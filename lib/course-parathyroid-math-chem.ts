@@ -3,17 +3,17 @@ import { type DraftLesson, type Source, q } from './course-types.ts';
 export const parathyroidMathChemSources: Record<string, Source> = {
   casr_hill: {
     id: 'casr_hill',
-    title: 'Allosteric Modulation and Hill Cooperativity of the Calcium-Sensing Receptor (CaSR)',
-    year: '2024',
-    url: 'https://doi.org/10.1038/s41574-024-00912-x',
-    kind: 'Model allosteryczny',
+    title: 'Brown EM et al. — Cloning and characterization of an extracellular Ca(2+)-sensing receptor from bovine parathyroid',
+    year: '1993',
+    url: 'https://doi.org/10.1038/366575a0',
+    kind: 'Biofizyka CaSR i model allosteryczny',
   },
   qtc_bone: {
     id: 'qtc_bone',
-    title: 'Hungry Bone Syndrome, CCCR Clearance and Mineralization Kinetics in Primary Hyperparathyroidism',
-    year: '2023',
-    url: 'https://doi.org/10.1007/s00198-023-06811-4',
-    kind: 'Kinetyka mineralizacji',
+    title: 'Witteveen JE et al. — Hungry bone syndrome: still a challenge in the post-operative management of primary hyperparathyroidism: a systematic review',
+    year: '2013',
+    url: 'https://doi.org/10.1530/EJE-12-0528',
+    kind: 'Kinetyka mineralizacji i zespół głodnych kości',
   },
 };
 

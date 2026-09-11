@@ -3,16 +3,16 @@ import { type DraftLesson, type Source, q } from './course-types.ts';
 export const thyroidMathChemSources: Record<string, Source> = {
   spina: {
     id: 'spina',
-    title: 'SPINA-GB / SPINA-GT Mathematical Endocrine Modeling and Structural Homeostasis',
-    year: '2024',
-    url: 'https://doi.org/10.3389/fendo.2024.137890',
+    title: 'Dietrich JW et al. — Calculated Parameters of Thyroid Homeostasis: Emerging Tools for Differential Diagnosis and Clinical Research',
+    year: '2016',
+    url: 'https://doi.org/10.3389/fendo.2016.00057',
     kind: 'Model matematyczny',
   },
   tpo_chem: {
     id: 'tpo_chem',
-    title: 'Structure and Radical Catalytic Cycle of Thyroid Peroxidase (TPO)',
-    year: '2023',
-    url: 'https://doi.org/10.1016/j.bbapap.2023.140880',
+    title: 'Coscia F et al. — The structure of human thyroglobulin',
+    year: '2020',
+    url: 'https://doi.org/10.1038/s41586-020-1995-4',
     kind: 'Biochemia i stereochemia',
   },
 };

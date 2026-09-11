@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { Activity, Scale, Zap, Atom, CheckCircle2, AlertTriangle, ArrowRight } from 'lucide-react';
+import { Activity, Scale, Atom, AlertTriangle } from 'lucide-react';
 import { calculateVermeulen } from '../../lib/gonad-simulator';
 
 export function VermeulenFreeTestosteroneCalculator() {
@@ -93,10 +93,10 @@ export function VermeulenFreeTestosteroneCalculator() {
           <div style={{ fontSize: '22px', fontWeight: 800, color: '#0f172a' }}>{result.bioavailableT_nmol} <span style={{ fontSize: '12px' }}>nmol/l</span></div>
           <div style={{ fontSize: '11px', color: '#64748b' }}>{result.bioavailableT_percent}% całkowitego</div>
         </div>
-        <div style={{ padding: '12px', background: isShbgExtreme ? '#fffbeb' : '#f8fafc', borderRadius: '8px', border: '1px solid', borderColor: isShbgExtreme ? '#fde68a' : '#e2e8f0' }}>
-          <div style={{ fontSize: '11px', color: isShbgExtreme ? '#92400e' : '#475569', fontWeight: 600 }}>Wskaźnik FAI</div>
-          <div style={{ fontSize: '22px', fontWeight: 800, color: isShbgExtreme ? '#b45309' : '#0f172a' }}>{result.fai}</div>
-          <div style={{ fontSize: '11px', color: '#64748b' }}>(100 × T) / SHBG</div>
+        <div style={{ padding: '10px 12px', background: isShbgExtreme ? '#fef2f2' : '#f1f5f9', borderRadius: '8px', border: '1px dashed', borderColor: isShbgExtreme ? '#fca5a5' : '#cbd5e1', opacity: isShbgExtreme ? 1 : 0.85 }}>
+          <div style={{ fontSize: '10px', color: isShbgExtreme ? '#991b1b' : '#64748b', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Wskaźnik pomocniczy: FAI</div>
+          <div style={{ fontSize: '18px', fontWeight: 800, color: isShbgExtreme ? '#dc2626' : '#334155' }}>{result.fai}</div>
+          <div style={{ fontSize: '10px', color: '#64748b' }}>(100 × T / SHBG) — bezmianowy, orientacyjny</div>
         </div>
       </div>
     </div>
@@ -251,11 +251,11 @@ export function AromataseAndSermMolecularVisualizer() {
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
         <Atom size={20} color="#9333ea" />
         <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 800 }}>
-          Wizualizator biochemiczny: Aromataza (CYP19A1), 5α-reduktaza i allosteria SERM
+          Wizualizator biochemiczny: Aromataza (CYP19A1), 5α-reduktaza i mechanizm SERM
         </h3>
       </div>
       <p style={{ fontSize: '12px', color: '#64748b', margin: '0 0 16px 0' }}>
-        Szczegółowy mechanizm eliminacji grupy C19 jako mrówczanu HCOOH, redukcji stereospecyficznej do DHT oraz allosterycznego wypchnięcia helisy 12 (H12) przez SERM.
+        Szczegółowy mechanizm eliminacji grupy C19 jako mrówczanu HCOOH, stereospecyficznej redukcji do DHT oraz ortosterycznego przemieszczenia helisy 12 (H12) przez SERM.
       </p>
 
       {/* Tabs */}
@@ -312,7 +312,7 @@ export function AromataseAndSermMolecularVisualizer() {
             cursor: 'pointer',
           }}
         >
-          3. Allosteria SERM i helisa 12 (ERα LBD)
+          3. Modulacja SERM i helisa 12 (ERα LBD)
         </button>
       </div>
 
@@ -353,10 +353,10 @@ export function AromataseAndSermMolecularVisualizer() {
       {selectedReaction === 'serm' && (
         <div style={{ background: '#fdf2f8', border: '1px solid #fbcfe8', borderRadius: '10px', padding: '16px' }}>
           <div style={{ fontSize: '13px', fontWeight: 700, color: '#9d174d', marginBottom: '8px' }}>
-            Mechanizm allosteryczny SERM (Tamoksyfen/Raloksyfen) na helisę 12 (H12)
+            Mechanizm działania SERM (Tamoksyfen/Raloksyfen) — ortosteryczna zawada i przemieszczenie helisy 12 (H12)
           </div>
           <div style={{ fontSize: '12px', color: '#831843', lineHeight: 1.6 }}>
-            Naturalny 17β-estradiol mieści się wewnątrz kieszeni LBD receptora ERα, pozwalając helisie 12 (H12) zamknąć kieszeń w pozycji „wieczka” (lid position) i utworzyć bruzdę wiążącą koaktywatory transkrypcji (p160/SRC-1). Cząsteczka tamoksyfenu posiada wystający, przestrzenny łańcuch boczny dwumetyloaminoetoksylowy, który wywołuje zawadę steryczną. Helisa H12 zostaje odepchnięta do bruzdy koaktywatora, fizycznie blokując transkrypcję genów mitogennych w tkance gruczołu piersiowego.
+            SERM jest <strong>ligandem ortosterycznym</strong> — wiąże się bezpośrednio w tej samej kieszeni wiążącej ligand (LBD) receptora ERα co 17β-estradiol. Podczas gdy estradiol umożliwia helisie 12 (H12) ułożenie się w pozycji zamykającego „wieczka” i uformowanie powierzchni AF-2 rekrutującej koaktywatory (p160/SRC-1), cząsteczka SERM posiada przestrzenny łańcuch boczny (np. dimetyloaminoetoksylowy w tamoksyfenie). Wywołuje on zawadę steryczną i wypycha H12 do bruzdy wiązania koaktywatorów, uniemożliwiając ich rekrutację lub sprzyjając rekrutacji korepresorów (NCoR/SMRT), co blokuje transkrypcję genów mitogennych w tkance piersi.
           </div>
         </div>
       )}

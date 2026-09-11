@@ -4,8 +4,8 @@ export const adrenalSources: Record<string, Source> = {
   pte_nadnercza: {
     id: 'pte_nadnercza',
     title: 'Polskie Towarzystwo Endokrynologiczne — Postępowanie w guzach nadnerczy i incydentaloma',
-    year: '2022',
-    url: 'https://doi.org/10.5603/EP.a2022.0045',
+    year: '2016',
+    url: 'https://doi.org/10.5603/EP.a2016.0039',
     kind: 'Polskie zalecenia kliniczne',
   },
   ese_incidentaloma: {
@@ -52,23 +52,23 @@ export const adrenalSources: Record<string, Source> = {
   },
   pte_macs: {
     id: 'pte_macs',
-    title: 'PTE — Łagodna autonomiczna sekrecja kortyzolu (MACS) w incydentaloma nadnerczy',
+    title: 'PTE / ESE — Autonomiczna sekrecja kortyzolu (MACS) w incydentaloma nadnerczy',
     year: '2023',
-    url: 'https://doi.org/10.5603/EP.2023.0012',
-    kind: 'Polskie stanowisko ekspertów',
+    url: 'https://doi.org/10.1093/ejendo/lvad066',
+    kind: 'Wytyczne kliniczne MACS',
   },
   adrenal_crisis: {
     id: 'adrenal_crisis',
-    title: 'Joint Consensus — Prevention and Treatment of Acute Adrenal Crisis in Adults',
-    year: '2020',
-    url: 'https://doi.org/10.1016/S2213-8587(20)30056-8',
-    kind: 'Konsensus: stany nagłe',
+    title: 'Rushworth RL, Torpy DJ, Falhammar H — Adrenal Crisis',
+    year: '2019',
+    url: 'https://doi.org/10.1056/NEJMra1807486',
+    kind: 'N Engl J Med: stany nagłe',
   },
   adrenal_surgery: {
     id: 'adrenal_surgery',
     title: 'ESES — Guidelines for Minimally Invasive and Open Adrenal Surgery',
     year: '2020',
-    url: 'https://doi.org/10.1007/s00423-020-01912-7',
+    url: 'https://doi.org/10.1007/s00423-020-01915-4',
     kind: 'Wytyczne chirurgiczne',
   },
 };

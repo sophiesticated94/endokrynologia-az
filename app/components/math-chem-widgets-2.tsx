@@ -1,94 +1,12 @@
 'use client';
 import { useState, useMemo } from 'react';
-import { Activity, Flame, ShieldAlert, Sparkles, HeartPulse, Sliders, CheckCircle2 } from 'lucide-react';
+import { Sparkles, HeartPulse, Sliders } from 'lucide-react';
 
 // ============================================================================
-// 1. ADRENAL ENZYME KINETICS (CYP21A2 MICHAELIS-MENTEN & 17-OHP SHUNT)
+// 1. 21-HYDROXYLASE PATHWAY EXPLORER (CYP21A2 SHUNT & CLINICAL 17-OHP BENCH)
 // ============================================================================
-export function AdrenalEnzymeKinetics() {
-  const [cyp21ActivityPct, setCyp21ActivityPct] = useState(1.5); // 1.5% - postać klasyczna prosta
-  const [acthDrive, setActhDrive] = useState(5.0); // 1 - 10 stymulacja ACTH
+export { AdrenalEnzymeKinetics } from './adrenal-pathway-explorer';
 
-  // Kinetyka enzymatyczna: Vmax proporcjonalna do aktywności enzymu
-  const km = 2.0; // uM
-  const baseVmax = 100.0;
-  const effectiveVmax = (baseVmax * cyp21ActivityPct) / 100;
-
-  // Nagromadzenie substratu 17-OHP w uM
-  const substrate17Ohp = useMemo(() => {
-    const raw = (acthDrive * 15) / (cyp21ActivityPct + 0.5);
-    return Math.round(raw * 10) / 10;
-  }, [acthDrive, cyp21ActivityPct]);
-
-  // Bocznikowanie do androgenów (17-OHP -> Androstendion -> Testosteron)
-  const androgenFlux = useMemo(() => {
-    const hill = Math.pow(substrate17Ohp, 2) / (Math.pow(10, 2) + Math.pow(substrate17Ohp, 2));
-    return Math.round(hill * 100);
-  }, [substrate17Ohp]);
-
-  const clinicalForm =
-    cyp21ActivityPct < 1.0
-      ? 'Klasyczna z utratą soli (brak aldosteronu, hiponatremia, hiperkaliemia)'
-      : cyp21ActivityPct <= 5.0
-      ? 'Klasyczna bez utraty soli (wirylizacja, zarośnięcie szpar, przedwczesne dojrzewanie)'
-      : cyp21ActivityPct <= 50.0
-      ? 'Nieklasyczna (NC-CAH, hirsutyzm, zaburzenia miesiączkowania u nastolatek)'
-      : 'Prawidłowa czynność 21-hydroksylazy (Fizjologia)';
-
-  return (
-    <div style={{ background: '#fdf8f6', border: '1px solid #fed7aa', borderRadius: '12px', padding: '18px', margin: '14px 0' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: '#c2410c' }}>
-        <Activity size={20} />
-        <h4 style={{ margin: 0, fontSize: '15px' }}>Kinetyka Enzymatyczna 21-Hydroksylazy i Bocznik Androgenowy WPN</h4>
-      </div>
-      <p style={{ fontSize: '12px', color: '#374151', margin: '0 0 14px' }}>
-        {'Równanie Michaelisa-Menten: V = (V_max · [S]) / (K_m + [S]). Spadek aktywności CYP21A2 prowadzi do drastycznej kumulacji 17-OHP i ucieczki w syntezę androgenów.'}
-      </p>
-
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '14px', marginBottom: '14px' }}>
-        <div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', marginBottom: '4px' }}>
-            <span>Aktywność resztkowa CYP21A2</span>
-            <strong>{cyp21ActivityPct}%</strong>
-          </div>
-          <input type="range" min="0" max="100" step="0.5" value={cyp21ActivityPct} onChange={e => setCyp21ActivityPct(Number(e.target.value))} style={{ width: '100%' }} />
-          <small style={{ fontSize: '10px', color: '#6b7280' }}>&lt;1%: utrata soli | 1–5%: prosta | 20–50%: nieklasyczna</small>
-        </div>
-
-        <div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', marginBottom: '4px' }}>
-            <span>Napęd osi ACTH (sprzężenie zwrotne)</span>
-            <strong>{acthDrive}x</strong>
-          </div>
-          <input type="range" min="1.0" max="10.0" step="0.5" value={acthDrive} onChange={e => setActhDrive(Number(e.target.value))} style={{ width: '100%' }} />
-          <small style={{ fontSize: '10px', color: '#6b7280' }}>Brak kortyzolu = odhamowanie ACTH i hiperplazja</small>
-        </div>
-      </div>
-
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '10px', marginBottom: '14px' }}>
-        <div style={{ background: '#fff', border: '1px solid #fed7aa', borderRadius: '8px', padding: '12px' }}>
-          <div style={{ fontSize: '11px', color: '#9a3412', fontWeight: 'bold' }}>Stężenie 17-OHP w surowicy</div>
-          <div style={{ fontSize: '20px', fontWeight: 'bold', color: substrate17Ohp > 30 ? '#dc2626' : '#16a34a' }}>
-            {substrate17Ohp} <span style={{ fontSize: '11px' }}>ng/ml</span>
-          </div>
-          <div style={{ fontSize: '10px', color: '#475569' }}>Próg diagnostyczny testu z Synacthenem: &gt;10 ng/ml</div>
-        </div>
-
-        <div style={{ background: '#fff', border: '1px solid #fee2e2', borderRadius: '8px', padding: '12px' }}>
-          <div style={{ fontSize: '11px', color: '#991b1b', fontWeight: 'bold' }}>Bocznikowanie do Androgenów</div>
-          <div style={{ fontSize: '20px', fontWeight: 'bold', color: androgenFlux > 60 ? '#dc2626' : '#d97706' }}>
-            {androgenFlux}% <span style={{ fontSize: '11px' }}>maks. przepływu</span>
-          </div>
-          <div style={{ fontSize: '10px', color: '#475569' }}>Nadmiar DHEA-S, androstendionu i testosteronu</div>
-        </div>
-      </div>
-
-      <div style={{ background: '#fff7ed', border: '1px solid #ffedd5', borderRadius: '8px', padding: '10px 14px', fontSize: '12px', color: '#9a3412' }}>
-        <strong>Fenotyp kliniczny:</strong> {clinicalForm}
-      </div>
-    </div>
-  );
-}
 
 // ============================================================================
 // 2. STEROIDOGENESIS P450 VISUALIZER & STERANE STEREOCHEMISTRY
@@ -209,95 +127,116 @@ export function SteroidogenesisP450Visualizer() {
 // ============================================================================
 // 3. CASR 4-PARAMETER HILL SIGMOIDAL CURVE & SETPOINT CALCULATOR
 // ============================================================================
+// ============================================================================
+// 3. CASR RELATIVE HILL SIGMOIDAL SUPPRESSION CURVE
+// ============================================================================
 export function CasrSigmoidalCurve() {
   const [ionizedCa, setIonizedCa] = useState(1.22); // mmol/l
   const [casrMode, setCasrMode] = useState<'normal' | 'fhh' | 'cinacalcet' | 'adenoma'>('normal');
 
-  // Parametry równania Hilla dla CaSR
-  // PTH = PTH_min + (PTH_max - PTH_min) / (1 + (Ca / EC50)^nH)
-  const pthMax = casrMode === 'adenoma' ? 180 : 100;
-  const pthMin = casrMode === 'adenoma' ? 45 : 8;
-  const nH = 3.8; // Wysoka kooperatywność receptora CaSR
-  const ec50 = casrMode === 'fhh' ? 1.38 : casrMode === 'cinacalcet' ? 1.12 : 1.21; // mmol/l
+  // Względna sekrecja PTH w % wartości maksymalnej (0–100%)
+  // W autonomizacji (gruczolak) minimalna supresja jest upośledzona (podwyższone plateau dolne)
+  const relativeMax = 100;
+  const relativeMin = casrMode === 'adenoma' ? 35 : 5;
+  const nH = 3.8; // Współczynnik Hilla (wysoka kooperatywność oligomeru CaSR)
+  const ec50 = casrMode === 'fhh' ? 1.38 : casrMode === 'cinacalcet' ? 1.12 : 1.21; // mmol/l (orientacyjny set-point)
 
-  // Obliczenie aktualnego PTH
-  const currentPth = useMemo(() => {
+  // Obliczenie względnej sekrecji PTH (% maksimum)
+  const relativePthPct = useMemo(() => {
     const ratio = Math.pow(ionizedCa / ec50, nH);
-    const pth = pthMin + (pthMax - pthMin) / (1 + ratio);
+    const pth = relativeMin + (relativeMax - relativeMin) / (1 + ratio);
     return Math.round(pth * 10) / 10;
-  }, [ionizedCa, ec50, pthMin, pthMax, nH]);
+  }, [ionizedCa, ec50, relativeMin, relativeMax, nH]);
 
-  // Generowanie punktów krzywej Hilla
+  // Generowanie punktów krzywej Hilla (0–100%)
   const curvePoints = useMemo(() => {
     const pts: { ca: number; pth: number }[] = [];
     for (let c = 0.8; c <= 1.7; c += 0.02) {
       const ratio = Math.pow(c / ec50, nH);
-      const val = pthMin + (pthMax - pthMin) / (1 + ratio);
+      const val = relativeMin + (relativeMax - relativeMin) / (1 + ratio);
       pts.push({ ca: Math.round(c * 100) / 100, pth: Math.round(val * 10) / 10 });
     }
     return pts;
-  }, [ec50, pthMin, pthMax, nH]);
+  }, [ec50, relativeMin, relativeMax, nH]);
+
+  const modeDescriptions = {
+    normal: 'Fizjologiczny model odniesienia: stromy spadek sekrecji PTH w wąskim zakresie normokalcemii.',
+    fhh: 'Mutacja inaktywująca CaSR / FHH: przesunięcie krzywej w prawo (oporność na wapń zjonizowany, obniżona czułość receptora).',
+    cinacalcet: 'Kalcymimetyk (cynakalcet): allosteryczna sensytyzacja receptora, przesunięcie krzywej w lewo (zwiększona wrażliwość na Ca²⁺).',
+    adenoma: 'Rozrost przytarczyc / gruczolak PHPT: zaburzenie supresji minimalnej (podwyższona niesupresyjna sekrecja bazowa, autonomizacja).',
+  };
 
   return (
     <div style={{ background: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '12px', padding: '18px', margin: '14px 0' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: '#1e293b' }}>
         <Sliders size={20} color="#059669" />
-        <h4 style={{ margin: 0, fontSize: '15px' }}>Sigmoida Hilla Receptora CaSR i Wskaźnik Set-Point Supresji PTH</h4>
+        <h4 style={{ margin: 0, fontSize: '15px' }}>Biofizyczny Model Supresji PTH przez CaSR (Względna Krzywa Hilla)</h4>
       </div>
       <p style={{ fontSize: '12px', color: '#475569', margin: '0 0 14px' }}>
-        {'Model 4-parametrowy z kooperatywnością n_H ≈ 3.8: PTH = PTH_min + (PTH_max - PTH_min) / (1 + ([Ca²⁺]/EC_50)^n_H). Przesunięcie w prawo w FHH vs w lewo po kalcymimetyku (cynakalcet).'}
+        Krzywa ilustruje względną dynamikę supresji wydzielania PTH (0–100% maksimum). Indywidualny set-point i stężenia bezwzględne PTH różnią się w zależności od pacjenta, masy tkanki przytarczycowej i gospodarki witaminą D.
       </p>
 
       <div style={{ display: 'flex', gap: '6px', marginBottom: '14px', flexWrap: 'wrap' }}>
         <button type="button" className={casrMode === 'normal' ? 'primary' : 'secondary'} onClick={() => setCasrMode('normal')} style={{ fontSize: '11px', padding: '5px 10px' }}>
-          Norma (EC50 = 1.21)
+          Model odniesienia
         </button>
         <button type="button" className={casrMode === 'fhh' ? 'primary' : 'secondary'} onClick={() => setCasrMode('fhh')} style={{ fontSize: '11px', padding: '5px 10px' }}>
-          Mutacja FHH (Prawo-skręt, EC50 = 1.38)
+          Przesunięcie w prawo (FHH)
         </button>
         <button type="button" className={casrMode === 'cinacalcet' ? 'primary' : 'secondary'} onClick={() => setCasrMode('cinacalcet')} style={{ fontSize: '11px', padding: '5px 10px' }}>
-          Kalcymimetyk (Lewo-skręt, EC50 = 1.12)
+          Przesunięcie w lewo (Kalcymimetyk)
         </button>
         <button type="button" className={casrMode === 'adenoma' ? 'primary' : 'secondary'} onClick={() => setCasrMode('adenoma')} style={{ fontSize: '11px', padding: '5px 10px' }}>
-          Gruczolak PHPT (Utrata supresji)
+          Autonomizacja / Gruczolak
         </button>
       </div>
 
       <div style={{ marginBottom: '14px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', marginBottom: '4px' }}>
           <span>Wapń zjonizowany w surowicy (Ca²⁺)</span>
-          <strong>{ionizedCa} mmol/l (Norma: 1.15 – 1.32)</strong>
+          <strong>{ionizedCa.toFixed(2)} mmol/l (Norma: 1.15 – 1.32)</strong>
         </div>
         <input type="range" min="0.85" max="1.65" step="0.01" value={ionizedCa} onChange={e => setIonizedCa(Number(e.target.value))} style={{ width: '100%' }} />
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '14px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '10px', marginBottom: '14px' }}>
         <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '10px' }}>
-          <small style={{ fontSize: '11px', color: '#64748b' }}>Wyliczone stężenie PTH</small>
-          <div style={{ fontSize: '20px', fontWeight: 'bold', color: currentPth > 65 ? '#dc2626' : currentPth < 15 ? '#2563eb' : '#16a34a' }}>
-            {currentPth} <span style={{ fontSize: '11px' }}>pg/ml</span>
+          <small style={{ fontSize: '11px', color: '#64748b' }}>Względna sekrecja PTH</small>
+          <div style={{ fontSize: '20px', fontWeight: 'bold', color: relativePthPct > 60 ? '#dc2626' : relativePthPct < 20 ? '#2563eb' : '#059669' }}>
+            {relativePthPct}% <span style={{ fontSize: '11px', fontWeight: 400 }}>maksimum</span>
           </div>
         </div>
 
         <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '10px' }}>
-          <small style={{ fontSize: '11px', color: '#64748b' }}>Wartość Set-Point (EC50)</small>
+          <small style={{ fontSize: '11px', color: '#64748b' }}>Orientacyjny set-point (EC50)</small>
           <div style={{ fontSize: '20px', fontWeight: 'bold', color: '#0f172a' }}>
-            {ec50} <span style={{ fontSize: '11px' }}>mmol/l</span>
+            ~{ec50} <span style={{ fontSize: '11px', fontWeight: 400 }}>mmol/l</span>
           </div>
         </div>
       </div>
 
       {/* SVG Wykres Sigmoidy */}
       <svg viewBox="0 0 540 140" style={{ width: '100%', height: 'auto', background: '#fff', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+        {/* Zakres normy wapnia zjonizowanego */}
+        <rect
+          x={40 + ((1.15 - 0.8) / 0.9) * 470}
+          y="15"
+          width={((1.32 - 1.15) / 0.9) * 470}
+          height="100"
+          fill="#f0fdf4"
+          opacity="0.8"
+        />
         <line x1="40" y1="115" x2="510" y2="115" stroke="#94a3b8" strokeWidth="1.5" />
         <line x1="40" y1="15" x2="40" y2="115" stroke="#94a3b8" strokeWidth="1.5" />
         <text x="270" y="132" textAnchor="middle" fontSize="10" fill="#64748b">Wapń zjonizowany Ca²⁺ (mmol/l) ⟶</text>
+        <text x="35" y="20" textAnchor="end" fontSize="9" fill="#64748b">100%</text>
+        <text x="35" y="115" textAnchor="end" fontSize="9" fill="#64748b">0%</text>
 
         {/* Krzywa Hilla */}
         <path
           d={curvePoints.reduce((acc, p, i) => {
             const x = 40 + ((p.ca - 0.8) / 0.9) * 470;
-            const y = 115 - (p.pth / 200) * 95;
+            const y = 115 - (p.pth / 100) * 95;
             return `${acc} ${i === 0 ? 'M' : 'L'} ${x} ${y}`;
           }, '')}
           fill="none"
@@ -306,8 +245,12 @@ export function CasrSigmoidalCurve() {
         />
 
         {/* Aktualny punkt pacjenta */}
-        <circle cx={40 + ((ionizedCa - 0.8) / 0.9) * 470} cy={115 - (currentPth / 200) * 95} r="6" fill="#dc2626" stroke="#fff" strokeWidth="2" />
+        <circle cx={40 + ((ionizedCa - 0.8) / 0.9) * 470} cy={115 - (relativePthPct / 100) * 95} r="6" fill="#dc2626" stroke="#fff" strokeWidth="2" />
       </svg>
+
+      <div style={{ marginTop: '10px', fontSize: '11px', color: '#475569', background: '#f1f5f9', padding: '8px 12px', borderRadius: '6px' }}>
+        <strong>Kontekst kliniczny:</strong> {modeDescriptions[casrMode]}
+      </div>
     </div>
   );
 }
@@ -326,18 +269,18 @@ export function BoneMineralizationKinetics() {
   const qtcBazett = Math.round(measuredQtMs / Math.sqrt(rrSec));
   const qtcFridericia = Math.round(measuredQtMs / Math.cbrt(rrSec));
 
-  // Zespół głodnych kości (HBS) - stała tempa zaniku k proporcjonalna do ALP
-  const hungryBoneK = (preopAlp / 100) * 0.12;
-  const hungryBoneRisk = 'Nie do wyliczenia z samej ALP';
+  const isBazettProlonged = qtcBazett > 460;
+  const isFridericiaProlonged = qtcFridericia > 450;
+  const isSevereProlongation = qtcBazett > 500 || qtcFridericia > 500;
 
   return (
     <div style={{ background: '#fef2f2', border: '1px solid #fecaca', borderRadius: '12px', padding: '18px', margin: '14px 0' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: '#991b1b' }}>
         <HeartPulse size={20} />
-        <h4 style={{ margin: 0, fontSize: '15px' }}>ALP a obrót kostny · matematyka QTc</h4>
+        <h4 style={{ margin: 0, fontSize: '15px' }}>Obrót kostny a elektrofizjologia serca · Matematyka QTc</h4>
       </div>
       <p style={{ fontSize: '12px', color: '#374151', margin: '0 0 14px' }}>
-        {'Formuły korygujące odstęp QT: Bazetta QTc = QT / √(RR) oraz Fridericia QTc = QT / ∛(RR). W hipokalcemii wydłużenie fazy plateau potencjału czynnościowego predysponuje do Torsade de Pointes.'}
+        Formuły korygujące odstęp QT: Bazetta QTc = QT / √(RR) oraz Fridericia QTc = QT / ∛(RR). Hipokalcemia wydłuża fazę plateau (faza 2) potencjału czynnościowego i odstęp ST/QT. Może zwiększać ryzyko komorowych zaburzeń rytmu, natomiast Torsade de Pointes (TdP) stanowi rzadkie powikłanie izolowanej hipokalcemii (w przeciwieństwie do hipokaliemii lub hipomagnezemii).
       </p>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '12px', marginBottom: '14px' }}>
@@ -365,34 +308,44 @@ export function BoneMineralizationKinetics() {
             <strong>{measuredQtMs} ms</strong>
           </div>
           <input type="range" min="300" max="550" step="5" value={measuredQtMs} onChange={e => setMeasuredQtMs(Number(e.target.value))} style={{ width: '100%' }} />
-          <small style={{ fontSize: '10px', color: '#6b7280' }}>Od początku Q do końca T</small>
+          <small style={{ fontSize: '10px', color: '#6b7280' }}>Od początku załamka Q do końca załamka T</small>
         </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '10px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '10px', marginBottom: '12px' }}>
         <div style={{ background: '#fff', border: '1px solid #fee2e2', borderRadius: '8px', padding: '12px' }}>
           <div style={{ fontSize: '11px', color: '#991b1b', fontWeight: 'bold' }}>QTc wg Bazetta</div>
-          <div style={{ fontSize: '20px', fontWeight: 'bold', color: qtcBazett > 460 ? '#dc2626' : '#16a34a' }}>
+          <div style={{ fontSize: '20px', fontWeight: 'bold', color: isSevereProlongation ? '#dc2626' : isBazettProlonged ? '#d97706' : '#0f172a' }}>
             {qtcBazett} <span style={{ fontSize: '12px' }}>ms</span>
           </div>
-          <div style={{ fontSize: '10px', color: '#4b5563' }}>Interpretuj względem rytmu, QRS, leków i elektrolitów</div>
+          <div style={{ fontSize: '10px', color: '#4b5563' }}>
+            Norma: ♂ ≤450 ms, ♀ ≤460 ms (przeszacowuje przy tachykardii)
+          </div>
         </div>
 
         <div style={{ background: '#fff', border: '1px solid #fee2e2', borderRadius: '8px', padding: '12px' }}>
           <div style={{ fontSize: '11px', color: '#991b1b', fontWeight: 'bold' }}>QTc wg Fridericia</div>
-          <div style={{ fontSize: '20px', fontWeight: 'bold', color: qtcFridericia > 450 ? '#dc2626' : '#16a34a' }}>
+          <div style={{ fontSize: '20px', fontWeight: 'bold', color: isSevereProlongation ? '#dc2626' : isFridericiaProlonged ? '#d97706' : '#0f172a' }}>
             {qtcFridericia} <span style={{ fontSize: '12px' }}>ms</span>
           </div>
-          <div style={{ fontSize: '10px', color: '#4b5563' }}>Dokładniejszy przy tachykardii</div>
+          <div style={{ fontSize: '10px', color: '#4b5563' }}>
+            Norma: ≤450 ms (bardziej stabilna korekcja przy tachykardii)
+          </div>
         </div>
 
         <div style={{ background: '#fff', border: '1px solid #fee2e2', borderRadius: '8px', padding: '12px' }}>
-          <div style={{ fontSize: '11px', color: '#991b1b', fontWeight: 'bold' }}>Ryzyko Hungry Bone (HBS)</div>
-          <div style={{ fontSize: '15px', fontWeight: 'bold', color: preopAlp > 250 ? '#dc2626' : '#16a34a' }}>
-            {hungryBoneRisk}
+          <div style={{ fontSize: '11px', color: '#991b1b', fontWeight: 'bold' }}>Zespół Głodnych Kości (HBS)</div>
+          <div style={{ fontSize: '13px', fontWeight: 'bold', color: preopAlp > 250 ? '#b45309' : '#0f172a' }}>
+            {preopAlp > 300 ? 'Podwyższone ryzyko obrotu kostnego' : 'Niskie ryzyko wg samej ALP'}
           </div>
-          <div style={{ fontSize: '10px', color: '#4b5563' }}>Oceń seryjnie Ca, P, Mg i objawy</div>
+          <div style={{ fontSize: '10px', color: '#4b5563' }}>
+            Ocena wieloczynnikowa: przedop. PTH, Ca, masa gruczolaka, osteitis fibrosa cystica, wiek i ALP
+          </div>
         </div>
+      </div>
+
+      <div style={{ fontSize: '11px', color: '#7f1d1d', background: '#fff1f2', border: '1px solid #fecdd3', borderRadius: '6px', padding: '8px 12px' }}>
+        <strong>Wskazówka interpretacyjna:</strong> QTc &gt; 500 ms wiąże się ze znacznym wzrostem ryzyka arytmii komorowych. Zawsze interpretuj QTc w kontekście szerokości zespołu QRS (przy LBBB lub stymulacji komór wzory korygujące tracą zastosowanie) oraz stężeń potasu i magnezu.
       </div>
     </div>
   );

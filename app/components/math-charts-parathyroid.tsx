@@ -1,6 +1,5 @@
 'use client';
 import { useState, useMemo } from 'react';
-import { Sliders, Activity, Heart, ShieldAlert, Sparkles, CheckCircle2 } from 'lucide-react';
 
 // ============================================================================
 // 1. CASR HILL EQUATION INTERACTIVE CURVE
@@ -9,33 +8,33 @@ export function CasrHillCurveChart() {
   const [ionizedCaMmol, setIonizedCaMmol] = useState(1.22); // Zakres: 0.8 do 1.7 mmol/L
   const [condition, setCondition] = useState<'normal' | 'fhh' | 'cinacalcet'>('normal');
 
-  const pthMax = 120.0;
-  const pthMin = 5.0;
-  const hillCoeff = 3.8; // Wysoka kooperatywność receptora CaSR
+  const relativeMax = 100.0;
+  const relativeMin = 5.0;
+  const hillCoeff = 3.8; // Wysoka kooperatywność oligomeru receptora CaSR
 
   const ec50Map = {
     normal: 1.21,
-    fhh: 1.38, // Przesunięcie w prawo (oporność CaSR)
+    fhh: 1.38, // Przesunięcie w prawo (oporność CaSR / FHH)
     cinacalcet: 1.12, // Przesunięcie w lewo (sensytyzacja allosteryczna)
   };
 
   const ec50 = ec50Map[condition];
 
-  // Obliczenie PTH wg równania Hilla
-  const currentPth = useMemo(() => {
+  // Obliczenie względnej sekrecji PTH wg równania Hilla (% maksimum)
+  const relativePth = useMemo(() => {
     const ratio = ionizedCaMmol / ec50;
-    const pth = pthMin + (pthMax - pthMin) / (1 + Math.pow(ratio, hillCoeff));
+    const pth = relativeMin + (relativeMax - relativeMin) / (1 + Math.pow(ratio, hillCoeff));
     return Math.round(pth * 10) / 10;
   }, [ionizedCaMmol, ec50]);
 
-  // Generowanie punktów krzywej SVG dla Ca: 0.8 do 1.7 mmol/L
+  // Generowanie punktów krzywej SVG dla Ca: 0.8 do 1.7 mmol/L (oś Y: 0 - 100%)
   const points = useMemo(() => {
     const pts: { x: number; y: number }[] = [];
     for (let ca = 0.8; ca <= 1.7; ca += 0.02) {
       const ratio = ca / ec50;
-      const pth = pthMin + (pthMax - pthMin) / (1 + Math.pow(ratio, hillCoeff));
+      const pth = relativeMin + (relativeMax - relativeMin) / (1 + Math.pow(ratio, hillCoeff));
       const px = 45 + ((ca - 0.8) / 0.9) * 440;
-      const py = 165 - 25 - (pth / 130) * 120;
+      const py = 165 - 25 - (pth / 100) * 115;
       pts.push({ x: px, y: py });
     }
     return pts;
@@ -45,7 +44,7 @@ export function CasrHillCurveChart() {
 
   // Punkt pracy pacjenta
   const patientPx = 45 + ((ionizedCaMmol - 0.8) / 0.9) * 440;
-  const patientPy = 165 - 25 - (currentPth / 130) * 120;
+  const patientPy = 165 - 25 - (relativePth / 100) * 115;
 
   return (
     <div style={{ background: '#f5f3fa', border: '1px solid #dcd4f0', borderRadius: '12px', padding: '18px', margin: '20px 0' }}>
@@ -55,25 +54,25 @@ export function CasrHillCurveChart() {
             MODEL BIOFIZYCZNY RECEPTORA CASR (RÓWNANIE HILLA)
           </span>
           <h4 style={{ margin: '2px 0 0', fontSize: '15px', color: '#2b1b4d' }}>
-            Sigmoidalna krzywa supresji PTH przez wapń zjonizowany (nH = 3,8)
+            Względna supresja wydzielania PTH przez wapń zjonizowany (0–100% maksimum, nH = 3,8)
           </h4>
         </div>
         <span style={{ fontSize: '12px', fontWeight: 700, background: '#ede6fa', color: '#56338e', padding: '4px 10px', borderRadius: '6px' }}>
-          Sygnał PTH = {currentPth} j. umownych przy Ca2+ = {ionizedCaMmol.toFixed(2)} mmol/l
+          Względna sekrecja PTH = {relativePth}% przy Ca2+ = {ionizedCaMmol.toFixed(2)} mmol/l
         </span>
       </div>
 
       {/* Przełączniki stanu klinicznego */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '8px', marginBottom: '14px' }}>
         {[
-          { id: 'normal', label: 'Model odniesienia (EC50 = 1,21)', color: '#6d4ba4' },
-          { id: 'fhh', label: 'FHH (Przesunięcie w prawo EC50 = 1,38)', color: '#dc2626' },
-          { id: 'cinacalcet', label: 'Cynakalcet (Przesunięcie w lewo EC50 = 1,12)', color: '#16a34a' },
+          { id: 'normal', label: 'Model odniesienia (orientacyjny EC50 ~ 1,21)', color: '#6d4ba4' },
+          { id: 'fhh', label: 'FHH (Przesunięcie w prawo EC50 ~ 1,38)', color: '#dc2626' },
+          { id: 'cinacalcet', label: 'Cynakalcet (Przesunięcie w lewo EC50 ~ 1,12)', color: '#16a34a' },
         ].map(item => (
           <button
             key={item.id}
             type="button"
-            onClick={() => setCondition(item.id as any)}
+            onClick={() => setCondition(item.id as 'normal' | 'fhh' | 'cinacalcet')}
             style={{
               padding: '6px 10px',
               borderRadius: '6px',
@@ -127,13 +126,13 @@ export function CasrHillCurveChart() {
             opacity="0.6"
           />
 
-          {/* Poziome linie siatki PTH */}
-          {[15, 65, 120].map(val => {
-            const y = 165 - 25 - (val / 130) * 120;
+          {/* Poziome linie siatki PTH (0%, 50%, 100%) */}
+          {[0, 50, 100].map(val => {
+            const y = 165 - 25 - (val / 100) * 115;
             return (
               <g key={val}>
                 <line x1="45" y1={y} x2="485" y2={y} stroke="#f1f5f9" strokeDasharray="3 3" />
-                <text x="38" y={y + 3} fill="#94a3b8" fontSize="9" textAnchor="end">{val}</text>
+                <text x="38" y={y + 3} fill="#94a3b8" fontSize="9" textAnchor="end">{val}%</text>
               </g>
             );
           })}
@@ -149,7 +148,7 @@ export function CasrHillCurveChart() {
             strokeWidth="1.5"
           />
           <text x={45 + ((ec50 - 0.8) / 0.9) * 440} y="26" fill="#9333ea" fontSize="10" fontWeight="700" textAnchor="middle">
-            Set-point (EC50 = {ec50})
+            Set-point (~{ec50} mmol/l)
           </text>
 
           {/* Krzywa sigmoidalna Hilla */}
@@ -158,19 +157,19 @@ export function CasrHillCurveChart() {
           {/* Punkt pacjenta */}
           <circle cx={patientPx} cy={patientPy} r="5" fill="#7c3aed" stroke="#fff" strokeWidth="2" />
           <text x={Math.min(460, patientPx + 8)} y={Math.max(25, patientPy - 6)} fill="#5b21b6" fontSize="10" fontWeight="700">
-            Ca2+: {ionizedCaMmol.toFixed(2)} ⟶ PTH: {currentPth}
+            Ca2+: {ionizedCaMmol.toFixed(2)} ⟶ {relativePth}% sekrecji
           </text>
 
           {/* Osie X i Y */}
           <line x1="45" y1="140" x2="485" y2="140" stroke="#475569" strokeWidth="1.5" />
           <line x1="45" y1="15" x2="45" y2="140" stroke="#475569" strokeWidth="1.5" />
           <text x="265" y="160" fill="#475569" fontSize="10" fontWeight="600" textAnchor="middle">Wapń zjonizowany [Ca2+] (mmol/L)</text>
-          <text x="14" y="80" fill="#475569" fontSize="10" fontWeight="600" transform="rotate(-90 14 80)" textAnchor="middle">PTH (j. umowne)</text>
+          <text x="14" y="80" fill="#475569" fontSize="10" fontWeight="600" transform="rotate(-90 14 80)" textAnchor="middle">Względna sekrecja PTH (% maks.)</text>
         </svg>
       </div>
 
       <div style={{ marginTop: '12px', fontSize: '12px', color: '#3b0764', lineHeight: '1.45', background: '#fdf4ff', padding: '10px 14px', borderRadius: '6px' }}>
-        <strong>Znaczenie współczynnika Hilla nH = 3,8:</strong> Bardzo wysoka kooperatywność allosteryczna sprawia, że krzywa jest niezwykle stroma w fizjologicznym oknie stężeń (1,15–1,30 mmol/L). Wahanie stężenia wapnia zaledwie o <strong>0,05 mmol/L</strong> skutkuje aż <strong>400-procentową zmianą tempa wydzielania PTH</strong>, co czyni z przytarczyc precyzyjny termostat homeostazy mineralnej.
+        <strong>Znaczenie współczynnika Hilla nH = 3,8:</strong> Bardzo wysoka kooperatywność allosteryczna sprawia, że krzywa jest niezwykle stroma w fizjologicznym oknie stężeń (1,15–1,30 mmol/L). Wahanie stężenia wapnia zaledwie o <strong>0,05 mmol/L</strong> skutkuje gwałtowną zmianą tempa wydzielania PTH, co czyni z przytarczyc precyzyjny termostat homeostazy mineralnej.
       </div>
     </div>
   );

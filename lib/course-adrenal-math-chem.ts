@@ -3,17 +3,17 @@ import { type DraftLesson, type Source, q } from './course-types.ts';
 export const adrenalMathChemSources: Record<string, Source> = {
   cah_kinetics: {
     id: 'cah_kinetics',
-    title: 'Michaelis-Menten Kinetics and Genetic Shunting of Cytochromes P450 in CAH',
-    year: '2023',
-    url: 'https://doi.org/10.1210/endrev/bnd024',
-    kind: 'Kinetyka enzymatyczna',
+    title: 'Krone N et al. — Predicting phenotype in steroid 21-hydroxylase deficiency? Comprehensive genotype-phenotype analysis in 21-hydroxylase deficiency',
+    year: '2000',
+    url: 'https://doi.org/10.1210/jcem.85.3.6441',
+    kind: 'Kinetyka enzymatyczna i korelacja genotyp-fenotyp',
   },
   sterane_chem: {
     id: 'sterane_chem',
-    title: 'Stereochemistry and Catalytic Oxygenation Mechanisms of Adrenal Steroidogenesis',
-    year: '2024',
-    url: 'https://doi.org/10.1021/acs.chemrev.2024.0042',
-    kind: 'Chemia steroidów',
+    title: 'Miller WL, Auchus RJ — The Molecular Biology, Biochemistry, and Physiology of Human Steroidogenesis and Its Disorders',
+    year: '2011',
+    url: 'https://doi.org/10.1210/er.2010-0013',
+    kind: 'Chemia steroidów i cytochromy P450',
   },
 };
 

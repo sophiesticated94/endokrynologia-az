@@ -1,7 +1,7 @@
 'use client';
 import { ThyroidWorkbench, WaterWorkbench, MechanismWorkbench } from './physiology-workbench';
-import { useState, useMemo } from 'react';
-import { Calculator, Atom, Activity, Droplets, Info, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import { useState } from 'react';
+import { Atom } from 'lucide-react';
 
 // ============================================================================
 // 1. SPINA-GT / SPINA-GD THYROID FEEDBACK CALCULATOR
@@ -19,22 +19,22 @@ export function TpoMolecularMechanism() {
       badge: 'Hem protoporfirynowy IX',
     },
     2: {
-      title: 'Krok 2: Utlenienie anionu jodkowego (I-) do postaci elektrofilowej',
-      desc: 'Compound I utlenia jon jodkowy I-, redukując się do Compound II lub z powrotem do Fe(III). Generowany jest elektrofilowy kation jodanowy (I+) lub rodnik jodu (I•), zdolny do ataku na pierścień aromatyczny tyrozyny.',
-      formula: '[TPO-Fe(IV)=O]+• + I- ⟶ TPO-Fe(III) + [IO]- / I•',
-      badge: 'Utlenienie 2-elektronowe',
+      title: 'Krok 2: Utlenienie anionu jodkowego (I-) do gatunku elektrofilowego',
+      desc: 'Compound I utlenia jon jodkowy I-, redukując się do Compound II lub powracając do Fe(III). Powstaje reaktywny gatunek elektrofilowy (przejściowy kation jodoniowy [I+], podjodyn [IO]-, rodnik I• lub kompleks enzymatyczny [Fe(IV)=O···I]). Dokładna natura aktywnego czynnika jodującego pozostaje przedmiotem debaty biochemicznej.',
+      formula: '[TPO-Fe(IV)=O]+• + I- ⟶ TPO-Fe(III) + [I+] / [IO]- / I•',
+      badge: 'Gatunek elektrofilowy',
     },
     3: {
       title: 'Krok 3: Organifikacja — podstawienie elektrofilowe na tyreoglobulinie (Tg)',
       desc: 'Jodowanie w pozycjach orto do grupy fenolowej reszt tyrozynowych: powstaje monojodotyrozyna (MIT, w pozycji C-3) oraz dijodotyrozyna (DIT, w pozycjach C-3 i C-5).',
-      formula: 'Tg-Tyr + I+ ⟶ Tg-MIT + H+ ; Tg-MIT + I+ ⟶ Tg-DIT + H+',
+      formula: 'Tg-Tyr + [I+] ⟶ Tg-MIT + H+ ; Tg-MIT + [I+] ⟶ Tg-DIT + H+',
       badge: 'Substytucja elektrofilowa',
     },
     4: {
-      title: 'Krok 4: Sprzęganie rodnikowe i stereochemia eteru difenylowego (120°)',
-      desc: 'Utlenione reszty DIT i MIT tworzą rodniki fenoksylowe. Dochodzi do addycji rodnikowej z eliminacją łańcucha bocznego alaniny (jako dehydroalanina). Wiązanie eterowe C-O-C wymusza prostopadłe ułożenie pierścieni aromatycznych pod kątem ~120°.',
-      formula: 'DIT• + DIT• ⟶ Tyroksyna (T4) + Tg-dehydroalanina',
-      badge: 'Kąt dwuścienny ~120°',
+      title: 'Krok 4: Sprzęganie tyrozyn w strukturze Tg (Coscia et al. Nature 2020)',
+      desc: 'Sprzęganie donorowej i akceptorowej reszty jodotyrozyny ułożonych antyrównolegle w trójwymiarowej strukturze tyreoglobuliny (donor DIT + akceptor DIT ⟶ T4; donor MIT + akceptor DIT ⟶ T3). Wolnorodnikowa addycja fenoli tworzy mostek eterowy C–O–C z eliminacją łańcucha alaniny donora pod postacią dehydroalaniny (Dha).',
+      formula: 'Tg-DIT(akceptor) + Tg-DIT(donor) ⟶ Tg-T4 + Tg-Dha (eliminacja)',
+      badge: 'Para donor-akceptor Tg',
     },
   };
 
@@ -114,14 +114,23 @@ export function TpoMolecularMechanism() {
         )}
         {step === 4 && (
           <g>
-            <rect x="20" y="25" width="170" height="80" rx="6" fill="#f8fafc" stroke="#64748b" strokeWidth="1.5" />
-            <text x="105" y="50" textAnchor="middle" fontWeight="bold" fill="#0f172a" fontSize="11">Pierścień wewnętrzny</text>
-            <text x="105" y="70" textAnchor="middle" fill="#475569" fontSize="10">DIT (pozycje 3,5)</text>
-            <path d="M 195 65 L 260 45" stroke="#ea580c" strokeWidth="3" />
-            <text x="230" y="35" textAnchor="middle" fill="#ea580c" fontSize="11" fontWeight="bold">~120° (O-mostek)</text>
-            <rect x="260" y="25" width="180" height="80" rx="6" fill="#fff7ed" stroke="#f97316" strokeWidth="2" />
-            <text x="350" y="50" textAnchor="middle" fontWeight="bold" fill="#9a3412" fontSize="11">Pierścień zewnętrzny (fenol)</text>
-            <text x="350" y="70" textAnchor="middle" fill="#c2410c" fontSize="10">Wypchnięcie pod kątem 120°</text>
+            <rect x="20" y="25" width="165" height="80" rx="6" fill="#eff6ff" stroke="#3b82f6" strokeWidth="1.5" />
+            <text x="102" y="48" textAnchor="middle" fontWeight="bold" fill="#1d4ed8" fontSize="11">Akceptor (Tg-DIT)</text>
+            <text x="102" y="66" textAnchor="middle" fill="#2563eb" fontSize="10">Przyjmuje pierścień fenolowy</text>
+            <text x="102" y="84" textAnchor="middle" fill="#1e40af" fontSize="9" fontWeight="bold">⟶ Powstaje szkielet T4</text>
+
+            <path d="M 190 65 L 255 65" stroke="#ea580c" strokeWidth="2.5" />
+            <text x="222" y="52" textAnchor="middle" fill="#c2410c" fontSize="10" fontWeight="bold">Mostek C–O–C</text>
+            <text x="222" y="80" textAnchor="middle" fill="#ea580c" fontSize="9">antyrównolegle</text>
+
+            <rect x="260" y="25" width="165" height="80" rx="6" fill="#fff7ed" stroke="#f97316" strokeWidth="1.5" />
+            <text x="342" y="48" textAnchor="middle" fontWeight="bold" fill="#9a3412" fontSize="11">Donor (Tg-DIT / MIT)</text>
+            <text x="342" y="66" textAnchor="middle" fill="#c2410c" fontSize="10">Oddaje pierścień jodotyrozyny</text>
+            <text x="342" y="84" textAnchor="middle" fill="#7c2d12" fontSize="9" fontWeight="bold">⟶ Pozostałość: Tg-Dha</text>
+
+            <rect x="435" y="38" width="150" height="54" rx="6" fill="#f8fafc" stroke="#94a3b8" strokeWidth="1" strokeDasharray="3 3" />
+            <text x="510" y="57" textAnchor="middle" fontWeight="bold" fill="#475569" fontSize="10">Eliminacja łańcucha</text>
+            <text x="510" y="74" textAnchor="middle" fill="#64748b" fontSize="9">Dehydroalanina w Tg</text>
           </g>
         )}
       </svg>

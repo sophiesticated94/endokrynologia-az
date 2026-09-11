@@ -3,16 +3,16 @@ import { type DraftLesson, type Source, q } from './course-types.ts';
 export const pituitaryMathChemSources: Record<string, Source> = {
   goodwin: {
     id: 'goodwin',
-    title: 'Goodwin Oscillators and Pulsatile Neuroendocrine Dynamics in the Hypothalamus-Pituitary Axis',
-    year: '2023',
-    url: 'https://doi.org/10.1016/j.mbs.2022.108845',
+    title: 'Goodwin BC — Oscillatory behavior in enzymatic control processes',
+    year: '1965',
+    url: 'https://doi.org/10.1016/0065-2571(65)90067-1',
     kind: 'Dynamika nieliniowa',
   },
   edelman: {
     id: 'edelman',
-    title: 'The Edelman Equation and Quantitative Water Balance in SIADH and Diabetes Insipidus',
-    year: '2024',
-    url: 'https://doi.org/10.1681/ASN.2023.0123',
+    title: 'Edelman IS et al. — Interrelations between serum sodium concentration, serum osmolarity and total exchangeable sodium, total exchangeable potassium and total body water',
+    year: '1958',
+    url: 'https://doi.org/10.1172/JCI103712',
     kind: 'Fizjologia elektrolitowa',
   },
 };

@@ -1,7 +1,7 @@
 'use client';
 import { InsulinMathWorkbench } from './physiology-workbench';
 import { useState } from 'react';
-import { Activity, Flame, Sliders, ArrowRight, Zap, CheckCircle2 } from 'lucide-react';
+import { Flame, ArrowRight, Zap, CheckCircle2 } from 'lucide-react';
 
 export function BergmanMinimalModelCalculator() { return <InsulinMathWorkbench/>; }
 
@@ -21,9 +21,9 @@ export function InsulinReceptorAndKetogenesisVisualizer() {
       enzymes: 'IRS-1 -> PI3K (p85/p110) -> PIP3',
     },
     {
-      title: '3. Kaskada kinazy Akt/PKB i fosforylacja AS160',
-      desc: 'PIP3 rekrutuje PDK1 i Akt. Uruchomiona kinaza Akt fosforyluje białko AS160 (Rab-GAP), wyłączając hamowanie białek Rab.',
-      enzymes: 'PDK1 -> Akt (Thr308/Ser473) -> AS160',
+      title: '3. Kaskada kinazy Akt/PKB (PDK1 + mTORC2) i fosforylacja AS160',
+      desc: 'PIP3 rekrutuje kinazy do błony komórkowej. Do pełnej aktywacji Akt/PKB wymagana jest podwójna fosforylacja: PDK1 fosforyluje pętlę aktywacyjną (Thr308), natomiast kompleks mTORC2 fosforyluje motyw hydrofobowy (Ser473). W pełni aktywna Akt fosforyluje białko AS160 (Rab-GAP), znosząc hamowanie białek Rab.',
+      enzymes: 'PDK1 (Thr308) + mTORC2 (Ser473) -> Akt -> AS160',
     },
     {
       title: '4. Fuzja pęcherzyków i translokacja GLUT4',
@@ -49,9 +49,9 @@ export function InsulinReceptorAndKetogenesisVisualizer() {
       enzymes: 'Liaza HMG-CoA -> Wolny Acetooctan',
     },
     {
-      title: '4. Redukcja do beta-hydroksymaślanu i kwasica HAGMA',
-      desc: 'Wysoki potencjał NADH redukuje acetooctan do beta-hydroksymaślanu (stanowiącego >85% ketonów). Luka anionowa AG wzrasta > 20–30 mmol/L.',
-      enzymes: 'Dehydrogenaza beta-hydroksymaślanowa -> Ketonemia + HAGMA',
+      title: '4. Równowaga redoks NADH/NAD⁺, synteza β-OHB i kryteria wyrównania DKA',
+      desc: 'Stosunek β-hydroksymaślanu do acetooctanu odzwierciedla potencjał redoks mitochondriów (NADH/NAD⁺) i dynamicznie rośnie w ciężkiej kwasicy. Do monitorowania DKA zaleca się bezpośredni pomiar β-OHB we krwi. Według konsensusu ADA/EASD 2024 kryteria ustąpienia DKA to: β-OHB < 0,6 mmol/l (lub HCO₃⁻ ≥ 18 mmol/l z pH żylnym ≥ 7,30) oraz powrót możliwości przyjmowania posiłków.',
+      enzymes: 'Dehydrogenaza β-OHB (zależna od NADH) -> β-OHB / HAGMA',
     },
   ];
 
