@@ -27,6 +27,7 @@ import { CardsView, ExamView, ResultsView } from './practice-views';
 import { AccountView } from './account-view';
 import { HptSimulator } from './hpt-simulator';
 import { PituitarySimulator } from './pituitary-simulator';
+import { AdrenalSimulator } from './adrenal-simulator';
 import { GlossaryView } from './glossary-components';
 
 const navItems = [
@@ -52,7 +53,7 @@ export default function CourseApp() {
   const learning = useLearning();
   const { state, user, configured, loading, saving, pending, error, online } = learning;
   const [route, setRoute] = useState<Route>('home');
-  const [simTab, setSimTab] = useState<'hpt' | 'pituitary'>('hpt');
+  const [simTab, setSimTab] = useState<'hpt' | 'pituitary' | 'adrenal'>('hpt');
   const routeRef = useRef<Route>('home');
   const [mobile, setMobile] = useState(false);
   const active = useRef(false);
@@ -119,9 +120,11 @@ export default function CourseApp() {
 
   const title =
     route.startsWith('lesson/') || route.startsWith('quiz/')
-      ? lesson?.moduleId === 'przysadka'
-        ? 'Moduł 02 / Przysadka i podwzgórze'
-        : 'Moduł 01 / Tarczyca'
+      ? lesson?.moduleId === 'nadnercza'
+        ? 'Moduł 03 / Nadnercza'
+        : lesson?.moduleId === 'przysadka'
+          ? 'Moduł 02 / Przysadka i podwzgórze'
+          : 'Moduł 01 / Tarczyca'
       : route.startsWith('case/')
       ? 'Przypadki kliniczne'
       : route === 'simulator'
@@ -328,8 +331,20 @@ export default function CourseApp() {
                 >
                   <Activity size={15} /> Moduł 02: Konsola Przysadkowa (Przysadka i podwzgórze)
                 </button>
+                <button
+                  className={simTab === 'adrenal' ? 'active' : ''}
+                  onClick={() => setSimTab('adrenal')}
+                >
+                  <Activity size={15} /> Moduł 03: Konsola Nadnerczowa (Kora i rdzeń nadnerczy)
+                </button>
               </div>
-              {simTab === 'hpt' ? <HptSimulator /> : <PituitarySimulator />}
+              {simTab === 'hpt' ? (
+                <HptSimulator />
+              ) : simTab === 'pituitary' ? (
+                <PituitarySimulator />
+              ) : (
+                <AdrenalSimulator />
+              )}
             </div>
           )}
           {route === 'glossary' && <GlossaryView go={go} />}

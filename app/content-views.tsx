@@ -39,8 +39,19 @@ import {
   WaterBalanceMatrix,
   SheehanSyndromeDiagram,
 } from './pituitary-diagrams';
+import {
+  AdrenalAnatomyVascularDiagram,
+  AdrenalSteroidogenesisDiagram,
+  AddisonVsSecondaryPigmentationDiagram,
+  RaaAxisAndConnPathway,
+  PheoAlphaBetaBlockadeDiagram,
+  IncidentalomaCtWashoutDiagram,
+  AdrenalCrisisEmergencyProtocol,
+  AdrenocorticalCarcinomaWeissDiagram,
+} from './adrenal-diagrams';
 import { HptSimulator } from './hpt-simulator';
 import { PituitarySimulator } from './pituitary-simulator';
+import { AdrenalSimulator } from './adrenal-simulator';
 
 export type Route =
   | 'home'
@@ -108,10 +119,20 @@ export function Dashboard({
       <section className="hero-panel">
         <div className="hero-copy">
           <span className="badge">
-            {next.moduleId === 'przysadka' ? 'MODUŁ 02 · PRZYSADKA' : 'MODUŁ 01 · TARCZYCA'}
+            {next.moduleId === 'nadnercza'
+              ? 'MODUŁ 03 · NADNERCZA'
+              : next.moduleId === 'przysadka'
+                ? 'MODUŁ 02 · PRZYSADKA'
+                : 'MODUŁ 01 · TARCZYCA'}
           </span>
           <h2>
-            {next.moduleId === 'przysadka' ? (
+            {next.moduleId === 'nadnercza' ? (
+              <>
+                Czapki nerkowe.
+                <br />
+                Kortyzol i katecholaminy.
+              </>
+            ) : next.moduleId === 'przysadka' ? (
               <>
                 Dyrygent orkiestry.
                 <br />
@@ -126,9 +147,11 @@ export function Dashboard({
             )}
           </h2>
           <p>
-            {next.moduleId === 'przysadka'
-              ? 'Od gruczolaków i zaburzeń pola widzenia po moczówkę prostą i SIADH.'
-              : 'Od osi hormonalnej po decyzje przy łóżku pacjenta. Poznaj tarczycę krok po kroku.'}
+            {next.moduleId === 'nadnercza'
+              ? 'Od choroby Addisona i przełomu nadnerczowego po zespół Conna, pheochromocytoma i raka ACC.'
+              : next.moduleId === 'przysadka'
+                ? 'Od gruczolaków i zaburzeń pola widzenia po moczówkę prostą i SIADH.'
+                : 'Od osi hormonalnej po decyzje przy łóżku pacjenta. Poznaj tarczycę krok po kroku.'}
           </p>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
             <button className="primary" onClick={() => go(`lesson/${next.id}`)}>
@@ -141,10 +164,10 @@ export function Dashboard({
           </div>
           <div className="hero-meta">
             <BookOpen size={15} />
-            {lessons.length} lekcji (2 moduły)
+            {lessons.length} lekcji (3 moduły)
             <span>·</span>
             <Clock size={15} />
-            około 6 godzin nauki
+            około 9 godzin nauki
           </div>
         </div>
         <ThyroidArt />
@@ -246,7 +269,7 @@ export function Dashboard({
 }
 
 export function CourseMap({ state, go }: { state: LearningState; go: Navigation }) {
-  const [activeTab, setActiveTab] = useState<'all' | 'tarczyca' | 'przysadka'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'tarczyca' | 'przysadka' | 'nadnercza'>('all');
 
   return (
     <>
@@ -274,6 +297,12 @@ export function CourseMap({ state, go }: { state: LearningState; go: Navigation 
           onClick={() => setActiveTab('przysadka')}
         >
           Moduł 02: Przysadka i podwzgórze (12)
+        </button>
+        <button
+          className={activeTab === 'nadnercza' ? 'active' : ''}
+          onClick={() => setActiveTab('nadnercza')}
+        >
+          Moduł 03: Nadnercza (12)
         </button>
       </div>
 
@@ -356,11 +385,53 @@ export function CourseMap({ state, go }: { state: LearningState; go: Navigation 
         </div>
       )}
 
+      {/* Moduł 03: Nadnercza */}
+      {(activeTab === 'all' || activeTab === 'nadnercza') && (
+        <div style={{ marginBottom: '40px' }}>
+          <section className="module-header" style={{ background: '#fdf6ee', borderColor: '#e6d3be' }}>
+            <span className="module-number" style={{ color: '#b2651f' }}>03</span>
+            <div>
+              <h2>Nadnercza</h2>
+              <p>12 lekcji · 60 pytań · Kora i rdzeń, Addison, WPN, Conn, guz chromochłonny, przełom i ACC · Konsola Nadnerczowa</p>
+            </div>
+            <span className="badge" style={{ color: '#8c480a', borderColor: '#dcb892', background: '#ffffffcc' }}>DOSTĘPNY</span>
+          </section>
+
+          {(() => {
+            const preferred = [
+              'Fundamenty',
+              'Niedoczynność kory i WPN',
+              'Nadczynności i guz chromochłonny',
+              'Stany nagłe i chirurgia',
+            ];
+            const actual = Array.from(new Set(lessons.filter(l => l.moduleId === 'nadnercza').map(l => l.group)));
+            const allGroups = [
+              ...preferred.filter(g => actual.includes(g)),
+              ...actual.filter(g => !preferred.includes(g)),
+            ];
+            return allGroups.map(group => {
+              const groupLessons = lessons.filter(l => l.moduleId === 'nadnercza' && l.group === group);
+              if (!groupLessons.length) return null;
+              return (
+                <section key={`n-${group}`} className="course-group">
+                  <h3>{group}</h3>
+                  <div className="lesson-list">
+                    {groupLessons.map(l => (
+                      <LessonRow key={l.id} lesson={l} state={state} go={go} />
+                    ))}
+                  </div>
+                </section>
+              );
+            });
+          })()}
+        </div>
+      )}
+
       <h2 className="spaced-heading">Dalsza część Twojej ścieżki</h2>
       <div className="planned-grid">
         {plannedModules.map((name, i) => (
           <div className="planned-card" key={name}>
-            <span>{String(i + 3).padStart(2, '0')}</span>
+            <span>{String(i + 4).padStart(2, '0')}</span>
             <h3>{name}</h3>
             <small>
               <LockKeyhole size={13} />
@@ -390,7 +461,12 @@ export function LessonView({
 }) {
   const moduleLessons = lessons.filter(l => l.moduleId === lesson.moduleId);
   const lessonNum = moduleLessons.indexOf(lesson) + 1;
-  const moduleLabel = lesson.moduleId === 'przysadka' ? 'MODUŁ 02: PRZYSADKA' : 'MODUŁ 01: TARCZYCA';
+  const moduleLabel =
+    lesson.moduleId === 'nadnercza'
+      ? 'MODUŁ 03: NADNERCZA'
+      : lesson.moduleId === 'przysadka'
+        ? 'MODUŁ 02: PRZYSADKA'
+        : 'MODUŁ 01: TARCZYCA';
 
   return (
     <div className="lesson-layout">
@@ -449,6 +525,16 @@ export function LessonView({
             {lesson.id === 'cushing-choroba' && i === 1 && <CushingDiagnosticPathway />}
             {lesson.id === 'moczowka-prosta' && i === 1 && <WaterBalanceMatrix />}
             {lesson.id === 'hipopituitaryzm' && i === 0 && <SheehanSyndromeDiagram />}
+
+            {/* Osadzone wykresy i schematy medyczne — Nadnercza */}
+            {lesson.id === 'nadnercza-anatomia' && i === 0 && <AdrenalAnatomyVascularDiagram />}
+            {lesson.id === 'nadnercza-anatomia' && i === 1 && <AdrenalSteroidogenesisDiagram />}
+            {lesson.id === 'addison-choroba' && i === 0 && <AddisonVsSecondaryPigmentationDiagram />}
+            {lesson.id === 'zespol-conna' && i === 1 && <RaaAxisAndConnPathway />}
+            {lesson.id === 'pheochromocytoma' && i === 1 && <PheoAlphaBetaBlockadeDiagram />}
+            {lesson.id === 'incydentaloma-nadnercza' && i === 1 && <IncidentalomaCtWashoutDiagram />}
+            {lesson.id === 'przelom-nadnerczowy' && i === 0 && <AdrenalCrisisEmergencyProtocol />}
+            {lesson.id === 'rak-nadnercza' && i === 0 && <AdrenocorticalCarcinomaWeissDiagram />}
           </section>
         ))}
 
@@ -563,6 +649,50 @@ export function LessonView({
           </div>
         )}
 
+        {/* Zwiastun konsoli nadnerczowej w Lekcji 1 Nadnerczy */}
+        {lesson.id === 'nadnercza-anatomia' && (
+          <div className="simulator-teaser-card" style={{ background: '#fdf7f0', borderColor: '#e8d5bf' }}>
+            <div className="teaser-content">
+              <div className="teaser-icon" style={{ background: '#faebd7', color: '#b2651f' }}>
+                <Activity size={26} />
+              </div>
+              <div>
+                <span className="eyebrow" style={{ color: '#b2651f' }}>INTERAKTYWNA KONSOLA KLINICZNA</span>
+                <h3>Chcesz przetestować steroidogenezę, blokadę alfa i kryteria TK?</h3>
+                <p>
+                  W <strong>Lekcji 2 („Wycisz, pobudź, oznacz”)</strong> czeka na Ciebie
+                  pełna <strong>Kliniczna Konsola Nadnerczowa</strong>. Możesz w niej
+                  badać osie HPA i RAA, symulować blok enzymatyczny 21-OH w WPN, kalkulować washout TK
+                  oraz zarządzać hemodynamiką guza chromochłonnego i resuscytacją w przełomie nadnerczowym.
+                </p>
+                <div className="teaser-actions">
+                  <button
+                    type="button"
+                    className="primary"
+                    onClick={() => go('lesson/nadnercza-diagnostyka')}
+                  >
+                    Przejdź do Lekcji 2 z konsolą <ArrowRight size={15} />
+                  </button>
+                  <button
+                    type="button"
+                    className="secondary"
+                    onClick={() => go('simulator')}
+                  >
+                    Otwórz symulatory
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Pełna Konsola Nadnerczowa w Lekcji 2 Nadnerczy */}
+        {lesson.id === 'nadnercza-diagnostyka' && (
+          <div style={{ margin: '36px 0' }}>
+            <AdrenalSimulator embedded />
+          </div>
+        )}
+
 
         {/* Rozszerzenie dla lekarza */}
         {state.level === 'doctor' ? (
@@ -640,7 +770,7 @@ export function LessonView({
           onClick={() => go('simulator')}
           style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '6px' }}
         >
-          <Activity size={14} /> Symulator osi HPT
+          <Activity size={14} /> Symulatory kliniczne
         </button>
         <button
           className="text-button"
@@ -655,7 +785,7 @@ export function LessonView({
 }
 
 export function CasesView({ state, go }: { state: LearningState; go: Navigation }) {
-  const [moduleFilter, setModuleFilter] = useState<'all' | 'tarczyca' | 'przysadka'>('all');
+  const [moduleFilter, setModuleFilter] = useState<'all' | 'tarczyca' | 'przysadka' | 'nadnercza'>('all');
   const [diffFilter, setDiffFilter] = useState<'all' | 'Podstawowy' | 'Zaawansowany'>('all');
 
   const filteredCases = cases.filter(c => {
@@ -691,6 +821,12 @@ export function CasesView({ state, go }: { state: LearningState; go: Navigation 
           onClick={() => setModuleFilter('przysadka')}
         >
           Moduł 02: Przysadka i podwzgórze (12)
+        </button>
+        <button
+          className={moduleFilter === 'nadnercza' ? 'active' : ''}
+          onClick={() => setModuleFilter('nadnercza')}
+        >
+          Moduł 03: Nadnercza (12)
         </button>
       </div>
 

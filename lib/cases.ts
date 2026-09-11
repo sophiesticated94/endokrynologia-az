@@ -1,5 +1,6 @@
 import type { Question } from './course.ts';
 import { pituitaryCases } from './cases-pituitary.ts';
+import { adrenalCases } from './cases-adrenals.ts';
 type Choice=[string,string];
 type StepDraft=[string,string,Choice,Choice];
 export type ClinicalCase={id:string;lessonId:string;title:string;patient:string;difficulty:'Podstawowy'|'Zaawansowany';intro:string;steps:(Question&{context:string;stage:string})[]};
@@ -71,4 +72,5 @@ step('Pacjentka trafia pod intensywny nadzór.','Jakie postępowanie odpowiada s
 export const cases: ClinicalCase[] = [
   ...thyroidCases,
   ...pituitaryCases,
+  ...adrenalCases,
 ];

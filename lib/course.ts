@@ -5,6 +5,9 @@ import { type ModuleId, type Lesson, type DraftLesson, type Source, type Pair, q
 import { pituitarySources } from './course-pituitary-sources.ts';
 import { draftPituitaryPart1 } from './course-pituitary-1.ts';
 import { draftPituitaryPart2 } from './course-pituitary-2.ts';
+import { adrenalSources } from './course-adrenal-sources.ts';
+import { draftAdrenalPart1 } from './course-adrenal-1.ts';
+import { draftAdrenalPart2 } from './course-adrenal-2.ts';
 
 const thyroidSources: Record<string, Source> = {
 
@@ -29,6 +32,7 @@ const thyroidSources: Record<string, Source> = {
 export const sources: Record<string, Source> = {
   ...thyroidSources,
   ...pituitarySources,
+  ...adrenalSources,
 };
 
 const draft: DraftLesson[] = [
@@ -159,6 +163,8 @@ const allDrafts: DraftLesson[] = [
   ...draft.map(l => ({ ...l, moduleId: 'tarczyca' as ModuleId })),
   ...draftPituitaryPart1,
   ...draftPituitaryPart2,
+  ...draftAdrenalPart1,
+  ...draftAdrenalPart2,
 ];
 
 export const lessons: Lesson[] = allDrafts.map((l, li) => ({
@@ -182,10 +188,10 @@ export const flashcards = questions.map(q => ({
 export const modulesList = [
   { id: 'tarczyca', name: 'Tarczyca', count: 12, subtitle: 'Fizjologia, Hashimoto, Graves, guzki i stany nagłe' },
   { id: 'przysadka', name: 'Przysadka i podwzgórze', count: 12, subtitle: 'Gruczolaki, prolactinoma, akromegalia, Cushing, moczówka i SIADH' },
+  { id: 'nadnercza', name: 'Nadnercza', count: 12, subtitle: 'Choroba Addisona, zespół Conna, guz chromochłonny, WPN i przełom nadnerczowy' },
 ] as const;
 
 export const plannedModules = [
-  'Nadnercza',
   'Przytarczyce i gospodarka wapniowa',
   'Cukrzyca',
   'Otyłość i metabolizm',

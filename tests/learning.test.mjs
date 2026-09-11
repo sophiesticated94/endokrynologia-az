@@ -6,6 +6,7 @@ import {scheduleReview,sampleQuestions,grade,projectActivities,saveIdempotently,
 import {glossary,glossaryMap} from '../lib/glossary.ts';
 import {calculateHormones,presets,defaultState,simulatorLegend} from '../lib/simulator.ts';
 import {calculatePituitaryState,pituitaryPresets,defaultPituitaryState,pituitarySimulatorLegend} from '../lib/pituitary-simulator.ts';
+import {calculateAdrenalState,adrenalPresets,defaultAdrenalState,adrenalSimulatorLegend} from '../lib/adrenal-simulator.ts';
 const now=new Date('2026-09-11T12:00:00Z');
 test('isSafePublicKey accepts anon JWT, publishable keys and rejects service_role and invalid keys',()=>{
  const anonJwt='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIn0.sig';
@@ -18,19 +19,21 @@ test('isSafePublicKey accepts anon JWT, publishable keys and rejects service_rol
  assert.equal(isSafePublicKey(''),false);
  assert.equal(isSafePublicKey(null),false);
 });
-test('complete curriculum: 24 lessons across 2 modules, 120 explained questions, 120 cards, 24 four-step cases',()=>{
- assert.equal(lessons.length,24);assert.equal(questions.length,120);assert.equal(flashcards.length,120);assert.equal(cases.length,24);
+test('complete curriculum: 36 lessons across 3 modules, 180 explained questions, 180 cards, 36 four-step cases',()=>{
+ assert.equal(lessons.length,36);assert.equal(questions.length,180);assert.equal(flashcards.length,180);assert.equal(cases.length,36);
  const thyroidLessons = lessons.filter(l => l.moduleId === 'tarczyca');
  const pituitaryLessons = lessons.filter(l => l.moduleId === 'przysadka');
+ const adrenalLessons = lessons.filter(l => l.moduleId === 'nadnercza');
  assert.equal(thyroidLessons.length, 12);
  assert.equal(pituitaryLessons.length, 12);
+ assert.equal(adrenalLessons.length, 12);
  for(const l of lessons){assert.equal(l.questions.length,5);assert.ok(l.sections.length>=3);assert.ok(l.goals.length>=2);assert.ok(l.advanced.length>100);assert.ok(l.table.rows.length>=3);assert.ok(l.sourceIds.every(id=>sources[id]));}
  for(const c of cases){assert.equal(c.steps.length,4);assert.deepEqual(c.steps.map(s=>s.stage),['Objawy','Badania','Rozpoznanie','Postępowanie']);assert.ok(lessons.some(l=>l.id===c.lessonId));}
  const bank=[...questions,...cases.flatMap(c=>c.steps)];assert.equal(new Set(bank.map(q=>q.id)).size,bank.length);
  for(const q of bank){assert.ok(q.answer>=0&&q.answer<q.options.length);assert.ok(q.options.every(o=>o.explanation.length>15&&o.text.length>0));assert.equal(new Set(q.options.map(o=>o.text)).size,q.options.length);}
 });
 test('correct answers are distributed and physiology answer remains TSH after rotation',()=>{assert.deepEqual([...new Set(questions.map(q=>q.answer))].sort(),[0,1,2]);assert.equal(questions[0].options[questions[0].answer].text,'TSH');assert.equal(questions[1].options[questions[1].answer].text,'Spadek TSH');});
-test('exam samples 30 unique questions, does not mutate bank, varies between runs',()=>{const before=questions.map(q=>q.id);const a=sampleQuestions(questions,30,()=>0.1);const b=sampleQuestions(questions,30,()=>0.8);assert.equal(a.length,30);assert.equal(new Set(a.map(q=>q.id)).size,30);assert.notDeepEqual(a,b);assert.deepEqual(questions.map(q=>q.id),before);assert.throws(()=>sampleQuestions(questions,121));});
+test('exam samples 30 unique questions, does not mutate bank, varies between runs',()=>{const before=questions.map(q=>q.id);const a=sampleQuestions(questions,30,()=>0.1);const b=sampleQuestions(questions,30,()=>0.8);assert.equal(a.length,30);assert.equal(new Set(a.map(q=>q.id)).size,30);assert.notDeepEqual(a,b);assert.deepEqual(questions.map(q=>q.id),before);assert.throws(()=>sampleQuestions(questions,181));});
 test('grading handles perfect, empty and changed answers',()=>{const bank=questions.slice(0,5);const answers=Object.fromEntries(bank.map(q=>[q.id,q.answer]));assert.deepEqual(grade(bank,answers),{correct:5,total:5,percent:100});assert.equal(grade(bank,{}).correct,0);answers[bank[0].id]=(bank[0].answer+1)%3;assert.equal(grade(bank,answers).percent,80);assert.equal(grade([],{}).percent,0);});
 test('review intervals progress 1,3,7,14,30 and cap at 30 days',()=>{let r;for(const days of [1,3,7,14,30,30]){r=scheduleReview(r,true,now);assert.equal((Date.parse(r.dueAt)-now.getTime())/86400000,days);}});
 test('forgotten card resets to first stage including already mature cards',()=>{const r=scheduleReview({stage:4,dueAt:now.toISOString()},false,now);assert.deepEqual(r,{stage:0,dueAt:'2026-09-12T12:00:00.000Z'});assert.equal(scheduleReview(r,true,now).stage,1)});
@@ -208,11 +211,13 @@ test('pituitary glossary contains key neuroendocrine terms with mappings',()=>{
  assert.ok(glossaryMap.get('niedowidzenie połowicze dwuskroniowe'));
 });
 
-test('course map grouping completely covers all lessons in both modules without omissions', () => {
+test('course map grouping completely covers all lessons in all three modules without omissions', () => {
   const thyroidLessons = lessons.filter(l => l.moduleId === 'tarczyca');
   const pituitaryLessons = lessons.filter(l => l.moduleId === 'przysadka');
+  const adrenalLessons = lessons.filter(l => l.moduleId === 'nadnercza');
   assert.equal(thyroidLessons.length, 12);
   assert.equal(pituitaryLessons.length, 12);
+  assert.equal(adrenalLessons.length, 12);
 
   const thyroidGroups = ['Fundamenty', 'Praktyka kliniczna', 'Sytuacje szczególne'];
   const coveredThyroid = thyroidGroups.flatMap(g => thyroidLessons.filter(l => l.group === g));
@@ -226,4 +231,118 @@ test('course map grouping completely covers all lessons in both modules without 
   ];
   const coveredPituitary = pituitaryGroups.flatMap(g => pituitaryLessons.filter(l => l.group === g));
   assert.equal(coveredPituitary.length, 12, 'All 12 pituitary lessons must belong to pituitary groups');
+
+  const adrenalGroups = [
+    'Fundamenty',
+    'Niedoczynność kory i WPN',
+    'Nadczynności i guz chromochłonny',
+    'Stany nagłe i chirurgia',
+  ];
+  const coveredAdrenal = adrenalGroups.flatMap(g => adrenalLessons.filter(l => l.group === g));
+  assert.equal(coveredAdrenal.length, 12, 'All 12 adrenal lessons must belong to adrenal groups');
 });
+
+test('adrenal simulator model accurately reflects steroidogenesis, RAA axis, pheo hemodynamics, CT washout, and crisis resuscitation', () => {
+  // 1. Healthy baseline
+  const healthy = calculateAdrenalState(defaultAdrenalState);
+  assert.equal(healthy.alertType, 'normal');
+  assert.ok(healthy.cortisol >= 10 && healthy.cortisol <= 20);
+  assert.ok(healthy.serumPotassium >= 3.5 && healthy.serumPotassium <= 5.0);
+  assert.ok(healthy.serumSodium >= 135 && healthy.serumSodium <= 145);
+  assert.ok(healthy.systolicBp >= 110 && healthy.systolicBp <= 130);
+
+  // 2. Addison disease preset (Primary Adrenal Insufficiency)
+  const addisonP = adrenalPresets.find(p => p.id === 'addison_unmanaged');
+  const addison = calculateAdrenalState(addisonP.state);
+  assert.ok(addison.cortisol < 5, 'Cortisol must be very low in Addison');
+  assert.ok(addison.aldosterone < 5, 'Aldosterone is deficient in primary AI');
+  assert.ok(addison.serumPotassium > 5.0, 'Hyperkalemia in Addison disease');
+  assert.ok(addison.serumSodium < 135, 'Hyponatremia in Addison disease');
+  assert.equal(addison.alertType, 'danger');
+
+  // 3. WPN 21-OH enzyme block
+  const wpnP = adrenalPresets.find(p => p.id === 'wpn_classic');
+  const wpn = calculateAdrenalState(wpnP.state);
+  assert.ok(wpn.ohp17 > 10, '17-OHP heavily accumulates in 21-OH deficiency');
+  assert.ok(wpn.dheaS > 400, 'Androgen precursors shunt and rise in 21-OH block');
+  assert.ok(wpn.cortisol < 10, 'Cortisol synthesis blocked');
+  assert.equal(wpn.alertType, 'danger');
+
+  // 4. Conn syndrome (Primary Aldosteronism)
+  const connP = adrenalPresets.find(p => p.id === 'conn_syndrome_apa');
+  const conn = calculateAdrenalState(connP.state);
+  assert.ok(conn.aldosterone > 20, 'Aldosterone is autonomously high in Conn');
+  assert.ok(conn.plasmaReninDrc < 3.0, 'Plasma renin is suppressed');
+  assert.ok(conn.arr > 10, 'Aldosterone-to-renin ratio (ARR) is positive');
+  assert.ok(conn.serumPotassium < 4.0, 'Hypokalemia in Conn syndrome');
+  assert.ok(conn.avsDominantGradient > 4.0, 'Lateralization in AVS');
+
+  // 5. Pheochromocytoma: dangerous uninhibited beta blockade vs safe alpha blockade
+  const pheoP = adrenalPresets.find(p => p.id === 'pheo_unpposed_beta_error');
+  const dangerousPheo = calculateAdrenalState(pheoP.state);
+  assert.ok(dangerousPheo.hemodynamicWarning, 'Must flag fatal uninhibited alpha vasoconstriction when beta blocker given without alpha blocker');
+  assert.equal(dangerousPheo.alertType, 'danger');
+  assert.match(dangerousPheo.hemodynamicWarning, /BŁĄD/);
+
+  // Safe alpha blockade
+  const safePheo = calculateAdrenalState({
+    ...pheoP.state,
+    alphaBlockerDoxazosinMg: 8,
+  });
+  assert.equal(safePheo.hemodynamicWarning, undefined, 'Safe when alpha blocker is present');
+  assert.ok(safePheo.systolicBp < dangerousPheo.systolicBp, 'Blood pressure controlled under alpha blockade');
+
+  // 6. CT washout calculator per ESE 2023 guidelines
+  const adenomaWashout = calculateAdrenalState({
+    ...defaultAdrenalState,
+    mode: 'incidentaloma_ct',
+    ctNativeHu: 6,
+    ctVenousHu: 80,
+    ctDelayedHu: 26,
+  });
+  assert.ok(adenomaWashout.ctApwPercent > 60, 'Absolute washout >60% indicates lipid-poor adenoma');
+  assert.equal(adenomaWashout.alertType, 'normal');
+
+  const malignantWashout = calculateAdrenalState({
+    ...defaultAdrenalState,
+    mode: 'incidentaloma_ct',
+    ctNativeHu: 38,
+    ctVenousHu: 95,
+    ctDelayedHu: 79,
+  });
+  assert.ok(malignantWashout.ctApwPercent < 60, 'Absolute washout <60% is non-adenoma / suspicious');
+  assert.equal(malignantWashout.alertType, 'danger');
+
+  // 7. Resuscitation protocol in adrenal crisis
+  const unmanagedCrisis = calculateAdrenalState({
+    ...defaultAdrenalState,
+    mode: 'crisis_resuscitation',
+    crisisBolusGiven: false,
+    salineResuscitationLiters: 0,
+  });
+  assert.equal(unmanagedCrisis.alertType, 'danger');
+
+  const treatedCrisis = calculateAdrenalState({
+    ...defaultAdrenalState,
+    mode: 'crisis_resuscitation',
+    crisisBolusGiven: true,
+    salineResuscitationLiters: 2,
+  });
+  assert.equal(treatedCrisis.alertType, 'warning');
+  assert.ok(treatedCrisis.systolicBp > unmanagedCrisis.systolicBp);
+  assert.ok(treatedCrisis.cortisol > 40);
+});
+
+test('adrenal glossary contains key steroid and adrenal terms with mappings', () => {
+  assert.ok(glossaryMap.get('aldosteron'));
+  assert.ok(glossaryMap.get('renina'));
+  assert.ok(glossaryMap.get('arr'));
+  assert.ok(glossaryMap.get('metanefryny'));
+  assert.ok(glossaryMap.get('fenoksybenzamina'));
+  assert.ok(glossaryMap.get('17-ohp'));
+  assert.ok(glossaryMap.get('mitotan'));
+  assert.ok(glossaryMap.get('skala weissa'));
+  assert.ok(glossaryMap.get('avs'));
+  assert.ok(glossaryMap.get('zespół waterhouse’a-friderichsena'));
+});
+

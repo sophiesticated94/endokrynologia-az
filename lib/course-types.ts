@@ -1,4 +1,4 @@
-export type ModuleId = 'tarczyca' | 'przysadka';
+export type ModuleId = 'tarczyca' | 'przysadka' | 'nadnercza';
 
 export type Option = { text: string; explanation: string };
 
