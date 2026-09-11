@@ -1,12 +1,12 @@
 # Endokrynologia A–Z 🩺
 
-> Interaktywna platforma edukacyjna z zakresu endokrynologii dla studentów medycyny i lekarzy. Wersja 1.0 zawiera kompletny, certyfikowany moduł **Tarczycy** z dwoma poziomami zaawansowania, interaktywnym symulatorem fizjologicznym osi HPT, wektorowymi schematami medycznymi, przypadkami klinicznymi, algorytmem powtórek przestrzennych (SRS) oraz synchronizacją postępu przez Supabase.
+> Interaktywna platforma edukacyjna z zakresu endokrynologii dla studentów medycyny i lekarzy. Zawiera dwa kompletne, certyfikowane moduły: **Moduł 01: Tarczyca** oraz **Moduł 02: Przysadka i podwzgórze** z dwoma poziomami zaawansowania (student vs lekarz), dwoma interaktywnymi symulatorami fizjologicznymi (oś HPT oraz 3-trybowa Konsola Przysadkowa), 13 wektorowymi schematami medycznymi, 24 przypadkami klinicznymi, bankiem 120 pytań i 120 fiszek z algorytmem powtórek przestrzennych (SRS) oraz synchronizacją postępu przez Supabase.
 
 ---
 
-## ✨ Główne funkcje
+## ✨ Główne funkcje i program edukacyjny
 
-### 1. Kompletny Moduł Tarczycy (12 lekcji)
+### 1. Moduł 01: Tarczyca (12 lekcji · 60 pytań · 12 przypadków)
 - **12 ustrukturyzowanych lekcji**:
   1. *Jak działa tarczyca?* (Fizjologia osi TRH–TSH–T4/T3, synteza, TBG)
   2. *Czytaj wyniki ze zrozumieniem* (Diagnostyka laboratoryjna, pary TSH/FT4, pułapki interferencji)
@@ -20,34 +20,49 @@
   10. *Tarczyca w ciąży* (hCG a TSH, wzrost zapotrzebowania na LT4, dobór tyreostatyku PTU)
   11. *Leki, jod i tarczyca* (Amiodaron AIT typ 1 vs typ 2, kontrast jodowy, lit)
   12. *Gdy liczy się czas* (Przełom tarczycowy, śpiączka hipometaboliczna, osłona hydrokortyzonem)
-- **Każda lekcja zawiera**: cele dydaktyczne, teorię podzieloną na sekcje, tabelę podsumowującą, **rozszerzenie dla lekarza**, podsumowanie oraz 5 pytań testowych z wyczerpującym omówieniem każdej z odpowiedzi.
 
-### 2. Interaktywny Symulator Osi HPT (`/simulator` oraz Lekcja 2)
-- Realistyczny matematyczny model fizjologiczny ujemnego sprzężenia zwrotnego ($\log_{10}\text{TSH} \sim -\text{FT4}$).
-- Suwaki parametrów: rezerwa wydzielnicza tarczycy, czynność przysadki, stymulacja przeciwciałami TRAb, substytucja lewotyroksyną (LT4) i blokada tiamazolem.
-- Dynamiczne odczyty stężeń **TSH**, **FT4** i **FT3** z automatyczną klasyfikacją fenotypu klinicznego.
-- **Modal z legendą i pojęciami**: 3 zakładki (*Suwaki i parametry*, *Hormony i normy*, *Ścieżka poznawcza w kursie* wyjaśniająca progresję pojęć).
-- 6 gotowych scenariuszy klinicznych jednym kliknięciem (*Eutyreoza*, *Nieleczone Hashimoto*, *Hashimoto na LT4*, *Graves-Basedow*, *Niedoczynność przysadkowa*, *Przedawkowanie LT4*).
+### 2. Moduł 02: Przysadka i podwzgórze (12 lekcji · 60 pytań · 12 przypadków)
+- **12 ustrukturyzowanych lekcji**:
+  1. *Jak rządzona jest orkiestra?* (Anatomia siodła tureckiego, płaty, krążenie wrotne, hormony tropowe)
+  2. *Rozszyfruj przysadkę* (Diagnostyka wieloosiowa, testy dynamiczne ITT, pułapka centralnego TSH)
+  3. *Mlekotok i brak miesiączki* (Prolactinoma, kabergolina, wykluczenie makroprolaktyny i efektu hook)
+  4. *Gdy rosną dłonie i rysy twarzy* (Akromegalia, przesiew IGF-1, brak supresji GH w teście OGTT 75g, operacja TSS)
+  5. *Tajemnice hiperkortyzolemii* (Choroba Cushinga, test 1 mg DEX, odróżnienie ektopowego ACTH i BIPSS)
+  6. *Guz, który nie krzyczy hormonami* (Makrogruczolaki nieczynne NFPA, chiasma, efekt odszypułowania)
+  7. *Gdy orkiestra cichnie* (Panhipopituitaryzm, zespół Sheehana, reguła: hydrokortyzon PRZED lewotyroksyną!)
+  8. *Rzeka bez tamy* (Moczówka prosta centralna vs nerkowa, test odwodnieniowy, odpowiedź na dDAVP)
+  9. *Pułapka fałszywego rozcieńczenia* (Zespół SIADH, euwolemia, zasada bezpiecznej korekty sodu max 8–10 mmol/l/24h)
+  10. *Autoimmunizacja w siodle* (Hipofizyt limfocytowy, zapalenia po immunoterapii onkologicznej anty-CTLA-4/PD-1)
+  11. *Dramat w siodle tureckim* (Udar przysadki / apopleksja, nagły ból głowy, ptoza n. III, wlew hydrokortyzonu)
+  12. *Chirurgia i opieka okołooperacyjna* (Dostęp przezklinowy TSS, 3-fazowa odpowiedź moczówkowa DI-SIADH-DI)
 
-### 3. Wektorowe schematy medyczne (SVG)
-- Schemat anatomiczny osi HPT ze sprzężeniem zwrotnym.
-- 2D matryca diagnostyczna TSH vs FT4.
-- Trójfazowa krzywa zapalenia de Quervaina z korelacją OB/CRP i jodochwytności.
-- Przewodnik ultrasonograficzny EU-TIRADS 1–5 z progami BACC.
-- Przekrój strzałkowy oczodołu w orbitopatii tarczycowej.
-- Krzywa hormonalna w ciąży (hCG vs TSH w trymestrach).
-- Drzewo histopatologiczne nowotworów tarczycy.
-- Kolorowe wskaźniki zakresów referencyjnych dla badań laboratoryjnych w przypadkach klinicznych.
+### 3. Dwa interaktywne symulatory fizjologiczne (`/simulator`)
+- **Symulator Osi HPT**: Model sprzężenia zwrotnego $\log_{10}\text{TSH} \sim -\text{FT4}$, suwaki wydolności, TRAb, dawek LT4 i tiamazolu oraz 6 presetów klinicznych z modalem legendy.
+- **Konsola Przysadkowo-Podwzgórzowa**: 3 zaawansowane tryby:
+  - *Tryb 1 (Osie i gospodarka wodna)*: PRL, GH/IGF-1, ACTH/kortyzol, AVP, sód w surowicy, osmolalność osocza i moczu, dobowa diureza.
+  - *Tryb 2 (Testy dynamiczne)*: OGTT 75 g glukozy dla supresji GH, nocny test hamowania 1 mg deksametazonu, test odwodnieniowo-wazopresynowy z dDAVP, leczenie kabergoliną.
+  - *Tryb 3 (Siodło, chiasma i pole widzenia)*: Interaktywna perymetria obojga oczu modelująca ubytek skroniowy (niedowidzenie kwadrantowe i całkowita hemianopsia bitemporalis) oraz naciekanie zatoki jamistej w skali Knospa z deficytem nerwów czaszkowych III, IV i VI.
 
-### 4. Inteligentne przypisy i Słowniczek medyczny (`/glossary`)
-- Automatyczne wykrywanie pojęć w tekście (`<GlossaryText>`) z interaktywnymi popoverami definiującymi normę i znaczenie kliniczne.
-- Searchable słowniczek pojęć z filtrowaniem wg kategorii (*Hormony*, *Diagnostyka*, *Choroby*, *Leki*, *Anatomia*).
+### 4. 13 wektorowych schematów medycznych (SVG)
+- Schemat osi HPT ze sprzężeniem zwrotnym
+- Matryca diagnostyczna TSH vs FT4
+- Krzywa zapalenia de Quervaina
+- Atlas ultrasonograficzny EU-TIRADS 1–5
+- Przekrój oczodołu w orbitopatii EUGOGO
+- Krzywa hormonalna w ciąży (hCG vs TSH)
+- Drzewo histopatologiczne raka tarczycy
+- Schemat anatomiczny siodła tureckiego, szypuły i zatok jamistych
+- Mechanizm niedowidzenia połowiczego dwuskroniowego (skrzyżowanie włókien nosowych siatkówek)
+- Krzywe supresji GH w teście OGTT (zdrowy vs akromegalia)
+- Algorytm diagnostyczny zespołu Cushinga
+- Matryca różnicowa gospodarki wodnej (Moczówka centralna vs nerkowa vs polidypsja vs SIADH)
+- Patofizjologia zespołu Sheehana (rozrost ciążowy $\to$ krwotok $\to$ puste siodło)
 
 ### 5. Przypadki kliniczne, fiszki i egzamin
-- **12 czterostopniowych przypadków klinicznych**: Objawy $\to$ Badania (z graficznymi wynikami lab) $\to$ Rozpoznanie $\to$ Postępowanie.
-- **Bank 60 fiszek** z algorytmem powtórek przestrzennych (interwały 1, 3, 7, 14 i 30 dni).
-- **Egzamin końcowy** losujący 30 unikalnych pytań z puli 60 pytań.
-- **Dwa poziomy zaawansowania**: Student medycyny oraz Lekarz / specjalizacja.
+- **24 czterostopniowe przypadki kliniczne**: 12 z tarczycy + 12 z przysadki z filtrowaniem wg działu i poziomu zaawansowania.
+- **Bank 120 fiszek** z filtrowaniem wg modułów i algorytmem SRS.
+- **Elastyczny egzamin końcowy**: losowanie 30 pytań z całego kursu (120 pytań) lub wybranego modułu (Tarczyca / Przysadka).
+- **Searchable Słowniczek medyczny (`/glossary`)**: 47+ zweryfikowanych haseł z normami i znaczeniem klinicznym.
 
 ### 6. Architektura danych i synchronizacja
 - Pełna praca w trybie gościa offline (bez konieczności logowania).

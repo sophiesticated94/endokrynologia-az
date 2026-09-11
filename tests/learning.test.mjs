@@ -5,6 +5,7 @@ import {cases} from '../lib/cases.ts';
 import {scheduleReview,sampleQuestions,grade,projectActivities,saveIdempotently,isSafePublicKey} from '../lib/learning.ts';
 import {glossary,glossaryMap} from '../lib/glossary.ts';
 import {calculateHormones,presets,defaultState,simulatorLegend} from '../lib/simulator.ts';
+import {calculatePituitaryState,pituitaryPresets,defaultPituitaryState,pituitarySimulatorLegend} from '../lib/pituitary-simulator.ts';
 const now=new Date('2026-09-11T12:00:00Z');
 test('isSafePublicKey accepts anon JWT, publishable keys and rejects service_role and invalid keys',()=>{
  const anonJwt='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIn0.sig';
@@ -17,15 +18,19 @@ test('isSafePublicKey accepts anon JWT, publishable keys and rejects service_rol
  assert.equal(isSafePublicKey(''),false);
  assert.equal(isSafePublicKey(null),false);
 });
-test('complete curriculum: 12 lessons, 60 explained questions, 60 cards, 12 four-step cases',()=>{
- assert.equal(lessons.length,12);assert.equal(questions.length,60);assert.equal(flashcards.length,60);assert.equal(cases.length,12);
+test('complete curriculum: 24 lessons across 2 modules, 120 explained questions, 120 cards, 24 four-step cases',()=>{
+ assert.equal(lessons.length,24);assert.equal(questions.length,120);assert.equal(flashcards.length,120);assert.equal(cases.length,24);
+ const thyroidLessons = lessons.filter(l => l.moduleId === 'tarczyca');
+ const pituitaryLessons = lessons.filter(l => l.moduleId === 'przysadka');
+ assert.equal(thyroidLessons.length, 12);
+ assert.equal(pituitaryLessons.length, 12);
  for(const l of lessons){assert.equal(l.questions.length,5);assert.ok(l.sections.length>=3);assert.ok(l.goals.length>=2);assert.ok(l.advanced.length>100);assert.ok(l.table.rows.length>=3);assert.ok(l.sourceIds.every(id=>sources[id]));}
  for(const c of cases){assert.equal(c.steps.length,4);assert.deepEqual(c.steps.map(s=>s.stage),['Objawy','Badania','Rozpoznanie','Postępowanie']);assert.ok(lessons.some(l=>l.id===c.lessonId));}
  const bank=[...questions,...cases.flatMap(c=>c.steps)];assert.equal(new Set(bank.map(q=>q.id)).size,bank.length);
  for(const q of bank){assert.ok(q.answer>=0&&q.answer<q.options.length);assert.ok(q.options.every(o=>o.explanation.length>15&&o.text.length>0));assert.equal(new Set(q.options.map(o=>o.text)).size,q.options.length);}
 });
 test('correct answers are distributed and physiology answer remains TSH after rotation',()=>{assert.deepEqual([...new Set(questions.map(q=>q.answer))].sort(),[0,1,2]);assert.equal(questions[0].options[questions[0].answer].text,'TSH');assert.equal(questions[1].options[questions[1].answer].text,'Spadek TSH');});
-test('exam samples 30 unique questions, does not mutate bank, varies between runs',()=>{const before=questions.map(q=>q.id);const a=sampleQuestions(questions,30,()=>0.1);const b=sampleQuestions(questions,30,()=>0.8);assert.equal(a.length,30);assert.equal(new Set(a.map(q=>q.id)).size,30);assert.notDeepEqual(a,b);assert.deepEqual(questions.map(q=>q.id),before);assert.throws(()=>sampleQuestions(questions,61));});
+test('exam samples 30 unique questions, does not mutate bank, varies between runs',()=>{const before=questions.map(q=>q.id);const a=sampleQuestions(questions,30,()=>0.1);const b=sampleQuestions(questions,30,()=>0.8);assert.equal(a.length,30);assert.equal(new Set(a.map(q=>q.id)).size,30);assert.notDeepEqual(a,b);assert.deepEqual(questions.map(q=>q.id),before);assert.throws(()=>sampleQuestions(questions,121));});
 test('grading handles perfect, empty and changed answers',()=>{const bank=questions.slice(0,5);const answers=Object.fromEntries(bank.map(q=>[q.id,q.answer]));assert.deepEqual(grade(bank,answers),{correct:5,total:5,percent:100});assert.equal(grade(bank,{}).correct,0);answers[bank[0].id]=(bank[0].answer+1)%3;assert.equal(grade(bank,answers).percent,80);assert.equal(grade([],{}).percent,0);});
 test('review intervals progress 1,3,7,14,30 and cap at 30 days',()=>{let r;for(const days of [1,3,7,14,30,30]){r=scheduleReview(r,true,now);assert.equal((Date.parse(r.dueAt)-now.getTime())/86400000,days);}});
 test('forgotten card resets to first stage including already mature cards',()=>{const r=scheduleReview({stage:4,dueAt:now.toISOString()},false,now);assert.deepEqual(r,{stage:0,dueAt:'2026-09-12T12:00:00.000Z'});assert.equal(scheduleReview(r,true,now).stage,1)});
@@ -125,5 +130,81 @@ test('simulator legend covers all state sliders, hormones and valid curriculum l
  const currentStep=simulatorLegend.curriculum.find(s=>s.isCurrent);
  assert.ok(currentStep,'curriculum should highlight embedded simulator lesson');
  assert.equal(currentStep.lessonId,'diagnostyka');
+});
+
+test('pituitary simulator model accurately reflects hormone axes, dynamic testing and visual fields',()=>{
+ const healthy = calculatePituitaryState(defaultPituitaryState);
+ assert.equal(healthy.alertType, 'normal');
+ assert.equal(healthy.visualFieldDefect, 'none');
+ assert.ok(healthy.prl < 25);
+ assert.ok(healthy.serumSodium >= 135 && healthy.serumSodium <= 145);
+
+ // Prolactinoma preset
+ const prolactinomaP = pituitaryPresets.find(p => p.id === 'prolactinoma_micro');
+ const prolactinoma = calculatePituitaryState(prolactinomaP.state);
+ assert.ok(prolactinoma.prl > 50, 'PRL should be significantly elevated in prolactinoma');
+ assert.equal(prolactinoma.alertType, 'danger');
+ const treatedProlactinoma = calculatePituitaryState({ ...prolactinomaP.state, cabergolineMg: 1.5 });
+ assert.ok(treatedProlactinoma.prl < prolactinoma.prl, 'Cabergoline lowers PRL');
+
+ // Acromegaly OGTT dynamic test
+ const acromegalyP = pituitaryPresets.find(p => p.id === 'acromegaly_active');
+ const acroBasal = calculatePituitaryState(acromegalyP.state);
+ assert.ok(acroBasal.gh > 2.0 && acroBasal.igf1 > 350, 'High basal GH and IGF-1 in acromegaly');
+ const acroOgtt = calculatePituitaryState({ ...acromegalyP.state, glucoseLoadG: 75 });
+ assert.ok(acroOgtt.gh >= 1.0, 'GH fails to suppress <1.0 in acromegaly OGTT');
+ const healthyOgtt = calculatePituitaryState({ ...defaultPituitaryState, glucoseLoadG: 75 });
+ assert.ok(healthyOgtt.gh < 0.4, 'GH suppresses <0.4 in healthy OGTT');
+
+ // Cushing overnight 1 mg DEX test
+ const cushingP = pituitaryPresets.find(p => p.id === 'cushing_disease');
+ const cushingBasal = calculatePituitaryState(cushingP.state);
+ assert.ok(cushingBasal.cortisol > 20 && cushingBasal.acth > 50);
+ const cushingDex = calculatePituitaryState({ ...cushingP.state, dexamethasoneMg: 1 });
+ assert.ok(cushingDex.cortisol > 1.8, 'Cortisol fails to suppress <1.8 in Cushing');
+ const healthyDex = calculatePituitaryState({ ...defaultPituitaryState, dexamethasoneMg: 1 });
+ assert.ok(healthyDex.cortisol < 1.8, 'Cortisol suppresses <1.8 in healthy DEX test');
+
+ // NFPA with suprasellar extension and bitemporal hemianopsia
+ const nfpaP = pituitaryPresets.find(p => p.id === 'nfpa_chiasm');
+ const nfpa = calculatePituitaryState(nfpaP.state);
+ assert.equal(nfpa.visualFieldDefect, 'bitemporal_hemianopsia');
+ assert.equal(nfpa.chiasmCompressed, true);
+ assert.match(nfpa.comment, /dekompresji neurochirurgicznej/);
+
+ // Central DI & dDAVP test
+ const diP = pituitaryPresets.find(p => p.id === 'central_di');
+ const diBasal = calculatePituitaryState(diP.state);
+ assert.ok(diBasal.urineOsmolality < 300, 'Hypoosmolar urine in DI');
+ assert.ok(diBasal.urineVolumeL > 5.0, 'Polyuria in DI');
+ const diTreated = calculatePituitaryState({ ...diP.state, desmopressinMcg: 2 });
+ assert.ok(diTreated.urineOsmolality > diBasal.urineOsmolality * 1.5, 'Osmolality increases >50% after dDAVP');
+
+ // SIADH
+ const siadhP = pituitaryPresets.find(p => p.id === 'siadh_euvolemic');
+ const siadh = calculatePituitaryState(siadhP.state);
+ assert.ok(siadh.serumSodium < 130, 'Hyponatremia in SIADH');
+ assert.ok(siadh.urineOsmolality > 300, 'Inappropriately concentrated urine in SIADH');
+ assert.match(siadh.comment, /8–10 mmol\/l\/24h/);
+});
+
+test('pituitary glossary contains key neuroendocrine terms with mappings',()=>{
+ assert.ok(glossaryMap.get('prl'));
+ assert.ok(glossaryMap.get('makroprolaktyna'));
+ assert.ok(glossaryMap.get('efekt hook'));
+ assert.ok(glossaryMap.get('kabergolina'));
+ assert.ok(glossaryMap.get('gh'));
+ assert.ok(glossaryMap.get('igf-1'));
+ assert.ok(glossaryMap.get('somatostatyna'));
+ assert.ok(glossaryMap.get('oktreotyd'));
+ assert.ok(glossaryMap.get('acth'));
+ assert.ok(glossaryMap.get('deksametazon'));
+ assert.ok(glossaryMap.get('bipss'));
+ assert.ok(glossaryMap.get('avp'));
+ assert.ok(glossaryMap.get('desmopresyna'));
+ assert.ok(glossaryMap.get('siadh'));
+ assert.ok(glossaryMap.get('zespół sheehana'));
+ assert.ok(glossaryMap.get('apopleksja przysadkowa'));
+ assert.ok(glossaryMap.get('niedowidzenie połowicze dwuskroniowe'));
 });
 

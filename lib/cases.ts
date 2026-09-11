@@ -1,10 +1,11 @@
-import type { Question } from './course';
+import type { Question } from './course.ts';
+import { pituitaryCases } from './cases-pituitary.ts';
 type Choice=[string,string];
 type StepDraft=[string,string,Choice,Choice];
 export type ClinicalCase={id:string;lessonId:string;title:string;patient:string;difficulty:'Podstawowy'|'Zaawansowany';intro:string;steps:(Question&{context:string;stage:string})[]};
 const step=(context:string,prompt:string,correct:Choice,wrong:Choice):StepDraft=>[context,prompt,correct,wrong];
 const make=(lessonId:string,title:string,patient:string,difficulty:ClinicalCase['difficulty'],intro:string,steps:StepDraft[]):ClinicalCase=>({id:`case-${lessonId}`,lessonId,title,patient,difficulty,intro,steps:steps.map(([context,prompt,correct,wrong],i)=>({id:`case-${lessonId}-${i+1}`,lessonId,stage:['Objawy','Badania','Rozpoznanie','Postępowanie'][i],context,prompt,answer:i%2,options:(i%2?[wrong,correct]:[correct,wrong]).map(([text,explanation])=>({text,explanation}))}))});
-export const cases:ClinicalCase[]=[
+const thyroidCases:ClinicalCase[]=[
 make('fizjologia','Wynik, który nie pasuje','Kobieta, 28 lat','Podstawowy','Podczas kontroli wykryto podwyższone całkowite T4. Pacjentka dobrze się czuje.',[
 step('Tętno 72/min, bez drżenia i spadku masy ciała. Stosuje doustną antykoncepcję estrogenową.','Co warto uwzględnić?',['Wpływ estrogenów na białka wiążące','Wzrost TBG może zwiększyć całkowite T4.'],['Pewny przełom tarczycowy','Brak objawów dekompensacji; sam wynik nie rozpoznaje przełomu.']),
 step('TSH 1,8 mIU/l (0,4–4,0), FT4 16 pmol/l (12–22).','Co wynika z badań?',['Prawidłowa czynność w tym kontekście','TSH i wolne T4 mieszczą się w zakresie.'],['Jawna pierwotna nadczynność','Oczekiwalibyśmy niskiego TSH i zwiększonej frakcji wolnej.']),
@@ -65,4 +66,9 @@ step('Temperatura 39,5°C, tętno 154/min, splątanie, duszność.','Jaki jest p
 step('Zespół pobiera TSH, FT4/FT3, elektrolity i badania w kierunku zakażenia.','Czy stabilizacja musi czekać na komplet wyników?',['Nie, działania prowadzi się równolegle','Opóźnienie leczenia niestabilności jest niebezpieczne.'],['Tak, bez wyników nie wolno pomagać','Ocena i zabezpieczenie ABC nie mogą czekać.']),
 step('Potwierdzono tyreotoksykozę, występują zaburzenia świadomości i krążenia.','Co jest najbardziej niepokojące?',['Przełom tarczycowy wyzwolony możliwą infekcją','Liczy się zespół objawów i dekompensacja narządowa.'],['Bezobjawowa subkliniczna nadczynność','Przeczy temu ciężki stan kliniczny.']),
 step('Pacjentka trafia pod intensywny nadzór.','Jakie postępowanie odpowiada sytuacji?',['Leczenie wielokierunkowe i czynnika wyzwalającego','Konieczna jest specjalistyczna kontrola hormonalna i narządowa.'],['Sam doustny beta-bloker bez oceny krążenia','Nie wystarcza, a w niewydolności serca wymaga ostrożności.'])]),
+];
+
+export const cases: ClinicalCase[] = [
+  ...thyroidCases,
+  ...pituitaryCases,
 ];

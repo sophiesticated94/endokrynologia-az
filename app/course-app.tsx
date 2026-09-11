@@ -26,12 +26,13 @@ import { Dashboard, CourseMap, LessonView, CasesView, type Route } from './conte
 import { CardsView, ExamView, ResultsView } from './practice-views';
 import { AccountView } from './account-view';
 import { HptSimulator } from './hpt-simulator';
+import { PituitarySimulator } from './pituitary-simulator';
 import { GlossaryView } from './glossary-components';
 
 const navItems = [
   ['home', 'Moja nauka', LayoutDashboard],
   ['course', 'Mapa kursu', BookOpen],
-  ['simulator', 'Symulator osi HPT', Activity],
+  ['simulator', 'Symulatory kliniczne', Activity],
   ['cases', 'Przypadki kliniczne', Stethoscope],
   ['cards', 'Fiszki i powtórki', Layers3],
   ['exam', 'Egzamin', ClipboardCheck],
@@ -51,6 +52,7 @@ export default function CourseApp() {
   const learning = useLearning();
   const { state, user, configured, loading, saving, pending, error, online } = learning;
   const [route, setRoute] = useState<Route>('home');
+  const [simTab, setSimTab] = useState<'hpt' | 'pituitary'>('hpt');
   const routeRef = useRef<Route>('home');
   const [mobile, setMobile] = useState(false);
   const active = useRef(false);
@@ -112,19 +114,21 @@ export default function CourseApp() {
   const fresh = flashcards.filter(c => !state.reviews[c.id]);
   const blocked = saving || loading || pending.length > 0;
 
+  const lesson = lessons.find(l => route === `lesson/${l.id}` || route === `quiz/${l.id}`);
+  const clinical = cases.find(c => route === `case/${c.id}`);
+
   const title =
     route.startsWith('lesson/') || route.startsWith('quiz/')
-      ? 'Moduł 01 / Tarczyca'
+      ? lesson?.moduleId === 'przysadka'
+        ? 'Moduł 02 / Przysadka i podwzgórze'
+        : 'Moduł 01 / Tarczyca'
       : route.startsWith('case/')
       ? 'Przypadki kliniczne'
       : route === 'simulator'
-      ? 'Symulator osi HPT'
+      ? 'Symulatory kliniczne'
       : route === 'glossary'
       ? 'Słowniczek pojęć medycznych'
       : navItems.find(n => n[0] === route)?.[1] ?? 'Twoje konto';
-
-  const lesson = lessons.find(l => route === `lesson/${l.id}` || route === `quiz/${l.id}`);
-  const clinical = cases.find(c => route === `case/${c.id}`);
   const userKey = user?.id ?? 'guest';
 
   useEffect(() => {
@@ -309,7 +313,25 @@ export default function CourseApp() {
 
           {route === 'home' && <Dashboard state={state} go={go} due={due.length} newCount={fresh.length} />}
           {route === 'course' && <CourseMap state={state} go={go} />}
-          {route === 'simulator' && <HptSimulator />}
+          {route === 'simulator' && (
+            <div>
+              <div className="filter-bar" style={{ marginBottom: '22px' }}>
+                <button
+                  className={simTab === 'hpt' ? 'active' : ''}
+                  onClick={() => setSimTab('hpt')}
+                >
+                  <Activity size={15} /> Moduł 01: Symulator osi HPT (Tarczyca)
+                </button>
+                <button
+                  className={simTab === 'pituitary' ? 'active' : ''}
+                  onClick={() => setSimTab('pituitary')}
+                >
+                  <Activity size={15} /> Moduł 02: Konsola Przysadkowa (Przysadka i podwzgórze)
+                </button>
+              </div>
+              {simTab === 'hpt' ? <HptSimulator /> : <PituitarySimulator />}
+            </div>
+          )}
           {route === 'glossary' && <GlossaryView go={go} />}
           {route.startsWith('lesson/') && lesson && (
             <LessonView

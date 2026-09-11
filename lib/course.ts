@@ -1,9 +1,13 @@
-export const CONTENT_VERSION = '2026.09.11.1';
+export const CONTENT_VERSION = '2026.09.11.2';
 export const VERIFIED_AT = '2026-09-11';
-export type Option = { text: string; explanation: string };
-export type Question = { id: string; lessonId: string; prompt: string; options: Option[]; answer: number };
-export type Source = { id: string; title: string; year: string; url: string; kind: string };
-export const sources: Record<string, Source> = {
+export type { ModuleId, Option, Question, Source, Pair, DraftQuestion, Lesson, DraftLesson } from './course-types.ts';
+import { type ModuleId, type Lesson, type DraftLesson, type Source, type Pair, q } from './course-types.ts';
+import { pituitarySources } from './course-pituitary-sources.ts';
+import { draftPituitaryPart1 } from './course-pituitary-1.ts';
+import { draftPituitaryPart2 } from './course-pituitary-2.ts';
+
+const thyroidSources: Record<string, Source> = {
+
   physiology:{id:'physiology',title:'Endotext — Thyroid Hormone Synthesis and Secretion',year:'2015',url:'https://www.ncbi.nlm.nih.gov/books/NBK285550/',kind:'Podręcznik: fizjologia'},
   central:{id:'central',title:'ETA — Central Hypothyroidism',year:'2018',url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC6198777/',kind:'Wytyczne'},
   lt4:{id:'lt4',title:'ETA — Levothyroxine preparations in monotherapy',year:'2025',url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC12323320/',kind:'Wytyczne'},
@@ -21,12 +25,14 @@ export const sources: Record<string, Source> = {
   coma:{id:'coma',title:'Joint consensus — Management of myxoedema coma',year:'2026',url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC13452032/',kind:'Konsensus'},
   emergency:{id:'emergency',title:'Endotext — Thyroid Storm',year:'2025',url:'https://www.ncbi.nlm.nih.gov/books/NBK278927/',kind:'Podręcznik: postępowanie w stanach nagłych'},
 };
-type Pair = [string,string];
-type DraftQuestion = {prompt:string; choices:Pair[]};
-const q=(prompt:string,correct:Pair,wrong1:Pair,wrong2:Pair):DraftQuestion=>({prompt,choices:[correct,wrong1,wrong2]});
-export type Lesson = {id:string;title:string;subtitle:string;group:string;minutes:number;goals:string[];sections:{title:string;text:string}[];table:{headers:[string,string];rows:Pair[]};advanced:string;summary:string;sourceIds:string[];questions:Question[]};
-type DraftLesson = Omit<Lesson,'questions'> & {questions:DraftQuestion[]};
-const draft:DraftLesson[]=[
+
+export const sources: Record<string, Source> = {
+  ...thyroidSources,
+  ...pituitarySources,
+};
+
+const draft: DraftLesson[] = [
+
 {id:'fizjologia',title:'Jak działa tarczyca?',subtitle:'Oś hormonalna, synteza i sprzężenie zwrotne',group:'Fundamenty',minutes:12,
 goals:['Wyjaśnisz zależność TRH–TSH–T4/T3.','Połączysz syntezę hormonów z ich działaniem w tkankach.'],
 sections:[{title:'Trzy piętra regulacji',text:'Podwzgórze wydziela TRH, które pobudza przysadkę do uwalniania TSH. TSH działa na komórki pęcherzykowe tarczycy, zwiększając syntezę i uwalnianie hormonów. Wzrost dostępności hormonów hamuje wydzielanie TRH i TSH. To ujemne sprzężenie zwrotne: przy sprawnej osi niedobór hormonów nasila sygnał pobudzający gruczoł.'},{title:'Od jodu do działania',text:'Komórka pęcherzykowa wychwytuje jodek. Tyreoperoksydaza (TPO) uczestniczy w jego utlenianiu, organifikacji i sprzęganiu jodotyrozyn na tyreoglobulinie. Koloid stanowi magazyn prekursorów hormonów. Tarczyca wydziela głównie T4; istotna część T3 powstaje poza gruczołem przez dejodynację T4. Hormony wpływają na metabolizm, termogenezę, serce oraz rozwój układu nerwowego.'},{title:'Wynik nie jest całym układem',text:'Większość hormonów krąży związana z białkami, w tym TBG. Zmiana stężenia białek wiążących może zmienić całkowite T4 bez odpowiadającej jej zmiany czynności tarczycy. Dlatego wynik interpretuj w kontekście TSH, frakcji wolnej i sytuacji klinicznej.'}],
@@ -148,11 +154,42 @@ q('Co sugeruje ciężką dekompensację niedoczynności?',['Hipotermia, bradykar
 q('Dlaczego w ciężkiej niedoczynności ocenia się oś nadnerczową?',['Może współistnieć niedobór kortyzolu','Wymaga zabezpieczenia przy wdrażaniu hormonów tarczycy.'],['Kortyzol jest markerem raka rdzeniastego','Tym markerem jest m.in. kalcytonina.'],['Każde TSH określa kortyzol','TSH nie ocenia wydolności nadnerczy.']),
 q('Czy należy czekać na pełny panel wyników przy niestabilności i podejrzeniu przełomu?',['Nie, rozpocząć pilną ocenę i zabezpieczenie równolegle z badaniami','Zwłoka może być niebezpieczna.'],['Tak, zawsze do kompletnej dokumentacji','Nie można odkładać stabilizacji.'],['Zrezygnować z badań całkowicie','Badania są potrzebne, ale prowadzi się je równolegle.'])]},
 ];
-export const lessons:Lesson[]=draft.map((l,li)=>({...l,questions:l.questions.map((item,i)=>{
-  const answer=(li+i)%3; const options=item.choices.map(([text,explanation])=>({text,explanation}));
-  const rotated=[...options.slice(3-answer),...options.slice(0,3-answer)];
-  return {id:`${l.id}-q${i+1}`,lessonId:l.id,prompt:item.prompt,options:rotated,answer};
-})}));
-export const questions=lessons.flatMap(l=>l.questions);
-export const flashcards=questions.map(q=>({id:`${q.id}-card`,lessonId:q.lessonId,front:q.prompt,back:`${q.options[q.answer].text}. ${q.options[q.answer].explanation}`}));
-export const plannedModules=['Przysadka i podwzgórze','Nadnercza','Przytarczyce i gospodarka wapniowa','Cukrzyca','Otyłość i metabolizm','Gonady i rozrodczość','Endokrynologia rozwojowa'];
+
+const allDrafts: DraftLesson[] = [
+  ...draft.map(l => ({ ...l, moduleId: 'tarczyca' as ModuleId })),
+  ...draftPituitaryPart1,
+  ...draftPituitaryPart2,
+];
+
+export const lessons: Lesson[] = allDrafts.map((l, li) => ({
+  ...l,
+  questions: l.questions.map((item, i) => {
+    const answer = (li + i) % 3;
+    const options = item.choices.map(([text, explanation]) => ({ text, explanation }));
+    const rotated = [...options.slice(3 - answer), ...options.slice(0, 3 - answer)];
+    return { id: `${l.id}-q${i + 1}`, lessonId: l.id, prompt: item.prompt, options: rotated, answer };
+  }),
+}));
+
+export const questions = lessons.flatMap(l => l.questions);
+export const flashcards = questions.map(q => ({
+  id: `${q.id}-card`,
+  lessonId: q.lessonId,
+  front: q.prompt,
+  back: `${q.options[q.answer].text}. ${q.options[q.answer].explanation}`,
+}));
+
+export const modulesList = [
+  { id: 'tarczyca', name: 'Tarczyca', count: 12, subtitle: 'Fizjologia, Hashimoto, Graves, guzki i stany nagłe' },
+  { id: 'przysadka', name: 'Przysadka i podwzgórze', count: 12, subtitle: 'Gruczolaki, prolactinoma, akromegalia, Cushing, moczówka i SIADH' },
+] as const;
+
+export const plannedModules = [
+  'Nadnercza',
+  'Przytarczyce i gospodarka wapniowa',
+  'Cukrzyca',
+  'Otyłość i metabolizm',
+  'Gonady i rozrodczość',
+  'Endokrynologia rozwojowa',
+];
+

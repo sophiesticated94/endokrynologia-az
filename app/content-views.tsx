@@ -31,7 +31,16 @@ import {
   PregnancyThyroidCurve,
   CancerHistologyDiagram,
 } from './medical-diagrams';
+import {
+  PituitaryAnatomyDiagram,
+  ChiasmFieldDiagram,
+  OgttGrowthHormoneCurve,
+  CushingDiagnosticPathway,
+  WaterBalanceMatrix,
+  SheehanSyndromeDiagram,
+} from './pituitary-diagrams';
 import { HptSimulator } from './hpt-simulator';
+import { PituitarySimulator } from './pituitary-simulator';
 
 export type Route =
   | 'home'
@@ -80,7 +89,7 @@ export function Dashboard({
   newCount: number;
 }) {
   const next = lessons.find(l => !state.completed.includes(l.id)) ?? lessons[0];
-  const percent = Math.round((state.completed.length / 12) * 100);
+  const percent = Math.round((state.completed.length / lessons.length) * 100);
 
   return (
     <>
@@ -99,16 +108,27 @@ export function Dashboard({
       <section className="hero-panel">
         <div className="hero-copy">
           <span className="badge">
-            MODUŁ 01 <span /> TARCZYCA
+            {next.moduleId === 'przysadka' ? 'MODUŁ 02 · PRZYSADKA' : 'MODUŁ 01 · TARCZYCA'}
           </span>
           <h2>
-            Mały gruczoł.
-            <br />
-            Wielkie znaczenie.
+            {next.moduleId === 'przysadka' ? (
+              <>
+                Dyrygent orkiestry.
+                <br />
+                Siodło i podwzgórze.
+              </>
+            ) : (
+              <>
+                Mały gruczoł.
+                <br />
+                Wielkie znaczenie.
+              </>
+            )}
           </h2>
           <p>
-            Od osi hormonalnej po decyzje przy łóżku pacjenta.
-            <br className="desktop-only" /> Poznaj tarczycę krok po kroku.
+            {next.moduleId === 'przysadka'
+              ? 'Od gruczolaków i zaburzeń pola widzenia po moczówkę prostą i SIADH.'
+              : 'Od osi hormonalnej po decyzje przy łóżku pacjenta. Poznaj tarczycę krok po kroku.'}
           </p>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
             <button className="primary" onClick={() => go(`lesson/${next.id}`)}>
@@ -116,15 +136,15 @@ export function Dashboard({
               <ArrowRight size={18} />
             </button>
             <button className="secondary" onClick={() => go('simulator')}>
-              <Activity size={17} /> Otwórz symulator osi HPT
+              <Activity size={17} /> Symulatory kliniczne
             </button>
           </div>
           <div className="hero-meta">
             <BookOpen size={15} />
-            12 lekcji
+            {lessons.length} lekcji (2 moduły)
             <span>·</span>
             <Clock size={15} />
-            około 3 godzin
+            około 6 godzin nauki
           </div>
         </div>
         <ThyroidArt />
@@ -139,7 +159,7 @@ export function Dashboard({
             <small>Ukończone lekcje</small>
             <strong>
               {state.completed.length}
-              <span> / 12</span>
+              <span> / {lessons.length}</span>
             </strong>
           </div>
           <div
@@ -219,41 +239,100 @@ export function Dashboard({
 }
 
 export function CourseMap({ state, go }: { state: LearningState; go: Navigation }) {
+  const [activeTab, setActiveTab] = useState<'all' | 'tarczyca' | 'przysadka'>('all');
+
   return (
     <>
       <div className="page-heading">
         <p className="eyebrow">OD PODSTAW DO PRAKTYKI</p>
         <h1>Twoja mapa endokrynologii</h1>
-        <p>Zacznij od tarczycy. Kolejne działy rozbudują tę samą ścieżkę nauki.</p>
+        <p>Wybierz moduł lub przeglądaj cały program edukacyjny krok po kroku.</p>
       </div>
 
-      <section className="module-header">
-        <span className="module-number">01</span>
-        <div>
-          <h2>Tarczyca</h2>
-          <p>12 lekcji · 60 pytań · dwa poziomy szczegółowości</p>
-        </div>
-        <span className="badge">DOSTĘPNY</span>
-      </section>
+      <div className="filter-bar" aria-label="Wybór modułu">
+        <button
+          className={activeTab === 'all' ? 'active' : ''}
+          onClick={() => setActiveTab('all')}
+        >
+          Wszystkie działy ({lessons.length} lekcji)
+        </button>
+        <button
+          className={activeTab === 'tarczyca' ? 'active' : ''}
+          onClick={() => setActiveTab('tarczyca')}
+        >
+          Moduł 01: Tarczyca (12)
+        </button>
+        <button
+          className={activeTab === 'przysadka' ? 'active' : ''}
+          onClick={() => setActiveTab('przysadka')}
+        >
+          Moduł 02: Przysadka i podwzgórze (12)
+        </button>
+      </div>
 
-      {['Fundamenty', 'Praktyka kliniczna', 'Sytuacje szczególne'].map(group => (
-        <section key={group} className="course-group">
-          <h3>{group}</h3>
-          <div className="lesson-list">
-            {lessons
-              .filter(l => l.group === group)
-              .map(l => (
-                <LessonRow key={l.id} lesson={l} state={state} go={go} />
-              ))}
-          </div>
-        </section>
-      ))}
+      {/* Moduł 01: Tarczyca */}
+      {(activeTab === 'all' || activeTab === 'tarczyca') && (
+        <div style={{ marginBottom: '40px' }}>
+          <section className="module-header">
+            <span className="module-number">01</span>
+            <div>
+              <h2>Tarczyca</h2>
+              <p>12 lekcji · 60 pytań · dwa poziomy szczegółowości · Symulator HPT</p>
+            </div>
+            <span className="badge">DOSTĘPNY</span>
+          </section>
+
+          {['Fundamenty', 'Praktyka kliniczna', 'Sytuacje szczególne'].map(group => {
+            const groupLessons = lessons.filter(l => l.moduleId === 'tarczyca' && l.group === group);
+            if (!groupLessons.length) return null;
+            return (
+              <section key={`t-${group}`} className="course-group">
+                <h3>{group}</h3>
+                <div className="lesson-list">
+                  {groupLessons.map(l => (
+                    <LessonRow key={l.id} lesson={l} state={state} go={go} />
+                  ))}
+                </div>
+              </section>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Moduł 02: Przysadka i podwzgórze */}
+      {(activeTab === 'all' || activeTab === 'przysadka') && (
+        <div style={{ marginBottom: '40px' }}>
+          <section className="module-header" style={{ background: '#eaf1f7', borderColor: '#c4d8e7' }}>
+            <span className="module-number" style={{ color: '#45779e' }}>02</span>
+            <div>
+              <h2>Przysadka i podwzgórze</h2>
+              <p>12 lekcji · 60 pytań · Gruczolaki, akromegalia, Cushing, moczówka i SIADH · Konsola Przysadkowa</p>
+            </div>
+            <span className="badge" style={{ color: '#255b85', borderColor: '#adc8dd', background: '#ffffffcc' }}>DOSTĘPNY</span>
+          </section>
+
+          {['Fundamenty', 'Gruczolaki i hipersekrecja', 'Niedoczynność i gospodarka wodna', 'Sytuacje szczególne i chirurgia'].map(group => {
+            const groupLessons = lessons.filter(l => l.moduleId === 'przysadka' && l.group === group);
+            if (!groupLessons.length) return null;
+            return (
+              <section key={`p-${group}`} className="course-group">
+                <h3>{group}</h3>
+                <div className="lesson-list">
+                  {groupLessons.map(l => (
+                    <LessonRow key={l.id} lesson={l} state={state} go={go} />
+                  ))}
+                </div>
+              </section>
+            );
+          })}
+        </div>
+      )}
 
       <h2 className="spaced-heading">Dalsza część Twojej ścieżki</h2>
       <div className="planned-grid">
         {plannedModules.map((name, i) => (
           <div className="planned-card" key={name}>
-            <span>{String(i + 2).padStart(2, '0')}</span>
+            <span>{String(i + 3).padStart(2, '0')}</span>
             <h3>{name}</h3>
             <small>
               <LockKeyhole size={13} />
@@ -281,6 +360,10 @@ export function LessonView({
   complete: () => void;
   advanced: () => void;
 }) {
+  const moduleLessons = lessons.filter(l => l.moduleId === lesson.moduleId);
+  const lessonNum = moduleLessons.indexOf(lesson) + 1;
+  const moduleLabel = lesson.moduleId === 'przysadka' ? 'MODUŁ 02: PRZYSADKA' : 'MODUŁ 01: TARCZYCA';
+
   return (
     <div className="lesson-layout">
       <article className="reading lesson-reading">
@@ -291,7 +374,7 @@ export function LessonView({
 
         <div className="page-heading">
           <p className="eyebrow">
-            LEKCJA {String(lessons.indexOf(lesson) + 1).padStart(2, '0')} / 12 ·{' '}
+            LEKCJA {String(lessonNum).padStart(2, '0')} / {moduleLessons.length} · {moduleLabel} ·{' '}
             {lesson.group.toUpperCase()}
           </p>
           <h1>{lesson.title}</h1>
@@ -322,7 +405,7 @@ export function LessonView({
               <GlossaryText text={section.text} />
             </p>
 
-            {/* Osadzone wykresy i schematy medyczne */}
+            {/* Osadzone wykresy i schematy medyczne — Tarczyca */}
             {lesson.id === 'fizjologia' && i === 0 && <ThyroidAxisDiagram />}
             {lesson.id === 'diagnostyka' && i === 1 && <LabMatrixDiagram />}
             {lesson.id === 'graves' && i === 1 && <OrbitopathyEyeDiagram />}
@@ -330,6 +413,14 @@ export function LessonView({
             {lesson.id === 'guzki' && i === 1 && <EuTiradsVisualGuide />}
             {lesson.id === 'nowotwory' && i === 0 && <CancerHistologyDiagram />}
             {lesson.id === 'ciaza' && i === 0 && <PregnancyThyroidCurve />}
+
+            {/* Osadzone wykresy i schematy medyczne — Przysadka */}
+            {lesson.id === 'przysadka-fizjologia' && i === 0 && <PituitaryAnatomyDiagram />}
+            {lesson.id === 'guzy-nieczynne' && i === 0 && <ChiasmFieldDiagram />}
+            {lesson.id === 'akromegalia' && i === 1 && <OgttGrowthHormoneCurve />}
+            {lesson.id === 'cushing-choroba' && i === 1 && <CushingDiagnosticPathway />}
+            {lesson.id === 'moczowka-prosta' && i === 1 && <WaterBalanceMatrix />}
+            {lesson.id === 'hipopituitaryzm' && i === 0 && <SheehanSyndromeDiagram />}
           </section>
         ))}
 
@@ -344,14 +435,13 @@ export function LessonView({
               </tr>
             </thead>
             <tbody>
-              {lesson.table.rows.map(([a, b]) => (
-                <tr key={a}>
-                  <td>
-                    <GlossaryText text={a} />
-                  </td>
-                  <td>
-                    <GlossaryText text={b} />
-                  </td>
+              {lesson.table.rows.map((row, rIdx) => (
+                <tr key={rIdx}>
+                  {row.map((cell, cIdx) => (
+                    <td key={cIdx}>
+                      <GlossaryText text={cell} />
+                    </td>
+                  ))}
                 </tr>
               ))}
             </tbody>
@@ -398,6 +488,50 @@ export function LessonView({
         {lesson.id === 'diagnostyka' && (
           <div style={{ margin: '36px 0' }}>
             <HptSimulator embedded />
+          </div>
+        )}
+
+        {/* Zwiastun konsoli przysadkowej w Lekcji 1 Przysadki */}
+        {lesson.id === 'przysadka-fizjologia' && (
+          <div className="simulator-teaser-card" style={{ background: '#edf4f8', borderColor: '#c7dce9' }}>
+            <div className="teaser-content">
+              <div className="teaser-icon" style={{ background: '#dceaf3', color: '#255b85' }}>
+                <Activity size={26} />
+              </div>
+              <div>
+                <span className="eyebrow" style={{ color: '#255b85' }}>INTERAKTYWNA KONSOLA KLINICZNA</span>
+                <h3>Chcesz przetestować osie przysadki, testy i pole widzenia?</h3>
+                <p>
+                  W <strong>Lekcji 2 („Rozszyfruj przysadkę”)</strong> czeka na Ciebie
+                  pełna <strong>Kliniczna Konsola Przysadkowo-Podwzgórzowa</strong>. Możesz w niej
+                  badać osie PRL, GH, ACTH, AVP, przeprowadzać testy dynamiczne (OGTT, deksametazon, dDAVP)
+                  oraz symulować ubytki pola widzenia (hemianopsia bitemporalis) i porażenie nerwów zatoki jamistej.
+                </p>
+                <div className="teaser-actions">
+                  <button
+                    type="button"
+                    className="primary"
+                    onClick={() => go('lesson/przysadka-diagnostyka')}
+                  >
+                    Przejdź do Lekcji 2 z konsolą <ArrowRight size={15} />
+                  </button>
+                  <button
+                    type="button"
+                    className="secondary"
+                    onClick={() => go('simulator')}
+                  >
+                    Otwórz symulatory
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Pełna Konsola Przysadkowa w Lekcji 2 Przysadki */}
+        {lesson.id === 'przysadka-diagnostyka' && (
+          <div style={{ margin: '36px 0' }}>
+            <PituitarySimulator embedded />
           </div>
         )}
 
@@ -493,27 +627,56 @@ export function LessonView({
 }
 
 export function CasesView({ state, go }: { state: LearningState; go: Navigation }) {
-  const [filter, setFilter] = useState('all');
+  const [moduleFilter, setModuleFilter] = useState<'all' | 'tarczyca' | 'przysadka'>('all');
+  const [diffFilter, setDiffFilter] = useState<'all' | 'Podstawowy' | 'Zaawansowany'>('all');
+
+  const filteredCases = cases.filter(c => {
+    if (diffFilter !== 'all' && c.difficulty !== diffFilter) return false;
+    if (moduleFilter === 'all') return true;
+    const lesson = lessons.find(l => l.id === c.lessonId);
+    return lesson?.moduleId === moduleFilter;
+  });
 
   return (
     <>
       <div className="page-heading">
         <p className="eyebrow">ZASTOSUJ WIEDZĘ</p>
         <h1>Spotkaj się z praktyką</h1>
-        <p>12 fikcyjnych pacjentów. Cztery etapy: objawy, badania, rozpoznanie i postępowanie.</p>
+        <p>{cases.length} fikcyjnych pacjentów. Cztery etapy: objawy, badania, rozpoznanie i postępowanie.</p>
       </div>
 
-      <div className="filter-bar" aria-label="Poziom przypadku">
+      <div className="filter-bar" style={{ marginBottom: '12px' }} aria-label="Wybór działu medycznego">
+        <button
+          className={moduleFilter === 'all' ? 'active' : ''}
+          onClick={() => setModuleFilter('all')}
+        >
+          Wszystkie działy ({cases.length})
+        </button>
+        <button
+          className={moduleFilter === 'tarczyca' ? 'active' : ''}
+          onClick={() => setModuleFilter('tarczyca')}
+        >
+          Moduł 01: Tarczyca (12)
+        </button>
+        <button
+          className={moduleFilter === 'przysadka' ? 'active' : ''}
+          onClick={() => setModuleFilter('przysadka')}
+        >
+          Moduł 02: Przysadka i podwzgórze (12)
+        </button>
+      </div>
+
+      <div className="filter-bar" aria-label="Poziom trudności">
         {[
-          ['all', 'Wszystkie'],
+          ['all', 'Wszystkie poziomy'],
           ['Podstawowy', 'Podstawowe'],
           ['Zaawansowany', 'Zaawansowane'],
         ].map(([value, label]) => (
           <button
-            className={filter === value ? 'active' : ''}
-            aria-pressed={filter === value}
+            className={diffFilter === value ? 'active' : ''}
+            aria-pressed={diffFilter === value}
             key={value}
-            onClick={() => setFilter(value)}
+            onClick={() => setDiffFilter(value as any)}
           >
             {label}
           </button>
@@ -521,9 +684,7 @@ export function CasesView({ state, go }: { state: LearningState; go: Navigation 
       </div>
 
       <div className="cases-grid">
-        {cases
-          .filter(c => filter === 'all' || c.difficulty === filter)
-          .map(c => (
+        {filteredCases.map(c => (
             <button className="case-card" key={c.id} onClick={() => go(`case/${c.id}`)}>
               <div className="case-card-top">
                 <span className="case-icon">

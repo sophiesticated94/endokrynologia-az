@@ -1,3 +1,5 @@
+import { pituitaryGlossary } from './glossary-pituitary.ts';
+
 export type GlossaryCategory = 'hormony' | 'diagnostyka' | 'choroby' | 'leki' | 'anatomia';
 
 export type GlossaryItem = {
@@ -10,7 +12,7 @@ export type GlossaryItem = {
   clinicalSignificance: string;
 };
 
-export const glossary: GlossaryItem[] = [
+const thyroidGlossary: GlossaryItem[] = [
   {
     id: 'tsh',
     term: 'TSH',
@@ -201,6 +203,11 @@ export const glossary: GlossaryItem[] = [
     definition: 'Badanie radioizotopowe (z użyciem 99mTc lub 131I) oceniające rozkład wychwytu znacznika w gruczole.',
     clinicalSignificance: 'Kluczowe badanie różnicujące guzek autonomiczny („gorący”) od niefunkcjonującego („zimnego”) oraz potwierdzające niską jodochwytność w fazie destrukcyjnego zapalenia tarczycy.'
   }
+];
+
+export const glossary: GlossaryItem[] = [
+  ...thyroidGlossary,
+  ...pituitaryGlossary,
 ];
 
 export const glossaryMap = new Map<string, GlossaryItem>();
