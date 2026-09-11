@@ -22,7 +22,7 @@ export const draftDiabetesPart2: DraftLesson[] = [
       },
       {
         title: 'Algorytm resuscytacji: płyny, potas i insulina',
-        text: 'Postępowanie opiera się na 4 filarach: 1) Płynoterapia: przetoczenie 1000 ml 0,9% NaCl w 1. godzinie, następnie 250–500 ml/h krystaloidów zbilansowanych (płyn Ringera); deficyt płynowy wynosi 5–8 litrów (ok. 100 ml/kg); 2) Wlew insuliny: dożylny wlew insuliny krótko- lub szybkodziałającej 0,1 j./kg/h (lub bolus 0,1 j./kg i wlew 0,1 j./kg/h); 3) Potas: ŻELAZNA ZASADA — NIE włączaj insuliny, jeśli K+ < 3,3 mmol/l (insulina wpycha K+ do komórek i grozi zgonem z zatrzymania krążenia!); 4) Włączenie 5% glukozy, gdy glikemia spadnie < 200–250 mg/dl, aby umożliwić dalszy wlew insuliny aż do ustąpienia kwasicy i spadku beta-hydroksymaślanu < 0,6 mmol/l (lub pH > 7,30 i HCO3- >= 18 mmol/l).',
+        text: 'Postępowanie opiera się na 4 filarach: 1) Płynoterapia: przetoczenie 1000 ml 0,9% NaCl w 1. godzinie, następnie 250–500 ml/h krystaloidów zbilansowanych (płyn Ringera); deficyt płynowy wynosi 5–8 litrów (ok. 100 ml/kg); 2) Wlew insuliny: dożylny wlew insuliny krótko- lub szybkodziałającej 0,1 j./kg/h (lub bolus 0,1 j./kg i wlew 0,1 j./kg/h); 3) Potas: ŻELAZNA ZASADA — NIE włączaj insuliny, jeśli K+ < 3,3 mmol/l (insulina wpycha K+ do komórek i grozi zgonem z zatrzymania krążenia!); 4) Włączenie 5% glukozy, gdy glikemia spadnie < 200–250 mg/dl, aby umożliwić dalszy wlew insuliny aż do biochemicznego ustąpienia DKA: stężenia beta-hydroksymaślanu < 0,6 mmol/l ORAZ (pH żylnego >= 7,30 LUB HCO3- >= 18 mmol/l) przy glikemii < 200 mg/dl (możliwość przyjmowania posiłków doustnie jest klinicznym warunkiem przejścia na podskórną insulinoterapię, a nie częścią definicji biochemicznej).',
       },
     ],
     table: {
@@ -58,7 +58,7 @@ export const draftDiabetesPart2: DraftLesson[] = [
         ['Przedawkowanie metforminy', 'Metformina powoduje kwasicę mleczanową, a nie euglikemiczną ketonową.'],
         ['Nadmierne spożycie soli kuchennej', 'Chlorek sodu może wywołać kwasicę hiperchloremiczną, nie ketonową.']),
       q('Kiedy uznaje się kwasicę ketonową (DKA) za wyleczoną (kryteria ustąpienia DKA)?',
-        ['Glikemia < 200 mg/dl, beta-hydroksymaślan < 0,6 mmol/l (lub pH > 7,30 i HCO3- >= 18 mmol/l) oraz powrót łaknienia', 'Wg konsensusu ADA/EASD 2024 i PTD 2025 kryterium ustąpienia to spadek beta-OHB < 0,6 mmol/l (lub pH > 7,30 z HCO3- >= 18) przy glikemii < 200 mg/dl i możliwości przyjmowania posiłków.'],
+        ['Glikemia < 200 mg/dl, beta-hydroksymaślan < 0,6 mmol/l oraz (pH żylne >= 7,30 lub HCO3- >= 18 mmol/l); tolerancja posiłków warunkuje konwersję na s.c.', 'Wg konsensusu ADA/EASD 2024 kryteria biochemicznego ustąpienia DKA to: beta-OHB < 0,6 mmol/l ORAZ (pH żylne >= 7,30 LUB HCO3- >= 18 mmol/l) przy glikemii < 200 mg/dl. Zdolność do przyjmowania posiłków i płynów doustnie jest klinicznym warunkiem bezpiecznego przejścia na insulinę podskórną (s.c.), a nie parametrem samej definicji biochemicznej.'],
         ['Gdy glikemia spadnie do 90 mg/dl niezależnie od pH', 'Spadek glikemii następuje znacznie szybciej niż ustąpienie kwasicy metabolicznej.'],
         ['Gdy pacjent przestanie odczuwać pragnienie', 'Subiektywne pragnienie nie jest parametrem laboratoryjnym ustąpienia kwasicy.']),
     ],

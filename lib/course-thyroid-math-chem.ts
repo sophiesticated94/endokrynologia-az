@@ -77,7 +77,7 @@ export const draftThyroidMathChem: DraftLesson[] = [
           explanation: 'W stanie stacjonarnym szybkość podania ($\\frac{F \\cdot D}{\\tau}$) równoważy szybkość eliminacji ($Cl \\cdot C_{ss} = V_d \\cdot k_e \\cdot C_{ss}$).',
         },
       ],
-      clinicalTakeaway: 'Stan stacjonarny $95\\%\\,C_{ss}$ osiągany jest po $4{,}32 \\times t_{1/2} \\approx 35\\text{–}42\\text{ dniach}$ (5–6 tygodni). Zbyt wczesna kontrola TSH po 2 tyg. od zmiany dawki da zafałszowany obraz.',
+      clinicalTakeaway: 'Stan stacjonarny farmakokinetyczny ($95\\%\\,C_{ss}$) osiągany jest po $t_{95\\%} = 4{,}32 \\times t_{1/2} \\approx 30\\text{ dniach}$ (~4,3 tygodnia). Ponieważ oś przysadkowo-tarczycowa (TSH) wykazuje dodatkową bezwładność transkrypcyjną, pełna równowaga osi następuje po 6–8 tygodniach. Zbyt wczesna ocena TSH (np. po 2 tyg.) da zafałszowany obraz kliniczny.',
     },
     workedExample: {
       title: 'Kalkulacja dawki substytucyjnej i czasu do steady-state',
@@ -91,8 +91,8 @@ export const draftThyroidMathChem: DraftLesson[] = [
       calculationSteps: [
         'Krok 1: Dawka dobowa $D = 68\\text{ kg} \\times 1{,}6\\,\\text{µg/kg} = 108{,}8\\,\\text{µg/d} \\longrightarrow$ preparat $100\\,\\text{µg/d}$ (lub naprzemiennie 100/112 µg).',
         'Krok 2: Stała eliminacji $k_e = \\frac{\\ln(2)}{7\\text{ dni}} = 0{,}099\\text{ d}^{-1}$.',
-        'Krok 3: Oczekiwany wzrost stężenia: $C_{ss} = \\frac{0{,}75 \\times 100\\,\\text{µg}}{12\\text{ L} \\times 0{,}099\\text{ d}^{-1} \\times 1\\text{ d}} = 63{,}1\\,\\text{nmol/L}$ (wzrost FT4 o ok. 15 pmol/L).',
-        'Krok 4: Czas do 95% steady-state: $t_{95\\%} = 4{,}32 \\times 7\\text{ dni} = 30{,}2\\text{ dni}$ (~5 tygodni).',
+        'Krok 3: Oczekiwane średnie stężenie stacjonarne całkowitej tyroksyny: $C_{ss} = \\frac{0{,}75 \\times 100\\,\\text{µg}}{12\\text{ L} \\times 0{,}099\\text{ d}^{-1} \\times 1\\text{ d}} = 63{,}1\\,\\mu\\text{g/L} \\approx 81\\,\\text{nmol/L}$ całkowitej $T_4$ (model jednokompartmentowy opisuje całkowitą ekspozycję leku, a nie frakcję wolną FT4 ani ujemne sprzężenie TSH).',
+        'Krok 4: Czas do równowagi: $t_{90\\%} \\approx 23{,}3\\text{ dni}$ (~3,3 tyg.), $t_{95\\%} = 4{,}32 \\times 7\\text{ dni} = 30{,}2\\text{ dni}$ (~4,3 tyg.). Pełna równowaga osi TSH z uwzględnieniem opóźnienia przysadkowego wymaga 6–8 tygodni.',
       ],
       result: 'Dawka początkowa: 100 µg/d; optymalny termin kontroli TSH i FT4: za 6–8 tygodni.',
       clinicalAction: 'Zlecono przyjmowanie rano na czczo 30–60 min przed posiłkiem, popijając wodą. Kontrola TSH i FT4 za 7 tygodni.',

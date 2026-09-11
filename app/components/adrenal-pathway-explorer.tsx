@@ -13,6 +13,7 @@ export function AdrenalEnzymeKinetics() {
   const [measured17Ohp, setMeasured17Ohp] = useState<number>(12.5); // ng/ml
   const [assayMethod, setAssayMethod] = useState<'immunoassay' | 'lc_ms_ms'>('lc_ms_ms');
   const [clinicalContext, setClinicalContext] = useState<'morning_follicular' | 'synacthen_60' | 'neonatal_screen'>('synacthen_60');
+  const [neonatalTier, setNeonatalTier] = useState<'term' | 'preterm_late' | 'preterm_vlbw'>('term');
 
   const genotypeProfiles = {
     salt_wasting: {
@@ -77,54 +78,61 @@ export function AdrenalEnzymeKinetics() {
     if (isNaN(val) || val < 0) return { verdict: 'Nieprawidłowa wartość', details: 'Wprowadź stężenie ≥ 0.' };
 
     if (clinicalContext === 'morning_follicular') {
-      if (val < 2.0) {
+      const normalCutoff = assayMethod === 'lc_ms_ms' ? 1.5 : 2.0;
+      const equivocalCutoff = assayMethod === 'lc_ms_ms' ? 8.0 : 10.0;
+      if (val < normalCutoff) {
         return {
-          verdict: '17-OHP podstawowe < 2 ng/ml (< 6 nmol/l) — Prawidłowe',
+          verdict: `17-OHP podstawowe < ${normalCutoff} ng/ml — Poniżej progu dla metody`,
           status: 'normal',
-          details: 'Rozpoznanie NC-CAH jest praktycznie wykluczone. U pacjentek z objawami hiperandrogenizmu w pierwszej kolejności należy rozważyć zespół policystycznych jajników (PCOS) lub hiperandrogenizm idiopatyczny.',
+          details: `Stężenie poniżej progu decyzyjnego dla ${assayMethod === 'lc_ms_ms' ? 'LC-MS/MS (~1,5 ng/ml)' : 'testów immunoenzymatycznych (~2,0 ng/ml)'} wskazuje na niskie prawdopodobieństwo NC-CAH w porannym badaniu fazy folikularnej. Przy cechach hiperandrogenizmu w pierwszej kolejności należy rozważyć PCOS lub hiperandrogenizm czynnościowy; pojedynczy wynik poranny nie stanowi jednak 100% wykluczenia postaci o zmiennej ekspresji ani nosicielstwa.`,
         };
-      } else if (val <= 10.0) {
+      } else if (val <= equivocalCutoff) {
         return {
-          verdict: '17-OHP podstawowe 2–10 ng/ml (6–30 nmol/l) — Szara strefa',
+          verdict: `17-OHP podstawowe ${normalCutoff}–${equivocalCutoff} ng/ml — Szara strefa`,
           status: 'equivocal',
-          details: 'Wynik niejednoznaczny. Wskazane wykonanie dynamicznego testu stymulacji Synacthenem (250 µg i.v./i.m. z oznaczeniem 17-OHP w 0. i 60. minucie) w celu definitywnego rozróżnienia NC-CAH od PCOS lub nosicielstwa.',
+          details: `Wynik niejednoznaczny (pośrednie stężenie w teście ${assayMethod === 'lc_ms_ms' ? 'LC-MS/MS' : 'immunologicznym'}). Wskazane wykonanie dynamicznego testu stymulacji Synacthenem 250 µg w celu precyzyjnego odróżnienia NC-CAH od PCOS lub heterozygotyczności CYP21A2.`,
         };
       } else {
         return {
-          verdict: '17-OHP podstawowe > 10 ng/ml (> 30 nmol/l) — Wysoce prawdopodobny NC-CAH',
+          verdict: `17-OHP podstawowe > ${equivocalCutoff} ng/ml — Wysokie prawdopodobieństwo bloku 21-OH`,
           status: 'abnormal',
-          details: 'Wysokie prawdopodobieństwo wrodzonego przerostu nadnerczy. Zalecane potwierdzenie testem z Synacthenem i badaniem genetycznym genu CYP21A2.',
+          details: `Stężenie podstawowe wyraźnie podwyższone. Wskazane potwierdzenie w teście stymulacji z Synacthenem oraz diagnostyka genetyczna genu CYP21A2.`,
         };
       }
     } else if (clinicalContext === 'synacthen_60') {
-      if (val < 10.0) {
+      const synacthenCutoff = assayMethod === 'lc_ms_ms' ? 8.0 : 10.0;
+      if (val < synacthenCutoff) {
         return {
-          verdict: '17-OHP po Synacthenie < 10 ng/ml (< 30 nmol/l) — Wynik ujemny (Norma)',
+          verdict: `17-OHP po Synacthenie < ${synacthenCutoff} ng/ml — Prawidłowa rezerwa enzymatyczna`,
           status: 'normal',
-          details: 'Prawidłowa odpowiedź 21-hydroksylacji wyklucza NC-CAH. Wartości w zakresie 5–10 ng/ml mogą niekiedy odpowiadać bezobjawowym heterozygotom (nosicielom mutacji CYP21A2).',
+          details: `Stężenie po 60 min stymulacji nie osiąga progu diagnostycznego dla ${assayMethod === 'lc_ms_ms' ? 'LC-MS/MS (~8 ng/ml)' : 'metod immunoenzymatycznych (10 ng/ml)'}. Wynik z wysokim prawdopodobieństwem klinicznym wyklucza objawową postać NC-CAH. Wartości pośrednie (np. 5–${synacthenCutoff} ng/ml) bywają spotykane u bezobjawowych nosicieli (heterozygot) mutacji CYP21A2.`,
         };
       } else if (val <= 30.0) {
         return {
-          verdict: '17-OHP po Synacthenie 10–30 ng/ml (30–90 nmol/l) — Dodatni (NC-CAH)',
+          verdict: `17-OHP po Synacthenie ${val} ng/ml (≥ ${synacthenCutoff} ng/ml) — Dodatni (NC-CAH)`,
           status: 'abnormal',
-          details: 'Klasyczny próg diagnostyczny NC-CAH (>10 ng/ml wg wytycznych Endocrine Society). Wskazana konsultacja endokrynologiczna, ocena rezerwy kortyzolowej i analiza genu CYP21A2 (istotne zwłaszcza przed planowaniem ciąży).',
+          details: `Wynik przekracza próg diagnostyczny wg wytycznych Endocrine Society (${assayMethod === 'lc_ms_ms' ? '≥8 ng/ml dla LC-MS/MS' : '≥10 ng/ml dla testów immunologicznych'}). Potwierdza to blok 21-hydroksylacji o charakterze nieklasycznym (NC-CAH). Wskazana ocena rezerwy glukokortykoidowej i analiza molekularna genu CYP21A2.`,
         };
       } else {
         return {
-          verdict: '17-OHP po Synacthenie > 30 ng/ml (> 90 nmol/l) — Znacznie podwyższony',
+          verdict: '17-OHP po Synacthenie > 30 ng/ml — Wyraźny blok enzymatyczny',
           status: 'severe',
-          details: 'Wyraźny blok enzymatyczny typowy dla WPN (w postaciach klasycznych stężenia po stymulacji często przekraczają 100 ng/ml).',
+          details: 'Masywny blok 21-hydroksylacji typowy dla WPN (w postaciach klasycznych stężenia po stymulacji często przekraczają 100 ng/ml).',
         };
       }
     } else {
+      const tierThresholdNg = neonatalTier === 'term' ? 10.0 : neonatalTier === 'preterm_late' ? 20.0 : 30.0;
+      const tierThresholdNmol = Math.round(tierThresholdNg * 3.03);
+      const tierLabel = neonatalTier === 'term' ? 'Noworodek donoszony (≥37 Hbd, ≥2500 g)' : neonatalTier === 'preterm_late' ? 'Późny wcześniak (32–36 Hbd, 1500–2499 g)' : 'Skrajny wcześniak (<32 Hbd, <1500 g)';
+      const isElevated = val > tierThresholdNg;
+
       return {
-        verdict: val > 30 ? 'Test przesiewowy noworodka: Wynik podwyższony' : 'Test przesiewowy noworodka: W granicach normy',
-        status: val > 30 ? 'abnormal' : 'normal',
-        details: 'Progi przesiewu na bibule są ściśle zależne od wieku ciążowego i masy urodzeniowej (wcześniaki wykazują fizjologicznie wyższe stężenia). ' +
-          (assayMethod === 'immunoassay' ? 'UWAGA: Immunoenzymatyczne testy u noworodków wykazują częste wyniki fałszywie dodatnie przez reakcje krzyżowe z siarczanowanymi steroidami płodowymi. Wymagana weryfikacja metodą LC-MS/MS!' : 'LC-MS/MS eliminuje interferencje steroidów płodowych i stanowi złoty standard (second-tier testing w nowoczesnych programach badań przesiewowych).'),
+        verdict: `Test przesiewowy (bibuła NBS) — ${isElevated ? 'Powyżej progu warstwowego' : 'W normie warstwowej'} (${tierThresholdNmol} nmol/l)`,
+        status: isElevated ? 'abnormal' : 'normal',
+        details: `Kategoria: ${tierLabel}. Wartość odcięcia wynosi ~${tierThresholdNg} ng/ml (~${tierThresholdNmol} nmol/l na suchej kropli krwi). ${isElevated ? (assayMethod === 'immunoassay' ? 'UWAGA: Wyniki immunoenzymatyczne (DELFIA) u noworodków (zwłaszcza wcześniaków) często dają wyniki fałszywie dodatnie z powodu reakcji krzyżowych z siarczanowanymi steroidami strefy płodowej (np. 16α-OH-DHEA-S). Konieczna weryfikacja drugiego rzutu metodą LC-MS/MS przed wdrożeniem leczenia!' : 'Podwyższony wynik w metodzie LC-MS/MS potwierdza rzeczywistą kumulację 17-OHP i wymaga pilnego skierowania do ośrodka referencyjnego endokrynologii pediatrycznej.') : (assayMethod === 'immunoassay' ? 'Wynik testu I rzutu nie przekracza progu alarmowego dla tej grupy dojrzałości.' : 'Stężenie w normie dla wieku ciążowego i masy ciała.')}`,
       };
     }
-  }, [measured17Ohp, clinicalContext, assayMethod]);
+  }, [measured17Ohp, clinicalContext, assayMethod, neonatalTier]);
 
   return (
     <div style={{ background: '#fdf8f6', border: '1px solid #fed7aa', borderRadius: '12px', padding: '18px', margin: '14px 0' }}>
@@ -234,6 +242,22 @@ export function AdrenalEnzymeKinetics() {
               <option value="morning_follicular">Poranny pomiar podstawowy (godz. 8:00, faza folikularna)</option>
               <option value="neonatal_screen">Przesiew noworodkowy (bibuła NBS)</option>
             </select>
+            {clinicalContext === 'neonatal_screen' && (
+              <div style={{ marginTop: '6px' }}>
+                <label style={{ fontSize: '10px', fontWeight: 600, color: '#9a3412', display: 'block', marginBottom: '2px' }}>
+                  Kategoria dojrzałości noworodka:
+                </label>
+                <select
+                  value={neonatalTier}
+                  onChange={e => setNeonatalTier(e.target.value as 'term' | 'preterm_late' | 'preterm_vlbw')}
+                  style={{ width: '100%', padding: '4px 6px', borderRadius: '4px', border: '1px solid #fed7aa', fontSize: '10px', background: '#fff7ed' }}
+                >
+                  <option value="term">Donoszony (≥37 Hbd, ≥2500 g)</option>
+                  <option value="preterm_late">Późny wcześniak (32–36 Hbd, 1500–2499 g)</option>
+                  <option value="preterm_vlbw">Skrajny wcześniak (&lt;32 Hbd, &lt;1500 g)</option>
+                </select>
+              </div>
+            )}
           </div>
 
           <div>

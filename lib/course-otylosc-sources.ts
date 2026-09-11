@@ -25,9 +25,9 @@ export const otyloscSources: Record<string, Source> = {
   'esc-eas-dyslipidemia-2023': {
     id: 'esc-eas-dyslipidemia-2023',
     title: 'ESC/EAS Guidelines for the Management of Dyslipidaemias: Lipid Modification to Reduce Cardiovascular Risk',
-    year: '2023',
-    url: 'https://www.escardio.org/Guidelines/Clinical-Practice-Guidelines/Dyslipidaemias',
-    kind: 'Wytyczne ESC/EAS',
+    year: '2019',
+    url: 'https://doi.org/10.1093/eurheartj/ehz455',
+    kind: 'Wytyczne kardiologiczne (ESC/EAS)',
   },
   'aasld-easl-masld-2024': {
     id: 'aasld-easl-masld-2024',

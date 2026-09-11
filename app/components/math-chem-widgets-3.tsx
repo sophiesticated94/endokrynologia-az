@@ -50,7 +50,7 @@ export function InsulinReceptorAndKetogenesisVisualizer() {
     },
     {
       title: '4. Równowaga redoks NADH/NAD⁺, synteza β-OHB i kryteria wyrównania DKA',
-      desc: 'Stosunek β-hydroksymaślanu do acetooctanu odzwierciedla potencjał redoks mitochondriów (NADH/NAD⁺) i dynamicznie rośnie w ciężkiej kwasicy. Do monitorowania DKA zaleca się bezpośredni pomiar β-OHB we krwi. Według konsensusu ADA/EASD 2024 kryteria ustąpienia DKA to: β-OHB < 0,6 mmol/l (lub HCO₃⁻ ≥ 18 mmol/l z pH żylnym ≥ 7,30) oraz powrót możliwości przyjmowania posiłków.',
+      desc: 'Stosunek β-hydroksymaślanu do acetooctanu odzwierciedla potencjał redoks mitochondriów (NADH/NAD⁺) i dynamicznie rośnie w ciężkiej kwasicy. Do monitorowania leczenia DKA zaleca się bezpośredni pomiar β-OHB we krwi. Według konsensusu ADA/EASD 2024 kryteria biochemicznego ustąpienia DKA to: β-OHB < 0,6 mmol/l ORAZ (pH żylne ≥ 7,30 LUB HCO₃⁻ ≥ 18 mmol/l) przy glikemii < 200 mg/dl. Zdolność do przyjmowania posiłków doustnie jest klinicznym warunkiem bezpiecznego przejścia na podskórną insulinoterapię, a nie składową samej definicji biochemicznej.',
       enzymes: 'Dehydrogenaza β-OHB (zależna od NADH) -> β-OHB / HAGMA',
     },
   ];

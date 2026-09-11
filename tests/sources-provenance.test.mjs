@@ -90,4 +90,21 @@ test('Sources provenance: clinical guidelines and consensus are present for core
 
   assert.ok(thyroidMathChemSources.tpo_chem, 'TPO / thyroglobulin structure paper must be present');
   assert.match(thyroidMathChemSources.tpo_chem.url, /10\.1038\/s41586-020-1995-4/, 'Tg structure should point to Coscia et al. Nature 2020');
+
+  // Specific 2022-2026 guideline & consensus checks
+  assert.match(diabetesSources.gdm_guidelines.url, /10\.1016\/S0020-7292\(15\)30007-2/, 'GDM should point to FIGO initiative');
+  assert.equal(parathyroidSources.kdigo_ckd_mbd.year, '2017', 'KDIGO CKD-MBD update is 2017');
+  assert.match(parathyroidSources.kdigo_ckd_mbd.url, /10\.1016\/j\.kisu\.2017\.04\.001/, 'KDIGO CKD-MBD should have valid DOI');
+  assert.equal(parathyroidSources.ese_hypopara.year, '2025', 'ESE hypoparathyroidism guideline update is 2025');
+  assert.match(parathyroidSources.ese_hypopara.url, /10\.1093\/ejendo\/lvaf222/, 'ESE hypoparathyroidism 2025 should have valid DOI');
+  assert.equal(nenSources['ata-mtc-2024'].year, '2015', 'ATA MTC guideline is 2015');
+  assert.match(nenSources['ata-mtc-2024'].url, /10\.1089\/thy\.2014\.0335/, 'ATA MTC guideline should have valid DOI');
+  assert.match(nenSources['eanm-prrt-2023'].url, /10\.1007\/s00259-012-2330-6/, 'EANM PRRT should point to joint procedure guidance');
+  assert.equal(nenSources['men-consensus-2021'].year, '2012', 'Thakker MEN1 guideline is 2012');
+  assert.match(nenSources['men-consensus-2021'].url, /10\.1210\/jc\.2012-1230/, 'MEN1 guideline should have Thakker DOI');
+  assert.match(otyloscSources['esc-eas-dyslipidemia-2023'].url, /10\.1093\/eurheartj\/ehz455/, 'ESC/EAS dyslipidemia should have 2019 DOI');
+  assert.ok(pituitarySources.pituitary_prolactinoma_2023, 'Pituitary Society prolactinoma consensus must exist');
+  assert.match(pituitarySources.pituitary_prolactinoma_2023.url, /10\.1038\/s41574-023-00886-5/, 'Pituitary Society prolactinoma must point to 2023 consensus');
+  assert.ok(pituitarySources.pituitary_incidentaloma_2025, 'Pituitary Society incidentaloma consensus must exist');
+  assert.match(pituitarySources.pituitary_incidentaloma_2025.url, /10\.1038\/s41574-025-01134-8/, 'Pituitary Society incidentaloma must point to 2025 statement');
 });

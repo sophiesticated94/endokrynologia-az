@@ -71,4 +71,18 @@ export const pituitarySources: Record<string, Source> = {
     url: 'https://doi.org/10.1016/S2213-8587(21)00235-7',
     kind: 'Międzynarodowy konsensus: Cushing',
   },
+  pituitary_prolactinoma_2023: {
+    id: 'pituitary_prolactinoma_2023',
+    title: 'Petersenn S et al. — Diagnosis and management of prolactin-secreting pituitary adenomas: a Pituitary Society consensus statement',
+    year: '2023',
+    url: 'https://doi.org/10.1038/s41574-023-00886-5',
+    kind: 'Konsensus międzynarodowy (Pituitary Society)',
+  },
+  pituitary_incidentaloma_2025: {
+    id: 'pituitary_incidentaloma_2025',
+    title: 'Fleseriu M et al. — Pituitary incidentaloma: a Pituitary Society international consensus guidance statement',
+    year: '2025',
+    url: 'https://doi.org/10.1038/s41574-025-01134-8',
+    kind: 'Konsensus międzynarodowy (Pituitary Society)',
+  },
 };

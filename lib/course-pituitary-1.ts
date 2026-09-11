@@ -183,7 +183,7 @@ export const draftPituitaryPart1: DraftLesson[] = [
       'W przypadku stosowania bardzo wysokich dawek kabergoliny (znanych z leczenia choroby Parkinsona, >3 mg/dobę) opisywano ryzyko włóknienia zastawek serca przez pobudzenie receptorów 5-HT2B. W dawkach endokrynologicznych (zwykle 0,5–1,0 mg/tydzień) ryzyko to jest minimalne, jednak wytyczne zalecają wykonanie wyjściowego echokardiogramu (ECHO serca) przed długotrwałym leczeniem.',
     summary:
       'Prolactinoma leczy się farmakologicznie agonistami dopaminy (kabergolina), uzyskując normalizację hormonów i regresję guza. Zawsze wykluczaj leki, niedoczynność tarczycy, makroprolaktynę (PEG) oraz efekt hook w makrogruczolakach.',
-    sourceIds: ['melmed'],
+    sourceIds: ['melmed', 'pituitary_prolactinoma_2023'],
     questions: [
       q(
         'Jaka jest podstawowa metoda leczenia pierwszego rzutu w większości przypadków prolactinoma?',
@@ -399,7 +399,7 @@ export const draftPituitaryPart1: DraftLesson[] = [
       'W przypadku guzów nieoperacyjnych lub niecałkowicie zrespektowanych makrogruczolaków NFPA wykazujących tendencję do wznowy w sąsiedztwie zatoki jamistej metodą z wyboru zapobiegającą dalszemu wzrostowi jest precyzyjna radioterapia stereotaktyczna (np. Gamma Knife lub CyberKnife), która zatrzymuje proliferację u ponad 90% chorych.',
     summary:
       'Gruczolaki nieczynne (NFPA) ujawniają się objawami masy (ubytki wzroku, bóle głowy, niedoczynność przysadki z ucisku). Leczeniem z wyboru w przypadku ucisku na skrzyżowanie wzrokowe jest operacja przezklinowa; bezobjawowe mikrogruczolaki wymagają jedynie bezpiecznego nadzoru.',
-    sourceIds: ['freda'],
+    sourceIds: ['freda', 'pituitary_incidentaloma_2025'],
     questions: [
       q(
         'Jakie jest bezwzględne wskazanie do operacji neurochirurgicznej u pacjenta z gruczolakiem nieczynnym hormonalnie (NFPA)?',

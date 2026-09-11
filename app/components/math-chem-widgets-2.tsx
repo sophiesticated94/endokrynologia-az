@@ -131,38 +131,39 @@ export function SteroidogenesisP450Visualizer() {
 // 3. CASR RELATIVE HILL SIGMOIDAL SUPPRESSION CURVE
 // ============================================================================
 export function CasrSigmoidalCurve() {
-  const [ionizedCa, setIonizedCa] = useState(1.22); // mmol/l
+  const [caRatio, setCaRatio] = useState(1.00); // Ca / Set-point (0.75 do 1.25)
   const [casrMode, setCasrMode] = useState<'normal' | 'fhh' | 'cinacalcet' | 'adenoma'>('normal');
 
   // Względna sekrecja PTH w % wartości maksymalnej (0–100%)
-  // W autonomizacji (gruczolak) minimalna supresja jest upośledzona (podwyższone plateau dolne)
   const relativeMax = 100;
   const relativeMin = casrMode === 'adenoma' ? 35 : 5;
   const nH = 3.8; // Współczynnik Hilla (wysoka kooperatywność oligomeru CaSR)
-  const ec50 = casrMode === 'fhh' ? 1.38 : casrMode === 'cinacalcet' ? 1.12 : 1.21; // mmol/l (orientacyjny set-point)
+  const shift = casrMode === 'fhh' ? 1.15 : casrMode === 'cinacalcet' ? 0.88 : casrMode === 'adenoma' ? 1.05 : 1.00;
 
   // Obliczenie względnej sekrecji PTH (% maksimum)
   const relativePthPct = useMemo(() => {
-    const ratio = Math.pow(ionizedCa / ec50, nH);
+    const effectiveRatio = caRatio / shift;
+    const ratio = Math.pow(effectiveRatio, nH);
     const pth = relativeMin + (relativeMax - relativeMin) / (1 + ratio);
     return Math.round(pth * 10) / 10;
-  }, [ionizedCa, ec50, relativeMin, relativeMax, nH]);
+  }, [caRatio, shift, relativeMin, relativeMax, nH]);
 
   // Generowanie punktów krzywej Hilla (0–100%)
   const curvePoints = useMemo(() => {
-    const pts: { ca: number; pth: number }[] = [];
-    for (let c = 0.8; c <= 1.7; c += 0.02) {
-      const ratio = Math.pow(c / ec50, nH);
+    const pts: { r: number; pth: number }[] = [];
+    for (let r = 0.75; r <= 1.25; r += 0.01) {
+      const effectiveRatio = r / shift;
+      const ratio = Math.pow(effectiveRatio, nH);
       const val = relativeMin + (relativeMax - relativeMin) / (1 + ratio);
-      pts.push({ ca: Math.round(c * 100) / 100, pth: Math.round(val * 10) / 10 });
+      pts.push({ r: Math.round(r * 100) / 100, pth: Math.round(val * 10) / 10 });
     }
     return pts;
-  }, [ec50, relativeMin, relativeMax, nH]);
+  }, [shift, relativeMin, relativeMax, nH]);
 
   const modeDescriptions = {
-    normal: 'Fizjologiczny model odniesienia: stromy spadek sekrecji PTH w wąskim zakresie normokalcemii.',
+    normal: 'Fizjologiczny model odniesienia: stroma supresja sekrecji PTH wokół set-pointu (1,00).',
     fhh: 'Mutacja inaktywująca CaSR / FHH: przesunięcie krzywej w prawo (oporność na wapń zjonizowany, obniżona czułość receptora).',
-    cinacalcet: 'Kalcymimetyk (cynakalcet): allosteryczna sensytyzacja receptora, przesunięcie krzywej w lewo (zwiększona wrażliwość na Ca²⁺).',
+    cinacalcet: 'Kalcymimetyk (cynakalcet): allosteryczna sensytyzacja receptora, przesunięcie krzywej w lewo (supresja przy niższym Ca).',
     adenoma: 'Rozrost przytarczyc / gruczolak PHPT: zaburzenie supresji minimalnej (podwyższona niesupresyjna sekrecja bazowa, autonomizacja).',
   };
 
@@ -173,7 +174,7 @@ export function CasrSigmoidalCurve() {
         <h4 style={{ margin: 0, fontSize: '15px' }}>Biofizyczny Model Supresji PTH przez CaSR (Względna Krzywa Hilla)</h4>
       </div>
       <p style={{ fontSize: '12px', color: '#475569', margin: '0 0 14px' }}>
-        Krzywa ilustruje względną dynamikę supresji wydzielania PTH (0–100% maksimum). Indywidualny set-point i stężenia bezwzględne PTH różnią się w zależności od pacjenta, masy tkanki przytarczycowej i gospodarki witaminą D.
+        Krzywa ilustruje względną dynamikę supresji wydzielania PTH (0–100% maksimum) w funkcji stosunku Ca / Set-point. Indywidualny set-point i stężenia bezwzględne PTH różnią się w zależności od pacjenta, masy tkanki przytarczycowej i gospodarki witaminą D.
       </p>
 
       <div style={{ display: 'flex', gap: '6px', marginBottom: '14px', flexWrap: 'wrap' }}>
@@ -193,10 +194,10 @@ export function CasrSigmoidalCurve() {
 
       <div style={{ marginBottom: '14px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', marginBottom: '4px' }}>
-          <span>Wapń zjonizowany w surowicy (Ca²⁺)</span>
-          <strong>{ionizedCa.toFixed(2)} mmol/l (Norma: 1.15 – 1.32)</strong>
+          <span>Względne stężenie wapnia (Ca / Set-point)</span>
+          <strong>{caRatio.toFixed(2)} × Set-point</strong>
         </div>
-        <input type="range" min="0.85" max="1.65" step="0.01" value={ionizedCa} onChange={e => setIonizedCa(Number(e.target.value))} style={{ width: '100%' }} />
+        <input type="range" min="0.75" max="1.25" step="0.01" value={caRatio} onChange={e => setCaRatio(Number(e.target.value))} style={{ width: '100%' }} />
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '10px', marginBottom: '14px' }}>
@@ -208,34 +209,25 @@ export function CasrSigmoidalCurve() {
         </div>
 
         <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '10px' }}>
-          <small style={{ fontSize: '11px', color: '#64748b' }}>Orientacyjny set-point (EC50)</small>
+          <small style={{ fontSize: '11px', color: '#64748b' }}>Względny Set-point profilu</small>
           <div style={{ fontSize: '20px', fontWeight: 'bold', color: '#0f172a' }}>
-            ~{ec50} <span style={{ fontSize: '11px', fontWeight: 400 }}>mmol/l</span>
+            {shift.toFixed(2)} <span style={{ fontSize: '11px', fontWeight: 400 }}>× ref</span>
           </div>
         </div>
       </div>
 
       {/* SVG Wykres Sigmoidy */}
       <svg viewBox="0 0 540 140" style={{ width: '100%', height: 'auto', background: '#fff', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-        {/* Zakres normy wapnia zjonizowanego */}
-        <rect
-          x={40 + ((1.15 - 0.8) / 0.9) * 470}
-          y="15"
-          width={((1.32 - 1.15) / 0.9) * 470}
-          height="100"
-          fill="#f0fdf4"
-          opacity="0.8"
-        />
         <line x1="40" y1="115" x2="510" y2="115" stroke="#94a3b8" strokeWidth="1.5" />
         <line x1="40" y1="15" x2="40" y2="115" stroke="#94a3b8" strokeWidth="1.5" />
-        <text x="270" y="132" textAnchor="middle" fontSize="10" fill="#64748b">Wapń zjonizowany Ca²⁺ (mmol/l) ⟶</text>
+        <text x="270" y="132" textAnchor="middle" fontSize="10" fill="#64748b">Względne stężenie Ca (Ca / Set-point) ⟶</text>
         <text x="35" y="20" textAnchor="end" fontSize="9" fill="#64748b">100%</text>
         <text x="35" y="115" textAnchor="end" fontSize="9" fill="#64748b">0%</text>
 
         {/* Krzywa Hilla */}
         <path
           d={curvePoints.reduce((acc, p, i) => {
-            const x = 40 + ((p.ca - 0.8) / 0.9) * 470;
+            const x = 40 + ((p.r - 0.75) / 0.50) * 470;
             const y = 115 - (p.pth / 100) * 95;
             return `${acc} ${i === 0 ? 'M' : 'L'} ${x} ${y}`;
           }, '')}
@@ -245,7 +237,7 @@ export function CasrSigmoidalCurve() {
         />
 
         {/* Aktualny punkt pacjenta */}
-        <circle cx={40 + ((ionizedCa - 0.8) / 0.9) * 470} cy={115 - (relativePthPct / 100) * 95} r="6" fill="#dc2626" stroke="#fff" strokeWidth="2" />
+        <circle cx={40 + ((caRatio - 0.75) / 0.50) * 470} cy={115 - (relativePthPct / 100) * 95} r="6" fill="#dc2626" stroke="#fff" strokeWidth="2" />
       </svg>
 
       <div style={{ marginTop: '10px', fontSize: '11px', color: '#475569', background: '#f1f5f9', padding: '8px 12px', borderRadius: '6px' }}>
@@ -336,7 +328,7 @@ export function BoneMineralizationKinetics() {
         <div style={{ background: '#fff', border: '1px solid #fee2e2', borderRadius: '8px', padding: '12px' }}>
           <div style={{ fontSize: '11px', color: '#991b1b', fontWeight: 'bold' }}>Zespół Głodnych Kości (HBS)</div>
           <div style={{ fontSize: '13px', fontWeight: 'bold', color: preopAlp > 250 ? '#b45309' : '#0f172a' }}>
-            {preopAlp > 300 ? 'Podwyższone ryzyko obrotu kostnego' : 'Niskie ryzyko wg samej ALP'}
+            {preopAlp > 300 ? 'Podwyższone ryzyko obrotu kostnego' : 'ALP w normie — nie wskazuje na przyspieszony obrót, ale sama ALP nie pozwala wykluczyć ryzyka HBS'}
           </div>
           <div style={{ fontSize: '10px', color: '#4b5563' }}>
             Ocena wieloczynnikowa: przedop. PTH, Ca, masa gruczolaka, osteitis fibrosa cystica, wiek i ALP

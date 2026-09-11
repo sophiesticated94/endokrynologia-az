@@ -9,84 +9,96 @@ import { Sliders, Activity, Sparkles, ArrowRight, ShieldAlert, CheckCircle2 } fr
 export function T4TwoCompartmentChart(){return <AccumulationChart/>;}
 
 export function DeiodinaseCatalyticCycle() {
-  const [step, setStep] = useState(1);
+  const [selectedCol, setSelectedCol] = useState<'core' | 'dio1' | 'dio2'>('core');
 
-  const stepDetails = [
-    {
-      title: 'Etap 1: Wiązanie substratu T4 w centrum aktywnym',
-      mechanism: 'Reszta selenocysteiny (Sec, U) posiada grupę selenolanową (-Se^-) o pKa = 5,2 (zjonizowana w pH 7,4).',
-      formula: 'Enzym-[Se^-] + Tyroksyna (T4) ⟶ Kompleks Enzym-Substrat [E-Se^- · T4]',
-      badge: 'Jonizacja Sec w pH fizjologicznym',
+  const columns = {
+    core: {
+      title: '1. Wspólny Rdzeń Katalityczny (Sec, U)',
+      status: 'USTALONE',
+      statusColor: '#16a34a',
+      statusBg: '#f0fdf4',
+      statusBorder: '#bbf7d0',
+      chemistry: 'Reszta selenocysteiny (Sec, pKa = 5,2) w pH 7,4 występuje niemal w 100% jako wysoce nukleofilowy selenolan (-Se⁻).',
+      cycle: 'E-Se⁻ + T4 ⟶ [E-Se⁻ · T4] ⟶ E-[Se-I] + T3 (odszczepienie jodu 5\').',
+      clinicalRole: 'Zarówno DIO1, jak i DIO2 wymagają selenu do syntezy aktywnego T3; zwykła cysteina (pKa 8,3) nie zapewnia dostatecznej szybkości reakcji.',
     },
-    {
-      title: 'Etap 2: Atak nukleofilowy i odszczepienie jodu 5\'',
-      mechanism: 'Selenolan atakuje atom jodu w pozycji 5\' pierścienia zewnętrznego, odrywając jon jodkowy i tworząc aktywną T3.',
-      formula: '[E-Se^- · T4] ⟶ E-[Se-I] (monojodoselenek) + 3,5,3\'-Trójjodotyronina (T3)',
-      badge: 'Konwersja prohormonu T4 do aktywnego T3',
+    dio1: {
+      title: '2. DIO1: Szlak wątrobowo-nerkowy (GSH)',
+      status: 'USTALONY MECHANIZM',
+      statusColor: '#0284c7',
+      statusBg: '#f0f9ff',
+      statusBorder: '#bae6fd',
+      chemistry: 'Redukcja przejściowego adduktu E-[Se-I] zachodzi z udziałem glutationu (GSH) poprzez selenenylosulfid (E-Se-SG).',
+      cycle: 'E-[Se-I] + GSH ⟶ E-Se-SG + I⁻ + H⁺ ; E-Se-SG + GSH ⟶ E-Se⁻ + GSSG + H⁺.',
+      clinicalRole: 'Kluczowa dla obwodowej puli krążącego T3. Silnie hamowana przez propylotiouracyl (PTU), który kowalencyjnie blokuje przejściowy stan E-[Se-I].',
     },
-    {
-      title: 'Etap 3: Redukcja tiolowa i regeneracja enzymu',
-      mechanism: 'Zredukowany glutation (GSH) lub tioredoksyna rozrywa wiązanie Se-I, uwalniając jod i regenerując aktywny selenolan.',
-      formula: 'E-[Se-I] + 2 R-SH (tioredoksyna) ⟶ E-[Se^-] + I^- + R-S-S-R + 2 H^+',
-      badge: 'Zależność od reduktorów komórkowych',
+    dio2: {
+      title: '3. DIO2: Szlak tkankowy (Mózg, Przysadka)',
+      status: 'NIEROZSTRZYGNIĘTY REDUKTOR / UBIKWITYNACJA',
+      statusColor: '#d97706',
+      statusBg: '#fffbeb',
+      statusBorder: '#fde68a',
+      chemistry: 'Endogenny reduktor fizjologiczny pozostaje nierozstrzygnięty (w in vitro działa DTT; in vivo proces jest niezależny od puli GSH).',
+      cycle: 'Substrat T4 przyspiesza ubikwitynację DIO2 przez ligazę WSB-1 ⟶ degradacja w proteasomie 26S.',
+      clinicalRole: 'Lokalna wewnątrzkomórkowa generacja T3 w przysadce (sprzężenie TSH) i OUN. Niewrażliwa na PTU w dawkach terapeutycznych. Podlega inaktywacji substratowej.',
     },
-  ];
-
-  const current = stepDetails[step - 1];
+  };
 
   return (
     <div style={{ background: '#fcfaf8', border: '1px solid #e7d8c9', borderRadius: '12px', padding: '18px', margin: '20px 0' }}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
         <div>
           <span style={{ fontSize: '11px', fontWeight: 700, color: '#9a3412', letterSpacing: '0.05em' }}>
-            CHEMIA ENZYMÓW SELENOWYCH
+            CHEMIA ENZYMÓW SELENOWYCH I PATOMARKERY
           </span>
           <h4 style={{ margin: '2px 0 0', fontSize: '15px', color: '#431407' }}>
-            Cykl katalityczny dejodynaz (DIO1/DIO2): Centrum selenocysteiny (Sec, U)
+            Trójkolumnowa architektura dejodynaz: Wspólny rdzeń Sec vs DIO1 vs DIO2
           </h4>
         </div>
-        <div style={{ display: 'flex', gap: '6px' }}>
-          {[1, 2, 3].map(s => (
-            <button
-              key={s}
-              type="button"
-              onClick={() => setStep(s)}
+      </div>
+
+      {/* Wybór kolumny lub podgląd trójkolumnowy */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '12px', marginBottom: '14px' }}>
+        {(['core', 'dio1', 'dio2'] as const).map(key => {
+          const col = columns[key];
+          const isSelected = selectedCol === key;
+          return (
+            <div
+              key={key}
+              onClick={() => setSelectedCol(key)}
               style={{
-                padding: '4px 10px',
-                borderRadius: '6px',
-                border: '1px solid',
-                borderColor: step === s ? '#c2410c' : '#fed7aa',
-                background: step === s ? '#c2410c' : '#fff',
-                color: step === s ? '#fff' : '#7c2d12',
-                fontWeight: 600,
-                fontSize: '12px',
+                background: isSelected ? '#fff' : '#faf7f5',
+                border: isSelected ? `2px solid ${col.statusColor}` : '1px solid #e2e8f0',
+                borderRadius: '8px',
+                padding: '12px',
                 cursor: 'pointer',
+                transition: 'all 0.15s ease',
               }}
             >
-              Krok {s}
-            </button>
-          ))}
-        </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+                <span style={{ fontSize: '9px', fontWeight: 800, color: col.statusColor, background: col.statusBg, border: `1px solid ${col.statusBorder}`, padding: '2px 6px', borderRadius: '4px' }}>
+                  {col.status}
+                </span>
+              </div>
+              <strong style={{ fontSize: '12px', color: '#1e293b', display: 'block', marginBottom: '4px' }}>
+                {col.title}
+              </strong>
+              <p style={{ fontSize: '11px', color: '#475569', margin: '0 0 8px', lineHeight: 1.4 }}>
+                {col.chemistry}
+              </p>
+              <div style={{ fontFamily: 'monospace', fontSize: '10px', background: '#f8fafc', padding: '6px 8px', borderRadius: '4px', color: '#334155', border: '1px solid #e2e8f0', marginBottom: '6px' }}>
+                {col.cycle}
+              </div>
+              <div style={{ fontSize: '10px', color: '#64748b' }}>
+                <strong>Aspekt kliniczny:</strong> {col.clinicalRole}
+              </div>
+            </div>
+          );
+        })}
       </div>
 
-      <div style={{ background: '#fff', border: '1px solid #fed7aa', borderRadius: '8px', padding: '14px', marginBottom: '12px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-          <span style={{ fontSize: '12px', fontWeight: 700, color: '#c2410c', background: '#ffedd5', padding: '2px 8px', borderRadius: '4px' }}>
-            {current.badge}
-          </span>
-          <strong style={{ fontSize: '14px', color: '#431407' }}>{current.title}</strong>
-        </div>
-        <p style={{ margin: '4px 0 10px', fontSize: '13px', color: '#7c2d12', lineHeight: '1.45' }}>
-          {current.mechanism}
-        </p>
-
-        <div style={{ fontFamily: 'monospace', fontSize: '13px', background: '#fff7ed', border: '1px solid #ffedd5', padding: '8px 12px', borderRadius: '6px', color: '#9a3412', fontWeight: 600 }}>
-          {current.formula}
-        </div>
-      </div>
-
-      <div style={{ fontSize: '12px', color: '#78350f', background: '#fef3c7', padding: '8px 12px', borderRadius: '6px', lineHeight: '1.4' }}>
-        <strong>Dlaczego selen, a nie siarka?</strong> Selenocysteina (Sec) ma pKa = 5,2, dzięki czemu w fizjologicznym pH 7,4 niemal 100% enzymu występuje w reaktywnej formie anionu selenolanowego (-Se^-). Zwykła cysteina (pKa = 8,3) w pH 7,4 jest w 90% sprotonowana i niezdolna do tak szybkiego nukleofilowego ataku na atom jodu.
+      <div style={{ fontSize: '11px', color: '#78350f', background: '#fef3c7', padding: '10px 14px', borderRadius: '6px', lineHeight: '1.45' }}>
+        <strong>Zróżnicowanie izoenzymów:</strong> Podczas gdy nukleofilowy atak selenolanu (Sec, U) stanowi wspólny mechanizm katalityczny, odmienny los związku pośredniego E-[Se-I] decyduje o farmakologii: DIO1 tworzy addukt selenenylosulfidowy z glutationem (podatny na zablokowanie przez PTU), podczas gdy DIO2 nie zależy od GSH in vivo i podlega ścisłej regulacji potranslacyjnej przez ubikwitynację proteasomalną (WSB-1).
       </div>
     </div>
   );

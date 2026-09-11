@@ -59,10 +59,10 @@ export const diabetesSources: Record<string, Source> = {
   },
   gdm_guidelines: {
     id: 'gdm_guidelines',
-    title: 'Integrating nutrition and mental health screening, risk assessment, and management in gestational diabetes mellitus',
-    year: '2023',
-    url: 'https://doi.org/10.1002/ijgo.14728',
-    kind: 'Wytyczne położnicze',
+    title: 'The International Federation of Gynecology and Obstetrics (FIGO) Initiative on gestational diabetes mellitus: A pragmatic guide for diagnosis, management, and care',
+    year: '2015',
+    url: 'https://doi.org/10.1016/S0020-7292(15)30007-2',
+    kind: 'Wytyczne położnicze (FIGO)',
   },
   bergman_model: {
     id: 'bergman_model',
