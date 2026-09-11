@@ -22,7 +22,7 @@ export const draftDiabetesPart2: DraftLesson[] = [
       },
       {
         title: 'Algorytm resuscytacji: płyny, potas i insulina',
-        text: 'Postępowanie opiera się na 4 filarach: 1) Płynoterapia: przetoczenie 1000 ml 0,9% NaCl w 1. godzinie, następnie 250–500 ml/h krystaloidów zbilansowanych (płyn Ringera); deficyt płynowy wynosi 5–8 litrów (ok. 100 ml/kg); 2) Wlew insuliny: dożylny wlew insuliny krótko- lub szybkodziałającej 0,1 j./kg/h (lub bolus 0,1 j./kg i wlew 0,1 j./kg/h); 3) Potas: ŻELAZNA ZASADA — NIE włączaj insuliny, jeśli K+ < 3,3 mmol/l (insulina wpycha K+ do komórek i grozi zgonem z zatrzymania krążenia!); 4) Włączenie 5% glukozy, gdy glikemia spadnie < 200–250 mg/dl, aby umożliwić dalszy wlew insuliny aż do zamknięcia luki anionowej.',
+        text: 'Postępowanie opiera się na 4 filarach: 1) Płynoterapia: przetoczenie 1000 ml 0,9% NaCl w 1. godzinie, następnie 250–500 ml/h krystaloidów zbilansowanych (płyn Ringera); deficyt płynowy wynosi 5–8 litrów (ok. 100 ml/kg); 2) Wlew insuliny: dożylny wlew insuliny krótko- lub szybkodziałającej 0,1 j./kg/h (lub bolus 0,1 j./kg i wlew 0,1 j./kg/h); 3) Potas: ŻELAZNA ZASADA — NIE włączaj insuliny, jeśli K+ < 3,3 mmol/l (insulina wpycha K+ do komórek i grozi zgonem z zatrzymania krążenia!); 4) Włączenie 5% glukozy, gdy glikemia spadnie < 200–250 mg/dl, aby umożliwić dalszy wlew insuliny aż do ustąpienia kwasicy i spadku beta-hydroksymaślanu < 0,6 mmol/l (lub pH > 7,30 i HCO3- >= 18 mmol/l).',
       },
     ],
     table: {
@@ -58,7 +58,7 @@ export const draftDiabetesPart2: DraftLesson[] = [
         ['Przedawkowanie metforminy', 'Metformina powoduje kwasicę mleczanową, a nie euglikemiczną ketonową.'],
         ['Nadmierne spożycie soli kuchennej', 'Chlorek sodu może wywołać kwasicę hiperchloremiczną, nie ketonową.']),
       q('Kiedy uznaje się kwasicę ketonową (DKA) za wyleczoną (kryteria ustąpienia DKA)?',
-        ['Glikemia < 200 mg/dl, HCO3- >= 18 mmol/l, pH > 7,30 oraz normalizacja luki anionowej (AG <= 12 mmol/l)', 'Dopiero spełnienie tych kryteriów pozwala na bezpieczne przejście z wlewu dożylnego na podskórną insulinę.'],
+        ['Glikemia < 200 mg/dl, beta-hydroksymaślan < 0,6 mmol/l (lub pH > 7,30 i HCO3- >= 18 mmol/l) oraz powrót łaknienia', 'Wg konsensusu ADA/EASD 2024 i PTD 2025 kryterium ustąpienia to spadek beta-OHB < 0,6 mmol/l (lub pH > 7,30 z HCO3- >= 18) przy glikemii < 200 mg/dl i możliwości przyjmowania posiłków.'],
         ['Gdy glikemia spadnie do 90 mg/dl niezależnie od pH', 'Spadek glikemii następuje znacznie szybciej niż ustąpienie kwasicy metabolicznej.'],
         ['Gdy pacjent przestanie odczuwać pragnienie', 'Subiektywne pragnienie nie jest parametrem laboratoryjnym ustąpienia kwasicy.']),
     ],
@@ -264,7 +264,7 @@ export const draftDiabetesPart2: DraftLesson[] = [
       },
       {
         title: 'Inhibitory SGLT2 (flozyny): rewolucja sercowo-nerkowa',
-        text: 'Flozyny (dapagliflozyna, empagliflozyna, kanagliflozyna) wybiórczo blokują nerkowy kotransporter SGLT2 w początkowym odcinku kanalika bliższego, wywołując wydalanie 70–80 g glukozy z moczem na dobę (glukozuria z utratą ok. 300 kcal/d). Powodują spadek ciśnienia tętniczego, masy ciała i kwasu moczowego. Co kluczowe — radykalnie redukują ryzyko hospitalizacji z powodu niewydolności serca (zarówno HFrEF, jak i HFpEF) oraz spowalniają progresję PChN, niezależnie od stopnia wyrównania glikemii.',
+        text: 'Flozyny (dapagliflozyna, empagliflozyna, kanagliflozyna) wybiórczo blokują nerkowy kotransporter SGLT2 w początkowym odcinku kanalika bliższego, wywołując wydalanie 70–80 g glukozy z moczem na dobę (glukozuria z utratą ok. 300 kcal/d). Powodują spadek ciśnienia tętniczego, masy ciała i kwasu moczowego. Co kluczowe — radykalnie redukują ryzyko hospitalizacji z powodu niewydolności serca (zarówno HFrEF, jak i HFpEF) oraz spowalniają progresję PChN (inicjacja do eGFR >= 20 ml/min/1,73m2 wg KDIGO 2023 / ADA 2026, kontynuacja do dializoterapii), niezależnie od stopnia wyrównania glikemii.',
       },
       {
         title: 'Inkretyny: agoniści receptora GLP-1 i podwójni agoniści GLP-1/GIP',
