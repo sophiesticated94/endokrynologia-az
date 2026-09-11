@@ -208,3 +208,22 @@ test('pituitary glossary contains key neuroendocrine terms with mappings',()=>{
  assert.ok(glossaryMap.get('niedowidzenie połowicze dwuskroniowe'));
 });
 
+test('course map grouping completely covers all lessons in both modules without omissions', () => {
+  const thyroidLessons = lessons.filter(l => l.moduleId === 'tarczyca');
+  const pituitaryLessons = lessons.filter(l => l.moduleId === 'przysadka');
+  assert.equal(thyroidLessons.length, 12);
+  assert.equal(pituitaryLessons.length, 12);
+
+  const thyroidGroups = ['Fundamenty', 'Praktyka kliniczna', 'Sytuacje szczególne'];
+  const coveredThyroid = thyroidGroups.flatMap(g => thyroidLessons.filter(l => l.group === g));
+  assert.equal(coveredThyroid.length, 12, 'All 12 thyroid lessons must belong to thyroid groups');
+
+  const pituitaryGroups = [
+    'Fundamenty',
+    'Gruczolaki i hipersekrecja',
+    'Niedoczynność i gospodarka wodna',
+    'Sytuacje szczególne i chirurgia',
+  ];
+  const coveredPituitary = pituitaryGroups.flatMap(g => pituitaryLessons.filter(l => l.group === g));
+  assert.equal(coveredPituitary.length, 12, 'All 12 pituitary lessons must belong to pituitary groups');
+});

@@ -6,7 +6,7 @@ export const draftPituitaryPart2: DraftLesson[] = [
     moduleId: 'przysadka',
     title: 'Kiedy przysadka gaśnie',
     subtitle: 'Niedoczynność przysadki, zespół Sheehana i żelazna zasada substytucji',
-    group: 'Praktyka kliniczna',
+    group: 'Niedoczynność i gospodarka wodna',
     minutes: 16,
     goals: [
       'Poznasz typową kolejność wypadania osi hormonalnych w powolnym niszczeniu przedniego płata.',
@@ -78,7 +78,7 @@ export const draftPituitaryPart2: DraftLesson[] = [
     moduleId: 'przysadka',
     title: 'Pragnienie nie do ugaszenia',
     subtitle: 'Moczówka prosta, niedobór wazopresyny i test odwodnieniowy',
-    group: 'Praktyka kliniczna',
+    group: 'Niedoczynność i gospodarka wodna',
     minutes: 17,
     goals: [
       'Zrozumiesz patofizjologię moczówki prostej centralnej (brak AVP) i nerkowej (oporność receptora V2).',
@@ -149,7 +149,7 @@ export const draftPituitaryPart2: DraftLesson[] = [
     moduleId: 'przysadka',
     title: 'Zabójczy nadmiar wody',
     subtitle: 'Zespół SIADH, hiponatremia hipoosmotyczna i ryzyko mielinolizy mostu',
-    group: 'Praktyka kliniczna',
+    group: 'Niedoczynność i gospodarka wodna',
     minutes: 18,
     goals: [
       'Opanujesz kryteria rozpoznania zespołu nieadekwatnego wydzielania wazopresyny (SIADH / zespół Schwartz-Barttera).',
@@ -221,7 +221,7 @@ export const draftPituitaryPart2: DraftLesson[] = [
     moduleId: 'przysadka',
     title: 'Nacieczenia i zapalenia',
     subtitle: 'Hipofizyty limfocytowe, powikłania immunoterapii onkologicznej (ICI) i choroby ziarniniakowe',
-    group: 'Sytuacje szczególne',
+    group: 'Sytuacje szczególne i chirurgia',
     minutes: 15,
     goals: [
       'Poznasz autoimmunologiczne zapalenie przysadki (hipofizyt) w ciąży i połogu.',
@@ -293,7 +293,7 @@ export const draftPituitaryPart2: DraftLesson[] = [
     moduleId: 'przysadka',
     title: 'Gdy pęka naczynie w siodle',
     subtitle: 'Apopleksja przysadki, nagłe objawy oczne i pilne leczenie sterydami',
-    group: 'Sytuacje szczególne',
+    group: 'Sytuacje szczególne i chirurgia',
     minutes: 16,
     goals: [
       'Rozpoznasz triadę objawów udaru przysadki (apopleksji): nagły piorunujący ból głowy, zaburzenia widzenia i oftalmoplegia.',
@@ -365,7 +365,7 @@ export const draftPituitaryPart2: DraftLesson[] = [
     moduleId: 'przysadka',
     title: 'Dojście przez zatokę klinową',
     subtitle: 'Neurochirurgia przezklinowa, trójfazowa odpowiedź wazopresynowa i opieka pooperacyjna',
-    group: 'Sytuacje szczególne',
+    group: 'Sytuacje szczególne i chirurgia',
     minutes: 16,
     goals: [
       'Zrozumiesz zasady operacji przez zatokę klinową (dostęp transsphenoidalny — endoskopowy / mikroskopowy).',

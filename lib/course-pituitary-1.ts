@@ -150,7 +150,7 @@ export const draftPituitaryPart1: DraftLesson[] = [
     moduleId: 'przysadka',
     title: 'Mlekotok, niepłodność i dopamina',
     subtitle: 'Prolactinoma, pułapka makroprolaktyny i leczenie kabergoliną',
-    group: 'Praktyka kliniczna',
+    group: 'Gruczolaki i hipersekrecja',
     minutes: 16,
     goals: [
       'Rozpoznasz objawy prolactinoma u kobiet i mężczyzn oraz zróżnicujesz guz prolaktynowy z hiperprolaktynemią czynnościową i polekową.',
@@ -220,9 +220,9 @@ export const draftPituitaryPart1: DraftLesson[] = [
   {
     id: 'akromegalia',
     moduleId: 'przysadka',
-    title: 'Gdy organizm nie przestaje rosnąć',
-    subtitle: 'Akromegalia, IGF-1, doustny test obciążenia glukozą i analogi somatostatyny',
-    group: 'Praktyka kliniczna',
+    title: 'Gdy dłonie i rysy twarzy stają się obce',
+    subtitle: 'Akromegalia, IGF-1, test OGTT dla GH i analogi somatostatyny',
+    group: 'Gruczolaki i hipersekrecja',
     minutes: 17,
     goals: [
       'Rozpoznasz podstępne objawy akromegalii (rozrost tkanek miękkich, bezdech senny, cukrzyca, kardiomiopatia).',
@@ -294,7 +294,7 @@ export const draftPituitaryPart1: DraftLesson[] = [
     moduleId: 'przysadka',
     title: 'Podstępny nadmiar kortyzolu',
     subtitle: 'Choroba Cushinga, gruczolaki kortykotropowe i różnicowanie hiperkortyzolemii',
-    group: 'Praktyka kliniczna',
+    group: 'Gruczolaki i hipersekrecja',
     minutes: 18,
     goals: [
       'Rozróżnisz pojęcie zespołu Cushinga (każdy nadmiar kortyzolu) od choroby Cushinga (gruczolak przysadki wydzielający ACTH).',
@@ -366,7 +366,7 @@ export const draftPituitaryPart1: DraftLesson[] = [
     moduleId: 'przysadka',
     title: 'Cisi lokatorzy siodła',
     subtitle: 'Gruczolaki nieczynne hormonalnie (NFPA), incydentaloma i wskazania neurochirurgiczne',
-    group: 'Praktyka kliniczna',
+    group: 'Gruczolaki i hipersekrecja',
     minutes: 14,
     goals: [
       'Zdefiniujesz pojęcie guza nieczynnego hormonalnie (NFPA) oraz incydentaloma przysadki.',

@@ -192,7 +192,7 @@ export function Dashboard({
             <small>Przypadki ukończone</small>
             <strong>
               {new Set(state.attempts.filter(a => a.kind === 'case').map(a => a.target_id)).size}
-              <span> / 12</span>
+              <span> / {cases.length}</span>
             </strong>
           </div>
           <ArrowUpRight size={19} />
@@ -202,18 +202,25 @@ export function Dashboard({
       <div className="dashboard-columns">
         <section>
           <div className="section-heading">
-            <h2>Twój następny krok</h2>
+            <div>
+              <h2>Twój następny krok</h2>
+              <small style={{ color: '#687771', display: 'block', marginTop: '2px' }}>
+                Kolejne 3 lekcje w kolejce · Pełny program liczy {lessons.length} lekcji
+              </small>
+            </div>
             <button className="text-button" onClick={() => go('course')}>
-              Cały program
+              Cały program ({lessons.length})
               <ArrowRight size={16} />
             </button>
           </div>
           <div className="lesson-list">
-            {lessons
-              .slice(Math.min(lessons.indexOf(next), 9), Math.min(lessons.indexOf(next), 9) + 3)
-              .map(l => (
+            {(() => {
+              const nextIdx = Math.max(0, lessons.indexOf(next));
+              const startIdx = Math.min(nextIdx, Math.max(0, lessons.length - 3));
+              return lessons.slice(startIdx, startIdx + 3).map(l => (
                 <LessonRow key={l.id} lesson={l} state={state} go={go} />
-              ))}
+              ));
+            })()}
           </div>
         </section>
 
@@ -282,20 +289,28 @@ export function CourseMap({ state, go }: { state: LearningState; go: Navigation 
             <span className="badge">DOSTĘPNY</span>
           </section>
 
-          {['Fundamenty', 'Praktyka kliniczna', 'Sytuacje szczególne'].map(group => {
-            const groupLessons = lessons.filter(l => l.moduleId === 'tarczyca' && l.group === group);
-            if (!groupLessons.length) return null;
-            return (
-              <section key={`t-${group}`} className="course-group">
-                <h3>{group}</h3>
-                <div className="lesson-list">
-                  {groupLessons.map(l => (
-                    <LessonRow key={l.id} lesson={l} state={state} go={go} />
-                  ))}
-                </div>
-              </section>
-            );
-          })}
+          {(() => {
+            const preferred = ['Fundamenty', 'Praktyka kliniczna', 'Sytuacje szczególne'];
+            const actual = Array.from(new Set(lessons.filter(l => l.moduleId === 'tarczyca').map(l => l.group)));
+            const allGroups = [
+              ...preferred.filter(g => actual.includes(g)),
+              ...actual.filter(g => !preferred.includes(g)),
+            ];
+            return allGroups.map(group => {
+              const groupLessons = lessons.filter(l => l.moduleId === 'tarczyca' && l.group === group);
+              if (!groupLessons.length) return null;
+              return (
+                <section key={`t-${group}`} className="course-group">
+                  <h3>{group}</h3>
+                  <div className="lesson-list">
+                    {groupLessons.map(l => (
+                      <LessonRow key={l.id} lesson={l} state={state} go={go} />
+                    ))}
+                  </div>
+                </section>
+              );
+            });
+          })()}
         </div>
       )}
 
@@ -311,20 +326,33 @@ export function CourseMap({ state, go }: { state: LearningState; go: Navigation 
             <span className="badge" style={{ color: '#255b85', borderColor: '#adc8dd', background: '#ffffffcc' }}>DOSTĘPNY</span>
           </section>
 
-          {['Fundamenty', 'Gruczolaki i hipersekrecja', 'Niedoczynność i gospodarka wodna', 'Sytuacje szczególne i chirurgia'].map(group => {
-            const groupLessons = lessons.filter(l => l.moduleId === 'przysadka' && l.group === group);
-            if (!groupLessons.length) return null;
-            return (
-              <section key={`p-${group}`} className="course-group">
-                <h3>{group}</h3>
-                <div className="lesson-list">
-                  {groupLessons.map(l => (
-                    <LessonRow key={l.id} lesson={l} state={state} go={go} />
-                  ))}
-                </div>
-              </section>
-            );
-          })}
+          {(() => {
+            const preferred = [
+              'Fundamenty',
+              'Gruczolaki i hipersekrecja',
+              'Niedoczynność i gospodarka wodna',
+              'Sytuacje szczególne i chirurgia',
+            ];
+            const actual = Array.from(new Set(lessons.filter(l => l.moduleId === 'przysadka').map(l => l.group)));
+            const allGroups = [
+              ...preferred.filter(g => actual.includes(g)),
+              ...actual.filter(g => !preferred.includes(g)),
+            ];
+            return allGroups.map(group => {
+              const groupLessons = lessons.filter(l => l.moduleId === 'przysadka' && l.group === group);
+              if (!groupLessons.length) return null;
+              return (
+                <section key={`p-${group}`} className="course-group">
+                  <h3>{group}</h3>
+                  <div className="lesson-list">
+                    {groupLessons.map(l => (
+                      <LessonRow key={l.id} lesson={l} state={state} go={go} />
+                    ))}
+                  </div>
+                </section>
+              );
+            });
+          })()}
         </div>
       )}
 
