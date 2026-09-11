@@ -11,9 +11,31 @@ import { draftAdrenalPart2 } from './course-adrenal-2.ts';
 import { parathyroidSources } from './course-parathyroid-sources.ts';
 import { draftParathyroidPart1 } from './course-parathyroid-1.ts';
 import { draftParathyroidPart2 } from './course-parathyroid-2.ts';
+import { thyroidMathChemSources, draftThyroidMathChem } from './course-thyroid-math-chem.ts';
+import { pituitaryMathChemSources, draftPituitaryMathChem } from './course-pituitary-math-chem.ts';
+import { adrenalMathChemSources, draftAdrenalMathChem } from './course-adrenal-math-chem.ts';
+import { parathyroidMathChemSources, draftParathyroidMathChem } from './course-parathyroid-math-chem.ts';
+import { diabetesSources } from './course-diabetes-sources.ts';
+import { draftDiabetesPart1 } from './course-diabetes-1.ts';
+import { draftDiabetesPart2 } from './course-diabetes-2.ts';
+import { draftDiabetesMathChem } from './course-diabetes-math-chem.ts';
+import { gonadsSources } from './course-gonads-sources.ts';
+import { draftGonadsPart1 } from './course-gonads-1.ts';
+import { draftGonadsPart2 } from './course-gonads-2.ts';
+import { draftGonadsPart3 } from './course-gonads-3.ts';
+import { draftGonadsPart4 } from './course-gonads-4.ts';
+import { nenSources } from './course-nen-sources.ts';
+import { draftNenPart1 } from './course-nen-1.ts';
+import { draftNenPart2 } from './course-nen-2.ts';
+import { draftNenPart3 } from './course-nen-3.ts';
+import { draftNenPart4 } from './course-nen-4.ts';
+import { otyloscSources } from './course-otylosc-sources.ts';
+import { draftOtyloscPart1 } from './course-otylosc-1.ts';
+import { draftOtyloscPart2 } from './course-otylosc-2.ts';
+import { draftOtyloscPart3 } from './course-otylosc-3.ts';
+import { draftOtyloscPart4 } from './course-otylosc-4.ts';
 
 const thyroidSources: Record<string, Source> = {
-
   physiology:{id:'physiology',title:'Endotext — Thyroid Hormone Synthesis and Secretion',year:'2015',url:'https://www.ncbi.nlm.nih.gov/books/NBK285550/',kind:'Podręcznik: fizjologia'},
   central:{id:'central',title:'ETA — Central Hypothyroidism',year:'2018',url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC6198777/',kind:'Wytyczne'},
   lt4:{id:'lt4',title:'ETA — Levothyroxine preparations in monotherapy',year:'2025',url:'https://pmc.ncbi.nlm.nih.gov/articles/PMC12323320/',kind:'Wytyczne'},
@@ -34,9 +56,17 @@ const thyroidSources: Record<string, Source> = {
 
 export const sources: Record<string, Source> = {
   ...thyroidSources,
+  ...thyroidMathChemSources,
   ...pituitarySources,
+  ...pituitaryMathChemSources,
   ...adrenalSources,
+  ...adrenalMathChemSources,
   ...parathyroidSources,
+  ...parathyroidMathChemSources,
+  ...diabetesSources,
+  ...gonadsSources,
+  ...nenSources,
+  ...otyloscSources,
 };
 
 const draft: DraftLesson[] = [
@@ -165,23 +195,58 @@ q('Czy należy czekać na pełny panel wyników przy niestabilności i podejrzen
 
 const allDrafts: DraftLesson[] = [
   ...draft.map(l => ({ ...l, moduleId: 'tarczyca' as ModuleId })),
+  ...draftThyroidMathChem,
   ...draftPituitaryPart1,
   ...draftPituitaryPart2,
+  ...draftPituitaryMathChem,
   ...draftAdrenalPart1,
   ...draftAdrenalPart2,
+  ...draftAdrenalMathChem,
   ...draftParathyroidPart1.map(l => ({ ...l, moduleId: 'przytarczyce' as ModuleId })),
   ...draftParathyroidPart2.map(l => ({ ...l, moduleId: 'przytarczyce' as ModuleId })),
+  ...draftParathyroidMathChem,
+  ...draftDiabetesPart1.map(l => ({ ...l, moduleId: 'cukrzyca' as ModuleId })),
+  ...draftDiabetesPart2.map(l => ({ ...l, moduleId: 'cukrzyca' as ModuleId })),
+  ...draftDiabetesMathChem.map(l => ({ ...l, moduleId: 'cukrzyca' as ModuleId })),
+  ...draftGonadsPart1.map(l => ({ ...l, moduleId: 'gonady' as ModuleId })),
+  ...draftGonadsPart2.map(l => ({ ...l, moduleId: 'gonady' as ModuleId })),
+  ...draftGonadsPart3.map(l => ({ ...l, moduleId: 'gonady' as ModuleId })),
+  ...draftGonadsPart4.map(l => ({ ...l, moduleId: 'gonady' as ModuleId })),
+  ...draftNenPart1.map(l => ({ ...l, moduleId: 'nen' as ModuleId })),
+  ...draftNenPart2.map(l => ({ ...l, moduleId: 'nen' as ModuleId })),
+  ...draftNenPart3.map(l => ({ ...l, moduleId: 'nen' as ModuleId })),
+  ...draftNenPart4.map(l => ({ ...l, moduleId: 'nen' as ModuleId })),
+  ...draftOtyloscPart1.map(l => ({ ...l, moduleId: 'otylosc' as ModuleId })),
+  ...draftOtyloscPart2.map(l => ({ ...l, moduleId: 'otylosc' as ModuleId })),
+  ...draftOtyloscPart3.map(l => ({ ...l, moduleId: 'otylosc' as ModuleId })),
+  ...draftOtyloscPart4.map(l => ({ ...l, moduleId: 'otylosc' as ModuleId })),
 ];
 
-export const lessons: Lesson[] = allDrafts.map((l, li) => ({
-  ...l,
-  questions: l.questions.map((item, i) => {
-    const answer = (li + i) % 3;
-    const options = item.choices.map(([text, explanation]) => ({ text, explanation }));
-    const rotated = [...options.slice(3 - answer), ...options.slice(0, 3 - answer)];
-    return { id: `${l.id}-q${i + 1}`, lessonId: l.id, prompt: item.prompt, options: rotated, answer };
-  }),
-}));
+export const lessons: Lesson[] = allDrafts.map((l, li) => {
+  const subtitle = l.subtitle || l.title;
+  const minutes = l.minutes || (l.readTime ? parseInt(l.readTime, 10) : 12);
+  const sections = l.sections.map(s => ({
+    title: s.title,
+    text: s.text || s.content || '',
+  }));
+  const table = {
+    headers: l.table.headers,
+    rows: l.table.rows,
+  };
+  return {
+    ...l,
+    subtitle,
+    minutes,
+    sections,
+    table,
+    questions: l.questions.map((item, i) => {
+      const answer = (li + i) % 3;
+      const options = item.choices.map(([text, explanation]) => ({ text, explanation }));
+      const rotated = [...options.slice(3 - answer), ...options.slice(0, 3 - answer)];
+      return { id: `${l.id}-q${i + 1}`, lessonId: l.id, prompt: item.prompt, options: rotated, answer };
+    }),
+  };
+});
 
 export const questions = lessons.flatMap(l => l.questions);
 export const flashcards = questions.map(q => ({
@@ -192,16 +257,18 @@ export const flashcards = questions.map(q => ({
 }));
 
 export const modulesList = [
-  { id: 'tarczyca', name: 'Tarczyca', count: 12, subtitle: 'Fizjologia, Hashimoto, Graves, guzki i stany nagłe' },
-  { id: 'przysadka', name: 'Przysadka i podwzgórze', count: 12, subtitle: 'Gruczolaki, prolactinoma, akromegalia, Cushing, moczówka i SIADH' },
-  { id: 'nadnercza', name: 'Nadnercza', count: 12, subtitle: 'Choroba Addisona, zespół Conna, guz chromochłonny, WPN i przełom nadnerczowy' },
-  { id: 'przytarczyce', name: 'Przytarczyce i Ca–P', count: 12, subtitle: 'Gospodarka wapniowo-fosforanowa, tężyczka, przełom hiperkalcemiczny i osteoporoza' },
+  { id: 'tarczyca', name: 'Tarczyca', count: 16, subtitle: 'Fizjologia, Hashimoto, Graves, guzki, stany nagłe, kinetyka T4 i mechanizm TPO' },
+  { id: 'przysadka', name: 'Przysadka i podwzgórze', count: 16, subtitle: 'Gruczolaki, prolactinoma, akromegalia, Cushing, moczówka, oscylatory Goodwina i równanie Edelmana' },
+  { id: 'nadnercza', name: 'Nadnercza', count: 16, subtitle: 'Choroba Addisona, zespół Conna, guz chromochłonny, WPN, kinetyka enzymatyczna i stereochemia' },
+  { id: 'przytarczyce', name: 'Przytarczyce i Ca–P', count: 16, subtitle: 'Gospodarka Ca–P, tężyczka, model Hilla CaSR, kinetyka mineralizacji i bisfosfoniany' },
+  { id: 'cukrzyca', name: 'Cukrzyca i metabolizm', count: 16, subtitle: 'T1D, T2D, MODY, LADA, DKA/HHS, pompy/CGM, model Bergmana i biochemia receptora insuliny' },
+  { id: 'gonady', name: 'Gonady i medycyna rozrodu', count: 20, subtitle: 'Oś HPG, hipogonadyzm, PCOS, MHT, IVF/OHSS, GAHT, DSD, równanie Vermeulena i aromataza' },
+  { id: 'nen', name: 'Nowotwory neuroendokrynne i MEN', count: 20, subtitle: 'GEP-NEN, rakowiak, gastrinoma, insulinoma, MEN1, MEN2, MEN4, VHL, PRRT, CAPTEM i kinet. receptorowa' },
+  { id: 'otylosc', name: 'Otyłość i lipidy', count: 20, subtitle: 'Adipobiologia, GLP-1/GIP, bariatria, MASLD, FH, PCSK9, model Halla i biochemia lipolizy' },
 ] as const;
 
 export const plannedModules = [
-  'Cukrzyca',
-  'Otyłość i metabolizm',
-  'Gonady i rozrodczość',
-  'Endokrynologia rozwojowa',
+  'Endokrynologia rozwojowa i pediatryczna',
+  'Endokrynologia ciąży i połogu',
 ];
 

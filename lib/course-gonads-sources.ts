@@ -1,0 +1,81 @@
+import type { Source } from './course-types.ts';
+
+export const gonadsSources: Record<string, Source> = {
+  'eau-hypogonadism-2024': {
+    id: 'eau-hypogonadism-2024',
+    title: 'EAU Guidelines on Sexual and Reproductive Health: Male Hypogonadism and Infertility',
+    year: '2024',
+    url: 'https://uroweb.org/guidelines/sexual-and-reproductive-health',
+    kind: 'Wytyczne EAU',
+  },
+  'eau-male-hypo-2024': {
+    id: 'eau-male-hypo-2024',
+    title: 'EAU Guidelines on Sexual and Reproductive Health: Male Hypogonadism and Infertility',
+    year: '2024',
+    url: 'https://uroweb.org/guidelines/sexual-and-reproductive-health',
+    kind: 'Wytyczne EAU',
+  },
+  'endo-testosterone-2018': {
+    id: 'endo-testosterone-2018',
+    title: 'Testosterone Therapy in Men With Hypogonadism: An Endocrine Society Clinical Practice Guideline',
+    year: '2018',
+    url: 'https://academic.oup.com/jcem/article/103/5/1715/4939465',
+    kind: 'Wytyczne Endocrine Society',
+  },
+  'pcos-guideline-2023': {
+    id: 'pcos-guideline-2023',
+    title: 'Recommendations from the 2023 International Evidence-based Guideline for the Assessment and Management of PCOS',
+    year: '2023',
+    url: 'https://www.monash.edu/medicine/mchri/pcos/guideline',
+    kind: 'Międzynarodowy Konsensus PCOS',
+  },
+  'eshre-poi-2024': {
+    id: 'eshre-poi-2024',
+    title: 'ESHRE Guideline: Management of Premature Ovarian Insufficiency (POI)',
+    year: '2024',
+    url: 'https://www.eshre.eu/Guidelines-and-Legal/Guidelines/Management-of-POI',
+    kind: 'Wytyczne ESHRE',
+  },
+  'wpath-soc8-2022': {
+    id: 'wpath-soc8-2022',
+    title: 'Standards of Care for the Health of Transgender and Gender Diverse People, Version 8 (SOC-8)',
+    year: '2022',
+    url: 'https://www.tandfonline.com/doi/full/10.1080/26895269.2022.2100644',
+    kind: 'Standardy WPATH',
+  },
+  'endo-trans-2017': {
+    id: 'endo-trans-2017',
+    title: 'Endocrine Treatment of Gender-Dysphoric/Gender-Incongruent Persons: An Endocrine Society Guideline',
+    year: '2017',
+    url: 'https://academic.oup.com/jcem/article/102/11/3869/4157558',
+    kind: 'Wytyczne Endocrine Society',
+  },
+  'who-semen-2021': {
+    id: 'who-semen-2021',
+    title: 'WHO Laboratory Manual for the Examination and Processing of Human Semen, Sixth Edition',
+    year: '2021',
+    url: 'https://www.who.int/publications/i/item/9789240030787',
+    kind: 'Podręcznik laboratoryjny WHO',
+  },
+  'vermeulen-1999': {
+    id: 'vermeulen-1999',
+    title: 'A Critical Evaluation of Simple Methods for the Estimation of Free Testosterone in Serum',
+    year: '1999',
+    url: 'https://academic.oup.com/jcem/article/84/10/3666/2864387',
+    kind: 'Publikacja oryginalna JCEM',
+  },
+  'eshre-art-ohss-2024': {
+    id: 'eshre-art-ohss-2024',
+    title: 'ESHRE Guideline on Ovarian Stimulation for IVF/ICSI and Prevention of OHSS',
+    year: '2024',
+    url: 'https://www.eshre.eu/Guidelines-and-Legal/Guidelines/Ovarian-Stimulation-in-ART',
+    kind: 'Wytyczne ESHRE',
+  },
+  'ptgip-nieplodnosc-2024': {
+    id: 'ptgip-nieplodnosc-2024',
+    title: 'Rekomendacje Polskiego Towarzystwa Ginekologów i Położników w zakresie diagnostyki i leczenia niepłodności',
+    year: '2024',
+    url: 'https://www.ginekologia-i-poloznictwo.pl',
+    kind: 'Rekomendacje PTGiP',
+  },
+};

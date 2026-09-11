@@ -29,6 +29,10 @@ import { HptSimulator } from './hpt-simulator';
 import { PituitarySimulator } from './pituitary-simulator';
 import { AdrenalSimulator } from './adrenal-simulator';
 import { ParathyroidSimulator } from './parathyroid-simulator';
+import { DiabetesSimulator } from './diabetes-simulator';
+import { GonadSimulator } from './gonad-simulator';
+import { NenSimulator } from './nen-simulator';
+import { ObesitySimulator } from './obesity-simulator';
 import { GlossaryView } from './glossary-components';
 
 const navItems = [
@@ -54,7 +58,7 @@ export default function CourseApp() {
   const learning = useLearning();
   const { state, user, configured, loading, saving, pending, error, online } = learning;
   const [route, setRoute] = useState<Route>('home');
-  const [simTab, setSimTab] = useState<'hpt' | 'pituitary' | 'adrenal' | 'parathyroid'>('hpt');
+  const [simTab, setSimTab] = useState<'hpt' | 'pituitary' | 'adrenal' | 'parathyroid' | 'diabetes' | 'gonad' | 'nen' | 'otylosc'>('hpt');
   const routeRef = useRef<Route>('home');
   const [mobile, setMobile] = useState(false);
   const active = useRef(false);
@@ -121,7 +125,9 @@ export default function CourseApp() {
 
   const title =
     route.startsWith('lesson/') || route.startsWith('quiz/')
-      ? lesson?.moduleId === 'przytarczyce'
+      ? lesson?.moduleId === 'cukrzyca'
+        ? 'Moduł 05 / Cukrzyca i metabolizm'
+        : lesson?.moduleId === 'przytarczyce'
         ? 'Moduł 04 / Przytarczyce i Ca–P'
         : lesson?.moduleId === 'nadnercza'
           ? 'Moduł 03 / Nadnercza'
@@ -346,18 +352,42 @@ export default function CourseApp() {
                 >
                   <Activity size={15} /> Moduł 04: Konsola Przytarczycowa (Przytarczyce i Ca–P)
                 </button>
+                <button
+                  className={simTab === 'diabetes' ? 'active' : ''}
+                  onClick={() => setSimTab('diabetes')}
+                >
+                  <Activity size={15} /> Moduł 05: Konsola Diabetologiczna (Cukrzyca, Pompy i CGM)
+                </button>
+                <button
+                  className={simTab === 'gonad' ? 'active' : ''}
+                  onClick={() => setSimTab('gonad')}
+                >
+                  <Activity size={15} /> Moduł 06: Konsola Gonadowa (Gonady i medycyna rozrodu)
+                </button>
+                <button
+                  className={simTab === 'nen' ? 'active' : ''}
+                  onClick={() => setSimTab('nen')}
+                >
+                  <Activity size={15} /> Moduł 07: Konsola Neuroendokrynna (NEN, MEN i PRRT)
+                </button>
+                <button
+                  className={simTab === 'otylosc' ? 'active' : ''}
+                  onClick={() => setSimTab('otylosc')}
+                >
+                  <Activity size={15} /> Moduł 08: Konsola Metaboliczna (Otyłość, Bariatria i Lipidy)
+                </button>
               </div>
-              {simTab === 'hpt' ? (
-                <HptSimulator />
-              ) : simTab === 'pituitary' ? (
-                <PituitarySimulator />
-              ) : simTab === 'adrenal' ? (
-                <AdrenalSimulator />
-              ) : (
-                <ParathyroidSimulator />
-              )}
+              {simTab === 'hpt' && <HptSimulator />}
+              {simTab === 'pituitary' && <PituitarySimulator />}
+              {simTab === 'adrenal' && <AdrenalSimulator />}
+              {simTab === 'parathyroid' && <ParathyroidSimulator />}
+              {simTab === 'diabetes' && <DiabetesSimulator />}
+              {simTab === 'gonad' && <GonadSimulator />}
+              {simTab === 'nen' && <NenSimulator />}
+              {simTab === 'otylosc' && <ObesitySimulator />}
             </div>
           )}
+
           {route === 'glossary' && <GlossaryView go={go} />}
           {route.startsWith('lesson/') && lesson && (
             <LessonView

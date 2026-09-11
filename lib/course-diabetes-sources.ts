@@ -1,0 +1,88 @@
+import type { Source } from './course-types.ts';
+
+export const diabetesSources: Record<string, Source> = {
+  ptd_guidelines: {
+    id: 'ptd_guidelines',
+    title: 'Zalecenia kliniczne dotyczące postępowania u chorych na cukrzycę — Polskie Towarzystwo Diabetologiczne',
+    year: '2025',
+    url: 'https://cukrzyca.info.pl/zalecenia_ptd',
+    kind: 'Polskie wytyczne',
+  },
+  ada_standards: {
+    id: 'ada_standards',
+    title: 'ADA Standards of Care in Diabetes — Diagnosis, Classification and Glycemic Targets',
+    year: '2026',
+    url: 'https://doi.org/10.2337/dc26-S002',
+    kind: 'Wytyczne międzynarodowe',
+  },
+  cgm_consensus: {
+    id: 'cgm_consensus',
+    title: 'Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range',
+    year: '2019',
+    url: 'https://doi.org/10.2337/dci19-0028',
+    kind: 'Konsensus międzynarodowy (ATTD)',
+  },
+  dka_guidelines: {
+    id: 'dka_guidelines',
+    title: 'Joint British Diabetes Societies (JBDS) & ADA Consensus: Management of Diabetic Ketoacidosis and Hyperosmolar Hyperglycaemic State in Adults',
+    year: '2024',
+    url: 'https://doi.org/10.2337/dci23-0085',
+    kind: 'Konsensus stanów nagłych',
+  },
+  t1d_staging: {
+    id: 't1d_staging',
+    title: 'Staging Presymptomatic Type 1 Diabetes: A Scientific Statement of the JDRF, Endocrine Society, and ADA',
+    year: '2015',
+    url: 'https://doi.org/10.2337/dc15-1419',
+    kind: 'Oświadczenie naukowe',
+  },
+  mody_genetics: {
+    id: 'mody_genetics',
+    title: 'Monogenic Diabetes: A Clinical and Molecular Guide to Diagnosis and Precision Therapy',
+    year: '2023',
+    url: 'https://doi.org/10.1016/S2213-8587(23)00045-8',
+    kind: 'Przegląd kliniczny: genetyka',
+  },
+  ckd_diabetes: {
+    id: 'ckd_diabetes',
+    title: 'KDIGO 2023 Clinical Practice Guideline for Diabetes Management in Chronic Kidney Disease',
+    year: '2023',
+    url: 'https://doi.org/10.1016/j.kack.2023.06.002',
+    kind: 'Wytyczne nefrologiczne',
+  },
+  cardiovascular_easd: {
+    id: 'cardiovascular_easd',
+    title: 'ESC Guidelines for the management of cardiovascular disease in patients with diabetes',
+    year: '2023',
+    url: 'https://doi.org/10.1093/eurheartj/ehad192',
+    kind: 'Wytyczne kardiologiczne',
+  },
+  gdm_guidelines: {
+    id: 'gdm_guidelines',
+    title: 'FIGO and Polish Gynecological Society: Management of Gestational Diabetes Mellitus',
+    year: '2023',
+    url: 'https://doi.org/10.1002/ijgo.14728',
+    kind: 'Wytyczne położnicze',
+  },
+  bergman_model: {
+    id: 'bergman_model',
+    title: 'Quantitative Estimation of Insulin Sensitivity and Glucose Clearance: The Minimal Model Approach',
+    year: '1979',
+    url: 'https://doi.org/10.1172/JCI109638',
+    kind: 'Podręcznik / Publikacja źródłowa: biocybernetyka',
+  },
+  insulin_biochem: {
+    id: 'insulin_biochem',
+    title: 'Molecular Mechanisms of Insulin Action and Signal Transduction Through IRS-1 and AS160 to GLUT4',
+    year: '2022',
+    url: 'https://doi.org/10.1152/physrev.00041.2021',
+    kind: 'Przegląd biochemiczny',
+  },
+  ketogenesis_biochem: {
+    id: 'ketogenesis_biochem',
+    title: 'Biochemical Pathways and Regulation of Hepatic Ketogenesis and Ketoacidosis in Diabetes',
+    year: '2021',
+    url: 'https://doi.org/10.1042/BCJ20200898',
+    kind: 'Przegląd biochemiczny',
+  },
+};

@@ -1,6 +1,10 @@
 import { pituitaryGlossary } from './glossary-pituitary.ts';
 import { adrenalGlossary } from './glossary-adrenals.ts';
 import { parathyroidGlossary } from './glossary-parathyroid.ts';
+import { diabetesGlossary } from './glossary-diabetes.ts';
+import { gonadsGlossary } from './glossary-gonads.ts';
+import { nenGlossary } from './glossary-nen.ts';
+import { otyloscGlossary } from './glossary-otylosc.ts';
 
 export type GlossaryCategory = 'hormony' | 'diagnostyka' | 'choroby' | 'leki' | 'anatomia' | 'fizjologia';
 
@@ -212,6 +216,10 @@ export const glossary: GlossaryItem[] = [
   ...pituitaryGlossary,
   ...adrenalGlossary,
   ...parathyroidGlossary,
+  ...diabetesGlossary,
+  ...gonadsGlossary,
+  ...nenGlossary,
+  ...otyloscGlossary,
 ];
 
 export const glossaryMap = new Map<string, GlossaryItem>();

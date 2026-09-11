@@ -2,6 +2,10 @@ import type { Question } from './course.ts';
 import { pituitaryCases } from './cases-pituitary.ts';
 import { adrenalCases } from './cases-adrenals.ts';
 import { parathyroidCases } from './cases-parathyroid.ts';
+import { diabetesCases } from './cases-diabetes.ts';
+import { gonadCases } from './cases-gonads.ts';
+import { nenCases } from './cases-nen.ts';
+import { otyloscCases } from './cases-otylosc.ts';
 type Choice=[string,string];
 type StepDraft=[string,string,Choice,Choice];
 export type ClinicalCase={id:string;lessonId:string;title:string;patient:string;difficulty:'Podstawowy'|'Zaawansowany';intro:string;steps:(Question&{context:string;stage:string})[]};
@@ -75,6 +79,94 @@ export const cases: ClinicalCase[] = [
   ...pituitaryCases,
   ...adrenalCases,
   ...parathyroidCases.map((c): ClinicalCase => {
+    const lessonId = c.lessonId || c.id.replace(/^case-/, '');
+    return {
+      ...c,
+      lessonId,
+      steps: c.steps.map((s, i: number) => {
+        const answer = i % s.options.length;
+        const correct = s.options[0];
+        const wrongs = s.options.slice(1);
+        const options = [...wrongs.slice(0, answer), correct, ...wrongs.slice(answer)];
+        return {
+          id: `${c.id}-${i + 1}`,
+          lessonId,
+          stage: s.stage || ['Objawy', 'Badania', 'Rozpoznanie', 'Postępowanie'][i],
+          context: s.context || '',
+          prompt: s.prompt,
+          answer,
+          options,
+        };
+      }),
+    };
+  }),
+  ...diabetesCases.map((c): ClinicalCase => {
+    const lessonId = c.lessonId || c.id.replace(/^case-/, '');
+    return {
+      ...c,
+      lessonId,
+      steps: c.steps.map((s, i: number) => {
+        const answer = i % s.options.length;
+        const correct = s.options[0];
+        const wrongs = s.options.slice(1);
+        const options = [...wrongs.slice(0, answer), correct, ...wrongs.slice(answer)];
+        return {
+          id: `${c.id}-${i + 1}`,
+          lessonId,
+          stage: s.stage || ['Objawy', 'Badania', 'Rozpoznanie', 'Postępowanie'][i],
+          context: s.context || '',
+          prompt: s.prompt,
+          answer,
+          options,
+        };
+      }),
+    };
+  }),
+  ...gonadCases.map((c): ClinicalCase => {
+    const lessonId = c.lessonId || c.id.replace(/^case-/, '');
+    return {
+      ...c,
+      lessonId,
+      steps: c.steps.map((s, i: number) => {
+        const answer = i % s.options.length;
+        const correct = s.options[0];
+        const wrongs = s.options.slice(1);
+        const options = [...wrongs.slice(0, answer), correct, ...wrongs.slice(answer)];
+        return {
+          id: `${c.id}-${i + 1}`,
+          lessonId,
+          stage: s.stage || ['Objawy', 'Badania', 'Rozpoznanie', 'Postępowanie'][i],
+          context: s.context || '',
+          prompt: s.prompt,
+          answer,
+          options,
+        };
+      }),
+    };
+  }),
+  ...nenCases.map((c): ClinicalCase => {
+    const lessonId = c.lessonId || c.id.replace(/^case-/, '');
+    return {
+      ...c,
+      lessonId,
+      steps: c.steps.map((s, i: number) => {
+        const answer = i % s.options.length;
+        const correct = s.options[0];
+        const wrongs = s.options.slice(1);
+        const options = [...wrongs.slice(0, answer), correct, ...wrongs.slice(answer)];
+        return {
+          id: `${c.id}-${i + 1}`,
+          lessonId,
+          stage: s.stage || ['Objawy', 'Badania', 'Rozpoznanie', 'Postępowanie'][i],
+          context: s.context || '',
+          prompt: s.prompt,
+          answer,
+          options,
+        };
+      }),
+    };
+  }),
+  ...otyloscCases.map((c): ClinicalCase => {
     const lessonId = c.lessonId || c.id.replace(/^case-/, '');
     return {
       ...c,

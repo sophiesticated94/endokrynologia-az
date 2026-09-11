@@ -27,78 +27,8 @@ import {
   pituitarySimulatorLegend,
 } from '../lib/pituitary-simulator.ts';
 
-export function PituitaryLegendModal({ onClose }: { onClose: () => void }) {
-  useEffect(() => {
-    function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === 'Escape') onClose();
-    }
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [onClose]);
-
-  return (
-    <div
-      className="modal-backdrop"
-      onClick={e => {
-        if (e.target === e.currentTarget) onClose();
-      }}
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="pituitary-legend-title"
-    >
-      <div className="hpt-legend-dialog">
-        <div className="legend-dialog-header">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <BookOpen size={20} className="icon-accent" />
-            <h2 id="pituitary-legend-title">Konsola Przysadkowa — Przewodnik kliniczny</h2>
-          </div>
-          <button
-            type="button"
-            className="text-button legend-close-btn"
-            onClick={onClose}
-            aria-label="Zamknij okno przewodnika"
-          >
-            <X size={20} />
-          </button>
-        </div>
-
-        <div className="legend-dialog-content">
-          {pituitarySimulatorLegend.sections.map((section, idx) => (
-            <div key={idx} className="legend-group" style={{ marginBottom: '24px' }}>
-              <h3 style={{ fontSize: '16px', color: 'var(--teal)', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <Layers size={16} /> {section.title}
-              </h3>
-              <div className="legend-cards-grid">
-                {section.items.map((item, itemIdx) => (
-                  <div key={itemIdx} className="legend-card">
-                    <strong>{item.term}</strong>
-                    <p>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-
-          <div className="curriculum-tip" style={{ marginTop: '20px' }}>
-            <Info size={18} />
-            <p>
-              <strong>Złote zasady kliniczne konsoli:</strong>
-              <br />1. W panhipopituitaryzmie podaj hydrokortyzon PRZED lewotyroksyną (zapobieganie przełomowi nadnerczowemu).
-              <br />2. W SIADH tempo wzrostu natremii NIE może przekraczać 8–10 mmol/l/24h (zapobieganie mielinolizie mostu CPM).
-              <br />3. W akromegalii kryterium potwierdzenia to brak supresji GH w teście OGTT 75 g (&lt;1,0 µg/l).
-            </p>
-          </div>
-        </div>
-
-        <div className="legend-dialog-footer">
-          <button type="button" className="primary" onClick={onClose}>
-            Wróć do konsoli <ArrowRight size={15} />
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
+import { PituitaryLegendModal } from './pituitary-simulator-modal';
+import { PituitaryPerimetryView } from './pituitary-perimetry-view';
 
 export function PituitarySimulator({ embedded = false }: { embedded?: boolean }) {
   const [activeMode, setActiveMode] = useState<'axes' | 'dynamic' | 'chiasm'>('axes');
@@ -472,76 +402,8 @@ export function PituitarySimulator({ embedded = false }: { embedded?: boolean })
             </div>
           </div>
 
-          {/* Symulacja pola widzenia (Perymetria obojga oczu) */}
-          <div style={{ background: '#f6f9f8', border: '1px solid #dbe6e0', borderRadius: '8px', padding: '16px', margin: '14px 0' }}>
-            <h4 style={{ margin: '0 0 10px', fontSize: '13px', color: '#355447', display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <Eye size={15} /> Perymetria (Badanie pola widzenia)
-            </h4>
-            <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', alignItems: 'center' }}>
-              {/* Oko lewe */}
-              <div style={{ textAlign: 'center' }}>
-                <div style={{
-                  width: '64px',
-                  height: '64px',
-                  borderRadius: '50%',
-                  background: '#e2ece6',
-                  border: '2px solid #5a8771',
-                  margin: 'auto',
-                  position: 'relative',
-                  overflow: 'hidden'
-                }}>
-                  {/* Ubytek skroniowy oka lewego = lewa połowa */}
-                  {res.visualFieldDefect === 'bitemporal_hemianopsia' && (
-                    <div style={{ position: 'absolute', inset: '0 50% 0 0', background: '#24322a' }} />
-                  )}
-                  {res.visualFieldDefect === 'quadrantanopsia' && (
-                    <div style={{ position: 'absolute', inset: '0 50% 50% 0', background: '#24322a' }} />
-                  )}
-                </div>
-                <small style={{ display: 'block', marginTop: '4px', fontSize: '11px', color: '#556c60' }}>Oko lewe</small>
-              </div>
-
-              {/* Oko prawe */}
-              <div style={{ textAlign: 'center' }}>
-                <div style={{
-                  width: '64px',
-                  height: '64px',
-                  borderRadius: '50%',
-                  background: '#e2ece6',
-                  border: '2px solid #5a8771',
-                  margin: 'auto',
-                  position: 'relative',
-                  overflow: 'hidden'
-                }}>
-                  {/* Ubytek skroniowy oka prawego = prawa połowa */}
-                  {res.visualFieldDefect === 'bitemporal_hemianopsia' && (
-                    <div style={{ position: 'absolute', inset: '0 0 0 50%', background: '#24322a' }} />
-                  )}
-                  {res.visualFieldDefect === 'quadrantanopsia' && (
-                    <div style={{ position: 'absolute', inset: '0 0 50% 50%', background: '#24322a' }} />
-                  )}
-                </div>
-                <small style={{ display: 'block', marginTop: '4px', fontSize: '11px', color: '#556c60' }}>Oko prawe</small>
-              </div>
-            </div>
-            <p style={{ fontSize: '12px', color: '#446153', margin: '10px 0 0', textAlign: 'center' }}>
-              <strong>Obraz:</strong> {res.visualFieldDescription}
-            </p>
-          </div>
-
-          {/* Objawy ucisku zatoki jamistej */}
-          {res.cranialNervesPalsy.length > 0 && (
-            <div className="alert" style={{ margin: '10px 0', fontSize: '12px' }}>
-              <div>
-                <strong>Zajęcie zatoki jamistej (Knosp {state.knospGrade}):</strong>
-                <ul style={{ margin: '4px 0 0', paddingLeft: '16px' }}>
-                  {res.cranialNervesPalsy.map((cn, i) => (
-                    <li key={i}>{cn}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          )}
+          {/* Symulacja pola widzenia (Perymetria obojga oczu) i nerwy czaszkowe */}
+          <PituitaryPerimetryView res={res} />
 
           {/* Diagnoza i ostrzeżenie kliniczne */}
           <div className={`sim-diagnosis-box ${res.alertType}`}>
