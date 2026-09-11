@@ -10,6 +10,16 @@ export function sampleQuestions<T>(bank:readonly T[],count:number,rng= Math.rand
   const pool=[...bank]; for(let i=pool.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]];}return pool.slice(0,count);
 }
 export function grade(bank:Question[],answers:Record<string,number>){const correct=bank.filter(q=>answers[q.id]===q.answer).length;return {correct,total:bank.length,percent:bank.length?Math.round(correct/bank.length*100):0};}
+/** Sample across topics, then shuffle answer positions without mutating the bank. */
+export function sampleBalancedQuestions(bank:readonly Question[],count:number,topic:(q:Question)=>string,rng=Math.random):Question[]{
+  const unique=[...new Map(bank.map(q=>[q.id,q])).values()];
+  if(!Number.isInteger(count)||count<0||count>unique.length)throw new Error('Nieprawidłowa liczba pytań');
+  const groups=new Map<string,Question[]>();
+  for(const q of sampleQuestions(unique,unique.length,rng)){const key=topic(q);groups.set(key,[...(groups.get(key)??[]),q]);}
+  const buckets=sampleQuestions([...groups.values()],groups.size,rng);const selected:Question[]=[];
+  while(selected.length<count){for(const bucket of buckets){const q=bucket.pop();if(q)selected.push(q);if(selected.length===count)break;}}
+  return sampleQuestions(selected,count,rng).map(q=>{const order=sampleQuestions(q.options.map((_,i)=>i),q.options.length,rng);return {...q,options:order.map(i=>q.options[i]),answer:order.indexOf(q.answer)};});
+}
 export type Activity={id:string;user_id:string;kind:'lesson'|'quiz'|'exam'|'case'|'review'|'profile';target_id:string;content_version:string;payload:Record<string,unknown>;created_at:string};
 export type LearningState={completed:string[];reviews:Record<string,Review>;attempts:Activity[];level:'student'|'doctor'};
 export function projectActivities(rows:Activity[]):LearningState{

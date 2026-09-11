@@ -87,7 +87,7 @@ export function GoodwinLimitCycleChart() {
             color: isLimitCycle ? '#166534' : '#991b1b',
           }}
         >
-          {isLimitCycle ? 'Stabilny cykl graniczny (pulsacja)' : 'Wygasanie do punktu stałego'}
+          Umowny model trzech zmiennych
         </span>
       </div>
 
@@ -108,7 +108,7 @@ export function GoodwinLimitCycleChart() {
         />
         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: '#64748b' }}>
           <span>n = 2 (tłumienie drgań)</span>
-          <span style={{ color: '#e11d48', fontWeight: 600 }}>Próg bifurkacji Hopfa (n ≈ 8)</span>
+          <span style={{ color: '#e11d48', fontWeight: 600 }}>Stabilność zależy też od pozostałych parametrów</span>
           <span>n = 12 (ostre salwy impulsów)</span>
         </div>
       </div>
@@ -124,7 +124,7 @@ export function GoodwinLimitCycleChart() {
             <line x1="35" y1="140" x2="485" y2="140" stroke="#94a3b8" strokeWidth="1.5" />
             <line x1="35" y1="15" x2="35" y2="140" stroke="#94a3b8" strokeWidth="1.5" />
             <path d={timePath} fill="none" stroke="#2563eb" strokeWidth="2.5" />
-            <text x="260" y="160" fill="#64748b" fontSize="10" textAnchor="middle">Czas t (godziny)</text>
+            <text x="260" y="160" fill="#64748b" fontSize="10" textAnchor="middle">Czas t (j. umowne)</text>
             <text x="12" y="80" fill="#64748b" fontSize="10" transform="rotate(-90 12 80)" textAnchor="middle">GnRH [X]</text>
           </svg>
         </div>
@@ -145,7 +145,7 @@ export function GoodwinLimitCycleChart() {
       </div>
 
       <div style={{ marginTop: '12px', fontSize: '12px', color: '#334155', lineHeight: '1.45', background: '#f1f5f9', padding: '10px 14px', borderRadius: '6px' }}>
-        <strong>Wnioski matematyczno-biologiczne:</strong> Model Goodwina dowodzi, że do wygenerowania periodycznych impulsów wydzielania przysadkowego nie jest potrzebny zewnętrzny stymulator — wystarczy <strong>wystarczająco silna nieliniowość (n ≥ 8)</strong> w ujemnym sprzężeniu zwrotnym z opóźnieniem czasowym. Gdy n &lt; 8, układ gasi drgania i przechodzi w stan toniczny, co prowadzi do desensytyzacji receptorów.
+        <strong>Założenia:</strong> To schematyczny oscylator Goodwina, nie model kliniczny GnRH. Sam próg n ≥8 nie gwarantuje cyklu granicznego dla dowolnych parametrów. Charakter krzywej nie rozpoznaje niedoboru hormonu ani desensytyzacji receptorów.
       </div>
     </div>
   );

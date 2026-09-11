@@ -59,14 +59,14 @@ export function CasrHillCurveChart() {
           </h4>
         </div>
         <span style={{ fontSize: '12px', fontWeight: 700, background: '#ede6fa', color: '#56338e', padding: '4px 10px', borderRadius: '6px' }}>
-          PTH = {currentPth} pg/ml przy Ca2+ = {ionizedCaMmol.toFixed(2)} mmol/l
+          Sygnał PTH = {currentPth} j. umownych przy Ca2+ = {ionizedCaMmol.toFixed(2)} mmol/l
         </span>
       </div>
 
       {/* Przełączniki stanu klinicznego */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '8px', marginBottom: '14px' }}>
         {[
-          { id: 'normal', label: 'Fizjologia (EC50 = 1,21)', color: '#6d4ba4' },
+          { id: 'normal', label: 'Model odniesienia (EC50 = 1,21)', color: '#6d4ba4' },
           { id: 'fhh', label: 'FHH (Przesunięcie w prawo EC50 = 1,38)', color: '#dc2626' },
           { id: 'cinacalcet', label: 'Cynakalcet (Przesunięcie w lewo EC50 = 1,12)', color: '#16a34a' },
         ].map(item => (
@@ -165,7 +165,7 @@ export function CasrHillCurveChart() {
           <line x1="45" y1="140" x2="485" y2="140" stroke="#475569" strokeWidth="1.5" />
           <line x1="45" y1="15" x2="45" y2="140" stroke="#475569" strokeWidth="1.5" />
           <text x="265" y="160" fill="#475569" fontSize="10" fontWeight="600" textAnchor="middle">Wapń zjonizowany [Ca2+] (mmol/L)</text>
-          <text x="14" y="80" fill="#475569" fontSize="10" fontWeight="600" transform="rotate(-90 14 80)" textAnchor="middle">PTH (pg/ml)</text>
+          <text x="14" y="80" fill="#475569" fontSize="10" fontWeight="600" transform="rotate(-90 14 80)" textAnchor="middle">PTH (j. umowne)</text>
         </svg>
       </div>
 
@@ -258,7 +258,7 @@ export function BoneKineticsEkgChart() {
             {qtcBazett} ms
           </div>
           <div style={{ fontSize: '11px', color: '#7c2d12', marginTop: '4px' }}>
-            {qtcBazett > 460 ? '⚠️ Ryzyko Torsade de Pointes' : 'W normie'}
+            Interpretuj względem rytmu, QRS, leków i elektrolitów
           </div>
         </div>
 

@@ -23,6 +23,8 @@ import {
   InsulinReceptorAndKetogenesisVisualizer,
 } from '../components/math-chem-widgets-3';
 import { GonadSimulator } from '../gonad-simulator';
+import { HormoneAtlas } from '../hormone-atlas';
+import { gahtLessonIds } from '../../lib/course-gaht';
 import {
   VermeulenFreeTestosteroneCalculator,
   GnrhPulseAndHpgOscillator,
@@ -37,6 +39,7 @@ import {
 import { LessonSimulatorsOtylosc } from './lesson-simulators-otylosc.tsx';
 
 export function LessonSimulators({ lessonId, go }: { lessonId: string; go: Navigation }) {
+  if (gahtLessonIds.includes(lessonId)) return <HormoneAtlas key={lessonId} initialGoal={lessonId==='gonady-trans-maskulinizujaca'||lessonId==='gaht-plodnosc'?'masc':'fem'}/>;
   // Zwiastun symulatora w Lekcji 1 Tarczycy
   if (lessonId === 'fizjologia') {
     return (
@@ -50,7 +53,7 @@ export function LessonSimulators({ lessonId, go }: { lessonId: string; go: Navig
             <h3>Chcesz sprawdzić ujemne sprzężenie zwrotne w akcji?</h3>
             <p>
               W <strong>Lekcji 2 („Czytaj wyniki ze zrozumieniem”)</strong> czeka na Ciebie
-              pełny interaktywny <strong>Symulator Osi HPT</strong>. Nauczysz się tam łączyć stężenia TSH i FT4
+              interaktywny <strong>Symulator Osi HPT</strong>. Nauczysz się tam łączyć stężenia TSH i FT4
               w pary diagnostyczne, a także testować wpływ leków i przeciwciał TRAb.
             </p>
             <div className="teaser-actions">
@@ -66,7 +69,7 @@ export function LessonSimulators({ lessonId, go }: { lessonId: string; go: Navig
                 className="secondary"
                 onClick={() => go('simulator')}
               >
-                Otwórz pełny symulator z legendą
+                Otwórz pracownie
               </button>
             </div>
           </div>
@@ -94,11 +97,11 @@ export function LessonSimulators({ lessonId, go }: { lessonId: string; go: Navig
           </div>
           <div>
             <span className="eyebrow" style={{ color: '#255b85' }}>INTERAKTYWNA KONSOLA KLINICZNA</span>
-            <h3>Chcesz przetestować osie przysadki, testy i pole widzenia?</h3>
+            <h3>Połącz osie przysadki z interpretacją wyników</h3>
             <p>
               W <strong>Lekcji 2 („Rozszyfruj przysadkę”)</strong> czeka na Ciebie
-              pełna <strong>Kliniczna Konsola Przysadkowo-Podwzgórzowa</strong>. Możesz w niej
-              badać osie PRL, GH, ACTH, AVP, testy dynamiczne i pole widzenia.
+              <strong>Pracownia Przysadkowo-Podwzgórzowa</strong>. Możesz w niej
+              prześledzić osie PRL, GH, ACTH i obliczyć klirens wolnej wody.
             </p>
             <div className="teaser-actions">
               <button
@@ -144,9 +147,8 @@ export function LessonSimulators({ lessonId, go }: { lessonId: string; go: Navig
             <h3>Chcesz przetestować steroidogenezę, blokadę alfa i kryteria TK?</h3>
             <p>
               W <strong>Lekcji 2 („Wycisz, pobudź, oznacz”)</strong> czeka na Ciebie
-              pełna <strong>Kliniczna Konsola Nadnerczowa</strong>. Możesz w niej
-              badać osie HPA i RAA, symulować blok enzymatyczny 21-OH w WPN, kalkulować washout TK
-              oraz zarządzać hemodynamiką guza chromochłonnego.
+              <strong>Pracownia Nadnerczowa</strong>. Możesz w niej
+              prześledzić osie HPA i RAA, obliczyć washout TK oraz poznać ograniczenia interpretacji.
             </p>
             <div className="teaser-actions">
               <button
@@ -192,9 +194,9 @@ export function LessonSimulators({ lessonId, go }: { lessonId: string; go: Navig
             <h3>Chcesz przetestować oś Ca–P–PTH, kalkulator CCCR, tężyczkę i HBS?</h3>
             <p>
               W <strong>Lekcji 2 („Wapń, fosfor, PTH i pułapki”)</strong> czeka na Ciebie
-              pełna <strong>Kliniczna Konsola Przytarczycowa</strong>. Możesz w niej
+              <strong>Pracownia Przytarczycowa</strong>. Możesz w niej
               badać sprzężenie Ca–PTH–CaSR, różnicować PHPT vs FHH za pomocą wskaźnika CCCR,
-              obliczać QTc w tężyczce oraz symulować resuscytację płynową w przełomie hiperkalcemicznym.
+              omówić pomiar wapnia i mechanizm zespołu głodnych kości.
             </p>
             <div className="teaser-actions">
               <button
@@ -237,11 +239,11 @@ export function LessonSimulators({ lessonId, go }: { lessonId: string; go: Navig
           </div>
           <div>
             <span className="eyebrow" style={{ color: '#0d7a57' }}>INTERAKTYWNA KONSOLA KLINICZNA</span>
-            <h3>Chcesz przetestować model Bergmana, CGM, regułę 1800/500 i stany nagłe DKA/HHS?</h3>
+            <h3>Sprawdź warunki obliczania HOMA oraz kryteria DKA/HHS</h3>
             <p>
               W <strong>Lekcji 2 („Rozpoznaj i sklasyfikuj”)</strong>, <strong>Lekcji 8 (DKA)</strong> oraz{' '}
               <strong>Lekcji 13 (Nowoczesne technologie)</strong> czeka na Ciebie
-              pełna <strong>Kliniczna Konsola Diabetologiczna</strong> z profilami CGM, kalkulatorem pomp i modelem resuscytacji w DKA.
+              <strong>Pracownia Diabetologiczna</strong> z HOMA, ograniczeniami CGM i ćwiczeniem na pomiarach w DKA/HHS.
             </p>
             <div className="teaser-actions">
               <button
@@ -368,7 +370,7 @@ export function LessonSimulators({ lessonId, go }: { lessonId: string; go: Navig
             <h3>Chcesz sprawdzić sprzężenia osi HPG i równanie Vermeulena?</h3>
             <p>
               W <strong>Lekcji 2 („Diagnostyka laboratoryjna i frakcje testosteronu”)</strong> oraz w zakładce symulatorów czeka pełna
-              <strong> Konsola Kliniczna Gonad</strong>. Pozwala testować równowagę Vermeulena, supresję osi po dopingu AAS, protokoły GAHT oraz predykcję OHSS.
+              <strong> Konsola Kliniczna Gonad</strong>. Pozwala badać wiązanie hormonów, porównać GAHT z gonadami i bez nich oraz odróżnić ryzyko OHSS od jego ciężkości.
             </p>
             <div className="teaser-actions">
               <button
@@ -424,7 +426,7 @@ export function LessonSimulators({ lessonId, go }: { lessonId: string; go: Navig
             <span className="eyebrow">KONSOLA ONKOLOGICZNA NEN & MEN</span>
             <h3>Chcesz sprawdzić staging WHO i dozymetrię PRRT w akcji?</h3>
             <p>
-              W <strong>Lekcji 2 („Obrazowanie receptorowe”)</strong> czeka pełna interaktywna
+              W <strong>Lekcji 2 („Obrazowanie receptorowe”)</strong> czeka interaktywna
               <strong> Konsola Nowotworów Neuroendokrynnych</strong>: grading WHO 2022/2024, skala Krenninga,
               drzewo decyzyjne RET i dozymetria nerkowa PRRT.
             </p>

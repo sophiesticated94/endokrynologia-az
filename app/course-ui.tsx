@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, ArrowLeft, Check, CheckCircle2, Stethoscope, ExternalLink } from 'lucide-react';
-import { sources, VERIFIED_AT, CONTENT_VERSION, type Question, type Lesson } from '@/lib/course';
+import { sources, CONTENT_VERSION, type Question, type Lesson } from '@/lib/course';
 import type { ClinicalCase } from '@/lib/cases';
 import { grade } from '@/lib/learning';
 import { GlossaryText } from './glossary-components';
@@ -46,7 +46,7 @@ export function SourceList({ lesson }: { lesson: Lesson }) {
     <div className="sources">
       <h3>Źródła i aktualność</h3>
       <p className="small">
-        Sprawdzenie źródeł: {new Date(VERIFIED_AT).toLocaleDateString('pl-PL')} · Wersja {CONTENT_VERSION}
+        {lesson.review ? `Sprawdzenie wybranych treści: ${new Date(lesson.review.checkedAt).toLocaleDateString('pl-PL')}. ${lesson.review.scope}` : 'Treść oczekuje udokumentowanego przeglądu tej lekcji. Rok źródła nie oznacza daty weryfikacji materiału.'} · Wersja {CONTENT_VERSION}
       </p>
       {lesson.sourceIds.map(id => (
         <a key={id} href={sources[id].url} target="_blank" rel="noreferrer">
@@ -80,6 +80,7 @@ export function QuestionOptions({
       {question.options.map((option, index) => (
         <button
           key={index}
+          type="button"
           className={`option ${selected === index ? 'selected' : ''} ${reveal && index === question.answer ? 'correct' : ''} ${reveal && selected === index && index !== question.answer ? 'incorrect' : ''}`}
           disabled={reveal}
           aria-pressed={selected === index}
@@ -90,11 +91,11 @@ export function QuestionOptions({
           </span>
           <span>
             <strong>
-              <GlossaryText text={option.text} />
+              {option.text}
             </strong>
             {reveal && (
               <small>
-                <GlossaryText text={option.explanation} />
+                {option.explanation}
               </small>
             )}
           </span>
@@ -231,6 +232,7 @@ export function Runner({
           <Stethoscope size={21} />
           <div>
             <strong>{clinical?.patient}</strong>
+            <p>{clinical?.intro}</p>
             <p>
               <GlossaryText text={clinical?.steps[index].context ?? ''} />
             </p>
@@ -245,7 +247,7 @@ export function Runner({
 
       <section className="panel question-panel">
         <h2>
-          <GlossaryText text={current.prompt} />
+          {mode === 'exam' ? current.prompt : <GlossaryText text={current.prompt} />}
         </h2>
         <QuestionOptions
           question={current}

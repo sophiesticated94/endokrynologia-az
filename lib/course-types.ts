@@ -21,6 +21,7 @@ export type Source = {
 export type Pair = [string, string];
 
 export type DraftQuestion = {
+  id?: string;
   prompt: string;
   choices: Pair[];
 };
@@ -64,6 +65,7 @@ export interface WorkedExample {
 }
 
 export type Lesson = {
+  review?: { checkedAt: string; scope: string };
   id: string;
   moduleId?: ModuleId;
   title: string;
@@ -82,6 +84,7 @@ export type Lesson = {
 };
 
 export type DraftLesson = {
+  review?: { checkedAt: string; scope: string };
   id: string;
   moduleId?: ModuleId;
   title: string;
@@ -99,4 +102,3 @@ export type DraftLesson = {
   derivation?: MathDerivation;
   workedExample?: WorkedExample;
 };
-

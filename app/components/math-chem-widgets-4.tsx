@@ -23,7 +23,7 @@ export function VermeulenFreeTestosteroneCalculator() {
         Rozwiązuje analitycznie kanoniczne równanie kwadratowe Vermeulena a[T_free]² + b[T_free] + c = 0 dla stałych K_s = 1,0×10⁹ M⁻¹ i K_a = 3,6×10⁴ M⁻¹.
       </p>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '14px', marginBottom: '16px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '14px', marginBottom: '16px' }}>
         <div>
           <label style={{ fontSize: '12px', display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
             <span>Testosteron całkowity:</span>
@@ -31,9 +31,9 @@ export function VermeulenFreeTestosteroneCalculator() {
           </label>
           <input
             type="range"
-            min="2.0"
+            min="0.1"
             max="40.0"
-            step="0.5"
+            step="0.1"
             value={totalT}
             onChange={e => setTotalT(Number(e.target.value))}
             style={{ width: '100%' }}
@@ -77,12 +77,12 @@ export function VermeulenFreeTestosteroneCalculator() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '10px 14px', background: '#fffbeb', border: '1px solid #fde68a', borderRadius: '8px', color: '#92400e', fontSize: '12px', marginBottom: '14px' }}>
           <AlertTriangle size={16} />
           <span>
-            <strong>Uwaga:</strong> Skrajne stężenie SHBG ({shbg} nmol/l). Wskaźnik FAI traci wiarygodność! Bezwzględny wymóg stosowania formuły Vermeulena.
+            <strong>Uwaga:</strong> Skrajne stężenie SHBG ({shbg} nmol/l). Wskaźnik FAI traci wiarygodność! FAI nie jest stężeniem wolnego T. Także cFT jest estymacją zależną od jakości oznaczeń i założeń wiązania.
           </span>
         </div>
       )}
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px', textAlign: 'center', marginBottom: '14px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '12px', textAlign: 'center', marginBottom: '14px' }}>
         <div style={{ padding: '12px', background: '#eff6ff', borderRadius: '8px', border: '1px solid #bfdbfe' }}>
           <div style={{ fontSize: '11px', color: '#1e40af', fontWeight: 600 }}>Wolny testosteron (Free T)</div>
           <div style={{ fontSize: '22px', fontWeight: 800, color: '#1d4ed8' }}>{result.freeT_pmol} <span style={{ fontSize: '12px' }}>pmol/l</span></div>
@@ -124,7 +124,8 @@ export function GnrhPulseAndHpgOscillator() {
     const pulseStrength = isPulse ? Math.exp(-Math.pow(phase - 5, 2) / 12) : 0.05;
 
     // Delayed negative feedback
-    const delayedInhibition = 1 / (1 + Math.pow(prevTest / inhibitionKi, 2.5));
+    const delayedTest = waveform[Math.max(0, i - Math.round(feedbackDelayTau / timeStep))]?.test ?? 15;
+    const delayedInhibition = 1 / (1 + Math.pow(delayedTest / inhibitionKi, 2.5));
     const gnrh = 0.2 + pulseStrength * 4.5 * delayedInhibition;
 
     // LH response depends on GnRH pulse frequency (high frequency fawors LH)
@@ -154,11 +155,11 @@ export function GnrhPulseAndHpgOscillator() {
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
         <Activity size={20} color="#16a34a" />
         <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 800 }}>
-          Oscylator neuronów KNDy i generator pulsów GnRH (układ ODE z opóźnieniem)
+          Ilustracyjny generator pulsów GnRH i opóźnione sprzężenie
         </h3>
       </div>
       <p style={{ fontSize: '12px', color: '#64748b', margin: '0 0 16px 0' }}>
-        Modeluje nieliniowe ujemne sprzężenie zwrotne testosteronu na wydzielanie LH i GnRH: dx/dt = V₀/[1 + (y(t-τ)/K_i)ⁿ] - k_x x(t).
+        Umowny model dyskretny: zmień interwał i opóźnienie, obserwuj kształt krzywych. Parametry nie są dopasowane do pacjenta; wykres nie wylicza wyników laboratoryjnych.
       </p>
 
       {/* SVG Waveform Plot */}
@@ -166,8 +167,8 @@ export function GnrhPulseAndHpgOscillator() {
         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', fontWeight: 600, color: '#475569', marginBottom: '4px' }}>
           <span>Przebieg 12-godzinny (0–720 min)</span>
           <div style={{ display: 'flex', gap: '12px' }}>
-            <span style={{ color: '#16a34a' }}>— Lutropina (LH, IU/l)</span>
-            <span style={{ color: '#0284c7' }}>— Testosteron (nmol/l)</span>
+            <span style={{ color: '#16a34a' }}>— Sygnał LH (j. umowne)</span>
+            <span style={{ color: '#0284c7' }}>— Sygnał T (j. umowne)</span>
           </div>
         </div>
 
@@ -189,7 +190,7 @@ export function GnrhPulseAndHpgOscillator() {
         </svg>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '14px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '14px' }}>
         <div>
           <label style={{ fontSize: '12px', display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
             <span>Interwał pulsów GnRH:</span>
@@ -225,7 +226,7 @@ export function GnrhPulseAndHpgOscillator() {
         <div>
           <label style={{ fontSize: '12px', display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
             <span>Stała hamowania (K_i):</span>
-            <strong>{inhibitionKi} nmol/l</strong>
+            <strong>{inhibitionKi} j. umownych</strong>
           </label>
           <input
             type="range"
@@ -321,7 +322,7 @@ export function AromataseAndSermMolecularVisualizer() {
           <div style={{ fontSize: '13px', fontWeight: 700, color: '#6b21a8', marginBottom: '8px' }}>
             3-etapowa aromatyzacja pierścienia A (CYP19A1 + 3 NADPH + 3 O₂)
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px', fontSize: '11px', color: '#3b0764' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '10px', fontSize: '11px', color: '#3b0764' }}>
             <div style={{ padding: '10px', background: '#fff', borderRadius: '8px', border: '1px solid #d8b4fe' }}>
               <div style={{ fontWeight: 700, marginBottom: '4px' }}>Etap I: Hydroksylacja C19</div>
               <div>Testosteron + O₂ + NADPH → 19-hydroksytestosteron. Utlenienie grupy metylowej przy węglu C10 do alkoholu pierwszorzędowego.</div>

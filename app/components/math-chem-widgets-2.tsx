@@ -328,13 +328,13 @@ export function BoneMineralizationKinetics() {
 
   // Zespół głodnych kości (HBS) - stała tempa zaniku k proporcjonalna do ALP
   const hungryBoneK = (preopAlp / 100) * 0.12;
-  const hungryBoneRisk = preopAlp > 500 ? 'Krytyczne (Gwałtowna hipokalcemia i hipofosfatemia)' : preopAlp > 250 ? 'Podwyższone' : 'Niskie';
+  const hungryBoneRisk = 'Nie do wyliczenia z samej ALP';
 
   return (
     <div style={{ background: '#fef2f2', border: '1px solid #fecaca', borderRadius: '12px', padding: '18px', margin: '14px 0' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: '#991b1b' }}>
         <HeartPulse size={20} />
-        <h4 style={{ margin: 0, fontSize: '15px' }}>Kinetyka Mineralizacji Kości (HBS) i Matematyka Odstępu QTc</h4>
+        <h4 style={{ margin: 0, fontSize: '15px' }}>ALP a obrót kostny · matematyka QTc</h4>
       </div>
       <p style={{ fontSize: '12px', color: '#374151', margin: '0 0 14px' }}>
         {'Formuły korygujące odstęp QT: Bazetta QTc = QT / √(RR) oraz Fridericia QTc = QT / ∛(RR). W hipokalcemii wydłużenie fazy plateau potencjału czynnościowego predysponuje do Torsade de Pointes.'}
@@ -375,7 +375,7 @@ export function BoneMineralizationKinetics() {
           <div style={{ fontSize: '20px', fontWeight: 'bold', color: qtcBazett > 460 ? '#dc2626' : '#16a34a' }}>
             {qtcBazett} <span style={{ fontSize: '12px' }}>ms</span>
           </div>
-          <div style={{ fontSize: '10px', color: '#4b5563' }}>{qtcBazett > 460 ? '⚠️ Ryzyko TdP!' : 'W normie (&lt;450 ms)'}</div>
+          <div style={{ fontSize: '10px', color: '#4b5563' }}>Interpretuj względem rytmu, QRS, leków i elektrolitów</div>
         </div>
 
         <div style={{ background: '#fff', border: '1px solid #fee2e2', borderRadius: '8px', padding: '12px' }}>
@@ -391,7 +391,7 @@ export function BoneMineralizationKinetics() {
           <div style={{ fontSize: '15px', fontWeight: 'bold', color: preopAlp > 250 ? '#dc2626' : '#16a34a' }}>
             {hungryBoneRisk}
           </div>
-          <div style={{ fontSize: '10px', color: '#4b5563' }}>Wymóg profilaktyki Ca + Kalcytriol</div>
+          <div style={{ fontSize: '10px', color: '#4b5563' }}>Oceń seryjnie Ca, P, Mg i objawy</div>
         </div>
       </div>
     </div>

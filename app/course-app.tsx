@@ -38,7 +38,7 @@ import { GlossaryView } from './glossary-components';
 const navItems = [
   ['home', 'Moja nauka', LayoutDashboard],
   ['course', 'Mapa kursu', BookOpen],
-  ['simulator', 'Symulatory kliniczne', Activity],
+  ['simulator', 'Pracownie i symulatory', Activity],
   ['cases', 'Przypadki kliniczne', Stethoscope],
   ['cards', 'Fiszki i powtórki', Layers3],
   ['exam', 'Egzamin', ClipboardCheck],
@@ -137,7 +137,7 @@ export default function CourseApp() {
       : route.startsWith('case/')
       ? 'Przypadki kliniczne'
       : route === 'simulator'
-      ? 'Symulatory kliniczne'
+      ? 'Pracownie i symulatory'
       : route === 'glossary'
       ? 'Słowniczek pojęć medycznych'
       : navItems.find(n => n[0] === route)?.[1] ?? 'Twoje konto';
@@ -356,7 +356,7 @@ export default function CourseApp() {
                   className={simTab === 'diabetes' ? 'active' : ''}
                   onClick={() => setSimTab('diabetes')}
                 >
-                  <Activity size={15} /> Moduł 05: Konsola Diabetologiczna (Cukrzyca, Pompy i CGM)
+                  <Activity size={15} /> Moduł 05: Konsola Diabetologiczna (HOMA i DKA/HHS)
                 </button>
                 <button
                   className={simTab === 'gonad' ? 'active' : ''}
@@ -374,7 +374,7 @@ export default function CourseApp() {
                   className={simTab === 'otylosc' ? 'active' : ''}
                   onClick={() => setSimTab('otylosc')}
                 >
-                  <Activity size={15} /> Moduł 08: Konsola Metaboliczna (Otyłość, Bariatria i Lipidy)
+                  <Activity size={15} /> Moduł 08: Konsola Metaboliczna (Masa, Lipidy i FIB-4)
                 </button>
               </div>
               {simTab === 'hpt' && <HptSimulator />}

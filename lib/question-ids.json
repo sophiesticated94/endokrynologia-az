@@ -1,0 +1,982 @@
+{
+  "fizjologia": {
+    "Co bezpośrednio pobudza tarczycę do syntezy hormonów?": "fizjologia-q1",
+    "Jaka jest główna odpowiedź sprawnej osi na wzrost FT4?": "fizjologia-q2",
+    "Który proces wymaga udziału TPO?": "fizjologia-q3",
+    "Skąd pochodzi istotna część krążącego T3?": "fizjologia-q4",
+    "Co może zwiększyć całkowite T4 bez rzeczywistej nadczynności?": "fizjologia-q5"
+  },
+  "diagnostyka": {
+    "TSH 16 mIU/l, FT4 8 pmol/l. Jaki to wzorzec?": "diagnostyka-q1",
+    "FT4 jest niskie, a TSH prawidłowe u chorego po operacji przysadki. Co dalej?": "diagnostyka-q2",
+    "TSH jest obniżone, FT4 prawidłowe. Jakie badanie może ujawnić T3-tyreotoksykozę?": "diagnostyka-q3",
+    "Wyniki sugerują nadczynność, lecz pacjent bez objawów przyjmuje wysokie dawki biotyny. Co uwzględnić?": "diagnostyka-q4",
+    "Które zakresy referencyjne należy stosować?": "diagnostyka-q5"
+  },
+  "niedoczynnosc": {
+    "Co jest standardowym leczeniem jawnej pierwotnej niedoczynności?": "niedoczynnosc-q1",
+    "Kiedy zwykle ocenia się TSH po zmianie dawki LT4?": "niedoczynnosc-q2",
+    "Co może osłabić wchłanianie LT4?": "niedoczynnosc-q3",
+    "Jak rozpocząć leczenie u starszego chorego z chorobą wieńcową?": "niedoczynnosc-q4",
+    "Zmęczenie utrzymuje się mimo prawidłowego TSH podczas LT4. Co jest rozsądne?": "niedoczynnosc-q5"
+  },
+  "hashimoto": {
+    "Anty-TPO dodatnie, TSH i FT4 prawidłowe u nieciężarnej osoby bez objawów. Co wynika z tych danych?": "hashimoto-q1",
+    "Na czym opiera się dostosowanie LT4 w pierwotnej niedoczynności?": "hashimoto-q2",
+    "Czy każda osoba z Hashimoto powinna odstawić gluten?": "hashimoto-q3",
+    "Jak traktować duże dawki jodu z suplementów?": "hashimoto-q4",
+    "Znane Hashimoto i szybko narastający ucisk szyi. Jak postąpić?": "hashimoto-q5"
+  },
+  "nadczynnosc": {
+    "Który stan jest tyreotoksykozą bez zwiększonej syntezy hormonów?": "nadczynnosc-q1",
+    "Co sugeruje nowo wykryte migotanie przedsionków u starszej osoby z utratą masy ciała?": "nadczynnosc-q2",
+    "Dlaczego tyreostatyk zwykle nie pomaga w fazie tyreotoksycznej zapalenia destrukcyjnego?": "nadczynnosc-q3",
+    "TSH jest niskie, a w USG widoczny guzek. Co może ocenić jego autonomię?": "nadczynnosc-q4",
+    "Jaka jest główna rola beta-adrenolityku w stabilnej tyreotoksykozie?": "nadczynnosc-q5"
+  },
+  "graves": {
+    "Które przeciwciała są szczególnie pomocne w rozpoznaniu Gravesa-Basedowa?": "graves-q1",
+    "Gorączka i ból gardła podczas tiamazolu. Jaki jest właściwy krok?": "graves-q2",
+    "Co jest modyfikowalnym czynnikiem ryzyka orbitopatii?": "graves-q3",
+    "Który objaw wymaga pilnej oceny okulistycznej?": "graves-q4",
+    "Co uwzględnić przed radiojodem w Gravesie-Basedowie?": "graves-q5"
+  },
+  "zapalenia": {
+    "Bolesna tarczyca po infekcji i wysokie OB sugerują przede wszystkim:": "zapalenia-q1",
+    "Co może nastąpić po fazie tyreotoksycznej zapalenia destrukcyjnego?": "zapalenia-q2",
+    "Jakiej jodochwytności oczekujesz w typowej fazie destrukcyjnej?": "zapalenia-q3",
+    "Ciężki stan, gorączka i podejrzenie ropnia szyi. Co jest priorytetem?": "zapalenia-q4",
+    "Dlaczego kontrolować hormony po ustąpieniu bólu?": "zapalenia-q5"
+  },
+  "guzki": {
+    "Co najlepiej ocenia strukturę guzka i węzły szyi?": "guzki-q1",
+    "Jaki typowy próg BACC podaje ETA 2023 dla EU-TIRADS 5 bez dodatkowych alarmów?": "guzki-q2",
+    "Co oznacza niediagnostyczna cytologia?": "guzki-q3",
+    "Dlaczego oceniamy także węzły chłonne?": "guzki-q4",
+    "Co oznacza sam fakt wykrycia guzka?": "guzki-q5"
+  },
+  "nowotwory": {
+    "Z jakich komórek wywodzi się rak rdzeniasty?": "nowotwory-q1",
+    "Czy każdy rak tarczycy leczy się radiojodem?": "nowotwory-q2",
+    "Z czym interpretować tyreoglobulinę po leczeniu raka zróżnicowanego?": "nowotwory-q3",
+    "Co należy wykluczyć przed planową operacją tarczycy u chorego z MEN2?": "nowotwory-q4",
+    "Od czego zależy intensywność supresji TSH po raku zróżnicowanym?": "nowotwory-q5"
+  },
+  "ciaza": {
+    "Dlaczego TSH może obniżyć się we wczesnej ciąży?": "ciaza-q1",
+    "Co zrobić po potwierdzeniu ciąży u kobiety przyjmującej LT4?": "ciaza-q2",
+    "Które leczenie jest przeciwwskazane w ciąży?": "ciaza-q3",
+    "Który tyreostatyk zwykle preferuje się w pierwszym trymestrze, gdy leczenie jest konieczne?": "ciaza-q4",
+    "Dlaczego TRAb ma znaczenie po wcześniejszej tyreoidektomii z powodu Gravesa?": "ciaza-q5"
+  },
+  "leki": {
+    "Jaki mechanizm dominuje w AIT typu 2?": "leki-q1",
+    "Czy amiodaron może powodować niedoczynność?": "leki-q2",
+    "Jak podejmować decyzję o odstawieniu amiodaronu?": "leki-q3",
+    "Który suplement może zafałszować niektóre oznaczenia tarczycowe?": "leki-q4",
+    "Co sprawdzić przed uznaniem, że dawka LT4 jest za mała?": "leki-q5"
+  },
+  "stany-nagle": {
+    "Tyreotoksykoza, gorączka, tętno 150/min i splątanie. Jaki priorytet?": "stany-nagle-q1",
+    "Czy bardzo wysokie FT4 samo rozpoznaje przełom?": "stany-nagle-q2",
+    "Co sugeruje ciężką dekompensację niedoczynności?": "stany-nagle-q3",
+    "Dlaczego w ciężkiej niedoczynności ocenia się oś nadnerczową?": "stany-nagle-q4",
+    "Czy należy czekać na pełny panel wyników przy niestabilności i podejrzeniu przełomu?": "stany-nagle-q5"
+  },
+  "tarczyca-matematyka-kinetyka": {
+    "Ile okresów półtrwania (t1/2) potrzeba do osiągnięcia 95% stanu stacjonarnego (Css) leku o kinetyce I rzędu?": "tarczyca-matematyka-kinetyka-q1",
+    "Jak zmienia się okres półtrwania (t1/2) lewotyroksyny u pacjenta z ciężką, nieleczoną niedoczynnością tarczycy?": "tarczyca-matematyka-kinetyka-q2",
+    "Co opisuje wzór Css = (F * D) / (Cl * tau)?": "tarczyca-matematyka-kinetyka-q3",
+    "Dlaczego pominięcie jednej porannej tabletki LT4 nie wywołuje natychmiastowych objawów niedoczynności?": "tarczyca-matematyka-kinetyka-q4",
+    "Jaki charakter ma zależność pomiędzy stężeniem FT4 a wydzielaniem TSH w przysadce?": "tarczyca-matematyka-kinetyka-q5"
+  },
+  "tarczyca-matematyka-sprzezenie": {
+    "Co bezpośrednio mierzy parametr matematyczny SPINA-GT?": "tarczyca-matematyka-sprzezenie-q1",
+    "Jaki stan metaboliczny charakteryzuje się prawidłowym SPINA-GT, lecz znacznie obniżonym SPINA-GD?": "tarczyca-matematyka-sprzezenie-q2",
+    "Do czego służy wskaźnik Jostela (Jostel’s TSH Index — JTI)?": "tarczyca-matematyka-sprzezenie-q3",
+    "Jak zmienia się wartość SPINA-GT u pacjenta po całkowitym wycięciu tarczycy (tyreoidektomii)?": "tarczyca-matematyka-sprzezenie-q4",
+    "Dlaczego korelacja między TSH a FT4 jest przedstawiana na skali log-liniowej?": "tarczyca-matematyka-sprzezenie-q5"
+  },
+  "tarczyca-chemia-synteza": {
+    "Jaki kąt tworzy wiązanie eterowe C-O-C łączące dwa pierścienie aromatyczne w cząsteczce tyroksyny?": "tarczyca-chemia-synteza-q1",
+    "Czym pod względem chemicznym jest Compound I w cyklu katalitycznym TPO?": "tarczyca-chemia-synteza-q2",
+    "Jaki produkt uboczny powstaje w łańcuchu tyreoglobuliny podczas odszczepienia pierścienia fenolowego w reakcji sprzęgania DIT do T4?": "tarczyca-chemia-synteza-q3",
+    "Dlaczego trójjodotyronina (T3) wiąże się z receptorem jądrowym TRβ z 10–15 razy większym powinowactwem niż T4?": "tarczyca-chemia-synteza-q4",
+    "Który enzym dostarcza nadtlenek wodoru (H2O2) niezbędny do aktywacji hemu TPO?": "tarczyca-chemia-synteza-q5"
+  },
+  "tarczyca-chemia-farmakologia": {
+    "Jakie ugrupowanie chemiczne w cząsteczce tiamazolu odpowiada za inhibicję peroksydazy tarczycowej (TPO)?": "tarczyca-chemia-farmakologia-q1",
+    "Dlaczego selenocysteina (Sec) w dejodynazach jest znacznie silniejszym nukleofilem w pH fizjologicznym niż zwykła cysteina?": "tarczyca-chemia-farmakologia-q2",
+    "Która dejodynaza odpowiada za inaktywację hormonów tarczycy poprzez usuwanie jodu z pierścienia wewnętrznego?": "tarczyca-chemia-farmakologia-q3",
+    "Dlaczego propylotiouracyl (PTU) w odróżnieniu od tiamazolu hamuje obwodową konwersję T4 do T3 w wątrobie?": "tarczyca-chemia-farmakologia-q4",
+    "Jaki kofaktor wewnątrzkomórkowy jest niezbędny do regeneracji aktywnej formy selenocysteiny w dejodynazach po odszczepieniu jodu?": "tarczyca-chemia-farmakologia-q5"
+  },
+  "przysadka-fizjologia": {
+    "Jaki objaw okulistyczny jest najbardziej typowy dla makrogruczolaka przysadki uciskającego chiazmę?": "przysadka-fizjologia-q1",
+    "Jaki jest główny fizjologiczny czynnik kontrolujący wydzielanie prolaktyny?": "przysadka-fizjologia-q2",
+    "Gdzie syntetyzowana jest wazopresyna (AVP) magazynowana w tylnym płacie przysadki?": "przysadka-fizjologia-q3",
+    "Co dzieje się ze stężeniem prolaktyny, gdy niefunkcjonujący guz uciska szypułę przysadki?": "przysadka-fizjologia-q4",
+    "Które nerwy czaszkowe mogą ulec uszkodzeniu przy bocznej ekspansji guza przysadki do zatoki jamistej?": "przysadka-fizjologia-q5"
+  },
+  "przysadka-diagnostyka": {
+    "Jaki wymiar guza przysadki stanowi granicę między mikrogruczolakiem a makrogruczolakiem?": "przysadka-diagnostyka-q1",
+    "Dlaczego w przesiewowej diagnostyce akromegalii oznacza się IGF-1, a nie pojedyncze stężenie hormonu wzrostu (GH)?": "przysadka-diagnostyka-q2",
+    "Jak wzmacniają się gruczolaki przysadki w dynamicznym badaniu MRI po podaniu kontrastu?": "przysadka-diagnostyka-q3",
+    "U chorego z makrogruczolakiem 18 mm wykonujesz perymetrię. Kiedy badanie to należy powtórzyć w trybie pilnym?": "przysadka-diagnostyka-q4",
+    "Co wchodzi w skład wstępnego panelu hormonalnego u każdego pacjenta z nowo wykrytym incydentaloma przysadki?": "przysadka-diagnostyka-q5"
+  },
+  "prolactinoma": {
+    "Jaka jest podstawowa metoda leczenia pierwszego rzutu w większości przypadków prolactinoma?": "prolactinoma-q1",
+    "Na czym polega efekt „hook” (haczyka) w diagnostyce wielkich guzów prolaktynowych?": "prolactinoma-q2",
+    "Pacjentka bez objawów hipogonadyzmu ma stężenie PRL 85 ng/ml. Miesiączkuje regularnie i ma dwoje dzieci. Co należy zrobić w pierwszej kolejności?": "prolactinoma-q3",
+    "Która grupa leków najczęściej wywołuje polekową hiperprolaktynemię w mechanizmie blokady receptorów D2?": "prolactinoma-q4",
+    "Dlaczego prolactinoma u mężczyzn jest najczęściej diagnozowany w stadium dużego makrogruczolaka?": "prolactinoma-q5"
+  },
+  "akromegalia": {
+    "Jak zachowuje się stężenie hormonu wzrostu (GH) podczas testu OGTT 75 g glukozy u osoby ze zdrową przysadką?": "akromegalia-q1",
+    "Co jest leczeniem pierwszego wyboru u pacjenta z nowo rozpoznaną akromegalią i makrogruczolakiem przysadki?": "akromegalia-q2",
+    "Które badanie profilaktyczne jest bezwzględnie zalecane u każdego pacjenta z akromegalią z uwagi na zwiększone ryzyko onkologiczne?": "akromegalia-q3",
+    "Jaki lek blokuje receptor obwodowy hormonu wzrostu i nie wymaga obecności receptorów somatostatynowych na guzie?": "akromegalia-q4",
+    "Jaki jest typowy powód opóźnienia rozpoznania akromegalii o średnio 7–10 lat od początku choroby?": "akromegalia-q5"
+  },
+  "cushing-choroba": {
+    "Jakie stężenie kortyzolu w surowicy krwi o godz. 8:00 rano po przyjęciu 1 mg deksametazonu o 23:00 wyklucza zespół Cushinga?": "cushing-choroba-q1",
+    "Czym różni się choroba Cushinga od zespołu Cushinga?": "cushing-choroba-q2",
+    "U pacjenta potwierdzono hiperkortyzolemię. Stężenie ACTH w osoczu wynosi <2 pg/ml (całkowicie stłumione). Gdzie zlokalizowana jest przyczyna?": "cushing-choroba-q3",
+    "Dlaczego pojedyncze poranne stężenie kortyzolu we krwi NIE służy do wstępnego wykluczenia zespołu Cushinga?": "cushing-choroba-q4",
+    "Kiedy stosuje się obustronne cewnikowanie zatok skalistych dolnych (BIPSS)?": "cushing-choroba-q5"
+  },
+  "guzy-nieczynne": {
+    "Jakie jest bezwzględne wskazanie do operacji neurochirurgicznej u pacjenta z gruczolakiem nieczynnym hormonalnie (NFPA)?": "guzy-nieczynne-q1",
+    "Czy leczenie farmakologiczne kabergoliną jest standardową terapią pierwszego rzutu w gruczolakach nieczynnych hormonalnie (NFPA)?": "guzy-nieczynne-q2",
+    "Jak często małe, przypadkowo wykryte mikrogruczolaki przysadki (<10 mm) ulegają powiększeniu w wieloletniej obserwacji?": "guzy-nieczynne-q3",
+    "W jaki sposób duży nieczynny makrogruczolak przysadki może doprowadzić do niedoczynności tarczycy lub kory nadnerczy?": "guzy-nieczynne-q4",
+    "Pacjent ma przypadkowo wykrytego mikrogruczolaka 6 mm bez objawów klinicznych i z prawidłowym polem widzenia. Jaki jest prawidłowy plan nadzoru?": "guzy-nieczynne-q5"
+  },
+  "hipopituitaryzm": {
+    "Dlaczego u pacjenta ze złożoną niedoczynnością przysadki hydrokortyzon musi być podany PRZED lewotyroksyną?": "hipopituitaryzm-q1",
+    "Jaki jest najwcześniejszy objaw kliniczny zespołu Sheehana w okresie połogu?": "hipopituitaryzm-q2",
+    "Który parametr laboratoryjny służy do monitorowania prawidłowości dawki lewotyroksyny w niedoczynności przysadkowej?": "hipopituitaryzm-q3",
+    "Dlaczego chory z wtórną niedoczynnością kory nadnerczy w przebiegu hipopituitaryzmu nie wymaga przyjmowania fludrokortyzonu?": "hipopituitaryzm-q4",
+    "Jaka jest zazwyczaj pierwsza oś hormonalna ulegająca upośledzeniu w powolnym niszczeniu przysadki przez guz?": "hipopituitaryzm-q5"
+  },
+  "moczowka-prosta": {
+    "Jak zachowuje się osmolalność moczu po podaniu desmopresyny u pacjenta z moczówką prostą centralną?": "moczowka-prosta-q1",
+    "Co jest głównym niebezpieczeństwem u chorego z moczówką prostą, który traci przytomność lub zostaje pozbawiony dostępu do wody?": "moczowka-prosta-q2",
+    "Który powszechnie stosowany lek psychiatryczny jest klasyczną przyczyną nabytej moczówki prostej nerkowej?": "moczowka-prosta-q3",
+    "Jakie stężenie sodu w surowicy cechuje stabilnego pacjenta z moczówką prostą, który wypija 8 litrów wody dziennie zgodnie ze swoim pragnieniem?": "moczowka-prosta-q4",
+    "Jaka jest preferowana postać i droga podawania desmopresyny w przewlekłym leczeniu moczówki prostej centralnej?": "moczowka-prosta-q5"
+  },
+  "siadh": {
+    "Jakie jest maksymalne bezpieczne tempo podnoszenia stężenia sodu w leczeniu przewlekłej hiponatremii w ciągu pierwszych 24 godzin?": "siadh-q1",
+    "Który stan kliniczny należy bezwzględnie wykluczyć przed postawieniem pewnego rozpoznania zespołu SIADH?": "siadh-q2",
+    "Jaki jest stan objętości wewnątrznaczyniowej (wolemii) u pacjenta z typowym zespołem SIADH?": "siadh-q3",
+    "Co stanowi podstawowe postępowanie pierwszego rzutu u stabilnego pacjenta z bezobjawowym lub łagodnym SIADH?": "siadh-q4",
+    "Jaki nowotwór złośliwy najczęściej odpowiada za ektopowe wydzielanie wazopresyny i zespół SIADH?": "siadh-q5"
+  },
+  "przysadka-zapalenia": {
+    "U chorego na czerniaka leczonego ipilimumabem (anty-CTLA-4) pojawia się silny ból głowy, zmęczenie i sód 128 mmol/l. Co należy pilnie podejrzewać?": "przysadka-zapalenia-q1",
+    "Który objaw radiologiczny w MRI siodła silnie przemawia za zapaleniem przysadki (hipofizytem), a nie za typowym gruczolakiem?": "przysadka-zapalenia-q2",
+    "Która oś hormonalna ulega najczęściej i najwcześniej upośledzeniu w przebiegu limfocytowego zapalenia przysadki?": "przysadka-zapalenia-q3",
+    "Kiedy najczęściej występuje klasyczne limfocytowe zapalenie przysadki (LYH)?": "przysadka-zapalenia-q4",
+    "Jaki objaw w zakresie tylnego płata często towarzyszy histiocytozie X i sarkoidozie z zajęciem siodła?": "przysadka-zapalenia-q5"
+  },
+  "udar-przysadki": {
+    "Jaki lek należy podać natychmiast każdemu choremu z podejrzeniem apopleksji przysadki, jeszcze przed wynikami badań laboratoryjnych?": "udar-przysadki-q1",
+    "Który objaw u chorego z apopleksją przysadki kwalifikuje go do pilnej operacji neurochirurgicznej w trybie ostrym?": "udar-przysadki-q2",
+    "Z jakim innym zagrażającym życiu stanem neurologicznym najczęściej mylona jest apopleksja przysadki ze względu na nagły ból głowy?": "udar-przysadki-q3",
+    "Dlaczego porażenie nerwu okoruchowego (III) jest typowym powikłaniem udaru guza przysadki?": "udar-przysadki-q4",
+    "W jakiej strukturze najczęściej dochodzi do krwawienia w apopleksji przysadki?": "udar-przysadki-q5"
+  },
+  "przysadka-operacje": {
+    "Czym charakteryzuje się druga faza klasycznej trójfazowej odpowiedzi po operacji przysadki (zwykle między 3. a 7. dobą)?": "przysadka-operacje-q1",
+    "Jakie stężenie kortyzolu w surowicy rano w 2.–3. dobie po operacji choroby Cushinga wskazuje na doszczętne usunięcie gruczolaka (remisję)?": "przysadka-operacje-q2",
+    "Pacjent po operacji przezklinowej zgłasza wyciek przezroczystego, słodkawego płynu z nosa nasilający się przy pochyleniu głowy do przodu. Jakie powikłanie należy podejrzewać?": "przysadka-operacje-q3",
+    "Dlaczego po operacji przysadki desmopresyny nie podaje się automatycznie przy pierwszych objawach poliurii?": "przysadka-operacje-q4",
+    "Który marker biochemiczny w płynie wyciekającym z nosa pozwala definitywnie odróżnić płyn mózgowo-rdzeniowy od wydzieliny śluzowej nosa?": "przysadka-operacje-q5"
+  },
+  "przysadka-matematyka-pulsacja": {
+    "Dlaczego ciągły wlew agonisty receptora GnRH hamuje wydzielanie LH i FSH zamiast je stymulować?": "przysadka-matematyka-pulsacja-q1",
+    "Jaka całka matematyczna opisuje zależność między chwilową sekrecją hormonu S(t) a jego stężeniem w osoczu C(t)?": "przysadka-matematyka-pulsacja-q2",
+    "Kiedy u zdrowego człowieka występuje fizjologiczny, największy dobowy szczyt wydzielania hormonu wzrostu (GH)?": "przysadka-matematyka-pulsacja-q3",
+    "Co dzieje się z fizjologiczną pulsacją ACTH i kortyzolu u pacjenta z chorobą Cushinga (gruczolak ACTH)?": "przysadka-matematyka-pulsacja-q4",
+    "Które neurony podwzgórza pełnią kluczową rolę jako generator pulsów GnRH (tzw. pulsator GnRH)?": "przysadka-matematyka-pulsacja-q5"
+  },
+  "przysadka-matematyka-osmolalnosc": {
+    "Co wyraża uproszczone równanie Edelmana w gospodarce wodno-elektrolitowej?": "przysadka-matematyka-osmolalnosc-q1",
+    "Kiedy klirens wolnej wody (C_H2O) przyjmuje wartość ujemną (C_H2O < 0)?": "przysadka-matematyka-osmolalnosc-q2",
+    "Jakie jest maksymalne bezpieczne tempo podnoszenia stężenia sodu w surowicy w przewlekłej hiponatremii?": "przysadka-matematyka-osmolalnosc-q3",
+    "Ile milimoli sodu zawiera 1 litr 3% roztworu NaCl stosowanego w ratunkowym leczeniu obrzęku mózgu?": "przysadka-matematyka-osmolalnosc-q4",
+    "Dlaczego podanie 0,9% NaCl u pacjenta z zespołem SIADH może paradoksalnie pogłębić hiponatremię?": "przysadka-matematyka-osmolalnosc-q5"
+  },
+  "przysadka-chemia-struktury": {
+    "Jaka część cząsteczki jest w 100% identyczna pod względem sekwencji aminokwasowej w TSH, LH, FSH i hCG?": "przysadka-chemia-struktury-q1",
+    "Dlaczego okres półtrwania hCG w osoczu wynosi aż 24–36 godzin, podczas gdy LH zaledwie 20–30 minut?": "przysadka-chemia-struktury-q2",
+    "Ilu aminokwasów liczy dojrzała cząsteczka wazopresyny (AVP) i oksytocyny (OXT)?": "przysadka-chemia-struktury-q3",
+    "Które reszty aminokwasowe tworzą kluczowy mostek disiarczkowy zamykający pierścień w cząsteczce wazopresyny?": "przysadka-chemia-struktury-q4",
+    "Jakie niebezpieczne powikłanie metaboliczne może wywołać wysoki wlew oksytocyny podczas porodu?": "przysadka-chemia-struktury-q5"
+  },
+  "przysadka-chemia-leki": {
+    "Jakie dwie modyfikacje chemiczne wprowadzono w cząsteczce desmopresyny (dDAVP) w stosunku do naturalnej AVP?": "przysadka-chemia-leki-q1",
+    "Dlaczego kabergolinę można podawać w prolactinoma zaledwie raz lub dwa razy w tygodniu?": "przysadka-chemia-leki-q2",
+    "Z pobudzeniem którego receptora serotoninowego wiąże się ryzyko włóknienia zastawek serca przy megadawkach ergolin?": "przysadka-chemia-leki-q3",
+    "Jaki jest czas półtrwania (t1/2) naturalnej somatostatyny w osoczu człowieka?": "przysadka-chemia-leki-q4",
+    "Który analog somatostatyny wykazuje 40-krotnie wyższe powinowactwo do receptora SSTR5 niż oktreotyd i jest stosowany w chorobie Cushinga?": "przysadka-chemia-leki-q5"
+  },
+  "nadnercza-anatomia": {
+    "Gdzie uchodzi prawa żyła nadnerczowa u człowieka?": "nadnercza-anatomia-q1",
+    "Który czynnik stanowi główny fizjologiczny regulator wydzielania aldosteronu przez strefę kłębuszkową?": "nadnercza-anatomia-q2",
+    "Dlaczego w rdzeniu nadnerczy powstaje głównie adrenalina, podczas gdy zwoje współczulne wydzielają niemal wyłącznie noradrenalinę?": "nadnercza-anatomia-q3",
+    "Jaki hormon jest głównym produktem strefy pasmowatej (zona fasciculata) kory nadnerczy?": "nadnercza-anatomia-q4",
+    "Jakie białko transportowe odpowiada za pierwszy, ograniczający etap sterydogenezy (transport cholesterolu do wnętrza mitochondrium)?": "nadnercza-anatomia-q5"
+  },
+  "nadnercza-diagnostyka": {
+    "Jakie stężenie kortyzolu w surowicy po podaniu 250 µg Synacthenu wyklucza pierwotną niedoczynność kory nadnerczy?": "nadnercza-diagnostyka-q1",
+    "Kiedy pojedyncze poranne oznaczenie stężenia kortyzolu we krwi pozwala bezpiecznie wykluczyć niedoczynność kory nadnerczy bez testów dynamicznych?": "nadnercza-diagnostyka-q2",
+    "Dlaczego doustna antykoncepcja estrogenowa może zafałszować wynik całkowitego kortyzolu w surowicy?": "nadnercza-diagnostyka-q3",
+    "Jaki lek moczopędny należy bezwzględnie odstawić na co najmniej 4–6 tygodni przed oznaczeniem wskaźnika ARR?": "nadnercza-diagnostyka-q4",
+    "W jakiej pozycji powinien spocząć pacjent przed pobraniem krwi na wolne metanefryny w osoczu w celu minimalizacji wyników fałszywie dodatnich?": "nadnercza-diagnostyka-q5"
+  },
+  "addison-choroba": {
+    "Dlaczego u pacjentów z chorobą Addisona rozwija się hiperpigmentacja skóry (melanodermia)?": "addison-choroba-q1",
+    "Jaki zestaw zaburzeń elektrolitowych jest najbardziej charakterystyczny dla pierwotnej niedoczynności kory nadnerczy?": "addison-choroba-q2",
+    "Jakie leczenie substytucyjne należy wdrożyć u pacjenta ze świeżo rozpoznaną chorobą Addisona?": "addison-choroba-q3",
+    "Co powinien zrobić stabilny pacjent z chorobą Addisona w przypadku wystąpienia infekcji z gorączką >38,5°C?": "addison-choroba-q4",
+    "Które autoprzeciwciała stanowią marker autoimmunologicznego zapalenia kory nadnerczy?": "addison-choroba-q5"
+  },
+  "niedoczynnosc-wtorna": {
+    "Dlaczego u pacjenta z wtórną (przysadkową) niedoczynnością kory nadnerczy stężenie potasu w surowicy zazwyczaj pozostaje prawidłowe?": "niedoczynnosc-wtorna-q1",
+    "Czym różni się wygląd powłok skórnych w chorobie Addisona od wtórnej niedoczynności nadnerczy?": "niedoczynnosc-wtorna-q2",
+    "Jaki jest najczęstszy powód wtórnej niewydolności kory nadnerczy w praktyce lekarza POZ i internisty?": "niedoczynnosc-wtorna-q3",
+    "Czy chory z izolowaną wtórną niedoczynnością kory nadnerczy wymaga przewlekłego przyjmowania fludrokortyzonu?": "niedoczynnosc-wtorna-q4",
+    "Po jakim czasie stosowania prednizonu w dawce >=5–7,5 mg/dobę należy podejrzewać wystąpienie supresji osi HPA?": "niedoczynnosc-wtorna-q5"
+  },
+  "wpn-zespol": {
+    "Jaki metabolit steroidowy ulega masywnej akumulacji we krwi w najczęstszej postaci wrodzonego przerostu nadnerczy (WPN)?": "wpn-zespol-q1",
+    "Dlaczego u noworodka z klasyczną postacią WPN z utratą soli dochodzi w 2.–3. tygodniu życia do zapaści krążeniowej?": "wpn-zespol-q2",
+    "Z jakim powszechnym zaburzeniem endokrynologicznym u młodych kobiet najczęściej bywa mylona nieklasyczna postać WPN (NC-CAH)?": "wpn-zespol-q3",
+    "Jaki wynik stężenia 17-OHP w teście stymulacji 250 µg Synacthenu definitywnie potwierdza rozpoznanie nieklasycznego WPN?": "wpn-zespol-q4",
+    "Co jest głównym celem terapeutycznym podawania hydrokortyzonu u chorych z wrodzonym przerostem nadnerczy?": "wpn-zespol-q5"
+  },
+  "cushing-nadnerczowy": {
+    "Jakie stężenie ACTH w osoczu stwierdza się u chorego z jawnym zespołem Cushinga wywołanym pojedynczym autonomicznym gruczolakiem kory nadnercza?": "cushing-nadnerczowy-q1",
+    "Dlaczego po usunięciu autonomicznego gruczolaka kory nadnercza pacjent musi natychmiast otrzymać hydrokortyzon?": "cushing-nadnerczowy-q2",
+    "Jakie kryterium w nocnym teście hamowania 1 mg deksametazonu definiuje łagodną autonomiczną sekrecję kortyzolu (MACS) w incydentaloma nadnerczy?": "cushing-nadnerczowy-q3",
+    "Jakie powikłania ogólnoustrojowe najczęściej towarzyszą chorym z łagodną autonomiczną sekrecją kortyzolu (MACS)?": "cushing-nadnerczowy-q4",
+    "Jak długo po operacji usunięcia gruczolaka wydzielającego kortyzol może trwać regeneracja osi HPA i przeciwległego nadnercza?": "cushing-nadnerczowy-q5"
+  },
+  "zespol-conna": {
+    "Czy prawidłowe stężenie potasu w surowicy krwi wyklucza u pacjenta pierwotny hiperaldosteronizm (zespół Conna)?": "zespol-conna-q1",
+    "Dlaczego badanie tomografii komputerowej (TK) nadnerczy nie jest wystarczające do podjęcia decyzji o adrenalektomii w PA?": "zespol-conna-q2",
+    "Jaka procedura jest uznawana za złoty standard w różnicowaniu jednostronnego gruczolaka (APA) od obustronnego przerostu nadnerczy (BAH)?": "zespol-conna-q3",
+    "Jaki lek stanowi podstawę farmakoterapii u chorego z obustronnym przerostem nadnerczy (BAH)?": "zespol-conna-q4",
+    "Czym charakteryzuje się wskaźnik ARR u pacjenta z pierwotnym hiperaldosteronizmem?": "zespol-conna-q5"
+  },
+  "pheochromocytoma": {
+    "Dlaczego podanie beta-blokera jako pierwszego leku u pacjenta z guzem chromochłonnym jest kardynalnym błędem w sztuce lekarskiej?": "pheochromocytoma-q1",
+    "Jaki lek należy wdrożyć jako pierwszy w ramach farmakologicznego przygotowania do operacji feochromocytoma?": "pheochromocytoma-q2",
+    "Jaka jest klasyczna triada objawów napadowych sugerująca obecność guza chromochłonnego?": "pheochromocytoma-q3",
+    "Jaki odsetek guzów chromochłonnych i paraganglioma rozwija się w związku z mutacją germinalną (uwarunkowanie genetyczne)?": "pheochromocytoma-q4",
+    "Dlaczego w ostatnich dobach przed operacją guza chromochłonnego zaleca się intensywne nawadnianie 0,9% NaCl i dietę bogatosolną?": "pheochromocytoma-q5"
+  },
+  "incydentaloma-nadnercza": {
+    "Jaka wartość gęstości natywnej w tomografii komputerowej bez kontrastu (TK) pozwala uznać incydentaloma nadnercza za łagodnego gruczolaka bez konieczności dalszych badań obrazowych?": "incydentaloma-nadnercza-q1",
+    "Jaki zestaw badań hormonalnych należy obligatoryjnie wykonać u KAŻDEGO pacjenta z przypadkowo wykrytym guzem nadnercza?": "incydentaloma-nadnercza-q2",
+    "Dlaczego biopsja aspiracyjna cienkoigłowa (BACC) jest rutynowo PRZECIWWSKAZANA w diagnostyce incydentaloma nadnerczy?": "incydentaloma-nadnercza-q3",
+    "Jaka wartość bezwzględnego współczynnika wymywania kontrastu (APW) w tomografii z opóźnioną fazą po 15 min przemawia za łagodnym charakterem zmiany?": "incydentaloma-nadnercza-q4",
+    "U 60-latka wykryto w TK guz lewego nadnercza 2,2 cm o gęstości natywnej 4 HU. W teście 1 mg DEX kortyzol wynosi 1,2 µg/dl, metanefryny w normie. Jakie jest zalecenie wg wytycznych ESE 2023?": "incydentaloma-nadnercza-q5"
+  },
+  "przelom-nadnerczowy": {
+    "Jaki lek i w jakiej dawce należy podać natychmiast w bolusie dożylnym choremu z podejrzeniem ostrego przełomu nadnerczowego?": "przelom-nadnerczowy-q1",
+    "Dlaczego w ostrej fazie leczenia przełomu nadnerczowego nie ma potrzeby podawania fludrokortyzonu?": "przelom-nadnerczowy-q2",
+    "Z jakim stanem chirurgicznym najczęściej bywa mylony ostry przełom nadnerczowy z powodu objawów brzusznych?": "przelom-nadnerczowy-q3",
+    "Jaki płyn infuzyjny stanowi podstawę resuscytacji płynowej w pierwszej dobie przełomu nadnerczowego?": "przelom-nadnerczowy-q4",
+    "Jaki steryd można zastosować u chorego we wstrząsie, jeśli planujemy równoczesne wykonanie testu z Synacthenem, bez fałszowania oznaczenia kortyzolu?": "przelom-nadnerczowy-q5"
+  },
+  "rak-nadnercza": {
+    "Jaki obraz kliniczny i hormonalny u kobiety w średnim wieku silnie nasuwa podejrzenie raka kory nadnerczy (ACC)?": "rak-nadnercza-q1",
+    "Ile kryteriów w mikroskopowej skali Weissa definiuje złośliwy charakter nowotworu kory nadnerczy (ACC)?": "rak-nadnercza-q2",
+    "Jaki lek o selektywnym działaniu adrenolitycznym stanowi standard terapii uzupełniającej u chorych na raka kory nadnerczy?": "rak-nadnercza-q3",
+    "Dlaczego u pacjenta przyjmującego mitotan dawka substytucyjna hydrokortyzonu musi być istotnie wyższa niż u standardowego chorego z niedoczynnością kory?": "rak-nadnercza-q4",
+    "Jaki dostęp operacyjny jest zalecany przez wytyczne ESE/ENSAT w przypadku guzów nadnercza o cechach podejrzenia raka kory nadnerczy (ACC)?": "rak-nadnercza-q5"
+  },
+  "adrenalektomia": {
+    "Jaka technika chirurgiczna stanowi złoty standard leczenia łagodnych, hormonalnie czynnych guzów nadnercza o średnicy poniżej 6 cm?": "adrenalektomia-q1",
+    "Dlaczego uszkodzenie prawej żyły nadnerczowej podczas operacji jest szczególnie niebezpieczne?": "adrenalektomia-q2",
+    "Jakie powikłanie metaboliczne może wystąpić w pierwszych godzinach po pomyślnym usunięciu guza chromochłonnego?": "adrenalektomia-q3",
+    "Kiedy stosuje się operację oszczędzającą korę nadnercza (cortical-sparing adrenalectomy)?": "adrenalektomia-q4",
+    "Jakie postępowanie farmakologiczne należy wdrożyć bezpośrednio po wycięciu jednostronnego gruczolaka Conna (APA)?": "adrenalektomia-q5"
+  },
+  "nadnercza-matematyka-kinetyka-enzymow": {
+    "Jaka resztkowa aktywność enzymatyczna (Vmax) 21-hydroksylazy (CYP21A2) cechuje postać klasyczną WPN z utratą soli?": "nadnercza-matematyka-kinetyka-enzymow-q1",
+    "Który metabolit steroidowy kumuluje się w sposób najbardziej spektakularny w deficycie 21-hydroksylazy i służy jako główny biomarker diagnostyczny?": "nadnercza-matematyka-kinetyka-enzymow-q2",
+    "Jaka wartość stężenia 17-OHP w 60. minucie testu stymulacji 250 µg Synacthenem stanowi kryterium potwierdzenia nieklasycznego WPN (NC-CAH)?": "nadnercza-matematyka-kinetyka-enzymow-q3",
+    "Dlaczego w deficycie 21-hydroksylazy dochodzi do gwałtownego rozrostu kory nadnerczy (hiperplazji)?": "nadnercza-matematyka-kinetyka-enzymow-q4",
+    "Czym jest tzw. alternatywny szlak tylnych drzwi (backdoor pathway) w steroidogenezie nadnerczowej?": "nadnercza-matematyka-kinetyka-enzymow-q5"
+  },
+  "nadnercza-matematyka-hemodynamika": {
+    "Dlaczego do wiarygodnej interpretacji podwyższonego wskaźnika ARR (>30) konieczne jest jednoczesne wykazanie stężenia aldosteronu (PAC) > 10–15 ng/dl?": "nadnercza-matematyka-hemodynamika-q1",
+    "Dlaczego w przygotowaniu do operacji guza chromochłonnego (pheo) bezwzględnie ZAKAZANE jest wdrożenie beta-blokera przed pełną blokadą alfa?": "nadnercza-matematyka-hemodynamika-q2",
+    "Na czym polega przewaga niekompetycyjnego antagonisty receptorów alfa (fenoksybenzaminy) nad antagonistą kompetycyjnym (doksazosyną)?": "nadnercza-matematyka-hemodynamika-q3",
+    "Jaki lek hipotensyjny fałszywie drastycznie podwyższa stężenie reniny i może uniemożliwić interpretację wskaźnika ARR (dając wynik fałszywie ujemny)?": "nadnercza-matematyka-hemodynamika-q4",
+    "Jaki wpływ na interpretację wskaźnika ARR ma hipokaliemia u pacjenta z podejrzeniem zespołu Conna?": "nadnercza-matematyka-hemodynamika-q5"
+  },
+  "nadnercza-chemia-steroidogeneza": {
+    "Ile atomów węgla liczy podstawowy szkielet steroidowy cholesterolu (prekursora steroidogenezy)?": "nadnercza-chemia-steroidogeneza-q1",
+    "Co oznacza oznaczenie podstawnika jako „alfa” (α) w nomenklaturze chemicznej steroidów?": "nadnercza-chemia-steroidogeneza-q2",
+    "Jaki aminokwas w łańcuchu peptydowym cytochromów P450 stanowi proksymalny ligand koordynujący jon żelaza w hemie?": "nadnercza-chemia-steroidogeneza-q3",
+    "Który enzym odpowiada za ochronę receptora mineralokortykoidowego (MR) przed niekontrolowaną aktywacją przez kortyzol w nerkach?": "nadnercza-chemia-steroidogeneza-q4",
+    "Dlaczego w warstwie kłębkowatej (zona glomerulosa) kory nadnerczy nie powstaje kortyzol ani androgeny?": "nadnercza-chemia-steroidogeneza-q5"
+  },
+  "nadnercza-chemia-katecholaminy": {
+    "Jaki enzym katalizuje pierwszy i ograniczający szybkość (rate-limiting) etap biosyntezy katecholamin z tyrozyny?": "nadnercza-chemia-katecholaminy-q1",
+    "Dlaczego rdzeń nadnerczy wytwarza głównie adrenalinę, podczas gdy zwoje współczulne wytwarzają prawie wyłącznie noradrenalinę?": "nadnercza-chemia-katecholaminy-q2",
+    "Dlaczego pomiar wolnych metanefryn w osoczu cechuje się wyższą czułością w wykrywaniu pheochromocytoma niż pomiar samej noradrenaliny?": "nadnercza-chemia-katecholaminy-q3",
+    "Co jest uniwersalnym donorem grupy metylowej w reakcji przekształcenia noradrenaliny w adrenalinę przez enzym PNMT?": "nadnercza-chemia-katecholaminy-q4",
+    "Jaki jon metalu jest niezbędnym kofaktorem w centrum aktywnym enzymu COMT (katecholo-O-metylotransferazy)?": "nadnercza-chemia-katecholaminy-q5"
+  },
+  "przytarczyce-fizjologia": {
+    "Jaki jest bezpośredni efekt aktywacji receptora CaSR przez wysokie stężenie jonów Ca2+ w przytarczycach?": "przytarczyce-fizjologia-q1",
+    "Jaki jest główny wpływ parathormonu (PTH) na gospodarkę fosforanową w nerkach?": "przytarczyce-fizjologia-q2",
+    "Który enzym jest bezpośrednio aktywowany w nerkach przez PTH w procesie bioaktywacji witaminy D?": "przytarczyce-fizjologia-q3",
+    "Jaka jest kluczowa funkcja biologiczna czynnika FGF23?": "przytarczyce-fizjologia-q4",
+    "Dlaczego ciężka hiperkalcemia prowadzi do wielomoczu (poliurii) i odwodnienia?": "przytarczyce-fizjologia-q5"
+  },
+  "przytarczyce-diagnostyka": {
+    "Pacjent ma stężenie wapnia całkowitego 8,0 mg/dl (norma 8,6–10,2) i stężenie albuminy 2,5 g/dl (norma 4,0). Ile wynosi stężenie wapnia skorygowanego?": "przytarczyce-diagnostyka-q1",
+    "W jaki sposób ostra alkaloza oddechowa wywołana hiperwentylacją wpływa na wapń zjonizowany?": "przytarczyce-diagnostyka-q2",
+    "Wskaźnik CCCR wynosi u pacjenta z hiperkalcemią 0,006 (<0,01). Jakie jest najbardziej prawdopodobne rozpoznanie?": "przytarczyce-diagnostyka-q3",
+    "Który parametr moczowy jest niezbędny do obliczenia wskaźnika CCCR (FeCa)?": "przytarczyce-diagnostyka-q4",
+    "Dlaczego u pacjenta z podejrzeniem zaburzeń osi przytarczycowej zaleca się odstawienie biotyny przed pobraniem krwi?": "przytarczyce-diagnostyka-q5"
+  },
+  "phpt-pierwotna": {
+    "58-letnia kobieta bez objawów ma Ca 10,6 mg/dl (norma do 10,2), PTH 85 pg/ml (norma do 65), T-score kręgosłupa -2,8, eGFR 75 ml/min. Czy pacjentka spełnia kryteria paratyreoidktomii?": "phpt-pierwotna-q1",
+    "Na czym polega kryterium z Miami w śródoperacyjnym monitorowaniu stężenia parathormonu (ioPTH)?": "phpt-pierwotna-q2",
+    "Które badanie densytometryczne (DXA) jest najbardziej czułe w wykrywaniu ubytku masy kostnej w PHPT?": "phpt-pierwotna-q3",
+    "Jaki lek należy rozważyć u chorego z jawną hiperkalcemią w przebiegu PHPT, u którego istnieją bezwzględne przeciwwskazania kardiologiczne do operacji?": "phpt-pierwotna-q4",
+    "Kiedy należy wykonać scyntygrafię MIBI lub USG szyi u pacjenta z podejrzeniem PHPT?": "phpt-pierwotna-q5"
+  },
+  "fhh-hiperkalcemia": {
+    "Dlaczego u chorego z FHH paratyreoidktomia jest zabiegiem przeciwwskazanym?": "fhh-hiperkalcemia-q1",
+    "Który wynik badania laboratoryjnego najsilniej przemawia za FHH, a przeciwko PHPT?": "fhh-hiperkalcemia-q2",
+    "W jaki sposób dziedziczy się klasyczna postać FHH typu 1?": "fhh-hiperkalcemia-q3",
+    "U 32-letniego mężczyzny bez objawów wykryto Ca 10,7 mg/dl, PTH 68 pg/ml i CCCR 0,007. Jakie postępowanie jest optymalne?": "fhh-hiperkalcemia-q4",
+    "Co dzieje się, gdy noworodek odziedziczy mutację inaktywującą CaSR homozygotycznie od obojga rodziców z FHH?": "fhh-hiperkalcemia-q5"
+  },
+  "shpt-thpt-pchn": {
+    "Jaki zestaw wyników laboratoryjnych jest najbardziej typowy dla wtórnej nadczynności przytarczyc (SHPT) w przebiegu PChN?": "shpt-thpt-pchn-q1",
+    "Co definiuje przejście wtórnej nadczynności przytarczyc (SHPT) w nadczynność trzeciorzędową (THPT)?": "shpt-thpt-pchn-q2",
+    "Dlaczego u pacjentów ze schyłkową niewydolnością nerek preferuje się bezwapniowe leki wiążące fosforany (np. sewelamer)?": "shpt-thpt-pchn-q3",
+    "W jaki sposób kalcymimetyk etelkalcetyd obniża stężenie parathormonu u chorych dializowanych?": "shpt-thpt-pchn-q4",
+    "Czym jest kalcifilaksja (arteriolopatia mocznicowa ze zwapnieniem)?": "shpt-thpt-pchn-q5"
+  },
+  "hiperkalcemia-nowotwory": {
+    "U 64-letniego palacza tytoniu z guzowatą zmianą w płucu stwierdzono Ca 13,8 mg/dl, fosforany 2,0 mg/dl i iPTH 4 pg/ml (norma 15–65). Jaki jest najbardziej prawdopodobny mechanizm hiperkalcemii?": "hiperkalcemia-nowotwory-q1",
+    "Jaka jest kluczowa różnica laboratoryjna między hiperkalcemią w PHPT a hiperkalcemią nowotworową (HCM)?": "hiperkalcemia-nowotwory-q2",
+    "Który nowotwór układu krwiotwórczego powoduje hiperkalcemię w mechanizmie pozanerkowej 1alfa-hydroksylacji i nadmiaru kalcytriolu?": "hiperkalcemia-nowotwory-q3",
+    "Dlaczego standardowy test laboratoryjny na parathormon (iPTH) nie wykrywa peptydu PTHrP?": "hiperkalcemia-nowotwory-q4",
+    "Jakie jest rokowanie u chorego z nowotworem litym, u którego doszło do rozwoju hiperkalcemii nowotworowej (HCM)?": "hiperkalcemia-nowotwory-q5"
+  },
+  "hipokalcemia-niedoczynnosc": {
+    "Jaki jest cel terapeutyczny stężenia wapnia całkowitego w surowicy u dorosłego pacjenta z przewlekłą niedoczynnością przytarczyc wg wytycznych ESE?": "hipokalcemia-niedoczynnosc-q1",
+    "Dlaczego w niedoczynności przytarczyc zwykły cholekalcyferol (witamina D3) w monoterapii nie pozwala wyrównać hipokalcemii?": "hipokalcemia-niedoczynnosc-q2",
+    "Jakie badanie moczu jest obligatoryjne w monitorowaniu bezpieczeństwa leczenia hipoparatyreozy?": "hipokalcemia-niedoczynnosc-q3",
+    "Który lek moczopędny można zastosować u chorego z niedoczynnością przytarczyc w celu zmniejszenia hiperkalciurii?": "hipokalcemia-niedoczynnosc-q4",
+    "Co wchodzi w skład klasycznej triady zespołu autoimmunologicznej poliendokrynopatii typu 1 (APS-1 / APECED)?": "hipokalcemia-niedoczynnosc-q5"
+  },
+  "tezyczka-objawy": {
+    "W jaki sposób spadek stężenia wapnia zjonizowanego w surowicy wywołuje skurcze mięśniowe w tężyczce?": "tezyczka-objawy-q1",
+    "W jaki sposób prawidłowo bada się objaw Trousseau?": "tezyczka-objawy-q2",
+    "Jaka zmiana w elektrokardiogramie (EKG) jest najbardziej charakterystyczna dla ostrej hipokalcemii?": "tezyczka-objawy-q3",
+    "Dlaczego u chorego z tężyczką i współistniejącą hipomagnezemią wlewy samego wapnia nie przynoszą poprawy klinicznej?": "tezyczka-objawy-q4",
+    "Który objaw napadu tężyczki stanowi bezpośrednie zagrożenie uduszeniem i zgonem pacjenta?": "tezyczka-objawy-q5"
+  },
+  "rzekoma-niedoczynnosc": {
+    "Jaki profil biochemiczny w surowicy pozwala odróżnić rzekomą niedoczynność przytarczyc (PHP) od klasycznej pooperacyjnej niedoczynności przytarczyc?": "rzekoma-niedoczynnosc-q1",
+    "Na czym polega objaw Archibalda w fenotypie wrodzonej osteodystrofii Albrighta (AHO)?": "rzekoma-niedoczynnosc-q2",
+    "Dlaczego u pacjenta z rzekomą rzekomą niedoczynnością przytarczyc (PPHP) stężenie wapnia i parathormonu jest całkowicie prawidłowe pomimo obecności cech AHO?": "rzekoma-niedoczynnosc-q3",
+    "Który z poniższych hormonów wykazuje oporność receptorową w zespole PHP typ 1a oprócz parathormonu?": "rzekoma-niedoczynnosc-q4",
+    "Jakie jest leczenie z wyboru zaburzeń gospodarki wapniowo-fosforanowej w PHP?": "rzekoma-niedoczynnosc-q5"
+  },
+  "przelom-hiperkalcemiczny": {
+    "Jaki jest PIERWSZY, najważniejszy krok w postępowaniu ratunkowym u odwodnionego pacjenta z przełomem hiperkalcemicznym (Ca 15,2 mg/dl)?": "przelom-hiperkalcemiczny-q1",
+    "Dlaczego kalcytoninę łączy się z kwasem zoledronowym w leczeniu ostrej hiperkalcemii?": "przelom-hiperkalcemiczny-q2",
+    "Który lek antyresorpcyjny jest preferowany w hiperkalcemii nowotworowej u pacjenta ze schyłkową niewydolnością nerek (eGFR 18 ml/min/1,73 m2)?": "przelom-hiperkalcemiczny-q3",
+    "W jakich przyczynach hiperkalcemii glikokortykosteroidy (np. prednizon, hydrokortyzon) wykazują najwyższą skuteczność terapeutyczną?": "przelom-hiperkalcemiczny-q4",
+    "Kiedy u pacjenta z przełomem hiperkalcemicznym bezwzględnie wskazane jest pilne wdrożenie hemodializy z płynem bezwapniowym?": "przelom-hiperkalcemiczny-q5"
+  },
+  "zespol-glodnych-kosci": {
+    "Który parametr laboratoryjny oznaczony przed operacją przytarczyc jest najsilniejszym wskaźnikiem ryzyka wystąpienia zespołu głodnych kości (HBS)?": "zespol-glodnych-kosci-q1",
+    "Jakie stężenie fosforanów w surowicy odróżnia zespół głodnych kości (HBS) od trwałej pooperacyjnej niedoczynności przytarczyc?": "zespol-glodnych-kosci-q2",
+    "Dlaczego po wycięciu gruczolaka przytarczycy dochodzi do nagłego załamania stężenia wapnia w surowicy?": "zespol-glodnych-kosci-q3",
+    "Jakie leczenie należy zastosować w ostrym zespole głodnych kości?": "zespol-glodnych-kosci-q4",
+    "Jak długo po operacji może utrzymywać się stan zwiększonego zapotrzebowania na wapń w ciężkim HBS?": "zespol-glodnych-kosci-q5"
+  },
+  "osteoporoza-metabolizm": {
+    "Jak wg kryteriów WHO definiuje się osteoporozę w densytometrii rentgenowskiej (DXA)?": "osteoporoza-metabolizm-q1",
+    "68-letnia kobieta doznała kompresyjnego złamania trzonu kręgu L2 po podniesieniu siatki z zakupami. W DXA jej T-score wynosi -1,9. Jakie jest rozpoznanie?": "osteoporoza-metabolizm-q2",
+    "Co grozi pacjentowi w przypadku nagłego zaprzestania przyjmowania denosumabu po 3 latach leczenia?": "osteoporoza-metabolizm-q3",
+    "Jaki lek przeciwosteoporotyczny działa w mechanizmie ANABOLICZNYM (pobudzającym kościotworzenie przez osteoblasty)?": "osteoporoza-metabolizm-q4",
+    "Jakie są zasady prawidłowego przyjmowania doustnych bisfosfonianów (np. alendronianu)?": "osteoporoza-metabolizm-q5"
+  },
+  "przytarczyce-matematyka-casr-sigmoida": {
+    "Jaki współczynnik kooperatywności Hilla (nH) charakteryzuje krzywą supresji PTH przez wapń zjonizowany na receptorze CaSR?": "przytarczyce-matematyka-casr-sigmoida-q1",
+    "Czym jest punkt nastawczy przytarczyc (set-point / EC50)?": "przytarczyce-matematyka-casr-sigmoida-q2",
+    "Jak zmienia się krzywa supresji PTH u pacjenta z rodzinną hiperkalcemią hipokalciuryczną (FHH)?": "przytarczyce-matematyka-casr-sigmoida-q3",
+    "W jaki sposób kalcymimetyk cynakalcet wpływa na parametry równania Hilla receptora CaSR?": "przytarczyce-matematyka-casr-sigmoida-q4",
+    "Co jest unikalnego w sygnalizacji wewnątrzkomórkowej w komórkach głównych przytarczyc w porównaniu z innymi komórkami dokrewnymi?": "przytarczyce-matematyka-casr-sigmoida-q5"
+  },
+  "przytarczyce-matematyka-kinetyka-mineralizacji": {
+    "Jaka wartość wskaźnika klirensu wapniowo-kreatyninowego (CCCR) silnie przemawia za rodzinną hiperkalcemią hipokalciuryczną (FHH) i chroni chorego przed niepotrzebną operacją?": "przytarczyce-matematyka-kinetyka-mineralizacji-q1",
+    "Dlaczego wzór Fridericia (QTc = QT / ∛RR) jest uważany za dokładniejszy od wzoru Bazetta przy tachykardii?": "przytarczyce-matematyka-kinetyka-mineralizacji-q2",
+    "Jaki specyficzny profil biochemiczny odróżnia zespół głodnych kości (HBS) od pooperacyjnej hipoparatyreozy?": "przytarczyce-matematyka-kinetyka-mineralizacji-q3",
+    "Jaki jest stechiometryczny stosunek molowy jonów wapnia do fosforu (Ca:P) w kryształach hydroksyapatytu kości Ca10(PO4)6(OH)2?": "przytarczyce-matematyka-kinetyka-mineralizacji-q4",
+    "Przekroczenie jakiej wartości iloczynu wapniowo-fosforanowego (Ca x P w mg²/dl²) stwarza krytyczne ryzyko kalcyfilaksji i zwapnień naczyniowych?": "przytarczyce-matematyka-kinetyka-mineralizacji-q5"
+  },
+  "przytarczyce-chemia-casr-kalcymimetyki": {
+    "Do której klasy receptorów sprzężonych z białkami G (GPCR) należy receptor wykrywający wapń (CaSR)?": "przytarczyce-chemia-casr-kalcymimetyki-q1",
+    "Jakie reszty aminokwasowe w szczelinie domeny VFT bezpośrednio koordynują dodatnio naładowane jony Ca2+?": "przytarczyce-chemia-casr-kalcymimetyki-q2",
+    "W którym miejscu receptora CaSR wiąże się allosteryczny lek cynakalcet?": "przytarczyce-chemia-casr-kalcymimetyki-q3",
+    "Czym pod względem chemicznym różni się nowszy kalcymimetyk etelkalcetyd od cynakalcetu?": "przytarczyce-chemia-casr-kalcymimetyki-q4",
+    "Jakie białko G jest głównym przekaźnikiem hamowania sekrecji PTH po aktywacji receptora CaSR?": "przytarczyce-chemia-casr-kalcymimetyki-q5"
+  },
+  "przytarczyce-chemia-witd-bisfosfoniany": {
+    "Dlaczego witamina D3 jest określana w chemii organicznej mianem „seko-steroidu”?": "przytarczyce-chemia-witd-bisfosfoniany-q1",
+    "Który metabolit witaminy D oznacza się we krwi obwodowej jako standardowy laboratoryjny wskaźnik zaopatrzenia organizmu?": "przytarczyce-chemia-witd-bisfosfoniany-q2",
+    "Czym pod względem chemicznym różni się mostek w cząsteczce bisfosfonianów (P-C-P) od naturalnego pirofosforanu (P-O-P)?": "przytarczyce-chemia-witd-bisfosfoniany-q3",
+    "Jaki kluczowy enzym szlaku mewalonianowego jest hamowany przez azotowe bisfosfoniany (np. kwas zoledronowy)?": "przytarczyce-chemia-witd-bisfosfoniany-q4",
+    "Główny bodziec stymulujący nerkowy enzym CYP27B1 (1α-hydroksylazę) do produkcji aktywnego kalcytriolu to:": "przytarczyce-chemia-witd-bisfosfoniany-q5"
+  },
+  "cukrzyca-fizjologia": {
+    "W jakim stosunku molowym insulina i peptyd C są uwalniane z komórki beta?": "cukrzyca-fizjologia-q1",
+    "Dlaczego stężenie peptydu C lepiej odzwierciedla czynność komórek beta niż stężenie insuliny?": "cukrzyca-fizjologia-q2",
+    "Jaka jest rola glukokinazy w komórce beta trzustki?": "cukrzyca-fizjologia-q3",
+    "Co dzieje się z kanałami K-ATP po wzroście stężenia glukozy w komórce beta?": "cukrzyca-fizjologia-q4",
+    "Przez jaki receptor inkretyna GLP-1 wzmaga sekrecję insuliny?": "cukrzyca-fizjologia-q5"
+  },
+  "cukrzyca-diagnostyka": {
+    "Pacjent bez objawów hiperglikemii ma glikemię na czczo 132 mg/dl (7,3 mmol/L). Jaki jest prawidłowy krok diagnostyczny?": "cukrzyca-diagnostyka-q1",
+    "Glikemia w 120. minucie testu OGTT wynosi 168 mg/dl (9,3 mmol/L). Jaka jest prawidłowa klasyfikacja?": "cukrzyca-diagnostyka-q2",
+    "W którym z poniższych stanów klinicznych stężenie HbA1c będzie FAŁSZYWIE ZANIŻONE?": "cukrzyca-diagnostyka-q3",
+    "Które kryterium pozwala na natychmiastowe rozpoznanie cukrzycy bez konieczności powtarzania badań?": "cukrzyca-diagnostyka-q4",
+    "Czy u pacjenta ze świeżo wykrytą glikemią na czczo 180 mg/dl należy zlecić doustny test obciążenia 75 g glukozy (OGTT)?": "cukrzyca-diagnostyka-q5"
+  },
+  "cukrzyca-technologie-cgm": {
+    "Jaki jest docelowy odsetek czasu w zakresie (TIR 70–180 mg/dl) dla większości chorych na cukrzycę typu 1?": "cukrzyca-technologie-cgm-q1",
+    "Jaki jest bezpieczny limit czasu spędzonego w hipoglikemii (TBR < 70 mg/dl) wg konsensusu ATTD?": "cukrzyca-technologie-cgm-q2",
+    "Współczynnik zmienności glikemii (CV) u pacjenta wynosi 42%. Jak należy zinterpretować ten wynik?": "cukrzyca-technologie-cgm-q3",
+    "Co mierzy sensor ciągłego monitorowania glikemii (CGM)?": "cukrzyca-technologie-cgm-q4",
+    "Sensor CGM pokazuje glikemię 65 mg/dl ze strzałką pionowo w dół, ale pacjent czuje się dobrze i zjadł obfity posiłek 15 minut temu. Co należy zrobić?": "cukrzyca-technologie-cgm-q5"
+  },
+  "cukrzyca-t1d": {
+    "Obecność których przeciwciał ma największą czułość w diagnostyce autoimmunologicznej cukrzycy u osób dorosłych?": "cukrzyca-t1d-q1",
+    "10-letnie dziecko ma dodatnie przeciwciała anty-GAD i anty-ZnT8, ale jego glikemie na czczo i w teście OGTT są w normie. W jakim stadium T1D się znajduje?": "cukrzyca-t1d-q2",
+    "Czym charakteryzuje się tzw. okres „miodowego miesiąca” (remisji częściowej) po rozpoznaniu cukrzycy typu 1?": "cukrzyca-t1d-q3",
+    "Który transporter cynku jest celem swoistych przeciwciał w cukrzycy typu 1?": "cukrzyca-t1d-q4",
+    "Jaki lek biologiczny został zarejestrowany do opóźniania przejścia ze stadium 2 do jawnego stadium 3 cukrzycy typu 1?": "cukrzyca-t1d-q5"
+  },
+  "cukrzyca-t2d": {
+    "Który narząd odpowiada za nadmierne uwalnianie glukozy na czczo u pacjenta z cukrzycą typu 2?": "cukrzyca-t2d-q1",
+    "O ile procent średnio zredukowana jest masa/funkcja komórek beta w momencie klinicznego rozpoznania cukrzycy typu 2?": "cukrzyca-t2d-q2",
+    "Jaką rolę w patogenezie T2D odgrywa nerkowy kotransporter SGLT2?": "cukrzyca-t2d-q3",
+    "Co to jest hiperinsulinizm kompensacyjny we wczesnej fazie patogenezy T2D?": "cukrzyca-t2d-q4",
+    "Dlaczego wolne kwasy tłuszczowe (FFA) nasilają insulinooporność w mięśniach szkieletowych?": "cukrzyca-t2d-q5"
+  },
+  "cukrzyca-mody": {
+    "22-letnia szczupła kobieta ma glikemie na czczo w przedziale 115–130 mg/dl od dziecka, ujemne przeciwciała anty-GAD i zachowany peptyd C. Jej matka i dziadek mają identyczne wartości. Jakie rozpoznanie należy podejrzewać?": "cukrzyca-mody-q1",
+    "Jakie jest właściwe postępowanie farmakologiczne u nieciężarnego pacjenta ze zdiagnozowaną mutacją GCK (MODY 2)?": "cukrzyca-mody-q2",
+    "Jaka grupa leków stanowi leczenie z wyboru w cukrzycy MODY 3 (mutacja genu HNF1A)?": "cukrzyca-mody-q3",
+    "Jaka dodatkowa cecha laboratoryjna jest charakterystyczna dla pacjentów z MODY 3 (HNF1A)?": "cukrzyca-mody-q4",
+    "Dlaczego metformina jest bezwzględnie przeciwwskazana w cukrzycy mitochondrialnej (zespół MIDD)?": "cukrzyca-mody-q5"
+  },
+  "cukrzyca-lada-3c": {
+    "Który parametr laboratoryjny jest kluczowy do odróżnienia cukrzycy LADA od klasycznej cukrzycy typu 2?": "cukrzyca-lada-3c-q1",
+    "Dlaczego pacjent z cukrzycą typu 3c (po resekcji trzustki lub w PZT) ma skrajną skłonność do ciężkich hipoglikemii?": "cukrzyca-lada-3c-q2",
+    "Jaki lek należy włączyć u pacjenta z cukrzycą typu 3c w przebiegu przewlekłego zapalenia trzustki ze stolcami tłuszczowymi?": "cukrzyca-lada-3c-q3",
+    "Jaki jest typowy dobowy profil glikemii u pacjenta przyjmującego doustne glikokortykosteroidy (np. Encorton rano)?": "cukrzyca-lada-3c-q4",
+    "Jakie postępowanie farmakologiczne zaleca się po potwierdzeniu rozpoznania LADA, nawet gdy pacjent ma jeszcze dobrą kontrolę na diecie?": "cukrzyca-lada-3c-q5"
+  },
+  "cukrzyca-dka": {
+    "Jakie jest kryterium wyjściowego stężenia potasu zezwalające na rozpoczęcie dożylnego wlewu insuliny w DKA?": "cukrzyca-dka-q1",
+    "Dlaczego po obniżeniu glikemii poniżej 200–250 mg/dl w trakcie leczenia DKA podłącza się wlew 5% glukozy?": "cukrzyca-dka-q2",
+    "Który metabolit ketonowy we krwi jest najczulszym wskaźnikiem monitorowania leczenia DKA?": "cukrzyca-dka-q3",
+    "Jaki czynnik jest najczęstszą przyczyną tzw. euglikemicznej kwasicy ketonowej (euDKA)?": "cukrzyca-dka-q4",
+    "Kiedy uznaje się kwasicę ketonową (DKA) za wyleczoną (kryteria ustąpienia DKA)?": "cukrzyca-dka-q5"
+  },
+  "cukrzyca-hhs": {
+    "Dlaczego u chorych z HHS nie dochodzi do rozwoju kwasicy ketonowej?": "cukrzyca-hhs-q1",
+    "Jaka jest wartość progowa efektywnej osmolalności osocza w kryteriach rozpoznania HHS?": "cukrzyca-hhs-q2",
+    "Dlaczego u każdego pacjenta z HHS należy wdrożyć profilaktykę przeciwzakrzepową heparyną drobnocząsteczkową?": "cukrzyca-hhs-q3",
+    "Dlaczego zbyt szybkie obniżanie glikemii i osmolalności w HHS jest niebezpieczne?": "cukrzyca-hhs-q4",
+    "76-letni mężczyzna z glikemią 840 mg/dl, sodem 148 mmol/l, pH 7,38, HCO3- 22 mmol/l i ujemnymi ketonami ma rozpoznanie:": "cukrzyca-hhs-q5"
+  },
+  "cukrzyca-hipoglikemia": {
+    "Na czym polega zasada 15/15 w leczeniu lekkiej hipoglikemii u przytomnego pacjenta?": "cukrzyca-hipoglikemia-q1",
+    "Dlaczego czekolada lub batony z kremem NIE są polecane do szybkiego wyprowadzania z hipoglikemii?": "cukrzyca-hipoglikemia-q2",
+    "Co należy podać nieprzytomnemu pacjentowi z cukrzycą z podejrzeniem ciężkiej hipoglikemii w warunkach domowych?": "cukrzyca-hipoglikemia-q3",
+    "Jak definiuje się zjawisko nieświadomości hipoglikemii (HAAF)?": "cukrzyca-hipoglikemia-q4",
+    "Który lek u chorych z cukrzycą może maskować objawy ostrzegawcze hipoglikemii (drżenie, tachykardię)?": "cukrzyca-hipoglikemia-q5"
+  },
+  "cukrzyca-powiklania-naczyniowe": {
+    "Jaki parametr jest najczulszym wskaźnikiem wczesnego uszkodzenia nerek w przebiegu cukrzycy?": "cukrzyca-powiklania-naczyniowe-q1",
+    "Jakie skojarzenie leków stanowi współczesny filar nefroprotekcji u pacjenta z cukrzycą typu 2 i albuminurią UACR > 300 mg/g?": "cukrzyca-powiklania-naczyniowe-q2",
+    "Co oznacza tzw. „initial dip” (przejściowy spadek eGFR o 3–5 ml/min) po rozpoczęciu leczenia flozyną (inhibitorem SGLT2)?": "cukrzyca-powiklania-naczyniowe-q3",
+    "Jak często należy wykonywać badanie dna oka po rozszerzeniu źrenic u pacjenta z nowo rozpoznaną cukrzycą typu 2?": "cukrzyca-powiklania-naczyniowe-q4",
+    "Czym charakteryzuje się dystalna symetryczna polineuropatia cukrzycowa w badaniu fizykalnym?": "cukrzyca-powiklania-naczyniowe-q5"
+  },
+  "cukrzyca-leki-nieinsulinowe": {
+    "Jaka wartość eGFR stanowi bezwzględną granicę, poniżej której należy natychmiast odstawić metforminę?": "cukrzyca-leki-nieinsulinowe-q1",
+    "U pacjenta z cukrzycą typu 2 i rozpoznaną niewydolnością serca ze zredukowaną frakcją wyrzutową (HFrEF EF 32%), lekiem o udowodnionej redukcji hospitalizacji i zgonu jest:": "cukrzyca-leki-nieinsulinowe-q2",
+    "Dlaczego agoniści receptora GLP-1 (np. semaglutyd) NIE wywołują hipoglikemii w monoterapii?": "cukrzyca-leki-nieinsulinowe-q3",
+    "Przed planową tomografią komputerową z dożylnym kontrastem jodowym u pacjenta leczonego metforminą należy:": "cukrzyca-leki-nieinsulinowe-q4",
+    "Który lek jest podwójnym agonistą receptorów GIP oraz GLP-1 zapewniającym redukcję masy ciała powyżej 20%?": "cukrzyca-leki-nieinsulinowe-q5"
+  },
+  "cukrzyca-insulinoterapia-aid": {
+    "Jaki odsetek całkowitego dobowego zapotrzebowania na insulinę (TDD) stanowi zazwyczaj insulina bazowa w schemacie baza-bolus?": "cukrzyca-insulinoterapia-aid-q1",
+    "Czym charakteryzuje się insulina degludec w porównaniu z klasyczną insuliną NPH?": "cukrzyca-insulinoterapia-aid-q2",
+    "Jak działa zaawansowany system hybrydowej zamkniętej pętli (AID)?": "cukrzyca-insulinoterapia-aid-q3",
+    "Do czego prowadzi regularne wstrzykiwanie insuliny w to samo zmienione miejsce z lipohipertrofią (przerostem tkanki tłuszczowej)?": "cukrzyca-insulinoterapia-aid-q4",
+    "Dlaczego analogi szybkodziałające (lispro, aspart, glulizyna) wchłaniają się szybciej niż zwykła insulina ludzka?": "cukrzyca-insulinoterapia-aid-q5"
+  },
+  "cukrzyca-ciaza": {
+    "Ile nieprawidłowych punktów w teście OGTT (75g) w 24.–28. tyg. ciąży wystarcza do rozpoznania cukrzycy ciążowej (GDM)?": "cukrzyca-ciaza-q1",
+    "Jaki jest docelowy poziom glikemii na czczo u kobiety ciężarnej z cukrzycą?": "cukrzyca-ciaza-q2",
+    "Dlaczego hiperglikemia u matki może doprowadzić do zespołu zaburzeń oddychania (RDS) u noworodka?": "cukrzyca-ciaza-q3",
+    "Jakie jest leczenie farmakologiczne z wyboru w cukrzycy ciążowej, gdy dieta nie zapewnia celów glikemii?": "cukrzyca-ciaza-q4",
+    "Kiedy po porodzie należy wykonać kontrolny test OGTT u kobiety, która przebyła cukrzycę ciążową?": "cukrzyca-ciaza-q5"
+  },
+  "cukrzyca-matematyka-modele": {
+    "Pacjent przyjmuje 50 jednostek insuliny na dobę (TDD = 50 j.). Ile wynosi jego współczynnik wrażliwości na insulinę (ISF) wg reguły 1800?": "cukrzyca-matematyka-modele-q1",
+    "Dla pacjenta o TDD = 50 j. ile wynosi wskaźnik węglowodanowo-insulinowy (ICR) wg reguły 500?": "cukrzyca-matematyka-modele-q2",
+    "Co oznacza zmienna X(t) w Minimalnym Modelu Bergmana?": "cukrzyca-matematyka-modele-q3",
+    "Pacjent z glikemią na czczo 180 mg/dl (10,0 mmol/l) i insulinemią 25 uU/ml ma wskaźnik HOMA-IR równy:": "cukrzyca-matematyka-modele-q4",
+    "Jaką wartość współczynnika zmienności glikemii (CV) uznaje się w raporcie AGP za granicę między stabilną a chwiejną glikemią?": "cukrzyca-matematyka-modele-q5"
+  },
+  "cukrzyca-chemia-biochemia": {
+    "Które białko bezpośrednio reguluje fuzję pęcherzyków zawierających transporter GLUT4 z błoną komórkową po ufosforylowaniu przez kinazę Akt?": "cukrzyca-chemia-biochemia-q1",
+    "Dlaczego w ciężkiej kwasicy ketonowej pomiar beta-hydroksymaślanu we krwi jest znacznie dokładniejszy niż test paskowy moczu na acetooctan?": "cukrzyca-chemia-biochemia-q2",
+    "Jaki enzym stanowi kluczowy punkt kontrolny ograniczający tempo ketogenezy w mitochondriach wątroby?": "cukrzyca-chemia-biochemia-q3",
+    "Jaka modyfikacja chemiczna w cząsteczce insuliny glargina zapewnia jej przedłużone, bezszczytowe działanie przez 24 godziny?": "cukrzyca-chemia-biochemia-q4",
+    "Co dzieje się z luką anionową (AG) w surowicy pacjenta z cukrzycową kwasicą ketonową (DKA)?": "cukrzyca-chemia-biochemia-q5"
+  },
+  "gonady-fizjologia-hpg": {
+    "Co dzieje się z osią HPG w przypadku ciągłego, niepulsacyjnego podawania GnRH?": "gonady-fizjologia-hpg-q1",
+    "Który czynnik stymuluje wybiórczo wydzielanie LH kosztem FSH?": "gonady-fizjologia-hpg-q2",
+    "Jaki warunek musi zostać spełniony, aby estradiol wywołał dodatnie sprzężenie zwrotne i wyrzut LH?": "gonady-fizjologia-hpg-q3",
+    "Za co odpowiada hormon antymüllerowski (AMH) w diagnostyce rezerwy jajnikowej?": "gonady-fizjologia-hpg-q4",
+    "Które komórki jądra odpowiadają za syntezę testosteronu pod wpływem LH?": "gonady-fizjologia-hpg-q5"
+  },
+  "gonady-diagnostyka-laboratoryjna": {
+    "Dlaczego krew na oznaczenie stężenia testosteronu należy pobierać rano na czczo?": "gonady-diagnostyka-laboratoryjna-q1",
+    "U otyłego pacjenta z BMI 36 stwierdzono testosteron całkowity 210 ng/dl (norma 300–900). Co należy zrobić?": "gonady-diagnostyka-laboratoryjna-q2",
+    "Jaki wynik testu stymulacji z hCG wskazuje na pierwotną niewydolność jąder (hipogonadyzm hipergonadotropowy)?": "gonady-diagnostyka-laboratoryjna-q3",
+    "Który stan kliniczny prowadzi do patologicznego wzrostu stężenia SHBG w osoczu?": "gonady-diagnostyka-laboratoryjna-q4",
+    "Ile porannych pomiarów testosteronu jest wymaganych do pewnego rozpoznania hipogonadyzmu?": "gonady-diagnostyka-laboratoryjna-q5"
+  },
+  "gonady-hipogonadyzm-meski": {
+    "Który zestaw badań laboratoryjnych jest charakterystyczny dla zespołu Klinefeltera?": "gonady-hipogonadyzm-meski-q1",
+    "Jaka cecha kliniczna pozwala odróżnić zespół Kallmanna od innych postaci hipogonadyzmu wtórnego?": "gonady-hipogonadyzm-meski-q2",
+    "Która postać hipogonadyzmu może ustąpić po radykalnej redukcji masy ciała i wyleczeniu bezdechu sennego?": "gonady-hipogonadyzm-meski-q3",
+    "Jaki jest typowy fenotyp dorosłego mężczyzny z nieleczonym zespołem Klinefeltera?": "gonady-hipogonadyzm-meski-q4",
+    "Dlaczego hemochromatoza może prowadzić do hipogonadyzmu hipogonadotropowego?": "gonady-hipogonadyzm-meski-q5"
+  },
+  "gonady-terapia-testosteronem": {
+    "Dlaczego pacjentowi z hipogonadyzmem planującemu ojcostwo NIE wolno podawać testosteronu?": "gonady-terapia-testosteronem-q1",
+    "Jaka wartość hematokrytu (Hct) stanowi bezwzględne wskazanie do redukcji dawki lub odstawienia TRT?": "gonady-terapia-testosteronem-q2",
+    "Który preparat testosteronu zapewnia najbardziej stabilne stężenie w surowicy bez wahań szczytowych?": "gonady-terapia-testosteronem-q3",
+    "Co z poniższych stanowi bezwzględne przeciwwskazanie do rozpoczęcia terapii zastępczej testosteronem?": "gonady-terapia-testosteronem-q4",
+    "Kiedy należy skontrolować stężenie testosteronu u pacjenta stosującego żel przezskórny 1%?": "gonady-terapia-testosteronem-q5"
+  },
+  "gonady-ginekomastia": {
+    "Jaki jest główny patomechanizm powstawania ginekomastii?": "gonady-ginekomastia-q1",
+    "Która cecha w badaniu fizykalnym budzi silne podejrzenie raka piersi u mężczyzny?": "gonady-ginekomastia-q2",
+    "Który lek jest preparatem pierwszego rzutu w farmakologicznym leczeniu wczesnej ginekomastii?": "gonady-ginekomastia-q3",
+    "U 14-letniego chłopca stwierdzono obustronne tkliwe powiększenie gruczołów piersiowych o średnicy 2,5 cm. Jakie jest właściwe postępowanie?": "gonady-ginekomastia-q4",
+    "Dlaczego marskość wątroby często prowadzi do ginekomastii u mężczyzn?": "gonady-ginekomastia-q5"
+  },
+  "gonady-nieplodnosc-meska": {
+    "Jaka jest minimalna prawidłowa koncentracja plemników wg standardów WHO 2021?": "gonady-nieplodnosc-meska-q1",
+    "Pacjent z azoospermią ma jądra o objętości 20 ml, FSH 3,2 IU/l i prawidłową inhibinę B. Jaka jest najbardziej prawdopodobna diagnoza?": "gonady-nieplodnosc-meska-q2",
+    "Wrodzony obustronny brak nasieniowodów (CBAVD) wiąże się najczęściej z mutacją w genie:": "gonady-nieplodnosc-meska-q3",
+    "Który parametr nasienia jest szczególnie uszkadzany przez żylaki powrózka nasiennego (varicocele)?": "gonady-nieplodnosc-meska-q4",
+    "Przy której mikrodelecji chromosomu Y szansa na odnalezienie plemników w micro-TESE jest praktycznie ZEROWA?": "gonady-nieplodnosc-meska-q5"
+  },
+  "gonady-doping-sterydy": {
+    "Jaki profil hormonalny stwierdza się u kulturysty w trakcie intensywnego cyklu z użyciem sterydów anabolicznych?": "gonady-doping-sterydy-q1",
+    "Dlaczego u mężczyzn stosujących sterydy anaboliczne często rozwija się ginekomastia?": "gonady-doping-sterydy-q2",
+    "Na czym polega terapia odblokowująca (PCT — Post Cycle Therapy) po odstawieniu AAS?": "gonady-doping-sterydy-q3",
+    "Jaki groźny wpływ wywierają sterydy anaboliczno-androgenne (zwłaszcza doustne) na profil lipidowy?": "gonady-doping-sterydy-q4",
+    "Co to jest zespół ASIH (Anabolic Steroid-Induced Hypogonadism)?": "gonady-doping-sterydy-q5"
+  },
+  "gonady-pcos": {
+    "Ile kryteriów rotterdamskich musi spełniać pacjentka, aby rozpoznać PCOS (po wykluczeniu innych chorób)?": "gonady-pcos-q1",
+    "W jaki sposób hiperinsulinizm nasila hiperandrogenizm w przebiegu PCOS?": "gonady-pcos-q2",
+    "Jaki lek jest obecnie rekomendowany jako PIERWSZY RZUT w indukcji owulacji u kobiet z PCOS planujących ciążę?": "gonady-pcos-q3",
+    "Czym charakteryzuje się fenotyp D zespołu policystycznych jajników?": "gonady-pcos-q4",
+    "Jaki progestagen w złożonej tabletce antykoncepcyjnej (COC) jest szczególnie korzystny u pacjentki z PCOS i trądzikiem?": "gonady-pcos-q5"
+  },
+  "gonady-hiperandrogenizm-kobiecy": {
+    "Który objaw kliniczny świadczy o WIRYLIZACJI (a nie jedynie o izolowanym hirsutyzmie)?": "gonady-hiperandrogenizm-kobiecy-q1",
+    "U 30-letniej kobiety stwierdzono nagłe pojawienie się hirsutyzmu w ciągu 4 miesięcy, klitoromegalię i testosteron 280 ng/dl. Co należy podejrzewać w pierwszej kolejności?": "gonady-hiperandrogenizm-kobiecy-q2",
+    "Jaki wynik stężenia 17-hydroksyprogesteronu (17-OHP) w teście stymulacji tetrakozaktydem (Synacthen) potwierdza nieklasyczny WPN (NCCAH)?": "gonady-hiperandrogenizm-kobiecy-q3",
+    "Ekstremalnie wysokie stężenie DHEA-S (> 700–800 mcg/dl) u pacjentki z hiperandrogenizmem wskazuje na patologię zlokalizowaną w:": "gonady-hiperandrogenizm-kobiecy-q4",
+    "Jaka skala punktowa jest międzynarodowym standardem oceny nasilenia hirsutyzmu w 9 obszarach ciała?": "gonady-hiperandrogenizm-kobiecy-q5"
+  },
+  "gonady-brak-miesiaczki": {
+    "Jaki jest PIERWSZY, bezwzględny krok diagnostyczny u każdej kobiety w wieku rozrodczym zgłaszającej brak miesiączki?": "gonady-brak-miesiaczki-q1",
+    "Co oznacza DODATNIA próba progestagenowa (wystąpienie krwawienia po odstawieniu progestagenu)?": "gonady-brak-miesiaczki-q2",
+    "U 20-letniej biegaczki z BMI 17,2 stwierdzono wtórny brak miesiączki, FSH 2,1 IU/l i estradiol 18 pg/ml. Jaka jest przyczyna?": "gonady-brak-miesiaczki-q3",
+    "Brak krwawienia po pełnej próbie estrogenowo-progestagenowej wskazuje na:": "gonady-brak-miesiaczki-q4",
+    "Który parametr laboratoryjny pozwala jednoznacznie odróżnić FHA od przedwczesnej niewydolności jajników (POI)?": "gonady-brak-miesiaczki-q5"
+  },
+  "gonady-menopauza-mht": {
+    "Jakie kryteria laboratoryjne wg wytycznych ESHRE 2024 definiują przedwczesną niewydolność jajników (POI)?": "gonady-menopauza-mht-q1",
+    "Do jakiego wieku kobieta z rozpoznaną POI powinna bezwzględnie kontynuować substytucję hormonalną?": "gonady-menopauza-mht-q2",
+    "Dlaczego u pacjentki z zachowaną macicą NIE WOLNO stosować monoterapii samymi estrogenami?": "gonady-menopauza-mht-q3",
+    "Jaka droga podania estradiolu w MHT jest preferowana u pacjentki otyłej (BMI 33) z żylakami kończyn dolnych?": "gonady-menopauza-mht-q4",
+    "Co oznacza pojęcie „okna możliwości terapeutycznych” (timing hypothesis) w kontekście MHT?": "gonady-menopauza-mht-q5"
+  },
+  "gonady-ivf-art": {
+    "Jaki mediator naczyniowy odpowiada za uogólnioną przepuszczalność naczyń i wodobrzusze w zespole OHSS?": "gonady-ivf-art-q1",
+    "U pacjentki z PCOS podczas stymulacji stwierdzono 24 dojrzałe pęcherzyki i estradiol 4800 pg/ml. Jak zapobiec ciężkiemu OHSS?": "gonady-ivf-art-q2",
+    "Dlaczego ciąża uzyskana w cyklu ze świeżym transferem nasila i wydłuża zespół OHSS (tzw. późny OHSS)?": "gonady-ivf-art-q3",
+    "Jaki lek dopaminergiczny stosuje się w prewencji OHSS w celu zablokowania receptora VEGFR-2?": "gonady-ivf-art-q4",
+    "Który parametr laboratoryjny w ciężkim OHSS jest wyznacznikiem zagrażającej zakrzepicy i hemokoncentracji?": "gonady-ivf-art-q5"
+  },
+  "gonady-onkoplednosc": {
+    "Która grupa chemioterapeutyków wykazuje NAJWYŻSZĄ gonadotoksyczność i ryzyko trwałej bezpłodności?": "gonady-onkoplednosc-q1",
+    "Na czym polega protokół „random-start” w stymulacji jajników u pacjentki onkologicznej?": "gonady-onkoplednosc-q2",
+    "Dlaczego u pacjentki z rakiem piersi z obecnością receptorów estrogenowych (ER+) do stymulacji dodaje się letrozol?": "gonady-onkoplednosc-q3",
+    "Jaka jest jedyna dostępna metoda zabezpieczenia płodności u dziewczynki przed okresem pokwitania?": "gonady-onkoplednosc-q4",
+    "Kiedy należy pobrać i zamrozić nasienie u młodego mężczyzny z nowo rozpoznanym chłoniakiem Hodgkina?": "gonady-onkoplednosc-q5"
+  },
+  "gonady-trans-feminizujaca": {
+    "Jaki jest docelowy poziom stężenia testosteronu całkowitego w feminizującej terapii hormonalnej u transpłciowych kobiet?": "gonady-trans-feminizujaca-q1",
+    "Który preparat estrogenowy jest BEZWZGLĘDNIE PRZECIWWSKAZANY w terapii tranzycyjnej ze względu na wysokie ryzyko zakrzepicy VTE?": "gonady-trans-feminizujaca-q2",
+    "Jaki jest docelowy zakres stężenia 17-beta-estradiolu w surowicy wg wytycznych Endocrine Society i WPATH?": "gonady-trans-feminizujaca-q3",
+    "Co należy monitorować u pacjentki przyjmującej octan cyproteronu (CPA) jako antyandrogen?": "gonady-trans-feminizujaca-q4",
+    "U 44-letniej transpłciowej kobiety z otyłością i palącej papierosy, jaka droga podania estradiolu jest najbezpieczniejsza?": "gonady-trans-feminizujaca-q5"
+  },
+  "gonady-trans-maskulinizujaca": {
+    "Jaki jest docelowy zakres stężenia testosteronu całkowitego u transpłciowego mężczyzny w GAHT?": "gonady-trans-maskulinizujaca-q1",
+    "Który z wymienionych objawów maskulinizacji jest NIEODWRACALNY po odstawieniu testosteronu?": "gonady-trans-maskulinizujaca-q2",
+    "Który wskaźnik laboratoryjny jest kluczowy w monitorowaniu bezpieczeństwa i wymaga pilnej interwencji przy wartości > 54%?": "gonady-trans-maskulinizujaca-q3",
+    "Co może być przyczyną nawrotu plamień z dróg rodnych u transpłciowego mężczyzny z suprafizjologicznym stężeniem testosteronu (np. 1400 ng/dl)?": "gonady-trans-maskulinizujaca-q4",
+    "Jak leczy się objawy zanikowego zapalenia pochwy i sromu u pacjenta na wieloletniej terapii testosteronem?": "gonady-trans-maskulinizujaca-q5"
+  },
+  "gonady-dsd": {
+    "17-letnia dziewczyna zgłosiła się z pierwotnym brakiem miesiączki. W badaniu: prawidłowo rozwinięte piersi, brak owłosienia łonowego, ślepa pochwa, kariotyp 46,XY. Jakie jest najbardziej prawdopodobne rozpoznanie?": "gonady-dsd-q1",
+    "Dlaczego u pacjentek z zespołem Swyera (czysta dysgenezja gonad 46,XY) zaleca się pilną obustronną gonadektomię?": "gonady-dsd-q2",
+    "Jaki marker biochemiczny w teście stymulacji hCG różnicuje niedobór 5-alfa-reduktazy od CAIS?": "gonady-dsd-q3",
+    "Dlaczego u pacjentki z CAIS (zespół Morrisa) NIE dochodzi do wytworzenia macicy i jajowodów?": "gonady-dsd-q4",
+    "Jaka jest najczęstsza przyczyna zaburzeń rozwoju płci typu 46,XX DSD z wirylizacją zewnętrznych narządów płciowych?": "gonady-dsd-q5"
+  },
+  "gonady-dojrzewanie-plciowe": {
+    "Jaki jest PIERWSZY fizykalny objaw prawidłowego rozpoczęcia pokwitania u chłopców?": "gonady-dojrzewanie-plciowe-q1",
+    "U 6-letniego chłopca stwierdzono pojawienie się owłosienia łonowego i powiększenie prącia, lecz jądra mają objętość 2 ml (< 4 ml). Jak zinterpretować ten obraz?": "gonady-dojrzewanie-plciowe-q2",
+    "Jaki wynik testu stymulacji z syntetycznym GnRH potwierdza ośrodkowe przedwczesne dojrzewanie (CPP)?": "gonady-dojrzewanie-plciowe-q3",
+    "Jak działają depot agonisty GnRH (np. tryptorelina) w leczeniu ośrodkowego przedwczesnego dojrzewania (CPP)?": "gonady-dojrzewanie-plciowe-q4",
+    "14,5-letni chłopiec bez cech dojrzewania (jądra 2 ml), z opóźnionym wiekiem kostnym o 2,5 roku i rodzinnym wywiadem późnego skoku wzrostowego u ojca. Co jest najbardziej prawdopodobne?": "gonady-dojrzewanie-plciowe-q5"
+  },
+  "gonady-onkologia-guzy": {
+    "Który z markerów nowotworowych jądra NIGDY nie jest podwyższony w czystym nasieniaku (seminoma)?": "gonady-onkologia-guzy-q1",
+    "62-letnia kobieta po menopauzie zgłosiła się z powodu nawrotu krwawień z dróg rodnych. W USG: pogrubiałe endometrium 14 mm oraz guz lewego jajnika o średnicy 6 cm. Jaki marker w surowicy ma najwyższą wartość diagnostyczną?": "gonady-onkologia-guzy-q2",
+    "Dlaczego skrajnie wysokie stężenie beta-hCG w zaawansowanym kosmówczaku jądra może wywołać nadczynność tarczycy?": "gonady-onkologia-guzy-q3",
+    "U 32-letniego mężczyzny wykryto 2-centymetrowy guz jądra, obustronną ginekomastię oraz zablokowane stężenia LH i FSH. Co jest najbardziej prawdopodobną przyczyną?": "gonady-onkologia-guzy-q4",
+    "24-letnia kobieta zgłasza gwałtowny rozrost owłosienia twarzy, obniżenie głosu i przerost łechtaczki w ciągu 4 miesięcy. Testosteron wynosi 320 ng/dl. Jakie badanie obrazowe należy pilnie wykonać?": "gonady-onkologia-guzy-q5"
+  },
+  "gonady-matematyka-modele": {
+    "Dlaczego w równaniu Vermeulena stężenie wolnej albuminy [Alb_free] można przyjąć jako równe stężeniu całkowitemu [Alb_total]?": "gonady-matematyka-modele-q1",
+    "U 68-letniego otyłego mężczyzny (BMI 36) stężenie SHBG wynosi 12 nmol/l, a T całkowity 9,5 nmol/l (z pozoru niski). Jaki błąd popełnimy, opierając się wyłącznie na T całkowitym bez równania Vermeulena?": "gonady-matematyka-modele-q2",
+    "Który składnik fizjologiczny tworzy tzw. biodostępny testosteron (bioavailable testosterone)?": "gonady-matematyka-modele-q3",
+    "Jaki warunek matematyczny w modelu generatora pulsów GnRH jest konieczny do powstania stabilnych samopodtrzymujących się oscylacji (cyklu granicznego)?": "gonady-matematyka-modele-q4",
+    "Jaki jest wzór na wskaźnik wolnych androgenów (FAI — Free Androgen Index)?": "gonady-matematyka-modele-q5"
+  },
+  "gonady-chemia-biochemia": {
+    "Co dzieje się z grupą metylową C19 podczas reakcji aromatyzacji testosteronu do 17-beta-estradiolu przez CYP19A1?": "gonady-chemia-biochemia-q1",
+    "Dlaczego dihydrotestosteron (5-alfa-DHT) NIE MOŻE ulec aromatyzacji do estrogenów?": "gonady-chemia-biochemia-q2",
+    "Jaki jest molekularny mechanizm działania inhibitorów aromatazy niesteroidowych (anastrozol, letrozol)?": "gonady-chemia-biochemia-q3",
+    "W jaki sposób selektywne modulatory receptora estrogenowego (SERM, np. tamoksyfen) blokują transkrypcję genów w komórkach raka piersi?": "gonady-chemia-biochemia-q4",
+    "Jaka jest różnica w powinowactwie i kinetyce dysocjacji do receptora androgenowego (AR) między DHT a testosteronem?": "gonady-chemia-biochemia-q5"
+  },
+  "nen-biologia-markery": {
+    "Który z wymienionych czynników najczęściej wywołuje fałszywie dodatnie podwyższenie chromograniny A?": "nen-biologia-markery-q1",
+    "Jakie zalecenie dietetyczne jest bezwzględnie wymagane przed dobową zbiórką moczu na 5-HIAA?": "nen-biologia-markery-q2",
+    "Jaki marker tkankowy w badaniu IHC stanowi najbardziej uniwersalny wyznacznik różnicowania neuroendokrynnego?": "nen-biologia-markery-q3",
+    "W jakiej sytuacji klinicznej marker surowiczy NSE (enolaza neuronowa) jest najbardziej przydatny?": "nen-biologia-markery-q4",
+    "Jaka nowoczesna technologia molekularna eliminuje ryzyko fałszywych wyników CgA pod wpływem leków IPP?": "nen-biologia-markery-q5"
+  },
+  "nen-obrazowanie-sstr": {
+    "Jaki stopień wychwytu w skali Krenninga jest warunkiem koniecznym kwalifikacji do radioterapii izotopowej PRRT?": "nen-obrazowanie-sstr-q1",
+    "Co oznacza sytuacja, gdy w badaniu dual-tracer przerzuty gromadzą 18F-FDG, lecz nie wykazują wychwytu 68Ga-DOTATATE?": "nen-obrazowanie-sstr-q2",
+    "Który podtyp receptora somatostatynowego dominuje w ponad 80% dobrze zróżnicowanych guzów NET?": "nen-obrazowanie-sstr-q3",
+    "Który narząd wykazuje najwyższy fizjologiczny wychwyt znacznika 68Ga-DOTATATE?": "nen-obrazowanie-sstr-q4",
+    "Jaka fizjologiczna struktura trzustki może gromadzić 68Ga-DOTATATE z powodu komórek PP, imitując guza pNET?": "nen-obrazowanie-sstr-q5"
+  },
+  "nen-klasyfikacja-who": {
+    "Który zestaw cech pozwala jednoznacznie zidentyfikować dobrze zróżnicowany guz NET G3 i odróżnić go od raka NEC G3?": "nen-klasyfikacja-who-q1",
+    "Gdy w bioptacie guza NEN indeks Ki-67 wynosi 12%, a liczba figur podziału wynosi 1 mitoza/2 mm², jaki stopień złośliwości należy przypisać guzowi?": "nen-klasyfikacja-who-q2",
+    "Jaki przedział indeksu Ki-67 definiuje dobrze zróżnicowany nowotwór NET G1 wg WHO 2022?": "nen-klasyfikacja-who-q3",
+    "Na jakiej standaryzowanej powierzchni pola widzenia patomorfolog zlicza figury podziału mitotycznego wg standardu WHO?": "nen-klasyfikacja-who-q4",
+    "Dlaczego rozróżnienie NET G3 od NEC G3 ma kardynalne znaczenie dla doboru leczenia onkologicznego?": "nen-klasyfikacja-who-q5"
+  },
+  "nen-gastrinoma-zoll-ellis": {
+    "Jaki jest prawidłowy wynik testu ze sekretyną potwierdzający rozpoznanie gastrinoma?": "nen-gastrinoma-zoll-ellis-q1",
+    "Który parametr jest absolutnie niezbędny do wiarygodnej interpretacji podwyższonego stężenia gastryny na czczo?": "nen-gastrinoma-zoll-ellis-q2",
+    "Gdzie zlokalizowany jest anatomiczny trójkąt Passaro, w którym rozwija się większość guzów gastrinoma?": "nen-gastrinoma-zoll-ellis-q3",
+    "Jaki jest główny patomechanizm opornych biegunek u pacjentów z zespołem Zollingera-Ellisona?": "nen-gastrinoma-zoll-ellis-q4",
+    "Z jakim zespołem genetycznym uwarunkowanym dziedzicznie najczęściej współistnieją mnogie guzy gastrinoma?": "nen-gastrinoma-zoll-ellis-q5"
+  },
+  "nen-insulinoma": {
+    "Który wynik oznaczeń w krytycznej próbce krwi (przy glikemii 42 mg/dl) potwierdza podejrzenie insulinoma i wyklucza hipoglikemię wywołaną podaniem egzogennej insuliny?": "nen-insulinoma-q1",
+    "Jaki lek wybiórczo blokujący wydzielanie insuliny przez kanały K_ATP stosuje się w farmakoterapii objawowej nieoperacyjnego guza insulinoma?": "nen-insulinoma-q2",
+    "Jakie trzy składowe tworzą klasyczną triadę Whipple'a?": "nen-insulinoma-q3",
+    "Jaki odsetek guzów insulinoma stanowią pojedyncze, łagodne gruczolaki podatne na wyleczenie chirurgiczne?": "nen-insulinoma-q4",
+    "Dlaczego w krytycznej próbce krwi w przebiegu próby głodowej oznacza się stężenie beta-hydroksymaślanu?": "nen-insulinoma-q5"
+  },
+  "nen-glukagonoma": {
+    "Jaki mechanizm bezpośrednio odpowiada za rozwój rumienia wędrującego nekrolitycznego (NME) w zespole glukagonoma?": "nen-glukagonoma-q1",
+    "Które powikłanie ogólnoustrojowe występuje u blisko 30–50% chorych z glukagonoma i wymaga rutynowej profilaktyki farmakologicznej?": "nen-glukagonoma-q2",
+    "Jaki odsetek guzów glukagonoma posiada przerzuty do wątroby lub węzłów chłonnych w momencie rozpoznania?": "nen-glukagonoma-q3",
+    "Jakie stężenie glukagonu w osoczu na czczo potwierdza podejrzenie zespołu glukagonoma?": "nen-glukagonoma-q4",
+    "Jaka jest odpowiedź zmian skórnych NME na wdrożenie leczenia analogami somatostatyny (SSA)?": "nen-glukagonoma-q5"
+  },
+  "nen-vipoma-rzadkie": {
+    "Który zestaw zaburzeń elektrolitowych i hemodynamicznych stanowi bezpośrednie zagrożenie życia w zespole Vernera-Morrisona (VIPoma)?": "nen-vipoma-rzadkie-q1",
+    "Jakie objawy tworzą klasyczną triadę zespołu somatostatynoma?": "nen-vipoma-rzadkie-q2",
+    "Jaki przekaźnik drugorzędowy w enterocytach pośredniczy w wywoływaniu wodnistej biegunki przez peptyd VIP?": "nen-vipoma-rzadkie-q3",
+    "Jaki zespół kliniczny wywołuje pozaprzysadkowy guz neuroendokrynny trzustki GRFoma?": "nen-vipoma-rzadkie-q4",
+    "Jaka cecha kliniczna pozwala odróżnić biegunkę w zespole WDHA od biegunki osmotycznej?": "nen-vipoma-rzadkie-q5"
+  },
+  "nen-zespol-rakowiaka": {
+    "Dlaczego izolowany, pierwotny rakowiak jelita krętego o średnicy 2 cm bez przerzutów nie wywołuje zespołu rakowiaka?": "nen-zespol-rakowiaka-q1",
+    "Dlaczego u pacjenta z zaawansowanym rakowiakiem midgut może dojść do rozwoju pelagry (niedoboru niacyny)?": "nen-zespol-rakowiaka-q2",
+    "Jaki drobnocząsteczkowy doustny inhibitor hydroksylazy tryptofanu (TPH) stosuje się w opornych biegunkach zespołu rakowiaka?": "nen-zespol-rakowiaka-q3",
+    "Który z objawów naczynioruchowych jest najczęstszą manifestacją zespołu rakowiaka (u 85–90% chorych)?": "nen-zespol-rakowiaka-q4",
+    "Jakie leki są bezwzględnie przeciwwskazane w razie wystąpienia skurczu oskrzeli u pacjenta z zespołem rakowiaka?": "nen-zespol-rakowiaka-q5"
+  },
+  "nen-serce-rakowiaka": {
+    "Dlaczego u pacjenta z rakowiakiem jelita cienkiego i przerzutami do wątroby zmiany włókniste dotyczą zastawek prawej, a nie lewej połowy serca?": "nen-serce-rakowiaka-q1",
+    "Który biomarker krwi cechuje się najwyższą czułością we wczesnym wykrywaniu kardiomiopatii rakowiakowej i powinien być rutynowo monitorowany?": "nen-serce-rakowiaka-q2",
+    "Który receptor serotoninowy jest bezpośrednio odpowiedzialny za indukcję włóknienia wsierdzia i aparatu zastawkowego?": "nen-serce-rakowiaka-q3",
+    "Jaka patologia zastawkowa prawej komory serca występuje najczęściej w zespole Hedingera?": "nen-serce-rakowiaka-q4",
+    "W jakiej sytuacji klinicznej zmiany włókniste w zespole rakowiaka mogą objąć także zastawki lewej połowy serca?": "nen-serce-rakowiaka-q5"
+  },
+  "nen-przelom-rakowiaka": {
+    "Jakiego leku NIE WOLNO podawać w przypadku ciężkiej hipotensji podczas przełomu rakowiaka na sali operacyjnej?": "nen-przelom-rakowiaka-q1",
+    "Jakie postępowanie profilaktyczne jest bezwzględnie wymagane przed planowaną biopsją lub resekcją guza u chorego z zespołem rakowiaka?": "nen-przelom-rakowiaka-q2",
+    "Jakie objawy kliniczne charakteryzują ostry przełom rakowiaka w trakcie anestezji?": "nen-przelom-rakowiaka-q3",
+    "Jaki lek wazopresyjny niepobudzający receptorów adrenergicznych można bezpiecznie rozważyć w opornej hipotensji przełomu rakowiaka?": "nen-przelom-rakowiaka-q4",
+    "Dlaczego comiesięczne iniekcje domięśniowe oktreotydu LAR nie eliminują konieczności wlewu dożylnego przed operacją?": "nen-przelom-rakowiaka-q5"
+  },
+  "nen-pluc-oskrzeli": {
+    "Które cechy histopatologiczne definiują rakowiaka atypowego (atypical carcinoid) płuca wg klasyfikacji WHO?": "nen-pluc-oskrzeli-q1",
+    "Dlaczego u pacjenta z rakowiakiem oskrzela powikłania zastawkowe zespołu rakowiaka mogą dotyczyć zastawki mitralnej i aortalnej?": "nen-pluc-oskrzeli-q2",
+    "Jaki rakowiak płuca cechuje się najłagodniejszym przebiegiem i 5-letnim przeżyciem przekraczającym 90–95%?": "nen-pluc-oskrzeli-q3",
+    "Jaki zespół paraneoplastyczny wywołany ektopowym wydzielaniem hormonów najczęściej kojarzy się z rakowiakami oskrzeli?": "nen-pluc-oskrzeli-q4",
+    "Jaki profil mutacji genetycznych wykazują agresywne raki płuc LCNEC i SCLC w odróżnieniu od rakowiaków typowych?": "nen-pluc-oskrzeli-q5"
+  },
+  "nen-zespol-men1": {
+    "Jaki zabieg operacyjny jest leczeniem z wyboru w pierwotnej nadczynności przytarczyc w przebiegu zespołu MEN1?": "nen-zespol-men1-q1",
+    "Który nowotwór w zespole MEN1 cechuje się wybitną predyspozycją do występowania u mężczyzn palących tytoń i skrajnie złośliwym przebiegiem?": "nen-zespol-men1-q2",
+    "Jakie trzy narządy tworzą klasyczną triadę 3P zespołu MEN1 (zespołu Wermera)?": "nen-zespol-men1-q3",
+    "Jaka jest funkcja biologiczna białka menina kodowanego przez gen MEN1 na chromosomie 11q13?": "nen-zespol-men1-q4",
+    "Jaki guz neuroendokrynny pNET/dwunastnicy występuje najczęściej u chorych z zespołem MEN1?": "nen-zespol-men1-q5"
+  },
+  "nen-zespol-men2": {
+    "W jakiej kolejności należy przeprowadzić leczenie operacyjne u pacjenta z zespołem MEN2A, u którego stwierdzono jednocześnie raka rdzeniastego tarczycy oraz guza chromochłonnego prawego nadnercza?": "nen-zespol-men2-q1",
+    "Nosicielstwo której mutacji protoonkogenu RET wymaga przeprowadzenia profilaktycznej tyroidectomii już w 1. roku życia dziecka?": "nen-zespol-men2-q2",
+    "Czym różni się zespół MEN2B od zespołu MEN2A pod względem zaangażowania przytarczyc?": "nen-zespol-men2-q3",
+    "Jakie unikalne cechy fenotypowe pozwalają rozpoznać zespół MEN2B u noworodka lub niemowlęcia bez badań genetycznych?": "nen-zespol-men2-q4",
+    "Dlaczego przed jakąkolwiek planowaną operacją tarczycy u nosiciela mutacji RET bezwzględnie oznacza się wolne metanefryny?": "nen-zespol-men2-q5"
+  },
+  "nen-zespol-men4": {
+    "Mutacja w którym genie odpowiada za rozwój zespołu MEN4 u chorego prezentującego nadczynność przytarczyc i gruczolaka przysadki bez mutacji w genie meniny?": "nen-zespol-men4-q1",
+    "Czym różni się przebieg kliniczny zespołu MEN4 od klasycznego zespołu MEN1?": "nen-zespol-men4-q2",
+    "Jaka jest biologiczna funkcja białka p27Kip1 kodowanego przez gen CDKN1B?": "nen-zespol-men4-q3",
+    "Jaka manifestacja endokrynna występuje najczęściej u pacjentów z potwierdzonym zespołem MEN4 (>80% chorych)?": "nen-zespol-men4-q4",
+    "Jaka metoda diagnostyczna jest współcześnie standardem różnicowania nietypowych zespołów MEN bez mutacji MEN1?": "nen-zespol-men4-q5"
+  },
+  "nen-vhl-nf1": {
+    "Jaki molekularny mechanizm odpowiada za patologiczną angiogenezę i rozwój guzów naczyniowych oraz pNET w zespole VHL?": "nen-vhl-nf1-q1",
+    "Który nowotwór neuroendokrynny przewodu pokarmowego wykazuje wybitną predyspozycję do występowania u chorych z neurofibromatozą typu 1 (NF1)?": "nen-vhl-nf1-q2",
+    "Jaki nowoczesny drobnocząsteczkowy inhibitor czynnika HIF-2alpha zrewolucjonizował leczenie guzów pNET i nerek w zespole VHL?": "nen-vhl-nf1-q3",
+    "Jaki charakter mają guzy neuroendokrynne trzustki (pNET) rozwijające się u chorych z zespołem von Hippla-Lindaua?": "nen-vhl-nf1-q4",
+    "Jaka jest biologiczna rola neurofibrominy kodowanej przez gen NF1 na chromosomie 17q11.2?": "nen-vhl-nf1-q5"
+  },
+  "nen-ektopowe-zespoly": {
+    "Który wynik obustronnego cewnikowania zatok skalistych dolnych (BIPSS) po stymulacji CRH potwierdza ektopowe (pozaprzysadkowe) źródło sekrecji ACTH?": "nen-ektopowe-zespoly-q1",
+    "Dlaczego u chorego z ektopowym zespołem Cushinga w przebiegu rakowiaka oskrzela dochodzi do ciężkiej hipokaliemii i zasadowicy metabolicznej?": "nen-ektopowe-zespoly-q2",
+    "Jaki nowotwór neuroendokrynny jest najczęstszą przyczyną ektopowego zespołu ACTH (~50% przypadków)?": "nen-ektopowe-zespoly-q3",
+    "Jak komórki NEN wydzielające ektopowy ACTH reagują w teście hamowania wysoką dawką deksametazonu (HDDST 8 mg)?": "nen-ektopowe-zespoly-q4",
+    "Jaki peptyd ektopowo wydzielany przez NEN wywołuje hiperkalcemię nowotworową przy niewykrywalnym stężeniu PTH natywnego?": "nen-ektopowe-zespoly-q5"
+  },
+  "nen-analogi-somatostatyny": {
+    "Które dwa przełomowe badania kliniczne III fazy udowodniły bezpośrednie działanie antyproliferacyjne analogów somatostatyny (wydłużenie PFS) w NEN?": "nen-analogi-somatostatyny-q1",
+    "Jakie powikłanie metaboliczne jest najczęstszym działaniem niepożądanym pasyreotydu z uwagi na jego wysokie powinowactwo do receptora SSTR5?": "nen-analogi-somatostatyny-q2",
+    "Do którego podtypu receptora somatostatynowego oktreotyd i lanreotyd wykazują najwyższe powinowactwo wiązania (subnanomolarne IC50)?": "nen-analogi-somatostatyny-q3",
+    "Jakie działanie niepożądane w drogach żółciowych rozwija się u 20–50% chorych leczonych przewlekle analogami SSA?": "nen-analogi-somatostatyny-q4",
+    "Jaki jest okres półtrwania natywnej somatostatyny (SS-14) w osoczu ludzkim w porównaniu do syntetycznych oktapeptydów?": "nen-analogi-somatostatyny-q5"
+  },
+  "nen-prrt-celowane-captem": {
+    "Na czym polega molekularny mechanizm synergii między kapecytabiną a temozolomidem w schemacie chemioterapii CAPTEM?": "nen-prrt-celowane-captem-q1",
+    "W jakim celu podczas podawania izotopu lutetu-177 (177Lu-DOTATATE) w procedurze PRRT przetacza się choremu roztwór aminokwasów (lizyny i argininy)?": "nen-prrt-celowane-captem-q2",
+    "Jaki rodzaj promieniowania jonizującego emituje lutet-177, warunkując niszczenie komórek w zasięgu do 2 mm?": "nen-prrt-celowane-captem-q3",
+    "Jaki punkt uchwytu molekularnego posiada ewerolimus zarejestrowany w leczeniu zaawansowanych pNET?": "nen-prrt-celowane-captem-q4",
+    "Jaka cecha molekularna w biopsji guza pNET jest silnym predyktorem wysokiej odpowiedzi na schemat CAPTEM?": "nen-prrt-celowane-captem-q5"
+  },
+  "nen-matematyka-modele": {
+    "Jaki jest powszechnie akceptowany limit skumulowanej dawki promieniowania pochłoniętej przez miąższ nerek podczas cykli PRRT z lutetem-177 przy osłonie aminokwasowej?": "nen-matematyka-modele-q1",
+    "Jeśli średnica pojedynczej zmiany przerzutowej w wątrobie wzrosła z 20 mm do 26 mm w kontrolnym badaniu TK, to zgodnie z kryteriami RECIST 1.1 zmiana ta kwalifikuje się jako:": "nen-matematyka-modele-q2",
+    "Jaka zależność matematyczna wiąże czas podwojenia objętości guza (DT) ze stałą tempa wzrostu lambda w modelu wykładniczym?": "nen-matematyka-modele-q3",
+    "Jaki limit dawki pochłoniętej przez czerwony szpik kostny stosuje się w planowaniu dozymetrycznym PRRT w celu uniknięcia mielosupresji?": "nen-matematyka-modele-q4",
+    "Jaka zmiana wymiarów zmian tarczowych definiuje częściową odpowiedź (PR) wg kryteriów RECIST 1.1?": "nen-matematyka-modele-q5"
+  },
+  "nen-chemia-biochemia": {
+    "W jaki sposób mutacja kodonu C634 w protoonkogenie RET (typowa dla MEN2A) prowadzi do permanentnej aktywacji receptora kinazy tyrozynowej?": "nen-chemia-biochemia-q1",
+    "Który element stereochemiczny w strukturze cząsteczki oktreotydu odpowiada za wysoką odporność na proteolizę i wybiórcze dopasowanie do receptora SSTR2?": "nen-chemia-biochemia-q2",
+    "Który enzym jest enzymem ograniczającym szybkość (rate-limiting) biosyntezy serotoniny z L-tryptofanu w komórkach enterochromafinowych jelita?": "nen-chemia-biochemia-q3",
+    "Jaki jest molekularny mechanizm aktywacji kinazy RET wywołany mutacją M918T w zespole MEN2B?": "nen-chemia-biochemia-q4",
+    "Za pośrednictwem jakiego szlaku wewnątrzkomórkowego pobudzenie receptora SSTR2 przez analogi somatostatyny hamuje wydzielanie hormonów i peptydów?": "nen-chemia-biochemia-q5"
+  },
+  "otylosc-biologia-tkanki-tluszczowej": {
+    "Która cecha odróżnia trzewną tkankę tłuszczową (VAT) od podskórnej tkanki tłuszczowej (SAT)?": "otylosc-biologia-tkanki-tluszczowej-q1",
+    "Jaki jest mechanizm termogenezy bezdrżeniowej w brunatnej tkance tłuszczowej (BAT)?": "otylosc-biologia-tkanki-tluszczowej-q2",
+    "Jak zmienia się stężenie leptyny i adiponektyny w surowicy u osoby z narastającą otyłością olbrzymią?": "otylosc-biologia-tkanki-tluszczowej-q3",
+    "Czym charakteryzują się tzw. struktury koronopodobne (crown-like structures) w tkance tłuszczowej?": "otylosc-biologia-tkanki-tluszczowej-q4",
+    "Jaki mechanizm molekularny odpowiada za indukcję insulinooporności przez ektopowo gromadzone ceramidy i diacyloglicerole (DAG)?": "otylosc-biologia-tkanki-tluszczowej-q5"
+  },
+  "otylosc-os-podwzgorzowa-laknienie": {
+    "Który z wymienionych hormonów jest jedynym znanym obwodowym hormonem o działaniu oreksygennym (stymulującym głód)?": "otylosc-os-podwzgorzowa-laknienie-q1",
+    "Jaki skutek wywołuje pobudzenie receptora melanokortyny 4 (MC4R) w jądrze przykomorowym przez alfa-MSH?": "otylosc-os-podwzgorzowa-laknienie-q2",
+    "W jaki sposób białko AgRP (agouti-related peptide) wpływa na receptor melanokortyny 4 (MC4R)?": "otylosc-os-podwzgorzowa-laknienie-q3",
+    "Jaka modyfikacja biochemiczna cząsteczki greliny przez enzym GOAT jest bezwzględnie konieczna do aktywacji receptora GHSR-1a?": "otylosc-os-podwzgorzowa-laknienie-q4",
+    "Który układ neuroprzekaźnikowy odpowiada za tzw. głód hedoniczny (hedonic hunger) i przełamywanie sygnałów sytości pod wpływem pokarmów smakowitych?": "otylosc-os-podwzgorzowa-laknienie-q5"
+  },
+  "otylosc-klasyfikacja-fenotypy": {
+    "Jaka wartość wskaźnika talia-do-wzrostu (WHtR) stanowi uniwersalny punkt odcięcia wskazujący na podwyższone ryzyko kardiometaboliczne?": "otylosc-klasyfikacja-fenotypy-q1",
+    "Zgodnie z wytycznymi EASO 2024, kiedy u pacjenta z BMI w zakresie nadwagi (27 kg/m²) można postawić rozpoznanie choroby otyłościowej?": "otylosc-klasyfikacja-fenotypy-q2",
+    "Jakie dwa elementy są niezbędne do potwierdzenia otyłości sarkopenicznej (sarcopenic obesity)?": "otylosc-klasyfikacja-fenotypy-q3",
+    "Jaki jest los większości pacjentów z tzw. otyłością metabolicznie zdrową (MHO) w długoletniej obserwacji klinicznej?": "otylosc-klasyfikacja-fenotypy-q4",
+    "Jaki jest prawidłowy punkt odcięcia obwodu talii definiujący otyłość brzuszną u kobiet rasy kaukaskiej wg kryteriów IDF?": "otylosc-klasyfikacja-fenotypy-q5"
+  },
+  "otylosc-genetyka-monogenowa": {
+    "Jaka jest najczęstsza monogenowa przyczyna otyłości u ludzi, odpowiadająca za 3–5% ciężkich postaci otyłości dziecięcej?": "otylosc-genetyka-monogenowa-q1",
+    "Który lek stanowi celowaną terapię substytucyjną u dzieci z wrodzonym genetycznym niedoborem leptyny (mutacja LEP)?": "otylosc-genetyka-monogenowa-q2",
+    "Dlaczego u pacjentów z mutacją genu proopiomelanokortyny (POMC) oprócz skrajnej otyłości występuje blada skóra, rude włosy i hipokortyzolemia?": "otylosc-genetyka-monogenowa-q3",
+    "Dla których wskazań genetycznych zaaprobowany został syntetyczny agonista receptora MC4R — setmelanotyd?": "otylosc-genetyka-monogenowa-q4",
+    "Która aberracja genetyczna leży u podstaw zespołu Pradera-Williego (PWS)?": "otylosc-genetyka-monogenowa-q5"
+  },
+  "otylosc-zespol-metaboliczny": {
+    "Ile kryteriów spośród 5 składowych musi spełniać pacjent, aby rozpoznać zespół metaboliczny wg kryteriów zharmonizowanych (IDF/AHA/NHLBI)?": "otylosc-zespol-metaboliczny-q1",
+    "Jaki wzór matematyczny służy do obliczenia wskaźnika insulinooporności HOMA-IR przy stężeniu glukozy wyrażonym w mg/dl?": "otylosc-zespol-metaboliczny-q2",
+    "Jaka zmiana w profilu lipoprotein odpowiada za wysoką aterogenność dyslipidemii w zespole metabolicznym?": "otylosc-zespol-metaboliczny-q3",
+    "Jaki próg glikemii na czczo kwalifikuje się jako składowa zespołu metabolicznego wg wytycznych IDF/AHA?": "otylosc-zespol-metaboliczny-q4",
+    "Co oznacza pojęcie glukolipotoksyczności w odniesieniu do komórek beta trzustki?": "otylosc-zespol-metaboliczny-q5"
+  },
+  "otylosc-masld-mash": {
+    "Który parametr laboratoryjny znajduje się w mianowniku wzoru na wskaźnik zwłóknienia FIB-4?": "otylosc-masld-mash-q1",
+    "Jaki wynik wskaźnika FIB-4 u osoby w wieku 50 lat pozwala z wysokim prawdopodobieństwem (NPV > 90%) wykluczyć zaawansowane zwłóknienie wątroby?": "otylosc-masld-mash-q2",
+    "Jaki jest mechanizm działania rezmetiromu — leku zaaprobowanego przez FDA w terapii MASH z włóknieniem?": "otylosc-masld-mash-q3",
+    "Które kryterium odróżnia postać MASH od prostego stłuszczenia metabolicznego (MASL)?": "otylosc-masld-mash-q4",
+    "Jaki polimorfizm genetyczny (rs738409) jest najsilniejszym znanym czynnikiem wrodzonej podatności na MASLD i stłuszczeniową marskość wątroby?": "otylosc-masld-mash-q5"
+  },
+  "otylosc-powiklania-sercowo-oddechowe": {
+    "Które badanie jest bezwzględnie wymagane do postawienia rozpoznania zespołu hipowentylacji w otyłości (OHS, zespół Pickwicka)?": "otylosc-powiklania-sercowo-oddechowe-q1",
+    "Dlaczego u pacjentów z otyłością stężenia biomarkerów niewydolności serca (BNP i NT-proBNP) są często fałszywie zaniżone?": "otylosc-powiklania-sercowo-oddechowe-q2",
+    "Jaki wskaźnik laboratoryjny w rutynowej jonogramie może służyć jako prosty test przesiewowy nasuwający podejrzenie przewlekłej retencji CO2 w OHS?": "otylosc-powiklania-sercowo-oddechowe-q3",
+    "Jaki wynik wskaźnika bezdechów i spłyceń (AHI) w badaniu polisomnograficznym definiuje obturacyjny bezdech senny o stopniu ciężkim?": "otylosc-powiklania-sercowo-oddechowe-q4",
+    "Jaki aparat i tryb wentylacji stanowi leczenie pierwszego wyboru u pacjentów z OHS i współistniejącym ciężkim bezdechem sennym (OSAS-OHS)?": "otylosc-powiklania-sercowo-oddechowe-q5"
+  },
+  "otylosc-powiklania-mechaniczne-nowotwory": {
+    "Który nowotwór złośliwy wykazuje najsilniejszy wzrost względnego ryzyka rozwoju (nawet 4–7-krotny) u kobiet z otyłością olbrzymią?": "otylosc-powiklania-mechaniczne-nowotwory-q1",
+    "Jaki jest mechanizm powstawania hipogonadyzmu wtórnego u otyłych mężczyzn (zespół MOSH)?": "otylosc-powiklania-mechaniczne-nowotwory-q2",
+    "Dlaczego choroba zwyrodnieniowa stawów (OA) u osób z otyłością rozwija się również w stawach rąk, które nie przenoszą ciężaru ciała?": "otylosc-powiklania-mechaniczne-nowotwory-q3",
+    "Ile typów nowotworów złośliwych zostało oficjalnie uznanych przez IARC/WHO za wykazujące bezpośredni związek przyczynowo-skutkowy z nadmiarem tkanki tłuszczowej?": "otylosc-powiklania-mechaniczne-nowotwory-q4",
+    "Jakie postępowanie lecznicze pozwala przywrócić eugonadyzm u większości mężczyzn z zespołem MOSH?": "otylosc-powiklania-mechaniczne-nowotwory-q5"
+  },
+  "otylosc-leki-inkretynowe-glp1": {
+    "Jaki kluczowy wynik w zakresie punktu końcowego MACE przyniosło badanie SELECT dla semaglutydu w dawce 2,4 mg?": "otylosc-leki-inkretynowe-glp1-q1",
+    "W jakim schemacie czasowym przeprowadza się standardową eskalację dawki semaglutydu (Wegovy) w leczeniu otyłości?": "otylosc-leki-inkretynowe-glp1-q2",
+    "Który stan chorobowy stanowi bezwzględne przeciwwskazanie do stosowania agonistów receptora GLP-1 zgodnie z charakterystyką produktu leczniczego?": "otylosc-leki-inkretynowe-glp1-q3",
+    "Dlaczego u pacjentów szybko tracących masę ciała pod wpływem agonistów GLP-1 rośnie ryzyko kamicy pęcherzyka żółciowego?": "otylosc-leki-inkretynowe-glp1-q4",
+    "Jaka modyfikacja strukturalna cząsteczki semaglutydu odpowiada za jego przedłużony czas półtrwania (około 7 dni)?": "otylosc-leki-inkretynowe-glp1-q5"
+  },
+  "otylosc-podwojni-potrojni-agonisci": {
+    "Które dwa receptory hormonalne aktywuje cząsteczka tirzepatydu (Zepbound/Mounjaro)?": "otylosc-podwojni-potrojni-agonisci-q1",
+    "Jaki średni ubytek masy ciała osiągają pacjenci stosujący najwyższą dawkę tirzepatydu (15 mg) w badaniach SURMOUNT-1?": "otylosc-podwojni-potrojni-agonisci-q2",
+    "Jaki dodatkowy efekt metaboliczny wnosi komponent agonizmu receptora glukagonowego (GCGR) w potrójnym agoniście — retatrutydzie?": "otylosc-podwojni-potrojni-agonisci-q3",
+    "Dlaczego aktywacja receptora GIPR przez tirzepatyd zmniejsza nasilenie nudności wywoływanych przez stymulację GLP-1R?": "otylosc-podwojni-potrojni-agonisci-q4",
+    "Które dwa leki wchodzą w skład preparatu złożonego CagriSema?": "otylosc-podwojni-potrojni-agonisci-q5"
+  },
+  "otylosc-leki-nieinkretynowe": {
+    "W jaki sposób naltrekson potęguje działanie bupropionu w redukcji łaknienia w preparacie złożonym?": "otylosc-leki-nieinkretynowe-q1",
+    "Który stan chorobowy stanowi bezwzględne przeciwwskazanie do włączenia leku bupropion/naltrekson?": "otylosc-leki-nieinkretynowe-q2",
+    "Jakie zalecenie dotyczące suplementacji witamin należy przekazać pacjentowi rozpoczynającemu terapię orlistatem?": "otylosc-leki-nieinkretynowe-q3",
+    "Dlaczego lek przeciwotyłościowy rimonabant został definitywnie wycofany z rynku farmaceutycznego?": "otylosc-leki-nieinkretynowe-q4",
+    "Jaki jest mechanizm działania farmakologicznego orlistatu w świetle przewodu pokarmowego?": "otylosc-leki-nieinkretynowe-q5"
+  },
+  "otylosc-strategia-terapeutyczna": {
+    "Co oznacza pojęcie adaptacji metabolicznej (adaptacyjnej termogenezy) podczas redukcji masy ciała?": "otylosc-strategia-terapeutyczna-q1",
+    "Jaki odsetek utraconej masy ciała odzyskują średnio pacjenci w ciągu roku po zaprzestaniu farmakoterapii agonistami GLP-1 (wg badania STEP 1 Extension)?": "otylosc-strategia-terapeutyczna-q2",
+    "Jaka interwencja jest kluczowa w trakcie intensywnej farmakoterapii otyłości w celu ochrony beztłuszczowej masy ciała (FFM)?": "otylosc-strategia-terapeutyczna-q3",
+    "Jak zgodnie z wytycznymi definiuje się brak zadowalającej odpowiedzi terapeutycznej (non-responder) na wdrożony lek przeciwotyłościowy?": "otylosc-strategia-terapeutyczna-q4",
+    "Dlaczego tradycyjna reguła Wishnofskyego (3500 kcal deficytu = 1 funt utraty tłuszczu) zawodzi w prognozowaniu długoterminowym?": "otylosc-strategia-terapeutyczna-q5"
+  },
+  "otylosc-bariotria-kwalifikacja-techniki": {
+    "Zgodnie ze zaktualizowanymi wytycznymi IFSO/ASMBS 2022/2023, od jakiego progu BMI pacjent kwalifikuje się do chirurgii bariatrycznej bez konieczności współistnienia innych powikłań?": "otylosc-bariotria-kwalifikacja-techniki-q1",
+    "Dlaczego u pacjenta z otyłością olbrzymią i ciężkim refluksem żołądkowo-przełykowym (GERD stopnia C) procedurą z wyboru jest RYGB, a nie LSG?": "otylosc-bariotria-kwalifikacja-techniki-q2",
+    "O ile obniża się progi BMI kwalifikacji bariatrycznej dla pacjentów pochodzenia azjatyckiego wg wytycznych IFSO?": "otylosc-bariotria-kwalifikacja-techniki-q3",
+    "Usunięcie której części żołądka podczas rękawowej resekcji (LSG) odpowiada za spektakularny spadek stężenia greliny we krwi?": "otylosc-bariotria-kwalifikacja-techniki-q4",
+    "Czym charakteryzuje się ominięcie żołądkowe z jednym zespoleniem (OAGB / Mini-Gastric Bypass)?": "otylosc-bariotria-kwalifikacja-techniki-q5"
+  },
+  "otylosc-bariotria-mechanizmy-remisja": {
+    "Zgodnie z konsensusem ADA/EASD, jaki warunek definiuje pełną remisję cukrzycy typu 2 po zabiegu bariatrycznym?": "otylosc-bariotria-mechanizmy-remisja-q1",
+    "Na czym polega tzw. hipoteza jelita tylnego (hindgut hypothesis) tłumacząca błyskawiczną poprawę glikemii po operacji RYGB?": "otylosc-bariotria-mechanizmy-remisja-q2",
+    "W jaki sposób podwyższone stężenie kwasów żółciowych w surowicy po RYGB wspomaga termogenezę i wydatek energetyczny?": "otylosc-bariotria-mechanizmy-remisja-q3",
+    "Który z wymienionych pacjentów z cukrzycą typu 2 ma najwyższe prawdopodobieństwo osiągnięcia trwałej remisji po operacji bariatrycznej?": "otylosc-bariotria-mechanizmy-remisja-q4",
+    "Jaki gatunek bakterii jelitowych namnaża się po operacji bariatrycznej i wywiera działanie przeciwzapalne oraz uszczelniające barierę jelitową?": "otylosc-bariotria-mechanizmy-remisja-q5"
+  },
+  "otylosc-bariotria-powiklania-suplementacja": {
+    "Czym różni się późny zespół poposiłkowy (late dumping syndrome) od wczesnego zespołu poposiłkowego?": "otylosc-bariotria-powiklania-suplementacja-q1",
+    "Jaki objaw kliniczny jest najwcześniejszym i najbardziej czułym wskaźnikiem nieszczelności zespolenia (leaku) w pierwszych dobach po operacji bariatrycznej?": "otylosc-bariotria-powiklania-suplementacja-q2",
+    "Dlaczego u pacjentów po ominięciu żołądkowym (RYGB) preparatem wapnia z wyboru jest cytrynian wapnia, a nie węglan wapnia?": "otylosc-bariotria-powiklania-suplementacja-q3",
+    "Jakie postępowanie profilaktyczne należy wdrożyć natychmiast u pacjenta bariatrycznego z uporczywymi wymiotami trwającymi od kilku dni?": "otylosc-bariotria-powiklania-suplementacja-q4",
+    "Które dwa czynniki behawioralne i farmakologiczne stanowią główne przyczyny powstawania owrzodzeń brzeżnych (marginal ulcers) po RYGB?": "otylosc-bariotria-powiklania-suplementacja-q5"
+  },
+  "otylosc-metabolizm-lipoprotein-klasyfikacja": {
+    "Która apolipoproteina znajduje się w dokładnie jednej kopii na każdej aterogennej cząstce lipoproteiny (LDL, VLDL, IDL)?": "otylosc-metabolizm-lipoprotein-klasyfikacja-q1",
+    "Jaki próg stężenia lipoproteiny (a) [Lp(a)] wyznacza istotnie podwyższone ryzyko sercowo-naczyniowe wg wytycznych ESC/EAS?": "otylosc-metabolizm-lipoprotein-klasyfikacja-q2",
+    "Który enzym jest bezpośrednio aktywowany przez apolipoproteinę C-II na powierzchni chylomikronów w celu hydrolizy triglicerydów?": "otylosc-metabolizm-lipoprotein-klasyfikacja-q3",
+    "Z jaką cząsteczką układu krzepnięcia apolipoproteina (a) w cząstce Lp(a) wykazuje wysoką homologię strukturalną, tłumaczącą jej działanie prozakrzepowe?": "otylosc-metabolizm-lipoprotein-klasyfikacja-q4",
+    "Jak często zgodnie z wytycznymi ESC/EAS 2023 należy oznaczać stężenie lipoproteiny (a) u osoby dorosłej w celach stratyfikacji ryzyka?": "otylosc-metabolizm-lipoprotein-klasyfikacja-q5"
+  },
+  "otylosc-hipercholesterolemia-rodzinna": {
+    "Mutacja utraty funkcji którego genu odpowiada za ponad 85–90% wszystkich przypadków hipercholesterolemii rodzinnej (FH)?": "otylosc-hipercholesterolemia-rodzinna-q1",
+    "Jaki objaw w badaniu fizykalnym jest wysoce swoisty (patognomoniczny) dla hipercholesterolemii rodzinnej i daje aż 6 punktów w skali DLCN?": "otylosc-hipercholesterolemia-rodzinna-q2",
+    "Ile punktów w skali Dutch Lipid Clinic Network (DLCN) jest wymagane do postawienia pewnego rozpoznania hipercholesterolemii rodzinnej?": "otylosc-hipercholesterolemia-rodzinna-q3",
+    "Na czym polega screening kaskadowy (cascade screening) w rodzinie pacjenta z rozpoznaną hipercholesterolemią rodzinną?": "otylosc-hipercholesterolemia-rodzinna-q4",
+    "Jaki nowoczesny lek pozwala obniżyć stężenie LDL-C u chorych z homozygotyczną FH (HoFH) z całkowitym brakiem receptorów LDLR?": "otylosc-hipercholesterolemia-rodzinna-q5"
+  },
+  "otylosc-farmakoterapia-hipolipemizujaca": {
+    "Jaki jest docelowy poziom cholesterolu frakcji LDL (LDL-C) u pacjenta po przebytym zawale serca (bardzo duże ryzyko sercowo-naczyniowe) wg wytycznych ESC/EAS 2023?": "otylosc-farmakoterapia-hipolipemizujaca-q1",
+    "O ile procent zmniejsza stężenie LDL-C dołączenie ezetymibu do leczenia statyną o wysokiej intensywności?": "otylosc-farmakoterapia-hipolipemizujaca-q2",
+    "Dlaczego kwas bempedonowy nie wywołuje dolegliwości bólowych mięśni (SAMS), które często występują po statynach?": "otylosc-farmakoterapia-hipolipemizujaca-q3",
+    "W jakim odstępie czasowym podaje się podskórnie inklisiran w terapii podtrzymującej po fazie nasycenia?": "otylosc-farmakoterapia-hipolipemizujaca-q4",
+    "Jaki jest docelowy poziom LDL-C dla pacjenta w kategorii ryzyka ekstremalnego (kolejny incydent naczyniowy w ciągu 2 lat pomimo optymalnego leczenia)?": "otylosc-farmakoterapia-hipolipemizujaca-q5"
+  },
+  "otylosc-matematyka-modele": {
+    "Dlaczego tradycyjna formuła Friedewalda nie powinna być stosowana do obliczania stężenia cholesterolu LDL u pacjentów ze stężeniem triglicerydów > 400 mg/dl?": "otylosc-matematyka-modele-q1",
+    "Pacjent o masie wyjściowej 120 kg zredukował wagę do 96 kg po 12 miesiącach od rękawowej resekcji żołądka. Ile wynosi jego wskaźnik %TBWL?": "otylosc-matematyka-modele-q2",
+    "O jaki czynnik koryguje się równanie Mifflina-St Jeor dla kobiet w porównaniu do mężczyzn przy tej samej masie, wzroście i wieku?": "otylosc-matematyka-modele-q3",
+    "Jaki wynik procentowej utraty nadmiaru masy ciała (%EWL) jest powszechnie uznawany w literaturze bariatrycznej za kryterium sukcesu operacji po 1–2 latach?": "otylosc-matematyka-modele-q4",
+    "Co dzieje się z dobowym wydatkiem energetycznym TDEE w miarę spadku masy ciała zgodnie z modelem nieliniowym Halla?": "otylosc-matematyka-modele-q5"
+  },
+  "otylosc-chemia-biochemia": {
+    "Który enzym katalizuje pierwszy i ograniczający szybkość etap wewnątrzkomórkowej lipolizy w adipocytach, hydrolizując triacyloglicerol do diacyloglicerolu?": "otylosc-chemia-biochemia-q1",
+    "Który metabolit pośredni lipogenezy de novo jest silnym allosterycznym inhibitorem enzymu CPT-1, blokującym niepotrzebne spalanie kwasów tłuszczowych podczas ich syntezy?": "otylosc-chemia-biochemia-q2",
+    "Jaki element strukturalny cząsteczki statyn odpowiada za ich bezpośrednie kompetycyjne wiązanie z centrum aktywnym reduktazy HMG-CoA?": "otylosc-chemia-biochemia-q3",
+    "Które białko osłania powierzchnię kropli lipidowej w spoczynkowym adipocycie i musi ulec fosforylacji przez PKA, aby umożliwić rozpoczęcie lipolizy?": "otylosc-chemia-biochemia-q4",
+    "Jaki jest cel dołączenia reszty kwasu alfa-aminoizomasłowego (Aib) w pozycji 8 cząsteczki semaglutydu?": "otylosc-chemia-biochemia-q5"
+  }
+}

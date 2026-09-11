@@ -1,4 +1,7 @@
-export const CONTENT_VERSION = '2026.09.11.2';
+export const CONTENT_VERSION = '2026.09.11.3';
+import legacyQuestionIds from './question-ids.json' with {type:'json'};
+import {gahtLessons, gahtSources, gahtConceptCards, gahtLessonIds} from './course-gaht.ts';
+import {studyPrompts} from './study-paths.ts';
 export const VERIFIED_AT = '2026-09-11';
 export type { ModuleId, Option, Question, Source, Pair, DraftQuestion, Lesson, DraftLesson } from './course-types.ts';
 import { type ModuleId, type Lesson, type DraftLesson, type Source, type Pair, q } from './course-types.ts';
@@ -55,6 +58,7 @@ const thyroidSources: Record<string, Source> = {
 };
 
 export const sources: Record<string, Source> = {
+  ...gahtSources,
   ...thyroidSources,
   ...thyroidMathChemSources,
   ...pituitarySources,
@@ -210,7 +214,8 @@ const allDrafts: DraftLesson[] = [
   ...draftDiabetesMathChem.map(l => ({ ...l, moduleId: 'cukrzyca' as ModuleId })),
   ...draftGonadsPart1.map(l => ({ ...l, moduleId: 'gonady' as ModuleId })),
   ...draftGonadsPart2.map(l => ({ ...l, moduleId: 'gonady' as ModuleId })),
-  ...draftGonadsPart3.map(l => ({ ...l, moduleId: 'gonady' as ModuleId })),
+  ...draftGonadsPart3.filter(l=>!gahtLessonIds.includes(l.id)).map(l => ({ ...l, moduleId: 'gonady' as ModuleId })),
+  ...gahtLessons,
   ...draftGonadsPart4.map(l => ({ ...l, moduleId: 'gonady' as ModuleId })),
   ...draftNenPart1.map(l => ({ ...l, moduleId: 'nen' as ModuleId })),
   ...draftNenPart2.map(l => ({ ...l, moduleId: 'nen' as ModuleId })),
@@ -243,18 +248,21 @@ export const lessons: Lesson[] = allDrafts.map((l, li) => {
       const answer = (li + i) % 3;
       const options = item.choices.map(([text, explanation]) => ({ text, explanation }));
       const rotated = [...options.slice(3 - answer), ...options.slice(0, 3 - answer)];
-      return { id: `${l.id}-q${i + 1}`, lessonId: l.id, prompt: item.prompt, options: rotated, answer };
+      const legacy = legacyQuestionIds as Record<string,Record<string,string>>;
+      const id = item.id ?? legacy[l.id]?.[item.prompt];
+      if (!id) throw new Error(`Nadaj trwały identyfikator pytaniu: ${l.id} / ${item.prompt}`);
+      return { id, lessonId: l.id, prompt: item.prompt, options: rotated, answer };
     }),
   };
 });
 
 export const questions = lessons.flatMap(l => l.questions);
-export const flashcards = questions.map(q => ({
+export const flashcards = [...questions.map(q => ({
   id: `${q.id}-card`,
   lessonId: q.lessonId,
   front: q.prompt,
   back: `${q.options[q.answer].text}. ${q.options[q.answer].explanation}`,
-}));
+})), ...gahtConceptCards, ...Object.entries(studyPrompts).map(([moduleId,p])=>({id:`reasoning-${moduleId}-v1`,lessonId:lessons.find(l=>l.moduleId===moduleId)!.id,front:p.question,back:`${p.answer} Pułapka: ${p.pitfall}`}))];
 
 export const modulesList = [
   { id: 'tarczyca', name: 'Tarczyca', count: 16, subtitle: 'Fizjologia, Hashimoto, Graves, guzki, stany nagłe, kinetyka T4 i mechanizm TPO' },
@@ -262,7 +270,7 @@ export const modulesList = [
   { id: 'nadnercza', name: 'Nadnercza', count: 16, subtitle: 'Choroba Addisona, zespół Conna, guz chromochłonny, WPN, kinetyka enzymatyczna i stereochemia' },
   { id: 'przytarczyce', name: 'Przytarczyce i Ca–P', count: 16, subtitle: 'Gospodarka Ca–P, tężyczka, model Hilla CaSR, kinetyka mineralizacji i bisfosfoniany' },
   { id: 'cukrzyca', name: 'Cukrzyca i metabolizm', count: 16, subtitle: 'T1D, T2D, MODY, LADA, DKA/HHS, pompy/CGM, model Bergmana i biochemia receptora insuliny' },
-  { id: 'gonady', name: 'Gonady i medycyna rozrodu', count: 20, subtitle: 'Oś HPG, hipogonadyzm, PCOS, MHT, IVF/OHSS, GAHT, DSD, równanie Vermeulena i aromataza' },
+  { id: 'gonady', name: 'Gonady i medycyna rozrodu', count: 26, subtitle: 'Oś HPG, hipogonadyzm, PCOS, MHT, IVF/OHSS, 8 lekcji GAHT, DSD i aromataza' },
   { id: 'nen', name: 'Nowotwory neuroendokrynne i MEN', count: 20, subtitle: 'GEP-NEN, rakowiak, gastrinoma, insulinoma, MEN1, MEN2, MEN4, VHL, PRRT, CAPTEM i kinet. receptorowa' },
   { id: 'otylosc', name: 'Otyłość i lipidy', count: 20, subtitle: 'Adipobiologia, GLP-1/GIP, bariatria, MASLD, FH, PCSK9, model Halla i biochemia lipolizy' },
 ] as const;
@@ -271,4 +279,3 @@ export const plannedModules = [
   'Endokrynologia rozwojowa i pediatryczna',
   'Endokrynologia ciąży i połogu',
 ];
-

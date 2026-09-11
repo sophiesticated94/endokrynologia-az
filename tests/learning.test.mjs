@@ -21,11 +21,11 @@ test('isSafePublicKey accepts anon JWT, publishable keys and rejects service_rol
   assert.equal(isSafePublicKey(null), false);
 });
 
-test('complete curriculum: 140 lessons across 8 modules, 700 explained questions, 700 cards, 108 four-step cases', () => {
-  assert.equal(lessons.length, 140);
-  assert.equal(questions.length, 700);
-  assert.equal(flashcards.length, 700);
-  assert.equal(cases.length, 108);
+test('complete curriculum: 146 lessons across 8 modules, 730 explained questions, 778 cards, 110 four-step cases', () => {
+  assert.equal(lessons.length, 146);
+  assert.equal(questions.length, 730);
+  assert.equal(flashcards.length, 778);
+  assert.equal(cases.length, 110);
 
   const thyroidLessons = lessons.filter(l => l.moduleId === 'tarczyca');
   const pituitaryLessons = lessons.filter(l => l.moduleId === 'przysadka');
@@ -41,7 +41,7 @@ test('complete curriculum: 140 lessons across 8 modules, 700 explained questions
   assert.equal(adrenalLessons.length, 16, 'Adrenals must have 16 lessons (12 clinical + 2 math + 2 chem)');
   assert.equal(parathyroidLessons.length, 16, 'Parathyroid must have 16 lessons (12 clinical + 2 math + 2 chem)');
   assert.equal(diabetesLessons.length, 16, 'Diabetes must have 16 lessons (12 clinical + 2 math + 2 chem)');
-  assert.equal(gonadLessons.length, 20, 'Gonads must have 20 lessons (16 clinical + 2 math + 2 chem)');
+  assert.equal(gonadLessons.length, 26, 'Gonads include the eight-lesson GAHT pathway');
   assert.equal(nenLessons.length, 20, 'NEN must have 20 lessons (16 clinical + 2 math + 2 chem)');
   assert.equal(otyloscLessons.length, 20, 'Otylosc must have 20 lessons (16 clinical + 2 math + 2 chem)');
 
@@ -84,7 +84,7 @@ test('exam samples 30 unique questions, does not mutate bank, varies between run
   assert.equal(new Set(a.map(q => q.id)).size, 30);
   assert.notDeepEqual(a, b);
   assert.deepEqual(questions.map(q => q.id), before);
-  assert.throws(() => sampleQuestions(questions, 701));
+  assert.throws(() => sampleQuestions(questions, questions.length + 1));
 });
 
 
@@ -249,21 +249,21 @@ test('medical glossary contains essential terms with definitions and clinical si
   assert.ok(glossaryMap.get('adaptacja-metaboliczna'));
 });
 
-test('course map grouping covers all 140 lessons across 8 modules without gaps', () => {
+test('course map grouping covers all 146 lessons across 8 modules without gaps', () => {
   const moduleGroups = {
     tarczyca: ['Fundamenty', 'Praktyka kliniczna', 'Sytuacje szczególne', 'Matematyka i modele', 'Chemia i biochemia'],
     przysadka: ['Fundamenty', 'Gruczolaki i hipersekrecja', 'Niedoczynność i gospodarka wodna', 'Sytuacje szczególne i chirurgia', 'Matematyka i modele', 'Chemia i biochemia'],
     nadnercza: ['Fundamenty', 'Niedoczynność kory i WPN', 'Nadczynności i guz chromochłonny', 'Stany nagłe i chirurgia', 'Matematyka i modele', 'Chemia i biochemia'],
     przytarczyce: ['Fundamenty', 'Nadczynności i hiperkalcemia', 'Niedoczynności i tężyczka', 'Kości, chirurgia i stany nagłe', 'Matematyka i modele', 'Chemia i biochemia'],
     cukrzyca: ['Fundamenty i diagnostyka', 'Klasyfikacja i patogeneza', 'Ostre stany i powikłania', 'Farmakoterapia i sytuacje szczególne', 'Matematyka i modele', 'Chemia i biochemia'],
-    gonady: ['Fundamenty i diagnostyka', 'Andrologia i gonady męskie', 'Ginekologia endokrynologiczna', 'Hormonoterapia tranzycyjna i zaburzenia rozwojowe', 'Matematyka i modele', 'Chemia i biochemia'],
+    gonady: ['GAHT · ścieżka mechanizmów', 'Fundamenty i diagnostyka', 'Andrologia i gonady męskie', 'Ginekologia endokrynologiczna', 'Hormonoterapia tranzycyjna i zaburzenia rozwojowe', 'Matematyka i modele', 'Chemia i biochemia'],
     nen: ['Fundamenty i diagnostyka', 'Guzy neuroendokrynne trzustki (pNET)', 'Zespół rakowiaka i NEN przewodu pokarmowego oraz płuc', 'Zespoły uwarunkowane genetycznie', 'Terapie celowane, PRRT i chirurgia', 'Matematyka i modele', 'Chemia i biochemia'],
     otylosc: ['Fundamenty i diagnostyka', 'Powikłania narządowe i kardiometaboliczne', 'Farmakoterapia otyłości', 'Chirurgia bariatryczna i metaboliczna', 'Zaburzenia lipidowe i dyslipidemie', 'Matematyka i modele', 'Chemia i biochemia'],
   };
 
   for (const [modId, groups] of Object.entries(moduleGroups)) {
     const modLessons = lessons.filter(l => l.moduleId === modId);
-    assert.equal(modLessons.length, (modId === 'gonady' || modId === 'nen' || modId === 'otylosc') ? 20 : 16, `Module ${modId} should have proper lesson count`);
+    assert.equal(modLessons.length, modId === 'gonady' ? 26 : (modId === 'nen' || modId === 'otylosc') ? 20 : 16, `Module ${modId} should have proper lesson count`);
     const lessonGroups = Array.from(new Set(modLessons.map(l => l.group)));
     for (const g of lessonGroups) {
       assert.ok(groups.includes(g), `Group "${g}" should be recognized in module ${modId}`);

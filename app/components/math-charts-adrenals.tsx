@@ -1,4 +1,5 @@
 'use client';
+import { MechanismWorkbench } from './physiology-workbench';
 import { useState, useMemo } from 'react';
 import { Sliders, Activity, ShieldAlert, CheckCircle2, TrendingUp } from 'lucide-react';
 
@@ -54,7 +55,7 @@ export function MichaelisMentenLineweaverChart() {
           </h4>
         </div>
         <span style={{ fontSize: '12px', fontWeight: 700, background: '#ffedd5', color: '#9a3412', padding: '4px 10px', borderRadius: '6px' }}>
-          V = {roundedV} µmol/min ({Math.round((velocity / baseVmax) * 100)}% normy)
+          V = {roundedV} j. umownych ({Math.round((velocity / baseVmax) * 100)}% założonego Vmax)
         </span>
       </div>
 
@@ -153,7 +154,7 @@ export function MichaelisMentenLineweaverChart() {
       </div>
 
       <div style={{ marginTop: '12px', fontSize: '12px', color: '#7c2d12', lineHeight: '1.45', background: '#fff7ed', padding: '10px 14px', borderRadius: '6px' }}>
-        <strong>Zasada patofizjologiczna bocznikowania:</strong> Gdy mutacja obniża Vmax do 1–2% normy, hydroksylacja 17-OHP do 11-deoksykortyzolu staje się wąskim gardłem. Substrat gromadzi się do stężeń 15–30 µM (&gt;10 × Km). Z powodu wysycenia zablokowanego enzymu nadmiar substratu ulega przymusowemu przekierowaniu do enzymów szlaku androgenowego (CYP17A1 i szlak &quot;backdoor&quot;), wywołując wirylizację.
+        <strong>Zasada patofizjologiczna bocznikowania:</strong> Obniżona aktywność 21-hydroksylazy ogranicza syntezę kortyzolu i może nasilać szlaki androgenowe. Krzywe pokazują równanie Michaelisa–Mentena z umownymi parametrami; nie przewidują stężeń ani fenotypu WPN.
       </div>
     </div>
   );
@@ -162,72 +163,4 @@ export function MichaelisMentenLineweaverChart() {
 // ============================================================================
 // 2. PHEO HEMODYNAMICS & NON-COMPETITIVE ALPHA-BLOCKADE CHART
 // ============================================================================
-export function ArrHemodynamicsChart() {
-  const [alphaBlockade, setAlphaBlockade] = useState<'none' | 'competitive' | 'irreversible'>('irreversible');
-
-  return (
-    <div style={{ background: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: '12px', padding: '18px', margin: '20px 0' }}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
-        <div>
-          <span style={{ fontSize: '11px', fontWeight: 700, color: '#1e40af', letterSpacing: '0.05em' }}>
-            FARMAKODYNAMIKA I HEMODYNAMIKA PHEOCHROMOCYTOMA
-          </span>
-          <h4 style={{ margin: '2px 0 0', fontSize: '15px', color: '#0f172a' }}>
-            Krzywa stężenie-odpowiedź (Emax): Kompetycyjna doksazosyna vs nieodwracalna fenoksybenzamina
-          </h4>
-        </div>
-        <div style={{ display: 'flex', gap: '6px' }}>
-          {[
-            { id: 'none', label: 'Brak blokady' },
-            { id: 'competitive', label: 'Doksazosyna (kompetycyjna)' },
-            { id: 'irreversible', label: 'Fenoksybenzamina (kowalencyjna)' },
-          ].map(m => (
-            <button
-              key={m.id}
-              type="button"
-              onClick={() => setAlphaBlockade(m.id as any)}
-              style={{
-                padding: '4px 8px',
-                borderRadius: '6px',
-                border: '1px solid',
-                borderColor: alphaBlockade === m.id ? '#1e40af' : '#cbd5e1',
-                background: alphaBlockade === m.id ? '#1e40af' : '#fff',
-                color: alphaBlockade === m.id ? '#fff' : '#334155',
-                fontWeight: 600,
-                fontSize: '11px',
-                cursor: 'pointer',
-              }}
-            >
-              {m.label}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '14px', marginBottom: '12px' }}>
-        <div style={{ fontSize: '12px', fontWeight: 700, color: '#1e3a8a', marginBottom: '6px' }}>
-          WPŁYW NA ODPOWIEDŹ NACZYNIORUCHOWĄ PRZY WYRZUCIE KATECHOLAMIN:
-        </div>
-        {alphaBlockade === 'none' && (
-          <p style={{ margin: '0', fontSize: '13px', color: '#b91c1c' }}>
-            <strong>Brak blokady:</strong> Maksymalny skurcz naczyń ($E_{'{max}'} = 100\%$). Wyrzut noradrenaliny podczas manipulacji guzem wywołuje przełom nadciśnieniowy z ciśnieniem &gt; 250/140 mmHg, obrzęk płuc i udar krwotoczny.
-          </p>
-        )}
-        {alphaBlockade === 'competitive' && (
-          <p style={{ margin: '0', fontSize: '13px', color: '#b45309' }}>
-            <strong>Antagonista kompetycyjny (Doksazosyna):</strong> Przesuwa krzywą w prawo ($EC_{'{50}'} \uparrow$), ale zachowuje $E_{'{max}'} = 100\%$. Olbrzymi wyrzut katecholamin (megadawka liganda) jest w stanie przełamać blokadę kompetycyjną i wywołać skok ciśnienia na sali operacyjnej.
-          </p>
-        )}
-        {alphaBlockade === 'irreversible' && (
-          <p style={{ margin: '0', fontSize: '13px', color: '#15803d' }}>
-            <strong>Antagonista nieodwracalny / kowalencyjny (Fenoksybenzamina):</strong> Kation azirydyniowy tworzy trwałe wiązanie kowalencyjne z receptorem $\alpha_1$, drastycznie <strong>obniżając $E_{'{max}'} do &lt;20%</strong>. Nawet stężenie katecholamin rzędu 1000 ng/ml NIE JEST W STANIE wywołać zagrażającego życiu skurczu naczyń.
-          </p>
-        )}
-      </div>
-
-      <div style={{ fontSize: '12px', color: '#334155', background: '#f1f5f9', padding: '10px 14px', borderRadius: '6px', lineHeight: '1.45' }}>
-        <strong>Kardynalna reguła operacyjna:</strong> Poza pełną blokadą alfa, pacjent z guzem pheo wymaga wdrożenia diety bogatosodowej i dożylnego nawodnienia 0,9% NaCl na 2–3 dni przed operacją, aby odtworzyć przewlekle skurczone łożysko naczyniowe i zapobiec wstrząsowi wazodylatacyjnemu po zaklemowaniu naczyń guza.
-      </div>
-    </div>
-  );
-}
+export function ArrHemodynamicsChart(){return <MechanismWorkbench system="adrenal"/>;}

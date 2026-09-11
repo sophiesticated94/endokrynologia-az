@@ -43,7 +43,7 @@ export const gonadsGlossary: GlossaryItem[] = [
     category: 'hormony',
     definition: 'Główny i najsilniejszy biologicznie estrogen produkowany przez komórki ziarniste jajników oraz obwodowo przez aromatazę z testosteronu.',
     normalRange: 'Kobiety: f. folikularna 30–120 pg/ml, pik owulacyjny 150–400 pg/ml; Mężczyźni: 10–40 pg/ml',
-    clinicalSignificance: 'Niezbędny do rozwoju cech płciowych, proliferacji endometrium i mineralizacji kości. W MHT i feminizującej GAHT cel wynosi 100–200 pg/ml.'
+    clinicalSignificance: 'Niezbędny do rozwoju cech płciowych, proliferacji endometrium i mineralizacji kości. W typowej feminizującej GAHT Endocrine Society podaje E2 100–200 pg/ml jako punkt odniesienia; nie jest to uniwersalny cel MHT.'
   },
   {
     id: 'shbg',

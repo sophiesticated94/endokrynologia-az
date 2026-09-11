@@ -19,11 +19,11 @@ export function LessonSimulatorsOtylosc({ lessonId, go }: { lessonId: string; go
           </div>
           <div>
             <span className="eyebrow">KONSOLA METABOLICZNA MODUŁU 08</span>
-            <h3>Chcesz sprawdzić model bilansu Halla i kwalifikację bariatryczną w akcji?</h3>
+            <h3>Porównaj zmianę masy, wzory LDL i interpretację FIB‑4</h3>
             <p>
               W <strong>Lekcji 2 („Rozpoznanie i fenotypowanie”)</strong> oraz kolejnych lekcjach
               farmakoterapii i chirurgii czeka pełna interaktywna <strong>Konsola Otyłości i Zaburzeń Lipidowych</strong>:
-              nieliniowy model Halla, kalkulator Friedewald vs Sampson, algorytm IFSO 2023 i cele ESC/EAS.
+              obliczanie zaobserwowanej zmiany masy, Friedewald vs Sampson i przesiew FIB‑4.
             </p>
             <div className="teaser-actions">
               <button

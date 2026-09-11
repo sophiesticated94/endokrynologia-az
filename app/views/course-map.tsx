@@ -4,6 +4,7 @@ import { LockKeyhole } from 'lucide-react';
 import { lessons, plannedModules } from '@/lib/course';
 import type { LearningState } from '@/lib/learning';
 import { LessonRow } from './lesson-row';
+import { StudyPath } from './study-path';
 import type { Navigation } from './types';
 
 export function CourseMap({ state, go }: { state: LearningState; go: Navigation }) {
@@ -84,6 +85,7 @@ export function CourseMap({ state, go }: { state: LearningState; go: Navigation 
       </div>
 
 
+      <StudyPath scope={activeTab} state={state} go={go}/>
       {/* Moduł 01: Tarczyca */}
       {(activeTab === 'all' || activeTab === 'tarczyca') && (
         <div style={{ marginBottom: '40px' }}>
