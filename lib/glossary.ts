@@ -1,5 +1,6 @@
 import { pituitaryGlossary } from './glossary-pituitary.ts';
 import { adrenalGlossary } from './glossary-adrenals.ts';
+import { parathyroidGlossary } from './glossary-parathyroid.ts';
 
 export type GlossaryCategory = 'hormony' | 'diagnostyka' | 'choroby' | 'leki' | 'anatomia' | 'fizjologia';
 
@@ -210,6 +211,7 @@ export const glossary: GlossaryItem[] = [
   ...thyroidGlossary,
   ...pituitaryGlossary,
   ...adrenalGlossary,
+  ...parathyroidGlossary,
 ];
 
 export const glossaryMap = new Map<string, GlossaryItem>();

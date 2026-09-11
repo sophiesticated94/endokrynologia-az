@@ -7,6 +7,7 @@ import {glossary,glossaryMap} from '../lib/glossary.ts';
 import {calculateHormones,presets,defaultState,simulatorLegend} from '../lib/simulator.ts';
 import {calculatePituitaryState,pituitaryPresets,defaultPituitaryState,pituitarySimulatorLegend} from '../lib/pituitary-simulator.ts';
 import {calculateAdrenalState,adrenalPresets,defaultAdrenalState,adrenalSimulatorLegend} from '../lib/adrenal-simulator.ts';
+import {calculateParathyroidState,parathyroidPresets,defaultParathyroidState,parathyroidSimulatorLegend} from '../lib/parathyroid-simulator.ts';
 const now=new Date('2026-09-11T12:00:00Z');
 test('isSafePublicKey accepts anon JWT, publishable keys and rejects service_role and invalid keys',()=>{
  const anonJwt='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIn0.sig';
@@ -19,21 +20,23 @@ test('isSafePublicKey accepts anon JWT, publishable keys and rejects service_rol
  assert.equal(isSafePublicKey(''),false);
  assert.equal(isSafePublicKey(null),false);
 });
-test('complete curriculum: 36 lessons across 3 modules, 180 explained questions, 180 cards, 36 four-step cases',()=>{
- assert.equal(lessons.length,36);assert.equal(questions.length,180);assert.equal(flashcards.length,180);assert.equal(cases.length,36);
+test('complete curriculum: 48 lessons across 4 modules, 240 explained questions, 240 cards, 48 four-step cases',()=>{
+ assert.equal(lessons.length,48);assert.equal(questions.length,240);assert.equal(flashcards.length,240);assert.equal(cases.length,48);
  const thyroidLessons = lessons.filter(l => l.moduleId === 'tarczyca');
  const pituitaryLessons = lessons.filter(l => l.moduleId === 'przysadka');
  const adrenalLessons = lessons.filter(l => l.moduleId === 'nadnercza');
+ const parathyroidLessons = lessons.filter(l => l.moduleId === 'przytarczyce');
  assert.equal(thyroidLessons.length, 12);
  assert.equal(pituitaryLessons.length, 12);
  assert.equal(adrenalLessons.length, 12);
+ assert.equal(parathyroidLessons.length, 12);
  for(const l of lessons){assert.equal(l.questions.length,5);assert.ok(l.sections.length>=3);assert.ok(l.goals.length>=2);assert.ok(l.advanced.length>100);assert.ok(l.table.rows.length>=3);assert.ok(l.sourceIds.every(id=>sources[id]));}
  for(const c of cases){assert.equal(c.steps.length,4);assert.deepEqual(c.steps.map(s=>s.stage),['Objawy','Badania','Rozpoznanie','Postępowanie']);assert.ok(lessons.some(l=>l.id===c.lessonId));}
  const bank=[...questions,...cases.flatMap(c=>c.steps)];assert.equal(new Set(bank.map(q=>q.id)).size,bank.length);
  for(const q of bank){assert.ok(q.answer>=0&&q.answer<q.options.length);assert.ok(q.options.every(o=>o.explanation.length>15&&o.text.length>0));assert.equal(new Set(q.options.map(o=>o.text)).size,q.options.length);}
 });
 test('correct answers are distributed and physiology answer remains TSH after rotation',()=>{assert.deepEqual([...new Set(questions.map(q=>q.answer))].sort(),[0,1,2]);assert.equal(questions[0].options[questions[0].answer].text,'TSH');assert.equal(questions[1].options[questions[1].answer].text,'Spadek TSH');});
-test('exam samples 30 unique questions, does not mutate bank, varies between runs',()=>{const before=questions.map(q=>q.id);const a=sampleQuestions(questions,30,()=>0.1);const b=sampleQuestions(questions,30,()=>0.8);assert.equal(a.length,30);assert.equal(new Set(a.map(q=>q.id)).size,30);assert.notDeepEqual(a,b);assert.deepEqual(questions.map(q=>q.id),before);assert.throws(()=>sampleQuestions(questions,181));});
+test('exam samples 30 unique questions, does not mutate bank, varies between runs',()=>{const before=questions.map(q=>q.id);const a=sampleQuestions(questions,30,()=>0.1);const b=sampleQuestions(questions,30,()=>0.8);assert.equal(a.length,30);assert.equal(new Set(a.map(q=>q.id)).size,30);assert.notDeepEqual(a,b);assert.deepEqual(questions.map(q=>q.id),before);assert.throws(()=>sampleQuestions(questions,241));});
 test('grading handles perfect, empty and changed answers',()=>{const bank=questions.slice(0,5);const answers=Object.fromEntries(bank.map(q=>[q.id,q.answer]));assert.deepEqual(grade(bank,answers),{correct:5,total:5,percent:100});assert.equal(grade(bank,{}).correct,0);answers[bank[0].id]=(bank[0].answer+1)%3;assert.equal(grade(bank,answers).percent,80);assert.equal(grade([],{}).percent,0);});
 test('review intervals progress 1,3,7,14,30 and cap at 30 days',()=>{let r;for(const days of [1,3,7,14,30,30]){r=scheduleReview(r,true,now);assert.equal((Date.parse(r.dueAt)-now.getTime())/86400000,days);}});
 test('forgotten card resets to first stage including already mature cards',()=>{const r=scheduleReview({stage:4,dueAt:now.toISOString()},false,now);assert.deepEqual(r,{stage:0,dueAt:'2026-09-12T12:00:00.000Z'});assert.equal(scheduleReview(r,true,now).stage,1)});
@@ -345,4 +348,104 @@ test('adrenal glossary contains key steroid and adrenal terms with mappings', ()
   assert.ok(glossaryMap.get('avs'));
   assert.ok(glossaryMap.get('zespół waterhouse’a-friderichsena'));
 });
+
+test('parathyroid simulation model accurately computes Ca-P-PTH axis, CCCR, QTc, and emergency protocols', () => {
+  // 1. Healthy state
+  const healthy = calculateParathyroidState(defaultParathyroidState);
+  assert.ok(healthy.correctedCalciumMgDl >= 8.5 && healthy.correctedCalciumMgDl <= 10.5, 'Corrected Ca in mg/dl normal');
+  assert.ok(healthy.ionizedCalciumMmol >= 1.15 && healthy.ionizedCalciumMmol <= 1.32, 'Ionized Ca in mmol/l normal');
+  assert.ok(healthy.serumPhosphateMgDl >= 2.5 && healthy.serumPhosphateMgDl <= 4.5, 'Phosphate normal');
+  assert.ok(healthy.intactPthPgMl >= 15 && healthy.intactPthPgMl <= 65, 'PTH normal');
+  assert.ok(healthy.qtcIntervalMs <= 430, 'Normal QTc');
+  assert.equal(healthy.alertType, 'normal');
+
+  // 2. Primary Hyperparathyroidism (PHPT)
+  const phptP = parathyroidPresets.find(p => p.id === 'phpt_adenoma');
+  const phpt = calculateParathyroidState(phptP.state);
+  assert.ok(phpt.correctedCalciumMgDl > 10.5, 'Elevated calcium in PHPT');
+  assert.ok(phpt.intactPthPgMl > 65, 'Elevated PTH in PHPT');
+  assert.ok(phpt.cccrRatio > 0.02, 'CCCR > 0.02 confirms PHPT over FHH');
+  assert.equal(phpt.alertType, 'danger');
+  assert.match(phpt.status, /Pierwotna nadczynność przytarczyc/);
+
+  // 3. Familial Hypocalciuric Hypercalcemia (FHH) with low CCCR
+  const fhhP = parathyroidPresets.find(p => p.id === 'fhh_mutation');
+  const fhh = calculateParathyroidState(fhhP.state);
+  assert.ok(fhh.correctedCalciumMgDl > 10.5, 'Hypercalcemia present in FHH');
+  assert.ok(fhh.cccrRatio < 0.01, 'CCCR < 0.01 is the diagnostic hallmark of FHH');
+  assert.match(fhh.status, /FHH/);
+
+  // 4. Secondary Hyperparathyroidism (SHPT) in CKD
+  const shptP = parathyroidPresets.find(p => p.id === 'shpt_ckd');
+  const shpt = calculateParathyroidState(shptP.state);
+  assert.ok(shpt.intactPthPgMl > 65, 'Compensatory PTH elevation in SHPT');
+  assert.ok(shpt.serumPhosphateMgDl > 4.5, 'Phosphate retention in CKD');
+
+  // 5. Postoperative Hypoparathyroidism with severe tetany and QTc prolongation
+  const tetanyP = parathyroidPresets.find(p => p.id === 'hypopara_postop');
+  const tetany = calculateParathyroidState(tetanyP.state);
+  assert.ok(tetany.correctedCalciumMgDl < 8.0, 'Severe hypocalcemia in hypoparathyroidism');
+  assert.ok(tetany.intactPthPgMl < 15, 'Deficient PTH');
+  assert.ok(tetany.qtcIntervalMs > 460, 'QTc markedly prolonged > 460 ms in acute hypocalcemia');
+  assert.notEqual(tetany.tetanyRisk, 'none', 'Tetany risk flagged');
+
+  // 6. Hypercalcemic crisis: premature furosemide error trap
+  const furosemideTrapP = parathyroidPresets.find(p => p.id === 'furosemide_crisis_trap');
+  const prematureFurosemide = calculateParathyroidState(furosemideTrapP.state);
+  assert.ok(prematureFurosemide.furosemideError, 'Must trigger fatal dehydration warning when furosemide given before saline');
+  assert.match(prematureFurosemide.status, /BŁĄD/);
+
+  // Safe resuscitation
+  const safeCrisis = calculateParathyroidState({
+    ...defaultParathyroidState,
+    mode: 'hypercalcemic_crisis',
+    crisisSalineLiters: 4,
+    zoledronicAcidGiven: true,
+    calcitoninGiven: true,
+  });
+  assert.equal(safeCrisis.furosemideError, false, 'No error when resuscitated properly with adequate hydration');
+  assert.ok(safeCrisis.correctedCalciumMgDl < 12.0, 'Calcium drops following fluid resuscitation and antiresorptive therapy');
+
+  // 7. Hungry Bone Syndrome (HBS)
+  const hbsP = parathyroidPresets.find(p => p.id === 'hungry_bone_postop');
+  const hbs = calculateParathyroidState(hbsP.state);
+  assert.ok(hbs.correctedCalciumMgDl < 8.0, 'Profound hypocalcemia in HBS');
+  assert.ok(hbs.serumPhosphateMgDl < 2.5, 'Profound hypophosphatemia as bone rapidly remineralizes');
+  assert.match(hbs.status, /głodnych kości/);
+});
+
+test('parathyroid glossary contains key mineral metabolism terms with mappings', () => {
+  assert.ok(glossaryMap.get('pth'));
+  assert.ok(glossaryMap.get('casr'));
+  assert.ok(glossaryMap.get('kalcytriol'));
+  assert.ok(glossaryMap.get('fgf23'));
+  assert.ok(glossaryMap.get('objaw chvostka'));
+  assert.ok(glossaryMap.get('objaw trousseau'));
+  assert.ok(glossaryMap.get('cccr'));
+  assert.ok(glossaryMap.get('cinakalcet'));
+  assert.ok(glossaryMap.get('denosumab'));
+  assert.ok(glossaryMap.get('kwas zoledronowy'));
+  assert.ok(glossaryMap.get('zespół głodnych kości'));
+  assert.ok(glossaryMap.get('przełom hiperkalcemiczny'));
+  assert.ok(glossaryMap.get('t-score'));
+});
+
+test('course map grouping covers all 48 lessons across 4 modules without gaps', () => {
+  const moduleGroups = {
+    tarczyca: ['Fundamenty', 'Praktyka kliniczna', 'Sytuacje szczególne'],
+    przysadka: ['Fundamenty', 'Gruczolaki i hipersekrecja', 'Niedoczynność i gospodarka wodna', 'Sytuacje szczególne i chirurgia'],
+    nadnercza: ['Fundamenty', 'Niedoczynność kory i WPN', 'Nadczynności i guz chromochłonny', 'Stany nagłe i chirurgia'],
+    przytarczyce: ['Fundamenty', 'Nadczynności i hiperkalcemia', 'Niedoczynności i tężyczka', 'Kości, chirurgia i stany nagłe'],
+  };
+
+  for (const [modId, groups] of Object.entries(moduleGroups)) {
+    const modLessons = lessons.filter(l => l.moduleId === modId);
+    assert.equal(modLessons.length, 12, `Module ${modId} should have 12 lessons`);
+    const lessonGroups = Array.from(new Set(modLessons.map(l => l.group)));
+    for (const g of lessonGroups) {
+      assert.ok(groups.includes(g), `Group ${g} should be recognized in module ${modId}`);
+    }
+  }
+});
+
 

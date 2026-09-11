@@ -49,9 +49,20 @@ import {
   AdrenalCrisisEmergencyProtocol,
   AdrenocorticalCarcinomaWeissDiagram,
 } from './adrenal-diagrams';
+import {
+  CalciumPhosphateAxisDiagram,
+  AlbuminCalciumCorrectionDiagram,
+  PhptVsFhhAlgorithmDiagram,
+  SecondaryTertiaryHptDiagram,
+  HypocalcemiaSignsEkgDiagram,
+  HypercalcemicCrisisProtocolDiagram,
+  HungryBoneSyndromeDiagram,
+  OsteoporosisTScoreBmdDiagram,
+} from './parathyroid-diagrams';
 import { HptSimulator } from './hpt-simulator';
 import { PituitarySimulator } from './pituitary-simulator';
 import { AdrenalSimulator } from './adrenal-simulator';
+import { ParathyroidSimulator } from './parathyroid-simulator';
 
 export type Route =
   | 'home'
@@ -119,14 +130,22 @@ export function Dashboard({
       <section className="hero-panel">
         <div className="hero-copy">
           <span className="badge">
-            {next.moduleId === 'nadnercza'
-              ? 'MODUŁ 03 · NADNERCZA'
-              : next.moduleId === 'przysadka'
-                ? 'MODUŁ 02 · PRZYSADKA'
-                : 'MODUŁ 01 · TARCZYCA'}
+            {next.moduleId === 'przytarczyce'
+              ? 'MODUŁ 04 · PRZYTARCZYCE'
+              : next.moduleId === 'nadnercza'
+                ? 'MODUŁ 03 · NADNERCZA'
+                : next.moduleId === 'przysadka'
+                  ? 'MODUŁ 02 · PRZYSADKA'
+                  : 'MODUŁ 01 · TARCZYCA'}
           </span>
           <h2>
-            {next.moduleId === 'nadnercza' ? (
+            {next.moduleId === 'przytarczyce' ? (
+              <>
+                Wapń i fosfor.
+                <br />
+                Przytarczyce i kości.
+              </>
+            ) : next.moduleId === 'nadnercza' ? (
               <>
                 Czapki nerkowe.
                 <br />
@@ -147,11 +166,13 @@ export function Dashboard({
             )}
           </h2>
           <p>
-            {next.moduleId === 'nadnercza'
-              ? 'Od choroby Addisona i przełomu nadnerczowego po zespół Conna, pheochromocytoma i raka ACC.'
-              : next.moduleId === 'przysadka'
-                ? 'Od gruczolaków i zaburzeń pola widzenia po moczówkę prostą i SIADH.'
-                : 'Od osi hormonalnej po decyzje przy łóżku pacjenta. Poznaj tarczycę krok po kroku.'}
+            {next.moduleId === 'przytarczyce'
+              ? 'Od pierwotnej nadczynności i tężyczki po przełom hiperkalcemiczny, zespół głodnych kości i osteoporozę.'
+              : next.moduleId === 'nadnercza'
+                ? 'Od choroby Addisona i przełomu nadnerczowego po zespół Conna, pheochromocytoma i raka ACC.'
+                : next.moduleId === 'przysadka'
+                  ? 'Od gruczolaków i zaburzeń pola widzenia po moczówkę prostą i SIADH.'
+                  : 'Od osi hormonalnej po decyzje przy łóżku pacjenta. Poznaj tarczycę krok po kroku.'}
           </p>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
             <button className="primary" onClick={() => go(`lesson/${next.id}`)}>
@@ -164,10 +185,10 @@ export function Dashboard({
           </div>
           <div className="hero-meta">
             <BookOpen size={15} />
-            {lessons.length} lekcji (3 moduły)
+            {lessons.length} lekcji (4 moduły)
             <span>·</span>
             <Clock size={15} />
-            około 9 godzin nauki
+            około 12 godzin nauki
           </div>
         </div>
         <ThyroidArt />
@@ -269,7 +290,7 @@ export function Dashboard({
 }
 
 export function CourseMap({ state, go }: { state: LearningState; go: Navigation }) {
-  const [activeTab, setActiveTab] = useState<'all' | 'tarczyca' | 'przysadka' | 'nadnercza'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'tarczyca' | 'przysadka' | 'nadnercza' | 'przytarczyce'>('all');
 
   return (
     <>
@@ -303,6 +324,12 @@ export function CourseMap({ state, go }: { state: LearningState; go: Navigation 
           onClick={() => setActiveTab('nadnercza')}
         >
           Moduł 03: Nadnercza (12)
+        </button>
+        <button
+          className={activeTab === 'przytarczyce' ? 'active' : ''}
+          onClick={() => setActiveTab('przytarczyce')}
+        >
+          Moduł 04: Przytarczyce i Ca–P (12)
         </button>
       </div>
 
@@ -427,11 +454,53 @@ export function CourseMap({ state, go }: { state: LearningState; go: Navigation 
         </div>
       )}
 
+      {/* Moduł 04: Przytarczyce i Ca–P */}
+      {(activeTab === 'all' || activeTab === 'przytarczyce') && (
+        <div style={{ marginBottom: '40px' }}>
+          <section className="module-header" style={{ background: '#f5f3fa', borderColor: '#dcd4f0' }}>
+            <span className="module-number" style={{ color: '#6d4ba4' }}>04</span>
+            <div>
+              <h2>Przytarczyce i gospodarka wapniowo-fosforanowa</h2>
+              <p>12 lekcji · 60 pytań · PTH, CaSR, witamina D, tężyczka, przełom hiperkalcemiczny, HBS i osteoporoza · Konsola Przytarczycowa</p>
+            </div>
+            <span className="badge" style={{ color: '#56338e', borderColor: '#c2b2e5', background: '#ffffffcc' }}>DOSTĘPNY</span>
+          </section>
+
+          {(() => {
+            const preferred = [
+              'Fundamenty',
+              'Nadczynności i hiperkalcemia',
+              'Niedoczynności i tężyczka',
+              'Kości, chirurgia i stany nagłe',
+            ];
+            const actual = Array.from(new Set(lessons.filter(l => l.moduleId === 'przytarczyce').map(l => l.group)));
+            const allGroups = [
+              ...preferred.filter(g => actual.includes(g)),
+              ...actual.filter(g => !preferred.includes(g)),
+            ];
+            return allGroups.map(group => {
+              const groupLessons = lessons.filter(l => l.moduleId === 'przytarczyce' && l.group === group);
+              if (!groupLessons.length) return null;
+              return (
+                <section key={`pt-${group}`} className="course-group">
+                  <h3>{group}</h3>
+                  <div className="lesson-list">
+                    {groupLessons.map(l => (
+                      <LessonRow key={l.id} lesson={l} state={state} go={go} />
+                    ))}
+                  </div>
+                </section>
+              );
+            });
+          })()}
+        </div>
+      )}
+
       <h2 className="spaced-heading">Dalsza część Twojej ścieżki</h2>
       <div className="planned-grid">
         {plannedModules.map((name, i) => (
           <div className="planned-card" key={name}>
-            <span>{String(i + 4).padStart(2, '0')}</span>
+            <span>{String(i + 5).padStart(2, '0')}</span>
             <h3>{name}</h3>
             <small>
               <LockKeyhole size={13} />
@@ -462,11 +531,13 @@ export function LessonView({
   const moduleLessons = lessons.filter(l => l.moduleId === lesson.moduleId);
   const lessonNum = moduleLessons.indexOf(lesson) + 1;
   const moduleLabel =
-    lesson.moduleId === 'nadnercza'
-      ? 'MODUŁ 03: NADNERCZA'
-      : lesson.moduleId === 'przysadka'
-        ? 'MODUŁ 02: PRZYSADKA'
-        : 'MODUŁ 01: TARCZYCA';
+    lesson.moduleId === 'przytarczyce'
+      ? 'MODUŁ 04: PRZYTARCZYCE'
+      : lesson.moduleId === 'nadnercza'
+        ? 'MODUŁ 03: NADNERCZA'
+        : lesson.moduleId === 'przysadka'
+          ? 'MODUŁ 02: PRZYSADKA'
+          : 'MODUŁ 01: TARCZYCA';
 
   return (
     <div className="lesson-layout">
@@ -535,6 +606,16 @@ export function LessonView({
             {lesson.id === 'incydentaloma-nadnercza' && i === 1 && <IncidentalomaCtWashoutDiagram />}
             {lesson.id === 'przelom-nadnerczowy' && i === 0 && <AdrenalCrisisEmergencyProtocol />}
             {lesson.id === 'rak-nadnercza' && i === 0 && <AdrenocorticalCarcinomaWeissDiagram />}
+
+            {/* Osadzone wykresy i schematy medyczne — Przytarczyce */}
+            {lesson.id === 'przytarczyce-fizjologia' && i === 0 && <CalciumPhosphateAxisDiagram />}
+            {lesson.id === 'przytarczyce-diagnostyka' && i === 0 && <AlbuminCalciumCorrectionDiagram />}
+            {lesson.id === 'fhh-hiperkalcemia' && i === 1 && <PhptVsFhhAlgorithmDiagram />}
+            {lesson.id === 'shpt-thpt-pchn' && i === 1 && <SecondaryTertiaryHptDiagram />}
+            {lesson.id === 'tezyczka-objawy' && i === 0 && <HypocalcemiaSignsEkgDiagram />}
+            {lesson.id === 'przelom-hiperkalcemiczny' && i === 1 && <HypercalcemicCrisisProtocolDiagram />}
+            {lesson.id === 'zespol-glodnych-kosci' && i === 1 && <HungryBoneSyndromeDiagram />}
+            {lesson.id === 'osteoporoza-metabolizm' && i === 1 && <OsteoporosisTScoreBmdDiagram />}
           </section>
         ))}
 
@@ -693,6 +774,51 @@ export function LessonView({
           </div>
         )}
 
+        {/* Zwiastun konsoli przytarczycowej w Lekcji 1 Przytarczyc */}
+        {lesson.id === 'przytarczyce-fizjologia' && (
+          <div className="simulator-teaser-card" style={{ background: '#f6f3fb', borderColor: '#dfd7f2' }}>
+            <div className="teaser-content">
+              <div className="teaser-icon" style={{ background: '#ede6fa', color: '#6d4ba4' }}>
+                <Activity size={26} />
+              </div>
+              <div>
+                <span className="eyebrow" style={{ color: '#6d4ba4' }}>INTERAKTYWNA KONSOLA KLINICZNA</span>
+                <h3>Chcesz przetestować oś Ca–P–PTH, kalkulator CCCR, tężyczkę i HBS?</h3>
+                <p>
+                  W <strong>Lekcji 2 („Wapń, fosfor, PTH i pułapki”)</strong> czeka na Ciebie
+                  pełna <strong>Kliniczna Konsola Przytarczycowa</strong>. Możesz w niej
+                  badać sprzężenie Ca–PTH–CaSR, różnicować PHPT vs FHH za pomocą wskaźnika CCCR,
+                  obliczać QTc w tężyczce oraz symulować resuscytację płynową w przełomie hiperkalcemicznym
+                  i zapobiegać zespołowi głodnych kości (HBS).
+                </p>
+                <div className="teaser-actions">
+                  <button
+                    type="button"
+                    className="primary"
+                    onClick={() => go('lesson/przytarczyce-diagnostyka')}
+                  >
+                    Przejdź do Lekcji 2 z konsolą <ArrowRight size={15} />
+                  </button>
+                  <button
+                    type="button"
+                    className="secondary"
+                    onClick={() => go('simulator')}
+                  >
+                    Otwórz symulatory
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Pełna Konsola Przytarczycowa w Lekcji 2 Przytarczyc */}
+        {lesson.id === 'przytarczyce-diagnostyka' && (
+          <div style={{ margin: '36px 0' }}>
+            <ParathyroidSimulator embedded />
+          </div>
+        )}
+
 
         {/* Rozszerzenie dla lekarza */}
         {state.level === 'doctor' ? (
@@ -785,7 +911,7 @@ export function LessonView({
 }
 
 export function CasesView({ state, go }: { state: LearningState; go: Navigation }) {
-  const [moduleFilter, setModuleFilter] = useState<'all' | 'tarczyca' | 'przysadka' | 'nadnercza'>('all');
+  const [moduleFilter, setModuleFilter] = useState<'all' | 'tarczyca' | 'przysadka' | 'nadnercza' | 'przytarczyce'>('all');
   const [diffFilter, setDiffFilter] = useState<'all' | 'Podstawowy' | 'Zaawansowany'>('all');
 
   const filteredCases = cases.filter(c => {
@@ -827,6 +953,12 @@ export function CasesView({ state, go }: { state: LearningState; go: Navigation 
           onClick={() => setModuleFilter('nadnercza')}
         >
           Moduł 03: Nadnercza (12)
+        </button>
+        <button
+          className={moduleFilter === 'przytarczyce' ? 'active' : ''}
+          onClick={() => setModuleFilter('przytarczyce')}
+        >
+          Moduł 04: Przytarczyce i Ca–P (12)
         </button>
       </div>
 

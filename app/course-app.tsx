@@ -28,6 +28,7 @@ import { AccountView } from './account-view';
 import { HptSimulator } from './hpt-simulator';
 import { PituitarySimulator } from './pituitary-simulator';
 import { AdrenalSimulator } from './adrenal-simulator';
+import { ParathyroidSimulator } from './parathyroid-simulator';
 import { GlossaryView } from './glossary-components';
 
 const navItems = [
@@ -53,7 +54,7 @@ export default function CourseApp() {
   const learning = useLearning();
   const { state, user, configured, loading, saving, pending, error, online } = learning;
   const [route, setRoute] = useState<Route>('home');
-  const [simTab, setSimTab] = useState<'hpt' | 'pituitary' | 'adrenal'>('hpt');
+  const [simTab, setSimTab] = useState<'hpt' | 'pituitary' | 'adrenal' | 'parathyroid'>('hpt');
   const routeRef = useRef<Route>('home');
   const [mobile, setMobile] = useState(false);
   const active = useRef(false);
@@ -120,11 +121,13 @@ export default function CourseApp() {
 
   const title =
     route.startsWith('lesson/') || route.startsWith('quiz/')
-      ? lesson?.moduleId === 'nadnercza'
-        ? 'Moduł 03 / Nadnercza'
-        : lesson?.moduleId === 'przysadka'
-          ? 'Moduł 02 / Przysadka i podwzgórze'
-          : 'Moduł 01 / Tarczyca'
+      ? lesson?.moduleId === 'przytarczyce'
+        ? 'Moduł 04 / Przytarczyce i Ca–P'
+        : lesson?.moduleId === 'nadnercza'
+          ? 'Moduł 03 / Nadnercza'
+          : lesson?.moduleId === 'przysadka'
+            ? 'Moduł 02 / Przysadka i podwzgórze'
+            : 'Moduł 01 / Tarczyca'
       : route.startsWith('case/')
       ? 'Przypadki kliniczne'
       : route === 'simulator'
@@ -337,13 +340,21 @@ export default function CourseApp() {
                 >
                   <Activity size={15} /> Moduł 03: Konsola Nadnerczowa (Kora i rdzeń nadnerczy)
                 </button>
+                <button
+                  className={simTab === 'parathyroid' ? 'active' : ''}
+                  onClick={() => setSimTab('parathyroid')}
+                >
+                  <Activity size={15} /> Moduł 04: Konsola Przytarczycowa (Przytarczyce i Ca–P)
+                </button>
               </div>
               {simTab === 'hpt' ? (
                 <HptSimulator />
               ) : simTab === 'pituitary' ? (
                 <PituitarySimulator />
-              ) : (
+              ) : simTab === 'adrenal' ? (
                 <AdrenalSimulator />
+              ) : (
+                <ParathyroidSimulator />
               )}
             </div>
           )}
