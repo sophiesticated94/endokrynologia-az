@@ -3,6 +3,16 @@ import {useCallback,useEffect,useMemo,useRef,useState} from 'react';
 import {createClient,type SupabaseClient,type User} from '@supabase/supabase-js';
 import {CONTENT_VERSION} from './course';
 import {projectActivities,saveIdempotently,type Activity} from './learning';
+const guestStorageKey='endokrynologia.learning.guest.v2';
+const pendingStorageKey=(userId:string)=>`endokrynologia.learning.pending.${userId}.v2`;
+function readStored(key:string):Activity[]{
+ if(typeof window==='undefined')return[];
+ try{const value=JSON.parse(localStorage.getItem(key)??'[]');return Array.isArray(value)?value:[];}catch{return[];}
+}
+function writeStored(key:string,events:Activity[]){
+ if(typeof window==='undefined')return;
+ try{localStorage.setItem(key,JSON.stringify(events));}catch{/* Storage may be unavailable in privacy mode. */}
+}
 export function useLearning(){
  const [client,setClient]=useState<SupabaseClient|null>(null);
  const [configured,setConfigured]=useState<boolean|null>(null);
@@ -23,19 +33,21 @@ export function useLearning(){
   async function init(){try{
    const response=await fetch('/api/config');if(!response.ok)throw new Error('Nie udało się pobrać konfiguracji.');
    const cfg=await response.json() as {configured:boolean;url:string;key:string};if(disposed)return;setConfigured(cfg.configured);
-   if(!cfg.configured){setLoading(false);return;}
+   if(!cfg.configured){setRows(readStored(guestStorageKey));setLoading(false);return;}
    const supa=createClient(cfg.url,cfg.key,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true,flowType:'implicit'}});setClient(supa);
    const {data}=supa.auth.onAuthStateChange((event,session)=>{
     if(disposed)return;
     if(event==='PASSWORD_RECOVERY')setRecovery(true);
-    if(userRef.current?.id!==session?.user?.id){epoch.current++;userRef.current=session?.user??null;setUser(session?.user??null);setRows([]);setPending([]);setError('');}
+    if(userRef.current?.id!==session?.user?.id){epoch.current++;const nextUser=session?.user??null;userRef.current=nextUser;setUser(nextUser);setRows(nextUser?[]:readStored(guestStorageKey));setPending(nextUser?readStored(pendingStorageKey(nextUser.id)):[]);setError('');}
     setLoading(false);
    });cleanup=()=>data.subscription.unsubscribe();
    const {data:session,error:sessionError}=await supa.auth.getSession();if(sessionError)throw sessionError;
-   if(!disposed){userRef.current=session.session?.user??null;setUser(session.session?.user??null);setLoading(false);}
+   if(!disposed){const nextUser=session.session?.user??null;if(userRef.current?.id!==nextUser?.id){epoch.current++;userRef.current=nextUser;setRows(nextUser?[]:readStored(guestStorageKey));setPending(nextUser?readStored(pendingStorageKey(nextUser.id)):[]);}setUser(nextUser);setLoading(false);}
   }catch{if(!disposed){setError('Nie udało się połączyć z usługą kont. Spróbuj ponownie.');setLoading(false);}}}
   void init();return()=>{disposed=true;cleanup();};
  },[configRetry]);
+ useEffect(()=>{if(!loading&&!user)writeStored(guestStorageKey,rows)},[loading,rows,user]);
+ useEffect(()=>{if(user)writeStored(pendingStorageKey(user.id),pending)},[pending,user]);
  const refresh=useCallback(async()=>{
   if(!client||!userRef.current)return;const id=userRef.current.id;const generation=epoch.current;setLoading(true);
   try{const all:Activity[]=[];for(let from=0;;from+=500){
@@ -63,7 +75,7 @@ export function useLearning(){
     }return {error};
    });
    if(epoch.current===generation){setRows(current=>[...new Map([...current,saved].map(e=>[e.id,e])).values()]);setPending(current=>current.filter(e=>e.id!==event.id));setError('');}return true;
-  }catch{if(epoch.current===generation){setPending(current=>[...current.filter(e=>e.id!==event.id),event]);setError('Nie zapisano aktywności. Twoja odpowiedź czeka na ponowienie — nie zamykaj tej karty.');}return false;}
+  }catch{if(epoch.current===generation){setRows(current=>[...new Map([...current,event].map(e=>[e.id,e])).values()]);setPending(current=>[...current.filter(e=>e.id!==event.id),event]);setError('Nie zapisano aktywności. Odpowiedź jest w kolejce i zostanie ponowiona po odzyskaniu połączenia.');}return false;}
   finally{busy.current=false;setSaving(false);}
  },[client]);
  const record=useCallback(async(kind:Activity['kind'],target_id:string,payload:Activity['payload']={},id=crypto.randomUUID())=>{
@@ -73,6 +85,7 @@ export function useLearning(){
   return persist(event);
  },[persist,loading]);
  const retry=useCallback(async()=>{if(busy.current)return;for(const event of pending){if(!await persist(event))break;}},[pending,persist]);
+ useEffect(()=>{const flush=()=>{if(userRef.current&&pending.length&&!busy.current)void retry()};window.addEventListener('online',flush);return()=>window.removeEventListener('online',flush)},[pending.length,retry]);
  const state=useMemo(()=>projectActivities(rows),[rows]);
  return {client,configured,user,loading,saving,error,pending,state,recovery,setRecovery,record,refresh,retry,online,retryConfig:()=>{setError('');setLoading(true);setConfigRetry(v=>v+1)}};
 }
