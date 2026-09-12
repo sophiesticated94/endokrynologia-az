@@ -2,463 +2,468 @@ import { type DraftLesson, q } from './course-types.ts';
 
 export const draftPsychiatryPart1: DraftLesson[] = [
   {
-    id: 'mdd-kryteria-icd11',
+    id: 'wywiad-psychiatryczny-mse',
     moduleId: 'psych-afektywne',
-    title: 'Epizod depresyjny: ICD-11 CDDR i DSM-5-TR',
-    subtitle: 'Kryteria osiowe, progi czasowe i różnicowanie somatyczne',
-    group: 'Klinika zaburzeń afektywnych',
-    minutes: 15,
+    title: 'Wywiad psychiatryczny i badanie stanu psychicznego (MSE)',
+    subtitle: 'Struktura badania, domeny MSE, ocena napędu, afektu i krytycyzmu',
+    group: 'Fundamenty i diagnostyka ogólna',
+    minutes: 16,
     goals: [
-      'Zestawisz kryteria ICD-11 CDDR 2024 z DSM-5-TR w rozpoznawaniu epizodu depresyjnego.',
-      'Wskażesz niezbędne badania somatyczne wykluczające wtórne podłoże zaburzeń nastroju.',
+      'Przeprowadzisz ustrukturyzowane badanie stanu psychicznego (Mental Status Examination — MSE).',
+      'Zróżnicujesz afekt dostosowany, spłaszczony, blady, niedostosowany i labilny.',
+      'Ocenisz krytycyzm chorobowy (wgląd / insight) oraz poczucie chorobowości.',
     ],
     sections: [
       {
-        title: 'Kryteria osiowe i czas trwania',
-        text: 'Zarówno ICD-11 CDDR 2024, jak i DSM-5-TR wymagają obecności objawów przez co najmniej 2 tygodnie przez większość dnia niemal każdego dnia. Osiowymi objawami są: obniżony nastrój (dysforia/smutek) oraz wyraźna utrata zainteresowań lub odczuwania przyjemności (anhedonia). W ICD-11 pacjent musi prezentować co najmniej 5 z 10 wymienionych objawów zgrupowanych w domeny afektywną, poznawczą i neurowegetatywną.',
+        title: 'Domeny badania stanu psychicznego (MSE)',
+        text: 'Badanie stanu psychicznego (MSE) jest psychiatrycznym odpowiednikiem badania fizykalnego. Obejmuje standaryzowaną ocenę: 1) Wyglądu ogólnego i zachowania (higiena, kontakt wzrokowy, ubiór, mimika, współpraca); 2) Aktywności psychoruchowej i napędu (spowolnienie, osłupienie, pobudzenie, akatyzja, tiki, manieryzmy); 3) Mowy (tempo, głośność, modulacja, latencja odpowiedzi, ciągłość); 4) Nastroju (deklarowany przez pacjenta stan emocjonalny) i afektu (obserwowalny wyraz emocjonalny); 5) Toku i treści myślenia; 6) Spostrzegania; 7) Funkcji poznawczych (orientacja, uwaga, pamięć); 8) Krytycyzmu i oceny rzeczywistości.',
       },
       {
-        title: 'Domeny poznawcze i neurowegetatywne',
-        text: 'Do objawów towarzyszących należą: zaburzenia snu (bezsenność z wczesnym wybudzaniem lub hipersomnia), zmiany łaknienia i masy ciała, spowolnienie lub pobudzenie psychoruchowe, poczucie braku energii i zmęczenie, nieadekwatne poczucie winy lub niskiej wartości, obniżona zdolność koncentracji oraz nawracające myśli o śmierci lub samobójstwie. Objawy muszą powodować istotne cierpienie lub upośledzenie funkcjonowania społeczno-zawodowego.',
+        title: 'Ocena afektu: wymiary i psychopatologia',
+        text: 'Afekt opisuje się w czterech wymiarach: modulacji (odpowiedź na bodźce), zakresu (szeroki vs wąski), adekwatności (zgodność z wypowiadaną treścią) oraz stabilności. Wyróżniamy: afekt spłaszczony (znaczne zubożenie ekspresji mimicznej i modulacji głosu, typowy dla objawów negatywnych), afekt blady/tępy (utrata zdolności głębszego przeżywania), afekt labilny (nagłe, nieadekwatne fluktuacje od śmiechu do płaczu) oraz afekt niedostosowany / paratymię (dysonans między treścią wypowiedzi a wyrazem emocjonalnym, np. uśmiech przy relacji o tragedii).',
       },
       {
-        title: 'Diagnostyka różnicowa z chorobami somatycznymi',
-        text: 'Przed ustaleniem pierwotnego rozpoznania psychiatrycznego konieczne jest wykluczenie przyczyn somatycznych. Panel podstawowy obejmuje: TSH (wykluczenie niedoczynności tarczycy), morfologię krwi (niedokrwistość), elektrolity, glikemię na czczo, stężenie witaminy B12 i kwasu foliowego, próby wątrobowe i nerkowe (eGFR), a u osób starszych lub z nietypowym przebiegiem – badanie neuroobrazowe mózgu (MRI/CT).',
+        title: 'Krytycyzm chorobowy (Insight) i sojusz terapeutyczny',
+        text: 'Krytycyzm ocenia się stopniowo: od pełnego braku poczucia choroby (anozognozja — przekonanie o pełnym zdrowiu mimo skrajnych objawów psychotycznych, częste w schizofrenii i manii), przez krytycyzm częściowy (uznawanie problemów nerwowych lub somatycznych bez wglądu w naturę psychiczną), po pełny wgląd (rozumienie etiologii, konieczności leczenia i przestrzegania zaleceń). Ocena wglądu jest kluczowa dla decyzji o leczeniu ambulatoryjnym vs hospitalizacji.',
       },
     ],
     table: {
-      headers: ['Cecha', 'ICD-11 CDDR (2024)', 'DSM-5-TR (2022)'],
+      headers: ['Domena MSE', 'Cechy prawidłowe', 'Odchylenia psychopatologiczne', 'Przykłady kliniczne'],
       rows: [
-        ['Czas trwania', 'Minimum 2 tygodnie', 'Minimum 2 tygodnie'],
-        ['Główne objawy', 'Obniżony nastrój LUB anhedonia', 'Obniżony nastrój LUB anhedonia'],
-        ['Minimalna liczba objawów', 'Co najmniej 5 z 10 objawów', 'Co najmniej 5 z 9 objawów'],
-        ['Wykluczenie somatyczne', 'Konieczne wykluczenie chorób OUN i metabolicznych', 'Nie wynika z bezpośrednich skutków substancji/stanu somatycznego'],
+        ['Afekt', 'Żywy, modulowany, dostosowany', 'Spłaszczony, blady, labilny, niedostosowany', 'Spłaszczenie w schizofrenii deficytowej, labilność w naczyniopochodnych OUN'],
+        ['Tok myślenia', 'Płynny, ukierunkowany na cel', 'Przyspieszony, spowolniony, rozkojarzony, otamowany', 'Gonitwa myśli w manii, otamowania w schizofrenii'],
+        ['Krytycyzm (Insight)', 'Pełny, gotowość do leczenia', 'Brak (anozognozja), częściowy intelektualny', 'Brak krytycyzmu w ostrym epizodzie manii z urojeniami wielkościowymi'],
       ],
     },
     advanced:
-      'W ICD-11 CDDR kładzie się szczególny nacisk na elastyczność kliniczną i wymiarowe określanie nasilenia (łagodny, umiarkowany, ciężki bez cech psychotycznych, ciężki z cechami psychotycznymi zgodnymi lub niezgodnymi z nastrojem). Wytyczne NICE i CANMAT 2023 podkreślają, że w epizodzie łagodnym pierwszym wyborem są interwencje psychologiczne, a farmakoterapia SSRI jest rezerwowana dla epizodów umiarkowanych, ciężkich lub przy braku odpowiedzi na psychoterapię.',
+      'W formalnym zapisie MSE rozróżnia się „nastrój” (mood — klimat emocjonalny, subiektywny stan raportowany przez pacjenta, np. „czuję pustkę”) od „afektu” (affect — pogoda emocjonalna, obiektywna manifestacja obserwowana przez badacza w danym momencie). Rozbieżność między nastrojem a afektem jest cenną wskazówką diagnostyczną.',
     summary:
-      'Rozpoznanie epizodu depresyjnego opiera się na 2-tygodniowym trwaniu co najmniej 5 objawów (w tym nastroju lub anhedonii) oraz wykluczeniu chorób somatycznych (TSH, B12, morfologia).',
-    sourceIds: ['icd11-cddr', 'dsm5tr', 'nice-depression', 'canmat-mdd-2023'],
+      'MSE standaryzuje ocenę wyglądu, napędu, mowy, nastroju, afektu, myślenia, percepcji i wglądu. Kluczowe jest odróżnienie afektu spłaszczonego od labilnego i ocena krytycyzmu chorobowego.',
+    sourceIds: ['icd11-cddr', 'dsm5tr', 'stahl-essential'],
     questions: [
       q(
-        'Jaki jest minimalny czas trwania objawów wymagany do rozpoznania epizodu depresyjnego wg ICD-11 i DSM-5-TR?',
-        ['Co najmniej 2 tygodnie', 'Oba standardy wymagają obecności objawów przez co najmniej 14 kolejnych dni.'],
-        ['Co najmniej 4 tygodnie', '4 tygodnie to próg wymagany w niektórych innych zaburzeniach, np. lękowych uogólnionych.'],
-        ['Co najmniej 6 miesięcy', '6 miesięcy dotyczy zaburzeń przewlekłych, takich jak dystymia.'],
+        'Jaka jest fundamentalna różnica między nastrojem (mood) a afektem (affect) w badaniu psychiatrycznym?',
+        ['Nastrój to subiektywny, utrwalony stan emocjonalny deklarowany przez pacjenta, a afekt to obiektywny wyraz obserwowany przez badacza', 'Nastrój porównuje się do klimatu, a afekt do chwilowej pogody obserwowalnej w mimice i mowie.'],
+        ['Nastrój dotyczy wyłącznie chorób psychotycznych, a afekt zaburzeń nerwicowych', 'Obie domeny ocenia się u każdego pacjenta.'],
+        ['Afekt ocenia się wyłącznie testami laboratoryjnymi z krwi', 'Afekt jest elementem oceny klinicznej MSE.'],
+        'psych-mse-q1'
+      ),
+      q(
+        'Co oznacza pojęcie paratymii (afektu niedostosowanego)?',
+        ['Niezgodność między wyrazem emocjonalnym a treścią przeżyć lub wypowiedzi', 'Klasycznym przykładem jest wesołkowaty uśmiech podczas opowiadania o śmierci bliskiej osoby.'],
+        ['Całkowity brak jakichkolwiek emocji i zastyganie', 'To opis stuporu lub skrajnego spłaszczenia afektu.'],
+        ['Błyskawiczne przechodzenie od wściekłości do euforii w ciągu sekundy', 'To cecha labilności emocjonalnej.'],
+        'psych-mse-q2'
+      ),
+      q(
+        'Czym charakteryzuje się anozognozja w przebiegu ostrej psychozy lub manii?',
+        ['Całkowitym brakiem poczucia choroby i nieświadomością istnienia objawów psychotycznych', 'Anozognozja wynika z neurobiologicznego zaburzenia wglądu, nie ze złośliwości pacjenta.'],
+        ['Przekonaniem pacjenta, że jest chory na nieuleczalną chorobę somatyczną', 'To cecha urojeń hipochondrycznych.'],
+        ['Symulowaniem objawów w celu uzyskania korzyści materialnej', 'To symulacja (malingering).'],
+        'psych-mse-q3'
+      ),
+      q(
+        'Które z poniższych zachowań świadczy o otamowaniu (blocking) toku myślenia?',
+        ['Nagłe, nieprzewidywalne przerwanie wątku wypowiedzi w pół słowa z poczuciem pustki w głowie', 'Otamowanie to nagłe zatrzymanie toku myślenia, po którym pacjent często nie pamięta, o czym mówił.'],
+        ['Wypowiadanie słów z ogromną prędkością i rymowanie', 'To gonitwa myśli (flight of ideas).'],
+        ['Ciągłe powtarzanie tego samego słowa zadanego przez lekarza', 'To echolalia lub perseweracja.'],
+        'psych-mse-q4'
+      ),
+      q(
+        'Jaki element wywiadu psychiatrycznego ma kluczowe znaczenie prognostyczne przy podejrzeniu choroby afektywnej dwubiegunowej?',
+        ['Dokładny wywiad rodzinny w kierunku ChAD, samobójstw i epizodów hipomanii po lekach', 'Obciążenie genetyczne ChAD sięga 70-80% heritability, a wcześniejsza hipomania po SSRI silnie wspiera diagnozę spektrum bipolarnego.'],
+        ['Grupa krwi pacjenta i poziom cholesterolu całkowitego', 'Nie mają wartości diagnostycznej w różnicowaniu ChAD.'],
+        ['Wyłącznie ocena uzębienia pacjenta', 'Nie determinuje podtypu choroby afektywnej.'],
+        'psych-mse-q5'
+      ),
+    ],
+  },
+  {
+    id: 'klasyfikacje-dsm5-icd11',
+    moduleId: 'psych-afektywne',
+    title: 'Klasyfikacje diagnostyczne: DSM-5-TR vs ICD-11 CDDR',
+    subtitle: 'Podejście operacyjne, wymiarowość, progi czasowe i różnice kategoryzacji',
+    group: 'Fundamenty i diagnostyka ogólna',
+    minutes: 17,
+    goals: [
+      'Porównasz filozofię diagnostyczną DSM-5-TR (kryteria twarde) z ICD-11 CDDR (elastyczność kliniczna).',
+      'Wskażesz główne różnice w kategoryzacji zaburzeń osobowości, PTSD i żałoby powikłanej.',
+      'Zastosujesz operacyjne progi czasowe i kryteria wykluczenia w codziennej praktyce.',
+    ],
+    sections: [
+      {
+        title: 'Filozofia DSM-5-TR vs ICD-11 CDDR (2024)',
+        text: 'DSM-5-TR (APA 2022) opiera się na sztywnych kryteriach operacyjnych (algorytmy typu „co najmniej X z Y objawów przez Z czasu”), stworzonych głównie dla standaryzacji badań klinicznych. Z kolei ICD-11 CDDR (WHO 2024 — Clinical Descriptions and Diagnostic Requirements) stawia na globalną użyteczność kliniczną (clinical utility), zmniejsza arbitralną liczbę progów objawowych i kładzie nacisk na wymiarowe nasilenie oraz wpływ na funkcjonowanie w różnych kręgach kulturowych.',
+      },
+      {
+        title: 'Kluczowe różnice nozologiczne',
+        text: 'Najważniejsze rozbieżności obejmują: 1) Zaburzenia osobowości: ICD-11 całkowicie zrezygnowało z tradycyjnych kategorii (paranoidalna, histrioniczna, schizoidalna) na rzecz oceny stopnia ciężkości (łagodne, umiarkowane, ciężkie) oraz 5 domen cechowych; zachowano jedynie wyróżnik Borderline pattern. DSM-5 zachował 10 tradycyjnych kategorii w 3 wiązkach (A, B, C); 2) Trauma: ICD-11 wprowadziło odrębną jednostkę — Złożone PTSD (Complex PTSD — CPTSD), obejmującą dysregulację afektu, negatywny obraz siebie i trudności w relacjach; 3) Żałoba: ICD-11 definiuje Prolonged Grief Disorder po 6 miesiącach, a DSM-5-TR po 12 miesiącach.',
+      },
+      {
+        title: 'Hierarchia diagnostyczna i wykluczenia',
+        text: 'W obu systemach obowiązują uniwersalne zasady wykluczenia: 1) Objawy nie mogą wynikać z bezpośredniego działania fizjologicznego substancji (leku, narkotyku) ani toksyny; 2) Objawy nie mogą być bezpośrednim skutkiem innego stanu somatycznego lub neurologicznego; 3) Diagnoza wyższego rzędu unieważnia diagnozę niższego rzędu (np. objawy psychotyczne występujące wyłącznie w epizodzie manii nie uprawniają do diagnozy schizofrenii).',
+      },
+    ],
+    table: {
+      headers: ['Jednostka kliniczna', 'ICD-11 CDDR (2024)', 'DSM-5-TR (2022)'],
+      rows: [
+        ['Zaburzenia osobowości', 'Wymiarowe (stopień ciężkości + 5 domen cech)', 'Kategoryczne (10 typów w wiązkach A, B, C)'],
+        ['Złożona trauma (CPTSD)', 'Odrębna kategoria obok klasycznego PTSD', 'Brak odrębnej jednostki (ujęte w podtypie dysocjacyjnym PTSD)'],
+        ['Przedłużona żałoba', 'Prolonged Grief Disorder po 6 miesiącach', 'Prolonged Grief Disorder po 12 miesiącach u dorosłych'],
+        ['Schizofrenia', 'Usunięcie podtypów, min. 1 miesiąc objawów', 'Usunięcie podtypów, min. 1 miesiąc ostrych w 6 mies. przebiegu'],
+      ],
+    },
+    advanced:
+      'Inicjatywa RDoC (Research Domain Criteria) NIMH stanowi alternatywę biologiczną dla obu klasyfikacji, badając wymiary behawioralne (np. negative valence, reward processing) od poziomu genów i obwodów neuronalnych po zachowanie, bez przywiązania do tradycyjnych jednostek nozologicznych.',
+    summary:
+      'ICD-11 stawia na elastyczność kliniczną i podejście wymiarowe (np. w zaburzeniach osobowości i CPTSD), podczas gdy DSM-5-TR utrzymuje sztywne algorytmy kryterialne.',
+    sourceIds: ['icd11-cddr', 'dsm5tr', 'ptp-standardy'],
+    questions: [
+      q(
+        'Jak klasyfikacja ICD-11 CDDR rewolucyjnie zmieniła diagnozowanie zaburzeń osobowości w porównaniu z DSM-5-TR?',
+        ['Zastąpiła 10 tradycyjnych kategorii oceną stopnia ciężkości (łagodne/umiarkowane/ciężkie) oraz domenami cechowymi', 'ICD-11 zrezygnowało z arbitralnych podziałów na rzecz modelu wymiarowego, zachowując jedynie specyfikator cech Borderline.'],
+        ['Wprowadziła 40 nowych odrębnych podtypów osobowości', 'Wręcz przeciwnie — zmniejszyła fragmentację kategoryczną.'],
+        ['Zabroniła diagnozowania zaburzeń osobowości u osób dorosłych', 'Zaburzenia osobowości pozostają ważną jednostką diagnostyczną.'],
+        'psych-class-q1'
+      ),
+      q(
+        'Jaka odrębna jednostka związana z ciężką, powtarzalną traumą istnieje w ICD-11, a nie została wyodrębniona jako osobna choroba w DSM-5-TR?',
+        ['Złożony zespół stresu pourazowego (Complex PTSD — CPTSD)', 'CPTSD w ICD-11 obejmuje klasyczną triadę PTSD plus zaburzenia regulacji afektu, poczucie bezwartościowości i trudności relacyjne.'],
+        ['Schizofrenia paranoidalna o późnym początku', 'Schizofrenia paranoidalna została wycofana z obu klasyfikacji.'],
+        ['Proste zaburzenie lękowe', 'Zaburzenia lękowe istnieją w obu systemach.'],
+        'psych-class-q2'
+      ),
+      q(
+        'Jaki jest minimalny próg czasowy trwania żałoby powikłanej (Prolonged Grief Disorder) wymagany w ICD-11 CDDR?',
+        ['Co najmniej 6 miesięcy od śmierci bliskiej osoby', 'W ICD-11 próg wynosi 6 miesięcy, podczas gdy DSM-5-TR wymaga 12 miesięcy u osób dorosłych.'],
+        ['Wystarczą 2 dni po pogrzebie', 'Reakcja w pierwszych dniach jest fizjologiczną żałobą, nie zaburzeniem psychicznym.'],
+        ['Dokładnie 10 lat ciągłego płaczu', '10 lat to stanowczo zbyt długi próg, uniemożliwiający pomoc terapeutyczną.'],
+        'psych-class-q3'
+      ),
+      q(
+        'Co jest podstawową zasadą wykluczenia obowiązującą w obu systemach klasyfikacyjnych?',
+        ['Wykluczenie bezpośredniego wpływu substancji psychoaktywnych lub ogólnego stanu somatycznego na objawy', 'Przed postawieniem diagnozy pierwotnej należy upewnić się, że objawy nie są wtórne do zatrucia lub choroby ciała.'],
+        ['Konieczność wykonania biopsji mózgu przed wdrożeniem leków', 'Biopsja mózgu nie jest elementem rutynowej diagnostyki psychiatrycznej.'],
+        ['Brak możliwości współwystępowania więcej niż jednego rozpoznania', 'Współchorobowość (komorbidność) jest powszechna i dopuszczalna.'],
+        'psych-class-q4'
+      ),
+      q(
+        'Czym charakteryzuje się podejście Research Domain Criteria (RDoC) w psychiatrii naukowej?',
+        ['Bada wymiary neurobiologiczne (obwody, geny, przetwarzanie nagrody) niezależnie od granic jednostek nozologicznych', 'RDoC bada fundamentalne mechanizmy psychiczne w poprzek tradycyjnych rozpoznań DSM i ICD.'],
+        ['Zaleca diagnozowanie chorób wyłącznie na podstawie astrologii', 'RDoC to ściśle biologiczny projekt neuropsychologiczny NIMH.'],
+        ['Wycofuje wszystkie leki przeciwdepresyjne z rynku', 'RDoC służy lepszemu zrozumieniu patomechanizmów i celowanemu rozwojowi leków.'],
+        'psych-class-q5'
+      ),
+    ],
+  },
+  {
+    id: 'psychopatologia-objawow',
+    moduleId: 'psych-afektywne',
+    title: 'Psychopatologia ogólna: spostrzeganie, myślenie, pamięć i świadomość',
+    subtitle: 'Złudzenia, omamy, omamy rzekome, urojenia, natręctwa i zaburzenia toku myślenia',
+    group: 'Fundamenty i diagnostyka ogólna',
+    minutes: 18,
+    goals: [
+      'Zróżnicujesz złudzenia (iluzje), omamy właściwe (halucynacje) oraz omamy rzekome (pseudohalucynacje).',
+      'Scharakteryzujesz cechy urojeń i odróżnisz je od myśli nadwartościowych oraz natręctw (obsesji).',
+      'Rozpoznasz formalne zaburzenia toku myślenia: rozkojarzenie, niespójność, perseweracje i gonitwę myśli.',
+    ],
+    sections: [
+      {
+        title: 'Zaburzenia spostrzegania: iluzje, halucynacje i pseudohalucynacje',
+        text: '1) Złudzenia (iluzje): zniekształcone spostrzeżenie realnie istniejącego bodźca zewnętrznego (np. płaszcz na wieszaku w mroku brany za włamywacza), podlegające korekcie pod wpływem uwagi; 2) Omamy właściwe (halucynacje): spostrzeżenia zmysłowe powstające bez bodźca zewnętrznego, rzutowane w przestrzeń zewnętrzną z pełnym poczuciem realności (sądem realizującym); 3) Omamy rzekome (pseudohalucynacje): doznania zmysłowe rzutowane w przestrzeń wewnętrzną (doznawane w głowie, za okiem, w ciele), często z poczuciem ich obcości lub nasyłania przez siły zewnętrzne (klasyczny objaw Kandinskiego-Clérambaulta w schizofrenii).',
+      },
+      {
+        title: 'Zaburzenia treści myślenia: urojenia, myśli nadwartościowe i obsesje',
+        text: '1) Urojenia (delusions): błędne, fałszywe przekonania o niezłomnej pewności subiektywnej, niepodatne na racjonalną perswazję i niezgodne z kontekstem kulturowym pacjenta; 2) Myśli nadwartościowe: przekonania silnie naładowane emocjonalnie, dominujące w życiu pacjenta, lecz teoretycznie korygowalne (np. skrajne idee polityczne lub religijne); 3) Myśli natrętne (obsesje): natarczywe, nawracające myśli ego-dystoniczne (pacjent ocenia je jako własne, lecz niechciane, absurdalne i budzące lęk, podejmując próby ich neutralizacji).',
+      },
+      {
+        title: 'Formalne zaburzenia toku myślenia',
+        text: 'Dotyczą formy, tempa i dynamiki myślenia: 1) Gonitwa myśli (fuga idearum): skrajne przyspieszenie toku z utratą wątku głównego i kojarzeniem na podstawie dźwięków (rymy, asonanse); 2) Spowolnienie toku myślenia (zahamowanie w depresji); 3) Rozkojarzenie: utrata logicznego związku między zdaniami przy zachowanej gramatyce; 4) Sałata słowna (schizofazja): całkowity rozpad gramatyczny i semantyczny języka; 5) Perseweracje: uporczywe powtarzanie tego samego słowa lub frazy mimo zmiany pytania.',
+      },
+    ],
+    table: {
+      headers: ['Fenomen psychopatologiczny', 'Bodziec realny', 'Lokalizacja rzutowania', 'Sąd realizujący (poczucie realności)'],
+      rows: [
+        ['Złudzenie (iluzja)', 'Obecny (zniekształcony)', 'Przestrzeń zewnętrzna', 'Korygowalny pod wpływem uwagi lub weryfikacji'],
+        ['Omam właściwy', 'Brak bodźca', 'Przestrzeń zewnętrzna (fizyczna)', 'Pełny, bezkrytyczny (pacjent słyszy głos zza ściany)'],
+        ['Pseudohalucynacja', 'Brak bodźca', 'Przestrzeń wewnętrzna (w głowie/umyśle)', 'Często poczucie obcości lub nasyłania'],
+        ['Urojenie', 'Sąd myślowy', 'Nie dotyczy percepcji zmysłowej', 'Bezwzględny, niekorygowalny perswazją'],
+      ],
+    },
+    advanced:
+      'W różnicowaniu psychopatologicznym kluczowe jest pojęcie ego-syntoniczności vs ego-dystoniczności. Urojenia są z natury ego-syntoniczne (pacjent traktuje je jako część swojej rzeczywistości), podczas gdy obsesje w OCD są ego-dystoniczne (pacjent cierpi z powodu ich obecności i pragnie się od nich uwolnić). Utrata ego-dystoniczności w OCD może zwiastować transformację w zespół urojeniowy.',
+    summary:
+      'Omam właściwy rzutowany jest na zewnątrz, pseudohalucynacja do wnętrza głowy. Urojenie jest niekorygowalnym sądem fałszywym (ego-syntonicznym), a obsesja natręctwem niechcianym (ego-dystonicznym).',
+    sourceIds: ['icd11-cddr', 'dsm5tr', 'stahl-essential'],
+    questions: [
+      q(
+        'Pacjent twierdzi, że słyszy obcy głos komentujący jego czyny, który rozbrzmiewa bezpośrednio wewnątrz jego czaszki (w głowie). Jest to objaw:',
+        ['Pseudohalucynacji (omamu rzekomego)', 'Rzutowanie doznania zmysłowego w przestrzeń wewnętrzną (do głowy) definiuje pseudohalucynację.'],
+        ['Klasycznej iluzji wzrokowej', 'Iluzja dotyczy zniekształcenia bodźca zewnętrznego.'],
+        ['Wyłącznie myśli nadwartościowej', 'Myśl nadwartościowa nie jest doznaniem zmysłowo-percepcyjnym.'],
+        'psych-patho-q1'
+      ),
+      q(
+        'Jaka cecha jednoznacznie odróżnia myśl natrętną (obsesję w OCD) od urojenia w schizofrenii?',
+        ['Obsesja jest ego-dystoniczna — pacjent uznaje ją za absurdalną i niechcianą, podczas gdy urojenie jest ego-syntoniczne i bezkrytyczne', 'Poczucie obcości myśli przy jednoczesnym uznawaniu jej za wytwór własnego umysłu jest cechą osiową natręctwa.'],
+        ['Obsesje występują wyłącznie w nocy podczas snu REM', 'Obsesje występują w stanie pełnej czuwania.'],
+        ['Urojenia zawsze ustępują po prostej prośbie rodziny', 'Urojenia są z definicji niepodatne na racjonalną perswazję.'],
+        'psych-patho-q2'
+      ),
+      q(
+        'Widzenie potwora w cieniu rzucanym przez stojący w ciemnym pokoju fotel, które znika po zapaleniu światła, to:',
+        ['Złudzenie (iluzja)', 'Bodziec realny (fotel w cieniu) został błędnie zinterpretowany, lecz uległ korekcie po doświetleniu.'],
+        ['Omam właściwy rzutowany w nieskończoność', 'Omam nie ma bodźca fizycznego i nie koryguje się zapaleniem światła.'],
+        ['Urojenie ksobne pierwszego stopnia', 'To zaburzenie percepcji zmysłowej, nie izolowany sąd myślowy.'],
+        'psych-patho-q3'
+      ),
+      q(
+        'Na czym polega rozkojarzenie toku myślenia w schizofrenii?',
+        ['Na utracie logicznych powiązań semantycznych między zdaniami przy zachowanej poprawności gramatycznej', 'Zdania są poprawnie zbudowane, ale brak między nimi logicznego związku przyczynowo-skutkowego.'],
+        ['Na mówieniu szeptem z powodu zapalenia krtani', 'To objaw czysto laryngologiczny.'],
+        ['Na błyskawicznym kojarzeniu wyłącznie na podstawie rymów', 'To gonitwa myśli (fuga idearum).'],
+        'psych-patho-q4'
+      ),
+      q(
+        'Co charakteryzuje urojenia oddziaływania (wpływu, owładnięcia)?',
+        ['Przekonanie pacjenta, że jego myśli, uczucia lub ruchy ciała są kontrolowane przez zewnętrzną siłę lub aparaturę', 'Urojenia owładnięcia należą do klasycznych objawów osiowych schizofrenii w ICD-11.'],
+        ['Poczucie, że pacjent jest najbogatszym człowiekiem na świecie', 'To urojenie wielkościowe.'],
+        ['Przekonanie o całkowitym zniszczeniu narządów wewnętrznych (zespół Cotarda)', 'To urojenie nihilistyczne.'],
+        'psych-patho-q5'
+      ),
+    ],
+  },
+  {
+    id: 'depresja-fenotypy-i-kryteria',
+    moduleId: 'psych-afektywne',
+    title: 'Epizod depresyjny i MDD: fenotypy melancholiczny, atypowy i psychotyczny',
+    subtitle: 'Kryteria osiowe, różnicowanie fenotypowe, biologia anhedonii i wytyczne leczenia',
+    group: 'Klinika zaburzeń afektywnych',
+    minutes: 19,
+    goals: [
+      'Zdiagnozujesz epizod depresyjny wg ICD-11 i DSM-5-TR z określeniem stopnia ciężkości.',
+      'Rozpoznasz specyficzne fenotypy: depresję melancholiczną, atypową i psychotyczną.',
+      'Wdrożysz leczenie pierwszego rzutu zgodnie z wytycznymi CANMAT 2023 i NICE NG222.',
+    ],
+    sections: [
+      {
+        title: 'Kryteria osiowe i gradacja ciężkości epizodu',
+        text: 'Rozpoznanie wymaga trwania objawów przez co najmniej 2 tygodnie. Wymóg ICD-11 to obecność co najmniej 5 z 10 objawów (w tym obniżony nastrój lub anhedonia). Stopnie ciężkości: 1) Łagodny: 5 objawów, funkcjonowanie zachowane przy znacznym wysiłku; 2) Umiarkowany: 6–7 objawów, wyraźne trudności w pracy i relacjach; 3) Ciężki bez objawów psychotycznych: >=8 objawów lub skrajne cierpienie, całkowita niezdolność do codziennych czynności; 4) Ciężki z objawami psychotycznymi (urojenia winy, kary, zubożenia lub omamy słuchowe zgodne lub niezgodne z nastrojem).',
+      },
+      {
+        title: 'Depresja melancholiczna vs atypowa',
+        text: '1) Fenotyp melancholiczny (endogenny): całkowita utrata reaktywności nastroju na pozytywne bodźce, jakościowo odmienny głęboki smutek (często odczuwany fizycznie w klatce piersiowej), bezsenność z wybudzaniem wcześnie rano (co najmniej 2h przed czasem), gorsze samopoczucie rano (rytm dobowy), znaczne spowolnienie lub pobudzenie psychoruchowe, jadłowstręt i spadek masy ciała; 2) Fenotyp atypowy: zachowana reaktywność nastroju (chwilowa poprawa pod wpływem miłych wydarzeń), wzmożone łaknienie (hiperfagia/wzrost wagi), hipersomnia (sen >10h na dobę), ołowiana bezwładność kończyn (leaden paralysis) oraz przewlekła nadwrażliwość na odrzucenie w relacjach.',
+      },
+      {
+        title: 'Zasady leczenia i wytyczne EBM',
+        text: 'Zgodnie z CANMAT 2023 i NICE: w depresji łagodnej lekami z wyboru są niefarmakologiczne interwencje psychologiczne (CBT, psychoterapia interpersonalna). W depresji umiarkowanej i ciężkiej leczeniem I rzutu są leki nowej generacji: SSRI (sertralina, escitalopram), SNRI (wenlafaksyna, duloksetyna), wortioksetyna lub mirtazapina. W depresji melancholicznej wyższą skuteczność wykazują leki o mechanizmie podwójnym (SNRI, TLPD). W depresji psychotycznej konieczne jest bezwzględne połączenie leku przeciwdepresyjnego z lekiem przeciwpsychotycznym II generacji (np. sertralina + olanzapina) lub pilne ECT.',
+      },
+    ],
+    table: {
+      headers: ['Cecha kliniczna', 'Depresja melancholiczna', 'Depresja atypowa', 'Depresja psychotyczna'],
+      rows: [
+        ['Reaktywność nastroju', 'Całkowicie zniesiona (brak reakcji na bodźce)', 'Zachowana (poprawa w odpowiedzi na nagrodę)', 'Całkowicie zniesiona'],
+        ['Rytm snu', 'Bezsenność wczesnoporanna (early morning awakening)', 'Hipersomnia (>10h snu/dobę)', 'Ciężka bezsenność całkowita'],
+        ['Łaknienie i masa ciała', 'Jadłowstręt, szybki spadek wagi', 'Wzmożone łaknienie (hiperfagia, tycie)', 'Jadłowstręt, ryzyko odwodnienia'],
+        ['Leczenie preferowane', 'SNRI, TLPD, mirtazapina, ECT', 'SSRI, bupropion, MAOI (moklobemid)', 'Antydepresant + lek przeciwpsychotyczny LUB pilne ECT'],
+      ],
+    },
+    advanced:
+      'W depresji z objawami psychotycznymi monoterapia lekiem przeciwdepresyjnym jest błędem w sztuce i wykazuje skuteczność rzędu zaledwie 20-30%. Dopiero skojarzenie z neuroleptykiem podnosi odsetek remisji do 60-70%, a w stanach zagrożenia życia (odmowa picia i jedzenia) zabiegiem z wyboru o skuteczności >85% pozostają elektrowstrząsy (ECT).',
+    summary:
+      'Rozpoznaj fenotyp: melancholia to brak reaktywności i wybudzanie rano (leki dualne/ECT); atypowa to hiperfagia i hipersomnia (SSRI/MAOI); psychotyczna wymaga bezwzględnie antydepresantu z neuroleptykiem lub ECT.',
+    sourceIds: ['canmat-mdd-2023', 'nice-depression', 'icd11-cddr', 'dsm5tr'],
+    questions: [
+      q(
+        'Który zestaw objawów definiuje fenotyp depresji z cechami atypowymi wg DSM-5-TR?',
+        ['Zachowana reaktywność nastroju, hipersomnia, hiperfagia (przyrost wagi) i ołowiana bezwładność kończyn', 'W depresji atypowej pacjent potrafi na chwilę poczuć się lepiej pod wpływem nagrody, dużo śpi i ma wilczy apetyt.'],
+        ['Całkowity brak reaktywności nastroju, wybudzanie 2h przed czasem i jadłowstręt', 'To klasyczny fenotyp melancholiczny.'],
+        ['Urojenia zubożenia i omamy potępiające', 'To fenotyp psychotyczny.'],
         'psych-mdd-q1'
       ),
       q(
-        'Które dwa objawy są uznawane za osiowe, z których co najmniej jeden musi wystąpić w epizodzie depresyjnym?',
-        ['Obniżony nastrój lub anhedonia', 'Przynajmniej jeden z tych dwóch objawów kardynalnych musi być obecny.'],
-        ['Bezsenność lub spadek masy ciała', 'Są to objawy wegetatywne towarzyszące, ale nie zastępują objawu osiowego.'],
-        ['Brak energii lub myśli samobójcze', 'To ważne cechy kliniczne, ale brak nastroju i anhedonii wyklucza typowy epizod.'],
+        'Jakie jest prawidłowe postępowanie farmakologiczne I rzutu w ciężkim epizodzie depresji z urojeniami zubożenia i winy (depresja psychotyczna)?',
+        ['Połączenie leku przeciwdepresyjnego z lekiem przeciwpsychotycznym II generacji (lub pilne ECT)', 'Sama monoterapia antydepresantem nie znosi urojeń psychotycznych i ma znikomą skuteczność.'],
+        ['Monoterapia dziurawcem zwyczajnym w małej dawce', 'Ziołolecznictwo jest nieskuteczne i niebezpieczne w psychozie.'],
+        ['Podanie wyłącznie leku nasennego grupy Z', 'Leki Z nie leczą depresji psychotycznej.'],
         'psych-mdd-q2'
       ),
       q(
-        'Które badanie laboratoryjne jest kluczowe w wykluczeniu endokrynologicznej przyczyny rzekomej depresji?',
-        ['TSH', 'Jawna i subkliniczna niedoczynność tarczycy często naśladuje objawy depresyjne i spowolnienie.'],
-        ['Kalcytonina', 'Kalcytonina jest markerem raka rdzeniastego tarczycy, bez związku z objawami nastroju.'],
-        ['Stężenie gastryny', 'Gastryna służy diagnostyce gastrinoma w przewodzie pokarmowym.'],
+        'O ile wcześniej budzi się pacjent z typowym fenotypem depresji melancholicznej w porównaniu ze swoim nawykowym czasem snu?',
+        ['Co najmniej 2 godziny wcześniej, z niemożnością ponownego zaśnięcia i najgorszym nastrojem rano', 'Wczesnoporanne wybudzanie jest biologicznym markerem ciężkiej depresji melancholicznej.'],
+        ['Budzi się dokładnie 5 minut przed budzikiem w doskonałym nastroju', 'To prawidłowy fizjologiczny rytm.'],
+        ['Śpi nieprzerwanie przez 18 godzin i budzi się wypoczęty', 'To hipersomnia.'],
         'psych-mdd-q3'
       ),
       q(
-        'Jak klasyfikuje się epizod depresyjny, w którym występują urojenia winy i kary zgodne z nastrojem?',
-        ['Epizod ciężki z objawami psychotycznymi', 'Urojenia depresyjne klasyfikują epizod jako ciężki psychotyczny (zgodny z nastrojem).'],
-        ['Epizod umiarkowany powikłany', 'Wystąpienie urojeń automatycznie podnosi kwalifikację do epizodu ciężkiego.'],
-        ['Zaburzenie schizoafektywne bez depresji', 'Urojenia syntoniczne z nastrojem w trakcie depresji nie oznaczają schizofrenii.'],
+        'Kiedy zgodnie z wytycznymi CANMAT 2023 i NICE zaleca się wdrożenie farmakoterapii w epizodzie depresyjnym?',
+        ['W epizodach o nasileniu umiarkowanym i ciężkim lub w łagodnych nieodpowiadających na psychoterapię', 'W łagodnej depresji pierwszym wyborem są interwencje psychologiczne (CBT) i higiena snu.'],
+        ['U każdego człowieka zgłaszającego 1-dniowy smutek po kłótni', 'Krótkotrwały smutek reaktywny nie jest chorobą.'],
+        ['Dopiero po 15 latach nieskutecznej psychoterapii psychoanalitycznej', 'Odwlekanie leczenia w ciężkiej depresji grozi samobójstwem.'],
         'psych-mdd-q4'
       ),
       q(
-        'Zgodnie z CANMAT 2023 i NICE, jakie postępowanie jest zalecane w łagodnym epizodzie depresyjnym bez myśli "S"?',
-        ['W pierwszej kolejności interwencje psychologiczne / CBT', 'W łagodnej depresji preferuje się psychoterapię CBT, psychoedukację lub aktywację behawioralną.'],
-        ['Natychmiastowe wdrożenie dwóch leków przeciwdepresyjnych', 'Polifarmakoterapia nie ma wskazań w pierwszym łagodnym epizodzie.'],
-        ['Terapia elektrowstrząsowa (EW)', 'EW stosuje się w depresji lekoopornej lub z bezpośrednim zagrożeniem życia.'],
+        'Które badanie somatyczne jest bezwzględnie konieczne w diagnostyce różnicowej każdego pierwszego epizodu depresji?',
+        ['Oznaczenie stężenia TSH (w celu wykluczenia pierwotnej niedoczynności tarczycy)', 'Niedoczynność tarczycy doskonale imituje depresję ze spowolnieniem, apatią i sennością.'],
+        ['Biopsja wątroby w znieczuleniu ogólnym', 'Nie ma uzasadnienia diagnostycznego.'],
+        ['RTG klatki piersiowej na stojąco bez wskazań', 'Nie służy diagnostyce nastroju.'],
         'psych-mdd-q5'
       ),
     ],
   },
   {
-    id: 'mdd-podtypy',
+    id: 'mania-hipomania-spektrum',
     moduleId: 'psych-afektywne',
-    title: 'Podtypy depresji: melancholiczna, atypowa i psychotyczna',
-    subtitle: 'Fenotypy kliniczne, neurobiologia i implikacje terapeutyczne',
+    title: 'Mania, hipomania i spektrum ChAD: kryteria, stany mieszane i pułapki',
+    subtitle: 'Kryteria ChAD I vs ChAD II, cechy mieszane (mixed features) i pułapka antydepresantów',
     group: 'Klinika zaburzeń afektywnych',
-    minutes: 15,
+    minutes: 19,
     goals: [
-      'Rozróżnisz cechy depresji melancholicznej od atypowej.',
-      'Dobierzesz optymalną strategię lekową dla poszczególnych fenotypów depresji.',
+      'Precyzyjnie odróżnisz manię (ChAD I) od hipomanii (ChAD II) na podstawie kryteriów czasowych i funkcjonalnych.',
+      'Zdiagnozujesz epizod mieszany oraz specyfikator mixed features wg DSM-5-TR i ICD-11.',
+      'Wskażesz śmiertelne pułapki włączania antydepresantów u chorych z niezdiagnozowanym spektrum ChAD.',
     ],
     sections: [
       {
-        title: 'Depresja melancholiczna (endogenna)',
-        text: 'Cechuje się jakościowo odmiennym przygnębieniem (opisywanym jako "ból psychiczny"), całkowitą utratą reaktywności nastroju na bodźce pozytywne, wyraźnym porannym pogorszeniem samopoczucia, wczesnym budzeniem się (o >= 2 godziny wcześniej niż zwykle), głębokim spowolnieniem lub pobudzeniem psychoruchowym, jadłowstrętem z utratą masy ciała oraz nadmiernym poczuciem winy. Wiąże się z silną nadaktywnością osi HPA.',
+        title: 'Mania (ChAD I) vs Hipomania (ChAD II): kryteria różnicowe',
+        text: '1) Mania: trwa co najmniej 7 dni (lub krócej, jeśli wymaga natychmiastowej hospitalizacji); charakteryzuje się wzmożonym, ekspansywnym lub drażliwym nastrojem, gonitwą myśli, skrajnym spadkiem potrzeby snu (np. 2h snu z poczuciem pełnej energii), wielomównością, podejmowaniem lekkomyślnych działań o wysokim ryzyku (zakupy, ryzykowne zachowania seksualne, nieprzemyślane inwestycje). Prowadzi do ZNACZNEGO upośledzenia funkcjonowania i może przebiegać z objawami psychotycznymi (urojenia wielkościowe, posłannicze). Pojedynczy epizod manii w życiu definiuje ChAD typu I; 2) Hipomania: trwa co najmniej 4 kolejne dni; objawy są wyraźną zmianą w stosunku do normy, ale NIE powodują istotnego upośledzenia funkcjonowania społecznego/zawodowego, NIE wymagają hospitalizacji i NIGDY nie mają cech psychotycznych. Występuje w ChAD typu II (wraz z co najmniej jednym ciężkim epizodem depresyjnym).',
       },
       {
-        title: 'Depresja atypowa',
-        text: 'W depresji atypowej kluczową cechą jest zachowana reaktywność nastroju (nastrój ulega poprawie w odpowiedzi na pozytywne wydarzenia). Towarzyszą jej co najmniej 2 z następujących cech: hiperfagia lub znaczny przyrost masy ciała ("comfort eating"), hipersomnia (sen > 10 h/dobę), objaw ołowianych kończyn (leaden paralysis – uczucie ciężkości nóg i rąk) oraz utrwalona nadwrażliwość na odrzucenie interpersonalne.',
+        title: 'Stany mieszane (Mixed Features): najwyższe ryzyko suicydalne',
+        text: 'W DSM-5-TR i ICD-11 stany mieszane definiuje się jako występowanie objawów z przeciwnego bieguna w trakcie epizodu dominującego (np. pełny epizod depresyjny z co najmniej 3 objawami maniakalnymi/hipomaniakalnymi: gonitwa myśli, pobudzenie psychoruchowe, przyspieszona mowa). Stan ten charakteryzuje się ogromnym napięciem dysforycznym, drażliwością, bezradnością i jednoczesnym odhamowaniem napędu ruchowego. Wiąże się z najwyższym wskaźnikiem prób samobójczych w całej psychiatrii!',
       },
       {
-        title: 'Depresja psychotyczna i implikacje farmakoterapii',
-        text: 'W depresji psychotycznej występują urojenia (najczęściej winy, grzeszności, kary, biedy, hipochondryczne lub nihilizmu/zespół Cotarda) i/lub omamy. Monoterapia samym lekiem przeciwdepresyjnym (np. SSRI) jest w tym podtypie nieskuteczna; standardem wg Maudsley 15th ed. jest skojarzenie leku przeciwdepresyjnego (SSRI/SNRI) z lekiem przeciwpsychotycznym II generacji (np. olanzapina, kwetiapina) lub kwalifikacja do terapii elektrowstrząsowej (EW).',
+        title: 'Pułapka antydepresantów (Antidepressant-Induced Switch)',
+        text: 'Zastosowanie leku przeciwdepresyjnego (zwłaszcza TLPD lub SNRI, w mniejszym stopniu SSRI) w monoterapii u pacjenta z nierozpoznanym ChAD lub cechami mieszanymi niesie katastrofalne skutki: może wywołać nagły przełom maniakalny (switch), zaindukować cyklotymię z szybką zmianą faz (rapid cycling — >=4 epizody w roku) lub drastycznie nasilić pobudzenie w stanie mieszanym, prowokując samobójstwo. Złotą zasadą w ChAD jest bezwzględne stosowanie stabilizatora nastroju (lit, walproinian, kwetiapina) przed jakimkolwiek rozważeniem ostrożnego dołączenia antydepresantu.',
       },
     ],
     table: {
-      headers: ['Cecha kliniczna', 'Depresja melancholiczna', 'Depresja atypowa'],
+      headers: ['Cecha różnicowa', 'Mania (ChAD I)', 'Hipomania (ChAD II)'],
       rows: [
-        ['Reaktywność nastroju', 'Całkowicie zniesiona', 'Zachowana (poprawa po miłych bodźcach)'],
-        ['Wzorzec snu', 'Bezsenność późna (wczesne budzenie)', 'Hipersomnia (>10h snu)'],
-        ['Łaknienie i masa', 'Jadłowstręt i spadek wagi', 'Hiperfagia, zajadanie stresu, wzrost wagi'],
-        ['Układ ruchowy', 'Wyraźne spowolnienie lub agitacja', 'Poczucie ołowianych kończyn (leaden paralysis)'],
+        ['Minimalny czas trwania', 'Co najmniej 7 dni (lub hospitalizacja)', 'Co najmniej 4 kolejne dni'],
+        ['Wpływ na funkcjonowanie', 'Wyraźne załamanie funkcjonowania zawodowego/społecznego', 'Funkcjonowanie zachowane, często subiektywny wzrost produktywności'],
+        ['Konieczność hospitalizacji', 'Częsta, nierzadko w trybie nagłym', 'Bezwzględnie brak wskazań do hospitalizacji (jeśli hospitalizacja → to mania)'],
+        ['Objawy psychotyczne', 'Mogą występować (urojenia wielkościowe)', 'BEZWZGLĘDNIE BRAK (obecność psychozy = zawsze mania)'],
       ],
     },
     advanced:
-      'Depresja atypowa wykazuje statystycznie częstszy związek ze spektrum choroby afektywnej dwubiegunowej (ChAD typu II) niż depresja melancholiczna. Historycznie w depresji atypowej wyższą skuteczność wykazywały iMAO (fenelzyna, moklobemid), obecnie lekami pierwszego wyboru pozostają SSRI/SNRI lub bupropion. W depresji melancholicznej wyższą skuteczność niż SSRI mogą wykazywać leki o profilu podwójnym (SNRI: wenlafaksyna, duloksetyna) oraz TLPD.',
+      'Spektrum choroby afektywnej dwubiegunowej wg Akiskala obejmuje podtypy takie jak: ChAD I½ (depresja z przedłużoną hipomanią), ChAD II½ (depresja nałożona na temperament cyklotymiczny), ChAD III (mania/hipomania wywołana wyłącznie lekami przeciwdepresyjnymi) oraz ChAD IV (depresja nałożona na temperament hipertymiczny). Wykrycie cech spektrum chroni przed błędem jatrogennym włączenia monoterapii SSRI.',
     summary:
-      'Melancholia to brak reaktywności nastroju, poranne pogorszenie i jadłowstręt. Depresja atypowa to reaktywność, hipersomnia i ołowiane kończyny. Depresja psychotyczna bezwzględnie wymaga LPD + neuroleptyk.',
-    sourceIds: ['dsm5tr', 'icd11-cddr', 'maudsley15', 'canmat-mdd-2023'],
+      'ChAD I to mania (>=7 dni, upośledzenie, psychoza); ChAD II to hipomania (>=4 dni, brak psychozy i bez hospitalizacji) + depresja. Monoterapia antydepresantami w ChAD jest błędem sztuki.',
+    sourceIds: ['canmat-isbd-bipolar', 'icd11-cddr', 'dsm5tr', 'ptp-standardy'],
     questions: [
       q(
-        'Który objaw jest kardynalnym kryterium depresji atypowej w odróżnieniu od melancholijnej?',
-        ['Zachowana reaktywność nastroju', 'W depresji atypowej nastrój przejściowo poprawia się w odpowiedzi na pozytywne bodźce.'],
-        ['Wczesne poranne budzenie się', 'Poranne budzenie jest typowe dla podtypu melancholicznego.'],
-        ['Utrata łaknienia i spadek masy ciała', 'Dla depresji atypowej charakterystyczna jest hiperfagia i przyrost wagi.'],
-        'psych-podtypy-q1'
+        'Pojawienie się urojeń wielkościowych (np. przekonanie o byciu wysłannikiem Boga) u pacjenta w stanie podwyższonego nastroju oznacza:',
+        ['Zawsze epizod pełnej manii (ChAD I), ponieważ hipomania z definicji wyklucza objawy psychotyczne', 'Obecność jakichkolwiek objawów psychotycznych natychmiast klasyfikuje epizod jako manię, niezależnie od czasu trwania.'],
+        ['Ciężką postać hipomanii', 'W hipomanii objawy psychotyczne nigdy nie występują.'],
+        ['Wyłącznie zespół odstawienny po nikotynie', 'Nikotyna nie wywołuje urojeń wielkościowych.'],
+        'psych-bip-q1'
       ),
       q(
-        'Jakie jest leczenie pierwszego wyboru w ciężkim epizodzie depresyjnym z objawami psychotycznymi wg Maudsley 15th ed.?',
-        ['Antydepresant (SSRI/SNRI) w skojarzeniu z lekiem przeciwpsychotycznym II generacji', 'Monoterapia samym lekiem przeciwdepresyjnym wykazuje niedostateczną skuteczność w depresji psychotycznej.'],
-        ['Monoterapia samym SSRI w maksymalnej dawce', 'Samo SSRI rzadko redukuje urojenia depresyjne.'],
-        ['Wyłącznie psychoterapia poznawczo-behawioralna', 'Stany psychotyczne wymagają pilnej farmakoterapii lub EW z uwagi na wysokie ryzyko samobójcze.'],
-        'psych-podtypy-q2'
+        'Jaki jest minimalny czas trwania wzmożonego nastroju wymagany do rozpoznania epizodu hipomanii w DSM-5-TR i ICD-11?',
+        ['Co najmniej 4 kolejne dni', '4 dni to formalny próg hipomanii; dla manii wynosi on 7 dni lub wymaga hospitalizacji.'],
+        ['Dokładnie 1 godzina po kawie', 'Krótkotrwałe pobudzenie nie jest hipomanią.'],
+        ['Co najmniej 6 miesięcy bez przerwy', '6 miesięcy dotyczy innych jednostek przewlekłych.'],
+        'psych-bip-q2'
       ),
       q(
-        'Co oznacza objaw "ołowianych kończyn" (leaden paralysis)?',
-        ['Subiektywne uczucie ciężkości rąk lub nóg w depresji atypowej', 'To uciążliwe uczucie ciężkości fizycznej charakterystyczne dla fenotypu atypowego.'],
-        ['Objaw oponowy w zapaleniu opon mózgowo-rdzeniowych', 'Objawy oponowe to objaw Kerniga czy Brudzińskiego.'],
-        ['Porażenie wiotkie w uszkodzeniu motoneuronu', 'To objaw neurologiczny, a nie cecha depresji.'],
-        'psych-podtypy-q3'
+        'Dlaczego stan mieszany (epizod depresyjny z cechami mieszanymi wg DSM-5-TR) niesie najwyższe ryzyko samobójstwa w psychiatrii?',
+        ['Łączy głębokie cierpienie i rozpacz depresyjną ze wzmożonym napędem psychoruchowym i gonitwą myśli', 'Pacjent ma energię do realizacji autodestrukcyjnych impulsów przy skrajnej dysforii psychicznej.'],
+        ['Ponieważ pacjent w tym stanie stale śpi', 'W stanie mieszanym występuje ciężka bezsenność.'],
+        ['Ponieważ wiąże się ze spadkiem ciśnienia tętniczego', 'Ciśnienie tętnicze nie determinuje tendencji samobójczych.'],
+        'psych-bip-q3'
       ),
       q(
-        'Kiedy typowo przypada dobowe pogorszenie nastroju u pacjenta z depresją melancholiczną?',
-        ['W godzinach porannych', 'Wzrost kortyzolu i rytm biologiczny w melancholii dają najgorsze samopoczucie rano.'],
-        ['Późnym wieczorem', 'Wieczorne pogorszenie bywa częstsze w zaburzeniach lękowych i depresji atypowej.'],
-        ['Zawsze w środku nocy', 'W środku nocy pacjent wybudza się, ale szczyt przygnębienia występuje po wstaniu.'],
-        'psych-podtypy-q4'
+        'Co grozi pacjentowi z nierozpoznaną chorobą afektywną dwubiegunową po włączeniu leku przeciwdepresyjnego w monoterapii?',
+        ['Inwersja fazy w manię (switch), przyspieszenie cykli (rapid cycling) lub wywołanie groźnego stanu mieszanego', 'Monoterapia antydepresantem destabilizuje układ afektywny u chorych predysponowanych do ChAD.'],
+        ['Natychmiastowe trwałe wyleczenie z ChAD', 'Leki przeciwdepresyjne nie leczą ChAD w monoterapii.'],
+        ['Rozwój raka trzustki w ciągu 24 godzin', 'Brak takiego związku onkologicznego.'],
+        'psych-bip-q4'
       ),
       q(
-        'Który podtyp depresji częściej maskuje nierozpoznane spektrum choroby afektywnej dwubiegunowej (ChAD II)?',
-        ['Depresja atypowa z wczesnym początkiem', 'Fenotyp atypowy (hipersomnia, hiperfagia) częściej koreluje ze spektrum ChAD.'],
-        ['Późna depresja naczyniowa u 80-latka', 'Depresja naczyniowa wiąże się z uszkodzeniem istoty białej mózgu.'],
-        ['Czysta postać melancholiczna bez wywiadu rodzinnego', 'Klasyczna jednobiegunowa melancholia ma inny profil genetyczny.'],
-        'psych-podtypy-q5'
+        'Jaki lek stanowi fundament farmakoterapii w zapobieganiu nawrotom manii i depresji oraz ma udowodnione działanie przeciwautodestrukcyjne?',
+        ['Węglan litu', 'Lit redukuje ryzyko zgonu z przyczyn samobójczych w ChAD nawet 5-krotnie i jest złotym standardem podtrzymującym.'],
+        ['Hydroksyzyna w kroplach', 'Hydroksyzyna działa sedatywnie, ale nie stabilizuje przebiegu ChAD.'],
+        ['Monoterapia fluoksetyną', 'Może wywołać epizod maniakalny.'],
+        'psych-bip-q5'
       ),
     ],
   },
   {
-    id: 'chad-spektrum',
+    id: 'psychoza-i-szlaki-dopaminy',
     moduleId: 'psych-afektywne',
-    title: 'Spektrum choroby afektywnej dwubiegunowej: ChAD I, ChAD II i cyklotymia',
-    subtitle: 'Różnicowanie manii od hipomanii, kryteria czasowe i przebieg',
-    group: 'Klinika zaburzeń afektywnych',
-    minutes: 16,
+    title: 'Psychoza i schizofrenia: objawy wytwórcze, negatywne i szlaki dopaminy',
+    subtitle: 'Kryteria schizofrenii 6A20, mezolimbiczna nadaktywność, kora przedczołowa i wczesna interwencja',
+    group: 'Fundamenty i diagnostyka ogólna',
+    minutes: 18,
     goals: [
-      'Precyzyjnie odróżnisz epizod maniakalny od hipomaniakalnego wg ICD-11 CDDR i DSM-5-TR.',
-      'Scharakteryzujesz podział na ChAD typu I, ChAD typu II i cyklotymię.',
+      'Zestawisz objawy pozytywne, negatywne i poznawcze psychozy w kontekście neurobiologicznym.',
+      'Powiążesz nadaktywność szlaku mezolimbicznego z powstawaniem doznań znaczenia urojeniowego (aberrant salience).',
+      'Wyjaśnisz pojęcie DUP (Duration of Untreated Psychosis) i znaczenie wczesnej interwencji w pierwszym epizodzie (FEP).',
     ],
     sections: [
       {
-        title: 'Mania a hipomania: kryteria rozstrzygające',
-        text: 'Podstawową osią różnicującą jest nasilenie, wpływ na funkcjonowanie oraz czas trwania. Mania (ChAD I) wymaga trwania podwyższonego/ekspansywnego lub drażliwego nastroju ze wzmożoną energią przez co najmniej 7 dni (lub krócej, jeśli konieczna jest hospitalizacja) i prowadzi do znacznego upośledzenia funkcjonowania społecznego/zawodowego lub zawiera objawy psychotyczne. Hipomania (ChAD II) trwa minimum 4 kolejne dni, powoduje zauważalną zmianę zachowania, ale BEZ istotnego upośledzenia funkcjonowania, BEZ konieczności hospitalizacji i BEZ objawów psychotycznych.',
+        title: 'Koncepcja psychozy i aberrant salience (Kapur)',
+        text: 'Współczesna neurobiologia definiuje psychozę jako stan nieprawidłowego nadawania znaczenia obojętnym bodźcom (aberrant salience). Prawidłowo dopamina w prążkowiu brzusznym sygnalizuje bodźce istotne dla przetrwania. W psychozie patologiczny, hiperergiczny wyrzut dopaminy w szlaku mezolimbicznym sprawia, że przypadkowe zdarzenia (np. czerwony samochód za oknem, kaszlnięcie przechodnia) zyskują skrajnie doniosłe, intymne znaczenie. Umysł pacjenta konstruuje urojenia jako wtórną próbę poznawczego wyjaśnienia tego obezwładniającego poczucia doniosłości.',
       },
       {
-        title: 'ChAD typu I vs ChAD typu II',
-        text: 'ChAD typu I definiuje wystąpienie co najmniej jednego epizodu manii w życiu (epizody depresyjne nie są formalnie wymagane do rozpoznania, choć występują u >95% pacjentów). ChAD typu II wymaga wystąpienia co najmniej jednego epizodu hipomanii ORAZ co najmniej jednego epizodu ciężkiej depresji; jeśli u pacjenta kiedykolwiek wystąpi pełna mania, rozpoznanie nieodwracalnie zmienia się na ChAD I. Przebieg ChAD II charakteryzuje się dominacją faz depresyjnych i wysokim ryzykiem samobójczym.',
+        title: 'Kryteria schizofrenii ICD-11 CDDR (6A20) i podział objawów',
+        text: 'ICD-11 wymaga co najmniej 2 objawów przez minimum 1 miesiąc (w tym min. 1 podstawowego: uporczywe urojenia, omamy, zaburzenia toku myślenia, doznania owładnięcia/wpływu). Wymiary psychopatologiczne: 1) Pozytywny (urojenia prześladowcze, ksobne, nasyłania myśli; omamy słuchowe komentujące); 2) Negatywny (alogia, awolicja, anhedonia, spłaszczenie afektu, asocjalność — 5A); 3) Poznawczy (spadek pamięci roboczej, funkcji wykonawczych i uwagi); 4) Dezorganizacji (dziwaczne zachowanie, niespójność wypowiedzi).',
       },
       {
-        title: 'Cyklotymia i epizody mieszane',
-        text: 'Cyklotymia to przewlekła niestabilność nastroju trwająca co najmniej 2 lata (1 rok u dzieci/młodzieży), z licznymi okresami objawów hipomaniakalnych i depresyjnych, które jednak nie spełniają pełnych kryteriów epizodu manii ani dużej depresji. Zgodnie z DSM-5-TR i ICD-11 epizody z cechami mieszanymi oznaczają współwystępowanie objawów przeciwnego bieguna (np. depresja ze wzmożonym napędem i gonitwą myśli lub mania z poczuciem winy i myślami rezygnacyjnymi).',
+        title: 'Pierwszy epizod psychozy (FEP) i czas nieleczonej psychozy (DUP)',
+        text: 'Okres od wystąpienia pierwszych jawnych objawów psychotycznych do wdrożenia skutecznego leczenia przeciwpsychotycznego definiuje się jako DUP (Duration of Untreated Psychosis). Badania jednoznacznie dowodzą, że długi DUP (>12 tygodni) koreluje z nieodwracalną utratą substancji szarej w korze czołowej i skroniowej, opornością na leczenie i trwałym inwalidztwem społecznym. Wczesna interwencja farmakologiczna i psychospołeczna w FEP jest najsilniejszym czynnikiem neuroprotekcyjnym.',
       },
     ],
     table: {
-      headers: ['Kryterium', 'Hipomania (ChAD II)', 'Mania (ChAD I)'],
+      headers: ['Wymiar objawów', 'Przykłady objawów', 'Patofizjologia w OUN', 'Wpływ leków blokujących D2'],
       rows: [
-        ['Minimalny czas trwania', 'Co najmniej 4 kolejne dni', 'Co najmniej 7 dni (lub hospitalizacja)'],
-        ['Wpływ na funkcjonowanie', 'Zauważalna zmiana, bez upośledzenia', 'Znaczne upośledzenie ról społecznych/pracy'],
-        ['Hospitalizacja', 'Nie występuje', 'Może być konieczna (wskazanie bezwzględne)'],
-        ['Objawy psychotyczne', 'Nigdy (wykluczają hipomanię)', 'Mogą występować (urojenia wielkościowe itp.)'],
+        ['Wymiar pozytywny', 'Urojenia ksobne, omamy słuchowe, poczucie nasyłania myśli', 'Hipersekrecja dopaminy w szlaku mezolimbicznym', 'Wysoka skuteczność (redukcja o >50% w PANSS)'],
+        ['Wymiar negatywny', 'Awolicja, anhedonia, alogia, asocjalność, spłaszczony afekt', 'Hipofunkcja D1 w korze przedczołowej (DLPFC)', 'Znikoma (FGA mogą wręcz nasilać objawy negatywne)'],
+        ['Wymiar poznawczy', 'Spadek pamięci operacyjnej i elastyczności myślenia', 'Zaburzenia synaptyczne receptorów NMDA i interneuronów GABA', 'Brak poprawy; kluczowa rehabilitacja poznawcza'],
       ],
     },
     advanced:
-      'Wystąpienie nawet pojedynczego objawu psychotycznego (np. urojenia misji od Boga lub wszechmocy) automatycznie kwalifikuje stan jako manię (ChAD I), niezależnie od tego, czy trwał 2 dni, czy 7 dni. Wytyczne CANMAT/ISBD 2023 wskazują, że monoterapię przeciwdepresyjną w ChAD uznaje się za błąd sztuki z powodu ryzyka indukcji manii (switch) oraz przyspieszenia cykliczności (rapid cycling).',
+      'Hipoteza glutaminianergiczna schizofrenii wyjaśnia ograniczenia samej teorii dopaminowej: hipofunkcja receptorów NMDA na interneuronach GABA-ergicznych kory prowadzi do odhamowania neuronów glutaminianergicznych rzutujących do VTA, co wtórnie napędza hipersekrecję dopaminy w układzie mezolimbicznym, a jednocześnie wywołuje hipodopaminergię w korze przedczołowej.',
     summary:
-      'ChAD I to co najmniej jeden epizod manii (>=7 dni, upośledzenie ról lub psychoza). ChAD II to hipomania (>=4 dni, bez psychozy/hospitalizacji) + depresja. Cyklotymia trwa >=2 lata subklinicznych wahań.',
-    sourceIds: ['icd11-cddr', 'dsm5tr', 'canmat-isbd-bipolar', 'maudsley15'],
+      'Psychoza wynika z aberrant salience napędzanego hipersekrecją dopaminy mezolimbicznej. Kluczowe jest skracanie czasu nieleczonej psychozy (DUP <12 tyg.) w celu ochrony kory mózgowej.',
+    sourceIds: ['icd11-cddr', 'dsm5tr', 'wfsbp-schizophrenia', 'nice-schizophrenia'],
     questions: [
       q(
-        'Jaki jest minimalny czas trwania wzmożonego nastroju wymagany do rozpoznania hipomanii bez hospitalizacji?',
-        ['Co najmniej 4 kolejne dni', 'ICD-11 i DSM-5-TR ustalają próg hipomanii na minimum 4 dni.'],
-        ['Co najmniej 7 kolejnych dni', '7 dni to formalne kryterium pełnego epizodu manii.'],
-        ['Co najmniej 14 kolejnych dni', '14 dni to kryterium epizodu depresyjnego.'],
-        'psych-chad-q1'
+        'Na czym polega zjawisko „aberrant salience” opisane przez Shita Kapura w patofizjologii psychozy?',
+        ['Na patologicznym, hiperdopaminergicznym przypisywaniu skrajnego znaczenia neutralnym bodźcom z otoczenia', 'Błędnie zasygnalizowane znaczenie zmusza mózg do urojeniowego wyjaśnienia sytuacji.'],
+        ['Na całkowitej utracie zdolności widzenia barw', 'Brak związku z percepcją barw.'],
+        ['Na nagłym wzroście łaknienia węglowodanów', 'Dotyczy przetwarzania znaczenia poznawczego, nie łaknienia.'],
+        'psych-psy-q1'
       ),
       q(
-        'Pojawienie się urojeń wielkościowych u pacjenta ze wzmożonym nastrojem trwającym 3 dni oznacza:',
-        ['Automatyczne rozpoznanie epizodu manii (ChAD I)', 'Obecność objawów psychotycznych bezwzględnie wyklucza hipomanię i definiuje manię.'],
-        ['Nadal hipomanię, jeśli pacjent nie trafił do szpitala', 'Objawy psychotyczne zawsze przekreślają kategorię hipomanii.'],
-        ['Zaburzenie urojeniowe późne', 'Ostry stan podwyższonego nastroju z urojeniami to komponent manii psychotycznej.'],
-        'psych-chad-q2'
+        'Co oznacza skrót DUP w kontekście wczesnej interwencji w psychozie i dlaczego ma kluczowe znaczenie?',
+        ['Duration of Untreated Psychosis (czas trwania nieleczonej psychozy) — jego wydłużenie nieodwracalnie pogarsza rokowanie', 'Dłuższy DUP wiąże się z neuroprogresją, ubytkiem substancji szarej i rozwojem lekooporności.'],
+        ['Dose of Unused Pills (dawka niewykorzystanych tabletek)', 'To nie jest medyczna definicja DUP.'],
+        ['Degree of Unilateral Paralysis (stopień porażenia połowiczego)', 'To termin neurologiczny z zakresu udarów.'],
+        'psych-psy-q2'
       ),
       q(
-        'Do jakiego typu ChAD kwalifikuje się pacjent, który miał 5 epizodów ciężkiej depresji i 1 udokumentowany epizod manii?',
-        ['ChAD typu I', 'Pojedynczy epizod manii w historii życia definiuje ChAD typu I.'],
-        ['ChAD typu II', 'ChAD typu II dopuszcza wyłącznie hipomanię, nigdy pełną manię.'],
-        ['Nawracające zaburzenia depresyjne', 'Wystąpienie manii wyklucza depresję jednobiegunową.'],
-        'psych-chad-q3'
+        'Który z wymienionych objawów należy do tzw. wymiaru negatywnego (osiowych objawów deficytowych) schizofrenii?',
+        ['Awolicja (brak woli i niezdolność do inicjowania działań ukierunkowanych na cel)', 'Awolicja, alogia, anhedonia, spłaszczenie afektu i asocjalność tworzą tzw. wymiar 5A objawów negatywnych.'],
+        ['Urojenia prześladowcze', 'Urojenia to wymiar pozytywny (wytwórczy).'],
+        ['Omamy słuchowe wrogie', 'Omamy to wymiar pozytywny.'],
+        'psych-psy-q3'
       ),
       q(
-        'Jak definiuje się cyklotymię wg ICD-11 CDDR i DSM-5-TR?',
-        ['Stan niestabilności nastroju trwający co najmniej 2 lata, niespełniający kryteriów manii ani dużej depresji', 'To przewlekłe wahania subkliniczne trwające minimum 2 lata u dorosłych.'],
-        ['Szybką zmianę faz występującą częściej niż 4 razy w roku', 'To definicja ChAD z szybką zmianą faz (rapid cycling).'],
-        ['Każdą postać ChAD leczoną wyłącznie psychoterapią', 'Cyklotymia to odrębna jednostka nozologiczna o charakterze przewlekłym.'],
-        'psych-chad-q4'
+        'Jaki jest minimalny czas trwania objawów wymagany przez ICD-11 CDDR do postawienia diagnozy schizofrenii (kod 6A20)?',
+        ['Minimum 1 miesiąc', 'W ICD-11 kryterium czasowe wynosi co najmniej 1 miesiąc obecności objawów osiowych.'],
+        ['Dokładnie 24 godziny', 'Wymaga dłuższego trwania; 24h to ostra psychoza przemijająca.'],
+        ['Minimum 5 lat', '5 lat to zdecydowanie za długo; opóźniłoby leczenie o lata.'],
+        'psych-psy-q4'
       ),
       q(
-        'Dlaczego monoterapia lekiem przeciwdepresyjnym (np. SSRI) jest przeciwwskazana w ChAD I?',
-        ['Ryzyko wyindukowania epizodu manii (switch) lub destabilizacji w rapid cycling', 'Leki przeciwdepresyjne w monoterapii w ChAD niosą wysokie ryzyko przełamania w manię i stany mieszane.'],
-        ['SSRI powodują natychmiastowe uszkodzenie kory mózgu w ChAD', 'Nie ma takiego mechanizmu neurotoksycznego.'],
-        ['SSRI są w 100% metabolizowane do litu', 'To absurdalna i nieprawdziwa teza biochemiczna.'],
-        'psych-chad-q5'
-      ),
-    ],
-  },
-  {
-    id: 'chad-pulapki',
-    moduleId: 'psych-afektywne',
-    title: 'Pułapki diagnostyczne w spektrum afektywnym',
-    subtitle: 'Przełączenie fazy po SSRI, ChAD maskowany depresją i ADHD vs hipomania',
-    group: 'Klinika zaburzeń afektywnych',
-    minutes: 16,
-    goals: [
-      'Rozpoznasz zjawisko przełączenia fazy (switch) po lekach przeciwdepresyjnych.',
-      'Zastosujesz Bipolarity Index i cechy sugerujące ukryty ChAD u pacjenta z depresją.',
-    ],
-    sections: [
-      {
-        title: 'Przełączenie fazy (antidepressant-induced switch)',
-        text: 'Wdrożenie leku przeciwdepresyjnego (zwłaszcza TLPD lub SNRI, rzadziej SSRI) u pacjenta z nierozpoznanym ChAD może wywołać gwałtowne przejście w hipomanię, manię lub stan mieszany. Stan ten charakteryzuje się nagłym zmniejszeniem potrzeby snu (np. 3 h snu bez zmęczenia), gonitwą myśli, skrajną drażliwością i dysinhibicją behawioralną. W DSM-5-TR pełny epizod manii indukowany lekiem, utrzymujący się po wycofaniu leku, uprawnia do rozpoznania ChAD I.',
-      },
-      {
-        title: 'Czerwone flagi dwubiegunowości w wywiadzie',
-        text: 'Do cech sugerujących podłoże dwubiegunowe u pacjenta zgłaszającego się z depresją należą: wczesny początek zachorowania (< 25 r.ż.), wywiad rodzinny ChAD u krewnych I stopnia, nagły początek i nagłe ustępowanie epizodów, cechy atypowe (hipersomnia, hiperfagia), depresja poporodowa, epizody psychotyczne w wywiadzie oraz brak odpowiedzi na >= 2 kolejne kuracje przeciwdepresyjne lub zaostrzenie drażliwości i pobudzenia po SSRI.',
-      },
-      {
-        title: 'Różnicowanie: ADHD vs hipomania vs Borderline (BPD)',
-        text: 'Kluczowe jest tempo zmian i ciągłość. ADHD to przewlekły, stały deficyt uwagi i impulsywność obecne od wczesnego dzieciństwa, bez wyraźnych wielotygodniowych przerw i bez epizodycznej ekspansywności czy zmniejszonej potrzeby snu. BPD (osobowość z pogranicza) charakteryzuje się chwiejnością nastroju zmieniającą się z godziny na godzinę pod wpływem odrzucenia interpersonalnego (reaktywność), podczas gdy fazy w ChAD trwają dni i tygodnie w sposób autonomiczny.',
-      },
-    ],
-    table: {
-      headers: ['Jednostka', 'Charakter wahań', 'Zapotrzebowanie na sen', 'Wyzwalacz'],
-      rows: [
-        ['Hipomania w ChAD', 'Epizodyczny (trwa dni/tygodnie)', 'Wyraźnie zmniejszone (brak zmęczenia)', 'Często autonomiczny lub zaburzenie rytmu dobowego'],
-        ['ADHD', 'Przewlekły, stały stan od dzieciństwa', 'Prawidłowe (trudności z zasypianiem, zmęczenie rano)', 'Nuda, przebodźcowanie, frustracja'],
-        ['Osobowość z pogranicza (BPD)', 'Bardzo szybki (godziny/minuty)', 'Zmienne, zależne od emocji', 'Odrzucenie interpersonalne, lęk przed porzuceniem'],
-      ],
-    },
-    advanced:
-      'Narzędziem standaryzowanym w ocenie prawdopodobieństwa spektrum ChAD jest Bipolarity Index (Sachs et al.). Skala ta ocenia 5 domen (każda 0-20 pkt, łącznie 100 pkt): cechy epizodu, wiek zachorowania, przebieg choroby i odpowiedź na leczenie, wywiad rodzinny oraz objawy towarzyszące. Wynik > 60 pkt silnie przemawia za spektrum dwubiegunowym i nakazuje włączenie stabilizatora nastroju (lit, lamotrygina, kwetiapina) przed eskalacją antydepresantów.',
-    summary:
-      'Zmniejszenie potrzeby snu i pobudzenie po SSRI to alarm przełączenia fazy w ChAD. Różnicuj epizodyczny ChAD od przewlekłego ADHD i ultraszybkiej reaktywności emocjonalnej w BPD.',
-    sourceIds: ['canmat-isbd-bipolar', 'dsm5tr', 'icd11-cddr', 'maudsley15'],
-    questions: [
-      q(
-        'Pacjent leczony sertraliną po 10 dniach śpi po 3 godziny na dobę, nie czuje zmęczenia i ma gonitwę myśli. Co podejrzewasz?',
-        ['Przełączenie fazy (switch) w hipomanię/manię w przebiegu ChAD', 'Zmniejszona potrzeba snu bez zmęczenia i przyspieszenie myśli po SSRI to typowy obraz jatrogennego switcha.'],
-        ['Prawidłową wczesną odpowiedź terapeutyczną na lek', 'Brak potrzeby snu nie jest celem ani normalnym efektem leczenia depresji.'],
-        ['Zespół odstawienny po sertralinie', 'Pacjent przyjmuje lek, nie doszło do przerwania kuracji.'],
-        'psych-pulapki-q1'
-      ),
-      q(
-        'Która cecha z wywiadu u chorego z depresją najbardziej zwiększa prawdopodobieństwo ChAD?',
-        ['Choroba afektywna dwubiegunowa u matki lub ojca (krewni I stopnia)', 'Wywiad rodzinny ChAD I stopnia jest jednym z najsilniejszych predyktorów biologicznych.'],
-        ['Występowanie choroby wieńcowej u dziadka', 'Choroby kardiologiczne nie różnicują ChAD od MDD.'],
-        ['Początek pierwszego epizodu w wieku 65 lat po zawale', 'Późny początek częściej wskazuje na depresję naczyniową lub organiczną.'],
-        'psych-pulapki-q2'
-      ),
-      q(
-        'Jak odróżnić labilność emocjonalną w zaburzeniu osobowości z pogranicza (BPD) od ChAD?',
-        ['W BPD wahania trwają minuty/godziny w reakcji na relacje, w ChAD epizody trwają dni/tygodnie', 'Dynamika czasowa i zależność od bodźców interpersonalnych są kluczowym kryterium różnicowym.'],
-        ['W BPD nigdy nie występują myśli samobójcze', 'BPD cechuje się bardzo wysoką częstością samookaleczeń i kryzysów samobójczych.'],
-        ['ChAD występuje wyłącznie u mężczyzn, a BPD wyłącznie u kobiet', 'Oba zaburzenia występują u obu płci.'],
-        'psych-pulapki-q3'
-      ),
-      q(
-        'Co jest charakterystyczne dla snu w ADHD w porównaniu z hipomanią?',
-        ['W ADHD pacjent ma trudności z zaśnięciem, ale rano jest zmęczony; w hipomanii śpi mało i ma nadmiar energii', 'W hipomanii występuje zmniejszona POTRZEBA snu, podczas gdy w ADHD pacjent cierpi z powodu niedospania.'],
-        ['W hipomanii pacjent śpi po 14 godzin na dobę', 'Hipersomnia jest rzadka w hipomanii.'],
-        ['W ADHD pacjent nie potrzebuje snu przez całe życie', 'To nieprawda; deprywacja snu w ADHD prowadzi do wyczerpania.'],
-        'psych-pulapki-q4'
-      ),
-      q(
-        'Jakie jest pierwsze postępowanie w przypadku wystąpienia pełnej manii po włączeniu leku przeciwdepresyjnego?',
-        ['Odstawienie leku przeciwdepresyjnego i wdrożenie leku przeciwpsychotycznego lub stabilizatora (np. lit, olanzapina)', 'Zgodnie z Maudsley i CANMAT należy niezwłocznie wycofać antydepresant i podać lek przeciwmaniakalny.'],
-        ['Podwojenie dawki antydepresantu, aby przełamać manię', 'Podwojenie dawki nasiliłoby manię i ryzyko psychozy/agresji.'],
-        ['Włączenie leku uspokajającego i pozostawienie antydepresantu bez zmian', 'Antydepresant napędza stan maniakalny i musi zostać zredukowany/odstawiony.'],
-        'psych-pulapki-q5'
-      ),
-    ],
-  },
-  {
-    id: 'dystymia-uporczywe',
-    moduleId: 'psych-afektywne',
-    title: 'Uporczywe zaburzenie depresyjne (dystymia)',
-    subtitle: 'Kryteria 2-letnie, depresja podwójna i leczenie długoterminowe',
-    group: 'Klinika zaburzeń afektywnych',
-    minutes: 14,
-    goals: [
-      'Zdefiniujesz kryteria czasowe i kliniczne dystymii wg ICD-11 CDDR i DSM-5-TR.',
-      'Rozpoznasz zjawisko "depresji podwójnej" (double depression) i zaplanujesz leczenie.',
-    ],
-    sections: [
-      {
-        title: 'Definicja i próg 2 lat',
-        text: 'Dystymia (w DSM-5-TR określana jako Persistent Depressive Disorder – PDD) to przewlekły stan obniżonego nastroju, który utrzymuje się przez co najmniej 2 lata (u dzieci i młodzieży przez co najmniej 1 rok). W ciągu tych 2 lat okresy wolne od objawów nie mogą trwać dłużej niż 2 kolejne miesiące. Nasilenie objawów jest zazwyczaj mniejsze niż w ciężkim epizodzie depresyjnym, jednak ich stałość prowadzi do głębokiej erozji jakości życia.',
-      },
-      {
-        title: 'Depresja podwójna (double depression)',
-        text: 'Zjawisko to polega na nałożeniu się ostrego epizodu dużej depresji (MDD) na wcześniej istniejącą, przewlekłą dystymię. Pacjent z wyjściowo niskim poziomem funkcjonowania doznaje dalszego gwałtownego załamania z anhedonią, myślami samobójczymi i objawami wegetatywnymi. Po wyleczeniu ostrego epizodu MDD chory często powraca jedynie do swojego "wyjściowego" stanu dystymicznego, co bywa mylnie uznawane za pełną remisję.',
-      },
-      {
-        title: 'Leczenie: farmakoterapia i CBASP',
-        text: 'Wbrew dawnym poglądom traktującym dystymię jako stałą "cechę charakteru", jest to stan responsywny na leczenie biologiczne. Wytyczne zalecają leki przeciwdepresyjne (SSRI, SNRI, moklobemid) w połączeniu z psychoterapią ukierunkowaną na przewlekłą depresję, zwłaszcza systemem CBASP (Cognitive Behavioral Analysis System of Psychotherapy) opracowanym przez McCullogha specjalnie dla tej populacji chorych.',
-      },
-    ],
-    table: {
-      headers: ['Cecha', 'Epizod MDD', 'Dystymia (PDD)'],
-      rows: [
-        ['Minimalny czas trwania', '2 tygodnie', '2 lata (dorośli) / 1 rok (dzieci)'],
-        ['Przerwy bezobjawowe', 'Mogą trwać miesiące/lata w remisji', 'Maksymalnie < 2 miesiące w ciągu 2 lat'],
-        ['Dynamika początku', 'Często ostry lub podostry początek', 'Podstępny, powolny początek, często od młodości'],
-        ['Subiektywne poczucie', '"Nie poznaję siebie, zmieniłem się"', '"Taki po prostu jestem, odkąd pamiętam"'],
-      ],
-    },
-    advanced:
-      'W badaniach neuroobrazowych pacjenci z dystymią wykazują utrwalone zaburzenia sieci wzbudzeń spoczynkowych (Default Mode Network – DMN) i nadmierną ruminację. Długotrwała farmakoterapia SSRI/SNRI w dystymii powinna być prowadzona przez co najmniej 2 lata od uzyskania remisji, a u pacjentów z nawracającą depresją podwójną często bezterminowo, ze względu na ryzyko nawrotu sięgające >70% w pierwszym roku po odstawieniu leku.',
-    summary:
-      'Dystymia wymaga trwania obniżonego nastroju przez >= 2 lata (przerwy < 2 mies.). Depresja podwójna to ostry epizod MDD nałożony na dystymię. Skuteczne jest skojarzenie SSRI/SNRI z psychoterapią CBASP.',
-    sourceIds: ['icd11-cddr', 'dsm5tr', 'nice-depression', 'maudsley15'],
-    questions: [
-      q(
-        'Jaki jest minimalny czas trwania przewlekłego obniżenia nastroju wymagany do rozpoznania dystymii u dorosłych?',
-        ['Co najmniej 2 lata', 'Standardy ICD-11 i DSM-5-TR wymagają trwania objawów przez minimum 24 miesiące.'],
-        ['Co najmniej 6 miesięcy', '6 miesięcy to próg dla zaburzeń lękowych uogólnionych (GAD).'],
-        ['Co najmniej 5 lat', '5 lat nie jest formalnym progiem w żadnej klasyfikacji.'],
-        'psych-dystymia-q1'
-      ),
-      q(
-        'Co oznacza pojęcie "depresji podwójnej" (double depression)?',
-        ['Wystąpienie ostrego epizodu dużej depresji (MDD) u osoby chorującej na przewlekłą dystymię', 'To nałożenie się pełnoobjawowego epizodu dużej depresji na podłoże istniejącej dystymii.'],
-        ['Jednoczesne wystąpienie depresji u obojga małżonków', 'To potoczne określenie bez znaczenia diagnostycznego.'],
-        ['Współwystępowanie depresji i schizofrenii paranoidalnej', 'To schizoafektywne zaburzenie nastroju.'],
-        'psych-dystymia-q2'
-      ),
-      q(
-        'Jaki jest dopuszczalny maksymalny czas trwania okresu wolnego od objawów w trakcie 2-letniego przebiegu dystymii?',
-        ['Mniej niż 2 kolejne miesiące', 'Przerwa bezobjawowa trwająca 2 miesiące lub dłużej wyklucza rozpoznanie dystymii.'],
-        ['Mniej niż 6 kolejnych miesięcy', '6 miesięcy to zbyt długa przerwa dla definicji dystymii.'],
-        ['Zero dni – objawy muszą występować w każdej sekundzie', 'Kryteria dopuszczają krótkie, trwające poniżej 2 miesięcy okresy lepszego samopoczucia.'],
-        'psych-dystymia-q3'
-      ),
-      q(
-        'Który model psychoterapii został stworzony specjalnie do leczenia przewlekłej depresji i dystymii?',
-        ['CBASP (Cognitive Behavioral Analysis System of Psychotherapy)', 'CBASP łączy techniki poznawcze, behawioralne i interpersonalne dedykowane przewlekłej depresji.'],
-        ['Klasyczna psychoanaliza freudowska', 'Psychoanaliza nie jest terapią pierwszego wyboru o udowodnionej specyfice w PDD.'],
-        ['Desensytyzacja EMDR w protokole pojedynczego urazu', 'EMDR jest dedykowany PTSD, nie dystymii.'],
-        'psych-dystymia-q4'
-      ),
-      q(
-        'Dlaczego pacjenci z dystymią często późno zgłaszają się do lekarza psychiatry?',
-        ['Uważają swój stan za stałą "cechę charakteru" i pesymistyczną naturę ("taki już jestem")', 'Podstępny wieloletni początek sprzyja utożsamieniu objawów z własną osobowością.'],
-        ['W dystymii nie występuje cierpienie psychiczne', 'Cierpienie w dystymii jest znaczne i prowadzi do trwałego obniżenia jakości życia.'],
-        ['Dystymia zawsze wiąże się z całkowitym brakiem kontaktu z otoczeniem', 'Funkcjonowanie jest zachowane, choć znacznie upośledzone.'],
-        'psych-dystymia-q5'
-      ),
-    ],
-  },
-  {
-    id: 'ocena-samobojstwa',
-    moduleId: 'psych-afektywne',
-    title: 'Ocena ryzyka samobójczego i plan bezpieczeństwa',
-    subtitle: 'Skala C-SSRS, czynniki ryzyka i wskazania do hospitalizacji',
-    group: 'Klinika zaburzeń afektywnych',
-    minutes: 17,
-    goals: [
-      'Przeprowadzisz stratyfikację ryzyka samobójczego przy użyciu skali C-SSRS.',
-      'Wdrożysz plan bezpieczeństwa (Safety Planning Intervention) i zidentyfikujesz wskazania do hospitalizacji.',
-    ],
-    sections: [
-      {
-        title: 'Ocena w skali C-SSRS: od myśli pasywnych do intencji',
-        text: 'Columbia-Suicide Severity Rating Scale (C-SSRS) stopniuje myśli samobójcze na 5 poziomach nasilenia: 1) Pasywne pragnienie śmierci ("chciałbym zasnąć i się nie obudzić"), 2) Niespecyficzne myśli samobójcze ("myślałem o odebraniu sobie życia"), 3) Myśli z metodami bez planu i intencji, 4) Myśli z intencją bez konkretnego planu, 5) Myśli samobójcze ze szczegółowym planem i intencją jego realizacji. Poziomy 4 i 5 oznaczają bezpośrednie zagrożenie życia i wymagają natychmiastowych działań interwencyjnych.',
-      },
-      {
-        title: 'Czynniki ryzyka statyczne i dynamiczne',
-        text: 'Do czynników statycznych (niemodyfikowalnych) należą: wcześniejsze próby samobójcze (najsilniejszy pojedynczy predyktor), płeć męska (wyższa dokonana śmiertelność), wywiad samobójstwa w rodzinie. Czynniki dynamiczne (modyfikowalne i podlegające pilnej interwencji) to: poczucie beznadziejności (hopelessness), skrajna bezsenność, pobudzenie psychoruchowe/akatyzja, ból psychiczny, intoksykacja alkoholem/substancjami oraz dostęp do śmiercionośnych środków (broń, leki).',
-      },
-      {
-        title: 'Plan bezpieczeństwa (SPI) i wskazania do hospitalizacji',
-        text: 'Plan bezpieczeństwa wg Stanleya i Browna składa się z 6 kroków: 1. Sygnały ostrzegawcze, 2. Własne strategie radzenia sobie (bez angażowania innych), 3. Ludzie i miejsca zapewniające odwrócenie uwagi, 4. Osoby bliskie, które można poprosić o pomoc, 5. Profesjonaliści i numery kryzysowe, 6. Bezpieczne otoczenie (usunięcie leków, noży, sznurów). Brak możliwości zapewnienia bezpieczeństwa w domu, plan z intencją lub cechy psychotyczne są wskazaniem do hospitalizacji, w tym w trybie nagłym.',
-      },
-    ],
-    table: {
-      headers: ['Poziom C-SSRS', 'Charakterystyka myśli', 'Ryzyko i działanie'],
-      rows: [
-        ['Poziom 1', 'Pasywne pragnienie śmierci ("lepiej byłoby nie żyć")', 'Niskie; psychoedukacja, plan bezpieczeństwa'],
-        ['Poziom 2-3', 'Aktywne myśli samobójcze, rozważanie metod bez intencji', 'Umiarkowane; intensyfikacja opieki, zaangażowanie bliskich'],
-        ['Poziom 4', 'Aktywne myśli z pewną intencją działania, bez planu', 'Wysokie; pilna konsultacja, usunięcie środków'],
-        ['Poziom 5', 'Aktywne myśli z konkretnym planem i intencją realizacji', 'Imminentne (bezpośrednie); pilna hospitalizacja psychiatryczna'],
-      ],
-    },
-    advanced:
-      'W prawie polskim (Ustawa o ochronie zdrowia psychicznego) przyjęcie do szpitala psychiatrycznego bez zgody pacjenta (art. 23) dopuszczalne jest wyłącznie wtedy, gdy osoba z zaburzeniami psychicznymi bezpośrednio zagraża swojemu życiu albo życiu lub zdrowiu innych osób. Dwa leki o udowodnionym specyficznym działaniu przeciw-samobójczym (niezależnym od ogólnego efektu antydepresyjnego) to lit w ChAD/MDD oraz klozapina w schizofrenii.',
-    summary:
-      'Skala C-SSRS różnicuje myśli pasywne od intencji i planu (poziom 4-5 = bezpośrednie zagrożenie). Wdrożenie Planu Bezpieczeństwa (SPI) i usunięcie dostępu do niebezpiecznych środków ratuje życie.',
-    sourceIds: ['cssrs-scale', 'nice-depression', 'maudsley15', 'canmat-mdd-2023'],
-    questions: [
-      q(
-        'Jaki jest najsilniejszy pojedynczy statyczny czynnik ryzyka dokonania samobójstwa w przyszłości?',
-        ['Próba samobójcza w wywiadzie', 'Wcześniejsza próba samobójcza jest statystycznie najsilniejszym predyktorem powtórnego zamachu.'],
-        ['Podwyższony poziom cholesterolu', 'Nie ma udowodnionego związku ze statycznym ryzykiem suicydalnym.'],
-        ['Wiek poniżej 10 lat', 'Wiek dziecięcy nie jest najsilniejszym predyktorem dokonanych samobójstw.'],
-        'psych-suicide-q1'
-      ),
-      q(
-        'Co oznacza poziom 5 w skali C-SSRS?',
-        ['Myśli samobójcze ze szczegółowym planem i intencją realizacji', 'To najwyższy poziom z bezpośrednim, imminentnym zagrożeniem zamachem samobójczym.'],
-        ['Pasywne pragnienie śmierci bez myśli o odebraniu sobie życia', 'Pasywne myśli to poziom 1 w skali C-SSRS.'],
-        ['Brak jakichkolwiek myśli o śmierci', 'Brak myśli oznacza wynik ujemny w przesiewie C-SSRS.'],
-        'psych-suicide-q2'
-      ),
-      q(
-        'Który krok jest krytycznym elementem Planu Bezpieczeństwa (Safety Planning Intervention)?',
-        ['Zabezpieczenie i ograniczenie dostępu do śmiercionośnych środków (leki, ostre narzędzia, broń)', 'Redukcja dostępu do środków (lethal means restriction) ratuje życie w chwilach impulsu.'],
-        ['Podpisanie "kontraktu na niepopełnienie samobójstwa" bez innych działań', 'Takie kontrakty nie mają udowodnionej skuteczności i dają fałszywe poczucie bezpieczeństwa.'],
-        ['Wypisanie pacjenta bez numerów kryzysowych', 'Plan bezpieczeństwa bezwzględnie wymaga listy telefonów pomocowych.'],
-        'psych-suicide-q3'
-      ),
-      q(
-        'Który lek wykazuje bezpośrednie, specyficzne działanie przeciw-samobójcze w zaburzeniach afektywnych?',
-        ['Węglan litu', 'Lit posiada silne dowody EBM na redukcję zgonów samobójczych w ChAD i nawracającej depresji.'],
-        ['Hydroksyzyna', 'Hydroksyzyna działa przeciwhistaminowo i uspokajająco, bez specyficznego efektu antysuicydalnego.'],
-        ['Propranolol', 'Beta-bloker redukuje objawy somatyczne lęku, ale nie zapobiega samobójstwom.'],
-        'psych-suicide-q4'
-      ),
-      q(
-        'Kiedy zgodnie z prawem możliwe jest przyjęcie pacjenta do szpitala psychiatrycznego bez jego zgody?',
-        ['Gdy wskutek zaburzenia psychicznego bezpośrednio zagraża swojemu życiu albo życiu lub zdrowiu innych', 'To ustawowa przesłanka art. 23 Ustawy o ochronie zdrowia psychicznego.'],
-        ['Gdy rodzina nie ma czasu opiekować się pacjentem', 'Względy socjalne nie stanowią podstawy do hospitalizacji przymusowej.'],
-        ['Gdy pacjent odmawia zażywania suplementów witaminowych', 'Odmowa suplementacji nie spełnia kryteriów bezpośredniego zagrożenia życia.'],
-        'psych-suicide-q5'
+        'W jaki sposób leki przeciwpsychotyczne I generacji (np. haloperidol) mogą wpływać na objawy negatywne schizofrenii?',
+        ['Mogą je pogłębiać poprzez dodatkową blokadę receptorów D2 w i tak hipodopaminergicznej korze przedczołowej', 'Zjawisko to nosi nazwę wtórnych objawów negatywnych (neuroleptic-induced deficit syndrome).'],
+        ['Natychmiast całkowicie usuwają objawy negatywne w ciągu 2 godzin', 'FGA nie leczą objawów negatywnych.'],
+        ['Zmieniają objawy negatywne w ciężką manię', 'FGA działają przeciwmaniakalnie.'],
+        'psych-psy-q5'
       ),
     ],
   },

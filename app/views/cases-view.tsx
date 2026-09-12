@@ -1,47 +1,24 @@
 'use client';
 import { useState } from 'react';
 import { ArrowRight, Stethoscope } from 'lucide-react';
-import { lessons } from '@/lib/course';
-import { cases } from '@/lib/cases';
+import type { CourseId } from '@/lib/course-types';
+import { getCourse } from '@/lib/courses-registry';
 import type { LearningState } from '@/lib/learning';
 import type { Navigation } from './types';
 
-export function CasesView({ state, go }: { state: LearningState; go: Navigation }) {
-  const [moduleFilter, setModuleFilter] = useState<'all' | 'tarczyca' | 'przysadka' | 'nadnercza' | 'przytarczyce' | 'cukrzyca' | 'gonady' | 'nen' | 'otylosc'>('all');
+export function CasesView({
+  state,
+  go,
+  activeCourse = 'endocrinology',
+}: {
+  state: LearningState;
+  go: Navigation;
+  activeCourse?: CourseId;
+}) {
+  const course = getCourse(activeCourse);
+  const { lessons, cases, modulesList } = course;
+  const [moduleFilter, setModuleFilter] = useState<string>('all');
   const [diffFilter, setDiffFilter] = useState<'all' | 'Podstawowy' | 'Zaawansowany'>('all');
-
-  const thyroidCount = cases.filter(c => {
-    const l = lessons.find(les => les.id === c.lessonId);
-    return l?.moduleId === 'tarczyca';
-  }).length;
-  const pituitaryCount = cases.filter(c => {
-    const l = lessons.find(les => les.id === c.lessonId);
-    return l?.moduleId === 'przysadka';
-  }).length;
-  const adrenalCount = cases.filter(c => {
-    const l = lessons.find(les => les.id === c.lessonId);
-    return l?.moduleId === 'nadnercza';
-  }).length;
-  const parathyroidCount = cases.filter(c => {
-    const l = lessons.find(les => les.id === c.lessonId);
-    return l?.moduleId === 'przytarczyce';
-  }).length;
-  const diabetesCount = cases.filter(c => {
-    const l = lessons.find(les => les.id === c.lessonId);
-    return l?.moduleId === 'cukrzyca';
-  }).length;
-  const gonadCount = cases.filter(c => {
-    const l = lessons.find(les => les.id === c.lessonId);
-    return l?.moduleId === 'gonady';
-  }).length;
-  const nenCount = cases.filter(c => {
-    const l = lessons.find(les => les.id === c.lessonId);
-    return l?.moduleId === 'nen';
-  }).length;
-  const otyloscCount = cases.filter(c => {
-    const l = lessons.find(les => les.id === c.lessonId);
-    return l?.moduleId === 'otylosc';
-  }).length;
 
   const filteredCases = cases.filter(c => {
     if (diffFilter !== 'all' && c.difficulty !== diffFilter) return false;
@@ -65,56 +42,23 @@ export function CasesView({ state, go }: { state: LearningState; go: Navigation 
         >
           Wszystkie działy ({cases.length})
         </button>
-        <button
-          className={moduleFilter === 'tarczyca' ? 'active' : ''}
-          onClick={() => setModuleFilter('tarczyca')}
-        >
-          Moduł 01: Tarczyca ({thyroidCount})
-        </button>
-        <button
-          className={moduleFilter === 'przysadka' ? 'active' : ''}
-          onClick={() => setModuleFilter('przysadka')}
-        >
-          Moduł 02: Przysadka i podwzgórze ({pituitaryCount})
-        </button>
-        <button
-          className={moduleFilter === 'nadnercza' ? 'active' : ''}
-          onClick={() => setModuleFilter('nadnercza')}
-        >
-          Moduł 03: Nadnercza ({adrenalCount})
-        </button>
-        <button
-          className={moduleFilter === 'przytarczyce' ? 'active' : ''}
-          onClick={() => setModuleFilter('przytarczyce')}
-        >
-          Moduł 04: Przytarczyce i Ca–P ({parathyroidCount})
-        </button>
-        <button
-          className={moduleFilter === 'cukrzyca' ? 'active' : ''}
-          onClick={() => setModuleFilter('cukrzyca')}
-        >
-          Moduł 05: Cukrzyca ({diabetesCount})
-        </button>
-        <button
-          className={moduleFilter === 'gonady' ? 'active' : ''}
-          onClick={() => setModuleFilter('gonady')}
-        >
-          Moduł 06: Gonady ({gonadCount})
-        </button>
-        <button
-          className={moduleFilter === 'nen' ? 'active' : ''}
-          onClick={() => setModuleFilter('nen')}
-        >
-          Moduł 07: NEN i MEN ({nenCount})
-        </button>
-        <button
-          className={moduleFilter === 'otylosc' ? 'active' : ''}
-          onClick={() => setModuleFilter('otylosc')}
-        >
-          Moduł 08: Otyłość i lipidy ({otyloscCount})
-        </button>
+        {modulesList.map(m => {
+          const count = cases.filter(c => {
+            const l = lessons.find(les => les.id === c.lessonId);
+            return l?.moduleId === m.id;
+          }).length;
+          if (count === 0) return null;
+          return (
+            <button
+              key={m.id}
+              className={moduleFilter === m.id ? 'active' : ''}
+              onClick={() => setModuleFilter(m.id)}
+            >
+              {m.name} ({count})
+            </button>
+          );
+        })}
       </div>
-
 
       <div className="filter-bar" aria-label="Poziom trudności">
         {[

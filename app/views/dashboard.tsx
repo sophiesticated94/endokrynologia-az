@@ -9,9 +9,10 @@ import {
   Stethoscope,
   Activity,
   Target,
+  BrainCircuit,
 } from 'lucide-react';
-import { lessons } from '@/lib/course';
-import { cases } from '@/lib/cases';
+import type { CourseId } from '@/lib/course-types';
+import { getCourse } from '@/lib/courses-registry';
 import type { LearningState } from '@/lib/learning';
 import { ThyroidArt } from '../course-ui';
 import type { Navigation } from './types';
@@ -22,12 +23,16 @@ export function Dashboard({
   go,
   due,
   newCount,
+  activeCourse = 'endocrinology',
 }: {
   state: LearningState;
   go: Navigation;
   due: number;
   newCount: number;
+  activeCourse?: CourseId;
 }) {
+  const course = getCourse(activeCourse);
+  const { lessons, cases, modulesList } = course;
   const next = lessons.find(l => !state.completed.includes(l.id)) ?? lessons[0];
   const percent = Math.round((state.completed.length / lessons.length) * 100);
   const mastered = Object.values(state.mastery).filter(item => item.status === 'mastered').length;
@@ -38,7 +43,11 @@ export function Dashboard({
         <div>
           <p className="eyebrow">TWOJA CODZIENNA DAWKA WIEDZY</p>
           <h1>{state.completed.length ? 'Wracamy do nauki.' : 'Dobrze Cię widzieć.'}</h1>
-          <p>Endokrynologia staje się prostsza, gdy rozumiesz jej podstawy.</p>
+          <p>
+            {activeCourse === 'psychiatry'
+              ? 'Psychiatria i psychofarmakologia stają się prostsze, gdy rozumiesz ich mechanizmy.'
+              : 'Endokrynologia staje się prostsza, gdy rozumiesz jej podstawy.'}
+          </p>
         </div>
         <span className="level-label">
           <GraduationCap size={18} />
@@ -49,7 +58,11 @@ export function Dashboard({
       <section className="hero-panel">
         <div className="hero-copy">
           <span className="eyebrow">
-            {next.moduleId === 'otylosc'
+            {activeCourse === 'psychiatry'
+              ? next.moduleId === 'psych-farmakologia'
+                ? 'MODUŁ 02 · PSYCHOFARMAKOLOGIA KLINICZNA'
+                : 'MODUŁ 01 · FUNDAMENTY PSYCHIATRII I DIAGNOSTYKA'
+              : next.moduleId === 'otylosc'
               ? 'MODUŁ 08 · OTYŁOŚĆ I ZABURZENIA LIPIDOWE'
               : next.moduleId === 'nen'
                 ? 'MODUŁ 07 · NOWOTWORY NEUROENDOKRYNNE'
@@ -66,7 +79,21 @@ export function Dashboard({
                           : 'MODUŁ 01 · TARCZYCA'}
           </span>
           <h2>
-            {next.moduleId === 'otylosc' ? (
+            {activeCourse === 'psychiatry' ? (
+              next.moduleId === 'psych-farmakologia' ? (
+                <>
+                  Receptory i leki.
+                  <br />
+                  Od PET po TDM 2026.
+                </>
+              ) : (
+                <>
+                  Umysł i kryteria.
+                  <br />
+                  Od MSE po ICD-11.
+                </>
+              )
+            ) : next.moduleId === 'otylosc' ? (
               <>
                 Metabolizm i lipidy.
                 <br />
@@ -117,7 +144,11 @@ export function Dashboard({
             )}
           </h2>
           <p>
-            {next.moduleId === 'otylosc'
+            {activeCourse === 'psychiatry'
+              ? next.moduleId === 'psych-farmakologia'
+                ? 'Poznaj farmakokinetykę OUN, okno Kapura D2 (65–80%), TDM wg AGNP 2026, fenotypy CPIC i stany nagłe toksykologii.'
+                : 'Opanuj ustrukturyzowany Mental Status Examination, kryteria ICD-11 CDDR, semiotykę psychoz, depresji, lęku, OCD, PTSD i ADHD.'
+              : next.moduleId === 'otylosc'
               ? 'Od adipobiologii i agonizmu GLP-1/GIP po kwalifikację IFSO 2023, MASLD/MASH, hipercholesterolemię rodzinną i model Halla.'
               : next.moduleId === 'nen'
                 ? 'Od biologii CgA/5-HIAA i klasyfikacji WHO po guzy pNET, zespoły MEN1/2/4, dozymetrię PRRT i schemat CAPTEM.'
@@ -144,14 +175,42 @@ export function Dashboard({
           </div>
           <div className="hero-meta">
             <BookOpen size={15} />
-            {lessons.length} lekcji (8 modułów)
+            {lessons.length} lekcji ({modulesList.length} moduły)
             <span>·</span>
             <Clock size={15} />
-            około 35 godzin nauki
+            {activeCourse === 'psychiatry' ? 'około 14 godzin nauki' : 'około 35 godzin nauki'}
           </div>
         </div>
 
-        <ThyroidArt />
+        {activeCourse === 'psychiatry' ? (
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '30px',
+              minWidth: '220px',
+            }}
+          >
+            <div
+              style={{
+                width: '180px',
+                height: '180px',
+                borderRadius: '50%',
+                background: 'linear-gradient(135deg, var(--accent-subtle, #e8f1ec), #ffffff)',
+                border: '2px solid var(--accent, #187765)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                boxShadow: '0 8px 24px rgba(24, 119, 101, 0.15)',
+              }}
+            >
+              <BrainCircuit size={84} color="var(--accent, #187765)" />
+            </div>
+          </div>
+        ) : (
+          <ThyroidArt />
+        )}
       </section>
 
       <div className="stats-grid">
@@ -253,8 +312,8 @@ export function Dashboard({
             jako pierwsze?
           </h2>
           <p>Objawy, wyniki, decyzja. Sprawdź swoje rozumowanie na fikcyjnym przypadku.</p>
-          <button className="text-button" onClick={() => go(`case/${cases[2].id}`)}>
-            Poznaj pacjentkę
+          <button className="text-button" onClick={() => cases[0] && go(`case/${cases[0].id}`)}>
+            Poznaj pacjenta
             <ArrowRight size={17} />
           </button>
         </section>

@@ -2,11 +2,17 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, ArrowLeft, Check, CheckCircle2, Stethoscope, ExternalLink } from 'lucide-react';
 import { sources, CONTENT_VERSION, lessonExperiences, type Question, type Lesson } from '@/lib/course';
-import type { Confidence } from '@/lib/course-types';
+import { psychiatrySources } from '@/lib/course-psychiatry-sources';
+import type { Confidence, Source } from '@/lib/course-types';
 import type { ClinicalCase } from '@/lib/cases';
 import { grade } from '@/lib/learning';
 import { GlossaryText } from './glossary-components';
 import { LabResultsGauge, caseLabs } from './medical-diagrams';
+
+const combinedSources: Record<string, Source> = {
+  ...sources,
+  ...psychiatrySources,
+};
 
 export function ThyroidArt() {
   return (
@@ -50,15 +56,19 @@ export function SourceList({ lesson }: { lesson: Lesson }) {
       <p className="small">
         {documentedReview ? `Sprawdzenie w przypisanych źródłach: ${new Date(documentedReview.checkedAt).toLocaleDateString('pl-PL')}. ${documentedReview.scope}` : 'Treść oczekuje udokumentowanego przeglądu tej lekcji. Rok źródła nie oznacza daty weryfikacji materiału.'} · Wersja {CONTENT_VERSION}
       </p>
-      {lesson.sourceIds.map(id => (
-        <a key={id} href={sources[id].url} target="_blank" rel="noreferrer">
-          <span>
-            {sources[id].title}
-            <small>{sources[id].kind} · {sources[id].year}</small>
-          </span>
-          <ExternalLink size={15} />
-        </a>
-      ))}
+      {lesson.sourceIds.map(id => {
+        const item = combinedSources[id] ?? sources[id] ?? psychiatrySources[id];
+        if (!item) return null;
+        return (
+          <a key={id} href={item.url || '#'} target="_blank" rel="noreferrer">
+            <span>
+              {item.title}
+              <small>{item.kind} · {item.year}</small>
+            </span>
+            <ExternalLink size={15} />
+          </a>
+        );
+      })}
       <p className="small">
         Autorskie opracowanie edukacyjne wspomagane AI, bez recenzji klinicznej. Nie zastępuje pełnych wytycznych ani indywidualnej decyzji lekarskiej.
       </p>

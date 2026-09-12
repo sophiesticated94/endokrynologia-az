@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { LockKeyhole, BrainCircuit, Sparkles } from 'lucide-react';
+import { LockKeyhole } from 'lucide-react';
 import {
   psychiatryLessons,
   psychiatryPlannedModules,
@@ -12,13 +12,11 @@ import type { Navigation } from './types';
 export function PsychiatryCourseMap({ state, go }: { state: LearningState; go: Navigation }) {
   const [activeTab, setActiveTab] = useState<'all' | 'psych-afektywne' | 'psych-farmakologia'>('all');
 
-  const afektywneCount = psychiatryLessons.filter(l => l.moduleId === 'psych-afektywne').length;
-  const farmakologiaCount = psychiatryLessons.filter(l => l.moduleId === 'psych-farmakologia').length;
+  const afektywneLessons = psychiatryLessons.filter(l => l.moduleId === 'psych-afektywne');
+  const farmakologiaLessons = psychiatryLessons.filter(l => l.moduleId === 'psych-farmakologia');
 
-  const clinicalAfektywne = psychiatryLessons.filter(l => l.group === 'Klinika zaburzeń afektywnych');
-  const neuroAfektywne = psychiatryLessons.filter(l => l.group === 'Neurobiologia i biochemia nastroju');
-  const lekiFarmakologia = psychiatryLessons.filter(l => l.group === 'Leki przeciwdepresyjne i stabilizatory');
-  const safetyFarmakologia = psychiatryLessons.filter(l => l.group === 'Bezpieczeństwo i stany nagłe');
+  const afektywneGroups = Array.from(new Set(afektywneLessons.map(l => l.group)));
+  const farmakologiaGroups = Array.from(new Set(farmakologiaLessons.map(l => l.group)));
 
   return (
     <>
@@ -39,13 +37,13 @@ export function PsychiatryCourseMap({ state, go }: { state: LearningState; go: N
           className={activeTab === 'psych-afektywne' ? 'active' : ''}
           onClick={() => setActiveTab('psych-afektywne')}
         >
-          Moduł 01: Zaburzenia afektywne i neurobiologia ({afektywneCount})
+          Moduł 01: Fundamenty i diagnostyka ({afektywneLessons.length})
         </button>
         <button
           className={activeTab === 'psych-farmakologia' ? 'active' : ''}
           onClick={() => setActiveTab('psych-farmakologia')}
         >
-          Moduł 02: Psychofarmakologia i receptory ({farmakologiaCount})
+          Moduł 02: Psychofarmakologia i leczenie ({farmakologiaLessons.length})
         </button>
       </div>
 
@@ -54,28 +52,23 @@ export function PsychiatryCourseMap({ state, go }: { state: LearningState; go: N
         {(activeTab === 'all' || activeTab === 'psych-afektywne') && (
           <section className="module-group">
             <header className="module-header">
-              <span className="eyebrow">MODUŁ 01 · 10 LEKCJI</span>
-              <h2>Zaburzenia afektywne i neurobiologia nastroju</h2>
-              <p>ICD-11 CDDR 2024, DSM-5-TR, szlak BDNF/TrkB, oś HPA, modele kinetyki i diagnostyka różnicowa ChAD vs MDD.</p>
+              <span className="eyebrow">MODUŁ 01 · {afektywneLessons.length} LEKCJI</span>
+              <h2>Fundamenty psychiatrii i diagnostyka kliniczna</h2>
+              <p>MSE, DSM-5-TR, ICD-11 CDDR, psychopatologia, depresja, mania, psychozy, lęk, OCD, PTSD, ADHD, zaburzenia osobowości i diagnostyka różnicowa.</p>
             </header>
 
-            <div className="subgroup">
-              <h3>Klinika zaburzeń afektywnych</h3>
-              <div className="lesson-list">
-                {clinicalAfektywne.map(l => (
-                  <LessonRow key={l.id} lesson={l} state={state} go={go} />
-                ))}
+            {afektywneGroups.map(group => (
+              <div key={group} className="subgroup">
+                <h3>{group}</h3>
+                <div className="lesson-list">
+                  {afektywneLessons
+                    .filter(l => l.group === group)
+                    .map(l => (
+                      <LessonRow key={l.id} lesson={l} state={state} go={go} />
+                    ))}
+                </div>
               </div>
-            </div>
-
-            <div className="subgroup">
-              <h3>Neurobiologia, biochemia i modele nastroju</h3>
-              <div className="lesson-list">
-                {neuroAfektywne.map(l => (
-                  <LessonRow key={l.id} lesson={l} state={state} go={go} />
-                ))}
-              </div>
-            </div>
+            ))}
           </section>
         )}
 
@@ -83,28 +76,23 @@ export function PsychiatryCourseMap({ state, go }: { state: LearningState; go: N
         {(activeTab === 'all' || activeTab === 'psych-farmakologia') && (
           <section className="module-group">
             <header className="module-header">
-              <span className="eyebrow">MODUŁ 02 · 11 LEKCJI</span>
-              <h2>Psychofarmakologia kliniczna i receptorologia</h2>
-              <p>Maudsley 15th ed., TDM AGNP 2026, fenotypy CPIC, badania PET (Meyer/Kapur), zespół serotoninowy Huntera i NMS.</p>
+              <span className="eyebrow">MODUŁ 02 · {farmakologiaLessons.length} LEKCJI</span>
+              <h2>Psychofarmakologia kliniczna i leczenie biologiczne</h2>
+              <p>PK/PD, SERT/NET/DAT, okno Kapura D2/D3, 5-HT, Glu/GABA, SSRI/SNRI/TLPD, atypowe, stabilizatory, SGA, TDM, PGx, powikłania, ECT/rTMS.</p>
             </header>
 
-            <div className="subgroup">
-              <h3>Leki przeciwdepresyjne i stabilizatory nastroju</h3>
-              <div className="lesson-list">
-                {lekiFarmakologia.map(l => (
-                  <LessonRow key={l.id} lesson={l} state={state} go={go} />
-                ))}
+            {farmakologiaGroups.map(group => (
+              <div key={group} className="subgroup">
+                <h3>{group}</h3>
+                <div className="lesson-list">
+                  {farmakologiaLessons
+                    .filter(l => l.group === group)
+                    .map(l => (
+                      <LessonRow key={l.id} lesson={l} state={state} go={go} />
+                    ))}
+                </div>
               </div>
-            </div>
-
-            <div className="subgroup">
-              <h3>Farmakogenetyka, bezpieczeństwo i stany nagłe</h3>
-              <div className="lesson-list">
-                {safetyFarmakologia.map(l => (
-                  <LessonRow key={l.id} lesson={l} state={state} go={go} />
-                ))}
-              </div>
-            </div>
+            ))}
           </section>
         )}
 

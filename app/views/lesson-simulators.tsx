@@ -37,6 +37,7 @@ import {
   SerotoninShuntAndSstrVisualizer,
 } from '../components/math-chem-widgets-5';
 import { LessonSimulatorsOtylosc } from './lesson-simulators-otylosc.tsx';
+import { LessonSimulatorsPsychiatry } from './lesson-simulators-psychiatry.tsx';
 
 export function LessonSimulators({ lessonId, go }: { lessonId: string; go: Navigation }) {
   if (gahtLessonIds.includes(lessonId)) return <GonadPharmacodynamicsLab key={lessonId} compact initialGoal={lessonId==='gonady-trans-maskulinizujaca'||lessonId==='gaht-plodnosc'?'masc':'fem'}/>;
@@ -476,6 +477,9 @@ export function LessonSimulators({ lessonId, go }: { lessonId: string; go: Navig
 
   const otyloscSim = LessonSimulatorsOtylosc({ lessonId, go });
   if (otyloscSim) return otyloscSim;
+
+  const psychSim = LessonSimulatorsPsychiatry({ lessonId, go });
+  if (psychSim) return psychSim;
 
   return null;
 }

@@ -74,7 +74,7 @@ export const COURSES: Record<CourseId, CourseBundle> = {
     shortTitle: 'Psychiatria',
     brandSub: 'PSYCHIATRIA A–Z',
     code: 'PSYCH',
-    badge: '21 lekcji · 2 moduły pilotażowe',
+    badge: '38 lekcji · 2 moduły zaawansowane · 24 przypadki',
     description:
       'Głęboka ścieżka kliniczno-biochemiczna: kryteria ICD-11 CDDR i DSM-5-TR, neurobiologia BDNF/HPA, Maudsley 15th ed., AGNP TDM 2026 i receptorologia PET.',
     lessons: psychiatryLessons,

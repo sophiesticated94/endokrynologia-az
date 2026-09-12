@@ -332,7 +332,15 @@ export default function CourseApp() {
           {route === 'catalog' && (
             <CatalogView activeCourse={activeCourse} onSelectCourse={selectCourse} go={go} />
           )}
-          {route === 'home' && <Dashboard state={state} go={go} due={due.length} newCount={fresh.length} />}
+          {route === 'home' && (
+            <Dashboard
+              state={state}
+              go={go}
+              due={due.length}
+              newCount={fresh.length}
+              activeCourse={activeCourse}
+            />
+          )}
           {route === 'course' && (
             activeCourse === 'endocrinology' ? <CourseMap state={state} go={go} /> : <PsychiatryCourseMap state={state} go={go} />
           )}
@@ -370,7 +378,7 @@ export default function CourseApp() {
               </div>
             </>
           )}
-          {route === 'cases' && <CasesView state={state} go={go} />}
+          {route === 'cases' && <CasesView state={state} go={go} activeCourse={activeCourse} />}
           {route.startsWith('case/') && clinical && (
             <>
               <Runner

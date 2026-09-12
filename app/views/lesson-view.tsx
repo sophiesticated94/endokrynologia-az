@@ -15,6 +15,7 @@ import {
   Code2,
 } from 'lucide-react';
 import { lessonExperiences, lessons, type Lesson } from '@/lib/course';
+import { psychiatryLessons } from '@/lib/course-psychiatry';
 import type { Confidence, LearningActivity, PracticeRecordMeta } from '@/lib/course-types';
 import { isLessonCoreComplete } from '@/lib/lesson-v2';
 import type { LearningState } from '@/lib/learning';
@@ -28,6 +29,21 @@ import { MathDerivationCard, WorkedExampleCard } from '../components/math-lesson
 import { PracticeActivityCard } from '../components/practice-activity';
 import { LearningWidgets } from '../components/learning-widgets';
 import type { Navigation } from './types';
+
+const MODULE_LABELS: Record<string, string> = {
+  tarczyca: 'MODUŁ 01: TARCZYCA',
+  przysadka: 'MODUŁ 02: PRZYSADKA I PODWZGÓRZE',
+  nadnercza: 'MODUŁ 03: NADNERCZA',
+  przytarczyce: 'MODUŁ 04: PRZYTARCZYCE I Ca–P',
+  cukrzyca: 'MODUŁ 05: CUKRZYCA I METABOLIZM',
+  gonady: 'MODUŁ 06: GONADY I ROZRÓD',
+  nen: 'MODUŁ 07: NOWOTWORY NEUROENDOKRYNNE I MEN',
+  otylosc: 'MODUŁ 08: OTYŁOŚĆ I LIPIDY',
+  pediatria: 'MODUŁ 09: ENDOKRYNOLOGIA PEDIATRYCZNA',
+  ciaza: 'MODUŁ 10: ENDOKRYNOLOGIA CIĄŻY I POŁOGU',
+  'psych-afektywne': 'MODUŁ 01: FUNDAMENTY PSYCHIATRII I DIAGNOSTYKA KLINICZNA',
+  'psych-farmakologia': 'MODUŁ 02: PSYCHOFARMAKOLOGIA KLINICZNA I LECZENIE BIOLOGICZNE',
+};
 
 export function LessonView({
   lesson,
@@ -49,26 +65,14 @@ export function LessonView({
   const [latexModalOpen, setLatexModalOpen] = useState(false);
   const [finishedActivities, setFinishedActivities] = useState<Set<string>>(new Set());
   const experience = lessonExperiences[lesson.id];
-  const moduleLessons = lessons.filter(l => l.moduleId === lesson.moduleId);
+  const allCourseLessons = lessons.some(l => l.id === lesson.id) ? lessons : psychiatryLessons;
+  const moduleLessons = allCourseLessons.filter(l => l.moduleId === lesson.moduleId);
   const lessonNum = moduleLessons.indexOf(lesson) + 1;
   const nextLesson = moduleLessons[lessonNum];
   const hasLessonMistakes = state.mistakes.some(item => item.lessonId === lesson.id);
   const moduleLabel =
-    lesson.moduleId === 'otylosc'
-      ? 'MODUŁ 08: OTYŁOŚĆ I ZABURZENIA LIPIDOWE'
-      : lesson.moduleId === 'nen'
-        ? 'MODUŁ 07: NOWOTWORY NEUROENDOKRYNNE I MEN'
-        : lesson.moduleId === 'gonady'
-          ? 'MODUŁ 06: GONADY'
-          : lesson.moduleId === 'cukrzyca'
-            ? 'MODUŁ 05: CUKRZYCA'
-            : lesson.moduleId === 'przytarczyce'
-              ? 'MODUŁ 04: PRZYTARCZYCE'
-              : lesson.moduleId === 'nadnercza'
-                ? 'MODUŁ 03: NADNERCZA'
-                : lesson.moduleId === 'przysadka'
-                  ? 'MODUŁ 02: PRZYSADKA'
-                  : 'MODUŁ 01: TARCZYCA';
+    (lesson.moduleId && MODULE_LABELS[lesson.moduleId]) ||
+    (lesson.moduleId ? `MODUŁ: ${lesson.moduleId.toUpperCase()}` : 'MODUŁ 01: TARCZYCA');
 
 
   return (

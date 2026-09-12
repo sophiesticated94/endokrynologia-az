@@ -1,17 +1,23 @@
 import type { Lesson, Question, DraftLesson } from './course-types.ts';
 import { draftPsychiatryPart1 } from './course-psychiatry-1.ts';
+import { draftPsychiatryPart1b } from './course-psychiatry-1b.ts';
 import { draftPsychiatryPart2 } from './course-psychiatry-2.ts';
 import { draftPsychiatryPart3 } from './course-psychiatry-3.ts';
+import { draftPsychiatryPart3b } from './course-psychiatry-3b.ts';
 import { draftPsychiatryPart4 } from './course-psychiatry-4.ts';
+import { draftPsychiatryPart4b } from './course-psychiatry-4b.ts';
 import { psychiatrySources } from './course-psychiatry-sources.ts';
 import { psychiatryCases } from './cases-psychiatry.ts';
 import { psychiatryGlossary } from './glossary-psychiatry.ts';
 
 export const allPsychiatryDrafts: DraftLesson[] = [
   ...draftPsychiatryPart1,
+  ...draftPsychiatryPart1b,
   ...draftPsychiatryPart2,
   ...draftPsychiatryPart3,
+  ...draftPsychiatryPart3b,
   ...draftPsychiatryPart4,
+  ...draftPsychiatryPart4b,
 ];
 
 export const psychiatryLessons: Lesson[] = allPsychiatryDrafts.map((l, li) => {
@@ -52,25 +58,25 @@ export const psychiatryFlashcards = [
   })),
   {
     id: 'psych-concept-sert-pet',
-    lessonId: 'ssri-mechanizm-wybor',
+    lessonId: 'transportery-monoamin-sert-net-dat',
     front: 'Dlaczego minimalna dawka terapeutyczna SSRI wysyca już ~80% transporterów SERT w badaniach PET?',
     back: 'Krzywa wysycenia SERT od dawki ma charakter hiperboliczny; podwajanie dawki zwiększa blokadę zaledwie o kilka procent, ale może nasilać działania niepożądane.',
   },
   {
     id: 'psych-concept-d2-window',
-    lessonId: 'leki-przeciwpsychotyczne-receptory',
+    lessonId: 'receptory-dopaminowe-okno-kapura',
     front: 'W jakim przedziale prążkowiowego occupancy D2 (okno Kapura) leki przeciwpsychotyczne zachowują skuteczność bez objawów pozapiramidowych?',
     back: 'W przedziale 65% – 80%. Poniżej 65% brak kontroli psychozy, powyżej 80% gwałtownie rośnie ryzyko EPS i hiperprolaktynemii.',
   },
   {
     id: 'psych-concept-hunter-clonus',
-    lessonId: 'zespol-serotoninowy-hunter',
+    lessonId: 'ostre-stany-toksyczne-zespol-serotoninowy',
     front: 'Jaki objaw jest warunkiem decyzyjnym o najwyższej czułości i swoistości w kryteriach Huntera zespołu serotoninowego?',
     back: 'Klonus (spontaniczny, indukowany lub oczny). Towarzyszy mu pobudzenie, hiperrefleksja, obfite poty i hipertermia.',
   },
   {
     id: 'psych-concept-lithium-tdm',
-    lessonId: 'stabilizatory-lit',
+    lessonId: 'normotymiki-lit-walproinian-lamotrygina',
     front: 'Jaki jest referencyjny zakres stężenia litu 12h po dawce w leczeniu podtrzymującym ChAD wg AGNP 2026?',
     back: '0,6 – 0,8 mmol/l. Stężenia > 1,2 mmol/l wywołują objawy neurotoksyczności (grubofaliste drżenie, ataksja, śpiączka).',
   },
@@ -79,23 +85,21 @@ export const psychiatryFlashcards = [
 export const psychiatryModulesList = [
   {
     id: 'psych-afektywne' as const,
-    name: 'Zaburzenia afektywne i neurobiologia nastroju',
-    count: 10,
-    subtitle: 'MDD (ICD-11/DSM-5), ChAD I i II, dystymia, suicydologia C-SSRS, monoaminy, szlak BDNF/TrkB, oś HPA i modele nieliniowe',
+    name: 'Fundamenty psychiatrii i diagnostyka kliniczna',
+    count: 16,
+    subtitle: 'MSE, DSM-5-TR / ICD-11, psychopatologia, depresja, mania, psychozy, lęk, OCD, PTSD, ADHD, zaburzenia osobowości i badania somatyczne',
   },
   {
     id: 'psych-farmakologia' as const,
-    name: 'Psychofarmakologia kliniczna i receptorologia',
-    count: 11,
-    subtitle: 'SSRI (PET SERT), SNRI i TLPD, leki atypowe, lit (TDM), walproinian i lamotrygina, SGA (D2 65–80%), CYP450, zespół Huntera i NMS',
+    name: 'Psychofarmakologia kliniczna i leczenie biologiczne',
+    count: 22,
+    subtitle: 'PK/PD, SERT/NET/DAT, D2/D3 (Kapur), 5-HT, Glu/GABA, SSRI/SNRI/TLPD, atypowe, stabilizatory, SGA, TDM, PGx, powikłania, ECT/rTMS',
   },
 ] as const;
 
 export const psychiatryPlannedModules = [
-  'Zaburzenia psychotyczne i schizofrenia',
-  'Zaburzenia lękowe, obsesyjno-kompulsyjne i stresowe pourazowe (PTSD)',
   'Psychiatria wieku podeszłego i organiczne zaburzenia psychiczne',
-  'Uzależnienia i zaburzenia spowodowane używaniem substancji psychoaktywnych',
+  'Zaburzenia odżywiania i psychosomatyka kliniczna',
 ];
 
 export { psychiatrySources, psychiatryCases, psychiatryGlossary };

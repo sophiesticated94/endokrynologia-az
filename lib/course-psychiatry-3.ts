@@ -2,466 +2,471 @@ import { type DraftLesson, q } from './course-types.ts';
 
 export const draftPsychiatryPart3: DraftLesson[] = [
   {
-    id: 'ssri-mechanizm-wybor',
+    id: 'farmakokinetyka-oun-bariera',
     moduleId: 'psych-farmakologia',
-    title: 'SSRI: powinowactwo do SERT, krzywa PET i profil cząsteczek',
-    subtitle: 'Wysycenie 80% SERT, różnice farmakodynamiczne i dobór leku',
-    group: 'Leki przeciwdepresyjne i stabilizatory',
-    minutes: 16,
+    title: 'Farmakokinetyka leków w OUN i bariera krew-mózg',
+    subtitle: 'Lipofilność, glikoproteina P (P-gp), wolna frakcja i penetracja do mózgowia',
+    group: 'Farmakokinetyka i farmakodynamika OUN',
+    minutes: 18,
     goals: [
-      'Wyjaśnisz zależność między dawką SSRI a stopniem wysycenia transportera SERT w badaniach PET.',
-      'Scharakteryzujesz unikalne cechy farmakodynamiczne sertraliny, escitalopramu i fluoksetyny.',
+      'Zrozumiesz rolę bariery krew-mózg (BBB) i pompy effluksowej P-gp w dystrybucji psychotropów.',
+      'Scharakteryzujesz wpływ wiązania z białkami osocza na wolną frakcję aktywną leku w OUN.',
+      'Ocenisz kinetykę eliminacji i czas osiągania stanu stacjonarnego (steady state).'
     ],
     sections: [
       {
-        title: 'Krzywa wysycenia SERT w badaniach PET (Meyer et al.)',
-        text: 'Badania pozytonowej tomografii emisyjnej (PET) z użyciem znaczników radiologicznych (np. [11C]DASB) wykazały, że kliniczny efekt przeciwdepresyjny SSRI wymaga zablokowania co najmniej 70–80% transporterów serotoniny (SERT) w prążkowiu i korze. Krzywa zależności wysycenia SERT od dawki ma charakter hiperboliczny: minimalna dawka terapeutyczna (np. 20 mg citalopramu, 10 mg escitalopramu, 50 mg sertraliny) osiąga już ~80% blokady SERT. Dalsze podwajanie dawki zwiększa wysycenie zaledwie o kilka procent (do 85%), ale może istotnie nasilać działania niepożądane.',
+        title: 'Bariera krew-mózg (BBB) i czynniki determinujące przenikanie',
+        text: 'Leki psychotropowe, aby wywrzeć efekt terapeutyczny, muszą przekroczyć barierę krew-mózg (blood-brain barrier, BBB), zbudowaną ze ściśle połączonych komórek śródbłonka naczyniowego (tight junctions) otoczonych przez perycyty i stopki astrocytarne. Kluczowymi determinantami penetracji są: niska masa cząsteczkowa (< 400–500 Da), wysoka lipofilność (współczynnik logP) oraz brak ładunku elektrycznego w fizjologicznym pH krwi (7,4).'
       },
       {
-        title: 'Profil poszczególnych cząsteczek SSRI',
-        text: 'Mimo wspólnej klasy cząsteczki SSRI różnią się profilami receptorowymi: 1) Escitalopram jest najbardziej selektywnym inhibitorem SERT o działaniu allosterycznym, 2) Sertralina posiada dodatkowe słabe działanie hamujące wychwyt zwrotny dopaminy (DAT) oraz powinowactwo do receptora sigma-1, co sprzyja aktywacji napędu i redukcji anhedonii, 3) Fluoksetyna blokuje receptory 5-HT2C (co może działać odhamowująco na noradrenalinę i dopaminę w korze przedczołowej, zmniejszając apetyt), a jej aktywny metabolit (norfluoksetyna) ma okres półtrwania t1/2 sięgający 7–15 dni.',
+        title: 'Glikoproteina P (P-gp / ABCB1) jako strażnik OUN',
+        text: 'Aktywna pompa effluksowa glikoproteina P (kodowana przez gen ABCB1) zlokalizowana w błonie komórek śródbłonka aktywnie wypompowuje wiele leków z tkanki mózgowej z powrotem do światła naczynia. Przykładowo, rysperydon i paliperydon są silnymi substratami P-gp, podczas gdy olanzapina i klozapina penetrują swobodniej. Inhibicja P-gp (np. przez werapamil, ketokonazol) może drastycznie zwiększyć mózgowe stężenie leku bez zmiany stężenia we krwi obwodowej.'
       },
       {
-        title: 'Działania niepożądane i bezpieczeństwo',
-        text: 'Główne działania niepożądane wynikają ze stymulacji receptorów serotoninowych w innych tkankach: 5-HT3 w przewodzie pokarmowym (nudności, biegunki we wczesnej fazie), 5-HT2A w OUN i rdzeniu (dysfunkcje seksualne: opóźniony wytrysk, anorgazmia u 40-70% pacjentów; zaburzenia snu). Dodatkowo SSRI hamują wychwyt serotoniny do płytek krwi, zwiększając ryzyko krwawień z górnego odcinka przewodu pokarmowego (szczególnie przy łączeniu z NLPZ).',
-      },
+        title: 'Wiązanie z białkami, wolna frakcja i stan stacjonarny',
+        text: 'Większość psychotropów wiąże się w 90–99% z albuminami lub alfa-1-kwaśną glikoproteiną. Tylko wolna, niezwiązana frakcja leku podlega dyfuzji do płynu mózgowo-rdzeniowego i wiąże się z receptorami. Czas osiągnięcia stanu stacjonarnego wynosi 4–5 okresów półtrwania (t1/2) leku – stąd przy t1/2 wynoszącym 24 godziny stabilne stężenie w mózgu ustala się dopiero po około 5 dniach regularnego przyjmowania.'
+      }
     ],
     table: {
-      headers: ['Cząsteczka', 'Główny profil dodatkowy', 'Okres półtrwania (t1/2)', 'Zastosowanie preferowane'],
+      headers: ['Parametr farmakokinetyczny', 'Znaczenie dla działania w OUN', 'Przykład kliniczny', 'Wpływ na dawkowanie'],
       rows: [
-        ['Escitalopram', 'Czysty SERT (modulacja allosteryczna)', 'Około 30 godzin', 'Lęk napadowy, uogólniony, depresja u osób starszych (mało interakcji)'],
-        ['Sertralina', 'Słaby inhibitor DAT + sigma-1', 'Około 26 godzin', 'Depresja ze spowolnieniem, po zawale serca (bezpieczna kardiologicznie)'],
-        ['Fluoksetyna', 'Antagonista 5-HT2C (aktywujący)', '2-4 dni (metabolit: 7-15 dni)', 'Depresja z atypową apatią, bulimia, niska adherencja (brak nagłego odstawienia)'],
-        ['Paroksetyna', 'Działanie cholinolityczne (M1) i hamowanie NOS', 'Około 21 godzin', 'Ciężki lęk, ale wysokie ryzyko sedacji, tycia, dysfunkcji seksualnych i objawów odstawiennych'],
-      ],
+        ['Substrat P-gp (ABCB1)', 'Aktywne usuwanie leku z mózgu przez barierę BBB', 'Rysperydon, paliperydon', 'Możliwa rozbieżność między stężeniem w osoczu a efektem w OUN'],
+        ['Wysokie wiązanie z białkami (> 95%)', 'Tylko wolna frakcja wywiera efekt i ulega metabolizmowi', 'Diazepam, kwas walproinowy', 'W hipoalbuminemii rośnie wolna frakcja i toksyczność'],
+        ['Długi okres półtrwania (t1/2)', 'Czas do steady-state wynosi 4–5 okresów półtrwania', 'Fluoksetyna (oraz norfluoksetyna: t1/2 ~7 dni)', 'Pełna stabilizacja stężenia wymaga nawet 4–5 tygodni']
+      ]
     },
     advanced:
-      'W przypadku zaburzeń obsesyjno-kompulsyjnych (OCD) zaleca się dawki SSRI istotnie wyższe niż w klasycznej depresji (np. sertralina do 200 mg/d, escitalopram do 20–30 mg/d, fluoksetyna do 60–80 mg/d). W badaniach PET w OCD wykazano, że wyższe dawki są konieczne do osiągnięcia maksymalnego wysycenia transporterów w specyficznych pętlach korowo-prążkowiowo-wzgórzowo-korowych (CSTC).',
+      'W ostrych stanach zapalnych OUN (np. zapalenie opon, udar mózgu) lub w przebiegu przewlekłego stresu i depresji dochodzi do rozszczelnienia tight junctions w BBB ("leaky brain"), co zwiększa przepuszczalność dla neurotoksyn, cytokin prozapalnych i leków o gorszym profilu penetracji.',
     summary:
-      'Efekt przeciwdepresyjny SSRI wymaga ~80% wysycenia SERT w PET, co osiąga się już przy standardowych dawkach. Sertralina moduluje DAT, fluoksetyna 5-HT2C, a escitalopram jest najczystszym inhibitorem SERT.',
-    sourceIds: ['pet-sert-meyer', 'maudsley15', 'canmat-mdd-2023', 'stahl-essential'],
+      'Penetracja leków do mózgu zależy od lipofilności i pompy effluksowej P-gp. Działanie wywiera wyłącznie frakcja wolna, a stan stacjonarny ustala się po 4–5 okresach biologicznego półtrwania.',
+    sourceIds: ['stahl-essential', 'maudsley15', 'agnp-tdm-2026'],
     questions: [
       q(
-        'Jaki odsetek zablokowania transporterów serotoniny (SERT) w badaniach PET odpowiada standardowemu progowi odpowiedzi terapeutycznej?',
-        ['Około 70–80%', 'Klasyczne badania Meyera i wsp. wykazały, że terapeutyczny efekt przeciwdepresyjny pojawia się przy wysyceniu SERT >= 70-80%.'],
-        ['Dokładnie 10%', '10% wysycenia nie daje istotnego klinicznie efektu przeciwdepresyjnego.'],
-        ['Zawsze bezwzględne 100%', '100% zablokowanie nie jest osiągalne przy dawkach klinicznych i groziłoby ciężką toksycznością.'],
-        'psych-ssri-q1'
+        'Ile okresów biologicznego półtrwania (t1/2) potrzeba, aby stężenie leku psychotropowego osiągnęło stan stacjonarny (steady state)?',
+        ['Około 4 do 5 okresów półtrwania (t1/2)', 'Wtedy szybkość eliminacji leku zrównuje się z szybkością jego podawania (ok. 94–97% stężenia docelowego).'],
+        ['Dokładnie 1 okres półtrwania', 'Po 1 okresie półtrwania lek osiąga zaledwie 50% stężenia stacjonarnego.'],
+        ['Co najmniej 30 okresów półtrwania', 'Po 30 okresach lek uległby całkowitej wymianie kilkukrotnie.'],
+        'psych-pk-q1'
       ),
       q(
-        'Który lek z grupy SSRI posiada dodatkowe, unikalne działanie hamujące wychwyt zwrotny dopaminy (DAT)?',
-        ['Sertralina', 'Sertralina wykazuje słabe powinowactwo do DAT, co przyczynia się do poprawy motywacji i napędu.'],
-        ['Escitalopram', 'Escitalopram jest wysoce selektywny dla SERT bez wpływu na DAT.'],
-        ['Paroksetyna', 'Paroksetyna ma komponentę cholinolityczną, a nie dopaminergiczną.'],
-        'psych-ssri-q2'
+        'Jaką rolę w barierze krew-mózg pełni glikoproteina P (P-gp, transporter ABCB1)?',
+        ['Aktywnie usuwa substraty lekowe z tkanki mózgowej z powrotem do krwiobiegu, ograniczając ich penetrację do OUN', 'Jest to zależna od ATP pompa effluksowa chroniąca mózgowie przed ksenobiotykami.'],
+        ['Ułatwia wychwyt glukozy i aminokwasów rozgałęzionych do neuronów', 'Transportem glukozy zajmuje się GLUT-1, nie P-gp.'],
+        ['Syntetyzuje dopaminę z tyrozyny w śródbłonku', 'P-gp nie ma aktywności hydroksylazy tyrozynowej.'],
+        'psych-pk-q2'
       ),
       q(
-        'Dlaczego po nagłym przerwaniu fluoksetyny objawy odstawienne (discontinuation syndrome) pojawiają się rzadko lub bardzo późno?',
-        ['Jej aktywny metabolit (norfluoksetyna) ma bardzo długi okres półtrwania wynoszący 7–15 dni', 'Norfluoksetyna działa jak "wbudowany w organizm" automatyczny powolny taper leku.'],
-        ['Fluoksetyna nie wchłania się do tkanek organizmu', 'Lek wchłania się prawidłowo i osiąga wysokie stężenia w OUN.'],
-        ['Fluoksetyna natychmiast zamienia się w dopaminę', 'Fluoksetyna nie jest prekursorem dopaminy.'],
-        'psych-ssri-q3'
+        'Który metabolit aktywnego leku przeciwdepresyjnego wykazuje wyjątkowo długi okres półtrwania wynoszący ok. 7–14 dni?',
+        ['Norfluoksetyna (aktywny metabolit fluoksetyny)', 'Dzięki temu fluoksetyna rzadziej wywołuje zespół odstawienny i wymaga 5-tygodniowego okresu wypłukiwania przed włączeniem MAOI.'],
+        ['Kwas walproinowy', 'Kwas walproinowy ma t1/2 ok. 12–16 godzin.'],
+        ['Hydroksyzyna', 'Hydroksyzyna ma t1/2 ok. 14–20 godzin.'],
+        'psych-pk-q3'
       ),
       q(
-        'Który lek z grupy SSRI jest uznawany za najbezpieczniejszy u pacjentów kardiologicznych (np. po zawale mięśnia sercowego)?',
-        ['Sertralina', 'Badanie SADHART potwierdziło wysoki profil bezpieczeństwa sertraliny u pacjentów po ostrych zespołach wieńcowych.'],
-        ['Citalopram w dawce 80 mg/dobę', 'Wysokie dawki citalopramu są przeciwwskazane z powodu wydłużenia odstępu QTc.'],
-        ['Doksepina w dawce toksycznej', 'Doksepina to kardiotoksyczny TLPD, a nie SSRI.'],
-        'psych-ssri-q4'
+        'Co dzieje się z farmakokinetyką leku silnie wiążącego się z białkami (np. kwasu walproinowego) u pacjenta z ciężką hipoalbuminemią?',
+        ['Wzrasta stężenie wolnej, aktywnej frakcji leku we krwi, co może wywołać objawy toksyczności przy "prawidłowym" stężeniu całkowitym', 'Tylko wolna frakcja przechodzi do tkanek i wywiera działanie toksyczne.'],
+        ['Lek przestaje w ogóle przenikać przez barierę krew-mózg', 'Brak białek ułatwia, a nie blokuje przenikanie wolnego leku.'],
+        ['Okres półtrwania leku wydłuża się do 10 lat', 'Klirens wątrobowy wolnej frakcji ulega raczej przyspieszeniu.'],
+        'psych-pk-q4'
       ),
       q(
-        'Który podtyp receptora serotoninowego odpowiada za występowanie anorgazmii i opóźnionego wytrysku podczas leczenia SSRI?',
-        ['Receptor 5-HT2A', 'Pobudzenie receptora 5-HT2A w OUN i szlakach rdzeniowych hamuje funkcje seksualne i orgazm.'],
-        ['Receptor 5-HT4', '5-HT4 zlokalizowany jest głównie w przewodzie pokarmowym i wpływa na perystaltykę.'],
-        ['Receptor insulinowy beta', 'Receptor insuliny nie uczestniczy w bezpośredniej neurotransmisji serotoninowej.'],
-        'psych-ssri-q5'
-      ),
-    ],
+        'Jaka cecha fizykochemiczna cząsteczki leku najbardziej sprzyja biernej dyfuzji przez barierę krew-mózg?',
+        ['Wysoka lipofilność przy braku ładunku jonowego w pH 7,4', 'Bariera BBB jest barierą lipidową, łatwo przepuszczalną dla małych cząsteczek niepolarnych.'],
+        ['Duża masa cząsteczkowa powyżej 50 000 Da i hydrofilność', 'Cząsteczki hydrofilne i duże nie przekraczają nienaruszonej bariery BBB.'],
+        ['Obecność trwałego dodatniego ładunku czwartorzędowego', 'Trwały ładunek jonowy uniemożliwia przenikanie przez lipidy błony.'],
+        'psych-pk-q5'
+      )
+    ]
   },
   {
-    id: 'snri-tlpd',
+    id: 'transportery-monoamin-sert-net-dat',
     moduleId: 'psych-farmakologia',
-    title: 'SNRI i TLPD: podwójny wychwyt i ryzyko kardiotoksyczności',
-    subtitle: 'Wenlafaksyna, duloksetyna i przedawkowanie trójpierścieniowych leków przeciwdepresyjnych',
-    group: 'Leki przeciwdepresyjne i stabilizatory',
-    minutes: 16,
+    title: 'Transportery monoamin: SERT, NET i DAT w badaniach PET',
+    subtitle: 'Krzywa wysycenia, hiperboliczna zależność dawka-odpowiedź i farmakodynamika',
+    group: 'Receptorologia i układy przekaźnikowe',
+    minutes: 18,
     goals: [
-      'Wyjaśnisz zależność profilu receptorowego wenlafaksyny od zastosowanej dawki (zależność SERT/NET).',
-      'Rozpoznasz objawy kardiotoksyczności i blokady kanałów sodowych Nav1.5 po przedawkowaniu TLPD.',
+      'Zrozumiesz mechanizm blokady transporterów SERT, NET i DAT przez leki przeciwdepresyjne.',
+      'Zinterpretujesz krzywą wysycenia SERT w badaniach PET (próg terapeutyczny ~80%).',
+      'Wyjaśnisz, dlaczego podwajanie dawki SSRI nie podwaja blokady transportera w OUN.'
     ],
     sections: [
       {
-        title: 'Wenlafaksyna i duloksetyna: farmakodynamika SNRI',
-        text: 'Inhibitory wychwytu zwrotnego serotoniny i noradrenaliny (SNRI) różnią się kinetyką blokady transporterów: 1) Wenlafaksyna w małych dawkach (<= 75 mg/d) działa praktycznie jak czysty SSRI (hamuje niemal wyłącznie SERT). Dopiero przy dawkach >= 150 mg/d pojawia się istotna blokada transportera noradrenaliny (NET), a przy dawkach >= 300 mg/d słaby wpływ na DAT. Może powodować zależny od dawki wzrost ciśnienia tętniczego krwi. 2) Duloksetyna wykazuje zrównoważone hamowanie SERT i NET w całym zakresie dawek (od 30-60 mg/d) i posiada udowodnioną skuteczność w przewlekłym bólu neuropatycznym.',
+        title: 'Rodzina transporterów SLC6 i wychwyt zwrotny',
+        text: 'Transportery monoamin: serotoniny (SERT / SLC6A4), noradrenaliny (NET / SLC6A2) i dopaminy (DAT / SLC6A3) należą do rodziny nośników zależnych od gradientu sodowo-potasowego. Ich fizjologiczną rolą jest usuwanie neuroprzekaźnika ze szczeliny synaptycznej z powrotem do kolbki presynaptycznej, co kończy transmisję sygnału. Blokada transportera powoduje kumulację monoaminy w synapsie.'
       },
       {
-        title: 'Trójpierścieniowe leki przeciwdepresyjne (TLPD)',
-        text: 'TLPD (amitryptylina, klomipramina, nortryptylina) to leki o silnym działaniu przeciwdepresyjnym (blokada SERT i NET), ale obciążone licznymi działaniami niepożądanymi wynikającymi z nieselektywnego blokowania innych receptorów: blokada M1 (suchość w ustach, zaparcia, zaburzenia akomodacji, retencja moczu, majaczenie u starszych), blokada H1 (sedacja, przyrost masy ciała) oraz blokada alfa-1 (hipotonia ortostatyczna i odruchowa tachykardia).',
+        title: 'Przełomowe badania PET Meyera: 80% occupancy SERT',
+        text: 'Badania pozytonowej tomografii emisyjnej (PET) z użyciem ligandu [11C]DASB (Meyer i wsp.) udowodniły, że minimalna dawka kliniczna każdego SSRI (np. cytalopram 20 mg, escitalopram 10 mg, sertralina 50 mg, paroksetyna 20 mg) blokuje już około 75–85% transporterów SERT w prążkowiu i korze mózgu. Osiągnięcie ~80% occupancy stanowi warunek konieczny do wyzwolenia odpowiedzi przeciwdepresyjnej.'
       },
       {
-        title: 'Kardiotoksyczność TLPD w przedawkowaniu',
-        text: 'Przedawkowanie TLPD jest stanem bezpośredniego zagrożenia życia. Wynika z blokady szybkich kanałów sodowych (Nav1.5) w mięśniu sercowym. W zapisie EKG obserwuje się: poszerzenie zespołu QRS > 100 ms (wzrost ryzyka drgawek) oraz QRS > 160 ms (wysokie ryzyko groźnych komorowych zaburzeń rytmu – VT/VF), prawogram i wysoki załamek R w odprowadzeniu aVR. Odtrutką z wyboru jest dożylny wodorowęglan sodu (1-2 mEq/kg m.c. w bolusie, dążąc do pH krwi 7,45–7,55), który zwiększa zewnątrzkomórkowe stężenie Na+ i alkalizuje osocze, odrywając lek od kanału.',
-      },
+        title: 'Hiperboliczna krzywa wysycenia i implikacje kliniczne',
+        text: 'Krzywa wiązania leku z SERT ma charakter nieliniowy (hiperboliczny wg równania Michaela-Menten). Wzrost dawki sertraliny z 50 mg do 100 mg podnosi blokadę SERT z 80% do ok. 85%, a zwiększenie do 200 mg – do ok. 88%. Wyjaśnia to, dlaczego eskalacja dawek SSRI przynosi skromny przyrost skuteczności przeciwdepresyjnej, natomiast znacznie nasila działania niepożądane (zależne od receptorów obwodowych i innych celów).'
+      }
     ],
     table: {
-      headers: ['Grupa / Lek', 'Profil wychwytu zwrotnego', 'Główne receptory blokowane', 'Ryzyko w przedawkowaniu'],
+      headers: ['Lek przeciwdepresyjny', 'Minimalna dawka (mg)', 'Occupancy SERT w PET (%)', 'Occupancy przy dawce maks. (%)'],
       rows: [
-        ['Wenlafaksyna (SNRI)', 'Dawkozależny: <=75mg SERT, >=150mg SERT+NET', 'Brak istotnego M1, H1, alfa-1', 'Umiarkowane (drgawki, tachykardia, zespół serotoninowy)'],
-        ['Duloksetyna (SNRI)', 'Zrównoważony SERT + NET od 30-60 mg', 'Brak istotnego M1, H1', 'Umiarkowane (nudności, hepatotoksyczność przy nadużywaniu alkoholu)'],
-        ['Amitryptylina (TLPD)', 'Nieselektywny SERT + NET', 'Silna blokada M1, H1, alfa-1, Nav1.5', 'Bardzo wysokie (poszerzenie QRS, zgon z arytmii komorowej)'],
-        ['Klomipramina (TLPD)', 'Bardzo silny SERT > NET', 'Silna blokada M1, H1, alfa-1, Nav1.5', 'Bardzo wysokie (obniżenie progu drgawkowego, arytmie komorowe)'],
-      ],
+        ['Escitalopram', '10 mg', '78–82%', '86–89% (20 mg)'],
+        ['Sertralina', '50 mg', '77–83%', '87–91% (200 mg)'],
+        ['Paroksetyna', '20 mg', '82–86%', '89–93% (40 mg)'],
+        ['Wenlafaksyna', '75 mg (tylko SERT)', '75–80%', '85% SERT + ~60% NET (225–375 mg)']
+      ]
     },
     advanced:
-      'Wodorowęglan sodu podany w zatruciu TLPD działa dwutorowo: 1) Alkalizacja krwi (podwyższenie pH) zmienia stopień jonizacji cząsteczki TLPD, zmniejszając frakcję leku związaną z kanałem sodowym serca, 2) Zwiększenie stężenia jonów sodu (ładunek Na+) w przestrzeni zewnątrzkomórkowej przezwycięża kompetycyjną blokadę kanału Nav1.5.',
+      'Wenlafaksyna wykazuje zależność profilu od dawki: w dawkach <= 75–150 mg/d działa niemal wyłącznie jako selektywny inhibitor SERT. Dopiero w dawkach >= 225 mg/d dochodzi do istotnego zablokowania transportera noradrenaliny (NET), przekształcając lek w funkcjonalny SNRI.',
     summary:
-      'Wenlafaksyna włącza komponent noradrenalinowy od 150 mg/d. TLPD silnie blokują receptory M1, H1 i alfa-1, a ich przedawkowanie blokuje kanały Nav1.5 (poszerzenie QRS w EKG), co wymaga natychmiastowego podania wodorowęglanu sodu.',
-    sourceIds: ['maudsley15', 'stahl-essential', 'canmat-mdd-2023'],
+      'Leki przeciwdepresyjne wymagają ~80% occupancy SERT w badaniach PET, co zapewnia już dawka początkowa. Z powodu hiperbolicznej krzywej wiązania dalsze podwajanie dawki daje niewielki wzrost blokady, potęgując objawy niepożądane.',
+    sourceIds: ['pet-sert-meyer', 'stahl-essential', 'canmat-mdd-2023'],
     questions: [
       q(
-        'Od jakiej dawki dobowej wenlafaksyna zaczyna w istotnym stopniu blokować transporter noradrenaliny (NET)?',
-        ['Od około 150 mg/dobę', 'W dawkach <=75 mg wenlafaksyna zachowuje się jak SSRI; komponent NET włącza się od 150 mg/d.'],
-        ['Już od dawki 12,5 mg/dobę', 'To dawka subkliniczna, bez wpływu na NET.'],
-        ['Dopiero od 1200 mg/dobę', 'Taka dawka jest toksyczna i przekracza zakres terapeutyczny.'],
-        'psych-snri-q1'
+        'Jaki minimalny procent wysycenia transporterów SERT w badaniach PET jest niezbędny do uzyskania efektu przeciwdepresyjnego wg Meyera?',
+        ['Około 80% occupancy SERT w OUN', 'Wartość ta stanowi próg terapeutyczny osiągany już przy minimalnej zarejestrowanej dawce terapeutycznej.'],
+        ['Mniej niż 10% occupancy', '10% nie wywołuje zauważalnego podwyższenia stężenia 5-HT w synapsie ani desensytyzacji autoreceptorów.'],
+        ['Dokładnie 100% nieodwracalnej blokady', '100% blokada nie występuje i groziłaby ciężkim, ostrym zespołem serotoninowym.'],
+        'psych-trans-q1'
       ),
       q(
-        'Jaka zmiana w EKG jest kluczowym zwiastunem zagrożenia życia w zatruciu trójpierścieniowymi lekami przeciwdepresyjnymi (TLPD)?',
-        ['Poszerzenie zespołu QRS powyżej 100-160 ms wskutek blokady kanałów sodowych Nav1.5', 'Poszerzenie QRS > 160 ms wiąże się z 50% ryzykiem złośliwych komorowych zaburzeń rytmu.'],
-        ['Zwężenie zespołu QRS do 20 ms', 'QRS nie ulega patologicznemu zwężeniu w zatruciach lekowych.'],
-        ['Całkowite zniknięcie załamka P bez innych zmian', 'Izolowany brak załamka P nie jest specyficznym objawem blokady sodowej przez TLPD.'],
-        'psych-snri-q2'
+        'Dlaczego podwojenie dawki SSRI (np. sertraliny z 50 do 100 mg) zwiększa blokadę SERT jedynie o ok. 5–7%?',
+        ['Ponieważ krzywa wiązania leku z transporterem ma kształt hiperboliczny i przy 80% wkracza w fazę plateau (nasycenia)', 'Większość miejsc wiążących jest już zajęta; do dalszego wzrostu potrzebne byłyby stężenia logarytmicznie wyższe.'],
+        ['Ponieważ sertralina ulega natychmiastowemu wydaleniu przez płuca', 'Sertralina jest metabolizowana w wątrobie, nie w płucach.'],
+        ['Transporter SERT ulega zniszczeniu po pierwszej dawce leku', 'Transportery podlegają fizjologicznej internalizacji i recyklingowi, nie destrukcji.'],
+        'psych-trans-q2'
       ),
       q(
-        'Co jest lekiem z wyboru w leczeniu kardiotoksyczności i poszerzenia QRS w ostrym przedawkowaniu TLPD?',
-        ['Dożylny wodorowęglan sodu (NaHCO3)', 'Wodorowęglan sodu dostarcza Na+ i alkalizuje krew, odblokowując kanały sodowe serca.'],
-        ['Dożylny chlorek potasu w szybkim wlewie', 'Potas mógłby nasilić zaburzenia przewodnictwa i wywołać asystolię.'],
-        ['Podanie doustne soku grejpfrutowego', 'Sok grejpfrutowy hamuje CYP3A4 i nie jest lekiem ratunkowym.'],
-        'psych-snri-q3'
+        'Od jakiej dawki dobowej wenlafaksyna zaczyna w istotnym stopniu klinicznym blokować transporter noradrenaliny (NET)?',
+        ['Od dawki 225 mg/d i wyższych', 'W niższych dawkach (75–150 mg) wenlafaksyna działa jak typowy SSRI.'],
+        ['Już od najmniejszej dawki 37,5 mg/d', 'Przy 37,5 mg blokada NET jest pomijalna klinicznie.'],
+        ['Wenlafaksyna nigdy nie blokuje transportera NET', 'Wenlafaksyna jest zarejestrowana jako SNRI i blokuje NET w odpowiednio wysokiej dawce.'],
+        'psych-trans-q3'
       ),
       q(
-        'Który lek z grupy SNRI posiada rejestrację i udowodnioną skuteczność w leczeniu bólu w polineuropatii cukrzycowej?',
-        ['Duloksetyna', 'Duloksetyna posiada solidne dowody EBM w redukcji bólu neuropatycznego i fibromialgii.'],
-        ['Fluoksetyna', 'Fluoksetyna nie jest lekiem pierwszego rzutu w obwodowym bólu neuropatycznym.'],
-        ['Rezerpina', 'Rezerpina wyczerpuje pęcherzyki monoaminowe i nasila depresję. Nie stosuje się jej w neuropatii.'],
-        'psych-snri-q4'
+        'Który transporter odpowiada za wychwyt zwrotny dopaminy m.in. w prążkowiu i jest celem metylofenidatu oraz bupropionu?',
+        ['DAT (dopamine transporter / SLC6A3)', 'Blokada DAT w prążkowiu i korze przedczołowej podwyższa toniczne stężenie dopaminy.'],
+        ['GLUT-4', 'GLUT-4 to transporter glukozy zależny od insuliny w mięśniach i tkance tłuszczowej.'],
+        ['SGLT-2', 'SGLT-2 to kotransporter sodowo-glukozowy w kanalikach nerkowych.'],
+        'psych-trans-q4'
       ),
       q(
-        'Który objaw uboczny TLPD wynika z ich silnego działania cholinolitycznego (antagonizm receptora M1)?',
-        ['Suchość błon śluzowych jamy ustnej, zaparcia i zaburzenia akomodacji', 'Blokada receptorów muskarynowych prowadzi do klasycznych objawów atropinopodobnych.'],
-        ['Nadmierne ślinienie się i skurcz oskrzeli', 'To objawy cholinomimetyczne, przeciwne do działania TLPD.'],
-        ['Wybitna hiponatremia z obrzękiem mózgu', 'Hiponatremia w SIADH bywa obserwowana po SSRI, nie jest cechą M1.'],
-        'psych-snri-q5'
-      ),
-    ],
+        'Jakie znaczenie ma selektywność escitalopramu wobec SERT w porównaniu z innymi SSRI?',
+        ['Jest najczystszym znanym inhibitorem SERT, niemal pozbawionym powinowactwa do receptorów histaminowych, cholinergicznych czy NET', 'Cechuje się czystym profilem bez działań sedatywnych czy antycholinergicznych.'],
+        ['Blokuje wyłącznie receptory beta-adrenolityczne w sercu', 'Escitalopram nie jest beta-blokerem.'],
+        ['Wiąże się nieodwracalnie kowalencyjnie z DNA jądrowym', 'Nie ma żadnego działania mutagennego ani alkilującego DNA.'],
+        'psych-trans-q5'
+      )
+    ]
   },
   {
-    id: 'leki-atypowe-antydepresyjne',
+    id: 'receptory-dopaminowe-okno-kapura',
     moduleId: 'psych-farmakologia',
-    title: 'Atypowe leki przeciwdepresyjne: bupropion, mirtazapina i wortioksetyna',
-    subtitle: 'Mechanizmy non-SSRI: NDRI, NaSSA, SARI i receptory multimodalne',
-    group: 'Leki przeciwdepresyjne i stabilizatory',
-    minutes: 15,
+    title: 'Receptory D2 i D3: okno terapeutyczne Kapura (65–80%)',
+    subtitle: 'Mechanizm przeciwpsychotyczny, objawy pozapiramidowe i prolaktyna',
+    group: 'Receptorologia i układy przekaźnikowe',
+    minutes: 18,
     goals: [
-      'Scharakteryzujesz mechanizm działania i wskazania dla bupropionu (NDRI) oraz mirtazapiny (NaSSA).',
-      'Dobierzesz lek przeciwdepresyjny u pacjenta z obawą o masę ciała lub dysfunkcje seksualne.',
+      'Zrozumiesz koncepcję prążkowiowego okna terapeutycznego Kapura (65%–80% occupancy D2).',
+      'Wyjaśnisz zależność między blokadą D2 > 80% a wystąpieniem objawów pozapiramidowych (EPS) i hiperprolaktynemii.',
+      'Scharakteryzujesz rolę częściowych agonistów D2/D3 (aripiprazol, kariprazyna) w prewencji powikłań.'
     ],
     sections: [
       {
-        title: 'Bupropion: selektywny inhibitor wychwytu DA i NA (NDRI)',
-        text: 'Bupropion blokuje transportery dopaminy (DAT) i noradrenaliny (NET) bez jakiegokolwiek wpływu na układ serotoninergiczny. Dzięki temu nie wywołuje dysfunkcji seksualnych (może wręcz poprawiać libido) ani przyrostu masy ciała (promuje spadek wagi). Jest lekiem pierwszego wyboru w depresji z dominującą anhedonią, apatią, przewlekłym zmęczeniem oraz w zespole uzależnienia od nikotyny. Bezwzględnym przeciwwskazaniem jest padaczka w wywiadzie oraz zaburzenia odżywiania (jadłowstręt/bulimia) z uwagi na obniżenie progu drgawkowego.',
+        title: 'Hipoteza dopaminowa i rola receptora D2 w szlaku mezolimbicznym',
+        text: 'Objawy wytwórcze psychozy (urojenia, omamy) wynikają z nadmiernej, niespójnej stymulacji receptorów dopaminowych D2 w szlaku mezolimbicznym (biegnącym z pola brzusznego nakrywki VTA do jądra półleżącego). Zablokowanie receptorów D2 w tym obwodzie przywraca właściwe filtrowanie bodźców i redukuje aberracyjną wagę poznawczą (aberrant salience).'
       },
       {
-        title: 'Mirtazapina: noradrenergiczny i swoiście serotoninergiczny (NaSSA)',
-        text: 'Mirtazapina nie blokuje transporterów wychwytu zwrotnego. Działa poprzez: 1) Blokadę presynaptycznych autoreceptorów i heteroreceptorów alfa-2 adrenergicznych, co odhamowuje wydzielanie NA i 5-HT, 2) Blokadę receptorów 5-HT2A, 5-HT2C i 5-HT3, kierując uwalnianą serotoninę swoiście na prokognitywne receptory 5-HT1A, 3) Bardzo silną blokadę receptorów histaminowych H1, co wywołuje silny efekt sedatywny, ułatwia zasypianie i stymuluje apetyt (przyrost masy ciała).',
+        title: 'Przełomowa praca Shitija Kapura: okno occupancy 65–80%',
+        text: 'W badaniach neuroobrazowych PET Kapur wykazał istnienie ścisłego okna terapeutycznego blokady prążkowiowych receptorów D2: 1) Poniżej 65% occupancy – brak istotnego działania przeciwpsychotycznego; 2) Pomiędzy 65% a 80% – optymalny efekt przeciwpsychotyczny przy znikomym ryzyku powikłań ruchowych; 3) Powyżej 80% occupancy – gwałtowny, skokowy wzrost ryzyka ostrych objawów pozapiramidowych (EPS: parkinsonizm, akatyzja, dystonie) oraz hiperprolaktynemii.'
       },
       {
-        title: 'Wortioksetyna i trazodon',
-        text: 'Wortioksetyna to lek multimodalny: hamuje SERT, działa jako agonista 5-HT1A, częściowy agonista 5-HT1B oraz antagonista 5-HT3, 5-HT1D i 5-HT7. Dzięki modulacji receptorowej zwiększa uwalnianie acetylocholiny, dopaminy i histaminy w korze czołowej, poprawiając funkcje poznawcze w depresji. Trazodon (SARI) w małych dawkach (25–100 mg) działa jako silny antagonista 5-HT2A, H1 i alfa-1, służąc jako nienaruszający architektury snu lek nasenny; w wyższych dawkach (>150–300 mg) blokuje SERT, wykazując działanie przeciwdepresyjne.',
-      },
+        title: 'Trzecia generacja: częściowi agoniści D2/D3',
+        text: 'Leki III generacji (aripiprazol, brekspiprazol, kariprazyna) nie są czystymi antagonistami, lecz częściowymi agonistami receptorów D2 i D3. Stabilizują one układ dopaminowy – w warunkach hiperdopaminergii działają jak antagoniści (redukując psychozę), natomiast w warunkach hipodopaminergii stymulują receptor z aktywnością wewnętrzną rzędu 25–40%, co zapobiega EPS i nie podwyższa prolaktyny, nawet przy occupancy sięgającym 90–95% w badaniu PET.'
+      }
     ],
     table: {
-      headers: ['Lek', 'Mechanizm główny', 'Wpływ na masę ciała', 'Wpływ na sferę seksualną'],
+      headers: ['Poziom Occupancy D2 w PET', 'Efekt kliniczny w OUN', 'Ryzyko EPS', 'Wydzielanie prolaktyny'],
       rows: [
-        ['Bupropion', 'NDRI (DAT + NET)', 'Spadek masy ciała / neutralny', 'Brak dysfunkcji (możliwa poprawa popędu)'],
-        ['Mirtazapina', 'NaSSA (alfa-2 + 5-HT2/3 + H1)', 'Wzrost masy ciała (zwiększone łaknienie)', 'Neutralny / minimalny'],
-        ['Wortioksetyna', 'Multimodalny (SERT + receptory 5-HT)', 'Neutralny', 'Niskie ryzyko dysfunkcji (< typowe SSRI)'],
-        ['Trazodon', 'SARI (5-HT2A + H1 + SERT w wysokiej dawce)', 'Neutralny', 'Rzadko priapizm (alarm urologiczny)'],
-      ],
+        ['< 65%', 'Nieskuteczny / brak kontroli urojeń i omamów', 'Praktycznie zerowe', 'Prawidłowe'],
+        ['65% – 80% (Okno Kapura)', 'Optymalny efekt przeciwpsychotyczny', 'Niskie / akceptowalne', 'Prawidłowe lub umiarkowanie podwyższone'],
+        ['> 80%', 'Brak dodatkowej korzyści przeciwpsychotycznej', 'Bardzo wysokie (skokowy wzrost EPS)', 'Znaczna hiperprolaktynemia (szlak guzkowo-lejkowy)'],
+        ['Częściowy agonizm D2 (90%)', 'Skuteczność przeciwpsychotyczna bez blokady tonicznej', 'Bardzo niskie (z wyjątkiem akatyzacji)', 'Prawidłowe lub spadek prolaktyny']
+      ]
     },
     advanced:
-      'Priapizm (długotrwały, bolesny wzwód prącia bez pobudzenia seksualnego) to rzadkie, lecz groźne powikłanie trazodonu wynikające z obwodowej blokady receptorów alfa-1 adrenergicznych w ciałach jamistych. Wymaga pilnej interwencji urologicznej (punkcja, leki alfa-adrenergiczne) w celu uniknięcia trwałej martwicy i impotencji.',
+      'Kariprazyna wyróżnia się unikalnym, preferencyjnym powinowactwem do receptora dopaminowego D3 (około 8–10 razy wyższym niż do D2). Receptory D3 zlokalizowane są głównie w układzie limbicznym i korze czołowej, co odpowiada za udowodnioną skuteczność kariprazyny w leczeniu pierwotnych objawów negatywnych i poznawczych w schizofrenii.',
     summary:
-      'Bupropion (NDRI) nie zaburza funkcji seksualnych i zmniejsza wagę, ale obniża próg drgawkowy. Mirtazapina (NaSSA) poprawia sen i apetyt przez blokadę alfa-2 i H1. Wortioksetyna poprawia funkcje poznawcze.',
-    sourceIds: ['maudsley15', 'canmat-mdd-2023', 'stahl-essential'],
+      'Okno terapeutyczne Kapura dla antagonistów D2 wynosi 65–80% occupancy. Przekroczenie 80% wyzwala EPS i hiperprolaktynemię. Częściowi agoniści D2/D3 osiągają wysokie occupancy bez blokady bazowej transmisji.',
+    sourceIds: ['pet-d2-kapur', 'wfsbp-schizophrenia', 'stahl-essential'],
     questions: [
       q(
-        'Który lek przeciwdepresyjny jest zalecany u pacjenta, dla którego kluczowe jest uniknięcie dysfunkcji seksualnych i przyrostu masy ciała?',
-        ['Bupropion', 'Bupropion nie wpływa na układ serotoninowy i nie powoduje typowych dla SSRI dysfunkcji seksualnych ani tycia.'],
-        ['Paroksetyna', 'Paroksetyna niesie jedno z najwyższych ryzyk dysfunkcji seksualnych i przyrostu wagi.'],
-        ['Mirtazapina', 'Mirtazapina silnie stymuluje łaknienie i prowadzi do przyrostu masy ciała.'],
-        'psych-atypowe-q1'
+        'Jaki jest optymalny przedział blokady (occupancy) receptorów D2 w prążkowiu gwarantujący skuteczność bez wywoływania EPS wg Kapura?',
+        ['65% do 80% occupancy D2', 'W tym przedziale następuje ustąpienie psychozy przy minimalnym ryzyku objawów pozapiramidowych.'],
+        ['Mniej niż 20% occupancy D2', 'Blokada < 20% nie daje żadnego mierzalnego efektu przeciwpsychotycznego.'],
+        ['Zawsze powyżej 95% occupancy D2', 'Blokada > 80% u antagonistów powoduje ciężki parkinsonizm polekowy i sztywność mięśniową.'],
+        'psych-kapur-q1'
       ),
       q(
-        'Co stanowi bezwzględne przeciwwskazanie do zastosowania bupropionu?',
-        ['Padaczka w wywiadzie lub aktywne zaburzenia odżywiania (bulimia/anoreksja)', 'Bupropion zależnie od dawki obniża próg drgawkowy; w bulimii ryzyko napadów drgawkowych jest szczególnie wysokie.'],
-        ['Nadmierna masa ciała (BMI > 35)', 'Otyłość nie jest przeciwwskazaniem; bupropion bywa składnikiem leków odchudzających.'],
-        ['Współistniejące uzależnienie od nikotyny', 'Bupropion jest zarejestrowany w leczeniu uzależnienia od tytoniu.'],
-        'psych-atypowe-q2'
+        'Dlaczego częściowy agonista D2 (np. aripiprazol) nie wywołuje parkinsonizmu ani hiperprolaktynemii pomimo occupancy D2 rzędu 85–95% w PET?',
+        ['Posiada wewnętrzną aktywność agonistyczną (25–30%), co zapewnia bazowe przewodnictwo w szlaku nigrostriatalnym i guzkowo-lejkowym', 'Działa jak bufor: tonizuje nadmiar dopaminy, lecz nie wygasza całkowicie transmisji do zera.'],
+        ['Aripiprazol nie przenika przez barierę krew-mózg', 'Aripiprazol doskonale penetruje do OUN, osiągając wysokie stężenia mózgowe.'],
+        ['Pobudza wydzielanie prolaktyny bezpośrednio przez przysadkę', 'Aripiprazol obniża, a nie podwyższa stężenie prolaktyny.'],
+        'psych-kapur-q2'
       ),
       q(
-        'Poprzez blokadę którego receptora mirtazapina wywołuje szybki efekt uspokajający i ułatwiający zasypianie?',
-        ['Receptora histaminowego H1', 'Silny antagonizm H1 odpowiada za sedację i senność po mirtazapinie.'],
-        ['Receptora beta-1 adrenergicznego', 'Mirtazapina nie blokuje receptorów beta-adrenergicznych.'],
-        ['Receptora dopaminowego D2 w przysadce', 'Mirtazapina nie wykazuje istotnego powinowactwa do D2 i nie wywołuje hiperprolaktynemii.'],
-        'psych-atypowe-q3'
+        'Który szlak dopaminowy odpowiada za wystąpienie mlekotoku i zaburzeń miesiączkowania przy blokadzie D2 > 80%?',
+        ['Szlak guzkowo-lejkowy (tuberoinfundibular)', 'Dopamina jest fizjologicznym inhibitorem wydzielania prolaktyny; blokada D2 odhamowuje laktotrofy przysadki.'],
+        ['Szlak nigrostriatalny', 'Szlak nigrostriatalny odpowiada za kontrolę ruchową i objawy pozapiramidowe.'],
+        ['Szlak mezokortykalny', 'Szlak mezokortykalny wiąże się z funkcjami poznawczymi i objawami negatywnymi.'],
+        'psych-kapur-q3'
       ),
       q(
-        'Jakie rzadkie, ale pilne powikłanie urologiczne może wystąpić u mężczyzn podczas stosowania trazodonu?',
-        ['Priapizm (przetrwały, bolesny wzwód prącia)', 'Blokada receptorów alfa-1 w naczyniach ciał jamistych może doprowadzić do priapizmu wymagającego pilnej pomocy.'],
-        ['Ostre zapalenie gruczołu krokowego', 'Trazodon nie wywołuje infekcyjnego zapalenia prostaty.'],
-        ['Całkowita atrofia jąder w ciągu 24 godzin', 'Trazodon nie wpływa destrukcyjnie na tkankę gonadalną w ten sposób.'],
-        'psych-atypowe-q4'
+        'Który z nowoczesnych leków przeciwpsychotycznych III generacji cechuje się najwyższym powinowactwem do receptorów dopaminowych D3?',
+        ['Kariprazyna', 'Wysokie powinowactwo do D3 odpowiada za jej skuteczność w redukcji osiowych objawów negatywnych schizofrenii.'],
+        ['Haloperydol', 'Haloperydol jest klasycznym, silnym antagonistą D2.'],
+        ['Chlorpromazyna', 'Chlorpromazyna to fenotiazyna o niskiej sile działania i nieselektywnym profilu.'],
+        'psych-kapur-q4'
       ),
       q(
-        'W jaki sposób wortioksetyna wywiera korzystny wpływ na funkcje poznawcze w depresji?',
-        ['Dzięki multimodalnemu profilowi receptorowemu (antagonizm 5-HT3/7 i modulacja 5-HT1A) nasila uwalnianie acetylocholiny i histaminy w korze', 'Modulacja heteroreceptorów odhamowuje uwalnianie neuroprzekaźników pro-kognitywnych w korze przedczołowej.'],
-        ['Działa jak czysty kwas solny rozpuszczający amyloid', 'Wortioksetyna nie niszczy chemicznie tkanek.'],
-        ['Blokuje wszystkie neurony w płacie czołowym', 'Wortioksetyna optymalizuje neurotransmisję, nie wyłącza kory.'],
-        'psych-atypowe-q5'
-      ),
-    ],
+        'Co dzieje się w szlaku mezolimbicznym podczas zaostrzenia psychozy u pacjenta ze schizofrenią?',
+        ['Dochodzi do nadmiernego, chaotycznego wyrzutu dopaminy i hiperstymulacji receptorów D2', 'Prowadzi to do nadawania nadmiernego znaczenia neutralnym bodźcom środowiskowym (aberrant salience).'],
+        ['Całkowite obumarcie neuronów dopaminergicznych', 'Schizofrenia nie jest chorobą neurodegeneracyjną z ostrą utratą ciał neuronów VTA.'],
+        ['Gwałtowny spadek stężenia dopaminy do zera', 'Spadek dopaminy w szlaku mezolimbicznym tłumiłby psychozę, a nie ją zaostrzał.'],
+        'psych-kapur-q5'
+      )
+    ]
   },
   {
-    id: 'stabilizatory-lit',
+    id: 'uklad-serotoninergiczny-receptory',
     moduleId: 'psych-farmakologia',
-    title: 'Lit: złoty standard stabilizacji nastroju i TDM',
-    subtitle: 'Mechanizmy neuroprotekcji, stężenia terapeutyczne i toksyczność',
-    group: 'Leki przeciwdepresyjne i stabilizatory',
-    minutes: 17,
+    title: 'Układ serotoninergiczny: receptory 5-HT1A, 2A, 2C, 3 i 7',
+    subtitle: 'Różnorodność receptorowa, autoreceptory a modulacja uwalniania monoamin',
+    group: 'Receptorologia i układy przekaźnikowe',
+    minutes: 18,
     goals: [
-      'Scharakteryzujesz wewnątrzkomórkowe mechanizmy działania jonów litu (GSK-3beta, szlak inozytolu).',
-      'Zinterpretujesz stężenia litu we krwi w profilaktyce i manii oraz wskażesz narządy wymagające monitorowania.',
+      'Zróżnicujesz funkcje i lokalizację receptorów 5-HT1A, 5-HT2A, 5-HT2C, 5-HT3 i 5-HT7.',
+      'Zrozumiesz, dlaczego antagonizm 5-HT2A leków atypowych chroni przed EPS i prolaktynemią.',
+      'Wyjaśnisz działanie przeciwwymiotne i propoznawcze antagonizmu receptorów 5-HT3 i 5-HT7.'
     ],
     sections: [
       {
-        title: 'Mechanizm biologiczny: enzymy zależne od magnezu',
-        text: 'Jon litu (Li+) jest małym kationem jednowartościowym, który konkuruje z magnezem (Mg2+) o centra katalityczne kluczowych enzymów wewnątrzkomórkowych. Do jego głównych celów molekularnych należą: 1) Syntaza kinazy glikogenu 3-beta (GSK-3beta) – lit hamuje ten enzym, co zapobiega fosforylacji białka tau, chroni przed apoptozą i nasila ekspresję beta-kateniny oraz czynników neurotroficznych (BDNF, Bcl-2), 2) Monofosfataza inozytolu (IMPaza) – lit hamuje obrót fosfoinozytydów, zmniejszając nadmierną pobudliwość kory mózgowej w stanach manii.',
+        title: 'Autoreceptory 5-HT1A a postsynaptyczne 5-HT2A',
+        text: 'Serotonina oddziałuje na co najmniej 14 podtypów receptorów. Somatodendrytyczne receptory 5-HT1A w jądrach szwu pełnią funkcję hamulca uwalniania serotoniny. Z kolei receptory postsynaptyczne 5-HT2A (sprzężone z białkiem Gq) zlokalizowane na neuronach piramidowych kory i interneuronach GABA-ergicznych hamują uwalnianie dopaminy w prążkowiu i korze czołowej.'
       },
       {
-        title: 'Okna terapeutyczne wg AGNP 2026 i Maudsley 15th ed.',
-        text: 'Lit charakteryzuje się bardzo wąskim indeksem terapeutycznym. Krew na badanie pobiera się rano, dokładnie 12 godzin po ostatniej dawce wieczornej (stężenie 12h-trough) w stanie stacjonarnym (po 4–7 dniach): 1) Leczenie podtrzymujące i profilaktyka ChAD: 0,6–0,8 mmol/l (u osób starszych 0,4–0,6 mmol/l), 2) Leczenie ostrego epizodu manii: 0,8–1,0 mmol/l, 3) Toksyczność: stężenia > 1,2 mmol/l wywołują objawy zatrucia (grubofaliste drżenie rąk, nudności, biegunka, ataksja, dyzartria), a stężenia > 2,0 mmol/l grożą drgawkami, śpiączką i nieodwracalnym uszkodzeniem OUN (wskazanie do pilnej hemodializy).',
+        title: 'Antagonizm 5-HT2A jako znak rozpoznawczy SGA',
+        text: 'Leki przeciwpsychotyczne II generacji (SGA: klozapina, olanzapina, kwetiapina) charakteryzują się wyższym powinowactwem do receptora 5-HT2A niż do D2. Zablokowanie 5-HT2A znosi hamowanie uwalniania dopaminy w prążkowiu (przez interneurony GABA), co powoduje lokalny wyrzut dopaminy konkurującej z lekiem o receptor D2. Chroni to pacjenta przed objawami pozapiramidowymi (EPS) pomimo terapeutycznej dawki leku.'
       },
       {
-        title: 'Monitorowanie narządowe: nerki, tarczyca i serce',
-        text: 'Lit jest wydalany w 95% w stanie niezmienionym przez nerki w kanalikach bliższych (konkuruje z sodem). Odwodnienie, dieta ubogosodowa, leki z grupy NLPZ, inhibitory ACE lub sartany oraz diuretyki tiazydowe zmniejszają klirens nerkowy litu i gwałtownie prowadzą do zatrucia. Przed włączeniem i w trakcie leczenia (co 3-6 miesięcy) obowiązkowo monitoruje się: eGFR, kreatyninę, TSH (ryzyko wola i niedoczynności tarczycy u 10-20% chorych) oraz wapń/PTH (ryzyko hiperkalcemii i nadczynności przytarczyc).',
-      },
+        title: 'Receptory 5-HT2C, 5-HT3 i 5-HT7 w psychofarmakologii',
+        text: 'Blokada receptora 5-HT2C (np. przez mirtazapinę, olanzapinę czy agomelatynę) odhamowuje uwalnianie dopaminy i noradrenaliny w korze przedczołowej, co poprawia nastrój, lecz sprzyja przyrostowi masy ciała. Antagonizm 5-HT3 (wortioksetyna, mirtazapina) znosi nudności i poprawia przekaźnictwo acetylocholinowe, a antagonizm 5-HT7 reguluje rytmy okołodobowe i funkcje wykonawcze.'
+      }
     ],
     table: {
-      headers: ['Stężenie Li+ (12h trough)', 'Stan kliniczny', 'Postępowanie'],
+      headers: ['Podtyp receptora', 'Mechanizm sygnałowy', 'Efekt stymulacji', 'Efekt blokady (antagonizmu)'],
       rows: [
-        ['< 0,6 mmol/l', 'Stężenie subterapeutyczne (wyjątek: osoby w podeszłym wieku)', 'Ryzyko nawrotu manii/depresji; rozważenie korekty dawki'],
-        ['0,6 – 0,8 mmol/l', 'Optymalne okno podtrzymujące w ChAD', 'Standardowa profilaktyka; doskonałe działanie antysuicydalne'],
-        ['0,8 – 1,0 mmol/l', 'Docelowe w ostrym epizodzie manii', 'Ścisła kontrola tolerancji i parametrów nerkowych'],
-        ['1,2 – 2,0 mmol/l', 'Toksyczność łagodna do umiarkowanej', 'Pilne wstrzymanie leku, nawodnienie 0,9% NaCl, kontrola stężeń'],
-        ['> 2,0 mmol/l', 'Ciężkie zatrucie zagrażające życiu', 'Wskazanie do pilnej hospitalizacji na OIT i hemodializy'],
-      ],
+        ['5-HT1A', 'Gi/o (spadek cAMP)', 'Przeciwlękowy, desensytyzacja w szwie', 'Brak autoregulacji uwalniania'],
+        ['5-HT2A', 'Gq (wzrost IP3/DAG, Ca2+)', 'Halucynacje (agoniści 5-HT2A), hamowanie DA', 'Działanie przeciwpsychotyczne, redukcja EPS (SGA)'],
+        ['5-HT2C', 'Gq (wzrost IP3/DAG)', 'Tłumienie apetytu, spadek DA/NA w PFC', 'Wzrost apetytu i wagi, wyrzut DA/NA w korze'],
+        ['5-HT3', 'Kanał jonowy (napływ Na+/Ca2+)', 'Nudności, wymioty, spadek ACh', 'Działanie przeciwwymiotne, propoznawcze'],
+        ['5-HT7', 'Gs (wzrost cAMP)', 'Regulacja rytmu dobowego, termoregulacja', 'Poprawa rytmu snu, działanie przeciwdepresyjne']
+      ]
     },
     advanced:
-      'Lit jest jedynym stabilizatorem o niepodważalnie udowodnionym efekcie redukcji wskaźnika samobójstw w ChAD i nawracającej depresji (redukcja ryzyka zgonu samobójczego o ponad 60-70% w metaanalizach Ciprianiego). Efekt ten jest niezależny od zapobiegania nawrotom samych faz afektywnych i wiąże się ze zmniejszeniem poziomu impulsywnej agresji.',
+      'Wortioksetyna jest przykładem multimodalnego leku przeciwdepresyjnego: hamuje SERT, działa jako agonista 5-HT1A, częściowy agonista 5-HT1B oraz antagonista 5-HT1D, 5-HT3 i 5-HT7. Złożona modulacja odhamowuje uwalnianie acetylocholiny, dopaminy i histaminy w hipokampie, wywierając bezpośredni korzystny wpływ na funkcje poznawcze w depresji.',
     summary:
-      'Lit działa neuroprotekcyjnie przez hamowanie GSK-3beta i IMPazy. Wymaga monitorowania stężeń 12h po dawce (0,6–0,8 mmol/l w profilaktyce). Odwodnienie i NLPZ nasilają retencję litu i grożą zatruciem.',
-    sourceIds: ['agnp-tdm-2026', 'maudsley15', 'canmat-isbd-bipolar'],
+      'Profil receptorowy 5-HT decyduje o tolerancji leków. Antagonizm 5-HT2A chroni przed EPS w lekach atypowych, blokada 5-HT2C zwiększa stężenie DA/NA w korze, a antagonizm 5-HT3 eliminuje nudności.',
+    sourceIds: ['stahl-essential', 'pet-d2-kapur', 'canmat-mdd-2023'],
     questions: [
       q(
-        'Jaki jest docelowy przedział stężenia litu w surowicy (12h po dawce) w leczeniu podtrzymującym ChAD wg AGNP 2026 i Maudsley?',
-        ['0,6 – 0,8 mmol/l', 'To kanoniczny, zwalidowany przedział stężenia stacjonarnego zapewniający skuteczność i minimalizujący toksyczność.'],
-        ['0,05 – 0,1 mmol/l', 'To stężenie subterapeutyczne, nie chroniące przed nawrotem fazy.'],
-        ['2,5 – 4,0 mmol/l', 'To zakres ciężkiego, śmiertelnego zatrucia litem.'],
-        'psych-lit-q1'
+        'Dlaczego leki przeciwpsychotyczne II generacji (SGA) o silnym antagonizmie 5-HT2A wywołują znacznie mniej objawów pozapiramidowych (EPS) niż haloperydol?',
+        ['Blokada receptorów 5-HT2A w prążkowiu odhamowuje uwalnianie dopaminy, która konkuruje z lekiem o receptory D2 w szlaku nigrostriatalnym', 'Chroni to układ pozapiramidowy przed nadmierną blokadą transmisyjną.'],
+        ['Leki II generacji niszczą prążkowie, więc pacjent nie ma czym drżeć', 'Leki psychotropowe nie powodują destrukcji prążkowia.'],
+        ['Antagonizm 5-HT2A całkowicie uniemożliwia wchłanianie leku do krwi', 'Leki SGA wchłaniają się prawidłowo z przewodu pokarmowego.'],
+        'psych-5ht-q1'
       ),
       q(
-        'Który enzym wewnątrzkomórkowy jest bezpośrednio hamowany przez lit, co prowadzi do neuroprotekcji i nasilenia BDNF?',
-        ['Syntaza kinazy glikogenu 3-beta (GSK-3beta)', 'Hamowanie GSK-3beta przez lit aktywuje czynniki pro-przeżyciowe i stabilizuje synapsy.'],
-        ['Aromataza CYP19A1 w jajniku', 'Aromataza przekształca androgeny w estrogeny; nie jest celem litu.'],
-        ['Lipaza lipoproteinowa w naczyniach włosowatych', 'LPL uczestniczy w metabolizmie chylomikronów.'],
-        'psych-lit-q2'
+        'Który podtyp receptora serotoninowego jest bezpośrednim kanałem jonowym bramkowanym ligandem (nie receptorem metabotropowym sprzężonym z białkiem G)?',
+        ['Receptor 5-HT3', 'Jest to pentameryczny kanał kationowy; jego blokada wywiera silny efekt przeciwwymiotny i prokognitywny.'],
+        ['Receptor 5-HT1A', '5-HT1A jest receptorem sprzężonym z białkiem Gi/o hamującym cyklazę adenylanową.'],
+        ['Receptor 5-HT2A', '5-HT2A jest receptorem sprzężonym z białkiem Gq stymulującym fosfolipazę C.'],
+        'psych-5ht-q2'
       ),
       q(
-        'Która grupa leków przeciwbólowych powszechnie dostępnych bez recepty może gwałtownie zwiększyć stężenie litu we krwi i wywołać zatrucie?',
-        ['Niesteroidowe leki przeciwzapalne (NLPZ, np. ibuprofen, ketoprofen)', 'NLPZ hamują syntezę prostaglandyn w nerkach, zmniejszają filtrację kłębuszkową i redukują wydalanie litu.'],
-        ['Paracetamol w dawkach terapeutycznych', 'Paracetamol nie wpływa istotnie na nerkowy klirens litu.'],
-        ['Preparaty magnezu doustnego', 'Magnez nie hamuje filtracji kłębuszkowej litu.'],
-        'psych-lit-q3'
+        'Jaki efekt kliniczny wywołuje silny antagonizm receptorów 5-HT2C (np. w działaniu mirtazapiny lub olanzapiny)?',
+        ['Wzrost łaknienia, zwiększenie masy ciała oraz odhamowanie uwalniania DA i NA w korze przedczołowej', 'Receptor 5-HT2C fizjologicznie hamuje apetyt i wyrzut katecholamin korowych.'],
+        ['Natychmiastowe zatrzymanie krążenia w mechanizmie asystolii', 'Blokada 5-HT2C nie wywołuje asystolii.'],
+        ['Gwałtowny spadek masy ciała o 20 kg w ciągu tygodnia', 'Blokada 5-HT2C promuje tycie, a nie chudnięcie.'],
+        'psych-5ht-q3'
       ),
       q(
-        'Jakie narządy wymagają bezwzględnego, rutynowego monitorowania laboratoryjnego podczas przewlekłej terapii litem?',
-        ['Nerki (eGFR, kreatynina) oraz tarczyca (TSH)', 'Lit może powodować nefropatię cewkowo-śródmiąższową, moczówkę nerkopochodną oraz niedoczynność tarczycy.'],
-        ['Śledziona i migdałki podniebienne', 'Lit nie wykazuje specyficznej toksyczności dla śledziony i migdałków.'],
-        ['Pęcherzyk żółciowy i trzustka co 7 dni', 'Nie ma wskazań do cotygodniowego badania pęcherzyka żółciowego.'],
-        'psych-lit-q4'
+        'Który lek przeciwdepresyjny łączy blokadę SERT z bezpośrednim antagonizmem receptorów 5-HT3 i 5-HT7 oraz agonizmem 5-HT1A (profil multimodalny)?',
+        ['Wortioksetyna', 'Profil ten zapewnia poprawę funkcji poznawczych w depresji i niskie ryzyko dysfunkcji seksualnych.'],
+        ['Doksepina', 'Doksepina jest trójpierścieniowym lekiem przeciwdepresyjnym o silnym działaniu antyhistaminowym.'],
+        ['Maprotylina', 'Maprotylina jest czteropierścieniowym selektywnym inhibitorem NET.'],
+        'psych-5ht-q4'
       ),
       q(
-        'Który objaw neurologiczny jest klasycznym, wczesnym sygnałem rozwijającego się zatrucia litem?',
-        ['Grubofaliste, nasilone drżenie rąk i ataksja', 'Nasilenie drżenia z drobno- na grubofaliste oraz chwiejność chodu to alarm toksyczności OUN.'],
-        ['Całkowita utrata słuchu po 1 sekundzie', 'Głuchota nie jest wczesnym objawem zatrucia litem.'],
-        ['Jednostronne opadanie powieki (zespół Hornera)', 'Zespół Hornera wynika z przerwania unerwienia współczulnego oka.'],
-        'psych-lit-q5'
-      ),
-    ],
+        'Gdzie zlokalizowane są somatodendrytyczne autoreceptory 5-HT1A wygaszające wyładowania neuronów serotoninowych?',
+        ['W jądrach szwu pnia mózgu (raphe nuclei)', 'Ich desensytyzacja po 2–4 tygodniach ekspozycji na SSRI odblokowuje trwałe uwalnianie serotoniny w mózgowiu.'],
+        ['W rogach tylnych rdzenia kręgowego', 'Rogi tylne przewodzą czucie somatyczne i ból.'],
+        ['W opuszce węchowej', 'Opuszka węchowa odbiera bodźce zapachowe.'],
+        'psych-5ht-q5'
+      )
+    ]
   },
   {
-    id: 'stabilizatory-przeciwpadaczkowe',
+    id: 'glutaminian-gaba-neuroplastycznosc',
     moduleId: 'psych-farmakologia',
-    title: 'Stabilizatory przeciwpadaczkowe: kwas walproinowy i lamotrygina',
-    subtitle: 'Mechanizmy jonowe, teratogenność VPA i powolne miareczkowanie lamotryginy',
-    group: 'Leki przeciwdepresyjne i stabilizatory',
-    minutes: 16,
+    title: 'Układy glutaminergiczny i GABA-ergiczny: kaskada neuroplastyczności',
+    subtitle: 'Receptory NMDA, AMPA, GABAA oraz rola szlaku BDNF-TrkB w OUN',
+    group: 'Receptorologia i układy przekaźnikowe',
+    minutes: 18,
     goals: [
-      'Scharakteryzujesz odmienności profilu klinicznego kwasu walproinowego (VPA) i lamotryginy w ChAD.',
-      'Wyjaśnisz zasady bezpiecznego miareczkowania lamotryginy w celu uniknięcia zespołu Stevensa-Johnsona.',
+      'Zrozumiesz rolę równowagi między pobudzeniem (Glu) a hamowaniem (GABA) w OUN.',
+      'Scharakteryzujesz mechanizm szybkiego działania przeciwdepresyjnego poprzez blokadę NMDA i wyrzut BDNF.',
+      'Wyjaśnisz budowę receptora GABAA i allosteryczną modulację przez benzodiazepiny.'
     ],
     sections: [
       {
-        title: 'Kwas walproinowy (VPA) / walproinian sodu',
-        text: 'Walproinian nasila przekaźnictwo GABA-ergiczne (hamuje rozpad GABA przez transaminazę GABA oraz stymuluje dekarboksylazę kwasu glutaminowego GAD) oraz blokuje napięciowo zależne kanały sodowe i wapniowe typu T. Jest wysoce skuteczny w manii ostrej, stanach mieszanych i ChAD z szybką zmianą faz (rapid cycling). Wymaga monitorowania TDM (stężenie terapeutyczne 50–100 ug/ml / 350–700 umol/l).',
+        title: 'Glutaminian i neurotoksyczność ekscytotoksyczna',
+        text: 'Kwas glutaminowy jest głównym przekaźnikiem pobudzającym w OUN, działającym na receptory jonotropowe (AMPA, NMDA, kainowe) i metabotropowe (mGluR). Fizjologicznie aktywacja AMPA depolaryzuje błonę, usuwając jon magnezu (Mg2+) blokujący kanał receptora NMDA i umożliwiając napływ jonów Ca2+. Przewlekły stres i nadmiar glutaminianu prowadzą do ekscytotoksyczności, zaniku kolców dendrytycznych i atrofii hipokampa.'
       },
       {
-        title: 'Czarne skrzynki i teratogenność walproinianu',
-        text: 'VPA jest bezwzględnie przeciwwskazany u kobiet w wieku rozrodczym, chyba że spełnione są warunki rygorystycznego Programu Zapobiegania Ciąży. Ryzyko wad wrodzonych (wady cewy nerwowej – spina bifida, wady twarzoczaszki, wady serca) wynosi około 10%, a ryzyko zaburzeń neurorozwojowych (autyzm ASD, deficyty IQ o 7-10 pkt) sięga 30-40% u dzieci matek przyjmujących VPA w ciąży. Inne groźne powikłania to: ostre zapalenie trzustki, hepatotoksyczność i hiperamonemia (encefalopatia bez uszkodzenia wątroby).',
+        title: 'Ketamina i przełom w neurobiologii depresji',
+        text: 'Ketamina (enancjomer S-ketamina / esketamina) podana w subanestetycznych dawkach paradoksalnie blokuje receptory NMDA na hamujących interneuronach GABA-ergicznych. Prowadzi to do rozhamowania neuronów piramidowych i gwałtownego wyrzutu glutaminianu, który stymuluje receptory AMPA. W kaskadzie wewnątrzkomórkowej aktywowany zostaje szlak mTORC1, co skutkuje masywną syntezą i uwalnianiem czynnika BDNF (Brain-Derived Neurotrophic Factor) oraz odbudową synaps w ciągu zaledwie kilku godzin.'
       },
       {
-        title: 'Lamotrygina: profilaktyka depresji w ChAD i ryzyko SJS/TEN',
-        text: 'Lamotrygina blokuje napięciowo zależne kanały sodowe i hamuje patologiczne uwalnianie glutaminianu. W przeciwieństwie do litu i VPA nie działa przeciwmaniakalnie; jej unikalną siłą jest zapobieganie nawrotom faz depresyjnych w ChAD (zwłaszcza ChAD typu II). Najgroźniejszym powikłaniem są ciężkie odczyny skórne: zespół Stevensa-Johnsona (SJS) i toksyczna nekroliza naskórka (TEN). Ryzyko to minimalizuje się poprzez bardzo powolne miareczkowanie dawki (zaczynając od 25 mg/d przez pierwsze 2 tygodnie, 50 mg/d przez kolejne 2 tygodnie). Przy łączeniu z VPA (który hamuje glukuronidację lamotryginy) dawki lamotryginy muszą być zredukowane o 50%!',
-      },
+        title: 'Układ GABA i receptor GABAA',
+        text: 'Kwas gamma-aminomasłowy (GABA) jest głównym neuroprzekaźnikiem hamującym. Receptor GABAA to pentameryczny kanał chlorkowy (najczęściej 2alfa, 2beta, 1gamma). Przyłączenie GABA otwiera kanał, powodując napływ jonów Cl- i hiperpolaryzację błony. Leki uspokajające i przeciwlękowe (benzodiazepiny) wiążą się allosterycznie na styku podjednostek alfa i gamma, zwiększając częstość otwarcia kanału w obecności GABA.'
+      }
     ],
     table: {
-      headers: ['Cecha', 'Kwas walproinowy (VPA)', 'Lamotrygina (LTG)'],
+      headers: ['Receptor / Układ', 'Mechanizm molekularny', 'Główny ligand / Lek', 'Znaczenie kliniczne'],
       rows: [
-        ['Główny profil w ChAD', 'Leczenie manii ostrej, stanów mieszanych, rapid cycling', 'Profilaktyka i leczenie depresji w ChAD (brak działania w ostrej manii)'],
-        ['Monitorowanie TDM', 'Tak, zalecane rutynowo (50–100 ug/ml)', 'Nie ma ustalonego sztywnego okna w psychiatrii'],
-        ['Ciąża i teratogenność', 'Kategoria X / bezwzględne ostrzeżenia (spina bifida, autyzm)', 'Uznawana za najbezpieczniejszy stabilizator (niezbędna kontrola stężenia)'],
-        ['Główne zagrożenie', 'Hepatotoksyczność, zapalenie trzustki, hiperamonemia', 'Zespół Stevensa-Johnsona (SJS) / TEN przy zbyt szybkim miareczkowaniu'],
-      ],
+        ['NMDA (Glu)', 'Kanał kationowy (Ca2+, Na+) blokowany przez Mg2+', 'Ketamina, esketamina, memantyna', 'Szybka synaptogeneza, neuroplastyczność, pamięć LTP'],
+        ['AMPA (Glu)', 'Szybki kanał sodowy (depolaryzacja błony)', 'Glutaminian, potentiatory AMPA', 'Inicjacja LTP, aktywacja wyrzutu BDNF'],
+        ['GABAA', 'Kanał chlorkowy (hiperpolaryzacja Cl-)', 'GABA, benzodiazepiny, leki Z, barbiturany', 'Działanie przeciwlękowe, sedatywne, przeciwdrgawkowe'],
+        ['Szlak BDNF / TrkB', 'Receptor kinazy tyrozynowej B', 'BDNF (aktywacja przez SSRI, ketaminę, ruch)', 'Neurogeneza w hipokampie, przeżycie neuronów']
+      ]
     },
     advanced:
-      'Karbamazepina przyspiesza metabolizm lamotryginy (indukcja enzymatyczna UGT), co wymaga podwojenia dawek lamotryginy. Z kolei kwas walproinowy silnie hamuje enzym UGT1A4, co podwaja okres półtrwania lamotryginy i drastycznie zwiększa ryzyko martwiczego złuszczania naskórka (TEN). Pacjent musi natychmiast zgłosić każde pojawienie się nowej wysypki z gorączką lub zajęciem śluzówek.',
+      'Mutacja w genie kodującym BDNF (polimorfizm Val66Met) upośledza zależne od aktywności uwalnianie BDNF z pęcherzyków presynaptycznych. Nosiciele allelu Met wykazują mniejszą objętość hipokampa, większą podatność na depresję wywołaną stresem oraz słabszą odpowiedź na klasyczne leki przeciwdepresyjne.',
     summary:
-      'VPA stabilizuje manię i stany mieszane, lecz jest silnym teratogenem (spina bifida, autyzm). Lamotrygina zapobiega depresji w ChAD i wymaga powolnego miareczkowania (ryzyko SJS/TEN), ze szczególną ostrożnością przy skojarzeniu z VPA.',
-    sourceIds: ['maudsley15', 'canmat-isbd-bipolar', 'ptp-standardy'],
+      'Równowaga Glu/GABA kontroluje pobudliwość kory. Ketamina poprzez przejściowy wyrzut glutaminianu i aktywację AMPA indukuje ekspresję BDNF i naprawę synaps w ciągu godzin, a receptory GABAA warunkują hamowanie lęku.',
+    sourceIds: ['krystal-ketamine', 'stahl-essential', 'canmat-mdd-2023'],
     questions: [
       q(
-        'Dlaczego kwas walproinowy jest bezwzględnie przeciwwskazany u kobiet w wieku rozrodczym bez spełnienia rygorystycznego programu zapobiegania ciąży?',
-        ['Bardzo wysokie ryzyko wad cewy nerwowej (spina bifida) oraz trwałych zaburzeń rozwoju intelektualnego i autyzmu u dziecka', 'Dane epidemiologiczne jednoznacznie dowodzą ciężkiej teratogenności i neurotoksyczności rozwojowej VPA.'],
-        ['Ponieważ natychmiast wywołuje u kobiety bezpłodność mechaniczną', 'VPA może dawać cechy PCOS, ale nie niszczy mechanicznie narządów rodnych.'],
-        ['Ponieważ każda kobieta po VPA zapada w śpiączkę wątrobową', 'Śpiączka wątrobowa jest rzadkim powikłaniem idiosynkratycznym.'],
-        'psych-vpa-q1'
+        'Jaki jest mechanizm błyskawicznego (w ciągu kilku godzin) działania przeciwdepresyjnego subanestetycznych dawek ketaminy/esketaminy?',
+        ['Blokada receptorów NMDA na interneuronach GABA-ergicznych, wyrzut glutaminianu, stymulacja receptorów AMPA i gwałtowna synteza BDNF przez szlak mTOR', 'Prowadzi to do odbudowy kolców dendrytycznych i połączeń synaptycznych w korze przedczołowej.'],
+        ['Trwałe zablokowanie wszystkich receptorów serotoninowych w całym organizmie', 'Ketamina nie blokuje receptorów 5-HT w mechanizmie osiowym.'],
+        ['Zahamowanie produkcji glukozy w hepatocytach', 'Metabolizm wątrobowy nie jest celem przeciwdepresyjnym ketaminy.'],
+        'psych-glu-q1'
       ),
       q(
-        'W jakiej fazie choroby afektywnej dwubiegunowej lamotrygina posiada najsilniejsze dowody skuteczności?',
-        ['W zapobieganiu nawrotom epizodów depresyjnych (profilaktyka fazy depresyjnej)', 'Lamotrygina jest unikalnym lekiem chroniącym pacjentów z ChAD przed załamaniami depresyjnymi.'],
-        ['W ostrym, pobudzonym epizodzie manii psychotycznej', 'Lamotrygina nie posiada skuteczności w przerywaniu ostrej manii.'],
-        ['W natychmiastowym przerywaniu drgawek w stanie padaczkowym', 'Do przerywania stanu padaczkowego stosuje się dożylne benzodiazepiny.'],
-        'psych-vpa-q2'
+        'Który jon blokuje kanał receptora NMDA w warunkach spoczynkowego potencjału błonowego komórki nerwowej?',
+        ['Jon magnezu (Mg2+)', 'Dopiero depolaryzacja błony wywołana przez receptory AMPA usuwa "korek magnezowy", umożliwiając napływ Ca2+.'],
+        ['Jon żelaza (Fe3+)', 'Żelazo nie pełni funkcji bramkującej kanał NMDA.'],
+        ['Jon miedzi (Cu2+)', 'Miedź nie jest fizjologicznym blokerem kanału NMDA.'],
+        'psych-glu-q2'
       ),
       q(
-        'Jak należy postąpić z dawkowaniem lamotryginy u pacjenta, który jednocześnie przyjmuje kwas walproinowy?',
-        ['Zmniejszyć dawki początkowe i tempo miareczkowania o połowę (np. zacząć od 25 mg co drugi dzień)', 'VPA hamuje enzym UGT1A4 i podwaja stężenie lamotryginy, drastycznie zwiększając ryzyko SJS.'],
-        ['Podwoić dawkę lamotryginy od pierwszego dnia', 'Zwiększenie dawki mogłoby doprowadzić do śmiertelnego zespołu Stevensa-Johnsona.'],
-        ['Podać od razu 400 mg lamotryginy w pojedynczej dawce', 'Brak miareczkowania jest błędem sztuki lekarskiej.'],
-        'psych-vpa-q3'
+        'W jaki sposób benzodiazepiny nasilają hamowanie neuronalne za pośrednictwem receptora GABAA?',
+        ['Działają jako dodatni modulator allosteryczny (PAM), zwiększając częstotliwość otwarcia kanału chlorkowego pod wpływem GABA', 'Napływ jonów Cl- do wnętrza komórki wywołuje hiperpolaryzację błony i spadek jej pobudliwości.'],
+        ['Zamykają kanały potasowe w komórkach glejowych', 'BZD nie modulują bezpośrednio kanałów potasowych gleju.'],
+        ['Same wiążą się w miejscu wiązania glutaminianu i go niszczą', 'BZD wiążą się na styku podjednostek alfa/gamma receptora GABAA.'],
+        'psych-glu-q3'
       ),
       q(
-        'Jaki objaw alarmowy podczas wprowadzania lamotryginy wymaga natychmiastowego przerwania leku i kontaktu z lekarzem?',
-        ['Wystąpienie wysypki skórnej, pęcherzy na skórze lub owrzodzeń błon śluzowych (jamy ustnej, oczu)', 'Wysypka może być początkiem zespołu Stevensa-Johnsona lub toksycznej nekrolizy naskórka (TEN).'],
-        ['Uczucie suchości w nosie po 3 tygodniach', 'Suchość nosa nie jest objawem martwicy naskórka.'],
-        ['Zmniejszenie zapotrzebowania na kawę', 'Brak ochoty na kawę nie stanowi zagrożenia dermatologicznego.'],
-        'psych-vpa-q4'
+        'Jaki czynnik troficzny i jego receptor o kluczowym znaczeniu dla neurogenezy w zakręcie zębatym hipokampa ulegają nasilonej ekspresji podczas skutecznej terapii przeciwdepresyjnej?',
+        ['BDNF (Brain-Derived Neurotrophic Factor) i receptor TrkB', 'Aktywacja kaskady BDNF-TrkB stymuluje przeżycie neuronów i tworzenie nowych kolców dendrytycznych.'],
+        ['Insulina i receptor IGF-2', 'Chociaż insulina wpływa na metabolizm mózgu, to BDNF-TrkB jest osiowym szlakiem plastyczności w depresji.'],
+        ['Trombopoetyna i receptor Mpl', 'Trombopoetyna reguluje wytwarzanie płytek krwi w szpiku kostnym.'],
+        'psych-glu-q4'
       ),
       q(
-        'Jakie jest zalecane stężenie terapeutyczne kwasu walproinowego (VPA) w surowicy w leczeniu ostrej manii wg wytycznych AGNP 2026?',
-        ['50 – 100 ug/ml (około 350 – 700 umol/l)', 'To zwalidowany przedział stężenia terapeutycznego VPA w stabilizacji nastroju.'],
-        ['1 – 5 ug/ml', 'To stężenie subterapeutyczne, nieskuteczne w ostrej manii.'],
-        ['500 – 1000 ug/ml', 'To zakres ciężkiej toksyczności z ryzykiem śpiączki i niewydolności wątroby.'],
-        'psych-vpa-q5'
-      ),
-    ],
+        'Jaki jest skutek przewlekłej, nadmiernej aktywacji receptorów NMDA przez wysokie stężenia glutaminianu w warunkach niedokrwienia lub przewlekłego stresu?',
+        ['Masywny, toksyczny napływ jonów Ca2+ prowadzący do aktywacji proteaz, wolnych rodników i śmierci komórki (ekscytotoksyczność)', 'Ekscytotoksyczność leży u podstaw zaniku struktur hipokampa w przewlekłej nieleczonej depresji.'],
+        ['Wzmocnienie pamięci fotograficznej bez żadnych skutków ubocznych', 'Nadmiar glutaminianu niszczy neurony i upośledza pamięć.'],
+        ['Przekształcenie neuronów w komórki nowotworowe glejaka', 'Ekscytotoksyczność prowadzi do apoptozy i nekrozy, a nie transformacji nowotworowej.'],
+        'psych-glu-q5'
+      )
+    ]
   },
   {
-    id: 'leki-przeciwpsychotyczne-receptory',
+    id: 'klasyczne-antydepresanty-ssri-snri-tlpd-maoi',
     moduleId: 'psych-farmakologia',
-    title: 'Atypowe leki przeciwpsychotyczne: okno receptorowe D2 i 5-HT2A',
-    subtitle: 'Okno Kapura 65–80% D2, częściowy agonizm i profil metaboliczny SGA',
-    group: 'Leki przeciwdepresyjne i stabilizatory',
-    minutes: 17,
+    title: 'Klasyczne leki przeciwdepresyjne: SSRI, SNRI, TLPD i iMAO',
+    subtitle: 'Porównanie klas terapeutycznych, profile toksyczności i ryzyko kardiologiczne',
+    group: 'Farmakoterapia zaburzeń afektywnych',
+    minutes: 18,
     goals: [
-      'Zinterpretujesz koncepcję okna terapeutycznego blokady receptorów D2 wg badań PET Kapura (65–80%).',
-      'Porównasz mechanizm częściowego agonizmu receptorów D2 (aripiprazol) z silnymi antagonistami (olanzapina, rysperydon).',
+      'Porównasz mechanizmy, skuteczność i tolerancję SSRI, SNRI, TLPD oraz inhibitorów MAO.',
+      'Rozpoznasz specyficzne powikłania kardiologiczne i antycholinergiczne trójpierścieniowych leków (TLPD).',
+      'Wdrożysz zasady diety ubogotyraminowej i bezpiecznego stosowania inhibitorów monoaminooksydazy.'
     ],
     sections: [
       {
-        title: 'Koncepcja okna terapeutycznego D2 (Kapur et al., PET)',
-        text: 'Badania neuroobrazowe PET wykazały, że działanie przeciwpsychotyczne (redukcja wytwórczych objawów psychotycznych – omamów i urojeń) wymaga zablokowania co najmniej 65% prążkowiowych receptorów dopaminowych D2 w szlaku mezolimbicznym. Jednak przekroczenie 80% blokady receptorów D2 w szlaku nigrostriatalnym wyzwala objawy pozapiramidowe (EPS: parkinsonizm polekowy, ostra dystonia, akatyzja), a w szlaku guzowo-lejkowym – hiperprolaktynemię. Przedział 65–80% occupancy D2 stanowi wąskie "złote okno terapeutyczne" leków przeciwpsychotycznych.',
+        title: 'SSRI i SNRI jako fundament leczenia I rzutu',
+        text: 'Inhibitory wychwytu zwrotnego serotoniny (SSRI: sertralina, escitalopram, citalopram, fluoksetyna, paroksetyna) oraz serotoniny i noradrenaliny (SNRI: wenlafaksyna, duloksetyna) są lekami I rzutu ze względu na wysoki wskaźnik bezpieczeństwa w przedawkowaniu i korzystny profil tolerancji. Działania niepożądane (nudności, dysfunkcje seksualne, bezsenność) wynikają głównie z pobudzenia obwodowych receptorów 5-HT2 i 5-HT3.'
       },
       {
-        title: 'Rola antagonizmu receptorów 5-HT2A w lekach II generacji (SGA)',
-        text: 'Atypowe leki przeciwpsychotyczne (SGA: olanzapina, kwetiapina, klozapina, rysperydon) charakteryzują się wyższym powinowactwem do receptorów serotoninowych 5-HT2A niż do receptorów dopaminowych D2 (iloraz powinowactwa 5-HT2A/D2 > 1). Blokada presynaptycznych receptorów 5-HT2A na neuronach dopaminergicznych w prążkowiu odhamowuje lokalne uwalnianie dopaminy, co chroni szlak nigrostriatalny przed nadmierną blokadą D2 i drastycznie zmniejsza ryzyko EPS w porównaniu z klasycznymi neuroleptykami (haloperidol).',
+        title: 'Trójpierścieniowe leki przeciwdepresyjne (TLPD): wysoka skuteczność, wąskie okno',
+        text: 'TLPD (klomipramina, amitryptylina, nortryptylina) silnie blokują SERT i NET, lecz wykazują też silny antagonizm receptorów muskarynowych M1 (suchość w ustach, zaparcia, majaczenie), histaminowych H1 (sedacja, tycie) oraz adrenergicznych alfa-1 (hipotensja ortostatyczna). Ponadto blokują sercowe kanały sodowe (Nav1.5), co w przedawkowaniu prowadzi do poszerzenia QRS, komorowych zaburzeń rytmu i zgonu.'
       },
       {
-        title: 'Częściowi agoniści D2: dopaminowe stabilizatory (Aripiprazol, Kariprazyna)',
-        text: 'Aripiprazol i kariprazyna nie są prostymi antagonistami D2, lecz częściowymi agonistami o wysokim powinowactwie i umiarkowanej aktywności wewnętrznej (intrinsic activity ~25-30% dla aripiprazolu). W warunkach nadmiaru dopaminy (szlak mezolimbiczny w psychozie) działają funkcjonalnie jak antagonista, obniżając transmisję. W warunkach niedoboru dopaminy (kora przedczołowa, szlak nigrostriatalny) zapewniają podstawowy poziom stymulacji (~25%), zapobiegając parkinsonizmowi i hiperprolaktynemii. W badaniach PET aripiprazol wykazuje wysokie wysycenie D2 (>85-90%) bez wywoływania klasycznego parkinsonizmu.',
-      },
+        title: 'Inhibitory monoaminooksydazy (iMAO) i reakcja tyraminowa',
+        text: 'iMAO nieodwracalne (np. fenelzyna, tranylcypromina) hamują enzym MAO-A i MAO-B, blokując rozkład monoamin. Spożycie pokarmów bogatych w tyraminę (dojrzałe sery, wino, wędzone ryby) wywołuje przełom nadciśnieniowy ("cheese effect"), gdyż niewybiórczo zablokowana MAO w jelitach i wątrobie nie neutralizuje tyraminy, co skutkuje masowym wyrzutem noradrenaliny. Odwracalny inhibitor MAO-A (moklobemid) jest pod tym względem znacznie bezpieczniejszy.'
+      }
     ],
     table: {
-      headers: ['Wysycenie D2 w PET', 'Wpływ kliniczny w szlaku mezolimbicznym', 'Wpływ w prążkowiu i przysadce'],
+      headers: ['Klasa leków', 'Mechanizm wiodący', 'Główne działania niepożądane', 'Toksyczność w przedawkowaniu'],
       rows: [
-        ['< 65%', 'Brak zadowalającej odpowiedzi przeciwpsychotycznej', 'Brak objawów pozapiramidowych, prawidłowa prolaktyna'],
-        ['65% – 80%', 'Optymalna kontrola urojeń i omamów (okno Kapura)', 'Niskie ryzyko parkinsonizmu i akatyzji'],
-        ['> 80%', 'Niewielki dalszy przyrost skuteczności', 'Wysokie ryzyko EPS, ostrej dystonii i hiperprolaktynemii'],
-        ['> 85% (Aripiprazol)', 'Skuteczność przeciwpsychotyczna (częściowy agonizm)', 'Brak hiperprolaktynemii (często jej spadek); możliwa akatyzja'],
-      ],
+        ['SSRI', 'Selektywna blokada SERT', 'Nudności, dysfunkcje seksualne, lęk początkowy', 'Bardzo niska (bezpieczne)'],
+        ['SNRI', 'Blokada SERT + NET', 'Nadciśnienie tętnicze, potliwość, tachykardia', 'Niska do umiarkowanej'],
+        ['TLPD', 'Blokada SERT, NET, M1, H1, alfa-1', 'Zaparcia, sedacja, hipotensja, suchość śluzówek', 'Skrajnie wysoka (blokada Nav1.5 -> arytmie komorowe)'],
+        ['iMAO klasyczne', 'Nieodwracalne hamowanie MAO-A i B', 'Przełom nadciśnieniowy (tyramina), bezsenność', 'Wysoka (stany zagrażające życiu)']
+      ]
     },
     advanced:
-      'Klozapina jest unikalnym lekiem przeciwpsychotycznym: osiąga efekt kliniczny w schizofrenii lekoopornej przy stosunkowo niskiej blokadzie D2 w PET (zaledwie 40–60%), ale wykazuje potężny antagonizm 5-HT2A, alfa-1, M1, H1 oraz powinowactwo do receptorów D4. Dzięki temu praktycznie nie wywołuje EPS ani późnych dyskinez, jednak wymaga bezwzględnego monitorowania morfologii krwi z powodu ryzyka agranulocytozy (rejestry klozapinowe).',
+      'W przypadku ciężkiego zatrucia TLPD z poszerzeniem zespołu QRS > 100–120 ms w EKG lekiem z wyboru znoszącym kardiotoksyczność jest dożylny wlew 8,4% wodorowęglanu sodu (NaHCO3). Alkalizacja osocza (pH 7,45–7,55) oraz wysokie stężenie sodu odwracają blokadę kanałów sodowych Nav1.5.',
     summary:
-      'Okno terapeutyczne D2 wynosi 65–80% occupancy w PET. Powyżej 80% rośnie ryzyko EPS i hiperprolaktynemii. Leki II generacji chronią prążkowie przez antagonizm 5-HT2A, a częściowi agoniści (aripiprazol) stabilizują transmisję bez wzrostu prolaktyny.',
-    sourceIds: ['pet-d2-kapur', 'maudsley15', 'stahl-essential'],
+      'SSRI i SNRI wyparły TLPD z I rzutu z uwagi na bezpieczeństwo kardiologiczne. TLPD grożą śmiertelnymi arytmiami przez blokadę kanałów sodowych (odtrutka: NaHCO3), a klasyczne iMAO wymagają ścisłej diety ubogotyraminowej.',
+    sourceIds: ['canmat-mdd-2023', 'nice-depression', 'tyramine-pressor'],
     questions: [
       q(
-        'Jaki przedział wysycenia receptorów dopaminowych D2 w prążkowiu w badaniach PET (okno Kapura) zapewnia efekt przeciwpsychotyczny przy minimalnym ryzyku EPS?',
-        ['65% – 80%', 'Przy 65% pojawia się odpowiedź przeciwpsychotyczna, a powyżej 80% gwałtownie rośnie ryzyko objawów pozapiramidowych.'],
-        ['10% – 25%', 'To za niski poziom wysycenia do kontroli psychozy.'],
-        ['Dokładnie 95% – 100%', 'Wysycenie >90% klasycznymi antagonistami wywołuje ciężki parkinsonizm polekowy i sztywność.'],
-        'psych-sga-q1'
+        'Jaka jest odtrutka z wyboru w ciężkim zatruciu TLPD z poszerzeniem zespołu QRS > 120 ms w zapisie EKG?',
+        ['Dożylny roztwór wodorowęglanu sodu (NaHCO3)', 'Alkalizacja krwi i ładunek jonów sodu wypierają cząsteczki TLPD z sercowych kanałów sodowych Nav1.5.'],
+        ['Dożylna digoksyna w bolusie', 'Digoksyna nasiliłaby kardiotoksyczność i ryzyko zgonu.'],
+        ['Podanie dużej dawki potasu w szybkim wlewie', 'Szybki wlew potasu grozi natychmiastowym asystolią serca.'],
+        'psych-clas-q1'
       ),
       q(
-        'Jaki jest mechanizm działania aripiprazolu na receptor dopaminowy D2?',
-        ['Częściowy agonizm receptorów D2 o wysokim powinowactwie', 'Aripiprazol ma aktywność wewnętrzną około 25-30%, stabilizując przekaźnictwo dopaminowe.'],
-        ['Nieodwracalna destrukcja cząsteczki receptora D2', 'Leki nie niszczą fizycznie cząsteczek receptorów.'],
-        ['Czysty agonizm identyczny z dopaminą (100% aktywności)', 'Pełny agonizm wywołałby zaostrzenie psychozy.'],
-        'psych-sga-q2'
+        'Dlaczego pacjenci przyjmujący nieodwracalne inhibitory MAO (np. tranylcyprominę) muszą bezwzględnie przestrzegać diety ubogiej w dojrzałe sery i wina?',
+        ['Zawierają one tyraminę, która z powodu braku jelitowej MAO przedostaje się do krążenia i wywołuje zagrażający życiu przełom nadciśnieniowy', 'Zjawisko to określa się tradycyjnie mianem reakcji serowej (cheese reaction).'],
+        ['Sery wchodzą w bezpośrednią reakcję chemiczną niszczącą nerki', 'Tyramina nie niszczy nerek bezpośrednio, lecz indukuje gwałtowny wyrzut noradrenaliny.'],
+        ['Wino powoduje natychmiastowe unieczynnienie leku w żołądku', 'Chodzi o śmiertelną interakcję naczyniową, a nie brak wchłaniania leku.'],
+        'psych-clas-q2'
       ),
       q(
-        'Dlaczego atypowe leki przeciwpsychotyczne (SGA) rzadziej wywołują objawy pozapiramidowe niż klasyczne neuroleptyki (np. haloperidol)?',
-        ['Dzięki silnemu antagonizmowi receptorów 5-HT2A, który odhamowuje uwalnianie dopaminy w prążkowiu', 'Wychwyt dopaminy w prążkowiu kompensuje blokadę D2 i chroni przed parkinsonizmem.'],
-        ['Ponieważ SGA w ogóle nie docierają do mózgu', 'SGA przenikają barierę krew-mózg w stopniu wymaganym do działania.'],
-        ['Ponieważ SGA są lekami uspokajającymi bez wpływu na neuroprzekaźniki', 'SGA silnie modulują szlaki monoaminowe.'],
-        'psych-sga-q3'
+        'Który z SSRI wykazuje najsilniejsze właściwości sedatywne i cholinolityczne wskutek powinowactwa do receptorów muskarynowych?',
+        ['Paroksetyna', 'Paroksetyna posiada słabe działanie antycholinergiczne, co może sprzyjać sedacji, zaparciom i przyrostowi wagi.'],
+        ['Escitalopram', 'Escitalopram jest niemal pozbawiony powinowactwa do receptorów muskarynowych.'],
+        ['Sertralina', 'Sertralina wykazuje słabe hamowanie DAT, bez istotnego wpływu cholinolitycznego.'],
+        'psych-clas-q3'
       ),
       q(
-        'Który lek przeciwpsychotyczny jest lekiem z wyboru w schizofrenii lekoopornej, lecz wymaga obowiązkowego monitorowania morfologii krwi z uwagi na agranulocytozę?',
-        ['Klozapina', 'Klozapina ma najwyższą udowodnioną skuteczność w lekooporności, ale niesie ryzyko agranulocytozy u ~0,8% chorych.'],
-        ['Haloperidol', 'Haloperidol nie wymaga rutynowych kontroli leukocytów pod kątem agranulocytozy.'],
-        ['Kwetiapina', 'Kwetiapina jest lekiem pierwszego rzutu i nie wymaga rejestru agranulocytozy.'],
-        'psych-sga-q4'
+        'Jaki parametr hemodynamiczny wymaga regularnego monitorowania u pacjentów leczonych wysokimi dawkami SNRI (np. wenlafaksyną >= 225 mg/d)?',
+        ['Ciśnienie tętnicze krwi i tętno', 'Wzrost stężenia noradrenaliny w synapsach obwodowych może prowadzić do utrwalonego nadciśnienia tętniczego.'],
+        ['Pojemność życiowa płuc w spirometrii', 'SNRI nie wpływają negatywnie na parametry spirometryczne płuc.'],
+        ['Czas krwawienia metodą Duke’a', 'Mimo wpływu 5-HT na płytki, to kontrola ciśnienia tętniczego jest kluczowa dla bezpieczeństwa kardiologicznego SNRI.'],
+        'psych-clas-q4'
       ),
       q(
-        'Jak aripiprazol wpływa na stężenie prolaktyny we krwi u pacjentów z hiperprolaktynemią wywołaną rysperydonem?',
-        ['Obniża stężenie prolaktyny dzięki częściowemu agonizmowi D2 w szlaku guzowo-lejkowym przysadki', 'Aktywność wewnętrzna aripiprazolu pobudza receptory D2 przysadki wystarczająco, by zahamować uwalnianie prolaktyny.'],
-        ['Podwaja stężenie prolaktyny w ciągu godziny', 'Aripiprazol jest znany z działania obniżającego prolaktynę.'],
-        ['Nie ma żadnego wpływu na przysadkę mózgową', 'Aripiprazol penetruje do przysadki i moduluje jej wydzielanie.'],
-        'psych-sga-q5'
-      ),
-    ],
-  },
+        'Który lek jest odwracalnym selektywnym inhibitorem monoaminooksydazy typu A (RIMA), niewymagającym tak rygorystycznej diety ubogotyraminowej?',
+        ['Moklobemid', 'Moklobemid może zostać wyparty z enzymu przez wysokie stężenia tyraminy, co drastycznie obniża ryzyko przełomu.'],
+        ['Klomipramina', 'Klomipramina jest trójpierścieniowym lekiem przeciwdepresyjnym.'],
+        ['Fenelzyna', 'Fenelzyna jest klasycznym, nieodwracalnym i nieselektywnym inhibitorem MAO.'],
+        'psych-clas-q5'
+      )
+    ]
+  }
 ];
