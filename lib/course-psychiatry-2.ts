@@ -57,7 +57,7 @@ export const draftPsychiatryPart2: DraftLesson[] = [
       ),
       q(
         'Jaki objaw w badaniu fizykalnym jednoznacznie odróżnia ostre przedawkowanie opioidów od intoksykacji kokainą?',
-        ['Wąskie, szpilkowate źrenice (miosis) i spowolnienie oddechów w opioidach vs rozszerzone źrenice (mydriasis) i tachykardia w kokainie', 'Wąskie źrenice i depresja oddechowa to patognomoniczne cechy zatrucia receptorowych agonistów opioidowych.'],
+        ['Wąskie, szpilkowate źrenice (miosis) i spowolnienie oddechów w opioidach vs rozszerzone źrenice (mydriasis) i tachykardia w kokainie', 'Wąskie źrenice i depresja oddechowa to kluczowe cechy osiowe toksydromu opioidowego.'],
         ['Podwyższenie temperatury ciała powyżej 42 stopni wyłącznie w opioidach', 'Hipertermia jest typowa dla stymulantów i zespołu serotoninowego, nie dla czystych opioidów.'],
         ['Występowanie drżenia zamiarowego w kokainie', 'Drżenie zamiarowe wskazuje na uszkodzenie móżdżku.'],
         'psych-subst-q3'
@@ -172,7 +172,7 @@ export const draftPsychiatryPart2: DraftLesson[] = [
     sections: [
       {
         title: 'Skala C-SSRS i gradacja myśli samobójczych',
-        text: 'Columbia-Suicide Severity Rating Scale (C-SSRS) jest złotym standardem oceny ryzyka suicydalnego. Rozróżnia 5 poziomów: 1) Pasywne życzenie śmierci ("chciałbym zasnąć i nie obudzić się"), 2) Aktywne nieswoiste myśli samobójcze, 3) Aktywne myśli z metodą (bez planu), 4) Myśli z intencją bez konkretnego planu, 5) Myśli samobójcze z konkretnym planem i zamiarem. Poziomy 4 i 5 oznaczają bezpośrednie zagrożenie życia i bezwzględne wskazanie do natychmiastowej hospitalizacji.'
+        text: 'Columbia-Suicide Severity Rating Scale (C-SSRS) jest szeroko walidowanym narzędziem ustrukturyzowanego wywiadu klinicznego w ocenie nasilenia myśli i zachowań samobójczych. Narzędzie standaryzuje komunikację kliniczną, choć nie zastępuje całościowej oceny ryzyka ani nie wylicza indywidualnego prawdopodobieństwa samobójstwa. Rozróżnia 5 poziomów nasilenia myśli: 1) Pasywne życzenie śmierci ("chciałbym zasnąć i nie obudzić się"), 2) Aktywne nieswoiste myśli samobójcze, 3) Aktywne myśli z metodą (bez planu), 4) Myśli z intencją bez konkretnego planu, 5) Myśli samobójcze z konkretnym planem i zamiarem. Poziomy 4 i 5 oznaczają bezpośrednie zagrożenie życia i bezwzględne wskazanie do natychmiastowej interwencji i zabezpieczenia pacjenta.'
       },
       {
         title: 'Statyczne i modyfikowalne czynniki ryzyka',
@@ -194,7 +194,7 @@ export const draftPsychiatryPart2: DraftLesson[] = [
     advanced:
       'Dwoma lekami o udowodnionym w randomizowanych badaniach klinicznych niezależnym działaniu antysuicydalnym (obniżającym śmiertelność z przyczyn samobójczych) są lit (w chorobie afektywnej dwubiegunowej i depresji jednobiegunowej) oraz klozapina (w schizofrenii i zaburzeniach schizoafektywnych).',
     summary:
-      'Skala C-SSRS pozwala obiektywnie sklasyfikować ryzyko samobójcze. W ostrym pobudzeniu kluczowa jest deeskalacja werbalna; farmakoterapia wymaga ostrożności przed łączeniem olanzapiny i.m. z benzodiazepinami.',
+      'Skala C-SSRS ustrukturyzowuje wywiad suicydologiczny, ułatwiając gradację nasilenia myśli samobójczych. W ostrym pobudzeniu kluczowa jest deeskalacja werbalna; farmakoterapia wymaga ostrożności przed jednoczesnym podaniem olanzapiny i.m. z benzodiazepinami.',
     sourceIds: ['cssrs-scale', 'ptp-standardy', 'maudsley15'],
     questions: [
       q(
@@ -384,8 +384,8 @@ export const draftPsychiatryPart2: DraftLesson[] = [
       q(
         'Dlaczego u osób w wieku podeszłym z nagłym pogorszeniem funkcjonowania poznawczego zawsze należy wykonać badanie ogólne moczu?',
         ['Infekcja układu moczowego (ZUM) jest u seniorów najczęstszą somatyczną przyczyną ostrego zespołu majaczeniowego (delirium)', 'Często przebiega bez gorączki i dyzurii, manifestując się wyłącznie zaburzeniami świadomości i pobudzeniem.'],
-        ['Bakterie w moczu produkują dopaminę przenikającą przez barierę krew-mózg', 'Bakterie z moczu nie produkują dopaminy penetrującej do OUN.'],
-        ['Badanie moczu zastępuje badanie rezonansu magnetycznego głowy', 'Badanie moczu nie ocenia struktury mózgowia.'],
+        ['Białkomocz powyżej 1 g/d bezpośrednio hamuje korowe receptory NMDA', 'Nefropatia białkomoczowa nie wywołuje ostrego zespołu majaczeniowego w mechanizmie bezpośredniej blokady receptorowej bez cech mocznicy.'],
+        ['Izolowany bakteriomocz bez objawów ogólnych stanowi bezpośrednie wskazanie do sedacji neuroleptykiem', 'Bezobjawowy bakteriomocz u seniorów nie wymaga antybiotykoterapii ani sedacji bez klinicznych i laboratoryjnych cech aktywnej infekcji.'],
         'psych-integ-q5'
       )
     ]

@@ -84,7 +84,7 @@ export const psychiatryGlossary: PsychiatryGlossaryEntry[] = [
     term: 'Węglan litu',
     slug: 'lit',
     category: 'leki',
-    short: 'Złoty standard stabilizacji nastroju w ChAD',
+    short: 'Lek pierwszego rzutu w stabilizacji nastroju w ChAD',
     full: 'Lek o udowodnionym specyficznym działaniu antysuicydalnym. Hamuje enzymy GSK-3beta i IMPazę; wymaga TDM (stężenie w profilaktyce 0,6–0,8 mmol/l).',
     sources: ['agnp-tdm-2026', 'maudsley15'],
   },

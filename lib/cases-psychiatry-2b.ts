@@ -16,8 +16,8 @@ export const psychiatryCasesPart2b: ClinicalCase[] = [
         prompt: 'Które zjawisko farmakologiczne odpowiada za konieczność zwiększania dawki alprazolamu przy przewlekłym stosowaniu?',
         choices: [
           ['Tolerancja farmakodynamiczna wynikająca z internalizacji receptorów GABA-A i odsprzężenia miejsca wiążącego benzodiazepiny', 'Długotrwała stymulacja kompleksem GABA-A prowadzi do down-regulacji receptorów i adaptacji kanałów chlorkowych, co wywołuje tolerancję i zespół odstawienny.'],
-          ['Zniszczenie neuronów kory czołowej przez lek', 'Benzodiazepiny nie wywołują pierwotnej martwicy kory, lecz adaptację receptorową.'],
-          ['Gwałtowne przyspieszenie filtracji kłębuszkowej nerek', 'Eliminacja nerkowa metabolitów nie tłumaczy tolerancji receptorowej w OUN.'],
+          ['Indukcja wątrobowych enzymów mikrosomalnych przyspieszająca klirens', 'Dla większości benzodiazepin tolerancja ma charakter farmakodynamiczny (adaptacja receptorów GABA-A), a nie farmakokinetyczny.'],
+          ['Autoimmunologiczne blokowanie transporterów GABA', 'Mechanizm dotyczy modulacji allosterycznej i internalizacji podjednostek receptora GABA-A, nie procesów autoimmunologicznych.'],
         ],
         answerIndex: 0,
       },
@@ -39,7 +39,7 @@ export const psychiatryCasesPart2b: ClinicalCase[] = [
         choices: [
           ['Powolna redukcja o 1–2 mg diazepamu co 1–2 tygodnie, dostosowywana elastycznie do samopoczucia pacjentki przez okres kilku miesięcy', 'Powolne tempo pozwala na stopniową resensytyzację receptorów GABA-A bez gwałtownej dysforii i drgawek.'],
           ['Zmniejszanie dawki o 50% co 2 dni', 'Zbyt szybka redukcja prowadzi do dekompensacji i porzucenia protokołu przez pacjenta.'],
-          ['Utrzymywanie stałej dawki przez 10 lat bez żadnych prób redukcji', 'Brak redukcji naraża na powikłania poznawcze i zaburzenia równowagi u pacjentki.'],
+          ['Natychmiastowe obniżenie dawki o 75% w pierwszym tygodniu i odstawienie w drugim', 'Zbyt agresywna redukcja wywołuje silny zespół z odbicia i drgawki; protokół Ashton zakłada powolne zmniejszanie dawki o 1–2 mg diazepamu co 1–2 tygodnie.'],
         ],
         answerIndex: 0,
       },
@@ -72,8 +72,8 @@ export const psychiatryCasesPart2b: ClinicalCase[] = [
         prompt: 'Jak w modelu neurobiologicznym tłumaczy się paradoksalny efekt uspokajający i poprawę koncentracji po stymulantach w ADHD?',
         choices: [
           ['Metylofenidat blokuje nośniki DAT i NET, optymalizując ton dopaminergiczny i noradrenergiczny w korze przedczołowej (PFC), co wzmacnia sygnał istotny i wygasza szum neuronalny', 'Zgodnie z teorią Arnsten deficyt dopaminy i noradrenaliny w PFC osłabia bramkowanie uwagi; podniesienie ich stężenia do okna optymalnego przywraca kontrolę wykonawczą.'],
-          ['Metylofenidat całkowicie niszczy neurony pobudzające w pniu mózgu', 'Stymulanty modyfikują uwalnianie neuroprzekaźników, nie niszcząc struktur komórkowych.'],
-          ['Lek działa wyłącznie jako placebo psychologiczne', 'Skuteczność metylofenidatu jest potwierdzona licznymi badaniami RCT z wysokim effect size (d > 0.8).'],
+          ['Wywołuje uogólnioną supresję kory mózgowej poprzez mechanizm sedatywny GABA-A', 'Metylofenidat nie jest agonistą GABA-A; działa poprzez modulację katecholamin (dopaminy i noradrenaliny), optymalizując stosunek sygnału do szumu w PFC.'],
+          ['Działa poprzez blokadę receptorów serotoninowych 5-HT2A w pniu mózgu', 'Głównym mechanizmem terapeutycznym w ADHD jest hamowanie wychwytu zwrotnego dopaminy i noradrenaliny (blokada DAT i NET), a nie antagonizm 5-HT2A.'],
         ],
         answerIndex: 0,
       },
@@ -83,8 +83,8 @@ export const psychiatryCasesPart2b: ClinicalCase[] = [
         prompt: 'Jaka postać farmaceutyczna metylofenidatu jest preferowana u dorosłych aktywnych zawodowo?',
         choices: [
           ['Preparat o zmodyfikowanym/przedłużonym uwalnianiu (np. OROS lub kapsułki o dwufazowym uwalnianiu) zapewniający stabilne działanie przez 8–12 godzin', 'Preparaty o przedłużonym uwalnianiu eliminują konieczność wielokrotnego zażywania tabletek w ciągu dnia i zmniejszają ryzyko wahań nastroju z odbicia.'],
-          ['Tabletki o natychmiastowym uwalnianiu (IR) zażywane co 45 minut', 'Tak częste dawkowanie wywołuje gwałtowne skoki stężenia i ryzyko działań niepożądanych.'],
-          ['Doraźne przyjmowanie leku wyłącznie raz w miesiącu', 'Metylofenidat wymaga regularnego pokrycia okresu wymaganego skupienia.'],
+          ['Wyłącznie postać o natychmiastowym uwalnianiu (IR) przyjmowana raz na dobę rano', 'Formulacje IR działają krótko (3–4 godziny), co przy dawkowaniu raz na dobę pozostawia pacjenta bez pokrycia uwagi przez większość dnia pracy.'],
+          ['Podskórne iniekcje o powolnym uwalnianiu stosowane co 6 miesięcy', 'Metylofenidat u dorosłych podawany jest doustnie w formulacjach modyfikowanych o profilu dobowym.'],
         ],
         answerIndex: 0,
       },
@@ -95,7 +95,7 @@ export const psychiatryCasesPart2b: ClinicalCase[] = [
         choices: [
           ['Spożywanie pożywnego, wysokobiałkowego śniadania przed zażyciem tabletki oraz kalorycznej kolacji po wygaśnięciu działania leku wieczorem', 'Przesunięcie głównych posiłków poza szczyt działania stymulanta zapobiega utracie masy ciała bez konieczności rezygnacji ze skutecznej dawki.'],
           ['Natychmiastowe odstawienie leku na stałe', 'Spadek apetytu jest częstym i możliwym do skompensowania działaniem niepożądanym.'],
-          ['Dołączenie leków nasennych w ciągu dnia', 'Leki nasenne znoszą efekt terapeutyczny stymulanta.'],
+          ['Natychmiastowe dołączenie cyproheptadyny jako stymulatora apetytu', 'Cyproheptadyna wykazuje działanie sedatywne i antycholinergiczne; w pierwszej kolejności zaleca się modyfikację pór posiłków.'],
         ],
         answerIndex: 0,
       },
@@ -128,7 +128,7 @@ export const psychiatryCasesPart2b: ClinicalCase[] = [
         choices: [
           ['Wartość graniczna / znacznie wydłużona (>480 ms) przy jednoczesnym skojarzeniu dwóch leków o znanym ryzyku TdP (amiodaron + escitalopram) i bradykardii', 'Połączenie escitalopramu w maksymalnej dawce z amiodaronem stwarza skrajne ryzyko wielokształtnego częstoskurczu komorowego (TdP) i nagłego zgonu sercowego.'],
           ['Stan całkowicie bezpieczny, ponieważ QTcF nie przekroczyło 600 ms', 'Próg alarmowy dla interwencji kardiologicznej to ≥500 ms lub przyrost >60 ms od wartości wyjściowej; 498 ms wymaga pilnej modyfikacji.'],
-          ['Wynik wskazuje na bezwzględną konieczność wszczepienia kardiowertera bez modyfikacji leków', 'Podstawą jest eliminacja jatrogennego czynnika farmakologicznego i korekta elektrolitowa.'],
+          ['Wskazanie do dołączenia drugiego leku wydłużającego QT w celu sedacji', 'Dodawanie kolejnych leków o potencjale blokady hERG (np. hydroksyzyny czy lewomepromazyny) dramatycznie zwielokrotnia ryzyko TdP.'],
         ],
         answerIndex: 0,
       },
@@ -138,8 +138,8 @@ export const psychiatryCasesPart2b: ClinicalCase[] = [
         prompt: 'Dlaczego hipokaliemia i hipomagnezemia drastycznie nasilają ryzyko TdP przy lekach blokujących kanał hERG?',
         choices: [
           ['Niskie stężenie zewnątrzkomórkowego potasu nasila blokadę kanałów potasowych IKr przez leki i sprzyja powstawaniu wczesnych potencjałów następczych (EAD)', 'Utrzymanie stężenia potasu >4,0 mmol/l i magnezu >0,8 mmol/l jest kluczowym warunkiem ochrony przed arytmią komorową.'],
-          ['Hipokaliemia przyspiesza przewodzenie w węźle AV', 'Wpływ na repolaryzację komorową jest mechanizmem kardynalnym arytmii TdP.'],
-          ['Niski potas neutralizuje działanie escitalopramu w mózgu', 'Nie ma wpływu na powinowactwo do SERT w OUN.'],
+          ['Niskie stężenie potasu bezpośrednio indukuje trwały blok odnogi pęczka Hisa', 'Hipokaliemia przede wszystkim opóźnia repolaryzację komór poprzez wpływ na prąd IKr, sprzyjając wczesnym potencjałom następczym (EAD) i TdP.'],
+          ['Wzrost stężenia potasu hamuje klirens wątrobowy leków przeciwdepresyjnych', 'Wpływ elektrolitowy dotyczy biofizyki kanałów jonowych w miocytach, a nie klirensu CYP450.'],
         ],
         answerIndex: 0,
       },
@@ -161,7 +161,7 @@ export const psychiatryCasesPart2b: ClinicalCase[] = [
         choices: [
           ['Skrócenie QTcF do wartości <450 ms przy prawidłowym stężeniu potasu (K+ >4,0 mmol/l)', 'Normalizacja repolaryzacji i wyrównanie elektrolitowe potwierdzają zażegnanie ryzyka TdP.'],
           ['Brak zmian przy QTcF 540 ms', 'Wartość ≥500 ms wymaga natychmiastowej hospitalizacji i telemetrii.'],
-          ['Wystąpienie bloku całkowitego serca jako zjawiska pożądanego', 'Blok przewodzenia jest powikłaniem kardiologicznym.'],
+          ['Stabilizacja QTcF na poziomie 520 ms bez objawów omdleniowych', 'Wartość QTcF ≥500 ms nadal niesie wysokie ryzyko TdP i wymaga modyfikacji leczenia pomimo braku omdleń w wywiadzie.'],
         ],
         answerIndex: 0,
       },
@@ -182,8 +182,8 @@ export const psychiatryCasesPart2b: ClinicalCase[] = [
         prompt: 'Jak status wolnego metabolizatora CYP2D6 wpływa na losy wenlafaksyny w organizmie wg wytycznych CPIC?',
         choices: [
           ['Brak aktywnego enzymu drastycznie spowalnia przekształcanie wenlafaksyny w jej główny metabolit (O-demetylowenlafaksynę), prowadząc do wielokrotnie wyższego stężenia substancji macierzystej i nasilenia działań niepożądanych', 'U metabolizatorów PM ekspozycja na cząsteczkę macierzystą jest skrajnie wysoka nawet przy małych dawkach początkowych.'],
-          ['Przyspiesza całkowitą eliminację leku w ciągu 30 minut od zażycia', 'Osoby PM eliminują lek wolniej, a nie szybciej.'],
-          ['Uniemożliwia wchłonięcie leku z przewodu pokarmowego', 'Wchłanianie jelitowe nie zależy od wątrobowego cytochromu CYP2D6.'],
+          ['Prowadzi do całkowitej niewrażliwości transporterów SERT i NET na lek w OUN', 'Genotyp metabolizatora dotyczy farmakokinetyki (klirensu wątrobowego), a nie powinowactwa do transporterów w synapsie.'],
+          ['Zwiększa klirens nerkowy cząsteczki macierzystej z moczem', 'Zmniejszona aktywność CYP2D6 upośledza klirens metaboliczny wenlafaksyny, zwiększając ogólnoustrojową ekspozycję na lek.'],
         ],
         answerIndex: 0,
       },
@@ -193,8 +193,8 @@ export const psychiatryCasesPart2b: ClinicalCase[] = [
         prompt: 'Jaki mechanizm lekowy prowadzi do fenokonwersji pacjenta NM w fenotypowy PM?',
         choices: [
           ['Jednoczesne podanie silnego inhibitora CYP2D6 (np. fluoksetyny, bupropionu lub paroksetyny), który blokuje czynny enzym', 'Fenokonwersja to zjawisko, w którym interakcja lekowa zmienia funkcjonalny metabolizm pacjenta niezależnie od jego wrodzonego genotypu.'],
-          ['Wypicie szklanki wody mineralnej niegazowanej', 'Woda nie wpływa na aktywność izoenzymów cytochromu P450.'],
-          ['Przyjmowanie suplementu witaminy C w dawce 50 mg', 'Witamina C nie jest silnym inhibitorem CYP2D6.'],
+          ['Zastosowanie silnego induktora enzymatycznego (np. dziurawca zwyczajnego lub karbamazepiny)', 'Induktory enzymatyczne obniżają stężenie leków, podczas gdy fenokonwersja w fenotyp PM wymaga silnej inhibicji enzymu (np. przez paroksetynę lub bupropion).'],
+          ['Dieta wysokobiałkowa z całkowitą eliminacją węglowodanów', 'Nawyki żywieniowe nie blokują wybiórczo enzymu CYP2D6 w stopniu wywołującym pełną fenokonwersję.'],
         ],
         answerIndex: 0,
       },
@@ -205,7 +205,7 @@ export const psychiatryCasesPart2b: ClinicalCase[] = [
         choices: [
           ['Rozważenie zamiany na lek przeciwdepresyjny niemetabolizowany przez CYP2D6 (np. escitalopram, sertralina) lub znacząca redukcja dawki wenlafaksyny z monitorowaniem TDM', 'Wybór leku o alternatywnej drodze eliminacji (np. CYP2C19 dla escitalopramu) pozwala uniknąć toksyczności.'],
           ['Natychmiastowe potrojenie dawki wenlafaksyny do 225 mg/d', 'Zwiększenie dawki u metabolizatora PM grozi ciężkim zespołem serotoninowym i kryzą nadciśnieniową.'],
-          ['Podanie kwasu acetylosalicylowego bez zmiany leku', 'Nie modyfikuje klirensu wenlafaksyny.'],
+          ['Dołączenie silnego inhibitora CYP2D6 w celu stabilizacji metabolizmu', 'Inhibitor enzymu pogłębiłby zablokowanie szlaku eliminacji i doprowadził do jeszcze groźniejszej intoksykacji wenlafaksyną.'],
         ],
         answerIndex: 0,
       },
@@ -216,7 +216,7 @@ export const psychiatryCasesPart2b: ClinicalCase[] = [
         choices: [
           ['Umożliwia precyzyjne zweryfikowanie rzeczywistej ekspozycji organizmu na lek i metabolity, stanowiąc obiektywne potwierdzenie fenotypu farmakokinetycznego', 'TDM łączy dane genetyczne z realnym stanem pacjenta (uwzględniając dietę, wiek i leki współistniejące).'],
           ['TDM jest całkowicie zbędne, jeśli wykonano badanie genetyczne', 'Genotyp wskazuje jedynie na potencjał enzymatyczny, nie uwzględniając interakcji ani wydolności narządów.'],
-          ['TDM bada wyłącznie poziom hemoglobiny we krwi', 'TDM oznacza oznaczenie stężenia substancji leczniczej w osoczu.'],
+          ['TDM pozwala przewidzieć wyłącznie genotyp pacjenta bez oceny stężenia leku', 'TDM mierzy rzeczywiste stężenie substancji we krwi (fenotyp funkcjonalny), nie identyfikując bezpośrednio wariantów allelicznych w DNA.'],
         ],
         answerIndex: 0,
       },
@@ -238,7 +238,7 @@ export const psychiatryCasesPart2b: ClinicalCase[] = [
         choices: [
           ['Esketamina donosowa (antagonista receptora NMDA) podawana w certyfikowanym ośrodku medycznym w skojarzeniu z doustnym lekiem przeciwdepresyjnym', 'Esketamina blokuje receptory NMDA na interneuronach GABA-ergicznych, wywołując wyrzut glutaminianu, stymulację receptorów AMPA i kaskadę synaptogenezy zależną od BDNF/mTOR.'],
           ['Kolejna monoterapię lekiem SSRI w dawce minimalnej przez 2 dni', 'Kolejny SSRI w monoterapii po 4 nieskutecznych kuracjach ma poniżej 10% szans na powodzenie.'],
-          ['Doraźne podanie leków przeciwbólowych bez recepty', 'Nie posiadają działania na plastyczność synaptyczną w depresji lekoopornej.'],
+          ['Wdrożenie długotrwałej monoterapii benzodiazepiną w wysokiej dawce', 'Benzodiazepiny nie wykazują działania przeciwdepresyjnego ani pronuroplastycznego i nie stanowią leczenia przyczynowego TRD.'],
         ],
         answerIndex: 0,
       },
@@ -248,8 +248,8 @@ export const psychiatryCasesPart2b: ClinicalCase[] = [
         prompt: 'Jaki szlak neurobiologiczny odpowiada za szybką odbudowę kolców dendrytycznych w hipokampie i korze przedczołowej po podaniu esketaminy?',
         choices: [
           ['Aktywacja receptorów AMPA prowadzi do depolaryzacji, napływu wapnia i wydzielenia neurotrofiny BDNF, co aktywuje kinazę mTOR i indukuje syntezę białek synaptycznych w 24 godziny', 'Jest to tzw. hipoteza plastyczności glutaminergicznej, fundamentalnie odmienna od wolnej latencji monoaminowej.'],
-          ['Zniszczenie wszystkich synaps glutaminergicznych w mózgu', 'Esketamina moduluje neurotransmisję i promuje powstawanie nowych połączeń synaptycznych, nie ich niszczenie.'],
-          ['Wybiórcze hamowanie wydzielania insuliny w trzustce', 'Mechanizm dotyczy bezpośrednio transmisji w OUN.'],
+          ['Trwałe zahamowanie syntezy BDNF i ekspresji receptorów TrkB', 'Esketamina w modelach przedklinicznych stymuluje, a nie hamuje szlak BDNF–TrkB–mTOR.'],
+          ['Bezpośrednia blokada obwodowych receptorów beta-1 adrenergicznych', 'Mechanizm ten dotyczy układu krążenia i leków beta-adrenolitycznych, a nie ośrodkowego działania ketaminy.'],
         ],
         answerIndex: 0,
       },
@@ -259,8 +259,8 @@ export const psychiatryCasesPart2b: ClinicalCase[] = [
         prompt: 'Jakie parametry życiowe i objawy przejściowe wymagają obowiązkowego monitorowania przez co najmniej 120 minut po podaniu leku?',
         choices: [
           ['Ciśnienie tętnicze krwi (ryzyko przejściowego skoku RR) oraz obecność objawów dysocjacyjnych i sedacji', 'Esketamina przejściowo podnosi ciśnienie tętnicze i może wywoływać zjawiska dysocjacji (depersonalizacja, derealizacja), które ustępują w ciągu 90–120 minut.'],
-          ['Poziom kwasu mlekowego co 5 minut', 'Brak wskazań do monitorowania mleczanów u stabilnego pacjenta.'],
-          ['Gęstość mineralna kości w badaniu densytometrycznym', 'Gęstość kości nie ulega zmianie po pojedynczej dawce leku.'],
+          ['Stężenie elektrolitów i gazometria tętnicza co 15 minut', 'Rutynowa inwazyjna diagnostyka gazometryczna nie jest wymagana u pacjentów bez ostrej niewydolności oddechowej.'],
+          ['Seryjne badania EEG po każdej dawce', 'Choć ketamina wpływa na czynność bioelektryczną mózgu, rutynowe monitorowanie EEG nie jest zaleceniem porejestracyjnym przy podawaniu esketaminy.'],
         ],
         answerIndex: 0,
       },
@@ -270,8 +270,8 @@ export const psychiatryCasesPart2b: ClinicalCase[] = [
         prompt: 'Jaka jest skuteczność terapii elektrowstrząsowej (ECT) w ciężkiej depresji z bezpośrednim zagrożeniem życia lub objawami psychotycznymi?',
         choices: [
           ['ECT pozostaje najskuteczniejszą biologiczną metodą leczenia ciężkiej depresji z odsetkiem remisji sięgającym 70–85%', 'Wskazaniami pilnymi do ECT są: stupor depresyjny, odmowa przyjmowania płynów i pokarmów, wysokie ryzyko samobójcze oraz depresja psychotyczna oporna na farmakoterapię.'],
-          ['ECT jest metodą o skuteczności równej placebo', 'Liczne badania kliniczne potwierdzają bezprecedensową skuteczność ECT w ciężkich postaciach depresji.'],
-          ['ECT wywołuje trwałe zniszczenie kory mózgowej u 100% chorych', 'Współczesne ECT prowadzone w znieczuleniu ogólnym z relaksacją mięśniową jest procedurą bezpieczną; działania niepożądane dotyczą przejściowych zaburzeń pamięci świeżej.'],
+          ['ECT jest zarezerwowane wyłącznie dla pacjentów w śpiączce wątrobowej', 'ECT jest uznaną metodą leczenia ciężkich zaburzeń psychotycznych i afektywnych, nie encefalopatii wątrobowej.'],
+          ['ECT wiąże się z brakiem jakichkolwiek działań niepożądanych poznawczych', 'ECT niesie ryzyko przemijających zaburzeń pamięci wstecznej i następczej, co wymaga rzetelnej informacji i zgody pacjenta.'],
         ],
         answerIndex: 0,
       },
@@ -303,8 +303,8 @@ export const psychiatryCasesPart2b: ClinicalCase[] = [
         prompt: 'Jakie jest główne odległe powikłanie somatyczne przewlekłej hiperprolaktynemii i wtórnego hipogonadyzmu u młodych kobiet?',
         choices: [
           ['Spadek gęstości mineralnej kości prowadzący do wczesnej osteopenii i osteoporozy (z powodu przewlekłego niedoboru estrogenów)', 'Przewlekła supresja osi HPG przez prolaktynę obniża poziom estrogenów, co przyspiesza resorpcję kości i grozi złamaniami patologicznymi.'],
-          ['Nadmierny rozrost kości twarzoczaszki', 'Akromegalia wynika z nadmiaru hormonu wzrostu (GH), nie prolaktyny.'],
-          ['Ostra niedokrwistość megaloblastyczna', 'Brak wpływu na wchłanianie witaminy B12.'],
+          ['Ostry zespół mielodysplastyczny', 'Prolaktyna nie wywołuje pierwotnej transformacji nowotworowej linii szpikowych.'],
+          ['Przewlekła niewydolność kory nadnerczy', 'Hiperprolaktynemia wpływa supresyjnie na oś podwzgórze-przysadka-gonady (GnRH/LH/FSH), a nie na wydzielanie ACTH.'],
         ],
         answerIndex: 0,
       },
@@ -325,7 +325,7 @@ export const psychiatryCasesPart2b: ClinicalCase[] = [
         prompt: 'Jaka strategia farmakologiczna jest najbardziej elegancka i skuteczna u pacjentki z hiperprolaktynemią na rysperydonie?',
         choices: [
           ['Stopniowa rotacja na arypiprazol LUB dołączenie małej dawki arypiprazolu (2,5–5 mg/d) do rysperydonu celem częściowego pobudzenia receptorów D2 w przysadce', 'Dołączenie małej dawki częściowego agonisty D2 skutecznie obniża prolaktynę bez konieczności rezygnacji ze sprawdzonego leku przeciwpsychotycznego.'],
-          ['Wdrożenie dużych dawek estrogenów bez konsultacji ginekologicznej', 'Nie usuwa przyczyny prolaktynowej i stwarza ryzyko zakrzepowo-zatorowe.'],
+          ['Rutynowe dołączenie bromokryptyny bez próby modyfikacji leczenia przeciwpsychotycznego', 'Agoniści dopaminy o silnym działaniu mogą destabilizować psychozę; preferuje się modyfikację neuroleptyku (rotację lub małą dawkę arypiprazolu).'],
           ['Natychmiastowe odstawienie wszystkich leków bez kontroli', 'Niesie ponad 70% ryzyko nawrotu ostrego epizodu psychotycznego w ciągu roku.'],
         ],
         answerIndex: 0,

@@ -268,7 +268,7 @@ test('Test G: EXTRIP RECOMMENDED vs SUGGESTED vs missing data logic', () => {
   assert.ok(missing.missingCriticalInputs.length > 0);
   assert.ok(missing.missingCriticalInputs.some(m => m.includes('eGFR')));
 
-  // NOT_INDICATED: stężenie terapeutyczne
+  // NOT_INDICATED: stężenie terapeutyczne przy pełnej ocenie
   const notInd = evaluateExtripLithiumGuidance({
     measuredConcentrationMmolL: 0.8,
     eGfr: 90,
@@ -276,8 +276,10 @@ test('Test G: EXTRIP RECOMMENDED vs SUGGESTED vs missing data logic', () => {
     seizures: false,
     dangerousDysrhythmias: false,
     significantConfusion: false,
+    projectedHoursToLessThan1MmolL: 0,
   });
   assert.equal(notInd.recommendationLevel, 'NOT_INDICATED');
+  assert.equal(notInd.fullyEvaluated, true);
 });
 
 // Test H: DSM-5-TR vs ICD-11 duration criteria

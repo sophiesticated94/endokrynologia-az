@@ -36,7 +36,7 @@ export const draftPsychiatryPart1b: DraftLesson[] = [
       ]
     },
     advanced:
-      'W pierwszych 7–14 dniach włączania SSRI u pacjentów z lękiem napadowym występuje paradoksalne nasilenie lęku wywołane pobudzeniem autoreceptorów 5-HT2A i 5-HT2C. Standardem jest rozpoczynanie od 1/2 dawki początkowej (np. sertralina 25 mg lub escitalopram 5 mg).',
+      'W pierwszych 7–14 dniach włączania SSRI u pacjentów z lękiem napadowym występuje paradoksalne nasilenie lęku wywołane pobudzeniem postsynaptycznych receptorów 5-HT2A i 5-HT2C. Standardem jest rozpoczynanie od 1/2 dawki początkowej (np. sertralina 25 mg lub escitalopram 5 mg).',
     summary:
       'Zaburzenia lękowe wynikają z dysregulacji pętli vmPFC-ciało migdałowate. Podstawą terapii są SSRI/SNRI w ostrożnej titracji oraz CBT; pregabalina stanowi niebenzodiazepinową alternatywę w GAD.',
     sourceIds: ['wfsbp-anxiety', 'nice-depression', 'pregabalin-consensus'],

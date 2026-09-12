@@ -145,6 +145,7 @@ export function PsychiatryCommandCenter({ initialPresetId }: { initialPresetId?:
       {activeTab === 'safety' && (
         <PsychiatrySafetyView
           patient={patient}
+          setPatient={setPatient}
           prescriptions={prescriptions}
           presetData={activePreset?.data}
         />

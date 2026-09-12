@@ -173,12 +173,12 @@ export const PSYCHIATRY_LESSON_ACTIVITY_REGISTRY: Record<string, Partial<WidgetP
       type: 'lab',
       prompt: 'PET wskazuje 84% occupancy D2 u pacjenta na haloperydolu. Jaka jest implikacja kliniczna heurystyki Kapura?',
       options: [
-        'Powyżej 80% occupancy dla czystych antagonistów gwałtownie wzrasta ryzyko EPS przy braku dodatkowej korzyści',
-        'Oznacza to pełną neuroprotekcję i brak działań niepożądanych',
-        'Occupancy >80% ma zastosowanie wyłącznie do częściowych agonistów',
+        'Powyżej 80% occupancy dla badanych antagonistów PET obserwowano skokowy wzrost ryzyka EPS przy braku dodatkowej korzyści klinicznej',
+        'Oznacza to gwarancję braku jakichkolwiek działań niepożądanych',
+        'Wskaźnik >80% ma zastosowanie wyłącznie do częściowych agonistów D2',
       ],
       answer: 0,
-      explanation: 'Kapur wykazał, że okno 65–80% łączy skuteczność z niskim EPS dla antagonistów. Przekroczenie 80% occupancy dramatycznie zwiększa prawdopodobieństwo parkinsonizmu.',
+      explanation: 'Kapur opisał historyczną heurystykę populacyjną: zakres 65–80% wiązał się ze statystyczną odpowiedzią przy niższym ryzyku EPS dla antagonistów. Przekroczenie 80% occupancy koreluje ze skokowym wzrostem prawdopodobieństwa parkinsonizmu.',
     }),
   },
   'receptory-dopaminowe-okno-kapura': {
@@ -187,12 +187,12 @@ export const PSYCHIATRY_LESSON_ACTIVITY_REGISTRY: Record<string, Partial<WidgetP
       type: 'lab',
       prompt: 'PET wskazuje 84% occupancy D2 u pacjenta na haloperydolu. Jaka jest implikacja kliniczna heurystyki Kapura?',
       options: [
-        'Powyżej 80% occupancy dla czystych antagonistów gwałtownie wzrasta ryzyko EPS przy braku dodatkowej korzyści',
-        'Oznacza to pełną neuroprotekcję i brak działań niepożądanych',
-        'Occupancy >80% ma zastosowanie wyłącznie do częściowych agonistów',
+        'Powyżej 80% occupancy dla badanych antagonistów PET obserwowano skokowy wzrost ryzyka EPS przy braku dodatkowej korzyści klinicznej',
+        'Oznacza to gwarancję braku jakichkolwiek działań niepożądanych',
+        'Wskaźnik >80% ma zastosowanie wyłącznie do częściowych agonistów D2',
       ],
       answer: 0,
-      explanation: 'Kapur wykazał, że okno 65–80% łączy skuteczność z niskim EPS dla antagonistów. Przekroczenie 80% occupancy dramatycznie zwiększa prawdopodobieństwo parkinsonizmu.',
+      explanation: 'Kapur opisał historyczną heurystykę populacyjną: zakres 65–80% wiązał się ze statystyczną odpowiedzią przy niższym ryzyku EPS dla antagonistów. Przekroczenie 80% occupancy koreluje ze skokowym wzrostem prawdopodobieństwa parkinsonizmu.',
     }),
   },
   'neuroleptyki-generacje-profil': {

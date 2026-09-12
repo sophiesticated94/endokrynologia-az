@@ -35,6 +35,8 @@ export interface ExtripEvaluationResult {
   rationale: string;
   criteriaMet: string[];
   missingCriticalInputs: string[];
+  unknownCriteria: string[];
+  fullyEvaluated: boolean;
   criteriaEvaluated: ExtripCriterionCheck[];
   educationalDisclaimer: string;
   evidenceId: 'extrip-lithium-recommendation';
@@ -164,6 +166,9 @@ export function evaluateExtripLithiumGuidance(input: ExtripEvaluationInput): Ext
     },
   ];
 
+  const unknownCriteria = checks.filter(c => c.status === 'unknown').map(c => c.criterion);
+  const fullyEvaluated = unknownCriteria.length === 0 && missingCriticalInputs.length === 0;
+
   let recommendation: ExtripRecommendation = 'NOT_INDICATED';
   let recommendationLabel = 'Brak wskazań do ECTR wg kryteriów EXTRIP / intensywna terapia zachowawcza';
   let rationale = '';
@@ -176,14 +181,14 @@ export function evaluateExtripLithiumGuidance(input: ExtripEvaluationInput): Ext
     recommendation = 'SUGGESTED';
     recommendationLabel = 'SUGGESTED: Rozważ kwalifikację do leczenia pozaustrojowego (ECTR)';
     rationale = `Spełnione kryteria sugerowane wg EXTRIP 2015: ${suggestedCriteriaMet.join('; ')}. Wskazana pilna konsultacja nefrologiczna i toksykologiczna.`;
-  } else if (missingCriticalInputs.length > 0) {
+  } else if (!fullyEvaluated) {
     recommendation = 'insufficient_information';
     recommendationLabel = 'Niekompletne dane kliniczne — brak możliwości pełnej oceny wg kryteriów EXTRIP';
-    rationale = `Brak krytycznych danych klinicznych: ${missingCriticalInputs.join(', ')}. Ocena EXTRIP nie może wykluczyć wskazań do ECTR bez tych informacji.`;
+    rationale = `Nieocenione lub brakujące kryteria: ${[...missingCriticalInputs, ...unknownCriteria].join(', ')}. Ocena EXTRIP nie może pewnie wykluczyć wskazań do ECTR (NOT_INDICATED) bez tych informacji.`;
   } else {
     recommendation = 'NOT_INDICATED';
     recommendationLabel = 'Leczenie zachowawcze / brak spełnionych kryteriów EXTRIP do hemodializy';
-    rationale = 'Brak spełnienia kryteriów bezwzględnych i sugerowanych EXTRIP. Wskazane nawadnianie 0,9% NaCl, monitorowanie diurezy i seryjne oznaczenia TDM.';
+    rationale = 'Brak spełnienia kryteriów bezwzględnych i sugerowanych EXTRIP przy pełnej ocenie wszystkich kryteriów. Wskazane nawadnianie 0,9% NaCl, monitorowanie diurezy i seryjne oznaczenia TDM.';
   }
 
   return {
@@ -193,6 +198,8 @@ export function evaluateExtripLithiumGuidance(input: ExtripEvaluationInput): Ext
     rationale,
     criteriaMet,
     missingCriticalInputs,
+    unknownCriteria,
+    fullyEvaluated,
     criteriaEvaluated: checks,
     educationalDisclaimer:
       'EDUKACYJNY KONTEKST EXTRIP — decyzja o kwalifikacji do hemodializy nie może być zautomatyzowana i wymaga pilnej oceny nefrologa oraz toksykologa w warunkach OIT.',

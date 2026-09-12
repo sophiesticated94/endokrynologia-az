@@ -39,7 +39,7 @@ export const psychiatryCasesPart1: ClinicalCase[] = [
         choices: [
           ['Ścisłe monitorowanie kliniczne, psychoedukacja rodziny i terapia CBT skoncentrowana na prodromie; leki przeciwpsychotyczne tylko w razie progresji do jawnego epizodu', 'Wytyczne nie zalecają rutynowej neuroleptyzacji w fazie prodromu ze względu na brak dowodu na zapobieganie psychozie i ryzyko metaboliczne/sedacji.'],
           ['Natychmiastowe włączenie haloperydolu w dawce 10 mg/d celem profilaktyki uszkodzenia istoty szarej', 'Klasyczne neuroleptyki w wysokich dawkach w prodromie są błędem sztuki i nasilają objawy negatywne.'],
-          ['Uspokojenie pacjenta i odstąpienie od jakichkolwiek dalszych wizyt kontrolnych', 'Brak monitorowania w fazie wysokiego ryzyka uniemożliwia wczesną interwencję w chwili debiutu jawnej psychozy.'],
+          ['Wdrożenie leczenia klozapiną w monoterapii w celu zapobieżenia progresji do psychozy', 'Klozapina nie jest zarejestrowana ani wskazana w stanie podwyższonego ryzyka psychozy z uwagi na profil działań niepożądanych.'],
         ],
         answerIndex: 0,
       },
@@ -91,7 +91,7 @@ export const psychiatryCasesPart1: ClinicalCase[] = [
         choices: [
           ['Zmniejszają prawdopodobieństwo jawnej niedoczynności tarczycy i aktywnego stanu zapalnego, wspierając diagnozę pierwotnego zaburzenia afektywnego', 'Prawidłowe wyniki eliminują typowe maski internistyczne, choć nie stanowią bezpośredniego testu na depresję.'],
           ['Definitywnie wykluczają wszystkie schorzenia somatyczne mogące imitować zespół zmęczeniowy', 'Laboratorium w normie nie wyklucza zaburzeń snu (np. bezdechu) ani wczesnych faz innych chorób.'],
-          ['Wskazują na konieczność wykonania pilnej punkcji lędźwiowej', 'Brak wskazań neurologicznych do inwazyjnej diagnostyki płynu mózgowo-rdzeniowego.'],
+          ['Stanowią bezpośredni dowód całkowitej remisji biologicznej wykluczający wskazania do farmakoterapii', 'Prawidłowe parametry tarczycy i zapalne wykluczają tło somatyczne, lecz nie oceniają nasilenia osiowych objawów afektywnych.'],
         ],
         answerIndex: 0,
       },
@@ -102,7 +102,7 @@ export const psychiatryCasesPart1: ClinicalCase[] = [
         choices: [
           ['Farmakoterapia SSRI (np. sertralina, escitalopram) skojarzona ze strukturalną psychoterapią CBT', 'W depresji umiarkowanej połączenie farmakoterapii i psychoterapii wykazuje najwyższą skuteczność.'],
           ['Monoterapia lekami nasennymi z grupy Z przez 6 miesięcy', 'Leki Z nie leczą depresji i niosą ryzyko uzależnienia.'],
-          ['Wstrzymanie jakichkolwiek interwencji do roku od wystąpienia stresora', 'Brak leczenia utrwala dysfunkcję i zwiększa ryzyko przewlekłości.'],
+          ['Monoterapia preparatami dziurawca w niekontrolowanych dawkach bez monitorowania stanu psychicznego', 'Preparaty ziołowe niosą ryzyko nieprzewidywalnych interakcji cytochromowych i nie stanowią standardu w umiarkowanej depresji.'],
         ],
         answerIndex: 0,
       },
@@ -112,7 +112,7 @@ export const psychiatryCasesPart1: ClinicalCase[] = [
         prompt: 'Jaka informacja edukacyjna jest kluczowa dla bezpieczeństwa terapii?',
         choices: [
           ['Pełny efekt terapeutyczny wymaga 4–6 tygodni na dawce docelowej; w pierwszych 10–14 dniach może przejściowo wystąpić niepokój lub nudności', 'Prawidłowa psychoedukacja o latencji terapeutycznej zapobiega przedwczesnemu odstawieniu leku przez pacjenta.'],
-          ['Lek musi przynieść pełną poprawę w ciągu 48 godzin od pierwszej tabletki', 'Działanie przeciwdepresyjne zależy od adaptacji receptorowych i neuroplastyczności, co wymaga czasu.'],
+          ['Brak subiektywnej poprawy po 7 dniach jest bezwzględnym wskazaniem do natychmiastowej zamiany leku na inną klasę', 'Ocena skuteczności wczesnej odpowiedzi następuje po 2–4 tygodniach; zbyt wczesna rotacja uniemożliwia ocenę efektu terapeutycznego.'],
           ['Poprawa nastroju pojawi się dopiero po 6 miesiącach nieprzerwanego leczenia', 'Wstępna odpowiedź kliniczna jest widoczna po 2–4 tygodniach.'],
         ],
         answerIndex: 0,
@@ -145,8 +145,8 @@ export const psychiatryCasesPart1: ClinicalCase[] = [
         prompt: 'Jak prawidłowo interpretować brak zmian w rezonansie magnetycznym?',
         choices: [
           ['Zmniejsza prawdopodobieństwo makroskopowego guza OUN lub udaru, lecz nie wyklucza zaburzeń na poziomie sieci neuronalnych typowych dla schizofrenii', 'Neuroobrazowanie strukturalne wyklucza przyczyny makroskopowe, ale schizofrenia nie daje widocznych ognisk w rutynowym MRI.'],
-          ['Definitywnie dowodzi, że pacjent jest zdrowy neurologicznie i symuluje objawy', 'Prawidłowe MRI nie wyklucza psychozy; większość pacjentów ze schizofrenią ma prawidłowy obraz MRI.'],
-          ['Oznacza, że badanie należy powtarzać co 2 tygodnie przez rok', 'Brak wskazań do seryjnego rezonansu przy stabilnym obrazie klinicznym.'],
+          ['Wyklucza proces psychotyczny i wskazuje na konieczność wykonania natychmiastowej tomografii emisyjnej SPECT', 'Prawidłowy obraz MRI jest typowy dla większości chorych na schizofrenię; SPECT nie jest badaniem rutynowym.'],
+          ['Oznacza bezwzględne wskazanie do seryjnego powtarzania rezonansu magnetycznego co 2 tygodnie', 'Brak wskazań do seryjnego rezonansu przy stabilnym i niepowikłanym obrazie neurologicznym.'],
         ],
         answerIndex: 0,
       },
@@ -167,8 +167,8 @@ export const psychiatryCasesPart1: ClinicalCase[] = [
         prompt: 'Jaka reakcja kliniczna jest priorytetowa?',
         choices: [
           ['Rozpoznanie akatyzacji polekowej i rozważenie redukcji dawki lub dołączenia propranololu', 'Akatyzja bywa błędnie mylona z narastaniem pobudzenia psychotycznego, co grozi błędnym zwiększeniem dawki neuroleptyku.'],
-          ['Uznanie objawu za opór psychologiczny i natychmiastowe podwojenie dawki neuroleptyku', 'Zwiększenie dawki neuroleptyku dramatycznie nasili akatyzję i może sprowokować zachowania samobójcze.'],
-          ['Zalecenie intensywnego wysiłku fizycznego bez weryfikacji leków', 'Nie usuwa neurobiologicznego podłoża akatyzji w prążkowiu.'],
+          ['Uznanie objawu za zaostrzenie psychozy i natychmiastowe podwojenie dawki neuroleptyku', 'Zwiększenie dawki neuroleptyku dramatycznie nasili akatyzję i może sprowokować zachowania samobójcze.'],
+          ['Dołączenie leku przeciwdepresyjnego z grupy SSRI w celu redukcji napięcia lękowego', 'SSRI w ostrej fazie akatyzacji mogą nasilić niepokój ruchowy i nie stanowią leczenia powikłań pozapiramidowych.'],
         ],
         answerIndex: 0,
       },
@@ -200,8 +200,8 @@ export const psychiatryCasesPart1: ClinicalCase[] = [
         prompt: 'Co wynika z prawidłowego profilu metaboliczno-tarczycowego?',
         choices: [
           ['Prawidłowe stężenie TSH zmniejsza prawdopodobieństwo pierwotnej niedoczynności tarczycy jako przyczyny apatii, wspierając pierwotną etiologię afektywną', 'Panel hormonalny eliminuje częstą maskę internistyczną, pozwalając skupić się na celowanym leczeniu przeciwdepresyjnym.'],
-          ['Dowodzi, że pacjent nie ma żadnych predyspozycji genetycznych do zaburzeń nastroju', 'Prawidłowe TSH nie mówi nic o genetyce zaburzeń afektywnych.'],
-          ['Wskazuje na konieczność wykonania biopsji tarczycy', 'Prawidłowa czynność tarczycy bez wola guzkowego nie wymaga biopsji.'],
+          ['Jednoznacznie wyklucza jakąkolwiek etiologię endokrynologiczną, w tym zaburzenia osi podwzgórze-przysadka-nadnercza', 'Prawidłowe TSH wyklucza pierwotną dysfunkcję tarczycy, lecz nie bada czynności osi kortyzolowej ani innych układów dokrewnych.'],
+          ['Wymaga natychmiastowego wykonania testu stymulacji z TRH w celu wykrycia utajonej niedoczynności', 'Brak wskazań do dynamicznych testów tyreotropowych przy prawidłowym wyjściowym TSH i FT4.'],
         ],
         answerIndex: 0,
       },
@@ -211,8 +211,8 @@ export const psychiatryCasesPart1: ClinicalCase[] = [
         prompt: 'Jaki profil leku przeciwdepresyjnego wykazuje najwyższą skuteczność w fenotypie melancholicznym ze spowolnieniem?',
         choices: [
           ['Lek o podwójnym mechanizmie noradrenergiczno-serotoninergicznym (SNRI, np. wenlafaksyna, duloksetyna) lub skojarzenie SSRI z mirtazapiną', 'Modulacja układu noradrenergicznego i receptorów 5-HT2/3 skuteczniej przełamuje spowolnienie melancholiczne niż monoterapię lekiem słabo aktywizującym.'],
-          ['Wyłącznie preparaty dziurawca w herbatkach ziołowych', 'Ziołolecznictwo jest nieskuteczne i niebezpieczne w ciężkim epizodie melancholicznym.'],
-          ['Doraźne leki uspokajające w kroplach bez antydepresantu', 'Leki uspokajające nie leczą biologicznego deficytu napędu i nastroju.'],
+          ['Monoterapia bupropionem w najniższej dawce 150 mg/d', 'W głębokim zespole melancholicznym z lękiem i bezsennością bupropion może nasilać niepokój i nie adresuje układu serotoninergicznego.'],
+          ['Doraźne podawanie pochodnych benzodiazepiny w monoterapii przez 3 miesiące', 'Benzodiazepiny nie posiadają swoistego działania przeciwdepresyjnego i niosą wysokie ryzyko tolerancji oraz uzależnienia.'],
         ],
         answerIndex: 0,
       },
@@ -253,7 +253,7 @@ export const psychiatryCasesPart1: ClinicalCase[] = [
         choices: [
           ['Znaczące upośledzenie funkcjonowania społeczno-zawodowego i podejmowanie skrajnie ryzykownych działań finansowych', 'Zgodnie z DSM-5-TR i ICD-11 hipomania NIE powoduje znacznego upośledzenia funkcjonowania; obecność poważnych strat oznacza manię.'],
           ['Czas trwania objawów krótszy niż 2 miesiące', 'Kryterium manii to minimum 7 dni lub jakikolwiek czas przy hospitalizacji; 2 miesiące nie są wymagane.'],
-          ['Obecność prawidłowego ciśnienia tętniczego', 'Parametry hemodynamiczne nie różnicują poziomu manii.'],
+          ['Współwystępowanie obniżonego nastroju w godzinach wieczornych (cechy mieszane)', 'Cechy mieszane mogą towarzyszyć zarówno manii, jak i hipomanii; kryterium rozstrzygającym pozostaje stopień dysfunkcji psychospołecznej i konieczność hospitalizacji.'],
         ],
         answerIndex: 0,
       },
@@ -262,9 +262,9 @@ export const psychiatryCasesPart1: ClinicalCase[] = [
         context: 'Partner ujawnia, że 3 tygodnie temu lekarz POZ włączył Dorocie sertralinę w dawce 100 mg/d z powodu obniżonego nastroju.',
         prompt: 'Jak zaklasyfikować ten stan wg współczesnych kryteriów DSM-5-TR?',
         choices: [
-          ['Pełny epizod maniakalny indukowany antydepresantem, utrzymujący się powyżej fizjologicznego efektu leku, upoważnia do rozpoznania ChAD', 'Kryteria DSM-5-TR jednoznacznie wskazują, że pełna mania wyindukowana lekiem przeciwdepresyjnym dowodzi obecności ChAD.'],
-          ['Jest to zwykłe działanie niepożądane leku niemające związku z chorobą dwubiegunową', 'Przejście w stan maniakalny po SSRI jest dowodem podatności dwubiegunowej.'],
-          ['Oznacza to natychmiastową konieczność zwiększenia dawki sertraliny do 200 mg', 'Podawanie antydepresantu w manii zaostrza pobudzenie i chaos myślowy.'],
+          ['Pełny epizod maniakalny indukowany antydepresantem, utrzymujący się powyżej fizjologicznego efektu leku, upoważnia do rozpoznania ChAD', 'Kryteria DSM-5-TR jednoznacznie wskazują, że pełny zespół maniakalny utrzymujący się poza fizjologiczny czas działania leku przeciwdepresyjnego spełnia kryteria rozpoznania ChAD typu I.'],
+          ['Jest to przejściowy odczyn somatyczny niemający związku z podatnością na zaburzenia afektywne dwubiegunowe', 'Rozwinięcie pełnoobjawowego zespołu maniakalnego po SSRI jest wyrazem podłoża dwubiegunowego.'],
+          ['Oznacza konieczność natychmiastowej eskalacji dawki sertraliny do 200 mg/d w celu przełamania pobudzenia', 'Podawanie leków przeciwdepresyjnych w manii dramatycznie nasila pobudzenie psychoruchowe i gonitwę myśli.'],
         ],
         answerIndex: 0,
       },
@@ -282,11 +282,11 @@ export const psychiatryCasesPart1: ClinicalCase[] = [
       {
         stage: 'Plan stabilizacji długoterminowej',
         context: 'Po ustąpieniu epizodu ostrego pacjentka wymaga profilaktyki nawrotów w ChAD.',
-        prompt: 'Jaki lek stanowi złoty standard w zapobieganiu nawrotom manii i depresji oraz redukuje ryzyko samobójcze?',
+        prompt: 'Jaki lek stanowi lek pierwszego rzutu i fundament w zapobieganiu nawrotom manii i depresji oraz redukuje ryzyko samobójcze?',
         choices: [
           ['Węglan litu stosowany pod ścisłą kontrolą stężenia w surowicy (TDM 0,6–0,8 mmol/l)', 'Lit jest jedynym stabilizatorem o udowodnionym bezpośrednim działaniu antyautodestrukcyjnym i wysokiej skuteczności profilaktycznej.'],
-          ['Diazepam stosowany przewlekle codziennie', 'Benzodiazepiny nie mają właściwości normotymicznych i prowadzą do uzależnienia.'],
-          ['Hydroksyzyna w dawkach wzrastających', 'Hydroksyzyna nie zapobiega nawrotom ChAD.'],
+          ['Lamotrygina w monoterapii w docelowej dawce 200 mg/d', 'Choć lamotrygina zapobiega epizodom depresyjnym, wykazuje słabą skuteczność w prewencji manii i nie posiada bezpośrednich twardych dowodów na redukcję samobójstw w ChAD I.'],
+          ['Wenlafaksyna w monoterapii w powolnej titracji', 'Monoterapia lekami przeciwdepresyjnymi w ChAD niesie wysokie ryzyko zmiany fazy w manie i destabilizacji nastroju.'],
         ],
         answerIndex: 0,
       },
@@ -319,8 +319,8 @@ export const psychiatryCasesPart1: ClinicalCase[] = [
         prompt: 'Jaki przedział wysycenia receptorów D2 w badaniach PET (okno Kapura) wiąże się ze statystyczną odpowiedzią bez nasilonych objawów pozapiramidowych dla czystego antagonisty?',
         choices: [
           ['Około 65–80% occupancy w prążkowiu (powyżej 80% gwałtownie rośnie ryzyko EPS i hiperprolaktynemii)', 'Klasyczna heurystyka Kapura wyznacza przedział 65–80% dla czystych antagonistów D2.'],
-          ['Dokładnie 100% occupancy jako bezwzględny warunek wyleczenia', '100% blokady D2 wywołuje ciężki parkinsonizm polekowy i akatyzję uniemożliwiającą funkcjonowanie.'],
-          ['Poniżej 30% occupancy', 'Tak niski poziom wysycenia nie daje statystycznej przewagi nad placebo w redukcji psychozy.'],
+          ['Przedział 85–95% occupancy z intencją pełnego zablokowania szlaku mezokortykalnego', 'Tak wysoka occupancy wiąże się ze skokowym wzrostem EPS i dysforii neuroleptycznej, bez dodatkowej korzyści terapeutycznej dla czystego antagonisty.'],
+          ['Przedział 40–50% occupancy dla zminimalizowania sedacji', 'O ile częściowi agoniści działają przy odmiennych wzorcach, dla czystych antagonistów poziom poniżej 60–65% wiąże się ze statystycznie niższą odpowiedzią kliniczną.'],
         ],
         answerIndex: 0,
       },
@@ -330,8 +330,8 @@ export const psychiatryCasesPart1: ClinicalCase[] = [
         prompt: 'Jaka dawka risperidonu w pierwszym epizodzie pozwala osiągnąć docelowe okno occupancy bez prowokowania EPS?',
         choices: [
           ['Dawka 2–4 mg/dobę (miareczkowana od 1 mg)', 'W pierwszym epizodzie dawka 2–3 mg risperidonu osiąga ~70–75% occupancy D2, co jest w pełni wystarczające.'],
-          ['Dawka 16 mg/dobę od pierwszej doby', 'Maksymalne dawki w pierwszym epizodzie prowadzą do ostrej dystonii i rezygnacji z leczenia.'],
-          ['Dawka 0.1 mg/dobę raz w tygodniu', 'Dawka subterapeutyczna niemająca wpływu na psychozę mezolimbiczną.'],
+          ['Dawka 8–10 mg/dobę w szybkiej eskalacji', 'Dawki powyżej 6 mg risperidonu u pacjentów w pierwszym epizodzie znacząco przekraczają 80% occupancy D2, prowokując EPS bez zwiększenia skuteczności.'],
+          ['Dawka 0,5 mg/dobę co drugi dzień', 'Schemat ten nie zapewnia stałego stężenia stacjonarnego w surowicy i wiąże się z subterapeutycznym wysyceniem D2.'],
         ],
         answerIndex: 0,
       },

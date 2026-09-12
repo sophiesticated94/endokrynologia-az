@@ -27,8 +27,8 @@ export const psychiatryCasesPart2: ClinicalCase[] = [
         prompt: 'Które objawy wchodzą w skład zespołu dyskontynuacji leków serotoninergicznych (akronim FINISH)?',
         choices: [
           ['Objawy grypopodobne, bezsenność, nudności, zaburzenia równowagi, parestezje („uczucie wyładowań prądu w głowie”) i nadpobudliwość', 'Są to typowe przejściowe objawy spadku stężenia serotoniny w synapsach, często mylone z nawrotem depresji.'],
-          ['Ostra niewydolność nerek i moczówka prosta', 'Leki SSRI nie wywołują ostrej niewydolności nerek przy odstawianiu.'],
-          ['Zanik nerwu wzrokowego i zaćma', 'Brak takiego związku patofizjologicznego.'],
+          ['Złośliwy zespół neuroleptyczny ze sztywnością i hipertermią', 'NMS wiąże się z blokadą receptorów D2 w OUN, a nie z odstawieniem leków serotoninergicznych.'],
+          ['Maniakalne pobudzenie psychoruchowe z urojeniami wielkościowymi', 'Pobudzenie maniakalne jest odrębnym stanem afektywnym, a nie typową składową somatycznego zespołu FINISH.'],
         ],
         answerIndex: 0,
       },
@@ -38,8 +38,8 @@ export const psychiatryCasesPart2: ClinicalCase[] = [
         prompt: 'Jaki parametr somatyczny wymaga szczególnego monitorowania przy dawkach wenlafaksyny ≥150 mg/d ze względu na modulację noradrenergiczną?',
         choices: [
           ['Ciśnienie tętnicze krwi (ryzyko nadciśnienia tętniczego zależnego od dawki przez hamowanie transportera NET)', 'W wyższych dawkach wenlafaksyna hamuje wychwyt noradrenaliny, co może podnosić opór naczyniowy i ciśnienie rozkurczowe.'],
-          ['Stężenie kwasu moczowego w surowicy', 'Wenlafaksyna nie wpływa istotnie na urykemię.'],
-          ['Obwód głowy i kości długich', 'Parametry te nie ulegają zmianie u osoby dorosłej pod wpływem leku.'],
+          ['Glikemię na czczo i HbA1c', 'Chociaż leki psychotropowe mogą wpływać na metabolizm, bezpośrednim i zależnym od dawki powikłaniem wyższych dawek wenlafaksyny jest wzrost ciśnienia tętniczego.'],
+          ['Czas protrombinowy (INR) przy braku antykoagulantów', 'Wenlafaksyna nie wpływa na syntezę czynników krzepnięcia zależnych od witaminy K.'],
         ],
         answerIndex: 0,
       },
@@ -49,7 +49,7 @@ export const psychiatryCasesPart2: ClinicalCase[] = [
         prompt: 'Jak zaklasyfikować ten wynik kliniczny?',
         choices: [
           ['Pełna remisja kliniczna (objawy wygaszone, powrót do prawidłowego funkcjonowania społeczno-zawodowego)', 'Wynik MADRS ≤10 punktów jest międzynarodowym standardem definiującym remisję.'],
-          ['Brak jakiejkolwiek odpowiedzi terapeutycznej', 'Redukcja objawów o ponad 70% stanowi znakomitą odpowiedź.'],
+          ['Częściowa odpowiedź terapeutyczna wymagająca augmentacji litem', 'Spadek MADRS do ≤10 punktów oznacza pełną remisję objawową, a nie zaledwie częściową odpowiedź.'],
           ['Konieczność natychmiastowego odstawienia leku z powodu wyleczenia', 'Przedwczesne odstawienie po uzyskaniu remisji grozi szybkim nawrotem; leczenie podtrzymujące powinno trwać min. 6–12 miesięcy.'],
         ],
         answerIndex: 0,
@@ -105,7 +105,7 @@ export const psychiatryCasesPart2: ClinicalCase[] = [
         choices: [
           ['Przy stężeniu litu >4,0 mmol/l (niezależnie od objawów) LUB >2,5 mmol/l przy obecności ciężkich objawów neurotoksyczności, bezmoczu lub załamaniu GFR', 'Hemodializa jest najskuteczniejszą metodą szybkiej eliminacji małej, rozpuszczalnej w wodzie cząsteczki litu z osocza.'],
           ['Zawsze, gdy stężenie przekroczy 0,9 mmol/l', 'Stężenie 0,9 mmol/l wymaga jedynie korekty dawki i obserwacji, nie dializoterapii.'],
-          ['Nigdy, litu nie można usunąć drogą hemodializy', 'Lit jest jedną z substancji o najwyższym wskaźniku dializowalności w toksykologii klinicznej.'],
+          ['Dopiero po wystąpieniu zatrzymania krążenia lub głębokiej śpiączki bez względu na stężenie litu', 'Kwalifikacja do hemodializy opiera się na stężeniu litu i wczesnych objawach neurotoksyczności (EXTRIP), nie czekając na załamanie parametrów krążeniowo-oddechowych.'],
         ],
         answerIndex: 0,
       },
@@ -183,7 +183,7 @@ export const psychiatryCasesPart2: ClinicalCase[] = [
         choices: [
           ['Złośliwy zespół neuroleptyczny (NMS - Neuroleptic Malignant Syndrome) wywołany blokadą dopaminergiczną', 'Triada: hipertermia, uogólniona sztywność mięśniowa i niestabilność autonomiczna po neuroleptyku to definicja NMS.'],
           ['Ostra dystonia krtaniowa', 'Dystonia dotyczy izolowanej grupy mięśni i nie przebiega z hipertermią oraz niestabilnością krążeniową.'],
-          ['Zwykłe zakażenie układu moczowego u pacjenta unieruchomionego', 'Zakażenie nie tłumaczy sztywności plastycznej całego ciała i labilności wegetatywnej.'],
+          ['Złośliwa hipertermia (MH)', 'Złośliwa hipertermia występuje po halogenowych anestetykach wziewnych lub suksametonium na sali operacyjnej, a nie po haloperidolu na oddziale psychiatrycznym.'],
         ],
         answerIndex: 0,
       },
@@ -193,8 +193,8 @@ export const psychiatryCasesPart2: ClinicalCase[] = [
         prompt: 'Który parametr laboratoryjny jest kluczowym markerem rozpadu mięśni i monitorowania ciężkości NMS?',
         choices: [
           ['Aktywność kinazy kreatynowej (CK > 1000 IU/l, często >10 000 IU/l) oraz leukocytoza i parametry funkcji nerek', 'Masywny wzrost CK świadczy o rabdomiolizie, która grozi wytrąceniem mioglobiny w cewkach nerkowych i ostrą niewydolnością nerek.'],
-          ['Stężenie amylazy w ślinie', 'Amylaza ślinowa nie ma znaczenia w monitorowaniu NMS.'],
-          ['Poziom witaminy B12', 'Witamina B12 nie reaguje ostro w zespole neuroleptycznym.'],
+          ['Stężenie troponiny sercowej w monoterapii', 'Chociaż tachykardia towarzyszy NMS, to kinaza kreatynowa (CK) odzwierciedla uogólniony rozpad mięśni poprzecznie prążkowanych i ryzyko ostrej niewydolności nerek.'],
+          ['Wskaźnik retikulocytozy i odczyn Coombsa', 'Parametry hemolityczne nie są swoistymi markerami uszkodzenia mięśni w przebiegu NMS.'],
         ],
         answerIndex: 0,
       },
@@ -204,8 +204,8 @@ export const psychiatryCasesPart2: ClinicalCase[] = [
         prompt: 'Które leki o działaniu zwiotczającym mięśnie lub dopaminergicznym są stosowane w celowanej terapii NMS?',
         choices: [
           ['Dantrolen (lek blokujący uwalnianie wapnia z siateczki sarkoplazmatycznej) oraz bromokryptyna (agonista receptorów dopaminowych)', 'Dantrolen redukuje hipertermię wywołaną skurczem mięśni, a bromokryptyna przełamuje blokadę dopaminergiczną w podwzgórzu i prążkowiu.'],
-          ['Podanie kolejnej dawki haloperydolu o przedłużonym uwalnianiu', 'Podanie neuroleptyku pogłębi blokadę receptorów D2 i drastycznie zwiększy śmiertelność.'],
-          ['Antybiotykoterapia empiryczna jako jedyne leczenie', 'Antybiotyki nie wpływają na mechanizm blokady dopaminergicznej w NMS.'],
+          ['Suksametonium (sukcynylocholina) w celu natychmiastowego zwiotczenia mięśni', 'Sukcynylocholina jest depolaryzującym środkiem zwiotczającym przeciwwskazanym przy rabdomiolizie z powodu ryzyka śmiertelnej hiperkaliemii i zatrzymania krążenia.'],
+          ['Propranolol i amiodaron we wlewie ciągłym', 'Leki antyarytmiczne nie leczą pierwotnej blokady dopaminergicznej ani rabdomiolizy w NMS i mogą pogłębić niestabilność hemodynamiczną.'],
         ],
         answerIndex: 0,
       },
@@ -226,7 +226,7 @@ export const psychiatryCasesPart2: ClinicalCase[] = [
   // 17. Klozapina - Kontynuacja Wątku B (Jakub M., lekooporność i TRS)
   makeFlexibleCase(
     'lekoopornosc-i-klozapina',
-    'Złoty standard w lekooporności i nadzór nad szpikiem (Wątek B)',
+    'Lek z wyboru w lekooporności schizofrenii i nadzór nad szpikiem (Wątek B)',
     'Jakub M., 22 lata',
     'Zaawansowany',
     'Jakub nie uzyskał poprawy po dwóch kolejnych kuracjach atypowymi neuroleptykami (risperidon 6 mg/d przez 8 tyg., następnie olanzapina 20 mg/d przez 10 tyg.). Nadal doświadcza uporczywych omamów słuchowych i urojeń ksobnych.',
@@ -238,7 +238,7 @@ export const psychiatryCasesPart2: ClinicalCase[] = [
         choices: [
           ['Tak, brak adekwatnej odpowiedzi na co najmniej dwa różne leki przeciwpsychotyczne (w tym min. jeden SGA) stosowane w dawkach terapeutycznych przez co najmniej 6 tygodni definiuje TRS', 'Kwalifikacja TRS upoważnia do natychmiastowego wdrożenia klozapiny jako leku o unikalnej, udowodnionej skuteczności.'],
           ['Nie, wymagane jest wypróbowanie co najmniej 6 różnych leków przez okres 5 lat', 'Zbyt długie opóźnianie włączenia klozapiny prowadzi do nieodwracalnego spadku plastyczności neuronalnej i utrwalenia objawów ubytkowych.'],
-          ['Nie, lekooporność można rozpoznać dopiero po wykonaniu zabiegu lobotomii', 'Lobotomia jest procedurą historyczną i niedopuszczalną we współczesnej medycynie.'],
+          ['Nie, lekooporność można orzec dopiero po braku remisji po pełnym cyklu 12 zabiegów elektrowstrząsowych (ECT)', 'Kryteria lekooporności (TRS) oparte są na braku odpowiedzi na dwa leki przeciwpsychotyczne w adekwatnej dawce i czasie; ECT nie jest warunkiem wstępnym włączenia klozapiny.'],
         ],
         answerIndex: 0,
       },
@@ -258,7 +258,7 @@ export const psychiatryCasesPart2: ClinicalCase[] = [
         context: 'Jakub wypala paczkę papierosów dziennie (20 sztuk/d). Planuje rzucenie palenia.',
         prompt: 'Co stanie się ze stężeniem klozapiny w surowicy po nagłym zaprzestaniu palenia tytoniu przez Jakuba?',
         choices: [
-          ['Stężenie klozapiny gwałtownie wzrośnie (nawet o 50–100%) z powodu ustąpienia indukcji izoenzymu CYP1A2 przez wielopierścieniowe węglowodory aromatyczne dymu tytoniowego', 'Wymaga to prewencyjnej redukcji dawki klozapiny i kontroli stężenia TDM, aby zapobiec drgawkom i ciężkiej sedacji.'],
+          ['Stężenie klozapiny może istotnie wzrosnąć (w literaturze opisywano wzrosty o 50–100%) z powodu ustąpienia indukcji izoenzymu CYP1A2 przez węglowodory dymu tytoniowego', 'Wymaga to prewencyjnej redukcji dawki klozapiny, monitorowania objawów i kontroli stężenia TDM, aby zapobiec intoksykacji i sedacji.'],
           ['Stężenie klozapiny natychmiast spadnie do zera', 'Dym tytoniowy indukuje klirens; jego brak spowalnia eliminację leku.'],
           ['Zaprzestanie palenia nie ma żadnego wpływu na metabolizm wątrobowy klozapiny', 'CYP1A2 jest głównym szlakiem eliminacji klozapiny, silnie zależnym od dymu tytoniowego.'],
         ],
@@ -304,8 +304,8 @@ export const psychiatryCasesPart2: ClinicalCase[] = [
         prompt: 'Z jakim poważnym ryzykiem klinicznym wiąże się nierozpoznana lub zlekceważona akatyzja polekowa?',
         choices: [
           ['Gwałtowny wzrost ryzyka impulsywnych zachowań samobójczych i agresywnych oraz porzucenie leczenia', 'Nieznośny dyskomfort psychoruchowy w akatyzacji jest udokumentowanym czynnikiem ryzyka nagłych prób samobójczych.'],
-          ['Trwałe uszkodzenie słuchu', 'Akatyzja nie wpływa na narząd słuchu.'],
-          ['Rozwój cukrzycy typu 1', 'Nie ma związku z autoimmunologiczną destrukcją komórek beta trzustki.'],
+          ['Rozwój zespołu parkinsonowskiego z drżeniem spoczynkowym', 'Akatyzja i parkinsonizm to odrębne zespoły pozapiramidowe, choć mogą współistnieć; najgroźniejszym bezpośrednim ryzykiem silnej akatyzacji są gwałtowne zachowania autodestrukcyjne.'],
+          ['Zaostrzenie objawów wytwórczych psychozy', 'Akatyzja jest zaburzeniem ruchowym z komponentem dysforii, choć jej błędne zinterpretowanie jako lęku psychotycznego grozi nieuzasadnionym podniesieniem dawki neuroleptyku.'],
         ],
         answerIndex: 0,
       },
@@ -316,7 +316,7 @@ export const psychiatryCasesPart2: ClinicalCase[] = [
         choices: [
           ['Lipofilny beta-adrenolityk (propranolol w dawce 20–40 mg/d) lub krótkoterminowo mała dawka benzodiazepiny', 'Propranolol blokuje ośrodkowe i obwodowe receptory beta-adrenergiczne, skutecznie redukując akatyzję u większości chorych.'],
           ['Podwojenie dawki neuroleptyku wywołującego objaw', 'Zwiększenie dawki neuroleptyku dramatycznie zaostrzy akatyzję.'],
-          ['Wdrożenie dużych dawek leków przeciwbólowych z grupy opioidów', 'Opioidy nie są wskazane w leczeniu akatyzacji polekowej.'],
+          ['Włączenie leku przeciwdepresyjnego z grupy SSRI w wysokiej dawce', 'Leki serotoninergiczne nie są leczeniem z wyboru w ostrej akatyzacji i w początkowym okresie mogą nawet nasilić niepokój ruchowy.'],
         ],
         answerIndex: 0,
       },

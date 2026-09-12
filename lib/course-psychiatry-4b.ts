@@ -5,32 +5,32 @@ export const draftPsychiatryPart4b: DraftLesson[] = [
     id: 'ostre-stany-toksyczne-zespol-serotoninowy',
     moduleId: 'psych-farmakologia',
     title: 'Zespół serotoninowy: mechanizm, kryteria Huntera i ratownictwo',
-    subtitle: 'Nadmierna stymulacja 5-HT2A/1A, klonus, sztywność i odtrutka cyproheptadyna',
+    subtitle: 'Nadmierna stymulacja 5-HT2A/1A, klonus, sztywność i leczenie wspomagające cyproheptadyną',
     group: 'Toksykologia i stany nagłe w psychiatrii',
     minutes: 18,
     goals: [
       'Zastosujesz kryteria decyzyjne Huntera (Hunter Serotonin Toxicity Criteria) o najwyższej czułości i swoistości.',
       'Zidentyfikujesz klonus (spontaniczny, wywołany, oczny) jako osiowy objaw decyzyjny.',
-      'Wdrożysz leczenie ratunkowe: chłodzenie, benzodiazepiny oraz swoisty antagonista 5-HT2A – cyproheptadynę.'
+      'Wdrożysz leczenie ratunkowe: chłodzenie, benzodiazepiny oraz wspomagającego antagonistę 5-HT2A – cyproheptadynę.'
     ],
     sections: [
       {
         title: 'Patofizjologia burzy serotoninowej',
-        text: 'Zespół serotoninowy (serotonin toxicity / syndrome) jest potencjalnie śmiertelnym powikłaniem wynikającym z masywnej nadstymulacji ośrodkowych i obwodowych receptorów serotoninowych (przede wszystkim 5-HT2A i 5-HT1A). Dochodzi do niego niemal wyłącznie po połączeniu co najmniej dwóch leków zwiększających stężenie serotoniny różnymi mechanizmami (np. SSRI + iMAO, SSRI + tramadol, linezolid, dekstrometorfan, tryptany, lit).'
+        text: 'Zespół serotoninowy (serotonin toxicity / syndrome) jest potencjalnie śmiertelnym powikłaniem wynikającym z masywnej nadstymulacji ośrodkowych i obwodowych receptorów serotoninowych (przede wszystkim 5-HT2A i 5-HT1A). Do zespołu dochodzi przede wszystkim po połączeniu co najmniej dwóch leków zwiększających stężenie serotoniny w odmiennych mechanizmach (np. SSRI + iMAO, SSRI + tramadol, linezolid, dekstrometorfan, tryptany, lit), rzadziej po ciężkim przedawkowaniu pojedynczego leku serotoninergicznego.'
       },
       {
-        title: 'Złoty standard: Kryteria Decyzyjne Huntera (Dunkley 2003)',
+        title: 'Kryteria Decyzyjne Huntera (Dunkley 2003)',
         text: 'Zastąpiły one przestarzałe kryteria Sternbacha. U pacjenta przyjmującego lek serotoninergiczny zespół rozpoznaje się, gdy występuje co najmniej jeden z warunków: 1) Klonus spontaniczny; 2) Klonus indukowany ORAZ pobudzenie lub obfite pocenie się; 3) Klonus oczny ORAZ pobudzenie lub obfite pocenie się; 4) Drżenie mięśniowe ORAZ hiperrefleksja (wygórowanie odruchów ścięgnistych); 5) Wzmożone napięcie mięśniowe ORAZ temperatura > 38°C ORAZ klonus (oczny lub indukowany).'
       },
       {
         title: 'Postępowanie ratunkowe i swoista farmakoterapia',
-        text: 'Pierwszym krokiem jest natychmiastowe odstawienie wszystkich leków serotoninergicznych. W opanowaniu pobudzenia i drżeń lekiem I wyboru są benzodiazepiny i.v. (np. diazepam, lorazepam). W przypadkach umiarkowanych i ciężkich stosuje się swoistego antagonistę receptorów 5-HT2A – cyproheptadynę (początkowo 12 mg p.o./zgłębnik, następnie 2 mg co 2 godziny). Ciężka hipertermia (> 39–40°C) wymaga intubacji, sedacji i miorelaksacji (nigdy sukcynylocholiną).'
+        text: 'Pierwszym krokiem jest natychmiastowe odstawienie wszystkich leków serotoninergicznych. W opanowaniu pobudzenia i drżeń lekiem I wyboru są benzodiazepiny i.v. (np. diazepam, lorazepam). W przypadkach umiarkowanych i ciężkich stosuje się antagonistę receptorów 5-HT2A – cyproheptadynę (początkowo 12 mg p.o./zgłębnik, następnie 2 mg co 2 godziny) jako terapię wspomagającą. Ciężka hipertermia (> 39–40°C) wymaga intubacji, sedacji i miorelaksacji (nigdy sukcynylocholiną).'
       }
     ],
     table: {
       headers: ['Objaw kliniczny', 'Występowanie w zespole serotoninowym', 'Występowanie w NMS', 'Różnicowanie'],
       rows: [
-        ['Odruchy ścięgniste (odruchy głębokie)', 'Hiperrefleksja, klonus (patognomoniczny)', 'Osłabione lub prawidłowe', 'Klonus jednoznacznie wskazuje na zespół serotoninowy'],
+        ['Odruchy ścięgniste (odruchy głębokie)', 'Hiperrefleksja, klonus (kluczowy w kryteriach Huntera)', 'Osłabione lub prawidłowe', 'Klonus w obecności leku 5-HT silnie przemawia za zespołem serotoninowym'],
         ['Napięcie mięśniowe', 'Zwiększone, głównie kończyny dolne', 'Uogólniona sztywność "rury ołowianej"', 'Sztywność rury ołowianej typowa dla NMS'],
         ['Perystaltyka jelit', 'Wzmożona (biegunka, przelewanie)', 'Osłabiona lub porażenna', 'Biegunka towarzyszy serotoninie'],
         ['Dynamika początku', 'Gwałtowna (w ciągu godzin od dawki)', 'Stopniowa (rozwój w ciągu kilku dni)', 'Szybki początek sprzyja toksyczności 5-HT']
@@ -45,13 +45,13 @@ export const draftPsychiatryPart4b: DraftLesson[] = [
       q(
         'Jaki objaw neurologiczny posiada najwyższą czułość i swoistość i stanowi fundament kryteriów decyzyjnych Huntera w zespole serotoninowym?',
         ['Klonus (spontaniczny, indukowany lub oczny)', 'Klonus w połączeniu z hiperrefleksją i pobudzeniem/potami pozwala na pewne postawienie rozpoznania.'],
-        ['Brak czucia smaku na koniuszku języka', 'Zaburzenia smaku nie wchodzą w skład kryteriów Huntera.'],
-        ['Wiotkość wszystkich czterech kończyn', 'W zespole serotoninowym napięcie mięśniowe rośnie, nie spada.'],
+        ['Izolowane symetryczne osłabienie czucia wibracji w dystalnych częściach kończyn', 'Polineuropatia obwodowa nie wchodzi w skład kryteriów Huntera ani toksydromu serotoninowego.'],
+        ['Zwiotczenie mięśni żwaczy i obustronne opadanie powiek', 'W zespole serotoninowym dochodzi do wzmożenia napięcia mięśniowego i klonusu, a nie objawów miastenicznych.'],
         'psych-hunt-q1'
       ),
       q(
-        'Jaki lek będący antagonistą receptorów 5-HT2A podaje się jako swoistą odtrutkę doustną w umiarkowanym i ciężkim zespole serotoninowym?',
-        ['Cyproheptadyna', 'Blokuje receptory 5-HT2A i szybko znosi toksyczność obwodową i ośrodkową serotoniny.'],
+        'Jaki lek będący antagonistą receptorów 5-HT2A stosuje się doustnie jako farmakoterapię wspomagającą w umiarkowanym i ciężkim zespole serotoninowym?',
+        ['Cyproheptadyna', 'Działa jako antagonista 5-HT2A i stanowi wsparcie objawowe obok intensywnego chłodzenia i sedacji benzodiazepinami.'],
         ['Haloperydol w iniekcji', 'Neuroleptyki typowe są przeciwwskazane, gdyż utrudniają termoregulację i mogą wywołać NMS.'],
         ['Propranolol w dawce dożylnej', 'Beta-blokery mogą wywołać zapaść hipotensyjną i maskować tachykardię.'],
         'psych-hunt-q2'
@@ -66,8 +66,8 @@ export const draftPsychiatryPart4b: DraftLesson[] = [
       q(
         'Czym różni się badanie odruchów ścięgnistych w zespole serotoninowym od złośliwego zespołu neuroleptycznego (NMS)?',
         ['W zespole serotoninowym występuje uderzające wygórowanie odruchów (hiperrefleksja) i klonus, a w NMS odruchy są prawidłowe lub stłumione', 'Jest to kluczowa cecha semiotyczna różnicująca te dwa stany nagłe.'],
-        ['W zespole serotoninowym odruchy całkowicie zanikają na zawsze', 'Odruchy powracają do normy po wyleczeniu toksyczności.'],
-        ['W NMS występuje klonus obu rzepek', 'Klonus jest cechą zespołu serotoninowego, nie NMS.'],
+        ['W zespole serotoninowym odruchy są całkowicie zniesione wskutek blokady złącza nerwowo-mięśniowego', 'W zespole serotoninowym typowa jest hiperrefleksja i klonus, a nie arefleksja.'],
+        ['W NMS występuje klonus rzepkowy i oczny', 'Klonus jest cechą zespołu serotoninowego, nie NMS.'],
         'psych-hunt-q4'
       ),
       q(
@@ -123,15 +123,15 @@ export const draftPsychiatryPart4b: DraftLesson[] = [
       q(
         'Jaki enzym mięśniowy ulega dramatycznemu podwyższeniu w surowicy krwi w przebiegu Złośliwego Zespołu Neuroleptycznego (NMS) wskutek rabdomiolizy?',
         ['Kinaza kreatynowa (CPK / CK)', 'Wartości przekraczają często 10 000–50 000 IU/l i korelują z ryzykiem ostrej martwicy cewek nerkowych.'],
-        ['Pepsyna żołądkowa', 'Pepsyna jest enzymem trawiennym soku żołądkowego, a nie mięśni.'],
-        ['Enteropeptydaza dwunastnicza', 'Nie ma żadnego związku z destrukcją włókien mięśniowych.'],
+        ['Dehydrogenaza mleczanowa (LDH) jako jedyny marker uszkodzenia', 'Choć LDH rośnie w rozpadzie tkanek, parametrem decyzyjnym o kluczowej dynamice jest kinaza kreatynowa (CK).'],
+        ['Aminotransferaza alaninowa (ALT) bez wzrostu AST', 'W uszkodzeniu mięśni szkieletowych AST dominuje nad ALT, lecz żaden z nich nie służy do monitorowania ciężkości NMS tak jak CPK.'],
         'psych-nms-q1'
       ),
       q(
         'Jaki lek będący blokerem receptorów rianodynowych (RyR1) stosuje się w dożylnej terapii NMS w celu przerwania skurczu mięśni i hipertermii?',
         ['Dantrolen', 'Hamuje uwalnianie wapnia z siateczki sarkoplazmatycznej, przerywając hipermetabolizm mięśniowy.'],
-        ['Magnez w tabletkach musujących', 'Magnez doustny nie wywiera efektu zwiotczającego w zagrażającej życiu rabdomiolizie.'],
-        ['Wapń w dożylnym bolusie', 'Podanie wapnia mogłoby wręcz nasilić toksyczność wewnątrzkomórkową w komórkach mięśniowych.'],
+        ['Sukcynylocholina w bolusie i.v.', 'Depolaryzujące leki zwiotczające są bezwzględnie przeciwwskazane, gdyż wyzwalają masywną hiperkaliemię i grożą zatrzymaniem krążenia.'],
+        ['Baklofen w wysokich dawkach doustnych', 'Baklofen jest agonistą receptora GABAB o powolnym początku i nie przerywa ostrej kaskady wapniowej RyR1 w OIT.'],
         'psych-nms-q2'
       ),
       q(
@@ -144,15 +144,15 @@ export const draftPsychiatryPart4b: DraftLesson[] = [
       q(
         'Jaki charakter ma wzmożone napięcie mięśniowe w NMS w badaniu neurologicznym?',
         ['Plastyczna sztywność o charakterze "rury ołowianej" (lead-pipe rigidity) jednakowa w całym zakresie ruchu', 'Świadczy o głębokiej blokadzie pozapiramidowej w szlaku nigrostriatalnym.'],
-        ['Spastyczne porażenie wiotkie', 'Pojęcia te wykluczają się wzajemnie.'],
-        ['Zupełny brak jakiegokolwiek napięcia mięśniowego', 'W NMS występuje skrajne wzmożenie, a nie zanik napięcia.'],
+        ['Napięcie spastyczne scyzorykowe (piramidowe) zależne od prędkości ruchu', 'Sztywność w NMS jest pozapiramidowa (plastyczna), jednakowa w całym zakresie ruchu, bez fenomenu scyzoryka.'],
+        ['Hipotonia mięśniowa z zachowanym objawem koła zębatego', 'Hipotonia nie występuje w NMS; sztywność obejmuje cały układ mięśniowy.'],
         'psych-nms-q4'
       ),
       q(
         'Jakie powikłanie narządowe jest główną przyczyną zgonu u pacjentów z nieleczoną rabdomiolizą w przebiegu NMS?',
         ['Ostra martwica cewek nerkowych i niewydolność nerek wywołana zatkaniem przez mioglobinę', 'Mioglobina wytrąca się w kanalikach nerkowych, co wymaga agresywnej płynoterapii i forsowanej diurezy.'],
-        ['Ostre pęknięcie pęcherza moczowego', 'Rabdomioliza nie powoduje pęknięcia pęcherza moczowego.'],
-        ['Zarastanie tętnic szyjnych w ciągu 5 minut', 'Nie występuje taki proces patologiczny.'],
+        ['Ostra niewydolność wątroby z encefalopatią wrotno-układową', 'Choć enzymy wątrobowe mogą rosnąć z powodu hipoperfuzji, bezpośrednim zagrożeniem z rozpadu mięśni jest nefropatia mioglobinuryczna.'],
+        ['Przetoka oskrzelowo-płucna z odmą prężną', 'Powikłania płucne wynikają z aspiracji lub hipowentylacji, a nie z przetoki miąższowej.'],
         'psych-nms-q5'
       )
     ]
@@ -196,28 +196,28 @@ export const draftPsychiatryPart4b: DraftLesson[] = [
     advanced:
       'W przypadku wystąpienia napadu Torsade de Pointes z zachowanym tętnem lekiem I wyboru znoszącym arytmię jest dożylny siarczan magnezu (MgSO4) w dawce 2 g i.v. podany w bolusie w ciągu 1–2 minut, niezależnie od wyjściowego stężenia magnezu we krwi.',
     summary:
-      'Blokada kanałów potasowych hERG grozi śmiertelnym częstoskurczem TdP. Złotym standardem kalkulacji jest wzór Fridericia (QTcF). QTc > 500 ms nakazuje natychmiastowe odstawienie leku; odtrutką na TdP jest MgSO4 i.v.',
+      'Blokada kanałów potasowych hERG grozi śmiertelnym częstoskurczem TdP. Rekomendowaną metodą kalkulacji jest wzór Fridericia (QTcF). QTc > 500 ms nakazuje natychmiastową weryfikację i redukcję lub odstawienie leku; lekiem I rzutu w napadzie TdP jest MgSO4 i.v.',
     sourceIds: ['crediblemeds-qt', 'maudsley15', 'canmat-mdd-2023'],
     questions: [
       q(
         'Dlaczego w monitorowaniu bezpieczeństwa leków psychotropowych zaleca się stosowanie wzoru Fridericia (QTcF) zamiast klasycznego wzoru Bazetta?',
         ['Formuła Bazetta drastycznie zawyża wartość QTc przy tachykardii (częstość akcji serca > 80–90/min), generując fałszywe alarmy', 'Formuła Fridericia oparta na pierwiastku sześciennym zapewnia precyzyjną ocenę repolaryzacji niezależnie od tętna.'],
-        ['Wzór Fridericia nie wymaga żadnych obliczeń ani zapisu EKG', 'Wzór wymaga zmierzenia czasu odstępu QT i RR w EKG.'],
-        ['Wzór Bazetta został zakazany z powodu błędów ortograficznych', 'Chodzi o fizyczne ograniczenia matematycznej formuły Bazetta.'],
+        ['Wzór Bazetta jest zalecany wyłącznie u pacjentów ze stymulatorem komorowym i blokiem lewej odnogi', 'W obecności poszerzonego QRS stosuje się formuły dedykowane (np. Bogossa), a Bazett nadmiernie zależy od częstości rytmu.'],
+        ['Wzór Bazetta niedoszacowuje QTc przy częstoskurczu, maskując groźne zaburzenia repolaryzacji', 'Główną wadą Bazetta przy tachykardii jest przeszacowanie (nadrozpoznawalność długiego QT), a nie niedoszacowanie.'],
         'psych-card-q1'
       ),
       q(
         'Jaki bezwzględny czas trwania odstępu QTc w zapisie EKG uznaje się za krytyczny próg alarmowy wymagający pilnej redukcji lub odstawienia leku?',
         ['QTc powyżej 500 ms (lub przyrost o > 60 ms względem badania wyjściowego)', 'Powyżej 500 ms gwałtownie rośnie ryzyko wystąpienia wielokształtnego częstoskurczu komorowego Torsade de Pointes.'],
-        ['QTc powyżej 150 ms', '150 ms to wartość fizjologicznie za krótka.'],
-        ['QTc powyżej 1500 ms', 'Przy QTc 1500 ms akcja serca uległaby zatrzymaniu.'],
+        ['QTc powyżej 440 ms u mężczyzn i 450 ms u kobiet', 'Wartości te stanowią górną granicę normy, lecz nie są bezwzględnym progiem pilnego odstawienia.'],
+        ['QTc powyżej 600 ms wyłącznie w obecności bloku prawej odnogi pęczka Hisa', 'Próg 500 ms jest krytycznym punktem odcięcia dla ryzyka TdP u każdego chorego bez względu na morfologię QRS.'],
         'psych-card-q2'
       ),
       q(
         'Jaki lek podaje się dożylnie w pierwszej kolejności u pacjenta z napadem częstoskurczu komorowego Torsade de Pointes z zachowanym tętnem?',
         ['Siarczan magnezu (MgSO4) 2 g dożylnie w bolusie', 'Magnez stabilizuje błonę miocytów i blokuje wczesne depolaryzacje następcze EAD.'],
-        ['Dożylny citalopram w bolusie', 'Citalopram jeszcze bardziej zablokowałby kanały hERG i doprowadził do asystolii.'],
-        ['Wapń w dawce uderzeniowej', 'Wapń nie jest lekiem I rzutu w Torsade de Pointes.'],
+        ['Amiodaron 300 mg we wlewie dożylnym', 'Amiodaron sam w sobie wydłuża repolaryzację komór i jest przeciwwskazany w TdP polekowym.'],
+        ['Lidokaina 1 mg/kg m.c. w bolusie przed podaniem magnezu', 'Lidokaina jest lekiem drugiego rzutu; postępowaniem pierwszego wyboru pozostaje natychmiastowy siarczan magnezu.'],
         'psych-card-q3'
       ),
       q(
@@ -332,7 +332,7 @@ export const draftPsychiatryPart4b: DraftLesson[] = [
         text: 'Zgodnie z międzynarodowym konsensusem TRRIP (Treatment Response and Resistance in Psychosis) schizofrenię lekooporną (TRS) rozpoznaje się, gdy u pacjenta nie uzyskano zadowalającej poprawy (redukcja PANSS < 20% lub brak remisji) po co najmniej dwóch kolejnych próbach terapeutycznych różnymi lekami przeciwpsychotycznymi w odpowiedniej dawce (ekwiwalent >= 600 mg chlorpromazyny/d) przez co najmniej 6 tygodni każda, przy potwierdzonej dobrej adherencji (np. badaniem TDM).'
       },
       {
-        title: 'Klozapina: złoty standard w TRS',
+        title: 'Klozapina w schizofrenii lekoopornej (TRS)',
         text: 'Klozapina jest jedynym lekiem o udowodnionej przewadze w TRS. Ze względu na ryzyko ostrej hipotensji ortostatycznej i zapaści naczyniowej wdrażanie rozpoczyna się od mikrodawki 12,5 mg lub 25 mg na noc, zwiększając dawkę powoli o 25–50 mg co 1–2 dni do dawki docelowej 300–450 mg/d. Stężenie terapeutyczne w surowicy krwi powinno wynosić 350–600 ng/ml.'
       },
       {
@@ -358,36 +358,36 @@ export const draftPsychiatryPart4b: DraftLesson[] = [
       q(
         'Kiedy zgodnie z konsensusem TRRIP należy podjąć decyzję o włączeniu klozapiny w schizofrenii?',
         ['Po braku adekwatnej odpowiedzi na co najmniej 2 różne leki przeciwpsychotyczne stosowane w odpowiedniej dawce przez min. 6 tygodni każdy', 'Odwlekanie wdrożenia klozapiny o lata drastycznie pogarsza szanse na remisję poznawczą i społeczną.'],
-        ['Dopiero po 25 latach nieskutecznego leczenia ambulatoryjnego', 'Odwlekanie terapii jest błędem prowadzącym do nieodwracalnych deficytów.'],
-        ['Jako lek I rzutu w pierwszym dniu pierwszego epizodu psychozy u każdego pacjenta', 'Klozapina nie jest lekiem I rzutu w niepowikłanym pierwszym epizodie z uwagi na profil bezpieczeństwa.'],
+        ['Wyłącznie po wyczerpaniu wszystkich neuroleptyków atypowych w politerapii trwającej minimum 5 lat', 'Zgodnie z TRRIP wystarczą 2 nieudane próby terapeutyczne (min. 6 tygodni każda); zwlekanie z wdrożeniem klozapiny utrwala lekooporność.'],
+        ['Jako lek I rzutu w pierwszym dniu pierwszego epizodu psychozy u każdego chorego', 'Klozapina nie jest lekiem pierwszego rzutu w niepowikłanym pierwszym epizodzie z uwagi na profil bezpieczeństwa i wymogi TDM.'],
         'psych-cloz-q1'
       ),
       q(
         'Które powikłanie klozapiny statystycznie odpowiada za większą liczbę zgonów pacjentów niż agranulocytoza?',
         ['Porażenna niedrożność jelit wywołana ciężką hipomotoryką przewodu pokarmowego (clozapine-induced gastrointestinal hypomotility)', 'Silne działanie antycholinergiczne i serotoninergiczne prowadzi do zalegania mas kałowych, martwicy jelita i sepsy.'],
-        ['Wypadanie włosów na klatce piersiowej', 'Utrata owłosienia nie stanowi zagrożenia życia.'],
-        ['Złamanie kości udowej podczas snu', 'Klozapina nie wywołuje samoistnych złamań trzonów kości.'],
+        ['Ciężki parkinsonizm polekowy z wczesnymi dyskinezami późnymi', 'Klozapina charakteryzuje się minimalnym powinowactwem do prążkowiowych receptorów D2 i niemal nie wywołuje EPS ani dyskinez późnych.'],
+        ['Ostre zatrzymanie moczu bez cech infekcji pęcherza', 'Choć działanie antycholinergiczne może utrudniać mikcję, zagrażającym życiu powikłaniem hipomotorycznym o najwyższej śmiertelności jest niedrożność i martwica jelit.'],
         'psych-cloz-q2'
       ),
       q(
         'Jaki zakres stężenia klozapiny we krwi w badaniu TDM uznaje się za optymalny w leczeniu schizofrenii lekoopornej?',
         ['350 do 600 ng/ml', 'Poniżej 350 ng/ml brak skuteczności w TRS, a powyżej 1000 ng/ml drastycznie rośnie ryzyko drgawek padaczkowych.'],
-        ['0,05 do 0,1 ng/ml', 'Są to stężenia homeopatyczne pozbawione efektu przeciwpsychotycznego.'],
-        ['15 000 do 30 000 ng/ml', 'Stężenie takie wywołałoby natychmiastową śmierć pacjenta.'],
+        ['50 do 150 ng/ml', 'Stężenia poniżej 200–350 ng/ml są z reguły subterapeutyczne w schizofrenii lekoopornej i korelują z brakiem remisji wg AGNP.'],
+        ['1200 do 2000 ng/ml', 'Stężenia powyżej 1000 ng/ml wiążą się z gwałtownym skokiem toksyczności, głębokiej sedacji, mioklonii i napadów drgawkowych.'],
         'psych-cloz-q3'
       ),
       q(
         'W jaki sposób leczy się uciążliwy ślinotok nocny (sialorrhea) u pacjenta leczonego klozapiną?',
         ['Miejscowym podaniem podjęzykowym kropli z lekiem antycholinergicznym (np. bromek ipratropium lub atropina pod język na noc)', 'Miejscowe zablokowanie receptorów w śliniankach ogranicza wydzielanie śliny bez nasilania zaparć ogólnoustrojowych.'],
-        ['Podaniem dużej dawki leku moczopędnego dożylnie', 'Leki moczopędne nie hamują czynności ślinianek.'],
-        ['Chirurgicznym wycięciem obu warg', 'Jest to okaleczenie pacjenta niemające nic wspólnego z medycyną.'],
+        ['Eskalacją dawki klozapiny o 100 mg przed snem', 'Zwiększenie dawki nasili pobudzenie receptorów muskarynowych i pogłębi hipersaliwację oraz sedację.'],
+        ['Doustnym podaniem chlorpromazyny o silnym działaniu sedatywnym', 'Dodanie kolejnego leku przeciwpsychotycznego p.o. zwiększa ogólne obciążenie antycholinergiczne i ryzyko zaparć bez kontroli ślinianek.'],
         'psych-cloz-q4'
       ),
       q(
         'Od jakiej dawki początkowej należy bezwzględnie rozpoczynać terapię klozapiną, aby zapobiec ostrej zapaści naczyniowej i ciężkiej hipotensji ortostatycznej?',
         ['12,5 mg do 25 mg podane na noc', 'Klozapina silnie blokuje receptory alfa-1 adrenergiczne; zbyt szybka titracja grozi utratą przytomności i wstrząsem.'],
-        ['600 mg w pierwszej dawce rano', 'Dawka uderzeniowa 600 mg stwarza bezpośrednie zagrożenie zgonu sercowo-naczyniowego.'],
-        ['1000 mg w powolnym wlewie dożylnym', 'Klozapina nie jest podawana w dożylnych megadawkach.'],
+        ['100 mg 2 razy na dobę od pierwszego dnia', 'Rozpoczęcie od 200 mg/d wiąże się ze skrajnym ryzykiem ostrej zapaści naczyniowej, tachykardii odruchowej i drgawek.'],
+        ['300 mg w pojedynczej dawce wieczornej', 'Dawka 300 mg jest dawką docelową osiąganą po 2–3 tygodniach ostrożnej titracji, nie dawką startową.'],
         'psych-cloz-q5'
       )
     ]
@@ -406,8 +406,8 @@ export const draftPsychiatryPart4b: DraftLesson[] = [
     ],
     sections: [
       {
-        title: 'Terapia elektrowstrząsowa (ECT): złoty standard skuteczności',
-        text: 'Terapia elektrowstrząsowa (Electroconvulsive Therapy - ECT) pozostaje najskuteczniejszą znaną metodą leczenia ciężkich, zagrażających życiu zaburzeń afektywnych i katatonii (skuteczność 70–90%). Zabieg przeprowadza się w znieczuleniu ogólnym (krótkodziałający anestetyk, np. propofol/etomidat) i zwiotczeniu mięśniowym (sukcynylocholina). Impuls elektryczny wywołuje uogólniony napad drgawkowy w EEG (trwający min. 25–30 sekund), stymulując masywny wyrzut neurotrofin (BDNF, VEGF) i neurogenezę.'
+        title: 'Terapia elektrowstrząsowa (ECT): wysoka skuteczność w lekooporności i stanach nagłych',
+        text: 'Terapia elektrowstrząsowa (Electroconvulsive Therapy - ECT) pozostaje metodą o najwyższej udokumentowanej skuteczności w ciężkich, zagrażających życiu zaburzeniach afektywnych i katatonii (odpowiedź kliniczna 70–90%). Zabieg przeprowadza się w znieczuleniu ogólnym (krótkodziałający anestetyk, np. propofol/etomidat) i zwiotczeniu mięśniowym (sukcynylocholina). Impuls elektryczny wywołuje uogólniony napad drgawkowy w EEG (trwający min. 25–30 sekund). Proponowane mechanizmy biologiczne obejmują indukcję neuroplastyczności, wyrzut BDNF i VEGF oraz neuromodulację sieci neuronalnych.'
       },
       {
         title: 'Przezczaszkowa stymulacja magnetyczna (rTMS)',
@@ -415,7 +415,7 @@ export const draftPsychiatryPart4b: DraftLesson[] = [
       },
       {
         title: 'Esketamina donosowa w depresji lekoopornej (TRD)',
-        text: 'S-enancjomer ketaminy podawany donosowo w połączeniu z SSRI/SNRI zrewolucjonizował leczenie TRD. Esketamina jako niekompetycyjny antagonista NMDA wywołuje szybki efekt przeciwdepresyjny i antysuicydalny (w ciągu 4–24h). Ze względu na przejściowe skoki ciśnienia tętniczego, sedację i objawy dysocjacyjne aplikacja odbywa się w certyfikowanym ośrodku pod 2-godzinnym bezpośrednim nadzorem medycznym.'
+        text: 'S-enancjomer ketaminy podawany donosowo w połączeniu z nowym SSRI/SNRI zrewolucjonizował leczenie TRD. Esketamina jako niekompetycyjny antagonista NMDA wywołuje szybki efekt przeciwdepresyjny i antysuicydalny (w ciągu 24–48h). Proponowany model mechanizmu obejmuje przejściowy wyrzut glutaminianu i kaskadę mTOR/BDNF. Ze względu na przejściowe skoki ciśnienia tętniczego, sedację i objawy dysocjacyjne aplikacja odbywa się w certyfikowanym ośrodku pod 2-godzinnym bezpośrednim nadzorem medycznym.'
       }
     ],
     table: {
@@ -443,8 +443,8 @@ export const draftPsychiatryPart4b: DraftLesson[] = [
       q(
         'W jaki sposób zabezpiecza się pacjenta przed złamaniami kości i urazami mięśniowymi podczas zabiegu ECT?',
         ['Poprzez podanie leku zwiotczającego mięśnie (sukcynylocholiny) po uprzednim uśpieniu pacjenta krótkodziałającym anestetykiem', 'Dzięki zwiotczeniu drgawki widoczne są jedynie w zapisie EEG lub jako minimalne drżenie palców stopy.'],
-        ['Przez owinięcie całego ciała grubą warstwą gipsu', 'Gips nie jest stosowany w procedurze ECT.'],
-        ['Przez podanie 10 litrów zimnej wody do żołądka', 'Procedura wymaga bycia na czczo w celu ochrony przed aspiracją.'],
+        ['Przez podanie lewodopy z benserazydem 30 minut przed zabiegiem', 'Agoniści dopaminy nie wykazują działania zwiotczającego ani nie zapobiegają urazom narządu ruchu podczas napadu drgawkowego.'],
+        ['Przez unieruchomienie wyłącznie pasami bez farmakologicznego zwiotczenia mięśni', 'Unieruchomienie mechaniczne bez leków miorelaksacyjnych stwarza wysokie ryzyko złamań kompresyjnych kręgów i zerwania mięśni.'],
         'psych-bio-q2'
       ),
       q(
@@ -457,15 +457,15 @@ export const draftPsychiatryPart4b: DraftLesson[] = [
       q(
         'Dlaczego po inhalacji donosowej esketaminy pacjent musi pozostać pod bezpośrednią obserwacją personelu medycznego przez co najmniej 2 godziny?',
         ['Z uwagi na ryzyko przejściowego skoku ciśnienia tętniczego krwi, sedacji oraz objawów dysocjacji psychicznej', 'Objawy te osiągają szczyt w ciągu pierwszych 40 minut i ustępują samoistnie po ok. 90–120 minutach.'],
-        ['Ponieważ esketamina powoduje natychmiastowe zrośnięcie obu nozdrzy', 'Jest to biologiczny nonsens.'],
-        ['Aby odczekać na wyblaknięcie koloru skóry', 'Esketamina nie zmienia koloru powłok skórnych.'],
+        ['Z uwagi na ryzyko opóźnionej złośliwej hipertermii rozwijającej się w drugiej godzinie', 'Hipertermia nie jest typowym działaniem niepożądanym esketaminy; nadzór koncentruje się na układzie krążenia i dysocjacji.'],
+        ['W celu monitorowania stężenia leku we krwi i wykonania pilnego TDM po 120 minutach', 'Esketamina donosowa nie wymaga rutynowego oznaczania stężenia TDM w surowicy podczas standardowych aplikacji klinicznych.'],
         'psych-bio-q4'
       ),
       q(
         'W jakim stanie klinicznym terapia elektrowstrząsowa (ECT) stanowi bezwzględną interwencję ratującą życie o najwyższej skuteczności?',
         ['W ostrej katatonii złośliwej oraz w ciężkim stuporze depresyjnym z odmową przyjmowania płynów i pokarmów', 'Zabieg natychmiastowo przerywa stan katatoniczny i zabezpiecza przed zgonem z odwodnienia i powikłań zatorowych.'],
-        ['W łagodnym przejściowym smutku po zgubieniu parasola', 'Nie jest to wskazanie do żadnego leczenia psychiatrycznego.'],
-        ['W próchnicy zębów trzonowych', 'Stomatologia nie posługuje się terapią ECT.'],
+        ['W izolowanej bezsenności pierwotnej bez objawów afektywnych', 'Izolowane zaburzenia snu leczy się metodami behawioralnymi (CBT-I) i farmakoterapią doraźną, nie procedurami inwazyjnymi.'],
+        ['W łagodnych zaburzeniach adaptacyjnych z obniżeniem nastroju po zmianie pracy', 'Wskazaniem do ECT są ciężkie, oporne lub zagrażające życiu stany afektywne i katatoniczne, a nie łagodne reakcje adaptacyjne.'],
         'psych-bio-q5'
       )
     ]

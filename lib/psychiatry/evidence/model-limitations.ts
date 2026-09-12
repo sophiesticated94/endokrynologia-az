@@ -93,7 +93,7 @@ export const PSYCHIATRY_EVIDENCE_REGISTRY: Record<string, EvidenceItem> = {
     level: 'CONSENSUS',
     sourceId: 'agnp-tdm-2026',
     quickSummary:
-      'Złoty standard standaryzacji próbki: faza dystrybucji tkankowej litu kończy się po 8–10 godzinach od przyjęcia leku.',
+      'Standard referencyjny standaryzacji próbki: faza dystrybucji tkankowej litu kończy się po 8–10 godzinach od przyjęcia leku.',
     clinicalContext: {
       population: 'Wszyscy chorzy przyjmujący lit w reżimie 1x dziennie (wieczorem) lub 2x dziennie',
       measurementMethod: 'Krew żylna pobrana na czczo przed poranną dawką',
@@ -157,9 +157,7 @@ export const PSYCHIATRY_EVIDENCE_REGISTRY: Record<string, EvidenceItem> = {
         'Nie ma bezpośredniego zastosowania przy bloku odnóg pęczka Hisa (LBBB/RBBB wymaga JTc).',
         'Prawidłowe QTc w spoczynku nie zabezpiecza przed TdP w obecności ostrej hipokaliemii.',
       ],
-      whatCannotBeInferred: [
-        'Samo QTc <450 ms NIE jest gwarancją bezpieczeństwa przy jednoczesnym podaniu dwóch leków z Known Risk TdP.',
-      ],
+      whatCannotBeInferred: ['Samo QTc <450 ms NIE jest gwarancją bezpieczeństwa przy jednoczesnym podaniu dwóch leków z Known Risk TdP.'],
       uncertaintyOrCI: 'Błąd ręcznego i automatycznego odczytu QT wynosi typowo ±10–20 ms.',
     },
   },
@@ -183,9 +181,7 @@ export const PSYCHIATRY_EVIDENCE_REGISTRY: Record<string, EvidenceItem> = {
         'Zalecenia nie zastępują indywidualnej konsultacji toksykologa i nefrologa w OIT.',
         'Wymagają oceny dynamiki zmian stężenia i przewidywanego czasu eliminacji litu.',
       ],
-      whatCannotBeInferred: [
-        'Pojedyncza sztywna liczba stężenia (np. >4,0 mmol/l) bez oceny eGFR i objawów neurologicznych nie jest jedynym kryterium.',
-      ],
+      whatCannotBeInferred: ['Pojedyncza sztywna liczba stężenia (np. >4,0 mmol/l) bez oceny eGFR i objawów neurologicznych nie jest jedynym kryterium.'],
     },
   },
 
@@ -237,7 +233,7 @@ export const PSYCHIATRY_EVIDENCE_REGISTRY: Record<string, EvidenceItem> = {
       ],
       whatCannotBeInferred: [
         'Klonus NIE jest patognomoniczny dla zespołu serotoninowego w oderwaniu od wywiadu lekowego.',
-        'Cyproheptadyna NIE jest stuprocentową specyficzną odtrutką; podstawą jest intensywne leczenie objawowe i chłodzenie.',
+        'Cyproheptadyna jest leczeniem wspomagającym (antagonista 5-HT2A), a nie uniwersalnym antidotum; podstawą jest intensywne chłodzenie i sedacja benzodiazepinami.',
       ],
       uncertaintyOrCI: 'Czułość 84%, swoistość 97% w badaniu Dunkley 2003 (N=473 pacjentów).',
     },
@@ -287,9 +283,7 @@ export const PSYCHIATRY_EVIDENCE_REGISTRY: Record<string, EvidenceItem> = {
         'Kryteria kategoryczne nie zawsze oddają wymiarową i wieloczynnikową naturę fenotypów psychicznych.',
         'Diagnoza wymaga rzetelnego wykluczenia podłoża somatycznego i toksycznego.',
       ],
-      whatCannotBeInferred: [
-        'Samo spełnienie kryteriów opisowych nie definiuje jednoznacznego biologicznego mechanizmu przyczynowego u jednostki.',
-      ],
+      whatCannotBeInferred: ['Samo spełnienie kryteriów opisowych nie definiuje jednoznacznego biologicznego mechanizmu przyczynowego u jednostki.'],
     },
   },
 
@@ -307,12 +301,8 @@ export const PSYCHIATRY_EVIDENCE_REGISTRY: Record<string, EvidenceItem> = {
       applicability: 'Leki przeciwpsychotyczne, normotymiki, leki przeciwdepresyjne i psychostymulanty',
     },
     researchContext: {
-      limitations: [
-        'Brak objawów w spoczynku nie gwarantuje bezpieczeństwa przy dynamicznych interakcjach lekowych lub odwodnieniu.',
-      ],
-      whatCannotBeInferred: [
-        'Prawidłowe badania wyjściowe nie zwalniają z okresowego monitorowania w trakcie modyfikacji dawek.',
-      ],
+      limitations: ['Brak objawów w spoczynku nie gwarantuje bezpieczeństwa przy dynamicznych interakcjach lekowych lub odwodnieniu.'],
+      whatCannotBeInferred: ['Prawidłowe badania wyjściowe nie zwalniają z okresowego monitorowania w trakcie modyfikacji dawek.'],
     },
   },
 
@@ -386,12 +376,8 @@ export const PSYCHIATRY_EVIDENCE_REGISTRY: Record<string, EvidenceItem> = {
       applicability: 'Zatrucia litem o różnym przebiegu czasowym',
     },
     researchContext: {
-      limitations: [
-        'Decyzja o hemodializie opiera się na całościowym stanie klinicznym, nie samym odizolowanym stężeniu.',
-      ],
-      whatCannotBeInferred: [
-        'Pojedyncza litemia <4,0 mmol/l nie wyklucza wskazań do ECTR przy obecności drgawek lub śpiączki.',
-      ],
+      limitations: ['Decyzja o hemodializie opiera się na całościowym stanie klinicznym, nie samym odizolowanym stężeniu.'],
+      whatCannotBeInferred: ['Pojedyncza litemia <4,0 mmol/l nie wyklucza wskazań do ECTR przy obecności drgawek lub śpiączki.'],
     },
   },
 
@@ -409,14 +395,11 @@ export const PSYCHIATRY_EVIDENCE_REGISTRY: Record<string, EvidenceItem> = {
       applicability: 'Różnicowanie stanów nagłych z zespołem serotoninowym i złośliwą hipertermią',
     },
     researchContext: {
-      limitations: [
-        'Wzrost CK może wystąpić po iniekcji domięśniowej lub pobudzeniu ruchowym bez NMS.',
-      ],
-      whatCannotBeInferred: [
-        'Obecność gorączki u pacjenta na neuroleptyku nie dowodzi automatycznie NMS bez cech sztywności.',
-      ],
+      limitations: ['Wzrost CK może wystąpić po iniekcji domięśniowej lub pobudzeniu ruchowym bez NMS.'],
+      whatCannotBeInferred: ['Obecność gorączki u pacjenta na neuroleptyku nie dowodzi automatycznie NMS bez cech sztywności.'],
     },
   },
+
   'cyp-interaction-observations': {
     id: 'cyp-interaction-observations',
     claimLabel: 'Obserwacje farmakogenetyczne i interakcje CYP450 (CPIC / Flockhart)',
@@ -432,12 +415,48 @@ export const PSYCHIATRY_EVIDENCE_REGISTRY: Record<string, EvidenceItem> = {
     },
     researchContext: {
       modelType: 'Jakościowy model wrażliwości enzymatycznej (kierunek zmian AUC/klirensu)',
-      limitations: [
-        'Współczynniki mają charakter edukacyjny i nie stanowią predyktora stężenia Css u konkretnego pacjenta.',
-      ],
-      whatCannotBeInferred: [
-        'Nie wolno kalkulować dokładnego stężenia osoczowego w ng/ml wyłącznie na podstawie fenotypu CYP.',
-      ],
+      limitations: ['Współczynniki mają charakter edukacyjny i nie stanowią predyktora stężenia Css u konkretnego pacjenta.'],
+      whatCannotBeInferred: ['Nie wolno kalkulować dokładnego stężenia osoczowego w ng/ml wyłącznie na podstawie fenotypu CYP.'],
+    },
+  },
+
+  'ect-clinical-efficacy': {
+    id: 'ect-clinical-efficacy',
+    claimLabel: 'Skuteczność kliniczna ECT a postulowane mechanizmy biologiczne',
+    origin: 'DERIVED',
+    level: 'META-ANALYSIS',
+    sourceId: 'apa-ect-guidelines',
+    quickSummary:
+      'Wysoka skuteczność doraźna w ciężkiej depresji, katatonii i manii (70–90% odpowiedzi) jest ugruntowana klinicznie; hipotezy neuroplastyczności i neurotrofin pozostają modelami postulowanymi.',
+    clinicalContext: {
+      population: 'Pacjenci z ciężką depresją lekooporną, depresją psychotyczną lub zagrażającą życiu katatonią',
+      measurementMethod: 'Randomizowane badania kliniczne, metaanalizy i rejestry zabiegowe',
+      applicability: 'Interwencja ratunkowa i drugoliniowa w ciężkich epizodach afektywnych',
+    },
+    researchContext: {
+      modelType: 'Metaanalizy RCT i wieloośrodkowe rejestry kliniczne',
+      limitations: ['Wysoki wskaźnik nawrotu po ostrej serii bez leczenia podtrzymującego; przejściowe deficyty pamięci.'],
+      whatCannotBeInferred: ['Wysoka skuteczność kliniczna nie dowodzi prawdziwości konkretnego hipotetycznego mechanizmu biologicznego.'],
+    },
+  },
+
+  'ketamine-esketamine-action': {
+    id: 'ketamine-esketamine-action',
+    claimLabel: 'Szybki efekt przeciwdepresyjny esketaminy a mechanizmy glutaminianowe',
+    origin: 'DERIVED',
+    level: 'META-ANALYSIS',
+    sourceId: 'krystal-ketamine',
+    quickSummary:
+      'Szybka redukcja objawów depresyjnych i suicydalnych w TRD potwierdzona w RCT fazy III; hipoteza kaskady BDNF/mTOR stanowi model wspierany, nie bezpośredni pomiar.',
+    clinicalContext: {
+      population: 'Dorośli pacjenci z depresją lekooporną (TRD) w połączeniu z nowym SSRI/SNRI',
+      measurementMethod: 'Podwójnie zaślepione badania fazy III i metaanalizy z nadzorem parametrów hemodynamicznych',
+      applicability: 'Depresja lekooporna z wymogiem natychmiastowej redukcji nasilenia objawów',
+    },
+    researchContext: {
+      modelType: 'Badania kliniczne fazy III (RCT) i modele translacyjne',
+      limitations: ['Krótki czas działania pojedynczej dawki wymaga regularnych sesji podtrzymujących; skoki ciśnienia i dysocjacja.'],
+      whatCannotBeInferred: ['Antagonizm NMDA nie wyjaśnia w pełni wszystkich zjawisk translacyjnych obserwowanych u ludzi.'],
     },
   },
 };

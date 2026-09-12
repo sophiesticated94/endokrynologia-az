@@ -38,7 +38,7 @@ export function PsychiatryPharmacologyView({ patient, setPatient, prescriptions,
         <span className="eyebrow">RECEPTOR SANDBOX &amp; PK/PD</span>
         <h2 style={{ margin: '4px 0 6px 0' }}>Symulator Farmakokinetyki i Wysycenia Receptorów</h2>
         <p style={{ margin: 0, color: 'var(--text-muted)' }}>
-          Dobieraj leki i dawki. Sprawdzaj stężenia Css, status CYP450 i wysycenie SERT oraz D2 z oznaczeniem poziomu dowodów (PET vs model PK).
+          Analizuj kierunek ekspozycji, wpływ CYP, wyniki TDM oraz populacyjne modele receptorowe z jawnym poziomem dowodów.
         </p>
       </div>
 

@@ -28,7 +28,7 @@ export const psychiatryCasesPart1b: ClinicalCase[] = [
         choices: [
           ['Agorafobia (lęk przed miejscami, z których ucieczka byłaby utrudniona w razie napadu paniki)', 'Agorafobia jest najczęstszym powikłaniem nieleczonego lęku napadowego.'],
           ['Urojenia prześladowcze w przestrzeniach publicznych', 'Brak usystematyzowanych przekonań urojeniowych; pacjentka krytycznie ocenia swój lęk, lecz nie potrafi go powstrzymać.'],
-          ['Otępienie naczyniowe z dezorientacją', 'Anna jest w pełni zorientowana i sprawna poznawczo.'],
+          ['Zaburzenie lękowe uogólnione (GAD) z dominującym zamartwianiem się', 'GAD charakteryzuje się ciągłym, uogólnionym lękiem wolnopłynącym, a nie unikaniem miejsc publicznych z obawy przed atakiem paniki.'],
         ],
         answerIndex: 0,
       },
@@ -50,7 +50,7 @@ export const psychiatryCasesPart1b: ClinicalCase[] = [
         choices: [
           ['Rozpoczęcie od małej dawki SSRI (np. sertralina 25 mg lub escitalopram 5 mg) i powolne zwiększanie co 7–14 dni do dawki terapeutycznej pod osłoną psychoedukacji', 'Osoby z lękiem napadowym są nadwrażliwe na przejściowy wzrost stężenia serotoniny w synapsach w pierwszych dniach leczenia.'],
           ['Włączenie maksymalnej dawki sertraliny (200 mg) od pierwszego dnia', 'Gwałtowna stymulacja 5-HT2A i 5-HT2C wywoła nasilenie lęku i porzucenie terapii przez pacjentkę.'],
-          ['Stosowanie wyłącznie preparatów magnezu i witaminy B6', 'Suplementacja nie stanowi leczenia przyczynowego zespołu lęku napadowego.'],
+          ['Włączenie bupropionu w monoterapii w docelowej dawce 300 mg/d', 'Bupropion ze względu na profil noradrenergiczno-dopaminergiczny może nasilać napady paniki i nie jest lekiem z wyboru w lęku napadowym.'],
         ],
         answerIndex: 0,
       },
@@ -72,8 +72,8 @@ export const psychiatryCasesPart1b: ClinicalCase[] = [
         prompt: 'Jaka jest kluczowa różnica między obsesją w OCD a urojeniem w psychozie?',
         choices: [
           ['W OCD natrętne myśli są ego-dystoniczne i traktowane krytycznie jako własne, lecz niechciane, podczas gdy urojenie jest ego-syntoniczne i bezkrytyczne', 'Krytycyzm wobec absurdalności natręctwa jest cechą typową dla OCD (z wyjątkiem postaci z ubogim wglądem).'],
-          ['Obsesje występują wyłącznie w nocy podczas fazy REM snu', 'Natręctwa manifestują się w czuwaniu pod wpływem bodźców wyzwalających.'],
-          ['W psychozie pacjent nigdy nie myje rąk', 'Czynności higieniczne mogą występować w obu stanach, różni je struktura przekonania i wglądu.'],
+          ['W OCD pacjent zawsze uważa swoje obawy za w pełni uzasadnione faktyczną obecnością trucizn', 'To cecha przekonań urojeniowych lub OCD z całkowitym brakiem wglądu; w typowym OCD pacjent dostrzega nieracjonalność natręctw.'],
+          ['Urojenie zawsze ustępuje natychmiast po wykonaniu czynności natrętnej', 'Urojenia nie redukują się po rytuałach; chwilowe rozładowanie napięcia po kompulsji jest charakterystyczne dla OCD.'],
         ],
         answerIndex: 0,
       },
@@ -83,7 +83,7 @@ export const psychiatryCasesPart1b: ClinicalCase[] = [
         prompt: 'Które struktury anatomiczne wchodzą w skład pętli CSTC odpowiedzialnej za hamowanie nawykowych zachowań?',
         choices: [
           ['Kora oczodołowo-czołowa (OFC), przedni zakręt obręczy (ACC), prążkowie (jądro ogoniaste) oraz wzgórze', 'Sieć OFC-ACC-prążkowie-wzgórze tworzy pętlę sprzężenia zwrotnego regulującą ocenę zagrożenia i wygaszanie zachowań rytualnych.'],
-          ['Wyłącznie móżdżek i rdzeń przedłużony', 'Struktury te odpowiadają za koordynację ruchową i funkcje wegetatywne, nie za treść poznawczą natręctw.'],
+          ['Głównie ciało migdałowate i jądro półleżące bez udziału kory czołowej', 'Choć ciało migdałowate moduluje lęk, klasyczny model pętli CSTC w OCD kładzie nacisk na oś kora oczodołowo-czołowa/zakręt obręczy – prążkowie – wzgórze.'],
           ['Hipokamp i kora potyliczna bez udziału zwojów podstawy', 'Obwód CSTC opiera się na kluczowej roli zwojów podstawy (prążkowia) w modulacji sygnałów wzgórzowych.'],
         ],
         answerIndex: 0,
@@ -94,8 +94,8 @@ export const psychiatryCasesPart1b: ClinicalCase[] = [
         prompt: 'Czym charakteryzuje się skuteczna farmakoterapia SSRI w OCD wg wytycznych WFSBP i NICE?',
         choices: [
           ['Wymaga wyższych dawek niż w depresji (np. sertralina 200 mg, escitalopram 20 mg) i dłuższego czasu oczekiwania na odpowiedź (10–12 tygodni)', 'Blokada transporterów SERT w OCD wymaga głębszej i dłuższej adaptacji receptorowej w prążkowiu i OFC niż w typowym epizodzie depresyjnym.'],
-          ['Wymaga stosowania leku wyłącznie przez 7 dni w małej dawce', 'Tydzień leczenia nie wywoła żadnego efektu w utrwalonych natręctwach.'],
-          ['SSRI są całkowicie nieskuteczne; jedyną opcją są leki nasenne', 'Leki serotoninergiczne są lekami pierwszego rzutu o najwyższej udowodnionej skuteczności w OCD.'],
+          ['Wystarcza standardowa dawka minimalna (np. sertralina 50 mg) z oceną efektu już po 2 tygodniach', 'W OCD dawki minimalne bywają niewystarczające, a czas do oceny pełnej odpowiedzi wynosi 10–12 tygodni.'],
+          ['Konieczne jest natychmiastowe włączenie trójpierścieniowej klomipraminy w dawce 300 mg od 1. dnia', 'Ze względu na profil działań niepożądanych i kardiotoksyczność klomipraminę rezerwuje się zwykle do kolejnych rzutów i wymaga powolnego miareczkowania.'],
         ],
         answerIndex: 0,
       },
@@ -161,8 +161,8 @@ export const psychiatryCasesPart1b: ClinicalCase[] = [
         prompt: 'Jaki lek blokujący receptory alfa-1 adrenergiczne jest stosowany w redukcji koszmarów sennych w PTSD?',
         choices: [
           ['Prazosyna (antagonista receptorów alfa-1 adrenergicznych)', 'Prazosyna zmniejsza nadmierną stymulację noradrenergiczną w OUN w fazie snu REM, redukując koszmary pourazowe.'],
-          ['Doustna adrenalina', 'Adrenalina nasiliłaby tachykardię i wzbudzenie lękowe.'],
-          ['Metoprolol w małej dawce', 'Beta-blokery słabiej penetrują OUN i nie wykazują tak swoistego wpływu na koszmary jak blokada alfa-1.'],
+          ['Hydroksyzyna w dawce 50 mg na noc', 'Lek przeciwhistaminowy wykazuje działanie sedatywne, ale nie moduluje specyficznie wzmożonego napięcia noradrenergicznego w fazie REM odpowiedzialnego za koszmary.'],
+          ['Propranolol w małej dawce', 'Beta-adrenolityki mogą zmniejszać obwodowe drżenie, lecz w badaniach klinicznych nie redukują koszmarów pourazowych tak swoiście jak antagonista alfa-1 (prazosyna).'],
         ],
         answerIndex: 0,
       },
@@ -183,8 +183,8 @@ export const psychiatryCasesPart1b: ClinicalCase[] = [
         prompt: 'Dlaczego potwierdzenie obecności objawów przed 12. rokiem życia jest bezwzględnym warunkiem rozpoznania ADHD u dorosłego?',
         choices: [
           ['ADHD jest zaburzeniem neurorozwojowym; objawy deficytu uwagi pojawiające się de novo po 25. roku życia sugerują inną etiologię (depresję, bezdech senny, substancje)', 'Zgodnie z kryteriami DSM-5-TR objawy muszą manifestować się w okresie rozwojowym, nawet jeśli pełne załamanie kompensacji nastąpiło dopiero w dorosłości.'],
-          ['Ponieważ u dorosłych nie występują receptory dopaminowe w korze przedczołowej', 'Receptory dopaminowe i transportery DAT funkcjonują przez całe życie.'],
-          ['Warunek ten dotyczy wyłącznie kobiet', 'Kryteria wieku początku dotyczą jednakowo obu płci.'],
+          ['Ponieważ objawy ujawniające się wyłącznie w dorosłości wynikają najczęściej z fizjologicznego starzenia kory mózgowej', 'Fizjologiczne starzenie nie tłumaczy izolowanego deficytu uwagi u młodych dorosłych; wyklucza się raczej schorzenia somatyczne, afektywne lub uzależnienia.'],
+          ['Ponieważ wywiad rozwojowy ma jedynie znaczenie orzecznicze, a do diagnozy wystarcza 2-tygodniowy okres rozproszenia', 'Krótkotrwałe epizody dekoncentracji są typowe dla zaburzeń adaptacyjnych lub afektywnych; ADHD wymaga przewlekłego wzorca z początkiem w dzieciństwie.'],
         ],
         answerIndex: 0,
       },
@@ -206,7 +206,7 @@ export const psychiatryCasesPart1b: ClinicalCase[] = [
         choices: [
           ['Leki stymulujące blokujące transporter dopaminy i noradrenaliny (metylofenidat o przedłużonym uwalnianiu)', 'Metylofenidat zwiększa dostępność dopaminy i noradrenaliny w korze przedczołowej, poprawiając funkcje wykonawcze u ponad 70% pacjentów.'],
           ['Neuroleptyki klasyczne w małych dawkach (np. perfenazyna)', 'Neuroleptyki blokują receptory D2, co nasila dysfunkcję wykonawczą i zubożenie napędu w ADHD.'],
-          ['Przewlekłe leczenie zolpidemem w ciągu dnia', 'Zolpidem jest lekiem nasennym o działaniu sedatywnym, pogarszającym funkcje poznawcze.'],
+          ['Monoterapia lekiem przeciwdepresyjnym z grupy SSRI (np. escitalopram)', 'SSRI mogą redukować lęk współistniejący, ale nie poprawiają deficytów uwagi i funkcji wykonawczych w niepowikłanym ADHD.'],
         ],
         answerIndex: 0,
       },
@@ -216,8 +216,8 @@ export const psychiatryCasesPart1b: ClinicalCase[] = [
         prompt: 'Jakie parametry życiowe należy obowiązkowo kontrolować podczas miareczkowania stymulantów?',
         choices: [
           ['Ciśnienie tętnicze krwi i tętno spoczynkowe na każdej wizycie (ryzyko tachykardii i nadciśnienia)', 'Zwiększenie napięcia noradrenergicznego może podnosić ciśnienie i tętno, co wymaga regularnej kontroli.'],
-          ['Poziom ferrytyny i witaminy D co 3 dni', 'Brak wskazań do tak częstego monitorowania tych parametrów.'],
-          ['Stężenie kwasu moczowego w dobowej zbiórce moczu', 'Metylofenidat nie wpływa istotnie na metabolizm puryn.'],
+          ['Dobowa zbiórka katecholamin w moczu przed każdą zmianą dawki', 'Badanie to służy do diagnostyki guza chromochłonnego, nie rutynowej kontroli farmakoterapii ADHD.'],
+          ['Seryjne badania echokardiograficzne co 2 tygodnie', 'Rutynowe echo serca nie jest wymagane u bezobjawowych pacjentów z prawidłowym wywiadem sercowo-naczyniowym i prawidłowym EKG.'],
         ],
         answerIndex: 0,
       },
@@ -239,7 +239,7 @@ export const psychiatryCasesPart1b: ClinicalCase[] = [
         choices: [
           ['Ocenia się ogólny stopień nasilenia dysfunkcji osobowości (łagodne, umiarkowane, ciężkie) oraz specyficzne domeny cech (np. negatywna afektywność, rozhamowanie)', 'ICD-11 odeszło od sztywnych kategorii ksobnych na rzecz oceny stopnia uszkodzenia relacji i tożsamości oraz profilu cech z wyróżnikiem wzorca granicznego.'],
           ['Wymaga się wyłącznie znalezienia jednego z 10 sztywnych typów bez oceny nasilenia', 'Model kategoryczny był krytykowany za nadmierne nakładanie się rozpoznań.'],
-          ['Zaburzenia osobowości diagnozuje się wyłącznie na podstawie badania MRI mózgu', 'Diagnoza opiera się na całościowym wywiadzie rozwojowym i relacyjnym.'],
+          ['Wymaga się wykonania seryjnych testów laboratoryjnych w kierunku neuroprzekaźników', 'Żadne testy biochemiczne czy laboratoryjne nie stanowią kryterium diagnostycznego zaburzeń osobowości.'],
         ],
         answerIndex: 0,
       },
@@ -261,7 +261,7 @@ export const psychiatryCasesPart1b: ClinicalCase[] = [
         choices: [
           ['Dialektyczna terapia behawioralna (DBT) lub terapia oparta na mentalizacji (MBT)', 'DBT uczy konkretnych umiejętności tolerancji dystresu, regulacji emocji i uważności, redukując samouszkodzenia.'],
           ['Wieloletnie leczenie benzodiazepinami w dużych dawkach', 'Benzodiazepiny w BPD nasilają impulsywność poprzez odhamowanie behawioralne.'],
-          ['Brak jakiejkolwiek psychoterapii i poleganie na suplementach', 'Podstawą leczenia zaburzeń osobowości jest psychoterapia, farmakoterapia pełni rolę pomocniczą.'],
+          ['Izolowana farmakoterapia z częstą rotacją leków bez interwencji psychoterapeutycznej', 'Sama farmakoterapia bez psychoterapii celowanej (np. DBT) nie prowadzi do trwałej poprawy regulacji emocjonalnej i relacyjnej.'],
         ],
         answerIndex: 0,
       },
@@ -271,7 +271,7 @@ export const psychiatryCasesPart1b: ClinicalCase[] = [
         prompt: 'Jaka jest rola farmakoterapii w zaburzeniu osobowości z pogranicza wg wytycznych NICE?',
         choices: [
           ['Farmakoterapia nie leczy samego zaburzenia osobowości; może być stosowana krótkoterminowo celując w konkretne objawy (np. mała dawka atypowego neuroleptyku w silnej dysforii)', 'NICE wyraźnie przestrzega przed polipragmazją w BPD i traktuje leki jako wsparcie w ostrych kryzysach.'],
-          ['Politerapia 5 lekami z różnych grup jako leczenie docelowe na całe życie', 'Polipragmazja w BPD zwiększa śmiertelność w razie przedawkowania i generuje powikłania somatyczne.'],
+          ['Długoterminowa politerapia lekami przeciwpsychotycznymi i stabilizatorami w celu całkowitej eradykacji cech osobowości', 'Wytyczne przestrzegają przed przewlekłą polipragmazją; farmakoterapia nie zmienia struktury osobowości, a jedynie łagodzi ostre objawy kryzysowe.'],
           ['Całkowity bezwzględny zakaz podawania jakichkolwiek leków nawet w ciężkiej depresji współistniejącej', 'Współistniejący pełny epizod dużej depresji wymaga standardowego leczenia przeciwdepresyjnego.'],
         ],
         answerIndex: 0,
@@ -294,7 +294,7 @@ export const psychiatryCasesPart1b: ClinicalCase[] = [
         choices: [
           ['Alkoholowy zespół abstynencyjny powikłany majaczeniem (Delirium Tremens) — stan bezpośredniego zagrożenia życia', 'Połączenie zaburzeń świadomości, iluzji/omamów wzrokowych (mikrozoopsje), drżenia i silnego pobudzenia wegetatywnego definiuje majaczenie drżenne.'],
           ['Czysty debiut schizofrenii paranoidalnej', 'Brak pobudzenia wegetatywnego w schizofrenii; wywiad gwałtownego odstawienia alkoholu jest rozstrzygający.'],
-          ['Niewielkie zatrucie pokarmowe', 'Zaburzenia świadomości i tachykardia wykraczają poza niepowikłany nieżyt żołądkowy.'],
+          ['Ostry epizod lęku panicznego z somatyzacją', 'Napad paniki nie powoduje zaburzeń świadomości z mikrozoopsjami, a wywiad nagłego odstawienia po ciągu wskazuje na powikłany zespół abstynencyjny.'],
         ],
         answerIndex: 0,
       },
@@ -315,8 +315,8 @@ export const psychiatryCasesPart1b: ClinicalCase[] = [
         prompt: 'Jaki lek należy bezwzględnie podać pozajelitowo przed jakąkolwiek infuzją węglowodanów?',
         choices: [
           ['Tiamina (witamina B1) w wysokiej dawce parenteralnie (i.v. lub i.m.)', 'Zużycie resztek tiaminy w metabolizmie glukozy wywołuje ostre martwicze uszkodzenie ciał suteczkowatych (encefalopatia Wernickego).'],
-          ['Witamina C w megadawkach', 'Witamina C nie zapobiega zespołowi Wernickego.'],
-          ['Wapń z witaminą D3', 'Gospodarka wapniowa nie jest pierwotnym czynnikiem encefalopatii alkoholowej.'],
+          ['Potas w bolusie bez uprzedniej oceny EKG i tiaminy', 'Gwałtowna nieskorygowana podaż potasu grozi arytmią, a brak tiaminy naraża na nieodwracalne uszkodzenie struktur podkorowych.'],
+          ['Piracetam w dużej dawce dożylnej', 'Leki nootropowe nie mają udowodnionej skuteczności w profilaktyce ostrej encefalopatii Wernickego.'],
         ],
         answerIndex: 0,
       },
@@ -327,7 +327,7 @@ export const psychiatryCasesPart1b: ClinicalCase[] = [
         choices: [
           ['Równoległe, zintegrowane leczenie uzależnienia od alkoholu i zaburzenia lękowego (psychoterapia uzależnień + bezpieczny lek przeciwlękowy nieuzależniający, np. SSRI)', 'Rozdzielanie leczenia („najpierw rok trzeźwości, potem leczenie lęku”) prowadzi do szybkiego nawrotu picia z powodu nieleczonych objawów lękowych.'],
           ['Przepisanie alprazolamu do codziennego stosowania zamiast alkoholu', 'Zastąpienie alkoholu krótko działającą benzodiazepiną prowadzi do wtórnego uzależnienia krzyżowego.'],
-          ['Wypisanie bez jakichkolwiek zaleceń terapeutycznych', 'Brak wsparcia po detoksykacji kończy się nawrotem picia u ponad 80% pacjentów.'],
+          ['Odrębne, sekwencyjne leczenie: odłożenie terapii lęku do uzyskania minimum 12 miesięcy pełnej abstynencji', 'Odkładanie leczenia nasilonego zaburzenia lękowego dramatycznie zwiększa ryzyko samoleczenia alkoholem i wczesnego nawrotu; zaleca się model zintegrowany.'],
         ],
         answerIndex: 0,
       },

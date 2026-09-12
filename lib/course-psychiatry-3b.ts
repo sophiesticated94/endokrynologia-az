@@ -87,13 +87,13 @@ export const draftPsychiatryPart3b: DraftLesson[] = [
     group: 'Farmakoterapia zaburzeń afektywnych',
     minutes: 18,
     goals: [
-      'Zastosujesz złoty standard profilaktyki ChAD – węglan litu – i zinterpretujesz stężenia we krwi.',
+      'Zastosujesz lek pierwszego rzutu w profilaktyce ChAD – węglan litu – i zinterpretujesz stężenia we krwi.',
       'Scharakteryzujesz teratogenność kwasu walproinowego i zasady programu zapobiegania ciąży.',
       'Wdrożysz bezpieczny, powolny schemat titracji lamotryginy w prewencji zespołu Stevensa-Johnsona.'
     ],
     sections: [
       {
-        title: 'Węglan litu: złoty standard normotymiczny i antysuicydalny',
+        title: 'Węglan litu: lek pierwszego rzutu w ChAD i prewencji suicydalnej',
         text: 'Lit pozostaje lekiem I wyboru w zapobieganiu nawrotom manii i depresji w ChAD oraz jedynym o udowodnionym bezpośrednim działaniu antysuicydalnym. Hamuje monofosfatazę inozytolową (IMPaza) oraz kinazę syntazy glikogenu 3-beta (GSK-3beta), promując neuroprotekcję. Wymaga ścisłego TDM: stężenie terapeutyczne w podtrzymaniu wynosi 0,6–0,8 mmol/l (w ostrej manii 0,8–1,0 mmol/l). Toksyczność pojawia się powyżej 1,2 mmol/l.'
       },
       {
@@ -190,7 +190,7 @@ export const draftPsychiatryPart3b: DraftLesson[] = [
         ['SGA (Olanzapina)', 'Antagonizm 5-HT2A > D2, H1, 5-HT2C', 'Bardzo niskie', 'Bardzo wysokie (tycie, cukrzyca)'],
         ['SGA (Rysperydon)', 'Antagonizm 5-HT2A + D2, alfa-1', 'Umiarkowane (zależne od dawki > 4–6 mg)', 'Umiarkowane (silna hiperprolaktynemia)'],
         ['III gen. (Aripiprazol)', 'Częściowy agonizm D2/D3 + 5-HT2A', 'Bardzo niskie (ryzyko akatyzji)', 'Minimalne / neutralne metabolicznie'],
-        ['Klozapina (Złoty standard TRS)', 'Słaby D2, silny 5-HT2A, alfa-1, M1, H1', 'Praktycznie zerowe', 'Bardzo wysokie + ryzyko agranulocytozy']
+        ['Klozapina (Lek z wyboru w TRS)', 'Słaby D2, silny 5-HT2A, alfa-1, M1, H1', 'Praktycznie zerowe', 'Bardzo wysokie + ryzyko agranulocytozy']
       ]
     },
     advanced:

@@ -12,9 +12,10 @@ interface Props {
   patient: PatientProfile;
   prescriptions: ActivePrescription[];
   presetData?: Record<string, any>;
+  setPatient?: React.Dispatch<React.SetStateAction<PatientProfile>>;
 }
 
-export function PsychiatrySafetyView({ patient, prescriptions, presetData }: Props) {
+export function PsychiatrySafetyView({ patient, prescriptions, presetData, setPatient }: Props) {
   const [clonusState, setClonusState] = useState(() => hydrateSafetySignsFromPreset(presetData));
 
   const hunter = evaluateHunterCriteria(prescriptions, clonusState);
@@ -50,9 +51,10 @@ export function PsychiatrySafetyView({ patient, prescriptions, presetData }: Pro
       {presetData?.rawQt !== undefined && (
         <div style={{ marginBottom: '20px' }}>
           <PsychiatryQtcLab
+            key={patient.labPotassium}
             initialRawQt={presetData.rawQt}
             initialHr={presetData.hr || 60}
-            initialPotassium={presetData.potassium || patient.labPotassium}
+            initialPotassium={patient.labPotassium}
             initialIsFemale={patient.sex === 'K'}
           />
         </div>
@@ -184,8 +186,12 @@ export function PsychiatrySafetyView({ patient, prescriptions, presetData }: Pro
               max={5.5}
               step={0.1}
               value={patient.labPotassium}
+              aria-label="Poziom potasu w surowicy"
               onChange={e => {
-                // aktualizacja potasu lokalnie
+                const val = parseFloat(e.target.value);
+                if (!isNaN(val) && setPatient) {
+                  setPatient(p => ({ ...p, labPotassium: val }));
+                }
               }}
               style={{ width: '100%', marginTop: '4px' }}
             />

@@ -89,12 +89,12 @@ test('calculateDrugState models SERT and D2 receptor occupancy and pharmacogenet
   // SSRI SERT occupancy (Meyer hyperbolic model)
   const sertralineState = calculateDrugState({ drugId: 'sertraline', doseMg: 50 }, basePatient);
   assert.ok(sertralineState.sertOccupancyPercent >= 75 && sertralineState.sertOccupancyPercent <= 88);
-  assert.equal(sertralineState.evidenceCategory, 'PET measured');
+  assert.ok(sertralineState.evidenceCategory.includes('MODELLED'));
 
   // Antipsychotic D2 occupancy (Kapur 65-80% therapeutic window)
   const olanStandard = calculateDrugState({ drugId: 'olanzapine', doseMg: 10 }, basePatient);
   assert.ok(olanStandard.d2OccupancyPercent >= 65 && olanStandard.d2OccupancyPercent <= 80);
-  assert.ok(olanStandard.safetyAlerts.some(a => a.includes('oknie terapeutycznym')));
+  assert.ok(olanStandard.safetyAlerts.some(a => a.includes('heurystyka')));
 
   const olanHigh = calculateDrugState({ drugId: 'olanzapine', doseMg: 20 }, basePatient);
   assert.ok(olanHigh.d2OccupancyPercent > 80);

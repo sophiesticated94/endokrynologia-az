@@ -259,7 +259,7 @@ export function calculateDrugState(
     } else if (d2Occupancy > 80) {
       alerts.push(`Wysycenie receptorów D2 wynosi szacunkowo ~${d2Occupancy}% (>80% heurystyka Kapura dla antagonistów). Zwiększone prawdopodobieństwo objawów pozapiramidowych (EPS) i hiperprolaktynemii.`);
     } else if (d2Occupancy >= 65 && d2Occupancy <= 80) {
-      alerts.push(`Wysycenie receptorów D2 w optymalnym oknie terapeutycznym (historyczna heurystyka Kapura 65–80%) dla czystych antagonistów.`);
+      alerts.push(`Wysycenie receptorów D2 w historycznym zakresie occupancy powiązanym z odpowiedzią kliniczną i EPS w części badań PET antagonistów D2 (heurystyka populacyjna, nie indywidualny próg terapeutyczny).`);
     }
   }
 
@@ -289,7 +289,11 @@ export function calculateDrugState(
     sertOccupancyPercent: sertOccupancy,
     d2OccupancyPercent: d2Occupancy,
     d2Model,
-    evidenceCategory: d2Model ? 'PET measured' : drug.petOccupancyAtDefaultDose ? 'PET measured' : 'PK-derived',
+    evidenceCategory: d2Model
+      ? (d2Model.outOfStudyRange ? 'EXTRAPOLATED · PET population fit' : 'MODELLED · PET population fit')
+      : (sertOccupancy > 0
+        ? 'MODELLED · PET population fit'
+        : (drug.id === 'lithium' ? 'MEASURED (TDM required)' : 'MODELLED · PK educational estimate')),
     safetyAlerts: alerts,
   };
 }

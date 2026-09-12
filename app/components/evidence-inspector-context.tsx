@@ -1,6 +1,6 @@
 'use client';
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { EvidenceInspectorModal } from './psychiatry-lesson-enhancements';
+import { EvidenceInspectorModal } from './evidence-inspector-modal';
 
 interface EvidenceInspectorContextValue {
   openEvidence: (claimKey?: string, mode?: string) => void;

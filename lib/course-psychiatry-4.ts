@@ -173,7 +173,7 @@ export const draftPsychiatryPart4: DraftLesson[] = [
     sections: [
       {
         title: 'Strategie zamiany leków psychotropowych wg wytycznych BAP',
-        text: 'British Association for Psychopharmacology (BAP) wyróżnia 3 podstawowe metody: 1) Zamiana bezpośrednia (direct switch) – odstawienie leku A i rozpoczęcie leku B następnego dnia (dopuszczalne w ramach tej samej klasy o zbliżonym profilu, np. citalopram -> sertralina); 2) Zamiana krzyżowa (cross-tapering) – stopniowa redukcja leku A przy jednoczesnym powolnym dołączaniu leku B (złoty standard w większości sytuacji klinicznych); 3) Zamiana z przerwą (washout) – konieczna przy przejściu na lub z inhibitorów MAO.'
+        text: 'British Association for Psychopharmacology (BAP) wyróżnia 3 podstawowe metody: 1) Zamiana bezpośrednia (direct switch) – odstawienie leku A i rozpoczęcie leku B następnego dnia (dopuszczalne w ramach tej samej klasy o zbliżonym profilu, np. citalopram -> sertralina); 2) Zamiana krzyżowa (cross-tapering) – stopniowa redukcja leku A przy jednoczesnym powolnym dołączaniu leku B (metoda preferowana w większości sytuacji klinicznych); 3) Zamiana z przerwą (washout) – konieczna przy przejściu na lub z inhibitorów MAO.'
       },
       {
         title: 'Zespół dyskontynuacji: akronim FINISH',

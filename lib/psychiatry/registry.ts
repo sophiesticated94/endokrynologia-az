@@ -228,7 +228,7 @@ export const PSYCHIATRY_LESSON_ENHANCEMENTS_DATA: Record<
     caseId: 'case-psychoza-i-szlaki-dopaminy',
     recurringPatientId: 'thread-psychosis-trs',
     whatChangesYourMind: {
-      knownFacts: ['Okno terapeutyczne Kapura: 65–80% occupancy D2 dla czystych antagonistów'],
+      knownFacts: ['Historyczna heurystyka populacyjna Kapura: zakres 65–80% occupancy D2 powiązany z odpowiedzią i niższym EPS dla antagonistów PET'],
       unknownFactors: ['Zastosowanie częściowego agonisty D2 (np. arypiprazol, karyprazyna)'],
       criticalDifferentiatingFactor: 'Arypiprazol przy occupancy >80% nie powoduje EPS ani hiperprolaktynemii dzięki aktywności wewnętrznej ~30%',
     },

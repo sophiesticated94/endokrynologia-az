@@ -87,7 +87,7 @@ export const draftPsychiatryPart3: DraftLesson[] = [
     minutes: 18,
     goals: [
       'Zrozumiesz mechanizm blokady transporterów SERT, NET i DAT przez leki przeciwdepresyjne.',
-      'Zinterpretujesz krzywą wysycenia SERT w badaniach PET (próg terapeutyczny ~80%).',
+      'Zinterpretujesz krzywą wysycenia SERT w badaniach PET (obserwacja populacyjna ~80%).',
       'Wyjaśnisz, dlaczego podwajanie dawki SSRI nie podwaja blokady transportera w OUN.'
     ],
     sections: [
@@ -97,7 +97,7 @@ export const draftPsychiatryPart3: DraftLesson[] = [
       },
       {
         title: 'Przełomowe badania PET Meyera: 80% occupancy SERT',
-        text: 'Badania pozytonowej tomografii emisyjnej (PET) z użyciem ligandu [11C]DASB (Meyer i wsp.) udowodniły, że minimalna dawka kliniczna każdego SSRI (np. cytalopram 20 mg, escitalopram 10 mg, sertralina 50 mg, paroksetyna 20 mg) blokuje już około 75–85% transporterów SERT w prążkowiu i korze mózgu. Osiągnięcie ~80% occupancy stanowi warunek konieczny do wyzwolenia odpowiedzi przeciwdepresyjnej.'
+        text: 'Badania pozytonowej tomografii emisyjnej (PET) z użyciem ligandu [11C]DASB (Meyer i wsp.) wykazały, że minimalne dawki terapeutyczne badanych SSRI (np. cytalopram 20 mg, escitalopram 10 mg, sertralina 50 mg, paroksetyna 20 mg) wiążą się zazwyczaj z wysokim wysyceniem rzędu 75–85% transporterów SERT w prążkowiu. Obserwacja ta stanowi model populacyjny korelacji farmakologicznej z odpowiedzią, a nie indywidualny sztywny próg skuteczności.'
       },
       {
         title: 'Hiperboliczna krzywa wysycenia i implikacje kliniczne',
@@ -116,12 +116,12 @@ export const draftPsychiatryPart3: DraftLesson[] = [
     advanced:
       'Wenlafaksyna wykazuje zależność profilu od dawki: w dawkach <= 75–150 mg/d działa niemal wyłącznie jako selektywny inhibitor SERT. Dopiero w dawkach >= 225 mg/d dochodzi do istotnego zablokowania transportera noradrenaliny (NET), przekształcając lek w funkcjonalny SNRI.',
     summary:
-      'Leki przeciwdepresyjne wymagają ~80% occupancy SERT w badaniach PET, co zapewnia już dawka początkowa. Z powodu hiperbolicznej krzywej wiązania dalsze podwajanie dawki daje niewielki wzrost blokady, potęgując objawy niepożądane.',
+      'W klasycznych badaniach PET badane SSRI przy minimalnych dawkach terapeutycznych osiągały wysokie wysycenie SERT ~80% (model populacyjny). Z powodu hiperbolicznej krzywej wiązania dalsze podwajanie dawki daje niewielki wzrost blokady, potęgując objawy niepożądane.',
     sourceIds: ['pet-sert-meyer', 'stahl-essential', 'canmat-mdd-2023'],
     questions: [
       q(
-        'Jaki minimalny procent wysycenia transporterów SERT w badaniach PET jest niezbędny do uzyskania efektu przeciwdepresyjnego wg Meyera?',
-        ['Około 80% occupancy SERT w OUN', 'Wartość ta stanowi próg terapeutyczny osiągany już przy minimalnej zarejestrowanej dawce terapeutycznej.'],
+        'Jaki szacunkowy poziom wysycenia transporterów SERT obserwowano w badaniach PET Meyera przy minimalnych dawkach terapeutycznych SSRI?',
+        ['Około 80% occupancy SERT w OUN', 'W klasycznych badaniach PET minimalne dawki terapeutyczne badanych SSRI wiązały się zwykle z wysokim SERT occupancy około 80% (obserwacja populacyjna, a nie indywidualny próg skuteczności).'],
         ['Mniej niż 10% occupancy', '10% nie wywołuje zauważalnego podwyższenia stężenia 5-HT w synapsie ani desensytyzacji autoreceptorów.'],
         ['Dokładnie 100% nieodwracalnej blokady', '100% blokada nie występuje i groziłaby ciężkim, ostrym zespołem serotoninowym.'],
         'psych-trans-q1'
@@ -129,8 +129,8 @@ export const draftPsychiatryPart3: DraftLesson[] = [
       q(
         'Dlaczego podwojenie dawki SSRI (np. sertraliny z 50 do 100 mg) zwiększa blokadę SERT jedynie o ok. 5–7%?',
         ['Ponieważ krzywa wiązania leku z transporterem ma kształt hiperboliczny i przy 80% wkracza w fazę plateau (nasycenia)', 'Większość miejsc wiążących jest już zajęta; do dalszego wzrostu potrzebne byłyby stężenia logarytmicznie wyższe.'],
-        ['Ponieważ sertralina ulega natychmiastowemu wydaleniu przez płuca', 'Sertralina jest metabolizowana w wątrobie, nie w płucach.'],
-        ['Transporter SERT ulega zniszczeniu po pierwszej dawce leku', 'Transportery podlegają fizjologicznej internalizacji i recyklingowi, nie destrukcji.'],
+        ['Ponieważ dochodzi do gwałtownego przyspieszenia klirensu wątrobowego przy wyższych dawkach', 'Dla sertraliny farmakokinetyka w dawkach terapeutycznych jest w przybliżeniu liniowa; ograniczenie wynika z nasycenia miejsc wiążących na białku docelowym (farmakodynamika).'],
+        ['Ponieważ wyższe stężenia leku blokują wyłącznie receptory obwodowe z pominięciem OUN', 'Lek swobodnie przenika barierę krew-mózg; plateau wynika z nieliniowej krzywej wysycenia SERT w OUN.'],
         'psych-trans-q2'
       ),
       q(
