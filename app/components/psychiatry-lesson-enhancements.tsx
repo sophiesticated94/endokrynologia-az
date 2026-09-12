@@ -17,8 +17,8 @@ import {
   Activity,
 } from 'lucide-react';
 import type { InlineEnhancementRef } from '@/lib/course-types';
-import type { WhatWouldChangeYourMind } from '@/lib/psychiatry/types';
 import { getPsychiatryPreset } from '@/lib/psychiatry/presets';
+import { evaluateHunterCriteria } from '@/lib/psychiatry-engine';
 import { PSYCHIATRY_EVIDENCE_REGISTRY } from '@/lib/psychiatry/evidence/model-limitations';
 import { getPsychiatryDiagramComponent } from './psychiatry-diagrams';
 import {
@@ -27,17 +27,22 @@ import {
   PsychiatryQtcLab,
 } from './psychiatry-receptor-lab';
 import { psychiatrySources } from '@/lib/course-psychiatry-sources';
-import { getMicroCase } from '@/lib/psychiatry/micro-cases';
+import { MicroCaseCard } from './psychiatry-micro-case-card';
 import type { Navigation } from '../views/types';
+import type { WhatWouldChangeYourMind } from '@/lib/psychiatry/types';
 
 export function EvidenceBadge({
   mode,
+  claimKey,
+  label,
   onClick,
 }: {
   mode?: string;
-  onClick: () => void;
+  claimKey?: string;
+  label?: string;
+  onClick?: () => void;
 }) {
-  if (!mode) return null;
+  if (!mode && !claimKey) return null;
 
   const modeLabels: Record<string, { label: string; color: string }> = {
     'pet-model': { label: 'Badania PET (Meyer / Kapur)', color: 'bg-emerald-100 text-emerald-800 border-emerald-300' },
@@ -48,17 +53,21 @@ export function EvidenceBadge({
     'clinical-framework': { label: 'Standard ICD-11 / DSM-5-TR', color: 'bg-indigo-100 text-indigo-800 border-indigo-300' },
   };
 
-  const current = modeLabels[mode] || { label: 'Dowody kliniczne', color: 'bg-slate-100 text-slate-800 border-slate-300' };
+  const claimItem = claimKey ? PSYCHIATRY_EVIDENCE_REGISTRY[claimKey] : undefined;
+  const current = mode ? (modeLabels[mode] || { label: 'Dowody kliniczne', color: 'bg-slate-100 text-slate-800 border-slate-300' }) : {
+    label: claimItem?.claimLabel || 'EBM Dowody',
+    color: 'bg-indigo-100 text-indigo-800 border-indigo-300',
+  };
 
   return (
     <button
       type="button"
       onClick={onClick}
-      className={`inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-full border shadow-sm transition-all hover:opacity-85 ${current.color}`}
+      className={`inline-flex items-center gap-1 px-2 py-0.5 text-[11px] font-semibold rounded-full border shadow-xs transition-all hover:opacity-85 ${current.color}`}
       title="Kliknij, aby otworzyć Evidence Inspector i sprawdzić metodologię"
     >
-      <FileCheck2 size={13} />
-      <span>{current.label}</span>
+      <FileCheck2 size={12} />
+      <span className="truncate max-w-[200px]">{label || current.label}</span>
     </button>
   );
 }
@@ -87,125 +96,110 @@ export function WhatChangesYourMindCard({
       </button>
 
       {open && (
-        <div className="mt-3 pt-3 border-t border-amber-200 text-xs space-y-3">
-          <div>
-            <span className="font-bold text-slate-700 uppercase tracking-wide block mb-1">
-              Znane fakty kliniczne:
-            </span>
-            <ul className="list-disc list-inside text-slate-700 space-y-0.5">
-              {whatChanges.knownFacts.map((fact, idx) => (
-                <li key={idx}>{fact}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <span className="font-bold text-slate-700 uppercase tracking-wide block mb-1">
-              Czynniki nieznane / luki w wywiadzie:
-            </span>
-            <ul className="list-disc list-inside text-slate-700 space-y-0.5">
-              {whatChanges.unknownFactors.map((factor, idx) => (
-                <li key={idx}>{factor}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="p-2.5 bg-white border border-amber-300 rounded-lg shadow-xs">
-            <span className="font-bold text-amber-900 block mb-0.5">
-              Krytyczny czynnik zmieniający rozpoznanie / leczenie:
-            </span>
-            <p className="text-slate-800 leading-relaxed">
+        <div className="mt-3 pt-3 border-t border-amber-200 text-xs text-amber-900 space-y-2">
+          {whatChanges.knownFacts && whatChanges.knownFacts.length > 0 && (
+            <div>
+              <span className="font-semibold text-slate-800">Znane fakty kliniczne:</span>
+              <ul className="list-disc list-inside mt-0.5 space-y-0.5 text-slate-700">
+                {whatChanges.knownFacts.map((fact, idx) => (
+                  <li key={idx}>{fact}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {whatChanges.unknownFactors && whatChanges.unknownFactors.length > 0 && (
+            <div>
+              <span className="font-semibold text-slate-800">Czynniki nieznane / luki:</span>
+              <ul className="list-disc list-inside mt-0.5 space-y-0.5 text-slate-700">
+                {whatChanges.unknownFactors.map((f, idx) => (
+                  <li key={idx}>{f}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {whatChanges.criticalDifferentiatingFactor && (
+            <div className="bg-white/80 p-2.5 rounded-lg border border-amber-200 text-slate-700">
+              <strong className="text-amber-950">Kluczowy czynnik różnicujący:</strong>{' '}
               {whatChanges.criticalDifferentiatingFactor}
-            </p>
-          </div>
+            </div>
+          )}
         </div>
       )}
     </div>
   );
 }
 
-export function MicroCaseCard({ caseId }: { caseId: string }) {
-  const [selected, setSelected] = useState<number | null>(null);
-  const current = getMicroCase(caseId);
-
-  return (
-    <div className="microcase-card my-4 p-4 bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl shadow-xs text-xs">
-      <div className="flex items-center gap-2 text-emerald-900 font-bold mb-2">
-        <Sparkles size={15} className="text-emerald-700" />
-        <span>{current.title}</span>
-      </div>
-      <p className="text-slate-700 mb-2 leading-relaxed">{current.vignette}</p>
-      <div className="font-semibold text-slate-900 mb-2">{current.question}</div>
-      <div className="space-y-1.5">
-        {current.options.map((opt: string, idx: number) => {
-          const isChosen = selected === idx;
-          const isCorrect = idx === current.answer;
-          let btnClass = 'border-slate-200 bg-white text-slate-800 hover:bg-slate-50';
-          if (selected !== null) {
-            if (isCorrect) btnClass = 'border-emerald-500 bg-emerald-100 text-emerald-950 font-semibold';
-            else if (isChosen) btnClass = 'border-rose-400 bg-rose-50 text-rose-900';
-          }
-          return (
-            <button
-              key={idx}
-              type="button"
-              onClick={() => setSelected(idx)}
-              className={`w-full text-left p-2.5 rounded-lg border transition-all flex items-start gap-2 ${btnClass}`}
-            >
-              <span className="font-mono font-bold text-[11px] mt-0.5">{String.fromCharCode(65 + idx)}.</span>
-              <span className="flex-1">{opt}</span>
-              {selected !== null && isCorrect && <CheckCircle2 size={15} className="text-emerald-700 shrink-0 mt-0.5" />}
-              {selected !== null && isChosen && !isCorrect && <AlertCircle size={15} className="text-rose-600 shrink-0 mt-0.5" />}
-            </button>
-          );
-        })}
-      </div>
-      {selected !== null && (
-        <div className={`mt-3 p-2.5 rounded-lg border leading-relaxed text-[11px] ${selected === current.answer ? 'bg-emerald-100/70 border-emerald-300 text-emerald-950' : 'bg-rose-50 border-rose-200 text-rose-950'}`}>
-          {current.rationales[selected]}
-        </div>
-      )}
-    </div>
-  );
-}
-
-export function HunterCriteriaQuickLab() {
+export function HunterCriteriaQuickLab({ onOpenClaim }: { onOpenClaim?: (key: string) => void }) {
+  const [exposure, setExposure] = useState<boolean | 'unknown'>('unknown');
   const [clonus, setClonus] = useState(false);
   const [inducible, setInducible] = useState(false);
+  const [ocular, setOcular] = useState(false);
   const [agitation, setAgitation] = useState(false);
   const [diaphoresis, setDiaphoresis] = useState(false);
-  const [hyperthermia, setHyperthermia] = useState(false);
+  const [tremor, setTremor] = useState(false);
+  const [hyperreflexia, setHyperreflexia] = useState(false);
+  const [hypertonia, setHypertonia] = useState(false);
+  const [tempOver38, setTempOver38] = useState(false);
 
-  const hunterMet = clonus || (inducible && (agitation || diaphoresis)) || (hyperthermia && clonus);
+  const evaluation = evaluateHunterCriteria(exposure, {
+    spontaneousClonus: clonus,
+    inducibleClonus: inducible,
+    ocularClonus: ocular,
+    agitation,
+    diaphoresis,
+    tremor,
+    hyperreflexia,
+    hypertonia,
+    hyperthermiaOver38: tempOver38,
+  });
 
   return (
     <div className="hunter-quick-lab my-3 p-3.5 bg-rose-50/60 border border-rose-200 rounded-xl text-xs">
-      <div className="flex items-center justify-between mb-2">
+      <div className="flex items-center justify-between mb-2 flex-wrap gap-1">
         <span className="font-bold text-rose-950 flex items-center gap-1.5">
-          <ShieldAlert size={15} className="text-rose-700" />
-          Kryteria Huntera: Zespół Serotoninowy
+          <ShieldAlert size={15} className="text-rose-700" /> Kryteria Huntera (Dunkley 2003)
         </span>
-        <span className={`px-2 py-0.5 rounded-full font-bold text-[11px] ${hunterMet ? 'bg-red-600 text-white animate-pulse' : 'bg-slate-100 text-slate-700'}`}>
-          {hunterMet ? 'KRYTERIA SPEŁNIONE' : 'Kryteria niespełnione'}
-        </span>
+        <div className="flex items-center gap-1.5">
+          {onOpenClaim && <EvidenceBadge claimKey="hunter-validation" label="Hunter EBM (84% / 97%)" onClick={() => onOpenClaim('hunter-validation')} />}
+          <span className={`px-2 py-0.5 rounded-full font-bold text-[11px] ${
+            evaluation.meetsCriteria ? 'bg-red-600 text-white animate-pulse' : exposure === 'unknown' ? 'bg-amber-100 text-amber-800' : 'bg-slate-100 text-slate-700'
+          }`}>
+            {evaluation.meetsCriteria ? 'KRYTERIA SPEŁNIONE' : exposure === 'unknown' ? 'EKSPOZYCJA NIEZNANA' : 'Kryteria niespełnione'}
+          </span>
+        </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 my-2 text-slate-700">
+      <div className="mb-2 p-1.5 bg-white/80 border border-rose-100 rounded-lg flex items-center gap-2 flex-wrap">
+        <span className="font-semibold text-slate-700">Ekspozycja serotoninergiczna:</span>
+        <label className="cursor-pointer flex items-center gap-1"><input type="radio" name="hq-exp" checked={exposure === true} onChange={() => setExposure(true)} /> Potwierdzona</label>
+        <label className="cursor-pointer flex items-center gap-1"><input type="radio" name="hq-exp" checked={exposure === false} onChange={() => setExposure(false)} /> Brak</label>
+        <label className="cursor-pointer flex items-center gap-1"><input type="radio" name="hq-exp" checked={exposure === 'unknown'} onChange={() => setExposure('unknown')} /> Nieznana</label>
+      </div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5 my-2 text-slate-700">
         {[
           { label: 'Klonus samoistny', val: clonus, set: setClonus },
-          { label: 'Klonus wyzwalany / oczny', val: inducible, set: setInducible },
-          { label: 'Pobudzenie psychoruchowe', val: agitation, set: setAgitation },
-          { label: 'Zlewne poty (diaphoresis)', val: diaphoresis, set: setDiaphoresis },
-          { label: 'Gorączka >38°C', val: hyperthermia, set: setHyperthermia },
+          { label: 'Klonus indukowany', val: inducible, set: setInducible },
+          { label: 'Klonus oczny', val: ocular, set: setOcular },
+          { label: 'Pobudzenie (agitation)', val: agitation, set: setAgitation },
+          { label: 'Zlewne poty', val: diaphoresis, set: setDiaphoresis },
+          { label: 'Drżenie mięśniowe', val: tremor, set: setTremor },
+          { label: 'Hiperrefleksja', val: hyperreflexia, set: setHyperreflexia },
+          { label: 'Hipertonia (sztywność)', val: hypertonia, set: setHypertonia },
+          { label: 'Gorączka >38°C', val: tempOver38, set: setTempOver38 },
         ].map((item, idx) => (
-          <label key={idx} className="flex items-center gap-2 cursor-pointer">
+          <label key={idx} className="flex items-center gap-1.5 cursor-pointer">
             <input type="checkbox" checked={item.val} onChange={e => item.set(e.target.checked)} className="rounded text-rose-600" />
-            <span>{item.label}</span>
+            <span className="text-[11px]">{item.label}</span>
           </label>
         ))}
       </div>
-      <p className="text-[11px] text-slate-600 mt-1">
-        Czułość 84%, swoistość 97% wg Dunkley 2003. Obecność spontanicznego klonusu przesądza o rozpoznaniu.
-      </p>
+      <div className="mt-1.5 p-2 bg-white/90 border border-rose-200 rounded-lg text-[11px]">
+        {evaluation.conditionMet && <div className="font-semibold text-rose-900">{evaluation.conditionMet}</div>}
+        <div className="text-slate-600">{evaluation.rationale}</div>
+        {evaluation.missingInformation && evaluation.missingInformation.length > 0 && (
+          <div className="text-amber-800 font-medium mt-0.5">Brak: {evaluation.missingInformation.join('; ')}</div>
+        )}
+      </div>
+      <p className="text-[10px] text-slate-500 mt-1 leading-tight">{evaluation.disclaimer}</p>
     </div>
   );
 }
@@ -272,7 +266,7 @@ export function InlineEnhancementRenderer({
       return <PsychiatryQtcLab compact />;
     }
     if (id.includes('hunter')) {
-      return <HunterCriteriaQuickLab />;
+      return <HunterCriteriaQuickLab onOpenClaim={onOpenEvidence} />;
     }
     return (
       <div className="my-3 p-3 bg-slate-50 border border-indigo-200 rounded-xl text-xs flex items-center justify-between">

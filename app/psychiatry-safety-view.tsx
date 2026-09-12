@@ -4,23 +4,26 @@ import { ShieldAlert, AlertTriangle, CheckCircle2, Flame, HeartPulse, Activity }
 import type { PatientProfile, ActivePrescription } from '@/lib/psychiatry-engine';
 import { evaluateHunterCriteria } from '@/lib/psychiatry-engine';
 import { PSYCHIATRY_DRUGS } from '@/lib/psychiatry-simulator-data';
+import { PsychiatryLithiumTdmLab, PsychiatryQtcLab } from './components/psychiatry-receptor-lab';
+import { EvidenceBadge } from './components/psychiatry-lesson-enhancements';
 
 interface Props {
   patient: PatientProfile;
   prescriptions: ActivePrescription[];
+  presetData?: Record<string, any>;
 }
 
-export function PsychiatrySafetyView({ patient, prescriptions }: Props) {
-  const [clonusState, setClonusState] = useState({
-    spontaneousClonus: false,
-    inducibleClonus: false,
-    ocularClonus: false,
-    agitation: false,
-    diaphoresis: false,
-    tremor: false,
-    hyperreflexia: false,
-    hyperthermiaOver38: false,
-  });
+export function PsychiatrySafetyView({ patient, prescriptions, presetData }: Props) {
+  const [clonusState, setClonusState] = useState(() => ({
+    spontaneousClonus: Boolean(presetData?.spontaneousClonus),
+    inducibleClonus: Boolean(presetData?.inducibleClonus),
+    ocularClonus: Boolean(presetData?.ocularClonus),
+    agitation: Boolean(presetData?.agitation),
+    diaphoresis: Boolean(presetData?.diaphoresis),
+    tremor: Boolean(presetData?.tremor),
+    hyperreflexia: Boolean(presetData?.hyperreflexia),
+    hyperthermiaOver38: (typeof presetData?.hyperthermia === 'number' && presetData.hyperthermia > 38) || false,
+  }));
 
   const hunter = evaluateHunterCriteria(prescriptions, clonusState);
 
@@ -40,6 +43,29 @@ export function PsychiatrySafetyView({ patient, prescriptions }: Props) {
         </p>
       </div>
 
+      {/* Preset Labs */}
+      {presetData?.measuredLevel !== undefined && (
+        <div style={{ marginBottom: '20px' }}>
+          <PsychiatryLithiumTdmLab
+            initialConcentration={presetData.measuredLevel}
+            initialHoursPostDose={presetData.hoursSinceDose || 12}
+            initialEgfr={presetData.eGfr || patient.labEgfr || 62}
+            initialHasNsaid={Array.isArray(presetData.interactingDrugs) && presetData.interactingDrugs.includes('nsaid')}
+          />
+        </div>
+      )}
+
+      {presetData?.rawQt !== undefined && (
+        <div style={{ marginBottom: '20px' }}>
+          <PsychiatryQtcLab
+            initialRawQt={presetData.rawQt}
+            initialHr={presetData.hr || 60}
+            initialPotassium={presetData.potassium || patient.labPotassium}
+            initialIsFemale={patient.sex === 'K'}
+          />
+        </div>
+      )}
+
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '20px' }}>
         {/* Moduł 1: Kryteria Huntera */}
         <div style={{ border: `1px solid ${hunter.meetsCriteria ? 'var(--danger)' : 'var(--border)'}`, borderRadius: '10px', padding: '18px', background: hunter.meetsCriteria ? 'var(--danger-subtle)' : 'var(--surface)' }}>
@@ -47,9 +73,12 @@ export function PsychiatrySafetyView({ patient, prescriptions }: Props) {
             <h3 style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '6px' }}>
               <Flame size={18} color={hunter.meetsCriteria ? 'var(--danger)' : 'var(--accent)'} /> Zespół serotoninowy (Kryteria Huntera)
             </h3>
-            <span className="badge" style={{ background: hunter.meetsCriteria ? 'var(--danger)' : 'var(--accent-subtle)', color: hunter.meetsCriteria ? '#fff' : 'var(--accent)' }}>
-              {hunter.meetsCriteria ? 'ZESPÓŁ ROZPOZNANY' : 'BRAK KRYTERIÓW'}
-            </span>
+            <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+              <EvidenceBadge claimKey="hunter-validation" label="EBM: Hunter 2003" />
+              <span className="badge" style={{ background: hunter.meetsCriteria ? 'var(--danger)' : 'var(--accent-subtle)', color: hunter.meetsCriteria ? '#fff' : 'var(--accent)' }}>
+                {hunter.meetsCriteria ? 'ZESPÓŁ ROZPOZNANY' : 'BRAK KRYTERIÓW'}
+              </span>
+            </div>
           </div>
 
           <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '12px' }}>

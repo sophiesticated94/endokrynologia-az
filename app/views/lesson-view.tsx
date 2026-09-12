@@ -72,6 +72,7 @@ export function LessonView({
 }) {
   const [latexModalOpen, setLatexModalOpen] = useState(false);
   const [evidenceModalOpen, setEvidenceModalOpen] = useState(false);
+  const [selectedClaimKey, setSelectedClaimKey] = useState<string | undefined>(undefined);
   const [finishedActivities, setFinishedActivities] = useState<Set<string>>(new Set());
   const psychEnhancement = getPsychiatryEnhancement(lesson.id);
   const experience = endoExperiences[lesson.id] || psychiatryLessonExperiences[lesson.id];
@@ -108,7 +109,10 @@ export function LessonView({
             {psychEnhancement?.evidenceMode && (
               <EvidenceBadge
                 mode={psychEnhancement.evidenceMode}
-                onClick={() => setEvidenceModalOpen(true)}
+                onClick={() => {
+                  setSelectedClaimKey(undefined);
+                  setEvidenceModalOpen(true);
+                }}
               />
             )}
             <button
@@ -164,7 +168,10 @@ export function LessonView({
               enhancement={enhancement}
               lessonId={lesson.id}
               go={go}
-              onOpenEvidence={() => setEvidenceModalOpen(true)}
+              onOpenEvidence={(claimKey?: string) => {
+                setSelectedClaimKey(claimKey);
+                setEvidenceModalOpen(true);
+              }}
             />
           );
 
@@ -391,7 +398,11 @@ export function LessonView({
       {evidenceModalOpen && (
         <EvidenceInspectorModal
           mode={psychEnhancement?.evidenceMode}
-          onClose={() => setEvidenceModalOpen(false)}
+          claimKey={selectedClaimKey}
+          onClose={() => {
+            setEvidenceModalOpen(false);
+            setSelectedClaimKey(undefined);
+          }}
         />
       )}
     </div>

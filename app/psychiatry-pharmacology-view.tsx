@@ -3,15 +3,18 @@ import { Pill, Activity, Zap, ShieldCheck, Plus, Trash2 } from 'lucide-react';
 import type { PatientProfile, ActivePrescription } from '@/lib/psychiatry-engine';
 import { calculateDrugState } from '@/lib/psychiatry-engine';
 import { PSYCHIATRY_DRUGS } from '@/lib/psychiatry-simulator-data';
+import { PsychiatryReceptorLab } from './components/psychiatry-receptor-lab';
+import { EvidenceBadge } from './components/psychiatry-lesson-enhancements';
 
 interface Props {
   patient: PatientProfile;
   setPatient: (updater: (prev: PatientProfile) => PatientProfile) => void;
   prescriptions: ActivePrescription[];
   setPrescriptions: (updater: (prev: ActivePrescription[]) => ActivePrescription[]) => void;
+  presetData?: Record<string, any>;
 }
 
-export function PsychiatryPharmacologyView({ patient, setPatient, prescriptions, setPrescriptions }: Props) {
+export function PsychiatryPharmacologyView({ patient, setPatient, prescriptions, setPrescriptions, presetData }: Props) {
   const availableDrugs = Object.values(PSYCHIATRY_DRUGS);
 
   function addDrug(drugId: string) {
@@ -39,6 +42,24 @@ export function PsychiatryPharmacologyView({ patient, setPatient, prescriptions,
         </p>
       </div>
 
+      {presetData?.antagonistDrug && (
+        <div style={{ marginBottom: '20px' }}>
+          <PsychiatryReceptorLab
+            initialDrug={presetData.antagonistDrug as any}
+            initialDose={presetData.antagonistDoseMg}
+          />
+        </div>
+      )}
+
+      {presetData?.inhibitor && (
+        <div style={{ padding: '12px 16px', background: '#eff6ff', border: '1px solid #bfdbfe', borderRadius: '8px', marginBottom: '16px', fontSize: '0.85rem' }}>
+          <strong style={{ color: '#1e40af', display: 'block', marginBottom: '4px' }}>
+            Interakcja CYP: {presetData.inhibitor} (inhibitor {presetData.targetEnzyme}) + {presetData.substrate}
+          </strong>
+          <span style={{ color: '#1e3a8a' }}>{presetData.expectedEffect}</span>
+        </div>
+      )}
+
       {/* Profil enzymatyczny pacjenta */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', background: 'var(--bg-subtle)', padding: '14px', borderRadius: '8px', marginBottom: '20px' }}>
         <div>
@@ -55,15 +76,21 @@ export function PsychiatryPharmacologyView({ patient, setPatient, prescriptions,
           </select>
         </div>
         <div>
-          <label style={{ display: 'block', fontSize: '0.85rem', marginBottom: '4px' }}>Palenie tytoniu (indukcja CYP1A2):</label>
+          <label style={{ display: 'block', fontSize: '0.85rem', marginBottom: '4px' }}>Palenie tytoniu (CYP1A2):</label>
           <select
             value={patient.substanceUse}
             onChange={e => setPatient(p => ({ ...p, substanceUse: e.target.value as any }))}
             style={{ width: '100%', padding: '6px' }}
           >
             <option value="brak">Nie pali (CYP1A2 wyjściowy)</option>
-            <option value="tyton">Pali tytoń (przyspieszony klirens olanzapiny)</option>
+            <option value="tyton">Pali tytoń (indukcja CYP1A2, klirens szybszy o ~50%)</option>
+            <option value="zaprzestanie_palenia">Zaprzestanie palenia (deindukcja CYP1A2, skok klozapiny o 50–100%)</option>
           </select>
+          {patient.substanceUse === 'zaprzestanie_palenia' && (
+            <div style={{ marginTop: '6px', fontSize: '0.75rem' }}>
+              <EvidenceBadge claimKey="clozapine-smoking-cyp1a2" label="EBM: Deindukcja CYP1A2" />
+            </div>
+          )}
         </div>
         <div>
           <label style={{ display: 'block', fontSize: '0.85rem', marginBottom: '4px' }}>Adherencja pacjenta (%): <strong>{patient.adherencePercent}%</strong></label>

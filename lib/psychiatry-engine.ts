@@ -18,7 +18,7 @@ export interface PatientProfile {
   grandiosityOrPsychosis: boolean;
   excessiveRiskActivities: boolean;
   familyHistoryBipolar: boolean;
-  substanceUse: 'brak' | 'alkohol' | 'tyton' | 'stymulanty' | 'thc';
+  substanceUse: 'brak' | 'alkohol' | 'tyton' | 'zaprzestanie_palenia' | 'stymulanty' | 'thc';
   somaticComorbidities: ('brak' | 'niedoczynnosc_tarczycy' | 'niewydolnosc_nerek' | 'choroba_wiencowa')[];
   labTsh: number;
   labEgfr: number;
@@ -33,84 +33,124 @@ export interface ActivePrescription {
   doseMg: number;
 }
 
+export interface HunterClinicalSignsInput {
+  spontaneousClonus?: boolean;
+  inducibleClonus?: boolean;
+  ocularClonus?: boolean;
+  agitation?: boolean;
+  diaphoresis?: boolean;
+  tremor?: boolean;
+  hyperreflexia?: boolean;
+  hypertonia?: boolean;
+  hyperthermiaOver38?: boolean;
+  temperature?: number;
+  serotonergicExposure?: boolean | 'unknown';
+}
+
 export interface HunterEvaluation {
   meetsCriteria: boolean;
   conditionMet: string | null;
   severity: 'brak' | 'zagrozenie_umiarkowane' | 'stan_zagrozenia_zycia';
   rationale: string;
+  branchNumber?: 1 | 2 | 3 | 4 | 5;
+  missingInformation?: string[];
+  disclaimer?: string;
 }
 
 export function evaluateHunterCriteria(
-  prescriptions: ActivePrescription[],
-  clinicalSigns: {
-    spontaneousClonus: boolean;
-    inducibleClonus: boolean;
-    ocularClonus: boolean;
-    agitation: boolean;
-    diaphoresis: boolean;
-    tremor: boolean;
-    hyperreflexia: boolean;
-    hyperthermiaOver38: boolean;
-  }
+  prescriptionsOrExposure: ActivePrescription[] | boolean | 'unknown',
+  clinicalSigns: HunterClinicalSignsInput
 ): HunterEvaluation {
-  const proserotoninDrugs = prescriptions.filter(p => {
-    const d = PSYCHIATRY_DRUGS[p.drugId];
-    return d && d.serotoninToxicityWeight > 0;
-  });
+  let exposure: boolean | 'unknown';
 
-  if (proserotoninDrugs.length === 0) {
+  if (typeof prescriptionsOrExposure === 'boolean') {
+    exposure = prescriptionsOrExposure;
+  } else if (prescriptionsOrExposure === 'unknown') {
+    exposure = 'unknown';
+  } else if (clinicalSigns.serotonergicExposure !== undefined) {
+    exposure = clinicalSigns.serotonergicExposure;
+  } else {
+    const proserotonin = (prescriptionsOrExposure || []).filter(p => {
+      const d = PSYCHIATRY_DRUGS[p.drugId];
+      return d && d.serotoninToxicityWeight > 0;
+    });
+    exposure = proserotonin.length > 0;
+  }
+
+  const {
+    spontaneousClonus = false,
+    inducibleClonus = false,
+    ocularClonus = false,
+    agitation = false,
+    diaphoresis = false,
+    tremor = false,
+    hyperreflexia = false,
+    hypertonia,
+    hyperthermiaOver38 = false,
+    temperature,
+  } = clinicalSigns;
+
+  const isFever = temperature !== undefined ? temperature > 38.0 : hyperthermiaOver38;
+  const isHypertonic = hypertonia !== false && (hypertonia === true || clinicalSigns.hypertonia === undefined);
+
+  const missingInformation: string[] = [];
+  if (exposure === 'unknown') missingInformation.push('Brak potwierdzenia wywiadu ekspozycji na leki serotoninergiczne');
+  if (temperature === undefined && !hyperthermiaOver38) missingInformation.push('Brak pomiaru temperatury ciała');
+
+  const disclaimer = 'EDUKACYJNA REGUŁA DECYZYJNA — Kryteria Huntera (Dunkley 2003: czułość 84%, swoistość 97%) stanowią regułę decyzyjną wyłącznie w kontekście potwierdzonej ekspozycji na substancje serotoninergiczne. Nie są samodzielnym biomarkerem laboratoryjnym.';
+
+  if (exposure === false) {
     return {
       meetsCriteria: false,
       conditionMet: null,
       severity: 'brak',
-      rationale: 'Brak aktywnego leku o działaniu proserotoninergicznym.',
+      rationale: 'Brak aktywnego leku lub udokumentowanej ekspozycji proserotoninergicznej. Zespół serotoninowy nie może być rozpoznany bez ekspozycji.',
+      missingInformation,
+      disclaimer,
     };
   }
 
-  const { spontaneousClonus, inducibleClonus, ocularClonus, agitation, diaphoresis, tremor, hyperreflexia, hyperthermiaOver38 } = clinicalSigns;
+  let branch: 1 | 2 | 3 | 4 | 5 | null = null;
+  let conditionMet: string | null = null;
 
   if (spontaneousClonus) {
-    return {
-      meetsCriteria: true,
-      conditionMet: 'Spontaniczny klonus (spontaneous clonus)',
-      severity: hyperthermiaOver38 ? 'stan_zagrozenia_zycia' : 'zagrozenie_umiarkowane',
-      rationale: 'Kryteria decyzyjne Huntera: spontaniczny klonus u pacjenta po leku serotoninergicznym jest wystarczający do pewnego rozpoznania.',
-    };
+    branch = 1;
+    conditionMet = 'Gałąź 1: Spontaniczny klonus (spontaneous clonus)';
+  } else if (inducibleClonus && (agitation || diaphoresis)) {
+    branch = 2;
+    conditionMet = 'Gałąź 2: Indukowany klonus + pobudzenie psychoruchowe lub zlewne poty';
+  } else if (ocularClonus && (agitation || diaphoresis)) {
+    branch = 3;
+    conditionMet = 'Gałąź 3: Klonus oczny + pobudzenie psychoruchowe lub zlewne poty';
+  } else if (tremor && hyperreflexia) {
+    branch = 4;
+    conditionMet = 'Gałąź 4: Drżenie mięśniowe + wygórowanie odruchów głębokich (hiperrefleksja)';
+  } else if (isHypertonic && isFever && (ocularClonus || inducibleClonus)) {
+    branch = 5;
+    conditionMet = 'Gałąź 5: Hipertonia mięśniowa + gorączka (>38°C) + klonus oczny lub indukowany';
   }
 
-  if (inducibleClonus && (agitation || diaphoresis)) {
-    return {
-      meetsCriteria: true,
-      conditionMet: 'Indukowany klonus + pobudzenie lub obfite poty',
-      severity: hyperthermiaOver38 ? 'stan_zagrozenia_zycia' : 'zagrozenie_umiarkowane',
-      rationale: 'Kryteria Huntera: indukowany klonus połączony z pobudzeniem psychoruchowym lub zlewnymi potami.',
-    };
-  }
+  if (branch !== null) {
+    if (exposure === 'unknown') {
+      return {
+        meetsCriteria: false,
+        conditionMet: `${conditionMet} (UWAGA: niepotwierdzona ekspozycja serotoninergiczna)`,
+        branchNumber: branch,
+        severity: isFever ? 'stan_zagrozenia_zycia' : 'zagrozenie_umiarkowane',
+        rationale: `Obraz neurologiczny odpowiada gałęzi ${branch} kryteriów Huntera, lecz brak pewności co do ekspozycji serotoninergicznej uniemożliwia formalne rozpoznanie zespołu serotoninowego. Wymagana pilna weryfikacja leków.`,
+        missingInformation,
+        disclaimer,
+      };
+    }
 
-  if (ocularClonus && (agitation || diaphoresis)) {
     return {
       meetsCriteria: true,
-      conditionMet: 'Klonus oczny + pobudzenie lub obfite poty',
-      severity: hyperthermiaOver38 ? 'stan_zagrozenia_zycia' : 'zagrozenie_umiarkowane',
-      rationale: 'Kryteria Huntera: mimowolne ruchy gałek ocznych (ocular clonus) z objawami wegetatywnymi.',
-    };
-  }
-
-  if (tremor && hyperreflexia) {
-    return {
-      meetsCriteria: true,
-      conditionMet: 'Drżenie mięśniowe + wygórowanie odruchów (hiperrefleksja)',
-      severity: hyperthermiaOver38 ? 'stan_zagrozenia_zycia' : 'zagrozenie_umiarkowane',
-      rationale: 'Kryteria Huntera: drżenie mięśniowe skojarzone z symetrycznym wygórowaniem odruchów głębokich.',
-    };
-  }
-
-  if (hyperthermiaOver38 && (ocularClonus || inducibleClonus)) {
-    return {
-      meetsCriteria: true,
-      conditionMet: 'Hipertermia (>38°C) + klonus oczny lub indukowany',
-      severity: 'stan_zagrozenia_zycia',
-      rationale: 'Kryteria Huntera: gorączka z klonusem stanowi bezpośrednie zagrożenie życia (ryzyko rabdomiolizy).',
+      conditionMet,
+      branchNumber: branch,
+      severity: (isFever || branch === 5) ? 'stan_zagrozenia_zycia' : 'zagrozenie_umiarkowane',
+      rationale: `Kryteria decyzyjne Huntera (Dunkley 2003): spełniona ${conditionMet} w kontekście potwierdzonej ekspozycji serotoninergicznej.`,
+      missingInformation,
+      disclaimer,
     };
   }
 
@@ -118,7 +158,9 @@ export function evaluateHunterCriteria(
     meetsCriteria: false,
     conditionMet: null,
     severity: 'brak',
-    rationale: 'Brak spełnienia kryteriów reguły decyzyjnej Huntera (brak klonusu lub kombinacji drżenia z hiperrefleksją).',
+    rationale: 'Brak spełnienia żadnej z 5 gałęzi reguły decyzyjnej Huntera (wymagany klonus lub kombinacja drżenia z hiperrefleksją bądź hipertonia z gorączką i klonusem).',
+    missingInformation,
+    disclaimer,
   };
 }
 
@@ -186,8 +228,12 @@ export function calculateDrugState(
     }
   }
 
-  if (drug.credibleMedsQtRisk === 'Known Risk' && (patient.labPotassium < 3.5 || patient.age >= 65)) {
-    alerts.push(`Krytyczne ostrzeżenie QTc (CredibleMeds): Pacjent z grupy ryzyka (K+ < 3.5 lub wiek >=65) przyjmuje lek o znanym ryzyku TdP.`);
+  if (drug.primaryCyp.includes('CYP1A2')) {
+    if (patient.substanceUse === 'zaprzestanie_palenia') {
+      alerts.push('Zaprzestanie palenia tytoniu (deindukcja CYP1A2): opisywany w literaturze wzrost stężenia o 50–100% (duża zmienność osobnicza; wymagane pilne monitorowanie TDM; stan zapalny/infekcja może dodatkowo obniżać klirens).');
+    } else if (patient.substanceUse === 'tyton') {
+      alerts.push('Aktywne palenie tytoniu: węglowodory aromatyczne dymu indukują CYP1A2, obniżając stężenie o ~50%.');
+    }
   }
 
   return {

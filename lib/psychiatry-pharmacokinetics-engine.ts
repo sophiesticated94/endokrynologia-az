@@ -27,6 +27,11 @@ export interface MeasuredLithiumSampleInput {
   hydrationLoss?: boolean;
   interactingMedications?: ('thiazide' | 'nsaid' | 'acei_arb' | 'loop_diuretic')[];
   symptoms?: ('fine_tremor' | 'coarse_tremor' | 'ataxia' | 'nausea_vomiting' | 'slurred_speech' | 'confusion')[];
+  decreasedConsciousness?: boolean;
+  seizures?: boolean;
+  dangerousDysrhythmias?: boolean;
+  significantConfusion?: boolean;
+  projectedHoursToLessThan1MmolL?: number;
 }
 
 export interface LithiumTdmInterpretation {
@@ -125,10 +130,11 @@ export function interpretMeasuredLithiumTdm(input: MeasuredLithiumSampleInput): 
   const extrip = evaluateExtripLithiumGuidance({
     lithiumConcentrationMmolL: measuredConcentrationMmolL,
     eGfr,
-    decreasedConsciousness: false,
-    seizures: false,
-    dangerousDysrhythmias: false,
-    confusionOrDelirium: symptoms.includes('confusion'),
+    decreasedConsciousness: input.decreasedConsciousness,
+    seizures: input.seizures,
+    dangerousDysrhythmias: input.dangerousDysrhythmias,
+    significantConfusion: input.significantConfusion ?? (symptoms.includes('confusion') ? true : undefined),
+    projectedHoursToLessThan1MmolL: input.projectedHoursToLessThan1MmolL,
   });
 
   if (severeSymptoms.length > 0 || therapeuticZone === 'toxic' || therapeuticZone === 'life_threatening') {
@@ -251,63 +257,28 @@ export interface D2DrugEvidenceProfile {
 
 export const D2_DRUGS_EVIDENCE: Record<string, D2DrugEvidenceProfile> = {
   haloperidol: {
-    id: 'haloperidol',
-    name: 'Haloperidol',
-    pharmacologicClass: 'antagonist',
-    intrinsicActivityPercent: 0,
-    ed50Mg: 1.6,
-    studyDoseRange: '1 – 10 mg/d',
-    studyMinDoseMg: 1,
-    studyMaxDoseMg: 10,
-    petStudy: 'Kapur et al. 2000 (Am J Psychiatry)',
+    id: 'haloperidol', name: 'Haloperidol', pharmacologicClass: 'antagonist', intrinsicActivityPercent: 0, ed50Mg: 1.6,
+    studyDoseRange: '1 – 10 mg/d', studyMinDoseMg: 1, studyMaxDoseMg: 10, petStudy: 'Kapur et al. 2000 (Am J Psychiatry)',
     receptorFingerprint: { d2Ki: 1.2, d3Ki: 2.1, ht2aKi: 54, ht1aKi: 1900, h1Ki: 440, m1Ki: 10000, alpha1Ki: 6.0 },
   },
   risperidone: {
-    id: 'risperidone',
-    name: 'Risperidon',
-    pharmacologicClass: 'antagonist',
-    intrinsicActivityPercent: 0,
-    ed50Mg: 1.4,
-    studyDoseRange: '1 – 6 mg/d',
-    studyMinDoseMg: 1,
-    studyMaxDoseMg: 6,
-    petStudy: 'Nyberg et al. 1999 / Kapur 2000',
+    id: 'risperidone', name: 'Risperidon', pharmacologicClass: 'antagonist', intrinsicActivityPercent: 0, ed50Mg: 1.4,
+    studyDoseRange: '1 – 6 mg/d', studyMinDoseMg: 1, studyMaxDoseMg: 6, petStudy: 'Nyberg et al. 1999 / Kapur 2000',
     receptorFingerprint: { d2Ki: 3.8, d3Ki: 5.2, ht2aKi: 0.17, ht1aKi: 420, h1Ki: 20, m1Ki: 10000, alpha1Ki: 2.7 },
   },
   olanzapine: {
-    id: 'olanzapine',
-    name: 'Olanzapina',
-    pharmacologicClass: 'antagonist',
-    intrinsicActivityPercent: 0,
-    ed50Mg: 7.2,
-    studyDoseRange: '5 – 20 mg/d',
-    studyMinDoseMg: 5,
-    studyMaxDoseMg: 20,
-    petStudy: 'Kapur et al. 1999 (Arch Gen Psychiatry)',
+    id: 'olanzapine', name: 'Olanzapina', pharmacologicClass: 'antagonist', intrinsicActivityPercent: 0, ed50Mg: 7.2,
+    studyDoseRange: '5 – 20 mg/d', studyMinDoseMg: 5, studyMaxDoseMg: 20, petStudy: 'Kapur et al. 1999 (Arch Gen Psychiatry)',
     receptorFingerprint: { d2Ki: 11, d3Ki: 27, ht2aKi: 4.0, ht1aKi: 2300, h1Ki: 0.08, m1Ki: 26, alpha1Ki: 19 },
   },
   aripiprazole: {
-    id: 'aripiprazole',
-    name: 'Aripiprazol',
-    pharmacologicClass: 'partial_agonist',
-    intrinsicActivityPercent: 30,
-    ed50Mg: 3.5,
-    studyDoseRange: '5 – 30 mg/d',
-    studyMinDoseMg: 5,
-    studyMaxDoseMg: 30,
-    petStudy: 'Yokoi et al. 2002 / Grunder et al. 2008',
+    id: 'aripiprazole', name: 'Aripiprazol', pharmacologicClass: 'partial_agonist', intrinsicActivityPercent: 30, ed50Mg: 3.5,
+    studyDoseRange: '5 – 30 mg/d', studyMinDoseMg: 5, studyMaxDoseMg: 30, petStudy: 'Yokoi et al. 2002 / Grunder et al. 2008',
     receptorFingerprint: { d2Ki: 0.7, d3Ki: 0.8, ht2aKi: 3.4, ht1aKi: 5.6, h1Ki: 61, m1Ki: 10000, alpha1Ki: 26 },
   },
   quetiapine: {
-    id: 'quetiapine',
-    name: 'Kwetiapina',
-    pharmacologicClass: 'antagonist',
-    intrinsicActivityPercent: 0,
-    ed50Mg: 180,
-    studyDoseRange: '150 – 800 mg/d',
-    studyMinDoseMg: 150,
-    studyMaxDoseMg: 800,
-    petStudy: 'Gefvert et al. 2001 / Kapur 2000',
+    id: 'quetiapine', name: 'Kwetiapina', pharmacologicClass: 'antagonist', intrinsicActivityPercent: 0, ed50Mg: 180,
+    studyDoseRange: '150 – 800 mg/d', studyMinDoseMg: 150, studyMaxDoseMg: 800, petStudy: 'Gefvert et al. 2001 / Kapur 2000',
     receptorFingerprint: { d2Ki: 160, d3Ki: 340, ht2aKi: 100, ht1aKi: 390, h1Ki: 11, m1Ki: 120, alpha1Ki: 22 },
   },
 };
@@ -320,7 +291,7 @@ export interface D2OccupancyModel {
   d2OccupancyPercent: number;
   pharmacologicClass: 'antagonist' | 'partial_agonist';
   intrinsicActivityPercent: number;
-  heuristicZone: 'below_heuristic' | 'within_kapur_heuristic' | 'above_heuristic';
+  heuristicZone: 'below_heuristic' | 'within_kapur_heuristic' | 'above_heuristic' | 'not_applicable_to_partial_agonist';
   clinicalInterpretation: string;
   prolactinTendency: 'low' | 'moderate' | 'high';
   studyDoseRange: string;
@@ -346,12 +317,12 @@ export function calculateD2Occupancy(drugId: string, doseMg: number): D2Occupanc
   let clinicalInterpretation = '';
 
   if (drug.pharmacologicClass === 'partial_agonist') {
-    heuristicZone = roundedOcc >= 75 ? 'within_kapur_heuristic' : 'below_heuristic';
-    clinicalInterpretation = `Aripiprazol (częściowy agonista D2): szacowane occupancy ~${roundedOcc}%. Relacja occupancy \u2192 EPS różni się od antagonistów; wysokie occupancy nie oznacza takiego samego ryzyka jak w klasycznym modelu Kapura. Akatyzja pozostaje jednak istotnym wyjątkiem klinicznym, który może wystąpić pomimo aktywności wewnętrznej (~30%).`;
+    heuristicZone = 'not_applicable_to_partial_agonist';
+    clinicalInterpretation = `Aripiprazol (częściowy agonista D2): szacowane occupancy ~${roundedOcc}%. Klasyczna heurystyka Kapura 65–80% nie ma zastosowania do częściowych agonistów (wysokie occupancy nie oznacza takiego samego ryzyka parkinsonizmu ze względu na obecność aktywności wewnętrznej ~30%, choć akatyzja pozostaje istotnym wyjątkiem klinicznym).`;
   } else {
     if (roundedOcc < 65) {
       heuristicZone = 'below_heuristic';
-      clinicalInterpretation = `Occupancy D2 ~${roundedOcc}% (<65%): Poniżej historycznej heurystyki z badań PET dla pełnej kontroli objawów wytwórczych u większości chorych dla czystych antagonistów.`;
+      clinicalInterpretation = `Occupancy D2 ~${roundedOcc}% (<65%): Poniżej zakresu historycznie związanego z odpowiedzią kliniczną w części badań PET antagonistów (heurystyka populacyjna, nie bezwzględne prawo biologiczne).`;
     } else if (roundedOcc <= 80) {
       heuristicZone = 'within_kapur_heuristic';
       clinicalInterpretation = `Occupancy D2 ~${roundedOcc}% (65–80%): Historyczny przedział optymalnej odpowiedzi dla antagonistów FGA/SGA bez gwałtownego wzrostu objawów pozapiramidowych.`;
@@ -403,6 +374,10 @@ export interface QtcRiskAssessment {
   calculatedQtcMs: number;
   method: 'Fridericia (QTcF)';
   riskCategory: 'normal' | 'borderline' | 'prolonged' | 'critical';
+  contributingFactors: string[];
+  urgentConsiderations: string[];
+  missingContext: string[];
+  guidelineContextActions: string[];
   riskFactorsIdentified: string[];
   missingClinicalContext: string[];
   actionRecommendation: string;
@@ -448,32 +423,44 @@ export function evaluateQtcRisk(input: QtcEvaluationInput | number, legacyHr?: n
     riskCategory = 'borderline';
   }
 
-  const riskFactors: string[] = [];
+  const contributingFactors: string[] = [];
+  const urgentConsiderations: string[] = [];
   const missingContext: string[] = [];
+  const guidelineContextActions: string[] = [];
 
   if (potassium !== undefined) {
-    if (potassium < 3.5) riskFactors.push(`Hipokaliemia (${potassium} mmol/l) — krytyczny czynnik torsade de pointes`);
+    if (potassium < 3.5) contributingFactors.push(`Hipokaliemia (${potassium} mmol/l) — krytyczny czynnik torsade de pointes`);
   } else {
     missingContext.push('Brak aktualnego stężenia potasu (K+)');
   }
 
   if (magnesium !== undefined) {
-    if (magnesium < 0.7) riskFactors.push(`Hipomagnezemia (${magnesium} mmol/l)`);
+    if (magnesium < 0.7) contributingFactors.push(`Hipomagnezemia (${magnesium} mmol/l)`);
   } else {
     missingContext.push('Brak stężenia magnezu (Mg2+)');
   }
 
-  if (safeHr < 55) riskFactors.push(`Bradykardia (${safeHr}/min) sprzyja wczesnym potencjałom następczym (EAD)`);
-  if (concurrentQtDrugs.length > 0) riskFactors.push(`Jednoczesne leki wydłużające QT (${concurrentQtDrugs.join(', ')})`);
-  if (cypInhibitorPresent) riskFactors.push('Obecny silny inhibitor CYP zwiększający ekspozycję na lek');
+  if (safeHr < 55) contributingFactors.push(`Bradykardia (${safeHr}/min) sprzyja wczesnym potencjałom następczym (EAD)`);
+  if (concurrentQtDrugs.length > 0) contributingFactors.push(`Leki wydłużające QT (${concurrentQtDrugs.join(', ')})`);
+  if (cypInhibitorPresent) contributingFactors.push('Obecny silny inhibitor CYP zwiększający ekspozycję na lek');
 
-  let actionRecommendation = 'QTcF w zakresie normy. Monitoruj elektrolity i EKG przy zmianie leczenia.';
+  let actionRecommendation = 'QTcF w normie. Monitoruj elektrolity i EKG przy modyfikacjach leczenia.';
   if (riskCategory === 'critical') {
-    actionRecommendation = 'KRYTYCZNE wydłużenie QTc (≥500 ms). Wstrzymaj/zredukuj lek, uzupełnij K+ (cel >4,0 mmol/l) i Mg2+ (>0,8 mmol/l), wdrożenie telemetrii.';
+    urgentConsiderations.push('Krytyczne wydłużenie QTc (≥500 ms) — wysokie ryzyko TdP i nagłego zgonu sercowego.');
+    guidelineContextActions.push('Pilna konsultacja kardiologiczna i wielodyscyplinarna ocena farmakoterapii.');
+    guidelineContextActions.push('Wyrównanie zaburzeń elektrolitowych: cel K+ >4,0 mmol/l, Mg2+ >0,8 mmol/l.');
+    guidelineContextActions.push('Ciągłe monitorowanie telemetryczne EKG do czasu skrócenia repolaryzacji komór.');
+    actionRecommendation = 'KRYTYCZNE wydłużenie QTc (≥500 ms): Wysokie ryzyko TdP. Wymagana pilna ocena wielodyscyplinarna, wyrównanie K+/Mg2+ i telemetria EKG (bez automatycznych dyspozycji lekowych).';
   } else if (riskCategory === 'prolonged') {
-    actionRecommendation = 'Wydłużone QTc. Rozważ zamianę na lek o minimalnym wpływie na hERG (np. arypiprazol, lurasidon, wortioksetyna).';
+    urgentConsiderations.push('Wydłużony odstęp QTc powyżej progu populacyjnego.');
+    guidelineContextActions.push('Weryfikacja sumarycznego obciążenia lekami blokującymi hERG (wg CredibleMeds).');
+    guidelineContextActions.push('Kontrola i korekta elektrolitów (K+, Mg2+) oraz powtórzenie EKG w stanie stacjonarnym.');
+    actionRecommendation = 'Wydłużone QTc: Weryfikacja obciążenia hERG i elektrolitów w kontekście pacjenta.';
   } else if (riskCategory === 'borderline') {
-    actionRecommendation = 'Wartość graniczna. Zachowaj szczególną ostrożność przed dołączeniem drugiego leku kardiotoksycznego.';
+    guidelineContextActions.push('Wartość graniczna — ostrożność przed dołączeniem kolejnego leku o ryzyku TdP.');
+    actionRecommendation = 'Wartość graniczna: Zachowaj szczególną ostrożność przed dołączeniem drugiego leku kardiotoksycznego.';
+  } else {
+    guidelineContextActions.push('Rutynowy nadzór kardiologiczny i laboratoryjny.');
   }
 
   return {
@@ -482,7 +469,11 @@ export function evaluateQtcRisk(input: QtcEvaluationInput | number, legacyHr?: n
     calculatedQtcMs,
     method: 'Fridericia (QTcF)',
     riskCategory,
-    riskFactorsIdentified: riskFactors,
+    contributingFactors,
+    urgentConsiderations,
+    missingContext,
+    guidelineContextActions,
+    riskFactorsIdentified: contributingFactors,
     missingClinicalContext: missingContext,
     actionRecommendation,
   };

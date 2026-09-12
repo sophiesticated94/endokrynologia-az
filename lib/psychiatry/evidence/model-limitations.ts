@@ -315,7 +315,115 @@ export const PSYCHIATRY_EVIDENCE_REGISTRY: Record<string, EvidenceItem> = {
       ],
     },
   },
+
+  'sert-meyer-observation': {
+    id: 'sert-meyer-observation',
+    claimLabel: 'Wysycenie SERT ~80% w badaniach PET (Meyer 2004)',
+    origin: 'MODELLED',
+    level: 'PET',
+    sourceId: 'pet-d2-kapur',
+    quickSummary:
+      'W populacyjnych badaniach PET (Meyer et al. 2004) minimalne dawki terapeutyczne SSRI osiągają ~80% blokady SERT w prążkowiu; dalsze zwiększanie dawki powoduje plateau saturacji.',
+    clinicalContext: {
+      population: 'Dorośli chorzy na depresję leczeni lekami z grupy SSRI/SNRI',
+      measurementMethod: 'Pozytonowa tomografia emisyjna (PET) z ligandem [11C]DASB',
+      applicability: 'Leki blokujące transporter serotoniny (SERT)',
+      timing: 'Stan stacjonarny po doustnym podaniu leku',
+      doseRange: 'Zakresy dawek terapeutycznych (np. sertralina 50 mg, escitalopram 10 mg)',
+    },
+    researchContext: {
+      modelType: 'Hiperboliczna krzywa saturacji: Emax * Dose / (ED50 + Dose)',
+      limitations: [
+        'Zajęcie SERT w badaniu PET nie gwarantuje natychmiastowej remisji u danego pacjenta.',
+        'Wymaga 2–4 tygodni na adaptację postsynaptyczną (desensytyzację autoreceptorów 5-HT1A).',
+      ],
+      whatCannotBeInferred: [
+        'Nie wolno zakładać, że wyższe dawki nie mają innych działań (np. DAT przy sertralinie >150 mg).',
+      ],
+      uncertaintyOrCI: 'W badaniu Meyera occupancy SERT przy dawkach standardowych wynosiło średnio 78–85%.',
+    },
+  },
+
+  'clozapine-smoking-cyp1a2': {
+    id: 'clozapine-smoking-cyp1a2',
+    claimLabel: 'Wpływ palenia tytoniu na stężenie klozapiny (CYP1A2)',
+    origin: 'MEASURED',
+    level: 'CONSENSUS',
+    sourceId: 'agnp-tdm-2026',
+    quickSummary:
+      'Wielopierścieniowe węglowodory aromatyczne (WWA) w dymie tytoniowym indukują CYP1A2. Po zaprzestaniu palenia dochodzi do deindukcji enzymu i opisywanego w literaturze wzrostu stężenia klozapiny o 50–100%, co wymaga pilnego TDM.',
+    clinicalContext: {
+      population: 'Pacjenci leczeni klozapiną lub olanzapiną zmieniający status palenia tytoniu',
+      measurementMethod: 'Oznaczenie TDM w surowicy przed poranną dawką (trough)',
+      applicability: 'Substraty enzymu CYP1A2; NRT nie zawiera WWA i nie indukuje enzymu',
+      timing: 'Deindukcja zachodzi w ciągu 1–2 tygodni po zaprzestaniu palenia',
+      doseRange: 'Wszystkie zakresy dawek klozapiny',
+    },
+    researchContext: {
+      modelType: 'Deindukcja enzymatyczna ze znaczną zmiennością międzyosobniczą',
+      limitations: [
+        'Wzrost o 50–100% stanowi przedział opisywany w literaturze; rzeczywisty wzrost zależy od polimorfizmu CYP1A2 i liczby wypalanych papierosów.',
+        'Infekcja i stan zapalny (IL-6) mogą dodatkowo gwałtownie zredukować aktywność CYP1A2.',
+      ],
+      whatCannotBeInferred: [
+        'Nie wolno modyfikować dawek w ciemno bez wykonania oznaczenia stężenia leku (TDM).',
+      ],
+      uncertaintyOrCI: 'Zmienność międzyosobnicza klirensu klozapiny jest 3–5-krotna.',
+    },
+  },
+
+  'extrip-lithium-2015': {
+    id: 'extrip-lithium-2015',
+    claimLabel: 'Kryteria leczenia nerkozastępczego w zatruciu litem (EXTRIP 2015)',
+    origin: 'DERIVED',
+    level: 'GUIDELINE',
+    sourceId: 'extrip-lithium',
+    quickSummary:
+      'Zalecenia grupy EXTRIP (Decker 2015): hemodializa zalecana (RECOMMENDED) przy śpiączce, drgawkach, groźnych dysrytmiach lub litemii >4,0 mmol/l przy eGFR <45 ml/min.',
+    clinicalContext: {
+      population: 'Pacjenci z ostrym, przewlekłym lub zaostrzonym zatruciem litem',
+      measurementMethod: 'Oznaczenie stężenia litu w surowicy i ocena eGFR/diurezy',
+      applicability: 'Zatrucia litem o różnym przebiegu czasowym',
+    },
+    researchContext: {
+      limitations: [
+        'Decyzja o hemodializie opiera się na całościowym stanie klinicznym, nie samym odizolowanym stężeniu.',
+      ],
+      whatCannotBeInferred: [
+        'Pojedyncza litemia <4,0 mmol/l nie wyklucza wskazań do ECTR przy obecności drgawek lub śpiączki.',
+      ],
+    },
+  },
+
+  'strawn-nms-pathophysiology': {
+    id: 'strawn-nms-pathophysiology',
+    claimLabel: 'Patofizjologia i diagnostyka NMS (Strawn et al. 2007)',
+    origin: 'DERIVED',
+    level: 'GUIDELINE',
+    sourceId: 'strawn-nms',
+    quickSummary:
+      'Ostra blokada receptorów D2 w podwzgórzu i zwojach podstawy wywołuje sztywność ołowianej rury, hipertermię, skok CK i niestabilność wegetatywną.',
+    clinicalContext: {
+      population: 'Pacjenci leczeni lekami przeciwpsychotycznymi o silnym powinowactwie do D2',
+      measurementMethod: 'Ocena napięcia mięśniowego, temperatury i poziomu kinazy kreatynowej (CK)',
+      applicability: 'Różnicowanie stanów nagłych z zespołem serotoninowym i złośliwą hipertermią',
+    },
+    researchContext: {
+      limitations: [
+        'Wzrost CK może wystąpić po iniekcji domięśniowej lub pobudzeniu ruchowym bez NMS.',
+      ],
+      whatCannotBeInferred: [
+        'Obecność gorączki u pacjenta na neuroleptyku nie dowodzi automatycznie NMS bez cech sztywności.',
+      ],
+    },
+  },
 };
+
+// Aliases for claimKey lookups
+PSYCHIATRY_EVIDENCE_REGISTRY['kapur-d2-threshold'] = PSYCHIATRY_EVIDENCE_REGISTRY['d2-kapur-heuristic'];
+PSYCHIATRY_EVIDENCE_REGISTRY['agnp-consensus-2026'] = PSYCHIATRY_EVIDENCE_REGISTRY['lithium-maintenance-tdm-range'];
+PSYCHIATRY_EVIDENCE_REGISTRY['crediblemeds-qtc'] = PSYCHIATRY_EVIDENCE_REGISTRY['qtc-risk-threshold'];
+PSYCHIATRY_EVIDENCE_REGISTRY['meyer-sert-occupancy'] = PSYCHIATRY_EVIDENCE_REGISTRY['sert-meyer-observation'];
 
 export const MODEL_CARDS: Record<string, ModelCard> = {
   'lithium-pk-sensitivity': {

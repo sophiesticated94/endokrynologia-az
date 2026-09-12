@@ -96,13 +96,16 @@ export function PsychosisDifferentialDiagram() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
         <div className="p-2.5 bg-white border border-purple-200 rounded-lg">
-          <div className="font-bold text-purple-900 mb-1">Schizofrenia (ICD-11 / DSM-5-TR)</div>
-          <p className="text-slate-600">Objawy osiowe $\ge 1$ miesiąca; objawy nastroju nieobecne lub stanowią jedynie niewielką część całkowitego czasu trwania choroby.</p>
+          <div className="font-bold text-purple-900 mb-1">Schizofrenia (Rozdzielenie kryteriów czasu trwania)</div>
+          <div className="text-slate-700 space-y-1">
+            <div><strong className="text-purple-800">DSM-5-TR:</strong> Ciągłe oznaki zaburzenia przez $\ge 6$ miesięcy, w tym $\ge 1$ miesiąc objawów fazy aktywnej (kryterium A); zaburzenie funkcjonowania; objawy nastroju krótkotrwałe.</div>
+            <div><strong className="text-purple-800">ICD-11 CDDR (6A20):</strong> Charakterystyczne objawy osiowe (urojenia, omamy, dezorganizacja, objawy negatywne) utrzymujące się przez $\ge 1$ miesiąc.</div>
+          </div>
         </div>
         <div className="p-2.5 bg-white border border-purple-200 rounded-lg">
           <div className="font-bold text-purple-900 mb-1">Zaburzenie schizoafektywne (Porównanie kryteriów)</div>
           <div className="text-slate-700 space-y-1">
-            <div><strong className="text-purple-800">DSM-5-TR:</strong> Epizod nastroju współistnieje z kryterium A schizofrenii + wymagane $\ge 2$ tygodnie urojeń/omamów bez wyraźnych objawów nastroju w trakcie trwania choroby.</div>
+            <div><strong className="text-purple-800">DSM-5-TR:</strong> Równoczesny epizod nastroju z kryterium A schizofrenii + wymagane $\ge 2$ tygodnie urojeń/omamów bez wyraźnych objawów nastroju w trakcie całego przebiegu choroby.</div>
             <div><strong className="text-purple-800">ICD-11 CDDR (6A21):</strong> Równoczesne spełnienie kryteriów schizofrenii i epizodu nastroju przez $\ge 1$ miesiąc; brak sztywnego wymogu $\ge 2$ tygodni izolowanej psychozy.</div>
           </div>
         </div>

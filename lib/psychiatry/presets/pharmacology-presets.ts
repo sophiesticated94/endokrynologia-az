@@ -44,14 +44,15 @@ export const PHARMACOLOGY_PRESETS: Record<string, PsychiatryWorkbenchPreset> = {
     id: 'clozapine-smoking-001',
     title: 'Klozapina i zaprzestanie palenia tytoniu (CYP1A2)',
     tab: 'pharmacology',
-    patientSummary: 'Nagły wzrost stężenia klozapiny o 50–100% po odstawieniu tytoniu (brak indukcji przez WWA).',
+    patientSummary: 'Zaprzestanie palenia tytoniu (deindukcja CYP1A2): opisywany w literaturze wzrost stężenia klozapiny o 50–100% (duża zmienność osobnicza; wymagane TDM; stan zapalny/infekcja może dodatkowo zmniejszać aktywność CYP1A2).',
     data: {
       lessonId: 'lekoopornosc-i-klozapina',
       drug: 'clozapine',
       baselineDoseMg: 350,
       smokingStatus: 'zaprzestanie_palenia',
       cyp1a2Deinduction: true,
-      monitoringNeed: 'Pilne oznaczenie TDM klozapiny w celu uniknięcia drgawek i sedacji',
+      claimKey: 'clozapine-smoking-cyp1a2',
+      monitoringNeed: 'Pilne oznaczenie TDM klozapiny pod kątem drgawek i toksyczności',
     },
   },
 };

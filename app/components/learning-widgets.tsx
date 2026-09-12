@@ -3,6 +3,12 @@ import { useState } from 'react';
 import { Activity, Beaker, GitBranch, TrendingUp } from 'lucide-react';
 import type { Confidence, LearningActivity, LessonExperienceV2, ModuleId, PracticeRecordMeta } from '@/lib/course-types';
 import { PracticeActivityCard } from './practice-activity';
+import {
+  getPsychiatryWidgetProvider,
+  PSYCHIATRY_LESSON_ACTIVITY_REGISTRY,
+} from '@/lib/psychiatry/psychiatry-lesson-activities';
+
+export { PSYCHIATRY_LESSON_ACTIVITY_REGISTRY };
 
 type RecordPractice = (activity: LearningActivity, correct: boolean, confidence?: Confidence, scored?: boolean, meta?: PracticeRecordMeta) => Promise<boolean>;
 const labels = {
@@ -98,61 +104,9 @@ const ENDO_GENERAL_PROVIDERS: WidgetProvider = {
   }),
 };
 
-const PSYCHIATRY_PROVIDERS: WidgetProvider = {
-  'axis-map': base => ({
-    ...base,
-    type: 'single_choice',
-    prompt: 'Wskaż fizjologiczną regułę interakcji receptorowych w szlakach dopaminergicznych i serotoninergicznych.',
-    options: [
-      'Blokada 5-HT2A w szlaku nigrostriatalnym stymuluje uwalnianie dopaminy i łagodzi ryzyko EPS',
-      'Blokada D2 zawsze nasila uwalnianie prolaktyny bez względu na stężenie dopaminy',
-      'Pobudzenie receptora 5-HT1A hamuje transmisję serotoninergiczną na obwodzie bez wpływu na autoreceptory',
-    ],
-    answer: 0,
-    explanation: 'W szlaku nigrostriatalnym serotonina hamuje uwalnianie dopaminy przez receptor 5-HT2A. Blokada tego receptora (cecha leków SGA) uwalnia hamulec i zwiększa dopaminę, co łagodzi ryzyko EPS.',
-  }),
-  'lab-workbench': base => ({
-    ...base,
-    type: 'lab',
-    prompt: 'Ocena stężenia litu 12 godzin po dawce wieczornej wynosi 0,72 mmol/l u pacjenta bez objawów intoksykacji, eGFR 85 ml/min. Jak zinterpretować ten wynik?',
-    options: [
-      'Prawidłowe stężenie w optymalnym oknie profilaktycznym ChAD (0,6–0,8 mmol/l wg AGNP 2026)',
-      'Wynik subterapeutyczny wymagający natychmiastowego podwojenia dawki',
-      'Stan bezpośredniego zagrożenia życia wymagający pilnej kwalifikacji do hemodializy',
-    ],
-    answer: 0,
-    explanation: 'Według konsensusu AGNP 2026 stężenie 0,6–0,8 mmol/l 12 h po dawce w stanie stacjonarnym stanowi optymalne okno podtrzymujące w ChAD.',
-  }),
-  timeline: base => ({
-    ...base,
-    type: 'trend',
-    prompt: 'Włączono escitalopram w ciężkim epizodzie depresyjnym. W jakim przedziale czasowym spodziewasz się pełnego efektu przeciwdepresyjnego w odróżnieniu od wczesnych działań niepożądanych?',
-    options: [
-      'Działania niepożądane (np. nudności, niepokój) w pierwszych dniach; odpowiedź terapeutyczna po 2–4 (do 6) tygodniach',
-      'Pełna remisja następuje w ciągu 24–48 godzin od pierwszej tabletki',
-      'Lek nie wywołuje żadnych wczesnych reakcji i działa wyłącznie po 6 miesiącach',
-    ],
-    answer: 0,
-    explanation: 'Transmisja monoamin rośnie szybko, lecz kaskada adaptacji receptorowych (down-regulacja 5-HT1A, ekspresja BDNF) wymaga 2–4 tygodni. Wczesne działania niepożądane pojawiają się natychmiast.',
-  }),
-  'pathway-builder': base => ({
-    ...base,
-    type: 'ordering',
-    prompt: 'Ułóż właściwy algorytm postępowania przy podejrzeniu ostrego zespołu serotoninowego.',
-    items: [
-      'Natychmiastowe odstawienie wszystkich leków proserotoninergicznych',
-      'Ocena kryteriów Huntera (klonus, hiperrefleksja, pobudzenie, hipertermia)',
-      'Leczenie objawowe: chłodzenie fizykalne i sedacja benzodiazepinami',
-      'W ciężkich przypadkach intubacja i ewentualne podanie cyproheptadyny',
-    ],
-    correctOrder: [0, 1, 2, 3],
-    explanation: 'Priorytetem jest przerwanie ekspozycji toksycznej, standaryzowana ocena kliniczna (kryteria Huntera) oraz sedacja i stabilizacja parametrów życiowych.',
-  }),
-};
-
-function getWidgetProvider(moduleId: ModuleId): WidgetProvider {
+function getWidgetProvider(moduleId: ModuleId, lessonId?: string): WidgetProvider {
   if (moduleId === 'psych-afektywne' || moduleId === 'psych-farmakologia') {
-    return PSYCHIATRY_PROVIDERS;
+    return getPsychiatryWidgetProvider(lessonId);
   }
   if (moduleId === 'cukrzyca') {
     return DIABETES_PROVIDERS;
@@ -169,7 +123,7 @@ function activityFor(widgetId: LessonExperienceV2['widgetIds'][number], moduleId
     sourceIds: experience.diagnostic.sourceIds,
     hint: 'Najpierw nazwij bodziec, odpowiedź układu i warunek, który może zmienić interpretację.',
   };
-  const provider = getWidgetProvider(moduleId);
+  const provider = getWidgetProvider(moduleId, experience.lessonId);
   const factory = provider[widgetId] || ENDO_GENERAL_PROVIDERS[widgetId];
   return factory(base);
 }

@@ -36,6 +36,58 @@ const defaultPatient: PatientProfile = {
   adherencePercent: 90,
 };
 
+function hydratePatientFromPreset(base: PatientProfile, d?: Record<string, any>): PatientProfile {
+  if (!d) return base;
+  const next = { ...base };
+  if (typeof d.labTsh === 'number') next.labTsh = d.labTsh;
+  if (typeof d.eGfr === 'number') next.labEgfr = d.eGfr;
+  if (typeof d.potassium === 'number') next.labPotassium = d.potassium;
+  if (d.smokingStatus === 'zaprzestanie_palenia') {
+    next.substanceUse = 'zaprzestanie_palenia';
+  } else if (d.smokingStatus === 'current_smoker' || d.smokingStatus === 'tyton') {
+    next.substanceUse = 'tyton';
+  } else if (typeof d.smokingStatus === 'string') {
+    next.substanceUse = d.smokingStatus === 'never_smoker' || d.smokingStatus === 'brak' ? 'brak' : 'tyton';
+  }
+  return next;
+}
+
+function getInitialPrescriptions(presetData?: Record<string, any>, presetId?: string): ActivePrescription[] {
+  if (!presetData) return [{ drugId: 'sertraline', doseMg: 50 }];
+  const d = presetData;
+  const rxList: ActivePrescription[] = [];
+  if (d.antagonistDrug && typeof d.antagonistDoseMg === 'number') {
+    rxList.push({ drugId: d.antagonistDrug, doseMg: d.antagonistDoseMg });
+  }
+  if (d.partialAgonistDrug && typeof d.partialAgonistDoseMg === 'number') {
+    rxList.push({ drugId: d.partialAgonistDrug, doseMg: d.partialAgonistDoseMg });
+  }
+  if (d.inhibitor) {
+    rxList.push({ drugId: d.inhibitor, doseMg: 20 });
+  }
+  if (d.substrate) {
+    rxList.push({ drugId: d.substrate, doseMg: 75 });
+  }
+  if (d.drug && typeof d.baselineDoseMg === 'number') {
+    rxList.push({ drugId: d.drug, doseMg: d.baselineDoseMg });
+  } else if (d.drug && Array.isArray(d.dosesTested)) {
+    rxList.push({ drugId: d.drug, doseMg: d.dosesTested[1] || 50 });
+  }
+  if (presetId === 'serotonin-hunter-001') {
+    rxList.push({ drugId: 'sertraline', doseMg: 100 });
+  }
+  if (presetId === 'lithium-tdm-measured-001') {
+    rxList.push({ drugId: 'lithium', doseMg: 750 });
+  }
+  if (presetId === 'qtc-crediblemeds-001') {
+    rxList.push({ drugId: 'escitalopram', doseMg: 20 });
+  }
+  if (presetId === 'nms-differential-001') {
+    rxList.push({ drugId: 'haloperidol', doseMg: 10 });
+  }
+  return rxList.length > 0 ? rxList : [{ drugId: 'sertraline', doseMg: 50 }];
+}
+
 export function PsychiatryCommandCenter({ initialPresetId }: { initialPresetId?: string } = {}) {
   const activePreset = initialPresetId ? getPsychiatryPreset(initialPresetId) : undefined;
 
@@ -49,34 +101,21 @@ export function PsychiatryCommandCenter({ initialPresetId }: { initialPresetId?:
   const [activeTab, setActiveTab] = useState<'twin' | 'diagnosis' | 'pharmacology' | 'safety'>(() =>
     getTargetTab(activePreset?.tab),
   );
-  const [patient, setPatient] = useState<PatientProfile>(() => {
-    if (!activePreset) return defaultPatient;
-    const p = { ...defaultPatient };
-    const d = activePreset.data;
-    if (typeof d.labTsh === 'number') p.labTsh = d.labTsh;
-    if (typeof d.eGfr === 'number') p.labEgfr = d.eGfr;
-    if (typeof d.potassium === 'number') p.labPotassium = d.potassium;
-    if (typeof d.smokingStatus === 'string') p.substanceUse = 'tyton';
-    return p;
-  });
+  const [patient, setPatient] = useState<PatientProfile>(() =>
+    hydratePatientFromPreset(defaultPatient, activePreset?.data)
+  );
   const [timelineWeek, setTimelineWeek] = useState(0);
-  const [prescriptions, setPrescriptions] = useState<ActivePrescription[]>([
-    { drugId: 'sertraline', doseMg: 50 },
-  ]);
+  const [prescriptions, setPrescriptions] = useState<ActivePrescription[]>(() =>
+    getInitialPrescriptions(activePreset?.data, activePreset?.id)
+  );
 
   useEffect(() => {
     if (!initialPresetId) return;
     const p = getPsychiatryPreset(initialPresetId);
     if (!p) return;
     setActiveTab(getTargetTab(p.tab));
-    setPatient(prev => {
-      const next = { ...prev };
-      const d = p.data;
-      if (typeof d.labTsh === 'number') next.labTsh = d.labTsh;
-      if (typeof d.eGfr === 'number') next.labEgfr = d.eGfr;
-      if (typeof d.potassium === 'number') next.labPotassium = d.potassium;
-      return next;
-    });
+    setPatient(prev => hydratePatientFromPreset(prev, p.data));
+    setPrescriptions(getInitialPrescriptions(p.data, p.id));
   }, [initialPresetId]);
 
   return (
@@ -143,6 +182,7 @@ export function PsychiatryCommandCenter({ initialPresetId }: { initialPresetId?:
           setPatient={setPatient}
           prescriptions={prescriptions}
           setPrescriptions={setPrescriptions}
+          presetData={activePreset?.data}
         />
       )}
 
@@ -150,6 +190,7 @@ export function PsychiatryCommandCenter({ initialPresetId }: { initialPresetId?:
         <PsychiatrySafetyView
           patient={patient}
           prescriptions={prescriptions}
+          presetData={activePreset?.data}
         />
       )}
     </div>
