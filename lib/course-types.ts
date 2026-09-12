@@ -12,7 +12,8 @@ export type ModuleId =
   | 'pediatria'
   | 'ciaza'
   | 'psych-afektywne'
-  | 'psych-farmakologia';
+  | 'psych-farmakologia'
+  | 'psych-organiczne';
 
 export type ObjectiveKind = 'mechanism' | 'interpretation' | 'differentiation' | 'decision' | 'safety';
 export type ActivityDifficulty = 'student' | 'doctor' | 'both';

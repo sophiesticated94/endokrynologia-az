@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { User, Search, Pill, ShieldAlert, Sparkles, Sliders } from 'lucide-react';
+import { User, Search, Pill, ShieldAlert, Sparkles, Sliders, Activity } from 'lucide-react';
 import type { PatientProfile, ActivePrescription } from '@/lib/psychiatry-engine';
 import { getPsychiatryPreset } from '@/lib/psychiatry/presets';
 import {
@@ -12,6 +12,7 @@ import { PsychiatryTwinView } from './psychiatry-twin-view';
 import { PsychiatryDiagnosisView } from './psychiatry-diagnosis-view';
 import { PsychiatryPharmacologyView } from './psychiatry-pharmacology-view';
 import { PsychiatrySafetyView } from './psychiatry-safety-view';
+import { NeuroGeriatricWorkbench } from './components/neuro-geriatric-workbench';
 
 export { hydratePsychiatryPatient, hydratePsychiatryPrescriptions };
 
@@ -46,16 +47,19 @@ const defaultPatient: PatientProfile = {
 export function PsychiatryCommandCenter({ initialPresetId }: { initialPresetId?: string } = {}) {
   const activePreset = initialPresetId ? getPsychiatryPreset(initialPresetId) : undefined;
 
-  const getTargetTab = (tabName?: string): 'twin' | 'diagnosis' | 'pharmacology' | 'safety' => {
+  const getTargetTab = (
+    tabName?: string,
+  ): 'twin' | 'diagnosis' | 'pharmacology' | 'safety' | 'neuro-geriatric' => {
     if (tabName === 'diagnostic') return 'diagnosis';
     if (tabName === 'pharmacology') return 'pharmacology';
     if (tabName === 'safety') return 'safety';
+    if (tabName === 'neuro-geriatric') return 'neuro-geriatric';
     return 'twin';
   };
 
-  const [activeTab, setActiveTab] = useState<'twin' | 'diagnosis' | 'pharmacology' | 'safety'>(() =>
-    getTargetTab(activePreset?.tab),
-  );
+  const [activeTab, setActiveTab] = useState<
+    'twin' | 'diagnosis' | 'pharmacology' | 'safety' | 'neuro-geriatric'
+  >(() => getTargetTab(activePreset?.tab));
   const [patient, setPatient] = useState<PatientProfile>(() =>
     hydratePsychiatryPatient(defaultPatient, activePreset?.data)
   );
@@ -116,6 +120,12 @@ export function PsychiatryCommandCenter({ initialPresetId }: { initialPresetId?:
         >
           <ShieldAlert size={15} /> 4. Safety &amp; Emergency (Hunter / NMS / QTc)
         </button>
+        <button
+          className={activeTab === 'neuro-geriatric' ? 'active' : ''}
+          onClick={() => setActiveTab('neuro-geriatric')}
+        >
+          <Activity size={15} /> 5. Neurokognitywna &amp; Geriatria (4AT / ACB / Beers)
+        </button>
       </div>
 
       {/* Aktywny widok */}
@@ -147,6 +157,13 @@ export function PsychiatryCommandCenter({ initialPresetId }: { initialPresetId?:
           patient={patient}
           setPatient={setPatient}
           prescriptions={prescriptions}
+          presetData={activePreset?.data}
+        />
+      )}
+
+      {activeTab === 'neuro-geriatric' && (
+        <NeuroGeriatricWorkbench
+          patient={patient}
           presetData={activePreset?.data}
         />
       )}

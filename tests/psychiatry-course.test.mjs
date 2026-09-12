@@ -6,19 +6,21 @@ import { psychiatryGlossary, psychiatryGlossaryMap } from '../lib/glossary-psych
 import { psychiatrySources } from '../lib/course-psychiatry-sources.ts';
 import { COURSES, getCourse } from '../lib/courses-registry.ts';
 
-test('psychiatry curriculum structure: 38 lessons across 2 modules, 190 questions, 194 flashcards, 24 cases', () => {
-  assert.equal(psychiatryLessons.length, 38);
-  assert.equal(psychiatryQuestions.length, 190);
-  assert.equal(psychiatryFlashcards.length, 194);
-  assert.equal(psychiatryCases.length, 24);
+test('psychiatry curriculum structure: 51 lessons across 3 modules, 255 questions, 259 flashcards, 32 cases', () => {
+  assert.equal(psychiatryLessons.length, 51);
+  assert.equal(psychiatryQuestions.length, 255);
+  assert.equal(psychiatryFlashcards.length, 259);
+  assert.equal(psychiatryCases.length, 32);
   assert.equal(psychiatryGlossary.length, 16);
-  assert.equal(psychiatryModulesList.length, 2);
+  assert.equal(psychiatryModulesList.length, 3);
 
   const affective = psychiatryLessons.filter(l => l.moduleId === 'psych-afektywne');
   const pharma = psychiatryLessons.filter(l => l.moduleId === 'psych-farmakologia');
+  const organic = psychiatryLessons.filter(l => l.moduleId === 'psych-organiczne');
 
   assert.equal(affective.length, 16, 'Affective & neurobiology module has 16 lessons');
   assert.equal(pharma.length, 22, 'Psychopharmacology & receptors module has 22 lessons');
+  assert.equal(organic.length, 13, 'Organic & neurocognitive module has 13 lessons');
 
   for (const l of psychiatryLessons) {
     assert.equal(l.questions.length, 5, `Lesson ${l.id} must have 5 questions`);
@@ -58,10 +60,10 @@ test('courses registry holds valid bundles for endocrinology and psychiatry', ()
   const psych = getCourse('psychiatry');
   assert.equal(psych.id, 'psychiatry');
   assert.equal(psych.title, 'Psychiatria i Psychofarmakologia Kliniczna');
-  assert.equal(psych.lessons.length, 38);
-  assert.equal(psych.questions.length, 190);
-  assert.equal(psych.flashcards.length, 194);
-  assert.equal(psych.cases.length, 24);
+  assert.equal(psych.lessons.length, 51);
+  assert.equal(psych.questions.length, 255);
+  assert.equal(psych.flashcards.length, 259);
+  assert.equal(psych.cases.length, 32);
   assert.equal(psych.glossary.length, 16);
 });
 

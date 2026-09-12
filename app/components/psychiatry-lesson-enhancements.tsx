@@ -25,6 +25,7 @@ import {
 import { MicroCaseCard } from './psychiatry-micro-case-card';
 import type { Navigation } from '../views/types';
 import type { WhatWouldChangeYourMind } from '@/lib/psychiatry/types';
+import { NeuroGeriatricQuickWidget } from './psychiatry-neuro-quick-widgets';
 
 import { EvidenceBadge } from './evidence-badge';
 import { EvidenceInspectorModal } from './evidence-inspector-modal';
@@ -233,6 +234,22 @@ export function InlineEnhancementRenderer({
     }
     if (id.includes('hunter')) {
       return <HunterCriteriaQuickLab onOpenClaim={onOpenEvidence} />;
+    }
+    if (
+      id.includes('4at') ||
+      id.includes('bpsd') ||
+      id.includes('geriatric') ||
+      id.includes('capacity') ||
+      id.includes('cause-hunt') ||
+      id.includes('neuro-clock')
+    ) {
+      return (
+        <NeuroGeriatricQuickWidget
+          widgetId={enhancement.id}
+          onOpenLab={onOpenLab}
+          onOpenEvidence={onOpenEvidence}
+        />
+      );
     }
     return (
       <div className="my-3 p-3 bg-slate-50 border border-indigo-200 rounded-xl text-xs flex items-center justify-between">

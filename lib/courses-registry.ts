@@ -86,9 +86,9 @@ export const COURSES: Record<CourseId, CourseBundle> = {
     shortTitle: 'Psychiatria',
     brandSub: 'PSYCHIATRIA A–Z',
     code: 'PSYCH',
-    badge: '38 lekcji · 2 moduły zaawansowane · 24 przypadki',
+    badge: '51 lekcji · 3 moduły zaawansowane · 32 przypadki',
     description:
-      'Głęboka ścieżka kliniczno-biochemiczna: kryteria ICD-11 CDDR i DSM-5-TR, neurobiologia BDNF/HPA, Maudsley 15th ed., AGNP TDM 2026 i receptorologia PET.',
+      'Głęboka ścieżka kliniczno-biochemiczna: ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., AGNP 2026, receptorologia PET, majaczenie (4AT), otępienia i geriatria (Beers/ACB).',
     lessons: psychiatryLessons,
     questions: psychiatryQuestions,
     flashcards: psychiatryFlashcards,

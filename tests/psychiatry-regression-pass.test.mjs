@@ -60,25 +60,19 @@ test('Test A: Psychiatry widgets never render endocrine fallback content', () =>
 // Test B: All enhancement kinds have renderer
 test('Test B: All enhancement kinds have renderer', () => {
   const validDiagrams = new Set([
-    'mse-map',
-    'psychosis-differential',
-    'bdnf-trkb-pathway',
-    'mood-timeline',
-    'fear-circuit',
-    'cstc-loop',
-    'monoamine-synapse',
-    'd2-pathways',
-    'cyp-network',
-    'serotonin-nms-hunter',
+    'mse-map', 'psychosis-differential', 'bdnf-trkb-pathway', 'mood-timeline',
+    'fear-circuit', 'cstc-loop', 'monoamine-synapse', 'd2-pathways',
+    'cyp-network', 'serotonin-nms-hunter', 'delirium-timeline',
+    'delirium-dementia-matrix', 'neurocognitive-differential-map',
+    'hippocampal-network-progression', 'dlb-pathway',
+    'anticholinergic-burden-consequences',
   ]);
   const validInlineWidgets = new Set([
-    'mse-workbench',
-    'criteria-matcher',
-    'd2-pet-explorer',
-    'lithium-tdm-interpreter',
-    'tdm-timing-validator',
-    'hunter-criteria-evaluator',
-    'fridericia-qtc-calculator',
+    'mse-workbench', 'criteria-matcher', 'd2-pet-explorer',
+    'lithium-tdm-interpreter', 'tdm-timing-validator',
+    'hunter-criteria-evaluator', 'fridericia-qtc-calculator',
+    '4at-calculator', 'cause-hunt', 'neuro-clock',
+    'bpsd-cause-hunt', 'geriatric-med-review', 'capacity-evaluator',
   ]);
 
   for (const [lessonId, enh] of Object.entries(PSYCHIATRY_LESSON_ENHANCEMENTS)) {
@@ -130,7 +124,10 @@ test('Test D: All preset deep links resolve', () => {
   for (const preset of presets) {
     assert.ok(preset.id, 'Preset must have id');
     assert.ok(preset.title, 'Preset must have title');
-    assert.ok(['diagnostic', 'pharmacology', 'safety'].includes(preset.tab), `Invalid tab ${preset.tab}`);
+    assert.ok(
+      ['diagnostic', 'pharmacology', 'safety', 'neuro-geriatric'].includes(preset.tab),
+      `Invalid tab ${preset.tab}`
+    );
     assert.ok(preset.patientSummary.length > 10, 'Preset must have patientSummary');
     if (preset.data.lessonId) {
       assert.ok(lessonIds.has(preset.data.lessonId), `Preset ${preset.id} lessonId not found`);
@@ -343,7 +340,7 @@ test('Test J: Claim-level evidence keys resolve', () => {
 
 // Test K: Longitudinal cases do not have exact 4-step lock
 test('Test K: Longitudinal cases do not have exact 4-step lock', () => {
-  assert.equal(psychiatryCases.length, 24);
+  assert.equal(psychiatryCases.length, 32);
   for (const c of psychiatryCases) {
     assert.ok(c.steps.length >= 3, `Case ${c.id} must have >=3 steps`);
     for (const s of c.steps) {

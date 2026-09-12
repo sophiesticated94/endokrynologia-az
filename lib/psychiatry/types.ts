@@ -1,6 +1,6 @@
 import type { LessonExperienceV2 } from '../course-types.ts';
 
-export type PsychiatryModuleId = 'psych-afektywne' | 'psych-farmakologia';
+export type PsychiatryModuleId = 'psych-afektywne' | 'psych-farmakologia' | 'psych-organiczne';
 
 export type PsychiatryLessonId =
   // Moduł 01: Fundamenty psychiatrii i diagnostyka kliniczna (16 lekcji)
@@ -42,7 +42,21 @@ export type PsychiatryLessonId =
   | 'bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna'
   | 'zaburzenia-ruchowe-polekowe-eps-dysdyskinezy'
   | 'lekoopornosc-i-klozapina'
-  | 'interwencje-biologiczne-ect-rtms-ketamina';
+  | 'interwencje-biologiczne-ect-rtms-ketamina'
+  // Moduł 03: Psychiatria organiczna, neurokognitywna i wieku podeszłego (13 lekcji)
+  | 'delirium-rozpoznanie-i-dynamika'
+  | 'delirium-vs-otepienie-vs-depresja'
+  | 'diagnostyka-ostrego-zaburzenia-swiadomosci'
+  | 'zaburzenia-poznawcze-mci-a-otepienie'
+  | 'choroba-alzheimera-wzorzec-i-progresja'
+  | 'naczyniowe-zaburzenia-poznawcze-vad'
+  | 'otepienie-z-cialami-lewyego-i-parkinson'
+  | 'otepienie-czolowo-skroniowe-bvftd'
+  | 'szybko-postepujace-zespoly-otepienne'
+  | 'bpsd-objawy-behawioralne-i-psychologiczne'
+  | 'psychofarmakologia-wieku-podeszlego'
+  | 'depresja-wieku-podeszlego-i-poznanie'
+  | 'zdolnosc-decyzyjna-capacity-i-safeguarding';
 
 export interface WhatWouldChangeYourMind {
   knownFacts: string[];
@@ -65,13 +79,15 @@ export interface PsychiatryLessonEnhancement {
     | 'measured-tdm'
     | 'validated-decision-rule'
     | 'pk-sensitivity'
-    | 'safety-context';
+    | 'safety-context'
+    | 'neurocognitive-differential'
+    | 'geriatric-safety';
 }
 
 export interface PsychiatryWorkbenchPreset {
   id: string;
   title: string;
-  tab: 'psych-center' | 'diagnostic' | 'pharmacology' | 'safety';
+  tab: 'psych-center' | 'diagnostic' | 'pharmacology' | 'safety' | 'neuro-geriatric';
   patientSummary: string;
   data: Record<string, unknown>;
 }

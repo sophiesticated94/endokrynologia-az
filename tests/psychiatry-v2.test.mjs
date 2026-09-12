@@ -12,13 +12,13 @@ import {
 } from '../lib/psychiatry/index.ts';
 import { isLessonCoreComplete, requiredCompletionActivityIds } from '../lib/lesson-v2.ts';
 
-test('all 38 psychiatry lessons use the complete v2 active learning structure', () => {
-  assert.equal(psychiatryLessons.length, 38);
-  assert.equal(Object.keys(psychiatryLessonExperiences).length, 38);
+test('all 51 psychiatry lessons use the complete v2 active learning structure', () => {
+  assert.equal(psychiatryLessons.length, 51);
+  assert.equal(Object.keys(psychiatryLessonExperiences).length, 51);
 
   const psychBundle = COURSES.psychiatry;
   assert.ok(psychBundle.lessonExperiences, 'CourseBundle psychiatry must have lessonExperiences');
-  assert.equal(Object.keys(psychBundle.lessonExperiences).length, 38);
+  assert.equal(Object.keys(psychBundle.lessonExperiences).length, 51);
 
   const allActivityIds = new Set();
 
@@ -74,8 +74,8 @@ test('all 38 psychiatry lessons use the complete v2 active learning structure', 
   }
 });
 
-test('psychiatry lesson enhancement registry covers all 38 lessons with valid deep links and evidence', () => {
-  assert.equal(Object.keys(PSYCHIATRY_LESSON_ENHANCEMENTS).length, 38);
+test('psychiatry lesson enhancement registry covers all 51 lessons with valid deep links and evidence', () => {
+  assert.equal(Object.keys(PSYCHIATRY_LESSON_ENHANCEMENTS).length, 51);
 
   const caseIds = new Set(psychiatryCases.map(c => c.id));
   const threadIds = new Set(Object.keys(PATIENT_THREADS));

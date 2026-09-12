@@ -382,6 +382,15 @@ export function CypNetworkDiagram() {
   );
 }
 
+import {
+  DeliriumTimelineDiagram,
+  DeliriumDementiaMatrixDiagram,
+  NeurocognitiveDifferentialDiagram,
+  HippocampalNetworkDiagram,
+  DlbPathwayDiagram,
+  AnticholinergicBurdenDiagram,
+} from './psychiatry-diagrams-neuro';
+
 export const PSYCHIATRY_DIAGRAM_COMPONENTS: Record<string, React.ComponentType> = {
   'mse-map': MseMapDiagram,
   'mood-timeline': MoodTimelineDiagram,
@@ -393,6 +402,12 @@ export const PSYCHIATRY_DIAGRAM_COMPONENTS: Record<string, React.ComponentType> 
   'd2-pathways': D2PathwaysDiagram,
   'serotonin-vs-nms': SerotoninVsNmsDiagram,
   'cyp-network': CypNetworkDiagram,
+  'delirium-timeline': DeliriumTimelineDiagram,
+  'delirium-dementia-matrix': DeliriumDementiaMatrixDiagram,
+  'neurocognitive-differential-map': NeurocognitiveDifferentialDiagram,
+  'hippocampal-network-progression': HippocampalNetworkDiagram,
+  'dlb-pathway': DlbPathwayDiagram,
+  'anticholinergic-burden-consequences': AnticholinergicBurdenDiagram,
 };
 
 export function getPsychiatryDiagramComponent(diagramId: string): React.ComponentType | undefined {

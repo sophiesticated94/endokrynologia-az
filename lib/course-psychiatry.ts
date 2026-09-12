@@ -6,6 +6,9 @@ import { draftPsychiatryPart3 } from './course-psychiatry-3.ts';
 import { draftPsychiatryPart3b } from './course-psychiatry-3b.ts';
 import { draftPsychiatryPart4 } from './course-psychiatry-4.ts';
 import { draftPsychiatryPart4b } from './course-psychiatry-4b.ts';
+import { draftPsychiatryPart5 } from './course-psychiatry-5.ts';
+import { draftPsychiatryPart5b } from './course-psychiatry-5b.ts';
+import { draftPsychiatryPart5c } from './course-psychiatry-5c.ts';
 import { psychiatrySources } from './course-psychiatry-sources.ts';
 import { psychiatryCases } from './cases-psychiatry.ts';
 import { psychiatryGlossary } from './glossary-psychiatry.ts';
@@ -18,6 +21,9 @@ export const allPsychiatryDrafts: DraftLesson[] = [
   ...draftPsychiatryPart3b,
   ...draftPsychiatryPart4,
   ...draftPsychiatryPart4b,
+  ...draftPsychiatryPart5,
+  ...draftPsychiatryPart5b,
+  ...draftPsychiatryPart5c,
 ];
 
 export const psychiatryLessons: Lesson[] = allPsychiatryDrafts.map((l, li) => {
@@ -95,10 +101,15 @@ export const psychiatryModulesList = [
     count: 22,
     subtitle: 'PK/PD, SERT/NET/DAT, D2/D3 (Kapur), 5-HT, Glu/GABA, SSRI/SNRI/TLPD, atypowe, stabilizatory, SGA, TDM, PGx, powikłania, ECT/rTMS',
   },
+  {
+    id: 'psych-organiczne' as const,
+    name: 'Psychiatria organiczna, neurokognitywna i wieku podeszłego',
+    count: 13,
+    subtitle: 'Delirium (4AT, Cause Hunt), otępienia (AD, VaD, DLB, bvFTD), RPD, BPSD, Beers 2023, obciążenie antycholinergiczne (ACB), capacity i safeguarding',
+  },
 ] as const;
 
 export const psychiatryPlannedModules = [
-  'Psychiatria wieku podeszłego i organiczne zaburzenia psychiczne',
   'Zaburzenia odżywiania i psychosomatyka kliniczna',
 ];
 

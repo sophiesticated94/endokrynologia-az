@@ -1,4 +1,5 @@
-import type { EvidenceItem, ModelCard } from './evidence-types';
+import type { EvidenceItem, ModelCard } from './evidence-types.ts';
+import { NEUROCOGNITIVE_EVIDENCE_REGISTRY } from './neurocognitive-limitations.ts';
 
 export const PSYCHIATRY_EVIDENCE_REGISTRY: Record<string, EvidenceItem> = {
   'd2-kapur-heuristic': {
@@ -469,24 +470,9 @@ PSYCHIATRY_EVIDENCE_REGISTRY['lithium-therapeutic-range'] = PSYCHIATRY_EVIDENCE_
 PSYCHIATRY_EVIDENCE_REGISTRY['crediblemeds-qtc'] = PSYCHIATRY_EVIDENCE_REGISTRY['qtc-risk-threshold'];
 PSYCHIATRY_EVIDENCE_REGISTRY['meyer-sert-occupancy'] = PSYCHIATRY_EVIDENCE_REGISTRY['sert-meyer-observation'];
 PSYCHIATRY_EVIDENCE_REGISTRY['hunter-criteria-validity'] = PSYCHIATRY_EVIDENCE_REGISTRY['hunter-validation'];
-
-export const MODEL_CARDS: Record<string, ModelCard> = {
-  'lithium-pk-sensitivity': {
-    modelId: 'lithium-pk-sensitivity',
-    name: 'Jakościowy model wrażliwości farmakokinetycznej litu',
-    assumptions: [
-      'Lit jest wydalany w 95% przez nerki z filtracją kłębuszkową i reabsorpcją w kanalikach proksymalnych (~80%).',
-      'Odwodnienie i spadek stężenia sodu zwiększają reabsorpcję proksymalną litu.',
-      'Tiazydy, NLPZ i inhibitory ACE/ARB obniżają klirens nerkowy litu.',
-    ],
-    validationRange: 'Zastosowanie wyłącznie edukacyjne — ilustracja kierunku zmian ekspozycji',
-    limitations: [
-      'Model NIE estymuje dokładnego stężenia osoczowego konkretnego pacjenta.',
-      'Rzeczywisty klirens zależy od indywidualnej reabsorpcji cewkowej i hydratacji.',
-    ],
-    knownFailureModes: [
-      'Stosowanie jako zastępstwo laboratoryjnego badania TDM grozi błędem dawkowania.',
-    ],
-    isPatientPredictor: false,
-  },
-};
+Object.assign(PSYCHIATRY_EVIDENCE_REGISTRY, NEUROCOGNITIVE_EVIDENCE_REGISTRY);
+PSYCHIATRY_EVIDENCE_REGISTRY['4at-delirium-validity'] = PSYCHIATRY_EVIDENCE_REGISTRY['evidence-4at-performance'];
+PSYCHIATRY_EVIDENCE_REGISTRY['acb-anticholinergic-model'] = PSYCHIATRY_EVIDENCE_REGISTRY['evidence-acb-burden'];
+PSYCHIATRY_EVIDENCE_REGISTRY['beers-decision-support'] = PSYCHIATRY_EVIDENCE_REGISTRY['evidence-beers-2023'];
+PSYCHIATRY_EVIDENCE_REGISTRY['dlb-antipsychotic-danger'] = PSYCHIATRY_EVIDENCE_REGISTRY['evidence-dlb-neuroleptic-sensitivity'];
+export { MODEL_CARDS } from './model-cards.ts';

@@ -10,13 +10,17 @@ import { LessonRow } from './lesson-row';
 import type { Navigation } from './types';
 
 export function PsychiatryCourseMap({ state, go }: { state: LearningState; go: Navigation }) {
-  const [activeTab, setActiveTab] = useState<'all' | 'psych-afektywne' | 'psych-farmakologia'>('all');
+  const [activeTab, setActiveTab] = useState<
+    'all' | 'psych-afektywne' | 'psych-farmakologia' | 'psych-organiczne'
+  >('all');
 
   const afektywneLessons = psychiatryLessons.filter(l => l.moduleId === 'psych-afektywne');
   const farmakologiaLessons = psychiatryLessons.filter(l => l.moduleId === 'psych-farmakologia');
+  const organiczneLessons = psychiatryLessons.filter(l => l.moduleId === 'psych-organiczne');
 
   const afektywneGroups = Array.from(new Set(afektywneLessons.map(l => l.group)));
   const farmakologiaGroups = Array.from(new Set(farmakologiaLessons.map(l => l.group)));
+  const organiczneGroups = Array.from(new Set(organiczneLessons.map(l => l.group)));
 
   return (
     <>
@@ -44,6 +48,12 @@ export function PsychiatryCourseMap({ state, go }: { state: LearningState; go: N
           onClick={() => setActiveTab('psych-farmakologia')}
         >
           Moduł 02: Psychofarmakologia i leczenie ({farmakologiaLessons.length})
+        </button>
+        <button
+          className={activeTab === 'psych-organiczne' ? 'active' : ''}
+          onClick={() => setActiveTab('psych-organiczne')}
+        >
+          Moduł 03: Organiczna i geriatria ({organiczneLessons.length})
         </button>
       </div>
 
@@ -86,6 +96,30 @@ export function PsychiatryCourseMap({ state, go }: { state: LearningState; go: N
                 <h3>{group}</h3>
                 <div className="lesson-list">
                   {farmakologiaLessons
+                    .filter(l => l.group === group)
+                    .map(l => (
+                      <LessonRow key={l.id} lesson={l} state={state} go={go} />
+                    ))}
+                </div>
+              </div>
+            ))}
+          </section>
+        )}
+
+        {/* Moduł 03 */}
+        {(activeTab === 'all' || activeTab === 'psych-organiczne') && (
+          <section className="module-group">
+            <header className="module-header">
+              <span className="eyebrow">MODUŁ 03 · {organiczneLessons.length} LEKCJI</span>
+              <h2>Psychiatria organiczna, neurokognitywna i wieku podeszłego</h2>
+              <p>Rozumowanie osiowe: pierwotne vs wtórne zaburzenia mózgu. Majaczenie (4AT, fenotyp hipoaktywny), otępienia (AD, DLB, VaD, FTD), kryteria Beers 2023, ciężar antycholinergiczny ACB, postępowanie w BPSD, zespoły gwałtownie postępujące (RPD) oraz ocena zdolności decyzyjnej i ochrona prawna pacjenta.</p>
+            </header>
+
+            {organiczneGroups.map(group => (
+              <div key={group} className="subgroup">
+                <h3>{group}</h3>
+                <div className="lesson-list">
+                  {organiczneLessons
                     .filter(l => l.group === group)
                     .map(l => (
                       <LessonRow key={l.id} lesson={l} state={state} go={go} />
