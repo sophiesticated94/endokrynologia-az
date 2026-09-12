@@ -173,17 +173,16 @@ export function calculateDrugState(
 
   const alerts: string[] = [];
   if (d2Occupancy > 80 && drug.id !== 'aripiprazole') {
-    alerts.push(`Wysycenie receptorów D2 wynosi ${d2Occupancy}% (>80% próg Kapura). Wysokie ryzyko objawów pozapiramidowych (EPS) i hiperprolaktynemii.`);
+    alerts.push(`Wysycenie receptorów D2 wynosi szacunkowo ~${d2Occupancy}% (>80% heurystyka Kapura). Zwiększone prawdopodobieństwo objawów pozapiramidowych (EPS) dla czystego antagonisty.`);
   } else if (d2Occupancy >= 65 && d2Occupancy <= 80) {
-    alerts.push(`Wysycenie receptorów D2 w optymalnym oknie terapeutycznym (65–80%). Skuteczność przeciwpsychotyczna bez nasilonych EPS.`);
+    alerts.push(`Wysycenie receptorów D2 w optymalnym oknie terapeutycznym (historyczna heurystyka Kapura 65–80%) dla czystych antagonistów.`);
   }
 
   if (drug.id === 'lithium') {
-    const estimatedLevel = ((effectiveDose / 750) * 0.7 * (patient.labEgfr < 60 ? 1.4 : 1.0)).toFixed(2);
-    if (Number(estimatedLevel) > 1.2) {
-      alerts.push(`Szacowane stężenie litu ${estimatedLevel} mmol/l przekracza próg toksyczności (1,2 mmol/l)! Ryzyko neurotoksyczności.`);
+    if (patient.labEgfr < 60) {
+      alerts.push('Ryzyko kumulacji i toksyczności (obniżony eGFR <60 ml/min): Zmniejszony klirens nerkowy litu. Wymagany ścisły monitoring TDM (12h po dawce).');
     } else {
-      alerts.push(`Szacowane stężenie litu w osoczu: ~${estimatedLevel} mmol/l (norma: 0,6–0,8 mmol/l).`);
+      alerts.push('Wskazana rutynowa kontrola stężenia litu 12 h po dawce (zakres terapeutyczny wg AGNP: 0,6–0,8 mmol/l).');
     }
   }
 
@@ -196,7 +195,7 @@ export function calculateDrugState(
     prescribedDose: rx.doseMg,
     effectiveDose: Math.round(effectiveDose),
     estimatedCss: drug.id === 'lithium'
-      ? `${((effectiveDose / 750) * 0.7 * (patient.labEgfr < 60 ? 1.4 : 1.0)).toFixed(2)} mmol/l`
+      ? 'Wymagany pomiar laboratoryjny TDM 12h po dawce'
       : `${Math.round(effectiveDose * 1.5)} ng/ml (szacunek populacyjny)`,
     sertOccupancyPercent: sertOccupancy,
     d2OccupancyPercent: d2Occupancy,

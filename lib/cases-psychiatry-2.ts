@@ -1,401 +1,336 @@
 import type { ClinicalCase } from './cases-psychiatry-builder.ts';
-import { make } from './cases-psychiatry-builder.ts';
+import { makeFlexibleCase } from './cases-psychiatry-builder.ts';
 
 export const psychiatryCasesPart2: ClinicalCase[] = [
-  make(
-    'farmakokinetyka-oun-bariera',
-    'Nieoczekiwana senność po antybiotyku',
-    'Kobieta, 48 lat',
-    'Zaawansowany',
-    'Pacjentka stabilna na stałej dawce rysperydonu (2 mg/d) zgłasza się z powodu nagłego, głębokiego otępienia i zawrotów głowy po włączeniu leczenia przeciwgrzybiczego.',
-    [
-      [
-        'W badaniu pacjentka wykazuje sztywność mięśniową, senność i spowolnienie ruchowe. Od 3 dni przyjmuje itrakonazol z powodu grzybicy paznokci.',
-        'Jaki mechanizm farmakokinetyczny na poziomie bariery krew-mózg (BBB) wyjaśnia gwałtowny wzrost stężenia leku w mózgowiu?',
-        ['Itrakonazol jest silnym inhibitorem glikoproteiny P (P-gp), co zablokowało usuwanie rysperydonu z tkanki mózgowej', 'Rysperydon jest substratem pompy P-gp; zablokowanie pompy effluksowej dramatycznie podnosi stężenie mózgowe leku.'],
-        ['Itrakonazol przekształcił się w czysty haloperydol', 'Leki przeciwgrzybicze nie ulegają biotransformacji do neuroleptyków.'],
-      ],
-      [
-        'W badaniach laboratoryjnych stężenie rysperydonu i 9-hydroksyrysperydonu w osoczu jest podwyższone o 70%, próby wątrobowe bez cech ostrej niewydolności.',
-        'Co należy zrobić z farmakoterapią w tej sytuacji?',
-        ['Zredukować dawkę rysperydonu o co najmniej 50% lub zastąpić itrakonazol lekiem bez wpływu na P-gp i CYP3A4', 'Eliminuje to zagrażającą toksyczność neurologiczną w OUN.'],
-        ['Zwiększyć dawkę rysperydonu do 8 mg/d', 'Doprowadziłoby to do ciężkich powikłań pozapiramidowych i zapaści krążeniowej.'],
-      ],
-      [
-        'Po zredukowaniu dawki rysperydonu objawy parkinsonizmu i sedacji ustąpiły w ciągu 48 godzin.',
-        'Jakie jest rozpoznanie problemu klinicznego?',
-        ['Polekowa toksyczność OUN wywołana interakcją na poziomie pompy effluksowej glikoproteiny P (P-gp)', 'Klasyczny przykład interakcji farmakokinetycznej w barierze krew-mózg.'],
-        ['Zapalenie opon mózgowo-rdzeniowych', 'Brak gorączki, sztywności karku oponowej i pleocytozy wyklucza zapalenie opon.'],
-      ],
-      [
-        'Klinicysta planuje zasady bezpieczeństwa farmakoterapii na przyszłość.',
-        'O czym należy pamiętać przy włączaniu leków u pacjentów leczonych substratami P-gp?',
-        ['O konieczności weryfikacji interakcji z silnymi inhibitorami (np. azole, klarytromycyna, werapamil) i induktorami pompy', 'Zapobiega to gwałtownym wahaniom stężeń neuroleptyków w OUN.'],
-        ['O całkowitym zakazie mycia rąk w ciepłej wodzie', 'Temperatura wody nie wpływa na pompę P-gp w naczyniach mózgowych.'],
-      ],
-    ]
-  ),
-  make(
-    'transportery-monoamin-sert-net-dat',
-    'Brak efektu po podwojeniu dawki',
-    'Mężczyzna, 39 lat',
+  // 13. Rotacja antydepresantów (Cross-tapering wg BAP)
+  makeFlexibleCase(
+    'zamiana-lekow-switching-cross-tapering',
+    'Bezpieczna zamiana leku po braku remisji',
+    'Beata K., 42 lata',
     'Podstawowy',
-    'Pacjent z depresją przyjmuje sertralinę w dawce 50 mg/d od 4 tygodni z niepełną poprawą. Lekarz zwiększył dawkę do 100 mg, a po kolejnych 2 tygodniach do 200 mg, co wywołało jedynie nudności i biegunkę.',
+    'Pacjentka leczona z powodu nawracającej depresji nie osiągnęła poprawy po 8 tygodniach przyjmowania sertraliny w pełnej dawce 150 mg/d. Planowana jest rotacja na wenlafaksynę.',
     [
-      [
-        'Pacjent pyta, dlaczego 4-krotne zwiększenie dawki (z 50 mg do 200 mg) nie dało 4-krotnego przyrostu poprawy nastroju, a jedynie nasiliło działania niepożądane.',
-        'Jakie zjawisko receptorowe i neuroobrazowe PET wyjaśnia ten stan?',
-        ['Krzywa occupancy SERT ma kształt hiperboliczny – dawka 50 mg wysyca już ~80% transporterów, a 200 mg zwiększa blokadę zaledwie do ok. 88%', 'Dalsza eskalacja dawki nie przynosi skokowego przyrostu wychwytu 5-HT, stymuluje natomiast obwodowe receptory jelitowe 5-HT3.'],
-        ['Transporter SERT uległ natychmiastowej atrofii w nerkach', 'Transporter SERT znajduje się w OUN i na płytkach krwi, nie w nerkach.'],
-      ],
-      [
-        'W badaniu stanu psychicznego: nastrój umiarkowanie obniżony, wyraźna anhedonia i apatia, brak myśli samobójczych.',
-        'Jaki krok terapeutyczny jest bardziej racjonalny niż dalsze podnoszenie dawki SSRI ponad 200 mg?',
-        ['Zmiana strategii: zmiana klasy leku (np. na SNRI / bupropion) lub augmentacja dotychczasowego leczenia (litem lub aripiprazolem)', 'Przełamuje to ograniczenia wysycenia samego układu serotoninergicznego.'],
-        ['Podanie sertraliny w dawce 1000 mg/d', 'Dawka taka przekracza normy bezpieczeństwa i grozi zespołem serotoninowym.'],
-      ],
-      [
-        'Rozpoznano częściową odpowiedź na monoterapię SSRI z ograniczeniem farmakodynamicznym wysycenia SERT.',
-        'Jakie jest rozpoznanie?',
-        ['Epizod depresyjny z częściową odpowiedzią na SSRI na plateau krzywej wysycenia transportera', 'Stan odpowiada fizjologicznemu nasyceniu układu transportowego 5-HT.'],
-        ['Choroba Parkinsona o wczesnym początku', 'Brak objawów parkinsonizmu, spowolnienie ma charakter afektywny.'],
-      ],
-      [
-        'Zdecydowano o wdrożeniu małej dawki aripiprazolu (2,5 mg/d) jako leku augmentującego.',
-        'Jaki jest mechanizm korzyści z dołączenia częściowego agonisty D2/D3 w tym punkcie?',
-        ['Modulacja przekaźnictwa dopaminowego i receptorów 5-HT1A, niezależna od wysycenia SERT', 'Pozwala na uzyskanie pełnej remisji objawów anhedonii bez eskalacji działań żołądkowych.'],
-        ['Natychmiastowe zniszczenie cząsteczek sertraliny we krwi', 'Aripiprazol nie niszczy sertraliny.'],
-      ],
+      {
+        stage: 'Kwalifikacja do zamiany (Switching)',
+        context: 'Beata nie ma cech poprawy w skali MADRS (<20% redukcji objawów), tolerancja sertraliny była dobra.',
+        prompt: 'Jaki protokół zamiany leków (switching) jest zalecany przez British Association for Psychopharmacology (BAP) przy przejściu z SSRI na SNRI?',
+        choices: [
+          ['Stopniowa zamiana krzyżowa (cross-tapering): powolna redukcja sertraliny z jednoczesnym powolnym wprowadzaniem wenlafaksyny przez 1–2 tygodnie', 'Cross-tapering minimalizuje ryzyko zespołu odstawiennego (FINISH) oraz nawrotu objawów depresyjnych w okresie przejściowym.'],
+          ['Natychmiastowe odstawienie sertraliny i 4-tygodniowy okres wymywania (washout) bez żadnego leku', 'Długi washout przy braku MAOI nie ma uzasadnienia i naraża pacjentkę na ciężki nawrót depresji.'],
+          ['Gwałtowne dołączenie maksymalnej dawki wenlafaksyny (225 mg) bez zmniejszania sertraliny', 'Takie postępowanie stwarza ryzyko zespołu serotoninowego i gwałtownych nudności.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Profilaktyka zespołu odstawiennego (FINISH)',
+        context: 'Pacjentka pyta o objawy, które mogą pojawić się przy zbyt szybkiej redukcji sertraliny.',
+        prompt: 'Które objawy wchodzą w skład zespołu dyskontynuacji leków serotoninergicznych (akronim FINISH)?',
+        choices: [
+          ['Objawy grypopodobne, bezsenność, nudności, zaburzenia równowagi, parestezje („uczucie wyładowań prądu w głowie”) i nadpobudliwość', 'Są to typowe przejściowe objawy spadku stężenia serotoniny w synapsach, często mylone z nawrotem depresji.'],
+          ['Ostra niewydolność nerek i moczówka prosta', 'Leki SSRI nie wywołują ostrej niewydolności nerek przy odstawianiu.'],
+          ['Zanik nerwu wzrokowego i zaćma', 'Brak takiego związku patofizjologicznego.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Monitorowanie ciśnienia tętniczego na SNRI',
+        context: 'Wenlafaksyna została pomyślnie zmiareczkowana do dawki 150 mg/d.',
+        prompt: 'Jaki parametr somatyczny wymaga szczególnego monitorowania przy dawkach wenlafaksyny ≥150 mg/d ze względu na modulację noradrenergiczną?',
+        choices: [
+          ['Ciśnienie tętnicze krwi (ryzyko nadciśnienia tętniczego zależnego od dawki przez hamowanie transportera NET)', 'W wyższych dawkach wenlafaksyna hamuje wychwyt noradrenaliny, co może podnosić opór naczyniowy i ciśnienie rozkurczowe.'],
+          ['Stężenie kwasu moczowego w surowicy', 'Wenlafaksyna nie wpływa istotnie na urykemię.'],
+          ['Obwód głowy i kości długich', 'Parametry te nie ulegają zmianie u osoby dorosłej pod wpływem leku.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Ocena remisji po zamianie leku',
+        context: 'Po 6 tygodniach na dawce 150 mg/d wenlafaksyny wynik w skali MADRS spadł z 28 do 7 punktów.',
+        prompt: 'Jak zaklasyfikować ten wynik kliniczny?',
+        choices: [
+          ['Pełna remisja kliniczna (objawy wygaszone, powrót do prawidłowego funkcjonowania społeczno-zawodowego)', 'Wynik MADRS ≤10 punktów jest międzynarodowym standardem definiującym remisję.'],
+          ['Brak jakiejkolwiek odpowiedzi terapeutycznej', 'Redukcja objawów o ponad 70% stanowi znakomitą odpowiedź.'],
+          ['Konieczność natychmiastowego odstawienia leku z powodu wyleczenia', 'Przedwczesne odstawienie po uzyskaniu remisji grozi szybkim nawrotem; leczenie podtrzymujące powinno trwać min. 6–12 miesięcy.'],
+        ],
+        answerIndex: 0,
+      },
     ]
   ),
-  make(
-    'receptory-dopaminowe-okno-kapura',
-    'Sztywność i mlekotok po eskalacji dawki',
-    'Kobieta, 27 lat',
-    'Zaawansowany',
-    'Pacjentka leczona z powodu schizofrenii rysperydonem w dawce zwiększonej z 4 mg do 8 mg/d zgłasza brak miesiączki, wyciek mleka z brodawek oraz sztywność kończyn.',
-    [
-      [
-        'W badaniu neurologicznym: opór plastyczny w stawach łokciowych z objawem koła zębatego, drżenie spoczynkowe dłoni. W badaniach laboratoryjnych prolaktyna 120 ng/ml (norma < 25).',
-        'Które zjawisko neuroobrazowe opisane przez Kapura zaszło u pacjentki po podwojeniu dawki?',
-        ['Wzrost prążkowiowego occupancy receptorów D2 powyżej 80%, co przełamało próg bezpieczeństwa EPS i odhamowało prolaktynę', 'W oknie 65–80% rysperydon kontrolował psychozę, powyżej 80% wyzwala powikłania pozapiramidowe i guzkowo-lejkowe.'],
-        ['Całkowity brak wiązania leku z receptorami D2', 'Wiązanie leku uległo nadmiernemu zwiększeniu, a nie zniesieniu.'],
-      ],
-      [
-        'Objawy wytwórcze psychozy są w pełni kontrolowane, pacjentka nie ma omamów ani urojeń.',
-        'Jaki jest najwłaściwszy krok w modyfikacji farmakoterapii?',
-        ['Powrót do niższej dawki rysperydonu (np. 3–4 mg/d) lub zamiana na lek częściowo agonistyczny D2 (aripiprazol)', 'Obniżenie occupancy poniżej 80% zniesie parkinsonizm i obniży prolaktynę bez utraty kontroli psychozy.'],
-        ['Dołączenie lewodopy w maksymalnej dawce bez zmiany dawki rysperydonu', 'Lewodopa zaostrzyłaby psychozę przez stymulację szlaku mezolimbicznego.'],
-      ],
-      [
-        'Po redukcji dawki rysperydonu do 3 mg/d sztywność mięśniowa ustąpiła, a stężenie prolaktyny uległo normalizacji.',
-        'Jakie jest rozpoznanie kliniczne powikłania?',
-        ['Jatrogenny zespół pozapiramidowy i hiperprolaktynemia wywołane przekroczeniem okna terapeutycznego blokady D2 (> 80%)', 'Klasyczne powikłanie przedawkowania silnego antagonisty D2.'],
-        ['Guz prolaktynowy przysadki (prolactinoma)', 'Polekowy charakter potwierdza szybka normalizacja po redukcji dawki neuroleptyku.'],
-      ],
-      [
-        'Klinicysta omawia z pacjentką dalsze leczenie podtrzymujące.',
-        'Jaka jest docelowa zasada dawkowania leków przeciwpsychotycznych w schizofrenii wg EBM?',
-        ['Stosowanie najniższej skutecznej dawki utrzymującej occupancy D2 w przedziale 65–80%', 'Maksymalizuje to szanse na długoterminowe funkcjonowanie poznawcze i współpracę pacjenta.'],
-        ['Stosowanie zawsze maksymalnej dopuszczalnej dawki z ulotki', 'Prowadzi do wtórnych objawów negatywnych, dyskinez i rezygnacji z leczenia.'],
-      ],
-    ]
-  ),
-  make(
-    'uklad-serotoninergiczny-receptory',
-    'Przyrost masy ciała i żarłoczność na leku',
-    'Mężczyzna, 31 lat',
-    'Podstawowy',
-    'Pacjent leczony mirtazapiną w dawce 30 mg/d z powodu depresji z bezsennością zgłasza ustąpienie bezsenności, lecz przytył 9 kg w ciągu 2 miesięcy z powodu napadów wilczego głodu na słodycze.',
-    [
-      [
-        'Pacjent skarży się, że wieczorami po zażyciu leku odczuwa niepohamowany apetyt na węglowodany proste.',
-        'Blokada których receptorów w podwzgórzu odpowiada za ten efekt mirtazapiny?',
-        ['Kombinacja silnego antagonizmu receptorów histaminowych H1 oraz serotoninowych 5-HT2C', 'Blokada 5-HT2C i H1 wyłącza fizjologiczny ośrodek sytości i promuje łaknienie.'],
-        ['Pobudzenie receptorów beta-3 adrenergicznych w brunatnej tkance tłuszczowej', 'Stymulacja beta-3 nasila lipolizę, nie powoduje otyłości.'],
-      ],
-      [
-        'W badaniach laboratoryjnych: glukoza na czczo 108 mg/dl, trójglicerydy 240 mg/dl, BMI wzrosło z 24 do 27 kg/m2.',
-        'Jak zinterpretować zmiany metaboliczne u pacjenta?',
-        ['Wczesne stadium zespołu metabolicznego indukowanego farmakologicznie wymagające modyfikacji leku', 'Wzrost glikemii i lipidów w krótkim czasie stwarza ryzyko sercowo-naczyniowe.'],
-        ['Fizjologiczny objaw powrotu do zdrowia niewymagający żadnej uwagi', 'Bagatelizowanie otyłości polekowej prowadzi do cukrzycy typu 2 i zawału serca.'],
-      ],
-      [
-        'Depresja jest w remisji, lecz ryzyko metaboliczne jest nieakceptowalne dla pacjenta.',
-        'Jakie jest rozpoznanie problemu?',
-        ['Polekowy zespół metaboliczny ze znacznym przyrostem masy ciała w przebiegu terapii NaSSA', 'Powikłanie wynikające z profilu receptorowego mirtazapiny.'],
-        ['Choroba Cushinga wywołana gruczolakiem przysadki', 'Gwałtowny apetyt po leku wskazuje na tło farmakologiczne bez cech hiperkortyzolemii.'],
-      ],
-      [
-        'Klinicysta planuje zamianę leku przeciwdepresyjnego na preparat o obojętnym profilu metabolicznym.',
-        'Jaki lek przeciwdepresyjny nie powoduje przyrostu masy ciała i nie stymuluje łaknienia?',
-        ['Bupropion (NDRI) lub wortioksetyna (lek multimodalny)', 'Leki te nie blokują receptorów H1 ani 5-HT2C, sprzyjając utrzymaniu lub redukcji masy ciała.'],
-        ['Olanzapina w dawce 20 mg/d', 'Olanzapina wykazuje jeszcze silniejszy potencjał metaboliczny i nasiliłaby otyłość.'],
-      ],
-    ]
-  ),
-  make(
-    'glutaminian-gaba-neuroplastycznosc',
-    'Szybka ulga w głębokim kryzysie suicydalnym',
-    'Mężczyzna, 44 lata',
-    'Zaawansowany',
-    'Pacjent z lekooporną depresją jednobiegunową (po nieskuteczności sertraliny, wenlafaksyny i litu) trafia do kliniki z nasilonymi myślami rezygnacyjnymi i stuporem.',
-    [
-      [
-        'Z uwagi na bezpośrednie zagrożenie życia i lekooporność zakwalifikowano pacjenta do wdrożenia donosowej esketaminy w połączeniu z doustnym lekiem przeciwdepresyjnym.',
-        'Jaki jest mechanizm błyskawicznego efektu przeciwdepresyjnego esketaminy?',
-        ['Niekompetycyjna blokada receptora NMDA, wyrzut glutaminianu, aktywacja receptorów AMPA i kaskady mTORC1 stymulującej syntezę BDNF', 'Prowadzi to do odbudowy połączeń synaptycznych w korze przedczołowej w ciągu kilku do kilkunastu godzin.'],
-        ['Blokada receptorów insuliny w nerkach', 'Esketamina działa na receptory w OUN, nie w nerkach.'],
-      ],
-      [
-        'Po 40 minutach od aplikacji donosowej pacjent zgłasza uczucie unoszenia się i obcości własnego ciała, ciśnienie tętnicze wzrosło ze 120/80 do 145/90 mmHg.',
-        'Jak należy zinterpretować te objawy?',
-        ['Są to typowe, przemijające zjawiska dysocjacyjne i sympatykomimetyczne wymagające 2-godzinnej obserwacji', 'Objawy te osiągają szczyt w 40 minucie i ustępują samoistnie bez trwałych powikłań.'],
-        ['Świadczą o natychmiastowym pęknięciu tętniaka aorty', 'Taki umiarkowany skok RR nie świadczy o rozwarstwieniu aorty u pacjenta bez tętniaka.'],
-      ],
-      [
-        'Następnego dnia rano pacjent zgłasza wyraźne ustąpienie myśli samobójczych i chęć rozmowy z rodziną (spadek w skali MADRS o 16 punktów).',
-        'Jakie jest rozpoznanie kliniczne sytuacji terapeutycznej?',
-        ['Szybka odpowiedź przeciwdepresyjna i antysuicydalna na interwencję glutaminergiczną w depresji lekoopornej (TRD)', 'Esketamina posiada udowodnioną skuteczność w ostrych kryzysach suicydalnych w TRD.'],
-        ['Przejście w ostrą manię psychotyczną', 'Ustąpienie myśli samobójczych i kontakt z bliskimi to remisja depresji, a nie mania.'],
-      ],
-      [
-        'Klinicysta ustala długofalowy schemat leczenia podtrzymującego.',
-        'Jak wygląda standardowy protokół indukcji i podtrzymania esketaminy?',
-        ['Aplikacja 2 razy w tygodniu przez pierwsze 4 tygodnie, następnie raz w tygodniu i co 2 tygodnie w fazie podtrzymującej', 'Protokół rejestracyjny gwarantuje utrwalenie neuroplastyczności synaptycznej.'],
-        ['Podawanie leku co 10 minut przez 30 dni bez przerwy', 'Taki schemat wywołałby ciężką psychozę toksyczną i uzależnienie.'],
-      ],
-    ]
-  ),
-  make(
-    'klasyczne-antydepresanty-ssri-snri-tlpd-maoi',
-    'Poszerzony QRS w szpitalnym oddziale ratunkowym',
-    'Kobieta, 52 lata',
-    'Zaawansowany',
-    'Kobieta zostaje przywieziona nieprzytomna do SOR po celowym spożyciu 40 tabletek amitryptyliny (TLPD). W monitorze widoczna tachykardia z szerokimi zespołami QRS.',
-    [
-      [
-        'W EKG: rytm zatokowy 125/min, poszerzenie zespołu QRS do 140 ms, fala R w odprowadzeniu aVR > 3 mm. Źrenice szerokie, skóra sucha i gorąca.',
-        'Zablokowanie jakiego kanału jonowego w kardiomiocytach odpowiada za poszerzenie zespołu QRS i ryzyko zgonu?',
-        ['Szybkich sercowych kanałów sodowych Nav1.5', 'TLPD wykazują działanie chinidynopodobne (klasa Ia leków antyarytmicznych), spowalniając depolaryzację komór.'],
-        ['Kanałów wapniowych typu L w trzustce', 'Kanały te regulują wyrzut insuliny, nie odpowiadają za poszerzenie QRS.'],
-      ],
-      [
-        'U pacjentki dochodzi do uogólnionego napadu drgawkowego, a ciśnienie tętnicze spada do 75/40 mmHg.',
-        'Jaki lek należy podać natychmiast drogą dożylną jako swoistą terapię ratunkową w zatruciu TLPD?',
-        ['Wodorowęglan sodu (8,4% NaHCO3) w szybkim wlewie i.v. do uzyskania pH krwi 7,45–7,55', 'Ładunek sodu i alkalizacja osocza wypierają amitryptylinę z kanałów Nav1.5, zwężając QRS i stabilizując rytm.'],
-        ['Fenytoinę w szybkim bolusie dożylnym', 'Fenytoina blokuje te same kanały sodowe i nasila kardiotoksyczność TLPD.'],
-      ],
-      [
-        'Po podaniu 150 ml 8,4% NaHCO3 zespół QRS uległ zwężeniu do 98 ms, ciśnienie wzrosło do 105/65 mmHg.',
-        'Jakie jest rozpoznanie?',
-        ['Ostre ciężkie zatrucie trójpierścieniowym lekiem przeciwdepresyjnym (TLPD) z zagrażającą kardiotoksycznością', 'Obraz z poszerzeniem QRS i objawami cholinolitycznymi jest patognomoniczny dla TLPD.'],
-        ['Zawał serca z uniesieniem odcinka ST (STEMI)', 'Poszerzenie QRS uogólnione bez lokalnego uniesienia ST i z suchością śluzówek wskazuje na toksykologię.'],
-      ],
-      [
-        'Po ustabilizowaniu pacjentka trafia na OIT w celu dalszego monitorowania.',
-        'Dlaczego leki z grupy TLPD zostały zastąpione w I rzucie leczenia depresji przez SSRI?',
-        ['Ze względu na ekstremalną toksyczność w przedawkowaniu i wysokie ryzyko śmiertelnych powikłań kardiologicznych', 'SSRI są bezpieczne w przedawkowaniu, podczas gdy dawka śmiertelna TLPD to zaledwie kilkutygodniowy zapas leku.'],
-        ['Ponieważ TLPD są całkowicie nieskuteczne w leczeniu depresji', 'TLPD są wysoce skutecznymi lekami, lecz ich profil bezpieczeństwa jest niekorzystny.'],
-      ],
-    ]
-  ),
-  make(
-    'atypowe-antydepresanty-multimodalne',
-    'Spadek energii i obawa o sferę intymną',
-    'Mężczyzna, 35 lat',
-    'Podstawowy',
-    'Inżynier budownictwa zgłasza się z powodu obniżenia napędu, apatii i trudności z porannym wstawaniem. Wcześniej brał paroksetynę, lecz odstawił ją z powodu anorgazmii.',
-    [
-      [
-        'Pacjent kategorycznie odmawia leków, które mogłyby pogorszyć jego życie seksualne lub wywołać spadek libido.',
-        'Który lek przeciwdepresyjny o profilu NDRI jest lekiem I wyboru w tej sytuacji klinicznej?',
-        ['Bupropion', 'Jako inhibitor wychwytu zwrotnego noradrenaliny i dopaminy nie wykazuje komponentu serotoninergicznego i nie osłabia funkcji seksualnych.'],
-        ['Fluoksetyna w dawce 60 mg/d', 'Wysokie dawki SSRI nasilają zaburzenia erekcji i anorgazmię przez stymulację 5-HT2A.'],
-      ],
-      [
-        'Przed włączeniem leku zebrano wywiad dotyczący napadów padaczkowych (brak), urazów głowy (brak) oraz zaburzeń odżywiania (brak).',
-        'Dlaczego wykluczenie padaczki i zaburzeń odżywiania jest bezwzględnie wymagane przed zleceniem bupropionu?',
-        ['Bupropion obniża próg drgawkowy, stwarzając ryzyko napadu drgawkowego u osób predysponowanych', 'W bulimii i anoreksji ryzyko to wzrasta wielokrotnie wskutek zaburzeń elektrolitowych.'],
-        ['Bupropion powoduje natychmiastowe wypadnięcie wyrostka robaczkowego', 'Nie ma takiego powikłania medycznego.'],
-      ],
-      [
-        'U pacjenta nie stwierdzono żadnych przeciwwskazań neurologicznych ani somatycznych.',
-        'Jakie jest rozpoznanie kliniczne?',
-        ['Epizod depresyjny z dominującym deficytem dopaminergicznym (apatia/anhedonia) z nietolerancją SSRI', 'Profil pacjenta idealnie kwalifikuje do terapii NDRI.'],
-        ['Uzależnienie od kofeiny', 'Objawy wykraczają daleko poza picie kawy, spełniając kryteria MDD.'],
-      ],
-      [
-        'Wdrożono bupropion w dawce 150 mg/d w formulacji o zmodyfikowanym uwalnianiu (Neuraxpharm / Wellbutrin XR).',
-        'Jakiej pory dnia dotyczy zalecenie przyjmowania bupropionu XR?',
-        ['Rano po śniadaniu, aby uniknąć bezsenności wywołanej działaniem aktywizującym', 'Działanie dopaminergiczno-noradrenergiczne podane wieczorem utrudniałoby zasypianie.'],
-        ['Wyłącznie o północy tuż przed snem', 'Przyjęcie stymulującego leku na noc zrujnowałoby architekturę snu pacjenta.'],
-      ],
-    ]
-  ),
-  make(
+
+  // 14. Lit intoksykacja - Kontynuacja Wątku A (Dorota K., 26 lat)
+  makeFlexibleCase(
     'normotymiki-lit-walproinian-lamotrygina',
-    'Drżenie rąk i pragnienie u pacjenta z ChAD',
-    'Mężczyzna, 41 lat',
+    'Zatrucie litem po ketoprofenie i odwodnieniu (Wątek A)',
+    'Dorota K., 26 lat',
     'Zaawansowany',
-    'Pacjent leczony węglanem litu od 3 lat z powodu ChAD I zgłasza się z powodu nasilonego drżenia grubofalistego dłoni, chwiejnego chodu i pragnienia po zażyciu leków przeciwbólowych na rwę kulszową.',
+    'Pacjentka leczona litem (750 mg/d w stanie stacjonarnym z poziomem 0,70 mmol/l) zgłasza się z powodu grubofalistego drżenia rąk, nudności, wymiotów i zaburzeń równowagi (ataksji).',
     [
-      [
-        'W badaniu pacjent jest senny, podsypiający, mówi niewyraźnie (dyzartria), pije 4 litry wody na dobę. Od tygodnia przyjmuje ketoprofen w wysokich dawkach.',
-        'Jaka interakcja farmakokinetyczna doprowadziła do kumulacji litu?',
-        ['Niesteroidowe leki przeciwzapalne (NLPZ) hamują syntezę prostaglandyn nerkowych, obniżając filtrację kłębuszkową i klirens litu o 30–50%', 'Powoduje to gwałtowny skok stężenia litu we krwi do wartości toksycznych.'],
-        ['Ketoprofen przekształcił się w lit w kanalikach nerkowych', 'Związki chemiczne nie ulegają transmutacji pierwiastków.'],
-      ],
-      [
-        'Oznaczono stężenie litu w surowicy krwi w trybie pilnym: wynik wynosi 1,55 mmol/l (zakres terapeutyczny 0,6–0,8 mmol/l).',
-        'Jak należy zakwalifikować ten stan kliniczny?',
-        ['Ostra neurotoksyczność litu wymagająca natychmiastowego odstawienia leku i hospitalizacji', 'Stężenia powyżej 1,2–1,5 mmol/l z objawami ataksji i drżeń to stan zagrożenia życia.'],
-        ['Optymalne stężenie w fazie zaostrzenia niewymagające modyfikacji', 'Pozostawienie pacjenta na tej dawce grozi nieodwracalnym uszkodzeniem móżdżku i nerek.'],
-      ],
-      [
-        'Wykonano badania: kreatynina 1,6 mg/dl (wzrost z 0,9), sód 138 mmol/l, eGFR 48 ml/min.',
-        'Jakie jest rozpoznanie?',
-        ['Polekowe zatrucie litem powikłane ostrym uszkodzeniem nerek wskutek interakcji z NLPZ', 'Kombinacja nefrotoksyczności i neurotoksyczności litowej.'],
-        ['Udar niedokrwienny móżdżku', 'Symetryczne objawy i wysokie stężenie litu wskazują na zatrucie ogólnoustrojowe.'],
-      ],
-      [
-        'Pacjent trafił na oddział toksykologii lub intensywnej terapii.',
-        'Jakie jest leczenie z wyboru w zatruciu litem o stężeniu 1,5–2,0 mmol/l z objawami neurologicznymi?',
-        ['Odstawienie litu i NLPZ, intensywna płynoterapia dożylna 0,9% NaCl (forsowanie diurezy sodowej) oraz kontrola parametrów nerkowych', 'Sód konkuruje z litem o resorpcję zwrotną w ramieniu wstępującym pętli Henlego, przyspieszając jego wydalanie.'],
-        ['Podanie węgla aktywowanego doustnie', 'Węgiel aktywowany nie wiąże jonów nieorganicznych, takich jak lit.'],
-      ],
-    ]
+      {
+        stage: 'Weryfikacja wywiadu i czynników wyzwalających',
+        context: 'W wywiadzie: Dorota 4 dni temu skręciła staw skokowy i z powodu bólu przyjmowała ketoprofen 200 mg/d, a z powodu upałów piła mało płynów.',
+        prompt: 'Jaki mechanizm odpowiada za dekompensację stężenia litu po włączeniu NLPZ?',
+        choices: [
+          ['NLPZ hamują nerkową syntezę prostaglandyn rozszerzających naczynia, obniżając GFR i nasilając wchłanianie zwrotne litu w cewce bliższej', 'Połączenie NLPZ lub tiazydów z odwodnieniem gwałtownie załamuje klirens litu i prowadzi do ostrej intoksykacji.'],
+          ['NLPZ bezpośrednio wypierają lit z połączeń z albuminami osocza', 'Lit nie wiąże się z białkami osocza; krąży wyłącznie w postaci wolnego kationu Li+.'],
+          ['Ketoprofen jest inhibitorem enzymu rozkładającego cząsteczki litu w wątrobie', 'Lit jest pierwiastkiem chemicznym i nie podlega metabolizmowi wątrobowemu; jest wydalany w 95% przez nerki.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Ocena laboratoryjna TDM litu',
+        context: 'Pobrano krew ściśle 12 h po dawce wieczornej. Wynik: stężenie litu 1,85 mmol/l, kreatynina 1,4 mg/dl (wcześniej 0,8), eGFR spadł do 52 ml/min.',
+        prompt: 'Jak zaklasyfikować to stężenie wg kryteriów konsensusu AGNP TDM?',
+        choices: [
+          ['Ciężka toksyczność litu (stężenie >1,2 mmol/l z objawami neurologicznymi) wymagająca natychmiastowej hospitalizacji i forsowanego nawadniania i.v.', 'Stężenia zbliżające się do 2,0 mmol/l niosą ryzyko trwałego uszkodzenia móżdżku (zespół SILENT) i ostrego uszkodzenia nerek.'],
+          ['Prawidłowe stężenie podtrzymujące w fazie ostrej manii', 'Zakres podtrzymujący to 0,6–0,8 mmol/l; 1,85 mmol/l jest stężeniem jednoznacznie toksycznym.'],
+          ['Błąd laboratoryjny niemający znaczenia klinicznego przy braku śpiączki', 'Objawy ataksji i drżenia w pełni korelują z poziomem laboratoryjnym i nakazują natychmiastowe działanie.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Natychmiastowe postępowanie ratunkowe',
+        context: 'Dorota trafia na oddział internistyczny/toksykologiczny.',
+        prompt: 'Jakie jest postępowanie pierwszego wyboru w umiarkowanej/ciężkiej intoksykacji litem przy wydolnym układzie krążenia?',
+        choices: [
+          ['Natychmiastowe odstawienie litu i NLPZ, intensywne nawadnianie dożylne 0,9% NaCl (celem przywrócenia wolemii i natriurezy) oraz kontrola diurezy', 'Sód zawarty w 0,9% NaCl konkuruje z litem o nośniki w kanalikach proksymalnych, nasilając nerkowe wydalanie litu.'],
+          ['Podanie węgla aktywowanego doustnie', 'Węgiel aktywowany NIE wiąże metali ani jonów nieorganicznych takich jak lit.'],
+          ['Wdrożenie leków moczopędnych tiazydowych celem wypłukania leku', 'Tiazydy paradoksalnie ZWIĘKSZAJĄ stężenie litu i pogłębiłyby zatrucie.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Kryteria kwalifikacji do hemodializy',
+        context: 'Klinicysta monitoruje parametry nerkowe i neurologiczne pacjentki.',
+        prompt: 'Kiedy w zatruciu litem bezwzględnie konieczna jest pilna hemodializa?',
+        choices: [
+          ['Przy stężeniu litu >4,0 mmol/l (niezależnie od objawów) LUB >2,5 mmol/l przy obecności ciężkich objawów neurotoksyczności, bezmoczu lub załamaniu GFR', 'Hemodializa jest najskuteczniejszą metodą szybkiej eliminacji małej, rozpuszczalnej w wodzie cząsteczki litu z osocza.'],
+          ['Zawsze, gdy stężenie przekroczy 0,9 mmol/l', 'Stężenie 0,9 mmol/l wymaga jedynie korekty dawki i obserwacji, nie dializoterapii.'],
+          ['Nigdy, litu nie można usunąć drogą hemodializy', 'Lit jest jedną z substancji o najwyższym wskaźniku dializowalności w toksykologii klinicznej.'],
+        ],
+        answerIndex: 0,
+      },
+    ],
+    { threadId: 'thread-bipolar-spectrum', timeOffsetWeeks: 40 }
   ),
-  make(
-    'leki-przeciwpsychotyczne-generacje',
-    'Niepokój nóg po włączeniu nowego neuroleptyku',
-    'Kobieta, 30 lat',
-    'Podstawowy',
-    'Pacjentka leczona z powodu zaburzeń afektywnych rozpoczęła przyjmowanie aripiprazolu w dawce 10 mg/d. Po 4 dniach zgłasza niemożność usiedzenia na krześle.',
-    [
-      [
-        'Pacjentka stale chodzi po pokoju, przebiera nogami, mówi, że czuje "wewnętrzny silnik w ciele", który zmusza ją do ciągłego ruchu. Nie ma myśli psychotycznych.',
-        'Jaki objaw pozapiramidowy rozwinął się u pacjentki?',
-        ['Akatyzja polekowa', 'Akatyzja to subiektywne poczucie przymusu ruchu i niemożność pozostania w bezruchu, typowa dla wczesnej fazy aripiprazolu.'],
-        ['Ostra fobia społeczna', 'Chęć ruchu ma podłoże somatomotoryczne, a nie lęk przed oceną innych.'],
-      ],
-      [
-        'Klinicysta musi odróżnić akatyzję od pobudzenia psychoruchowego w przebiegu zaostrzenia choroby podstawowej.',
-        'Dlaczego błędne rozpoznanie pobudzenia i zwiększenie dawki aripiprazolu byłoby katastrofalne w skutkach?',
-        ['Zwiększenie dawki neuroleptyku dramatycznie nasiliłoby akatyzję, co może doprowadzić pacjenta do impulsywnej próby samobójczej', 'Akatyzja jest jednym z najbardziej męczących polekowych stanów psychicznych i generuje ryzyko suicydalne.'],
-        ['Spowodowałoby natychmiastową utratę wzroku', 'Aripiprazol nie uszkadza nerwu wzrokowego w ten sposób.'],
-      ],
-      [
-        'W skali BARS (Barnes Akathisia Rating Scale) pacjentka uzyskuje 4 punkty (akatyzja uogólniona umiarkowana).',
-        'Jakie jest rozpoznanie?',
-        ['Wczesna akatyzja polekowa po częściowym agoniście receptora D2', 'Objaw wystąpił w typowym oknie czasowym pierwszego tygodnia terapii.'],
-        ['Zespół niespokojnych nóg (RLS) idiopatyczny', 'RLS występuje wyłącznie wieczorem i w spoczynku nocnym, podczas gdy akatyzja trwa przez cały dzień.'],
-      ],
-      [
-        'Planowane jest pilne wdrożenie leczenia znoszącego objaw.',
-        'Jaki lek I wyboru przynosi najszybszą ulgę w akatyzji polekowej?',
-        ['Propranolol (20–40 mg/d) lub doraźnie niska dawka benzodiazepiny (np. lorazepam) wraz z redukcją dawki aripiprazolu', 'Beta-adrenolityki wygaszają obwodowe i ośrodkowe napięcie adrenergiczne odpowiedzialne za akatyzację.'],
-        ['Zwiększenie dawki aripiprazolu do 30 mg/d', 'To kardynalny błąd nasilający cierpienie pacjentki.'],
-      ],
-    ]
-  ),
-  make(
-    'benzodiazepiny-leki-z-tapering',
-    'Napad paniki z odbicia po odstawieniu leku',
-    'Kobieta, 46 lat',
-    'Podstawowy',
-    'Prawniczka przyjmowała alprazolam w dawce 1 mg 3x dziennie przez 18 miesięcy z powodu lęku. Po skończeniu się opakowania odstawiła lek z dnia na dzień.',
-    [
-      [
-        'Po 24 godzinach od ostatniej tabletki pacjentka doznaje potwornego lęku, drżenia całego ciała, nadwrażliwości na dźwięki i światło oraz skoku ciśnienia do 180/110 mmHg.',
-        'Jaki zespół kliniczny rozwinął się u pacjentki?',
-        ['Ostry zespół odstawienny po nagłym przerwaniu benzodiazepiny krótko działającej', 'Nagły brak allosterycznej modulacji GABA-A odsłania niehamowaną burzę glutaminergiczną w mózgowiu.'],
-        ['Fizjologiczny objaw dobrego samopoczucia', 'Jest to stan bezpośredniego zagrożenia napadem padaczkowym i majaczeniem.'],
-      ],
-      [
-        'Pacjentka trafia do gabinetu lekarskiego w stanie skrajnego niepokoju z drżeniem zamiarowym.',
-        'Przed jakim zagrażającym życiu powikłaniem neurologicznym należy natychmiast zabezpieczyć pacjentkę?',
-        ['Przed uogólnionym napadem drgawkowym toniczno-klonowym i stanem padaczkowym', 'Nagłe odstawienie wysokich dawek BZD jest jedną z głównych przyczyn polekowych napadów drgawkowych.'],
-        ['Przed złamaniem wyrostka mieczykowatego', 'Zespoły odstawienne nie wywołują samoistnych złamań mostka.'],
-      ],
-      [
-        'Pacjentka spełnia kryteria zespołu uzależnienia od benzodiazepin z ostrym zespołem abstynencyjnym.',
-        'Jakie jest prawidłowe rozpoznanie?',
-        ['Zespół uzależnienia od benzodiazepin powikłany ostrym zespołem abstynencyjnym', 'Wymaga zaplanowanej procedury detoksykacji farmakologicznej.'],
-        ['Guz chromochłonny nadnerczy', 'Wywiad przewlekłego przyjmowania alprazolamu jednoznacznie wyjaśnia etiologię objawów.'],
-      ],
-      [
-        'Klinicysta wdraża procedurę bezpiecznego odstawiania wg wytycznych Heather Ashton.',
-        'Jaki jest właściwy schemat postępowania wg Protokołu Ashtona?',
-        ['Zamiana 3 mg alprazolamu na równoważną dawkę długodziałającego diazepamu (ok. 60 mg/d w dawkach podzielonych) i stopniowa redukcja o 1–2 mg co 1–2 tygodnie', 'Stabilne stężenie diazepamu i jego metabolitów eliminuje skoki lęku i chroni przed drgawkami.'],
-        ['Zalecenie picia melisy i całkowitego unikania kontaktu z lekarzem', 'Pozostawienie pacjentki bez BZD stwarza śmiertelne zagrożenie neurologiczne.'],
-      ],
-    ]
-  ),
-  make(
+
+  // 15. Zespół serotoninowy - Hunter
+  makeFlexibleCase(
     'ostre-stany-toksyczne-zespol-serotoninowy',
-    'Gorączka, obfite poty i drżenia u pacjenta z rwą kulszową',
-    'Mężczyzna, 56 lat',
+    'Klonus i hipertermia po lekach przeciwbólowych',
+    'Ewa D., 34 lata',
     'Zaawansowany',
-    'Mężczyzna leczony od roku sertraliną w dawce 100 mg/d otrzymał od lekarza POZ z powodu ostrej rwy kulszowej tramadol w kroplach (300 mg/d). Po 12 godzinach trafia na SOR.',
+    'Kobieta leczona paroksetyną (40 mg/d) z powodu lęku napadowego zażyła w ciągu ostatnich 12 godzin tramadol (z powodu rwy kulszowej) oraz syrop z dekstrometorfanem.',
     [
-      [
-        'Pacjent ma temperaturę 38,9°C, obficie się poci, jest pobudzony i splątany. W badaniu neurologicznym: klonus obu rzepek i stóp oraz wygórowane odruchy głębokie (4+).',
-        'Czy stan pacjenta spełnia kryteria decyzyjne Huntera toksyczności serotoninowej?',
-        ['Tak, obecność gorączki > 38°C, wzmożonego napięcia mięśniowego oraz klonusa spełnia kryteria Huntera ze 100% swoistością', 'Połączenie SSRI z tramadolem (inhibitorem SERT) wywołało toksyczną burzę serotoninową.'],
-        ['Nie, do zespołu serotoninowego wymagana jest utrata wszystkich zębów', 'Zęby nie mają żadnego związku z układem serotoninergicznym.'],
-      ],
-      [
-        'W badaniach laboratoryjnych leukocytoza 14 tys./ul, stężenie kinazy CPK umiarkowanie podwyższone (650 IU/l), perystaltyka jelit żywa, głośna.',
-        'Jaka cecha badania brzucha i perystaltyki odróżnia ten stan od złośliwego zespołu neuroleptycznego (NMS)?',
-        ['W zespole serotoninowym perystaltyka jest wzmożona (biegunka, przelewanie), a w NMS jest osłabiona lub porażenna', 'Nadmiar serotoniny silnie stymuluje receptory jelitowe 5-HT3 i 5-HT4.'],
-        ['W zespole serotoninowym wątroba całkowicie zanika w USG', 'USG wątroby jest prawidłowe.'],
-      ],
-      [
-        'Wszystkie dane kliniczne wskazują na ciężki stan zagrożenia życia.',
-        'Jakie jest rozpoznanie?',
-        ['Ciężki zespół serotoninowy indukowany niebezpieczną interakcją sertraliny z tramadolem', 'Klasyczna, zagrażająca życiu jatrogenna toksyczność serotoninowa.'],
-        ['Zwykła grypa żołądkowa powikłana odwodnieniem', 'Grypa nie wywołuje wygórowania odruchów ścięgnistych ani klonusa stóp.'],
-      ],
-      [
-        'Zespół SOR natychmiast odstawia sertralinę i tramadol, podaje diazepam i.v. i wdraża chłodzenie.',
-        'Jaki lek będący swoistym antagonistą 5-HT2A należy podać jako odtrutkę w tym zespole?',
-        ['Cyproheptadyna (początkowo 12 mg p.o. lub przez zgłębnik, potem 2 mg co 2 godziny)', 'Szybko blokuje receptory serotoninowe, wygaszając hipertermię i klonus.'],
-        ['Dojęzykowa nitrogliceryna w aerozolu', 'Nitrogliceryna nasiliłaby hipotensję i nie ma wpływu na receptory 5-HT.'],
-      ],
+      {
+        stage: 'Ocena kryteriów Huntera (Hunter Toxicity Criteria)',
+        context: 'Ewa jest pobudzona, zlewa się potem (diaphoresis), ma temperaturę ciała 38,7°C, tętno 120/min. Przy zginaniu grzbietowym stopy występuje 8 samoistnych uderzeń klonusu (klonus indukowany), a w gałkach ocznych widoczny jest klonus oczny.',
+        prompt: 'Czy obraz kliniczny spełnia zwalidowane kryteria decyzyjne Huntera toksyczności serotoninergicznej?',
+        choices: [
+          ['Tak, obecność indukowanego klonusu w połączeniu z pobudzeniem i obfitymi potami u pacjenta po lekach proserotoninergicznych spełnia regułę decyzyjną Huntera', 'Kryteria Huntera cechują się 84% czułością i 97% swoistością; klonus i hipertermia są kluczowymi determinantami.'],
+          ['Nie, do rozpoznania wymagana jest obecność sztywności typu „ołowianej rury” i hiporefleksja', 'Sztywność „ołowianej rury” i hiporefleksja są cechami złośliwego zespołu neuroleptycznego (NMS), a nie zespołu serotoninowego.'],
+          ['Nie, zespół serotoninowy można rozpoznać wyłącznie po badaniu stężenia serotoniny we krwi w trybie cito', 'Poziom serotoniny w osoczu nie koreluje z neuroprzekaźnictwem w OUN i nie ma wartości diagnostycznej.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Różnicowanie z neuroleptycznym zespołem złośliwym (NMS)',
+        context: 'Lekarz dyżurny waha się między zespołem serotoninowym a NMS.',
+        prompt: 'Które cechy badania neurologicznego najsilniej odróżniają zespół serotoninowy od NMS?',
+        choices: [
+          ['W zespole serotoninowym występuje hiperrefleksja, klonus i wzmożona perystaltyka jelit (biegunka), podczas gdy w NMS dominuje skrajna sztywność mięśniowa i hiporefleksja', 'Profil nerwowo-mięśniowy w zespole serotoninowym cechuje się nadpobudliwością i klonusem (szczególnie w kończynach dolnych).'],
+          ['W zespole serotoninowym nigdy nie występuje tachykardia ani gorączka', 'W ciężkim zespole serotoninowym hipertermia może przekraczać 40°C i prowadzić do rabdomiolizy.'],
+          ['NMS rozwija się w ciągu 30 minut, a zespół serotoninowy wymaga 4 tygodni', 'Jest odwrotnie: zespół serotoninowy narasta gwałtownie (godziny), a NMS rozwija się zazwyczaj podstępnie przez kilka dni.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Postępowanie terapeutyczne w stanie zagrożenia życia',
+        context: 'Temperatura ciała rośnie do 39,2°C, narasta sztywność klatki piersiowej utrudniająca wentylację.',
+        prompt: 'Jaki jest priorytet postępowania ratunkowego w ciężkiej toksyczności serotoninergicznej?',
+        choices: [
+          ['Odstawienie leków, agresywne chłodzenie fizykalne, dożylne benzodiazepiny w celu opanowania pobudzenia i mioklonii oraz w ciężkich przypadkach intubacja z relaksacją niedepolaryzującą', 'Sedacja benzodiazepinami obniża napięcie mięśniowe i zapobiega produkcji ciepła; lekiem wspomagającym może być cyproheptadyna.'],
+          ['Podanie paracetamolu w wysokiej dawce w celu zresetowania ośrodka termoregulacji', 'Gorączka w zespole serotoninowym wynika z obwodowej aktywności mięśniowej, a nie z przestawienia punktu nastawczego w podwzgórzu (leki przeciwgorączkowe są nieskuteczne).'],
+          ['Podanie propranololu w bolusie i.v.', 'Blokada receptorów beta może pogłębić hipotensję i maskować wstrząs bez wpływu na pobudzenie 5-HT.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Farmakologiczna modulacja receptorowa',
+        context: 'Rozważasz podanie swoistego antagonisty receptorów 5-HT2A.',
+        prompt: 'Jaki lek o działaniu przeciwhistaminowym i antyserotoninergicznym może być zastosowany jako leczenie wspomagające?',
+        choices: [
+          ['Cyproheptadyna podana dożołądkowo przez zgłębnik', 'Cyproheptadyna blokuje receptory 5-HT2A i może skrócić czas trwania objawów u pacjentów z umiarkowaną/ciężką toksycznością.'],
+          ['Flumazenil we wlewie ciągłym', 'Flumazenil jest antagonistą benzodiazepin i mógłby wywołać drgawki.'],
+          ['Nalokson w dużej dawce', 'Nalokson odwraca działanie opioidów, lecz nie hamuje kaskady serotoninergicznej wywołanej SSRI.'],
+        ],
+        answerIndex: 0,
+      },
     ]
   ),
-  make(
-    'lekoopornosc-i-klozapina',
-    'Przełamanie 5-letniej psychozy lekoopornej',
-    'Mężczyzna, 29 lat',
+
+  // 16. NMS
+  makeFlexibleCase(
+    'zlosliwy-zespol-neuroleptyczny-nms',
+    'Sztywność ołowianej rury i wysoka kinaza po haloperydolu',
+    'Marek W., 40 lat',
     'Zaawansowany',
-    'Mężczyzna z rozpoznaniem schizofrenii od 5 lat był leczony olanzapiną (20 mg/d przez 3 mies.), a następnie aripiprazolem (30 mg/d przez 4 mies.). Nadal słyszy głosy i ma urojenia.',
+    'Mężczyzna leczony z powodu ostrej psychozy haloperydolem (15 mg/d) po 4 dniach staje się mutystyczny, leży w łóżku w pozycji zgięciowej, gorączkuje do 39,5°C i obficie się poci.',
     [
-      [
-        'W badaniu TDM potwierdzono prawidłowe stężenia obu wcześniej stosowanych leków, wykluczając brak adherencji. Pacjent nadal spełnia kryteria aktywnej psychozy.',
-        'Czy pacjent spełnia międzynarodowe kryteria schizofrenii lekoopornej (TRS) wg grupy TRRIP?',
-        ['Tak, brak odpowiedzi na co najmniej 2 różne leki przeciwpsychotyczne w odpowiedniej dawce i czasie przy udokumentowanej adherencji definiuje TRS', 'Odwlekanie wdrożenia leku z wyboru w tym momencie jest błędem w sztuce lekarskiej.'],
-        ['Nie, lekooporność można rozpoznać dopiero po przetestowaniu 20 różnych leków przez 50 lat', 'Kryteria TRRIP wymagają dokładnie 2 nieudanych prób terapeutycznych.'],
-      ],
-      [
-        'Przed wdrożeniem klozapiny wykonano badania wyjściowe: morfologia krwi (ANC 4200/ul), glukoza 88 mg/dl, lipidogram w normie, EKG prawidłowe.',
-        'Od jakiej dawki należy bezwzględnie rozpocząć titrację klozapiny w pierwszym dniu?',
-        ['12,5 mg do 25 mg podane na noc', 'Zabezpiecza to pacjenta przed ciężką hipotensją ortostatyczną i zapaścią naczyniową wywołaną blokadą alfa-1.'],
-        ['300 mg rano w pojedynczej dawce', 'Taka dawka uderzeniowa stwarza śmiertelne zagrożenie kardiologiczne.'],
-      ],
-      [
-        'W trakcie powolnego zwiększania dawki dobowej pacjent w 3. tygodniu osiągnął dawkę 300 mg/d. Stężenie klozapiny we krwi wynosi 410 ng/ml.',
-        'Jak ocenić to stężenie w odniesieniu do okna terapeutycznego AGNP?',
-        ['Stężenie znajduje się w optymalnym przedziale terapeutycznym (350–600 ng/ml)', 'Gwarantuje to maksymalną szansę na redukcję lekoopornych objawów wytwórczych.'],
-        ['Stężenie jest skrajnie toksyczne i wymaga dializoterapii', 'Toksyczność pojawia się typowo powyżej 1000 ng/ml.'],
-      ],
-      [
-        'Pacjent zgłasza brak wypróżnienia od 4 dni i ból brzucha.',
-        'Jakie krytyczne zalecenie profilaktyczne należy wdrożyć natychmiast, aby zapobiec zgonowi z powodu atonii jelit?',
-        ['Natychmiastowe wdrożenie leków osmotycznych (makrogole / PEG), kontrola perystaltyki i wykluczenie niedrożności jelit', 'Hipomotoryka jelit na klozapinie jest powikłaniem potencjalnie śmiertelnym, wymagającym aktywnego leczenia od pierwszych objawów zaparcia.'],
-        ['Zalecenie głodówki przez 3 tygodnie', 'Głodówka nie przywróci motoryki porażonego jelita.'],
-      ],
+      {
+        stage: 'Ocena objawów osiowych NMS (Kryteria Levensona/Caroffa)',
+        context: 'W badaniu neurologicznym: uogólniony opór plastyczny mięśni we wszystkich kończynach („ołowiana rura”), tachykardia 130/min, niestabilne ciśnienie tętnicze (skoki 180/110 i spadki do 100/60 mmHg), zniesione odruchy głębokie.',
+        prompt: 'Jakie rozpoznanie kliniczne wyjaśnia ten ostry stan?',
+        choices: [
+          ['Złośliwy zespół neuroleptyczny (NMS - Neuroleptic Malignant Syndrome) wywołany blokadą dopaminergiczną', 'Triada: hipertermia, uogólniona sztywność mięśniowa i niestabilność autonomiczna po neuroleptyku to definicja NMS.'],
+          ['Ostra dystonia krtaniowa', 'Dystonia dotyczy izolowanej grupy mięśni i nie przebiega z hipertermią oraz niestabilnością krążeniową.'],
+          ['Zwykłe zakażenie układu moczowego u pacjenta unieruchomionego', 'Zakażenie nie tłumaczy sztywności plastycznej całego ciała i labilności wegetatywnej.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Badania laboratoryjne i powikłania narządowe',
+        context: 'Pobrano krew na badania pilne.',
+        prompt: 'Który parametr laboratoryjny jest kluczowym markerem rozpadu mięśni i monitorowania ciężkości NMS?',
+        choices: [
+          ['Aktywność kinazy kreatynowej (CK > 1000 IU/l, często >10 000 IU/l) oraz leukocytoza i parametry funkcji nerek', 'Masywny wzrost CK świadczy o rabdomiolizie, która grozi wytrąceniem mioglobiny w cewkach nerkowych i ostrą niewydolnością nerek.'],
+          ['Stężenie amylazy w ślinie', 'Amylaza ślinowa nie ma znaczenia w monitorowaniu NMS.'],
+          ['Poziom witaminy B12', 'Witamina B12 nie reaguje ostro w zespole neuroleptycznym.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Interwencja farmakologiczna w NMS',
+        context: 'Haloperydol został natychmiast odstawiony, wdrożono intensywne nawadnianie krystaloidami.',
+        prompt: 'Które leki o działaniu zwiotczającym mięśnie lub dopaminergicznym są stosowane w celowanej terapii NMS?',
+        choices: [
+          ['Dantrolen (lek blokujący uwalnianie wapnia z siateczki sarkoplazmatycznej) oraz bromokryptyna (agonista receptorów dopaminowych)', 'Dantrolen redukuje hipertermię wywołaną skurczem mięśni, a bromokryptyna przełamuje blokadę dopaminergiczną w podwzgórzu i prążkowiu.'],
+          ['Podanie kolejnej dawki haloperydolu o przedłużonym uwalnianiu', 'Podanie neuroleptyku pogłębi blokadę receptorów D2 i drastycznie zwiększy śmiertelność.'],
+          ['Antybiotykoterapia empiryczna jako jedyne leczenie', 'Antybiotyki nie wpływają na mechanizm blokady dopaminergicznej w NMS.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Powrót do leczenia przeciwpsychotycznego po przebyciu NMS',
+        context: 'Marek wyzdrowiał po 2 tygodniach leczenia na OIT. Psychoza ulega zaostrzeniu.',
+        prompt: 'Jakie są zasady bezpiecznego ponownego włączenia leku przeciwpsychotycznego po przebyciu NMS?',
+        choices: [
+          ['Odczekanie minimum 2 tygodni od pełnej normalizacji CK i objawów, wybór leku o słabym powinowactwie do D2 (np. kwetiapina, klozapina) i powolne miareczkowanie', 'Należy bezwzględnie unikać powrotu do silnego FGA (jak haloperidol) i monitorować temperaturę oraz CK na każdym etapie.'],
+          ['Natychmiastowe podanie haloperydolu w tej samej dawce następnego dnia po wypisie', 'Ryzyko nawrotu NMS wynosi wówczas ponad 50% i zagraża życiu.'],
+          ['Dożywotni zakaz stosowania jakichkolwiek leków przeciwpsychotycznych nawet w psychozie zagrażającej życiu', 'Możliwe jest ostrożne leczenie lekiem SGA o niskiej sile blokady D2 po ustąpieniu stanu ostrego.'],
+        ],
+        answerIndex: 0,
+      },
+    ]
+  ),
+
+  // 17. Klozapina - Kontynuacja Wątku B (Jakub M., lekooporność i TRS)
+  makeFlexibleCase(
+    'lekoopornosc-i-klozapina',
+    'Złoty standard w lekooporności i nadzór nad szpikiem (Wątek B)',
+    'Jakub M., 22 lata',
+    'Zaawansowany',
+    'Jakub nie uzyskał poprawy po dwóch kolejnych kuracjach atypowymi neuroleptykami (risperidon 6 mg/d przez 8 tyg., następnie olanzapina 20 mg/d przez 10 tyg.). Nadal doświadcza uporczywych omamów słuchowych i urojeń ksobnych.',
+    [
+      {
+        stage: 'Kwalifikacja do schizofrenii lekoopornej (TRS)',
+        context: 'Zarówno risperidon, jak i olanzapina były przyjmowane regularnie (potwierdzona wysoka adherencja). Wynik w skali PANSS wynosi 98 punktów.',
+        prompt: 'Czy pacjent spełnia międzynarodowe kryteria schizofrenii lekoopornej (Treatment-Resistant Schizophrenia - TRS wg kryteriów Kane\'a / TRRIP)?',
+        choices: [
+          ['Tak, brak adekwatnej odpowiedzi na co najmniej dwa różne leki przeciwpsychotyczne (w tym min. jeden SGA) stosowane w dawkach terapeutycznych przez co najmniej 6 tygodni definiuje TRS', 'Kwalifikacja TRS upoważnia do natychmiastowego wdrożenia klozapiny jako leku o unikalnej, udowodnionej skuteczności.'],
+          ['Nie, wymagane jest wypróbowanie co najmniej 6 różnych leków przez okres 5 lat', 'Zbyt długie opóźnianie włączenia klozapiny prowadzi do nieodwracalnego spadku plastyczności neuronalnej i utrwalenia objawów ubytkowych.'],
+          ['Nie, lekooporność można rozpoznać dopiero po wykonaniu zabiegu lobotomii', 'Lobotomia jest procedurą historyczną i niedopuszczalną we współczesnej medycynie.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Wymogi bezpieczeństwa hematologicznego (ANC)',
+        context: 'Przed włączeniem klozapiny Jakub ma wykonaną morfologię krwi.',
+        prompt: 'Jaki parametr morfologii i o jakiej minimalnej wartości bezwzględnej warunkuje bezpieczne rozpoczęcie leczenia klozapiną?',
+        choices: [
+          ['Bezwzględna liczba granulocytów obojętnochłonnych (ANC) ≥ 1500/µl (lub ≥ 1000/µl u osób z łagodną neutropenią etniczną BEN)', 'Klozapina niesie ryzyko agranulocytozy (~0,8%), dlatego terapia wymaga ścisłego monitorowania ANC: co tydzień przez pierwsze 18 tygodni, następnie co 4 tygodnie.'],
+          ['Liczba płytek krwi > 500 000/µl', 'Trombocyty nie są głównym celem toksyczności szpikowej klozapiny.'],
+          ['Stężenie hemoglobiny > 16 g/dl', 'Norma czerwonokrwinkowa nie definiuje bezpieczeństwa agranulocytarnego.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Wpływ palenia tytoniu na farmakokinetykę klozapiny (CYP1A2)',
+        context: 'Jakub wypala paczkę papierosów dziennie (20 sztuk/d). Planuje rzucenie palenia.',
+        prompt: 'Co stanie się ze stężeniem klozapiny w surowicy po nagłym zaprzestaniu palenia tytoniu przez Jakuba?',
+        choices: [
+          ['Stężenie klozapiny gwałtownie wzrośnie (nawet o 50–100%) z powodu ustąpienia indukcji izoenzymu CYP1A2 przez wielopierścieniowe węglowodory aromatyczne dymu tytoniowego', 'Wymaga to prewencyjnej redukcji dawki klozapiny i kontroli stężenia TDM, aby zapobiec drgawkom i ciężkiej sedacji.'],
+          ['Stężenie klozapiny natychmiast spadnie do zera', 'Dym tytoniowy indukuje klirens; jego brak spowalnia eliminację leku.'],
+          ['Zaprzestanie palenia nie ma żadnego wpływu na metabolizm wątrobowy klozapiny', 'CYP1A2 jest głównym szlakiem eliminacji klozapiny, silnie zależnym od dymu tytoniowego.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Zapobieganie powikłaniom żołądkowo-jelitowym',
+        context: 'Klozapina wykazuje silne działanie antycholinergiczne i przeciwserotoninowe na perystaltykę przewodu pokarmowego.',
+        prompt: 'Które działanie niepożądane klozapiny jest statystycznie częstszą przyczyną zgonu niż agranulocytoza i wymaga aktywnej profilaktyki przeczyszczającej?',
+        choices: [
+          ['Ciężkie zaparcie prowadzące do niedrożności porażennej jelit (hipomotoryczność przewodu pokarmowego)', 'Niedrożność jelit wywołana klozapiną niesie wysoką śmiertelność z powodu martwicy i perforacji; wymaga rutynowej oceny wypróżnień i leków osmotycznych (makrogole).'],
+          ['Ostre krwawienie z wrzodu żołądka', 'Klozapina nie wykazuje działania wrzodotwórczego w mechanizmie typowym dla NLPZ.'],
+          ['Kamica pęcherzyka żółciowego', 'Kamica żółciowa nie jest typowym bezpośrednim powikłaniem klozapiny.'],
+        ],
+        answerIndex: 0,
+      },
+    ],
+    { threadId: 'thread-psychosis-trs', timeOffsetWeeks: 48 }
+  ),
+
+  // 18. Akatyzja na arypiprazolu
+  makeFlexibleCase(
+    'zaburzenia-ruchowe-polekowe-eps-dysdyskinezy',
+    'Uporczywy niepokój ruchowy po częściowym agoniście',
+    'Damian R., 27 lat',
+    'Zaawansowany',
+    'Pacjent z rozpoznaniem schizofrenii po włączeniu arypiprazolu w dawce 15 mg/d zgłasza, że „nie może znaleźć sobie miejsca”, ciągle przestępuje z nogi na nogę i czuje wewnętrzny przymus chodzenia.',
+    [
+      {
+        stage: 'Identyfikacja akatyzacji vs pobudzenie psychotyczne',
+        context: 'W badaniu: Damian nieustannie maszeruje po gabinecie, siada na kilka sekund i natychmiast wstaje. Nie ma nasilenia omamów ani urojeń, odczuwa natomiast potworny dyskomfort wewnętrzny.',
+        prompt: 'Jakie zaburzenie ruchowe polekowe prezentuje pacjent?',
+        choices: [
+          ['Akatyzja polekowa (subiektywne poczucie niepokoju ruchowego połączone z obiektywną ruchliwością kończyn dolnych)', 'Akatyzja jest częstym wczesnym działaniem niepożądanym częściowych agonistów D2 i silnych antagonistów D2.'],
+          ['Późne dyskinezy (tardive dyskinesia)', 'Późne dyskinezy rozwijają się po wielu miesiącach/latach leczenia i cechują się mimowolnymi ruchami choreiformnymi, zazwyczaj bez subiektywnego przymusu.'],
+          ['Katatonia z pobudzeniem', 'W katatonii pobudzenie ma charakter bezcelowy, chaotyczny i towarzyszą mu inne cechy (echolalia, stereotypie, negatywizm).'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Ryzyko kliniczne nieleczonej akatyzacji',
+        context: 'Pacjent mówi lekarzowi: „Jeśli to uczucie nie minie, chyba wyskoczę przez okno”.',
+        prompt: 'Z jakim poważnym ryzykiem klinicznym wiąże się nierozpoznana lub zlekceważona akatyzja polekowa?',
+        choices: [
+          ['Gwałtowny wzrost ryzyka impulsywnych zachowań samobójczych i agresywnych oraz porzucenie leczenia', 'Nieznośny dyskomfort psychoruchowy w akatyzacji jest udokumentowanym czynnikiem ryzyka nagłych prób samobójczych.'],
+          ['Trwałe uszkodzenie słuchu', 'Akatyzja nie wpływa na narząd słuchu.'],
+          ['Rozwój cukrzycy typu 1', 'Nie ma związku z autoimmunologiczną destrukcją komórek beta trzustki.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Farmakoterapia I rzutu w akatyzacji',
+        context: 'Należy szybko przynieść ulgę pacjentowi i zredukować napięcie ruchowe.',
+        prompt: 'Jaki lek stanowi farmakoterapię I wyboru w ostrej akatyzacji polekowej wg wytycznych Maudsley?',
+        choices: [
+          ['Lipofilny beta-adrenolityk (propranolol w dawce 20–40 mg/d) lub krótkoterminowo mała dawka benzodiazepiny', 'Propranolol blokuje ośrodkowe i obwodowe receptory beta-adrenergiczne, skutecznie redukując akatyzję u większości chorych.'],
+          ['Podwojenie dawki neuroleptyku wywołującego objaw', 'Zwiększenie dawki neuroleptyku dramatycznie zaostrzy akatyzję.'],
+          ['Wdrożenie dużych dawek leków przeciwbólowych z grupy opioidów', 'Opioidy nie są wskazane w leczeniu akatyzacji polekowej.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Optymalizacja schematu przeciwpsychotycznego',
+        context: 'Po ustąpieniu ostrego epizodu rozważasz długofalowy plan leczenia Damiana.',
+        prompt: 'Jakie działanie w zakresie dawkowania arypiprazolu jest uzasadnione, jeśli akatyzja ma tendencję do nawracania?',
+        choices: [
+          ['Zmniejszenie dawki arypiprazolu (np. do 10 mg/d) lub wolniejsze miareczkowanie, a w razie braku tolerancji zamiana na lek o minimalnym potencjale akatyzacji (np. kwetiapina)', 'Wielu pacjentów toleruje arypiprazol w niższej dawce, zachowując kontrolę przeciwpsychotyczną bez akatyzacji.'],
+          ['Natychmiastowe przejście na dożylny haloperidol', 'Haloperidol wykazuje jeszcze wyższy potencjał wywoływania akatyzacji i parkinsonizmu.'],
+          ['Wstrzymanie leczenia bez żadnej obserwacji', 'Brak leczenia przeciwpsychotycznego u pacjenta ze schizofrenią prowadzi do nawrotu psychozy.'],
+        ],
+        answerIndex: 0,
+      },
     ]
   ),
 ];

@@ -1,4 +1,4 @@
-import type { CourseId, Lesson, Question, Source } from './course-types.ts';
+import type { CourseId, Lesson, LessonExperienceV2, Question, Source } from './course-types.ts';
 import {
   lessons as endoLessons,
   questions as endoQuestions,
@@ -6,6 +6,7 @@ import {
   sources as endoSources,
   modulesList as endoModulesList,
   plannedModules as endoPlannedModules,
+  lessonExperiences as endoLessonExperiences,
 } from './course.ts';
 import { cases as endoCases, type ClinicalCase } from './cases.ts';
 import { glossary as endoGlossary } from './glossary.ts';
@@ -19,6 +20,13 @@ import {
   psychiatryCases,
 } from './course-psychiatry.ts';
 import { psychiatryGlossary } from './glossary-psychiatry.ts';
+import {
+  psychiatryLessonExperiences,
+  PSYCHIATRY_LESSON_ENHANCEMENTS,
+  ALL_PSYCHIATRY_PRESETS,
+  type PsychiatryLessonEnhancementRegistry,
+  type PsychiatryWorkbenchPreset,
+} from './psychiatry/index.ts';
 
 export interface CourseModuleMeta {
   id: string;
@@ -45,6 +53,9 @@ export interface CourseBundle {
   plannedModules: string[];
   defaultSimTab: string;
   standardsBadge: string;
+  lessonExperiences?: Record<string, LessonExperienceV2>;
+  lessonEnhancements?: PsychiatryLessonEnhancementRegistry;
+  workbenchPresets?: Record<string, PsychiatryWorkbenchPreset>;
 }
 
 export const COURSES: Record<CourseId, CourseBundle> = {
@@ -67,6 +78,7 @@ export const COURSES: Record<CourseId, CourseBundle> = {
     plannedModules: endoPlannedModules,
     defaultSimTab: 'hpt',
     standardsBadge: 'ETA · PTE · ADA · EASD · Endocrine Society',
+    lessonExperiences: endoLessonExperiences,
   },
   psychiatry: {
     id: 'psychiatry',
@@ -87,6 +99,9 @@ export const COURSES: Record<CourseId, CourseBundle> = {
     plannedModules: psychiatryPlannedModules,
     defaultSimTab: 'psych-center',
     standardsBadge: 'ICD-11 CDDR · DSM-5-TR · Maudsley 15th · AGNP 2026',
+    lessonExperiences: psychiatryLessonExperiences,
+    lessonEnhancements: PSYCHIATRY_LESSON_ENHANCEMENTS,
+    workbenchPresets: ALL_PSYCHIATRY_PRESETS,
   },
 };
 

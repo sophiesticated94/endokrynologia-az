@@ -1,401 +1,352 @@
 import type { ClinicalCase } from './cases-psychiatry-builder.ts';
-import { make } from './cases-psychiatry-builder.ts';
+import { makeFlexibleCase } from './cases-psychiatry-builder.ts';
 
 export const psychiatryCasesPart1: ClinicalCase[] = [
-  make(
+  // 1. MSE - Początek Wątku B (Jakub M., 21 lat - stan podwyższonego ryzyka)
+  makeFlexibleCase(
     'wywiad-psychiatryczny-mse',
-    'Niepozorny niepokój u studenta',
-    'Mężczyzna, 21 lat',
-    'Podstawowy',
-    'Student III roku politechniki zgłasza się z powodu narastających od 3 miesięcy trudności w nauce, poczucia izolacji i niepokoju.',
+    'Wycofanie i spowolnienie u studenta (Wątek B)',
+    'Jakub M., 21 lat',
+    'Zaawansowany',
+    'Student informatyki zgłasza się zaniepokojony przez współlokatorów: od 3 miesięcy opuszcza zajęcia, zamyka się w pokoju i ma poczucie obcości otoczenia.',
     [
-      [
-        'W badaniu pacjent ma zubożałą mimikę (hipomimia), wypowiada się cicho, z wydłużonym czasem latencji odpowiedzi. Nie zgłasza jawnych urojeń ani omamów.',
-        'Które elementy w ocenie MSE wskazują na obecność objawów ubytkowych (negatywnych)?',
-        ['Spłycenie afektu, alogia (ubóstwo mowy) oraz wycofanie społeczne', 'Objawy negatywne cechują się deficytem ekspresji emocjonalnej i zubożeniem kontaktu.'],
-        ['Wyłącznie tachykardia i drżenie rąk', 'Objawy wegetatywne nie definiują zespołu ubytkowego w schizofrenii.'],
-      ],
-      [
-        'Wykonano podstawowe badania krwi, toksykologię moczu (ujemna) oraz konsultację neurologiczną (bez odchyleń).',
-        'Jaki krok diagnostyczny jest kluczowy przy podejrzeniu prodromu psychozy u osoby młodej?',
-        ['Szczegółowy wywiad od rodziny na temat dynamiki zmian funkcjonowania i neuroobrazowanie MRI mózgu', 'Pozwala to ustalić trajektorię pogorszenia i wykluczyć wady lub procesy organiczne OUN.'],
-        ['Natychmiastowe skierowanie na rentgen klatki piersiowej i kości czaszki', 'Rentgen kości czaszki nie ocenia miąższu mózgowia ani psychozy.'],
-      ],
-      [
-        'Stan psychiczny pacjenta spełnia kryteria stanu podwyższonego ryzyka psychozy (At-Risk Mental State - ARMS / CHR).',
-        'Jakie jest prawidłowe rozpoznanie kliniczne na tym etapie?',
-        ['Stan wysokiego ryzyka psychozy z przewagą dysfunkcji poznawczych i wycofania', 'Brak w pełni ukształtowanych objawów wytwórczych nie pozwala jeszcze na rozpoznanie schizofrenii.'],
-        ['Choroba Alzheimera o wczesnym początku', 'Otępienie alzheimerowskie w wieku 21 lat bez tła rodzinnego jest skrajnie nieprawdopodobne.'],
-      ],
-      [
-        'Rodzina pyta o dalsze postępowanie terapeutyczne.',
-        'Jaka jest rekomendowana strategia w fazie prodromalnej (CHR)?',
-        ['Ścisły monitoring kliniczny, psychoedukacja i wsparcie psychoterapeutyczne CBT (neuroleptyki tylko w razie progresji do jawnej psychozy)', 'Wytyczne zalecają powściągliwość w rutynowym włączaniu neuroleptyków przed jawnym epizodem wytwórczym.'],
-        ['Wdrożenie haloperydolu w maksymalnej dawce domięśniowo', 'Klasyczne neuroleptyki w prodromie są błędem i nasilają apatię.'],
-      ],
-    ]
+      {
+        stage: 'Obserwacja i badanie MSE',
+        context: 'W gabinecie Jakub ma wyraźnie zubożałą mimikę (hipomimia), wypowiada się cicho, z wydłużoną latencją odpowiedzi (2–3 sekundy). Zaprzecza głosom i podsłuchom, ale wspomina o „dziwnym napięciu w powietrzu”.',
+        prompt: 'Które elementy badania MSE wskazują na prodromalne objawy ubytkowe (negatywne), a nie na zwykły lęk społeczny?',
+        choices: [
+          ['Spłycenie afektu, alogia (ubóstwo treści i ilości mowy) oraz bierność w kontakcie emocjonalnym', 'Objawy ubytkowe cechują się pierwotnym deficytem ekspresji i modulacji emocjonalnej, trudnym do przezwyciężenia w bezpośredniej relacji.'],
+          ['Izolowane drżenie rąk i przyspieszenie oddechu bez zubożenia mimiki', 'Objawy autonomiczne są charakterystyczne dla pobudzenia lękowego, a nie dla osiowych objawów ubytkowych.'],
+          ['Deklaratywny lęk przed oceną ze sprawną modulacją głosu i pełnym kontaktem wzrokowym', 'W lęku społecznym pacjent przeżywa silne emocje i wykazuje adekwatną ekspresję mimiczną mimo unikania ekspozycji.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Diagnostyka różnicowa i badania',
+        context: 'Toksykologia moczu na amfetaminę, THC, opioidy jest ujemna. W podstawowych badaniach krwi (morfologia, CRP, TSH) brak odchyleń.',
+        prompt: 'Jaki wniosek diagnostyczny jest najbardziej uzasadniony w odniesieniu do badań somatycznych?',
+        choices: [
+          ['Prawidłowe wyniki zmniejszają prawdopodobieństwo ostrej intoksykacji i zaburzeń tarczycy, ale nie wykluczają procesu psychotycznego ani rzadszych przyczyn organicznych', 'Badania dodatkowe zawężają pole różnicowe, lecz nie stanowią bezpośredniego potwierdzenia pierwotnej psychozy.'],
+          ['Prawidłowy panel definitywnie dowodzi pierwotnej schizofrenii i zwalnia z dalszej czujności somatycznej', 'Brak odchyleń w rutynowych badaniach krwi nie stanowi dowodu jednostki psychiatrycznej; wymaga korelacji z trajektorią objawów.'],
+          ['Ujemna toksykologia jednoznacznie wyklucza wpływ jakichkolwiek substancji psychoaktywnych w ostatnich miesiącach', 'Rutynowe testy moczowe wykrywają substancje w oknie od kilkunastu godzin do kilku dni (dłużej dla THC), nie dokumentując dłuższego wywiadu.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Kwalifikacja kliniczna (ARMS/CHR)',
+        context: 'Nasilenie objawów spełnia kryteria stanu wysokiego ryzyka psychozy (At-Risk Mental State / CHR). Jakub ma spadek funkcjonowania w skali SOFAS z 85 do 45 punktów.',
+        prompt: 'Jaka strategia postępowania jest rekomendowana w fazie CHR/ARMS wg wytycznych EBM?',
+        choices: [
+          ['Ścisłe monitorowanie kliniczne, psychoedukacja rodziny i terapia CBT skoncentrowana na prodromie; leki przeciwpsychotyczne tylko w razie progresji do jawnego epizodu', 'Wytyczne nie zalecają rutynowej neuroleptyzacji w fazie prodromu ze względu na brak dowodu na zapobieganie psychozie i ryzyko metaboliczne/sedacji.'],
+          ['Natychmiastowe włączenie haloperydolu w dawce 10 mg/d celem profilaktyki uszkodzenia istoty szarej', 'Klasyczne neuroleptyki w wysokich dawkach w prodromie są błędem sztuki i nasilają objawy negatywne.'],
+          ['Uspokojenie pacjenta i odstąpienie od jakichkolwiek dalszych wizyt kontrolnych', 'Brak monitorowania w fazie wysokiego ryzyka uniemożliwia wczesną interwencję w chwili debiutu jawnej psychozy.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Analiza kontrfaktyczna',
+        context: 'Rozważ alternatywny rozwój sytuacji klinicznej u Jakuba.',
+        prompt: 'Gdyby Jakub zgłosił nagłe pojawienie się w nocy omamów wzrokowych, falującego poziomu przytomności i splątania, co byłoby najbardziej dyskryminującym wnioskiem?',
+        choices: [
+          ['Obraz ten silnie przemawia przeciwko typowemu prodromowi schizofrenii i nakazuje pilną diagnostykę majaczenia / zapalenia mózgu (np. anty-NMDAR)', 'Fluktuacje świadomości i dominacja omamów wzrokowych są czerwonymi flagami organicznymi wymagającymi pilnego oddziału neurologii/OIT.'],
+          ['Stan ten jest klasycznym objawem zaostrzenia schizofrenii i wymaga jedynie podwojenia dawki neuroleptyku', 'Schizofrenia przebiega przy jasnej świadomości; zaburzenia przytomności wykluczają pierwotny proces osiowy.'],
+          ['Objawy te potwierdzają zaburzenie depresyjne z lękiem uogólnionym', 'Splątanie i omamy wzrokowe nie mieszczą się w obrazie niepowikłanego epizodu depresyjnego.'],
+        ],
+        answerIndex: 0,
+        counterfactual: {
+          alteredFact: 'Zaburzenia świadomości i omamy wzrokowe zamiast izolowanego wycofania',
+          supports: ['Majaczenie (delirium)', 'Autoimmunologiczne zapalenie mózgu (anty-NMDAR)', 'Ostra neuroinfekcja'],
+          arguesAgainst: ['Pierwotna schizofrenia', 'Prodrom CHR'],
+          mostDiscriminatingNextStep: 'Pilne nakłucie lędźwiowe, EEG i panel przeciwciał przeciwneuronalnych',
+          invalidatedManagementSteps: ['Leczenie ambulatoryjne CBT bez hospitalizacji somatycznej'],
+        },
+      },
+    ],
+    { threadId: 'thread-psychosis-trs', timeOffsetWeeks: 0 }
   ),
-  make(
+
+  // 2. DSM-5 vs ICD-11
+  makeFlexibleCase(
     'klasyfikacje-dsm5-icd11',
     'Dylemat kryteriów w gabinecie POZ',
-    'Kobieta, 29 lat',
+    'Magdalena R., 29 lat',
     'Podstawowy',
     'Pacjentka zgłasza się 6 tygodni po nagłej utracie pracy i rozstaniu z partnerem. Skarży się na ciągły smutek, płaczliwość i bezsenność.',
     [
-      [
-        'Pacjentka spełnia 6 z 9 kryteriów epizodu depresyjnego wg DSM-5-TR, objawy trwają nieprzerwanie od 4 tygodni, występuje anhedonia i poczucie winy.',
-        'Czy obecność ciężkiego stresora życiowego (utrata pracy) wyklucza rozpoznanie epizodu depresyjnego?',
-        ['Nie, kryteria DSM-5-TR i ICD-11 jednoznacznie zniosły wykluczenie żałoby/stresu, jeśli spełnione są pełne kryteria epizodu', 'Kontekst stresowy nie unieważnia biologicznego epizodu depresyjnego wymagającego leczenia.'],
-        ['Tak, przy obecności stresora można rozpoznać wyłącznie przejściowe zmęczenie', 'Bagatelizowanie ciężkiego epizodu jako "reakcji na stres" opóźnia skuteczną terapię.'],
-      ],
-      [
-        'W badaniach laboratoryjnych TSH 1,8 mIU/l, morfologia prawidłowa, CRP w normie.',
-        'Co wnosi prawidłowy panel podstawowy w tym przypadku?',
-        ['Potwierdza brak uchwytnej somatycznej przyczyny dekompensacji afektywnej', 'Pozwala na bezpieczne postawienie diagnozy pierwotnego epizodu depresyjnego.'],
-        ['Wskazuje na bezwzględną konieczność biopsji szpiku kostnego', 'Brak jakichkolwiek wskazań hematologicznych do biopsji szpiku.'],
-      ],
-      [
-        'Objawy trwają ponad miesiąc, nasilenie w skali MADRS wynosi 26 punktów (umiarkowane).',
-        'Jak brzmi pełne rozpoznanie wg ICD-11?',
-        ['Epizod depresyjny umiarkowany bez cech psychotycznych (6A70.1)', 'Liczba objawów i upośledzenie ról społecznych odpowiadają nasileniu umiarkowanemu.'],
-        ['Ostre zaburzenie dysocjacyjne tożsamości', 'Pacjentka nie wykazuje cech dysocjacyjnych.'],
-      ],
-      [
-        'Klinicysta planuje optymalną interwencję leczniczą.',
-        'Jakie postępowanie I wyboru rekomendują wytyczne NICE i CANMAT dla depresji umiarkowanej?',
-        ['Farmakoterapia lekiem z grupy SSRI (np. sertralina, escitalopram) skojarzona z psychoterapią poznawczo-behawioralną', 'Połączenie farmakoterapii i psychoterapii daje najwyższy odsetek trwałej remisji.'],
-        ['Wyłącznie skierowanie do sanatorium uzdrowiskowego bez leków', 'Umiarkowana depresja wymaga aktywnego leczenia przeciwdepresyjnego.'],
-      ],
+      {
+        stage: 'Ocena kryteriów diagnostycznych',
+        context: 'Pacjentka spełnia 6 z 9 kryteriów epizodu depresyjnego wg DSM-5-TR, objawy trwają nieprzerwanie od 4 tygodni, występuje anhedonia i poczucie winy.',
+        prompt: 'Czy obecność ciężkiego stresora życiowego (utrata pracy, rozstanie) wyklucza rozpoznanie epizodu depresyjnego?',
+        choices: [
+          ['Nie, kryteria DSM-5-TR i ICD-11 zniosły automatyczne wykluczenie żałoby i reakcji stresowych, jeśli spełniony jest pełny biologiczny zespół objawów', 'Obecność stresora nie zaprzecza biologicznemu epizodowi depresyjnemu wymagającemu adekwatnego leczenia.'],
+          ['Tak, przy obecności stresora klasyfikacje nakazują wyłącznie rozpoznanie reakcji adaptacyjnej bez leczenia', 'Bagatelizowanie pełnoobjawowego epizodu jako zwykłej reakcji na stres opóźnia leczenie.'],
+          ['Stresor życiowy pozwala rozpoznać depresję tylko wtedy, gdy pacjent ma myśli samobójcze z planem', 'Kryteria rozpoznania nie wymagają tendencji suicydalnych do stwierdzenia epizodu.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Interpretacja badań laboratoryjnych',
+        context: 'TSH wynosi 1,8 mIU/l, morfologia prawidłowa, CRP <1 mg/l.',
+        prompt: 'Jak poprawnie zinterpretować te wyniki z perspektywy rozumowania klinicznego?',
+        choices: [
+          ['Zmniejszają prawdopodobieństwo jawnej niedoczynności tarczycy i aktywnego stanu zapalnego, wspierając diagnozę pierwotnego zaburzenia afektywnego', 'Prawidłowe wyniki eliminują typowe maski internistyczne, choć nie stanowią bezpośredniego testu na depresję.'],
+          ['Definitywnie wykluczają wszystkie schorzenia somatyczne mogące imitować zespół zmęczeniowy', 'Laboratorium w normie nie wyklucza zaburzeń snu (np. bezdechu) ani wczesnych faz innych chorób.'],
+          ['Wskazują na konieczność wykonania pilnej punkcji lędźwiowej', 'Brak wskazań neurologicznych do inwazyjnej diagnostyki płynu mózgowo-rdzeniowego.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Kwalifikacja nasilenia i postępowanie',
+        context: 'Wynik w skali MADRS wynosi 26 punktów (nasilenie umiarkowane).',
+        prompt: 'Jakie postępowanie pierwszego wyboru zalecają wytyczne NICE i CANMAT?',
+        choices: [
+          ['Farmakoterapia SSRI (np. sertralina, escitalopram) skojarzona ze strukturalną psychoterapią CBT', 'W depresji umiarkowanej połączenie farmakoterapii i psychoterapii wykazuje najwyższą skuteczność.'],
+          ['Monoterapia lekami nasennymi z grupy Z przez 6 miesięcy', 'Leki Z nie leczą depresji i niosą ryzyko uzależnienia.'],
+          ['Wstrzymanie jakichkolwiek interwencji do roku od wystąpienia stresora', 'Brak leczenia utrwala dysfunkcję i zwiększa ryzyko przewlekłości.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Decyzja w warunkach niepewności',
+        context: 'Pacjentka pyta o czas potrzebny do oceny skuteczności włączonego leku przeciwdepresyjnego.',
+        prompt: 'Jaka informacja edukacyjna jest kluczowa dla bezpieczeństwa terapii?',
+        choices: [
+          ['Pełny efekt terapeutyczny wymaga 4–6 tygodni na dawce docelowej; w pierwszych 10–14 dniach może przejściowo wystąpić niepokój lub nudności', 'Prawidłowa psychoedukacja o latencji terapeutycznej zapobiega przedwczesnemu odstawieniu leku przez pacjenta.'],
+          ['Lek musi przynieść pełną poprawę w ciągu 48 godzin od pierwszej tabletki', 'Działanie przeciwdepresyjne zależy od adaptacji receptorowych i neuroplastyczności, co wymaga czasu.'],
+          ['Poprawa nastroju pojawi się dopiero po 6 miesiącach nieprzerwanego leczenia', 'Wstępna odpowiedź kliniczna jest widoczna po 2–4 tygodniach.'],
+        ],
+        answerIndex: 0,
+      },
     ]
   ),
-  make(
+
+  // 3. Psychopatologia
+  makeFlexibleCase(
     'psychopatologia-objawow',
     'Głosy zza ściany i poczucie podsłuchu',
-    'Mężczyzna, 36 lat',
+    'Krzysztof B., 36 lat',
     'Zaawansowany',
-    'Inżynier informatyk twierdzi, że sąsiedzi zamontowali w gniazdkach mikrofony i komentują każdy jego krok w mieszkaniu.',
+    'Inżynier informatyk zgłasza się przekonany, że sąsiedzi zamontowali w gniazdkach mikrofony i komentują każdy jego krok w mieszkaniu.',
     [
-      [
-        'Pacjent słyszy dwa obce głosy dyskutujące między sobą na temat jego myśli i zachowań. Jest bezwzględnie przekonany o realności podsłuchu.',
-        'Jak w terminologii psychopatologicznej określa się te objawy?',
-        ['Omamy słuchowe słowne (omamy komentujące) oraz usystematyzowane urojenia ksobne i prześladowcze', 'Głosy komentujące w 3. osobie i urojenia prześladowcze to klasyczne objawy osiowe psychozy.'],
-        ['Iluzje fizjologiczne i myśli natrętne ego-dystoniczne', 'W iluzjach istnieje realny bodziec, a myśli natrętne są krytykowane przez pacjenta jako własne i absurdalne.'],
-      ],
-      [
-        'W wykonanym w trybie pilnym badaniu MRI głowy nie uwidoczniono zmian ogniskowych ani obrzęku. Toksykologia moczu ujemna.',
-        'Jak interpretować ten wynik u pacjenta z ostrymi objawami wytwórczymi?',
-        ['Wyklucza proces ekspansywny OUN, udar oraz intoksykację narkotykami, potwierdzając pierwotne tło psychotyczne', 'Czyste neuroobrazowanie i ujemna toksykologia kierują diagnostykę ku spektrum schizofrenii.'],
-        ['Dowodzi, że pacjent symuluje objawy dla uzyskania renty', 'Prawidłowe MRI nie wyklucza psychozy; schizofrenia nie daje widocznych guzów w rutynowym MRI.'],
-      ],
-      [
-        'Objawy trwają nieprzerwanie od 4 miesięcy, powodując całkowitą izolację w zaciemnionym pokoju.',
-        'Jakie jest rozpoznanie kliniczne wg ICD-11?',
-        ['Schizofrenia (Schizophrenia - 6A20)', 'Utrzymywanie się osiowych objawów urojeniowo-omamowych przez ponad 1 miesiąc spełnia wymogi ICD-11.'],
-        ['Zaburzenie afektywne dwubiegunowe z manią', 'Brak wzmożonego nastroju, ekspansywności i epizodów maniakalnych.'],
-      ],
-      [
-        'Pacjent nie przyjmował dotąd żadnych leków przeciwpsychotycznych.',
-        'Jaki neuroleptyk i w jakim celu należy zaproponować w pierwszej kolejności?',
-        ['Atypowy lek przeciwpsychotyczny (np. aripiprazol lub rysperydon w małej/średniej dawce)', 'Leki II/III generacji cechują się korzystnym profilem tolerancji i wysoką skutecznością w pierwszym epizodzie.'],
-        ['Chlorpromazyna w dawce 1000 mg/d domięśniowo', 'Stosowanie megadawek FGA w pierwszym epizodzie grozi ciężkim zespołem pozapiramidowym i zniechęceniem do leczenia.'],
-      ],
+      {
+        stage: 'Fenomenologia objawów wytwórczych',
+        context: 'Krzysztof słyszy dwa obce głosy dyskutujące między sobą w 3. osobie na temat jego myśli i zachowań. Uznaje ich realność za bezdyskusyjną (brak krytycyzmu).',
+        prompt: 'Jak w ścisłej nomenklaturze psychopatologicznej określa się ten zestaw objawów?',
+        choices: [
+          ['Omamy słuchowe słowne (omamy komentujące) oraz urojenia ksobne i prześladowcze (objawy osiowe wg Schneidera)', 'Głosy dyskutujące w 3. osobie i urojenia oddziaływania stanowią klasyczne objawy I rzędu wg Kurta Schneidera.'],
+          ['Myśli natrętne ego-dystoniczne i iluzje zmysłowe', 'Myśli natrętne są przez pacjenta krytykowane jako absurdalne, a iluzje wymagają zniekształcenia realnego bodźca.'],
+          ['Zespół paranoidalny w przebiegu ostrego epizodu maniakalnego', 'Brak wzmożonego napędu, gonitwy myśli i wielkościowości wyklucza czystą manię.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Neuroobrazowanie i diagnostyka organiczna',
+        context: 'W wykonanym badaniu MRI mózgu nie uwidoczniono zmian ogniskowych ani anomalii naczyniowych. Toksykologia moczu ujemna.',
+        prompt: 'Jak prawidłowo interpretować brak zmian w rezonansie magnetycznym?',
+        choices: [
+          ['Zmniejsza prawdopodobieństwo makroskopowego guza OUN lub udaru, lecz nie wyklucza zaburzeń na poziomie sieci neuronalnych typowych dla schizofrenii', 'Neuroobrazowanie strukturalne wyklucza przyczyny makroskopowe, ale schizofrenia nie daje widocznych ognisk w rutynowym MRI.'],
+          ['Definitywnie dowodzi, że pacjent jest zdrowy neurologicznie i symuluje objawy', 'Prawidłowe MRI nie wyklucza psychozy; większość pacjentów ze schizofrenią ma prawidłowy obraz MRI.'],
+          ['Oznacza, że badanie należy powtarzać co 2 tygodnie przez rok', 'Brak wskazań do seryjnego rezonansu przy stabilnym obrazie klinicznym.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Wybór strategii terapeutycznej',
+        context: 'Objawy trwają od 4 miesięcy i doprowadziły do całkowitego wycofania z pracy zawodowej.',
+        prompt: 'Jaki neuroleptyk i w jakiej strategii dawkowania jest rekomendowany w pierwszym epizodzie psychozy?',
+        choices: [
+          ['Atypowy lek przeciwpsychotyczny (SGA, np. aripiprazol, risperidon lub olanzapina) w małej lub umiarkowanej dawce z powolnym miareczkowaniem', 'Pierwszy epizod cechuje się wysoką wrażliwością terapeutyczną i podatnością na objawy pozapiramidowe; dawki powinny być niższe niż w nawrotach.'],
+          ['Haloperydol w dawce 20 mg/d w skojarzeniu z lewomepromazyną domięśniowo', 'Wysokie dawki FGA w pierwszym epizodzie generują ciężkie objawy pozapiramidowe i wtórną traumę leczenia.'],
+          ['Wyłącznie benzodiazepina w monoterapii przez 3 miesiące', 'Benzodiazepiny redukują lęk, lecz nie posiadają swoistego działania przeciwpsychotycznego na szlak mezolimbiczny.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Follow-up i wczesne działania niepożądane',
+        context: 'Po włączeniu leczenia Krzysztof zgłasza niepokój ruchowy i niemożność usiedzenia na krześle.',
+        prompt: 'Jaka reakcja kliniczna jest priorytetowa?',
+        choices: [
+          ['Rozpoznanie akatyzacji polekowej i rozważenie redukcji dawki lub dołączenia propranololu', 'Akatyzja bywa błędnie mylona z narastaniem pobudzenia psychotycznego, co grozi błędnym zwiększeniem dawki neuroleptyku.'],
+          ['Uznanie objawu za opór psychologiczny i natychmiastowe podwojenie dawki neuroleptyku', 'Zwiększenie dawki neuroleptyku dramatycznie nasili akatyzję i może sprowokować zachowania samobójcze.'],
+          ['Zalecenie intensywnego wysiłku fizycznego bez weryfikacji leków', 'Nie usuwa neurobiologicznego podłoża akatyzji w prążkowiu.'],
+        ],
+        answerIndex: 0,
+      },
     ]
   ),
-  make(
+
+  // 4. Depresja melancholiczna - Początek Wątku A (Tomasz, 48 lat)
+  makeFlexibleCase(
     'depresja-fenotypy-i-kryteria',
-    'Gdy zmęczenie nie ustępuje po urlopie',
-    'Kobieta, 45 lat',
-    'Podstawowy',
-    'Księgowa zgłasza się z powodu przewlekłego spadku energii, utraty wagi o 6 kg i budzenia się codziennie o 3 nad ranem.',
+    'Gdy zmęczenie nie ustępuje po urlopie (Wątek A)',
+    'Tomasz K., 48 lat',
+    'Zaawansowany',
+    'Dyrektor finansowy zgłasza się z powodu postępującej utraty energii, spadku masy ciała o 7 kg i codziennego wybudzania się o 3:30 nad ranem.',
     [
-      [
-        'Pacjentka nie cieszy się z żadnych aktywności, czuje się najgorzej o poranku, ma spowolniony chód i poczucie bezsensu życia.',
-        'Jaki fenotyp epizodu depresyjnego prezentuje pacjentka?',
-        ['Epizod depresyjny z cechami melancholicznymi (somatycznymi)', 'Wczesne budzenie, poranne pogorszenie, utrata wagi i anhedonia definiują cechy melancholiczne.'],
-        ['Epizod depresyjny o fenotypie atypowym', 'W depresji atypowej występuje wzmożony apetyt, hipersomnia i reaktywność nastroju.'],
-      ],
-      [
-        'Wykonano badania: TSH 2,2 mIU/l, fT4 w normie, ferrytyna 60 ng/ml, witamina B12 400 pg/ml, morfologia prawidłowa.',
-        'Jaka jest interpretacja profilu metaboliczno-tarczycowego?',
-        ['Prawidłowa czynność tarczycy i gospodarka żelazem wykluczają częste somatyczne przyczyny zespołu melancholicznego', 'Pozwala to skupić się na celowanej farmakoterapii przeciwdepresyjnej.'],
-        ['Wskazuje na natychmiastową konieczność podania jodu promieniotwórczego', 'Tarczyca pracuje prawidłowo, brak wskazań do leczenia radiojodem.'],
-      ],
-      [
-        'Nasilenie depresji w skali HAM-D wynosi 24 punkty (ciężka depresja bez objawów psychotycznych). Myśli samobójcze o charakterze rezygnacyjnym.',
-        'Jakie jest rozpoznanie?',
-        ['Ciężki epizod depresyjny z zespołem somatycznym (melancholicznym)', 'Kombinacja głębokiego spowolnienia i wegetatywnych cech melancholii.'],
-        ['Zaburzenie hipochondryczne', 'Pacjentka nie skupia się na lęku przed konkretną chorobą, lecz ma globalny deficyt nastroju i energii.'],
-      ],
-      [
-        'Pacjentka wymaga skutecznej farmakoterapii przywracającej napęd i sen.',
-        'Jaki lek przeciwdepresyjny I wyboru posiada silne dowody w fenotypie melancholicznym?',
-        ['Lek o profilu podwójnym SNRI (np. wenlafaksyna, duloksetyna) lub SSRI w połączeniu z mirtazapiną na noc', 'Modulacja noradrenergiczna i serotoninergiczna wykazuje wysoką skuteczność w melancholii ze spowolnieniem.'],
-        ['Hydroksyzyna w kroplach doraźnie', 'Hydroksyzyna jest lekiem przeciwhistaminowym, nie leczy ciężkiej depresji melancholicznej.'],
-      ],
-    ]
+      {
+        stage: 'Identyfikacja fenotypu klinicznego',
+        context: 'Tomasz nie odczuwa żadnej radości z sukcesów zawodowych (pełna anhedonia), ma głębokie poczucie winy wobec rodziny i czuje się najgorzej o poranku.',
+        prompt: 'Jaki fenotyp epizodu depresyjnego prezentuje pacjent?',
+        choices: [
+          ['Epizod depresyjny z cechami melancholicznymi (somatycznymi)', 'Wczesne budzenie, poranne pogorszenie, spadek masy ciała i głęboka anhedonia to klasyczny wzorzec melancholii.'],
+          ['Depresja atypowa z reaktywnością nastroju i hiperfagią', 'W depresji atypowej apetyt rośnie, a nastrój przejściowo poprawia się w odpowiedzi na bodźce.'],
+          ['Reakcja żałoby bez cech zespołu biologicznego', 'U Tomasza brak straty bliskiej osoby, a obecny jest ciężki zespół neuroendokrynny.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Badania i pułapki różnicowania',
+        context: 'Wykonano badania: TSH 2,1 mIU/l, FT4 w normie, ferrytyna 80 ng/ml, witamina B12 420 pg/ml, morfologia prawidłowa.',
+        prompt: 'Co wynika z prawidłowego profilu metaboliczno-tarczycowego?',
+        choices: [
+          ['Prawidłowe stężenie TSH zmniejsza prawdopodobieństwo pierwotnej niedoczynności tarczycy jako przyczyny apatii, wspierając pierwotną etiologię afektywną', 'Panel hormonalny eliminuje częstą maskę internistyczną, pozwalając skupić się na celowanym leczeniu przeciwdepresyjnym.'],
+          ['Dowodzi, że pacjent nie ma żadnych predyspozycji genetycznych do zaburzeń nastroju', 'Prawidłowe TSH nie mówi nic o genetyce zaburzeń afektywnych.'],
+          ['Wskazuje na konieczność wykonania biopsji tarczycy', 'Prawidłowa czynność tarczycy bez wola guzkowego nie wymaga biopsji.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Kwalifikacja terapeutyczna w melancholii',
+        context: 'Skala HAM-D wynosi 25 punktów. Tomasz ma myśli rezygnacyjne, bez aktywnego planu samobójczego.',
+        prompt: 'Jaki profil leku przeciwdepresyjnego wykazuje najwyższą skuteczność w fenotypie melancholicznym ze spowolnieniem?',
+        choices: [
+          ['Lek o podwójnym mechanizmie noradrenergiczno-serotoninergicznym (SNRI, np. wenlafaksyna, duloksetyna) lub skojarzenie SSRI z mirtazapiną', 'Modulacja układu noradrenergicznego i receptorów 5-HT2/3 skuteczniej przełamuje spowolnienie melancholiczne niż monoterapię lekiem słabo aktywizującym.'],
+          ['Wyłącznie preparaty dziurawca w herbatkach ziołowych', 'Ziołolecznictwo jest nieskuteczne i niebezpieczne w ciężkim epizodie melancholicznym.'],
+          ['Doraźne leki uspokajające w kroplach bez antydepresantu', 'Leki uspokajające nie leczą biologicznego deficytu napędu i nastroju.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Analiza kontrfaktyczna: Wywiad dwubiegunowy',
+        context: 'Rozważ zmianę kluczowego faktu w wywiadzie Tomasza.',
+        prompt: 'Gdyby Tomasz wspomniał, że 3 lata temu przez 2 tygodnie spał po 2 godziny na dobę, kupił 3 samochody i czuł się „geniuszem finansowym”, jak zmieniłoby to Twoje postępowanie?',
+        choices: [
+          ['Klasyfikuje to pacjenta w spektrum choroby afektywnej dwubiegunowej (ChAD I); monoterapię SNRI należy bezwzględnie wstrzymać na rzecz stabilizatora nastroju (np. litu)', 'Podanie silnego leku przeciwdepresyjnego w monoterapii w ChAD grozi inwersją fazy w ciężką manię lub stan mieszany.'],
+          ['Informacja ta nie ma znaczenia, ponieważ epizod manii miał miejsce dawno temu', 'Każdy przebyty epizod maniakalny trwale zmienia rozpoznanie z jednobiegunowej depresji na ChAD I.'],
+          ['Należy podać podwójną dawkę wenlafaksyny, aby zapobiec ponownej manii', 'Leki przeciwdepresyjne nie chronią przed manią, lecz ją prowokują.'],
+        ],
+        answerIndex: 0,
+        counterfactual: {
+          alteredFact: 'W wywiadzie epizod manii z wielkościowością i bezsennością',
+          supports: ['Choroba afektywna dwubiegunowa typu I (ChAD I)', 'Wskazanie do stabilizatora (lit, walproinian, kwetiapina)'],
+          arguesAgainst: ['Nawracające zaburzenie depresyjne (MDD)', 'Bezpieczeństwo monoterapii SNRI'],
+          mostDiscriminatingNextStep: 'Wdrożenie normotymika pod kontrolą TDM zamiast samego antydepresantu',
+          invalidatedManagementSteps: ['Monoterapia wenlafaksyną lub duloksetyną'],
+        },
+      },
+    ],
+    { threadId: 'thread-bipolar-spectrum', timeOffsetWeeks: 0 }
   ),
-  make(
+
+  // 5. Mania i hipomania - Kontynuacja Wątku A (Dorota K., 26 lat)
+  makeFlexibleCase(
     'mania-hipomania-spektrum',
-    'Kreatywny zryw i nieprzespane noce',
-    'Mężczyzna, 28 lat',
-    'Podstawowy',
-    'Grafik komputerowy od 5 dni śpi po 2 godziny na dobę, wziął dwa kredyty na "rewolucyjny startup" i mówi tak szybko, że trudno go zrozumieć.',
+    'Kreatywny zryw i nieprzespane noce (Wątek A)',
+    'Dorota K., 26 lat',
+    'Zaawansowany',
+    'Młoda architektka zostaje przyprowadzona przez partnera: od 5 dni śpi po 3 godziny, mówi z ogromną prędkością, zaciąga kredyty i twierdzi, że odkryła rewolucyjną teorię urbanistyki.',
     [
-      [
-        'Pacjent jest euforyczny, drażliwy przy próbie przerwania wypowiedzi, wykazuje słowotok, gonitwę myśli i wydatki znacznie przekraczające budżet.',
-        'Które cechy stanu psychicznego przesądzają o rozpoznaniu epizodu manii (a nie hipomanii)?',
-        ['Znaczne upośledzenie funkcjonowania społeczno-finansowego oraz objawy o nasileniu dezorganizującym', 'W hipomanii funkcjonowanie nie ulega załamaniu i brak jest tak skrajnych zachowań ryzykownych.'],
-        ['Wyłącznie zmniejszona potrzeba snu', 'Zmniejszona potrzeba snu występuje w obu stanach, to skala dysfunkcji różnicuje manię.'],
-      ],
-      [
-        'W wywiadzie: w wieku 23 lat przebył 3-miesięczny epizod ciężkiej depresji leczony bezskutecznie dwoma lekami przeciwdepresyjnymi.',
-        'Jak ten fakt z przeszłości modyfikuje rozumienie obrazu klinicznego?',
-        ['Wskazuje na Chorobę Afektywną Dwubiegunową typu I (ChAD I)', 'Wystąpienie choćby jednego pełnego epizodu manii w życiu definiuje rozpoznanie ChAD I.'],
-        ['Świadczy o tym, że pacjent jest zdrowy, a obecne zachowanie to fizjologiczna kompensacja', 'Jest to ciężki, patologiczny epizod afektywny wymagający hospitalizacji.'],
-      ],
-      [
-        'Wykluczono używanie stymulantów (toksykologia moczu ujemna). Stan spełnia kryteria manii.',
-        'Jakie jest rozpoznanie kliniczne?',
-        ['Epizod maniakalny w przebiegu zaburzenia afektywnego dwubiegunowego typu I', 'Spełnione pełne kryteria czasowe i objawowe manii.'],
-        ['Dystymia o wczesnym początku', 'Dystymia to przewlekłe obniżenie nastroju o małym nasileniu, a nie stan manii.'],
-      ],
-      [
-        'Pacjent odmawia przyjmowania leków doustnych i jest silnie pobudzony.',
-        'Jakie jest leczenie I rzutu w ostrej manii dwubiegunowej wg standardów CANMAT/ISBD?',
-        ['Lek przeciwpsychotyczny II generacji (np. olanzapina, aripiprazol lub kwetiapina) ewentualnie w skojarzeniu z litkiem lub walproinianem', 'SGA najszybciej opanowują pobudzenie maniakalne i przywracają sen.'],
-        ['Monoterapia fluoksetyną w dawce 60 mg/d', 'Antydepresant w ostrej manii dramatycznie nasiliłby pobudzenie i ryzyko agresji.'],
-      ],
-    ]
+      {
+        stage: 'Różnicowanie manii z hipomanią',
+        context: 'Dorota nie czuje zmęczenia, jest drażliwa przy próbie przerwania jej wywodu, a jej plany inwestycyjne grożą natychmiastową ruiną finansową. Nie wykazuje jednak objawów psychotycznych ani konieczności hospitalizacji przymusowej.',
+        prompt: 'Który czynnik rozstrzyga o zakwalifikowaniu epizodu jako pełnej manii, a nie hipomanii?',
+        choices: [
+          ['Znaczące upośledzenie funkcjonowania społeczno-zawodowego i podejmowanie skrajnie ryzykownych działań finansowych', 'Zgodnie z DSM-5-TR i ICD-11 hipomania NIE powoduje znacznego upośledzenia funkcjonowania; obecność poważnych strat oznacza manię.'],
+          ['Czas trwania objawów krótszy niż 2 miesiące', 'Kryterium manii to minimum 7 dni lub jakikolwiek czas przy hospitalizacji; 2 miesiące nie są wymagane.'],
+          ['Obecność prawidłowego ciśnienia tętniczego', 'Parametry hemodynamiczne nie różnicują poziomu manii.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Weryfikacja wywiadu farmakologicznego',
+        context: 'Partner ujawnia, że 3 tygodnie temu lekarz POZ włączył Dorocie sertralinę w dawce 100 mg/d z powodu obniżonego nastroju.',
+        prompt: 'Jak zaklasyfikować ten stan wg współczesnych kryteriów DSM-5-TR?',
+        choices: [
+          ['Pełny epizod maniakalny indukowany antydepresantem, utrzymujący się powyżej fizjologicznego efektu leku, upoważnia do rozpoznania ChAD', 'Kryteria DSM-5-TR jednoznacznie wskazują, że pełna mania wyindukowana lekiem przeciwdepresyjnym dowodzi obecności ChAD.'],
+          ['Jest to zwykłe działanie niepożądane leku niemające związku z chorobą dwubiegunową', 'Przejście w stan maniakalny po SSRI jest dowodem podatności dwubiegunowej.'],
+          ['Oznacza to natychmiastową konieczność zwiększenia dawki sertraliny do 200 mg', 'Podawanie antydepresantu w manii zaostrza pobudzenie i chaos myślowy.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Natychmiastowa interwencja farmakologiczna',
+        context: 'Należy szybko opanować wzmożony napęd, bezsenność i ryzyko autodestrukcji majątkowej.',
+        prompt: 'Jaki jest pierwszy i najważniejszy krok w farmakoterapii ostrej manii u Doroty?',
+        choices: [
+          ['Natychmiastowe odstawienie sertraliny i wdrożenie leku przeciwpsychotycznego o profilu antymaniakalnym (np. kwetiapina, olanzapina, arypiprazol) lub litu', 'Podstawą jest eliminacja czynnika napędzającego i szybka sedacja oraz stabilizacja nastroju lekiem SGA/litem.'],
+          ['Kontynuacja sertraliny z dołączeniem melatoniny na sen', 'Melatonina nie zatrzyma kaskady neurochemicznej ostrej manii.'],
+          ['Wdrożenie drugiego leku przeciwdepresyjnego o innym mechanizmie', 'Prowokuje stan mieszany i nasila ryzyko samobójcze.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Plan stabilizacji długoterminowej',
+        context: 'Po ustąpieniu epizodu ostrego pacjentka wymaga profilaktyki nawrotów w ChAD.',
+        prompt: 'Jaki lek stanowi złoty standard w zapobieganiu nawrotom manii i depresji oraz redukuje ryzyko samobójcze?',
+        choices: [
+          ['Węglan litu stosowany pod ścisłą kontrolą stężenia w surowicy (TDM 0,6–0,8 mmol/l)', 'Lit jest jedynym stabilizatorem o udowodnionym bezpośrednim działaniu antyautodestrukcyjnym i wysokiej skuteczności profilaktycznej.'],
+          ['Diazepam stosowany przewlekle codziennie', 'Benzodiazepiny nie mają właściwości normotymicznych i prowadzą do uzależnienia.'],
+          ['Hydroksyzyna w dawkach wzrastających', 'Hydroksyzyna nie zapobiega nawrotom ChAD.'],
+        ],
+        answerIndex: 0,
+      },
+    ],
+    { threadId: 'thread-bipolar-spectrum', timeOffsetWeeks: 12 }
   ),
-  make(
+
+  // 6. Psychoza i szlaki dopaminy - Kontynuacja Wątku B (Jakub M., debiut)
+  makeFlexibleCase(
     'psychoza-i-szlaki-dopaminy',
-    'Tajemnicze kody na parkingu',
-    'Mężczyzna, 24 lata',
+    'Gdy świat nabiera ukrytych znaczeń (Wątek B)',
+    'Jakub M., 21 lat',
     'Zaawansowany',
-    'Młody pracownik korporacji przestał wychodzić z mieszkania, twierdząc, że rejestracje aut na parkingu to zaszyfrowane groźby służb specjalnych.',
+    'Sześć miesięcy po pierwszej wizycie Jakub trafia na izbę przyjęć: twierdzi, że telewizor nadaje zaszyfrowane sygnały o zbliżającej się katastrofie, a ludzie na ulicy czytają w jego myślach.',
     [
-      [
-        'Pacjent nadaje neutralnym bodźcom wzrokowym (numery tablic, kolor kurtek przechodniów) głębokie, zagrażające znaczenie odnoszące się bezpośrednio do niego.',
-        'Jakie zjawisko neurobiologiczne i semiotyczne odpowiada za ten objaw?',
-        ['Nadawanie aberracyjnej wagi poznawczej (aberrant salience) wywołane hiperdopaminergią w szlaku mezolimbicznym', 'Nadmierny wyrzut dopaminy powoduje, że przypadkowe bodźce stają się dla pacjenta skrajnie ważne i przerażające.'],
-        ['Porażenie nerwu okoruchowego', 'Objaw ten dotyczy interpretacji znaczenia, a nie ruchomości gałek ocznych.'],
-      ],
-      [
-        'W szpitalu wykonano tomografię komputerową głowy (norma) oraz panel metaboliczny i toksykologiczny (czysty).',
-        'Jaka jest rola badań obrazowych w pierwszym epizodzie psychotycznym (FEP)?',
-        ['Konieczne wykluczenie guzów, naczyniaków, krwiaków przymózgowych i wad rozwojowych OUN', 'Organiczne uszkodzenia mózgu mogą idealnie naśladować pierwszy rzut schizofrenii.'],
-        ['Badanie neuroobrazowe służy do potwierdzenia podtypu schizofrenii', 'Neuroobrazowanie wyklucza przyczyny wtórne, nie stawia diagnozy schizofrenii.'],
-      ],
-      [
-        'Objawy trwają od 7 tygodni, pacjent nie radzi sobie z samoobsługą.',
-        'Jakie jest rozpoznanie kliniczne?',
-        ['Pierwszy epizod schizofrenii (6A20 wg ICD-11)', 'Utrzymywanie się osiowych urojeń ksobnych i ksobno-prześladowczych powyżej 1 miesiąca.'],
-        ['Fobia społeczna prosta', 'Fobia społeczna nie wiąże się z urojeniową interpretacją rzeczywistości.'],
-      ],
-      [
-        'Klinicysta planuje rozpoczęcie farmakoterapii przeciwpsychotycznej.',
-        'W jakim przedziale occupancy receptorów D2 w prążkowiu (okno Kapura) należy dążyć w badaniach neuroobrazowych?',
-        ['65% do 80% occupancy D2', 'Zapewnia to kontrolę psychozy bez ryzyka parkinsonizmu polekowego i hiperprolaktynemii.'],
-        ['Poniżej 30% occupancy', 'Poniżej 65% neuroleptyk nie wykazuje skuteczności przeciwpsychotycznej.'],
-      ],
-    ]
-  ),
-  make(
-    'zaburzenia-lekowe-gad-napadowy',
-    'Duszność w zatłoczonym metrze',
-    'Kobieta, 26 lat',
-    'Podstawowy',
-    'Architektka zgłasza się po trzech interwencjach Pogotowia Ratunkowego z powodu nagłych epizodów duszności, palpitacji i lęku przed śmiercią.',
-    [
-      [
-        'Napady pojawiają się nagle, trwają około 15–20 minut, towarzyszy im poczucie dławienia, zawroty głowy i drętwienie dłoni. W EKG i troponinach brak odchyleń.',
-        'Jakie rozpoznanie należy podejrzewać w pierwszej kolejności?',
-        ['Zaburzenie lękowe z napadami paniki (Panic Disorder) z lękiem antycypacyjnym', 'Nagłe rzuty obezwładniającego lęku wegetatywnego bez patologii kardiologicznej to klasyczna panika.'],
-        ['Astma oskrzelowa wysiłkowa', 'Prawidłowa spirometria i brak świstów w badaniu osłuchowym wykluczają astmę.'],
-      ],
-      [
-        'Wykluczono guz chromochłonny (prawidłowe metanefryny w moczu) oraz nadczynność tarczycy (TSH w normie).',
-        'Dlaczego diagnostyka różnicowa napadów paniki wymaga badań endokrynologicznych?',
-        ['Ponieważ nadczynność tarczycy i pheochromocytoma idealnie imitują autonomiczne objawy paniki', 'Wyrzut katecholamin lub hormonów tarczycy wywołuje identyczne pobudzenie adrenergiczne.'],
-        ['Badania te są zbędne i generują jedynie koszty', 'Zaniechanie wykluczenia schorzeń somatycznych jest błędem w sztuce lekarskiej.'],
-      ],
-      [
-        'Pacjentka zaczęła unikać jazdy metrem i galerii handlowych z obawy przed brakiem pomocy.',
-        'Jakie jest pełne rozpoznanie kliniczne?',
-        ['Zaburzenie lękowe z napadami paniki i agorafobią', 'Dołączające unikanie przestrzeni publicznych z lękiem przed uwięzieniem definiuje agorafobię.'],
-        ['Zaburzenie urojeniowe', 'Pacjentka ma pełen krytycyzm wobec lękowego charakteru objawów.'],
-      ],
-      [
-        'Pacjentka pyta o najskuteczniejszą formę leczenia długoterminowego.',
-        'Jakie leczenie I wyboru należy wdrożyć?',
-        ['SSRI (np. sertralina lub escitalopram w powolnej titracji) skojarzone z psychoterapią CBT z ekspozycją', 'SSRI długoterminowo tłumią pobudliwość ciała migdałowatego, a CBT odwrażliwia lęk przed lękiem.'],
-        ['Przepisanie alprazolamu w dawce 2 mg 3x dziennie przez rok', 'Prowadzi do ciężkiego uzależnienia i nasilenia lęku z odbicia.'],
-      ],
-    ]
-  ),
-  make(
-    'ocd-i-petla-cstc',
-    'Godziny przy zlewie i symetria biurka',
-    'Mężczyzna, 31 lat',
-    'Podstawowy',
-    'Programista myje ręce po 40 razy dziennie z obawy przed zarazkami, spóźniając się do pracy z powodu konieczności układania przedmiotów.',
-    [
-      [
-        'Pacjent zdaje sobie sprawę z absurdalności swoich obaw, jednak niewykonanie rytuału mycia wywołuje obezwładniający lęk i napięcie.',
-        'Która cecha odróżnia myśli natrętne w OCD od myśli urojeniowych w psychozie?',
-        ['Zachowany krytycyzm i poczucie ego-dystoniczności (pacjent wie, że myśli pochodzą z jego umysłu i są irracjonalne)', 'W psychozie urojenia są traktowane bezkrytycznie jako obiektywna prawda (ego-syntoniczność).'],
-        ['Występowanie wyłącznie w nocy', 'OCD manifestuje się przez cały dzień w trakcie codziennych czynności.'],
-      ],
-      [
-        'Dłonie pacjenta są zaczerwienione, z pęknięciami skóry i maceracją naskórka (objaw przymusowego mycia).',
-        'Jaki obwód neuronalny wykazuje nadaktywność w patogenezie tego zaburzenia?',
-        ['Pętla korowo-prążkowiowo-wzgórzowo-korowa (CSTC) obejmująca korę oczodołowo-czołową (OFC)', 'Zaburzenie bramkowania w prążkowiu uniemożliwia wygaszenie sygnału o błędzie lub zagrożeniu.'],
-        ['Drogi czuciowe sznurów tylnych rdzenia kręgowego', 'Sznury tylne przewodzą czucie wibracji i ułożenia, nie generują natręctw.'],
-      ],
-      [
-        'Nasilenie objawów w skali Y-BOCS wynosi 28 punktów (ciężkie OCD).',
-        'Jakie jest rozpoznanie?',
-        ['Zaburzenie obsesyjno-kompulsyjne (OCD - Obsessive-Compulsive Disorder)', 'Występują zarówno myśli natrętne (obsesje skażenia), jak i czynności natrętne (kompulsje mycia).'],
-        ['Obsesyjno-kompulsyjne zaburzenie osobowości (OCPD)', 'OCPD to utrwalony, ego-syntoniczny wzorzec perfekcjonizmu, a nie uciążliwe rytuały mycia.'],
-      ],
-      [
-        'Klinicysta dobiera farmakoterapię.',
-        'Jakie zasady dawkowania SSRI obowiązują w leczeniu OCD w porównaniu z depresją?',
-        ['Stosuje się wysokie dawki (np. sertralina 200 mg/d), a czas oczekiwania na odpowiedź wynosi 10–12 tygodni', 'Desensytyzacja receptorowa w pętli CSTC wymaga wyższego stopnia occupancy i dłuższego czasu.'],
-        ['Wystarczy dawka minimalna przez 10 dni', 'Dawki minimalne są nieskuteczne w redukcji natręctw w obwodach CSTC.'],
-      ],
-    ]
-  ),
-  make(
-    'ptsd-trauma-stres',
-    'Koszmary i błyski świateł po wypadku',
-    'Kobieta, 38 lat',
-    'Podstawowy',
-    'Kierowniczka marketingu uczestniczyła 3 miesiące temu w zderzeniu czołowym samochodów. Od tego czasu budzi się z krzykiem i nie może wsiąść do auta.',
-    [
-      [
-        'Podczas nagłych dźwięków (klakson, pisk opon) pacjentka przeżywa scenę wypadku, czując zapach spalonej gumy i dymu (flashback). Towarzyszy jej bezsenność i drażliwość.',
-        'Które zjawisko kliniczne stanowi patognomoniczną cechę zespołu stresu pourazowego (PTSD)?',
-        ['Nawracające, natrętne ponowne przeżywanie traumy (intruzje, flashbacks) wbrew woli pacjenta', 'Jest to rdzenny objaw odróżniający PTSD od zwykłego lęku adaptacyjnego.'],
-        ['Całkowita utrata zdolności mowy w języku ojczystym', 'Afazja motoryczna wskazuje na uszkodzenie kory mózgowej, a nie PTSD.'],
-      ],
-      [
-        'W badaniach laboratoryjnych parametry somatyczne w normie.',
-        'Jaka zmiana neurobiologiczna w układzie limbicznym odpowiada za brak wygaszania lęku pourazowego?',
-        ['Nadreaktywność ciała migdałowatego przy osłabionym hamowaniu ze strony brzuszno-przyśrodkowej kory przedczołowej (vmPFC) i atrofii hipokampa', 'Prowadzi to do niemożności zróżnicowania bezpiecznego kontekstu teraźniejszości od wspomnienia zagrożenia.'],
-        ['Całkowity brak neuronów dopaminowych w pniu mózgu', 'PTSD nie jest schorzeniem z ubytkiem istoty czarnej.'],
-      ],
-      [
-        'Objawy trwają ponad 3 miesiące i uniemożliwiają powrót do pracy.',
-        'Jakie jest rozpoznanie?',
-        ['Zespół stresu pourazowego (PTSD - Post-Traumatic Stress Disorder)', 'Spełnione kryteria ekspozycji na traumę, ponownego przeżywania, unikania i hiperwzbudzenia trwające > 1 miesiąc.'],
-        ['Ostra reakcja na stres (ASD)', 'ASD rozpoznaje się wyłącznie w pierwszym miesiącu od ekspozycji na uraz.'],
-      ],
-      [
-        'Pacjentka pyta o najskuteczniejszą terapię przyczynową.',
-        'Jaka interwencja psychoterapeutyczna posiada status I wyboru w międzynarodowych wytycznych?',
-        ['Psychoterapia poznawczo-behawioralna zorientowana na traumę (TF-CBT) lub terapia odwrażliwiania za pomocą ruchu gałek ocznych (EMDR)', 'Metody te posiadają najwyższy stopień dowodów naukowych (Level 1) w leczeniu śladów pamięciowych traumy.'],
-        ['Długotrwałe podawanie benzodiazepin w wysokich dawkach', 'Benzodiazepiny hamują naturalne procesy wygaszania lęku i utrwalają objawy PTSD.'],
-      ],
-    ]
-  ),
-  make(
-    'adhd-dorosli-i-rozwojowe',
-    'Geniusz chaosu na granicy zwolnienia',
-    'Mężczyzna, 33 lata',
-    'Podstawowy',
-    'Analityk finansowy o ponadprzeciętnej inteligencji stoi przed groźbą dyscyplinarnego zwolnienia z powodu chronicznych spóźnień, gubienia dokumentów i prokrastynacji.',
-    [
-      [
-        'Pacjent w sytuacjach presji czasu potrafi pracować przez 14 godzin (hiperfokus), lecz nie potrafi zmusić się do wykonywania rutynowych raportów. Odczuwa stały niepokój wewnętrzny.',
-        'Jaki deficyt neuropsychologiczny leży u podłoża takich trudności?',
-        ['Dysfunkcja funkcji wykonawczych (pamięci roboczej, planowania i hamowania reakcji) zależna od kory przedczołowej', 'W ADHD uwaga nie jest nieobecna, lecz pozbawiona wewnętrznej, wolicjonalnej kontroli.'],
-        ['Pierwotne upośledzenie umysłowe w stopniu umiarkowanym', 'Wysokie IQ i zaawansowane stanowisko analityka wykluczają niepełnosprawność intelektualną.'],
-      ],
-      [
-        'W zebranym wywiadzie od matki pacjenta: w szkole podstawowej stale gubił zeszyty, wiercił się w ławce i rozmawiał z kolegami pomimo bardzo dobrych ocen.',
-        'Dlaczego potwierdzenie obecności objawów przed 12. rokiem życia jest obligatoryjne?',
-        ['ADHD jest schorzeniem neurorozwojowym trwającym od dzieciństwa; nie może pojawić się po raz pierwszy de novo u dorosłego', 'Jest to bezwzględny wymóg diagnostyczny w kryteriach DSM-5-TR i ICD-11.'],
-        ['Wymóg ten ma charakter wyłącznie statystyczny dla celów ubezpieczeniowych', 'Jest to kryterium biologiczne definiujące neurorozwojowy charakter zaburzenia.'],
-      ],
-      [
-        'Po wykluczeniu depresji i ChAD potwierdzono utrzymywanie się deficytów uwagi w pracy i w domu.',
-        'Jakie jest rozpoznanie kliniczne?',
-        ['ADHD u dorosłych (zespół nadpobudliwości psychoruchowej z deficytem uwagi z przewagą zaburzeń koncentracji)', 'Obecne objawy nieuwagi i wewnętrznego niepokoju trwające od dzieciństwa.'],
-        ['Zaburzenie osobowości antyspołecznej', 'Brak cech agresji, łamania praw innych i lekceważenia norm prawnych.'],
-      ],
-      [
-        'Pacjent kwalifikuje się do wdrożenia farmakoterapii celowanej.',
-        'Jaki lek stanowi I rzut farmakoterapii ADHD u dorosłych wg wytycznych NICE i WFSBP?',
-        ['Psychostymulant: metylofenidat w formulacji o przedłużonym uwalnianiu (CR/OROS)', 'Metylofenidat blokuje DAT i NET w korze przedczołowej, cechując się najwyższą siłą efektu terapeutycznego.'],
-        ['Haloperydol w kroplach doustnych', 'Haloperydol blokuje dopaminę i drastycznie pogorszyłby deficyty uwagi pacjenta.'],
-      ],
-    ]
-  ),
-  make(
-    'zaburzenia-osobowosci-wymiarowe',
-    'Labilność emocjonalna i panika przed samotnością',
-    'Kobieta, 23 lata',
-    'Podstawowy',
-    'Studentka trafia do izby przyjęć po powierzchownych nacięciach przedramion wykonanych po tym, jak partner nie odpisał na jej wiadomość przez 2 godziny.',
-    [
-      [
-        'W wywiadzie: burzliwe relacje, skrajne idealizowanie ludzi na zmianę z ich dewaluacją (rozszczepienie), chroniczne poczucie pustki wewnętrznej i lęk przed odrzuceniem.',
-        'Który wzorzec osobowości odpowiada temu obrazowi klinicznemu?',
-        ['Wzorzec osobowości z pogranicza (Borderline pattern wg ICD-11 / DSM-5-TR)', 'Niestabilność afektu, tożsamości, relacji i zachowania parasuicydalne to cechy osiowe BPD.'],
-        ['Osobowość anankastyczna (obsesyjno-kompulsyjna)', 'Osobowość anankastyczna cechuje się sztywnością, chłodem emocjonalnym i dążeniem do porządku, a nie labilnością.'],
-      ],
-      [
-        'W badaniach laboratoryjnych morfologia, elektrolity i EKG w normie. Rany zaopatrzone chirurgicznie.',
-        'Jak należy traktować zachowania samouszkadzające (samookaleczenia) u pacjentki z BPD?',
-        ['Jako dysfunkcyjny sposób regulacji skrajnego cierpienia emocjonalnego (bólu psychicznego), wymagający oceny ryzyka suicydalnego', 'Samookaleczenia u osób z BPD często pełnią funkcję doraźnej redukcji dysforii, lecz zwiększają ryzyko zgonu w dłuższej perspektywie.'],
-        ['Jako złośliwą manipulację, którą personel powinien ukarać zignorowaniem pacjentki', 'Taka postawa personelu jest skrajnie nieetyczna i potęguje kryzys suicydalny.'],
-      ],
-      [
-        'U pacjentki wykluczono obecność epizodu manii i psychozy.',
-        'Jak brzmi rozpoznanie wg modelu wymiarowego ICD-11?',
-        ['Zaburzenie osobowości o nasileniu umiarkowanym z domeną negatywnej afektywności i odhamowania oraz wzorcem z pogranicza (Borderline)', 'ICD-11 precyzyjnie łączy stopień dysfunkcji z domenami cech i wzorcem specyficznym.'],
-        ['Schizofrenia paranoidalna o późnym początku', 'Brak jakichkolwiek objawów psychotycznych i rozpadu toku myślenia.'],
-      ],
-      [
-        'Pacjentka i rodzina pytają o najskuteczniejszą formę trwałej pomocy.',
-        'Jaka interwencja stanowi złoty standard leczenia zaburzenia osobowości z pogranicza?',
-        ['Terapia dialektyczno-behawioralna (DBT) lub terapia oparta na mentalizacji (MBT)', 'Psychoterapie celowane w regulację emocji i tolerancję dystresu wykazują najwyższą skuteczność w BPD.'],
-        ['Wieloletnia polipragmazja czterema neuroleptykami w maksymalnych dawkach', 'Leki w BPD pełnią jedynie funkcję pomocniczą w kryzysach, nie leczą zaburzenia osobowości.'],
-      ],
-    ]
-  ),
-  make(
-    'diagnostyka-roznicowa-algorytmy',
-    'Ostra psychoza u młodej kobiety z gorączką',
-    'Kobieta, 22 lata',
-    'Zaawansowany',
-    'Studentka filologii bez wcześniejszego wywiadu psychiatrycznego zostaje przywieziona przez pogotowie z powodu nagłego pobudzenia, omamów wzrokowych i mutyzmu.',
-    [
-      [
-        'W izbie przyjęć pacjentka ma stan podgorączkowy 38,1°C, tachykardię 118/min, przymusowe mimowolne ruchy języka i warg (dyskinezy orofacjalne) oraz zmienny poziom kontaktu.',
-        'Które cechy obrazu klinicznego stanowią tzw. "czerwone flagi" organicznego tła psychozy?',
-        ['Gorączka, nagły początek, dyskinezy ustno-twarzowe u pacjentki dotąd nieleczonej neuroleptykiem oraz fluktuacje świadomości', 'Cechy te jednoznacznie wskazują na ostre organiczne zapalenie mózgowia, a nie pierwotną schizofrenię.'],
-        ['Młody wiek pacjentki', 'Wiek 22 lata jest typowy dla psychoz, to obecność dyskinez i objawów somatycznych stanowi czerwoną flagę.'],
-      ],
-      [
-        'W badaniu płynu mózgowo-rdzeniowego stwierdzono pleocytozę limfocytarną i podwyższone stężenie białka. Zlecono panel przeciwciał neuronalnych.',
-        'Obecność jakich przeciwciał w surowicy lub PMR wyjaśnia ten obraz kliniczny?',
-        ['Przeciwciała przeciwko receptorom NMDA (anty-NMDAR)', 'Autoimmunologiczne zapalenie mózgu z przeciwciałami anty-NMDAR typowo manifestuje się ostrą psychozą i dyskinezami u młodych kobiet.'],
-        ['Przeciwciała przeciwko tyreoperoksydazie (anty-TPO)', 'Anty-TPO wiążą się z chorobą Hashimoto, rzadko dając tak burzliwe ostre zapalenie z dyskinezami.'],
-      ],
-      [
-        'W wykonanym pilnie USG miednicy mniejszej uwidoczniono potworniaka dojrzałego (teratoma) prawego jajnika.',
-        'Jakie jest ostateczne rozpoznanie przyczynowe?',
-        ['Autoimmunologiczne zapalenie mózgu z przeciwciałami anty-NMDAR w przebiegu paranowotworowym (potworniak jajnika)', 'Komórki potworniaka zawierają tkankę nerwową prezentującą receptory NMDA, indukując odpowiedź autoimmunologiczną.'],
-        ['Schizofrenia hebefreniczna powikłana zapaleniem wyrostka robaczkowego', 'Jest to błędna diagnoza ignorująca przyczynowy związek potworniaka z przeciwciałami anty-NMDAR.'],
-      ],
-      [
-        'Zespół kliniczny planuje pilne postępowanie terapeutyczne.',
-        'Jakie leczenie jest postępowaniem z wyboru ratującym życie pacjentki?',
-        ['Pilna resekcja chirurgiczna potworniaka jajnika połączona z intensywną immunoterapią (metyloprednizolon i.v., plazmafereza lub IVIG)', 'Usunięcie źródła antygenu w połączeniu z usunięciem krążących przeciwciał prowadzi do pełnego wyleczenia u większości pacjentek.'],
-        ['Długoterminowa terapia haloperydolem w monolicie w szpitalu psychiatrycznym', 'Neuroleptyki są przeciwwskazane lub nieskuteczne, a brak immunoterapii grozi zgonem pacjentki.'],
-      ],
-    ]
+      {
+        stage: 'Ocena szlaków dopaminergicznych',
+        context: 'U Jakuba rozwinęły się pełnoobjawowe urojenia ksobne, nasyłania myśli i omamy słuchowe przy zachowanej orientacji w czasie i przestrzeni.',
+        prompt: 'Który szlak dopaminergiczny odpowiada za powstawanie objawów wytwórczych (pozytywnych) w psychozie?',
+        choices: [
+          ['Szlak mezolimbiczny (z nakrywki brzusznej VTA do jądra półleżącego) w stanie hiperaktywności', 'Nadmierne uwalnianie dopaminy w szlaku mezolimbicznym odpowiada za nadawanie nieprawidłowego znaczenia bodźcom (aberrant salience).'],
+          ['Szlak nigrostriatalny w stanie pierwotnego zaniku', 'Szlak nigrostriatalny reguluje motorykę; jego zablokowanie wywołuje objawy parkinsonowskie.'],
+          ['Szlak guzkowo-lejkowy w stanie całkowitej blokady', 'Szlak guzkowo-lejkowy kontroluje uwalnianie prolaktyny przez przysadkę.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Kwalifikacja poziomu occupancy D2',
+        context: 'Rozważasz wdrożenie risperidonu u Jakuba, który nigdy wcześniej nie przyjmował neuroleptyków.',
+        prompt: 'Jaki przedział wysycenia receptorów D2 w badaniach PET (okno Kapura) wiąże się ze statystyczną odpowiedzią bez nasilonych objawów pozapiramidowych dla czystego antagonisty?',
+        choices: [
+          ['Około 65–80% occupancy w prążkowiu (powyżej 80% gwałtownie rośnie ryzyko EPS i hiperprolaktynemii)', 'Klasyczna heurystyka Kapura wyznacza przedział 65–80% dla czystych antagonistów D2.'],
+          ['Dokładnie 100% occupancy jako bezwzględny warunek wyleczenia', '100% blokady D2 wywołuje ciężki parkinsonizm polekowy i akatyzję uniemożliwiającą funkcjonowanie.'],
+          ['Poniżej 30% occupancy', 'Tak niski poziom wysycenia nie daje statystycznej przewagi nad placebo w redukcji psychozy.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Wybór leku i dawki',
+        context: 'Jakub waży 72 kg, ma prawidłową czynność nerek i wątroby.',
+        prompt: 'Jaka dawka risperidonu w pierwszym epizodzie pozwala osiągnąć docelowe okno occupancy bez prowokowania EPS?',
+        choices: [
+          ['Dawka 2–4 mg/dobę (miareczkowana od 1 mg)', 'W pierwszym epizodzie dawka 2–3 mg risperidonu osiąga ~70–75% occupancy D2, co jest w pełni wystarczające.'],
+          ['Dawka 16 mg/dobę od pierwszej doby', 'Maksymalne dawki w pierwszym epizodzie prowadzą do ostrej dystonii i rezygnacji z leczenia.'],
+          ['Dawka 0.1 mg/dobę raz w tygodniu', 'Dawka subterapeutyczna niemająca wpływu na psychozę mezolimbiczną.'],
+        ],
+        answerIndex: 0,
+      },
+      {
+        stage: 'Monitorowanie powikłań metabolicznych i neurologicznych',
+        context: 'Po 4 tygodniach leczenia risperidonem 3 mg/d objawy psychotyczne uległy redukcji o 50%, ale Jakub przybrał 4 kg na wadze, a jego prolaktyna wzrosła do 65 ng/ml.',
+        prompt: 'Jakie działanie kliniczne jest najbardziej racjonalne?',
+        choices: [
+          ['Ocena objawów klinicznych hiperprolaktynemii (ginekomastia, libido), wdrożenie interwencji dietetycznej, a w razie progresji rozważenie rotacji na lek neutralny metabolicznie i prolaktynowo (np. arypiprazol)', 'Wzrost prolaktyny wynika z blokady D2 w szlaku guzkowo-lejkowym; częściowy agonista przywraca właściwy ton dopaminergiczny.'],
+          ['Natychmiastowe odstawienie neuroleptyku bez włączenia leku zastępczego', 'Nagłe odstawienie grozi gwałtownym nawrotem ostrej psychozy z psychozą z odbicia.'],
+          ['Dołączenie bromokryptyny bez konsultacji i podwojenie dawki risperidonu', 'Agonista dopaminy może zaostrzyć psychozę, a podwojenie dawki pogłębi problem metaboliczny.'],
+        ],
+        answerIndex: 0,
+      },
+    ],
+    { threadId: 'thread-psychosis-trs', timeOffsetWeeks: 24 }
   ),
 ];

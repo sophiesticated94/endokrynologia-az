@@ -37,10 +37,10 @@ test('psychiatry curriculum structure: 38 lessons across 2 modules, 190 question
 
   for (const c of psychiatryCases) {
     assert.equal(c.steps.length, 4, `Case ${c.id} must have 4 steps`);
-    assert.deepEqual(c.steps.map(s => s.stage), ['Objawy', 'Badania', 'Rozpoznanie', 'Postępowanie']);
+    assert.ok(c.steps.every(s => typeof s.stage === 'string' && s.stage.length > 0), `Case ${c.id} steps must have non-empty stage names`);
     for (const step of c.steps) {
-      assert.equal(step.options.length, 2, `Case ${c.id} step ${step.id} must have 2 options`);
-      assert.ok(step.answer === 0 || step.answer === 1);
+      assert.ok(step.options.length >= 2, `Case ${c.id} step ${step.id} must have at least 2 options`);
+      assert.ok(step.answer >= 0 && step.answer < step.options.length, `Case ${c.id} step ${step.id} answer out of range`);
       assert.ok(step.options[step.answer].explanation.length > 20);
     }
   }

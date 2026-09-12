@@ -47,12 +47,20 @@ export type LearningActivity =
   | (ActivityBase & { type: 'numeric'; answer: number; tolerance: number; unit: string })
   | (ActivityBase & { type: 'recall'; modelAnswer: string });
 
+export type InlineEnhancementRef = {
+  id: string;
+  kind: 'diagram' | 'interactive-widget' | 'micro-case' | 'evidence-panel' | 'workbench-deeplink';
+  placement: 'after-intro' | 'after-text' | 'before-checkpoint' | 'after-checkpoint' | 'end-of-block';
+  presetId?: string;
+};
+
 export type LessonBlockV2 = {
   id: string;
   title: string;
   text: string;
   sourceIds: string[];
   checkpointId?: string;
+  inlineEnhancements?: InlineEnhancementRef[];
 };
 
 export type LessonExperienceV2 = {

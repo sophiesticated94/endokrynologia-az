@@ -45,10 +45,10 @@ export const psychiatrySources: Record<string, Source> = {
   },
   'agnp-tdm-2026': {
     id: 'agnp-tdm-2026',
-    title: 'AGNP Consensus Guidelines for Therapeutic Drug Monitoring in Psychiatry: 2026 Update',
+    title: 'Consensus Guidelines for Therapeutic Drug Monitoring in Neuropsychopharmacology: Update 2026 - Pharmacokinetic, pharmacogenetic and clinical aspects',
     year: '2026',
-    url: 'https://doi.org/10.1055/a-2026-tdm-agnp',
-    kind: 'Konsensus: TDM i farmakokinetyka ilościowa',
+    url: 'https://doi.org/10.1055/a-2860-7861',
+    kind: 'Konsensus międzynarodowy: TDM i farmakokinetyka ilościowa (AGNP)',
   },
   'hunter-criteria': {
     id: 'hunter-criteria',
@@ -59,10 +59,10 @@ export const psychiatrySources: Record<string, Source> = {
   },
   'nms-consensus': {
     id: 'nms-consensus',
-    title: 'Gurrera RJ et al. — An International Consensus Diagnostic Criteria for Neuroleptic Malignant Syndrome',
-    year: '2024',
+    title: 'An international consensus study of neuroleptic malignant syndrome diagnostic criteria using the Delphi method',
+    year: '2011',
     url: 'https://doi.org/10.4088/JCP.10m06438',
-    kind: 'Konsensus międzynarodowy: NMS',
+    kind: 'Konsensus międzynarodowy: NMS (Delphi)',
   },
   'cpic-cyp2d6-2c19': {
     id: 'cpic-cyp2d6-2c19',
@@ -143,10 +143,10 @@ export const psychiatrySources: Record<string, Source> = {
   },
   'bush-francis-catatonia': {
     id: 'bush-francis-catatonia',
-    title: 'Bush G et al. — Catatonia Rating Scale and Lorazepam Challenge Protocol',
-    year: '2022',
+    title: 'Catatonia. I. Rating scale and standardized examination',
+    year: '1996',
     url: 'https://doi.org/10.1111/j.1600-0447.1996.tb09814.x',
-    kind: 'Skala referencyjna i protokół diagnostyki katatonii',
+    kind: 'Skala referencyjna i standaryzowane badanie katatonii (BFCRS)',
   },
   'wfsbp-anxiety': {
     id: 'wfsbp-anxiety',
@@ -227,10 +227,10 @@ export const psychiatrySources: Record<string, Source> = {
   },
   'apa-ect-guidelines': {
     id: 'apa-ect-guidelines',
-    title: 'APA Task Force on ECT — The Practice of Electroconvulsive Therapy',
+    title: 'The Practice of Electroconvulsive Therapy: Recommendations for Treatment, Training, and Privileging (A Task Force Report of the APA), Third Edition',
     year: '2023',
-    url: 'https://doi.org/10.1176/appi.books.9780890425787',
-    kind: 'Referencyjne wytyczne elektrowstrząsów (APA)',
+    url: 'https://doi.org/10.1176/appi.books.9780890427118',
+    kind: 'Referencyjne wytyczne elektrowstrząsów (APA 3rd Ed)',
   },
   'krystal-ketamine': {
     id: 'krystal-ketamine',

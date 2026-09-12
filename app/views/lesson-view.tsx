@@ -13,9 +13,17 @@ import {
   Activity,
   BookA,
   Code2,
+  Sliders,
 } from 'lucide-react';
-import { lessonExperiences, lessons, type Lesson } from '@/lib/course';
+import { lessonExperiences as endoExperiences, lessons, type Lesson } from '@/lib/course';
 import { psychiatryLessons } from '@/lib/course-psychiatry';
+import { psychiatryLessonExperiences, getPsychiatryEnhancement } from '@/lib/psychiatry';
+import {
+  EvidenceBadge,
+  WhatChangesYourMindCard,
+  InlineEnhancementRenderer,
+  EvidenceInspectorModal,
+} from '../components/psychiatry-lesson-enhancements';
 import type { Confidence, LearningActivity, PracticeRecordMeta } from '@/lib/course-types';
 import { isLessonCoreComplete } from '@/lib/lesson-v2';
 import type { LearningState } from '@/lib/learning';
@@ -63,8 +71,10 @@ export function LessonView({
   recordPractice: (activity: LearningActivity, correct: boolean, confidence?: Confidence, scored?: boolean, meta?: PracticeRecordMeta) => Promise<boolean>;
 }) {
   const [latexModalOpen, setLatexModalOpen] = useState(false);
+  const [evidenceModalOpen, setEvidenceModalOpen] = useState(false);
   const [finishedActivities, setFinishedActivities] = useState<Set<string>>(new Set());
-  const experience = lessonExperiences[lesson.id];
+  const psychEnhancement = getPsychiatryEnhancement(lesson.id);
+  const experience = endoExperiences[lesson.id] || psychiatryLessonExperiences[lesson.id];
   const allCourseLessons = lessons.some(l => l.id === lesson.id) ? lessons : psychiatryLessons;
   const moduleLessons = allCourseLessons.filter(l => l.moduleId === lesson.moduleId);
   const lessonNum = moduleLessons.indexOf(lesson) + 1;
@@ -95,6 +105,12 @@ export function LessonView({
             {lesson.minutes} min
             <GraduationCap size={16} />
             {state.level === 'doctor' ? 'Podstawy + rozszerzenie lekarskie' : 'Podstawy'}
+            {psychEnhancement?.evidenceMode && (
+              <EvidenceBadge
+                mode={psychEnhancement.evidenceMode}
+                onClick={() => setEvidenceModalOpen(true)}
+              />
+            )}
             <button
               type="button"
               onClick={() => setLatexModalOpen(true)}
@@ -149,6 +165,17 @@ export function LessonView({
             </p>
 
             <LessonDiagram lessonId={lesson.id} sectionIndex={i} />
+
+            {section.inlineEnhancements?.map(enhancement => (
+              <InlineEnhancementRenderer
+                key={enhancement.id}
+                enhancement={enhancement}
+                lessonId={lesson.id}
+                go={go}
+                onOpenEvidence={() => setEvidenceModalOpen(true)}
+              />
+            ))}
+
             {experience && section.checkpointId && (()=>{const activity=experience.activities.find(item=>item.id===section.checkpointId);return activity?<PracticeActivityCard activity={activity} onRecord={recordPractice} onComplete={(id)=>setFinishedActivities(current=>new Set(current).add(id))}/>:null})()}
           </section>
         ))}
@@ -219,6 +246,10 @@ export function LessonView({
           </div>
         </div>
 
+        {psychEnhancement?.whatChangesYourMind && (
+          <WhatChangesYourMindCard whatChanges={psychEnhancement.whatChangesYourMind} />
+        )}
+
         {experience && <section className="exit-zone">
           <span className="eyebrow">ODTWÓRZ I SPRAWDŹ</span>
           <h2>Zamknij lekcję aktywnie</h2>
@@ -277,13 +308,25 @@ export function LessonView({
         <hr />
         <strong>Teoria spotyka praktykę</strong>
         <p>Przećwicz ten temat na przypadku klinicznym.</p>
-        <button className="text-button" onClick={() => go(`case/case-${lesson.id}`)}>
-          Otwórz przypadek
+        <button
+          className="text-button"
+          onClick={() => go(`case/${psychEnhancement?.caseId || `case-${lesson.id}`}`)}
+        >
+          {psychEnhancement?.recurringPatientId ? 'Otwórz przypadek (Wątek pacjenta)' : 'Otwórz przypadek'}
           <ArrowUpRight size={15} />
         </button>
 
         <hr />
         <strong>Szybkie narzędzia</strong>
+        {psychEnhancement?.workbenchPresetId && (
+          <button
+            className="text-button"
+            onClick={() => go('simulator')}
+            style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '6px', color: '#4f46e5' }}
+          >
+            <Sliders size={14} /> Psychiatry Command Center
+          </button>
+        )}
         <button
           className="text-button"
           onClick={() => go('simulator')}
@@ -313,6 +356,13 @@ export function LessonView({
           onClose={() => setLatexModalOpen(false)}
           initialEquation={lesson.derivation?.steps[0]?.equation}
           initialTitle={lesson.title}
+        />
+      )}
+
+      {evidenceModalOpen && (
+        <EvidenceInspectorModal
+          mode={psychEnhancement?.evidenceMode}
+          onClose={() => setEvidenceModalOpen(false)}
         />
       )}
     </div>
