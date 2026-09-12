@@ -14,9 +14,9 @@ export function CasrHillCurveChart() {
 
   const conditionProfiles = {
     normal: { label: 'Model odniesienia (Set-point = 1,00)', shift: 1.0, minSec: 5, color: '#6d4ba4', desc: 'Fizjologiczny model stromej supresji wydzielania PTH wokół punktu równowagi.' },
-    fhh: { label: 'FHH (Przesunięcie w prawo)', shift: 1.15, minSec: 5, color: '#dc2626', desc: 'Inaktywacja CaSR: krzywa przesunięta w prawo — do supresji PTH wymagany jest wyższy poziom Ca²⁺.' },
-    cinacalcet: { label: 'Kalcymimetyk (Przesunięcie w lewo)', shift: 0.88, minSec: 5, color: '#16a34a', desc: 'Allosteryczna sensytyzacja CaSR: krzywa przesunięta w lewo — supresja następuje przy niższym Ca²⁺.' },
-    adenoma: { label: 'Autonomizacja / Gruczolak', shift: 1.05, minSec: 35, color: '#d97706', desc: 'PHPT / gruczolak: podwyższone dolne plateau (brak pełnej supresji bazowej mimo hiperkalcemii).' },
+    fhh: { label: 'FHH (Przesunięcie w prawo)', shift: 1.15, minSec: 5, color: '#dc2626', desc: 'Inaktywacja CaSR: przesunięcie w prawo (arbitralny parametr shift = 1,15) — do supresji PTH wymagany jest wyższy poziom Ca²⁺.' },
+    cinacalcet: { label: 'Kalcymimetyk (Przesunięcie w lewo)', shift: 0.88, minSec: 5, color: '#16a34a', desc: 'Allosteryczna sensytyzacja CaSR: przesunięcie w lewo (arbitralny parametr shift = 0,88) — supresja następuje przy niższym Ca²⁺.' },
+    adenoma: { label: 'Autonomizacja / Gruczolak', shift: 1.05, minSec: 35, color: '#d97706', desc: 'PHPT / gruczolak: podwyższona sekrecja minimalna (arbitralny parametr minSec = 35%) — brak pełnej supresji bazowej mimo hiperkalcemii.' },
   };
 
   const cur = conditionProfiles[condition];

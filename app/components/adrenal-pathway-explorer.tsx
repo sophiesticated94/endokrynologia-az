@@ -9,11 +9,14 @@ export function AdrenalEnzymeKinetics() {
   // Część A: Model korelacji genotyp–fenotyp i wektory zmian szlaku
   const [genotypeRange, setGenotypeRange] = useState<'salt_wasting' | 'simple_virilizing' | 'non_classical' | 'normal'>('simple_virilizing');
 
-  // Część B: Narzędzie interpretacji rzeczywistego pomiaru laboratoryjnego 17-OHP
+  // Narzędzie interpretacji rzeczywistego pomiaru laboratoryjnego 17-OHP
   const [measured17Ohp, setMeasured17Ohp] = useState<number>(12.5); // ng/ml
   const [assayMethod, setAssayMethod] = useState<'immunoassay' | 'lc_ms_ms'>('lc_ms_ms');
   const [clinicalContext, setClinicalContext] = useState<'morning_follicular' | 'synacthen_60' | 'neonatal_screen'>('synacthen_60');
   const [neonatalTier, setNeonatalTier] = useState<'term' | 'preterm_late' | 'preterm_vlbw'>('term');
+  const [thresholdPreset, setThresholdPreset] = useState<'classical' | 'pediatric_2025' | 'custom'>('classical');
+  const [customBaselineCutoff, setCustomBaselineCutoff] = useState<number>(1.5);
+  const [customSynacthenCutoff, setCustomSynacthenCutoff] = useState<number>(8.0);
 
   const genotypeProfiles = {
     salt_wasting: {
@@ -77,41 +80,41 @@ export function AdrenalEnzymeKinetics() {
     const val = measured17Ohp;
     if (isNaN(val) || val < 0) return { verdict: 'Nieprawidłowa wartość', details: 'Wprowadź stężenie ≥ 0.' };
 
+    const baselineCutoff = thresholdPreset === 'classical' ? 2.0 : thresholdPreset === 'pediatric_2025' ? 0.94 : customBaselineCutoff;
+    const synacthenCutoff = thresholdPreset === 'classical' ? 10.0 : thresholdPreset === 'pediatric_2025' ? 7.81 : customSynacthenCutoff;
+
     if (clinicalContext === 'morning_follicular') {
-      const normalCutoff = assayMethod === 'lc_ms_ms' ? 1.5 : 2.0;
-      const equivocalCutoff = assayMethod === 'lc_ms_ms' ? 8.0 : 10.0;
-      if (val < normalCutoff) {
+      if (val < baselineCutoff) {
         return {
-          verdict: `17-OHP podstawowe < ${normalCutoff} ng/ml — Poniżej progu dla metody`,
+          verdict: `17-OHP podstawowe < ${baselineCutoff} ng/ml — Poniżej progu odcięcia`,
           status: 'normal',
-          details: `Stężenie poniżej progu decyzyjnego dla ${assayMethod === 'lc_ms_ms' ? 'LC-MS/MS (~1,5 ng/ml)' : 'testów immunoenzymatycznych (~2,0 ng/ml)'} wskazuje na niskie prawdopodobieństwo NC-CAH w porannym badaniu fazy folikularnej. Przy cechach hiperandrogenizmu w pierwszej kolejności należy rozważyć PCOS lub hiperandrogenizm czynnościowy; pojedynczy wynik poranny nie stanowi jednak 100% wykluczenia postaci o zmiennej ekspresji ani nosicielstwa.`,
+          details: `Stężenie poniżej progu (${baselineCutoff} ng/ml) wskazuje na niskie prawdopodobieństwo NC-CAH w porannym badaniu fazy folikularnej. Wytyczne Endocrine Society (2018) zalecają ocenę porannego profilu LC-MS/MS, podkreślając zależność norm od laboratorium, wieku i płci (np. od 0,94 ng/ml w badaniach pediatrycznych po 1,5–2,0 ng/ml u dorosłych). Przy cechach hiperandrogenizmu w pierwszej kolejności należy rozważyć PCOS.`,
         };
-      } else if (val <= equivocalCutoff) {
+      } else if (val <= synacthenCutoff) {
         return {
-          verdict: `17-OHP podstawowe ${normalCutoff}–${equivocalCutoff} ng/ml — Szara strefa`,
+          verdict: `17-OHP podstawowe ${baselineCutoff}–${synacthenCutoff} ng/ml — Szara strefa diagnostyczna`,
           status: 'equivocal',
-          details: `Wynik niejednoznaczny (pośrednie stężenie w teście ${assayMethod === 'lc_ms_ms' ? 'LC-MS/MS' : 'immunologicznym'}). Wskazane wykonanie dynamicznego testu stymulacji Synacthenem 250 µg w celu precyzyjnego odróżnienia NC-CAH od PCOS lub heterozygotyczności CYP21A2.`,
+          details: `Wynik niejednoznaczny (pośrednie stężenie w wybranym schemacie odcięć). Wskazane wykonanie dynamicznego testu stymulacji Synacthenem 250 µg w celu precyzyjnego odróżnienia NC-CAH od PCOS lub nosicielstwa wariantu CYP21A2.`,
         };
       } else {
         return {
-          verdict: `17-OHP podstawowe > ${equivocalCutoff} ng/ml — Wysokie prawdopodobieństwo bloku 21-OH`,
+          verdict: `17-OHP podstawowe > ${synacthenCutoff} ng/ml — Wysokie prawdopodobieństwo bloku 21-OH`,
           status: 'abnormal',
-          details: `Stężenie podstawowe wyraźnie podwyższone. Wskazane potwierdzenie w teście stymulacji z Synacthenem oraz diagnostyka genetyczna genu CYP21A2.`,
+          details: `Stężenie podstawowe wyraźnie podwyższone (przekracza ${synacthenCutoff} ng/ml). Wskazane potwierdzenie w teście stymulacji z Synacthenem oraz analiza molekularna genu CYP21A2.`,
         };
       }
     } else if (clinicalContext === 'synacthen_60') {
-      const synacthenCutoff = assayMethod === 'lc_ms_ms' ? 8.0 : 10.0;
       if (val < synacthenCutoff) {
         return {
           verdict: `17-OHP po Synacthenie < ${synacthenCutoff} ng/ml — Prawidłowa rezerwa enzymatyczna`,
           status: 'normal',
-          details: `Stężenie po 60 min stymulacji nie osiąga progu diagnostycznego dla ${assayMethod === 'lc_ms_ms' ? 'LC-MS/MS (~8 ng/ml)' : 'metod immunoenzymatycznych (10 ng/ml)'}. Wynik z wysokim prawdopodobieństwem klinicznym wyklucza objawową postać NC-CAH. Wartości pośrednie (np. 5–${synacthenCutoff} ng/ml) bywają spotykane u bezobjawowych nosicieli (heterozygot) mutacji CYP21A2.`,
+          details: `Stężenie po 60 min stymulacji nie przekracza progu (${synacthenCutoff} ng/ml). Wynik wyklucza objawową postać NC-CAH w tym kryterium. Wartości pośrednie bywają spotykane u bezobjawowych heterozygot mutacji CYP21A2. Próg zależy od metody, laboratorium i wieku; wytyczne Endocrine Society 2018 zalecają profil LC-MS/MS przy wynikach granicznych, lecz nie ustanawiają uniwersalnego odcięcia 8 ng/ml dla LC-MS/MS.`,
         };
       } else if (val <= 30.0) {
         return {
           verdict: `17-OHP po Synacthenie ${val} ng/ml (≥ ${synacthenCutoff} ng/ml) — Dodatni (NC-CAH)`,
           status: 'abnormal',
-          details: `Wynik przekracza próg diagnostyczny wg wytycznych Endocrine Society (${assayMethod === 'lc_ms_ms' ? '≥8 ng/ml dla LC-MS/MS' : '≥10 ng/ml dla testów immunologicznych'}). Potwierdza to blok 21-hydroksylacji o charakterze nieklasycznym (NC-CAH). Wskazana ocena rezerwy glukokortykoidowej i analiza molekularna genu CYP21A2.`,
+          details: `Wynik przekracza próg diagnostyczny w wybranym schemacie (≥ ${synacthenCutoff} ng/ml). Potwierdza to blok 21-hydroksylacji o charakterze nieklasycznym (NC-CAH). Wskazana ocena rezerwy glukokortykoidowej i analiza molekularna genu CYP21A2.`,
         };
       } else {
         return {
@@ -121,18 +124,14 @@ export function AdrenalEnzymeKinetics() {
         };
       }
     } else {
-      const tierThresholdNg = neonatalTier === 'term' ? 10.0 : neonatalTier === 'preterm_late' ? 20.0 : 30.0;
-      const tierThresholdNmol = Math.round(tierThresholdNg * 3.03);
       const tierLabel = neonatalTier === 'term' ? 'Noworodek donoszony (≥37 Hbd, ≥2500 g)' : neonatalTier === 'preterm_late' ? 'Późny wcześniak (32–36 Hbd, 1500–2499 g)' : 'Skrajny wcześniak (<32 Hbd, <1500 g)';
-      const isElevated = val > tierThresholdNg;
-
       return {
-        verdict: `Test przesiewowy (bibuła NBS) — ${isElevated ? 'Powyżej progu warstwowego' : 'W normie warstwowej'} (${tierThresholdNmol} nmol/l)`,
-        status: isElevated ? 'abnormal' : 'normal',
-        details: `Kategoria: ${tierLabel}. Wartość odcięcia wynosi ~${tierThresholdNg} ng/ml (~${tierThresholdNmol} nmol/l na suchej kropli krwi). ${isElevated ? (assayMethod === 'immunoassay' ? 'UWAGA: Wyniki immunoenzymatyczne (DELFIA) u noworodków (zwłaszcza wcześniaków) często dają wyniki fałszywie dodatnie z powodu reakcji krzyżowych z siarczanowanymi steroidami strefy płodowej (np. 16α-OH-DHEA-S). Konieczna weryfikacja drugiego rzutu metodą LC-MS/MS przed wdrożeniem leczenia!' : 'Podwyższony wynik w metodzie LC-MS/MS potwierdza rzeczywistą kumulację 17-OHP i wymaga pilnego skierowania do ośrodka referencyjnego endokrynologii pediatrycznej.') : (assayMethod === 'immunoassay' ? 'Wynik testu I rzutu nie przekracza progu alarmowego dla tej grupy dojrzałości.' : 'Stężenie w normie dla wieku ciążowego i masy ciała.')}`,
+        verdict: `Bibuła NBS (${tierLabel}) — brak jednego globalnego odcięcia`,
+        status: 'equivocal',
+        details: `Programy przesiewu noworodkowego (NBS) nie stosują pojedynczego odcięcia (publikowane progi dla dzieci donoszonych wahają się od 25 do 75 ng/ml). Wcześniactwo fizjologicznie i analitycznie podwyższa stężenie 17-OHP z trzech powodów: 1) przetrwałe wydzielanie strefy płodowej kory nadnerczy (fetal zone), 2) masywne reakcje krzyżowe w immunotestach z siarczanami steroidowymi (np. 15α/16α-OH-DHEA-S), 3) stres okołoporodowy i opóźnione dojrzewanie 11β- i 21-hydroksylazy. Wartości graniczne wymagają ścisłej stratyfikacji wg wieku ciążowego (Hbd) i masy urodzeniowej oraz weryfikacji w teście drugiego rzutu (second-tier) LC-MS/MS przed wdrożeniem leczenia.`,
       };
     }
-  }, [measured17Ohp, clinicalContext, assayMethod, neonatalTier]);
+  }, [measured17Ohp, clinicalContext, thresholdPreset, customBaselineCutoff, customSynacthenCutoff, neonatalTier]);
 
   return (
     <div style={{ background: '#fdf8f6', border: '1px solid #fed7aa', borderRadius: '12px', padding: '18px', margin: '14px 0' }}>
@@ -304,6 +303,81 @@ export function AdrenalEnzymeKinetics() {
             </div>
           </div>
         </div>
+
+        {/* Selektor presetów progów decyzyjnych */}
+        {clinicalContext !== 'neonatal_screen' && (
+          <div style={{ marginBottom: '12px' }}>
+            <label style={{ fontSize: '11px', fontWeight: 600, color: '#475569', display: 'block', marginBottom: '4px' }}>
+              Schemat progów decyzyjnych (odcięcia zależą od metody, wieku i laboratorium):
+            </label>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '6px' }}>
+              <button
+                type="button"
+                onClick={() => setThresholdPreset('classical')}
+                style={{
+                  padding: '6px 8px',
+                  borderRadius: '6px',
+                  border: '1px solid',
+                  borderColor: thresholdPreset === 'classical' ? '#c2410c' : '#cbd5e1',
+                  background: thresholdPreset === 'classical' ? '#fff7ed' : '#fff',
+                  color: thresholdPreset === 'classical' ? '#9a3412' : '#475569',
+                  fontSize: '10px',
+                  fontWeight: 600,
+                  textAlign: 'left',
+                  cursor: 'pointer',
+                }}
+              >
+                Klasyczne (RIA: &lt;2 / &gt;10 ng/ml)
+              </button>
+              <button
+                type="button"
+                onClick={() => setThresholdPreset('pediatric_2025')}
+                style={{
+                  padding: '6px 8px',
+                  borderRadius: '6px',
+                  border: '1px solid',
+                  borderColor: thresholdPreset === 'pediatric_2025' ? '#0284c7' : '#cbd5e1',
+                  background: thresholdPreset === 'pediatric_2025' ? '#f0f9ff' : '#fff',
+                  color: thresholdPreset === 'pediatric_2025' ? '#0369a1' : '#475569',
+                  fontSize: '10px',
+                  fontWeight: 600,
+                  textAlign: 'left',
+                  cursor: 'pointer',
+                }}
+              >
+                Pediatryczne LC-MS/MS 2025 (&lt;0,94 / &gt;7,81)
+              </button>
+              <button
+                type="button"
+                onClick={() => setThresholdPreset('custom')}
+                style={{
+                  padding: '6px 8px',
+                  borderRadius: '6px',
+                  border: '1px solid',
+                  borderColor: thresholdPreset === 'custom' ? '#16a34a' : '#cbd5e1',
+                  background: thresholdPreset === 'custom' ? '#f0fdf4' : '#fff',
+                  color: thresholdPreset === 'custom' ? '#166534' : '#475569',
+                  fontSize: '10px',
+                  fontWeight: 600,
+                  textAlign: 'left',
+                  cursor: 'pointer',
+                }}
+              >
+                Własny próg laboratorium
+              </button>
+            </div>
+            {thresholdPreset === 'custom' && (
+              <div style={{ display: 'flex', gap: '14px', marginTop: '6px', padding: '8px 10px', background: '#f8fafc', borderRadius: '6px', border: '1px dashed #cbd5e1' }}>
+                <label style={{ fontSize: '11px', color: '#475569' }}>
+                  Próg podstawowy: <input type="number" step="0.1" value={customBaselineCutoff} onChange={e => setCustomBaselineCutoff(Number(e.target.value))} style={{ width: '60px', padding: '2px 4px', fontSize: '11px' }} /> ng/ml
+                </label>
+                <label style={{ fontSize: '11px', color: '#475569' }}>
+                  Próg po stymulacji: <input type="number" step="0.1" value={customSynacthenCutoff} onChange={e => setCustomSynacthenCutoff(Number(e.target.value))} style={{ width: '60px', padding: '2px 4px', fontSize: '11px' }} /> ng/ml
+                </label>
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Werdykt i uzasadnienie */}
         <div style={{ padding: '10px 12px', borderRadius: '8px', background: labInterpretation.status === 'normal' ? '#f0fdf4' : labInterpretation.status === 'equivocal' ? '#fffbeb' : '#fef2f2', border: `1px solid ${labInterpretation.status === 'normal' ? '#bbf7d0' : labInterpretation.status === 'equivocal' ? '#fde68a' : '#fecaca'}` }}>

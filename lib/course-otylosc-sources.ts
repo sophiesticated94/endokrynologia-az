@@ -29,6 +29,13 @@ export const otyloscSources: Record<string, Source> = {
     url: 'https://doi.org/10.1093/eurheartj/ehz455',
     kind: 'Wytyczne kardiologiczne (ESC/EAS)',
   },
+  'esc_eas_dyslipidemia_2025': {
+    id: 'esc_eas_dyslipidemia_2025',
+    title: 'ESC/EAS Focused Update on the Management of Dyslipidaemias (SCORE2, Lp(a), Bempedoic Acid and Risk Modifiers)',
+    year: '2025',
+    url: 'https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/dyslipidaemias',
+    kind: 'Wytyczne kardiologiczne (ESC/EAS 2025 Focused Update)',
+  },
   'aasld-easl-masld-2024': {
     id: 'aasld-easl-masld-2024',
     title: 'AASLD / EASL Clinical Practice Guidance on Metabolic dysfunction-Associated Steatotic Liver Disease (MASLD/MASH)',

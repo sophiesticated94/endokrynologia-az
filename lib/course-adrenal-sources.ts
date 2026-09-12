@@ -17,10 +17,10 @@ export const adrenalSources: Record<string, Source> = {
   },
   endo_pa: {
     id: 'endo_pa',
-    title: 'Endocrine Society — The Management of Primary Aldosteronism: Case Detection and Treatment',
-    year: '2016',
-    url: 'https://doi.org/10.1210/jc.2015-4061',
-    kind: 'Międzynarodowe wytyczne',
+    title: 'Endocrine Society — Clinical Practice Guideline on Primary Aldosteronism: Screening and Diagnosis',
+    year: '2025',
+    url: 'https://www.endocrine.org/clinical-practice-guidelines/primary-aldosteronism-2',
+    kind: 'Międzynarodowe wytyczne (Endocrine Society 2025)',
   },
   endo_pheo: {
     id: 'endo_pheo',

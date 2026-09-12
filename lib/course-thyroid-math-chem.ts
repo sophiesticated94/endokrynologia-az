@@ -36,7 +36,7 @@ export const draftThyroidMathChem: DraftLesson[] = [
       },
       {
         title: 'Kinetyka rzędu pierwszego i czas półtrwania (t1/2 = 7 dni)',
-        text: 'Eliminacja T4 podlega kinetyce I rzędu: dC/dt = -ke * C, gdzie stała eliminacji ke wynosi około 0,10 na dobę (0,0042 h^-1). Okres półtrwania wynosi t1/2 = ln(2) / ke ≈ 6,9–7,0 dni u osób w eutyreozie. W niedoczynności t1/2 ulega wydłużeniu do 9–10 dni (z powodu obniżonego metabolizmu), a w nadczynności skraca się do 3–4 dni. Stan równowagi stacjonarnej (steady-state, Css) osiągany jest po 4–5 okresach półtrwania, czyli po około 35–42 dniach (5–6 tygodni).',
+        text: 'Eliminacja T4 podlega kinetyce I rzędu: dC/dt = -ke * C, gdzie stała eliminacji ke wynosi około 0,10 na dobę (0,0042 h^-1). Okres półtrwania wynosi t1/2 = ln(2) / ke ≈ 6,9–7,0 dni u osób w eutyreozie. W niedoczynności t1/2 ulega wydłużeniu do 9–10 dni (z powodu obniżonego metabolizmu), a w nadczynności skraca się do 3–4 dni. Stan równowagi stacjonarnej (steady-state, 95% Css) osiągany jest po 4,3–5 okresach półtrwania, czyli po 28–35 dniach (4–5 tygodniach), a 5–6 okresów półtrwania (35–42 dni) zapewnia >97% stężenia stacjonarnego.',
       },
       {
         title: 'Formuła stężenia stacjonarnego i fluktuacje międzydawkowe',
@@ -49,7 +49,7 @@ export const draftThyroidMathChem: DraftLesson[] = [
         ['Okres półtrwania (t1/2)', '7 dni (168 h)', 'Kontrola TSH najwcześniej po 6–8 tygodniach od korekty dawki'],
         ['Objętość dystrybucji (Vd)', '11–15 L (0,18 L/kg)', 'Ograniczona głównie do osocza i wątroby przez silne wiązanie z TBG'],
         ['Biodostępność (F)', '65–80% na czczo', 'Pokarm, kawa, żelazo i wapń zmniejszają F nawet o 30–50%'],
-        ['Czas do steady-state', '4–5 x t1/2 (35–42 dni)', 'Fizjologiczny powód, dla którego TSH nie bada się po 7 dniach'],
+        ['Czas do steady-state', '4–5 x t1/2 (28–35 dni; 5–6 x to 35–42 dni)', 'Fizjologiczny powód, dla którego TSH nie bada się po 7 dniach'],
       ],
     },
     advanced:

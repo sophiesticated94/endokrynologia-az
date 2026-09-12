@@ -109,4 +109,8 @@ test('Sources provenance: clinical guidelines and consensus are present for core
   assert.match(pituitarySources.pituitary_incidentaloma_2025.url, /10\.1038\/s41574-025-01134-8/, 'Pituitary Society incidentaloma must point to 2025 statement');
   assert.ok(pituitarySources.avpd_copeptin, 'AVP-D copeptin landmark trial must exist');
   assert.match(pituitarySources.avpd_copeptin.url, /10\.1056\/NEJMoa1803760/, 'AVP-D copeptin trial must point to NEJM landmark');
+  assert.ok(otyloscSources.esc_eas_dyslipidemia_2025, 'ESC/EAS 2025 focused update must exist');
+  assert.match(otyloscSources.esc_eas_dyslipidemia_2025.url, /escardio\.org/, 'ESC/EAS 2025 must point to ESC practice guidelines');
+  assert.ok(adrenalSources.endo_pa, 'Endocrine Society PA guideline must exist');
+  assert.equal(adrenalSources.endo_pa.year, '2025', 'Endocrine Society PA guideline must be 2025');
 });

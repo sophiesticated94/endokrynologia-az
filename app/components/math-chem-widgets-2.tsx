@@ -174,7 +174,7 @@ export function CasrSigmoidalCurve() {
         <h4 style={{ margin: 0, fontSize: '15px' }}>Biofizyczny Model Supresji PTH przez CaSR (Względna Krzywa Hilla)</h4>
       </div>
       <p style={{ fontSize: '12px', color: '#475569', margin: '0 0 14px' }}>
-        Krzywa ilustruje względną dynamikę supresji wydzielania PTH (0–100% maksimum) w funkcji stosunku Ca / Set-point. Indywidualny set-point i stężenia bezwzględne PTH różnią się w zależności od pacjenta, masy tkanki przytarczycowej i gospodarki witaminą D.
+        Krzywa ilustruje względną dynamikę supresji wydzielania PTH (0–100% maksimum) w funkcji stosunku Ca / Set-point. Indywidualny set-point i stężenia bezwzględne PTH różnią się w zależności od pacjenta, masy tkanki przytarczycowej i zaopatrzenia w witaminę D. Wartości przesunięć (np. shift 1,15 w FHH, 0,88 dla cynakalcetu czy minimalna sekrecja 35% w gruczolaku) to arbitralne parametry dydaktyczne wizualizacji kierunku zmian, a nie uniwersalne stałe biologiczne.
       </p>
 
       <div style={{ display: 'flex', gap: '6px', marginBottom: '14px', flexWrap: 'wrap' }}>

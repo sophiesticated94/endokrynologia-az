@@ -95,21 +95,21 @@ export const draftPituitaryPart2: DraftLesson[] = [
       },
       {
         title: 'Diagnostyka: Test z desmopresyną oraz nowoczesna ocena kopeptyny',
-        text: 'W klasycznym teście odwodnieniowym ocenia się zagęszczanie moczu (w polidypsji rośnie >750 mOsm/kg, w AVP-D/AVP-R pozostaje <300 mOsm/kg, a podanie desmopresyny dDAVP daje wzrost >50% w postaci centralnej AVP-D). Nowoczesnym złotym standardem (wg wytycznych Christ-Crain i Pituitary Society) jest pomiar stymulowanej kopeptyny (stabilnego zastępczego markera AVP): po wlewie 3% NaCl (do stężenia sodu >=150 mmol/l) stężenie kopeptyny <4,9 pmol/l z trafnością >95% potwierdza AVP-D, a >=4,9 pmol/l dowodzi polidypsji pierwotnej. Alternatywą jest test stymulacji argininą (odcięcie 3,8 pmol/l). Wyjściowa kopeptyna >21,4 pmol/l bez odwodnienia potwierdza nerkową AVP-R.',
+        text: 'W klasycznym teście odwodnieniowym ocenia się zagęszczanie moczu (w polidypsji rośnie >750 mOsm/kg, w AVP-D/AVP-R pozostaje <300 mOsm/kg, a podanie desmopresyny dDAVP daje wzrost >50% w postaci centralnej AVP-D). Nowoczesnym złotym standardem (wg wytycznych Christ-Crain i Pituitary Society) jest pomiar stymulowanej kopeptyny (stabilnego zastępczego markera AVP): po wlewie 3% NaCl (do stężenia sodu >=150 mmol/l) stężenie kopeptyny <4,9 pmol/l z wysoką trafnością (~96%) potwierdza AVP-D, a >=4,9 pmol/l dowodzi polidypsji pierwotnej. Test stymulacji argininą okazał się w badaniach head-to-head wyraźnie mniej trafny diagnostycznie (~74% vs ~96% dla NaCl) i wymaga modelu dwugranicznego: stężenie <=3,0 pmol/l silnie przemawia za AVP-D, >5,2 pmol/l za polidypsją pierwotną, a przedział 3,0–5,2 pmol/l stanowi strefę nierozstrzygającą. Wyjściowa kopeptyna >21,4 pmol/l bez odwodnienia potwierdza nerkową AVP-R.',
       },
     ],
     table: {
       headers: ['Jednostka chorobowa', 'Test z desmopresyną (dDAVP)', 'Stymulowana kopeptyna'],
       rows: [
-        ['AVP-D (moczówka centralna)', 'Wzrost osmolalności moczu >50% po dDAVP', '<4,9 pmol/l po 3% NaCl (<3,8 po argininie)'],
+        ['AVP-D (moczówka centralna)', 'Wzrost osmolalności moczu >50% po dDAVP', '<4,9 pmol/l po 3% NaCl (lub <=3,0 pmol/l po argininie)'],
         ['AVP-R (moczówka nerkowa)', 'Brak wzrostu osmolalności (<50% po dDAVP)', 'Wyjściowo >21,4 pmol/l bez odwodnienia'],
-        ['Polidypsja pierwotna', 'Mocz zagęszczony już w fazie odwodnienia (>750 mOsm/kg)', '>=4,9 pmol/l po 3% NaCl (prawidłowa rezerwa)'],
+        ['Polidypsja pierwotna', 'Mocz zagęszczony już w fazie odwodnienia (>750 mOsm/kg)', '>=4,9 pmol/l po 3% NaCl (lub >5,2 pmol/l po argininie)'],
       ],
     },
     advanced:
-      'W badaniu MRI mózgowia zdrowy tylny płat przysadki daje charakterystyczny sygnał wysokiej intensywności („jasny punkt” tylnego płata — posterior pituitary bright spot w obrazach T1-zależnych), który odpowiada magazynom kompleksów wazopresyna-neurofizyna. Zanik tego „jasnego punktu” w T1 silnie przemawia za moczówką prostą centralną lub uszkodzeniem podwzgórza.',
+      'W badaniu MRI mózgowia zdrowy tylny płat przysadki daje charakterystyczny sygnał wysokiej intensywności („jasny punkt” tylnego płata — posterior pituitary bright spot w obrazach T1-zależnych), który odpowiada magazynom kompleksów wazopresyna-neurofizyna. Zanik tego „jasnego punktu” w T1 jest znaleziskiem wspierającym, ale nieswoistym — może zanikać z wiekiem u osób całkowicie zdrowych, a u części pacjentów z AVP-D pozostawać widoczny.',
     summary:
-      'Moczówka prosta to poliuria i polidypsja (AVP-D lub AVP-R). Test z desmopresyną lub nowoczesny test stymulacji kopeptyny (3% NaCl/arginina) rozstrzygają o etiologii, a leczenie AVP-D opiera się na doustnej lub podjęzykowej desmopresynie.',
+      'Moczówka prosta to poliuria i polidypsja (AVP-D lub AVP-R). Test z desmopresyną lub nowoczesny test stymulacji kopeptyny (3% NaCl, model dwugraniczny po argininie) rozstrzygają o etiologii, a leczenie AVP-D opiera się na doustnej lub podjęzykowej desmopresynie.',
     sourceIds: ['baldeweg', 'avpd_copeptin'],
     questions: [
       q(
