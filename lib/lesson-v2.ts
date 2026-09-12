@@ -7,7 +7,7 @@ import type {
   Question,
 } from './course-types.ts';
 
-const PILOT_MODULES = new Set(['tarczyca', 'cukrzyca']);
+const PILOT_MODULES = new Set(['tarczyca', 'cukrzyca', 'przysadka']);
 function classifyObjective(statement: string): ObjectiveKind {
   const value = statement.toLocaleLowerCase('pl');
   if (/bezpie|piln|przeciwwsk|monitor|zagroż|alarm/.test(value)) return 'safety';
@@ -43,10 +43,10 @@ function toActivity(
 function widgetIds(lesson: Lesson): LessonExperienceV2['widgetIds'] {
   const id = lesson.id;
   const widgets = new Set<LessonExperienceV2['widgetIds'][number]>();
-  if (/fizjologia|diagnostyka|dka|hhs|zapalenia|niedoczynnosc|nadczynnosc/.test(id)) widgets.add('axis-map');
-  if (/diagnostyka|dka|hhs|ciaza|cgm|stany-nagle|niedoczynnosc|nadczynnosc/.test(id)) widgets.add('lab-workbench');
-  if (/dka|hhs|cgm|zapalenia|niedoczynnosc|ciaza|technologie/.test(id)) widgets.add('timeline');
-  if (/diagnostyka|guzki|dka|hhs|klasyfikacja|stany-nagle/.test(id)) widgets.add('pathway-builder');
+  if (/fizjologia|diagnostyka|dka|hhs|zapalenia|niedoczynnosc|nadczynnosc|prolactinoma|akromegalia|cushing|hipopituitaryzm/.test(id)) widgets.add('axis-map');
+  if (/diagnostyka|dka|hhs|ciaza|cgm|stany-nagle|niedoczynnosc|nadczynnosc|moczowka|siadh|osmolalnosc/.test(id)) widgets.add('lab-workbench');
+  if (/dka|hhs|cgm|zapalenia|niedoczynnosc|ciaza|technologie|pulsacja|operacje/.test(id)) widgets.add('timeline');
+  if (/diagnostyka|guzki|dka|hhs|klasyfikacja|stany-nagle|guzy-nieczynne|udar-przysadki/.test(id)) widgets.add('pathway-builder');
   if (!widgets.size) widgets.add(lesson.moduleId === 'cukrzyca' ? 'lab-workbench' : 'axis-map');
   return [...widgets].slice(0, 2);
 }

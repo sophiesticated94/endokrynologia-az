@@ -88,7 +88,7 @@ async function main() {
     DATABASE_URL_TEST: 'postgresql://postgres:postgres@localhost:5432/endokrynologia_test',
   };
 
-  const testProcess = spawn('node', ['--test', 'tests/integration/postgres-tarczyca.test.mjs'], {
+  const testProcess = spawn('node', ['--test', 'tests/integration/postgres-modules.test.mjs'], {
     stdio: 'inherit',
     shell: true,
     env,

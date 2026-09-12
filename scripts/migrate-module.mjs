@@ -223,13 +223,14 @@ export async function migrateModule(options = {}) {
           courseId: 'endocrinology',
           title: moduleMeta.name,
           subtitle: moduleMeta.subtitle || '',
-          sortOrder: 1,
+          sortOrder: Math.max(1, modulesList.findIndex((m) => m.id === moduleId) + 1),
         })
         .onConflictDoUpdate({
           target: modules.id,
           set: {
             title: moduleMeta.name,
             subtitle: moduleMeta.subtitle || '',
+            sortOrder: Math.max(1, modulesList.findIndex((m) => m.id === moduleId) + 1),
             updatedAt: new Date(),
           },
         });

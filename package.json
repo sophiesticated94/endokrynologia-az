@@ -19,7 +19,11 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "node scripts/run-migrations.mjs",
     "db:seed:tarczyca": "node scripts/migrate-module.mjs --module=tarczyca --apply",
-    "db:verify:tarczyca": "node scripts/migrate-module.mjs --module=tarczyca --verify"
+    "db:verify:tarczyca": "node scripts/migrate-module.mjs --module=tarczyca --verify",
+    "db:seed:cukrzyca": "node scripts/migrate-module.mjs --module=cukrzyca --apply",
+    "db:verify:cukrzyca": "node scripts/migrate-module.mjs --module=cukrzyca --verify",
+    "db:seed:przysadka": "node scripts/migrate-module.mjs --module=przysadka --apply",
+    "db:verify:przysadka": "node scripts/migrate-module.mjs --module=przysadka --verify"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
