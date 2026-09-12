@@ -1,4 +1,7 @@
 import crypto from 'node:crypto';
+import fs from 'node:fs';
+import fsp from 'node:fs/promises';
+import path from 'node:path';
 import { eq, and, desc } from 'drizzle-orm';
 import { createDatabase } from '../db/postgres/index.ts';
 import {
@@ -7,9 +10,19 @@ import {
   lessons,
   lessonRevisions,
   contentSources,
+  widgetPresets,
 } from '../db/postgres/schema.ts';
 import { LessonRevisionDocumentSchema } from '../lib/content/schemas/lesson-revision.ts';
-import { PostgresContentRepository, StaticContentRepository } from '../lib/content/content-repository.ts';
+import {
+  PostgresContentRepository,
+  StaticContentRepository,
+} from '../lib/content/content-repository.ts';
+import { compareLessonDocuments } from '../lib/content/structured-diff.ts';
+import { getPreset, WidgetPresetDefinitionSchema } from '../lib/content/preset-registry.ts';
+import { getDefaultObjectStorage } from '../lib/storage/create-object-storage.ts';
+import { ContentAssetRepository } from '../lib/content/asset-repository.ts';
+import { AssetService } from '../lib/content/asset-service.ts';
+import { buildCourseAssetKey } from '../lib/content/course-asset-key-builder.ts';
 import {
   lessons as staticLessons,
   lessonExperiences as staticExperiences,
@@ -35,6 +48,81 @@ export function canonicalHash(obj) {
   return crypto.createHash('sha256').update(JSON.stringify(cleaned)).digest('hex');
 }
 
+function collectPresetIds(doc) {
+  const presetIds = new Set();
+  if (doc.experience && doc.experience.blocks) {
+    for (const block of doc.experience.blocks) {
+      if (block.inlineEnhancements) {
+        for (const enh of block.inlineEnhancements) {
+          if (enh.presetId) {
+            presetIds.add(enh.presetId);
+          }
+        }
+      }
+    }
+  }
+  return [...presetIds];
+}
+
+async function scanAndMigrateAssets(lesson, doc, assetService, isApply) {
+  const jsonStr = JSON.stringify(doc);
+  const pathRegex =
+    /(?:["'(\s]|^)(\/(?:assets|images|public)\/[^"')\s]+|\b[\w\-\.\/]+\.(?:png|webp|jpg|jpeg|svg|avif|gif))(?:["')\s]|$)/gi;
+
+  const foundPaths = new Set();
+  let match;
+  while ((match = pathRegex.exec(jsonStr)) !== null) {
+    const raw = match[1];
+    if (raw && !raw.startsWith('/api/assets/')) {
+      foundPaths.add(raw);
+    }
+  }
+
+  let migratedCount = 0;
+  for (const rawPath of foundPaths) {
+    let resolved = null;
+    const candidates = [
+      path.resolve(process.cwd(), rawPath.replace(/^\//, '')),
+      path.resolve(process.cwd(), 'public', rawPath.replace(/^\//, '')),
+    ];
+    for (const cand of candidates) {
+      if (fs.existsSync(cand)) {
+        resolved = cand;
+        break;
+      }
+    }
+
+    if (!resolved) {
+      throw new Error(
+        `[migrate] Broken asset reference in lesson "${lesson.id}": "${rawPath}" could not be resolved on disk!`
+      );
+    }
+
+    if (isApply && assetService) {
+      const filename = path.basename(resolved);
+      const key = buildCourseAssetKey({
+        courseId: 'endocrinology',
+        moduleId: doc.moduleId,
+        lessonId: lesson.id,
+        filename,
+      });
+      const fileBuffer = await fsp.readFile(resolved);
+      const record = await assetService.ingestAsset({
+        key,
+        content: fileBuffer,
+        originalFilename: filename,
+      });
+      doc.assetIds = doc.assetIds || [];
+      if (!doc.assetIds.includes(record.id)) {
+        doc.assetIds.push(record.id);
+      }
+      migratedCount++;
+    }
+  }
+
+  return migratedCount;
+}
+
 export async function migrateModule(options = {}) {
   const moduleId = options.module || 'tarczyca';
   const isApply = options.apply || false;
@@ -53,15 +141,20 @@ export async function migrateModule(options = {}) {
   };
 
   const { db, close } = createDatabase(databaseUrl);
+  const storage = getDefaultObjectStorage();
+  const assetRepo = new ContentAssetRepository(db);
+  const assetService = new AssetService(storage, assetRepo);
 
   try {
     if (isVerifyOnly) {
-      console.log(`[verify] Checking parity for module "${moduleId}"...`);
+      console.log(`[verify] Checking structured parity for module "${moduleId}"...`);
       const pgRepo = new PostgresContentRepository(db);
       const staticRepo = new StaticContentRepository();
 
       const pgLessons = await pgRepo.listLessons(moduleId);
-      console.log(`[verify] Database lessons count: ${pgLessons.length}, Static lessons count: ${targetLessons.length}`);
+      console.log(
+        `[verify] Database lessons count: ${pgLessons.length}, Static lessons count: ${targetLessons.length}`
+      );
 
       if (pgLessons.length !== targetLessons.length) {
         throw new Error(
@@ -75,16 +168,19 @@ export async function migrateModule(options = {}) {
         const pgDoc = await pgRepo.getLesson(staticL.id);
 
         if (!pgDoc) {
-          console.error(`[verify] Lesson missing in database: ${staticL.id}`);
+          console.error(
+            `[verify] Lesson missing in database or publishedRevisionId not set: ${staticL.id}`
+          );
           diffCount++;
           continue;
         }
 
-        const sHash = canonicalHash(staticDoc);
-        const pHash = canonicalHash(pgDoc);
-
-        if (sHash !== pHash) {
-          console.error(`[verify] Hash mismatch for lesson ${staticL.id}: static=${sHash} vs pg=${pHash}`);
+        const diff = compareLessonDocuments(staticDoc, pgDoc);
+        if (!diff.equal) {
+          console.error(
+            `[verify] Structured diff mismatch for lesson ${staticL.id}:`,
+            diff.differences
+          );
           diffCount++;
         }
       }
@@ -93,7 +189,9 @@ export async function migrateModule(options = {}) {
         throw new Error(`Verification failed with ${diffCount} differences!`);
       }
 
-      console.log(`[verify] 100% PARITY VERIFIED for all ${targetLessons.length} lessons in module "${moduleId}".`);
+      console.log(
+        `[verify] 100% PARITY VERIFIED for all ${targetLessons.length} lessons in module "${moduleId}".`
+      );
       return { success: true, count: targetLessons.length, verified: true };
     }
 
@@ -101,7 +199,6 @@ export async function migrateModule(options = {}) {
     console.log(`[migrate] Mode: ${isApply ? 'APPLY (writing to database)' : 'DRY RUN (simulation)'}`);
 
     if (isApply) {
-      // 1. Ensure course exists
       await db
         .insert(courses)
         .values({
@@ -119,7 +216,6 @@ export async function migrateModule(options = {}) {
           },
         });
 
-      // 2. Ensure module exists
       await db
         .insert(modules)
         .values({
@@ -139,7 +235,7 @@ export async function migrateModule(options = {}) {
         });
     }
 
-    // Collect and migrate relevant sources
+    // Sources
     const usedSourceIds = new Set(targetLessons.flatMap((l) => l.sourceIds));
     console.log(`[migrate] Found ${usedSourceIds.size} unique canonical sources.`);
 
@@ -173,6 +269,8 @@ export async function migrateModule(options = {}) {
 
     let insertedRevisions = 0;
     let skippedRevisions = 0;
+    let totalAssetsMigrated = 0;
+    let totalPresetsMigrated = 0;
 
     for (let i = 0; i < targetLessons.length; i++) {
       const lesson = targetLessons[i];
@@ -199,7 +297,47 @@ export async function migrateModule(options = {}) {
         review: lesson.review,
       };
 
-      // Strict validation through Zod
+      // 1. Scan and migrate real assets
+      const assetCount = await scanAndMigrateAssets(lesson, doc, assetService, isApply);
+      totalAssetsMigrated += assetCount;
+
+      // 2. Validate and migrate referenced widget presets
+      const referencedPresets = collectPresetIds(doc);
+      for (const presetId of referencedPresets) {
+        const presetDef = getPreset(presetId);
+        if (!presetDef) {
+          throw new Error(
+            `[migrate] Broken preset reference in lesson "${lesson.id}": preset "${presetId}" not found in preset registry!`
+          );
+        }
+        WidgetPresetDefinitionSchema.parse(presetDef);
+
+        if (isApply) {
+          await db
+            .insert(widgetPresets)
+            .values({
+              id: presetDef.id,
+              widgetKind: presetDef.widgetType,
+              moduleId: presetDef.moduleId,
+              lessonId: presetDef.lessonId,
+              title: presetDef.title,
+              initialState: presetDef.initialState,
+              updatedAt: new Date(),
+            })
+            .onConflictDoUpdate({
+              target: widgetPresets.id,
+              set: {
+                widgetKind: presetDef.widgetType,
+                title: presetDef.title,
+                initialState: presetDef.initialState,
+                updatedAt: new Date(),
+              },
+            });
+          totalPresetsMigrated++;
+        }
+      }
+
+      // 3. Strict validation through Zod
       const validated = LessonRevisionDocumentSchema.parse(doc);
       const hash = canonicalHash(validated);
 
@@ -208,87 +346,88 @@ export async function migrateModule(options = {}) {
         continue;
       }
 
-      // Upsert lesson identity
-      await db
-        .insert(lessons)
-        .values({
-          id: lesson.id,
-          moduleId: moduleId,
-          title: lesson.title,
-          subtitle: lesson.subtitle || lesson.title,
-          sortOrder: i + 1,
-          minutes: lesson.minutes,
-          updatedAt: new Date(),
-        })
-        .onConflictDoUpdate({
-          target: lessons.id,
-          set: {
+      // 4. Transactional upsert and publishing
+      await db.transaction(async (tx) => {
+        await tx
+          .insert(lessons)
+          .values({
+            id: lesson.id,
+            moduleId: moduleId,
             title: lesson.title,
             subtitle: lesson.subtitle || lesson.title,
             sortOrder: i + 1,
             minutes: lesson.minutes,
             updatedAt: new Date(),
-          },
-        });
+          })
+          .onConflictDoUpdate({
+            target: lessons.id,
+            set: {
+              title: lesson.title,
+              subtitle: lesson.subtitle || lesson.title,
+              sortOrder: i + 1,
+              minutes: lesson.minutes,
+              updatedAt: new Date(),
+            },
+          });
 
-      // Check if revision with same hash already exists (idempotency)
-      const existingRev = await db
-        .select()
-        .from(lessonRevisions)
-        .where(
-          and(
-            eq(lessonRevisions.lessonId, lesson.id),
-            eq(lessonRevisions.contentHash, hash)
-          )
-        )
-        .limit(1);
-
-      let targetRevisionId;
-
-      if (existingRev[0]) {
-        skippedRevisions++;
-        targetRevisionId = existingRev[0].id;
-      } else {
-        // Query current max version
-        const latestRows = await db
+        const existingRev = await tx
           .select()
           .from(lessonRevisions)
-          .where(eq(lessonRevisions.lessonId, lesson.id))
-          .orderBy(desc(lessonRevisions.version))
+          .where(
+            and(
+              eq(lessonRevisions.lessonId, lesson.id),
+              eq(lessonRevisions.contentHash, hash)
+            )
+          )
           .limit(1);
 
-        const nextVersion = latestRows[0] ? latestRows[0].version + 1 : 1;
+        let targetRevisionId;
 
-        const newRev = await db
-          .insert(lessonRevisions)
-          .values({
-            lessonId: lesson.id,
-            version: nextVersion,
-            contentHash: hash,
-            document: validated,
-            status: 'published',
-          })
-          .returning();
+        if (existingRev[0]) {
+          skippedRevisions++;
+          targetRevisionId = existingRev[0].id;
+        } else {
+          const latestRows = await tx
+            .select()
+            .from(lessonRevisions)
+            .where(eq(lessonRevisions.lessonId, lesson.id))
+            .orderBy(desc(lessonRevisions.version))
+            .limit(1);
 
-        targetRevisionId = newRev[0].id;
-        insertedRevisions++;
-      }
+          const nextVersion = latestRows[0] ? latestRows[0].version + 1 : 1;
 
-      // Ensure publishedRevisionId points to current revision
-      await db
-        .update(lessons)
-        .set({ publishedRevisionId: targetRevisionId })
-        .where(eq(lessons.id, lesson.id));
+          const newRev = await tx
+            .insert(lessonRevisions)
+            .values({
+              lessonId: lesson.id,
+              version: nextVersion,
+              contentHash: hash,
+              document: validated,
+              status: 'published',
+            })
+            .returning();
+
+          targetRevisionId = newRev[0].id;
+          insertedRevisions++;
+        }
+
+        await tx
+          .update(lessons)
+          .set({ publishedRevisionId: targetRevisionId })
+          .where(eq(lessons.id, lesson.id));
+      });
     }
 
     console.log(
-      `[migrate] Completed. Inserted revisions: ${insertedRevisions}, Skipped (unchanged): ${skippedRevisions}`
+      `[migrate] Completed. Inserted revisions: ${insertedRevisions}, Skipped (unchanged): ${skippedRevisions}, Assets: ${totalAssetsMigrated}, Presets: ${totalPresetsMigrated}`
     );
 
     return {
       success: true,
       insertedRevisions,
       skippedRevisions,
+      totalAssetsMigrated,
+      totalPresetsMigrated,
       totalLessons: targetLessons.length,
     };
   } finally {
@@ -296,10 +435,13 @@ export async function migrateModule(options = {}) {
   }
 }
 
-// CLI entry point
-if (process.argv[1] && process.argv[1].replace(/\\/g, '/').endsWith('scripts/migrate-module.mjs')) {
+if (
+  process.argv[1] &&
+  process.argv[1].replace(/\\/g, '/').endsWith('scripts/migrate-module.mjs')
+) {
   const args = process.argv.slice(2);
-  const moduleArg = args.find((a) => a.startsWith('--module='))?.split('=')[1] || 'tarczyca';
+  const moduleArg =
+    args.find((a) => a.startsWith('--module='))?.split('=')[1] || 'tarczyca';
   const apply = args.includes('--apply');
   const verify = args.includes('--verify');
   const dbUrlArg = args.find((a) => a.startsWith('--database-url='))?.split('=')[1];

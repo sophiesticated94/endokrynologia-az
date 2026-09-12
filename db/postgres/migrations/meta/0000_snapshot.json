@@ -1,5 +1,5 @@
 {
-  "id": "de02ce34-ba28-4f96-a7d9-d7155e52c1fe",
+  "id": "bb573d40-8dbd-4513-ac8b-c77356f8581c",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -376,7 +376,8 @@
         },
         "status": {
           "name": "status",
-          "type": "varchar(32)",
+          "type": "revision_status",
+          "typeSchema": "public",
           "primaryKey": false,
           "notNull": true,
           "default": "'published'"
@@ -524,6 +525,19 @@
             "id"
           ],
           "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "lessons_published_revision_id_lesson_revisions_id_fk": {
+          "name": "lessons_published_revision_id_lesson_revisions_id_fk",
+          "tableFrom": "lessons",
+          "tableTo": "lesson_revisions",
+          "columnsFrom": [
+            "published_revision_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "set null",
           "onUpdate": "no action"
         }
       },
@@ -696,7 +710,18 @@
       "isRLSEnabled": false
     }
   },
-  "enums": {},
+  "enums": {
+    "public.revision_status": {
+      "name": "revision_status",
+      "schema": "public",
+      "values": [
+        "draft",
+        "review",
+        "published",
+        "archived"
+      ]
+    }
+  },
   "schemas": {},
   "sequences": {},
   "roles": {},

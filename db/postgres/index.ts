@@ -12,9 +12,14 @@ export interface DatabaseConnection {
 }
 
 export function createDatabase(connectionUrl?: string): DatabaseConnection {
+  const envUrl = process.env.DATABASE_URL;
+  if (!connectionUrl && !envUrl && process.env.NODE_ENV === 'production') {
+    throw new Error('DATABASE_URL environment variable is required in production mode');
+  }
+
   const url =
     connectionUrl ||
-    process.env.DATABASE_URL ||
+    envUrl ||
     'postgresql://postgres:postgres@localhost:5432/endokrynologia_dev';
 
   const client = postgres(url, {

@@ -9,6 +9,7 @@ import {
   LessonRevisionDocumentSchema,
   type LessonRevisionDocument,
 } from './schemas/lesson-revision.ts';
+import { compareLessonDocuments } from './structured-diff.ts';
 import { lessons as staticLessons, lessonExperiences as staticExperiences } from '../course.ts';
 
 export interface ModuleSummary {
@@ -99,16 +100,7 @@ export class PostgresContentRepository implements ContentRepository {
       .limit(1);
 
     if (!rows[0]) {
-      // Fallback to latest revision if publishedRevisionId is not set
-      const latest = await this.db
-        .select()
-        .from(lessonRevisions)
-        .where(eq(lessonRevisions.lessonId, lessonId))
-        .orderBy(desc(lessonRevisions.version))
-        .limit(1);
-
-      if (!latest[0]) return null;
-      return LessonRevisionDocumentSchema.parse(latest[0].document);
+      return null;
     }
 
     return LessonRevisionDocumentSchema.parse(rows[0].revision.document);
@@ -167,17 +159,20 @@ export class ComparingContentRepository implements ContentRepository {
       this.pgRepo.getLesson(lessonId),
     ]);
 
-    if (!fromStatic && !fromPg) return null;
-    if (!fromStatic || !fromPg) {
-      console.warn(`[compare] Discrepancy for lesson ${lessonId}: static=${!!fromStatic}, pg=${!!fromPg}`);
-      return fromPg || fromStatic;
+    if (!fromPg) {
+      throw new Error(`[compare] Lesson "${lessonId}" is missing from PostgreSQL! No silent fallback in compare mode.`);
+    }
+    if (!fromStatic) {
+      console.warn(`[compare] Lesson "${lessonId}" exists in PostgreSQL but not in static definitions.`);
+      return fromPg;
     }
 
-    // Compare essential fields
-    const sJson = JSON.stringify(fromStatic);
-    const pgJson = JSON.stringify(fromPg);
-    if (sJson !== pgJson) {
-      console.warn(`[compare] Content mismatch for lesson ${lessonId}`);
+    const diff = compareLessonDocuments(fromStatic, fromPg);
+    if (!diff.equal) {
+      console.warn(
+        `[compare] Structured diff mismatch for lesson "${lessonId}" (${diff.differences.length} differences):`,
+        diff.differences.map((d) => `${d.path}: ${d.message}`)
+      );
     }
 
     return fromPg;

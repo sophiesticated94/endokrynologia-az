@@ -168,6 +168,7 @@ export interface BeersFlag {
   rationale: string;
   exceptions: string;
   evidenceId: string;
+  clinicalContextNotes?: string;
 }
 
 export function evaluateBeersCriteria(
@@ -192,8 +193,9 @@ export function evaluateBeersCriteria(
         drug,
         criterion: 'Benzodiazepiny i leki z grupy Z u osób starszych',
         rationale: 'Zwiększone ryzyko upadków, złamań, majaczenia, zaburzeń poznawczych i wypadków komunikacyjnych.',
-        exceptions: 'Wyjątki: leczenie stanu padaczkowego, ostry zespół odstawienny po alkoholu/BZD, ciężki katatoniczny stupor lub faza terminalna opieki paliatywnej.',
+        exceptions: 'Wyjątki Beers 2023: zaburzenia drgawkowe (seizure disorders), zaburzenia zachowania w fazie snu REM (RBD), zespół odstawienny benzodiazepin lub alkoholu, ciężkie uogólnione zaburzenie lękowe (severe GAD) oraz znieczulenie okołooperacyjne/proceduralne.',
         evidenceId: 'evidence-beers-2023',
+        clinicalContextNotes: 'Lokalne wyjątki kliniczne: opieka paliatywna/terminalna oraz ciężki katatoniczny stupor w protokołach ratunkowych.',
       });
     }
 
@@ -214,7 +216,7 @@ export function evaluateBeersCriteria(
       flags.push({
         drug,
         criterion: 'Leki przeciwpsychotyczne w otępieniu (BPSD)',
-        rationale: 'Zwiększona śmiertelność ogólna oraz 3-krotny wzrost ryzyka udaru mózgu i TIA (ostrzeżenie FDA/EMA).',
+        rationale: 'Zwiększone ryzyko incydentów naczyniowo-mózgowych (udar mózgu / TIA) oraz zwiększona śmiertelność ogólna u osób starszych z otępieniem (ostrzeżenie FDA/EMA).',
         exceptions: 'Wyłącznie w ciężkim cierpieniu lub bezpośrednim zagrożeniu przemocą, gdy metody niefarmakologiczne zawiodły; najmniejsza dawka, krótki czas.',
         evidenceId: 'evidence-antipsychotics-dementia-blackbox',
       });

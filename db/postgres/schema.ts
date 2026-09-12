@@ -1,5 +1,6 @@
 import {
   pgTable,
+  pgEnum,
   uuid,
   varchar,
   text,
@@ -9,8 +10,16 @@ import {
   jsonb,
   uniqueIndex,
   index,
+  type AnyPgColumn,
 } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm';
+
+export const revisionStatusEnum = pgEnum('revision_status', [
+  'draft',
+  'review',
+  'published',
+  'archived',
+]);
 
 export const courses = pgTable('courses', {
   id: varchar('id', { length: 64 }).primaryKey(),
@@ -42,7 +51,10 @@ export const lessons = pgTable('lessons', {
   subtitle: text('subtitle'),
   sortOrder: integer('sort_order').default(0).notNull(),
   minutes: integer('minutes').default(12).notNull(),
-  publishedRevisionId: uuid('published_revision_id'),
+  publishedRevisionId: uuid('published_revision_id').references(
+    (): AnyPgColumn => lessonRevisions.id,
+    { onDelete: 'set null' }
+  ),
   createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
   updatedAt: timestamp('updated_at', { withTimezone: true }).defaultNow().notNull(),
 });
@@ -57,7 +69,7 @@ export const lessonRevisions = pgTable(
     version: integer('version').notNull(),
     contentHash: varchar('content_hash', { length: 64 }).notNull(),
     document: jsonb('document').notNull(),
-    status: varchar('status', { length: 32 }).default('published').notNull(),
+    status: revisionStatusEnum('status').default('published').notNull(),
     createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
   },
   (table) => [

@@ -67,10 +67,13 @@ export async function GET(
       },
     });
   } catch (err: unknown) {
+    const requestId = crypto.randomUUID();
+    console.error(`[asset-api] [${requestId}] Error retrieving asset ${assetId}:`, err);
+
     return new Response(
       JSON.stringify({
-        error: 'Internal storage error',
-        detail: err instanceof Error ? err.message : String(err),
+        error: 'Internal server error',
+        requestId,
       }),
       {
         status: 500,

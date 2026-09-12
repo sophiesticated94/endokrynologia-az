@@ -1,3 +1,4 @@
+CREATE TYPE "public"."revision_status" AS ENUM('draft', 'review', 'published', 'archived');--> statement-breakpoint
 CREATE TABLE "content_assets" (
 	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"object_key" varchar(512) NOT NULL,
@@ -56,7 +57,7 @@ CREATE TABLE "lesson_revisions" (
 	"version" integer NOT NULL,
 	"content_hash" varchar(64) NOT NULL,
 	"document" jsonb NOT NULL,
-	"status" varchar(32) DEFAULT 'published' NOT NULL,
+	"status" "revision_status" DEFAULT 'published' NOT NULL,
 	"created_at" timestamp with time zone DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
@@ -96,6 +97,7 @@ CREATE TABLE "widget_presets" (
 ALTER TABLE "evidence_claims" ADD CONSTRAINT "evidence_claims_source_id_content_sources_id_fk" FOREIGN KEY ("source_id") REFERENCES "public"."content_sources"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "lesson_revisions" ADD CONSTRAINT "lesson_revisions_lesson_id_lessons_id_fk" FOREIGN KEY ("lesson_id") REFERENCES "public"."lessons"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "lessons" ADD CONSTRAINT "lessons_module_id_modules_id_fk" FOREIGN KEY ("module_id") REFERENCES "public"."modules"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "lessons" ADD CONSTRAINT "lessons_published_revision_id_lesson_revisions_id_fk" FOREIGN KEY ("published_revision_id") REFERENCES "public"."lesson_revisions"("id") ON DELETE set null ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "modules" ADD CONSTRAINT "modules_course_id_courses_id_fk" FOREIGN KEY ("course_id") REFERENCES "public"."courses"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "widget_presets" ADD CONSTRAINT "widget_presets_module_id_modules_id_fk" FOREIGN KEY ("module_id") REFERENCES "public"."modules"("id") ON DELETE set null ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "widget_presets" ADD CONSTRAINT "widget_presets_lesson_id_lessons_id_fk" FOREIGN KEY ("lesson_id") REFERENCES "public"."lessons"("id") ON DELETE set null ON UPDATE no action;--> statement-breakpoint
