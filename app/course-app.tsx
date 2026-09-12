@@ -47,20 +47,10 @@ const navItems = [
   ['glossary', 'Słowniczek pojęć', BookA],
 ] as const;
 
-function validRoute(value: string): value is Route {
-  return (
-    ['home', 'course', 'simulator', 'cases', 'cards', 'exam', 'results', 'mistakes', 'glossary', 'account', 'catalog'].includes(value) ||
-    value.startsWith('simulator?') ||
-    value.startsWith('simulator/') ||
-    COURSES.endocrinology.lessons.some(l => value === `lesson/${l.id}` || value === `quiz/${l.id}`) ||
-    COURSES.psychiatry.lessons.some(l => value === `lesson/${l.id}` || value === `quiz/${l.id}`) ||
-    COURSES.endocrinology.cases.some(c => value === `case/${c.id}`) ||
-    COURSES.psychiatry.cases.some(c => value === `case/${c.id}`)
-  );
-}
+import { validRoute, getInitialCourse, getInitialRoute } from './utils/initial-route';
 
 export default function CourseApp() {
-  const [activeCourse, setActiveCourse] = useState<CourseId>('endocrinology');
+  const [activeCourse, setActiveCourse] = useState<CourseId>(() => getInitialCourse());
 
   const selectCourse = useCallback((id: CourseId) => {
     setActiveCourse(id);
@@ -74,8 +64,8 @@ export default function CourseApp() {
 
   const learning = useLearning(activeCourse);
   const { state, user, configured, loading, saving, pending, error, online } = learning;
-  const [route, setRoute] = useState<Route>('home');
-  const routeRef = useRef<Route>('home');
+  const [route, setRoute] = useState<Route>(() => getInitialRoute());
+  const routeRef = useRef<Route>(getInitialRoute());
   const [mobile, setMobile] = useState(false);
   const active = useRef(false);
   const setActive = useCallback((v: boolean) => {

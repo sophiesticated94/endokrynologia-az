@@ -20,71 +20,74 @@ export function PsychiatryLabModal({
       if (e.key === 'Escape') onClose();
     };
     window.addEventListener('keydown', handleKeyDown);
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = prevOverflow;
     };
   }, [onClose]);
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-4 bg-slate-950/75 sm:backdrop-blur-xs"
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-2 pb-3 sm:p-6 bg-black/65 backdrop-blur-xs animate-in fade-in duration-150"
       role="dialog"
       aria-modal="true"
       onClick={e => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="relative bg-white w-full h-[100dvh] max-h-[100dvh] sm:h-[90vh] sm:max-h-[90vh] sm:max-w-6xl sm:rounded-2xl flex flex-col shadow-2xl border-0 sm:border sm:border-slate-200 overflow-hidden">
-        {/* Pasek nagłówka - zawsze przypięty na górze z obsługą safe-area (notch) */}
-        <div
-          className="sticky top-0 z-20 flex items-center justify-between px-3 sm:px-6 py-2.5 sm:py-3.5 border-b border-slate-200 bg-white shrink-0 shadow-xs"
-          style={{ paddingTop: 'max(env(safe-area-inset-top), 10px)' }}
-        >
-          <div className="flex items-center gap-2 sm:gap-2.5 min-w-0 pr-2">
-            <div className="p-1.5 sm:p-2 bg-indigo-600 text-white rounded-lg shadow-sm shrink-0">
-              <Sliders size={16} />
-            </div>
-            <div className="min-w-0">
-              <h2 className="font-bold text-slate-900 text-sm sm:text-base leading-tight truncate">
-                {preset ? preset.title : 'Pracownia kliniczna (Command Center)'}
-              </h2>
-              <p className="text-[11px] sm:text-xs text-slate-500 truncate">
-                {preset ? preset.patientSummary : 'Eksploracja przypadku bez opuszczania lekcji'}
-              </p>
-            </div>
-          </div>
+      {/* Karta modalu - na mobile elegancki bottom-sheet (86vh), widoczne tło lekcji z tyłu */}
+      <div
+        className="relative bg-white w-full max-w-5xl h-[86vh] max-h-[86vh] sm:h-[88vh] sm:max-h-[88vh] rounded-2xl sm:rounded-3xl flex flex-col shadow-2xl border border-slate-200 overflow-hidden"
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Pasek nagłówka - zakotwiczony z uchwytem i dużym przyciskiem zamknięcia */}
+        <div className="shrink-0 bg-white border-b border-slate-200 px-3.5 sm:px-6 pt-2.5 pb-3">
+          {/* Uchwyt dla urządzeń dotykowych */}
+          <div className="w-12 h-1 bg-slate-300 rounded-full mx-auto mb-2 sm:hidden" />
 
-          <div className="flex items-center gap-2 shrink-0">
-            {onOpenFullScreen && (
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
+              <div className="p-1.5 sm:p-2 bg-indigo-600 text-white rounded-lg shadow-xs shrink-0">
+                <Sliders size={16} />
+              </div>
+              <div className="min-w-0">
+                <h2 className="font-bold text-slate-900 text-xs sm:text-base leading-tight truncate">
+                  {preset ? preset.title : 'Pracownia kliniczna (Command Center)'}
+                </h2>
+                <p className="text-[10px] sm:text-xs text-slate-500 truncate">
+                  {preset ? preset.patientSummary : 'Eksploracja przypadku w oknie lekcji'}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+              {onOpenFullScreen && (
+                <button
+                  type="button"
+                  onClick={onOpenFullScreen}
+                  className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-indigo-700 bg-indigo-50 hover:bg-indigo-100 rounded-lg transition-colors cursor-pointer"
+                  title="Otwórz pracownię w osobnym pełnym oknie"
+                >
+                  <Maximize2 size={13} />
+                  <span>Pełny ekran</span>
+                </button>
+              )}
               <button
                 type="button"
-                onClick={onOpenFullScreen}
-                className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-indigo-700 bg-indigo-50 hover:bg-indigo-100 rounded-lg transition-colors cursor-pointer"
-                title="Otwórz pracownię w osobnym widoku"
+                onClick={onClose}
+                className="flex items-center gap-1 px-3 py-1.5 sm:px-3.5 sm:py-2 bg-slate-900 hover:bg-slate-800 active:bg-black text-white rounded-xl text-xs sm:text-sm font-bold shadow-xs transition-all cursor-pointer touch-manipulation"
+                aria-label="Zamknij pracownię i wróć do lekcji"
               >
-                <Maximize2 size={13} />
-                <span>Pełny ekran</span>
+                <X size={15} className="stroke-[2.5]" />
+                <span>Zamknij</span>
               </button>
-            )}
-            <button
-              type="button"
-              onClick={onClose}
-              className="flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 bg-slate-900 hover:bg-slate-800 active:bg-black text-white rounded-xl text-xs sm:text-sm font-bold transition-all shadow-xs cursor-pointer touch-manipulation shrink-0"
-              aria-label="Zamknij pracownię i wróć do lekcji"
-            >
-              <X size={16} className="stroke-[2.5]" />
-              <span>Zamknij</span>
-            </button>
+            </div>
           </div>
         </div>
 
-        {/* Ciało z Command Center z gwarancją niezależnego przewijania na mobile (min-h-0 + WebkitOverflowScrolling) */}
+        {/* Treść z przewijaniem dotykowym */}
         <div
-          className="flex-1 min-h-0 w-full overflow-y-auto overscroll-contain p-3 sm:p-6 bg-slate-50/50"
-          style={{ WebkitOverflowScrolling: 'touch', touchAction: 'pan-y' }}
+          className="flex-1 min-h-0 w-full overflow-y-auto overscroll-contain p-3.5 sm:p-6 bg-slate-50/60"
+          style={{ WebkitOverflowScrolling: 'touch' }}
         >
           <PsychiatryCommandCenter initialPresetId={presetId || undefined} />
 
