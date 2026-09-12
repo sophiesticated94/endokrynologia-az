@@ -126,7 +126,7 @@ export function CasesView({ state, go }: { state: LearningState; go: Navigation 
             className={diffFilter === value ? 'active' : ''}
             aria-pressed={diffFilter === value}
             key={value}
-            onClick={() => setDiffFilter(value as any)}
+            onClick={() => setDiffFilter(value as typeof diffFilter)}
           >
             {label}
           </button>

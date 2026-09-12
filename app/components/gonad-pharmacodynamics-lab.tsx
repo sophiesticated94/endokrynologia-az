@@ -1,0 +1,100 @@
+'use client';
+
+import { useMemo, useState } from 'react';
+import { Activity, Beaker, BookOpen, Dna, FlaskConical, Plus, RotateCcw, ShieldAlert, Trash2 } from 'lucide-react';
+import { Area, AreaChart, CartesianGrid, Line, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import {
+  ANALYTES, DRUG_DEFINITIONS, GONAD_MODEL_VERSION, GONAD_PRESETS, convertDisplay, getDrugDefinition, simulateHormoneScenario,
+  type AnalyteId, type ClinicalContext, type DsdPreset,
+  type PhysiologicStage, type SimulationInput,
+} from '../../lib/gonad-pharmacodynamics';
+
+type View = 'curves' | 'panel' | 'mechanism' | 'sources';
+const clone = <T,>(value:T):T => JSON.parse(JSON.stringify(value)) as T;
+const coreAnalytes:AnalyteId[]=['estradiol','testosterone','freeTestosterone','dht','lh','fsh','shbg','progesterone'];
+const safetyAnalytes:AnalyteId[]=['hemoglobin','hematocrit','potassium','creatinine','egfr','prolactin','alt','ast','ldl','hdl','triglycerides','systolicBp','diastolicBp'];
+const mechanismAnalytes:AnalyteId[]=['arActivity','erActivity','gnrhActivity','aromataseActivity','fiveAlphaActivity','inhibin'];
+const observationAnalytes:AnalyteId[]=['estradiol','testosterone','lh','fsh','shbg','hematocrit','potassium','prolactin'];
+
+const stageLabels:Record<PhysiologicStage,string>={mini_puberty:'Mini-pokwitanie',prepubertal:'Przed pokwitaniem',tanner2:'Tanner II',tanner3:'Tanner III',tanner4:'Tanner IV',tanner5:'Tanner V',adult:'Dorosłość',perimenopause:'Perimenopauza',postmenopause:'Po menopauzie',older:'Późna dorosłość'};
+const contextLabels:Record<ClinicalContext,string>={gaht_feminizing:'GAHT feminizująca',gaht_masculinizing:'GAHT maskulinizująca',hypogonadism:'Hipogonadyzm / substytucja',fertility_ivf:'Płodność / IVF',puberty:'Indukcja lub supresja pokwitania',oncology:'Onkologia hormonozależna',pregnancy:'Ciąża',dsd:'DSD — model mechanistyczny'};
+const dsdLabels:Record<DsdPreset,string>={none:'Bez presetu DSD',cais:'CAIS — niewrażliwość AR',five_alpha_deficiency:'Niedobór 5α-reduktazy',gonadal_dysgenesis:'Dysgenezja gonad',cah:'WPN / CAH — nadmiar androgenów',ovotesticular:'DSD owotestikularne'};
+
+function N({label,value,onChange,min=0,max=9999,step=1,unit}:{label:string;value:number;onChange:(v:number)=>void;min?:number;max?:number;step?:number;unit?:string}){
+  return <label className="gpd-field"><span>{label}{unit&&<small>{unit}</small>}</span><input type="number" value={value} min={min} max={max} step={step} onChange={e=>onChange(Number(e.target.value))}/></label>;
+}
+
+function Select<T extends string>({label,value,onChange,options}:{label:string;value:T;onChange:(v:T)=>void;options:Record<T,string>}){
+  return <label className="gpd-field"><span>{label}</span><select value={value} onChange={e=>onChange(e.target.value as T)}>{Object.entries(options).map(([key,text])=><option key={key} value={key}>{String(text)}</option>)}</select></label>;
+}
+
+function format(analyte:AnalyteId,value:number,si:boolean){const c=convertDisplay(analyte,value,si);return `${c.value.toLocaleString('pl-PL',{maximumFractionDigits:ANALYTES[analyte].decimals+1})} ${c.unit}`;}
+
+export function GonadPharmacodynamicsLab({initialGoal='fem',compact=false}:{initialGoal?:'fem'|'masc';compact?:boolean}){
+  const start=initialGoal==='masc'?GONAD_PRESETS[2]:GONAD_PRESETS[0];
+  const [input,setInput]=useState<SimulationInput>(()=>clone(start));
+  const [view,setView]=useState<View>('curves');
+  const [analyte,setAnalyte]=useState<AnalyteId>(initialGoal==='masc'?'testosterone':'estradiol');
+  const [si,setSi]=useState(false);
+  const [newDrug,setNewDrug]=useState('e2_oral');
+  const result=useMemo(()=>simulateHormoneScenario(input),[input]);
+  const absentResult=useMemo(()=>simulateHormoneScenario({...input,id:`${input.id}-absent`,patient:{...input.patient,gonads:'none',gonadFunction:'absent',gonadReserve:0}}),[input]);
+  const patchPatient=<K extends keyof SimulationInput['patient']>(key:K,value:SimulationInput['patient'][K])=>setInput(v=>({...v,patient:{...v.patient,[key]:value}}));
+  const loadPreset=(preset:SimulationInput)=>{setInput(clone(preset));setAnalyte(preset.context==='gaht_masculinizing'?'testosterone':'estradiol');};
+  const updateRegimen=(id:string,patch:Partial<SimulationInput['regimens'][number]>)=>setInput(v=>({...v,regimens:v.regimens.map(r=>r.id===id?{...r,...patch}:r)}));
+  const addDrug=()=>{const def=getDrugDefinition(newDrug);setInput(v=>({...v,regimens:[...v.regimens,{id:`r-${Date.now()}`,drugId:def.id,dose:def.defaultDose,intervalHours:def.defaultIntervalHours,hoursSinceLastDose:Math.min(12,def.defaultIntervalHours),durationDays:90,adherence:95}]}));};
+  const addObservation=(analyteId:AnalyteId)=>{const current=result.sample.values[analyteId].median;setInput(v=>({...v,observations:[...v.observations.filter(o=>o.analyte!==analyteId),{analyte:analyteId,value:Number(current.toFixed(2)),hoursFromNow:0}]}));};
+  const chartData=result.points.map(point=>{const x=point.values[analyte];const p05=convertDisplay(analyte,x.p05,si).value,p25=convertDisplay(analyte,x.p25,si).value;return {hour:point.hour,p05,band90:convertDisplay(analyte,x.p95,si).value-p05,p25,band50:convertDisplay(analyte,x.p75,si).value-p25,median:convertDisplay(analyte,x.median,si).value};});
+  const chartUnit=convertDisplay(analyte,0,si).unit;
+  const selectedPrediction=result.sample.values[analyte];
+  const selectedSources=selectedPrediction.sourceIds.map(id=>result.evidence.find(item=>item.id===id)).filter((item):item is NonNullable<typeof item>=>Boolean(item));
+  const scenarioFit=selectedPrediction.origin==='extrapolated'?'Niska — wynik przeniesiony z najbliższego udokumentowanego modelu':selectedPrediction.origin==='calibrated'?'Wyższa dla czasu i analitu objętego pomiarem':'Umiarkowana — zgodność z postacią leku i populacją zależy od scenariusza';
+
+  return <section className={`gpd-lab ${compact?'compact':''}`}>
+    <header className="gpd-head"><div><span className="eyebrow">LABORATORIUM HPG · MODEL {GONAD_MODEL_VERSION}</span><h2>Ilościowa mapa terapii hormonalnej</h2><p>Zmień anatomię, preparaty, dawki i czas pobrania. Ciemne pasmo obejmuje typową połowę modelowanej populacji, jasne 90%.</p></div><div className="gpd-version"><FlaskConical size={20}/><span>Dane pozostają<br/><strong>tylko w tej sesji</strong></span></div></header>
+
+    <div className="gpd-presets" aria-label="Fikcyjne scenariusze startowe">{GONAD_PRESETS.map(p=><button type="button" key={p.id} className={input.id===p.id?'active':''} onClick={()=>loadPreset(p)}><strong>{p.label}</strong><small>fikcyjny profil</small></button>)}<button type="button" onClick={()=>loadPreset(start)}><RotateCcw size={15}/> Reset</button></div>
+
+    <div className="gpd-layout">
+      <aside className="gpd-controls">
+        <div className="gpd-section-title"><Activity size={17}/> Kontekst i fizjologia</div>
+        <div className="gpd-grid two">
+          <Select label="Zastosowanie" value={input.context} onChange={v=>setInput(x=>({...x,context:v}))} options={contextLabels}/>
+          <N label="Wiek" unit="lata" value={input.patient.ageYears} min={0} max={100} step={.1} onChange={v=>patchPatient('ageYears',v)}/>
+          <Select label="Etap fizjologiczny" value={input.patient.stage} onChange={v=>patchPatient('stage',v)} options={stageLabels}/>
+          <Select label="Rodzaj gonad" value={input.patient.gonads} onChange={v=>{patchPatient('gonads',v);if(v==='none'){patchPatient('gonadFunction','absent');patchPatient('gonadReserve',0)}}} options={{testes:'Jądra',ovaries:'Jajniki',mixed:'Tkanka mieszana',none:'Brak gonad'}}/>
+          <Select label="Czynność gonad" value={input.patient.gonadFunction} onChange={v=>patchPatient('gonadFunction',v)} options={{active:'Zachowana',impaired:'Ograniczona',absent:'Nieobecna'}}/>
+          <N label="Rezerwa gonad" unit="%" value={input.patient.gonadReserve} min={0} max={100} onChange={v=>patchPatient('gonadReserve',v)}/>
+          <N label="Masa" unit="kg" value={input.patient.weightKg} min={2} max={250} step={.1} onChange={v=>patchPatient('weightKg',v)}/>
+          <N label="Wzrost" unit="cm" value={input.patient.heightCm} min={40} max={230} onChange={v=>patchPatient('heightCm',v)}/>
+          <N label="eGFR" unit="ml/min/1,73 m²" value={input.patient.egfr} min={5} max={180} onChange={v=>patchPatient('egfr',v)}/>
+          <Select label="Wątroba" value={input.patient.hepaticFunction} onChange={v=>patchPatient('hepaticFunction',v)} options={{normal:'Bez rozpoznanej dysfunkcji',impaired:'Dysfunkcja — model szeroki'}}/>
+        </div>
+        <div className="gpd-switches"><label><input type="checkbox" checked={input.patient.uterusPresent} onChange={e=>patchPatient('uterusPresent',e.target.checked)}/> Macica obecna</label><label><input type="checkbox" checked={input.patient.pregnant} onChange={e=>patchPatient('pregnant',e.target.checked)}/> Ciąża</label></div>
+        {input.patient.pregnant&&<N label="Tydzień ciąży" value={input.patient.gestationalWeek} min={1} max={42} onChange={v=>patchPatient('gestationalWeek',v)}/>}
+
+        <details className="gpd-details"><summary>DSD i aktywność szlaków</summary><Select label="Preset mechanistyczny" value={input.patient.dsdPreset} onChange={v=>patchPatient('dsdPreset',v)} options={dsdLabels}/><div className="gpd-grid two"><N label="Czułość AR" unit="%" value={input.patient.arSensitivity} min={0} max={150} onChange={v=>patchPatient('arSensitivity',v)}/><N label="Aromataza" unit="%" value={input.patient.aromataseActivity} min={0} max={200} onChange={v=>patchPatient('aromataseActivity',v)}/><N label="5α-reduktaza" unit="%" value={input.patient.fiveAlphaActivity} min={0} max={200} onChange={v=>patchPatient('fiveAlphaActivity',v)}/><N label="Steroidogeneza" unit="%" value={input.patient.steroidogenicActivity} min={0} max={200} onChange={v=>patchPatient('steroidogenicActivity',v)}/></div></details>
+
+        <div className="gpd-section-title"><Beaker size={17}/> Preparaty i dawkowanie</div>
+        <div className="gpd-add"><select aria-label="Dodaj preparat" value={newDrug} onChange={e=>setNewDrug(e.target.value)}>{DRUG_DEFINITIONS.map(d=><option key={d.id} value={d.id}>{d.label} · {d.region}</option>)}</select><button type="button" className="primary" onClick={addDrug}><Plus size={15}/>Dodaj</button></div>
+        <div className="gpd-regimens">{input.regimens.map(r=>{const def=getDrugDefinition(r.drugId);return <article key={r.id} className="gpd-regimen"><div className="gpd-regimen-head"><div><strong>{def.label}</strong><small>{def.route} · {def.region} · dowody: {def.evidence}</small></div><button type="button" aria-label={`Usuń ${def.label}`} onClick={()=>setInput(v=>({...v,regimens:v.regimens.filter(x=>x.id!==r.id)}))}><Trash2 size={16}/></button></div><div className="gpd-grid three"><N label="Dawka" unit={def.doseUnit} value={r.dose} min={def.minDose} max={def.maxDose} step={def.defaultDose<1?.05:def.defaultDose<10?.5:1} onChange={v=>updateRegimen(r.id,{dose:v})}/><N label="Co ile" unit="godz." value={r.intervalHours} min={1} max={2400} onChange={v=>updateRegimen(r.id,{intervalHours:v})}/><N label="Od ostatniej" unit="godz." value={r.hoursSinceLastDose} min={0} max={2400} onChange={v=>updateRegimen(r.id,{hoursSinceLastDose:v})}/><N label="Czas terapii" unit="dni" value={r.durationDays} min={1} max={3650} onChange={v=>updateRegimen(r.id,{durationDays:v})}/><N label="Adherencja" unit="%" value={r.adherence} min={0} max={100} onChange={v=>updateRegimen(r.id,{adherence:v})}/></div></article>})}</div>
+
+        <details className="gpd-details"><summary>Kalibracja rzeczywistym pomiarem</summary><p>Pomiar przesuwa i zawęża pasmo tylko dla wybranego analitu. Zapisz czas względem chwili pokazanej jako 0 h.</p>{observationAnalytes.map(a=>{const obs=input.observations.find(o=>o.analyte===a);return <div className="gpd-observation" key={a}><button type="button" className="text-button" onClick={()=>addObservation(a)}>{obs?'Zresetuj':'Dodaj'} {ANALYTES[a].label}</button>{obs&&<><input aria-label={`Wartość ${ANALYTES[a].label}`} type="number" value={obs.value} step="0.1" onChange={e=>setInput(v=>({...v,observations:v.observations.map(o=>o.analyte===a?{...o,value:Number(e.target.value)}:o)}))}/><span>{ANALYTES[a].unit}</span><input aria-label={`Czas ${ANALYTES[a].label}`} type="number" value={obs.hoursFromNow} onChange={e=>setInput(v=>({...v,observations:v.observations.map(o=>o.analyte===a?{...o,hoursFromNow:Number(e.target.value)}:o)}))}/><span>h</span><button type="button" aria-label={`Usuń pomiar ${ANALYTES[a].label}`} onClick={()=>setInput(v=>({...v,observations:v.observations.filter(o=>o.analyte!==a)}))}><Trash2 size={14}/></button></>}</div>})}</details>
+      </aside>
+
+      <main className="gpd-results">
+        <div className="gpd-tabs" role="tablist">{([['curves','Krzywe'],['panel','Panel laboratoryjny'],['mechanism','Mechanizm i gonady'],['sources','Źródła']] as [View,string][]).map(([key,label])=><button type="button" role="tab" aria-selected={view===key} className={view===key?'active':''} onClick={()=>setView(key)} key={key}>{label}</button>)}<button type="button" className="gpd-unit" onClick={()=>setSi(v=>!v)}>{si?'Jednostki SI':'Jednostki konw.'}</button></div>
+
+        {view==='curves'&&<section className="gpd-surface"><div className="gpd-result-head"><div><span className="eyebrow">PROFIL CZASOWY</span><h3>{ANALYTES[analyte].label}</h3></div><select value={analyte} onChange={e=>setAnalyte(e.target.value as AnalyteId)}>{[...coreAnalytes,...safetyAnalytes,...mechanismAnalytes].map(a=><option value={a} key={a}>{ANALYTES[a].label}</option>)}</select></div><div className="gpd-chart" aria-label={`Wykres ${ANALYTES[analyte].label}`}><ResponsiveContainer width="100%" height="100%"><AreaChart data={chartData} margin={{top:12,right:18,left:0,bottom:6}}><CartesianGrid strokeDasharray="3 4" stroke="#dce8e4"/><XAxis dataKey="hour" tickFormatter={v=>`${Number(v).toFixed(0)} h`} fontSize={11}/><YAxis width={58} fontSize={11}/><Tooltip formatter={(v)=>[Number(v).toLocaleString('pl-PL',{maximumFractionDigits:2}),chartUnit]} labelFormatter={v=>`${Number(v).toFixed(1)} h względem teraz`}/><Area type="monotone" dataKey="p05" stackId="outer" stroke="none" fill="transparent"/><Area type="monotone" dataKey="band90" stackId="outer" stroke="none" fill="#72c9bd" fillOpacity={.22}/><Area type="monotone" dataKey="p25" stackId="inner" stroke="none" fill="transparent"/><Area type="monotone" dataKey="band50" stackId="inner" stroke="none" fill="#178779" fillOpacity={.3}/><Line type="monotone" dataKey="median" stroke="#0f5f5a" strokeWidth={3} dot={false}/><ReferenceLine x={0} stroke="#a33c2f" strokeDasharray="4 3" label={{value:'teraz / pobranie',fontSize:10,fill:'#8f352b'}}/></AreaChart></ResponsiveContainer></div><div className="gpd-legend"><span><i className="median"/>Mediana</span><span><i className="typical"/>25–75%</span><span><i className="wide"/>5–95%</span></div><div className="gpd-now"><strong>{format(analyte,selectedPrediction.median,si)}</strong><span>typowo {format(analyte,selectedPrediction.p25,si)} – {format(analyte,selectedPrediction.p75,si)}</span><span>szeroko {format(analyte,selectedPrediction.p05,si)} – {format(analyte,selectedPrediction.p95,si)}</span><em>{selectedPrediction.origin==='calibrated'?'skalibrowano pomiarem':selectedPrediction.origin==='extrapolated'?'ekstrapolacja':'model populacyjny'}</em></div><article className="gpd-provenance"><div><span className="eyebrow">KARTA POCHODZENIA WYNIKU</span><strong>{selectedPrediction.origin==='calibrated'?'Pomiar + model':selectedPrediction.origin==='extrapolated'?'Ekstrapolacja modelu':'Model populacyjny'} · dowody {selectedPrediction.evidence}</strong><p>Zgodność ze scenariuszem: {scenarioFit}</p></div><div>{selectedSources.length?selectedSources.map(source=><p key={source.id}><a href={source.url} target="_blank" rel="noreferrer">{source.title}</a><span>{source.year} · {source.population} · n: {source.sampleSize} · zweryfikowano {source.reviewedAt}</span></p>):<p><span>Wartość syntetyczna pochodzi z warstwy mechanistycznej modelu {GONAD_MODEL_VERSION}; nie jest pomiarem.</span></p>}</div></article></section>}
+
+        {view==='panel'&&<section className="gpd-surface"><span className="eyebrow">WARTOŚCI W CHWILI 0 H</span><h3>Hormony i syntetyczny panel bezpieczeństwa</h3><div className="gpd-cards">{coreAnalytes.map(a=>{const x=result.sample.values[a];return <button type="button" key={a} onClick={()=>{setAnalyte(a);setView('curves')}}><small>{ANALYTES[a].label}</small><strong>{format(a,x.median,si)}</strong><span>{format(a,x.p05,si)} – {format(a,x.p95,si)}</span><em>{x.origin}</em></button>})}</div><div className="gpd-table" role="table"><div className="gpd-tr head" role="row"><span>Parametr syntetyczny</span><span>Mediana</span><span>Typowy przedział</span><span>Szeroki przedział</span></div>{safetyAnalytes.map(a=>{const x=result.sample.values[a];return <button type="button" className="gpd-tr" role="row" key={a} onClick={()=>{setAnalyte(a);setView('curves')}}><strong>{ANALYTES[a].label}</strong><span>{format(a,x.median,si)}</span><span>{format(a,x.p25,si)} – {format(a,x.p75,si)}</span><span>{format(a,x.p05,si)} – {format(a,x.p95,si)}</span></button>})}</div><p className="gpd-method"><ShieldAlert size={16}/> Te parametry są generowane z rozkładów populacyjnych. Nie są pomiarem, wynikiem laboratoryjnym ani kalkulatorem indywidualnego ryzyka.</p></section>}
+
+        {view==='mechanism'&&<section className="gpd-surface"><span className="eyebrow">TEN SAM SCENARIUSZ · ZMIENIAMY TYLKO GONADY</span><h3>Co wnosi obecność czynnej tkanki gonadalnej?</h3><div className="gpd-axis"><div className="gpd-node">Podwzgórze<strong>{Math.round(result.sample.values.gnrhActivity.median)}%</strong><small>sygnał GnRH</small></div><span>→</span><div className="gpd-node">Przysadka<strong>{result.sample.values.lh.median.toFixed(1)} / {result.sample.values.fsh.median.toFixed(1)}</strong><small>LH / FSH IU/l</small></div><span>→</span><div className={`gpd-node ${input.patient.gonads==='none'?'muted':''}`}>{input.patient.gonads==='none'?'Brak gonad':'Gonady'}<strong>{Math.round(result.sample.values.inhibin.median)}%</strong><small>indeks inhibiny</small></div></div><div className="gpd-compare"><article><h4>A · Wybrany scenariusz</h4>{mechanismAnalytes.map(a=><p key={a}><span>{ANALYTES[a].label}</span><strong>{Math.round(result.sample.values[a].median)}%</strong></p>)}</article><article><h4>B · Te same dane, brak gonad</h4>{mechanismAnalytes.map(a=><p key={a}><span>{ANALYTES[a].label}</span><strong>{Math.round(absentResult.sample.values[a].median)}%</strong></p>)}</article></div><div className="gpd-tissue"><Dna size={20}/><p><strong>Receptory i konwersja obwodowa pozostają.</strong> Po gonadektomii znika produkcja gonadalna i inhibina, lecz podany E2 lub T nadal działa, a T może nadal przechodzić w DHT i E2. Supresja LH/FSH nie zmniejszy produkcji narządu, którego nie ma.</p></div></section>}
+
+        {view==='sources'&&<section className="gpd-surface"><span className="eyebrow">PROWENIENCJA KAŻDEJ KRZYWEJ</span><h3>Źródła i zgodność modelu</h3><div className="gpd-sources">{result.evidence.length?result.evidence.map(e=><article key={e.id}><BookOpen size={18}/><div><strong>{e.title}</strong><p>{e.kind} · {e.year} · {e.population}</p><small>{e.sampleSize} · sprawdzono {e.reviewedAt}</small><a href={e.url} target="_blank" rel="noreferrer">Otwórz źródło</a></div></article>):<p>Dodaj preparat, aby zobaczyć źródła jego modelu.</p>}</div><details className="gpd-details"><summary>Jak czytać jakość dowodów?</summary><p><strong>High/moderate</strong> oznacza, że postać i populacja mają bezpośrednie dane PK/PD lub wytyczne. <strong>Low</strong> oznacza dane pośrednie. <strong>Ekstrapolacja</strong> przenosi zależność z najbliższego preparatu lub populacji i celowo rozszerza pasmo.</p></details></section>}
+
+        <div className="gpd-warnings">{result.warnings.map(w=><p key={w}><ShieldAlert size={15}/>{w}</p>)}</div>
+      </main>
+    </div>
+  </section>;
+}

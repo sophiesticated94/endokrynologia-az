@@ -45,7 +45,7 @@ export function useLearning(){
   catch{if(epoch.current===generation)setError('Nie udało się odczytać postępu. Sprawdź połączenie i konfigurację bazy.');}
   finally{if(epoch.current===generation)setLoading(false);}
  },[client]);
- useEffect(()=>{if(user)void refresh();},[user,refresh]);
+ useEffect(()=>{if(user)queueMicrotask(()=>void refresh());},[user,refresh]);
  useEffect(()=>{const focus=()=>{if(userRef.current&&!busy.current)void refresh()};window.addEventListener('focus',focus);const timer=setInterval(focus,30000);return()=>{window.removeEventListener('focus',focus);clearInterval(timer)}},[refresh]);
  useEffect(()=>{if(!pending.length)return;const prevent=(event:BeforeUnloadEvent)=>{event.preventDefault();event.returnValue=''};window.addEventListener('beforeunload',prevent);return()=>window.removeEventListener('beforeunload',prevent)},[pending]);
  const persist=useCallback(async(event:Activity)=>{
@@ -54,7 +54,7 @@ export function useLearning(){
   try{
    let saved:Activity=event;
    await saveIdempotently(event,async(e)=>{
-    const {created_at:_,...insert}=e;
+    const {created_at,...insert}=e;void created_at;
     const {data,error}=await client.from('learning_events').insert(insert).select().single();
     if(data)saved=data as Activity;
     if(error?.code==='23505'){

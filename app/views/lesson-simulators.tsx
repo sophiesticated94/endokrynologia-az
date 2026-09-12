@@ -23,7 +23,7 @@ import {
   InsulinReceptorAndKetogenesisVisualizer,
 } from '../components/math-chem-widgets-3';
 import { GonadSimulator } from '../gonad-simulator';
-import { HormoneAtlas } from '../hormone-atlas';
+import { GonadPharmacodynamicsLab } from '../components/gonad-pharmacodynamics-lab';
 import { gahtLessonIds } from '../../lib/course-gaht';
 import {
   VermeulenFreeTestosteroneCalculator,
@@ -39,7 +39,7 @@ import {
 import { LessonSimulatorsOtylosc } from './lesson-simulators-otylosc.tsx';
 
 export function LessonSimulators({ lessonId, go }: { lessonId: string; go: Navigation }) {
-  if (gahtLessonIds.includes(lessonId)) return <HormoneAtlas key={lessonId} initialGoal={lessonId==='gonady-trans-maskulinizujaca'||lessonId==='gaht-plodnosc'?'masc':'fem'}/>;
+  if (gahtLessonIds.includes(lessonId)) return <GonadPharmacodynamicsLab key={lessonId} compact initialGoal={lessonId==='gonady-trans-maskulinizujaca'||lessonId==='gaht-plodnosc'?'masc':'fem'}/>;
   // Zwiastun symulatora w Lekcji 1 Tarczycy
   if (lessonId === 'fizjologia') {
     return (

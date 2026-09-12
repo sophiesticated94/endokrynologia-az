@@ -30,12 +30,6 @@ export function LatexViewerModal({
   const [selectedModule, setSelectedModule] = useState<'all' | 'tarczyca' | 'przysadka' | 'nadnercza' | 'przytarczyce'>('all');
 
   useEffect(() => {
-    if (initialEquation) {
-      setEquation(initialEquation);
-    }
-  }, [initialEquation]);
-
-  useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key === 'Escape' && isOpen) {
         onClose();

@@ -1,24 +1,22 @@
 'use client';
 import { useState } from 'react';
-import { GonadConsoleHpg } from './components/gonad-console-hpg';
+import { GonadPharmacodynamicsLab } from './components/gonad-pharmacodynamics-lab';
 import { GonadConsoleDiagnostics } from './components/gonad-console-diagnostics';
 import { GonadConsoleCycle } from './components/gonad-console-cycle';
 import { GonadConsoleIvf } from './components/gonad-console-ivf';
 import { GonadConsolePathway } from './components/gonad-console-pathway';
-import { HormoneAtlas } from './hormone-atlas';
 
-export type GonadTab = 'hpg' | 'diagnostics' | 'cycle' | 'ivf' | 'pathway' | 'gaht';
+export type GonadTab = 'hpg' | 'diagnostics' | 'cycle' | 'ivf' | 'pathway';
 
 export function GonadSimulator(_props: { embedded?: boolean; compact?: boolean } = {}) {
   const [tab, setTab] = useState<GonadTab>('hpg');
 
   const tabs: { key: GonadTab; label: string }[] = [
-    { key: 'hpg', label: '1. Oś HPG & Farmakodynamika' },
+    { key: 'hpg', label: '1. Ilościowa farmakodynamika HPG / GAHT' },
     { key: 'diagnostics', label: '2. Diagnostyka & Vermeulen cFT' },
     { key: 'cycle', label: '3. Cykl & Sprzężenia E2/LH' },
     { key: 'ivf', label: '4. Stymulacja IVF & OHSS' },
     { key: 'pathway', label: '5. Szlak Steroidogenezy' },
-    { key: 'gaht', label: 'Atlas GAHT' },
   ];
 
   return (
@@ -47,12 +45,11 @@ export function GonadSimulator(_props: { embedded?: boolean; compact?: boolean }
       </div>
 
       <div>
-        {tab === 'hpg' && <GonadConsoleHpg />}
+        {tab === 'hpg' && <GonadPharmacodynamicsLab />}
         {tab === 'diagnostics' && <GonadConsoleDiagnostics />}
         {tab === 'cycle' && <GonadConsoleCycle />}
         {tab === 'ivf' && <GonadConsoleIvf />}
         {tab === 'pathway' && <GonadConsolePathway />}
-        {tab === 'gaht' && <HormoneAtlas key="gaht" initialGoal="fem" />}
       </div>
     </section>
   );

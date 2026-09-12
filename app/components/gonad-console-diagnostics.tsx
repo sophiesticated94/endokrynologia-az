@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { Scale, AlertTriangle, CheckCircle2, Stethoscope, HeartPulse } from 'lucide-react';
+import { Scale, AlertTriangle, Stethoscope, HeartPulse } from 'lucide-react';
 import { calculateVermeulen } from '../../lib/gonad-simulator';
 
 export function GonadConsoleDiagnostics() {
@@ -145,7 +145,7 @@ export function GonadConsoleDiagnostics() {
             </label>
             <select
               value={hypoType}
-              onChange={e => setHypoType(e.target.value as any)}
+              onChange={e => setHypoType(e.target.value as typeof hypoType)}
               style={{ width: '100%', padding: '6px', fontSize: '11px', borderRadius: '6px', border: '1px solid #cbd5e1' }}
             >
               <option value="primary">Hipogonadyzm pierwotny (LH/FSH podwyższone)</option>

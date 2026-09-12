@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import {
   BookOpen,
   ChevronRight,
@@ -62,9 +62,9 @@ export default function CourseApp() {
   const routeRef = useRef<Route>('home');
   const [mobile, setMobile] = useState(false);
   const active = useRef(false);
-  const setActive = useRef((v: boolean) => {
+  const setActive = useCallback((v: boolean) => {
     active.current = v;
-  }).current;
+  }, []);
   const mainRef = useRef<HTMLElement>(null);
 
   useEffect(() => {

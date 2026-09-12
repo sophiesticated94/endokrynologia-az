@@ -1,6 +1,6 @@
 'use client';
 import { useState, useMemo } from 'react';
-import { AlertOctagon, CheckCircle2, ShieldAlert, Sparkles } from 'lucide-react';
+import { AlertOctagon, CheckCircle2, Sparkles } from 'lucide-react';
 
 export function GonadConsoleIvf() {
   const [protocol, setProtocol] = useState<'antagonist' | 'long_agonist'>('antagonist');
@@ -8,8 +8,11 @@ export function GonadConsoleIvf() {
   const [estradiolPeak, setEstradiolPeak] = useState<number>(4200); // pg/ml
   const [amhLevel, setAmhLevel] = useState<number>(4.8); // ng/ml
   const [triggerChoice, setTriggerChoice] = useState<'hcg' | 'gnrh_agonist'>('gnrh_agonist');
+  const [triggerDose, setTriggerDose] = useState<number>(0.2);
   const [freezeAll, setFreezeAll] = useState<boolean>(true);
   const [cabergolineUsed, setCabergolineUsed] = useState<boolean>(true);
+  const [cabergolineDose, setCabergolineDose] = useState<number>(0.5);
+  const [cabergolineDays, setCabergolineDays] = useState<number>(8);
 
   // Ocena ryzyka OHSS
   const riskAssessment = useMemo(() => {
@@ -37,29 +40,29 @@ export function GonadConsoleIvf() {
 
     if (triggerChoice === 'gnrh_agonist') {
       if (protocol === 'antagonist') {
-        interventions.push('Trigger agonistą GnRH (np. triptorelina 0,2 mg): krótki wyrzut LH z szybką luteolizą niemal do zera znosi wczesny OHSS!');
+        interventions.push(`Trigger agonistą GnRH (${triggerDose.toLocaleString('pl-PL')} mg w tym scenariuszu): krótki wyrzut LH ogranicza ekspozycję lutealną; nie wyklucza wczesnego OHSS.`);
         if (residualRisk === 'high') residualRisk = 'moderate';
         if (residualRisk === 'moderate') residualRisk = 'low';
       } else {
         interventions.push('UWAGA BŁĄD PROTOKOŁU: Trigger agonistą GnRH jest niemożliwy w długim protokole z agonistą (receptory GnRHR są zdesensytyzowane!).');
       }
     } else {
-      interventions.push('Trigger hCG (5000–10000 IU): długi t1/2 stymuluje ciałka żółte do ciągłego wydzielania VEGF (wysokie ryzyko naczyniowe!).');
+      interventions.push(`Trigger hCG (${Math.round(triggerDose)} IU w tym scenariuszu): dłuższa aktywność luteotropowa zwiększa znaczenie oceny ryzyka OHSS.`);
     }
 
     if (freezeAll) {
-      interventions.push('Strategia Freeze-All (odroczenie transferu zarodków): całkowicie zapobiega późnemu OHSS wywoływanemu przez ciążowe hCG!');
+      interventions.push('Strategia freeze-all ogranicza ryzyko późnego OHSS związanego z endogennym hCG ciąży, ale nie usuwa ryzyka wczesnego OHSS.');
       if (residualRisk === 'high') residualRisk = 'low';
     } else if (baselineRisk === 'high') {
-      interventions.push('Świeży transfer zarodka przy wysokim ryzyku stwarza zagrożenie zagrażającego życiu późnego OHSS w razie ciąży mnogiej.');
+      interventions.push('Świeży transfer przy wysokiej odpowiedzi wymaga uwzględnienia późnego OHSS, jeśli dojdzie do ciąży.');
     }
 
     if (cabergolineUsed) {
-      interventions.push('Kabergolina 0,5 mg/d: agonista receptora dopaminergicznego D2 blokuje fosforylację VEGFR-2 i zmniejsza przesięki.');
+      interventions.push(`Kabergolina ${cabergolineDose.toLocaleString('pl-PL')} mg/d przez ${cabergolineDays} dni: działanie dopaminergiczne może ograniczać przepuszczalność związaną ze szlakiem VEGF; nie zastępuje monitorowania.`);
     }
 
     return { baselineRisk, residualRisk, reasons, interventions };
-  }, [protocol, follicleCount, estradiolPeak, amhLevel, triggerChoice, freezeAll, cabergolineUsed]);
+  }, [protocol, follicleCount, estradiolPeak, amhLevel, triggerChoice, triggerDose, freezeAll, cabergolineUsed, cabergolineDose, cabergolineDays]);
 
   return (
     <div style={{ background: '#fff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '18px' }}>
@@ -95,7 +98,7 @@ export function GonadConsoleIvf() {
               style={{ width: '100%' }}
             />
             <span style={{ fontSize: '10px', color: follicleCount >= 18 ? '#dc2626' : '#64748b' }}>
-              {follicleCount >= 18 ? '≥18 pęcherzyków (hiperodpowiedź)' : 'Prawidłowa kohorta (<18)'}
+              {follicleCount >= 18 ? '≥18 pęcherzyków — marker wysokiej odpowiedzi' : '<18 pęcherzyków; oceniaj łącznie z pozostałymi danymi'}
             </span>
           </div>
 
@@ -114,7 +117,7 @@ export function GonadConsoleIvf() {
               style={{ width: '100%' }}
             />
             <span style={{ fontSize: '10px', color: estradiolPeak >= 3500 ? '#dc2626' : '#64748b' }}>
-              {estradiolPeak >= 3500 ? '≥3500 pg/ml (krytyczne ryzyko)' : '<3500 pg/ml'}
+              {estradiolPeak >= 3500 ? '≥3500 pg/ml — jeden z markerów wysokiej odpowiedzi' : '<3500 pg/ml; pojedynczy próg nie rozpoznaje OHSS'}
             </span>
           </div>
 
@@ -133,7 +136,7 @@ export function GonadConsoleIvf() {
               style={{ width: '100%' }}
             />
             <span style={{ fontSize: '10px', color: amhLevel >= 3.4 ? '#d97706' : '#64748b' }}>
-              {amhLevel >= 3.4 ? 'Wysokie AMH (fenotyp PCOM)' : 'Norma rezerwy'}
+              {amhLevel >= 3.4 ? 'Wysokie AMH — zwiększone ryzyko nadmiernej odpowiedzi' : 'Niższe AMH; wynik zależy od metody i wieku'}
             </span>
           </div>
         </div>
@@ -152,7 +155,7 @@ export function GonadConsoleIvf() {
             </label>
             <select
               value={protocol}
-              onChange={e => setProtocol(e.target.value as any)}
+              onChange={e => setProtocol(e.target.value as typeof protocol)}
               style={{ width: '100%', padding: '6px', fontSize: '11px', borderRadius: '6px', border: '1px solid #cbd5e1' }}
             >
               <option value="antagonist">Protokół z antagonistą GnRH (standard ESHRE)</option>
@@ -166,12 +169,18 @@ export function GonadConsoleIvf() {
             </label>
             <select
               value={triggerChoice}
-              onChange={e => setTriggerChoice(e.target.value as any)}
+              onChange={e => { const next=e.target.value as 'hcg'|'gnrh_agonist'; setTriggerChoice(next); setTriggerDose(next==='hcg'?5000:0.2); }}
               style={{ width: '100%', padding: '6px', fontSize: '11px', borderRadius: '6px', border: '1px solid #cbd5e1' }}
             >
               <option value="gnrh_agonist">Agonista GnRH (np. triptorelina 0,2 mg) — protekcja</option>
               <option value="hcg">Choriogonadotropina hCG (5000–10000 IU) — standard</option>
             </select>
+          </div>
+          <div>
+            <label style={{ fontSize: '11px', fontWeight: 600, color: '#334155', display: 'block', marginBottom: '4px' }}>
+              Dawka triggera ({triggerChoice === 'hcg' ? 'IU' : 'mg'}):
+            </label>
+            <input type="number" min={triggerChoice === 'hcg' ? 1000 : 0.05} max={triggerChoice === 'hcg' ? 15000 : 1} step={triggerChoice === 'hcg' ? 250 : 0.05} value={triggerDose} onChange={e => setTriggerDose(Number(e.target.value))} style={{ width: '100%', padding: '6px', fontSize: '11px', borderRadius: '6px', border: '1px solid #cbd5e1' }} />
           </div>
         </div>
 
@@ -182,9 +191,13 @@ export function GonadConsoleIvf() {
           </label>
           <label style={{ fontSize: '11px', display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer' }}>
             <input type="checkbox" checked={cabergolineUsed} onChange={e => setCabergolineUsed(e.target.checked)} />
-            <span style={{ color: '#334155' }}>Kabergolina 0,5 mg/d przez 8 dni po punkcji (blokada VEGFR-2)</span>
+            <span style={{ color: '#334155' }}>Kabergolina — dodaj do scenariusza</span>
           </label>
         </div>
+        {cabergolineUsed && <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,minmax(130px,200px))', gap: '8px', marginTop: '10px' }}>
+          <label style={{ fontSize: '11px', color: '#334155' }}>Dawka dobowa (mg)<input type="number" min="0.125" max="1" step="0.125" value={cabergolineDose} onChange={e=>setCabergolineDose(Number(e.target.value))} style={{display:'block',width:'100%',marginTop:'4px',padding:'6px',border:'1px solid #cbd5e1',borderRadius:'6px'}}/></label>
+          <label style={{ fontSize: '11px', color: '#334155' }}>Czas (dni)<input type="number" min="1" max="14" value={cabergolineDays} onChange={e=>setCabergolineDays(Number(e.target.value))} style={{display:'block',width:'100%',marginTop:'4px',padding:'6px',border:'1px solid #cbd5e1',borderRadius:'6px'}}/></label>
+        </div>}
       </div>
 
       {/* WERDYKT I INTERWENCJE */}

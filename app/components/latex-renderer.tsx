@@ -61,14 +61,14 @@ export function FormattedMathText({
   className = '',
   enableGlossary = true,
 }: FormattedMathTextProps) {
-  if (!text) return null;
-
   // Dzielimy tekst według bloków $$...$$ oraz $...$
   // Używamy grupy przechwytującej, aby zachować dopasowania w tablicy wynikowej
   const parts = useMemo(() => {
     const regex = /(\$\$[\s\S]+?\$\$|\$[^\$\n]+?\$)/g;
     return text.split(regex);
   }, [text]);
+
+  if (!text) return null;
 
   return (
     <span className={className}>

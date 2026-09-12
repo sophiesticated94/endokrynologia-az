@@ -75,13 +75,13 @@ export function GonadConsoleHpg() {
     let t = isMaleGonad ? 'N (fizjologiczny)' : 'N (niski bazowy)';
     let e2 = isFemaleGonad ? 'N (zależny od cyklu)' : 'N (niski fizjologiczny)';
     let dht = isMaleGonad ? 'N' : 'N (niski)';
-    let p4 = isFemaleGonad ? 'N (faza zależna)' : 'N (śladowy)';
+    const p4 = isFemaleGonad ? 'N (faza zależna)' : 'N (śladowy)';
     let shbg = 'N (zakres referencyjny)';
     let arActivation = isMaleGonad ? 'Prawidłowa męska' : 'Niska fizjologiczna';
     let erActivation = isFemaleGonad ? 'Prawidłowa żeńska' : 'Niska fizjologiczna';
 
     const tissueNotes: string[] = [];
-    let confidence = 'Wysoki poziom pewności co do kierunku regulacji pętli sprzężeń.';
+    const confidence = 'Wysoki poziom pewności co do kierunku regulacji pętli sprzężeń.';
 
     // Efekty leków
     const d = selectedDrugs;
