@@ -267,7 +267,7 @@ export const D2_DRUGS_EVIDENCE: Record<string, D2DrugEvidenceProfile> = {
     receptorFingerprint: { d2Ki: 3.8, d3Ki: 5.2, ht2aKi: 0.17, ht1aKi: 420, h1Ki: 20, m1Ki: 10000, alpha1Ki: 2.7 },
   },
   olanzapine: {
-    id: 'olanzapine', name: 'Olanzapina', pharmacologicClass: 'antagonist', intrinsicActivityPercent: 0, ed50Mg: 7.2,
+    id: 'olanzapine', name: 'Olanzapina', pharmacologicClass: 'antagonist', intrinsicActivityPercent: 0, ed50Mg: 4.3,
     studyDoseRange: '5 – 20 mg/d', studyMinDoseMg: 5, studyMaxDoseMg: 20, petStudy: 'Kapur et al. 1999 (Arch Gen Psychiatry)',
     receptorFingerprint: { d2Ki: 11, d3Ki: 27, ht2aKi: 4.0, ht1aKi: 2300, h1Ki: 0.08, m1Ki: 26, alpha1Ki: 19 },
   },

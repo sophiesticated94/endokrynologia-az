@@ -1,4 +1,9 @@
 import { PSYCHIATRY_DRUGS, type DrugProfile } from './psychiatry-simulator-data.ts';
+import {
+  calculateD2Occupancy,
+  D2_DRUGS_EVIDENCE,
+  type D2OccupancyModel,
+} from './psychiatry-pharmacokinetics-engine.ts';
 
 export interface PatientProfile {
   age: number;
@@ -91,11 +96,14 @@ export function evaluateHunterCriteria(
   } = clinicalSigns;
 
   const isFever = temperature !== undefined ? temperature > 38.0 : hyperthermiaOver38;
-  const isHypertonic = hypertonia !== false && (hypertonia === true || clinicalSigns.hypertonia === undefined);
+  const isHypertonic = hypertonia === true;
 
   const missingInformation: string[] = [];
   if (exposure === 'unknown') missingInformation.push('Brak potwierdzenia wywiadu ekspozycji na leki serotoninergiczne');
   if (temperature === undefined && !hyperthermiaOver38) missingInformation.push('Brak pomiaru temperatury ciała');
+  if (hypertonia === undefined && isFever && (ocularClonus || inducibleClonus)) {
+    missingInformation.push('Brak oceny napięcia mięśniowego (ocena hipertonii pod kątem gałęzi 5)');
+  }
 
   const disclaimer = 'EDUKACYJNA REGUŁA DECYZYJNA — Kryteria Huntera (Dunkley 2003: czułość 84%, swoistość 97%) stanowią regułę decyzyjną wyłącznie w kontekście potwierdzonej ekspozycji na substancje serotoninergiczne. Nie są samodzielnym biomarkerem laboratoryjnym.';
 
@@ -168,9 +176,12 @@ export interface DrugCalculatedState {
   drug: DrugProfile;
   prescribedDose: number;
   effectiveDose: number;
+  exposureTendency: 'lower' | 'neutral' | 'higher';
+  exposureExplanation: string;
   estimatedCss: string;
   sertOccupancyPercent: number;
   d2OccupancyPercent: number;
+  d2Model?: D2OccupancyModel;
   evidenceCategory: string;
   safetyAlerts: string[];
 }
@@ -199,25 +210,57 @@ export function calculateDrugState(
   const adherenceFraction = Math.max(0.1, patient.adherencePercent / 100);
   const effectiveDose = rx.doseMg * cypFactor * adherenceFraction;
 
-  // Obliczenie occupancy SERT (krzywa hiperboliczna Meyera: Emax * Dose / (ED50 + Dose))
-  let sertOccupancy = 0;
-  if (drug.class === 'SSRI' || drug.class === 'SNRI') {
-    const ed50 = drug.defaultDose * 0.1;
-    sertOccupancy = Math.min(88, Math.round((88 * effectiveDose) / (ed50 + effectiveDose)));
+  let exposureTendency: 'lower' | 'neutral' | 'higher' = 'neutral';
+  let exposureExplanation = 'Standardowy profil metabolizmu populacyjnego.';
+
+  if (cypFactor > 1.2 || adherenceFraction > 1.0) {
+    exposureTendency = 'higher';
+    exposureExplanation = 'Spowolniony metabolizm (fenotyp PM/IM lub deindukcja enzymatyczna) — tendencja do wyższego stężenia.';
+  } else if (cypFactor < 0.8 || adherenceFraction < 0.7) {
+    exposureTendency = 'lower';
+    exposureExplanation = 'Przyspieszony metabolizm (indukcja dymem tytoniowym lub fenotyp UM) bądź niska adherencja — tendencja do niższej ekspozycji.';
   }
 
-  // Obliczenie occupancy D2 (Kapur et al.)
+  let estimatedCss: string;
+  if (drug.id === 'lithium') {
+    estimatedCss = 'Measured TDM required (pomiar 12h po dawce, brak symulacji stężenia)';
+  } else if (drug.id === 'clozapine' && patient.substanceUse === 'zaprzestanie_palenia') {
+    estimatedCss = 'Exposure may increase (deindukcja CYP1A2: opisywany wzrost o 50–100%; wymagany TDM)';
+  } else if (exposureTendency === 'higher') {
+    estimatedCss = 'Exposure may increase (spowolniony klirens / interakcja metaboliczna)';
+  } else if (exposureTendency === 'lower') {
+    estimatedCss = 'Exposure may decrease (przyspieszony klirens / indukcja enzymatyczna)';
+  } else {
+    estimatedCss = 'TDM not routinely indicated (standardowy metabolizm enzymatyczny)';
+  }
+
+  // D2 Occupancy z walidowanego silnika PET
   let d2Occupancy = 0;
-  if (drug.class === 'SGA' || drug.class === 'FGA') {
-    const ed50D2 = drug.defaultDose * 0.35;
-    d2Occupancy = Math.min(94, Math.round((95 * effectiveDose) / (ed50D2 + effectiveDose)));
+  let d2Model: D2OccupancyModel | undefined;
+  if (drug.id in D2_DRUGS_EVIDENCE) {
+    d2Model = calculateD2Occupancy(drug.id, rx.doseMg);
+    d2Occupancy = d2Model.d2OccupancyPercent;
+  }
+
+  // SERT Occupancy z badań PET (Meyer et al. 2004)
+  let sertOccupancy = 0;
+  if (drug.id === 'sertraline') {
+    const ed50 = 4.5;
+    sertOccupancy = Math.min(88, Math.round((85 * rx.doseMg) / (ed50 + rx.doseMg)));
+  } else if (drug.id === 'escitalopram') {
+    const ed50 = 1.3;
+    sertOccupancy = Math.min(88, Math.round((85 * rx.doseMg) / (ed50 + rx.doseMg)));
   }
 
   const alerts: string[] = [];
-  if (d2Occupancy > 80 && drug.id !== 'aripiprazole') {
-    alerts.push(`Wysycenie receptorów D2 wynosi szacunkowo ~${d2Occupancy}% (>80% heurystyka Kapura). Zwiększone prawdopodobieństwo objawów pozapiramidowych (EPS) dla czystego antagonisty.`);
-  } else if (d2Occupancy >= 65 && d2Occupancy <= 80) {
-    alerts.push(`Wysycenie receptorów D2 w optymalnym oknie terapeutycznym (historyczna heurystyka Kapura 65–80%) dla czystych antagonistów.`);
+  if (d2Model) {
+    if (d2Model.pharmacologicClass === 'partial_agonist') {
+      alerts.push(`Aripiprazol (częściowy agonista D2): wysokie occupancy (~${d2Occupancy}%) wynika z wysokiego powinowactwa, lecz obecność aktywności wewnętrznej (~30%) zmienia profil tolerancji. Klasyczna heurystyka Kapura 65–80% NIE ma zastosowania; akatyzja pozostaje istotnym ryzykiem klinicznym.`);
+    } else if (d2Occupancy > 80) {
+      alerts.push(`Wysycenie receptorów D2 wynosi szacunkowo ~${d2Occupancy}% (>80% heurystyka Kapura dla antagonistów). Zwiększone prawdopodobieństwo objawów pozapiramidowych (EPS) i hiperprolaktynemii.`);
+    } else if (d2Occupancy >= 65 && d2Occupancy <= 80) {
+      alerts.push(`Wysycenie receptorów D2 w optymalnym oknie terapeutycznym (historyczna heurystyka Kapura 65–80%) dla czystych antagonistów.`);
+    }
   }
 
   if (drug.id === 'lithium') {
@@ -240,12 +283,13 @@ export function calculateDrugState(
     drug,
     prescribedDose: rx.doseMg,
     effectiveDose: Math.round(effectiveDose),
-    estimatedCss: drug.id === 'lithium'
-      ? 'Wymagany pomiar laboratoryjny TDM 12h po dawce'
-      : `${Math.round(effectiveDose * 1.5)} ng/ml (szacunek populacyjny)`,
+    exposureTendency,
+    exposureExplanation,
+    estimatedCss,
     sertOccupancyPercent: sertOccupancy,
     d2OccupancyPercent: d2Occupancy,
-    evidenceCategory: drug.petOccupancyAtDefaultDose ? 'PET measured' : 'PK-derived',
+    d2Model,
+    evidenceCategory: d2Model ? 'PET measured' : drug.petOccupancyAtDefaultDose ? 'PET measured' : 'PK-derived',
     safetyAlerts: alerts,
   };
 }

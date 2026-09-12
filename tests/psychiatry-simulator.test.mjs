@@ -70,10 +70,15 @@ test('Hunter decision rule detects serotonin syndrome according to Dunkley 2003 
   const r4 = evaluateHunterCriteria(ssriRx, { ...emptySigns, tremor: true, hyperreflexia: true });
   assert.equal(r4.meetsCriteria, true);
 
-  // Rule 5: Hyperthermia (>38) + ocular/inducible clonus
-  const r5 = evaluateHunterCriteria(ssriRx, { ...emptySigns, hyperthermiaOver38: true, inducibleClonus: true });
+  // Rule 5: Hyperthermia (>38) + ocular/inducible clonus + hypertonia === true
+  const r5 = evaluateHunterCriteria(ssriRx, { ...emptySigns, hyperthermiaOver38: true, inducibleClonus: true, hypertonia: true });
   assert.equal(r5.meetsCriteria, true);
   assert.equal(r5.severity, 'stan_zagrozenia_zycia');
+
+  // Rule 5 negative test: fever + clonus without hypertonia (undefined) does NOT meet branch 5
+  const r5Undefined = evaluateHunterCriteria(ssriRx, { ...emptySigns, hyperthermiaOver38: true, inducibleClonus: true, hypertonia: undefined });
+  assert.equal(r5Undefined.meetsCriteria, false);
+  assert.ok(r5Undefined.missingInformation?.some(m => m.includes('hipertonii')));
 
   // Negative control: Isolated tremor without hyperreflexia -> false
   const rNeg = evaluateHunterCriteria(ssriRx, { ...emptySigns, tremor: true });

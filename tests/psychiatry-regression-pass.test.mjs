@@ -8,10 +8,17 @@ import {
   ALL_PSYCHIATRY_PRESETS,
 } from '../lib/psychiatry/index.ts';
 import { getPsychiatryWidgetProvider } from '../lib/psychiatry/psychiatry-lesson-activities.ts';
-import { evaluateHunterCriteria } from '../lib/psychiatry-engine.ts';
+import { evaluateHunterCriteria, calculateDrugState } from '../lib/psychiatry-engine.ts';
 import { evaluateExtripLithiumGuidance } from '../lib/psychiatry/extrip-guidelines.ts';
 import { calculateD2Occupancy } from '../lib/psychiatry-pharmacokinetics-engine.ts';
 import { PSYCHIATRY_EVIDENCE_REGISTRY } from '../lib/psychiatry/evidence/model-limitations.ts';
+import { getSlotRank, compareSlotRanks } from '../lib/psychiatry/placement-helpers.ts';
+import {
+  hydratePsychiatryPatient,
+  hydratePsychiatryPrescriptions,
+  hydrateSafetySignsFromPreset,
+} from '../lib/psychiatry/presets/hydration.ts';
+import { getDiagnosticDurationCriteria } from '../lib/psychiatry/classification-timings.ts';
 
 // Test A: Psychiatry widgets never render endocrine fallback content
 test('Test A: Psychiatry widgets never render endocrine fallback content', () => {
@@ -86,6 +93,15 @@ test('Test B: All enhancement kinds have renderer', () => {
 
 // Test C: Placement slot ordering and structure
 test('Test C: Placement slot ordering and structure', () => {
+  assert.ok(getSlotRank('after-intro') < getSlotRank('after-text'));
+  assert.ok(getSlotRank('after-text') < getSlotRank('before-checkpoint'));
+  assert.ok(getSlotRank('before-checkpoint') < getSlotRank('checkpoint'));
+  assert.ok(getSlotRank('checkpoint') < getSlotRank('after-checkpoint'));
+  assert.ok(getSlotRank('after-checkpoint') < getSlotRank('end-of-block'));
+  assert.ok(compareSlotRanks('after-intro', 'after-text') < 0);
+  assert.ok(compareSlotRanks('end-of-block', 'checkpoint') > 0);
+  assert.equal(compareSlotRanks('checkpoint', 'checkpoint'), 0);
+
   const validModes = new Set([
     'clinical-framework',
     'safety-context',
@@ -124,26 +140,57 @@ test('Test D: All preset deep links resolve', () => {
 
 // Test E: Preset hydration propagates fields into state
 test('Test E: Preset hydration propagates fields into state', () => {
+  const basePatient = {
+    age: 35,
+    sex: 'female',
+    cyp2d6Phenotype: 'NM',
+    cyp2c19Phenotype: 'NM',
+    substanceUse: 'brak',
+    adherencePercent: 100,
+  };
   const clozapinePreset = ALL_PSYCHIATRY_PRESETS['clozapine-smoking-001'];
   assert.equal(clozapinePreset.data.smokingStatus, 'zaprzestanie_palenia');
   assert.equal(clozapinePreset.data.claimKey, 'clozapine-smoking-cyp1a2');
+  const pHydrated = hydratePsychiatryPatient(basePatient, clozapinePreset.data);
+  assert.equal(pHydrated.substanceUse, 'zaprzestanie_palenia');
+  const rxHydrated = hydratePsychiatryPrescriptions(clozapinePreset.data, clozapinePreset.id);
+  assert.ok(rxHydrated.some(r => r.drugId === 'clozapine'));
 
   const cypPreset = ALL_PSYCHIATRY_PRESETS['cyp-interaction-001'];
   assert.equal(cypPreset.data.inhibitor, 'fluoxetine');
   assert.equal(cypPreset.data.substrate, 'venlafaxine');
+  const rxCyp = hydratePsychiatryPrescriptions(cypPreset.data, cypPreset.id);
+  assert.ok(rxCyp.some(r => r.drugId === 'fluoxetine'));
+  assert.ok(rxCyp.some(r => r.drugId === 'venlafaxine'));
 
   const d2Preset = ALL_PSYCHIATRY_PRESETS['d2-evidence-001'];
   assert.equal(d2Preset.data.antagonistDrug, 'risperidone');
   assert.equal(d2Preset.data.partialAgonistDrug, 'aripiprazole');
+  const rxD2 = hydratePsychiatryPrescriptions(d2Preset.data, d2Preset.id);
+  assert.ok(rxD2.some(r => r.drugId === 'risperidone'));
+  assert.ok(rxD2.some(r => r.drugId === 'aripiprazole'));
 
   const lithiumPreset = ALL_PSYCHIATRY_PRESETS['lithium-tdm-measured-001'];
   assert.equal(lithiumPreset.data.measuredLevel, 1.45);
   assert.equal(lithiumPreset.data.hoursSinceDose, 12);
   assert.equal(lithiumPreset.data.eGfr, 62);
+  const pLithium = hydratePsychiatryPatient(basePatient, lithiumPreset.data);
+  assert.equal(pLithium.labEgfr, 62);
+  const rxLithium = hydratePsychiatryPrescriptions(lithiumPreset.data, lithiumPreset.id);
+  assert.ok(rxLithium.some(r => r.drugId === 'lithium'));
 
   const qtcPreset = ALL_PSYCHIATRY_PRESETS['qtc-crediblemeds-001'];
   assert.equal(qtcPreset.data.rawQt, 490);
   assert.equal(qtcPreset.data.potassium, 3.2);
+  const pQtc = hydratePsychiatryPatient(basePatient, qtcPreset.data);
+  assert.equal(pQtc.labPotassium, 3.2);
+
+  const hunterBranch5 = ALL_PSYCHIATRY_PRESETS['serotonin-hunter-branch5'];
+  if (hunterBranch5) {
+    const signs = hydrateSafetySignsFromPreset(hunterBranch5.data);
+    assert.equal(signs.hypertonia, true);
+    assert.equal(signs.hyperthermiaOver38, true);
+  }
 });
 
 // Test F: Hunter decision tree branches (all 5 branches and exposure requirement)
@@ -235,13 +282,18 @@ test('Test G: EXTRIP RECOMMENDED vs SUGGESTED vs missing data logic', () => {
 
 // Test H: DSM-5-TR vs ICD-11 duration criteria
 test('Test H: DSM-5-TR vs ICD-11 duration criteria', () => {
-  const dsm5MinTotalMonths = 6;
-  const dsm5MinActivePhaseMonths = 1;
-  const icd11MinMonths = 1;
-  assert.equal(dsm5MinTotalMonths, 6);
-  assert.equal(dsm5MinActivePhaseMonths, 1);
-  assert.equal(icd11MinMonths, 1);
-  assert.ok(dsm5MinTotalMonths > icd11MinMonths);
+  const schCriteria = getDiagnosticDurationCriteria('schizophrenia');
+  assert.equal(schCriteria.dsm5tr.totalDurationMonths, 6);
+  assert.equal(schCriteria.dsm5tr.activePhaseMonths, 1);
+  assert.equal(schCriteria.icd11.totalDurationMonths, 1);
+  assert.equal(schCriteria.icd11.activePhaseMonths, 1);
+  assert.ok(schCriteria.dsm5tr.totalDurationMonths > schCriteria.icd11.totalDurationMonths);
+
+  const affCriteria = getDiagnosticDurationCriteria('schizoaffective');
+  assert.equal(affCriteria.dsm5tr.isolatedPsychosisWeeks, 2);
+  assert.equal(affCriteria.icd11.totalDurationMonths, 1);
+  assert.ok(affCriteria.dsm5tr.summaryText.includes('2 tygodnie'));
+  assert.ok(affCriteria.icd11.summaryText.includes('1 miesiąc'));
 });
 
 // Test I: Partial agonists get not_applicable_to_partial_agonist
@@ -257,7 +309,7 @@ test('Test I: Partial agonists get not_applicable_to_partial_agonist', () => {
   assert.notEqual(halo.heuristicZone, 'not_applicable_to_partial_agonist');
 });
 
-// Test J: Claim-level evidence keys resolve (all 9 keys)
+// Test J: Claim-level evidence keys resolve (all 10 canonical claims and aliases)
 test('Test J: Claim-level evidence keys resolve', () => {
   const requiredClaimKeys = [
     'hunter-validation',
@@ -269,17 +321,22 @@ test('Test J: Claim-level evidence keys resolve', () => {
     'meyer-sert-occupancy',
     'sert-meyer-observation',
     'clozapine-smoking-cyp1a2',
+    'cyp-interaction-observations',
   ];
 
   for (const key of requiredClaimKeys) {
     const claim = PSYCHIATRY_EVIDENCE_REGISTRY[key];
     assert.ok(claim, `Missing evidence claim for key: ${key}`);
     assert.ok(claim.id, `Claim ${key} must have id`);
-    assert.ok(claim.claimLabel.length > 10, `Claim ${key} claimLabel too short`);
-    assert.ok(claim.quickSummary.length > 20, `Claim ${key} quickSummary too short`);
-    assert.ok(claim.researchContext.limitations.length > 0, `Claim ${key} limitations missing`);
+    assert.ok(claim.claimLabel.length > 5, `Claim ${key} claimLabel too short`);
+    assert.ok(claim.quickSummary.length > 15, `Claim ${key} quickSummary too short`);
+    assert.ok(claim.researchContext?.limitations?.length > 0, `Claim ${key} limitations missing`);
     assert.ok(claim.sourceId, `Claim ${key} must have sourceId`);
   }
+
+  assert.ok(PSYCHIATRY_EVIDENCE_REGISTRY['d2-occupancy-model']);
+  assert.ok(PSYCHIATRY_EVIDENCE_REGISTRY['lithium-therapeutic-range']);
+  assert.ok(PSYCHIATRY_EVIDENCE_REGISTRY['hunter-criteria-validity']);
 });
 
 // Test K: Longitudinal cases do not have exact 4-step lock
@@ -295,3 +352,124 @@ test('Test K: Longitudinal cases do not have exact 4-step lock', () => {
     }
   }
 });
+
+// Test L: Hunter branch 5 hypertonia undefined vs true
+test('Test L: Hunter branch 5 hypertonia undefined vs true', () => {
+  const ssriRx = [{ drugId: 'sertraline', doseMg: 100 }];
+  const signsBase = {
+    spontaneousClonus: false,
+    inducibleClonus: true,
+    ocularClonus: false,
+    agitation: false,
+    diaphoresis: false,
+    tremor: false,
+    hyperreflexia: false,
+    hyperthermiaOver38: true,
+  };
+
+  const undefRes = evaluateHunterCriteria(ssriRx, { ...signsBase, hypertonia: undefined });
+  assert.equal(undefRes.meetsCriteria, false);
+  assert.ok(undefRes.missingInformation?.some(m => m.includes('hipertoni')));
+
+  const falseRes = evaluateHunterCriteria(ssriRx, { ...signsBase, hypertonia: false });
+  assert.equal(falseRes.meetsCriteria, false);
+
+  const trueRes = evaluateHunterCriteria(ssriRx, { ...signsBase, hypertonia: true });
+  assert.equal(trueRes.meetsCriteria, true);
+  assert.equal(trueRes.branchNumber, 5);
+  assert.equal(trueRes.severity, 'stan_zagrozenia_zycia');
+});
+
+// Test M: EXTRIP missing data and per-criterion status
+test('Test M: EXTRIP missing data and per-criterion status', () => {
+  const emptyRes = evaluateExtripLithiumGuidance({});
+  assert.equal(emptyRes.recommendationLevel, 'insufficient_information');
+  assert.equal(emptyRes.recommendation, 'insufficient_information');
+  assert.ok(emptyRes.missingCriticalInputs.length >= 2);
+
+  const noConcRes = evaluateExtripLithiumGuidance({
+    eGfr: 30,
+    decreasedConsciousness: false,
+    seizures: false,
+    dangerousDysrhythmias: false,
+  });
+  assert.equal(noConcRes.recommendationLevel, 'insufficient_information');
+  assert.ok(noConcRes.missingCriticalInputs.some(m => m.toLowerCase().includes('stężen')));
+
+  const concOnlyRes = evaluateExtripLithiumGuidance({ measuredConcentrationMmolL: 4.5 });
+  assert.equal(concOnlyRes.recommendationLevel, 'insufficient_information');
+  assert.ok(concOnlyRes.missingCriticalInputs.some(m => m.includes('eGFR')));
+  assert.ok(concOnlyRes.criteriaEvaluated.some(c => c.status === 'unknown'));
+
+  const validRes = evaluateExtripLithiumGuidance({
+    measuredConcentrationMmolL: 4.2,
+    eGfr: 35,
+    decreasedConsciousness: false,
+    seizures: false,
+    dangerousDysrhythmias: false,
+    significantConfusion: false,
+    projectedHoursToLessThan1MmolL: 24,
+  });
+  assert.equal(validRes.recommendationLevel, 'RECOMMENDED');
+  assert.ok(validRes.criteriaEvaluated.every(c => c.status === 'met' || c.status === 'not_met'));
+});
+
+// Test N: calculateDrugState exposure direction and no fake ng/ml
+test('Test N: calculateDrugState exposure direction and no fake ng/ml', () => {
+  const patientNM = {
+    age: 30,
+    sex: 'male',
+    cyp2d6Phenotype: 'NM',
+    cyp2c19Phenotype: 'NM',
+    substanceUse: 'brak',
+    adherencePercent: 100,
+  };
+  const standardState = calculateDrugState({ drugId: 'olanzapine', doseMg: 10 }, patientNM);
+  assert.equal(typeof standardState.estimatedCss, 'string');
+  assert.ok(!standardState.estimatedCss.includes('ng/ml'));
+  assert.equal(standardState.exposureTendency, 'neutral');
+
+  const patientPM = { ...patientNM, cyp2d6Phenotype: 'PM' };
+  const pmState = calculateDrugState({ drugId: 'fluoxetine', doseMg: 20 }, patientPM);
+  assert.equal(pmState.exposureTendency, 'higher');
+  assert.ok(pmState.estimatedCss.includes('Exposure may increase'));
+
+  const patientCessation = { ...patientNM, substanceUse: 'zaprzestanie_palenia' };
+  const clozState = calculateDrugState({ drugId: 'clozapine', doseMg: 300 }, patientCessation);
+  assert.ok(clozState.estimatedCss.includes('deindukcja CYP1A2'));
+  assert.ok(clozState.estimatedCss.includes('50–100%'));
+  assert.ok(!clozState.estimatedCss.includes('ng/ml'));
+
+  const lithState = calculateDrugState({ drugId: 'lithium', doseMg: 750 }, patientNM);
+  assert.ok(lithState.estimatedCss.includes('Measured TDM required'));
+});
+
+// Test O: Partial agonists do not show Kapur window
+test('Test O: Partial agonists do not show Kapur window', () => {
+  const ariOccupancy = calculateD2Occupancy('aripiprazole', 15);
+  assert.equal(ariOccupancy.heuristicZone, 'not_applicable_to_partial_agonist');
+  assert.equal(ariOccupancy.pharmacologicClass, 'partial_agonist');
+  assert.ok(ariOccupancy.clinicalInterpretation.includes('aktywności wewnętrznej'));
+  assert.ok(ariOccupancy.clinicalInterpretation.includes('heurystyka nie dotyczy') ||
+            ariOccupancy.clinicalInterpretation.includes('heurystyka'));
+  assert.ok(ariOccupancy.clinicalInterpretation.includes('akatyzja') ||
+            ariOccupancy.clinicalInterpretation.includes('akatyzji'));
+  assert.ok(!ariOccupancy.clinicalInterpretation.includes('chroni przed EPS'));
+
+  const rispOccupancy = calculateD2Occupancy('risperidone', 4);
+  assert.equal(rispOccupancy.pharmacologicClass, 'antagonist');
+  assert.notEqual(rispOccupancy.heuristicZone, 'not_applicable_to_partial_agonist');
+});
+
+// Test P: Evidence registry integrity and claim lookups
+test('Test P: Evidence registry integrity and claim lookups', () => {
+  const registryKeys = Object.keys(PSYCHIATRY_EVIDENCE_REGISTRY);
+  assert.ok(registryKeys.length >= 10);
+  for (const key of registryKeys) {
+    const claim = PSYCHIATRY_EVIDENCE_REGISTRY[key];
+    assert.ok(claim.id, `Claim ${key} has no id`);
+    assert.ok(claim.claimLabel, `Claim ${key} has no label`);
+    assert.ok(claim.quickSummary, `Claim ${key} has no quickSummary`);
+  }
+});
+

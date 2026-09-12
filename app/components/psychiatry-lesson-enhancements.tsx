@@ -28,6 +28,7 @@ import {
 } from './psychiatry-receptor-lab';
 import { psychiatrySources } from '@/lib/course-psychiatry-sources';
 import { MicroCaseCard } from './psychiatry-micro-case-card';
+import { useEvidenceInspector } from './evidence-inspector-context';
 import type { Navigation } from '../views/types';
 import type { WhatWouldChangeYourMind } from '@/lib/psychiatry/types';
 
@@ -44,6 +45,8 @@ export function EvidenceBadge({
 }) {
   if (!mode && !claimKey) return null;
 
+  const inspector = useEvidenceInspector();
+
   const modeLabels: Record<string, { label: string; color: string }> = {
     'pet-model': { label: 'Badania PET (Meyer / Kapur)', color: 'bg-emerald-100 text-emerald-800 border-emerald-300' },
     'measured-tdm': { label: 'Oznaczenie TDM (AGNP 2026)', color: 'bg-blue-100 text-blue-800 border-blue-300' },
@@ -59,11 +62,25 @@ export function EvidenceBadge({
     color: 'bg-indigo-100 text-indigo-800 border-indigo-300',
   };
 
+  const effectiveOnClick = onClick || (claimKey && inspector ? () => inspector.openEvidence(claimKey, mode) : undefined);
+
+  if (!effectiveOnClick) {
+    return (
+      <span
+        className={`inline-flex items-center gap-1 px-2 py-0.5 text-[11px] font-semibold rounded-full border shadow-xs select-none ${current.color}`}
+        title="Poziom dowodów klinicznych (EBM)"
+      >
+        <FileCheck2 size={12} />
+        <span className="truncate max-w-[200px]">{label || current.label}</span>
+      </span>
+    );
+  }
+
   return (
     <button
       type="button"
-      onClick={onClick}
-      className={`inline-flex items-center gap-1 px-2 py-0.5 text-[11px] font-semibold rounded-full border shadow-xs transition-all hover:opacity-85 ${current.color}`}
+      onClick={effectiveOnClick}
+      className={`inline-flex items-center gap-1 px-2 py-0.5 text-[11px] font-semibold rounded-full border shadow-xs transition-all hover:opacity-85 cursor-pointer ${current.color}`}
       title="Kliknij, aby otworzyć Evidence Inspector i sprawdzić metodologię"
     >
       <FileCheck2 size={12} />

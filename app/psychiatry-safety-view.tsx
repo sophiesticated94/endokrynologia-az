@@ -6,6 +6,7 @@ import { evaluateHunterCriteria } from '@/lib/psychiatry-engine';
 import { PSYCHIATRY_DRUGS } from '@/lib/psychiatry-simulator-data';
 import { PsychiatryLithiumTdmLab, PsychiatryQtcLab } from './components/psychiatry-receptor-lab';
 import { EvidenceBadge } from './components/psychiatry-lesson-enhancements';
+import { hydrateSafetySignsFromPreset } from '@/lib/psychiatry/presets/hydration';
 
 interface Props {
   patient: PatientProfile;
@@ -14,16 +15,7 @@ interface Props {
 }
 
 export function PsychiatrySafetyView({ patient, prescriptions, presetData }: Props) {
-  const [clonusState, setClonusState] = useState(() => ({
-    spontaneousClonus: Boolean(presetData?.spontaneousClonus),
-    inducibleClonus: Boolean(presetData?.inducibleClonus),
-    ocularClonus: Boolean(presetData?.ocularClonus),
-    agitation: Boolean(presetData?.agitation),
-    diaphoresis: Boolean(presetData?.diaphoresis),
-    tremor: Boolean(presetData?.tremor),
-    hyperreflexia: Boolean(presetData?.hyperreflexia),
-    hyperthermiaOver38: (typeof presetData?.hyperthermia === 'number' && presetData.hyperthermia > 38) || false,
-  }));
+  const [clonusState, setClonusState] = useState(() => hydrateSafetySignsFromPreset(presetData));
 
   const hunter = evaluateHunterCriteria(prescriptions, clonusState);
 
@@ -115,6 +107,10 @@ export function PsychiatrySafetyView({ patient, prescriptions, presetData }: Pro
               <span>Pobudzenie / agitacja</span>
             </label>
             <label style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <input type="checkbox" checked={clonusState.hypertonia} onChange={e => setClonusState(s => ({ ...s, hypertonia: e.target.checked }))} />
+              <span>Wzmożone napięcie (hipertonia)</span>
+            </label>
+            <label style={{ display: 'flex', alignItems: 'center', gap: '6px', gridColumn: 'span 2' }}>
               <input type="checkbox" checked={clonusState.hyperthermiaOver38} onChange={e => setClonusState(s => ({ ...s, hyperthermiaOver38: e.target.checked }))} />
               <span style={{ color: 'var(--danger)', fontWeight: 600 }}>Gorączka &gt; 38°C</span>
             </label>
@@ -122,9 +118,14 @@ export function PsychiatrySafetyView({ patient, prescriptions, presetData }: Pro
 
           <div style={{ padding: '10px', background: 'var(--bg-subtle)', borderRadius: '6px', fontSize: '0.85rem' }}>
             <div><strong>Wynik algorytmu:</strong> {hunter.rationale}</div>
+            {hunter.missingInformation && hunter.missingInformation.length > 0 && (
+              <div style={{ marginTop: '4px', color: 'var(--warning-text)', fontSize: '0.78rem' }}>
+                Luki w wywiadzie: {hunter.missingInformation.join('; ')}
+              </div>
+            )}
             {hunter.meetsCriteria && (
               <div style={{ marginTop: '8px', color: 'var(--danger-text)', fontWeight: 600 }}>
-                Postępowanie: 1. Natychmiast odstaw leki 5-HT, 2. Benzodiazepiny i.v. (diazepam), 3. Chłodzenie fizykalne, 4. Cyproheptadyna 12 mg p.o. (paracetamol nieskuteczny!).
+                Postępowanie: 1. Natychmiast odstaw leki 5-HT, 2. Benzodiazepiny i.v. (diazepam w celu opanowania pobudzenia i mioklonii), 3. Chłodzenie fizykalne i nawadnianie, 4. Cyproheptadyna p.o. (rozważ w umiarkowanych i ciężkich przypadkach; paracetamol jest nieskuteczny w hipertermii mięśniopochodnej).
               </div>
             )}
           </div>
@@ -136,9 +137,12 @@ export function PsychiatrySafetyView({ patient, prescriptions, presetData }: Pro
             <h3 style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '6px' }}>
               <ShieldAlert size={18} color="var(--warning)" /> Złośliwy Zespół Neuroleptyczny (NMS)
             </h3>
-            <span className="badge" style={{ background: hasD2Blocker ? 'var(--warning-subtle)' : 'var(--bg-subtle)', color: hasD2Blocker ? 'var(--warning)' : 'var(--text-muted)' }}>
-              {hasD2Blocker ? 'BLOKADA D2 AKTYWNA' : 'BRAK BLOKADY D2'}
-            </span>
+            <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+              <EvidenceBadge claimKey="strawn-nms-pathophysiology" label="EBM: NMS Strawn 2007" />
+              <span className="badge" style={{ background: hasD2Blocker ? 'var(--warning-subtle)' : 'var(--bg-subtle)', color: hasD2Blocker ? 'var(--warning)' : 'var(--text-muted)' }}>
+                {hasD2Blocker ? 'BLOKADA D2 AKTYWNA' : 'BRAK BLOKADY D2'}
+              </span>
+            </div>
           </div>
 
           <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '10px' }}>
@@ -151,8 +155,9 @@ export function PsychiatrySafetyView({ patient, prescriptions, presetData }: Pro
               <li><strong>NMS:</strong> Sztywność ołowianej rury, hiporefleksja, porażenie perystaltyki jelit, wysokie CK.</li>
               <li><strong>Serotoninowy:</strong> Klonus (spontaniczny/oczny), hiperrefleksja, biegunka, mydriasis.</li>
             </ul>
-            <div style={{ marginTop: '8px', color: 'var(--accent)', fontWeight: 600 }}>
-              Odtrutka w NMS: Dantrolen i.v. (zwiotczenie mięśni przez RyR1) + Bromokryptyna (agonista D2).
+            <div style={{ marginTop: '10px', color: 'var(--text-muted)', fontSize: '0.8rem', lineHeight: 1.4 }}>
+              <strong style={{ color: 'var(--text-main)', display: 'block', marginBottom: '2px' }}>Postępowanie w NMS (brak uniwersalnego antidotum o statusie RCT):</strong>
+              1. Natychmiastowe odstawienie neuroleptyku. 2. Intensywne leczenie wspomagające (chłodzenie, płynoterapia, monitorowanie OIT). 3. Farmakoterapia celowana: dantrolen i.v., bromokryptyna lub amantadyna mogą być rozważane zależnie od ciężkości i protokołu ośrodka (evidence oparty na seriach przypadków).
             </div>
           </div>
         </div>
@@ -163,9 +168,12 @@ export function PsychiatrySafetyView({ patient, prescriptions, presetData }: Pro
             <h3 style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '6px' }}>
               <HeartPulse size={18} color="var(--accent)" /> Monitor Kardiologiczny: QTc &amp; TdP
             </h3>
-            <span className="badge" style={{ background: patient.labPotassium < 3.5 ? 'var(--danger)' : 'var(--accent-subtle)', color: patient.labPotassium < 3.5 ? '#fff' : 'var(--accent)' }}>
-              K+: {patient.labPotassium} mmol/l
-            </span>
+            <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+              <EvidenceBadge claimKey="crediblemeds-qtc" label="EBM: CredibleMeds" />
+              <span className="badge" style={{ background: patient.labPotassium < 3.5 ? 'var(--danger)' : 'var(--accent-subtle)', color: patient.labPotassium < 3.5 ? '#fff' : 'var(--accent)' }}>
+                K+: {patient.labPotassium} mmol/l
+              </span>
+            </div>
           </div>
 
           <label style={{ display: 'block', marginBottom: '10px', fontSize: '0.85rem' }}>
@@ -182,8 +190,8 @@ export function PsychiatrySafetyView({ patient, prescriptions, presetData }: Pro
               style={{ width: '100%', marginTop: '4px' }}
             />
             {patient.labPotassium < 3.5 && (
-              <small style={{ color: 'var(--danger)', display: 'block', fontWeight: 600 }}>
-                Hipokaliemia! Bezwzględne przeciwwskazanie do leków obciążających QTc (citalopram, haloperidol).
+              <small style={{ color: 'var(--danger)', display: 'block', fontWeight: 600, marginTop: '4px' }}>
+                Hipokaliemia! Istotny modyfikowalny czynnik ryzyka TdP — wymaga pilnej suplementacji potasu i ponownej oceny ryzyka przed podaniem lub eskalacją leków wydłużających QT.
               </small>
             )}
           </label>

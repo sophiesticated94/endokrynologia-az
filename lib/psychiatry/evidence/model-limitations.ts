@@ -417,13 +417,39 @@ export const PSYCHIATRY_EVIDENCE_REGISTRY: Record<string, EvidenceItem> = {
       ],
     },
   },
+  'cyp-interaction-observations': {
+    id: 'cyp-interaction-observations',
+    claimLabel: 'Obserwacje farmakogenetyczne i interakcje CYP450 (CPIC / Flockhart)',
+    origin: 'DERIVED',
+    level: 'GUIDELINE',
+    sourceId: 'agnp-tdm-2026',
+    quickSummary:
+      'Polimorfizmy enzymatyczne (CYP2D6, CYP2C19) oraz silne inhibitory/induktory determinują kierunek zmian klirensu (edukacyjne współczynniki wrażliwości, nie stężenie jednostkowe).',
+    clinicalContext: {
+      population: 'Pacjenci przyjmujący psychofarmaki metabolizowane przez izoenzymy cytochromu P450',
+      measurementMethod: 'Genotypowanie farmakogenetyczne CPIC lub fenotypowanie metaboliczne',
+      applicability: 'Ocena kierunku zmian ekspozycji i ryzyka działań niepożądanych',
+    },
+    researchContext: {
+      modelType: 'Jakościowy model wrażliwości enzymatycznej (kierunek zmian AUC/klirensu)',
+      limitations: [
+        'Współczynniki mają charakter edukacyjny i nie stanowią predyktora stężenia Css u konkretnego pacjenta.',
+      ],
+      whatCannotBeInferred: [
+        'Nie wolno kalkulować dokładnego stężenia osoczowego w ng/ml wyłącznie na podstawie fenotypu CYP.',
+      ],
+    },
+  },
 };
 
 // Aliases for claimKey lookups
 PSYCHIATRY_EVIDENCE_REGISTRY['kapur-d2-threshold'] = PSYCHIATRY_EVIDENCE_REGISTRY['d2-kapur-heuristic'];
+PSYCHIATRY_EVIDENCE_REGISTRY['d2-occupancy-model'] = PSYCHIATRY_EVIDENCE_REGISTRY['d2-kapur-heuristic'];
 PSYCHIATRY_EVIDENCE_REGISTRY['agnp-consensus-2026'] = PSYCHIATRY_EVIDENCE_REGISTRY['lithium-maintenance-tdm-range'];
+PSYCHIATRY_EVIDENCE_REGISTRY['lithium-therapeutic-range'] = PSYCHIATRY_EVIDENCE_REGISTRY['lithium-maintenance-tdm-range'];
 PSYCHIATRY_EVIDENCE_REGISTRY['crediblemeds-qtc'] = PSYCHIATRY_EVIDENCE_REGISTRY['qtc-risk-threshold'];
 PSYCHIATRY_EVIDENCE_REGISTRY['meyer-sert-occupancy'] = PSYCHIATRY_EVIDENCE_REGISTRY['sert-meyer-observation'];
+PSYCHIATRY_EVIDENCE_REGISTRY['hunter-criteria-validity'] = PSYCHIATRY_EVIDENCE_REGISTRY['hunter-validation'];
 
 export const MODEL_CARDS: Record<string, ModelCard> = {
   'lithium-pk-sensitivity': {

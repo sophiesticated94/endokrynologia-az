@@ -23,6 +23,7 @@ export interface ExtripEvaluationInput {
 export interface ExtripCriterionCheck {
   criterion: string;
   met: boolean;
+  status: 'met' | 'not_met' | 'unknown';
   importance: 'absolute' | 'relative';
   note: string;
 }
@@ -40,7 +41,8 @@ export interface ExtripEvaluationResult {
 }
 
 export function evaluateExtripLithiumGuidance(input: ExtripEvaluationInput): ExtripEvaluationResult {
-  const lithiumConcentrationMmolL = input.lithiumConcentrationMmolL ?? input.measuredConcentrationMmolL ?? 0;
+  const rawConcentration = input.lithiumConcentrationMmolL ?? input.measuredConcentrationMmolL;
+  const lithiumConcentrationMmolL = rawConcentration;
   const {
     eGfr,
     hasAkiOrSevereRenalFailure,
@@ -55,6 +57,7 @@ export function evaluateExtripLithiumGuidance(input: ExtripEvaluationInput): Ext
   const conf = significantConfusion !== undefined ? significantConfusion : confusionOrDelirium;
   const missingCriticalInputs: string[] = [];
 
+  if (lithiumConcentrationMmolL === undefined) missingCriticalInputs.push('Stężenie litu w surowicy');
   if (decreasedConsciousness === undefined) missingCriticalInputs.push('Poziom przytomności (śpiączka / stupor)');
   if (seizures === undefined) missingCriticalInputs.push('Występowanie drgawek');
   if (dangerousDysrhythmias === undefined) missingCriticalInputs.push('Zagrażające życiu dysrytmie komorowe');
@@ -65,7 +68,7 @@ export function evaluateExtripLithiumGuidance(input: ExtripEvaluationInput): Ext
 
   // 1. Kryteria RECOMMENDED wg EXTRIP 2015
   const recommendedCriteriaMet: string[] = [];
-  if (hasImpairedRenal && lithiumConcentrationMmolL > 4.0) {
+  if (lithiumConcentrationMmolL !== undefined && hasImpairedRenal && lithiumConcentrationMmolL > 4.0) {
     recommendedCriteriaMet.push('Stężenie litu >4,0 mmol/l przy upośledzonej funkcji nerek (eGFR <45 ml/min lub AKI)');
   }
   if (decreasedConsciousness === true) {
@@ -80,7 +83,7 @@ export function evaluateExtripLithiumGuidance(input: ExtripEvaluationInput): Ext
 
   // 2. Kryteria SUGGESTED wg EXTRIP 2015
   const suggestedCriteriaMet: string[] = [];
-  if (lithiumConcentrationMmolL > 5.0) {
+  if (lithiumConcentrationMmolL !== undefined && lithiumConcentrationMmolL > 5.0) {
     suggestedCriteriaMet.push('Stężenie litu >5,0 mmol/l');
   }
   if (conf === true) {
@@ -92,10 +95,28 @@ export function evaluateExtripLithiumGuidance(input: ExtripEvaluationInput): Ext
 
   const criteriaMet = [...recommendedCriteriaMet, ...suggestedCriteriaMet];
 
+  const neuroMet = Boolean(decreasedConsciousness || seizures || dangerousDysrhythmias);
+  const neuroKnownNotMet = decreasedConsciousness === false && seizures === false && dangerousDysrhythmias === false;
+  const neuroStatus = neuroMet ? 'met' : neuroKnownNotMet ? 'not_met' : 'unknown';
+
+  const renalConcStatus = lithiumConcentrationMmolL === undefined || (eGfr === undefined && !hasAkiOrSevereRenalFailure)
+    ? 'unknown'
+    : (lithiumConcentrationMmolL > 4.0 && hasImpairedRenal) ? 'met' : 'not_met';
+
+  const highConcStatus = lithiumConcentrationMmolL === undefined
+    ? 'unknown'
+    : lithiumConcentrationMmolL > 5.0 ? 'met' : 'not_met';
+
+  const confStatus = conf === true ? 'met' : conf === false ? 'not_met' : 'unknown';
+  const elimStatus = projectedHoursToLessThan1MmolL !== undefined
+    ? (projectedHoursToLessThan1MmolL > 36 ? 'met' : 'not_met')
+    : 'unknown';
+
   const checks: ExtripCriterionCheck[] = [
     {
       criterion: 'Ciężka neurotoksyczność lub groźne dysrytmie (RECOMMENDED)',
-      met: Boolean(decreasedConsciousness || seizures || dangerousDysrhythmias),
+      met: neuroMet,
+      status: neuroStatus,
       importance: 'absolute',
       note: decreasedConsciousness
         ? 'Stwierdzono zaburzenia przytomności (śpiączka / stupor)'
@@ -103,35 +124,43 @@ export function evaluateExtripLithiumGuidance(input: ExtripEvaluationInput): Ext
         ? 'Wystąpiły drgawki'
         : dangerousDysrhythmias
         ? 'Stwierdzono groźne dysrytmie komorowe'
-        : decreasedConsciousness === false && seizures === false && dangerousDysrhythmias === false
+        : neuroKnownNotMet
         ? 'Brak śpiączki, drgawek i groźnych dysrytmii komorowych'
-        : 'Nieznane / brak oceny neurologicznej i kardiologicznej',
+        : 'Nieznane / brak pełnej oceny neurologicznej i kardiologicznej',
     },
     {
       criterion: 'Stężenie litu >4,0 mmol/l i dysfunkcja nerek (RECOMMENDED)',
-      met: lithiumConcentrationMmolL > 4.0 && hasImpairedRenal,
+      met: renalConcStatus === 'met',
+      status: renalConcStatus,
       importance: 'absolute',
-      note: `Stężenie: ${lithiumConcentrationMmolL} mmol/l, filtracja nerkowa: ${eGfr !== undefined ? `${eGfr} ml/min` : hasAkiOrSevereRenalFailure ? 'AKI' : 'nieznana'}`,
+      note: lithiumConcentrationMmolL !== undefined
+        ? `Stężenie: ${lithiumConcentrationMmolL} mmol/l, filtracja nerkowa: ${eGfr !== undefined ? `${eGfr} ml/min` : hasAkiOrSevereRenalFailure ? 'AKI' : 'nieznana'}`
+        : 'Brak oznaczenia stężenia litu w surowicy',
     },
     {
       criterion: 'Stężenie litu >5,0 mmol/l (SUGGESTED)',
-      met: lithiumConcentrationMmolL > 5.0,
+      met: highConcStatus === 'met',
+      status: highConcStatus,
       importance: 'relative',
-      note: `Stężenie: ${lithiumConcentrationMmolL} mmol/l ${lithiumConcentrationMmolL > 5.0 ? '(>5,0 mmol/l)' : '(≤5,0 mmol/l)'}`,
+      note: lithiumConcentrationMmolL !== undefined
+        ? `Stężenie: ${lithiumConcentrationMmolL} mmol/l ${lithiumConcentrationMmolL > 5.0 ? '(>5,0 mmol/l)' : '(≤5,0 mmol/l)'}`
+        : 'Brak oznaczenia stężenia litu w surowicy',
     },
     {
       criterion: 'Znaczne splątanie (SUGGESTED)',
-      met: Boolean(conf),
+      met: confStatus === 'met',
+      status: confStatus,
       importance: 'relative',
       note: conf === true ? 'Obecne znaczne splątanie' : conf === false ? 'Brak znacznego splątania' : 'Brak danych o splątaniu',
     },
     {
       criterion: 'Czas eliminacji do stężenia <1,0 mmol/l >36h (SUGGESTED)',
-      met: Boolean(projectedHoursToLessThan1MmolL !== undefined && projectedHoursToLessThan1MmolL > 36),
+      met: elimStatus === 'met',
+      status: elimStatus,
       importance: 'relative',
       note: projectedHoursToLessThan1MmolL !== undefined
         ? `Szacowany czas: ${projectedHoursToLessThan1MmolL} h`
-        : 'Czas eliminacji nieoszacowany',
+        : 'Czas eliminacji nieznany / nieoszacowany',
     },
   ];
 

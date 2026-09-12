@@ -187,52 +187,90 @@ export function PsychiatryPharmacologyView({ patient, setPatient, prescriptions,
                 </div>
 
                 {/* Parametry obliczeniowe */}
-                <div style={{ fontSize: '0.88rem', marginBottom: '12px' }}>
-                  <div>Szacowane Css: <strong>{calc.estimatedCss}</strong> (TDM AGNP: {drug.agnpReferenceRange})</div>
-                  <div>Poziom dowodów receptorowych: <span className="badge" style={{ background: 'var(--accent-subtle)', color: 'var(--accent)', marginLeft: '4px' }}>{calc.evidenceCategory}</span></div>
+                <div style={{ fontSize: '0.85rem', marginBottom: '12px', background: 'var(--bg-subtle)', padding: '10px', borderRadius: '6px' }}>
+                  <div style={{ marginBottom: '4px' }}>
+                    Status ekspozycji: <strong>{calc.estimatedCss}</strong>
+                  </div>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginBottom: '4px' }}>
+                    {calc.exposureExplanation}
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.78rem' }}>
+                    <span>Przedział referencyjny TDM (AGNP 2026): <strong>{drug.agnpReferenceRange}</strong></span>
+                    <span className="badge" style={{ background: 'var(--accent-subtle)', color: 'var(--accent)' }}>{calc.evidenceCategory}</span>
+                  </div>
                 </div>
 
                 {/* Wykres wysycenia SERT / D2 */}
                 {calc.sertOccupancyPercent > 0 && (
-                  <div style={{ marginBottom: '10px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', marginBottom: '2px' }}>
-                      <span>Wysycenie SERT (transporter serotoniny):</span>
-                      <strong>{calc.sertOccupancyPercent}%</strong>
+                  <div style={{ marginBottom: '12px', padding: '10px', background: 'var(--bg-subtle)', borderRadius: '6px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.8rem', marginBottom: '4px' }}>
+                      <span style={{ fontWeight: 600 }}>Wysycenie SERT (transporter 5-HT):</span>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        <EvidenceBadge claimKey="meyer-sert-occupancy" label="PET Meyer 2004" />
+                        <strong>~{calc.sertOccupancyPercent}%</strong>
+                      </div>
                     </div>
                     <div style={{ height: '8px', background: 'var(--border)', borderRadius: '4px', overflow: 'hidden' }}>
                       <div
                         style={{
                           height: '100%',
                           width: `${calc.sertOccupancyPercent}%`,
-                          background: calc.sertOccupancyPercent >= 70 ? 'var(--accent)' : 'var(--warning)',
+                          background: 'var(--accent)',
                         }}
                       />
                     </div>
-                    <small style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Próg terapeutyczny PET: &gt;=70-80%</small>
+                    <small style={{ fontSize: '0.74rem', color: 'var(--text-muted)', display: 'block', marginTop: '4px' }}>
+                      W klasycznych badaniach PET minimalne dawki terapeutyczne badanych SSRI wiązały się ze statystycznym plateau wysycenia (~80%). Nie stanowi to uniwersalnego progu skuteczności klinicznej.
+                    </small>
                   </div>
                 )}
 
                 {calc.d2OccupancyPercent > 0 && (
-                  <div style={{ marginBottom: '10px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', marginBottom: '2px' }}>
-                      <span>Wysycenie D2 (okno Kapura):</span>
-                      <strong>{calc.d2OccupancyPercent}%</strong>
-                    </div>
-                    <div style={{ height: '8px', background: 'var(--border)', borderRadius: '4px', overflow: 'hidden' }}>
-                      <div
-                        style={{
-                          height: '100%',
-                          width: `${calc.d2OccupancyPercent}%`,
-                          background:
-                            calc.d2OccupancyPercent > 80 && drug.id !== 'aripiprazole'
-                              ? 'var(--danger)'
-                              : calc.d2OccupancyPercent >= 65
-                              ? 'var(--accent)'
-                              : 'var(--warning)',
-                        }}
-                      />
-                    </div>
-                    <small style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Zielone okno Kapura: 65–80% (powyżej 80% rośnie ryzyko EPS)</small>
+                  <div style={{ marginBottom: '12px', padding: '10px', background: 'var(--bg-subtle)', borderRadius: '6px' }}>
+                    {calc.d2Model?.pharmacologicClass === 'partial_agonist' ? (
+                      <div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.8rem', marginBottom: '4px' }}>
+                          <span style={{ fontWeight: 600 }}>Wiązanie D2 (częściowy agonista):</span>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                            <EvidenceBadge claimKey="kapur-d2-threshold" label="Heurystyka Kapura: Nie dotyczy" />
+                            <strong>~{calc.d2OccupancyPercent}%</strong>
+                          </div>
+                        </div>
+                        <div style={{ height: '8px', background: 'var(--border)', borderRadius: '4px', overflow: 'hidden', marginBottom: '6px' }}>
+                          <div style={{ height: '100%', width: `${calc.d2OccupancyPercent}%`, background: 'var(--accent)' }} />
+                        </div>
+                        <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', lineHeight: 1.3 }}>
+                          <strong>Kapur antagonist heuristic: not applicable.</strong> Aktywność wewnętrzna wynosi ~{calc.d2Model?.intrinsicActivityPercent}%. Wysokie wiązanie receptorowe nie generuje typowej blokady dopaminergicznej, jednak akatyzja pozostaje istotnym powikłaniem.
+                        </div>
+                      </div>
+                    ) : (
+                      <div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.8rem', marginBottom: '4px' }}>
+                          <span style={{ fontWeight: 600 }}>Wysycenie D2 (antagonista D2):</span>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                            <EvidenceBadge claimKey="kapur-d2-threshold" label="PET Kapur 2000" />
+                            <strong>~{calc.d2OccupancyPercent}%</strong>
+                          </div>
+                        </div>
+                        <div style={{ height: '8px', background: 'var(--border)', borderRadius: '4px', overflow: 'hidden', marginBottom: '6px' }}>
+                          <div
+                            style={{
+                              height: '100%',
+                              width: `${calc.d2OccupancyPercent}%`,
+                              background:
+                                calc.d2OccupancyPercent > 80
+                                  ? 'var(--danger)'
+                                  : calc.d2OccupancyPercent >= 65
+                                  ? 'var(--accent)'
+                                  : 'var(--warning)',
+                            }}
+                          />
+                        </div>
+                        <small style={{ fontSize: '0.74rem', color: 'var(--text-muted)', display: 'block' }}>
+                          Historyczna heurystyka PET Kapura: 65–80% dla czystych antagonistów. Powyżej 80% obserwuje się statystyczny skok ryzyka EPS.
+                        </small>
+                      </div>
+                    )}
                   </div>
                 )}
 
