@@ -149,6 +149,16 @@ export default function CourseApp() {
     if (learning.recovery) window.location.hash = 'account';
   }, [learning.recovery]);
 
+  useEffect(() => {
+    const handleRejection = (e: PromiseRejectionEvent) => {
+      if (!e.reason || e.reason === 'undefined') {
+        e.preventDefault();
+      }
+    };
+    window.addEventListener('unhandledrejection', handleRejection);
+    return () => window.removeEventListener('unhandledrejection', handleRejection);
+  }, []);
+
   function go(next: Route) {
     if (next === route) {
       setMobile(false);

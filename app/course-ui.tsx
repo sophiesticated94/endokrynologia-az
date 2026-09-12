@@ -158,17 +158,22 @@ export function Runner({
 
   async function finish() {
     if (count !== bank.length || blocked) return;
-    setFinished(true);
-    onActive(false);
-    const snapshots = bank.map(q => ({ ...q, selected: answers[q.id] }));
-    setSaveStatus('Zapisywanie wyniku…');
-    const reasoning = mode === 'case' ? bank.map(q => ({questionId:q.id,confidence:confidence[q.id],missingInformation:missingInfo[q.id]})) : undefined;
-    const ok = await onFinish({ ...score, answers, questions: snapshots, title, ...(reasoning ? {reasoning} : {}) }, id.current);
-    setSaveStatus(
-      ok
-        ? 'Wynik dodany do historii.'
-        : 'Wynik oczekuje na zapis. Użyj przycisku „Ponów zapis” powyżej.'
-    );
+    try {
+      setFinished(true);
+      onActive(false);
+      const snapshots = bank.map(q => ({ ...q, selected: answers[q.id] }));
+      setSaveStatus('Zapisywanie wyniku…');
+      const reasoning = mode === 'case' ? bank.map(q => ({questionId:q.id,confidence:confidence[q.id],missingInformation:missingInfo[q.id]})) : undefined;
+      const ok = await onFinish({ ...score, answers, questions: snapshots, title, ...(reasoning ? {reasoning} : {}) }, id.current);
+      setSaveStatus(
+        ok
+          ? 'Wynik dodany do historii.'
+          : 'Wynik oczekuje na zapis. Użyj przycisku „Ponów zapis” powyżej.'
+      );
+    } catch (err) {
+      console.error('Error finishing:', err);
+      setSaveStatus('Błąd zapisu wyniku.');
+    }
   }
 
   if (finished)

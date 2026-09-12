@@ -42,13 +42,17 @@ export function PracticeActivityCard({
 
   async function submit() {
     if (!canSubmit) return;
-    const correct = activity.type === 'recall' ? true : gradeActivity(activity, response) === true;
-    setRevealed(true);
-    await onRecord(activity, correct, confidence, phase !== 'diagnostic' && activity.type !== 'recall', {
-      answerType: answerType(activity),
-      elapsedMs: Math.max(0, Date.now() - (startedAt.current ?? Date.now())),
-    });
-    onComplete?.(activity.id, correct);
+    try {
+      const correct = activity.type === 'recall' ? true : gradeActivity(activity, response) === true;
+      setRevealed(true);
+      await onRecord(activity, correct, confidence, phase !== 'diagnostic' && activity.type !== 'recall', {
+        answerType: answerType(activity),
+        elapsedMs: Math.max(0, Date.now() - (startedAt.current ?? Date.now())),
+      });
+      onComplete?.(activity.id, correct);
+    } catch (err) {
+      console.error('Error submitting activity:', err);
+    }
   }
 
   function move(index: number, delta: number) {

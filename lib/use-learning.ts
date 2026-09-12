@@ -89,10 +89,12 @@ export function useLearning(courseId: CourseId = 'endocrinology') {
   finally{busy.current=false;setSaving(false);}
  },[client]);
  const record=useCallback(async(kind:Activity['kind'],target_id:string,payload:Activity['payload']={},id=safeRandomUUID())=>{
-  if(busy.current||loading)return false;
-  const event:Activity={id,user_id:userRef.current?.id??'guest',kind,target_id,payload:{...payload,courseId},content_version:CONTENT_VERSION,created_at:new Date().toISOString()};
-  if(!userRef.current){setRows(current=>[...current.filter(e=>e.id!==id),event]);return true;}
-  return persist(event);
+  try{
+    if(busy.current||loading)return false;
+    const event:Activity={id,user_id:userRef.current?.id??'guest',kind,target_id,payload:{...payload,courseId},content_version:CONTENT_VERSION,created_at:new Date().toISOString()};
+    if(!userRef.current){setRows(current=>[...current.filter(e=>e.id!==id),event]);return true;}
+    return await persist(event);
+  }catch(err){console.error('Failed to record learning activity:',err);return false;}
  },[persist,loading,courseId]);
  const retry=useCallback(async()=>{if(busy.current)return;for(const event of pending){if(!await persist(event))break;}},[pending,persist]);
  useEffect(()=>{const flush=()=>{if(userRef.current&&pending.length&&!busy.current)void retry()};window.addEventListener('online',flush);return()=>window.removeEventListener('online',flush)},[pending.length,retry]);
