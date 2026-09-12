@@ -6,6 +6,7 @@ import { lessons, questions, flashcards, sources } from '../lib/course.ts';
 import { cases } from '../lib/cases.ts';
 import { scheduleReview, sampleQuestions, grade, projectActivities, saveIdempotently, isSafePublicKey } from '../lib/learning.ts';
 import { glossary, glossaryMap } from '../lib/glossary.ts';
+import { safeRandomUUID } from '../lib/utils.ts';
 
 const now = new Date('2026-09-11T12:00:00Z');
 
@@ -296,6 +297,20 @@ test('course map grouping covers all 178 lessons across 10 modules without gaps'
   }
 });
 
+
+test('safeRandomUUID produces valid RFC4122 v4 UUIDs across secure and insecure environments', () => {
+  const uuid = safeRandomUUID();
+  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+  assert.match(uuid, uuidRegex);
+
+  const set = new Set();
+  for (let i = 0; i < 50; i++) {
+    const val = safeRandomUUID();
+    assert.match(val, uuidRegex);
+    set.add(val);
+  }
+  assert.equal(set.size, 50);
+});
 
 test('strict architectural rule: no project code file exceeds 500 lines', () => {
   const trackedFiles = execSync('git ls-files "*.ts" "*.tsx" "*.mjs"', { encoding: 'utf8' })

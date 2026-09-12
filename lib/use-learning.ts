@@ -4,6 +4,7 @@ import {createClient,type SupabaseClient,type User} from '@supabase/supabase-js'
 import {CONTENT_VERSION} from './course';
 import {parseStoredActivities,projectActivities,saveIdempotently,type Activity} from './learning';
 import type { CourseId } from './course-types';
+import { safeRandomUUID } from './utils';
 const getGuestStorageKey = (cid: CourseId) =>
   cid === 'endocrinology' ? 'endokrynologia.learning.guest.v2' : 'psychiatria.learning.guest.v2';
 const getPendingStorageKey = (userId: string, cid: CourseId) =>
@@ -87,7 +88,7 @@ export function useLearning(courseId: CourseId = 'endocrinology') {
   }catch{if(epoch.current===generation){setRows(current=>[...new Map([...current,event].map(e=>[e.id,e])).values()]);setPending(current=>[...current.filter(e=>e.id!==event.id),event]);setError('Nie zapisano aktywności. Odpowiedź jest w kolejce i zostanie ponowiona po odzyskaniu połączenia.');}return false;}
   finally{busy.current=false;setSaving(false);}
  },[client]);
- const record=useCallback(async(kind:Activity['kind'],target_id:string,payload:Activity['payload']={},id=crypto.randomUUID())=>{
+ const record=useCallback(async(kind:Activity['kind'],target_id:string,payload:Activity['payload']={},id=safeRandomUUID())=>{
   if(busy.current||loading)return false;
   const event:Activity={id,user_id:userRef.current?.id??'guest',kind,target_id,payload:{...payload,courseId},content_version:CONTENT_VERSION,created_at:new Date().toISOString()};
   if(!userRef.current){setRows(current=>[...current.filter(e=>e.id!==id),event]);return true;}

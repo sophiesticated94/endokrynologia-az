@@ -8,6 +8,7 @@ import type { ClinicalCase } from '@/lib/cases';
 import { grade } from '@/lib/learning';
 import { GlossaryText } from './glossary-components';
 import { LabResultsGauge, caseLabs } from './medical-diagrams';
+import { safeRandomUUID } from '@/lib/utils';
 
 const combinedSources: Record<string, Source> = {
   ...sources,
@@ -144,7 +145,7 @@ export function Runner({
   const [saveStatus, setSaveStatus] = useState('');
 
   useEffect(() => {
-    id.current = crypto.randomUUID();
+    id.current = safeRandomUUID();
     onActive(true);
     return () => onActive(false);
   }, [onActive]);
