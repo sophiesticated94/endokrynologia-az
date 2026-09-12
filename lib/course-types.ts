@@ -1,5 +1,55 @@
 export type ModuleId = 'tarczyca' | 'przysadka' | 'nadnercza' | 'przytarczyce' | 'cukrzyca' | 'gonady' | 'nen' | 'otylosc';
 
+export type ObjectiveKind = 'mechanism' | 'interpretation' | 'differentiation' | 'decision' | 'safety';
+export type ActivityDifficulty = 'student' | 'doctor' | 'both';
+export type Confidence = 1 | 2 | 3;
+
+export type LearningObjective = {
+  id: string;
+  statement: string;
+  kind: ObjectiveKind;
+};
+
+type ActivityBase = {
+  id: string;
+  objectiveIds: string[];
+  prompt: string;
+  explanation: string;
+  difficulty: ActivityDifficulty;
+  reasoning: ObjectiveKind;
+  hint?: string;
+  sourceIds: string[];
+};
+
+export type LearningActivity =
+  | (ActivityBase & { type: 'single_choice' | 'lab' | 'trend' | 'missing_information'; options: string[]; answer: number })
+  | (ActivityBase & { type: 'multi_select'; options: string[]; answers: number[] })
+  | (ActivityBase & { type: 'ordering'; items: string[]; correctOrder: number[] })
+  | (ActivityBase & { type: 'matching'; pairs: Pair[] })
+  | (ActivityBase & { type: 'numeric'; answer: number; tolerance: number; unit: string })
+  | (ActivityBase & { type: 'recall'; modelAnswer: string });
+
+export type LessonBlockV2 = {
+  id: string;
+  title: string;
+  text: string;
+  sourceIds: string[];
+  checkpointId?: string;
+};
+
+export type LessonExperienceV2 = {
+  experienceVersion: 2;
+  lessonId: string;
+  objectives: LearningObjective[];
+  diagnostic: LearningActivity;
+  blocks: LessonBlockV2[];
+  activities: LearningActivity[];
+  teachBack: LearningActivity & { type: 'recall' };
+  exitTicket: LearningActivity[];
+  widgetIds: Array<'axis-map' | 'lab-workbench' | 'timeline' | 'pathway-builder'>;
+  review: { status: 'source-checked'; checkedAt: string; scope: string };
+};
+
 export type Option = { text: string; explanation: string };
 
 export type Question = {
@@ -30,8 +80,10 @@ export const q = (
   prompt: string,
   correct: Pair,
   wrong1: Pair,
-  wrong2: Pair
+  wrong2: Pair,
+  id?: string
 ): DraftQuestion => ({
+  id,
   prompt,
   choices: [correct, wrong1, wrong2],
 });
@@ -65,7 +117,7 @@ export interface WorkedExample {
 }
 
 export type Lesson = {
-  review?: { checkedAt: string; scope: string };
+  review?: { checkedAt: string; scope: string; status?: 'source-checked' | 'clinician-reviewed' };
   id: string;
   moduleId?: ModuleId;
   title: string;

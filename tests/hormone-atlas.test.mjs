@@ -49,8 +49,13 @@ test('GAHT pathway has 8 fully explained lessons and unique authored retrieval c
   assert.equal(flashcards.filter(c=>c.id.endsWith('concept-v2')).length,40);
 });
 test('unchanged questions retain frozen IDs, independent of ordering',()=>{
+  const rewrittenIds=new Set(['cukrzyca-gdm-postpartum-ogtt-v2']);
   for(const lesson of [...lessons].reverse())for(const q of [...lesson.questions].reverse()){
-    if(!gahtLessonIds.includes(lesson.id))assert.equal(q.id,legacyIds[lesson.id][q.prompt]);
+    if(gahtLessonIds.includes(lesson.id))continue;
+    if(rewrittenIds.has(q.id)){assert.match(q.id,/-v2$/);continue;}
+    const legacyId=legacyIds[lesson.id][q.prompt];
+    if(legacyId)assert.equal(q.id,legacyId);
+    else assert.match(q.id,/-v2$/,'materially rewritten questions receive a new explicit id');
   }
 });
 test('balanced exam covers every GAHT lesson, preserves answers and does not mutate bank',()=>{

@@ -4,7 +4,9 @@ Polskojęzyczna aplikacja edukacyjna React / TypeScript (Sites, vinext) dla stud
 
 ## Program
 
-146 lekcji w 8 modułach: tarczyca, przysadka, nadnercza, przytarczyce, cukrzyca, gonady, NEN/MEN oraz otyłość i lipidy. Bank zawiera 730 pytań, 778 fiszek i 110 etapowych przypadków. Treści nie przeszły recenzji klinicznej; datę i zakres sprawdzenia wskazano przy opracowanych lekcjach.
+146 lekcji w 8 modułach: tarczyca, przysadka, nadnercza, przytarczyce, cukrzyca, gonady, NEN/MEN oraz otyłość i lipidy. Bank zawiera 730 pytań, 778 fiszek i 112 etapowych przypadków, w tym dwa przekrojowe przypadki wielowizytowe. Treści nie przeszły recenzji klinicznej; datę i zakres sprawdzenia wskazano przy opracowanych lekcjach.
+
+Tarczyca i Cukrzyca korzystają z doświadczenia lekcji v2: diagnozy wstępnej, checkpointów, aktywnego odtwarzania, pracowni, exit ticketu, opanowania celów i Notatnika błędów. [Playbook migracji](docs/lesson-v2-migration-playbook.md) opisuje przejście pozostałych 114 lekcji.
 
 Ścieżka GAHT obejmuje 8 lekcji, 40 pytań, 80 fiszek (w tym 40 pojęciowych) i 4 przypadki. Atlas porównuje hormony oraz sprzężenia z gonadami i bez nich: aromataza, DHT, inhibina, progesteron, receptory i leki GnRH. Model jest jakościowy.
 
@@ -12,7 +14,7 @@ Pracownie wszystkich modułów łączą interpretację mechanizmów z obliczenia
 
 ## Nauka i zapis
 
-- Dwa poziomy nauki, quizy z omówieniem, przypadki, egzamin i historia wyników.
+- Dwa poziomy nauki, quizy z omówieniem, przypadki, egzamin, historia wyników i opanowanie celów lekcji.
 - Egzamin losuje 30 unikalnych pytań z równomiernym udziałem tematów; wyjaśnienia dopiero po zakończeniu.
 - Powtórki po 1, 3, 7, 14 i 30 dniach; błąd przywraca pierwszy etap.
 - Wersjonowane treści i stabilne ID. Wyniki zachowują snapshot pytań; aktualizacja nie kasuje historii.

@@ -11,6 +11,10 @@ type StepDraft=[string,string,Choice,Choice];
 export type ClinicalCase={id:string;lessonId:string;title:string;patient:string;difficulty:'Podstawowy'|'Zaawansowany';intro:string;steps:(Question&{context:string;stage:string})[]};
 const step=(context:string,prompt:string,correct:Choice,wrong:Choice):StepDraft=>[context,prompt,correct,wrong];
 const make=(lessonId:string,title:string,patient:string,difficulty:ClinicalCase['difficulty'],intro:string,steps:StepDraft[]):ClinicalCase=>({id:`case-${lessonId}`,lessonId,title,patient,difficulty,intro,steps:steps.map(([context,prompt,correct,wrong],i)=>({id:`case-${lessonId}-${i+1}`,lessonId,stage:['Objawy','Badania','Rozpoznanie','Postępowanie'][i],context,prompt,answer:i%2,options:(i%2?[wrong,correct]:[correct,wrong]).map(([text,explanation])=>({text,explanation}))}))});
+const capstone=(id:string,lessonId:string,title:string,patient:string,intro:string,steps:StepDraft[]):ClinicalCase=>{
+  const value=make(lessonId,title,patient,'Zaawansowany',intro,steps);
+  return {...value,id,steps:value.steps.map((item,index)=>({...item,id:`${id}-${index+1}`}))};
+};
 const thyroidCases:ClinicalCase[]=[
 make('fizjologia','Wynik, który nie pasuje','Kobieta, 28 lat','Podstawowy','Podczas kontroli wykryto podwyższone całkowite T4. Pacjentka dobrze się czuje.',[
 step('Tętno 72/min, bez drżenia i spadku masy ciała. Stosuje doustną antykoncepcję estrogenową.','Co warto uwzględnić?',['Wpływ estrogenów na białka wiążące','Wzrost TBG może zwiększyć całkowite T4.'],['Pewny przełom tarczycowy','Brak objawów dekompensacji; sam wynik nie rozpoznaje przełomu.']),
@@ -74,8 +78,22 @@ step('Potwierdzono tyreotoksykozę, występują zaburzenia świadomości i krą�
 step('Pacjentka trafia pod intensywny nadzór.','Jakie postępowanie odpowiada sytuacji?',['Leczenie wielokierunkowe i czynnika wyzwalającego','Konieczna jest specjalistyczna kontrola hormonalna i narządowa.'],['Sam doustny beta-bloker bez oceny krążenia','Nie wystarcza, a w niewydolności serca wymaga ostrożności.'])]),
 ];
 
+const capstoneCases:ClinicalCase[]=[
+capstone('case-capstone-tarczyca','diagnostyka','Trzy wizyty, trzy różne pytania','Kobieta, 36 lat','Przekrojowy przypadek pokazuje, jak ta sama para hormonów zmienia znaczenie wraz z czasem, lekami i stanem osi.',[
+step('Wizyta 1: zmęczenie, bez objawów alarmowych. Pacjentka przyjmuje biotynę; TSH jest niskie, FT4 wysokie, a obraz kliniczny niespójny.','Co powinno wydarzyć się przed rozpoznaniem nadczynności?',['Ocena interferencji, czasu pobrania i powtórzenie wiarygodną metodą','Niespójny zestaw wymaga kontroli warunków oznaczenia.'],['Natychmiastowa nieodwracalna terapia','Pomija możliwość błędu przedanalitycznego lub analitycznego.']),
+step('Wizyta 2: po uzgodnionym odstawieniu biotyny wyniki są prawidłowe. Pół roku później po operacji przysadki FT4 spada, TSH pozostaje w zakresie.','Która informacja zmienia interpretację najbardziej?',['Choroba przysadki i nieadekwatność TSH do FT4','W tej sytuacji samo TSH nie jest wiarygodnym testem przesiewowym.'],['Poprzedni prawidłowy wynik zamyka diagnostykę na zawsze','Nowe uszkodzenie osi zmienia kontekst.']),
+step('Wizyta 3: wynik potwierdzono, oceniono pozostałe osie i wykluczono ostrą chorobę.','Jaki mechanizm najlepiej porządkuje dane?',['Niedostateczny sygnał centralny względem niskiego hormonu obwodowego','To wzorzec wymagający oceny niedoczynności centralnej.'],['Pierwotna nadprodukcja hormonów tarczycy','Nie pasuje do niskiego FT4.']),
+step('Zespół przygotowuje plan.','Co musi poprzedzić i towarzyszyć decyzji terapeutycznej?',['Ocena bezpieczeństwa osi nadnerczowej i monitorowanie właściwym parametrem','W chorobie centralnej TSH nie jest prostym celem prowadzenia.'],['Automatyczna eskalacja do zaniku TSH','Mogłaby prowadzić do nadmiernego leczenia.'])]),
+capstone('case-capstone-cukrzyca','cukrzyca-diagnostyka','Od rozpoznania do sytuacji nagłej','Mężczyzna, 31 lat','Trzy kontakty kliniczne wymagają kolejno potwierdzenia rozpoznania, klasyfikacji i rozpoznania zagrożenia.',[
+step('Wizyta 1: bez objawów, pojedyncza glikemia na czczo 132 mg/dl.','Jaki jest właściwy następny krok?',['Potwierdzić nieprawidłowość odpowiednim testem w innym dniu','Pojedynczy wynik bez jednoznacznych objawów wymaga potwierdzenia.'],['Na tej podstawie ustalić typ i leczenie','Wynik nie określa jeszcze etiologii ani planu.']),
+step('Wizyta 2: cukrzycę potwierdzono. Występuje chudnięcie, ketonemia i niskie stężenie peptydu C.','Co jest teraz kluczowe?',['Ocena pilności i klasyfikacja niedoboru insuliny w pełnym kontekście','Typ cukrzycy wpływa na bezpieczeństwo dalszego postępowania.'],['Założenie typu 2 wyłącznie na podstawie wieku','Wiek nie wyklucza innych typów.']),
+step('Wizyta 3: nudności, odwodnienie, glukoza 190 mg/dl podczas terapii SGLT2.','Których danych nie wolno pominąć?',['Ketonów oraz pH lub wodorowęglanów','Niższa glikemia nie wyklucza DKA.'],['Wyłącznie HbA1c z ostatnich miesięcy','Nie rozstrzyga ostrego stanu.']),
+step('Stwierdzono ketonemię i kwasicę.','Jaki tok działania jest prawidłowy?',['Pilna pomoc i protokół oparty na pełnej ocenie klinicznej i laboratoryjnej','To stan wymagający monitorowania oraz leczenia przyczyny.'],['Samodzielna korekta na podstawie kalkulatora aplikacji','Aplikacja nie wyznacza leczenia ostrego stanu.'])]),
+];
+
 export const cases: ClinicalCase[] = [
   ...thyroidCases,
+  ...capstoneCases,
   ...pituitaryCases,
   ...adrenalCases,
   ...parathyroidCases.map((c): ClinicalCase => {

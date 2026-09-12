@@ -1,0 +1,109 @@
+import type {
+  LearningActivity,
+  LearningObjective,
+  Lesson,
+  LessonExperienceV2,
+  ObjectiveKind,
+  Question,
+} from './course-types.ts';
+
+const PILOT_MODULES = new Set(['tarczyca', 'cukrzyca']);
+const objectiveKinds: ObjectiveKind[] = ['mechanism', 'interpretation', 'decision', 'safety'];
+
+function toActivity(
+  question: Question,
+  objectiveId: string,
+  reasoning: ObjectiveKind,
+  phase: string,
+  sources: string[],
+): LearningActivity {
+  return {
+    id: `${question.id}-${phase}-v2`,
+    type: phase === 'diagnostic' ? 'single_choice' : phase === 'exit' ? 'missing_information' : 'single_choice',
+    objectiveIds: [objectiveId],
+    prompt: question.prompt,
+    options: question.options.map(option => option.text),
+    answer: question.answer,
+    explanation: question.options[question.answer].explanation,
+    hint: 'Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.',
+    difficulty: phase === 'exit' ? 'both' : 'student',
+    reasoning,
+    sourceIds: sources,
+  };
+}
+
+function widgetIds(lesson: Lesson): LessonExperienceV2['widgetIds'] {
+  const id = lesson.id;
+  const widgets = new Set<LessonExperienceV2['widgetIds'][number]>();
+  if (/fizjologia|diagnostyka|dka|hhs|zapalenia|niedoczynnosc|nadczynnosc/.test(id)) widgets.add('axis-map');
+  if (/diagnostyka|dka|hhs|ciaza|cgm|stany-nagle|niedoczynnosc|nadczynnosc/.test(id)) widgets.add('lab-workbench');
+  if (/dka|hhs|cgm|zapalenia|niedoczynnosc|ciaza|technologie/.test(id)) widgets.add('timeline');
+  if (/diagnostyka|guzki|dka|hhs|klasyfikacja|stany-nagle/.test(id)) widgets.add('pathway-builder');
+  if (!widgets.size) widgets.add(lesson.moduleId === 'cukrzyca' ? 'lab-workbench' : 'axis-map');
+  return [...widgets].slice(0, 2);
+}
+
+export function buildPilotExperiences(lessons: Lesson[]): Record<string, LessonExperienceV2> {
+  return Object.fromEntries(
+    lessons.filter(lesson => lesson.moduleId && PILOT_MODULES.has(lesson.moduleId)).map(lesson => {
+      const objectives: LearningObjective[] = lesson.goals.slice(0, 4).map((statement, index) => ({
+        id: `${lesson.id}-objective-${index + 1}`,
+        statement,
+        kind: objectiveKinds[index % objectiveKinds.length],
+      }));
+      const objectiveAt = (index: number) => objectives[index % objectives.length].id;
+      const diagnostic = toActivity(lesson.questions[0], objectiveAt(0), objectives[0].kind, 'diagnostic', lesson.sourceIds);
+      const activities = lesson.questions.slice(1, 3).map((question, index) =>
+        toActivity(question, objectiveAt(index + 1), objectives[(index + 1) % objectives.length].kind, `checkpoint-${index + 1}`, lesson.sourceIds),
+      );
+      const exitTicket = lesson.questions.slice(3).map((question, index) =>
+        toActivity(question, objectiveAt(index + 3), objectives[(index + 3) % objectives.length].kind, 'exit', lesson.sourceIds),
+      );
+      const blocks = lesson.sections.map((section, index) => ({
+        id: `${lesson.id}-block-${index + 1}`,
+        title: section.title,
+        text: section.text,
+        sourceIds: lesson.sourceIds,
+        checkpointId: activities[index]?.id,
+      }));
+      const experience: LessonExperienceV2 = {
+        experienceVersion: 2,
+        lessonId: lesson.id,
+        objectives,
+        diagnostic,
+        blocks,
+        activities,
+        teachBack: {
+          id: `${lesson.id}-teach-back-v2`,
+          type: 'recall',
+          objectiveIds: objectives.map(item => item.id),
+          prompt: `Wyjaśnij własnymi słowami najważniejszy mechanizm z lekcji „${lesson.title}”.`,
+          modelAnswer: lesson.summary,
+          explanation: 'Porównaj swoją wypowiedź z odpowiedzią wzorcową. Liczy się mechanizm i warunek zastosowania, nie identyczne brzmienie.',
+          difficulty: 'both',
+          reasoning: 'mechanism',
+          sourceIds: lesson.sourceIds,
+        },
+        exitTicket,
+        widgetIds: widgetIds(lesson),
+        review: {
+          status: 'source-checked',
+          checkedAt: '2026-09-12',
+          scope: 'Struktura dydaktyczna v2 i zgodność twierdzeń z przypisanym zestawem źródeł; bez formalnej recenzji klinicznej.',
+        },
+      };
+      return [lesson.id, experience];
+    }),
+  );
+}
+
+export function buildQuestionObjectiveMap(experiences: Record<string, LessonExperienceV2>) {
+  const result: Record<string, string[]> = {};
+  for (const experience of Object.values(experiences)) {
+    for (const activity of [experience.diagnostic, ...experience.activities, ...experience.exitTicket]) {
+      const questionId = activity.id.replace(/-(diagnostic|checkpoint-\d+|exit)-v2$/, '');
+      result[questionId] = activity.objectiveIds;
+    }
+  }
+  return result;
+}

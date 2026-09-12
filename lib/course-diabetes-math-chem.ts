@@ -3,13 +3,13 @@ import { type DraftLesson, q } from './course-types.ts';
 export const draftDiabetesMathChem: DraftLesson[] = [
   {
     id: 'cukrzyca-matematyka-modele',
-    title: 'Minimal Model Bergmana i algorytmy insulinoterapii',
-    subtitle: 'Równania różniczkowe glukoza-insulina, wskaźniki HOMA, reguły ISF/ICR i statystyka CGM',
+    title: 'Modele glukoza–insulina i ich ograniczenia',
+    subtitle: 'Minimal Model Bergmana, HOMA, statystyka CGM i bezpieczna interpretacja reguł empirycznych',
     group: 'Matematyka i modele',
     minutes: 18,
     goals: [
       'Wyprowadzisz Minimalny Model Bergmana dynamiki glukozy i insuliny.',
-      'Obliczysz wskaźnik wrażliwości na insulinę (ISF), wskaźnik węglowodanowo-insulinowy (ICR) oraz bolus korekcyjny.',
+      'Odróżnisz model badawczy i regułę orientacyjną od indywidualnego ustawienia insulinoterapii.',
     ],
     sections: [
       {
@@ -18,11 +18,11 @@ export const draftDiabetesMathChem: DraftLesson[] = [
       },
       {
         title: 'Wskaźniki HOMA-IR i HOMA-B w stanie stacjonarnym',
-        text: 'Model homeostazy Matthews’a (HOMA) w stanie spoczynku przy euglikemii na czczo wiąże stężenie glukozy $G_0$ i insuliny $I_0$. Wskaźnik insulinooporności wyraża formuła: $\\text{HOMA-IR} = \\frac{G_0 \\cdot I_0}{22{,}5}$ (dla $G_0$ w mmol/l i $I_0$ w $\\mu\\text{U/ml}$) lub $\\frac{G_0 \\cdot I_0}{405}$ (dla $G_0$ w mg/dl). Wartość $\\text{HOMA-IR} > 2{,}5$ świadczy o istotnej insulinooporności. Sprawność wydzielniczą komórek beta szacuje wskaźnik: $\\text{HOMA-B} = \\frac{20 \\cdot I_0}{G_0 - 3{,}5}\\%$ (prawidłowo ok. 100%).',
+        text: 'Model homeostazy Matthews’a (HOMA) wiąże glikemię i insulinemię oznaczone na czczo w stabilnych warunkach. Uproszczony HOMA-IR wyraża formuła: $\\text{HOMA-IR} = \\frac{G_0 \\cdot I_0}{22{,}5}$ dla glukozy w mmol/l i insuliny w $\\mu\\text{U/ml}$ lub $\\frac{G_0 \\cdot I_0}{405}$ dla glukozy w mg/dl. Wynik zależy od metody oznaczenia, populacji i warunków pobrania; nie istnieje jeden uniwersalny próg diagnostyczny dla pojedynczego pacjenta. HOMA nie służy do oceny ostrej hiperglikemii ani do samodzielnego ustalania leczenia.',
       },
       {
-        title: 'Algorytmy pompowe i intensywnej insulinoterapii',
-        text: 'W codziennej praktyce klinicznej i algorytmach zamkniętej pętli (AID) wykorzystuje się zasady oparte na całkowitej dawce dobowej insuliny (TDD, Total Daily Dose): 1) Reguła 1800 dla współczynnika wrażliwości na insulinę: $\\text{ISF} = \\frac{1800}{\\text{TDD}}\\,[\\text{mg/dl na 1 j.}]$ (lub $\\frac{100}{\\text{TDD}}\\,[\\text{mmol/l na 1 j.}]$) — określa, o ile mg/dl spadnie cukier po 1 j. insuliny szybkodziałającej; 2) Reguła 500 dla wskaźnika węglowodanowo-insulinowego: $\\text{ICR} = \\frac{500}{\\text{TDD}}\\,[\\text{g węglowodanów na 1 j.}]$; 3) Bolus całkowity: $\\text{Bolus} = \\frac{\\text{Węglowodany [g]}}{\\text{ICR}} + \\frac{G_{\\text{akt}} - G_{\\text{cel}}}{\\text{ISF}} - \\text{IOB}$, gdzie IOB (Insulin on Board) to aktywna insulina z poprzednich wstrzyknięć.',
+        title: 'Reguły orientacyjne — nie kalkulator dawki',
+        text: 'Reguły 1800 i 500 bywają używane jako punkty startowe do oszacowania ISF i ICR na podstawie znanej, stabilnej całkowitej dawki dobowej. Rzeczywista odpowiedź zależy m.in. od aktywnej insuliny, trendu CGM, posiłku, wysiłku, choroby i pory dnia. W tej lekcji służą wyłącznie do zrozumienia zależności odwrotnej: większe TDD zwykle oznacza mniejszą wrażliwość. Aplikacja nie wylicza ani nie rekomenduje indywidualnego bolusa.',
       },
     ],
     table: {
@@ -38,7 +38,7 @@ export const draftDiabetesMathChem: DraftLesson[] = [
     advanced:
       'W systemach sztucznej trzustki (AID) model predykcyjny uwzględnia kinetykę pierwszego rzędu zanikania insuliny w przedziale podskórnym $I_{sc}$ ze stałą absorpcji $k_a$ oraz klirens insuliny z osocza $k_e$: $IOB(t) = \\text{Bolus} \\cdot \\left(1 - \\frac{t}{\\tau}\\right) e^{-k t}$. Zaawansowane algorytmy MPC (Model Predictive Control) rozwiązują w czasie rzeczywistym problem optymalizacyjny minimalizujący kwadrat odchylenia glikemii od trajektorii docelowej przy ograniczeniach na maksymalną dawkę bazy.',
     summary:
-      'Minimalny Model Bergmana opisuje dynamikę glukozy i insuliny układem równań różniczkowych. Reguła 1800 (ISF) i reguła 500 (ICR) stanowią fundament kalkulacji bolusów w intensywnej insulinoterapii.',
+      'Modele porządkują zależności, ale nie zastępują pomiaru ani indywidualnych ustawień. HOMA wymaga stabilnych warunków, a reguły ISF/ICR są tylko orientacyjnymi punktami startowymi.',
     sourceIds: ['bergman_model', 'cgm_consensus', 'ada_standards'],
     derivation: {
       title: 'Wyprowadzenie Minimalnego Modelu Bergmana i reguł pomp insulinowych',
@@ -70,11 +70,11 @@ export const draftDiabetesMathChem: DraftLesson[] = [
           explanation: 'Określa gramaturę węglowodanów zrównoważoną przez 1 j. insuliny podanej w bolusie prandialnym.',
         },
       ],
-      clinicalTakeaway: 'Kalkulator bolusa w pompie oblicza dawkę ze wzoru: Bolus = (Węglowodany / ICR) + (Glikemia - Cel) / ISF - IOB. Niedoszacowanie TDD zaniża ISF i prowadzi do jatrogennych hipoglikemii.',
+      clinicalTakeaway: 'ISF i ICR należy weryfikować na danych tej osoby i w bezpiecznych warunkach. Sam wzór nie uwzględnia wszystkich czynników i nie powinien generować dawki w aplikacji edukacyjnej.',
     },
     workedExample: {
-      title: 'Kalkulacja intensywnej insulinoterapii (baza, ICR, ISF i bolus posiłkowo-korekcyjny)',
-      patient: 'Mężczyzna, 26 lat, masa ciała 70 kg, cukrzyca typu 1, aktualna glikemia przed obiadem 220 mg/dl (12,2 mmol/l), planuje posiłek 60 g węglowodanów, docelowa glikemia 100 mg/dl, brak aktywnej insuliny (IOB = 0).',
+      title: 'Porównanie orientacyjnych współczynników bez wyznaczania dawki',
+      patient: 'Dwa anonimowe zestawy danych dydaktycznych ze stabilną, znaną całkowitą dawką dobową. Ćwiczenie pokazuje kierunek zależności, nie plan leczenia.',
       inputs: [
         { label: 'Masa ciała', value: '70', unit: 'kg' },
         { label: 'Szacowane TDD (0,6 j./kg)', value: '42', unit: 'j./dobę' },
@@ -83,16 +83,13 @@ export const draftDiabetesMathChem: DraftLesson[] = [
         { label: 'Węglowodany w posiłku', value: '60', unit: 'g' },
       ],
       calculationSteps: [
-        'Krok 1: Wyznaczenie całkowitej dawki dobowej (TDD): $\\text{TDD} = 70\\text{ kg} \\times 0{,}6\\,\\text{j./kg} = 42\\,\\text{j./dobę}$.',
-        'Krok 2: Podział na bazę (45%) i bolusy (55%): $\\text{Baza} = 42 \\times 0{,}45 \\approx 19\\,\\text{j. analogu długodziałającego na dobę}$.',
-        'Krok 3: Wyliczenie współczynnika wrażliwości (ISF): $\\text{ISF} = \\frac{1800}{\\text{TDD}} = \\frac{1800}{42} \\approx 43\\,\\text{mg/dl na 1 j. insuliny}$.',
-        'Krok 4: Wyliczenie wskaźnika węglowodanowo-insulinowego (ICR): $\\text{ICR} = \\frac{500}{\\text{TDD}} = \\frac{500}{42} \\approx 12\\,\\text{g węglowodanów na 1 j. insuliny}$.',
-        'Krok 5: Bolus na posiłek: $\\text{Bolus}_{\\text{posiłek}} = \\frac{60\\,\\text{g}}{12\\,\\text{g/j.}} = 5{,}0\\,\\text{j. insuliny szybkodziałającej}$.',
-        'Krok 6: Bolus korekcyjny: $\\text{Bolus}_{\\text{korekta}} = \\frac{220 - 100}{43} = \\frac{120}{43} \\approx 2{,}8\\,\\text{j. insuliny}$.',
-        'Krok 7: Bolus całkowity przed posiłkiem: $\\text{Bolus}_{\\text{tot}} = 5{,}0 + 2{,}8 = 7{,}8\\,\\text{j.} \\approx 8{,}0\\,\\text{j. analogu szybkodziałającego}$.',
+        'Krok 1: Dla znanego TDD = 42 j./dobę reguła 1800 daje orientacyjne $ISF \\approx 43$ mg/dl/j.',
+        'Krok 2: Reguła 500 daje orientacyjne $ICR \\approx 12$ g/j.',
+        'Krok 3: Są to hipotezy startowe, które wymagają obserwacji w powtarzalnych warunkach; nie są dawką do zastosowania.',
+        'Krok 4: Przed każdą rzeczywistą decyzją potrzebne są indywidualne ustawienia, aktywna insulina, trend, posiłek, wysiłek i plan bezpieczeństwa.',
       ],
-      result: 'Pacjent powinien podać 8 jednostek analogu szybkodziałającego 10 minut przed obiadem, aby pokryć 60 g węglowodanów i zredukować hiperglikemię z 220 do 100 mg/dl.',
-      clinicalAction: 'Zalecono weryfikację glikemii za 2 godziny za pomocą sensora CGM; gdyby sensor wykazał trend spadkowy ze skośną strzałką w dół, dawkę korekcyjną zmniejsza się o 1 j.',
+      result: 'Obliczenia dają wyłącznie wartości orientacyjne. Nie wolno z nich wyprowadzić dawki bez zweryfikowanych ustawień, aktywnej insuliny i pełnego kontekstu.',
+      clinicalAction: 'W praktyce współczynniki ustala i weryfikuje zespół prowadzący wraz z osobą chorującą na cukrzycę; ten przykład nie rekomenduje dawki.',
     },
     questions: [
       q('Pacjent przyjmuje 50 jednostek insuliny na dobę (TDD = 50 j.). Ile wynosi jego współczynnik wrażliwości na insulinę (ISF) wg reguły 1800?',
@@ -200,8 +197,8 @@ export const draftDiabetesMathChem: DraftLesson[] = [
         'Krok 4: Weryfikacja stężenia beta-hydroksymaślanu włośniczkowego: wynik $6{,}4\\,\\text{mmol/L}$ (norma $<0{,}6$, kryterium DKA $\\ge 3{,}0\\,\\text{mmol/L}$).',
         'Krok 5: Ocena kompensacji oddechowej (reguła Wintera): spodziewane $pCO_2 = 1{,}5 \\times [HCO_3^-] + 8 \\pm 2 = 1{,}5 \\times 8 + 8 = 20 \\pm 2\\,\\text{mmHg}$. Wynik pacjentki $pCO_2 = 19\\,\\text{mmHg}$ potwierdza czystą kwasicę metaboliczną z prawidłową kompensacją Kussmaula.',
       ],
-      result: 'Ciężka cukrzycowa kwasica ketonowa z luką anionową AG = 30 mmol/L, ketonemią 6,4 mmol/L i prawidłowym skorygowanym sodem 138 mmol/L.',
-      clinicalAction: 'Natychmiastowe wdrożenie wlewu 1000 ml 0,9% NaCl w 1h, oznaczenie potasu; przy K+ = 4,6 mmol/L włączenie wlewu insuliny 0,1 j./kg/h i dodanie 20 mmol KCl do każdej butelki płynu.',
+      result: 'Wyniki spełniają kryteria DKA i wskazują na ciężką kwasicę. Luka anionowa pomaga opisać zaburzenie, ale konsensus 2024 nie zaleca jej jako jedynego kryterium ustąpienia DKA.',
+      clinicalAction: 'To stan nagły wymagający leczenia i częstego monitorowania według aktualnego protokołu. Dobór płynu, insuliny i potasu zależy m.in. od stanu krążenia, stężenia potasu, chorób współistniejących i seryjnych wyników; przykład nie wyznacza dawek.',
     },
     questions: [
       q('Które białko bezpośrednio reguluje fuzję pęcherzyków zawierających transporter GLUT4 z błoną komórkową po ufosforylowaniu przez kinazę Akt?',

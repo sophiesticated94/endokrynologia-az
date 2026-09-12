@@ -14,7 +14,8 @@ import {
   BookA,
   Code2,
 } from 'lucide-react';
-import { lessons, type Lesson } from '@/lib/course';
+import { lessonExperiences, lessons, type Lesson } from '@/lib/course';
+import type { Confidence, LearningActivity } from '@/lib/course-types';
 import type { LearningState } from '@/lib/learning';
 import { SourceList } from '../course-ui';
 import { GlossaryText } from '../glossary-components';
@@ -23,6 +24,8 @@ import { LatexViewerModal } from '../components/latex-viewer-modal';
 import { LessonDiagram } from './lesson-diagrams';
 import { LessonSimulators } from './lesson-simulators';
 import { MathDerivationCard, WorkedExampleCard } from '../components/math-lesson-cards';
+import { PracticeActivityCard } from '../components/practice-activity';
+import { LearningWidgets } from '../components/learning-widgets';
 import type { Navigation } from './types';
 
 export function LessonView({
@@ -31,18 +34,24 @@ export function LessonView({
   go,
   blocked,
   complete,
-  advanced,
+  setLevel,
+  recordPractice,
 }: {
   lesson: Lesson;
   state: LearningState;
   go: Navigation;
   blocked: boolean;
   complete: () => void;
-  advanced: () => void;
+  setLevel: (level: 'student' | 'doctor') => void;
+  recordPractice: (activity: LearningActivity, correct: boolean, confidence?: Confidence, scored?: boolean) => Promise<boolean>;
 }) {
   const [latexModalOpen, setLatexModalOpen] = useState(false);
+  const [finishedActivities, setFinishedActivities] = useState<Set<string>>(new Set());
+  const experience = lessonExperiences[lesson.id];
   const moduleLessons = lessons.filter(l => l.moduleId === lesson.moduleId);
   const lessonNum = moduleLessons.indexOf(lesson) + 1;
+  const nextLesson = moduleLessons[lessonNum];
+  const hasLessonMistakes = state.mistakes.some(item => item.lessonId === lesson.id);
   const moduleLabel =
     lesson.moduleId === 'otylosc'
       ? 'MODUŁ 08: OTYŁOŚĆ I ZABURZENIA LIPIDOWE'
@@ -108,15 +117,25 @@ export function LessonView({
 
         <div className="goals">
           <h3>Po tej lekcji</h3>
-          {lesson.goals.map(goal => (
-            <p key={goal}>
+          {(experience?.objectives ?? lesson.goals.map((statement, index) => ({id:`legacy-${index}`,statement}))).map(goal => (
+            <p key={goal.id}>
               <CheckCircle2 size={17} />
-              <FormattedMathText text={goal} />
+              <span><FormattedMathText text={goal.statement} />{experience && <small className={`mastery-chip ${state.mastery[goal.id]?.status ?? 'new'}`}>{state.mastery[goal.id]?.status === 'mastered' ? 'opanowane' : state.mastery[goal.id]?.status === 'practicing' ? 'ćwiczysz' : state.mastery[goal.id]?.status === 'learning' ? 'do poprawy' : 'nowe'}</small>}</span>
             </p>
           ))}
+          {experience && <div className="level-switch lesson-level-switch" aria-label="Poziom treści"><button className={state.level==='student'?'active':''} onClick={()=>setLevel('student')}>Student</button><button className={state.level==='doctor'?'active':''} onClick={()=>setLevel('doctor')}>Lekarz / rezydent</button></div>}
         </div>
 
-        {lesson.sections.map((section, i) => (
+        {experience && (
+          <PracticeActivityCard
+            activity={experience.diagnostic}
+            phase="diagnostic"
+            onRecord={recordPractice}
+            onComplete={id => setFinishedActivities(current => new Set(current).add(id))}
+          />
+        )}
+
+        {(experience?.blocks ?? lesson.sections.map((section,index)=>({id:`legacy-block-${index}`,title:section.title,text:section.text,sourceIds:lesson.sourceIds}))).map((section, i) => (
           <section key={section.title} id={`section-${i}`} className="lesson-section">
             <span className="eyebrow">0{i + 1}</span>
             <h2>{section.title}</h2>
@@ -125,6 +144,7 @@ export function LessonView({
             </p>
 
             <LessonDiagram lessonId={lesson.id} sectionIndex={i} />
+            {experience && section.checkpointId && (()=>{const activity=experience.activities.find(item=>item.id===section.checkpointId);return activity?<PracticeActivityCard activity={activity} onRecord={recordPractice} onComplete={(id)=>setFinishedActivities(current=>new Set(current).add(id))}/>:null})()}
           </section>
         ))}
 
@@ -155,6 +175,10 @@ export function LessonView({
         {/* Symulatory i zwiastuny */}
         <LessonSimulators lessonId={lesson.id} go={go} />
 
+        {experience && lesson.moduleId && (
+          <LearningWidgets experience={experience} moduleId={lesson.moduleId} onRecord={recordPractice} />
+        )}
+
         {/* Formalne wyprowadzenia matematyczne i biofizyczne */}
         <MathDerivationCard derivation={lesson.derivation} />
 
@@ -173,7 +197,7 @@ export function LessonView({
             </p>
           </section>
         ) : (
-          <button className="advanced-toggle" disabled={blocked} onClick={advanced}>
+          <button className="advanced-toggle" disabled={blocked} onClick={() => setLevel('doctor')}>
             <GraduationCap size={20} />
             <span>Pokaż rozszerzenie dla lekarza</span>
             <ChevronRight size={18} />
@@ -190,14 +214,21 @@ export function LessonView({
           </div>
         </div>
 
+        {experience && <section className="exit-zone">
+          <span className="eyebrow">ODTWÓRZ I SPRAWDŹ</span>
+          <h2>Zamknij lekcję aktywnie</h2>
+          <PracticeActivityCard activity={experience.teachBack} onRecord={recordPractice} onComplete={(id)=>setFinishedActivities(current=>new Set(current).add(id))}/>
+          {experience.exitTicket.map(activity=><PracticeActivityCard key={activity.id} activity={activity} phase="exit" onRecord={recordPractice} onComplete={(id)=>setFinishedActivities(current=>new Set(current).add(id))}/>)}
+        </section>}
+
         <div className="lesson-finish">
           <button
             className="secondary"
-            disabled={blocked || state.completed.includes(lesson.id)}
+            disabled={blocked || state.completed.includes(lesson.id) || Boolean(experience && ![experience.teachBack,...experience.exitTicket].every(activity=>finishedActivities.has(activity.id)))}
             onClick={complete}
           >
             <Check size={17} />
-            {state.completed.includes(lesson.id) ? 'Lekcja ukończona' : 'Oznacz jako ukończoną'}
+            {state.completed.includes(lesson.id) ? 'Lekcja ukończona' : experience ? 'Zakończ lekcję' : 'Oznacz jako ukończoną'}
           </button>
           <button className="primary" onClick={() => go(`quiz/${lesson.id}`)}>
             Sprawdź wiedzę
@@ -205,12 +236,28 @@ export function LessonView({
           </button>
         </div>
 
+        {experience && (
+          <section className="next-action" aria-labelledby="next-action-title">
+            <div>
+              <span className="eyebrow">REKOMENDOWANY NASTĘPNY KROK</span>
+              <h3 id="next-action-title">
+                {hasLessonMistakes ? 'Napraw konkretny błąd' : state.completed.includes(lesson.id) && nextLesson ? 'Przejdź do kolejnej lekcji' : 'Zastosuj wiedzę w przypadku'}
+              </h3>
+              <p>{hasLessonMistakes ? 'Notatnik otworzy krótką powtórkę przypisaną do celu, bez cofania do całej lekcji.' : state.completed.includes(lesson.id) && nextLesson ? nextLesson.title : 'Przypadek etapowy sprawdzi decyzję, pewność i brakującą informację.'}</p>
+            </div>
+            <button className="primary" onClick={() => go(hasLessonMistakes ? 'mistakes' : state.completed.includes(lesson.id) && nextLesson ? `lesson/${nextLesson.id}` : 'cases')}>
+              {hasLessonMistakes ? 'Otwórz notatnik' : state.completed.includes(lesson.id) && nextLesson ? 'Następna lekcja' : 'Wybierz przypadek'}
+              <ArrowRight size={17} />
+            </button>
+          </section>
+        )}
+
         <SourceList lesson={lesson} />
       </article>
 
       <aside className="lesson-aside">
         <p className="eyebrow">W TEJ LEKCJI</p>
-        {lesson.sections.map((s, i) => (
+        {(experience?.blocks ?? lesson.sections).map((s, i) => (
           <a
             href={`#section-${i}`}
             key={s.title}

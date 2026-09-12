@@ -9,7 +9,7 @@ export const draftDiabetesPart2: DraftLesson[] = [
     minutes: 17,
     goals: [
       'Wyjaśnisz mechanizm rozwoju kwasicy metabolicznej z podwyższoną luką anionową w DKA.',
-      'Przedstawisz priorytety resuscytacji: płynoterapia, wlew insuliny i warunki suplementacji potasu.',
+      'Wskażesz informacje potrzebne do bezpiecznego rozpoczęcia i monitorowania płynoterapii, insuliny oraz uzupełniania potasu.',
     ],
     sections: [
       {
@@ -18,11 +18,11 @@ export const draftDiabetesPart2: DraftLesson[] = [
       },
       {
         title: 'Triada rozpoznania DKA',
-        text: 'Do rozpoznania DKA wymagane jest jednoczesne stwierdzenie: 1) Hiperglikemii (zwykle > 250 mg/dl [13,9 mmol/l], choć w kwasicy euglikemicznej np. po flozynach może być < 200 mg/dl); 2) Kwasicy metabolicznej: pH krwi tętniczej/żylnej <= 7,30 i stężenie wodorowęglanów HCO3- < 18 mmol/l; 3) Ketonemii (stężenie beta-hydroksymaślanu we krwi >= 3,0 mmol/l) lub nasilonej ketonurii (>= ++). Luka anionowa (AG = Na+ - [Cl- + HCO3-]) jest podwyższona (> 10–12 mmol/l).',
+        text: 'Konsensus 2024 wymaga trzech składowych: 1) glukozy >= 200 mg/dl (11,1 mmol/l) albo wcześniej rozpoznanej cukrzycy; 2) ketozy — najlepiej beta-hydroksymaślanu >= 3,0 mmol/l, ewentualnie ketonurii >= 2+; 3) kwasicy metabolicznej: pH < 7,30 lub HCO3- < 18 mmol/l. DKA może być euglikemiczna, m.in. podczas stosowania inhibitorów SGLT2. Luka anionowa może wspierać interpretację, lecz nie zastępuje bezpośredniego oznaczenia ketonów.',
       },
       {
-        title: 'Algorytm resuscytacji: płyny, potas i insulina',
-        text: 'Postępowanie opiera się na 4 filarach: 1) Płynoterapia: przetoczenie 1000 ml 0,9% NaCl w 1. godzinie, następnie 250–500 ml/h krystaloidów zbilansowanych (płyn Ringera); deficyt płynowy wynosi 5–8 litrów (ok. 100 ml/kg); 2) Wlew insuliny: dożylny wlew insuliny krótko- lub szybkodziałającej 0,1 j./kg/h (lub bolus 0,1 j./kg i wlew 0,1 j./kg/h); 3) Potas: ŻELAZNA ZASADA — NIE włączaj insuliny, jeśli K+ < 3,3 mmol/l (insulina wpycha K+ do komórek i grozi zgonem z zatrzymania krążenia!); 4) Włączenie 5% glukozy, gdy glikemia spadnie < 200–250 mg/dl, aby umożliwić dalszy wlew insuliny aż do biochemicznego ustąpienia DKA: stężenia beta-hydroksymaślanu < 0,6 mmol/l ORAZ (pH żylnego >= 7,30 LUB HCO3- >= 18 mmol/l) przy glikemii < 200 mg/dl (możliwość przyjmowania posiłków doustnie jest klinicznym warunkiem przejścia na podskórną insulinoterapię, a nie częścią definicji biochemicznej).',
+        title: 'Bezpieczna sekwencja: płyny, potas, insulina i dekstroza',
+        text: 'Leczenie prowadzi się w warunkach pilnego nadzoru według lokalnego protokołu. Najpierw ocenia się perfuzję, choroby serca i nerek oraz wyjściowy potas. Płyny, insulinę i uzupełnianie potasu dobiera się do seryjnych wyników; przy K+ < 3,5 mmol/l konsensus 2024 zaleca odroczyć insulinę do czasu korekty potasu. Po obniżeniu glikemii dodanie dekstrozy umożliwia dalsze hamowanie ketogenezy bez wywołania hipoglikemii. Ustąpienie DKA ocenia się przede wszystkim przez beta-hydroksymaślan < 0,6 mmol/l oraz pH żylne >= 7,30 lub HCO3- >= 18 mmol/l; luka anionowa nie powinna być jedynym kryterium.',
       },
     ],
     table: {
@@ -38,13 +38,14 @@ export const draftDiabetesPart2: DraftLesson[] = [
     advanced:
       'Euglikemiczna kwasica ketonowa (euDKA): rozwija się najczęściej u chorych stosujących inhibitory SGLT2 (flozyny) w okresie infekcji, zabiegu operacyjnego lub głodówki. Cukromocz indukowany flozyną utrzymuje glikemię <200 mg/dl, ale hipoinsulinemia i wzrost glukagonu wyzwalają masową ketogenezę. Każdy pacjent na flozynie z nudnościami i dusznością Kussmaula wymaga natychmiastowego oznaczenia gazometrii i ciał ketonowych we krwi!',
     summary:
-      'DKA to kwasica metaboliczna z wysoką luką anionową i ketonemią. W leczeniu priorytetem jest nawodnienie i potas; wlew insuliny podaje się dopiero przy K+ >= 3,3 mmol/l.',
+      'DKA wymaga jednoczesnej oceny glukozy lub znanej cukrzycy, ketozy i kwasicy. Leczenie jest pilne, zależne od stanu krążenia i seryjnych elektrolitów; przy K+ < 3,5 mmol/l insulinę odracza się do czasu korekty potasu.',
     sourceIds: ['dka_guidelines', 'ptd_guidelines', 'ada_standards'],
     questions: [
-      q('Jakie jest kryterium wyjściowego stężenia potasu zezwalające na rozpoczęcie dożylnego wlewu insuliny w DKA?',
-        ['Potas w surowicy musi wynosić co najmniej 3,3 mmol/L', 'Podanie insuliny przy niższym stężeniu grozi nagłą śmiercią w mechanizmie arytmii komorowej wskutek hipokaliemii.'],
+      q('Przy jakim wyjściowym stężeniu potasu konsensus 2024 zaleca odroczyć insulinę i najpierw uzupełniać potas?',
+        ['Poniżej 3,5 mmol/L', 'Insulina może dalej obniżyć potas; potrzebne są korekta i częste pomiary według protokołu.'],
         ['Potas musi przekraczać 6,0 mmol/L', 'Taka wartość oznacza hiperkaliemię, w której insulina jest bezpieczna, ale nie stanowi to dolnego progu.'],
-        ['Stężenie potasu nie ma znaczenia przed podaniem insuliny', 'To kardynalny błąd medyczny zagrażający życiu chorego.']),
+        ['Stężenie potasu nie ma znaczenia przed podaniem insuliny', 'Potas wpływa na bezpieczną kolejność leczenia i wymaga monitorowania.'],
+        'cukrzyca-dka-potassium-2024-v2'),
       q('Dlaczego po obniżeniu glikemii poniżej 200–250 mg/dl w trakcie leczenia DKA podłącza się wlew 5% glukozy?',
         ['Aby zapobiec hipoglikemii i umożliwić kontynuację wlewu insuliny aż do całkowitego ustąpienia kwasicy i ketonemii', 'Celem leczenia DKA jest zlikwidowanie kwasicy ketonowej, a nie samo zbicie cukru.'],
         ['Aby natychmiast wywołać glukozurię', 'Glukozuria nie jest celem terapeutycznym w leczeniu DKA.'],
@@ -80,11 +81,11 @@ export const draftDiabetesPart2: DraftLesson[] = [
       },
       {
         title: 'Kryteria laboratoryjne HHS',
-        text: 'Rozpoznanie HHS opiera się na 4 cechach: 1) Skrajna hiperglikemia (zwykle > 600 mg/dl [33,3 mmol/l], nierzadko > 1000 mg/dl); 2) Efektywna osmolalność osocza > 320 mOsm/kg H2O; 3) Brak istotnej kwasicy metabolicznej (pH krwi tętniczej > 7,30, wodorowęglany HCO3- > 18 mmol/l); 4) Ujemne lub śladowe ciała ketonowe w surowicy i moczu. Śmiertelność w HHS (10–20%) jest znacznie wyższa niż w DKA (1–2%).',
+        text: 'Konsensus 2024 opisuje HHS przez 4 równoczesne cechy: 1) glukoza >= 600 mg/dl (33,3 mmol/l); 2) hiperosmolalność — efektywna osmolalność > 300 mOsm/kg lub całkowita > 320 mOsm/kg; 3) brak istotnej ketonemii — beta-hydroksymaślan < 3,0 mmol/l albo ketonuria < 2+; 4) brak kwasicy — pH >= 7,30 i HCO3- >= 15 mmol/l. Obraz mieszany DKA/HHS jest możliwy, dlatego pojedynczy parametr nie wystarcza.',
       },
       {
-        title: 'Resuscytacja: ostrożna rehydratacja i profilaktyka heparyną',
-        text: 'Głównym celem jest powolne wyrównanie osmolalności — spadek glikemii nie powinien przekraczać 50–70 mg/dl/h (3–4 mmol/l/h), a spadek osmolalności 3 mOsm/kg/h, aby zapobiec obrzękowi mózgu. Podstawą jest 0,9% NaCl (lub 0,45% NaCl, gdy sód skorygowany jest wysoki). Z powodu zagęszczenia krwi i hiperlepkości chorzy mają ogromne ryzyko powikłań zakrzepowo-zatorowych (udar, zatorowość płucna) — rutynowo podaje się heparynę drobnocząsteczkową (HDCz) w dawkach profilaktycznych.',
+        title: 'Kontrolowana korekta osmolalności i ocena zakrzepowa',
+        text: 'Głównym celem jest kontrolowana korekta odwodnienia i osmolalności z częstą oceną sodu, glukozy, diurezy, układu krążenia i stanu neurologicznego. Rodzaj oraz tempo płynów zależą od pełnego obrazu, zwłaszcza wieku oraz chorób serca i nerek. HHS zwiększa ryzyko zakrzepowo-zatorowe, ale profilaktykę przeciwzakrzepową dobiera się po ocenie przeciwwskazań i zgodnie z lokalnym protokołem.',
       },
     ],
     table: {
@@ -92,30 +93,32 @@ export const draftDiabetesPart2: DraftLesson[] = [
       rows: [
         ['Typowi pacjenci', 'Seniorzy z cukrzycą typu 2', 'Młodzi z cukrzycą typu 1'],
         ['Glikemia typowa', '> 600 mg/dl (często > 1000 mg/dl)', '250–600 mg/dl (lub euglikemia)'],
-        ['Kwasica metaboliczna', 'Brak (pH > 7,30, HCO3- > 18)', 'Obecna (pH <= 7,30, HCO3- < 18)'],
+        ['Kwasica metaboliczna', 'Brak (pH >= 7,30 i HCO3- >= 15)', 'Obecna (pH < 7,30 lub HCO3- < 18)'],
         ['Ketonemia', 'Ujemna lub śladowa (< 3,0 mmol/l)', 'Silnie dodatnia (>= 3,0 mmol/l)'],
-        ['Osmolalność efektywna', '> 320 mOsm/kg H2O', 'Zwykle < 320 mOsm/kg H2O'],
+        ['Osmolalność', 'Efektywna > 300 lub całkowita > 320 mOsm/kg', 'Może współistnieć hiperosmolalność'],
         ['Deficyt płynowy', 'Skrajny: 8–12 litrów (15–20% m.c.)', 'Umiarkowany: 4–6 litrów (5–10% m.c.)'],
       ],
     },
     advanced:
       'Wzór na efektywną osmolalność osocza: Osm_eff = 2 * [Na+] + Glukoza [mg/dl] / 18 (wszystko w mmol/L lub po przeliczeniu mg/dl). Mocznik nie jest osmolitem efektywnym, ponieważ swobodnie dyfunduje przez błony komórkowe i nie wywołuje przesunięć wody między przestrzenią wewnątrz- i zewnątrznaczyniową.',
     summary:
-      'HHS to stan skrajnej hiperglikemii (>600 mg/dl) i hiperosmolalności (>320 mOsm/kg) bez kwasicy ketonowej. Wymaga powolnego nawadniania i profilaktyki heparyną.',
+      'HHS łączy znaczną hiperglikemię i hiperosmolalność bez istotnej ketozy lub kwasicy. Wymaga pilnego, monitorowanego leczenia; tempo płynów i profilaktykę zakrzepową indywidualizuje się.',
     sourceIds: ['dka_guidelines', 'ada_standards', 'ptd_guidelines'],
     questions: [
       q('Dlaczego u chorych z HHS nie dochodzi do rozwoju kwasicy ketonowej?',
         ['Resztkowa endogenna insulina wystarcza do zahamowania lipolizy w tkance tłuszczowej i ketogenezy w wątrobie', 'Stężenie insuliny potrzebne do hamowania lipolizy jest 10-krotnie niższe niż do stymulacji wychwytu glukozy.'],
         ['Wątroba pacjenta nie posiada enzymów do produkcji ciał ketonowych', 'Wątroba ma komplet enzymów, ale brak sygnału lipolitycznego nie dostarcza substratów.'],
         ['Nerki filtrują ciała ketonowe 100 razy szybciej niż glukozę', 'Filtracja ketonów nie chroni przed zakwaszeniem krwi.']),
-      q('Jaka jest wartość progowa efektywnej osmolalności osocza w kryteriach rozpoznania HHS?',
-        ['Powyżej 320 mOsm/kg H2O', 'Wartość ta koreluje z zaburzeniami świadomości, stuporem i śpiączką hiperosmolarną.'],
-        ['Powyżej 150 mOsm/kg H2O', '150 mOsm/kg to stan skrajnej hipoosmolalności zagrażający obrzękiem mózgu.'],
-        ['Dokładnie 285 mOsm/kg H2O', '285 mOsm/kg to prawidłowa fizjologiczna osmolalność osocza u człowieka.']),
-      q('Dlaczego u każdego pacjenta z HHS należy wdrożyć profilaktykę przeciwzakrzepową heparyną drobnocząsteczkową?',
-        ['Skrajne odwodnienie i hiperglikemia wywołują hiperlepkość krwi, zwiększając ryzyko zakrzepicy żylnej i tętniczej', 'Zatorowość płucna i udar są głównymi przyczynami zgonów w zespole HHS.'],
-        ['Heparyna bezpośrednio obniża stężenie glukozy we krwi', 'Heparyna nie ma właściwości hipoglikemizujących.'],
-        ['Heparyna zapobiega utracie potasu z moczem', 'Heparyna może wręcz podnosić potas przez hamowanie aldosteronu.']),
+      q('Która wartość spełnia kryterium hiperosmolalności w HHS według konsensusu 2024?',
+        ['Efektywna osmolalność > 300 mOsm/kg albo całkowita > 320 mOsm/kg', 'Trzeba wiedzieć, który wzór i rodzaj osmolalności zastosowano.'],
+        ['Wyłącznie efektywna osmolalność > 320 mOsm/kg', 'Konsensus 2024 rozróżnia próg dla osmolalności efektywnej i całkowitej.'],
+        ['Dokładnie 285 mOsm/kg H2O', 'To wartość mieszcząca się w typowym zakresie fizjologicznym.'],
+        'cukrzyca-hhs-osmolality-2024-v2'),
+      q('Jakiej informacji potrzeba przed decyzją o profilaktyce przeciwzakrzepowej w HHS?',
+        ['Oceny ryzyka zakrzepowego, krwawienia i przeciwwskazań', 'HHS zwiększa ryzyko zakrzepowe, ale bezpieczeństwo profilaktyki zależy od pełnego kontekstu.'],
+        ['Wyłącznie stężenia glukozy', 'Glikemia nie opisuje ryzyka krwawienia ani przeciwwskazań.'],
+        ['Wyłącznie stężenia potasu', 'Potas jest ważny dla leczenia metabolicznego, ale nie wystarcza do tej decyzji.'],
+        'cukrzyca-hhs-thrombosis-context-v2'),
       q('Dlaczego zbyt szybkie obniżanie glikemii i osmolalności w HHS jest niebezpieczne?',
         ['Grozi gwałtownym przemieszczeniem wody do neuronów i obrzękiem mózgu', 'Mózg adaptuje się do hiperosmolalności generując osmoprotektanty (idiogenne osmolity).'],
         ['Wywołuje natychmiastowe uszkodzenie siatkówki', 'Obrzęk mózgu i zapaść naczyniowa są bezpośrednim zagrożeniem życia.'],
@@ -390,7 +393,7 @@ export const draftDiabetesPart2: DraftLesson[] = [
       },
       {
         title: 'Rygorystyczne cele i leczenie z wyboru',
-        text: 'Hiperglikemia matki wywołuje hiperglikemię płodu i hiperinsulinizm płodowy, skutkując makrosomią (masa > 4000 g), dystocją barkową, pourodzeniową hipoglikemią noworodka i niewydolnością oddechową (insulina hamuje syntezę surfaktantu!). Cele glikemii w ciąży są bardzo surowe: na czczo i przed posiłkami 70–90 mg/dl (3,9–5,0 mmol/l), 1h po posiłku < 140 mg/dl (< 7,8 mmol/l). Leczeniem z wyboru przy braku wyrównania dietą jest wyłącznie insulinoterapia (analogi: lispro, aspart, detemir). Większość leków doustnych jest przeciwwskazana.',
+        text: 'Hiperglikemia matki zwiększa ryzyko hiperinsulinizmu płodowego, nadmiernego wzrastania płodu, dystocji barkowej i hipoglikemii noworodka. Cele glikemii oraz wybór farmakoterapii zależą od aktualnych wytycznych i sytuacji klinicznej. Insulina jest preferowanym lekiem, gdy zmiana stylu życia nie wystarcza; decyzji nie należy sprowadzać do jednej listy analogów ani uniwersalnego progu dla każdej osoby.',
       },
     ],
     table: {
@@ -402,7 +405,7 @@ export const draftDiabetesPart2: DraftLesson[] = [
       ],
     },
     advanced:
-      'Postępowanie poporodowe po GDM: bezpośrednio po urodzeniu łożyska gwałtownie spada stężenie hPL i insulinooporność natychmiast ustępuje — u większości kobiet można odstawić insulinę w 1. dobie po porodzie. Kobiety po przebytej GDM mają jednak 7-krotnie wyższe ryzyko rozwoju cukrzycy typu 2 w ciągu kolejnych 10 lat — bezwzględnie wymagają wykonania kontrolnego testu OGTT 6–12 tygodni po porodzie!',
+      'Po porodzie zapotrzebowanie na insulinę zwykle szybko się zmienia, dlatego leczenie trzeba ponownie ocenić zamiast automatycznie kontynuować lub odstawiać. Po GDM zaleca się kontrolę 75-g OGTT po 4–12 tygodniach oraz dalsze okresowe badania ze względu na zwiększone ryzyko cukrzycy typu 2.',
     summary:
       'GDM rozpoznaje się w teście OGTT przy glikemii na czczo >=92 mg/dl, w 60 min >=180 mg/dl lub w 120 min >=153 mg/dl (wystarczy 1 nieprawidłowość). Leczeniem z wyboru jest dieta, a w razie nieskuteczności — insulina.',
     sourceIds: ['gdm_guidelines', 'ptd_guidelines', 'ada_standards'],
@@ -424,9 +427,10 @@ export const draftDiabetesPart2: DraftLesson[] = [
         ['Pochodne sulfonylomocznika w dużych dawkach', 'Przenikają przez łożysko i wywołują ciężką, przedłużoną hipoglikemię u noworodka.'],
         ['Inhibitory SGLT2 (flozyny)', 'Są bezwzględnie przeciwwskazane w ciąży ze względu na potencjalną nefrotoksyczność dla płodu.']),
       q('Kiedy po porodzie należy wykonać kontrolny test OGTT u kobiety, która przebyła cukrzycę ciążową?',
-        ['Po 6–12 tygodniach od porodu', 'Pozwala ocenić, czy doszło do pełnej normalizacji tolerancji glukozy, czy też przetrwał stan przedcukrzycowy lub T2D.'],
+        ['Po 4–12 tygodniach od porodu', 'Ten przedział pozwala ocenić tolerancję glukozy po ustąpieniu wpływu ciąży.'],
         ['Dopiero po 10 latach', 'To zbyt późno na wczesną interwencję dietetyczną i profilaktykę T2D.'],
-        ['W pierwszej dobie po porodzie przed wypisem ze szpitala', 'Bezpośrednio po porodzie organizm znajduje się w stanie ostrego stresu połogowego i wynik byłby niemiarodajny.']),
+        ['W pierwszej dobie po porodzie przed wypisem ze szpitala', 'Bezpośrednio po porodzie organizm znajduje się w stanie ostrego stresu połogowego i wynik byłby niemiarodajny.'],
+        'cukrzyca-gdm-postpartum-ogtt-v2'),
     ],
   },
 ];

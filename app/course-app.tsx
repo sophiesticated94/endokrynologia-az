@@ -17,8 +17,10 @@ import {
   LayoutDashboard,
   Activity,
   BookA,
+  BrainCircuit,
 } from 'lucide-react';
 import { lessons, flashcards } from '@/lib/course';
+import type { Confidence, LearningActivity } from '@/lib/course-types';
 import { cases } from '@/lib/cases';
 import { useLearning } from '@/lib/use-learning';
 import { SourceList, Runner } from './course-ui';
@@ -34,6 +36,7 @@ import { GonadSimulator } from './gonad-simulator';
 import { NenSimulator } from './nen-simulator';
 import { ObesitySimulator } from './obesity-simulator';
 import { GlossaryView } from './glossary-components';
+import { ErrorNotebook } from './views/error-notebook';
 
 const navItems = [
   ['home', 'Moja nauka', LayoutDashboard],
@@ -43,12 +46,13 @@ const navItems = [
   ['cards', 'Fiszki i powtórki', Layers3],
   ['exam', 'Egzamin', ClipboardCheck],
   ['results', 'Moje wyniki', ChartNoAxesCombined],
+  ['mistakes', 'Notatnik błędów', BrainCircuit],
   ['glossary', 'Słowniczek pojęć', BookA],
 ] as const;
 
 function validRoute(value: string): value is Route {
   return (
-    ['home', 'course', 'simulator', 'cases', 'cards', 'exam', 'results', 'glossary', 'account'].includes(value) ||
+    ['home', 'course', 'simulator', 'cases', 'cards', 'exam', 'results', 'mistakes', 'glossary', 'account'].includes(value) ||
     lessons.some(l => value === `lesson/${l.id}` || value === `quiz/${l.id}`) ||
     cases.some(c => value === `case/${c.id}`)
   );
@@ -140,6 +144,8 @@ export default function CourseApp() {
       ? 'Pracownie i symulatory'
       : route === 'glossary'
       ? 'Słowniczek pojęć medycznych'
+      : route === 'mistakes'
+      ? 'Notatnik błędów'
       : navItems.find(n => n[0] === route)?.[1] ?? 'Twoje konto';
   const userKey = user?.id ?? 'guest';
 
@@ -396,7 +402,8 @@ export default function CourseApp() {
               go={go}
               blocked={blocked}
               complete={() => void learning.record('lesson', lesson.id)}
-              advanced={() => void learning.record('profile', 'level', { level: 'doctor' })}
+              setLevel={level => void learning.record('profile', 'level', { level })}
+              recordPractice={(activity: LearningActivity, correct: boolean, confidence?: Confidence, scored = true) => learning.record('practice', activity.id, {lessonId: lesson.id, objectiveIds: activity.objectiveIds, correct, confidence, activityType: activity.type, scored})}
             />
           )}
           {route.startsWith('quiz/') && lesson && (
@@ -436,6 +443,22 @@ export default function CourseApp() {
           {route === 'cards' && <CardsView key={userKey} learning={learning} go={go} />}
           {route === 'exam' && <ExamView key={userKey} learning={learning} onActive={setActive} />}
           {route === 'results' && <ResultsView key={userKey} learning={learning} go={go} />}
+          {route === 'mistakes' && (
+            <ErrorNotebook
+              state={state}
+              go={go}
+              recordPractice={(lessonId, activity, correct, confidence, scored = true) =>
+                learning.record('practice', activity.id, {
+                  lessonId,
+                  objectiveIds: activity.objectiveIds,
+                  correct,
+                  confidence,
+                  activityType: activity.type,
+                  scored,
+                })
+              }
+            />
+          )}
           {route === 'account' && <AccountView learning={learning} go={go} />}
 
           <footer className="footer">

@@ -1,7 +1,8 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, ArrowLeft, Check, CheckCircle2, Stethoscope, ExternalLink } from 'lucide-react';
-import { sources, CONTENT_VERSION, type Question, type Lesson } from '@/lib/course';
+import { sources, CONTENT_VERSION, lessonExperiences, type Question, type Lesson } from '@/lib/course';
+import type { Confidence } from '@/lib/course-types';
 import type { ClinicalCase } from '@/lib/cases';
 import { grade } from '@/lib/learning';
 import { GlossaryText } from './glossary-components';
@@ -42,11 +43,12 @@ export function ThyroidArt() {
 }
 
 export function SourceList({ lesson }: { lesson: Lesson }) {
+  const documentedReview = lessonExperiences[lesson.id]?.review ?? lesson.review;
   return (
     <div className="sources">
       <h3>Źródła i aktualność</h3>
       <p className="small">
-        {lesson.review ? `Sprawdzenie wybranych treści: ${new Date(lesson.review.checkedAt).toLocaleDateString('pl-PL')}. ${lesson.review.scope}` : 'Treść oczekuje udokumentowanego przeglądu tej lekcji. Rok źródła nie oznacza daty weryfikacji materiału.'} · Wersja {CONTENT_VERSION}
+        {documentedReview ? `Sprawdzenie w przypisanych źródłach: ${new Date(documentedReview.checkedAt).toLocaleDateString('pl-PL')}. ${documentedReview.scope}` : 'Treść oczekuje udokumentowanego przeglądu tej lekcji. Rok źródła nie oznacza daty weryfikacji materiału.'} · Wersja {CONTENT_VERSION}
       </p>
       {lesson.sourceIds.map(id => (
         <a key={id} href={sources[id].url} target="_blank" rel="noreferrer">
@@ -126,6 +128,8 @@ export function Runner({
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [revealed, setRevealed] = useState<Record<string, boolean>>({});
   const [finished, setFinished] = useState(false);
+  const [confidence, setConfidence] = useState<Record<string, Confidence>>({});
+  const [missingInfo, setMissingInfo] = useState<Record<string, string>>({});
   const id = useRef('');
   const [saveStatus, setSaveStatus] = useState('');
 
@@ -147,7 +151,8 @@ export function Runner({
     onActive(false);
     const snapshots = bank.map(q => ({ ...q, selected: answers[q.id] }));
     setSaveStatus('Zapisywanie wyniku…');
-    const ok = await onFinish({ ...score, answers, questions: snapshots, title }, id.current);
+    const reasoning = mode === 'case' ? bank.map(q => ({questionId:q.id,confidence:confidence[q.id],missingInformation:missingInfo[q.id]})) : undefined;
+    const ok = await onFinish({ ...score, answers, questions: snapshots, title, ...(reasoning ? {reasoning} : {}) }, id.current);
     setSaveStatus(
       ok
         ? 'Wynik dodany do historii.'
@@ -255,6 +260,10 @@ export function Runner({
           onSelect={n => setAnswers(v => ({ ...v, [current.id]: n }))}
           reveal={mode !== 'exam' && show}
         />
+        {mode === 'case' && !show && <div className="case-reasoning-gate">
+          <fieldset><legend>Jak pewna jest Twoja decyzja?</legend><div className="confidence-row">{([1,2,3] as Confidence[]).map(value=><button type="button" key={value} className={confidence[current.id]===value?'active':''} onClick={()=>setConfidence(currentValue=>({...currentValue,[current.id]:value}))}>{value===1?'Zgaduję':value===2?'Raczej wiem':'Jestem pewien'}</button>)}</div></fieldset>
+          <label className="field">Który brak danych najłatwiej zmieniłby decyzję?<select value={missingInfo[current.id]??''} onChange={event=>setMissingInfo(currentValue=>({...currentValue,[current.id]:event.target.value}))}><option value="">Wybierz obszar</option><option value="urgency">Stan ogólny i pilność</option><option value="measurement">Wiarygodność pomiaru, jednostki lub zakres</option><option value="alternative">Alternatywne rozpoznanie lub czynnik zakłócający</option><option value="decision-condition">Warunek zmiany decyzji i monitorowanie</option></select></label>
+        </div>}
         {mode !== 'exam' && show && (
           <div className={`feedback ${chosen === current.answer ? 'good' : 'bad'}`} role="status">
             <strong>
@@ -262,9 +271,7 @@ export function Runner({
             </strong>
             <p style={{ margin: '6px 0 0' }}>{current.options[chosen!].explanation}</p>
             {mode === 'case' && (
-              <p className="small" style={{ margin: '6px 0 0', opacity: 0.85 }}>
-                Dalszy etap przedstawia przebieg po prawidłowej decyzji.
-              </p>
+              <><p className="small" style={{ margin: '6px 0 0', opacity: 0.85 }}>Dalszy etap przedstawia przebieg po prawidłowej decyzji.</p><p className="case-reflection"><strong>Co zmieniło decyzję?</strong> Nazwij konkretną daną z kontekstu i sprawdź, czy wybrany przez Ciebie brak informacji mógłby odwrócić wniosek.</p></>
             )}
           </div>
         )}
@@ -276,7 +283,7 @@ export function Runner({
           {mode !== 'exam' && !show ? (
             <button
               className="primary"
-              disabled={chosen === undefined}
+              disabled={chosen === undefined || (mode === 'case' && (!confidence[current.id] || !missingInfo[current.id]))}
               onClick={() => setRevealed(v => ({ ...v, [current.id]: true }))}
             >
               Sprawdź odpowiedź

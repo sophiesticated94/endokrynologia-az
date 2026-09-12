@@ -80,8 +80,8 @@ export const draftThyroidMathChem: DraftLesson[] = [
       clinicalTakeaway: 'Stan stacjonarny farmakokinetyczny ($95\\%\\,C_{ss}$) osiągany jest po $t_{95\\%} = 4{,}32 \\times t_{1/2} \\approx 30\\text{ dniach}$ (~4,3 tygodnia). Ponieważ oś przysadkowo-tarczycowa (TSH) wykazuje dodatkową bezwładność transkrypcyjną, pełna równowaga osi następuje po 6–8 tygodniach. Zbyt wczesna ocena TSH (np. po 2 tyg.) da zafałszowany obraz kliniczny.',
     },
     workedExample: {
-      title: 'Kalkulacja dawki substytucyjnej i czasu do steady-state',
-      patient: 'Kobieta, 42 lata, 68 kg, stan po tyreoidektomii z powodu raka brodawkowatego, TSH wyjściowe 28 mIU/l.',
+      title: 'Ilustracja czasu dochodzenia do stanu stacjonarnego',
+      patient: 'Hipotetyczny model farmakokinetyczny po zmianie ekspozycji na LT4; nie służy do wyznaczania dawki dla pacjenta.',
       inputs: [
         { label: 'Masa ciała', value: '68', unit: 'kg' },
         { label: 'Zapotrzebowanie pełne', value: '1,6', unit: 'µg/kg/d' },
@@ -89,13 +89,13 @@ export const draftThyroidMathChem: DraftLesson[] = [
         { label: 'Oszacowany t1/2', value: '7,0', unit: 'dni' },
       ],
       calculationSteps: [
-        'Krok 1: Dawka dobowa $D = 68\\text{ kg} \\times 1{,}6\\,\\text{µg/kg} = 108{,}8\\,\\text{µg/d} \\longrightarrow$ preparat $100\\,\\text{µg/d}$ (lub naprzemiennie 100/112 µg).',
-        'Krok 2: Stała eliminacji $k_e = \\frac{\\ln(2)}{7\\text{ dni}} = 0{,}099\\text{ d}^{-1}$.',
-        'Krok 3: Oczekiwane średnie stężenie stacjonarne całkowitej tyroksyny: $C_{ss} = \\frac{0{,}75 \\times 100\\,\\text{µg}}{12\\text{ L} \\times 0{,}099\\text{ d}^{-1} \\times 1\\text{ d}} = 63{,}1\\,\\mu\\text{g/L} \\approx 81\\,\\text{nmol/L}$ całkowitej $T_4$ (model jednokompartmentowy opisuje całkowitą ekspozycję leku, a nie frakcję wolną FT4 ani ujemne sprzężenie TSH).',
-        'Krok 4: Czas do równowagi: $t_{90\\%} \\approx 23{,}3\\text{ dni}$ (~3,3 tyg.), $t_{95\\%} = 4{,}32 \\times 7\\text{ dni} = 30{,}2\\text{ dni}$ (~4,3 tyg.). Pełna równowaga osi TSH z uwzględnieniem opóźnienia przysadkowego wymaga 6–8 tygodni.',
+        'Krok 1: Przy ilustracyjnym okresie półtrwania 7 dni stała eliminacji wynosi $k_e = \\frac{\\ln(2)}{7} \\approx 0{,}099\\text{ d}^{-1}$.',
+        'Krok 2: Po jednym okresie półtrwania osiągnięta jest połowa docelowej zmiany ekspozycji, po dwóch około 75%, a po czterech około 94%.',
+        'Krok 3: $t_{95\\%} \\approx 4{,}32 \\times 7\\text{ dni} = 30{,}2\\text{ dni}$. Jest to model ekspozycji na lek, nie przewidywanie FT4 ani TSH.',
+        'Krok 4: Odpowiedź osi hormonalnej i termin oceny zależą także od sytuacji klinicznej, dlatego wynik modelu nie jest automatyczną instrukcją zmiany leczenia.',
       ],
-      result: 'Dawka początkowa: 100 µg/d; optymalny termin kontroli TSH i FT4: za 6–8 tygodni.',
-      clinicalAction: 'Zlecono przyjmowanie rano na czczo 30–60 min przed posiłkiem, popijając wodą. Kontrola TSH i FT4 za 7 tygodni.',
+      result: 'Model pokazuje, że ekspozycja narasta przez kolejne okresy półtrwania; nie przewiduje FT4 ani TSH konkretnej osoby.',
+      clinicalAction: 'Termin kontroli i sposób przyjmowania należy ustalać według wskazania, preparatu i zaleceń prowadzącego; aplikacja nie wyznacza dawki.',
     },
     questions: [
       q(

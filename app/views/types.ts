@@ -11,6 +11,7 @@ export type Route =
   | 'account'
   | 'simulator'
   | 'glossary'
+  | 'mistakes'
   | `lesson/${string}`
   | `quiz/${string}`
   | `case/${string}`;

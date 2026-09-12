@@ -21,11 +21,11 @@ test('isSafePublicKey accepts anon JWT, publishable keys and rejects service_rol
   assert.equal(isSafePublicKey(null), false);
 });
 
-test('complete curriculum: 146 lessons across 8 modules, 730 explained questions, 778 cards, 110 four-step cases', () => {
+test('complete curriculum: 146 lessons across 8 modules, 730 explained questions, 778 cards, 112 four-step cases', () => {
   assert.equal(lessons.length, 146);
   assert.equal(questions.length, 730);
   assert.equal(flashcards.length, 778);
-  assert.equal(cases.length, 110);
+  assert.equal(cases.length, 112);
 
   const thyroidLessons = lessons.filter(l => l.moduleId === 'tarczyca');
   const pituitaryLessons = lessons.filter(l => l.moduleId === 'przysadka');

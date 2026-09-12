@@ -8,6 +8,7 @@ import {
   Layers3,
   Stethoscope,
   Activity,
+  Target,
 } from 'lucide-react';
 import { lessons } from '@/lib/course';
 import { cases } from '@/lib/cases';
@@ -29,6 +30,7 @@ export function Dashboard({
 }) {
   const next = lessons.find(l => !state.completed.includes(l.id)) ?? lessons[0];
   const percent = Math.round((state.completed.length / lessons.length) * 100);
+  const mastered = Object.values(state.mastery).filter(item => item.status === 'mastered').length;
 
   return (
     <>
@@ -195,6 +197,20 @@ export function Dashboard({
             <strong>
               {new Set(state.attempts.filter(a => a.kind === 'case').map(a => a.target_id)).size}
               <span> / {cases.length}</span>
+            </strong>
+          </div>
+          <ArrowUpRight size={19} />
+        </button>
+
+        <button className="stat-card" onClick={() => go('mistakes')}>
+          <div className="stat-icon teal">
+            <Target size={22} />
+          </div>
+          <div>
+            <small>Opanowanie celów</small>
+            <strong>
+              {mastered}
+              <span> · {state.mistakes.length} do powtórki</span>
             </strong>
           </div>
           <ArrowUpRight size={19} />
