@@ -7,7 +7,15 @@ import {
   PsychiatryQtcLab,
 } from '../components/psychiatry-receptor-lab';
 
-export function LessonSimulatorsPsychiatry({ lessonId, go }: { lessonId: string; go: Navigation }) {
+export function LessonSimulatorsPsychiatry({
+  lessonId,
+  go,
+  onOpenLab,
+}: {
+  lessonId: string;
+  go: Navigation;
+  onOpenLab?: (presetId?: string) => void;
+}) {
   // Leki przeciwpsychotyczne, atypowe, SSRI i mechanizmy receptorowe D2/SERT
   if (
     lessonId === 'neuroleptyki-generacje-profil' ||
@@ -84,8 +92,14 @@ export function LessonSimulatorsPsychiatry({ lessonId, go }: { lessonId: string;
             <button
               type="button"
               className="primary"
-              onClick={() => go('simulator')}
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem' }}
+              onClick={() => {
+                if (onOpenLab) {
+                  onOpenLab('mse-young-adult-001');
+                } else {
+                  go('simulator');
+                }
+              }}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', cursor: 'pointer' }}
             >
               Uruchom pracownię diagnostyczną <ArrowRight size={15} />
             </button>
@@ -127,8 +141,14 @@ export function LessonSimulatorsPsychiatry({ lessonId, go }: { lessonId: string;
             <button
               type="button"
               className="primary"
-              onClick={() => go('simulator')}
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', background: '#c0392b', borderColor: '#c0392b' }}
+              onClick={() => {
+                if (onOpenLab) {
+                  onOpenLab('hunter-toxicity-001');
+                } else {
+                  go('simulator');
+                }
+              }}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', background: '#c0392b', borderColor: '#c0392b', cursor: 'pointer' }}
             >
               Otwórz symulator stanów nagłych <ArrowRight size={15} />
             </button>

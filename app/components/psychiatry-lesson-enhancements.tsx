@@ -167,11 +167,13 @@ export function InlineEnhancementRenderer({
   lessonId,
   go,
   onOpenEvidence,
+  onOpenLab,
 }: {
   enhancement: InlineEnhancementRef;
   lessonId: string;
   go: Navigation;
   onOpenEvidence: () => void;
+  onOpenLab?: (presetId?: string) => void;
 }) {
   if (enhancement.kind === 'workbench-deeplink') {
     const preset = enhancement.presetId ? getPsychiatryPreset(enhancement.presetId) : undefined;
@@ -189,10 +191,16 @@ export function InlineEnhancementRenderer({
         </div>
         <button
           type="button"
-          onClick={() => go(targetRoute)}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg shadow-sm transition-colors text-xs whitespace-nowrap ml-2"
+          onClick={() => {
+            if (onOpenLab) {
+              onOpenLab(enhancement.presetId);
+            } else {
+              go(targetRoute);
+            }
+          }}
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg shadow-sm transition-colors text-xs whitespace-nowrap ml-2 cursor-pointer"
         >
-          <span>Otwórz w Command Center</span>
+          <span>Zbadaj przypadek w pracowni</span>
           <ArrowRight size={13} />
         </button>
       </div>
@@ -234,8 +242,14 @@ export function InlineEnhancementRenderer({
         </div>
         <button
           type="button"
-          onClick={() => go('simulator')}
-          className="text-indigo-600 hover:text-indigo-800 font-semibold underline text-xs"
+          onClick={() => {
+            if (onOpenLab) {
+              onOpenLab();
+            } else {
+              go('simulator');
+            }
+          }}
+          className="text-indigo-600 hover:text-indigo-800 font-semibold underline text-xs cursor-pointer"
         >
           Otwórz w pracowni
         </button>

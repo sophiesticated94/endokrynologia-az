@@ -39,7 +39,15 @@ import {
 import { LessonSimulatorsOtylosc } from './lesson-simulators-otylosc.tsx';
 import { LessonSimulatorsPsychiatry } from './lesson-simulators-psychiatry.tsx';
 
-export function LessonSimulators({ lessonId, go }: { lessonId: string; go: Navigation }) {
+export function LessonSimulators({
+  lessonId,
+  go,
+  onOpenLab,
+}: {
+  lessonId: string;
+  go: Navigation;
+  onOpenLab?: (presetId?: string) => void;
+}) {
   if (gahtLessonIds.includes(lessonId)) return <GonadPharmacodynamicsLab key={lessonId} compact initialGoal={lessonId==='gonady-trans-maskulinizujaca'||lessonId==='gaht-plodnosc'?'masc':'fem'}/>;
   // Zwiastun symulatora w Lekcji 1 Tarczycy
   if (lessonId === 'fizjologia') {
@@ -478,7 +486,7 @@ export function LessonSimulators({ lessonId, go }: { lessonId: string; go: Navig
   const otyloscSim = LessonSimulatorsOtylosc({ lessonId, go });
   if (otyloscSim) return otyloscSim;
 
-  const psychSim = LessonSimulatorsPsychiatry({ lessonId, go });
+  const psychSim = LessonSimulatorsPsychiatry({ lessonId, go, onOpenLab });
   if (psychSim) return psychSim;
 
   return null;

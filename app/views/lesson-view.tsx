@@ -24,6 +24,7 @@ import {
   InlineEnhancementRenderer,
   EvidenceInspectorModal,
 } from '../components/psychiatry-lesson-enhancements';
+import { PsychiatryLabModal } from '../components/psychiatry-lab-modal';
 import type { Confidence, LearningActivity, PracticeRecordMeta, InlineEnhancementRef } from '@/lib/course-types';
 import { isLessonCoreComplete } from '@/lib/lesson-v2';
 import type { LearningState } from '@/lib/learning';
@@ -72,6 +73,7 @@ export function LessonView({
 }) {
   const [latexModalOpen, setLatexModalOpen] = useState(false);
   const [evidenceModalOpen, setEvidenceModalOpen] = useState(false);
+  const [labModalPresetId, setLabModalPresetId] = useState<string | null>(null);
   const [selectedClaimKey, setSelectedClaimKey] = useState<string | undefined>(undefined);
   const [finishedActivities, setFinishedActivities] = useState<Set<string>>(new Set());
   const psychEnhancement = getPsychiatryEnhancement(lesson.id);
@@ -172,6 +174,9 @@ export function LessonView({
                 setSelectedClaimKey(claimKey);
                 setEvidenceModalOpen(true);
               }}
+              onOpenLab={(presetId?: string) => {
+                setLabModalPresetId(presetId ?? psychEnhancement?.workbenchPresetId ?? 'mse-young-adult-001');
+              }}
             />
           );
 
@@ -241,7 +246,13 @@ export function LessonView({
         </div>
 
         {/* Symulatory i zwiastuny */}
-        <LessonSimulators lessonId={lesson.id} go={go} />
+        <LessonSimulators
+          lessonId={lesson.id}
+          go={go}
+          onOpenLab={presetId => {
+            setLabModalPresetId(presetId ?? psychEnhancement?.workbenchPresetId ?? 'mse-young-adult-001');
+          }}
+        />
 
         {experience && lesson.moduleId && (
           <LearningWidgets experience={experience} moduleId={lesson.moduleId} onRecord={recordPractice} />
@@ -357,8 +368,8 @@ export function LessonView({
         {psychEnhancement?.workbenchPresetId && (
           <button
             className="text-button"
-            onClick={() => go('simulator')}
-            style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '6px', color: '#4f46e5' }}
+            onClick={() => setLabModalPresetId(psychEnhancement.workbenchPresetId ?? null)}
+            style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '6px', color: '#4f46e5', cursor: 'pointer' }}
           >
             <Sliders size={14} /> Psychiatry Command Center
           </button>
@@ -402,6 +413,17 @@ export function LessonView({
           onClose={() => {
             setEvidenceModalOpen(false);
             setSelectedClaimKey(undefined);
+          }}
+        />
+      )}
+
+      {labModalPresetId !== null && (
+        <PsychiatryLabModal
+          presetId={labModalPresetId}
+          onClose={() => setLabModalPresetId(null)}
+          onOpenFullScreen={() => {
+            go(labModalPresetId ? `simulator?preset=${labModalPresetId}` : 'simulator');
+            setLabModalPresetId(null);
           }}
         />
       )}
