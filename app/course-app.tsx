@@ -50,6 +50,8 @@ const navItems = [
 function validRoute(value: string): value is Route {
   return (
     ['home', 'course', 'simulator', 'cases', 'cards', 'exam', 'results', 'mistakes', 'glossary', 'account', 'catalog'].includes(value) ||
+    value.startsWith('simulator?') ||
+    value.startsWith('simulator/') ||
     COURSES.endocrinology.lessons.some(l => value === `lesson/${l.id}` || value === `quiz/${l.id}`) ||
     COURSES.psychiatry.lessons.some(l => value === `lesson/${l.id}` || value === `quiz/${l.id}`) ||
     COURSES.endocrinology.cases.some(c => value === `case/${c.id}`) ||
@@ -101,7 +103,9 @@ export default function CourseApp() {
       }
 
       // Automatyczne przełączanie kursu po otwarciu bezpośredniego linku
-      if (hash.startsWith('lesson/') || hash.startsWith('quiz/')) {
+      if (hash.startsWith('simulator?') || hash.startsWith('simulator/')) {
+        if (activeCourse !== 'psychiatry') selectCourse('psychiatry');
+      } else if (hash.startsWith('lesson/') || hash.startsWith('quiz/')) {
         if (COURSES.psychiatry.lessons.some(l => hash === `lesson/${l.id}` || hash === `quiz/${l.id}`)) {
           if (activeCourse !== 'psychiatry') selectCourse('psychiatry');
         } else if (COURSES.endocrinology.lessons.some(l => hash === `lesson/${l.id}` || hash === `quiz/${l.id}`)) {
@@ -156,6 +160,14 @@ export default function CourseApp() {
   const fresh = flashcards.filter(c => !state.reviews[c.id]);
   const blocked = saving || loading || pending.length > 0;
 
+  let simulatorPresetId: string | undefined = undefined;
+  if (route.startsWith('simulator?')) {
+    const params = new URLSearchParams(route.slice('simulator?'.length));
+    simulatorPresetId = params.get('preset') || undefined;
+  } else if (route.startsWith('simulator/')) {
+    simulatorPresetId = route.slice('simulator/'.length) || undefined;
+  }
+
   const lesson = lessons.find(l => route === `lesson/${l.id}` || route === `quiz/${l.id}`);
   const clinical = cases.find(c => route === `case/${c.id}`);
 
@@ -166,7 +178,7 @@ export default function CourseApp() {
       ? `${course.shortTitle} / ${lesson?.title ?? 'Lekcja'}`
       : route.startsWith('case/')
       ? 'Przypadki kliniczne'
-      : route === 'simulator'
+      : route.startsWith('simulator')
       ? `${course.shortTitle} · Symulatory`
       : route === 'glossary'
       ? 'Słowniczek pojęć'
@@ -344,8 +356,8 @@ export default function CourseApp() {
           {route === 'course' && (
             activeCourse === 'endocrinology' ? <CourseMap state={state} go={go} /> : <PsychiatryCourseMap state={state} go={go} />
           )}
-          {route === 'simulator' && (
-            activeCourse === 'endocrinology' ? <EndocrinologySimulators /> : <PsychiatryCommandCenter />
+          {route.startsWith('simulator') && (
+            activeCourse === 'endocrinology' ? <EndocrinologySimulators /> : <PsychiatryCommandCenter initialPresetId={simulatorPresetId} />
           )}
 
           {route === 'glossary' && <GlossaryView go={go} />}

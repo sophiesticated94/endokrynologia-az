@@ -8,6 +8,11 @@
  * - D2 Explorer jawnie rozdziela antagonistów od częściowych agonistów
  */
 
+import {
+  evaluateExtripLithiumGuidance,
+  type ExtripEvaluationResult,
+} from './psychiatry/extrip-guidelines.ts';
+
 // ============================================================================
 // 1. TDM LITU: INTERPRETER ZMIERZONEGO STĘŻENIA (TRYB A)
 // ============================================================================
@@ -34,6 +39,7 @@ export interface LithiumTdmInterpretation {
   clinicalObservations: string[];
   monitoringRecommendations: string[];
   safetyAlert?: string;
+  extripGuidance?: ExtripEvaluationResult;
   evidenceId: string;
 }
 
@@ -115,8 +121,18 @@ export function interpretMeasuredLithiumTdm(input: MeasuredLithiumSampleInput): 
 
   // Objawy toksyczności
   const severeSymptoms = symptoms.filter(s => ['ataxia', 'coarse_tremor', 'slurred_speech', 'confusion'].includes(s));
+  
+  const extrip = evaluateExtripLithiumGuidance({
+    lithiumConcentrationMmolL: measuredConcentrationMmolL,
+    eGfr,
+    decreasedConsciousness: false,
+    seizures: false,
+    dangerousDysrhythmias: false,
+    confusionOrDelirium: symptoms.includes('confusion'),
+  });
+
   if (severeSymptoms.length > 0 || therapeuticZone === 'toxic' || therapeuticZone === 'life_threatening') {
-    safetyAlert = 'ALARM BEZPIECZEŃSTWA: Podejrzenie zatrucia litem. Wstrzymaj podawanie leku, zabezpiecz intensywne nawadnianie 0,9% NaCl i rozważ pilną kwalifikację do hemodializy (przy stężeniu >4,0 mmol/l lub >2,5 mmol/l z ciężkimi objawami).';
+    safetyAlert = `ALARM BEZPIECZEŃSTWA: Podejrzenie intoksykacji litem (${measuredConcentrationMmolL.toFixed(2)} mmol/l). Kontekst EXTRIP: ${extrip.recommendationLabel}. Wstrzymaj podawanie leku, zabezpiecz nawadnianie 0,9% NaCl i pilną konsultację nefrologiczną/toksykologiczną.`;
     recommendations.push('Natychmiastowe wstrzymanie dawek litu do czasu ustąpienia objawów i normalizacji stężenia.');
     recommendations.push('Pilne powtórzenie stężenia litu, elektrolitów, kreatyniny i gazometrii.');
   } else {
@@ -134,7 +150,8 @@ export function interpretMeasuredLithiumTdm(input: MeasuredLithiumSampleInput): 
     clinicalObservations: observations,
     monitoringRecommendations: recommendations,
     safetyAlert,
-    evidenceId: 'lithium-tdm-window',
+    extripGuidance: extrip,
+    evidenceId: 'lithium-maintenance-tdm-range',
   };
 }
 
@@ -149,7 +166,8 @@ export interface LithiumPkSensitivityInput {
 }
 
 export interface LithiumPkSensitivityOutput {
-  exposureTrend: 'baseline' | 'slight_increase' | 'moderate_increase' | 'marked_increase';
+  exposureTrend: 'minimal' | 'moderate' | 'strong';
+  exposurePressure: 'minimal' | 'moderate' | 'strong';
   trendDescription: string;
   mechanisms: string[];
   disclaimer: string;
@@ -160,55 +178,48 @@ export function evaluateLithiumPkSensitivity(input: LithiumPkSensitivityInput): 
   const { eGfr, volumeStatus, interactingDrugs } = input;
   const mechanisms: string[] = [];
 
-  let riskScore = 0;
+  const severeRisk = eGfr < 30 || volumeStatus === 'severe_dehydration' || (interactingDrugs.includes('thiazide') && (eGfr < 60 || volumeStatus !== 'euvolemia'));
+  const moderateRisk = !severeRisk && (eGfr < 60 || volumeStatus === 'mild_dehydration' || interactingDrugs.length > 0);
+
   if (eGfr < 30) {
-    riskScore += 3;
-    mechanisms.push('Ciężka dysfunkcja nerek (eGFR <30): znaczne załamanie klirensu litu.');
+    mechanisms.push('Ciężka dysfunkcja nerek (eGFR <30): znaczne załamanie filtracji kłębuszkowej litu.');
   } else if (eGfr < 60) {
-    riskScore += 2;
-    mechanisms.push('Umiarkowana niewydolność nerek (eGFR 30–59): wydłużenie okresu półtrwania litu.');
+    mechanisms.push('Umiarkowane obniżenie filtracji (eGFR 30–59): wydłużenie biologicznego okresu półtrwania litu.');
   }
 
   if (volumeStatus === 'severe_dehydration') {
-    riskScore += 3;
-    mechanisms.push('Ciężkie odwodnienie: maksymalna aktywacja wchłaniania zwrotnego w kanalikach nerkowych.');
+    mechanisms.push('Ciężkie odwodnienie: silna aktywacja wchłaniania zwrotnego sodu i litu w ramieniu wstępującym i cewce bliższej.');
   } else if (volumeStatus === 'mild_dehydration') {
-    riskScore += 1;
-    mechanisms.push('Niewielki deficyt płynowy: tendencja do podwyższenia stężenia.');
+    mechanisms.push('Niewielki deficyt płynowy: tendencja do podwyższenia reabsorpcji litu w cewce proksymalnej.');
   }
 
   if (interactingDrugs.includes('thiazide')) {
-    riskScore += 3;
-    mechanisms.push('Tiazyd: bezpośrednie zaburzenie wydalania litu w nerkach.');
+    mechanisms.push('Tiazyd: natriureza w cewce dalszej indukuje kompensacyjny wychwyt kationów Na+/Li+ w cewce bliższej.');
   }
   if (interactingDrugs.includes('nsaid')) {
-    riskScore += 1;
-    mechanisms.push('NLPZ: spadek filtracji kłębuszkowej poprzez spadek prostaglandyn nerkowych.');
+    mechanisms.push('NLPZ: spadek syntezy prostaglandyn nerkowych (PGE2) i skurcz tętniczki doprowadzającej kłębuszka.');
   }
   if (interactingDrugs.includes('acei_arb')) {
-    riskScore += 1;
-    mechanisms.push('ACEI/ARB: możliwy spadek ciśnienia filtracji kłębuszkowej.');
+    mechanisms.push('ACEI/ARB: rozszerzenie tętniczki odprowadzającej i potencjalny spadek ciśnienia filtracji.');
   }
 
-  let exposureTrend: LithiumPkSensitivityOutput['exposureTrend'] = 'baseline';
-  let trendDescription = 'Typowa ekspozycja przy prawidłowym klirensie i nawodnieniu.';
+  let exposurePressure: 'minimal' | 'moderate' | 'strong' = 'minimal';
+  let trendDescription = 'Niski nacisk na kumulację litu. Prawidłowa filtracja kłębuszkowa i stan ewolemii sprzyjają stabilnemu klirensowi.';
 
-  if (riskScore >= 5) {
-    exposureTrend = 'marked_increase';
-    trendDescription = 'Bardzo silny kierunek ku kumulacji litu i intoksykacji! Zdecydowanie zalecana redukcja dawki i ścisły TDM.';
-  } else if (riskScore >= 3) {
-    exposureTrend = 'moderate_increase';
-    trendDescription = 'Istotna tendencja do wzrostu ekspozycji (możliwy skok stężenia o 30–60%).';
-  } else if (riskScore >= 1) {
-    exposureTrend = 'slight_increase';
-    trendDescription = 'Niewielka tendencja do wzrostu stężenia; wymaga ostrożności.';
+  if (severeRisk) {
+    exposurePressure = 'strong';
+    trendDescription = 'Silny nacisk na wzrost ekspozycji i kumulację litu. Wskazany ścisły nadzór kliniczny oraz laboratoryjna weryfikacja stężenia (TDM).';
+  } else if (moderateRisk) {
+    exposurePressure = 'moderate';
+    trendDescription = 'Umiarkowany nacisk na wzrost ekspozycji w wyniku nakładających się czynników hemodynamicznych lub interakcji cewkowych. Wskazana czujność i kontrola stężenia w TDM.';
   }
 
   return {
-    exposureTrend,
+    exposureTrend: exposurePressure,
+    exposurePressure,
     trendDescription,
     mechanisms,
-    disclaimer: 'MODEL EDUKACYJNY — NIE JEST KALKULATOREM STĘŻENIA U KONKRETNEGO PACJENTA.',
+    disclaimer: 'MODEL EDUKACYJNY — brak predykcji stężenia i brak automatycznych dyspozycji dawkowania. Decyzje opierają się na standaryzowanym pomiarze TDM.',
     evidenceId: 'lithium-pk-sensitivity',
   };
 }
@@ -224,6 +235,8 @@ export interface D2DrugEvidenceProfile {
   intrinsicActivityPercent: number; // 0% dla czystych antagonistów, ~30-60% dla częściowych
   ed50Mg: number;
   studyDoseRange: string;
+  studyMinDoseMg: number;
+  studyMaxDoseMg: number;
   petStudy: string;
   receptorFingerprint: {
     d2Ki: number;
@@ -244,6 +257,8 @@ export const D2_DRUGS_EVIDENCE: Record<string, D2DrugEvidenceProfile> = {
     intrinsicActivityPercent: 0,
     ed50Mg: 1.6,
     studyDoseRange: '1 – 10 mg/d',
+    studyMinDoseMg: 1,
+    studyMaxDoseMg: 10,
     petStudy: 'Kapur et al. 2000 (Am J Psychiatry)',
     receptorFingerprint: { d2Ki: 1.2, d3Ki: 2.1, ht2aKi: 54, ht1aKi: 1900, h1Ki: 440, m1Ki: 10000, alpha1Ki: 6.0 },
   },
@@ -254,6 +269,8 @@ export const D2_DRUGS_EVIDENCE: Record<string, D2DrugEvidenceProfile> = {
     intrinsicActivityPercent: 0,
     ed50Mg: 1.4,
     studyDoseRange: '1 – 6 mg/d',
+    studyMinDoseMg: 1,
+    studyMaxDoseMg: 6,
     petStudy: 'Nyberg et al. 1999 / Kapur 2000',
     receptorFingerprint: { d2Ki: 3.8, d3Ki: 5.2, ht2aKi: 0.17, ht1aKi: 420, h1Ki: 20, m1Ki: 10000, alpha1Ki: 2.7 },
   },
@@ -264,6 +281,8 @@ export const D2_DRUGS_EVIDENCE: Record<string, D2DrugEvidenceProfile> = {
     intrinsicActivityPercent: 0,
     ed50Mg: 7.2,
     studyDoseRange: '5 – 20 mg/d',
+    studyMinDoseMg: 5,
+    studyMaxDoseMg: 20,
     petStudy: 'Kapur et al. 1999 (Arch Gen Psychiatry)',
     receptorFingerprint: { d2Ki: 11, d3Ki: 27, ht2aKi: 4.0, ht1aKi: 2300, h1Ki: 0.08, m1Ki: 26, alpha1Ki: 19 },
   },
@@ -274,6 +293,8 @@ export const D2_DRUGS_EVIDENCE: Record<string, D2DrugEvidenceProfile> = {
     intrinsicActivityPercent: 30,
     ed50Mg: 3.5,
     studyDoseRange: '5 – 30 mg/d',
+    studyMinDoseMg: 5,
+    studyMaxDoseMg: 30,
     petStudy: 'Yokoi et al. 2002 / Grunder et al. 2008',
     receptorFingerprint: { d2Ki: 0.7, d3Ki: 0.8, ht2aKi: 3.4, ht1aKi: 5.6, h1Ki: 61, m1Ki: 10000, alpha1Ki: 26 },
   },
@@ -284,6 +305,8 @@ export const D2_DRUGS_EVIDENCE: Record<string, D2DrugEvidenceProfile> = {
     intrinsicActivityPercent: 0,
     ed50Mg: 180,
     studyDoseRange: '150 – 800 mg/d',
+    studyMinDoseMg: 150,
+    studyMaxDoseMg: 800,
     petStudy: 'Gefvert et al. 2001 / Kapur 2000',
     receptorFingerprint: { d2Ki: 160, d3Ki: 340, ht2aKi: 100, ht1aKi: 390, h1Ki: 11, m1Ki: 120, alpha1Ki: 22 },
   },
@@ -293,12 +316,17 @@ export interface D2OccupancyModel {
   drugId: string;
   drugName: string;
   doseMg: number;
+  estimateLabel: string;
   d2OccupancyPercent: number;
   pharmacologicClass: 'antagonist' | 'partial_agonist';
   intrinsicActivityPercent: number;
   heuristicZone: 'below_heuristic' | 'within_kapur_heuristic' | 'above_heuristic';
   clinicalInterpretation: string;
   prolactinTendency: 'low' | 'moderate' | 'high';
+  studyDoseRange: string;
+  outOfStudyRange: boolean;
+  outOfRangeWarning?: string;
+  uncertaintyNote: string;
   limitationNote: string;
   evidenceSource: string;
 }
@@ -309,16 +337,21 @@ export function calculateD2Occupancy(drugId: string, doseMg: number): D2Occupanc
   const occupancy = safeDose > 0 ? (safeDose / (drug.ed50Mg + safeDose)) * 100 : 0;
   const roundedOcc = Math.min(96, Math.round(occupancy));
 
+  const outOfStudyRange = safeDose < drug.studyMinDoseMg || safeDose > drug.studyMaxDoseMg;
+  const outOfRangeWarning = outOfStudyRange
+    ? `Uwaga: Dawka ${safeDose} mg/d wykracza poza zakres badany w cytowanym protokole PET (${drug.studyDoseRange}). Oszacowanie stanowi ekstrapolację modelu populacyjnego obarczoną większą niepewnością.`
+    : undefined;
+
   let heuristicZone: D2OccupancyModel['heuristicZone'] = 'within_kapur_heuristic';
   let clinicalInterpretation = '';
 
   if (drug.pharmacologicClass === 'partial_agonist') {
     heuristicZone = roundedOcc >= 75 ? 'within_kapur_heuristic' : 'below_heuristic';
-    clinicalInterpretation = `Aripiprazol (częściowy agonista): occupancy ~${roundedOcc}%. Dzięki aktywności wewnętrznej (~30%) nie znosi całkowicie transmisji dopaminergicznej, co chroni przed EPS i hiperprolaktynemią nawet przy occupancy >80%.`;
+    clinicalInterpretation = `Aripiprazol (częściowy agonista D2): szacowane occupancy ~${roundedOcc}%. Relacja occupancy \u2192 EPS różni się od antagonistów; wysokie occupancy nie oznacza takiego samego ryzyka jak w klasycznym modelu Kapura. Akatyzja pozostaje jednak istotnym wyjątkiem klinicznym, który może wystąpić pomimo aktywności wewnętrznej (~30%).`;
   } else {
     if (roundedOcc < 65) {
       heuristicZone = 'below_heuristic';
-      clinicalInterpretation = `Occupancy D2 ~${roundedOcc}% (<65%): Poniżej historycznej heurystyki z badań PET dla pełnej kontroli objawów wytwórczych u większości chorych.`;
+      clinicalInterpretation = `Occupancy D2 ~${roundedOcc}% (<65%): Poniżej historycznej heurystyki z badań PET dla pełnej kontroli objawów wytwórczych u większości chorych dla czystych antagonistów.`;
     } else if (roundedOcc <= 80) {
       heuristicZone = 'within_kapur_heuristic';
       clinicalInterpretation = `Occupancy D2 ~${roundedOcc}% (65–80%): Historyczny przedział optymalnej odpowiedzi dla antagonistów FGA/SGA bez gwałtownego wzrostu objawów pozapiramidowych.`;
@@ -334,12 +367,17 @@ export function calculateD2Occupancy(drugId: string, doseMg: number): D2Occupanc
     drugId: drug.id,
     drugName: drug.name,
     doseMg: safeDose,
+    estimateLabel: 'Population PET fit estimate',
     d2OccupancyPercent: roundedOcc,
     pharmacologicClass: drug.pharmacologicClass,
     intrinsicActivityPercent: drug.intrinsicActivityPercent,
     heuristicZone,
     clinicalInterpretation,
     prolactinTendency,
+    studyDoseRange: drug.studyDoseRange,
+    outOfStudyRange,
+    outOfRangeWarning,
+    uncertaintyNote: 'Szacunek populacyjny z dopasowania krzywej PET; niepewność międzyosobnicza rzędu ±10–15% occupancy przy tym samym stężeniu.',
     limitationNote: 'Model oparty na dopasowaniu danych populacyjnych PET; rzeczywiste stężenie i occupancy zależą od polimorfizmu CYP, wchłaniania i interakcji.',
     evidenceSource: drug.petStudy,
   };

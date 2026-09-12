@@ -24,7 +24,7 @@ import {
   InlineEnhancementRenderer,
   EvidenceInspectorModal,
 } from '../components/psychiatry-lesson-enhancements';
-import type { Confidence, LearningActivity, PracticeRecordMeta } from '@/lib/course-types';
+import type { Confidence, LearningActivity, PracticeRecordMeta, InlineEnhancementRef } from '@/lib/course-types';
 import { isLessonCoreComplete } from '@/lib/lesson-v2';
 import type { LearningState } from '@/lib/learning';
 import { SourceList } from '../course-ui';
@@ -156,29 +156,58 @@ export function LessonView({
           />
         )}
 
-        {(experience?.blocks ?? lesson.sections.map((section,index)=>({id:`legacy-block-${index}`,title:section.title,text:section.text,sourceIds:lesson.sourceIds}))).map((section, i) => (
-          <section key={section.title} id={`section-${i}`} className="lesson-section">
-            <span className="eyebrow">0{i + 1}</span>
-            <h2>{section.title}</h2>
-            <p>
-              <FormattedMathText text={section.text} />
-            </p>
+        {(experience?.blocks ?? lesson.sections.map((section,index)=>({id:`legacy-block-${index}`,title:section.title,text:section.text,sourceIds:lesson.sourceIds}))).map((section, i) => {
+          const enhancements = section.inlineEnhancements ?? [];
+          const renderEnhancement = (enhancement: InlineEnhancementRef) => (
+            <InlineEnhancementRenderer
+              key={enhancement.id}
+              enhancement={enhancement}
+              lessonId={lesson.id}
+              go={go}
+              onOpenEvidence={() => setEvidenceModalOpen(true)}
+            />
+          );
 
-            <LessonDiagram lessonId={lesson.id} sectionIndex={i} />
+          const afterIntro = enhancements.filter(e => e.placement === 'after-intro');
+          const afterText = enhancements.filter(e => e.placement === 'after-text');
+          const beforeCheckpoint = enhancements.filter(e => e.placement === 'before-checkpoint');
+          const afterCheckpoint = enhancements.filter(e => e.placement === 'after-checkpoint');
+          const endOfBlock = enhancements.filter(e => e.placement === 'end-of-block' || !e.placement);
 
-            {section.inlineEnhancements?.map(enhancement => (
-              <InlineEnhancementRenderer
-                key={enhancement.id}
-                enhancement={enhancement}
-                lessonId={lesson.id}
-                go={go}
-                onOpenEvidence={() => setEvidenceModalOpen(true)}
-              />
-            ))}
+          return (
+            <section key={section.title} id={`section-${i}`} className="lesson-section">
+              <span className="eyebrow">0{i + 1}</span>
+              <h2>{section.title}</h2>
 
-            {experience && section.checkpointId && (()=>{const activity=experience.activities.find(item=>item.id===section.checkpointId);return activity?<PracticeActivityCard activity={activity} onRecord={recordPractice} onComplete={(id)=>setFinishedActivities(current=>new Set(current).add(id))}/>:null})()}
-          </section>
-        ))}
+              {afterIntro.map(renderEnhancement)}
+
+              <p>
+                <FormattedMathText text={section.text} />
+              </p>
+
+              {afterText.map(renderEnhancement)}
+
+              <LessonDiagram lessonId={lesson.id} sectionIndex={i} />
+
+              {beforeCheckpoint.map(renderEnhancement)}
+
+              {experience && section.checkpointId && (() => {
+                const activity = experience.activities.find(item => item.id === section.checkpointId);
+                return activity ? (
+                  <PracticeActivityCard
+                    activity={activity}
+                    onRecord={recordPractice}
+                    onComplete={id => setFinishedActivities(current => new Set(current).add(id))}
+                  />
+                ) : null;
+              })()}
+
+              {afterCheckpoint.map(renderEnhancement)}
+
+              {endOfBlock.map(renderEnhancement)}
+            </section>
+          );
+        })}
 
         {/* Tabela podsumowująca */}
         <div className="table-wrap">

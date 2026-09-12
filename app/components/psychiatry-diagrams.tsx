@@ -88,28 +88,31 @@ export function PsychosisDifferentialDiagram() {
     <div className="diagram-card p-4 bg-slate-50 border border-slate-200 rounded-xl my-4 text-slate-800">
       <div className="flex items-center justify-between mb-3 border-b border-slate-200 pb-2">
         <h4 className="font-semibold text-sm tracking-wide text-purple-900 uppercase">
-          Algorytm Różnicowania Zespołów Psychotycznych
+          Algorytm Różnicowania Zespołów Psychotycznych: DSM-5-TR vs ICD-11
         </h4>
         <span className="text-xs bg-purple-100 text-purple-800 px-2 py-0.5 rounded font-medium">
-          Oś czasu i relacja do afektu
+          Relacja psychozy do afektu i osie czasu
         </span>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
         <div className="p-2.5 bg-white border border-purple-200 rounded-lg">
           <div className="font-bold text-purple-900 mb-1">Schizofrenia (ICD-11 / DSM-5-TR)</div>
-          <p className="text-slate-600">Objawy osiowe $\ge 1$ miesiąca; brak dominującego epizodu afektywnego. Objawy ujemne i spadek funkcjonowania.</p>
+          <p className="text-slate-600">Objawy osiowe $\ge 1$ miesiąca; objawy nastroju nieobecne lub stanowią jedynie niewielką część całkowitego czasu trwania choroby.</p>
         </div>
         <div className="p-2.5 bg-white border border-purple-200 rounded-lg">
-          <div className="font-bold text-purple-900 mb-1">Zaburzenie schizoafektywne</div>
-          <p className="text-slate-600">Jednoczesność psychozy i epizodu afektywnego + co najmniej 2 tygodnie urojeń/omamów pod nieobecność zaburzeń nastroju.</p>
+          <div className="font-bold text-purple-900 mb-1">Zaburzenie schizoafektywne (Porównanie kryteriów)</div>
+          <div className="text-slate-700 space-y-1">
+            <div><strong className="text-purple-800">DSM-5-TR:</strong> Epizod nastroju współistnieje z kryterium A schizofrenii + wymagane $\ge 2$ tygodnie urojeń/omamów bez wyraźnych objawów nastroju w trakcie trwania choroby.</div>
+            <div><strong className="text-purple-800">ICD-11 CDDR (6A21):</strong> Równoczesne spełnienie kryteriów schizofrenii i epizodu nastroju przez $\ge 1$ miesiąc; brak sztywnego wymogu $\ge 2$ tygodni izolowanej psychozy.</div>
+          </div>
         </div>
         <div className="p-2.5 bg-white border border-purple-200 rounded-lg">
-          <div className="font-bold text-purple-900 mb-1">Depresja / Mania z psychozą</div>
-          <p className="text-slate-600">Objawy psychotyczne występują wyłącznie w trakcie trwania epizodu nastroju; często syntoniczne z nastrojem.</p>
+          <div className="font-bold text-purple-900 mb-1">Depresja / Mania z objawami psychotycznymi</div>
+          <p className="text-slate-600">Urojenia i omamy występują wyłącznie w trakcie trwania epizodu afektywnego. Brak jakiejkolwiek psychozy w okresach eutymii.</p>
         </div>
         <div className="p-2.5 bg-white border border-purple-200 rounded-lg">
-          <div className="font-bold text-purple-900 mb-1">Psychozy organiczne i substancje</div>
-          <p className="text-slate-600">Początek po substancjach lub organiczny (badania toksykologiczne, EEG, MRI, przeciwciała anty-NMDA).</p>
+          <div className="font-bold text-purple-900 mb-1">Psychozy na podłożu somatycznym i substancji</div>
+          <p className="text-slate-600">Początek skorelowany z intoksykacją/odstawieniem (toksykologia moczu) lub schorzeniem OUN (zapalenie anty-NMDAR, toczeń, guz, padaczka).</p>
         </div>
       </div>
     </div>
@@ -124,21 +127,21 @@ export function MonoamineSynapseDiagram() {
           Synapsa Monoaminergiczna (SERT / NET / DAT)
         </h4>
         <span className="text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-medium">
-          Mechanizm wychwytu i autoregulacji
+          Wychwyt zwrotny i obserwacje PET
         </span>
       </div>
       <div className="grid grid-cols-3 gap-2 text-xs text-center">
         <div className="p-2 bg-emerald-50 border border-emerald-200 rounded">
           <div className="font-bold text-emerald-800">SERT</div>
-          <p className="text-slate-600 mt-1">Transporter 5-HT. Blokowany przez SSRI/SNRI. Badania PET: próg 80% occupancy.</p>
+          <p className="text-slate-600 mt-1">Transporter 5-HT. W klasycznych badaniach PET (Meyer et al. 2004) obserwowano ~80% occupancy przy minimalnych dawkach SSRI (obserwacja populacyjna PET, nie uniwersalny próg skuteczności).</p>
         </div>
         <div className="p-2 bg-emerald-50 border border-emerald-200 rounded">
           <div className="font-bold text-emerald-800">NET</div>
-          <p className="text-slate-600 mt-1">Transporter NA. Blokowany przez SNRI, reboksetynę, TLPD. W korze PFC usuwa też dopaminę.</p>
+          <p className="text-slate-600 mt-1">Transporter NA. Blokowany przez SNRI, reboksetynę, TLPD. W korze przedczołowej (PFC) wychwytuje również dopaminę.</p>
         </div>
         <div className="p-2 bg-emerald-50 border border-emerald-200 rounded">
           <div className="font-bold text-emerald-800">DAT</div>
-          <p className="text-slate-600 mt-1">Transporter DA w prążkowiu. Blokowany przez metylofenidat i bupropion (ok. 20-30% occupancy).</p>
+          <p className="text-slate-600 mt-1">Transporter DA w prążkowiu. Blokowany przez metylofenidat i bupropion (obserwowane ~20-30% occupancy w dawkach klinicznych).</p>
         </div>
       </div>
     </div>
@@ -150,27 +153,63 @@ export function BdnfTrkbPathwayDiagram() {
     <div className="diagram-card p-4 bg-slate-50 border border-slate-200 rounded-xl my-4 text-slate-800">
       <div className="flex items-center justify-between mb-3 border-b border-slate-200 pb-2">
         <h4 className="font-semibold text-sm tracking-wide text-amber-900 uppercase">
-          Szlak Neuroplastyczności BDNF / TrkB i Kaskada mTOR
+          Neuroplastyczność i BDNF/TrkB: Porównanie Modeli
         </h4>
         <span className="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-medium">
-          Mechanizm szybkiej synaptogenezy
+          Hipotezy neuroplastyczności
         </span>
       </div>
-      <div className="flex flex-col md:flex-row items-stretch gap-2 text-xs">
-        <div className="flex-1 p-2 bg-amber-50 border border-amber-200 rounded">
-          <div className="font-bold text-amber-900 mb-1">1. Wyzwalacz (Ketamina / SSRI)</div>
-          <p className="text-slate-600">Blokada NMDA na interneuronach GABA $\to$ wyrzut glutaminianu na receptory AMPA.</p>
+      
+      <div className="space-y-3 text-xs">
+        {/* Ścieżka ketaminy */}
+        <div className="p-3 bg-amber-50 border border-amber-300 rounded-lg">
+          <div className="flex items-center justify-between mb-1">
+            <span className="font-bold text-amber-950">ŚCIEŻKA KETAMINY (Model Szybki)</span>
+            <span className="text-[10px] font-semibold bg-amber-200 text-amber-900 px-2 py-0.5 rounded">
+              SUPPORTED MODEL · EXPERIMENTAL
+            </span>
+          </div>
+          <div className="flex items-center gap-2 text-slate-700 mt-2">
+            <div className="flex-1 bg-white p-2 rounded border border-amber-200">
+              <strong>1. Blokada NMDAR:</strong> Blokada na interneuronach GABA $\to$ odhamowanie i wyrzut glutaminianu.
+            </div>
+            <span className="font-bold text-amber-700">&rarr;</span>
+            <div className="flex-1 bg-white p-2 rounded border border-amber-200">
+              <strong>2. Aktywacja AMPAR:</strong> Napływ Ca2+ i wyrzut BDNF $\to$ aktywacja TrkB oraz kinazy mTORC1.
+            </div>
+            <span className="font-bold text-amber-700">&rarr;</span>
+            <div className="flex-1 bg-white p-2 rounded border border-amber-200">
+              <strong>3. Synaptogeneza:</strong> Nowe kolce dendrytyczne w hipokampie i PFC w ciągu 4–24 godzin.
+            </div>
+          </div>
         </div>
-        <div className="flex items-center justify-center font-bold text-amber-600">&rarr;</div>
-        <div className="flex-1 p-2 bg-amber-50 border border-amber-200 rounded">
-          <div className="font-bold text-amber-900 mb-1">2. Wydzielanie BDNF i TrkB</div>
-          <p className="text-slate-600">Aktywacja receptora kinazy tyrozynowej B (TrkB) oraz szlaku kinazy Akt i mTORC1.</p>
+
+        {/* Ścieżka SSRI */}
+        <div className="p-3 bg-sky-50 border border-sky-300 rounded-lg">
+          <div className="flex items-center justify-between mb-1">
+            <span className="font-bold text-sky-950">ŚCIEŻKA PRZEWLEKŁA SSRI (Model Adaptacyjny)</span>
+            <span className="text-[10px] font-semibold bg-sky-200 text-sky-900 px-2 py-0.5 rounded">
+              CLINICAL EVIDENCE · ADAPTIVE MODEL
+            </span>
+          </div>
+          <div className="flex items-center gap-2 text-slate-700 mt-2">
+            <div className="flex-1 bg-white p-2 rounded border border-sky-200">
+              <strong>1. Blokada SERT:</strong> Wzrost stężenia 5-HT w szczelinie i desensytyzacja autoreceptorów 5-HT1A (1–2 tyg.).
+            </div>
+            <span className="font-bold text-sky-700">&rarr;</span>
+            <div className="flex-1 bg-white p-2 rounded border border-sky-200">
+              <strong>2. Kaskada cAMP/CREB:</strong> Wzrost transkrypcji genu BDNF i wolniejsza aktywacja receptorów TrkB.
+            </div>
+            <span className="font-bold text-sky-700">&rarr;</span>
+            <div className="flex-1 bg-white p-2 rounded border border-sky-200">
+              <strong>3. Neurogeneza:</strong> Stopniowy wzrost przeżywalności neuronów w zakręcie zębatym (2–6 tyg.).
+            </div>
+          </div>
         </div>
-        <div className="flex items-center justify-center font-bold text-amber-600">&rarr;</div>
-        <div className="flex-1 p-2 bg-amber-50 border border-amber-200 rounded">
-          <div className="font-bold text-amber-900 mb-1">3. Synaptogeneza</div>
-          <p className="text-slate-600">Wzrost gęstości kolców dendrytycznych w hipokampie i korze przedczołowej (PFC).</p>
-        </div>
+
+        <p className="text-[11px] text-slate-600 italic">
+          Uwaga kliniczna: Żaden z powyższych modeli nie jest kompletną, wyłączną przyczyną remisji depresji u człowieka. Są to ugruntowane modele neurobiologiczne wspierające rozumienie latencji i dynamiki leczenia.
+        </p>
       </div>
     </div>
   );
@@ -338,3 +377,25 @@ export function CypNetworkDiagram() {
     </div>
   );
 }
+
+export const PSYCHIATRY_DIAGRAM_COMPONENTS: Record<string, React.ComponentType> = {
+  'mse-map': MseMapDiagram,
+  'mood-timeline': MoodTimelineDiagram,
+  'psychosis-differential': PsychosisDifferentialDiagram,
+  'monoamine-synapse': MonoamineSynapseDiagram,
+  'bdnf-trkb-pathway': BdnfTrkbPathwayDiagram,
+  'cstc-loop': CstcLoopDiagram,
+  'fear-circuit': FearCircuitDiagram,
+  'd2-pathways': D2PathwaysDiagram,
+  'serotonin-vs-nms': SerotoninVsNmsDiagram,
+  'cyp-network': CypNetworkDiagram,
+};
+
+export function getPsychiatryDiagramComponent(diagramId: string): React.ComponentType | undefined {
+  const normalized = diagramId.replace(/^diagram-/, '');
+  if (PSYCHIATRY_DIAGRAM_COMPONENTS[normalized]) return PSYCHIATRY_DIAGRAM_COMPONENTS[normalized];
+  if (normalized === 'bdnf-trkb') return BdnfTrkbPathwayDiagram;
+  if (normalized === 'serotonin-nms-hunter') return SerotoninVsNmsDiagram;
+  return undefined;
+}
+

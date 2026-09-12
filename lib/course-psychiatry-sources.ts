@@ -50,6 +50,13 @@ export const psychiatrySources: Record<string, Source> = {
     url: 'https://doi.org/10.1055/a-2860-7861',
     kind: 'Konsensus międzynarodowy: TDM i farmakokinetyka ilościowa (AGNP)',
   },
+  'extrip-lithium': {
+    id: 'extrip-lithium',
+    title: 'Decker BS et al. — Extracorporeal Treatment for Lithium Poisoning: Systematic Review and Recommendations from the EXTRIP Workgroup (CJASN)',
+    year: '2015',
+    url: 'https://doi.org/10.2215/CJN.10021014',
+    kind: 'Wytyczne międzynarodowej grupy roboczej EXTRIP',
+  },
   'hunter-criteria': {
     id: 'hunter-criteria',
     title: 'Dunkley EJC et al. — The Hunter Serotonin Toxicity Criteria (QJM)',

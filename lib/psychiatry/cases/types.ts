@@ -23,6 +23,16 @@ export interface CounterfactualBranch {
   invalidatedManagementSteps: string[];
 }
 
+export type ThreadEvent =
+  | { type: 'smoking_cessation'; reason?: string }
+  | { type: 'smoking_resumption'; cigarettesPerDay?: number }
+  | { type: 'hypomania_discovered'; details: string }
+  | { type: 'medication_started'; medication: string; indication?: string }
+  | { type: 'medication_stopped'; medication: string; reason?: string }
+  | { type: 'diagnosis_updated'; newDiagnosis: string; replacedDiagnosis?: string }
+  | { type: 'adverse_reaction'; reaction: string; drugCausing: string }
+  | { type: 'egfr_changed'; newEgfr: number };
+
 export interface PatientThreadState {
   threadId: string;
   patientName: string;

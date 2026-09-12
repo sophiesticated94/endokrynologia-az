@@ -64,18 +64,8 @@ import {
   CasrHillCurveChart,
   BoneKineticsEkgChart,
 } from '../components/math-charts-parathyroid';
-import {
-  MseMapDiagram,
-  MoodTimelineDiagram,
-  PsychosisDifferentialDiagram,
-  MonoamineSynapseDiagram,
-  BdnfTrkbPathwayDiagram,
-  CstcLoopDiagram,
-  FearCircuitDiagram,
-  D2PathwaysDiagram,
-  SerotoninVsNmsDiagram,
-  CypNetworkDiagram,
-} from '../components/psychiatry-diagrams';
+import { getPsychiatryDiagramComponent } from '../components/psychiatry-diagrams';
+import { PSYCHIATRY_LESSON_ENHANCEMENTS } from '@/lib/psychiatry';
 
 export function LessonDiagram({ lessonId, sectionIndex }: { lessonId: string; sectionIndex: number }) {
   // Tarczyca
@@ -139,50 +129,21 @@ export function LessonDiagram({ lessonId, sectionIndex }: { lessonId: string; se
   if (lessonId === 'przytarczyce-chemia-casr-kalcymimetyki' && sectionIndex === 0) return <CasrSigmoidalCurve />;
   if (lessonId === 'przytarczyce-chemia-witd-bisfosfoniany' && sectionIndex === 0) return <BoneMineralizationKinetics />;
 
-  // Psychiatria
-  if (lessonId === 'wywiad-psychiatryczny-mse' && sectionIndex === 0) return <MseMapDiagram />;
-  if (lessonId === 'mania-hipomania-spektrum' && sectionIndex === 0) return <MoodTimelineDiagram />;
-  if (
-    (lessonId === 'psychoza-i-szlaki-dopaminy' ||
-      lessonId === 'psychopatologia-objawow' ||
-      lessonId === 'diagnostyka-roznicowa-algorytmy') &&
-    sectionIndex === 1
-  )
-    return <PsychosisDifferentialDiagram />;
-  if (
-    (lessonId === 'transportery-monoamin-sert-net-dat' ||
-      lessonId === 'klasyczne-antydepresanty-ssri-snri-tlpd-maoi' ||
-      lessonId === 'uklad-serotoninergiczny-receptory') &&
-    sectionIndex === 0
-  )
-    return <MonoamineSynapseDiagram />;
-  if (
-    (lessonId === 'depresja-fenotypy-i-kryteria' ||
-      lessonId === 'glutaminian-gaba-neuroplastycznosc' ||
-      lessonId === 'interwencje-biologiczne-ect-rtms-ketamina') &&
-    sectionIndex === 1
-  )
-    return <BdnfTrkbPathwayDiagram />;
-  if (lessonId === 'ocd-i-petla-cstc' && sectionIndex === 0) return <CstcLoopDiagram />;
-  if (
-    (lessonId === 'zaburzenia-lekowe-gad-napadowy' || lessonId === 'ptsd-trauma-stres') &&
-    sectionIndex === 0
-  )
-    return <FearCircuitDiagram />;
-  if (
-    (lessonId === 'receptory-dopaminowe-okno-kapura' ||
-      lessonId === 'leki-przeciwpsychotyczne-generacje' ||
-      lessonId === 'zaburzenia-ruchowe-polekowe-eps-dysdyskinezy') &&
-    sectionIndex === 0
-  )
-    return <D2PathwaysDiagram />;
-  if (
-    (lessonId === 'ostre-stany-toksyczne-zespol-serotoninowy' ||
-      lessonId === 'zlosliwy-zespol-neuroleptyczny-nms') &&
-    sectionIndex === 0
-  )
-    return <SerotoninVsNmsDiagram />;
-  if (lessonId === 'farmakogenetyka-cyp-pgx' && sectionIndex === 0) return <CypNetworkDiagram />;
+  // Psychiatria — pojedyncze źródło prawdy z centralnego registry
+  const psychEnhancement = PSYCHIATRY_LESSON_ENHANCEMENTS[lessonId as keyof typeof PSYCHIATRY_LESSON_ENHANCEMENTS];
+  if (psychEnhancement) {
+    const blockEnhancements = psychEnhancement.experience?.blocks[sectionIndex]?.inlineEnhancements;
+    // Jeśli dany blok ma już jawny enhancement kind: 'diagram', renderer blokowy go wyświetli
+    if (blockEnhancements?.some(e => e.kind === 'diagram')) {
+      return null;
+    }
+    const diagramId = psychEnhancement.diagrams[sectionIndex] || (sectionIndex === 0 && psychEnhancement.diagrams.length === 1 ? psychEnhancement.diagrams[0] : undefined);
+    if (diagramId) {
+      const Component = getPsychiatryDiagramComponent(diagramId);
+      if (Component) return <Component />;
+    }
+    return null;
+  }
 
   return null;
 }

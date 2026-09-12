@@ -1,7 +1,8 @@
 'use client';
-import { useState } from 'react';
-import { User, Search, Pill, ShieldAlert, Sparkles } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { User, Search, Pill, ShieldAlert, Sparkles, Sliders } from 'lucide-react';
 import type { PatientProfile, ActivePrescription } from '@/lib/psychiatry-engine';
+import { getPsychiatryPreset } from '@/lib/psychiatry/presets';
 import { PsychiatryTwinView } from './psychiatry-twin-view';
 import { PsychiatryDiagnosisView } from './psychiatry-diagnosis-view';
 import { PsychiatryPharmacologyView } from './psychiatry-pharmacology-view';
@@ -35,16 +36,65 @@ const defaultPatient: PatientProfile = {
   adherencePercent: 90,
 };
 
-export function PsychiatryCommandCenter() {
-  const [activeTab, setActiveTab] = useState<'twin' | 'diagnosis' | 'pharmacology' | 'safety'>('twin');
-  const [patient, setPatient] = useState<PatientProfile>(defaultPatient);
+export function PsychiatryCommandCenter({ initialPresetId }: { initialPresetId?: string } = {}) {
+  const activePreset = initialPresetId ? getPsychiatryPreset(initialPresetId) : undefined;
+
+  const getTargetTab = (tabName?: string): 'twin' | 'diagnosis' | 'pharmacology' | 'safety' => {
+    if (tabName === 'diagnostic') return 'diagnosis';
+    if (tabName === 'pharmacology') return 'pharmacology';
+    if (tabName === 'safety') return 'safety';
+    return 'twin';
+  };
+
+  const [activeTab, setActiveTab] = useState<'twin' | 'diagnosis' | 'pharmacology' | 'safety'>(() =>
+    getTargetTab(activePreset?.tab),
+  );
+  const [patient, setPatient] = useState<PatientProfile>(() => {
+    if (!activePreset) return defaultPatient;
+    const p = { ...defaultPatient };
+    const d = activePreset.data;
+    if (typeof d.labTsh === 'number') p.labTsh = d.labTsh;
+    if (typeof d.eGfr === 'number') p.labEgfr = d.eGfr;
+    if (typeof d.potassium === 'number') p.labPotassium = d.potassium;
+    if (typeof d.smokingStatus === 'string') p.substanceUse = 'tyton';
+    return p;
+  });
   const [timelineWeek, setTimelineWeek] = useState(0);
   const [prescriptions, setPrescriptions] = useState<ActivePrescription[]>([
     { drugId: 'sertraline', doseMg: 50 },
   ]);
 
+  useEffect(() => {
+    if (!initialPresetId) return;
+    const p = getPsychiatryPreset(initialPresetId);
+    if (!p) return;
+    setActiveTab(getTargetTab(p.tab));
+    setPatient(prev => {
+      const next = { ...prev };
+      const d = p.data;
+      if (typeof d.labTsh === 'number') next.labTsh = d.labTsh;
+      if (typeof d.eGfr === 'number') next.labEgfr = d.eGfr;
+      if (typeof d.potassium === 'number') next.labPotassium = d.potassium;
+      return next;
+    });
+  }, [initialPresetId]);
+
   return (
     <div className="psychiatry-command-center" style={{ marginTop: '12px' }}>
+      {activePreset && (
+        <div className="preset-loaded-banner mb-4 p-3 bg-indigo-50 border border-indigo-200 rounded-xl flex items-center justify-between text-xs">
+          <div className="flex items-center gap-2">
+            <Sliders size={16} className="text-indigo-600" />
+            <div>
+              <span className="font-bold text-indigo-950">Załadowany profil kliniczny: {activePreset.title}</span>
+              <p className="text-slate-600 text-[11px] line-clamp-1">{activePreset.patientSummary}</p>
+            </div>
+          </div>
+          <span className="px-2.5 py-1 bg-indigo-100 text-indigo-800 font-semibold rounded-full text-[10px] uppercase">
+            Preset: {activePreset.tab}
+          </span>
+        </div>
+      )}
       {/* Pasek zakładek Command Center */}
       <div className="filter-bar" style={{ marginBottom: '20px', gap: '8px', flexWrap: 'wrap' }}>
         <button

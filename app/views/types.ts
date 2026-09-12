@@ -10,6 +10,8 @@ export type Route =
   | 'results'
   | 'account'
   | 'simulator'
+  | `simulator?${string}`
+  | `simulator/${string}`
   | 'glossary'
   | 'mistakes'
   | 'catalog'

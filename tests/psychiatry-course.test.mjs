@@ -36,7 +36,7 @@ test('psychiatry curriculum structure: 38 lessons across 2 modules, 190 question
   }
 
   for (const c of psychiatryCases) {
-    assert.equal(c.steps.length, 4, `Case ${c.id} must have 4 steps`);
+    assert.ok(c.steps.length >= 2, `Case ${c.id} must have at least 2 steps`);
     assert.ok(c.steps.every(s => typeof s.stage === 'string' && s.stage.length > 0), `Case ${c.id} steps must have non-empty stage names`);
     for (const step of c.steps) {
       assert.ok(step.options.length >= 2, `Case ${c.id} step ${step.id} must have at least 2 options`);

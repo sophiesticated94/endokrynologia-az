@@ -61,9 +61,9 @@ test('Safety: Educational PK sensitivity model is qualitative and contains expli
     volumeStatus: 'severe_dehydration',
     interactingDrugs: ['thiazide', 'nsaid'],
   });
-  assert.equal(pk.exposureTrend, 'marked_increase');
+  assert.equal(pk.exposurePressure, 'strong');
   assert.ok(pk.disclaimer.includes('MODEL EDUKACYJNY'));
-  assert.ok(pk.disclaimer.includes('NIE JEST KALKULATOREM STĘŻENIA'));
+  assert.ok(pk.disclaimer.includes('brak predykcji stężenia'));
 });
 
 test('Safety: D2 PET explorer differentiates antagonists from partial agonists and marks Kapur heuristic', () => {
@@ -81,7 +81,8 @@ test('Safety: D2 PET explorer differentiates antagonists from partial agonists a
   assert.equal(ari.intrinsicActivityPercent, 30);
   assert.ok(ari.d2OccupancyPercent > 75);
   assert.ok(ari.clinicalInterpretation.includes('aktywności wewnętrznej'));
-  assert.ok(ari.clinicalInterpretation.includes('chroni przed EPS'));
+  assert.ok(!ari.clinicalInterpretation.includes('chroni przed EPS'));
+  assert.ok(ari.clinicalInterpretation.toLowerCase().includes('akatyzj'));
 });
 
 test('Safety: QTcF formula uses Fridericia and evaluates clinical risk context', () => {

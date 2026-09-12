@@ -12,75 +12,166 @@ const labels = {
   'pathway-builder': ['Ścieżka decyzji', GitBranch],
 } as const;
 
-function activityFor(widgetId: LessonExperienceV2['widgetIds'][number], moduleId: ModuleId, experience: LessonExperienceV2): LearningActivity {
-  const base = {
-    id: `${experience.lessonId}-${widgetId}-v2`,
-    objectiveIds: [experience.objectives[0].id],
-    difficulty: 'both' as const,
-    reasoning: experience.objectives[0].kind,
-    sourceIds: experience.diagnostic.sourceIds,
-    hint: 'Najpierw nazwij bodziec, odpowiedź układu i warunek, który może zmienić interpretację.',
-  };
-  if (widgetId === 'axis-map') return moduleId === 'cukrzyca' ? {
+type ActivityBaseInput = {
+  id: string;
+  objectiveIds: string[];
+  difficulty: 'both';
+  reasoning: LessonExperienceV2['objectives'][number]['kind'];
+  sourceIds: string[];
+  hint: string;
+};
+
+type WidgetProvider = {
+  'axis-map': (base: ActivityBaseInput) => LearningActivity;
+  'lab-workbench': (base: ActivityBaseInput) => LearningActivity;
+  timeline: (base: ActivityBaseInput) => LearningActivity;
+  'pathway-builder': (base: ActivityBaseInput) => LearningActivity;
+};
+
+const DIABETES_PROVIDERS: WidgetProvider = {
+  'axis-map': base => ({
     ...base,
     type: 'single_choice',
     prompt: 'Przy znacznym niedoborze insuliny i wzroście hormonów kontrregulacyjnych przewidź dominujący kierunek zmian.',
     options: ['Spadek lipolizy i ketogenezy', 'Wzrost lipolizy, ketogenezy i produkcji glukozy', 'Izolowany spadek glukagonu'],
     answer: 1,
     explanation: 'Niedobór działania insuliny i przewaga sygnałów kontrregulacyjnych sprzyjają produkcji glukozy oraz ketonów. Model pokazuje kierunek, nie nasilenie u konkretnej osoby.',
-  } : {
-    ...base,
-    type: 'single_choice',
-    prompt: 'Spada produkcja T4, a podwzgórze i przysadka działają prawidłowo. Jaki wzorzec przewidujesz?',
-    options: ['FT4 spada, TSH rośnie', 'FT4 i TSH rosną równolegle', 'FT4 spada, a TSH zawsze pozostaje bez zmian'],
-    answer: 0,
-    explanation: 'Przy sprawnej osi spadek hormonu obwodowego osłabia ujemne sprzężenie zwrotne i zwiększa sygnał TSH.',
-  };
-  if (widgetId === 'lab-workbench') return moduleId === 'cukrzyca' ? {
+  }),
+  'lab-workbench': base => ({
     ...base,
     type: 'lab',
     prompt: 'Glukoza 228 mg/dl, β-hydroksymaślan 4,1 mmol/l, pH 7,24, HCO₃⁻ 15 mmol/l. Co wolno stwierdzić z tego zestawu?',
     options: ['Spełnia trzy grupy kryteriów DKA w konsensusie 2024', 'Sama glukoza rozpoznaje HHS', 'Prawidłowe pH wyklucza kwasicę'],
     answer: 0,
     explanation: 'Rozpoznanie DKA wymaga cukrzycy/hiperglikemii, ketonemii i kwasicy. Wyniki ćwiczenia nie zastępują oceny pacjenta ani lokalnego protokołu.',
-  } : {
-    ...base,
-    type: 'lab',
-    prompt: 'TSH 1,8 mIU/l i FT4 8 pmol/l po operacji przysadki. Jaka informacja ma największe znaczenie?',
-    options: ['Prawidłowa flaga TSH wyklucza chorobę', 'TSH może być nieadekwatne do niskiego FT4', 'Niskie FT4 zawsze oznacza pierwotną chorobę tarczycy'],
-    answer: 1,
-    explanation: 'W chorobie przysadki samo TSH nie wyklucza niedoczynności centralnej; potrzebne są FT4, kontekst kliniczny i ocena pozostałych osi.',
-  };
-  if (widgetId === 'timeline') return moduleId === 'cukrzyca' ? {
+  }),
+  timeline: base => ({
     ...base,
     type: 'trend',
     prompt: 'CGM pokazuje szybki wzrost glikemii, ale pacjent ma nudności i przyjmuje inhibitor SGLT2. Czego nie wolno przeoczyć?',
     options: ['Oceny ketonów i równowagi kwasowo-zasadowej', 'Wyłącznie średniej z ostatnich 14 dni', 'Założenia, że niższa glikemia wyklucza DKA'],
     answer: 0,
     explanation: 'DKA może wystąpić przy glikemii poniżej dawnych progów, zwłaszcza w określonych kontekstach. Trend CGM nie zastępuje wymaganych pomiarów.',
-  } : {
-    ...base,
-    type: 'trend',
-    prompt: 'Po zmianie dawki LT4 FT4 zmienia się wcześniej niż TSH. Który wniosek jest najbezpieczniejszy?',
-    options: ['Ocenić czas od zmiany i nie eskalować leczenia na podstawie zbyt wczesnego TSH', 'TSH stabilizuje się w kilka godzin', 'Każde odchylenie wymaga natychmiastowej kolejnej zmiany dawki'],
-    answer: 0,
-    explanation: 'Oś potrzebuje czasu do nowej równowagi. Interpretacja wymaga znajomości czasu, sposobu przyjmowania i sytuacji klinicznej.',
-  };
-  return moduleId === 'cukrzyca' ? {
+  }),
+  'pathway-builder': base => ({
     ...base,
     type: 'ordering',
     prompt: 'Ułóż bezpieczny tok oceny podejrzenia ostrego kryzysu hiperglikemicznego.',
     items: ['Oceń stan ogólny i pilność', 'Zbierz pełny zestaw glukoza/ketony/pH lub HCO₃⁻/osmolalność', 'Rozpoznaj DKA, HHS albo obraz mieszany', 'Zastosuj właściwy protokół i monitorowanie'],
     correctOrder: [0, 1, 2, 3],
     explanation: 'Najpierw bezpieczeństwo i komplet danych, potem klasyfikacja oraz postępowanie według protokołu.',
-  } : {
+  }),
+};
+
+const ENDO_GENERAL_PROVIDERS: WidgetProvider = {
+  'axis-map': base => ({
+    ...base,
+    type: 'single_choice',
+    prompt: 'Spada produkcja T4, a podwzgórze i przysadka działają prawidłowo. Jaki wzorzec przewidujesz?',
+    options: ['FT4 spada, TSH rośnie', 'FT4 i TSH rosną równolegle', 'FT4 spada, a TSH zawsze pozostaje bez zmian'],
+    answer: 0,
+    explanation: 'Przy sprawnej osi spadek hormonu obwodowego osłabia ujemne sprzężenie zwrotne i zwiększa sygnał TSH.',
+  }),
+  'lab-workbench': base => ({
+    ...base,
+    type: 'lab',
+    prompt: 'TSH 1,8 mIU/l i FT4 8 pmol/l po operacji przysadki. Jaka informacja ma największe znaczenie?',
+    options: ['Prawidłowa flaga TSH wyklucza chorobę', 'TSH może być nieadekwatne do niskiego FT4', 'Niskie FT4 zawsze oznacza pierwotną chorobę tarczycy'],
+    answer: 1,
+    explanation: 'W chorobie przysadki samo TSH nie wyklucza niedoczynności centralnej; potrzebne są FT4, kontekst kliniczny i ocena pozostałych osi.',
+  }),
+  timeline: base => ({
+    ...base,
+    type: 'trend',
+    prompt: 'Po zmianie dawki LT4 FT4 zmienia się wcześniej niż TSH. Który wniosek jest najbezpieczniejszy?',
+    options: ['Ocenić czas od zmiany i nie eskalować leczenia na podstawie zbyt wczesnego TSH', 'TSH stabilizuje się w kilka godzin', 'Każde odchylenie wymaga natychmiastowej kolejnej zmiany dawki'],
+    answer: 0,
+    explanation: 'Oś potrzebuje czasu do nowej równowagi. Interpretacja wymaga znajomości czasu, sposobu przyjmowania i sytuacji klinicznej.',
+  }),
+  'pathway-builder': base => ({
     ...base,
     type: 'ordering',
     prompt: 'Ułóż tok oceny niespójnych wyników tarczycowych.',
     items: ['Sprawdź kontekst i objawy', 'Zweryfikuj leki, suplementy, czas pobrania i jednostki', 'Powtórz lub omów oznaczenie z laboratorium', 'Dopiero potem rozważ rzadkie rozpoznania'],
     correctOrder: [0, 1, 2, 3],
     explanation: 'Niespójność wymaga najpierw kontroli warunków badania i interferencji, zanim uruchomi się diagnostykę rzadkich chorób.',
+  }),
+};
+
+const PSYCHIATRY_PROVIDERS: WidgetProvider = {
+  'axis-map': base => ({
+    ...base,
+    type: 'single_choice',
+    prompt: 'Wskaż fizjologiczną regułę interakcji receptorowych w szlakach dopaminergicznych i serotoninergicznych.',
+    options: [
+      'Blokada 5-HT2A w szlaku nigrostriatalnym stymuluje uwalnianie dopaminy i łagodzi ryzyko EPS',
+      'Blokada D2 zawsze nasila uwalnianie prolaktyny bez względu na stężenie dopaminy',
+      'Pobudzenie receptora 5-HT1A hamuje transmisję serotoninergiczną na obwodzie bez wpływu na autoreceptory',
+    ],
+    answer: 0,
+    explanation: 'W szlaku nigrostriatalnym serotonina hamuje uwalnianie dopaminy przez receptor 5-HT2A. Blokada tego receptora (cecha leków SGA) uwalnia hamulec i zwiększa dopaminę, co łagodzi ryzyko EPS.',
+  }),
+  'lab-workbench': base => ({
+    ...base,
+    type: 'lab',
+    prompt: 'Ocena stężenia litu 12 godzin po dawce wieczornej wynosi 0,72 mmol/l u pacjenta bez objawów intoksykacji, eGFR 85 ml/min. Jak zinterpretować ten wynik?',
+    options: [
+      'Prawidłowe stężenie w optymalnym oknie profilaktycznym ChAD (0,6–0,8 mmol/l wg AGNP 2026)',
+      'Wynik subterapeutyczny wymagający natychmiastowego podwojenia dawki',
+      'Stan bezpośredniego zagrożenia życia wymagający pilnej kwalifikacji do hemodializy',
+    ],
+    answer: 0,
+    explanation: 'Według konsensusu AGNP 2026 stężenie 0,6–0,8 mmol/l 12 h po dawce w stanie stacjonarnym stanowi optymalne okno podtrzymujące w ChAD.',
+  }),
+  timeline: base => ({
+    ...base,
+    type: 'trend',
+    prompt: 'Włączono escitalopram w ciężkim epizodzie depresyjnym. W jakim przedziale czasowym spodziewasz się pełnego efektu przeciwdepresyjnego w odróżnieniu od wczesnych działań niepożądanych?',
+    options: [
+      'Działania niepożądane (np. nudności, niepokój) w pierwszych dniach; odpowiedź terapeutyczna po 2–4 (do 6) tygodniach',
+      'Pełna remisja następuje w ciągu 24–48 godzin od pierwszej tabletki',
+      'Lek nie wywołuje żadnych wczesnych reakcji i działa wyłącznie po 6 miesiącach',
+    ],
+    answer: 0,
+    explanation: 'Transmisja monoamin rośnie szybko, lecz kaskada adaptacji receptorowych (down-regulacja 5-HT1A, ekspresja BDNF) wymaga 2–4 tygodni. Wczesne działania niepożądane pojawiają się natychmiast.',
+  }),
+  'pathway-builder': base => ({
+    ...base,
+    type: 'ordering',
+    prompt: 'Ułóż właściwy algorytm postępowania przy podejrzeniu ostrego zespołu serotoninowego.',
+    items: [
+      'Natychmiastowe odstawienie wszystkich leków proserotoninergicznych',
+      'Ocena kryteriów Huntera (klonus, hiperrefleksja, pobudzenie, hipertermia)',
+      'Leczenie objawowe: chłodzenie fizykalne i sedacja benzodiazepinami',
+      'W ciężkich przypadkach intubacja i ewentualne podanie cyproheptadyny',
+    ],
+    correctOrder: [0, 1, 2, 3],
+    explanation: 'Priorytetem jest przerwanie ekspozycji toksycznej, standaryzowana ocena kliniczna (kryteria Huntera) oraz sedacja i stabilizacja parametrów życiowych.',
+  }),
+};
+
+function getWidgetProvider(moduleId: ModuleId): WidgetProvider {
+  if (moduleId === 'psych-afektywne' || moduleId === 'psych-farmakologia') {
+    return PSYCHIATRY_PROVIDERS;
+  }
+  if (moduleId === 'cukrzyca') {
+    return DIABETES_PROVIDERS;
+  }
+  return ENDO_GENERAL_PROVIDERS;
+}
+
+function activityFor(widgetId: LessonExperienceV2['widgetIds'][number], moduleId: ModuleId, experience: LessonExperienceV2): LearningActivity {
+  const base: ActivityBaseInput = {
+    id: `${experience.lessonId}-${widgetId}-v2`,
+    objectiveIds: [experience.objectives[0].id],
+    difficulty: 'both',
+    reasoning: experience.objectives[0].kind,
+    sourceIds: experience.diagnostic.sourceIds,
+    hint: 'Najpierw nazwij bodziec, odpowiedź układu i warunek, który może zmienić interpretację.',
   };
+  const provider = getWidgetProvider(moduleId);
+  const factory = provider[widgetId] || ENDO_GENERAL_PROVIDERS[widgetId];
+  return factory(base);
 }
 
 function withChoiceFeedback(activity: LearningActivity): LearningActivity {

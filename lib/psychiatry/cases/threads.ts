@@ -1,4 +1,4 @@
-import type { PatientThreadState } from './types.ts';
+import type { PatientThreadState, ThreadEvent, CounterfactualBranch } from './types.ts';
 
 export const PATIENT_THREADS: Record<string, PatientThreadState> = {
   'thread-bipolar-spectrum': {
@@ -69,3 +69,86 @@ export const PATIENT_THREADS: Record<string, PatientThreadState> = {
     eGfr: 90,
   },
 };
+
+export function applyThreadEvent(
+  state: PatientThreadState,
+  event: ThreadEvent,
+): PatientThreadState {
+  const next: PatientThreadState = {
+    ...state,
+    establishedDiagnoses: [...state.establishedDiagnoses],
+    activeMedications: [...state.activeMedications],
+    knownSensitivities: [...state.knownSensitivities],
+    keyHistoryFacts: [...state.keyHistoryFacts],
+  };
+
+  switch (event.type) {
+    case 'smoking_cessation':
+      next.smoking = false;
+      next.keyHistoryFacts.push(event.reason ? `Zaprzestanie palenia: ${event.reason}` : 'Zaprzestanie palenia tytoniu (spadek indukcji CYP1A2)');
+      break;
+    case 'smoking_resumption':
+      next.smoking = true;
+      next.keyHistoryFacts.push(`Wznowienie palenia tytoniu (${event.cigarettesPerDay ?? 15} papierosów/d)`);
+      break;
+    case 'hypomania_discovered':
+      next.keyHistoryFacts.push(`Ujawnienie wywiadu hipomanii: ${event.details}`);
+      if (!next.establishedDiagnoses.some(d => d.toLowerCase().includes('chad'))) {
+        next.establishedDiagnoses.push('Zaburzenie afektywne dwubiegunowe typu II (ChAD II)');
+      }
+      break;
+    case 'medication_started':
+      if (!next.activeMedications.includes(event.medication)) {
+        next.activeMedications.push(event.medication);
+      }
+      break;
+    case 'medication_stopped':
+      next.activeMedications = next.activeMedications.filter(
+        m => !m.toLowerCase().includes(event.medication.toLowerCase()),
+      );
+      if (event.reason) {
+        next.keyHistoryFacts.push(`Odstawienie leku ${event.medication}: ${event.reason}`);
+      }
+      break;
+    case 'diagnosis_updated':
+      if (event.replacedDiagnosis) {
+        next.establishedDiagnoses = next.establishedDiagnoses.filter(
+          d => !d.toLowerCase().includes(event.replacedDiagnosis!.toLowerCase()),
+        );
+      }
+      if (!next.establishedDiagnoses.includes(event.newDiagnosis)) {
+        next.establishedDiagnoses.push(event.newDiagnosis);
+      }
+      break;
+    case 'adverse_reaction':
+      next.knownSensitivities.push(`${event.reaction} po ${event.drugCausing}`);
+      break;
+    case 'egfr_changed':
+      next.eGfr = event.newEgfr;
+      break;
+  }
+
+  return next;
+}
+
+export function createCounterfactualBranch(
+  baseState: PatientThreadState,
+  branch: CounterfactualBranch,
+): { branchState: PatientThreadState; counterfactual: CounterfactualBranch } {
+  return {
+    branchState: {
+      ...baseState,
+      establishedDiagnoses: [...baseState.establishedDiagnoses],
+      activeMedications: [...baseState.activeMedications],
+      knownSensitivities: [...baseState.knownSensitivities],
+      keyHistoryFacts: [...baseState.keyHistoryFacts, `[Kontrfaktycznie]: ${branch.alteredFact}`],
+    },
+    counterfactual: {
+      alteredFact: branch.alteredFact,
+      supports: [...branch.supports],
+      arguesAgainst: [...branch.arguesAgainst],
+      mostDiscriminatingNextStep: branch.mostDiscriminatingNextStep,
+      invalidatedManagementSteps: [...branch.invalidatedManagementSteps],
+    },
+  };
+}
