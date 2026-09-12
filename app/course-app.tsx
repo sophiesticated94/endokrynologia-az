@@ -20,9 +20,10 @@ import {
   BrainCircuit,
 } from 'lucide-react';
 import { lessons, flashcards } from '@/lib/course';
-import type { Confidence, LearningActivity } from '@/lib/course-types';
+import type { Confidence, LearningActivity, PracticeRecordMeta } from '@/lib/course-types';
 import { cases } from '@/lib/cases';
 import { useLearning } from '@/lib/use-learning';
+import { practicePayload } from '@/lib/learning';
 import { SourceList, Runner } from './course-ui';
 import { Dashboard, CourseMap, LessonView, CasesView, type Route } from './content-views';
 import { CardsView, ExamView, ResultsView } from './practice-views';
@@ -290,15 +291,15 @@ export default function CourseApp() {
             <div className="connection-note">
               <LockKeyhole size={16} />
               <span>
-                Tryb gościa · Konta i synchronizacja czekają na konfigurację Supabase. Postęp gościa znika po
-                odświeżeniu.
+                Tryb gościa · Konta i synchronizacja czekają na konfigurację Supabase. Postęp jest zapisywany
+                lokalnie na tym urządzeniu.
               </span>
             </div>
           )}
           {configured === true && !user && !loading && (
             <div className="connection-note">
               <LogIn size={16} />
-              <span>Tryb gościa — postęp tej sesji nie jest zapisywany na koncie.</span>
+              <span>Tryb gościa — postęp jest zapisywany lokalnie, bez synchronizacji między urządzeniami.</span>
               <button className="text-button" onClick={() => go('account')}>
                 Zaloguj się
               </button>
@@ -403,7 +404,7 @@ export default function CourseApp() {
               blocked={blocked}
               complete={() => void learning.record('lesson', lesson.id)}
               setLevel={level => void learning.record('profile', 'level', { level })}
-              recordPractice={(activity: LearningActivity, correct: boolean, confidence?: Confidence, scored = true) => learning.record('practice', activity.id, {lessonId: lesson.id, objectiveIds: activity.objectiveIds, correct, confidence, activityType: activity.type, scored})}
+              recordPractice={(activity: LearningActivity, correct: boolean, confidence?: Confidence, scored = true, meta?: PracticeRecordMeta) => learning.record('practice', activity.id, practicePayload(lesson.id, activity, correct, confidence, scored, meta))}
             />
           )}
           {route.startsWith('quiz/') && lesson && (
@@ -447,15 +448,8 @@ export default function CourseApp() {
             <ErrorNotebook
               state={state}
               go={go}
-              recordPractice={(lessonId, activity, correct, confidence, scored = true) =>
-                learning.record('practice', activity.id, {
-                  lessonId,
-                  objectiveIds: activity.objectiveIds,
-                  correct,
-                  confidence,
-                  activityType: activity.type,
-                  scored,
-                })
+              recordPractice={(lessonId, activity, correct, confidence, scored = true, meta) =>
+                learning.record('practice', activity.id, practicePayload(lessonId, activity, correct, confidence, scored, meta))
               }
             />
           )}

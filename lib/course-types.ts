@@ -19,7 +19,11 @@ type ActivityBase = {
   reasoning: ObjectiveKind;
   hint?: string;
   sourceIds: string[];
+  optionFeedback?: string[];
 };
+
+export type PracticeAnswerType = 'choice_index' | 'choice_indexes' | 'ordered_indexes' | 'matching_map' | 'numeric_value' | 'self_assessment';
+export type PracticeRecordMeta = { answerType: PracticeAnswerType; elapsedMs: number };
 
 export type LearningActivity =
   | (ActivityBase & { type: 'single_choice' | 'lab' | 'trend' | 'missing_information'; options: string[]; answer: number })

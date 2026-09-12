@@ -2,12 +2,12 @@
 import {useCallback,useEffect,useMemo,useRef,useState} from 'react';
 import {createClient,type SupabaseClient,type User} from '@supabase/supabase-js';
 import {CONTENT_VERSION} from './course';
-import {projectActivities,saveIdempotently,type Activity} from './learning';
+import {parseStoredActivities,projectActivities,saveIdempotently,type Activity} from './learning';
 const guestStorageKey='endokrynologia.learning.guest.v2';
 const pendingStorageKey=(userId:string)=>`endokrynologia.learning.pending.${userId}.v2`;
 function readStored(key:string):Activity[]{
  if(typeof window==='undefined')return[];
- try{const value=JSON.parse(localStorage.getItem(key)??'[]');return Array.isArray(value)?value:[];}catch{return[];}
+ return parseStoredActivities(localStorage.getItem(key));
 }
 function writeStored(key:string,events:Activity[]){
  if(typeof window==='undefined')return;

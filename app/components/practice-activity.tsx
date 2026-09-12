@@ -1,10 +1,18 @@
 'use client';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { ArrowDown, ArrowUp, Check, HelpCircle, RotateCcw } from 'lucide-react';
-import type { Confidence, LearningActivity } from '@/lib/course-types';
+import type { Confidence, LearningActivity, PracticeAnswerType, PracticeRecordMeta } from '@/lib/course-types';
 import { gradeActivity, type ActivityResponse } from '@/lib/activity-grading';
 
 const confidenceLabels: Record<Confidence, string> = { 1: 'Zgaduję', 2: 'Raczej wiem', 3: 'Jestem pewien' };
+function answerType(activity: LearningActivity): PracticeAnswerType {
+  if (activity.type === 'multi_select') return 'choice_indexes';
+  if (activity.type === 'ordering') return 'ordered_indexes';
+  if (activity.type === 'matching') return 'matching_map';
+  if (activity.type === 'numeric') return 'numeric_value';
+  if (activity.type === 'recall') return 'self_assessment';
+  return 'choice_index';
+}
 
 export function PracticeActivityCard({
   activity,
@@ -14,7 +22,7 @@ export function PracticeActivityCard({
 }: {
   activity: LearningActivity;
   phase?: 'diagnostic' | 'checkpoint' | 'exit' | 'review';
-  onRecord: (activity: LearningActivity, correct: boolean, confidence?: Confidence, scored?: boolean) => Promise<boolean>;
+  onRecord: (activity: LearningActivity, correct: boolean, confidence?: Confidence, scored?: boolean, meta?: PracticeRecordMeta) => Promise<boolean>;
   onComplete?: (id: string, correct: boolean) => void;
 }) {
   const initialOrder = useMemo(() => activity.type === 'ordering' ? activity.items.map((_, index) => index).reverse() : [], [activity]);
@@ -22,6 +30,8 @@ export function PracticeActivityCard({
   const [confidence, setConfidence] = useState<Confidence>();
   const [revealed, setRevealed] = useState(false);
   const [hint, setHint] = useState(false);
+  const startedAt = useRef<number|null>(null);
+  useEffect(() => { startedAt.current = Date.now(); }, [activity.id]);
   const result = revealed ? gradeActivity(activity, response) : null;
   const hasResponse = activity.type === 'matching'
     ? Object.keys(response as Record<string,string>).length === activity.pairs.length
@@ -34,7 +44,10 @@ export function PracticeActivityCard({
     if (!canSubmit) return;
     const correct = activity.type === 'recall' ? true : gradeActivity(activity, response) === true;
     setRevealed(true);
-    await onRecord(activity, correct, confidence, phase !== 'diagnostic' && activity.type !== 'recall');
+    await onRecord(activity, correct, confidence, phase !== 'diagnostic' && activity.type !== 'recall', {
+      answerType: answerType(activity),
+      elapsedMs: Math.max(0, Date.now() - (startedAt.current ?? Date.now())),
+    });
     onComplete?.(activity.id, correct);
   }
 
@@ -92,8 +105,9 @@ export function PracticeActivityCard({
         <div className={`activity-feedback ${result === false ? 'incorrect' : 'correct'}`} role="status">
           <strong>{activity.type === 'recall' ? 'Odpowiedź wzorcowa' : result ? 'Trafne rozumowanie' : phase === 'diagnostic' ? 'To punkt startowy — bez kary' : 'Warto wrócić do tego celu'}</strong>
           {activity.type === 'recall' && <p>{activity.modelAnswer}</p>}
+          {result === false && typeof response === 'number' && activity.optionFeedback?.[response] && <p><strong>Dlaczego ten wybór nie działa:</strong> {activity.optionFeedback[response]}</p>}
           <p>{activity.explanation}</p>
-          {phase === 'review' && <button className="text-button" onClick={() => {setRevealed(false);setResponse('');setConfidence(undefined)}}><RotateCcw size={15}/>Spróbuj ponownie</button>}
+          {phase === 'review' && <button className="text-button" onClick={() => {setRevealed(false);setResponse(activity.type === 'ordering' ? initialOrder : activity.type === 'multi_select' ? [] : activity.type === 'matching' ? {} : '');setConfidence(undefined);startedAt.current=Date.now()}}><RotateCcw size={15}/>Spróbuj ponownie</button>}
         </div>
       )}
     </section>

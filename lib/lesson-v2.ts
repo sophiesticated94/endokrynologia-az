@@ -8,7 +8,14 @@ import type {
 } from './course-types.ts';
 
 const PILOT_MODULES = new Set(['tarczyca', 'cukrzyca']);
-const objectiveKinds: ObjectiveKind[] = ['mechanism', 'interpretation', 'decision', 'safety'];
+function classifyObjective(statement: string): ObjectiveKind {
+  const value = statement.toLocaleLowerCase('pl');
+  if (/bezpie|piln|przeciwwsk|monitor|zagroż|alarm/.test(value)) return 'safety';
+  if (/różnic|odróż|porówn/.test(value)) return 'differentiation';
+  if (/decyz|postępow|leczeni|kwalifik|dobier|wybier|wskaz/.test(value)) return 'decision';
+  if (/interpret|wynik|panel|trend|oblicz|rozpozn|klasyfik/.test(value)) return 'interpretation';
+  return 'mechanism';
+}
 
 function toActivity(
   question: Question,
@@ -23,6 +30,7 @@ function toActivity(
     objectiveIds: [objectiveId],
     prompt: question.prompt,
     options: question.options.map(option => option.text),
+    optionFeedback: question.options.map(option => option.explanation),
     answer: question.answer,
     explanation: question.options[question.answer].explanation,
     hint: 'Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.',
@@ -49,15 +57,15 @@ export function buildPilotExperiences(lessons: Lesson[]): Record<string, LessonE
       const objectives: LearningObjective[] = lesson.goals.slice(0, 4).map((statement, index) => ({
         id: `${lesson.id}-objective-${index + 1}`,
         statement,
-        kind: objectiveKinds[index % objectiveKinds.length],
+        kind: classifyObjective(statement),
       }));
       const objectiveAt = (index: number) => objectives[index % objectives.length].id;
-      const diagnostic = toActivity(lesson.questions[0], objectiveAt(0), objectives[0].kind, 'diagnostic', lesson.sourceIds);
+      const diagnostic = toActivity(lesson.questions[0], objectiveAt(0), 'mechanism', 'diagnostic', lesson.sourceIds);
       const activities = lesson.questions.slice(1, 3).map((question, index) =>
-        toActivity(question, objectiveAt(index + 1), objectives[(index + 1) % objectives.length].kind, `checkpoint-${index + 1}`, lesson.sourceIds),
+        toActivity(question, objectiveAt(index + 1), index === 0 ? 'mechanism' : 'interpretation', `checkpoint-${index + 1}`, lesson.sourceIds),
       );
       const exitTicket = lesson.questions.slice(3).map((question, index) =>
-        toActivity(question, objectiveAt(index + 3), objectives[(index + 3) % objectives.length].kind, 'exit', lesson.sourceIds),
+        toActivity(question, objectiveAt(index + 3), index === 0 ? 'decision' : 'safety', 'exit', lesson.sourceIds),
       );
       const blocks = lesson.sections.map((section, index) => ({
         id: `${lesson.id}-block-${index + 1}`,
@@ -106,4 +114,16 @@ export function buildQuestionObjectiveMap(experiences: Record<string, LessonExpe
     }
   }
   return result;
+}
+
+export function requiredCompletionActivityIds(experience: LessonExperienceV2): string[] {
+  return [...experience.activities, experience.teachBack, ...experience.exitTicket].map(activity => activity.id);
+}
+
+export function isLessonCoreComplete(experience: LessonExperienceV2, completedIds: ReadonlySet<string>): boolean {
+  return requiredCompletionActivityIds(experience).every(id => completedIds.has(id));
+}
+
+export function findRepeatableActivity(experience: LessonExperienceV2, activityId: string, extraActivities: LearningActivity[] = []): LearningActivity|undefined {
+  return [experience.diagnostic, ...experience.activities, experience.teachBack, ...experience.exitTicket, ...extraActivities].find(activity => activity.id === activityId);
 }

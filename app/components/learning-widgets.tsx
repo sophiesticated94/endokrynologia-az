@@ -1,10 +1,10 @@
 'use client';
 import { useState } from 'react';
 import { Activity, Beaker, GitBranch, TrendingUp } from 'lucide-react';
-import type { Confidence, LearningActivity, LessonExperienceV2, ModuleId } from '@/lib/course-types';
+import type { Confidence, LearningActivity, LessonExperienceV2, ModuleId, PracticeRecordMeta } from '@/lib/course-types';
 import { PracticeActivityCard } from './practice-activity';
 
-type RecordPractice = (activity: LearningActivity, correct: boolean, confidence?: Confidence, scored?: boolean) => Promise<boolean>;
+type RecordPractice = (activity: LearningActivity, correct: boolean, confidence?: Confidence, scored?: boolean, meta?: PracticeRecordMeta) => Promise<boolean>;
 const labels = {
   'axis-map': ['Mapa osi', Activity],
   'lab-workbench': ['Panel wyników', Beaker],
@@ -83,10 +83,25 @@ function activityFor(widgetId: LessonExperienceV2['widgetIds'][number], moduleId
   };
 }
 
+function withChoiceFeedback(activity: LearningActivity): LearningActivity {
+  if (!('options' in activity)) return activity;
+  const correct = 'answer' in activity ? activity.answer : -1;
+  return {
+    ...activity,
+    optionFeedback: activity.options.map((_, index) => index === correct
+      ? activity.explanation
+      : 'Ten wybór pomija kluczowy mechanizm, komplet danych albo warunek bezpieczeństwa opisany w odpowiedzi wzorcowej.'),
+  };
+}
+
+export function widgetActivitiesForExperience(experience: LessonExperienceV2, moduleId: ModuleId): LearningActivity[] {
+  return experience.widgetIds.map(widgetId => withChoiceFeedback(activityFor(widgetId, moduleId, experience)));
+}
+
 export function LearningWidgets({experience,moduleId,onRecord}:{experience:LessonExperienceV2;moduleId:ModuleId;onRecord:RecordPractice}) {
   const [active, setActive] = useState(experience.widgetIds[0]);
   if (!active) return null;
-  const widgetActivity = activityFor(active, moduleId, experience);
+  const widgetActivity = widgetActivitiesForExperience(experience, moduleId).find(activity => activity.id === `${experience.lessonId}-${active}-v2`)!;
   return <section className="widget-lab">
     <div className="widget-lab-heading"><div><span className="eyebrow">PRACOWNIA W LEKCJI</span><h2>Najpierw przewidź, potem odsłoń mechanizm</h2></div><span className="model-warning">Model edukacyjny · nie diagnozuje</span></div>
     <div className="widget-tabs" role="tablist" aria-label="Narzędzia tej lekcji">

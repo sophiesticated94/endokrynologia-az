@@ -15,7 +15,8 @@ import {
   Code2,
 } from 'lucide-react';
 import { lessonExperiences, lessons, type Lesson } from '@/lib/course';
-import type { Confidence, LearningActivity } from '@/lib/course-types';
+import type { Confidence, LearningActivity, PracticeRecordMeta } from '@/lib/course-types';
+import { isLessonCoreComplete } from '@/lib/lesson-v2';
 import type { LearningState } from '@/lib/learning';
 import { SourceList } from '../course-ui';
 import { GlossaryText } from '../glossary-components';
@@ -43,7 +44,7 @@ export function LessonView({
   blocked: boolean;
   complete: () => void;
   setLevel: (level: 'student' | 'doctor') => void;
-  recordPractice: (activity: LearningActivity, correct: boolean, confidence?: Confidence, scored?: boolean) => Promise<boolean>;
+  recordPractice: (activity: LearningActivity, correct: boolean, confidence?: Confidence, scored?: boolean, meta?: PracticeRecordMeta) => Promise<boolean>;
 }) {
   const [latexModalOpen, setLatexModalOpen] = useState(false);
   const [finishedActivities, setFinishedActivities] = useState<Set<string>>(new Set());
@@ -224,7 +225,7 @@ export function LessonView({
         <div className="lesson-finish">
           <button
             className="secondary"
-            disabled={blocked || state.completed.includes(lesson.id) || Boolean(experience && ![experience.teachBack,...experience.exitTicket].every(activity=>finishedActivities.has(activity.id)))}
+            disabled={blocked || state.completed.includes(lesson.id) || Boolean(experience && !isLessonCoreComplete(experience, finishedActivities))}
             onClick={complete}
           >
             <Check size={17} />

@@ -1,4 +1,4 @@
-export const CONTENT_VERSION = '2026.09.12.1';
+export const CONTENT_VERSION = '2026.09.12.2';
 import { buildPilotExperiences, buildQuestionObjectiveMap } from './lesson-v2.ts';
 import legacyQuestionIds from './question-ids.json' with {type:'json'};
 import {gahtLessons, gahtSources, gahtConceptCards, gahtLessonIds} from './course-gaht.ts';

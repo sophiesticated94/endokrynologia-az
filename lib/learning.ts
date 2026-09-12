@@ -1,6 +1,6 @@
 import { questionObjectiveMap } from './course.ts';
 import type { Question } from './course.ts';
-import type { Confidence } from './course-types';
+import type { Confidence, LearningActivity, PracticeRecordMeta } from './course-types';
 export const intervals=[1,3,7,14,30] as const;
 export type Review={stage:number;dueAt:string};
 export function scheduleReview(previous:Review|undefined,remembered:boolean,now=new Date()):Review {
@@ -27,6 +27,15 @@ export type MasteryStatus='new'|'learning'|'practicing'|'mastered';
 export type MasteryRecord={status:MasteryStatus;correctEvidence:number;lastAttemptAt:string;highConfidenceError:boolean};
 export type MistakeRecord={eventId:string;activityId:string;lessonId:string;objectiveIds:string[];confidence?:Confidence;createdAt:string};
 export type LearningState={completed:string[];reviews:Record<string,Review>;attempts:Activity[];level:'student'|'doctor';mastery:Record<string,MasteryRecord>;mistakes:MistakeRecord[]};
+
+export function practicePayload(lessonId:string,activity:LearningActivity,correct:boolean,confidence:Confidence|undefined,scored:boolean,meta?:PracticeRecordMeta):Record<string,unknown>{
+  return {lessonId,objectiveIds:activity.objectiveIds,correct,confidence,activityType:activity.type,answerType:meta?.answerType,elapsedMs:meta?.elapsedMs,scored};
+}
+
+export function parseStoredActivities(raw:string|null):Activity[]{
+  if(!raw)return[];
+  try{const value=JSON.parse(raw);return Array.isArray(value)?value.filter(item=>item&&typeof item.id==='string'&&typeof item.kind==='string'):[];}catch{return[];}
+}
 
 type Evidence={correct:boolean;activityType:string;createdAt:string;confidence?:Confidence};
 function asConfidence(value:unknown):Confidence|undefined{return value===1||value===2||value===3?value:undefined}

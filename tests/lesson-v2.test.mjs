@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { lessonExperiences, lessons, questionObjectiveMap, sources } from '../lib/course.ts';
 import { gradeActivity } from '../lib/activity-grading.ts';
-import { projectActivities } from '../lib/learning.ts';
+import { parseStoredActivities, practicePayload, projectActivities } from '../lib/learning.ts';
+import { findRepeatableActivity, isLessonCoreComplete, requiredCompletionActivityIds } from '../lib/lesson-v2.ts';
 
 test('all 32 thyroid and diabetes lessons use the complete v2 learning structure', () => {
   const pilot = lessons.filter(lesson => lesson.moduleId === 'tarczyca' || lesson.moduleId === 'cukrzyca');
@@ -17,13 +18,24 @@ test('all 32 thyroid and diabetes lessons use the complete v2 learning structure
     assert.equal(experience.activities.length, 2);
     assert.equal(experience.exitTicket.length, 2);
     assert.ok(experience.widgetIds.length >= 1);
+    const reasoning = new Set([...experience.activities, ...experience.exitTicket].map(activity => activity.reasoning));
+    assert.ok(reasoning.has('mechanism') && reasoning.has('interpretation') && reasoning.has('decision'));
+    const scoredObjectiveIds = new Set([...experience.activities, ...experience.exitTicket].flatMap(activity => activity.objectiveIds));
+    assert.ok(experience.objectives.every(objective => scoredObjectiveIds.has(objective.id)));
     for (const activity of [experience.diagnostic, ...experience.activities, experience.teachBack, ...experience.exitTicket]) {
       assert.ok(!ids.has(activity.id), `duplicate activity id: ${activity.id}`);
       ids.add(activity.id);
       assert.ok(activity.objectiveIds.every(id => experience.objectives.some(objective => objective.id === id)));
       assert.ok(activity.sourceIds.length > 0 && activity.sourceIds.every(id => sources[id]));
       assert.ok(activity.reasoning);
+      if ('options' in activity) {
+        assert.equal(activity.optionFeedback?.length, activity.options.length);
+        assert.ok(activity.optionFeedback.every(Boolean));
+      }
     }
+    const required = requiredCompletionActivityIds(experience);
+    assert.equal(isLessonCoreComplete(experience, new Set(required)), true);
+    assert.equal(isLessonCoreComplete(experience, new Set(required.slice(1))), false);
   }
 });
 
@@ -59,4 +71,26 @@ test('diagnostic and recall events do not affect mastery or the mistake notebook
   const state=projectActivities([{id:'x',user_id:'u',kind:'practice',target_id:'diagnostic',content_version:'v2',created_at:'2026-09-10T10:00:00Z',payload:{lessonId:'fizjologia',objectiveIds:['objective'],correct:false,confidence:3,activityType:'single_choice',scored:false}}]);
   assert.deepEqual(state.mastery,{});
   assert.deepEqual(state.mistakes,[]);
+});
+
+test('practice payload records timing and answer shape without free-form response text', () => {
+  const activity=lessonExperiences.fizjologia.teachBack;
+  const payload=practicePayload('fizjologia',activity,true,undefined,false,{answerType:'self_assessment',elapsedMs:12400});
+  assert.equal(payload.answerType,'self_assessment');
+  assert.equal(payload.elapsedMs,12400);
+  assert.equal(payload.activityType,'recall');
+  assert.equal('response' in payload,false);
+  assert.equal('text' in payload,false);
+});
+
+test('stored offline queues reject malformed JSON and preserve valid immutable events', () => {
+  const event={id:'offline-1',user_id:'u',kind:'practice',target_id:'a',content_version:'v2',created_at:'2026-09-12T10:00:00Z',payload:{}};
+  assert.deepEqual(parseStoredActivities('{broken'),[]);
+  assert.deepEqual(parseStoredActivities(JSON.stringify([null,{bad:true},event])),[event]);
+});
+
+test('mistake resolver includes repeatable widget activities', () => {
+  const experience=lessonExperiences.fizjologia;
+  const widget={...experience.diagnostic,id:'fizjologia-axis-map-v2'};
+  assert.equal(findRepeatableActivity(experience,widget.id,[widget]),widget);
 });
