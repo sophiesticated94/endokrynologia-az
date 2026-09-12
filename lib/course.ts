@@ -38,6 +38,14 @@ import { draftOtyloscPart1 } from './course-otylosc-1.ts';
 import { draftOtyloscPart2 } from './course-otylosc-2.ts';
 import { draftOtyloscPart3 } from './course-otylosc-3.ts';
 import { draftOtyloscPart4 } from './course-otylosc-4.ts';
+import { pediatricSources } from './course-pediatrics-sources.ts';
+import { draftPediatricsPart1 } from './course-pediatrics-1.ts';
+import { draftPediatricsPart2 } from './course-pediatrics-2.ts';
+import { draftPediatricsMathChem } from './course-pediatrics-math-chem.ts';
+import { pregnancySources } from './course-pregnancy-sources.ts';
+import { draftPregnancyPart1 } from './course-pregnancy-1.ts';
+import { draftPregnancyPart2 } from './course-pregnancy-2.ts';
+import { draftPregnancyMathChem } from './course-pregnancy-math-chem.ts';
 
 const thyroidSources: Record<string, Source> = {
   physiology:{id:'physiology',title:'Endotext — Thyroid Hormone Synthesis and Secretion',year:'2015',url:'https://www.ncbi.nlm.nih.gov/books/NBK285550/',kind:'Podręcznik: fizjologia'},
@@ -72,6 +80,8 @@ export const sources: Record<string, Source> = {
   ...gonadsSources,
   ...nenSources,
   ...otyloscSources,
+  ...pediatricSources,
+  ...pregnancySources,
 };
 
 const draft: DraftLesson[] = [
@@ -226,6 +236,12 @@ const allDrafts: DraftLesson[] = [
   ...draftOtyloscPart2.map(l => ({ ...l, moduleId: 'otylosc' as ModuleId })),
   ...draftOtyloscPart3.map(l => ({ ...l, moduleId: 'otylosc' as ModuleId })),
   ...draftOtyloscPart4.map(l => ({ ...l, moduleId: 'otylosc' as ModuleId })),
+  ...draftPediatricsPart1.map(l => ({ ...l, moduleId: 'pediatria' as ModuleId })),
+  ...draftPediatricsPart2.map(l => ({ ...l, moduleId: 'pediatria' as ModuleId })),
+  ...draftPediatricsMathChem.map(l => ({ ...l, moduleId: 'pediatria' as ModuleId })),
+  ...draftPregnancyPart1.map(l => ({ ...l, moduleId: 'ciaza' as ModuleId })),
+  ...draftPregnancyPart2.map(l => ({ ...l, moduleId: 'ciaza' as ModuleId })),
+  ...draftPregnancyMathChem.map(l => ({ ...l, moduleId: 'ciaza' as ModuleId })),
 ];
 
 export const lessons: Lesson[] = allDrafts.map((l, li) => {
@@ -276,9 +292,11 @@ export const modulesList = [
   { id: 'gonady', name: 'Gonady i medycyna rozrodu', count: 26, subtitle: 'Oś HPG, hipogonadyzm, PCOS, MHT, IVF/OHSS, 8 lekcji GAHT, DSD i aromataza' },
   { id: 'nen', name: 'Nowotwory neuroendokrynne i MEN', count: 20, subtitle: 'GEP-NEN, rakowiak, gastrinoma, insulinoma, MEN1, MEN2, MEN4, VHL, PRRT, CAPTEM i kinet. receptorowa' },
   { id: 'otylosc', name: 'Otyłość i lipidy', count: 20, subtitle: 'Adipobiologia, GLP-1/GIP, bariatria, MASLD, FH, PCSK9, model Halla i biochemia lipolizy' },
+  { id: 'pediatria', name: 'Endokrynologia pediatryczna', count: 16, subtitle: 'Auksologia, SDS, GHD, CPP, CDGP, WPN noworodek, Turner, krzywica, szlak JAK-STAT i steroidogeneza płodowa' },
+  { id: 'ciaza', name: 'Endokrynologia ciąży i połogu', count: 16, subtitle: 'Tarczyca w ciąży, Graves/PTU, GDM IADPSG, Addison w porodzie, prolactinoma, model Bergmana i transfer łożyskowy' },
 ] as const;
 
-export const plannedModules = [
-  'Endokrynologia rozwojowa i pediatryczna',
-  'Endokrynologia ciąży i połogu',
+export const plannedModules: string[] = [
+  'Endokrynologia wieku podeszłego i geriatryczna',
+  'Immunoterapia i powikłania endokrynne w onkologii',
 ];

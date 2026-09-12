@@ -9,6 +9,8 @@ export type ModuleId =
   | 'gonady'
   | 'nen'
   | 'otylosc'
+  | 'pediatria'
+  | 'ciaza'
   | 'psych-afektywne'
   | 'psych-farmakologia';
 

@@ -54,7 +54,7 @@ export const COURSES: Record<CourseId, CourseBundle> = {
     shortTitle: 'Endokrynologia',
     brandSub: 'ENDOKRYNOLOGIA A–Z',
     code: 'ENDO',
-    badge: '146 lekcji · 8 modułów',
+    badge: '178 lekcji · 10 modułów',
     description:
       'Kompletny program kliniczno-mechanistyczny: oś HPT, HPA, HPG, gospodarka Ca–P, cukrzyca i pompy, NEN, GAHT oraz metabolizm.',
     lessons: endoLessons,

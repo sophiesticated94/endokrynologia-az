@@ -7,8 +7,46 @@ import { LessonRow } from './lesson-row';
 import { StudyPath } from './study-path';
 import type { Navigation } from './types';
 
+function ModuleGroups({
+  moduleId,
+  preferred,
+  state,
+  go,
+}: {
+  moduleId: string;
+  preferred: string[];
+  state: LearningState;
+  go: Navigation;
+}) {
+  const actual = Array.from(new Set(lessons.filter(l => l.moduleId === moduleId).map(l => l.group)));
+  const allGroups = [
+    ...preferred.filter(g => actual.includes(g)),
+    ...actual.filter(g => !preferred.includes(g)),
+  ];
+  return (
+    <>
+      {allGroups.map(group => {
+        const groupLessons = lessons.filter(l => l.moduleId === moduleId && l.group === group);
+        if (!groupLessons.length) return null;
+        return (
+          <section key={`${moduleId}-${group}`} className="course-group">
+            <h3>{group}</h3>
+            <div className="lesson-list">
+              {groupLessons.map(l => (
+                <LessonRow key={l.id} lesson={l} state={state} go={go} />
+              ))}
+            </div>
+          </section>
+        );
+      })}
+    </>
+  );
+}
+
 export function CourseMap({ state, go }: { state: LearningState; go: Navigation }) {
-  const [activeTab, setActiveTab] = useState<'all' | 'tarczyca' | 'przysadka' | 'nadnercza' | 'przytarczyce' | 'cukrzyca' | 'gonady' | 'nen' | 'otylosc'>('all');
+  const [activeTab, setActiveTab] = useState<
+    'all' | 'tarczyca' | 'przysadka' | 'nadnercza' | 'przytarczyce' | 'cukrzyca' | 'gonady' | 'nen' | 'otylosc' | 'pediatria' | 'ciaza'
+  >('all');
 
   const thyroidCount = lessons.filter(l => l.moduleId === 'tarczyca').length;
   const pituitaryCount = lessons.filter(l => l.moduleId === 'przysadka').length;
@@ -18,6 +56,8 @@ export function CourseMap({ state, go }: { state: LearningState; go: Navigation 
   const gonadCount = lessons.filter(l => l.moduleId === 'gonady').length;
   const nenCount = lessons.filter(l => l.moduleId === 'nen').length;
   const otyloscCount = lessons.filter(l => l.moduleId === 'otylosc').length;
+  const pediatriaCount = lessons.filter(l => l.moduleId === 'pediatria').length;
+  const ciazaCount = lessons.filter(l => l.moduleId === 'ciaza').length;
 
   return (
     <>
@@ -82,10 +122,22 @@ export function CourseMap({ state, go }: { state: LearningState; go: Navigation 
         >
           Moduł 08: Otyłość i zaburzenia lipidowe ({otyloscCount})
         </button>
+        <button
+          className={activeTab === 'pediatria' ? 'active' : ''}
+          onClick={() => setActiveTab('pediatria')}
+        >
+          Moduł 09: Endokrynologia pediatryczna ({pediatriaCount})
+        </button>
+        <button
+          className={activeTab === 'ciaza' ? 'active' : ''}
+          onClick={() => setActiveTab('ciaza')}
+        >
+          Moduł 10: Endokrynologia ciąży i połogu ({ciazaCount})
+        </button>
       </div>
 
+      <StudyPath scope={activeTab} state={state} go={go} />
 
-      <StudyPath scope={activeTab} state={state} go={go}/>
       {/* Moduł 01: Tarczyca */}
       {(activeTab === 'all' || activeTab === 'tarczyca') && (
         <div style={{ marginBottom: '40px' }}>
@@ -97,35 +149,12 @@ export function CourseMap({ state, go }: { state: LearningState; go: Navigation 
             </div>
             <span className="badge">DOSTĘPNY</span>
           </section>
-
-          {(() => {
-            const preferred = [
-              'Fundamenty',
-              'Praktyka kliniczna',
-              'Sytuacje szczególne',
-              'Matematyka i modele',
-              'Chemia i biochemia',
-            ];
-            const actual = Array.from(new Set(lessons.filter(l => l.moduleId === 'tarczyca').map(l => l.group)));
-            const allGroups = [
-              ...preferred.filter(g => actual.includes(g)),
-              ...actual.filter(g => !preferred.includes(g)),
-            ];
-            return allGroups.map(group => {
-              const groupLessons = lessons.filter(l => l.moduleId === 'tarczyca' && l.group === group);
-              if (!groupLessons.length) return null;
-              return (
-                <section key={`t-${group}`} className="course-group">
-                  <h3>{group}</h3>
-                  <div className="lesson-list">
-                    {groupLessons.map(l => (
-                      <LessonRow key={l.id} lesson={l} state={state} go={go} />
-                    ))}
-                  </div>
-                </section>
-              );
-            });
-          })()}
+          <ModuleGroups
+            moduleId="tarczyca"
+            preferred={['Fundamenty', 'Praktyka kliniczna', 'Sytuacje szczególne', 'Matematyka i modele', 'Chemia i biochemia']}
+            state={state}
+            go={go}
+          />
         </div>
       )}
 
@@ -140,36 +169,12 @@ export function CourseMap({ state, go }: { state: LearningState; go: Navigation 
             </div>
             <span className="badge" style={{ color: '#255b85', borderColor: '#adc8dd', background: '#ffffffcc' }}>DOSTĘPNY</span>
           </section>
-
-          {(() => {
-            const preferred = [
-              'Fundamenty',
-              'Gruczolaki i hipersekrecja',
-              'Niedoczynność i gospodarka wodna',
-              'Sytuacje szczególne i chirurgia',
-              'Matematyka i modele',
-              'Chemia i biochemia',
-            ];
-            const actual = Array.from(new Set(lessons.filter(l => l.moduleId === 'przysadka').map(l => l.group)));
-            const allGroups = [
-              ...preferred.filter(g => actual.includes(g)),
-              ...actual.filter(g => !preferred.includes(g)),
-            ];
-            return allGroups.map(group => {
-              const groupLessons = lessons.filter(l => l.moduleId === 'przysadka' && l.group === group);
-              if (!groupLessons.length) return null;
-              return (
-                <section key={`p-${group}`} className="course-group">
-                  <h3>{group}</h3>
-                  <div className="lesson-list">
-                    {groupLessons.map(l => (
-                      <LessonRow key={l.id} lesson={l} state={state} go={go} />
-                    ))}
-                  </div>
-                </section>
-              );
-            });
-          })()}
+          <ModuleGroups
+            moduleId="przysadka"
+            preferred={['Fundamenty', 'Gruczolaki i hipersekrecja', 'Niedoczynność i gospodarka wodna', 'Sytuacje szczególne i chirurgia', 'Matematyka i modele', 'Chemia i biochemia']}
+            state={state}
+            go={go}
+          />
         </div>
       )}
 
@@ -184,36 +189,12 @@ export function CourseMap({ state, go }: { state: LearningState; go: Navigation 
             </div>
             <span className="badge" style={{ color: '#8c480a', borderColor: '#dcb892', background: '#ffffffcc' }}>DOSTĘPNY</span>
           </section>
-
-          {(() => {
-            const preferred = [
-              'Fundamenty',
-              'Niedoczynność kory i WPN',
-              'Nadczynności i guz chromochłonny',
-              'Stany nagłe i chirurgia',
-              'Matematyka i modele',
-              'Chemia i biochemia',
-            ];
-            const actual = Array.from(new Set(lessons.filter(l => l.moduleId === 'nadnercza').map(l => l.group)));
-            const allGroups = [
-              ...preferred.filter(g => actual.includes(g)),
-              ...actual.filter(g => !preferred.includes(g)),
-            ];
-            return allGroups.map(group => {
-              const groupLessons = lessons.filter(l => l.moduleId === 'nadnercza' && l.group === group);
-              if (!groupLessons.length) return null;
-              return (
-                <section key={`n-${group}`} className="course-group">
-                  <h3>{group}</h3>
-                  <div className="lesson-list">
-                    {groupLessons.map(l => (
-                      <LessonRow key={l.id} lesson={l} state={state} go={go} />
-                    ))}
-                  </div>
-                </section>
-              );
-            });
-          })()}
+          <ModuleGroups
+            moduleId="nadnercza"
+            preferred={['Fundamenty', 'Niedoczynność kory i WPN', 'Nadczynności i guz chromochłonny', 'Stany nagłe i chirurgia', 'Matematyka i modele', 'Chemia i biochemia']}
+            state={state}
+            go={go}
+          />
         </div>
       )}
 
@@ -228,36 +209,12 @@ export function CourseMap({ state, go }: { state: LearningState; go: Navigation 
             </div>
             <span className="badge" style={{ color: '#56338e', borderColor: '#c2b2e5', background: '#ffffffcc' }}>DOSTĘPNY</span>
           </section>
-
-          {(() => {
-            const preferred = [
-              'Fundamenty',
-              'Nadczynności i hiperkalcemia',
-              'Niedoczynności i tężyczka',
-              'Kości, chirurgia i stany nagłe',
-              'Matematyka i modele',
-              'Chemia i biochemia',
-            ];
-            const actual = Array.from(new Set(lessons.filter(l => l.moduleId === 'przytarczyce').map(l => l.group)));
-            const allGroups = [
-              ...preferred.filter(g => actual.includes(g)),
-              ...actual.filter(g => !preferred.includes(g)),
-            ];
-            return allGroups.map(group => {
-              const groupLessons = lessons.filter(l => l.moduleId === 'przytarczyce' && l.group === group);
-              if (!groupLessons.length) return null;
-              return (
-                <section key={`pt-${group}`} className="course-group">
-                  <h3>{group}</h3>
-                  <div className="lesson-list">
-                    {groupLessons.map(l => (
-                      <LessonRow key={l.id} lesson={l} state={state} go={go} />
-                    ))}
-                  </div>
-                </section>
-              );
-            });
-          })()}
+          <ModuleGroups
+            moduleId="przytarczyce"
+            preferred={['Fundamenty', 'Nadczynności i hiperkalcemia', 'Niedoczynności i tężyczka', 'Kości, chirurgia i stany nagłe', 'Matematyka i modele', 'Chemia i biochemia']}
+            state={state}
+            go={go}
+          />
         </div>
       )}
 
@@ -272,36 +229,12 @@ export function CourseMap({ state, go }: { state: LearningState; go: Navigation 
             </div>
             <span className="badge" style={{ color: '#095c41', borderColor: '#a3d8c5', background: '#ffffffcc' }}>DOSTĘPNY</span>
           </section>
-
-          {(() => {
-            const preferred = [
-              'Fundamenty i diagnostyka',
-              'Klasyfikacja i patogeneza',
-              'Ostre stany i powikłania',
-              'Farmakoterapia i sytuacje szczególne',
-              'Matematyka i modele',
-              'Chemia i biochemia',
-            ];
-            const actual = Array.from(new Set(lessons.filter(l => l.moduleId === 'cukrzyca').map(l => l.group)));
-            const allGroups = [
-              ...preferred.filter(g => actual.includes(g)),
-              ...actual.filter(g => !preferred.includes(g)),
-            ];
-            return allGroups.map(group => {
-              const groupLessons = lessons.filter(l => l.moduleId === 'cukrzyca' && l.group === group);
-              if (!groupLessons.length) return null;
-              return (
-                <section key={`dia-${group}`} className="course-group">
-                  <h3>{group}</h3>
-                  <div className="lesson-list">
-                    {groupLessons.map(l => (
-                      <LessonRow key={l.id} lesson={l} state={state} go={go} />
-                    ))}
-                  </div>
-                </section>
-              );
-            });
-          })()}
+          <ModuleGroups
+            moduleId="cukrzyca"
+            preferred={['Fundamenty i diagnostyka', 'Klasyfikacja i patogeneza', 'Ostre stany i powikłania', 'Farmakoterapia i sytuacje szczególne', 'Matematyka i modele', 'Chemia i biochemia']}
+            state={state}
+            go={go}
+          />
         </div>
       )}
 
@@ -316,36 +249,12 @@ export function CourseMap({ state, go }: { state: LearningState; go: Navigation 
               hormonoterapia tranzycyjna (GAHT), zaburzenia rozwoju płci (DSD) oraz modele biofizyczne i stereochemia steroidogenezy.
             </p>
           </section>
-
-          {(() => {
-            const preferred = [
-              'Fundamenty i diagnostyka',
-              'Andrologia i gonady męskie',
-              'Ginekologia endokrynologiczna',
-              'Hormonoterapia tranzycyjna i zaburzenia rozwojowe',
-              'Matematyka i modele',
-              'Chemia i biochemia',
-            ];
-            const actual = Array.from(new Set(lessons.filter(l => l.moduleId === 'gonady').map(l => l.group)));
-            const allGroups = [
-              ...preferred.filter(g => actual.includes(g)),
-              ...actual.filter(g => !preferred.includes(g)),
-            ];
-            return allGroups.map(group => {
-              const groupLessons = lessons.filter(l => l.moduleId === 'gonady' && l.group === group);
-              if (!groupLessons.length) return null;
-              return (
-                <section key={`gon-${group}`} className="course-group">
-                  <h3>{group}</h3>
-                  <div className="lesson-list">
-                    {groupLessons.map(l => (
-                      <LessonRow key={l.id} lesson={l} state={state} go={go} />
-                    ))}
-                  </div>
-                </section>
-              );
-            });
-          })()}
+          <ModuleGroups
+            moduleId="gonady"
+            preferred={['Fundamenty i diagnostyka', 'Andrologia i gonady męskie', 'Ginekologia endokrynologiczna', 'Hormonoterapia tranzycyjna i zaburzenia rozwojowe', 'Matematyka i modele', 'Chemia i biochemia']}
+            state={state}
+            go={go}
+          />
         </div>
       )}
 
@@ -360,37 +269,12 @@ export function CourseMap({ state, go }: { state: LearningState; go: Navigation 
               zespoły MEN1, MEN2A/2B, MEN4, VHL, dozymetria nerkowa PRRT (177Lu-DOTATATE) oraz doustna chemioterapia CAPTEM.
             </p>
           </section>
-
-          {(() => {
-            const preferred = [
-              'Fundamenty i diagnostyka',
-              'Guzy neuroendokrynne trzustki (pNET)',
-              'Zespół rakowiaka i NEN przewodu pokarmowego oraz płuc',
-              'Zespoły uwarunkowane genetycznie',
-              'Terapie celowane, PRRT i chirurgia',
-              'Matematyka i modele',
-              'Chemia i biochemia',
-            ];
-            const actual = Array.from(new Set(lessons.filter(l => l.moduleId === 'nen').map(l => l.group)));
-            const allGroups = [
-              ...preferred.filter(g => actual.includes(g)),
-              ...actual.filter(g => !preferred.includes(g)),
-            ];
-            return allGroups.map(group => {
-              const groupLessons = lessons.filter(l => l.moduleId === 'nen' && l.group === group);
-              if (!groupLessons.length) return null;
-              return (
-                <section key={`nen-${group}`} className="course-group">
-                  <h3>{group}</h3>
-                  <div className="lesson-list">
-                    {groupLessons.map(l => (
-                      <LessonRow key={l.id} lesson={l} state={state} go={go} />
-                    ))}
-                  </div>
-                </section>
-              );
-            });
-          })()}
+          <ModuleGroups
+            moduleId="nen"
+            preferred={['Fundamenty i diagnostyka', 'Guzy neuroendokrynne trzustki (pNET)', 'Zespół rakowiaka i NEN przewodu pokarmowego oraz płuc', 'Zespoły uwarunkowane genetycznie', 'Terapie celowane, PRRT i chirurgia', 'Matematyka i modele', 'Chemia i biochemia']}
+            state={state}
+            go={go}
+          />
         </div>
       )}
 
@@ -406,54 +290,91 @@ export function CourseMap({ state, go }: { state: LearningState; go: Navigation 
               inhibitory PCSK9 i inklisiran, model dynamiczny Halla oraz kinetyka lipolizy i estrów cholesterolu.
             </p>
           </section>
-
-          {(() => {
-            const preferred = [
-              'Fundamenty i diagnostyka',
-              'Powikłania narządowe i kardiometaboliczne',
-              'Farmakoterapia otyłości',
-              'Chirurgia bariatryczna i metaboliczna',
-              'Zaburzenia lipidowe i dyslipidemie',
-              'Matematyka i modele',
-              'Chemia i biochemia',
-            ];
-            const actual = Array.from(new Set(lessons.filter(l => l.moduleId === 'otylosc').map(l => l.group)));
-            const allGroups = [
-              ...preferred.filter(g => actual.includes(g)),
-              ...actual.filter(g => !preferred.includes(g)),
-            ];
-            return allGroups.map(group => {
-              const groupLessons = lessons.filter(l => l.moduleId === 'otylosc' && l.group === group);
-              if (!groupLessons.length) return null;
-              return (
-                <section key={`otylosc-${group}`} className="course-group">
-                  <h3>{group}</h3>
-                  <div className="lesson-list">
-                    {groupLessons.map(l => (
-                      <LessonRow key={l.id} lesson={l} state={state} go={go} />
-                    ))}
-                  </div>
-                </section>
-              );
-            });
-          })()}
+          <ModuleGroups
+            moduleId="otylosc"
+            preferred={['Fundamenty i diagnostyka', 'Powikłania narządowe i kardiometaboliczne', 'Farmakoterapia otyłości', 'Chirurgia bariatryczna i metaboliczna', 'Zaburzenia lipidowe i dyslipidemie', 'Matematyka i modele', 'Chemia i biochemia']}
+            state={state}
+            go={go}
+          />
         </div>
       )}
 
-      <h2 className="spaced-heading">Dalsza część Twojej ścieżki</h2>
-      <div className="planned-grid">
-        {plannedModules.map((name, i) => (
-          <div className="planned-card" key={name}>
-            <span>{String(i + 9).padStart(2, '0')}</span>
-            <h3>{name}</h3>
-            <small>
-              <LockKeyhole size={13} />
-              Planowany moduł
-            </small>
-          </div>
-        ))}
-      </div>
+      {/* Moduł 09: Endokrynologia pediatryczna */}
+      {(activeTab === 'all' || activeTab === 'pediatria') && (
+        <div className="module-group" style={{ marginTop: activeTab === 'all' ? '40px' : '0' }}>
+          <section className="course-module-header">
+            <span className="eyebrow">MODUŁ 09 · ENDOKRYNOLOGIA PEDIATRYCZNA I ROZWOJOWA</span>
+            <h2>Endokrynologia pediatryczna i rozwojowa</h2>
+            <p>
+              Auksologia, siatki centylowe i SDS, somatotropinowa niedoczynność przysadki (GHD), przedwczesne i opóźnione dojrzewanie (CPP/CDGP),
+              wrodzony przerost nadnerczy (WPN noworodka), zespół Turnera, krzywica i XLH, szlak JAK-STAT5b oraz steroidogeneza kory płodowej.
+            </p>
+          </section>
+          <ModuleGroups
+            moduleId="pediatria"
+            preferred={[
+              'Wzrastanie i rozwój',
+              'Dojrzewanie i gonady',
+              'Tarczyca i metabolizm',
+              'Nadnercza i steroidy',
+              'Genetyka i dysgenezje',
+              'Gospodarka mineralna',
+              'Stany nagłe i intensywna terapia',
+              'Matematyka i modele',
+              'Chemia i biochemia',
+            ]}
+            state={state}
+            go={go}
+          />
+        </div>
+      )}
 
+      {/* Moduł 10: Endokrynologia ciąży i połogu */}
+      {(activeTab === 'all' || activeTab === 'ciaza') && (
+        <div className="module-group" style={{ marginTop: activeTab === 'all' ? '40px' : '0' }}>
+          <section className="course-module-header">
+            <span className="eyebrow">MODUŁ 10 · ENDOKRYNOLOGIA CIĄŻY I POŁOGU</span>
+            <h2>Endokrynologia ciąży i połogu</h2>
+            <p>
+              Fizjologia osi matczyno-płodowych, wczesna niedoczynność i choroba Hashimoto, choroba Gravesa-Basedowa i PTU, poporodowe zapalenie tarczycy (PPT),
+              cukrzyca ciążowa (GDM IADPSG), Addison w porodzie, guz chromochłonny, model Bergmana w ciąży i jednostka płodowo-łożyskowa.
+            </p>
+          </section>
+          <ModuleGroups
+            moduleId="ciaza"
+            preferred={[
+              'Tarczyca w ciąży',
+              'Cukrzyca i metabolizm w ciąży',
+              'Nadnercza w ciąży',
+              'Przysadka i woda w ciąży',
+              'Przytarczyce i kości',
+              'Nadciśnienie endokrynne',
+              'Matematyka i modele',
+              'Chemia i biochemia',
+            ]}
+            state={state}
+            go={go}
+          />
+        </div>
+      )}
+
+      {plannedModules.length > 0 && (
+        <>
+          <h2 className="spaced-heading">Dalsza część Twojej ścieżki</h2>
+          <div className="planned-grid">
+            {plannedModules.map((name, i) => (
+              <div className="planned-card" key={name}>
+                <span>{String(i + 11).padStart(2, '0')}</span>
+                <h3>{name}</h3>
+                <small>
+                  <LockKeyhole size={13} />
+                  Planowany moduł
+                </small>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
     </>
   );
 }

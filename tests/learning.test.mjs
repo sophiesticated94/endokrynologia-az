@@ -21,11 +21,11 @@ test('isSafePublicKey accepts anon JWT, publishable keys and rejects service_rol
   assert.equal(isSafePublicKey(null), false);
 });
 
-test('complete curriculum: 146 lessons across 8 modules, 730 explained questions, 778 cards, 112 four-step cases', () => {
-  assert.equal(lessons.length, 146);
-  assert.equal(questions.length, 730);
-  assert.equal(flashcards.length, 778);
-  assert.equal(cases.length, 112);
+test('complete curriculum: 178 lessons across 10 modules, 890 explained questions, 940 cards, 120 four-step cases', () => {
+  assert.equal(lessons.length, 178);
+  assert.equal(questions.length, 890);
+  assert.equal(flashcards.length, 940);
+  assert.equal(cases.length, 120);
 
   const thyroidLessons = lessons.filter(l => l.moduleId === 'tarczyca');
   const pituitaryLessons = lessons.filter(l => l.moduleId === 'przysadka');
@@ -35,6 +35,8 @@ test('complete curriculum: 146 lessons across 8 modules, 730 explained questions
   const gonadLessons = lessons.filter(l => l.moduleId === 'gonady');
   const nenLessons = lessons.filter(l => l.moduleId === 'nen');
   const otyloscLessons = lessons.filter(l => l.moduleId === 'otylosc');
+  const pedLessons = lessons.filter(l => l.moduleId === 'pediatria');
+  const pregLessons = lessons.filter(l => l.moduleId === 'ciaza');
 
   assert.equal(thyroidLessons.length, 16, 'Thyroid must have 16 lessons (12 clinical + 2 math + 2 chem)');
   assert.equal(pituitaryLessons.length, 16, 'Pituitary must have 16 lessons (12 clinical + 2 math + 2 chem)');
@@ -44,6 +46,8 @@ test('complete curriculum: 146 lessons across 8 modules, 730 explained questions
   assert.equal(gonadLessons.length, 26, 'Gonads include the eight-lesson GAHT pathway');
   assert.equal(nenLessons.length, 20, 'NEN must have 20 lessons (16 clinical + 2 math + 2 chem)');
   assert.equal(otyloscLessons.length, 20, 'Otylosc must have 20 lessons (16 clinical + 2 math + 2 chem)');
+  assert.equal(pedLessons.length, 16, 'Pediatria must have 16 lessons (12 clinical + 2 math + 2 chem)');
+  assert.equal(pregLessons.length, 16, 'Ciaza must have 16 lessons (12 clinical + 2 math + 2 chem)');
 
 
   for (const l of lessons) {
@@ -249,7 +253,7 @@ test('medical glossary contains essential terms with definitions and clinical si
   assert.ok(glossaryMap.get('adaptacja-metaboliczna'));
 });
 
-test('course map grouping covers all 146 lessons across 8 modules without gaps', () => {
+test('course map grouping covers all 178 lessons across 10 modules without gaps', () => {
   const moduleGroups = {
     tarczyca: ['Fundamenty', 'Praktyka kliniczna', 'Sytuacje szczególne', 'Matematyka i modele', 'Chemia i biochemia'],
     przysadka: ['Fundamenty', 'Gruczolaki i hipersekrecja', 'Niedoczynność i gospodarka wodna', 'Sytuacje szczególne i chirurgia', 'Matematyka i modele', 'Chemia i biochemia'],
@@ -259,6 +263,27 @@ test('course map grouping covers all 146 lessons across 8 modules without gaps',
     gonady: ['GAHT · ścieżka mechanizmów', 'Fundamenty i diagnostyka', 'Andrologia i gonady męskie', 'Ginekologia endokrynologiczna', 'Hormonoterapia tranzycyjna i zaburzenia rozwojowe', 'Matematyka i modele', 'Chemia i biochemia'],
     nen: ['Fundamenty i diagnostyka', 'Guzy neuroendokrynne trzustki (pNET)', 'Zespół rakowiaka i NEN przewodu pokarmowego oraz płuc', 'Zespoły uwarunkowane genetycznie', 'Terapie celowane, PRRT i chirurgia', 'Matematyka i modele', 'Chemia i biochemia'],
     otylosc: ['Fundamenty i diagnostyka', 'Powikłania narządowe i kardiometaboliczne', 'Farmakoterapia otyłości', 'Chirurgia bariatryczna i metaboliczna', 'Zaburzenia lipidowe i dyslipidemie', 'Matematyka i modele', 'Chemia i biochemia'],
+    pediatria: [
+      'Wzrastanie i rozwój',
+      'Dojrzewanie i gonady',
+      'Tarczyca i metabolizm',
+      'Nadnercza i steroidy',
+      'Genetyka i dysgenezje',
+      'Gospodarka mineralna',
+      'Stany nagłe i intensywna terapia',
+      'Matematyka i modele',
+      'Chemia i biochemia',
+    ],
+    ciaza: [
+      'Tarczyca w ciąży',
+      'Cukrzyca i metabolizm w ciąży',
+      'Nadnercza w ciąży',
+      'Przysadka i woda w ciąży',
+      'Przytarczyce i kości',
+      'Nadciśnienie endokrynne',
+      'Matematyka i modele',
+      'Chemia i biochemia',
+    ],
   };
 
   for (const [modId, groups] of Object.entries(moduleGroups)) {

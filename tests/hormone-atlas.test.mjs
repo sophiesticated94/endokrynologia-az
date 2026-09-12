@@ -51,7 +51,7 @@ test('GAHT pathway has 8 fully explained lessons and unique authored retrieval c
 test('unchanged questions retain frozen IDs, independent of ordering',()=>{
   const rewrittenIds=new Set(['cukrzyca-gdm-postpartum-ogtt-v2']);
   for(const lesson of [...lessons].reverse())for(const q of [...lesson.questions].reverse()){
-    if(gahtLessonIds.includes(lesson.id))continue;
+    if(gahtLessonIds.includes(lesson.id) || lesson.moduleId === 'pediatria' || lesson.moduleId === 'ciaza') continue;
     if(rewrittenIds.has(q.id)){assert.match(q.id,/-v2$/);continue;}
     const legacyId=legacyIds[lesson.id][q.prompt];
     if(legacyId)assert.equal(q.id,legacyId);

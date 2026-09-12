@@ -6,6 +6,8 @@ import { diabetesCases } from './cases-diabetes.ts';
 import { gonadCases } from './cases-gonads.ts';
 import { nenCases } from './cases-nen.ts';
 import { otyloscCases } from './cases-otylosc.ts';
+import { pediatricCases } from './cases-pediatrics.ts';
+import { pregnancyCases } from './cases-pregnancy.ts';
 type Choice=[string,string];
 type StepDraft=[string,string,Choice,Choice];
 export type ClinicalCase={id:string;lessonId:string;title:string;patient:string;difficulty:'Podstawowy'|'Zaawansowany';intro:string;steps:(Question&{context:string;stage:string})[]};
@@ -206,4 +208,6 @@ export const cases: ClinicalCase[] = [
       }),
     };
   }),
+  ...pediatricCases,
+  ...pregnancyCases,
 ];

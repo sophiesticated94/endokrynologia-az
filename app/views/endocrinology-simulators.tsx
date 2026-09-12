@@ -9,10 +9,12 @@ import { DiabetesSimulator } from '../diabetes-simulator';
 import { GonadSimulator } from '../gonad-simulator';
 import { NenSimulator } from '../nen-simulator';
 import { ObesitySimulator } from '../obesity-simulator';
+import { PediatricsGrowthTwinView } from '../pediatrics-growth-twin-view';
+import { PregnancyEndocrineTwinView } from '../pregnancy-endocrine-twin-view';
 
 export function EndocrinologySimulators() {
   const [simTab, setSimTab] = useState<
-    'hpt' | 'pituitary' | 'adrenal' | 'parathyroid' | 'diabetes' | 'gonad' | 'nen' | 'otylosc'
+    'hpt' | 'pituitary' | 'adrenal' | 'parathyroid' | 'diabetes' | 'gonad' | 'nen' | 'otylosc' | 'pediatria' | 'ciaza'
   >('hpt');
 
   return (
@@ -42,6 +44,12 @@ export function EndocrinologySimulators() {
         <button className={simTab === 'otylosc' ? 'active' : ''} onClick={() => setSimTab('otylosc')}>
           <Activity size={15} /> Moduł 08: Konsola Metaboliczna (Masa, Lipidy i FIB-4)
         </button>
+        <button className={simTab === 'pediatria' ? 'active' : ''} onClick={() => setSimTab('pediatria')}>
+          <Activity size={15} /> Moduł 09: Growth & Puberty Twin (Auksologia & SDS)
+        </button>
+        <button className={simTab === 'ciaza' ? 'active' : ''} onClick={() => setSimTab('ciaza')}>
+          <Activity size={15} /> Moduł 10: Pregnancy & GDM Twin (0–40 hbd & OGTT)
+        </button>
       </div>
       {simTab === 'hpt' && <HptSimulator />}
       {simTab === 'pituitary' && <PituitarySimulator />}
@@ -51,6 +59,8 @@ export function EndocrinologySimulators() {
       {simTab === 'gonad' && <GonadSimulator />}
       {simTab === 'nen' && <NenSimulator />}
       {simTab === 'otylosc' && <ObesitySimulator />}
+      {simTab === 'pediatria' && <PediatricsGrowthTwinView />}
+      {simTab === 'ciaza' && <PregnancyEndocrineTwinView />}
     </div>
   );
 }

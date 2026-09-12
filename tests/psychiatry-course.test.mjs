@@ -50,10 +50,10 @@ test('courses registry holds valid bundles for endocrinology and psychiatry', ()
   const endo = getCourse('endocrinology');
   assert.equal(endo.id, 'endocrinology');
   assert.equal(endo.title, 'Endokrynologia i Zaburzenia Metaboliczne');
-  assert.equal(endo.lessons.length, 146);
-  assert.equal(endo.questions.length, 730);
-  assert.equal(endo.flashcards.length, 778);
-  assert.equal(endo.cases.length, 112);
+  assert.equal(endo.lessons.length, 178);
+  assert.equal(endo.questions.length, 890);
+  assert.equal(endo.flashcards.length, 940);
+  assert.equal(endo.cases.length, 120);
 
   const psych = getCourse('psychiatry');
   assert.equal(psych.id, 'psychiatry');
