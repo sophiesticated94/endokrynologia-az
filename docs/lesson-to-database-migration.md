@@ -1,1012 +1,921 @@
-Pracujesz na AKTUALNYM HEAD repozytorium `sophiesticated94/endokrynologia-az`.
+# Migracja modułów i lekcji do PostgreSQL
 
-Chcemy stworzyć uniwersalną warstwę storage dla wszystkich binarnych plików aplikacji.
+Ten dokument opisuje **aktualny wzorzec migracji contentu** w repozytorium `sophiesticated94/endokrynologia-az`.
 
-Pierwsza implementacja:
-LOCAL FILESYSTEM z konfigurowalnym root directory.
+Punktem referencyjnym jest migracja modułu `tarczyca`. Kolejne moduły powinny używać tych samych kontraktów, repozytoriów, walidacji i testów zamiast tworzyć własny równoległy pipeline.
 
-Architektura musi umożliwiać późniejsze przełączenie praktycznie 1:1 na:
-- Amazon S3
-- Cloudflare R2
-- MinIO
-- dowolny S3-compatible object storage
+## 1. Docelowa architektura
 
-bez zmieniania logiki domenowej, lekcji ani asset repository.
+Treść kursu jest rozdzielona na trzy warstwy:
 
-==================================================
-1. PODZIAŁ ODPOWIEDZIALNOŚCI
-==================================================
+```text
+PostgreSQL
+  courses
+  modules
+  lessons
+  lesson_revisions
+  content_sources
+  evidence_claims
+  widget_presets
+  content_assets
 
-PostgreSQL przechowuje:
+ObjectStorage
+  binary assets
 
-- asset ID
-- logical object key
-- mime type
-- hash
-- rozmiar
-- dimensions
-- alt text
-- caption
-- attribution
-- license
-- timestamps
-- metadata
+Kod aplikacji
+  React components
+  renderery
+  widget engines
+  clinical engines
+  Zod schemas
+  registries
+```
 
-Storage przechowuje:
+Najważniejsza zasada:
 
-- binary content
+> PostgreSQL przechowuje content i konfigurację. Kod przechowuje zachowanie. ObjectStorage przechowuje binaria.
 
-NIE przechowuj:
-- absolutnego path filesystemu w lesson JSON
-- public URL w lesson JSON
-- S3 bucket URL w lesson JSON
-- base64 w PostgreSQL
+Do bazy nie trafiają React components, callbacki, funkcje ani wykonywalny JavaScript.
 
-Lekcja referencjonuje wyłącznie:
+---
 
-assetId
+## 2. Model danych
 
-==================================================
-2. UNIWERSALNY INTERFEJS STORAGE
-==================================================
+Aktualny model Drizzle znajduje się w:
 
-Dodaj domenowy interfejs, np.:
+```text
+db/postgres/schema.ts
+```
 
-`lib/storage/object-storage.ts`
+Relacyjny szkielet:
 
-Interfejs nie może zawierać:
-- Node-specific absolute paths
-- AWS SDK types
-- Cloudflare R2 types
+```text
+courses
+  -> modules
+    -> lessons
+      -> lesson_revisions
+```
 
-Preferowany kontrakt:
+Dodatkowe tabele:
 
-interface ObjectStorage {
-  put(
-    key: StorageKey,
-    content: BinarySource,
-    options?: PutObjectOptions
-  ): Promise<StoredObject>;
+```text
+content_assets
+content_sources
+evidence_claims
+widget_presets
+```
 
-  get(key: StorageKey): Promise<StoredObjectContent | null>;
+### `lessons`
 
-  getStream(key: StorageKey): Promise<ReadableStream<Uint8Array> | null>;
+`lessons` przechowuje stabilną tożsamość lekcji:
 
-  stat(key: StorageKey): Promise<StoredObjectMetadata | null>;
+- `id`
+- `module_id`
+- `title`
+- `subtitle`
+- `sort_order`
+- `minutes`
+- `published_revision_id`
 
-  exists(key: StorageKey): Promise<boolean>;
+Nie przechowujemy pełnej treści lekcji bezpośrednio w tym rekordzie.
 
-  delete(key: StorageKey): Promise<void>;
+### `lesson_revisions`
 
-  move?(source: StorageKey, destination: StorageKey): Promise<void>;
+Pełny snapshot treści znajduje się w:
 
-  copy?(source: StorageKey, destination: StorageKey): Promise<void>;
+```text
+lesson_revisions.document JSONB
+```
 
-  list(prefix?: StorageKey): Promise<StoredObjectMetadata[]>;
-}
+Każda rewizja posiada:
 
-Nie komplikuj interface, jeśli metoda nie jest obecnie potrzebna.
+- UUID
+- `lesson_id`
+- numer wersji
+- `content_hash`
+- dokument JSONB
+- status `draft | review | published | archived`
 
-Minimalne wymagane:
+`lessons.published_revision_id` wskazuje dokładnie rewizję widoczną w runtime.
+
+**Nie wolno zgadywać opublikowanej rewizji przez `ORDER BY version DESC`.**
+
+Jeżeli `published_revision_id` jest puste, `PostgresContentRepository.getLesson()` zwraca `null`.
+
+---
+
+## 3. Format dokumentu lekcji
+
+Canonical runtime schema znajduje się w:
+
+```text
+lib/content/schemas/lesson-revision.ts
+```
+
+Migracja ma zachowywać obecny model możliwie 1:1.
+
+Dokument zawiera m.in.:
+
+```text
+id
+moduleId
+title
+subtitle
+group
+minutes
+goals
+sections
+table
+advanced
+summary
+sourceIds
+questions
+experience
+  objectives
+  diagnostic
+  blocks
+  activities
+  teachBack
+  exitTicket
+  widgetIds
+derivation?
+workedExample?
+assetIds
+review?
+```
+
+Każdy dokument pobrany z PostgreSQL musi przejść:
+
+```text
+LessonRevisionDocumentSchema.parse(...)
+```
+
+Nie używaj:
+
+```ts
+row.document as LessonRevisionDocument
+```
+
+bez runtime validation.
+
+---
+
+## 4. Nie normalizujemy treści lekcji na dziesiątki tabel
+
+Nie tworzymy osobnych tabel dla:
+
+- paragrafów
+- nagłówków
+- odpowiedzi quizowych
+- bloków V2
+- komórek tabel
+- inline enhancements
+
+To są naturalnie zagnieżdżone dane dokumentowe i pozostają w JSONB.
+
+Relacyjnie przechowujemy tożsamość, relacje, publikowanie, źródła, presety i metadata assetów.
+
+---
+
+## 5. Source of truth podczas migracji
+
+W okresie przejściowym działają dwa źródła:
+
+```text
+StaticContentRepository
+PostgresContentRepository
+```
+
+oraz:
+
+```text
+ComparingContentRepository
+```
+
+Runtime wybiera repozytorium przez:
+
+```text
+lib/content/content-repository-factory.ts
+```
+
+Fabryka obsługuje:
+
+```text
+CONTENT_SOURCE=static
+CONTENT_SOURCE=database
+CONTENT_SOURCE=compare
+```
+
+oraz listę modułów:
+
+```text
+CONTENT_DB_MODULES=tarczyca,...
+```
+
+### Zasady runtime
+
+- moduł poza `CONTENT_DB_MODULES` pozostaje statyczny
+- `static` czyta TypeScript
+- `database` czyta PostgreSQL
+- `compare` czyta oba źródła, wykonuje structured diff i renderuje DB
+- invalid DB content nie może zostać ukryty silent fallbackiem
+
+Fabryka jest server-only.
+
+UI nie powinno ręcznie tworzyć `StaticContentRepository` ani `PostgresContentRepository`.
+
+### Ważny wyjątek
+
+Migrator nie używa runtime factory.
+
+Migrator jawnie traktuje:
+
+```text
+StaticContentRepository -> source
+PostgresContentRepository -> target / verification
+```
+
+Dzięki temu ustawienia runtime nie zmieniają zachowania migracji.
+
+---
+
+## 6. Structured parity
+
+Porównanie static vs DB znajduje się w:
+
+```text
+lib/content/structured-diff.ts
+```
+
+Sprawdzane są m.in.:
+
+- podstawowe pola lekcji
+- goals
+- sourceIds
+- sections
+- table
+- questions
+- answer indexes
+- LessonExperienceV2
+- objectives
+- activities
+- blocks
+- inlineEnhancements
+- widgetIds
+- derivation
+- workedExample
+- assetIds
+
+Nowy moduł jest gotowy do cutover dopiero wtedy, gdy `--verify` przechodzi bez różnic.
+
+Nie zastępuj structured diff prostym `JSON.stringify(a) === JSON.stringify(b)`.
+
+---
+
+## 7. Migrator modułu
+
+Canonical migrator:
+
+```text
+scripts/migrate-module.mjs
+```
+
+Uruchomienie dla modułu:
+
+```bash
+node scripts/migrate-module.mjs --module=<moduleId>
+node scripts/migrate-module.mjs --module=<moduleId> --apply
+node scripts/migrate-module.mjs --module=<moduleId> --verify
+```
+
+Dla Tarczycy istnieją skróty:
+
+```bash
+npm run db:seed:tarczyca
+npm run db:verify:tarczyca
+```
+
+### Pipeline migracji
+
+Dla każdej lekcji:
+
+```text
+static Lesson
++ LessonExperienceV2
++ canonical sources
++ referenced assets
++ referenced widget presets
+        |
+        v
+build LessonRevisionDocument
+        |
+        v
+Zod validation
+        |
+        v
+canonical SHA-256 hash
+        |
+        v
+transactional DB upsert
+        |
+        v
+published_revision_id
+        |
+        v
+Postgres read-back
+        |
+        v
+structured parity verification
+```
+
+Migrator musi być idempotentny.
+
+Jeżeli `lessonId + contentHash` już istnieje:
+
+```text
+nie twórz nowej rewizji
+```
+
+---
+
+## 8. Publikowanie i rewizje
+
+Zmiana contentu tworzy nową rewizję zamiast modyfikować istniejący published snapshot.
+
+Model:
+
+```text
+v1 published
+-> zmiana contentu
+-> v2
+-> publish
+-> lessons.published_revision_id = v2
+```
+
+Aktualny migrator wykonuje zapis i ustawienie `published_revision_id` w transakcji.
+
+Dla przyszłego CMS zachowujemy ten sam model:
+
+```text
+draft -> review -> published -> archived
+```
+
+Nie edytuj historycznej opublikowanej rewizji in-place.
+
+---
+
+## 9. ObjectStorage
+
+Kontrakt znajduje się w:
+
+```text
+lib/storage/object-storage.ts
+```
+
+Aktualny interfejs obsługuje:
+
+```text
 put
-get/getStream
+get
+getStream
 stat
 exists
 delete
+list
+```
 
-==================================================
-3. STORAGE KEY
-==================================================
+Aktualny provider:
 
-Aplikacja operuje wyłącznie na LOGICAL KEY.
+```text
+FileSystemObjectStorage
+```
 
-Przykłady:
+w:
 
-courses/psychiatry/psych-organiczne/delirium/attention-fluctuation.webp
+```text
+lib/storage/filesystem/filesystem-object-storage.ts
+```
 
-courses/endocrinology/tarczyca/hpt-axis.webp
+Factory:
 
-evidence/psychiatry/pet/meyer-2004-figure.webp
+```text
+lib/storage/create-object-storage.ts
+```
 
-imports/2026-09-12/source-image.png
+Konfiguracja lokalna:
 
-NIGDY:
-
-C:\data\course-storage\...
-/var/lib/course-storage/...
-
-To są implementation details filesystem adaptera.
-
-==================================================
-4. FILESYSTEM BACKEND
-==================================================
-
-Dodaj:
-
-`FileSystemObjectStorage`
-
-constructor:
-
-new FileSystemObjectStorage({
-  rootPath
-})
-
-Konfiguracja:
-
-CONTENT_STORAGE_PROVIDER=filesystem
-CONTENT_STORAGE_ROOT=/srv/endokrynologia/storage
-
-Dla Windows powinno również działać np.:
-
-CONTENT_STORAGE_ROOT=D:\course-storage
-
-Adapter mapuje:
-
-logical key:
-courses/psychiatry/image.webp
-
-do:
-
-<rootPath>/courses/psychiatry/image.webp
-
-==================================================
-5. PATH SECURITY — KRYTYCZNE
-==================================================
-
-Każdy key musi być normalizowany.
-
-NIGDY nie pozwalaj na path traversal:
-
-../
-..\
-absolute paths
-drive letters
-UNC paths
-null bytes
-
-Forbidden:
-
-../../etc/passwd
-
-C:\Windows\system.ini
-
-\\server\share
-
-/foo/bar
-
-StorageKey powinien być względny i POSIX-like:
-
-courses/psychiatry/foo.webp
-
-Nawet na Windows logical keys używają `/`.
-
-Po resolve:
-
-resolved absolute path MUST remain inside rootPath.
-
-Dodaj testy path traversal.
-
-==================================================
-6. STORAGE KEY VALIDATION
-==================================================
-
-Dodaj helper:
-
-normalizeStorageKey()
-
-Reguły:
-
-- trim
-- convert `\` → `/`
-- remove duplicate `/`
-- no leading `/`
-- no `..`
-- no `.`
-- no empty path segments
-- reasonable max length
-- UTF-8 supported, ale prefer slug-safe paths
-- key cannot resolve outside root
-
-Preferuj branded type:
-
-type StorageKey = string & { readonly __brand: 'StorageKey' };
-
-StorageKey powinien powstawać tylko przez validator.
-
-==================================================
-7. ATOMIC WRITE
-==================================================
-
-Filesystem `put()` nie powinien pisać bezpośrednio do final file.
-
-Zrób:
-
-write:
-<filename>.tmp-<random>
-
-fsync / close
-
-rename atomically:
-temp → final
-
-Dzięki temu crash podczas uploadu nie zostawi częściowego pliku pod finalnym key.
-
-Jeśli overwrite=false:
-fail, jeśli obiekt istnieje.
-
-==================================================
-8. CONTENT HASH
-==================================================
-
-Podczas uploadu oblicz SHA-256.
-
-StoredObject powinien zwracać:
-
-{
-  key,
-  size,
-  sha256,
-  mimeType,
-  createdAt?
-}
-
-Postgres zapisuje sha256.
-
-Można dzięki temu:
-- deduplikować pliki
-- wykrywać corruption
-- ustawiać ETag
-- robić migration verification.
-
-==================================================
-9. CONTENT-ADDRESSED OPTION
-==================================================
-
-Nie wymagaj content-addressed storage wszędzie, ale przygotuj helper:
-
-buildContentAddressedKey()
-
-np.:
-
-objects/sha256/ab/cd/<fullhash>.webp
-
-oraz semantic aliases mogą pozostać w DB.
-
-Na pierwszym etapie do course assets można używać czytelnych keys:
-
-courses/psychiatry/...
-
-Nie przebudowuj systemu bez potrzeby.
-
-==================================================
-10. MIME TYPE
-==================================================
-
-Nie ufaj wyłącznie extension.
-
-Importer powinien:
-
-- znać deklarowany mime type
-- rozsądnie walidować extension vs mime
-- odrzucać nieobsługiwane typy
-
-Dla course images minimum:
-image/png
-image/jpeg
-image/webp
-image/avif
-image/svg+xml
-
-SVG traktuj ostrożnie:
-jeśli SVG pochodzi od użytkownika, wymaga sanitizacji.
-
-==================================================
-11. STREAMING
-==================================================
-
-Nie czytaj wszystkich dużych plików do Buffer bez potrzeby.
-
-Storage powinien umożliwiać streaming.
-
-Filesystem:
-fs.createReadStream / web stream adapter
-
-S3:
-GetObject Body stream
-
-HTTP asset endpoint:
-storage.getStream(key)
-→ response stream
-
-Dzięki temu ten sam endpoint działa niezależnie od providera.
-
-==================================================
-12. RANGE REQUESTS
-==================================================
-
-Nie musisz implementować tego w pierwszym PR dla samych obrazów.
-
-Ale API zaprojektuj tak, żeby później można było dodać:
-
-getRange(key, start, end)
-
-dla:
-- video
-- audio
-- PDF
-
-Bez zmiany całej abstrakcji.
-
-==================================================
-13. ASSET REPOSITORY ≠ STORAGE
-==================================================
-
-Rozdziel dwie warstwy:
-
-ObjectStorage
-→ fizyczny plik
-
-ContentAssetRepository
-→ rekord w PostgreSQL
-
-Przykład:
-
-ContentAssetRepository.get(assetId)
-
-zwraca:
-
-{
-  id,
-  objectKey,
-  mimeType,
-  sha256,
-  byteSize,
-  width,
-  height,
-  altText,
-  ...
-}
-
-Następnie:
-
-ObjectStorage.get(objectKey)
-
-Nie mieszaj SQL z filesystemem w jednym service.
-
-==================================================
-14. POSTGRES SCHEMA
-==================================================
-
-Tabela:
-
-content_assets
-
-id uuid primary key
-
-object_key text NOT NULL UNIQUE
-
-sha256 text NOT NULL
-
-mime_type text NOT NULL
-
-byte_size bigint NOT NULL
-
-width int NULL
-height int NULL
-
-alt_text text NULL
-caption text NULL
-attribution text NULL
-license text NULL
-
-original_filename text NULL
-
-created_at timestamptz NOT NULL
-updated_at timestamptz NOT NULL
-
-metadata jsonb NOT NULL DEFAULT '{}'
-
-Opcjonalnie:
-
-UNIQUE(sha256)
-
-Tylko jeśli faktycznie chcemy globalną deduplikację identycznych plików.
-
-==================================================
-15. NIE ZAPISUJ PROVIDERA W KAŻDYM ASSECIE
-==================================================
-
-Nie rób:
-
-provider = filesystem/s3
-
-na każdym rekordzie, jeśli cała aplikacja korzysta z jednego aktywnego storage.
-
-Provider jest deployment configuration.
-
-DB zna:
-
-object_key
-
-A konfiguracja runtime mówi:
-
-object_key
-→ filesystem
-
-lub:
-
-object_key
-→ S3.
-
-To właśnie umożliwia migrację bez przepisywania rekordów DB.
-
-==================================================
-16. STORAGE FACTORY
-==================================================
-
-Dodaj:
-
-createObjectStorage()
-
-Konfiguracja:
-
-CONTENT_STORAGE_PROVIDER=filesystem
-
-dla local:
-
-CONTENT_STORAGE_ROOT=/data/endokrynologia
-
-Docelowo:
-
-CONTENT_STORAGE_PROVIDER=s3
-
-S3_BUCKET=...
-S3_REGION=...
-S3_ENDPOINT=...
-S3_ACCESS_KEY_ID=...
-S3_SECRET_ACCESS_KEY=...
-S3_PREFIX=...
-
-Factory zwraca:
-
-ObjectStorage
-
-Reszta aplikacji nie zna providera.
-
-==================================================
-17. S3 SEMANTICS OD POCZĄTKU
-==================================================
-
-Projektując filesystem implementation pamiętaj:
-
-S3:
-- nie ma prawdziwych katalogów
-- wszystko jest key/prefix
-- rename nie istnieje atomowo
-- move = copy + delete
-- list działa po prefix
-- directory creation nie istnieje
-
-Dlatego domenowy interface nie powinien mieć:
-
-createDirectory()
-directoryExists()
-
-Katalog jest tylko efektem key prefix.
-
-Filesystem adapter sam:
-mkdir({ recursive: true })
-
-przy `put()`.
-
-==================================================
-18. ROOT / PREFIX
-==================================================
-
-Filesystem:
-
-rootPath:
-/srv/course-storage
-
-logical key:
-courses/psychiatry/a.webp
-
-physical:
- /srv/course-storage/courses/psychiatry/a.webp
-
-
-S3 odpowiednik:
-
-bucket:
-medical-course
-
-prefix:
-production/
-
-logical key:
-courses/psychiatry/a.webp
-
-S3 key:
-production/courses/psychiatry/a.webp
-
-RootPath i S3 prefix pełnią tę samą logiczną rolę:
-namespace root.
-
-==================================================
-19. PUBLIC URL NIE JEST CZĘŚCIĄ CORE INTERFACE
-==================================================
-
-Nie zakładaj, że storage object ma public URL.
-
-Course assets mogą być serwowane przez aplikację:
-
-GET /api/assets/:assetId
-
-Flow:
-
-assetId
-→ ContentAssetRepository
-→ objectKey
-→ ObjectStorage
-→ stream
-
-To działa identycznie dla:
-filesystem
-S3 private bucket
-R2 private bucket.
-
-Opcjonalny interface capability później:
-
-SignedUrlStorage
-
-getSignedReadUrl(key, ttl)
-
-ale NIE wrzucaj tego do obowiązkowego core interface.
-
-==================================================
-20. CACHE HEADERS
-==================================================
-
-Asset endpoint wykorzystuje sha256 jako ETag.
-
-Response:
-
-ETag: "<sha256>"
-
-Cache-Control dla immutable assets:
-
-public, max-age=31536000, immutable
-
-Jeśli asset zmienia treść:
-twórz nowy asset ID/key.
-
-Nie nadpisuj istniejącej semantycznie grafiki pod tym samym immutable asset URL.
-
-==================================================
-21. FILESYSTEM URL NIE MOŻE WYCIEKAĆ
-==================================================
-
-Nigdy nie zwracaj klientowi:
-
-/srv/course-storage/...
-
-Browser powinien widzieć:
-
-/api/assets/<uuid>
-
-lub docelowy CDN URL.
-
-Root directory jest sekretem infrastruktury, nie częścią modelu domenowego.
-
-==================================================
-22. MIGRACJA FILESYSTEM → S3
-==================================================
-
-Dodaj później lub od razu script:
-
-scripts/migrate-storage.ts
-
-Flow:
-
-source storage
-→ target storage
-
-Dla każdego content_assets:
-
-source.stat(objectKey)
-source.getStream(objectKey)
-target.put(objectKey, stream)
-
-następnie verify:
-
-size
-sha256
-
-Ponieważ object_key pozostaje ten sam:
-ZERO zmian lesson records
-ZERO zmian content_assets
-ZERO zmian lesson JSON.
-
-Po migracji:
-
-CONTENT_STORAGE_PROVIDER=s3
-
-i aplikacja działa dalej.
-
-==================================================
-23. STORAGE COPY VERIFY
-==================================================
-
-Migrator nie może uznać uploadu za sukces tylko dlatego, że `put()` nie rzucił wyjątku.
-
-Po upload:
-target.stat()
-
-porównaj:
-- size
-- sha256 jeśli provider metadata wspiera hash
-albo odczytaj i policz checksum
-
-Raport:
-copied
-skipped
-failed
-hashMismatch.
-
-==================================================
-24. FILESYSTEM BACKUP
-==================================================
-
-Filesystem root powinien być samowystarczalny.
-
-Backup:
-
-PostgreSQL dump
-+
-storage root directory
-
-powinien pozwolić odtworzyć całą treść.
-
-Nie trzymaj plików poza rootem.
-
-==================================================
-25. TEMP DIRECTORY
-==================================================
-
-Temporary uploads:
-
-<root>/.tmp/
-
-lub system tmp.
-
-Nie traktuj `.tmp` jako canonical objects.
-
-Cleanup orphaned temp files starszych niż określony TTL.
-
-==================================================
-26. DELETE SEMANTICS
-==================================================
-
-Nie usuwaj od razu fizycznego pliku, gdy jedna lesson revision przestaje go używać.
-
-Published history może nadal referencjonować asset.
-
-Zanim usuniesz asset:
-sprawdź references ze wszystkich zachowanych revisions.
-
-Najbezpieczniej:
-
-mark asset deleted/orphaned
-→ garbage collector
-→ usuń dopiero po grace period.
-
-==================================================
-27. REFERENCE COUNTING
-==================================================
-
-Nie utrzymuj ręcznego mutable reference counter, jeśli można go policzyć.
-
-GC może znaleźć:
-
-content_assets
-LEFT JOIN / extracted revision references
-
-i oznaczyć orphan assets.
-
-Nie pozwól przypadkowo usunąć obrazka używanego przez published historical revision.
-
-==================================================
-28. STORAGE STRUCTURE
-==================================================
-
-Preferowana struktura logical keys:
-
-course-assets/
-  endocrinology/
-    <module>/
-      <lesson>/
-        ...
-
-  psychiatry/
-    <module>/
-      <lesson>/
-        ...
-
-shared/
-  diagrams/
-  evidence/
-  branding/
-
-imports/
-  ...
-
-exports/
-  ...
-
-Nie koduj tej struktury na sztywno w storage adapter.
-
-To policy wyższej warstwy.
-
-==================================================
-29. STORAGE POLICY SERVICE
-==================================================
-
-Możesz dodać mały helper:
-
-CourseAssetKeyBuilder
-
-np.:
-
-courseAssetKey({
-  courseId,
-  moduleId,
-  lessonId,
-  filename
-})
-
-→
-
-course-assets/psychiatry/psych-organiczne/delirium/foo.webp
-
-Dzięki temu keys są spójne.
-
-Ale storage adapter dostaje już gotowy key.
-
-==================================================
-30. LOCAL DEV
-==================================================
-
-Default development configuration:
-
+```text
 CONTENT_STORAGE_PROVIDER=filesystem
 CONTENT_STORAGE_ROOT=./.data/storage
+```
 
-Dodaj:
-.data/
-do .gitignore.
+Domena operuje tylko na logical `StorageKey`.
 
-Do repo nie commitujemy binarnych runtime assetów po migracji, chyba że konkretny asset jest świadomie częścią source fixtures.
+Nigdy nie zapisujemy w lesson JSON:
 
-==================================================
-31. DEPLOYMENT WARNING
-==================================================
+- absolutnej ścieżki
+- filesystem root
+- bucket URL
+- public URL
 
-Aktualny projekt korzysta z Cloudflare/Wrangler.
+Docelowy S3/R2 adapter powinien implementować ten sam `ObjectStorage` contract bez zmian w modelu lekcji.
 
-Filesystem storage NIE może być traktowany jako trwały production storage na Cloudflare Workers.
+---
 
-W deploymentach Workers:
+## 10. Security StorageKey
 
-ObjectStorage implementation:
-S3ObjectStorage / R2ObjectStorage
+Walidacja znajduje się w:
 
-W local/self-hosted Node:
-FileSystemObjectStorage.
+```text
+lib/storage/storage-key.ts
+```
 
-Nie implementuj kodu zakładającego, że cwd filesystem jest trwały na każdym deploymencie.
+Key musi być względny i POSIX-like, np.:
 
-==================================================
-32. TESTY KONTRAKTOWE
-==================================================
+```text
+course-assets/endocrinology/tarczyca/fizjologia/hpt-axis.webp
+```
 
-Najważniejsza rzecz dla łatwej podmiany backendu:
+Odrzucane są m.in.:
 
-napisz jeden wspólny test suite:
+```text
+../
+absolute paths
+Windows drive paths
+UNC paths
+null bytes
+empty segments
+.
+..
+```
 
-runObjectStorageContractTests(factory)
+`FileSystemObjectStorage` dodatkowo sprawdza containment i symlink escape.
 
-Testy:
+Nie omijaj `normalizeStorageKey()`.
 
-put/get roundtrip
-binary integrity
-unicode key
-nested prefix
-stat
-exists
-overwrite behavior
-delete
-missing object
-list prefix
-path normalization
-zero-byte file
-large streamed file
+---
 
-FileSystemObjectStorage:
-musi przejść cały suite.
+## 11. Assets
 
-W przyszłości:
-S3ObjectStorage
-musi przejść TEN SAM suite.
+Metadata znajdują się w `content_assets`.
 
-To jest prawdziwa gwarancja wymienności adapterów.
+Binary znajduje się w ObjectStorage.
 
-==================================================
-33. TESTY SECURITY
-==================================================
+Lekcja przechowuje `assetIds`.
 
-Odrzuć:
+Serwowanie:
 
-../secret
-foo/../../secret
-/foo
-C:\secret
-..\secret
-foo\..\secret
-null byte
+```text
+GET /api/assets/[id]
+```
 
-Sprawdź symlink escape.
+Flow:
 
-BARDZO WAŻNE:
+```text
+assetId
+-> ContentAssetRepository
+-> objectKey
+-> ObjectStorage
+-> stream
+```
 
-filesystem adapter nie może pozwalać na symlink wewnątrz root,
-który prowadzi poza root.
+Endpoint używa SHA-256 jako ETag oraz immutable cache headers.
 
-Albo:
-- prohibit/fail on symlink traversal
+### Immutable asset rule
 
-albo:
-- resolve realpath parent/final path i potwierdź containment.
+Jeżeli pod tym samym semantic key pojawi się inna treść:
 
-==================================================
-34. CONCURRENCY
-==================================================
+```text
+old hash != new hash
+```
 
-Dwa równoległe put() tego samego key nie mogą zostawić corrupted file.
+nie wolno nadpisać starego assetu.
 
-Użyj:
-unique temp files
-+
-atomic rename.
+`AssetService` tworzy nowy versioned key i nowy rekord `content_assets`.
 
-Dla immutable assetów preferuj:
-overwrite=false.
+Historyczne lesson revisions mogą nadal wskazywać starszy asset.
 
-==================================================
-35. ERROR MODEL
-==================================================
+---
 
-Dodaj provider-independent errors:
+## 12. Wykrywanie realnych assetów przy migracji
 
-StorageNotFoundError
-StorageAlreadyExistsError
-StorageInvalidKeyError
-StorageUnavailableError
-StorageIntegrityError
+Migrator skanuje treść dokumentu lekcji pod kątem istniejących referencji do obrazów, m.in.:
 
-Nie pozwalaj, żeby wyższe warstwy zależały od:
-ENOENT
-AWS NoSuchKey
-S3ServiceException.
+```text
+/assets/...
+/images/...
+/public/...
+*.png
+*.webp
+*.jpg
+*.jpeg
+*.svg
+*.avif
+*.gif
+```
 
-Adapter mapuje native errors → domain errors.
+Dla każdej referencji:
 
-==================================================
-36. OBSERVABILITY
-==================================================
+```text
+resolve real file
+-> fail if missing
+-> buildCourseAssetKey(...)
+-> AssetService.ingestAsset(...)
+-> add assetId to lesson document
+```
 
-Loguj:
+Nie skanuj całego repo i nie importuj przypadkowych grafik.
 
-provider
-operation
-key
-size
-duration
-success/failure
+Jeśli lekcja nie zawiera assetu, poprawnym wynikiem jest `0 assets`.
 
-NIE loguj:
-binary content
-credentials
-absolute root path przy każdym request.
+Fixture binary w contract tests nie jest dowodem migracji contentu.
 
-==================================================
-37. FINALNA STRUKTURA
-==================================================
+---
 
-Preferowana:
+## 13. Widget presets
 
-lib/storage/
-  object-storage.ts
-  storage-key.ts
-  storage-errors.ts
-  create-object-storage.ts
+Canonical registry:
 
-  filesystem/
-    filesystem-object-storage.ts
+```text
+lib/content/preset-registry.ts
+```
 
-  s3/
-    s3-object-storage.ts       // może być scaffold / późniejsza faza
+Registry agreguje presety domenowe, aktualnie m.in.:
 
-lib/content/
-  asset-repository.ts
-  asset-service.ts
-  course-asset-key-builder.ts
+```text
+lib/endocrinology/presets/endocrine-presets.ts
+lib/psychiatry/presets/...
+```
 
-db/
-  schema/
-    content-assets.ts
+Preset ma postać logicznie zgodną z:
 
-scripts/
-  migrate-storage.ts
-  verify-storage.ts
+```ts
+{
+  id,
+  widgetType,
+  schemaVersion,
+  moduleId,
+  lessonId?,
+  title,
+  initialState,
+  evidenceIds?
+}
+```
 
-==================================================
-38. NIE NADABSTRAHUJ
-==================================================
+Migrator nie importuje wszystkich presetów świata.
 
-Nie buduj:
-- plugin framework
-- event bus
-- distributed filesystem abstraction
-- mount table
-- virtual POSIX filesystem
+Dla każdej lekcji:
 
-Potrzebujemy prostego port/adapter:
+```text
+collect referenced presetIds
+-> resolve through preset registry
+-> validate WidgetPresetDefinitionSchema
+-> insert/update widget_presets
+```
 
-ObjectStorage
-        |
-   -------------
-   |           |
-Filesystem    S3/R2
+Brakujący `presetId` jest błędem migracji.
 
-Tyle.
+Nie traktuj default state widgetu jako named lesson preset.
 
-==================================================
-39. ACCEPTANCE CRITERIA
-==================================================
+---
 
-Gotowe, gdy:
+## 14. Dodawanie presetów dla nowego modułu
 
-- root path jest configurable
-- wszystkie keys są względem root
-- path traversal jest niemożliwy
-- binary może być streamowany
-- atomic writes działają
-- SHA-256 jest liczony
-- Postgres przechowuje metadata + object_key
-- lessons znają tylko assetId
-- storage implementation nie zna Lesson
-- filesystem implementation przechodzi contract tests
-- asset endpoint nie ujawnia physical path
-- zmiana filesystem → S3 nie wymaga migracji lesson JSON
-- object keys mogą zostać identyczne przy migracji
-- typecheck/test/build przechodzą
+Nowy moduł powinien trzymać presety blisko domeny, np.:
 
-==================================================
-40. RAPORT KOŃCOWY
-==================================================
+```text
+lib/endocrinology/presets/<module>-presets.ts
+```
 
-Podaj:
+lub odpowiedni katalog domenowy.
 
-1. ObjectStorage contract
-2. filesystem implementation
-3. storage key security rules
-4. Postgres content_assets schema
-5. asset serving flow
-6. configuration/env
-7. contract tests
-8. migration path filesystem -> S3/R2
-9. deployment limitations
-10. test/build results
+Następnie należy podłączyć je do:
 
-Nie implementuj S3 logiki w domenie.
-Provider ma być wymiennym adapterem.
+```text
+lib/content/preset-registry.ts
+```
+
+Zasady:
+
+- stabilne ID
+- brak duplicate IDs
+- jawny `widgetType`
+- `schemaVersion`
+- `moduleId`
+- tylko serializowalny `initialState`
+- żadnych funkcji lub React nodes
+
+---
+
+## 15. Źródła i evidence
+
+Canonical source IDs są zachowywane podczas migracji.
+
+Migrator zbiera `sourceIds` używane przez lekcje i upsertuje odpowiednie rekordy `content_sources`.
+
+Lekcja przechowuje wyłącznie referencje.
+
+Nie kopiuj DOI, URL i metadanych źródła do każdego lesson document, jeśli istnieją w registry źródeł.
+
+`evidence_claims` pozostaje osobną warstwą claim-level evidence.
+
+---
+
+## 16. PostgreSQL local development
+
+Local DB:
+
+```text
+postgres:16-alpine
+```
+
+Konfiguracja:
+
+```text
+docker-compose.yml
+```
+
+Uruchomienie:
+
+```bash
+npm run db:up
+npm run db:migrate
+```
+
+Wyłączenie:
+
+```bash
+npm run db:down
+```
+
+Docker Compose obsługuje:
+
+```text
+POSTGRES_DB
+POSTGRES_USER
+POSTGRES_PASSWORD
+POSTGRES_PORT
+```
+
+Produkcyjny runtime wymaga jawnego `DATABASE_URL`.
+
+Nie polegaj w produkcji na lokalnym domyślnym connection stringu.
+
+---
+
+## 17. Testy
+
+### Zwykłe testy
+
+```bash
+npm test
+```
+
+Nie powinny wymagać działającego PostgreSQL.
+
+Obejmują m.in. ObjectStorage contract/security i schema/content validation.
+
+### Integration tests
+
+```bash
+npm run test:integration
+```
+
+Wymagają PostgreSQL i mają fail-fast, jeśli baza jest niedostępna.
+
+### Docker convenience wrapper
+
+```bash
+npm run test:integration:docker
+```
+
+Uruchamia kontener PostgreSQL, czeka na readiness i wykonuje integration suite.
+
+Integration test dla Tarczycy sprawdza obecnie:
+
+- migrations
+- migrację wszystkich lekcji
+- idempotencję
+- structured parity
+- publish invariants
+- immutable assets
+- preset registry
+- runtime repository factory
+
+Dla każdego kolejnego modułu wymagany jest analogiczny test integracyjny albo rozszerzenie istniejącego testu parametrycznego.
+
+---
+
+## 18. Procedura migracji kolejnego modułu
+
+Przykład dla `<moduleId>`.
+
+### Krok 1. Audit
+
+Sprawdź:
+
+```text
+lesson IDs
+module ID
+LessonExperienceV2
+sourceIds
+asset references
+inline enhancement presetIds
+widgetIds
+```
+
+Nie zmieniaj IDs podczas migracji.
+
+### Krok 2. Presety
+
+Jeżeli moduł używa named presets:
+
+1. dodaj domain-specific registry,
+2. podłącz go do `preset-registry.ts`,
+3. sprawdź brak duplicate IDs.
+
+### Krok 3. Assets
+
+Nie twórz sztucznych assetów.
+
+Upewnij się, że wszystkie referencje używane przez lekcje wskazują na realne pliki.
+
+### Krok 4. Dry run
+
+```bash
+node scripts/migrate-module.mjs --module=<moduleId>
+```
+
+Dry run powinien:
+
+- znaleźć lekcje
+- znaleźć sources
+- wykryć broken asset references
+- wykryć broken preset references
+- przejść Zod validation
+- nie zapisywać contentu do DB
+
+### Krok 5. Apply
+
+```bash
+node scripts/migrate-module.mjs --module=<moduleId> --apply
+```
+
+### Krok 6. Verify
+
+```bash
+node scripts/migrate-module.mjs --module=<moduleId> --verify
+```
+
+Wymagane:
+
+```text
+100% structured parity
+```
+
+### Krok 7. Integration test
+
+Dodaj test analogiczny do:
+
+```text
+tests/integration/postgres-tarczyca.test.mjs
+```
+
+Minimum:
+
+- liczba lekcji
+- pierwsza migracja tworzy rewizje
+- druga migracja tworzy 0 nowych rewizji
+- verify przechodzi
+- unpublished lesson nie fallbackuje do draftu
+- presets resolve
+- real assets resolve, jeśli moduł je posiada
+
+### Krok 8. Compare mode
+
+W konfiguracji runtime:
+
+```text
+CONTENT_DB_MODULES=<moduleId>
+CONTENT_SOURCE=compare
+```
+
+Przejdź przez reprezentatywne lekcje i sprawdź logi structured diff.
+
+### Krok 9. Database mode
+
+Po parity:
+
+```text
+CONTENT_SOURCE=database
+CONTENT_DB_MODULES=<moduleId>
+```
+
+Dla zmigrowanego modułu brak DB contentu jest błędem, nie powodem do silent static fallbacku.
+
+### Krok 10. Dopiero potem kolejny moduł
+
+Nie rób big-bang cutover całego kursu.
+
+Migracja ma być moduł po module.
+
+---
+
+## 19. Co należy dostosować przy nowym module
+
+`migrate-module.mjs` jest obecnie zbudowany na źródłach Endokrynologii z `lib/course.ts` i `modulesList`.
+
+Przy migracji modułu z innej domeny, np. Psychiatrii, nie kopiuj całego skryptu.
+
+Wyodrębnij mały adapter źródła modułu, który dostarczy migratorowi:
+
+```ts
+{
+  course,
+  module,
+  lessons,
+  lessonExperiences,
+  sources
+}
+```
+
+Migrator powinien zachować wspólną logikę:
+
+```text
+validation
+hashing
+assets
+presets
+revision publishing
+parity
+```
+
+Różnić ma się jedynie adapter danych wejściowych.
+
+To jest preferowany następny refactor, gdy migrowana będzie pierwsza domena poza aktualnym `lib/course.ts`.
+
+---
+
+## 20. Czego NIE robić
+
+Nie:
+
+- twórz osobnego migratora per moduł przez copy/paste
+- zmieniaj lesson IDs
+- zapisuj React components w DB
+- zapisuj funkcje w JSONB
+- zapisuj binary jako base64 w lesson document
+- zapisuj absolute filesystem paths
+- nadpisuj immutable assets
+- wybieraj latest revision zamiast `published_revision_id`
+- ignoruj Zod validation
+- silently fallbackuj do static w `database` mode
+- importuj cały katalog `public/` bez referencji z contentu
+- generuj sztucznych presetów podczas migracji
+- buduj nową warstwę CMS przy każdej migracji modułu
+
+---
+
+## 21. Definition of Done modułu
+
+Moduł jest zmigrowany dopiero, gdy:
+
+- wszystkie lesson IDs zostały zachowane
+- wszystkie lessons mają poprawny published revision
+- wszystkie documents przechodzą Zod
+- migracja jest idempotentna
+- `--verify` daje 100% structured parity
+- referenced presets istnieją i zostały zwalidowane
+- referenced assets istnieją i są w ObjectStorage
+- assety są immutable
+- sources resolve
+- integration tests przechodzą
+- compare mode nie wykazuje różnic
+- database mode działa bez static fallbacku dla tego modułu
+- `npm test` przechodzi
+- `npm run test:integration` przechodzi z PostgreSQL
+- production build przechodzi
+
+---
+
+## 22. Kolejność dla następnych modułów
+
+Preferowana kolejność pracy:
+
+```text
+1. audit source module
+2. source adapter, jeśli potrzebny
+3. preset registry integration
+4. asset reference audit
+5. dry-run
+6. apply
+7. verify
+8. integration test
+9. compare runtime
+10. database runtime
+11. kolejny moduł
+```
+
+Nie rozwijaj przy okazji nowego frameworka do migracji, jeśli obecne porty wystarczają.
+
+Celem jest powtarzalny pipeline, nie doroczny festiwal abstrakcji.
