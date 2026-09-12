@@ -107,4 +107,6 @@ test('Sources provenance: clinical guidelines and consensus are present for core
   assert.match(pituitarySources.pituitary_prolactinoma_2023.url, /10\.1038\/s41574-023-00886-5/, 'Pituitary Society prolactinoma must point to 2023 consensus');
   assert.ok(pituitarySources.pituitary_incidentaloma_2025, 'Pituitary Society incidentaloma consensus must exist');
   assert.match(pituitarySources.pituitary_incidentaloma_2025.url, /10\.1038\/s41574-025-01134-8/, 'Pituitary Society incidentaloma must point to 2025 statement');
+  assert.ok(pituitarySources.avpd_copeptin, 'AVP-D copeptin landmark trial must exist');
+  assert.match(pituitarySources.avpd_copeptin.url, /10\.1056\/NEJMoa1803760/, 'AVP-D copeptin trial must point to NEJM landmark');
 });

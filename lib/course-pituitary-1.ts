@@ -226,7 +226,7 @@ export const draftPituitaryPart1: DraftLesson[] = [
     minutes: 17,
     goals: [
       'Rozpoznasz podstępne objawy akromegalii (rozrost tkanek miękkich, bezdech senny, cukrzyca, kardiomiopatia).',
-      'Opanujesz kryteria rozpoznania (IGF-1, brak supresji GH w OGTT <1,0 µg/l) oraz leczenie skojarzone.',
+      'Opanujesz kryteria rozpoznania (IGF-1, brak supresji GH w OGTT <0,4 µg/l w ultraczułych testach / <1,0 µg/l) oraz leczenie skojarzone.',
     ],
     sections: [
       {
@@ -235,7 +235,7 @@ export const draftPituitaryPart1: DraftLesson[] = [
       },
       {
         title: 'Kryteria laboratoryjne: IGF-1 i test OGTT',
-        text: 'Diagnostyka dwuetapowa: 1) Badanie przesiewowe: stężenie IGF-1 w surowicy powyżej normy dla wieku i płci. 2) Test potwierdzenia: doustny test tolerancji 75 g glukozy (OGTT) z pomiarem GH w punktach 0, 30, 60, 90 i 120 minut. W warunkach fizjologicznych hiperglikemia hamuje wydzielanie GH <1,0 µg/l (lub <0,4 µg/l w ultraczułych testach). Brak supresji GH potwierdza autonomiczną akromegalię.',
+        text: 'Diagnostyka dwuetapowa: 1) Badanie przesiewowe: stężenie IGF-1 w surowicy powyżej normy dla wieku i płci. 2) Test potwierdzenia: doustny test tolerancji 75 g glukozy (OGTT) z pomiarem GH w punktach 0, 30, 60, 90 i 120 minut. W warunkach fizjologicznych hiperglikemia hamuje wydzielanie GH <0,4 µg/l w nowoczesnych testach ultraczułych (lub <1,0 µg/l w starszych metodach poliklonalnych). Brak supresji GH potwierdza autonomiczną akromegalię.',
       },
       {
         title: 'Leczenie: Neurochirurgia i farmakoterapia',
@@ -246,7 +246,7 @@ export const draftPituitaryPart1: DraftLesson[] = [
       headers: ['Etap postępowania', 'Kryterium / Lek'],
       rows: [
         ['Przesiew laboratoryjny', 'Podwyższone stężenie IGF-1 skorygowane dla wieku i płci'],
-        ['Potwierdzenie autonomii', 'Test OGTT 75 g glukozy — brak supresji GH poniżej 1,0 µg/l'],
+        ['Potwierdzenie autonomii', 'Test OGTT 75 g glukozy — brak supresji GH <0,4 µg/l (<1,0 w starszych testach)'],
         ['Leczenie 1. rzutu', 'Operacja neurochirurgiczna przezklinowa (transsphenoidal surgery)'],
         ['Farmakoterapia uzupełniająca', 'Analogi somatostatyny (oktreotyd, lanreotyd), pegwisomant, kabergolina'],
       ],

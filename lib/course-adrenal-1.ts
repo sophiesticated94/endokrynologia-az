@@ -91,7 +91,7 @@ export const draftAdrenalPart1: DraftLesson[] = [
       },
       {
         title: 'Złoty standard: Test stymulacji z syntetycznym ACTH (Synacthen)',
-        text: 'Standardowy test z Synacthenem (tetracosactide) polega na dożylnym lub domięśniowym podaniu 250 µg syntetycznego ACTH 1-24 z pomiarem kortyzolu w 0, 30 i 60 minucie. Prawidłowa odpowiedź: stężenie kortyzolu po stymulacji osiąga co najmniej >=18 µg/dl (500 nmol/l). Brak wzrostu potwierdza pierwotną niedoczynność kory nadnerczy. Uwaga kliniczna: w świeżej wtórnej niedoczynności nadnerczy (np. po operacji przysadki przed 4–6 tygodniami) kora nadnerczy nie zdążyła jeszcze zaniknąć i może prawidłowo odpowiedzieć na potężną dawkę 250 µg Synacthenu! W tych przypadkach stosuje się test z małą dawką (1 µg) lub test hipoglikemii poinsulinowej (ITT).',
+        text: 'Standardowy test z Synacthenem (tetracosactide) polega na dożylnym lub domięśniowym podaniu 250 µg syntetycznego ACTH 1-24 z pomiarem kortyzolu w 0, 30 i 60 minucie. Prawidłowa odpowiedź: w klasycznych testach immunochemicznych stężenie kortyzolu po stymulacji osiąga co najmniej >=18 µg/dl (500 nmol/l). W nowoczesnych testach chromatografii cieczowej ze spektrometrią mas (LC-MS/MS) oraz testach z monoklonalnymi przeciwciałami II generacji próg odcięcia wynosi 14–15 µg/dl (ok. 400–412 nmol/l) z uwagi na wyższą swoistość i brak reakcji krzyżowych. Brak wymaganego wzrostu potwierdza pierwotną niedoczynność kory nadnerczy. Uwaga kliniczna: w świeżej wtórnej niedoczynności nadnerczy (np. po operacji przysadki przed 4–6 tygodniami) kora nadnerczy nie zdążyła jeszcze zaniknąć i może prawidłowo odpowiedzieć na dawkę 250 µg Synacthenu! W tych przypadkach stosuje się test z małą dawką (1 µg) lub test hipoglikemii poinsulinowej (ITT).',
       },
       {
         title: 'Przesiew w kierunku Conna i Pheochromocytoma',
@@ -102,7 +102,7 @@ export const draftAdrenalPart1: DraftLesson[] = [
       headers: ['Badanie laboratoryjne', 'Wartość referencyjna / Odcięcie', 'Interpretacja kliniczna'],
       rows: [
         ['Poranny kortyzol (8:00)', '<3 µg/dl: niedoczynność; >15–18 µg/dl: norma', 'Stężenia pośrednie (3–15 µg/dl) wymagają testu Synacthenu'],
-        ['Test z Synacthenem 250 µg', 'Szczyt kortyzolu w 30/60 min >=18 µg/dl (500 nmol/l)', 'Poniżej 18 µg/dl = niewydolność kory nadnerczy'],
+        ['Test z Synacthenem 250 µg', 'Szczyt kortyzolu >=18 µg/dl (500 nmol/l; w LC-MS/MS >=14–15 µg/dl)', 'Poniżej progu odcięcia = niewydolność kory nadnerczy'],
         ['Wskaźnik ARR (Aldo/Renina)', 'ARR podwyższony (zależnie od jednostek: Aldo ng/dl / DRC mIU/l >2,0)', 'Sugeruje pierwotny hiperaldosteronizm; wymaga testu potwierdzenia'],
         ['Wolne metanefryny w osoczu', 'W granicach normy laboratoryjnej', 'Wysoka czułość (97–99%); 3-krotny wzrost niemal przesądza o feo'],
       ],
@@ -110,18 +110,18 @@ export const draftAdrenalPart1: DraftLesson[] = [
     advanced:
       'Dlaczego wolne metanefryny w osoczu są lepsze niż katecholaminy? Katecholaminy (adrenalina, noradrenalina) są wydzielane przez guz epizodycznie i mają okres półtrwania zaledwie 1–2 minut. Natomiast komórki guza chromochłonnego stale, w sposób ciągły metabolizują katecholaminy wewnątrzkomórkowo za pomocą enzymu COMT (katecholo-O-metylotransferazy) do metanefryny i normetanefryny, które stale dyfundują do krwioobiegu niezależnie od napadów wyrzutu katecholamin.',
     summary:
-      'Diagnostyka kory i rdzenia opiera się na dynamicznych testach i rygorze przedanalitycznym: test 250 µg Synacthenu definiuje rezerwę kory (odcięcie 18 µg/dl), wskaźnik ARR wymaga wyrównania potasu i modyfikacji leków, a wolne metanefryny wykazują najwyższą czułość w wykrywaniu feochromocytoma.',
+      'Diagnostyka kory i rdzenia opiera się na dynamicznych testach i rygorze przedanalitycznym: test 250 µg Synacthenu definiuje rezerwę kory (odcięcie 18 µg/dl, w LC-MS/MS 14–15 µg/dl), wskaźnik ARR wymaga wyrównania potasu i modyfikacji leków, a wolne metanefryny wykazują najwyższą czułość w wykrywaniu feochromocytoma.',
     sourceIds: ['pte_nadnercza', 'endo_pai', 'endo_pa', 'endo_pheo'],
     questions: [
       q(
         'Jakie stężenie kortyzolu w surowicy po podaniu 250 µg Synacthenu wyklucza pierwotną niedoczynność kory nadnerczy?',
-        ['Osiągnięcie stężenia co najmniej 18 µg/dl (500 nmol/l) w 30. lub 60. minucie', 'Jest to międzynarodowo przyjęte kryterium prawidłowej odpowiedzi kory nadnerczy.'],
+        ['Osiągnięcie stężenia co najmniej 18 µg/dl (500 nmol/l) w 30. lub 60. minucie (w LC-MS/MS próg wynosi 14–15 µg/dl)', 'Jest to klasyczne kryterium w testach immunochemicznych; nowoczesne metody LC-MS/MS stosują niższe odcięcie 14–15 µg/dl (400–412 nmol/l).'],
         ['Wzrost o dokładnie 2 µg/dl w stosunku do wartości wyjściowej', 'Sam przyrost bez osiągnięcia bezwzględnego progu 18 µg/dl nie wyklucza niedoczynności.'],
         ['Stężenie powyżej 100 µg/dl', 'Wartość 100 µg/dl jest fizjologicznie niespotykana w standardowym teście.']
       ),
       q(
         'Kiedy pojedyncze poranne oznaczenie stężenia kortyzolu we krwi pozwala bezpiecznie wykluczyć niedoczynność kory nadnerczy bez testów dynamicznych?',
-        ['Gdy stężenie wynosi >15–18 µg/dl (>450–500 nmol/l) u osoby nieprzyjmującej estrogenów', 'Wysoki poranny kortyzol świadczy o zachowanej i wydolnej czynności strefy pasmowatej.'],
+        ['Gdy stężenie wynosi >15–18 µg/dl (>450–500 nmol/l) u osoby nieprzyjmującej estrogenów', 'Wysoki poranny kortyzol świadczy o zachowanej czynności (w LC-MS/MS próg wykluczenia bywa obniżony do >14 µg/dl).'],
         ['Zawsze przy stężeniu powyżej 4 µg/dl', 'Wartości 3–15 µg/dl znajdują się w strefie niepewności i wymagają stymulacji Synacthenem.'],
         ['Nigdy, u każdego pacjenta trzeba wykonać cewnikowanie żył', 'Cewnikowanie wykonuje się w diagnostyce Conna i Cushinga, a nie niedoczynności.']
       ),
@@ -252,7 +252,7 @@ export const draftAdrenalPart1: DraftLesson[] = [
       ],
     },
     advanced:
-      'Jak bezpiecznie odstawiać przewlekłą sterydoterapię? Najpierw stopniowo redukuje się dawkę do ekwiwalentu fizjologicznego (ok. 4–5 mg prednizonu lub 15–20 mg hydrokortyzonu rano). Następnie pacjenta przestawia się na krótko działający hydrokortyzon (15 mg rano). Ocenę powrotu sprawności osi HPA przeprowadza się, oznaczając poranny kortyzol przed przyjęciem porannej dawki leku: gdy kortyzol rano przekroczy >10 µg/dl, a w teście z Synacthenem osiągnie >=18 µg/dl, sterydoterapię można definitywnie zakończyć.',
+      'Jak bezpiecznie odstawiać przewlekłą sterydoterapię? Najpierw stopniowo redukuje się dawkę do ekwiwalentu fizjologicznego (ok. 4–5 mg prednizonu lub 15–20 mg hydrokortyzonu rano). Następnie pacjenta przestawia się na krótko działający hydrokortyzon (15 mg rano). Ocenę powrotu sprawności osi HPA przeprowadza się, oznaczając poranny kortyzol przed przyjęciem porannej dawki leku: gdy kortyzol rano przekroczy >10 µg/dl, a w teście z Synacthenem osiągnie >=18 µg/dl (lub >=14–15 µg/dl w metodach LC-MS/MS), sterydoterapię można definitywnie zakończyć.',
     summary:
       'Wtórna niedoczynność nadnerczy cechuje się niskim ACTH, bladą skórą i prawidłowym potasem dzięki zachowanej czynności strefy kłębuszkowej. Wymaga leczenia wyłącznie hydrokortyzonem. Najczęstszą przyczyną jest jatrogenna supresja po sterydach, wymagająca stopniowej redukcji dawki.',
     sourceIds: ['endo_pai', 'pte_nadnercza'],
@@ -311,7 +311,7 @@ export const draftAdrenalPart1: DraftLesson[] = [
       },
       {
         title: 'Postać nieklasyczna (NC-CAH) u dorosłych',
-        text: 'Nieklasyczny WPN (Non-Classic CAH — NC-CAH, aktywność enzymu 20–50%) jest jedną z najczęstszych chorób jednogenowych (częstość 1:200–1:1000). U noworodków nie ma wad narządów płciowych. Objawy ujawniają się w okresie pokwitania lub u młodych kobiet i doskonale imitują zespół policystycznych jajników (PCOS): oporny trądzik, łysienie androgenowe, hirsutyzm, zaburzenia owulacji i niepłodność. ROZPOZNANIE: Podstawowym testem przesiewowym jest poranne stężenie 17-hydroksyprogesteronu (17-OHP) w fazie folikularnej: stężenie >2 ng/ml (>6 nmol/l) budzi podejrzenie, a test stymulacji 250 µg Synacthenu z wyrzutem 17-OHP >10 ng/ml (>30 nmol/l) jednoznacznie potwierdza rozpoznanie.',
+        text: 'Nieklasyczny WPN (Non-Classic CAH — NC-CAH, aktywność enzymu 20–50%) jest jedną z najczęstszych chorób jednogenowych (częstość 1:200–1:1000). U noworodków nie ma wad narządów płciowych. Objawy ujawniają się w okresie pokwitania lub u młodych kobiet i doskonale imitują zespół policystycznych jajników (PCOS): oporny trądzik, łysienie androgenowe, hirsutyzm, zaburzenia owulacji i niepłodność. ROZPOZNANIE: Podstawowym testem przesiewowym jest poranne stężenie 17-hydroksyprogesteronu (17-OHP) w fazie folikularnej: stężenie <2 ng/ml w teście immunologicznym (lub <1,5 ng/ml w LC-MS/MS) czyni NC-CAH mało prawdopodobnym. Wartości w szarej strefie (2–10 ng/ml) budzą podejrzenie i wymagają testu stymulacji 250 µg Synacthenu: wyrzut 17-OHP >10 ng/ml (>30 nmol/l, a w LC-MS/MS >8–10 ng/ml) jednoznacznie potwierdza rozpoznanie.',
       },
     ],
     table: {

@@ -40,7 +40,7 @@ export const draftAdrenalMathChem: DraftLesson[] = [
       },
       {
         title: 'Bocznik androgenowy i test stymulacji Synacthenem',
-        text: 'Nadmiar 17-OHP nie może przejść w 11-deoksykortyzol, zostaje więc skierowany do alternatywnego szlaku metabolizowanego przez enzym CYP17A1 (o aktywności 17,20-liazy). Prowadzi to do lawinowego wytwarzania androstendionu i testosteronu. W diagnostyce postaci nieklasycznej stosuje się test stymulacji 250 µg syntetycznego ACTH (Synacthen) z pomiarem 17-OHP w 0 i 60 minucie: wyrzut >10 ng/ml potwierdza rozpoznanie.',
+        text: 'Nadmiar 17-OHP nie może przejść w 11-deoksykortyzol, zostaje więc skierowany do alternatywnego szlaku metabolizowanego przez enzym CYP17A1 (o aktywności 17,20-liazy). Prowadzi to do lawinowego wytwarzania androstendionu i testosteronu. W diagnostyce postaci nieklasycznej stosuje się test stymulacji 250 µg syntetycznego ACTH (Synacthen) z pomiarem 17-OHP w 0 i 60 minucie: wyrzut >10 ng/ml (>30 nmol/l w teście immunologicznym lub >8–10 ng/ml w LC-MS/MS) potwierdza rozpoznanie.',
       },
     ],
     table: {
@@ -48,8 +48,8 @@ export const draftAdrenalMathChem: DraftLesson[] = [
       rows: [
         ['Klasyczna z utratą soli', '<1% normy', '17-OHP >100 ng/ml; przełom solny u noworodka w 2. tyg. życia, hiperkaliemia'],
         ['Klasyczna prosta wirylizująca', '1–5% normy', '17-OHP 30–100 ng/ml; obojnacze narządy płciowe u dziewczynek, brak utraty soli'],
-        ['Nieklasyczna (NC-CAH)', '20–50% normy', '17-OHP w teście ACTH >10 ng/ml; hirsutyzm, trądzik, zaburzenia owulacji u kobiet'],
-        ['Zdrowa fizjologia', '100% normy', '17-OHP podstawowe <2 ng/ml; prawidłowa homeostaza mineralo- i glukokortykoidowa'],
+        ['Nieklasyczna (NC-CAH)', '20–50% normy', '17-OHP w teście ACTH >10 ng/ml (>30 nmol/l, w LC-MS/MS >8–10); hirsutyzm, anowulacja'],
+        ['Zdrowa fizjologia', '100% normy', '17-OHP podstawowe <2 ng/ml (w LC-MS/MS <1,5 ng/ml); prawidłowa homeostaza'],
       ],
     },
     advanced:

@@ -77,40 +77,40 @@ export const draftPituitaryPart2: DraftLesson[] = [
     id: 'moczowka-prosta',
     moduleId: 'przysadka',
     title: 'Pragnienie nie do ugaszenia',
-    subtitle: 'Moczówka prosta, niedobór wazopresyny i test odwodnieniowy',
+    subtitle: 'Moczówka prosta (AVP-D / AVP-R), test odwodnieniowy i diagnostyka kopeptyną',
     group: 'Niedoczynność i gospodarka wodna',
     minutes: 17,
     goals: [
-      'Zrozumiesz patofizjologię moczówki prostej centralnej (brak AVP) i nerkowej (oporność receptora V2).',
-      'Opanujesz przeprowadzanie i interpretację testu odwodnieniowo-wazopresynowego oraz leczenie desmopresyną.',
+      'Zrozumiesz patofizjologię niedoboru wazopresyny (AVP-D, moczówka centralna) i oporności nerkowej (AVP-R) oraz rolę kopeptyny.',
+      'Opanujesz test z desmopresyną, diagnostykę kopeptyną po 3% NaCl lub argininie oraz zasady leczenia dDAVP.',
     ],
     sections: [
       {
-        title: 'Objawy: Poliuria, polidypsja i woda jak ze studni',
-        text: 'Moczówka prosta (Diabetes Insipidus — DI) to zespół objawów wynikający z braku działania wazopresyny (arginino-wazopresyny, AVP). Skutkiem jest niezdolność nerek do zagęszczania moczu. Pacjent oddaje ogromne ilości (>3–10 litrów/dobę) skrajnie rozcieńczonego moczu (ciężar właściwy <1,005 g/ml, osmolalność moczu <300 mOsm/kg H2O — hipostenuria). Towarzyszy temu nieposkromione pragnienie (polidypsja), zwłaszcza na zimną wodę, oraz nykturia. Dopóki chory ma zachowane pragnienie i swobodny dostęp do wody, sód we krwi pozostaje w normie.',
+        title: 'Objawy: Poliuria, polidypsja i nowa nomenklatura AVP-D / AVP-R',
+        text: 'Moczówka prosta (Diabetes Insipidus — obecnie według międzynarodowego konsensusu określana jako AVP-D: niedobór wazopresyny lub AVP-R: oporność na wazopresynę) to zespół objawów wynikający z braku działania arginino-wazopresyny (AVP). Skutkiem jest niezdolność nerek do zagęszczania moczu. Pacjent oddaje ogromne ilości (>3–10 litrów/dobę) skrajnie rozcieńczonego moczu (ciężar właściwy <1,005 g/ml, osmolalność moczu <300 mOsm/kg H2O — hipostenuria). Towarzyszy temu nieposkromione pragnienie (polidypsja) oraz nykturia. Dopóki chory ma zachowane pragnienie i swobodny dostęp do wody, sód we krwi pozostaje w normie (zwykle 140–143 mmol/l).',
       },
       {
-        title: 'Różnicowanie: Centralna vs Nerkowa vs Psychogenna',
-        text: 'Trzy główne stany kliniczne: 1) Moczówka centralna: brak AVP (urazy głowy, operacje siodła, histiocytoza X, sarkoidoza, idiopatyczna); 2) Moczówka nerkowa: nerki nie reagują na AVP (leczenie litem, hiperkalcemia, hipokaliemia, wady receptora V2); 3) Polidypsja pierwotna/psychogenna: nadmierne przymusowe picie wody pierwotnie rozcieńcza krew i wtórnie hamuje AVP (przysadka i nerki są w pełni zdrowe!).',
+        title: 'Różnicowanie: Centralna (AVP-D) vs Nerkowa (AVP-R) vs Psychogenna',
+        text: 'Trzy główne stany kliniczne: 1) AVP-D (moczówka centralna): brak AVP (urazy głowy, operacje siodła, histiocytoza z komórek Langerhansa, sarkoidoza, idiopatyczna); 2) AVP-R (moczówka nerkowa): nerki nie reagują na AVP (leczenie litem, hiperkalcemia, hipokaliemia, wrodzone mutacje receptora V2); 3) Polidypsja pierwotna: nadmierne przymusowe picie wody pierwotnie rozcieńcza krew i fizjologicznie hamuje wydzielanie AVP (przysadka i nerki są w pełni zdrowe!).',
       },
       {
-        title: 'Test odwodnieniowo-wazopresynowy',
-        text: 'Złoty standard różnicowania: Chory powstrzymuje się od picia płynów pod ścisłym nadzorem (pomiar masy ciała, ciśnienia, osmolalności moczu i osocza). Faza 1 (odwodnienie): W polidypsji pierwotnej mocz ulega zagęszczeniu (>750 mOsm/kg). W moczówce (centralnej i nerkowej) mocz pozostaje rozcieńczony (<300 mOsm/kg). Faza 2: Podaje się desmopresynę (dDAVP): W moczówce centralnej dochodzi do gwałtownego wzrostu osmolalności moczu (>50% wzrostu). W moczówce nerkowej brak reakcji (<50% wzrostu)!',
+        title: 'Diagnostyka: Test z desmopresyną oraz nowoczesna ocena kopeptyny',
+        text: 'W klasycznym teście odwodnieniowym ocenia się zagęszczanie moczu (w polidypsji rośnie >750 mOsm/kg, w AVP-D/AVP-R pozostaje <300 mOsm/kg, a podanie desmopresyny dDAVP daje wzrost >50% w postaci centralnej AVP-D). Nowoczesnym złotym standardem (wg wytycznych Christ-Crain i Pituitary Society) jest pomiar stymulowanej kopeptyny (stabilnego zastępczego markera AVP): po wlewie 3% NaCl (do stężenia sodu >=150 mmol/l) stężenie kopeptyny <4,9 pmol/l z trafnością >95% potwierdza AVP-D, a >=4,9 pmol/l dowodzi polidypsji pierwotnej. Alternatywą jest test stymulacji argininą (odcięcie 3,8 pmol/l). Wyjściowa kopeptyna >21,4 pmol/l bez odwodnienia potwierdza nerkową AVP-R.',
       },
     ],
     table: {
-      headers: ['Jednostka chorobowa', 'Faza odwodnienia (mocz)', 'Po podaniu desmopresyny (dDAVP)'],
+      headers: ['Jednostka chorobowa', 'Test z desmopresyną (dDAVP)', 'Stymulowana kopeptyna'],
       rows: [
-        ['Moczówka centralna', 'Mocz hipoosmotyczny (<300 mOsm/kg)', 'Gwałtowny wzrost osmolalności moczu (>50%)'],
-        ['Moczówka nerkowa', 'Mocz hipoosmotyczny (<300 mOsm/kg)', 'Brak wzrostu osmolalności moczu (<50%)'],
-        ['Polidypsja pierwotna', 'Mocz ulega zagęszczeniu (>750 mOsm/kg)', 'Mocz zagęszczony już w fazie odwodnienia'],
+        ['AVP-D (moczówka centralna)', 'Wzrost osmolalności moczu >50% po dDAVP', '<4,9 pmol/l po 3% NaCl (<3,8 po argininie)'],
+        ['AVP-R (moczówka nerkowa)', 'Brak wzrostu osmolalności (<50% po dDAVP)', 'Wyjściowo >21,4 pmol/l bez odwodnienia'],
+        ['Polidypsja pierwotna', 'Mocz zagęszczony już w fazie odwodnienia (>750 mOsm/kg)', '>=4,9 pmol/l po 3% NaCl (prawidłowa rezerwa)'],
       ],
     },
     advanced:
       'W badaniu MRI mózgowia zdrowy tylny płat przysadki daje charakterystyczny sygnał wysokiej intensywności („jasny punkt” tylnego płata — posterior pituitary bright spot w obrazach T1-zależnych), który odpowiada magazynom kompleksów wazopresyna-neurofizyna. Zanik tego „jasnego punktu” w T1 silnie przemawia za moczówką prostą centralną lub uszkodzeniem podwzgórza.',
     summary:
-      'Moczówka prosta to poliuria i polidypsja z hipostenurią. Test odwodnieniowy z podaniem desmopresyny rozstrzyga o etiologii: wzrost zagęszczenia moczu po dDAVP potwierdza postać centralną, która doskonale reaguje na doustną lub donosową desmopresynę.',
-    sourceIds: ['baldeweg'],
+      'Moczówka prosta to poliuria i polidypsja (AVP-D lub AVP-R). Test z desmopresyną lub nowoczesny test stymulacji kopeptyny (3% NaCl/arginina) rozstrzygają o etiologii, a leczenie AVP-D opiera się na doustnej lub podjęzykowej desmopresynie.',
+    sourceIds: ['baldeweg', 'avpd_copeptin'],
     questions: [
       q(
         'Jak zachowuje się osmolalność moczu po podaniu desmopresyny u pacjenta z moczówką prostą centralną?',

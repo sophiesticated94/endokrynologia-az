@@ -85,4 +85,11 @@ export const pituitarySources: Record<string, Source> = {
     url: 'https://doi.org/10.1038/s41574-025-01134-8',
     kind: 'Konsensus międzynarodowy (Pituitary Society)',
   },
+  avpd_copeptin: {
+    id: 'avpd_copeptin',
+    title: 'Fenske W, Refardt J, Christ-Crain M et al. — A Copeptin-Based Approach in the Diagnosis of Diabetes Insipidus',
+    year: '2018',
+    url: 'https://doi.org/10.1056/NEJMoa1803760',
+    kind: 'Złoty standard diagnostyki AVP-D (NEJM)',
+  },
 };

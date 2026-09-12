@@ -239,17 +239,17 @@ export const draftThyroidMathChem: DraftLesson[] = [
     id: 'tarczyca-chemia-synteza',
     moduleId: 'tarczyca',
     title: 'Stereochemia jodotyronin i rodnikowy mechanizm peroksydazy TPO',
-    subtitle: 'Compound I, ferryl-oxo, kąt dwuścienny 120° i sprzęganie fenoli',
+    subtitle: 'Compound I, ferryl-oxo, kąt walencyjny C-O-C ~120° i sprzęganie fenoli',
     group: 'Chemia i biochemia',
     minutes: 19,
     goals: [
-      'Poznasz geometrię przestrzenną cząsteczki tyroksyny z kątem dwuściennym 120° wiązania eterowego.',
+      'Poznasz geometrię przestrzenną cząsteczki tyroksyny z kątem walencyjnym mostka C-O-C ~120° oraz prostopadłą orientacją pierścieni (kąt torsyjny ~90°).',
       'Przeanalizujesz cykl katalityczny hemu peroksydazy tarczycowej (TPO) z udziałem Compound I i rodników fenoksylowych.',
     ],
     sections: [
       {
-        title: 'Geometria cząsteczki tyroksyny: eter difenylowy pod kątem 120°',
-        text: 'Cząsteczka tyroksyny (3,5,3\',5\'-tetrajodo-L-tyronina) składa się z dwóch pierścieni aromatycznych połączonych mostkiem tlenowym (eter difenylowy). Ze względu na odpychanie steryczne dużych atomów jodu w pozycjach 3 i 5 pierścienia wewnętrznego (tyrozynowego), pierścień zewnętrzny (fenolowy) jest zorientowany prostopadle do płaszczyzny pierścienia wewnętrznego. Wiązanie C-O-C tworzy charakterystyczny kąt walencyjny wynoszący około 120°, co decyduje o dopasowaniu do kieszeni wiążącej receptora jądrowego TRbeta.',
+        title: 'Geometria cząsteczki tyroksyny: mostek eterowy C-O-C ~120° i ułożenie pierścieni',
+        text: 'Cząsteczka tyroksyny (3,5,3\',5\'-tetrajodo-L-tyronina) składa się z dwóch pierścieni aromatycznych połączonych mostkiem tlenowym (eter difenylowy). Wiązanie C-O-C tworzy charakterystyczny kąt walencyjny wynoszący około 120° (wynikający z częściowej delokalizacji wolnych par tlenu do pierścieni). Z kolei ze względu na odpychanie steryczne dużych atomów jodu w pozycjach 3 i 5 pierścienia wewnętrznego (tyrozynowego), pierścień zewnętrzny (fenolowy) przyjmuje orientację prostopadłą do wewnętrznego (kąt torsyjny/dwuścienny bliski 90°). Ta trójwymiarowa architektura decyduje o dopasowaniu do kieszeni wiążącej receptora jądrowego TRbeta.',
       },
       {
         title: 'Cykl katalityczny hemu TPO: Utlenienie do Compound I',
@@ -272,13 +272,13 @@ export const draftThyroidMathChem: DraftLesson[] = [
     advanced:
       'Obecność czterech atomów jodu nadaje tyroksynie unikalną gęstość elektronową i wysoką lipofilność. Promień van der Waalsa jodu (2,15 Å) powoduje masywną zawadę przestrzenną (steric hindrance). W trójjodotyroninie (T3) brak jodu w pozycji 5\' znosi symetrię pierścienia zewnętrznego, co umożliwia obrót wokół wiązania C-O i zwiększa powinowactwo do receptora TRbeta aż 10–15-krotnie w porównaniu z T4.',
     summary:
-      'Stereochemia tyronin opiera się na 120-stopniowym mostku eterowym, a ich synteza wymaga generowania kationorodnika ferrylu [Fe(IV)=O]+• przez hem peroksydazy tarczycowej.',
+      'Stereochemia tyronin opiera się na 120-stopniowym kącie walencyjnym mostka eterowego C-O-C i prostopadłym ułożeniu pierścieni, a ich synteza wymaga generowania kationorodnika ferrylu [Fe(IV)=O]+• przez hem peroksydazy tarczycowej.',
     sourceIds: ['tpo_chem', 'physiology', 'graves'],
     questions: [
       q(
         'Jaki kąt tworzy wiązanie eterowe C-O-C łączące dwa pierścienie aromatyczne w cząsteczce tyroksyny?',
         ['Około 120° (konformacja prostopadła pierścieni)', 'Zapobiega kolizji sterycznej między atomami jodu w pozycjach 3 i 5.'],
-        ['Dokładnie 180° (płaska cząsteczka liniowa)', 'Wiązanie eterowe ma hybrydyzację zbliżoną do sp3 atomu tlenu i nie jest liniowe.'],
+        ['Dokładnie 180° (płaska cząsteczka liniowa)', 'Wiązanie eterowe diarylowe charakteryzuje się kątem walencyjnym C-O-C bliskim 120° i nie jest liniowe.'],
         ['Poniżej 45°', 'Kąt walencyjny tlenu w eterach nie przyjmuje tak ostrych wartości.']
       ),
       q(

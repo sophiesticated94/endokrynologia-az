@@ -252,15 +252,15 @@ export const draftGonadsPart2: DraftLesson[] = [
       {
         title: 'Algorytm diagnostyki różnicowej',
         content:
-          'W diagnostyce laboratoryjnej oznacza się: testosteron całkowity, DHEA-S (siarczan dehydroepiandrosteronu — marker nadnerczowy) oraz 17-hydroksyprogesteron (17-OHP) rano w fazie folikularnej. Testosteron > 150–200 ng/dl sugeruje guza jajnika (np. arrhenoblastoma / guz z komórek Sertolego-Leydiga) lub nadnerczy. DHEA-S > 700–800 mcg/dl wskazuje na raka kory nadnerczy (ACC). Stężenie 17-OHP na czczo > 2 ng/ml wymaga testu stymulacji tetrakozaktydem (Synacthen 250 mcg) w celu wykluczenia nieklasycznego wrodzonego przerostu nadnerczy (NCCAH z niedoborem 21-hydroksylazy, gdzie 17-OHP po stymulacji przekracza 10 ng/ml).',
+          'W diagnostyce laboratoryjnej oznacza się: testosteron całkowity, DHEA-S (siarczan dehydroepiandrosteronu — marker nadnerczowy) oraz 17-hydroksyprogesteron (17-OHP) rano w fazie folikularnej. Testosteron > 150–200 ng/dl sugeruje guza jajnika (np. arrhenoblastoma / guz z komórek Sertolego-Leydiga) lub nadnerczy. DHEA-S > 700–800 mcg/dl wskazuje na raka kory nadnerczy (ACC). Stężenie 17-OHP na czczo < 2 ng/ml (< 1,5 ng/ml w LC-MS/MS) czyni NCCAH mało prawdopodobnym; wartości w strefie 2–10 ng/ml wymagają testu stymulacji tetrakozaktydem (Synacthen 250 mcg) w celu weryfikacji nieklasycznego wrodzonego przerostu nadnerczy (gdzie 17-OHP po stymulacji przekracza 10 ng/ml, w LC-MS/MS > 8–10 ng/ml).',
       },
     ],
     table: {
       caption: 'Diagnostyka różnicowa hiperandrogenizmu u kobiet',
       headers: ['Jednostka chorobowa', 'Stężenie testosteronu', 'Stężenie DHEA-S', 'Stężenie 17-OHP', 'Cechy kliniczne'],
       rows: [
-        ['PCOS', 'Umiarkowanie podwyższony (< 150 ng/dl)', 'Prawidłowy lub lekko podwyższony', 'Prawidłowy (< 2 ng/ml)', 'Początek w pokwitaniu, anowulacja, powolny przebieg'],
-        ['Nieklasyczny WPN (NCCAH)', 'Umiarkowanie podwyższony', 'Prawidłowy lub podwyższony', 'Wysoki (> 2 ng/ml, po Synacthenie > 10)', 'Autosomalnie recesywny, mutacja CYP21A2'],
+        ['PCOS', 'Umiarkowanie podwyższony (< 150 ng/dl)', 'Prawidłowy lub lekko podwyższony', 'Prawidłowy (< 2 ng/ml, LC-MS/MS < 1,5)', 'Początek w pokwitaniu, anowulacja, powolny przebieg'],
+        ['Nieklasyczny WPN (NCCAH)', 'Umiarkowanie podwyższony', 'Prawidłowy lub podwyższony', 'Strefa 2–10 ng/ml, po Synacthenie > 10', 'Autosomalnie recesywny, mutacja CYP21A2'],
         ['Guz jajnika (Sertoli-Leydig)', 'Bardzo wysoki (> 150–200 ng/dl)', 'Prawidłowy', 'Prawidłowy', 'Nagły początek, szybka wirylizacja, guz w USG'],
         ['Rak kory nadnerczy (ACC)', 'Wybitnie wysoki', 'Ekstremalnie wysoki (> 700–800 mcg/dl)', 'Często podwyższony', 'Szybka progresja, objawy Cushinga, guz w TK'],
       ],
