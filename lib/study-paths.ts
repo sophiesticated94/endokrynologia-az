@@ -1,5 +1,6 @@
-import type {ModuleId} from './course-types.ts';
-export const studyPrompts:Record<ModuleId,{question:string;answer:string;pitfall:string}>={
+export type EndocrineModuleId = 'tarczyca' | 'przysadka' | 'nadnercza' | 'przytarczyce' | 'cukrzyca' | 'gonady' | 'nen' | 'otylosc';
+
+export const studyPrompts: Record<EndocrineModuleId, { question: string; answer: string; pitfall: string }> = {
   tarczyca:{question:'Dlaczego prawidłowe TSH nie zamyka diagnostyki przy podejrzeniu choroby przysadki?',answer:'Interpretuj jednocześnie hormon obwodowy, sygnał przysadkowy i kontekst. W chorobie centralnej sygnał może być nieadekwatny do stężenia hormonu obwodowego.',pitfall:'Rozpoznanie z jednego TSH bez oceny FT4 i kontekstu.'},
   przysadka:{question:'Jak odróżnisz skutek ucisku od nadmiernego wydzielania i niedoboru hormonów?',answer:'Utwórz trzy osobne listy: objawy miejscowe, hipersekrecja i niedoczynność osi. Jeden guz może wiązać się z kilkoma mechanizmami.',pitfall:'Przypisanie wszystkich objawów jednemu hormonowi.'},
   nadnercza:{question:'Co musisz wiedzieć o pobraniu i lekach przed interpretacją testu hormonalnego?',answer:'Zapisz wskazanie do testu, porę pobrania, przygotowanie, stosowane leki i stan chorego. Wynik interpretuje się według protokołu konkretnego testu.',pitfall:'Traktowanie wyniku testu dynamicznego jak przypadkowego oznaczenia.'},

@@ -12,6 +12,7 @@ export type Route =
   | 'simulator'
   | 'glossary'
   | 'mistakes'
+  | 'catalog'
   | `lesson/${string}`
   | `quiz/${string}`
   | `case/${string}`;

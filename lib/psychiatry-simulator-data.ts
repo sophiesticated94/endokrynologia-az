@@ -1,0 +1,231 @@
+export type ReceptorEvidence = 'PET measured' | 'PK-derived' | 'Mechanistic' | 'Speculative';
+
+export interface ReceptorBinding {
+  target: 'SERT' | 'NET' | 'DAT' | 'D2' | 'D3' | '5-HT1A' | '5-HT2A' | '5-HT2C' | 'H1' | 'M1' | 'alpha1';
+  ki: number; // nM (niższa wartość = silniejsze wiązanie)
+  mode: 'antagonist' | 'partial_agonist' | 'full_agonist' | 'inverse_agonist' | 'inhibitor';
+  evidence: ReceptorEvidence;
+  clinicalEffect: string;
+}
+
+export interface DrugProfile {
+  id: string;
+  name: string;
+  class: 'SSRI' | 'SNRI' | 'TLPD' | 'NDRI' | 'NaSSA' | 'SARI' | 'SGA' | 'FGA' | 'Stabilizator';
+  defaultDose: number;
+  doseUnit: string;
+  minDose: number;
+  maxDose: number;
+  stepDose: number;
+  halfLifeHours: number;
+  primaryCyp: ('CYP2D6' | 'CYP2C19' | 'CYP3A4' | 'CYP1A2' | 'CYP2B6')[];
+  cypInhibition?: ('CYP2D6' | 'CYP2C19' | 'CYP3A4' | 'CYP1A2' | 'CYP2B6')[];
+  agnpLevel: 1 | 2 | 3 | 4;
+  agnpReferenceRange: string;
+  credibleMedsQtRisk: 'Known Risk' | 'Possible Risk' | 'Conditional Risk' | 'Low Risk';
+  metabolicRisk: 'Niski' | 'Umiarkowany' | 'Wysoki' | 'Bardzo wysoki';
+  serotoninToxicityWeight: number; // 0 - 10
+  d2AntagonistWeight: number; // 0 - 10
+  receptors: ReceptorBinding[];
+  petOccupancyAtDefaultDose?: { target: string; percent: number; study: string };
+  warningNotes: string;
+}
+
+export const PSYCHIATRY_DRUGS: Record<string, DrugProfile> = {
+  sertraline: {
+    id: 'sertraline',
+    name: 'Sertralina',
+    class: 'SSRI',
+    defaultDose: 50,
+    doseUnit: 'mg/d',
+    minDose: 25,
+    maxDose: 200,
+    stepDose: 25,
+    halfLifeHours: 26,
+    primaryCyp: ['CYP2B6', 'CYP2C19', 'CYP3A4', 'CYP2D6'] as any,
+    agnpLevel: 2,
+    agnpReferenceRange: '10 – 50 ng/ml',
+    credibleMedsQtRisk: 'Low Risk',
+    metabolicRisk: 'Niski',
+    serotoninToxicityWeight: 6,
+    d2AntagonistWeight: 0,
+    warningNotes: 'Dodatkowa słaba blokada DAT sprzyja napędowi. Bezpieczna po zawale serca (SADHART).',
+    petOccupancyAtDefaultDose: { target: 'SERT', percent: 80, study: 'Meyer et al. 2004 (Am J Psychiatry)' },
+    receptors: [
+      { target: 'SERT', ki: 0.3, mode: 'inhibitor', evidence: 'PET measured', clinicalEffect: 'Działanie przeciwdepresyjne i przeciwlękowe (~80% blokady w PET)' },
+      { target: 'DAT', ki: 25, mode: 'inhibitor', evidence: 'PK-derived', clinicalEffect: 'Lekka aktywacja napędu i redukcja anhedonii w wyższych dawkach' },
+      { target: '5-HT2A', ki: 2200, mode: 'antagonist', evidence: 'Mechanistic', clinicalEffect: 'Minimalny wpływ kliniczny' },
+    ],
+  },
+  escitalopram: {
+    id: 'escitalopram',
+    name: 'Escitalopram',
+    class: 'SSRI',
+    defaultDose: 10,
+    doseUnit: 'mg/d',
+    minDose: 5,
+    maxDose: 20,
+    stepDose: 5,
+    halfLifeHours: 30,
+    primaryCyp: ['CYP2C19', 'CYP3A4', 'CYP2D6'],
+    agnpLevel: 2,
+    agnpReferenceRange: '15 – 30 ng/ml',
+    credibleMedsQtRisk: 'Known Risk',
+    metabolicRisk: 'Niski',
+    serotoninToxicityWeight: 7,
+    d2AntagonistWeight: 0,
+    warningNotes: 'Najczystszy inhibitor SERT. Dawka maks. 10 mg u osób >60 r.ż. z uwagi na QTc.',
+    petOccupancyAtDefaultDose: { target: 'SERT', percent: 82, study: 'Meyer et al. 2004' },
+    receptors: [
+      { target: 'SERT', ki: 1.1, mode: 'inhibitor', evidence: 'PET measured', clinicalEffect: 'Precyzyjna blokada SERT z modulacją allosteryczną' },
+    ],
+  },
+  fluoxetine: {
+    id: 'fluoxetine',
+    name: 'Fluoksetyna',
+    class: 'SSRI',
+    defaultDose: 20,
+    doseUnit: 'mg/d',
+    minDose: 10,
+    maxDose: 60,
+    stepDose: 10,
+    halfLifeHours: 72,
+    primaryCyp: ['CYP2D6', 'CYP2C19', 'CYP3A4'],
+    cypInhibition: ['CYP2D6'],
+    agnpLevel: 2,
+    agnpReferenceRange: '120 – 500 ng/ml (suma z norfluoksetyną)',
+    credibleMedsQtRisk: 'Possible Risk',
+    metabolicRisk: 'Niski',
+    serotoninToxicityWeight: 7,
+    d2AntagonistWeight: 0,
+    warningNotes: 'Silny inhibitor CYP2D6. Norfluoksetyna t1/2 ~7-15 dni. Antagonizm 5-HT2C daje efekt aktywujący.',
+    petOccupancyAtDefaultDose: { target: 'SERT', percent: 76, study: 'Suhara et al. 2003' },
+    receptors: [
+      { target: 'SERT', ki: 1.0, mode: 'inhibitor', evidence: 'PET measured', clinicalEffect: 'Silna blokada wychwytu serotoniny' },
+      { target: '5-HT2C', ki: 60, mode: 'antagonist', evidence: 'PK-derived', clinicalEffect: 'Odhamowanie dopaminy/noradrenaliny w korze czołowej, zmniejszenie apetytu' },
+    ],
+  },
+  venlafaxine: {
+    id: 'venlafaxine',
+    name: 'Wenlafaksyna',
+    class: 'SNRI',
+    defaultDose: 150,
+    doseUnit: 'mg/d',
+    minDose: 37.5,
+    maxDose: 375,
+    stepDose: 37.5,
+    halfLifeHours: 11,
+    primaryCyp: ['CYP2D6', 'CYP3A4'],
+    agnpLevel: 2,
+    agnpReferenceRange: '100 – 400 ng/ml (suma z O-demetylowenlafaksyną)',
+    credibleMedsQtRisk: 'Possible Risk',
+    metabolicRisk: 'Niski',
+    serotoninToxicityWeight: 8,
+    d2AntagonistWeight: 0,
+    warningNotes: 'Dawkozależna blokada NET od 150 mg/d. Może podnosić ciśnienie tętnicze. Zespół odstawienny FINISH.',
+    petOccupancyAtDefaultDose: { target: 'SERT', percent: 84, study: 'Meyer et al. 2004' },
+    receptors: [
+      { target: 'SERT', ki: 8.2, mode: 'inhibitor', evidence: 'PET measured', clinicalEffect: 'Blokada SERT obecna w całym zakresie dawek (>80% przy 75-150 mg)' },
+      { target: 'NET', ki: 1020, mode: 'inhibitor', evidence: 'PK-derived', clinicalEffect: 'Blokada NET pojawia się przy dawkach >= 150 mg/d' },
+    ],
+  },
+  bupropion: {
+    id: 'bupropion',
+    name: 'Bupropion',
+    class: 'NDRI',
+    defaultDose: 150,
+    doseUnit: 'mg/d',
+    minDose: 150,
+    maxDose: 300,
+    stepDose: 150,
+    halfLifeHours: 20,
+    primaryCyp: ['CYP2B6'],
+    cypInhibition: ['CYP2D6'],
+    agnpLevel: 2,
+    agnpReferenceRange: '10 – 30 ng/ml (hydroksybupropion: 600–2000 ng/ml)',
+    credibleMedsQtRisk: 'Low Risk',
+    metabolicRisk: 'Niski',
+    serotoninToxicityWeight: 0,
+    d2AntagonistWeight: 0,
+    warningNotes: 'Brak wpływu na serotoninę. Brak zaburzeń erekcji/libido. Obniża próg drgawkowy (przeciwwskazany w bulimii).',
+    petOccupancyAtDefaultDose: { target: 'DAT', percent: 25, study: 'Learned-Coughlin et al. 2003 (PET)' },
+    receptors: [
+      { target: 'DAT', ki: 520, mode: 'inhibitor', evidence: 'PET measured', clinicalEffect: 'Blokada DAT rzędu 15-25% w prążkowiu – motywacja i napęd' },
+      { target: 'NET', ki: 600, mode: 'inhibitor', evidence: 'Mechanistic', clinicalEffect: 'Zwiększenie czuwania i redukcja apatii' },
+    ],
+  },
+  olanzapine: {
+    id: 'olanzapine',
+    name: 'Olanzapina',
+    class: 'SGA',
+    defaultDose: 10,
+    doseUnit: 'mg/d',
+    minDose: 2.5,
+    maxDose: 20,
+    stepDose: 2.5,
+    halfLifeHours: 33,
+    primaryCyp: ['CYP1A2', 'CYP2D6'],
+    agnpLevel: 1,
+    agnpReferenceRange: '20 – 80 ng/ml',
+    credibleMedsQtRisk: 'Conditional Risk',
+    metabolicRisk: 'Bardzo wysoki',
+    serotoninToxicityWeight: 0,
+    d2AntagonistWeight: 7,
+    warningNotes: 'Wysokie ryzyko zespołu metabolicznego (tycie, glikemia, lipidy). Klirens przyspieszony o 50% przez dym tytoniowy (CYP1A2).',
+    petOccupancyAtDefaultDose: { target: 'D2', percent: 73, study: 'Kapur et al. 1999 (Am J Psychiatry)' },
+    receptors: [
+      { target: '5-HT2A', ki: 4, mode: 'antagonist', evidence: 'PET measured', clinicalEffect: '>90% wysycenia w PET; ochrona prążkowia przed EPS' },
+      { target: 'D2', ki: 11, mode: 'antagonist', evidence: 'PET measured', clinicalEffect: '70–75% wysycenia przy 10 mg – idealne okno terapeutyczne psychozy' },
+      { target: 'H1', ki: 7, mode: 'antagonist', evidence: 'PK-derived', clinicalEffect: 'Silna sedacja i stymulacja apetytu (oś podwzgórzowa)' },
+      { target: 'M1', ki: 26, mode: 'antagonist', evidence: 'PK-derived', clinicalEffect: 'Działanie cholinolityczne (suchość w ustach, zaparcia)' },
+      { target: 'alpha1', ki: 19, mode: 'antagonist', evidence: 'PK-derived', clinicalEffect: 'Hipotonia ortostatyczna' },
+    ],
+  },
+  aripiprazole: {
+    id: 'aripiprazole',
+    name: 'Arypiprazol',
+    class: 'SGA',
+    defaultDose: 15,
+    doseUnit: 'mg/d',
+    minDose: 5,
+    maxDose: 30,
+    stepDose: 5,
+    halfLifeHours: 75,
+    primaryCyp: ['CYP2D6', 'CYP3A4'],
+    agnpLevel: 2,
+    agnpReferenceRange: '100 – 350 ng/ml',
+    credibleMedsQtRisk: 'Low Risk',
+    metabolicRisk: 'Niski',
+    serotoninToxicityWeight: 1,
+    d2AntagonistWeight: 4,
+    warningNotes: 'Częściowy agonista D2 (~25% aktywności). Brak wzrostu prolaktyny. Neutralny metabolicznie. Ryzyko akatyzji.',
+    petOccupancyAtDefaultDose: { target: 'D2', percent: 85, study: 'Yokoi et al. 2002 (PET)' },
+    receptors: [
+      { target: 'D2', ki: 0.7, mode: 'partial_agonist', evidence: 'PET measured', clinicalEffect: '>80-90% occupancy bez klasycznego parkinsonizmu dzięki agonizmowi częściowemu' },
+      { target: '5-HT1A', ki: 5.6, mode: 'partial_agonist', evidence: 'PK-derived', clinicalEffect: 'Działanie anksjolityczne i przeciwdepresyjne' },
+      { target: '5-HT2A', ki: 8.7, mode: 'antagonist', evidence: 'PK-derived', clinicalEffect: 'Ułatwienie neurotransmisji dopaminy w korze' },
+    ],
+  },
+  lithium: {
+    id: 'lithium',
+    name: 'Węglan litu',
+    class: 'Stabilizator',
+    defaultDose: 750,
+    doseUnit: 'mg/d',
+    minDose: 250,
+    maxDose: 1500,
+    stepDose: 250,
+    halfLifeHours: 24,
+    primaryCyp: [],
+    agnpLevel: 1,
+    agnpReferenceRange: '0,6 – 0,8 mmol/l (podtrzymująco) / 0,8 – 1,0 mmol/l (mania)',
+    credibleMedsQtRisk: 'Conditional Risk',
+    metabolicRisk: 'Umiarkowany',
+    serotoninToxicityWeight: 3,
+    d2AntagonistWeight: 0,
+    warningNotes: 'Złoty standard ChAD i profilaktyki samobójstw. Wąski indeks (toksyczność >1,2 mmol/l). Monitoruj eGFR i TSH. Interakcja z NLPZ.',
+    receptors: [
+      { target: 'D2', ki: 99999, mode: 'antagonist', evidence: 'Mechanistic', clinicalEffect: 'Brak bezpośredniego wiązania z receptorami monoaminowymi' },
+    ],
+  },
+};

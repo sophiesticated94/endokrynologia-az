@@ -1,10 +1,10 @@
 'use client';
-import {lessons,modulesList,type ModuleId} from '../../lib/course';
+import {lessons,modulesList} from '../../lib/course';
 import {gahtLessonIds} from '../../lib/course-gaht';
-import {studyPrompts} from '../../lib/study-paths';
+import {studyPrompts, type EndocrineModuleId} from '../../lib/study-paths';
 import type {LearningState} from '../../lib/learning';
 import type {Navigation} from './types';
-export function StudyPath({scope,state,go}:{scope:ModuleId|'all';state:LearningState;go:Navigation}){
+export function StudyPath({scope,state,go}:{scope:EndocrineModuleId|'all';state:LearningState;go:Navigation}){
   const topic=scope==='all'?'gonady':scope;
   const prompt=studyPrompts[topic];
   const sequence=scope==='all'||scope==='gonady'?gahtLessonIds.map(id=>lessons.find(l=>l.id===id)!):lessons.filter(l=>l.moduleId===scope);

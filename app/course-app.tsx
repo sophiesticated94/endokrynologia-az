@@ -19,23 +19,19 @@ import {
   BookA,
   BrainCircuit,
 } from 'lucide-react';
-import { lessons, flashcards } from '@/lib/course';
-import type { Confidence, LearningActivity, PracticeRecordMeta } from '@/lib/course-types';
-import { cases } from '@/lib/cases';
+import type { Confidence, CourseId, LearningActivity, PracticeRecordMeta } from '@/lib/course-types';
+import { COURSES, getCourse } from '@/lib/courses-registry';
 import { useLearning } from '@/lib/use-learning';
 import { practicePayload } from '@/lib/learning';
 import { SourceList, Runner } from './course-ui';
 import { Dashboard, CourseMap, LessonView, CasesView, type Route } from './content-views';
 import { CardsView, ExamView, ResultsView } from './practice-views';
 import { AccountView } from './account-view';
-import { HptSimulator } from './hpt-simulator';
-import { PituitarySimulator } from './pituitary-simulator';
-import { AdrenalSimulator } from './adrenal-simulator';
-import { ParathyroidSimulator } from './parathyroid-simulator';
-import { DiabetesSimulator } from './diabetes-simulator';
-import { GonadSimulator } from './gonad-simulator';
-import { NenSimulator } from './nen-simulator';
-import { ObesitySimulator } from './obesity-simulator';
+import { EndocrinologySimulators } from './views/endocrinology-simulators';
+import { PsychiatryCommandCenter } from './psychiatry-command-center';
+import { PsychiatryCourseMap } from './views/psychiatry-course-map';
+import { CatalogView } from './views/catalog-view';
+import { CourseSwitcher } from './course-switcher';
 import { GlossaryView } from './glossary-components';
 import { ErrorNotebook } from './views/error-notebook';
 
@@ -53,17 +49,36 @@ const navItems = [
 
 function validRoute(value: string): value is Route {
   return (
-    ['home', 'course', 'simulator', 'cases', 'cards', 'exam', 'results', 'mistakes', 'glossary', 'account'].includes(value) ||
-    lessons.some(l => value === `lesson/${l.id}` || value === `quiz/${l.id}`) ||
-    cases.some(c => value === `case/${c.id}`)
+    ['home', 'course', 'simulator', 'cases', 'cards', 'exam', 'results', 'mistakes', 'glossary', 'account', 'catalog'].includes(value) ||
+    COURSES.endocrinology.lessons.some(l => value === `lesson/${l.id}` || value === `quiz/${l.id}`) ||
+    COURSES.psychiatry.lessons.some(l => value === `lesson/${l.id}` || value === `quiz/${l.id}`) ||
+    COURSES.endocrinology.cases.some(c => value === `case/${c.id}`) ||
+    COURSES.psychiatry.cases.some(c => value === `case/${c.id}`)
   );
 }
 
 export default function CourseApp() {
-  const learning = useLearning();
+  const [activeCourse, setActiveCourse] = useState<CourseId>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('med.activeCourse');
+      if (saved === 'psychiatry' || saved === 'endocrinology') return saved;
+    }
+    return 'endocrinology';
+  });
+
+  const selectCourse = useCallback((id: CourseId) => {
+    setActiveCourse(id);
+    if (typeof window !== 'undefined') {
+      try { localStorage.setItem('med.activeCourse', id); } catch {}
+    }
+  }, []);
+
+  const course = getCourse(activeCourse);
+  const { lessons, flashcards, cases } = course;
+
+  const learning = useLearning(activeCourse);
   const { state, user, configured, loading, saving, pending, error, online } = learning;
   const [route, setRoute] = useState<Route>('home');
-  const [simTab, setSimTab] = useState<'hpt' | 'pituitary' | 'adrenal' | 'parathyroid' | 'diabetes' | 'gonad' | 'nen' | 'otylosc'>('hpt');
   const routeRef = useRef<Route>('home');
   const [mobile, setMobile] = useState(false);
   const active = useRef(false);
@@ -84,6 +99,22 @@ export default function CourseApp() {
         history.replaceState(null, '', `#${routeRef.current}`);
         return;
       }
+
+      // Automatyczne przełączanie kursu po otwarciu bezpośredniego linku
+      if (hash.startsWith('lesson/') || hash.startsWith('quiz/')) {
+        if (COURSES.psychiatry.lessons.some(l => hash === `lesson/${l.id}` || hash === `quiz/${l.id}`)) {
+          if (activeCourse !== 'psychiatry') selectCourse('psychiatry');
+        } else if (COURSES.endocrinology.lessons.some(l => hash === `lesson/${l.id}` || hash === `quiz/${l.id}`)) {
+          if (activeCourse !== 'endocrinology') selectCourse('endocrinology');
+        }
+      } else if (hash.startsWith('case/')) {
+        if (COURSES.psychiatry.cases.some(c => hash === `case/${c.id}`)) {
+          if (activeCourse !== 'psychiatry') selectCourse('psychiatry');
+        } else if (COURSES.endocrinology.cases.some(c => hash === `case/${c.id}`)) {
+          if (activeCourse !== 'endocrinology') selectCourse('endocrinology');
+        }
+      }
+
       active.current = false;
       routeRef.current = hash;
       setRoute(hash);
@@ -103,7 +134,7 @@ export default function CourseApp() {
       window.removeEventListener('hashchange', changed);
       window.removeEventListener('beforeunload', prevent);
     };
-  }, []);
+  }, [activeCourse, selectCourse]);
 
   useEffect(() => {
     mainRef.current?.focus({ preventScroll: true });
@@ -129,67 +160,20 @@ export default function CourseApp() {
   const clinical = cases.find(c => route === `case/${c.id}`);
 
   const title =
-    route.startsWith('lesson/') || route.startsWith('quiz/')
-      ? lesson?.moduleId === 'cukrzyca'
-        ? 'Moduł 05 / Cukrzyca i metabolizm'
-        : lesson?.moduleId === 'przytarczyce'
-        ? 'Moduł 04 / Przytarczyce i Ca–P'
-        : lesson?.moduleId === 'nadnercza'
-          ? 'Moduł 03 / Nadnercza'
-          : lesson?.moduleId === 'przysadka'
-            ? 'Moduł 02 / Przysadka i podwzgórze'
-            : 'Moduł 01 / Tarczyca'
+    route === 'catalog'
+      ? 'Katalog kursów'
+      : route.startsWith('lesson/') || route.startsWith('quiz/')
+      ? `${course.shortTitle} / ${lesson?.title ?? 'Lekcja'}`
       : route.startsWith('case/')
       ? 'Przypadki kliniczne'
       : route === 'simulator'
-      ? 'Pracownie i symulatory'
+      ? `${course.shortTitle} · Symulatory`
       : route === 'glossary'
-      ? 'Słowniczek pojęć medycznych'
+      ? 'Słowniczek pojęć'
       : route === 'mistakes'
       ? 'Notatnik błędów'
       : navItems.find(n => n[0] === route)?.[1] ?? 'Twoje konto';
   const userKey = user?.id ?? 'guest';
-
-  useEffect(() => {
-    const context = (
-      document as unknown as {
-        modelContext?: { registerTool: (tool: unknown, options: { signal: AbortSignal }) => void | Promise<void> };
-      }
-    ).modelContext;
-    if (!context) return;
-    const controller = new AbortController();
-    try {
-      void Promise.resolve(
-        context.registerTool(
-          {
-            name: 'open_endocrinology_lesson',
-            title: 'Otwórz lekcję endokrynologii',
-            description: 'Otwiera lekcję po identyfikatorze; nie oznacza jej jako ukończonej.',
-            inputSchema: {
-              type: 'object',
-              properties: { lessonId: { type: 'string', enum: lessons.map(l => l.id) } },
-              required: ['lessonId'],
-              additionalProperties: false,
-            },
-            annotations: { readOnlyHint: false },
-            execute: async (input: unknown) => {
-              const id = (input as { lessonId?: unknown })?.lessonId;
-              if (typeof id !== 'string' || !lessons.some(l => l.id === id)) throw new Error('Nieznana lekcja');
-              if (active.current) throw new Error('Najpierw zakończ aktywne ćwiczenie.');
-              const target = `lesson/${id}`;
-              window.location.hash = target;
-              await new Promise<void>(resolve =>
-                requestAnimationFrame(() => requestAnimationFrame(() => resolve()))
-              );
-              return { route: target, lessonId: id };
-            },
-          },
-          { signal: controller.signal }
-        )
-      ).catch(() => {});
-    } catch {}
-    return () => controller.abort();
-  }, []);
 
   return (
     <div className="app-shell">
@@ -205,15 +189,25 @@ export default function CourseApp() {
       </a>
       {mobile && <button aria-label="Zamknij menu" className="scrim" onClick={() => setMobile(false)} />}
       <aside className={`sidebar ${mobile ? 'open' : ''}`}>
-        <button className="brand" onClick={() => go('home')} aria-label="Endokrynologia A–Z — strona główna">
+        <button className="brand" onClick={() => go('home')} aria-label={`${course.title} — strona główna`}>
           <span className="brand-icon">
-            <FlaskConical size={23} />
+            {activeCourse === 'endocrinology' ? <FlaskConical size={23} /> : <BrainCircuit size={23} />}
           </span>
           <span>
-            endo<span className="brand-light">akademia</span>
-            <small>ENDOKRYNOLOGIA A–Z</small>
+            {activeCourse === 'endocrinology' ? 'endo' : 'psych'}<span className="brand-light">akademia</span>
+            <small>{course.brandSub}</small>
           </span>
         </button>
+
+        <div style={{ padding: '0 12px 12px 12px' }}>
+          <CourseSwitcher
+            activeCourse={activeCourse}
+            onSelectCourse={selectCourse}
+            onOpenCatalog={() => go('catalog')}
+            variant="sidebar"
+          />
+        </div>
+
         <div className="nav-label">TWOJA PRZESTRZEŃ</div>
         <nav>
           {navItems.map(([id, label, Icon]) => (
@@ -264,7 +258,12 @@ export default function CourseApp() {
             <button className="mobile-menu icon-button" aria-label="Otwórz menu" onClick={() => setMobile(true)}>
               <Menu size={22} />
             </button>
-            <span>Akademia</span>
+            <CourseSwitcher
+              activeCourse={activeCourse}
+              onSelectCourse={selectCourse}
+              onOpenCatalog={() => go('catalog')}
+              variant="topbar"
+            />
             <ChevronRight size={14} />
             <strong>{title}</strong>
           </div>
@@ -330,69 +329,15 @@ export default function CourseApp() {
             </div>
           )}
 
+          {route === 'catalog' && (
+            <CatalogView activeCourse={activeCourse} onSelectCourse={selectCourse} go={go} />
+          )}
           {route === 'home' && <Dashboard state={state} go={go} due={due.length} newCount={fresh.length} />}
-          {route === 'course' && <CourseMap state={state} go={go} />}
+          {route === 'course' && (
+            activeCourse === 'endocrinology' ? <CourseMap state={state} go={go} /> : <PsychiatryCourseMap state={state} go={go} />
+          )}
           {route === 'simulator' && (
-            <div>
-              <div className="filter-bar" style={{ marginBottom: '22px' }}>
-                <button
-                  className={simTab === 'hpt' ? 'active' : ''}
-                  onClick={() => setSimTab('hpt')}
-                >
-                  <Activity size={15} /> Moduł 01: Symulator osi HPT (Tarczyca)
-                </button>
-                <button
-                  className={simTab === 'pituitary' ? 'active' : ''}
-                  onClick={() => setSimTab('pituitary')}
-                >
-                  <Activity size={15} /> Moduł 02: Konsola Przysadkowa (Przysadka i podwzgórze)
-                </button>
-                <button
-                  className={simTab === 'adrenal' ? 'active' : ''}
-                  onClick={() => setSimTab('adrenal')}
-                >
-                  <Activity size={15} /> Moduł 03: Konsola Nadnerczowa (Kora i rdzeń nadnerczy)
-                </button>
-                <button
-                  className={simTab === 'parathyroid' ? 'active' : ''}
-                  onClick={() => setSimTab('parathyroid')}
-                >
-                  <Activity size={15} /> Moduł 04: Konsola Przytarczycowa (Przytarczyce i Ca–P)
-                </button>
-                <button
-                  className={simTab === 'diabetes' ? 'active' : ''}
-                  onClick={() => setSimTab('diabetes')}
-                >
-                  <Activity size={15} /> Moduł 05: Konsola Diabetologiczna (HOMA i DKA/HHS)
-                </button>
-                <button
-                  className={simTab === 'gonad' ? 'active' : ''}
-                  onClick={() => setSimTab('gonad')}
-                >
-                  <Activity size={15} /> Moduł 06: Konsola Gonadowa (Gonady i medycyna rozrodu)
-                </button>
-                <button
-                  className={simTab === 'nen' ? 'active' : ''}
-                  onClick={() => setSimTab('nen')}
-                >
-                  <Activity size={15} /> Moduł 07: Konsola Neuroendokrynna (NEN, MEN i PRRT)
-                </button>
-                <button
-                  className={simTab === 'otylosc' ? 'active' : ''}
-                  onClick={() => setSimTab('otylosc')}
-                >
-                  <Activity size={15} /> Moduł 08: Konsola Metaboliczna (Masa, Lipidy i FIB-4)
-                </button>
-              </div>
-              {simTab === 'hpt' && <HptSimulator />}
-              {simTab === 'pituitary' && <PituitarySimulator />}
-              {simTab === 'adrenal' && <AdrenalSimulator />}
-              {simTab === 'parathyroid' && <ParathyroidSimulator />}
-              {simTab === 'diabetes' && <DiabetesSimulator />}
-              {simTab === 'gonad' && <GonadSimulator />}
-              {simTab === 'nen' && <NenSimulator />}
-              {simTab === 'otylosc' && <ObesitySimulator />}
-            </div>
+            activeCourse === 'endocrinology' ? <EndocrinologySimulators /> : <PsychiatryCommandCenter />
           )}
 
           {route === 'glossary' && <GlossaryView go={go} />}
@@ -404,13 +349,15 @@ export default function CourseApp() {
               blocked={blocked}
               complete={() => void learning.record('lesson', lesson.id)}
               setLevel={level => void learning.record('profile', 'level', { level })}
-              recordPractice={(activity: LearningActivity, correct: boolean, confidence?: Confidence, scored = true, meta?: PracticeRecordMeta) => learning.record('practice', activity.id, practicePayload(lesson.id, activity, correct, confidence, scored, meta))}
+              recordPractice={(activity: LearningActivity, correct: boolean, confidence?: Confidence, scored = true, meta?: PracticeRecordMeta) =>
+                learning.record('practice', activity.id, practicePayload(lesson.id, activity, correct, confidence, scored, meta))
+              }
             />
           )}
           {route.startsWith('quiz/') && lesson && (
             <>
               <Runner
-                key={`${route}-${userKey}`}
+                key={`${route}-${userKey}-${activeCourse}`}
                 bank={lesson.questions}
                 title={lesson.title}
                 mode="quiz"
@@ -427,7 +374,7 @@ export default function CourseApp() {
           {route.startsWith('case/') && clinical && (
             <>
               <Runner
-                key={`${route}-${userKey}`}
+                key={`${route}-${userKey}-${activeCourse}`}
                 bank={clinical.steps}
                 title={clinical.title}
                 mode="case"
@@ -441,9 +388,9 @@ export default function CourseApp() {
               </div>
             </>
           )}
-          {route === 'cards' && <CardsView key={userKey} learning={learning} go={go} />}
-          {route === 'exam' && <ExamView key={userKey} learning={learning} onActive={setActive} />}
-          {route === 'results' && <ResultsView key={userKey} learning={learning} go={go} />}
+          {route === 'cards' && <CardsView key={`${userKey}-${activeCourse}`} learning={learning} go={go} />}
+          {route === 'exam' && <ExamView key={`${userKey}-${activeCourse}`} learning={learning} onActive={setActive} />}
+          {route === 'results' && <ResultsView key={`${userKey}-${activeCourse}`} learning={learning} go={go} />}
           {route === 'mistakes' && (
             <ErrorNotebook
               state={state}
@@ -457,10 +404,10 @@ export default function CourseApp() {
 
           <footer className="footer">
             <span>
-              <FlaskConical size={16} />
-              Endokrynologia A–Z
+              {activeCourse === 'endocrinology' ? <FlaskConical size={16} /> : <BrainCircuit size={16} />}
+              {course.title}
             </span>
-            <span>Materiał edukacyjny · bez recenzji klinicznej</span>
+            <span>{course.standardsBadge} · Materiał edukacyjny</span>
             <button className="text-button" onClick={() => go('course')}>
               Odkrywaj dalej
               <ArrowUpRight size={14} />

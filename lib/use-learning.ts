@@ -3,17 +3,25 @@ import {useCallback,useEffect,useMemo,useRef,useState} from 'react';
 import {createClient,type SupabaseClient,type User} from '@supabase/supabase-js';
 import {CONTENT_VERSION} from './course';
 import {parseStoredActivities,projectActivities,saveIdempotently,type Activity} from './learning';
-const guestStorageKey='endokrynologia.learning.guest.v2';
-const pendingStorageKey=(userId:string)=>`endokrynologia.learning.pending.${userId}.v2`;
-function readStored(key:string):Activity[]{
- if(typeof window==='undefined')return[];
- return parseStoredActivities(localStorage.getItem(key));
+import type { CourseId } from './course-types';
+const getGuestStorageKey = (cid: CourseId) =>
+  cid === 'endocrinology' ? 'endokrynologia.learning.guest.v2' : 'psychiatria.learning.guest.v2';
+const getPendingStorageKey = (userId: string, cid: CourseId) =>
+  `med.learning.pending.${cid}.${userId}.v2`;
+
+function readStored(key: string): Activity[] {
+  if (typeof window === 'undefined') return [];
+  return parseStoredActivities(localStorage.getItem(key));
 }
-function writeStored(key:string,events:Activity[]){
- if(typeof window==='undefined')return;
- try{localStorage.setItem(key,JSON.stringify(events));}catch{/* Storage may be unavailable in privacy mode. */}
+function writeStored(key: string, events: Activity[]) {
+  if (typeof window === 'undefined') return;
+  try {
+    localStorage.setItem(key, JSON.stringify(events));
+  } catch {
+    /* Storage may be unavailable in privacy mode. */
+  }
 }
-export function useLearning(){
+export function useLearning(courseId: CourseId = 'endocrinology') {
  const [client,setClient]=useState<SupabaseClient|null>(null);
  const [configured,setConfigured]=useState<boolean|null>(null);
  const [user,setUser]=useState<User|null>(null);
@@ -33,21 +41,22 @@ export function useLearning(){
   async function init(){try{
    const response=await fetch('/api/config');if(!response.ok)throw new Error('Nie udało się pobrać konfiguracji.');
    const cfg=await response.json() as {configured:boolean;url:string;key:string};if(disposed)return;setConfigured(cfg.configured);
-   if(!cfg.configured){setRows(readStored(guestStorageKey));setLoading(false);return;}
+   if(!cfg.configured){setRows(readStored(getGuestStorageKey(courseId)));setLoading(false);return;}
    const supa=createClient(cfg.url,cfg.key,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true,flowType:'implicit'}});setClient(supa);
    const {data}=supa.auth.onAuthStateChange((event,session)=>{
     if(disposed)return;
     if(event==='PASSWORD_RECOVERY')setRecovery(true);
-    if(userRef.current?.id!==session?.user?.id){epoch.current++;const nextUser=session?.user??null;userRef.current=nextUser;setUser(nextUser);setRows(nextUser?[]:readStored(guestStorageKey));setPending(nextUser?readStored(pendingStorageKey(nextUser.id)):[]);setError('');}
+    if(userRef.current?.id!==session?.user?.id){epoch.current++;const nextUser=session?.user??null;userRef.current=nextUser;setUser(nextUser);setRows(nextUser?[]:readStored(getGuestStorageKey(courseId)));setPending(nextUser?readStored(getPendingStorageKey(nextUser.id,courseId)):[]);setError('');}
     setLoading(false);
    });cleanup=()=>data.subscription.unsubscribe();
    const {data:session,error:sessionError}=await supa.auth.getSession();if(sessionError)throw sessionError;
-   if(!disposed){const nextUser=session.session?.user??null;if(userRef.current?.id!==nextUser?.id){epoch.current++;userRef.current=nextUser;setRows(nextUser?[]:readStored(guestStorageKey));setPending(nextUser?readStored(pendingStorageKey(nextUser.id)):[]);}setUser(nextUser);setLoading(false);}
+   if(!disposed){const nextUser=session.session?.user??null;if(userRef.current?.id!==nextUser?.id){epoch.current++;userRef.current=nextUser;setRows(nextUser?[]:readStored(getGuestStorageKey(courseId)));setPending(nextUser?readStored(getPendingStorageKey(nextUser.id,courseId)):[]);}setUser(nextUser);setLoading(false);}
   }catch{if(!disposed){setError('Nie udało się połączyć z usługą kont. Spróbuj ponownie.');setLoading(false);}}}
   void init();return()=>{disposed=true;cleanup();};
  },[configRetry]);
- useEffect(()=>{if(!loading&&!user)writeStored(guestStorageKey,rows)},[loading,rows,user]);
- useEffect(()=>{if(user)writeStored(pendingStorageKey(user.id),pending)},[pending,user]);
+ useEffect(()=>{if(!user&&!loading){setRows(readStored(getGuestStorageKey(courseId)));}},[courseId,user,loading]);
+ useEffect(()=>{if(!loading&&!user)writeStored(getGuestStorageKey(courseId),rows)},[loading,rows,user,courseId]);
+ useEffect(()=>{if(user)writeStored(getPendingStorageKey(user.id,courseId),pending)},[pending,user,courseId]);
  const refresh=useCallback(async()=>{
   if(!client||!userRef.current)return;const id=userRef.current.id;const generation=epoch.current;setLoading(true);
   try{const all:Activity[]=[];for(let from=0;;from+=500){
@@ -80,10 +89,10 @@ export function useLearning(){
  },[client]);
  const record=useCallback(async(kind:Activity['kind'],target_id:string,payload:Activity['payload']={},id=crypto.randomUUID())=>{
   if(busy.current||loading)return false;
-  const event:Activity={id,user_id:userRef.current?.id??'guest',kind,target_id,payload,content_version:CONTENT_VERSION,created_at:new Date().toISOString()};
+  const event:Activity={id,user_id:userRef.current?.id??'guest',kind,target_id,payload:{...payload,courseId},content_version:CONTENT_VERSION,created_at:new Date().toISOString()};
   if(!userRef.current){setRows(current=>[...current.filter(e=>e.id!==id),event]);return true;}
   return persist(event);
- },[persist,loading]);
+ },[persist,loading,courseId]);
  const retry=useCallback(async()=>{if(busy.current)return;for(const event of pending){if(!await persist(event))break;}},[pending,persist]);
  useEffect(()=>{const flush=()=>{if(userRef.current&&pending.length&&!busy.current)void retry()};window.addEventListener('online',flush);return()=>window.removeEventListener('online',flush)},[pending.length,retry]);
  const state=useMemo(()=>projectActivities(rows),[rows]);

@@ -1,4 +1,16 @@
-export type ModuleId = 'tarczyca' | 'przysadka' | 'nadnercza' | 'przytarczyce' | 'cukrzyca' | 'gonady' | 'nen' | 'otylosc';
+export type CourseId = 'endocrinology' | 'psychiatry';
+
+export type ModuleId =
+  | 'tarczyca'
+  | 'przysadka'
+  | 'nadnercza'
+  | 'przytarczyce'
+  | 'cukrzyca'
+  | 'gonady'
+  | 'nen'
+  | 'otylosc'
+  | 'psych-afektywne'
+  | 'psych-farmakologia';
 
 export type ObjectiveKind = 'mechanism' | 'interpretation' | 'differentiation' | 'decision' | 'safety';
 export type ActivityDifficulty = 'student' | 'doctor' | 'both';
