@@ -60,13 +60,7 @@ function validRoute(value: string): value is Route {
 }
 
 export default function CourseApp() {
-  const [activeCourse, setActiveCourse] = useState<CourseId>(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('med.activeCourse');
-      if (saved === 'psychiatry' || saved === 'endocrinology') return saved;
-    }
-    return 'endocrinology';
-  });
+  const [activeCourse, setActiveCourse] = useState<CourseId>('endocrinology');
 
   const selectCourse = useCallback((id: CourseId) => {
     setActiveCourse(id);
@@ -104,19 +98,26 @@ export default function CourseApp() {
 
       // Automatyczne przełączanie kursu po otwarciu bezpośredniego linku
       if (hash.startsWith('simulator?') || hash.startsWith('simulator/')) {
-        if (activeCourse !== 'psychiatry') selectCourse('psychiatry');
+        setActiveCourse('psychiatry');
       } else if (hash.startsWith('lesson/') || hash.startsWith('quiz/')) {
         if (COURSES.psychiatry.lessons.some(l => hash === `lesson/${l.id}` || hash === `quiz/${l.id}`)) {
-          if (activeCourse !== 'psychiatry') selectCourse('psychiatry');
+          setActiveCourse('psychiatry');
         } else if (COURSES.endocrinology.lessons.some(l => hash === `lesson/${l.id}` || hash === `quiz/${l.id}`)) {
-          if (activeCourse !== 'endocrinology') selectCourse('endocrinology');
+          setActiveCourse('endocrinology');
         }
       } else if (hash.startsWith('case/')) {
         if (COURSES.psychiatry.cases.some(c => hash === `case/${c.id}`)) {
-          if (activeCourse !== 'psychiatry') selectCourse('psychiatry');
+          setActiveCourse('psychiatry');
         } else if (COURSES.endocrinology.cases.some(c => hash === `case/${c.id}`)) {
-          if (activeCourse !== 'endocrinology') selectCourse('endocrinology');
+          setActiveCourse('endocrinology');
         }
+      } else {
+        try {
+          const saved = localStorage.getItem('med.activeCourse');
+          if (saved === 'psychiatry' || saved === 'endocrinology') {
+            setActiveCourse(saved);
+          }
+        } catch {}
       }
 
       active.current = false;
