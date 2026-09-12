@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Pill, Activity, AlertTriangle, CheckCircle, Info, Heart, ShieldAlert } from 'lucide-react';
 import {
   calculateD2Occupancy,
@@ -341,6 +341,12 @@ export function PsychiatryQtcLab({
   const [isFemale, setIsFemale] = useState(initialIsFemale);
   const [potassium, setPotassium] = useState<number | undefined>(initialPotassium);
   const [magnesium, setMagnesium] = useState<number | undefined>(initialMagnesium);
+
+  useEffect(() => {
+    if (initialPotassium !== undefined) {
+      setPotassium(initialPotassium);
+    }
+  }, [initialPotassium]);
 
   const qtc = evaluateQtcRisk({
     rawQtMs: rawQt,

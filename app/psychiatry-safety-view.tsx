@@ -51,7 +51,6 @@ export function PsychiatrySafetyView({ patient, prescriptions, presetData, setPa
       {presetData?.rawQt !== undefined && (
         <div style={{ marginBottom: '20px' }}>
           <PsychiatryQtcLab
-            key={patient.labPotassium}
             initialRawQt={presetData.rawQt}
             initialHr={presetData.hr || 60}
             initialPotassium={patient.labPotassium}

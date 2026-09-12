@@ -308,10 +308,10 @@ export const PSYCHIATRY_EVIDENCE_REGISTRY: Record<string, EvidenceItem> = {
 
   'sert-meyer-observation': {
     id: 'sert-meyer-observation',
-    claimLabel: 'Wysycenie SERT ~80% w badaniach PET (Meyer 2004)',
+    claimLabel: 'Model saturacji SERT oparty na danych PET (Meyer 2004)',
     origin: 'MODELLED',
     level: 'PET',
-    sourceId: 'pet-d2-kapur',
+    sourceId: 'pet-sert-meyer',
     quickSummary:
       'W populacyjnych badaniach PET (Meyer et al. 2004) minimalne dawki terapeutyczne SSRI osiągają ~80% blokady SERT w prążkowiu; dalsze zwiększanie dawki powoduje plateau saturacji.',
     clinicalContext: {
@@ -325,7 +325,7 @@ export const PSYCHIATRY_EVIDENCE_REGISTRY: Record<string, EvidenceItem> = {
       modelType: 'Hiperboliczna krzywa saturacji: Emax * Dose / (ED50 + Dose)',
       limitations: [
         'Zajęcie SERT w badaniu PET nie gwarantuje natychmiastowej remisji u danego pacjenta.',
-        'Wymaga 2–4 tygodni na adaptację postsynaptyczną (desensytyzację autoreceptorów 5-HT1A).',
+        'Kliniczny efekt przeciwdepresyjny wykazuje opóźnienie (latency 2–4 tyg.); desensytyzacja presynaptycznych somatodendrytycznych autoreceptorów 5-HT1A w jądrach szwu oraz wtórne adaptacje neuroplastyczne (BDNF, synaptogeneza) stanowią jeden z modeli tego zjawiska, a nie wyczerpujące wyjaśnienie.',
       ],
       whatCannotBeInferred: [
         'Nie wolno zakładać, że wyższe dawki nie mają innych działań (np. DAT przy sertralinie >150 mg).',

@@ -39,6 +39,9 @@ test('Content Safety: Scans 38 lessons and 24 cases for forbidden overcertainty 
     { pattern: /suicide risk %/i, name: 'suicide risk %' },
     { pattern: /ryzyko samobójcze\s*=\s*\d+%/i, name: 'liczbowy procent ryzyka samobójstwa' },
     { pattern: /złoty standard/i, name: 'złoty standard' },
+    { pattern: /wykluczaj[ąa]\s+pierwotny\s+proces/i, name: 'wykluczają pierwotny proces (brak odporności na procesy wtórne)' },
+    { pattern: /wspieraj[ąa]c\s+diagnoz[ęe]\s+pierwotnego/i, name: 'wspierając diagnozę pierwotnego (negative test fallacy)' },
+    { pattern: /eliminuj[ąa]\s+typowe\s+maski\s+internistyczne/i, name: 'eliminują typowe maski internistyczne (overcertainty)' },
   ];
 
   const violations = [];

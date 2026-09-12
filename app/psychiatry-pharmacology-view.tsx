@@ -206,7 +206,7 @@ export function PsychiatryPharmacologyView({ patient, setPatient, prescriptions,
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.8rem', marginBottom: '4px' }}>
                       <span style={{ fontWeight: 600 }}>Wysycenie SERT (transporter 5-HT):</span>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                        <EvidenceBadge claimKey="meyer-sert-occupancy" label="PET Meyer 2004" />
+                        <EvidenceBadge claimKey="meyer-sert-occupancy" label="MODELLED · Meyer PET fit" />
                         <strong>~{calc.sertOccupancyPercent}%</strong>
                       </div>
                     </div>
