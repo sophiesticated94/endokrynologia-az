@@ -26,17 +26,17 @@
     ],
     "prompt": "81-letni samotny mężczyzna po udarze mózgu skarży się na brak sił, zaparcia i bóle mięśniowe. W gabinecie powtarza: „jestem tylko ciężarem, niedługo wszystko się skończy”, a pytany o pamięć odpowiada zniecierpliwiony: „nie wiem, nic nie pamiętam”. Jak należy ocenić jego stan?",
     "options": [
-      "Stan wysokiego ryzyka samobójczego w przebiegu ciężkiego epizodu depresji wieku podeszłego, wymagający pilnej oceny planów suicydalnych i wdrożenia bezpieczeństwa",
       "Naturalny stan pogodzenia się z losem niewymagający żadnej interwencji",
-      "Brak jakiegokolwiek ryzyka, ponieważ pacjenci po 80 r.ż. nigdy nie podejmują prób samobójczych"
+      "Brak jakiegokolwiek ryzyka, ponieważ pacjenci po 80 r.ż. nigdy nie podejmują prób samobójczych",
+      "Stan wysokiego ryzyka samobójczego w przebiegu ciężkiego epizodu depresji wieku podeszłego, wymagający pilnej oceny planów suicydalnych i wdrożenia bezpieczeństwa"
     ],
     "optionFeedback": [
-      "Starszy samotny mężczyzna z poczuciem bycia ciężarem i aluzjami do końca życia znajduje się w grupie najwyższego ryzyka dokonanego samobójstwa.",
       "Poczucie bycia ciężarem i rezygnacja są objawami depresji, a nie zdrowym starzeniem się.",
-      "Seniorzy cechują się najwyższym wskaźnikiem zgonów samobójczych w całej populacji."
+      "Seniorzy cechują się najwyższym wskaźnikiem zgonów samobójczych w całej populacji.",
+      "Starszy samotny mężczyzna z poczuciem bycia ciężarem i aluzjami do końca życia znajduje się w grupie najwyższego ryzyka dokonanego samobójstwa."
     ],
     "answer": 2,
-    "explanation": "Seniorzy cechują się najwyższym wskaźnikiem zgonów samobójczych w całej populacji.",
+    "explanation": "Starszy samotny mężczyzna z poczuciem bycia ciężarem i aluzjami do końca życia znajduje się w grupie najwyższego ryzyka dokonanego samobójstwa.",
     "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
     "difficulty": "student",
     "reasoning": "mechanism",
@@ -127,17 +127,17 @@
       ],
       "prompt": "Jak współczesna neuropsychiatria interpretuje zjawisko ustąpienia deficytów poznawczych po skutecznym wyleczeniu geriatrycznego epizodu depresyjnego?",
       "options": [
+        "Jako dowód na to, że pacjent symulował depresję dla uzyskania renty",
         "Jako stan podwyższonego ryzyka rozwoju jawnego otępienia w perspektywie kilku lat, wymagający okresowej kontroli neuropsychologicznej",
-        "Jako stuprocentową gwarancję nieśmiertelności neuronów mózgowych do końca życia",
-        "Jako dowód na to, że pacjent symulował depresję dla uzyskania renty"
+        "Jako stuprocentową gwarancję nieśmiertelności neuronów mózgowych do końca życia"
       ],
       "optionFeedback": [
+        "Epizod depresyjny jest realnym stanem biologicznym, a nie symulacją.",
         "Deficyty poznawcze w depresji geriatrycznej często odzwierciedlają wczesną dysfunkcję naczyniową lub prodromalną neurodegenerację.",
-        "Wyleczenie epizodu nie gwarantuje braku późniejszej demencji.",
-        "Epizod depresyjny jest realnym stanem biologicznym, a nie symulacją."
+        "Wyleczenie epizodu nie gwarantuje braku późniejszej demencji."
       ],
       "answer": 1,
-      "explanation": "Wyleczenie epizodu nie gwarantuje braku późniejszej demencji.",
+      "explanation": "Deficyty poznawcze w depresji geriatrycznej często odzwierciedlają wczesną dysfunkcję naczyniową lub prodromalną neurodegenerację.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "student",
       "reasoning": "interpretation",
@@ -175,17 +175,17 @@
       ],
       "prompt": "Który lek przeciwdepresyjny jest zalecany jako bezpieczny wybór pierwszego rzutu u starszego pacjenta z depresją i chorobą niedokrwienną serca?",
       "options": [
-        "Sertralina w stopniowo miareczkowanej dawce (np. od 25 mg/d)",
         "Klomipramina w dawce dożylnej 150 mg/dobę",
-        "Wyciąg z dziurawca w niekontrolowanych dawkach w połączeniu z fenelzyną"
+        "Wyciąg z dziurawca w niekontrolowanych dawkach w połączeniu z fenelzyną",
+        "Sertralina w stopniowo miareczkowanej dawce (np. od 25 mg/d)"
       ],
       "optionFeedback": [
-        "Sertralina posiada udokumentowane bezpieczeństwo kardiologiczne (badanie SADHART), brak istotnego wpływu antycholinergicznego i niski potencjał interakcji.",
         "Klomipramina jest silnym TLPD o wysokim ryzyku kardiologicznym.",
-        "Połączenie niesie śmiertelne ryzyko przełomu nadciśnieniowego i zespołu serotoninowego."
+        "Połączenie niesie śmiertelne ryzyko przełomu nadciśnieniowego i zespołu serotoninowego.",
+        "Sertralina posiada udokumentowane bezpieczeństwo kardiologiczne (badanie SADHART), brak istotnego wpływu antycholinergicznego i niski potencjał interakcji."
       ],
       "answer": 2,
-      "explanation": "Połączenie niesie śmiertelne ryzyko przełomu nadciśnieniowego i zespołu serotoninowego.",
+      "explanation": "Sertralina posiada udokumentowane bezpieczeństwo kardiologiczne (badanie SADHART), brak istotnego wpływu antycholinergicznego i niski potencjał interakcji.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "both",
       "reasoning": "decision",

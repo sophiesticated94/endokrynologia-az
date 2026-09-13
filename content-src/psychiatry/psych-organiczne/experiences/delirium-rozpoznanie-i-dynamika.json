@@ -116,17 +116,17 @@
       ],
       "prompt": "Dlaczego hipoaktywna postać majaczenia wiąże się ze statystycznie gorszym rokowaniem i wyższą śmiertelnością niż postać hiperaktywna?",
       "options": [
+        "Ponieważ postać hipoaktywna jest nieodwracalnym defektem kory potylicznej",
         "Ponieważ spowolnienie i patologiczna senność są często przeoczane lub mylone z depresją, co opóźnia wykrycie ostrej przyczyny somatycznej",
-        "Ponieważ hipoaktywne delirium występuje wyłącznie u pacjentów ze złośliwym zespołem neuroleptycznym",
-        "Ponieważ postać hipoaktywna jest nieodwracalnym defektem kory potylicznej"
+        "Ponieważ hipoaktywne delirium występuje wyłącznie u pacjentów ze złośliwym zespołem neuroleptycznym"
       ],
       "optionFeedback": [
+        "Majaczenie jest zespołem potencjalnie odwracalnym po usunięciu wyzwalacza somatycznego.",
         "Brak pobudzenia sprawia, że personel nie alarmuje lekarza, a postępująca sepsa lub hipoksja pozostają nierozpoznane.",
-        "Hipoaktywne delirium jest powszechnym zespołem geriatrycznym o zróżnicowanej etiologii internistycznej.",
-        "Majaczenie jest zespołem potencjalnie odwracalnym po usunięciu wyzwalacza somatycznego."
+        "Hipoaktywne delirium jest powszechnym zespołem geriatrycznym o zróżnicowanej etiologii internistycznej."
       ],
       "answer": 1,
-      "explanation": "Hipoaktywne delirium jest powszechnym zespołem geriatrycznym o zróżnicowanej etiologii internistycznej.",
+      "explanation": "Brak pobudzenia sprawia, że personel nie alarmuje lekarza, a postępująca sepsa lub hipoksja pozostają nierozpoznane.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "student",
       "reasoning": "mechanism",
@@ -144,17 +144,17 @@
       ],
       "prompt": "Jak należy poprawnie interpretować wynik 6 punktów w skali 4AT u 82-letniego pacjenta po operacji ortopedycznej?",
       "options": [
-        "Wynik silnie zwiększa podejrzenie majaczenia i nakazuje pilne poszukiwanie przyczyn somatycznych i metabolicznych",
         "Wynik definitywnie potwierdza otępienie naczyniowe i wyklucza wpływ zabiegu operacyjnego",
-        "Wynik oznacza brak wskazań do jakiejkolwiek diagnostyki, jeśli pacjent nie zgłasza omamów"
+        "Wynik oznacza brak wskazań do jakiejkolwiek diagnostyki, jeśli pacjent nie zgłasza omamów",
+        "Wynik silnie zwiększa podejrzenie majaczenia i nakazuje pilne poszukiwanie przyczyn somatycznych i metabolicznych"
       ],
       "optionFeedback": [
-        "4AT jest narzędziem przesiewowym; wynik >=4 wskazuje na wysokie prawdopodobieństwo delirium, lecz nie zastępuje badania lekarskiego ani oceny etiologii.",
         "4AT nie diagnozuje typu otępienia, a ostry wynik odzwierciedla stan dynamiczny.",
-        "Brak omamów jest typowy dla postaci hipoaktywnej i nie obniża czujności przy 6 punktach w 4AT."
+        "Brak omamów jest typowy dla postaci hipoaktywnej i nie obniża czujności przy 6 punktach w 4AT.",
+        "4AT jest narzędziem przesiewowym; wynik >=4 wskazuje na wysokie prawdopodobieństwo delirium, lecz nie zastępuje badania lekarskiego ani oceny etiologii."
       ],
       "answer": 2,
-      "explanation": "Brak omamów jest typowy dla postaci hipoaktywnej i nie obniża czujności przy 6 punktach w 4AT.",
+      "explanation": "4AT jest narzędziem przesiewowym; wynik >=4 wskazuje na wysokie prawdopodobieństwo delirium, lecz nie zastępuje badania lekarskiego ani oceny etiologii.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "student",
       "reasoning": "interpretation",
@@ -221,17 +221,17 @@
       ],
       "prompt": "Co jest kluczową zaletą metodologiczną testu 4AT w porównaniu z kwestionariuszami wymagającymi pełnej współpracy pacjenta?",
       "options": [
+        "Zastępuje konieczność wykonania gazometrii i elektrolitów u każdego chorego",
         "Pozwala na przyznanie punktów pacjentom podsypiającym lub niewspółpracującym, zapobiegając fałszywie ujemnym wynikom w stanach ciężkich",
-        "Wykrywa z dokładnością do 100% stężenie leków przeciwpsychotycznych w osoczu",
-        "Zastępuje konieczność wykonania gazometrii i elektrolitów u każdego chorego"
+        "Wykrywa z dokładnością do 100% stężenie leków przeciwpsychotycznych w osoczu"
       ],
       "optionFeedback": [
+        "Żadne narzędzie przesiewowe nie zastępuje diagnostyki laboratoryjnej przyczyny majaczenia.",
         "Niemożność wykonania próby uwagi (np. miesięcy od tyłu) punktuje jako nieprawidłowość, co chroni przed zlekceważeniem głębokich zaburzeń czuwania.",
-        "4AT jest testem behawioralno-poznawczym, a nie badaniem laboratoryjnym.",
-        "Żadne narzędzie przesiewowe nie zastępuje diagnostyki laboratoryjnej przyczyny majaczenia."
+        "4AT jest testem behawioralno-poznawczym, a nie badaniem laboratoryjnym."
       ],
       "answer": 1,
-      "explanation": "4AT jest testem behawioralno-poznawczym, a nie badaniem laboratoryjnym.",
+      "explanation": "Niemożność wykonania próby uwagi (np. miesięcy od tyłu) punktuje jako nieprawidłowość, co chroni przed zlekceważeniem głębokich zaburzeń czuwania.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "both",
       "reasoning": "safety",

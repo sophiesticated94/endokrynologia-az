@@ -105,17 +105,17 @@
       ],
       "prompt": "Który obszar codziennego funkcjonowania najwcześniej ulega zaburzeniu w procesie konwersji z MCI do otępienia?",
       "options": [
+        "Odruchy bezwarunkowe połykania i żucia",
         "Złożone czynności instrumentalne (IADL), takie jak zarządzanie budżetem, przyjmowanie leków i załatwianie spraw urzędowych",
-        "Podstawowe czynności higieniczne (mycie rąk i czesanie się)",
-        "Odruchy bezwarunkowe połykania i żucia"
+        "Podstawowe czynności higieniczne (mycie rąk i czesanie się)"
       ],
       "optionFeedback": [
+        "Odruchy połykania ulegają uszkodzeniu dopiero w końcowej fazie zaawansowanego otępienia.",
         "Funkcje wykonawcze i pamięć robocza potrzebne do IADL załamują się znacznie wcześniej niż podstawowe nawyki higieniczne (ADL).",
-        "Podstawowe czynności ADL pozostają zachowane aż do umiarkowanych i ciężkich stadiów otępienia.",
-        "Odruchy połykania ulegają uszkodzeniu dopiero w końcowej fazie zaawansowanego otępienia."
+        "Podstawowe czynności ADL pozostają zachowane aż do umiarkowanych i ciężkich stadiów otępienia."
       ],
       "answer": 1,
-      "explanation": "Podstawowe czynności ADL pozostają zachowane aż do umiarkowanych i ciężkich stadiów otępienia.",
+      "explanation": "Funkcje wykonawcze i pamięć robocza potrzebne do IADL załamują się znacznie wcześniej niż podstawowe nawyki higieniczne (ADL).",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "student",
       "reasoning": "mechanism",
@@ -133,17 +133,17 @@
       ],
       "prompt": "Dlaczego wynik 27/30 pkt w teście MMSE u 70-letniego profesora uniwersytetu z podejrzeniem procesu otępiennego NIE pozwala na wykluczenie wczesnej choroby Alzheimera?",
       "options": [
-        "Wysoka rezerwa poznawcza i wykształcenie maskują wczesne deficyty w prostych przesiewowych testach o niskim suficie trudności",
         "Ponieważ test MMSE jest testem służącym wyłącznie do wykrywania schizofrenii katatonicznej",
-        "Ponieważ choroba Alzheimera nigdy nie wpływa na pamięć epizodyczną"
+        "Ponieważ choroba Alzheimera nigdy nie wpływa na pamięć epizodyczną",
+        "Wysoka rezerwa poznawcza i wykształcenie maskują wczesne deficyty w prostych przesiewowych testach o niskim suficie trudności"
       ],
       "optionFeedback": [
-        "Testy przesiewowe typu MMSE mają efekt sufitowy; u osób z wysokim wykształceniem wczesne otępienie wymaga czulszych testów (MoCA, pełna bateria neuropsychologiczna).",
         "MMSE ocenia ogólne funkcje poznawcze, nie schizofrenię katatoniczną.",
-        "Zaburzenia pamięci epizodycznej są typową cechą choroby Alzheimera."
+        "Zaburzenia pamięci epizodycznej są typową cechą choroby Alzheimera.",
+        "Testy przesiewowe typu MMSE mają efekt sufitowy; u osób z wysokim wykształceniem wczesne otępienie wymaga czulszych testów (MoCA, pełna bateria neuropsychologiczna)."
       ],
       "answer": 2,
-      "explanation": "Zaburzenia pamięci epizodycznej są typową cechą choroby Alzheimera.",
+      "explanation": "Testy przesiewowe typu MMSE mają efekt sufitowy; u osób z wysokim wykształceniem wczesne otępienie wymaga czulszych testów (MoCA, pełna bateria neuropsychologiczna).",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "student",
       "reasoning": "interpretation",
@@ -210,17 +210,17 @@
       ],
       "prompt": "Dlaczego informacje uzyskane od bliskich lub opiekuna (collateral history) są niezbędne do postawienia rozpoznania otępienia?",
       "options": [
+        "Ponieważ testy neuropsychologiczne są w 100% niewiarygodne bez podpisu członka rodziny",
         "Ponieważ pacjent z powodu anozognozji (braku wglądu) lub zaburzeń pamięci może nie dostrzegać i bagatelizować rzeczywistych trudności w codziennym życiu",
-        "Ponieważ prawo zabrania rozmawiania z pacjentem bez obecności notariusza",
-        "Ponieważ testy neuropsychologiczne są w 100% niewiarygodne bez podpisu członka rodziny"
+        "Ponieważ prawo zabrania rozmawiania z pacjentem bez obecności notariusza"
       ],
       "optionFeedback": [
+        "Testy są standaryzowane, lecz ocena funkcjonowania w świecie realnym wymaga danych ze środowiska domowego.",
         "Osoba z wczesnym otępieniem często deklaruje pełną sprawność, a dopiero relacja rodziny ujawnia niespłacone rachunki, przypalanie garnków czy gubienie leków.",
-        "Prawo medyczne wymaga badania pacjenta, a wywiad od rodziny jest uzupełnieniem klinicznym.",
-        "Testy są standaryzowane, lecz ocena funkcjonowania w świecie realnym wymaga danych ze środowiska domowego."
+        "Prawo medyczne wymaga badania pacjenta, a wywiad od rodziny jest uzupełnieniem klinicznym."
       ],
       "answer": 1,
-      "explanation": "Prawo medyczne wymaga badania pacjenta, a wywiad od rodziny jest uzupełnieniem klinicznym.",
+      "explanation": "Osoba z wczesnym otępieniem często deklaruje pełną sprawność, a dopiero relacja rodziny ujawnia niespłacone rachunki, przypalanie garnków czy gubienie leków.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "both",
       "reasoning": "safety",

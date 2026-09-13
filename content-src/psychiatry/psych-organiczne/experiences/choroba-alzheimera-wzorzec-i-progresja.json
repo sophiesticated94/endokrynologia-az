@@ -26,17 +26,17 @@
     ],
     "prompt": "Który mechanizm zaburzeń pamięci jest najbardziej charakterystyczny dla wczesnego stadium typowej postaci choroby Alzheimera?",
     "options": [
+      "Gwałtowna utrata pamięci proceduralnej jazdy na rowerze w ciągu 3 dni",
       "Upośledzenie konsolidacji i odraczania nowych informacji (brak poprawy przy podpowiedziach semantycznych)",
-      "Wybiórcze zapominanie wydarzeń z wczesnego dzieciństwa przy zachowanej pamięci wczorajszego dnia",
-      "Gwałtowna utrata pamięci proceduralnej jazdy na rowerze w ciągu 3 dni"
+      "Wybiórcze zapominanie wydarzeń z wczesnego dzieciństwa przy zachowanej pamięci wczorajszego dnia"
     ],
     "optionFeedback": [
+      "Pamięć proceduralna opiera się na jądrach podstawy i móżdżku, ulegając zaburzeniu dopiero w bardzo późnym stadium.",
       "Wynika z pierwotnego uszkodzenia formacji hipokampa i kory śródwęchowej; podpowiedzi z listą nie pomagają odtworzyć zapomnianych słów.",
-      "W chorobie Alzheimera pamięć odległa z dzieciństwa jest najlepiej i najdłużej zachowana (prawo Ribota).",
-      "Pamięć proceduralna opiera się na jądrach podstawy i móżdżku, ulegając zaburzeniu dopiero w bardzo późnym stadium."
+      "W chorobie Alzheimera pamięć odległa z dzieciństwa jest najlepiej i najdłużej zachowana (prawo Ribota)."
     ],
     "answer": 1,
-    "explanation": "W chorobie Alzheimera pamięć odległa z dzieciństwa jest najlepiej i najdłużej zachowana (prawo Ribota).",
+    "explanation": "Wynika z pierwotnego uszkodzenia formacji hipokampa i kory śródwęchowej; podpowiedzi z listą nie pomagają odtworzyć zapomnianych słów.",
     "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
     "difficulty": "student",
     "reasoning": "mechanism",
@@ -104,17 +104,17 @@
       ],
       "prompt": "Jaką rolę pełni badanie rezonansu magnetycznego (MRI) głowy w diagnostyce podejrzenia choroby Alzheimera?",
       "options": [
-        "Wspiera rozpoznanie poprzez ocenę zaniku struktur hipokampa (skala MTA) oraz pozwala wykluczyć guzy, krwiaki podtwardówkowe i udary",
         "W 100% przypadków jednoznacznie przesądza o obecności złogów amyloidu w synapsach",
-        "Jest badaniem całkowicie bezużytecznym u osób powyżej 60 roku życia"
+        "Jest badaniem całkowicie bezużytecznym u osób powyżej 60 roku życia",
+        "Wspiera rozpoznanie poprzez ocenę zaniku struktur hipokampa (skala MTA) oraz pozwala wykluczyć guzy, krwiaki podtwardówkowe i udary"
       ],
       "optionFeedback": [
-        "MRI mózgu dostarcza dowodów na atrofię przyśrodkowego płata skroniowego i wyklucza uchwytne strukturalne przyczyny wtórne.",
         "Standardowe MRI ocenia atrofię makroskopową, nie mikroskopowe złogi amyloidu (wymagałoby to PET amyloidowego).",
-        "MRI jest standardem diagnostycznym rekomendowanym przez wytyczne EFNS i NICE."
+        "MRI jest standardem diagnostycznym rekomendowanym przez wytyczne EFNS i NICE.",
+        "MRI mózgu dostarcza dowodów na atrofię przyśrodkowego płata skroniowego i wyklucza uchwytne strukturalne przyczyny wtórne."
       ],
       "answer": 2,
-      "explanation": "MRI jest standardem diagnostycznym rekomendowanym przez wytyczne EFNS i NICE.",
+      "explanation": "MRI mózgu dostarcza dowodów na atrofię przyśrodkowego płata skroniowego i wyklucza uchwytne strukturalne przyczyny wtórne.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "student",
       "reasoning": "mechanism",
@@ -181,17 +181,17 @@
       ],
       "prompt": "Czym jest anozognozja obserwowana u wielu pacjentów z chorobą Alzheimera?",
       "options": [
+        "Napadowym kurczem mięśni powiek wywołanym światłem słonecznym",
         "Biologicznym brakiem wglądu i świadomości własnych deficytów poznawczych spowodowanym uszkodzeniem sieci neuronalnych",
-        "Zdolnością do natychmiastowego zapamiętywania 100 cyfr po przecinku",
-        "Napadowym kurczem mięśni powiek wywołanym światłem słonecznym"
+        "Zdolnością do natychmiastowego zapamiętywania 100 cyfr po przecinku"
       ],
       "optionFeedback": [
+        "Kurcz powiek to blefarospazm, a nie anozognozja.",
         "Anozognozja nie jest zwykłym „wypieraniem psychologicznym”, lecz neurologiczną niezdolnością do monitorowania własnych błędów pamięciowych.",
-        "Taki objaw nie ma związku z anozognozją ani chorobą Alzheimera.",
-        "Kurcz powiek to blefarospazm, a nie anozognozja."
+        "Taki objaw nie ma związku z anozognozją ani chorobą Alzheimera."
       ],
       "answer": 1,
-      "explanation": "Taki objaw nie ma związku z anozognozją ani chorobą Alzheimera.",
+      "explanation": "Anozognozja nie jest zwykłym „wypieraniem psychologicznym”, lecz neurologiczną niezdolnością do monitorowania własnych błędów pamięciowych.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "both",
       "reasoning": "decision",
@@ -209,17 +209,17 @@
       ],
       "prompt": "Jaki jest mechanizm działania inhibitorów acetylocholinoesterazy (donepezil, rywastygmina, galantamina) w chorobie Alzheimera?",
       "options": [
-        "Objawowe zwiększenie stężenia acetylocholiny w szczelinach synaptycznych OUN, bez zatrzymania postępującej utraty neuronów",
         "Całkowita regeneracja i namnożenie obumarłych komórek piramidowych hipokampa",
-        "Selektywny antagonizm receptorów dopaminowych D2 w prążkowiu"
+        "Selektywny antagonizm receptorów dopaminowych D2 w prążkowiu",
+        "Objawowe zwiększenie stężenia acetylocholiny w szczelinach synaptycznych OUN, bez zatrzymania postępującej utraty neuronów"
       ],
       "optionFeedback": [
-        "Leki te łagodzą objawy poznawcze i behawioralne, stabilizując sprawność na kilka-kilkanaście miesięcy, lecz nie cofają neurodegeneracji.",
         "Żaden dostępny inhibitor AChE nie regeneruje obumarłych neuronów.",
-        "Inhibitory AChE działają na układ cholinergiczny, a nie blokadę D2."
+        "Inhibitory AChE działają na układ cholinergiczny, a nie blokadę D2.",
+        "Leki te łagodzą objawy poznawcze i behawioralne, stabilizując sprawność na kilka-kilkanaście miesięcy, lecz nie cofają neurodegeneracji."
       ],
       "answer": 2,
-      "explanation": "Inhibitory AChE działają na układ cholinergiczny, a nie blokadę D2.",
+      "explanation": "Leki te łagodzą objawy poznawcze i behawioralne, stabilizując sprawność na kilka-kilkanaście miesięcy, lecz nie cofają neurodegeneracji.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "both",
       "reasoning": "safety",

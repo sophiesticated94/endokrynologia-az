@@ -26,17 +26,17 @@
     ],
     "prompt": "62-letni urzędnik bez wywiadu psychiatrycznego od 18 miesięcy staje się opryskliwy, opowiada wulgarne żarty w obecności przełożonych, nie wykazał żadnych emocji na wieść o śmierci syna i obsesyjnie wyjada cukierniczki. W teście MMSE uzyskuje 29/30 pkt. Jaka diagnoza jest najbardziej prawdopodobna?",
     "options": [
+      "Wczesne stadium choroby Creutzfeldta-Jakoba o przebiegu 18-miesięcznym",
       "Wariant behawioralny otępienia czołowo-skroniowego (bvFTD)",
-      "Prawidłowe starzenie się mózgu niewymagające żadnej diagnostyki",
-      "Wczesne stadium choroby Creutzfeldta-Jakoba o przebiegu 18-miesięcznym"
+      "Prawidłowe starzenie się mózgu niewymagające żadnej diagnostyki"
     ],
     "optionFeedback": [
+      "Przebieg CJD jest gwałtowny (tygodnie/miesiące) z miokloniami i ataksją, a nie izolowanym odhamowaniem.",
       "Odhamowanie behawioralne, zanik empatii i hiperororalność przy zachowanej pamięci świeżej w MMSE to klasyczny obraz uszkodzenia kory czołowej w kryteriach Rascovsky 2011.",
-      "Utrata empatii i wulgarne zachowania u 62-latka nigdy nie są normą fizjologiczną.",
-      "Przebieg CJD jest gwałtowny (tygodnie/miesiące) z miokloniami i ataksją, a nie izolowanym odhamowaniem."
+      "Utrata empatii i wulgarne zachowania u 62-latka nigdy nie są normą fizjologiczną."
     ],
     "answer": 1,
-    "explanation": "Utrata empatii i wulgarne zachowania u 62-latka nigdy nie są normą fizjologiczną.",
+    "explanation": "Odhamowanie behawioralne, zanik empatii i hiperororalność przy zachowanej pamięci świeżej w MMSE to klasyczny obraz uszkodzenia kory czołowej w kryteriach Rascovsky 2011.",
     "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
     "difficulty": "student",
     "reasoning": "mechanism",
@@ -101,17 +101,17 @@
       ],
       "prompt": "Dlaczego test przesiewowy MMSE może być fałszywie ujemny (wynik w normie) u pacjenta z zaawansowanymi zaburzeniami zachowania w przebiegu bvFTD?",
       "options": [
-        "Ponieważ MMSE bada głównie orientację, pamięć świeżą i proste funkcje językowe, a jest całkowicie niewrażliwy na funkcje kory oczodołowo-czołowej i empatię społeczną",
         "Ponieważ test MMSE wolno przeprowadzać wyłącznie u dzieci do 12 roku życia",
-        "Ponieważ pacjenci z bvFTD za każdym razem przekupują osobę badającą"
+        "Ponieważ pacjenci z bvFTD za każdym razem przekupują osobę badającą",
+        "Ponieważ MMSE bada głównie orientację, pamięć świeżą i proste funkcje językowe, a jest całkowicie niewrażliwy na funkcje kory oczodołowo-czołowej i empatię społeczną"
       ],
       "optionFeedback": [
-        "Chory potrafi podać datę i powtórzyć słowa, mimo że utracił kontrolę impulsów i zdolność do funkcjonowania w społeczeństwie.",
         "MMSE jest testem dla osób dorosłych i seniorów.",
-        "Taka teza jest absurdalna; błąd wynika z ograniczeń narzędzia testowego."
+        "Taka teza jest absurdalna; błąd wynika z ograniczeń narzędzia testowego.",
+        "Chory potrafi podać datę i powtórzyć słowa, mimo że utracił kontrolę impulsów i zdolność do funkcjonowania w społeczeństwie."
       ],
       "answer": 2,
-      "explanation": "Taka teza jest absurdalna; błąd wynika z ograniczeń narzędzia testowego.",
+      "explanation": "Chory potrafi podać datę i powtórzyć słowa, mimo że utracił kontrolę impulsów i zdolność do funkcjonowania w społeczeństwie.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "student",
       "reasoning": "mechanism",
@@ -175,17 +175,17 @@
       ],
       "prompt": "Jaki jest najbardziej dyskryminujący wskaźnik pozwalający odróżnić późny epizod manii od wariantu behawioralnego FTD?",
       "options": [
+        "Występowanie łupieżu na skórze głowy",
         "Progresywny, podstępny przebieg z postępującą utratą empatii i obecnością atrofii czołowo-skroniowej w MRI mózgu w bvFTD",
-        "Poziom ciśnienia tętniczego mierzony na lewym ramieniu",
-        "Występowanie łupieżu na skórze głowy"
+        "Poziom ciśnienia tętniczego mierzony na lewym ramieniu"
       ],
       "optionFeedback": [
+        "Objawy dermatologiczne nie mają wartości dyskryminującej w neuropsychiatrii.",
         "Mania przebiega fazowo z epizodami remisji, podczas gdy bvFTD jest chorobą neurodegeneracyjną prowadzącą do trwałego ubytku tkanki mózgowej.",
-        "Ciśnienie tętnicze nie różnicuje manii od otępienia czołowo-skroniowego.",
-        "Objawy dermatologiczne nie mają wartości dyskryminującej w neuropsychiatrii."
+        "Ciśnienie tętnicze nie różnicuje manii od otępienia czołowo-skroniowego."
       ],
       "answer": 1,
-      "explanation": "Ciśnienie tętnicze nie różnicuje manii od otępienia czołowo-skroniowego.",
+      "explanation": "Mania przebiega fazowo z epizodami remisji, podczas gdy bvFTD jest chorobą neurodegeneracyjną prowadzącą do trwałego ubytku tkanki mózgowej.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "both",
       "reasoning": "decision",
@@ -202,17 +202,17 @@
       ],
       "prompt": "Jakie jest zalecane postępowanie farmakologiczne w łagodzeniu odhamowania i kompulsji w bvFTD?",
       "options": [
-        "Leki z grupy SSRI (np. trazodon, sertralina) wykazujące umiarkowaną skuteczność w redukcji zachowań stereotypowych i impulsywnych",
         "Wysokie dawki inhibitorów acetylocholinoesterazy (donepezil)",
-        "Monoterapia amfetaminą w dawce 100 mg/dobę"
+        "Monoterapia amfetaminą w dawce 100 mg/dobę",
+        "Leki z grupy SSRI (np. trazodon, sertralina) wykazujące umiarkowaną skuteczność w redukcji zachowań stereotypowych i impulsywnych"
       ],
       "optionFeedback": [
-        "Wykazano, że deficyt serotoninergiczny w korze czołowej odpowiada za impulsywność; SSRI pomagają wyhamować drażliwość i hiperororalność.",
         "ChEI nie mają udowodnionej skuteczności w bvFTD i mogą wręcz nasilać pobudzenie i drażliwość.",
-        "Amfetamina w wysokiej dawce nasiliłaby pobudzenie i zachowania agresywne."
+        "Amfetamina w wysokiej dawce nasiliłaby pobudzenie i zachowania agresywne.",
+        "Wykazano, że deficyt serotoninergiczny w korze czołowej odpowiada za impulsywność; SSRI pomagają wyhamować drażliwość i hiperororalność."
       ],
       "answer": 2,
-      "explanation": "Amfetamina w wysokiej dawce nasiliłaby pobudzenie i zachowania agresywne.",
+      "explanation": "Wykazano, że deficyt serotoninergiczny w korze czołowej odpowiada za impulsywność; SSRI pomagają wyhamować drażliwość i hiperororalność.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "both",
       "reasoning": "safety",

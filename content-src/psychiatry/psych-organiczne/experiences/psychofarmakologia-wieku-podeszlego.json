@@ -26,17 +26,17 @@
     ],
     "prompt": "83-letni pacjent z łagodnymi zaburzeniami poznawczymi otrzymuje od urologa oksybutyninę na nietrzymanie moczu, od internisty hydroksyzynę na świąd skóry i od psychiatry amitryptylinę w małej dawce na ból neuropatyczny. Jakie jest łączne obciążenie ACB tego zestawu?",
     "options": [
+      "Wynik wynosi dokładnie 1 punkt i jest całkowicie bezpieczny dla 90-latka",
       "Bardzo wysokie (ACB = 9 pkt: 3 + 3 + 3), niosące krytyczne ryzyko ostrego delirium, nasilenia otępienia, zatrzymania moczu i upadków",
-      "Wynik ACB wynosi 0 punktów, ponieważ leki te nie wpływają na układ cholinergiczny",
-      "Wynik wynosi dokładnie 1 punkt i jest całkowicie bezpieczny dla 90-latka"
+      "Wynik ACB wynosi 0 punktów, ponieważ leki te nie wpływają na układ cholinergiczny"
     ],
     "optionFeedback": [
+      "ACB = 9 jest jednym z najwyższych spotykanych w polifarmacji geriatrycznej i wymaga pilnej depreskrypcji.",
       "Każdy z tych trzech leków posiada maksymalną punktację ACB = 3; kumulacja blokady muskarynowej drastycznie upośledza funkcje poznawcze seniora.",
-      "Wszystkie 3 wymienione substancje są klasycznymi, silnymi antagonistami receptorów muskarynowych.",
-      "ACB = 9 jest jednym z najwyższych spotykanych w polifarmacji geriatrycznej i wymaga pilnej depreskrypcji."
+      "Wszystkie 3 wymienione substancje są klasycznymi, silnymi antagonistami receptorów muskarynowych."
     ],
     "answer": 1,
-    "explanation": "Wszystkie 3 wymienione substancje są klasycznymi, silnymi antagonistami receptorów muskarynowych.",
+    "explanation": "Każdy z tych trzech leków posiada maksymalną punktację ACB = 3; kumulacja blokady muskarynowej drastycznie upośledza funkcje poznawcze seniora.",
     "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
     "difficulty": "student",
     "reasoning": "mechanism",
@@ -121,17 +121,17 @@
       ],
       "prompt": "Jak należy traktować kryteria AGS Beers 2023 w codziennej praktyce lekarskiej w Polsce i Europie?",
       "options": [
-        "Jako narzędzie wsparcia decyzji (decision-support) identyfikujące leki potencjalnie nieodpowiednie, wymagające indywidualnej oceny klinicznej, a nie jako bezwzględny zakaz prawny",
         "Jako kodeks karny przewidujący automatyczną utratę prawa wykonywania zawodu za podanie hydroksyzyny",
-        "Jako zalecenie dotyczące wyłącznie dawkowania antybiotyków u noworodków"
+        "Jako zalecenie dotyczące wyłącznie dawkowania antybiotyków u noworodków",
+        "Jako narzędzie wsparcia decyzji (decision-support) identyfikujące leki potencjalnie nieodpowiednie, wymagające indywidualnej oceny klinicznej, a nie jako bezwzględny zakaz prawny"
       ],
       "optionFeedback": [
-        "Kryteria Beers ostrzegają przed typowymi powikłaniami, lecz w uzasadnionych sytuacjach (np. opieka paliatywna) stosowanie leku z listy może być właściwym wyborem.",
         "Kryteria Beers są zaleceniem towarzystwa naukowego, a nie prawem karnym.",
-        "Kryteria Beers dotyczą pacjentów geriatrycznych w wieku >=65 lat."
+        "Kryteria Beers dotyczą pacjentów geriatrycznych w wieku >=65 lat.",
+        "Kryteria Beers ostrzegają przed typowymi powikłaniami, lecz w uzasadnionych sytuacjach (np. opieka paliatywna) stosowanie leku z listy może być właściwym wyborem."
       ],
       "answer": 2,
-      "explanation": "Kryteria Beers dotyczą pacjentów geriatrycznych w wieku >=65 lat.",
+      "explanation": "Kryteria Beers ostrzegają przed typowymi powikłaniami, lecz w uzasadnionych sytuacjach (np. opieka paliatywna) stosowanie leku z listy może być właściwym wyborem.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "student",
       "reasoning": "mechanism",
@@ -198,17 +198,17 @@
       ],
       "prompt": "Co jest zalecaną alternatywą o niższym obciążeniu antycholinergicznym dla oksybutyniny w leczeniu zespołu pęcherza nadreaktywnego u pacjenta z zaburzeniami poznawczymi?",
       "options": [
+        "Podanie haloperidolu domięśniowo",
         "Mirabegron (selektywny agonista receptorów beta-3 adrenergicznych) lub ustrukturyzowany trening mięśni dna miednicy",
-        "Zwiększenie dawki amitryptyliny do 150 mg na noc",
-        "Podanie haloperidolu domięśniowo"
+        "Zwiększenie dawki amitryptyliny do 150 mg na noc"
       ],
       "optionFeedback": [
+        "Haloperidol nie leczy pęcherza nadreaktywnego i niesie ryzyko parkinsonizmu.",
         "Mirabegron rozluźnia mięsień wypieracz pęcherza na drodze adrenergicznej, nie blokując receptorów muskarynowych w OUN (ACB = 0).",
-        "Amitryptylina potęguje obciążenie antycholinergiczne i może doprowadzić do anurii.",
-        "Haloperidol nie leczy pęcherza nadreaktywnego i niesie ryzyko parkinsonizmu."
+        "Amitryptylina potęguje obciążenie antycholinergiczne i może doprowadzić do anurii."
       ],
       "answer": 1,
-      "explanation": "Amitryptylina potęguje obciążenie antycholinergiczne i może doprowadzić do anurii.",
+      "explanation": "Mirabegron rozluźnia mięsień wypieracz pęcherza na drodze adrenergicznej, nie blokując receptorów muskarynowych w OUN (ACB = 0).",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "both",
       "reasoning": "decision",
@@ -226,17 +226,17 @@
       ],
       "prompt": "Dlaczego u wyniszczonego 85-letniego pacjenta prawidłowe stężenie kreatyniny (0,7 mg/dl) może maskować ciężką niewydolność nerek?",
       "options": [
-        "Z powodu ubytku masy mięśniowej (sarkopenii) produkcja endogennej kreatyniny jest znikoma, przez co stężenie w surowicy nie odzwierciedla spadku filtracji kłębuszkowej",
         "Ponieważ nerki u osób starszych filtrują krew przez skórę",
-        "Ponieważ kreatynina u osób starszych ulega rozpadowi do glukozy"
+        "Ponieważ kreatynina u osób starszych ulega rozpadowi do glukozy",
+        "Z powodu ubytku masy mięśniowej (sarkopenii) produkcja endogennej kreatyniny jest znikoma, przez co stężenie w surowicy nie odzwierciedla spadku filtracji kłębuszkowej"
       ],
       "optionFeedback": [
-        "U seniora z niską masą mięśniową GFR może wynosić <30 ml/min mimo pozornie prawidłowego wyniku kreatyniny (konieczne wyliczenie eGFR/klirensu).",
         "Filtracja kłębuszkowa zachodzi w nerkach, nie przez skórę.",
-        "Kreatynina jest metabolitem fosfokreatyny mięśniowej wydalanym przez nerki."
+        "Kreatynina jest metabolitem fosfokreatyny mięśniowej wydalanym przez nerki.",
+        "U seniora z niską masą mięśniową GFR może wynosić <30 ml/min mimo pozornie prawidłowego wyniku kreatyniny (konieczne wyliczenie eGFR/klirensu)."
       ],
       "answer": 2,
-      "explanation": "Kreatynina jest metabolitem fosfokreatyny mięśniowej wydalanym przez nerki.",
+      "explanation": "U seniora z niską masą mięśniową GFR może wynosić <30 ml/min mimo pozornie prawidłowego wyniku kreatyniny (konieczne wyliczenie eGFR/klirensu).",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "both",
       "reasoning": "safety",

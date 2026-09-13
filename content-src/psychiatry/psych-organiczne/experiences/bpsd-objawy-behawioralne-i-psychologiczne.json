@@ -106,17 +106,17 @@
       ],
       "prompt": "Dlaczego leki przeciwpsychotyczne (zarówno typowe, jak i atypowe) są opatrzone ostrzeżeniem regulatorów (Black Box Warning) w leczeniu otępienia?",
       "options": [
+        "Ponieważ leki przeciwpsychotyczne leczą wyłącznie choroby pasożytnicze wątroby",
         "Z powodu udokumentowanego 1,5–1,8-krotnego wzrostu śmiertelności ogólnej oraz około 3-krotnego wzrostu ryzyka udaru mózgu i TIA",
-        "Ponieważ leki te w 100% przypadków zamieniają krew pacjenta w roztwór soli",
-        "Ponieważ leki przeciwpsychotyczne leczą wyłącznie choroby pasożytnicze wątroby"
+        "Ponieważ leki te w 100% przypadków zamieniają krew pacjenta w roztwór soli"
       ],
       "optionFeedback": [
+        "Leki te działają na receptory OUN (D2, 5-HT2A).",
         "Metaanalizy randomizowanych badań klinicznych jednoznacznie potwierdziły istotny wzrost ryzyka sercowo-naczyniowego i zgonów.",
-        "Taka teza jest biologicznie niemożliwa; ostrzeżenie dotyczy udarów i zgonów naczyniowych.",
-        "Leki te działają na receptory OUN (D2, 5-HT2A)."
+        "Taka teza jest biologicznie niemożliwa; ostrzeżenie dotyczy udarów i zgonów naczyniowych."
       ],
       "answer": 1,
-      "explanation": "Taka teza jest biologicznie niemożliwa; ostrzeżenie dotyczy udarów i zgonów naczyniowych.",
+      "explanation": "Metaanalizy randomizowanych badań klinicznych jednoznacznie potwierdziły istotny wzrost ryzyka sercowo-naczyniowego i zgonów.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "student",
       "reasoning": "mechanism",
@@ -133,17 +133,17 @@
       ],
       "prompt": "Który lek przeciwpsychotyczny posiada w Unii Europejskiej rejestrację do krótkotrwałego (do 6 tygodni) leczenia uporczywej agresji w otępieniu typu Alzheimera po wyczerpaniu metod niefarmakologicznych?",
       "options": [
-        "Rysperydon w małych dawkach (0,25–1 mg/dobę)",
         "Klozapina w dawce 400 mg/dobę",
-        "Haloperidol w dożylnym wlewie ciągłym"
+        "Haloperidol w dożylnym wlewie ciągłym",
+        "Rysperydon w małych dawkach (0,25–1 mg/dobę)"
       ],
       "optionFeedback": [
-        "Rysperydon jest jedynym SGA zarejestrowanym w tym wskazaniu, z zaleceniem regularnej reewaluacji i próby odstawienia.",
         "Klozapina nie jest lekiem pierwszego rzutu w BPSD z powodu sedacji, hipotonii i agranulocytozy.",
-        "Haloperidol dożylny u seniora niesie skrajne ryzyko torsade de pointes i ciężkich objawów pozapiramidowych."
+        "Haloperidol dożylny u seniora niesie skrajne ryzyko torsade de pointes i ciężkich objawów pozapiramidowych.",
+        "Rysperydon jest jedynym SGA zarejestrowanym w tym wskazaniu, z zaleceniem regularnej reewaluacji i próby odstawienia."
       ],
       "answer": 2,
-      "explanation": "Haloperidol dożylny u seniora niesie skrajne ryzyko torsade de pointes i ciężkich objawów pozapiramidowych.",
+      "explanation": "Rysperydon jest jedynym SGA zarejestrowanym w tym wskazaniu, z zaleceniem regularnej reewaluacji i próby odstawienia.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "student",
       "reasoning": "interpretation",
@@ -207,17 +207,17 @@
       ],
       "prompt": "Kiedy według wytycznych NICE NG97 dopuszczalne jest rozważenie leku przeciwpsychotycznego u pacjenta z BPSD?",
       "options": [
+        "Wyłącznie wtedy, gdy pacjent wyrazi pisemną zgodę w obecności 3 notariuszy",
         "Wyłącznie w sytuacji ciężkiego cierpienia pacjenta lub bezpośredniego zagrożenia zranieniem siebie bądź innych osób, gdy metody niefarmakologiczne zawiodły",
-        "Zawsze przy każdej wizycie jako rutynowa profilaktyka zachowań agresywnych",
-        "Wyłącznie wtedy, gdy pacjent wyrazi pisemną zgodę w obecności 3 notariuszy"
+        "Zawsze przy każdej wizycie jako rutynowa profilaktyka zachowań agresywnych"
       ],
       "optionFeedback": [
+        "W stanach nagłego zagrożenia obowiązują procedury medyczne, nie potrójne akty notarialne.",
         "Wskazania są wąskie i rygorystyczne; leki nie powinny być stosowane z powodu błądzenia, wokalizacji czy łagodnego niepokoju.",
-        "Rutynowe profilaktyczne stosowanie neuroleptyków w otępieniu jest błędem sztuki.",
-        "W stanach nagłego zagrożenia obowiązują procedury medyczne, nie potrójne akty notarialne."
+        "Rutynowe profilaktyczne stosowanie neuroleptyków w otępieniu jest błędem sztuki."
       ],
       "answer": 1,
-      "explanation": "Rutynowe profilaktyczne stosowanie neuroleptyków w otępieniu jest błędem sztuki.",
+      "explanation": "Wskazania są wąskie i rygorystyczne; leki nie powinny być stosowane z powodu błądzenia, wokalizacji czy łagodnego niepokoju.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "both",
       "reasoning": "safety",

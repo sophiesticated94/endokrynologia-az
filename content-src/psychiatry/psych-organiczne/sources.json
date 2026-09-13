@@ -103,5 +103,12 @@
     "year": "2023",
     "url": "https://www.who.int/publications/i/item/978924159938-2",
     "kind": "Narzędzie przesiewowe WHO dla substancji psychoaktywnych"
+  },
+  "cssrs-scale": {
+    "id": "cssrs-scale",
+    "title": "Posner K et al. — The Columbia-Suicide Severity Rating Scale: initial validity and internal consistency findings (Am J Psychiatry)",
+    "year": "2011",
+    "url": "https://doi.org/10.1176/appi.ajp.2011.10111704",
+    "kind": "Skala oceny nasilenia myśli i zachowań samobójczych (C-SSRS)"
   }
 }

@@ -26,17 +26,17 @@
     ],
     "prompt": "84-letni pacjent ze stabilnym od 3 lat otępieniem w chorobie Alzheimera staje się w ciągu 24 godzin agresywny, nie poznaje córki i widzi ogień za oknem. Co jest najbardziej prawidłowym wnioskiem klinicznym?",
     "options": [
+      "Stan ten dowodzi, że pierwotna diagnoza choroby Alzheimera była błędna i pacjent choruje na schizofrenię",
       "Obraz przemawia za majaczeniem nałożonym na otępienie (delirium superimposed on dementia) i wymaga pilnego poszukiwania ostrej przyczyny somatycznej",
-      "Jest to naturalna, spodziewana progresja choroby Alzheimera i wymaga podwojenia dawki memantyny",
-      "Stan ten dowodzi, że pierwotna diagnoza choroby Alzheimera była błędna i pacjent choruje na schizofrenię"
+      "Jest to naturalna, spodziewana progresja choroby Alzheimera i wymaga podwojenia dawki memantyny"
     ],
     "optionFeedback": [
+      "Debiut schizofrenii w wieku 84 lat z nagłym załamaniem jest skrajnie nieprawdopodobny.",
       "Otępienie neurodegeneracyjne nie postępuje skokowo w 24 godziny; nagłe załamanie u chorego z AD jest z reguły majaczeniem wywołanym infekcją, bólem lub lekiem.",
-      "Podwojenie memantyny bez zbadania pacjenta ignoruje ostry stan zagrożenia somatycznego.",
-      "Debiut schizofrenii w wieku 84 lat z nagłym załamaniem jest skrajnie nieprawdopodobny."
+      "Podwojenie memantyny bez zbadania pacjenta ignoruje ostry stan zagrożenia somatycznego."
     ],
     "answer": 1,
-    "explanation": "Podwojenie memantyny bez zbadania pacjenta ignoruje ostry stan zagrożenia somatycznego.",
+    "explanation": "Otępienie neurodegeneracyjne nie postępuje skokowo w 24 godziny; nagłe załamanie u chorego z AD jest z reguły majaczeniem wywołanym infekcją, bólem lub lekiem.",
     "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
     "difficulty": "student",
     "reasoning": "mechanism",
@@ -111,17 +111,17 @@
       ],
       "prompt": "Który parametr semiotyczny stanowi najważniejszy dyskryminator pomiędzy łagodnym stadium otępienia a hipoaktywnym majaczeniem?",
       "options": [
-        "Uwaga i czujność — w majaczeniu uwaga jest głęboko zaburzona i falująca, a w łagodnym otępieniu uwaga i czuwanie są względnie zachowane",
         "Obecność lub brak ubytków pamięci świeżej",
-        "Wiek metrykalny pacjenta"
+        "Wiek metrykalny pacjenta",
+        "Uwaga i czujność — w majaczeniu uwaga jest głęboko zaburzona i falująca, a w łagodnym otępieniu uwaga i czuwanie są względnie zachowane"
       ],
       "optionFeedback": [
-        "Pacjent z wczesnym otępieniem potrafi utrzymać kontakt i skupić się na badaniu, podczas gdy w delirium uwaga natychmiast ulega rozproszeniu.",
         "Zaburzenia pamięci świeżej występują zarówno w otępieniu, jak i w delirium, nie stanowiąc cechy różnicującej.",
-        "Wiek jest czynnikiem ryzyka obu stanów i nie pozwala na ich odróżnienie."
+        "Wiek jest czynnikiem ryzyka obu stanów i nie pozwala na ich odróżnienie.",
+        "Pacjent z wczesnym otępieniem potrafi utrzymać kontakt i skupić się na badaniu, podczas gdy w delirium uwaga natychmiast ulega rozproszeniu."
       ],
       "answer": 2,
-      "explanation": "Wiek jest czynnikiem ryzyka obu stanów i nie pozwala na ich odróżnienie.",
+      "explanation": "Pacjent z wczesnym otępieniem potrafi utrzymać kontakt i skupić się na badaniu, podczas gdy w delirium uwaga natychmiast ulega rozproszeniu.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "student",
       "reasoning": "mechanism",
@@ -188,17 +188,17 @@
       ],
       "prompt": "Co oznacza pojęcie „sundowning” w kontekście dobowego przebiegu majaczenia i otępienia?",
       "options": [
+        "Występowanie napadów padaczkowych wyłącznie w porze południowej",
         "Charakterystyczne nasilenie lęku, dezorientacji, błądzenia i pobudzenia w godzinach późnopopołudniowych i nocnych",
-        "Całkowite ustąpienie wszystkich objawów poznawczych po zachodzie słońca",
-        "Występowanie napadów padaczkowych wyłącznie w porze południowej"
+        "Całkowite ustąpienie wszystkich objawów poznawczych po zachodzie słońca"
       ],
       "optionFeedback": [
+        "Sundowning nie odnosi się do napadów padaczkowych w południe.",
         "Zjawisko to wiąże się ze spadkiem oświetlenia, zmęczeniem sensorycznym i zaburzeniami rytmu okołodobowego melatoniny i kortyzolu.",
-        "Sundowning oznacza zaostrzenie, a nie ustąpienie objawów w nocy.",
-        "Sundowning nie odnosi się do napadów padaczkowych w południe."
+        "Sundowning oznacza zaostrzenie, a nie ustąpienie objawów w nocy."
       ],
       "answer": 1,
-      "explanation": "Sundowning oznacza zaostrzenie, a nie ustąpienie objawów w nocy.",
+      "explanation": "Zjawisko to wiąże się ze spadkiem oświetlenia, zmęczeniem sensorycznym i zaburzeniami rytmu okołodobowego melatoniny i kortyzolu.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "both",
       "reasoning": "decision",
@@ -216,17 +216,17 @@
       ],
       "prompt": "Dlaczego u osób starszych z pierwszym w życiu epizodem manii lub psychozy należy przyjąć niższy próg do poszerzonej diagnostyki neurologicznej i obrazowej?",
       "options": [
-        "Ponieważ prawdopodobieństwo etiologii wtórnej (udar, guz, infekcja, leki) jest w tej grupie wiekowej istotnie wyższe niż w młodości",
         "Ponieważ u osób starszych leki psychotropowe w 100% przypadków wywołują zgon",
-        "Ponieważ schizofrenia wyklucza możliwość zachorowania na jakiekolwiek choroby internistyczne"
+        "Ponieważ schizofrenia wyklucza możliwość zachorowania na jakiekolwiek choroby internistyczne",
+        "Ponieważ prawdopodobieństwo etiologii wtórnej (udar, guz, infekcja, leki) jest w tej grupie wiekowej istotnie wyższe niż w młodości"
       ],
       "optionFeedback": [
-        "Późny debiut objawów afektywnych lub psychotycznych po 65 r.ż. ma znacznie częściej podłoże somatyczno-naczyniowe niż pierwotne.",
         "Taka teza jest fałszywa; leki wymagają ostrożnego dawkowania, lecz nie są bezwzględnie śmiertelne.",
-        "Obecność schorzenia psychicznego nie chroni przed chorobami somatycznymi."
+        "Obecność schorzenia psychicznego nie chroni przed chorobami somatycznymi.",
+        "Późny debiut objawów afektywnych lub psychotycznych po 65 r.ż. ma znacznie częściej podłoże somatyczno-naczyniowe niż pierwotne."
       ],
       "answer": 2,
-      "explanation": "Obecność schorzenia psychicznego nie chroni przed chorobami somatycznymi.",
+      "explanation": "Późny debiut objawów afektywnych lub psychotycznych po 65 r.ż. ma znacznie częściej podłoże somatyczno-naczyniowe niż pierwotne.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "both",
       "reasoning": "safety",

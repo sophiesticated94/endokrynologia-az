@@ -106,17 +106,17 @@
       ],
       "prompt": "75-letni pacjent z rozpoznanym zespołem parkinsonowskim i łagodnym otępieniem zgłasza, że widzi wieczorem nieznajome dzieci bawiące się w kącie pokoju. Lekarz dyżurny podaje 5 mg haloperidolu domięśniowo. Jakie powikłanie jest najbardziej prawdopodobne?",
       "options": [
+        "Spadek apetytu na słodycze bez żadnych innych następstw",
         "Gwałtowne pogorszenie sprawności ruchowej, ciężka uogólniona sztywność, stupor, a nawet zgon z powodu ostrej nadwrażliwości na blokadę D2",
-        "Natychmiastowe i trwałe wyleczenie z parkinsonizmu",
-        "Spadek apetytu na słodycze bez żadnych innych następstw"
+        "Natychmiastowe i trwałe wyleczenie z parkinsonizmu"
       ],
       "optionFeedback": [
+        "Odpowiedź na podanie neuroleptyku w DLB niesie ciężkie ryzyko powikłań zagrażających życiu.",
         "Pacjenci z DLB wykazują krytyczną nadwrażliwość na neuroleptyki typowe; haloperidol może zablokować resztkowe receptory dopaminowe w prążkowiu.",
-        "Haloperidol nasila parkinsonizm, a nie go leczy.",
-        "Odpowiedź na podanie neuroleptyku w DLB niesie ciężkie ryzyko powikłań zagrażających życiu."
+        "Haloperidol nasila parkinsonizm, a nie go leczy."
       ],
       "answer": 1,
-      "explanation": "Haloperidol nasila parkinsonizm, a nie go leczy.",
+      "explanation": "Pacjenci z DLB wykazują krytyczną nadwrażliwość na neuroleptyki typowe; haloperidol może zablokować resztkowe receptory dopaminowe w prążkowiu.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "student",
       "reasoning": "mechanism",
@@ -133,17 +133,17 @@
       ],
       "prompt": "Jaka grupa leków stanowi leczenie pierwszego wyboru w łagodzeniu omamów wzrokowych i fluktuacji poznawczych w otępieniu z ciałami Lewy’ego?",
       "options": [
-        "Inhibitory acetylocholinoesterazy (np. donepezil, rywastygmina)",
         "Neuroleptyki I generacji o wysokim powinowactwie do D2 (haloperidol)",
-        "Duże dawki leków antycholinergicznych (np. hydroksyzyna, biperyden)"
+        "Duże dawki leków antycholinergicznych (np. hydroksyzyna, biperyden)",
+        "Inhibitory acetylocholinoesterazy (np. donepezil, rywastygmina)"
       ],
       "optionFeedback": [
-        "Niwelują głęboki deficyt cholinergiczny w korze potylicznej i czołowej, zmniejszając częstość halucynacji wzrokowych bez ryzyka parkinsonizmu.",
         "Haloperidol jest skrajnie niebezpieczny w DLB z powodu ryzyka zapaści i śmiertelnej sztywności.",
-        "Leki antycholinergiczne drastycznie zaostrzają omamy, splątanie i deficyty poznawcze w DLB."
+        "Leki antycholinergiczne drastycznie zaostrzają omamy, splątanie i deficyty poznawcze w DLB.",
+        "Niwelują głęboki deficyt cholinergiczny w korze potylicznej i czołowej, zmniejszając częstość halucynacji wzrokowych bez ryzyka parkinsonizmu."
       ],
       "answer": 2,
-      "explanation": "Leki antycholinergiczne drastycznie zaostrzają omamy, splątanie i deficyty poznawcze w DLB.",
+      "explanation": "Niwelują głęboki deficyt cholinergiczny w korze potylicznej i czołowej, zmniejszając częstość halucynacji wzrokowych bez ryzyka parkinsonizmu.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "student",
       "reasoning": "interpretation",
@@ -207,17 +207,17 @@
       ],
       "prompt": "Jaki fakt z wywiadu od małżonka pacjenta z podejrzeniem DLB ma kluczowe znaczenie retrospektywne?",
       "options": [
+        "Fakt, że pacjent lubi oglądać mecze piłkarskie w telewizji",
         "Wieloletnia historia odgrywania marzeń sennych, krzyków i gwałtownych ruchów w nocy (zaburzenie zachowania w fazie REM — RBD)",
-        "Informacja, że pacjent w wieku 15 lat chorował na ospę wietrzną",
-        "Fakt, że pacjent lubi oglądać mecze piłkarskie w telewizji"
+        "Informacja, że pacjent w wieku 15 lat chorował na ospę wietrzną"
       ],
       "optionFeedback": [
+        "Zainteresowania hobbystyczne nie mają znaczenia diagnostycznego w kryteriach DLB.",
         "RBD jest wczesnym synukleinopatycznym markerem prodromalnym, wyprzedzającym kliniczne otępienie DLB nawet o 10–20 lat.",
-        "Przebyta ospa wietrzna w młodości nie jest markerem synukleinopatii.",
-        "Zainteresowania hobbystyczne nie mają znaczenia diagnostycznego w kryteriach DLB."
+        "Przebyta ospa wietrzna w młodości nie jest markerem synukleinopatii."
       ],
       "answer": 1,
-      "explanation": "Przebyta ospa wietrzna w młodości nie jest markerem synukleinopatii.",
+      "explanation": "RBD jest wczesnym synukleinopatycznym markerem prodromalnym, wyprzedzającym kliniczne otępienie DLB nawet o 10–20 lat.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "both",
       "reasoning": "safety",

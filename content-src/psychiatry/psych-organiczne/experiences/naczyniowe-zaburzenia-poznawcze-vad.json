@@ -26,17 +26,17 @@
     ],
     "prompt": "Który profil neuropsychologiczny najsilniej sugeruje naczyniowe zaburzenia poznawcze (VaD) w odróżnieniu od wczesnej choroby Alzheimera?",
     "options": [
-      "Wyraźne spowolnienie przetwarzania informacji i zaburzenia funkcji wykonawczych przy zachowanej konsolidacji pamięci (poprawa przy podpowiedziach)",
       "Izolowana utrata pamięci autobiograficznej przy zachowanym tempie psychoruchowym",
-      "Wrodzony brak możliwości rozpoznawania kolorów od dzieciństwa"
+      "Wrodzony brak możliwości rozpoznawania kolorów od dzieciństwa",
+      "Wyraźne spowolnienie przetwarzania informacji i zaburzenia funkcji wykonawczych przy zachowanej konsolidacji pamięci (poprawa przy podpowiedziach)"
     ],
     "optionFeedback": [
-      "Uszkodzenie pętli podkorowo-czołowych utrudnia wyszukiwanie informacji i elastyczność myślenia, lecz hipokamp koduje wspomnienia poprawnie.",
       "Taki profil jest typowy dla zaburzeń dysocjacyjnych lub wczesnego AD, a nie zespołu podkorowego.",
-      "Wada wrodzona widzenia barw nie ma związku z naczyniowym uszkodzeniem mózgu u seniora."
+      "Wada wrodzona widzenia barw nie ma związku z naczyniowym uszkodzeniem mózgu u seniora.",
+      "Uszkodzenie pętli podkorowo-czołowych utrudnia wyszukiwanie informacji i elastyczność myślenia, lecz hipokamp koduje wspomnienia poprawnie."
     ],
     "answer": 2,
-    "explanation": "Wada wrodzona widzenia barw nie ma związku z naczyniowym uszkodzeniem mózgu u seniora.",
+    "explanation": "Uszkodzenie pętli podkorowo-czołowych utrudnia wyszukiwanie informacji i elastyczność myślenia, lecz hipokamp koduje wspomnienia poprawnie.",
     "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
     "difficulty": "student",
     "reasoning": "mechanism",
@@ -127,17 +127,17 @@
       ],
       "prompt": "Który zespól objawów neurologicznych najczęściej towarzyszy podkorowemu otępieniu naczyniowemu (chorobie małych naczyń)?",
       "options": [
+        "Brak jakichkolwiek objawów somatycznych i neurologicznych przez całe życie",
         "Zaburzenia chodu (apraksja chodu na szerokiej podstawie), naglące parcia na mocz oraz chwiejność emocjonalna (zespół rzekomoopuszkowy)",
-        "Uogólniona wiotkość mięśniowa z zanikiem odruchów głębokich i opadaniem stopy",
-        "Brak jakichkolwiek objawów somatycznych i neurologicznych przez całe życie"
+        "Uogólniona wiotkość mięśniowa z zanikiem odruchów głębokich i opadaniem stopy"
       ],
       "optionFeedback": [
+        "VaD ze względu na podłoże naczyniowe prawie zawsze manifestuje się mikrosympatyką neurologiczną.",
         "Zlewne uszkodzenia istoty białej wokół komór rozrywają drogi korowo-rdzeniowe, pęcherzowe i opuszkowe.",
-        "Objawy obwodowe dotyczą polineuropatii, a nie uszkodzenia naczyniowego OUN.",
-        "VaD ze względu na podłoże naczyniowe prawie zawsze manifestuje się mikrosympatyką neurologiczną."
+        "Objawy obwodowe dotyczą polineuropatii, a nie uszkodzenia naczyniowego OUN."
       ],
       "answer": 1,
-      "explanation": "Objawy obwodowe dotyczą polineuropatii, a nie uszkodzenia naczyniowego OUN.",
+      "explanation": "Zlewne uszkodzenia istoty białej wokół komór rozrywają drogi korowo-rdzeniowe, pęcherzowe i opuszkowe.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "student",
       "reasoning": "interpretation",
@@ -174,17 +174,17 @@
       ],
       "prompt": "Co oznacza pojęcie „otępienia mieszanego” (Mixed Dementia) w praktyce klinicznej u chorych w podeszłym wieku?",
       "options": [
-        "Współistnienie zmian neurodegeneracyjnych typu Alzheimera (blaszki amyloidowe, sploty tau) oraz naczyniowego uszkodzenia istoty białej i lakun",
         "Jednoczesne zachorowanie na malarię mózgową i pląsawicę Huntingtona",
-        "Połączenie autyzmu dziecięcego z ostrym upojeniem alkoholowym"
+        "Połączenie autyzmu dziecięcego z ostrym upojeniem alkoholowym",
+        "Współistnienie zmian neurodegeneracyjnych typu Alzheimera (blaszki amyloidowe, sploty tau) oraz naczyniowego uszkodzenia istoty białej i lakun"
       ],
       "optionFeedback": [
-        "Naczyniowe niedokrwienie nasila stan zapalny i obniża rezerwę mózgową, przyspieszając kliniczną manifestację patologii amyloidowej.",
         "Mieszane otępienie dotyczy najczęstszego nakładania się patologii AD i naczyniowej.",
-        "Taka konstelacja nie ma nic wspólnego z geriatrycznym otępieniem mieszanym."
+        "Taka konstelacja nie ma nic wspólnego z geriatrycznym otępieniem mieszanym.",
+        "Naczyniowe niedokrwienie nasila stan zapalny i obniża rezerwę mózgową, przyspieszając kliniczną manifestację patologii amyloidowej."
       ],
       "answer": 2,
-      "explanation": "Taka konstelacja nie ma nic wspólnego z geriatrycznym otępieniem mieszanym.",
+      "explanation": "Naczyniowe niedokrwienie nasila stan zapalny i obniża rezerwę mózgową, przyspieszając kliniczną manifestację patologii amyloidowej.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "both",
       "reasoning": "decision",

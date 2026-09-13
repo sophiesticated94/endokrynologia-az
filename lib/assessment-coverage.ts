@@ -44,6 +44,9 @@ export interface LessonMasterySelectionResult {
   completeCoverage: boolean;
   uncoveredObjectiveIds: string[];
   minimumRequiredCount: number;
+  estimatedMinimumRequiredCount: number;
+  contractSatisfied: boolean;
+  missingContractDetails?: string[];
 }
 
 export interface ModuleMasterySelectionResult {
@@ -52,30 +55,18 @@ export interface ModuleMasterySelectionResult {
   uncoveredTopics: string[];
   coveredObjectiveCount: number;
   totalObjectiveCount: number;
+  coverageDebt?: {
+    missingSafetyObjectives: string[];
+    missingDecisionObjectives: string[];
+    uncoveredTopics: string[];
+  };
 }
 
 export function inferAssessmentLevel(activity: LearningActivity): AssessmentLevel {
   if (activity.assessmentLevel) return activity.assessmentLevel;
-
-  switch (activity.type) {
-    case 'short_answer':
-    case 'clinical_reasoning':
-    case 'recall':
-      return 'generation';
-    case 'select_and_justify':
-    case 'evidence_weighting':
-    case 'ordering':
-    case 'matching':
-    case 'numeric':
-    case 'lab':
-    case 'trend':
-    case 'missing_information':
-      return 'application';
-    case 'single_choice':
-    case 'multi_select':
-    default:
-      return 'recognition';
-  }
+  if (['short_answer', 'clinical_reasoning', 'recall'].includes(activity.type)) return 'generation';
+  if (['select_and_justify', 'evidence_weighting', 'ordering', 'matching', 'numeric', 'lab', 'trend', 'missing_information'].includes(activity.type)) return 'application';
+  return 'recognition';
 }
 
 export function isActivityGeneration(activity: LearningActivity): boolean {
@@ -177,19 +168,9 @@ export function validateObjectiveCoverage(experience: LessonExperienceV2): Objec
 
     const meetsContract = missingRequirements.length === 0;
     details[obj.id] = {
-      objective: obj,
-      activities: matching,
-      activityCount: matching.length,
-      distinctActivityTypes: distinctTypes,
-      levels,
-      recognition: hasRec,
-      application: hasApp,
-      generation: hasGen,
-      transfer: hasTrans,
-      generationTransfer: hasGenTrans,
-      assessmentBank: inBank,
-      meetsContract,
-      missingRequirements,
+      objective: obj, activities: matching, activityCount: matching.length, distinctActivityTypes: distinctTypes,
+      levels, recognition: hasRec, application: hasApp, generation: hasGen, transfer: hasTrans,
+      generationTransfer: hasGenTrans, assessmentBank: inBank, meetsContract, missingRequirements,
     };
   }
 
@@ -208,59 +189,98 @@ export function validateObjectiveCoverage(experience: LessonExperienceV2): Objec
     isValid,
     objectives: details,
     summary: {
-      totalObjectives: experience.objectives.length,
-      coveredObjectives: coveredCount,
-      missingApplication: missingAppCount,
-      missingGeneration: missingGenCount,
-      missingTransfer: missingTransferCount,
-      missingGenerationTransfer: missingGenTransferCount,
-      hasGeneration,
-      hasTransfer,
-      hasGenerationTransfer,
+      totalObjectives: experience.objectives.length, coveredObjectives: coveredCount,
+      missingApplication: missingAppCount, missingGeneration: missingGenCount,
+      missingTransfer: missingTransferCount, missingGenerationTransfer: missingGenTransferCount,
+      hasGeneration, hasTransfer, hasGenerationTransfer,
     },
     validationIssues: validationIssues.length > 0 ? validationIssues : undefined,
   };
+}
+
+export function computeExactMinimalSetCover(
+  items: LearningActivity[],
+  requiredObjectiveIds: Set<string>
+): { isExact: boolean; count: number } {
+  if (requiredObjectiveIds.size === 0) return { isExact: true, count: 0 };
+  if (items.length === 0) return { isExact: true, count: 0 };
+
+  // If pool size <= 15, do exact search (combinations of increasing size)
+  if (items.length <= 15) {
+    const n = items.length;
+    for (let k = 1; k <= n; k++) {
+      const checkCombination = (start: number, chosen: number[]): boolean => {
+        if (chosen.length === k) {
+          const covered = new Set<string>();
+          for (const idx of chosen) {
+            for (const id of items[idx].objectiveIds) {
+              if (requiredObjectiveIds.has(id)) covered.add(id);
+            }
+          }
+          return covered.size === requiredObjectiveIds.size;
+        }
+        for (let i = start; i < n; i++) {
+          chosen.push(i);
+          if (checkCombination(i + 1, chosen)) return true;
+          chosen.pop();
+        }
+        return false;
+      };
+      if (checkCombination(0, [])) {
+        return { isExact: true, count: k };
+      }
+    }
+  }
+
+  // Greedy fallback for larger pools (> 15)
+  const tempCovered = new Set<string>();
+  let minCount = 0;
+  const poolCopy = [...items];
+  while (tempCovered.size < requiredObjectiveIds.size && poolCopy.length > 0) {
+    poolCopy.sort((a, b) => {
+      const aNew = a.objectiveIds.filter(id => requiredObjectiveIds.has(id) && !tempCovered.has(id)).length;
+      const bNew = b.objectiveIds.filter(id => requiredObjectiveIds.has(id) && !tempCovered.has(id)).length;
+      return bNew - aNew;
+    });
+    const best = poolCopy.shift();
+    if (!best) break;
+    const added = best.objectiveIds.filter(id => requiredObjectiveIds.has(id) && !tempCovered.has(id));
+    if (added.length === 0) break;
+    added.forEach(id => tempCovered.add(id));
+    minCount++;
+  }
+  return { isExact: false, count: Math.max(minCount, 1) };
 }
 
 export function selectLessonMasteryAssessment(
   experience: LessonExperienceV2,
   options: { count?: number; excludeActivityIds?: string[]; rng?: () => number } = {}
 ): LessonMasterySelectionResult {
-  const { count = 3, excludeActivityIds = [], rng = Math.random } = options;
+  const defaultCount = Math.max(experience.objectives.length, 3);
+  const { count = defaultCount, excludeActivityIds = [], rng = Math.random } = options;
   const bank = experience.assessmentBank || [];
   const excludedSet = new Set(excludeActivityIds);
 
   const candidatePool = bank.filter(a => !excludedSet.has(a.id));
   const fallbackPool = getAllExperienceActivities(experience, false).filter(a => !excludedSet.has(a.id) && a.type !== 'recall');
-
-  // Calculate minimum required count to cover all lesson objectives
   const allPool = [...candidatePool, ...fallbackPool];
   const requiredObjIds = new Set(experience.objectives.map(o => o.id));
 
-  // Greedy set-cover to compute minimum required items
-  const tempCovered = new Set<string>();
-  let minCount = 0;
-  const poolCopy = [...allPool];
-  while (tempCovered.size < requiredObjIds.size && poolCopy.length > 0) {
-    poolCopy.sort((a, b) => {
-      const aNew = a.objectiveIds.filter(id => requiredObjIds.has(id) && !tempCovered.has(id)).length;
-      const bNew = b.objectiveIds.filter(id => requiredObjIds.has(id) && !tempCovered.has(id)).length;
-      return bNew - aNew;
-    });
-    const best = poolCopy.shift();
-    if (!best) break;
-    const added = best.objectiveIds.filter(id => requiredObjIds.has(id) && !tempCovered.has(id));
-    if (added.length === 0) break;
-    added.forEach(id => tempCovered.add(id));
-    minCount++;
-  }
+  const { count: minRequired } = computeExactMinimalSetCover(allPool, requiredObjIds);
 
-  // Selection prioritizing: transfer items, coverage of uncovered objectives
+  // Selection prioritizing: transfer items, cognitive level (application/generation), coverage of uncovered objectives
   const selected: LearningActivity[] = [];
   const coveredObjIds = new Set<string>();
 
-  // 1. First pass: candidate pool (bank/transfer items)
-  const prioritizedCandidates = [...candidatePool].sort((a, b) => (isActivityTransfer(b) ? 1 : 0) - (isActivityTransfer(a) ? 1 : 0));
+  const scoreCandidate = (a: LearningActivity): number => {
+    let s = 0;
+    if (isActivityTransfer(a)) s += 4;
+    if (isActivityGeneration(a)) s += 2;
+    else if (inferAssessmentLevel(a) === 'application') s += 1;
+    return s;
+  };
+
+  const prioritizedCandidates = [...candidatePool].sort((a, b) => scoreCandidate(b) - scoreCandidate(a));
   for (const act of prioritizedCandidates) {
     if (selected.length >= count) break;
     const coversNew = act.objectiveIds.some(id => requiredObjIds.has(id) && !coveredObjIds.has(id));
@@ -270,7 +290,6 @@ export function selectLessonMasteryAssessment(
     }
   }
 
-  // 2. Second pass: fallback pool for any remaining uncovered objectives
   for (const act of fallbackPool) {
     if (selected.length >= count) break;
     const coversNew = act.objectiveIds.some(id => requiredObjIds.has(id) && !coveredObjIds.has(id));
@@ -280,20 +299,48 @@ export function selectLessonMasteryAssessment(
     }
   }
 
-  // 3. Fill remaining slots with diversity
   const remaining = allPool.filter(a => !selected.some(s => s.id === a.id)).sort(() => rng() - 0.5);
   while (selected.length < count && remaining.length > 0) {
     selected.push(remaining.pop()!);
   }
 
-  const uncovered = experience.objectives.map(o => o.id).filter(id => !coveredObjIds.has(id));
-  const completeCoverage = uncovered.length === 0;
+  const resultItems = selected.slice(0, count);
+  const finalCoveredObjIds = new Set<string>();
+  for (const act of resultItems) {
+    for (const id of act.objectiveIds) {
+      if (requiredObjIds.has(id)) finalCoveredObjIds.add(id);
+    }
+  }
+
+  const missingContractDetails: string[] = [];
+  for (const obj of experience.objectives) {
+    const matchingSelected = resultItems.filter(a => a.objectiveIds.includes(obj.id));
+    if (matchingSelected.length === 0) {
+      missingContractDetails.push(`Cel "${obj.id}" nie jest pokryty przez wybrane zadania.`);
+      continue;
+    }
+    const hasAppOrGen = matchingSelected.some(a => inferAssessmentLevel(a) === 'application' || isActivityGeneration(a));
+    const hasTrans = matchingSelected.some(isActivityTransfer);
+
+    if (['decision', 'differentiation', 'safety'].includes(obj.kind) && !hasAppOrGen) {
+      missingContractDetails.push(`Cel "${obj.id}" (${obj.kind}) wymaga zadania Application lub Generation.`);
+    }
+    if (['decision', 'safety'].includes(obj.kind) && !hasTrans) {
+      missingContractDetails.push(`Cel "${obj.id}" (${obj.kind}) wymaga zadania transferowego.`);
+    }
+  }
+
+  const uncovered = experience.objectives.map(o => o.id).filter(id => !finalCoveredObjIds.has(id));
+  const contractSatisfied = missingContractDetails.length === 0 && uncovered.length === 0;
 
   return {
-    items: selected.slice(0, count),
-    completeCoverage,
+    items: resultItems,
+    completeCoverage: contractSatisfied,
     uncoveredObjectiveIds: uncovered,
-    minimumRequiredCount: Math.max(minCount, 1),
+    minimumRequiredCount: Math.max(minRequired, 1),
+    estimatedMinimumRequiredCount: Math.max(minRequired, 1),
+    contractSatisfied,
+    missingContractDetails: missingContractDetails.length > 0 ? missingContractDetails : undefined,
   };
 }
 
@@ -306,25 +353,42 @@ export function selectLessonMasteryTest(
 
 export function selectModuleMasteryAssessment(
   experiences: Record<string, LessonExperienceV2>,
-  options: { excludeActivityIds?: string[]; rng?: () => number } = {}
+  options: { count?: number; excludeActivityIds?: string[]; rng?: () => number } = {}
 ): ModuleMasterySelectionResult {
-  const { excludeActivityIds = [], rng = Math.random } = options;
+  const { count, excludeActivityIds = [], rng = Math.random } = options;
   const excludedSet = new Set(excludeActivityIds);
   const lessons = Object.values(experiences);
 
-  const selected: LearningActivity[] = [];
-  const coveredObjIds = new Set<string>();
-  const coveredTopics = new Set<string>();
+  const safetyObjIds = new Set<string>();
+  const decisionObjIds = new Set<string>();
   let totalObjectives = 0;
 
   for (const exp of lessons) {
     totalObjectives += exp.objectives.length;
+    for (const obj of exp.objectives) {
+      if (obj.kind === 'safety') safetyObjIds.add(obj.id);
+      if (obj.kind === 'decision') decisionObjIds.add(obj.id);
+    }
+  }
+
+  const selected: LearningActivity[] = [];
+  const coveredObjIds = new Set<string>();
+  const coveredTopics = new Set<string>();
+
+  for (const exp of lessons) {
+    if (typeof count === 'number' && selected.length >= count) break;
     const bank = (exp.assessmentBank || []).filter(a => !excludedSet.has(a.id));
     const pool = bank.length > 0 ? bank : getAllExperienceActivities(exp, false).filter(a => !excludedSet.has(a.id) && a.type !== 'recall');
 
-    // Pick items that maximize objective coverage for this lesson
-    const shuffledPool = [...pool].sort(() => rng() - 0.5);
-    const chosen = shuffledPool[0];
+    const sortedPool = [...pool].sort((a, b) => {
+      const aSafety = a.objectiveIds.some(id => safetyObjIds.has(id) || decisionObjIds.has(id)) ? 2 : 0;
+      const bSafety = b.objectiveIds.some(id => safetyObjIds.has(id) || decisionObjIds.has(id)) ? 2 : 0;
+      const aTrans = isActivityTransfer(a) ? 1 : 0;
+      const bTrans = isActivityTransfer(b) ? 1 : 0;
+      return (bSafety + bTrans) - (aSafety + aTrans);
+    });
+
+    const chosen = sortedPool[0];
     if (chosen) {
       selected.push(chosen);
       chosen.objectiveIds.forEach(id => coveredObjIds.add(id));
@@ -332,17 +396,44 @@ export function selectModuleMasteryAssessment(
     }
   }
 
+  if (typeof count === 'number' && count > selected.length) {
+    const allPool = lessons.flatMap(exp => (exp.assessmentBank || []).concat(getAllExperienceActivities(exp, false)))
+      .filter(a => !excludedSet.has(a.id) && !selected.some(s => s.id === a.id) && a.type !== 'recall');
+
+    for (const act of allPool) {
+      if (selected.length >= count) break;
+      const coversNeeded = act.objectiveIds.some(id => (safetyObjIds.has(id) || decisionObjIds.has(id)) && !coveredObjIds.has(id));
+      if (coversNeeded) {
+        selected.push(act);
+        act.objectiveIds.forEach(id => coveredObjIds.add(id));
+      }
+    }
+  }
+
+  const missingSafety = Array.from(safetyObjIds).filter(id => !coveredObjIds.has(id));
+  const missingDecision = Array.from(decisionObjIds).filter(id => !coveredObjIds.has(id));
   const uncoveredTopics = lessons.map(l => l.lessonId).filter(id => !coveredTopics.has(id));
+  const isComplete = uncoveredTopics.length === 0;
 
   return {
     items: selected,
-    completeCoverage: uncoveredTopics.length === 0,
+    completeCoverage: isComplete,
     uncoveredTopics,
     coveredObjectiveCount: coveredObjIds.size,
     totalObjectiveCount: totalObjectives,
+    coverageDebt: !isComplete ? {
+      missingSafetyObjectives: missingSafety,
+      missingDecisionObjectives: missingDecision,
+      uncoveredTopics,
+    } : undefined,
   };
 }
 
+/**
+ * Quick spaced review sampling items across lessons.
+ * NOTE: quickReview !== moduleMastery. Quick review is intended for rapid retrieval practice,
+ * whereas module mastery enforces strict coverage of safety, decision, and curriculum objectives.
+ */
 export function selectModuleQuickReview(
   experiences: Record<string, LessonExperienceV2>,
   options: { count?: number; excludeActivityIds?: string[]; rng?: () => number } = {}
@@ -381,5 +472,5 @@ export function selectModuleMasteryTest(
   experiences: Record<string, LessonExperienceV2>,
   options: { count?: number; excludeActivityIds?: string[]; rng?: () => number } = {}
 ): LearningActivity[] {
-  return selectModuleQuickReview(experiences, options);
+  return selectModuleMasteryAssessment(experiences, options).items;
 }

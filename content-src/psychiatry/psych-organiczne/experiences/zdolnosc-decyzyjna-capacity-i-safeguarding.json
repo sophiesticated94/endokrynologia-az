@@ -100,17 +100,17 @@
       ],
       "prompt": "Jakie są 4 funkcjonalne domeny oceny zdolności decyzyjnej wg uznanych standardów (Mental Capacity Framework)?",
       "options": [
+        "Zgodność z wolą ordynatora oddziału, partii rządzącej i sąsiadów",
         "Zrozumienie informacji istotnych dla decyzji (Understanding), ich zatrzymanie (Retention), zdolność do ich wyważenia i rozważenia konsekwencji (Weighing) oraz zakomunikowanie wyboru (Communicating)",
-        "Bogactwo finansowe, wykształcenie wyższe, brak zmarszczek na twarzy i posiadanie samochodu",
-        "Zgodność z wolą ordynatora oddziału, partii rządzącej i sąsiadów"
+        "Bogactwo finansowe, wykształcenie wyższe, brak zmarszczek na twarzy i posiadanie samochodu"
       ],
       "optionFeedback": [
+        "Zdolność decyzyjna ocenia autonomię pacjenta, a nie konformizm.",
         "Czteroelementowy model ocenia proces myślowy pacjenta, a nie samą treść podjętej decyzji.",
-        "Status społeczny i majątek nie mają żadnego związku z oceną zdolności decyzyjnej.",
-        "Zdolność decyzyjna ocenia autonomię pacjenta, a nie konformizm."
+        "Status społeczny i majątek nie mają żadnego związku z oceną zdolności decyzyjnej."
       ],
       "answer": 1,
-      "explanation": "Status społeczny i majątek nie mają żadnego związku z oceną zdolności decyzyjnej.",
+      "explanation": "Czteroelementowy model ocenia proces myślowy pacjenta, a nie samą treść podjętej decyzji.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "student",
       "reasoning": "mechanism",
@@ -127,17 +127,17 @@
       ],
       "prompt": "Co oznacza zasada, że zdolność do podejmowania decyzji jest „decision-specific” i „time-specific”?",
       "options": [
-        "Oznacza, że oceniamy zdolność do konkretnej decyzji w danym momencie czasu; pacjent może nie być zdolny do sprzedaży domu, lecz zdolny do wyboru obiadu, a jego stan może fluktuować",
         "Oznacza, że lekarz podejmuje decyzję wyłącznie w dni parzyste po godzinie 12:00",
-        "Oznacza, że każda decyzja musi zostać potwierdzona przez test laboratoryjny moczu"
+        "Oznacza, że każda decyzja musi zostać potwierdzona przez test laboratoryjny moczu",
+        "Oznacza, że oceniamy zdolność do konkretnej decyzji w danym momencie czasu; pacjent może nie być zdolny do sprzedaży domu, lecz zdolny do wyboru obiadu, a jego stan może fluktuować"
       ],
       "optionFeedback": [
-        "Odrzuca to zero-jedynkowe traktowanie pacjenta jako „całkowicie zdolnego” lub „całkowicie niezdolnego” do jakichkolwiek czynności życiowych.",
         "Time-specific odnosi się do dynamiki stanu psychicznego chorego (np. w delirium), a nie do harmonogramu dyżurów.",
-        "Testy laboratoryjne nie oceniają zdolności decyzyjnej."
+        "Testy laboratoryjne nie oceniają zdolności decyzyjnej.",
+        "Odrzuca to zero-jedynkowe traktowanie pacjenta jako „całkowicie zdolnego” lub „całkowicie niezdolnego” do jakichkolwiek czynności życiowych."
       ],
       "answer": 2,
-      "explanation": "Testy laboratoryjne nie oceniają zdolności decyzyjnej.",
+      "explanation": "Odrzuca to zero-jedynkowe traktowanie pacjenta jako „całkowicie zdolnego” lub „całkowicie niezdolnego” do jakichkolwiek czynności życiowych.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "student",
       "reasoning": "interpretation",
@@ -201,17 +201,17 @@
       ],
       "prompt": "Dlaczego wywiad od osób trzecich (collateral history) jest niezbędny przy ocenie zdolności seniora do bezpiecznego samodzielnego funkcjonowania w domu?",
       "options": [
+        "Ponieważ rodzina jest właścicielem ciała pacjenta",
         "Ponieważ pacjent w gabinecie może prezentować wyuczone maski społeczne (social facade), podczas gdy rodzina obserwuje niespłacone rachunki, niedożywienie i przypalanie garnków",
-        "Ponieważ prawo zabrania wierzyć seniorom w jakiekolwiek słowo bez podpisu świadka",
-        "Ponieważ rodzina jest właścicielem ciała pacjenta"
+        "Ponieważ prawo zabrania wierzyć seniorom w jakiekolwiek słowo bez podpisu świadka"
       ],
       "optionFeedback": [
+        "Pacjent jest autonomicznym podmiotem prawa.",
         "Fenomen fasady społecznej polega na sprawianiu pozorów pełnej sprawności w krótkiej rozmowie przy całkowitej niesamodzielności w środowisku domowym.",
-        "Ocena kliniczna dąży do obiektywizacji faktów, a nie arbitralnego podważania słów pacjenta.",
-        "Pacjent jest autonomicznym podmiotem prawa."
+        "Ocena kliniczna dąży do obiektywizacji faktów, a nie arbitralnego podważania słów pacjenta."
       ],
       "answer": 1,
-      "explanation": "Ocena kliniczna dąży do obiektywizacji faktów, a nie arbitralnego podważania słów pacjenta.",
+      "explanation": "Fenomen fasady społecznej polega na sprawianiu pozorów pełnej sprawności w krótkiej rozmowie przy całkowitej niesamodzielności w środowisku domowym.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "both",
       "reasoning": "safety",

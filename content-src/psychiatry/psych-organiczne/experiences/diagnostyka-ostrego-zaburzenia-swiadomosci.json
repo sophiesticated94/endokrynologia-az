@@ -26,17 +26,17 @@
     ],
     "prompt": "81-letni pacjent w 1. dobie po zabiegu pomostowania naczyniowego nagle staje się skrajnie pobudzony, krzyczy i próbuje zeskoczyć z łóżka. Jaki krok diagnostyczno-terapeutyczny powinien poprzedzać podanie leku uspokajającego?",
     "options": [
-      "Ocena parametrów życiowych, wykluczenie hipoksji oraz zbadanie podbrzusza (USG pęcherza w kierunku zatrzymania moczu) i kontrola bólu",
       "Natychmiastowe podanie 10 mg haloperidolu domięśniowo bez badania fizykalnego",
-      "Konsultacja psychoanalityczna w celu przepracowania lęku przed śmiercią"
+      "Konsultacja psychoanalityczna w celu przepracowania lęku przed śmiercią",
+      "Ocena parametrów życiowych, wykluczenie hipoksji oraz zbadanie podbrzusza (USG pęcherza w kierunku zatrzymania moczu) i kontrola bólu"
     ],
     "optionFeedback": [
-      "Nagłe pobudzenie pooperacyjne bardzo często wynika z ostrego zatrzymania moczu lub niedostatecznej analgezji; sedacja bez zbadania pacjenta grozi pęknięciem pęcherza lub zapaścią.",
       "Podanie wysokiej dawki typowego neuroleptyku seniorowi bez zbadania przyczyny somatycznej jest błędem sztuki.",
-      "Ostre delirium wymaga pilnego postępowania somatycznego, nie psychoterapii wglądowej."
+      "Ostre delirium wymaga pilnego postępowania somatycznego, nie psychoterapii wglądowej.",
+      "Nagłe pobudzenie pooperacyjne bardzo często wynika z ostrego zatrzymania moczu lub niedostatecznej analgezji; sedacja bez zbadania pacjenta grozi pęknięciem pęcherza lub zapaścią."
     ],
     "answer": 2,
-    "explanation": "Ostre delirium wymaga pilnego postępowania somatycznego, nie psychoterapii wglądowej.",
+    "explanation": "Nagłe pobudzenie pooperacyjne bardzo często wynika z ostrego zatrzymania moczu lub niedostatecznej analgezji; sedacja bez zbadania pacjenta grozi pęknięciem pęcherza lub zapaścią.",
     "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
     "difficulty": "student",
     "reasoning": "mechanism",
@@ -127,17 +127,17 @@
       ],
       "prompt": "Jak prawidłowo interpretować informację: „badania laboratoryjne (morfologia, CRP, TSH, glikemia, elektrolity) oraz TK głowy są w normie” u starszej osoby z ostrym splątaniem?",
       "options": [
+        "Oznaczają, że pacjent symuluje objawy w celu wymuszenia opieki",
         "Zmniejszają prawdopodobieństwo jaskrawych zaburzeń metabolicznych i ostrego krwotoku, lecz nie dowodzą etiologii pierwotnej i wymagają dalszej diagnostyki somatycznej",
-        "Stanowią bezpośredni dowód na późny debiut schizofrenii paranoidalnej",
-        "Oznaczają, że pacjent symuluje objawy w celu wymuszenia opieki"
+        "Stanowią bezpośredni dowód na późny debiut schizofrenii paranoidalnej"
       ],
       "optionFeedback": [
+        "Majaczenie jest biologicznym stanem zagrożenia mózgu, a nie symulacją.",
         "Wyniki ujemne eliminują jedynie część przyczyn; delirium może wynikać z leków, bezdrgawkowego stanu padaczkowego, bólu czy hipoksji.",
-        "Ujemne wyniki badań laboratoryjnych nie są testem potwierdzającym schizofrenię.",
-        "Majaczenie jest biologicznym stanem zagrożenia mózgu, a nie symulacją."
+        "Ujemne wyniki badań laboratoryjnych nie są testem potwierdzającym schizofrenię."
       ],
       "answer": 1,
-      "explanation": "Ujemne wyniki badań laboratoryjnych nie są testem potwierdzającym schizofrenię.",
+      "explanation": "Wyniki ujemne eliminują jedynie część przyczyn; delirium może wynikać z leków, bezdrgawkowego stanu padaczkowego, bólu czy hipoksji.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "student",
       "reasoning": "interpretation",
@@ -174,17 +174,17 @@
       ],
       "prompt": "Które badanie przyłóżkowe jest najbardziej uzasadnione u pacjenta geriatrycznego z nagłym pobudzeniem wieczornym i brakiem mikcji przez ostatnie 10 godzin?",
       "options": [
-        "Przyłóżkowe USG pęcherza moczowego (bladderscan) lub cewnikowanie diagnostyczne",
         "Badanie rezonansu magnetycznego całego ciała w sekwencji angiograficznej",
-        "Test plam atramentowych Rorschacha"
+        "Test plam atramentowych Rorschacha",
+        "Przyłóżkowe USG pęcherza moczowego (bladderscan) lub cewnikowanie diagnostyczne"
       ],
       "optionFeedback": [
-        "Pozwala na natychmiastowe wykrycie zatrzymania moczu, które bywa bezpośrednią i w pełni odwracalną przyczyną majaczenia.",
         "Angiografia całego ciała nie jest badaniem pierwszego rzutu przy podejrzeniu zatrzymania moczu.",
-        "Testy projekcyjne są całkowicie nieprzydatne i niewykonalne w ostrym zespole majaczeniowym."
+        "Testy projekcyjne są całkowicie nieprzydatne i niewykonalne w ostrym zespole majaczeniowym.",
+        "Pozwala na natychmiastowe wykrycie zatrzymania moczu, które bywa bezpośrednią i w pełni odwracalną przyczyną majaczenia."
       ],
       "answer": 2,
-      "explanation": "Testy projekcyjne są całkowicie nieprzydatne i niewykonalne w ostrym zespole majaczeniowym.",
+      "explanation": "Pozwala na natychmiastowe wykrycie zatrzymania moczu, które bywa bezpośrednią i w pełni odwracalną przyczyną majaczenia.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "both",
       "reasoning": "decision",

@@ -26,17 +26,17 @@
     ],
     "prompt": "23-letnia studentka bez wcześniejszego wywiadu psychiatrycznego w ciągu 3 tygodni rozwija objawy lęku, omamów wzrokowo-słuchowych, po czym dołączają mimowolne grymasy ust i języka (dyskinezy), uogólniony napad padaczkowy oraz okresowy mutyzm. Jaki jest priorytet diagnostyczny?",
     "options": [
-      "Pilna hospitalizacja na oddziale neurologii z wykonaniem punkcji lędźwiowej (panel przeciwciał w PMR), MRI mózgu i EEG pod kątem autoimmunologicznego zapalenia mózgu",
       "Natychmiastowe rozpoznanie schizofrenii i skierowanie na 10-letnią psychoterapię psychoanalityczną",
-      "Wypisanie do domu z zaleceniem picia naparu z melisy"
+      "Wypisanie do domu z zaleceniem picia naparu z melisy",
+      "Pilna hospitalizacja na oddziale neurologii z wykonaniem punkcji lędźwiowej (panel przeciwciał w PMR), MRI mózgu i EEG pod kątem autoimmunologicznego zapalenia mózgu"
     ],
     "optionFeedback": [
-      "Pojawienie się psychozy z napadami padaczkowymi, dyskinezami i katatonią u młodej osoby w ciągu 3 tygodni jest czerwoną flagą zapalenia mózgu (np. anty-NMDAR).",
       "Rozpoznanie schizofrenii przy ostrych napadach padaczkowych i dyskinezach bez badań neurologicznych jest rażącym błędem.",
-      "Encefalopatia z napadami drgawkowymi jest stanem bezpośredniego zagrożenia życia."
+      "Encefalopatia z napadami drgawkowymi jest stanem bezpośredniego zagrożenia życia.",
+      "Pojawienie się psychozy z napadami padaczkowymi, dyskinezami i katatonią u młodej osoby w ciągu 3 tygodni jest czerwoną flagą zapalenia mózgu (np. anty-NMDAR)."
     ],
     "answer": 2,
-    "explanation": "Encefalopatia z napadami drgawkowymi jest stanem bezpośredniego zagrożenia życia.",
+    "explanation": "Pojawienie się psychozy z napadami padaczkowymi, dyskinezami i katatonią u młodej osoby w ciągu 3 tygodni jest czerwoną flagą zapalenia mózgu (np. anty-NMDAR).",
     "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
     "difficulty": "student",
     "reasoning": "mechanism",
@@ -133,17 +133,17 @@
       ],
       "prompt": "70-letni pacjent w ciągu 8 tygodni traci zdolność chodzenia (ataksja), dołączają gwałtowne zrywy mięśniowe po klaśnięciu w dłonie (mioklonie wyzwalane bodźcem) oraz głębokie otępienie. Co jest najbardziej prawdopodobną hipotezą roboczą?",
       "options": [
+        "Przemęczenie pracą w ogródku działkowym",
         "Podejrzenie choroby prionowej (sporadyczna choroba Creutzfeldta-Jakoba — sCJD)",
-        "Typowy, łagodny przebieg choroby Alzheimera",
-        "Przemęczenie pracą w ogródku działkowym"
+        "Typowy, łagodny przebieg choroby Alzheimera"
       ],
       "optionFeedback": [
+        "Tak gwałtowny zespół neurologiczny nigdy nie jest wynikiem zmęczenia fizycznego.",
         "Triada: szybko postępujące otępienie w kilka tygodni, mioklonie bodźcowe (startle) i ataksja to klasyczny obraz sCJD wymagający testu RT-QuIC i MRI DWI.",
-        "Choroba Alzheimera nie doprowadza do głębokiego otępienia z ataksją w ciągu 8 tygodni.",
-        "Tak gwałtowny zespół neurologiczny nigdy nie jest wynikiem zmęczenia fizycznego."
+        "Choroba Alzheimera nie doprowadza do głębokiego otępienia z ataksją w ciągu 8 tygodni."
       ],
       "answer": 1,
-      "explanation": "Choroba Alzheimera nie doprowadza do głębokiego otępienia z ataksją w ciągu 8 tygodni.",
+      "explanation": "Triada: szybko postępujące otępienie w kilka tygodni, mioklonie bodźcowe (startle) i ataksja to klasyczny obraz sCJD wymagający testu RT-QuIC i MRI DWI.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "student",
       "reasoning": "interpretation",
@@ -180,17 +180,17 @@
       ],
       "prompt": "Dlaczego ujemny wynik przeciwciał przeciwko receptorom NMDA w surowicy krwi NIE wyklucza autoimmunologicznego zapalenia mózgu?",
       "options": [
-        "Ponieważ swoiste przeciwciała mogą być produkowane wewnątrzpłynowo (intrathecal synthesis), a badanie płynu mózgowo-rdzeniowego ma znacznie wyższą czułość",
         "Ponieważ przeciwciała we krwi zamieniają się w hemoglobinę po 2 godzinach",
-        "Ponieważ krew jest całkowicie pozbawiona białek układu odpornościowego"
+        "Ponieważ krew jest całkowicie pozbawiona białek układu odpornościowego",
+        "Ponieważ swoiste przeciwciała mogą być produkowane wewnątrzpłynowo (intrathecal synthesis), a badanie płynu mózgowo-rdzeniowego ma znacznie wyższą czułość"
       ],
       "optionFeedback": [
-        "W zapaleniu anty-NMDAR miano przeciwciał w PMR bezpośrednio koreluje z procesem w OUN, podczas gdy we krwi obwodowej może pozostać ujemne.",
         "Przeciwciała nie przekształcają się w hemoglobinę; różnica wynika z kompartmentowości bariery krew-mózg.",
-        "Krew zawiera immunoglobuliny, lecz ich stężenie w surowicy może być niewystarczające we wczesnej fazie."
+        "Krew zawiera immunoglobuliny, lecz ich stężenie w surowicy może być niewystarczające we wczesnej fazie.",
+        "W zapaleniu anty-NMDAR miano przeciwciał w PMR bezpośrednio koreluje z procesem w OUN, podczas gdy we krwi obwodowej może pozostać ujemne."
       ],
       "answer": 2,
-      "explanation": "Krew zawiera immunoglobuliny, lecz ich stężenie w surowicy może być niewystarczające we wczesnej fazie.",
+      "explanation": "W zapaleniu anty-NMDAR miano przeciwciał w PMR bezpośrednio koreluje z procesem w OUN, podczas gdy we krwi obwodowej może pozostać ujemne.",
       "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
       "difficulty": "both",
       "reasoning": "decision",
