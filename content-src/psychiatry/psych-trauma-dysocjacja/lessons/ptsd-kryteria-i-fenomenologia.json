@@ -1,0 +1,164 @@
+{
+  "id": "ptsd-kryteria-i-fenomenologia",
+  "moduleId": "psych-trauma-dysocjacja",
+  "title": "Zespół stresu pourazowego (PTSD): kryteria i fenotyp kliniczny",
+  "subtitle": "Triada ICD-11, cztery wiązki DSM-5-TR, podtyp dysocjacyjny i unikanie",
+  "group": "A. Trauma i odpowiedź na stres",
+  "minutes": 18,
+  "goals": [
+    "Opanujesz kryteria diagnostyczne PTSD wg ICD-11 (intruzje, unikanie, wzbudzenie) oraz DSM-5-TR.",
+    "Rozpoznasz podtyp dysocjacyjny PTSD (depersonalizacja/derealizacja) i jego implikacje kliniczne."
+  ],
+  "sections": [
+    {
+      "title": "Kryteria osiowe PTSD w ICD-11: Koncepcja rdzennej triady",
+      "text": "ICD-11 uprościło diagnozę PTSD (kod 6B40), ograniczając ją do trzech kluczowych wiązek objawowych, które muszą trwać min. kilka tygodni i powodować znaczne upośledzenie funkcjonowania: 1) Ponowne przeżywanie traumy w teraźniejszości (re-experiencing) — nie jako zwykłe wspomnienie, lecz intruzje sensoryczne, koszmary senne lub flashbacks z poczuciem, że wydarzenie dzieje się TU I TERAZ; 2) Świadome unikanie (avoidance) — myśli, uczuć lub zewnętrznych przypominaczy (miejsc, ludzi, rozmów); 3) Utrwalone poczucie aktualnego zagrożenia (hyperarousal) — nadmierna czujność (hypervigilance) i nasilona reakcja zaskoczenia (exaggerated startle response)."
+    },
+    {
+      "title": "Różnice między ICD-11 a DSM-5-TR",
+      "text": "W DSM-5-TR kryteria są szersze i obejmują 4 klastry: intruzje (B), unikanie (C), negatywne zmiany w sferze poznawczej i nastroju (D — np. alienacja, anhedonia, amnezja pourazowa) oraz zmiany w pobudzeniu i reaktywności (E). W ICD-11 objawy z klastra D zostały celowo przeniesione do definicji Complex PTSD (cPTSD) lub depresji, co zapobiega sztucznemu nakładaniu się jednostek i nadrozpoznawalności."
+    },
+    {
+      "title": "Podtyp dysocjacyjny PTSD (PTSD Dissociative Subtype)",
+      "text": "Zarówno ICD-11, jak i DSM-5-TR wyróżniają specyfikator z objawami dysocjacyjnymi (PTSD-DS). Dotyczy on około 15–30% pacjentów z PTSD i charakteryzuje się występowaniem uporczywej depersonalizacji (poczucie odłączenia od własnego ciała/umysłu) lub derealizacji (poczucie nierealności, sztuczności otoczenia) niezależnie od epizodów intruzji. Pacjenci z tym podtypem częściej doświadczyli powtarzanej traumy wczesnodziecięcej, wykazują hiper-inhibicję kory czołowej i wymagają wstępnej fazy stabilizacji przed zastosowaniem metod ekspozycyjnych."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Wiązka objawowa (ICD-11)",
+      "Manifestacja kliniczna",
+      "Pułapka diagnostyczna"
+    ],
+    "rows": [
+      [
+        "Ponowne przeżywanie (Re-experiencing)",
+        "Flashbacks z utratą kontaktu z otoczeniem, koszmary",
+        "Mylone z omamami psychotycznymi, jeśli brak oceny kontekstu"
+      ],
+      [
+        "Unikanie (Avoidance)",
+        "Rezygnacja z podróży autem, unikanie miejsc wypadku",
+        "Pacjent maskuje objaw, zgłaszając się z izolowaną fobią"
+      ],
+      [
+        "Wzmożone zagrożenie (Hyperarousal)",
+        "Siadanie tyłem do ściany, skrajny przestrach przy hałasie",
+        "Mylone z uogólnionym zaburzeniem lękowym (GAD) lub ADHD"
+      ],
+      [
+        "Podtyp dysocjacyjny",
+        "Poczucie bycia robotem, widzenie świata jak przez mgłę",
+        "Błędne podejrzenie zaburzenia psychotycznego lub symulacji"
+      ]
+    ]
+  },
+  "advanced": "W badaniach laboratoryjnych chorych na klasyczne PTSD poddanych ekspozycji na skrypt traumy obserwuje się gwałtowny wzrost tętna i przewodnictwa skóry (odpowiedź sympatyczna). U chorych z podtypem dysocjacyjnym (PTSD-DS) ten sam bodziec wywołuje paradoksalny brak tachykardii lub wręcz bradykardię z nasileniem derealizacji (odpowiedź wazo-wagalna sterowana przez vlPAG).",
+  "summary": "PTSD wg ICD-11 wymaga triady: intruzji (w tu i teraz), unikania i hyperarousalu przez min. kilka tygodni. Podtyp dysocjacyjny obejmuje depersonalizację/derealizację i wymaga ostrożności w planowaniu ekspozycji.",
+  "sourceIds": [
+    "src-icd11-cddr-2024",
+    "src-dsm5-tr-2022",
+    "src-nice-ng116-ptsd-2018"
+  ],
+  "questions": [
+    {
+      "id": "ptsd-kryteria-i-fenomenologia-q1",
+      "lessonId": "ptsd-kryteria-i-fenomenologia",
+      "prompt": "Jaki warunek musi spełniać intruzja (re-experiencing), aby stanowiła osiowy objaw PTSD wg ICD-11?",
+      "options": [
+        {
+          "text": "Musi wiązać się z poczuciem ponownego przeżywania zdarzenia w teraźniejszości (w tu i teraz)",
+          "explanation": "Zwykłe smutne wspominanie przeszłości nie spełnia kryterium re-experiencing w ICD-11."
+        },
+        {
+          "text": "Musi występować wyłącznie w trakcie pełni księżyca",
+          "explanation": "Faza księżyca nie ma żadnego znaczenia medycznego."
+        },
+        {
+          "text": "Musi dotyczyć wyłącznie wydarzeń z okresu noworodkowego",
+          "explanation": "Amnezja dziecięca uniemożliwia pamięć noworodkową."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ptsd-kryteria-i-fenomenologia-q2",
+      "lessonId": "ptsd-kryteria-i-fenomenologia",
+      "prompt": "Czym charakteryzuje się podtyp dysocjacyjny PTSD (PTSD-DS)?",
+      "options": [
+        {
+          "text": "Uporczywym współwystępowaniem depersonalizacji lub derealizacji",
+          "explanation": "To osiowe kryterium specyfikatora dysocjacyjnego w ICD-11 i DSM-5-TR."
+        },
+        {
+          "text": "Wykształceniem trzeciej nerki i hiperkalcemią",
+          "explanation": "To nonsens somatyczny."
+        },
+        {
+          "text": "Utratą zdolności trawienia węglowodanów",
+          "explanation": "Brak związku z enzymami trawiennymi."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ptsd-kryteria-i-fenomenologia-q3",
+      "lessonId": "ptsd-kryteria-i-fenomenologia",
+      "prompt": "Jaki minimalny czas trwania objawów jest wymagany do rozpoznania PTSD?",
+      "options": [
+        {
+          "text": "Minimum kilka tygodni (zwykle definiowane jako co najmniej 1 miesiąc)",
+          "explanation": "Wcześniejsze objawy (3–30 dni) kwalifikują się jako ostre zaburzenie stresowe (ASD)."
+        },
+        {
+          "text": "Dokładnie 24 godziny",
+          "explanation": "To faza peritraumatyczna lub wczesna ASR."
+        },
+        {
+          "text": "Co najmniej 10 lat bez żadnych przerw",
+          "explanation": "PTSD można rozpoznać już po miesiącu od zdarzenia."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ptsd-kryteria-i-fenomenologia-q4",
+      "lessonId": "ptsd-kryteria-i-fenomenologia",
+      "prompt": "Jak odróżnić intruzję flashback w PTSD od omamów w schizofrenii?",
+      "options": [
+        {
+          "text": "Flashback jest ściśle związany z treścią urazu i odtwarza sensoryczne fragmenty realnego zdarzenia",
+          "explanation": "W schizofrenii omamy mają zwykle charakter wielotematyczny, niespójny z konkretną traumą i towarzyszą im urojenia."
+        },
+        {
+          "text": "W PTSD pacjent zawsze traci przytomność na ponad 2 godziny",
+          "explanation": "Utrata przytomności sugeruje omdlenie lub napad padaczkowy, nie flashback."
+        },
+        {
+          "text": "W schizofrenii pacjent nigdy nie słyszy żadnych głosów",
+          "explanation": "Omamy słuchowe są osiowym objawem schizofrenii."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ptsd-kryteria-i-fenomenologia-q5",
+      "lessonId": "ptsd-kryteria-i-fenomenologia",
+      "prompt": "Która reakcja fizjologiczna może dominować podczas ekspozycji u pacjenta z podtypem dysocjacyjnym PTSD?",
+      "options": [
+        {
+          "text": "Zablokowanie pobudzenia sympatycznego, spadek tętna i nasilenie depersonalizacji",
+          "explanation": "To zjawisko nadmiernej inhibicji limbicznej (hiper-inhibicja przedczołowa)."
+        },
+        {
+          "text": "Zawsze tachykardia powyżej 220/min z migotaniem komór",
+          "explanation": "Reakcja dysocjacyjna charakteryzuje się raczej hiporeaktywnością niż arytmią komorową."
+        },
+        {
+          "text": "Cukromocz i przełom tarczycowy",
+          "explanation": "Brak związku przyczynowego."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

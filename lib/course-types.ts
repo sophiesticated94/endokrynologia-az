@@ -13,7 +13,8 @@ export type ModuleId =
   | 'ciaza'
   | 'psych-afektywne'
   | 'psych-farmakologia'
-  | 'psych-organiczne';
+  | 'psych-organiczne'
+  | 'psych-trauma-dysocjacja';
 
 export type ObjectiveKind = 'mechanism' | 'interpretation' | 'differentiation' | 'decision' | 'safety';
 export type ActivityDifficulty = 'student' | 'doctor' | 'both';
@@ -82,6 +83,7 @@ export type LessonExperienceV2 = {
     | 'pathway-builder'
     | 'adrenal-workbench'
     | 'parathyroid-workbench'
+    | 'trauma-dissociation-workbench'
     | string
   >;
   widgetConfig?: Record<string, { presetId?: string }>;

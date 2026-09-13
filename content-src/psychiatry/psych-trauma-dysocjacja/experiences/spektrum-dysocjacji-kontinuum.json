@@ -1,0 +1,242 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "spektrum-dysocjacji-kontinuum",
+  "objectives": [
+    {
+      "id": "spektrum-dysocjacji-kontinuum-obj-1",
+      "statement": "Zrozumiesz dysocjację jako kontinuum od zjawisk adaptacyjnych (absorpcja) po strukturalną fragmentację.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "spektrum-dysocjacji-kontinuum-obj-2",
+      "statement": "Poznasz teorię strukturalnej dysocjacji osobowości (część ANP vs części EP).",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "spektrum-dysocjacji-kontinuum-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "spektrum-dysocjacji-kontinuum-obj-1"
+    ],
+    "prompt": "Czym różni się część ANP od części EP w teorii strukturalnej dysocjacji?",
+    "options": [
+      "ANP odpowiada za codzienne funkcjonowanie unikając traumy, a EP jest uwięziona w afekcie pourazowym",
+      "ANP to część produkująca hormony tarczycy, a EP hormony nadnerczy",
+      "ANP występuje wyłącznie u niemowląt, a EP u osób po 80. roku życia"
+    ],
+    "optionFeedback": [
+      "ANP (Apparently Normal Part) realizuje cele adaptacyjne, EP (Emotional Part) przechowuje obronne reakcje zagrożenia.",
+      "To pojęcia z zakresu struktury osobowości i neuropsychologii, a nie gruczołów dokrewnych.",
+      "Pojęcia te opisują fragmentację potraumatyczną u osób w każdym wieku."
+    ],
+    "answer": 0,
+    "explanation": "ANP (Apparently Normal Part) realizuje cele adaptacyjne, EP (Emotional Part) przechowuje obronne reakcje zagrożenia.",
+    "hint": "Przeanalizuj mechanizm biologiczny i kryteria przed zaznaczeniem opcji.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "src-van-der-hart-dissociation-2006",
+      "src-isstd-adult-did-2011"
+    ],
+    "claimIds": [
+      "claim-trauma-dissociation-continuum"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "spektrum-dysocjacji-kontinuum-block-1",
+      "title": "Czym jest dysocjacja? Zjawisko i definicja",
+      "text": "Dysocjacja to załamanie normalnie zintegrowanych funkcji świadomości, pamięci autobiograficznej, tożsamości, percepcji otoczenia i kontroli motorycznej. Zjawiska dysocjacyjne rozciągają się na kontinuum: od zjawisk łagodnych, normatywnych (np. absorpcja czytelnicza, „highway hypnosis” — automatyczne prowadzenie auta po znanej trasie z luką w pamięci drogi, marzenia dzienne) po ciężkie, patologiczne formy fragmentacji psychiki wywołane traumą.",
+      "sourceIds": [
+        "src-van-der-hart-dissociation-2006",
+        "src-isstd-adult-did-2011"
+      ],
+      "checkpointId": "spektrum-dysocjacji-kontinuum-q2-checkpoint-1-v2",
+      "claimIds": [
+        "claim-trauma-dissociation-continuum"
+      ],
+      "inlineEnhancements": []
+    },
+    {
+      "id": "spektrum-dysocjacji-kontinuum-block-2",
+      "title": "Teoria strukturalnej dysocjacji osobowości (Van der Hart, Nijenhuis, Steele)",
+      "text": "Model ten wyjaśnia, jak chroniczna trauma uniemożliwia integrację osobowości. Wyróżnia się: 1) Pozornie Normalną Część Osobowości (ANP — Apparently Normal Part), która zarządza codziennym funkcjonowaniem, unikając wspomnień urazowych i realizując cele życiowe; oraz 2) Emocjonalną Część Osobowości (EP — Emotional Part), która pozostaje uwięziona w traumie, przechowując afekt lęku, wściekłości lub zamrożenia (reakcje pniowe). Wyróżnia się dysocjację pierwotną (jedno ANP i jedno EP, np. klasyczne PTSD), wtórną (jedno ANP i kilka EP, np. cPTSD, BPD) oraz trzeciorzędową (wiele ANP i wiele EP — kryterium DID).",
+      "sourceIds": [
+        "src-van-der-hart-dissociation-2006",
+        "src-isstd-adult-did-2011"
+      ],
+      "checkpointId": "spektrum-dysocjacji-kontinuum-q3-checkpoint-2-v2",
+      "claimIds": [
+        "claim-trauma-dissociation-continuum"
+      ],
+      "inlineEnhancements": []
+    },
+    {
+      "id": "spektrum-dysocjacji-kontinuum-block-3",
+      "title": "Dysocjacja psychoformiczna a somatoformiczna",
+      "text": "Dysocjacja manifestuje się na dwóch płaszczyznach: 1) Psychoformicznej — objawy w sferze procesów psychicznych (amnezja, depersonalizacja, derealizacja, stany fugi, słyszenie wewnętrznych głosów); 2) Somatoformicznej — objawy w ciele bez organicznego podłoża (konwersja: pseudonapady padaczkowe PNES, utrata czucia o niefizjologicznym przebiegu, czynnościowy paraliż, głuchota psychogenna). Narzędziem oceny jest m.in. skala DES (Dissociative Experiences Scale) oraz SDQ-20.",
+      "sourceIds": [
+        "src-van-der-hart-dissociation-2006",
+        "src-isstd-adult-did-2011"
+      ],
+      "claimIds": [
+        "claim-trauma-dissociation-continuum"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "spektrum-dysocjacji-kontinuum-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "spektrum-dysocjacji-kontinuum-obj-1"
+      ],
+      "prompt": "Jaki poziom strukturalnej dysocjacji charakteryzuje dysocjacyjne zaburzenie tożsamości (DID)?",
+      "options": [
+        "Dysocjacja trzeciorzędowa (wiele odrębnych części ANP oraz wiele części EP)",
+        "Całkowity brak dysocjacji",
+        "Wyłącznie normatywna absorpcja filmowa"
+      ],
+      "optionFeedback": [
+        "W DID dochodzi do podziału nie tylko części emocjonalnych, ale i części realizujących codzienne życie (tożsamości).",
+        "DID to skrajna postać dysocjacji tożsamościowej.",
+        "Normatywna absorpcja nie jest zaburzeniem psychicznym."
+      ],
+      "answer": 0,
+      "explanation": "W DID dochodzi do podziału nie tylko części emocjonalnych, ale i części realizujących codzienne życie (tożsamości).",
+      "hint": "Zwróć uwagę na ramy czasowe oraz kryteria wykluczenia.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-van-der-hart-dissociation-2006",
+        "src-isstd-adult-did-2011"
+      ],
+      "claimIds": [
+        "claim-trauma-dissociation-continuum"
+      ]
+    },
+    {
+      "id": "spektrum-dysocjacji-kontinuum-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "spektrum-dysocjacji-kontinuum-obj-2"
+      ],
+      "prompt": "Co to jest dysocjacja somatoformiczna?",
+      "options": [
+        "Występowanie objawów cielesnych (np. rzekomonapadowych, paraliżu, utraty czucia) bez podłoża neurologicznego",
+        "Prawdziwe złamanie kości udowej pod wpływem stresu",
+        "Wrodzony brak jednej z półkul mózgu"
+      ],
+      "optionFeedback": [
+        "To somatyczna manifestacja mechanizmu dysocjacyjnego (zaburzenie konwersyjne).",
+        "Złamanie kości wymaga urazu mechanicznego lub osteoporozy.",
+        "To wada rozwojowa OUN, a nie zjawisko dysocjacyjne."
+      ],
+      "answer": 0,
+      "explanation": "To somatyczna manifestacja mechanizmu dysocjacyjnego (zaburzenie konwersyjne).",
+      "hint": "Kluczem jest bezpieczeństwo i hierarchia postępowania.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-van-der-hart-dissociation-2006",
+        "src-isstd-adult-did-2011"
+      ],
+      "claimIds": [
+        "claim-trauma-dissociation-continuum"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "spektrum-dysocjacji-kontinuum-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "spektrum-dysocjacji-kontinuum-obj-1",
+      "spektrum-dysocjacji-kontinuum-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejsze kryteria i pułapki różnicowania z lekcji „Spektrum i kontinuum zjawisk dysocjacyjnych”.",
+    "modelAnswer": "Dysocjacja to kontinuum od absorpcji do fragmentacji tożsamości. Teoria strukturalnej dysocjacji tłumaczy podział psychiki na części funkcjonujące (ANP) i uwięzione w traumie (EP).",
+    "explanation": "Porównaj swoją odpowiedź z podsumowaniem klinicznym. Zwróć uwagę na kryteria decyzyjne i czerwone flagi.",
+    "difficulty": "both",
+    "reasoning": "safety",
+    "sourceIds": [
+      "src-van-der-hart-dissociation-2006",
+      "src-isstd-adult-did-2011"
+    ],
+    "claimIds": [
+      "claim-trauma-dissociation-continuum"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "spektrum-dysocjacji-kontinuum-q4-exit-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "spektrum-dysocjacji-kontinuum-obj-1"
+      ],
+      "prompt": "Który objaw zalicza się do łagodnych, normatywnych zjawisk dysocjacyjnych?",
+      "options": [
+        "Zjawisko automatycznej jazdy autem po znanej trasie (highway hypnosis) z przejściową luką w pamięci drogi",
+        "Niepamięć całego swojego dzieciństwa i dorosłości z ucieczką do innego miasta",
+        "Przekonanie, że własne ramiona zostały zamienione w skrzydła ptaka"
+      ],
+      "optionFeedback": [
+        "To zjawisko powszechne, polegające na automatyzacji czynności bez patologicznej fragmentacji.",
+        "To fuga dysocjacyjna, stan głęboko patologiczny.",
+        "To zaburzenie urojeniowe lub ciężka agnozja."
+      ],
+      "answer": 0,
+      "explanation": "To zjawisko powszechne, polegające na automatyzacji czynności bez patologicznej fragmentacji.",
+      "hint": "Przypomnij sobie wzorce neurobiologiczne i kontrfaktyczne reguły decyzyjne.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-van-der-hart-dissociation-2006",
+        "src-isstd-adult-did-2011"
+      ],
+      "claimIds": [
+        "claim-trauma-dissociation-continuum"
+      ]
+    },
+    {
+      "id": "spektrum-dysocjacji-kontinuum-q5-exit-2-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "spektrum-dysocjacji-kontinuum-obj-2"
+      ],
+      "prompt": "Jakie narzędzie przesiewowe jest powszechnie stosowane do oceny nasilenia dysocjacji psychoformicznej?",
+      "options": [
+        "Skala Doświadczeń Dysocjacyjnych (Dissociative Experiences Scale — DES)",
+        "Skala Glasgow (GCS)",
+        "Krzywa cukrowa OGTT"
+      ],
+      "optionFeedback": [
+        "DES jest międzynarodowym standardem kwestionariuszowym oceny zjawisk dysocjacyjnych.",
+        "GCS służy do oceny głębokości śpiączki i przytomności w stanach nagłych.",
+        "OGTT diagnozuje zaburzenia gospodarki węglowodanowej."
+      ],
+      "answer": 0,
+      "explanation": "DES jest międzynarodowym standardem kwestionariuszowym oceny zjawisk dysocjacyjnych.",
+      "hint": "Wybierz informację o najwyższej wadze różnicującej.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "src-van-der-hart-dissociation-2006",
+        "src-isstd-adult-did-2011"
+      ],
+      "claimIds": [
+        "claim-trauma-dissociation-continuum"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "trauma-dissociation-workbench"
+  ],
+  "widgetConfig": {},
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, CG78, ISTSS, pure content-src architecture"
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "id": "spektrum-dysocjacji-kontinuum",
+  "moduleId": "psych-trauma-dysocjacja",
+  "title": "Spektrum i kontinuum zjawisk dysocjacyjnych",
+  "subtitle": "Od normatywnej absorpcji po patologiczną fragmentację: teoria strukturalnej dysocjacji",
+  "group": "B. Dysocjacja",
+  "minutes": 17,
+  "goals": [
+    "Zrozumiesz dysocjację jako kontinuum od zjawisk adaptacyjnych (absorpcja) po strukturalną fragmentację.",
+    "Poznasz teorię strukturalnej dysocjacji osobowości (część ANP vs części EP)."
+  ],
+  "sections": [
+    {
+      "title": "Czym jest dysocjacja? Zjawisko i definicja",
+      "text": "Dysocjacja to załamanie normalnie zintegrowanych funkcji świadomości, pamięci autobiograficznej, tożsamości, percepcji otoczenia i kontroli motorycznej. Zjawiska dysocjacyjne rozciągają się na kontinuum: od zjawisk łagodnych, normatywnych (np. absorpcja czytelnicza, „highway hypnosis” — automatyczne prowadzenie auta po znanej trasie z luką w pamięci drogi, marzenia dzienne) po ciężkie, patologiczne formy fragmentacji psychiki wywołane traumą."
+    },
+    {
+      "title": "Teoria strukturalnej dysocjacji osobowości (Van der Hart, Nijenhuis, Steele)",
+      "text": "Model ten wyjaśnia, jak chroniczna trauma uniemożliwia integrację osobowości. Wyróżnia się: 1) Pozornie Normalną Część Osobowości (ANP — Apparently Normal Part), która zarządza codziennym funkcjonowaniem, unikając wspomnień urazowych i realizując cele życiowe; oraz 2) Emocjonalną Część Osobowości (EP — Emotional Part), która pozostaje uwięziona w traumie, przechowując afekt lęku, wściekłości lub zamrożenia (reakcje pniowe). Wyróżnia się dysocjację pierwotną (jedno ANP i jedno EP, np. klasyczne PTSD), wtórną (jedno ANP i kilka EP, np. cPTSD, BPD) oraz trzeciorzędową (wiele ANP i wiele EP — kryterium DID)."
+    },
+    {
+      "title": "Dysocjacja psychoformiczna a somatoformiczna",
+      "text": "Dysocjacja manifestuje się na dwóch płaszczyznach: 1) Psychoformicznej — objawy w sferze procesów psychicznych (amnezja, depersonalizacja, derealizacja, stany fugi, słyszenie wewnętrznych głosów); 2) Somatoformicznej — objawy w ciele bez organicznego podłoża (konwersja: pseudonapady padaczkowe PNES, utrata czucia o niefizjologicznym przebiegu, czynnościowy paraliż, głuchota psychogenna). Narzędziem oceny jest m.in. skala DES (Dissociative Experiences Scale) oraz SDQ-20."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Poziom dysocjacji",
+      "Struktura ANP / EP",
+      "Jednostka kliniczna"
+    ],
+    "rows": [
+      [
+        "Brak / normatywna",
+        "Jednolita zintegrowana tożsamość",
+        "Norma, przejściowa absorpcja"
+      ],
+      [
+        "Pierwotna",
+        "1 ANP (funkcjonowanie) + 1 EP (trauma)",
+        "Proste PTSD, ostre zaburzenie stresowe"
+      ],
+      [
+        "Wtórna",
+        "1 ANP + wiele zróżnicowanych EP",
+        "Złożone PTSD (cPTSD), zaburzenie osobowości BPD"
+      ],
+      [
+        "Trzeciorzędowa",
+        "Wiele odrębnych ANP + wiele odrębnych EP",
+        "Dysocjacyjne zaburzenie tożsamości (DID)"
+      ]
+    ]
+  },
+  "advanced": "W badaniach neurofizjologicznych u pacjentów ze strukturalną dysocjacją trzeciorzędową wykazano odmienne mapy łączności korowo-podkorowej w zależności od tego, która część tożsamości (ANP czy EP) kontroluje w danym momencie ciało; manifestuje się to m.in. odmienną zmiennością rytmu zatokowego (HRV), oporem skóry, a nawet mierzalną ostrością wzroku.",
+  "summary": "Dysocjacja to kontinuum od absorpcji do fragmentacji tożsamości. Teoria strukturalnej dysocjacji tłumaczy podział psychiki na części funkcjonujące (ANP) i uwięzione w traumie (EP).",
+  "sourceIds": [
+    "src-van-der-hart-dissociation-2006",
+    "src-isstd-adult-did-2011"
+  ],
+  "questions": [
+    {
+      "id": "spektrum-dysocjacji-kontinuum-q1",
+      "lessonId": "spektrum-dysocjacji-kontinuum",
+      "prompt": "Czym różni się część ANP od części EP w teorii strukturalnej dysocjacji?",
+      "options": [
+        {
+          "text": "ANP odpowiada za codzienne funkcjonowanie unikając traumy, a EP jest uwięziona w afekcie pourazowym",
+          "explanation": "ANP (Apparently Normal Part) realizuje cele adaptacyjne, EP (Emotional Part) przechowuje obronne reakcje zagrożenia."
+        },
+        {
+          "text": "ANP to część produkująca hormony tarczycy, a EP hormony nadnerczy",
+          "explanation": "To pojęcia z zakresu struktury osobowości i neuropsychologii, a nie gruczołów dokrewnych."
+        },
+        {
+          "text": "ANP występuje wyłącznie u niemowląt, a EP u osób po 80. roku życia",
+          "explanation": "Pojęcia te opisują fragmentację potraumatyczną u osób w każdym wieku."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "spektrum-dysocjacji-kontinuum-q2",
+      "lessonId": "spektrum-dysocjacji-kontinuum",
+      "prompt": "Jaki poziom strukturalnej dysocjacji charakteryzuje dysocjacyjne zaburzenie tożsamości (DID)?",
+      "options": [
+        {
+          "text": "Dysocjacja trzeciorzędowa (wiele odrębnych części ANP oraz wiele części EP)",
+          "explanation": "W DID dochodzi do podziału nie tylko części emocjonalnych, ale i części realizujących codzienne życie (tożsamości)."
+        },
+        {
+          "text": "Całkowity brak dysocjacji",
+          "explanation": "DID to skrajna postać dysocjacji tożsamościowej."
+        },
+        {
+          "text": "Wyłącznie normatywna absorpcja filmowa",
+          "explanation": "Normatywna absorpcja nie jest zaburzeniem psychicznym."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "spektrum-dysocjacji-kontinuum-q3",
+      "lessonId": "spektrum-dysocjacji-kontinuum",
+      "prompt": "Co to jest dysocjacja somatoformiczna?",
+      "options": [
+        {
+          "text": "Występowanie objawów cielesnych (np. rzekomonapadowych, paraliżu, utraty czucia) bez podłoża neurologicznego",
+          "explanation": "To somatyczna manifestacja mechanizmu dysocjacyjnego (zaburzenie konwersyjne)."
+        },
+        {
+          "text": "Prawdziwe złamanie kości udowej pod wpływem stresu",
+          "explanation": "Złamanie kości wymaga urazu mechanicznego lub osteoporozy."
+        },
+        {
+          "text": "Wrodzony brak jednej z półkul mózgu",
+          "explanation": "To wada rozwojowa OUN, a nie zjawisko dysocjacyjne."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "spektrum-dysocjacji-kontinuum-q4",
+      "lessonId": "spektrum-dysocjacji-kontinuum",
+      "prompt": "Który objaw zalicza się do łagodnych, normatywnych zjawisk dysocjacyjnych?",
+      "options": [
+        {
+          "text": "Zjawisko automatycznej jazdy autem po znanej trasie (highway hypnosis) z przejściową luką w pamięci drogi",
+          "explanation": "To zjawisko powszechne, polegające na automatyzacji czynności bez patologicznej fragmentacji."
+        },
+        {
+          "text": "Niepamięć całego swojego dzieciństwa i dorosłości z ucieczką do innego miasta",
+          "explanation": "To fuga dysocjacyjna, stan głęboko patologiczny."
+        },
+        {
+          "text": "Przekonanie, że własne ramiona zostały zamienione w skrzydła ptaka",
+          "explanation": "To zaburzenie urojeniowe lub ciężka agnozja."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "spektrum-dysocjacji-kontinuum-q5",
+      "lessonId": "spektrum-dysocjacji-kontinuum",
+      "prompt": "Jakie narzędzie przesiewowe jest powszechnie stosowane do oceny nasilenia dysocjacji psychoformicznej?",
+      "options": [
+        {
+          "text": "Skala Doświadczeń Dysocjacyjnych (Dissociative Experiences Scale — DES)",
+          "explanation": "DES jest międzynarodowym standardem kwestionariuszowym oceny zjawisk dysocjacyjnych."
+        },
+        {
+          "text": "Skala Glasgow (GCS)",
+          "explanation": "GCS służy do oceny głębokości śpiączki i przytomności w stanach nagłych."
+        },
+        {
+          "text": "Krzywa cukrowa OGTT",
+          "explanation": "OGTT diagnozuje zaburzenia gospodarki węglowodanowej."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

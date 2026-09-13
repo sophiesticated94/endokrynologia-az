@@ -1,0 +1,164 @@
+{
+  "id": "dbt-interwencja-kryzysowa-i-bezpieczenstwo",
+  "moduleId": "psych-trauma-dysocjacja",
+  "title": "Dialektyczna terapia behawioralna (DBT) i zarządzanie kryzysem",
+  "subtitle": "Hierarchia celów Linehan, redukcja szkód, plan bezpieczeństwa Stanley-Brown i protokół TIPP",
+  "group": "E. Leczenie i interwencje",
+  "minutes": 20,
+  "goals": [
+    "Zrozumiesz dialektyczną terapię behawioralną (DBT) i jej hierarchię celów zorientowaną na bezpieczeństwo.",
+    "Opanujesz sporządzanie Planu Bezpieczeństwa (Stanley-Brown) oraz techniki regulacji kryzysowej (TIPP)."
+  ],
+  "sections": [
+    {
+      "title": "Hierarchia celów w DBT: Życie ponad wszystko",
+      "text": "W dialektycznej terapii behawioralnej (DBT) obowiązuje bezwzględna, hierarchiczna struktura każdej sesji terapeutycznej: 1) POZIOM 1: Zachowania zagrażające życiu (Life-threatening behaviors) — aktywne myśli samobójcze, zamiary, przygotowania oraz zagrażające zdrowiu samouszkodzenia. Jeśli pacjent w minionym tygodniu dokonał cięcia lub miał kryzys suicydalny, sesja w 100% koncentruje się na analizie łańcuchowej (chain analysis) tego incydentu i wdrożeniu umiejętności bezpieczeństwa; 2) POZIOM 2: Zachowania kolidujące z terapią (Therapy-interfering behaviors) — spóźnienia, unikanie kontaktu, palenie mostów; 3) POZIOM 3: Zachowania niszczące jakość życia (Quality-of-life behaviors); 4) POZIOM 4: Nabywanie nowych umiejętności."
+    },
+    {
+      "title": "Plan Bezpieczeństwa (Safety Planning Intervention wg Stanley-Brown)",
+      "text": "Współczesna suicydologia całkowicie odrzuciła archaiczne „kontrakty na niepopełnianie samobójstwa” („podpisz, że tego nie zrobisz”), które nie mają żadnej wartości ochronnej. Standardem jest pisemny Plan Bezpieczeństwa tworzony wspólnie z pacjentem, obejmujący 6 kroków: 1) Rozpoznanie indywidualnych sygnałów ostrzegawczych kryzysu; 2) Wewnętrzne strategie zaradcze (samodzielne techniki wyciszenia bez pomocy innych); 3) Kontakty z ludźmi i miejsca odwracające uwagę; 4) Bliskie osoby, które można poprosić o pomoc; 5) Profesjonaliści i agencje kryzysowe (telefony zaufania, numer 116 123 / 116 111 / 22 484 88 01, izba przyjęć); 6) ZABEZPIECZENIE ŚRODOWISKA (usunięcie leków, ostrych narzędzi, broni)."
+    },
+    {
+      "title": "Techniki kryzysowe TIPP i redukcja szkód (Harm Reduction)",
+      "text": "W stanie ostrego pobudzenia emocjonalnego myślenie korowe jest wyłączone. W DBT stosuje się wówczas protokół TIPP, zmieniający fizjologię za pośrednictwem nerwu błędnego: T (Temperature) — odruch nurka (zanurzenie twarzy w misce z zimną wodą 10–12°C na 15–30 s z wstrzymaniem oddechu, co wyzwala natychmiastową bradykardię wagalną); I (Intense exercise) — krótki intensywny wysiłek fizyczny; P (Paced breathing) — spowolnione oddychanie z wydłużonym wydechem (np. wdech 4 s, wydech 7 s); P (Progressive muscle relaxation) — relaksacja Jacobsona. Równolegle stosuje się redukcję szkód (zastępowanie cięcia trzymaniem kostki lodu lub strzelaniem gumką recepturką)."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Narzędzie kryzysowe",
+      "Mechanizm działania",
+      "Wskazanie kliniczne"
+    ],
+    "rows": [
+      [
+        "Plan Bezpieczeństwa (Stanley-Brown)",
+        "6-stopniowy zindywidualizowany algorytm krok po kroku",
+        "Każdy pacjent z wywiadem myśli rezygnacyjnych i BPD"
+      ],
+      [
+        "Zabezpieczenie środowiska (Krok 6)",
+        "Ograniczenie dostępu do środków śmiercionośnych (leki, żyletki)",
+        "Podstawa redukcji śmiertelności samobójczej"
+      ],
+      [
+        "Protokół TIPP (Temperatura)",
+        "Stymulacja nerwu błędnego przez odruch nurka (bradykardia)",
+        "Ostry szczyt pobudzenia, panika, paraliżujące napięcie"
+      ],
+      [
+        "Analiza łańcuchowa (Chain Analysis)",
+        "Rozłożenie zdarzenia kryzysowego na czynniki pierwsze (wyzwalacz -> myśl -> ból -> cięcie)",
+        "Po każdym incydencie samookaleczenia na sesji DBT"
+      ]
+    ]
+  },
+  "advanced": "W randomizowanych badaniach klinicznych wykazano, że samo sporządzenie Planu Bezpieczeństwa w izbie przyjęć w połączeniu z krótkim kontaktem telefonicznym w kolejnych dobach obniża ryzyko ponownych prób samobójczych o niemal 50% w porównaniu ze standardową opieką (badanie VA Emergency Department Safety Planning).",
+  "summary": "DBT stawia bezpieczeństwo życia na szczycie hierarchii. Standardem jest pisemny Plan Bezpieczeństwa (Stanley-Brown) z zabezpieczeniem środowiska oraz fizjologiczne techniki TIPP (odruch nurka).",
+  "sourceIds": [
+    "src-linehan-dbt-1993",
+    "src-stanley-brown-safety-2012",
+    "src-nice-cg78-bpd-2009"
+  ],
+  "questions": [
+    {
+      "id": "dbt-interwencja-kryzysowa-i-bezpieczenstwo-q1",
+      "lessonId": "dbt-interwencja-kryzysowa-i-bezpieczenstwo",
+      "prompt": "Jaki cel terapeutyczny stoi bezwzględnie na szczycie hierarchii w dialektycznej terapii behawioralnej (DBT)?",
+      "options": [
+        {
+          "text": "Zachowania zagrażające życiu (aktywna suicydalność, ciężkie samouszkodzenia)",
+          "explanation": "Życie pacjenta jest warunkiem wstępnym jakiejkolwiek innej terapii; kryzys suicydalny pochłania cały priorytet sesji."
+        },
+        {
+          "text": "Nauka gry na instrumencie klawiszowym",
+          "explanation": "To cel hobbystyczny, bez znaczenia w hierarchii DBT."
+        },
+        {
+          "text": "Sprzątanie pokoju w akademiku",
+          "explanation": "Cele jakości życia są na niższym szczeblu hierarchii."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "dbt-interwencja-kryzysowa-i-bezpieczenstwo-q2",
+      "lessonId": "dbt-interwencja-kryzysowa-i-bezpieczenstwo",
+      "prompt": "Dlaczego dawne „kontrakty na niepopełnianie samobójstwa” zostały odrzucone we współczesnej medycynie?",
+      "options": [
+        {
+          "text": "Nie mają żadnej udowodnionej skuteczności i mogą dawać personelowi fałszywe poczucie bezpieczeństwa",
+          "explanation": "Kontrakt nie daje pacjentowi żadnych realnych narzędzi radzenia sobie z bólem; standardem jest Plan Bezpieczeństwa."
+        },
+        {
+          "text": "Ponieważ wymagały podpisu u notariusza za wysoką opłatą",
+          "explanation": "Kwestia dotyczy braku skuteczności klinicznej i fałszywego spokoju personelu."
+        },
+        {
+          "text": "Ponieważ samobójstwa w Europie już w ogóle nie występują",
+          "explanation": "Suicydalność pozostaje ogromnym wyzwaniem zdrowia publicznego."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "dbt-interwencja-kryzysowa-i-bezpieczenstwo-q3",
+      "lessonId": "dbt-interwencja-kryzysowa-i-bezpieczenstwo",
+      "prompt": "Na czym polega krok „T” (Temperature) w protokole kryzysowym TIPP w DBT?",
+      "options": [
+        {
+          "text": "Na wywołaniu odruchu nurka (zanurzenie twarzy w zimnej wodzie 10–12°C), co aktywuje nerw błędny i zwalnia akcję serca",
+          "explanation": "Fizjologiczny odruch nurka gwałtownie przełącza układ nerwowy w tryb hamowania wagalnego."
+        },
+        {
+          "text": "Na pomiarze temperatury w uchu i podaniu antybiotyku",
+          "explanation": "TIPP to technika behawioralna regulacji afektu, nie leczenie gorączki."
+        },
+        {
+          "text": "Na włączeniu sauny fińskiej na 3 godziny",
+          "explanation": "Długotrwała sauna w silnym kryzysie emocjonalnym grozi odwodnieniem i omdleniem."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "dbt-interwencja-kryzysowa-i-bezpieczenstwo-q4",
+      "lessonId": "dbt-interwencja-kryzysowa-i-bezpieczenstwo",
+      "prompt": "Który krok w 6-etapowym Planie Bezpieczeństwa (Stanley-Brown) ma największe znaczenie dla fizycznego przetrwania kryzysu?",
+      "options": [
+        {
+          "text": "Zabezpieczenie środowiska (usunięcie lub zablokowanie dostępu do leków, narzędzi, niebezpiecznych miejsc)",
+          "explanation": "Ograniczenie dostępu do śmiercionośnych środków jest najskuteczniejszą empiryczną metodą prewencji samobójstw."
+        },
+        {
+          "text": "Wykupienie karnetu na siłownię na rok z góry",
+          "explanation": "To działanie odległe, nie chroni w kryzysie ostrym."
+        },
+        {
+          "text": "Obejrzenie horroru kinowego",
+          "explanation": "Horror może nasilić pobudzenie lękowe."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "dbt-interwencja-kryzysowa-i-bezpieczenstwo-q5",
+      "lessonId": "dbt-interwencja-kryzysowa-i-bezpieczenstwo",
+      "prompt": "Co oznacza podejście redukcji szkód (Harm Reduction) w kontekście nawracających samookaleczeń w BPD?",
+      "options": [
+        {
+          "text": "Wdrażanie bezpieczniejszych zachowań zastępczych (kostka lodu, gumka recepturka) w drodze do całkowitego zaprzestania",
+          "explanation": "Redukcja szkód chroni tkanki przed trwałym okaleczeniem i infekcją w fazie, gdy pacjent dopiero uczy się tolerancji dystresu."
+        },
+        {
+          "text": "Rozdawanie pacjentom żyletek na oddziale szpitalnym",
+          "explanation": "To skrajne zaniedbanie i bezpośrednie narażenie życia pacjenta."
+        },
+        {
+          "text": "Zakaz rozmowy z pacjentem przez 6 miesięcy po skaleczeniu",
+          "explanation": "Odrzucenie pacjenta eskaluje kryzys suicydalny."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "id": "did-roznicowanie-bpd-i-psychoza",
+  "moduleId": "psych-trauma-dysocjacja",
+  "title": "Różnicowanie DID: BPD, psychoza schizofreniczna i padaczka skroniowa",
+  "subtitle": "Wewnętrzne głosy, pułapka objawów Schneidera, kryteria amnezji i aura skroniowa",
+  "group": "D. Różnicowanie kliniczne",
+  "minutes": 21,
+  "goals": [
+    "Nauczysz się precyzyjnie odróżniać DID od zaburzenia osobowości borderline (BPD).",
+    "Odróżnisz głosy tożsamościowe w DID od omamów w schizofrenii i rozpoznasz maskę padaczki skroniowej (TLE)."
+  ],
+  "sections": [
+    {
+      "title": "DID a BPD: Trzy kluczowe osie różnicujące",
+      "text": "Wielu chorych z DID ma wcześniejsze błędne rozpoznanie BPD z powodu samouszkodzeń i chwiejności afektu. RÓŻNICOWANIE: 1) Ciągłość tożsamości — w BPD tożsamość jest niestabilna, zmienna pod wpływem relacji („nie wiem kim jestem”), ale chory ZAWSZE doświadcza siebie jako jednej osoby; w DID występują odrębne stany tożsamości z odmiennymi imionami, wiekiem i manierami. 2) Amnezja — w BPD NIE MA nawracających luk w pamięci codziennych zdarzeń (chory pamięta swoje kłótnie i zachowania); w DID amnezja codzienna jest osiowa. 3) Wzorzec relacyjny — w BPD dominuje paniczny lęk przed porzuceniem."
+    },
+    {
+      "title": "Pułapka objawów Schneidera I rzędu: DID a Schizofrenia",
+      "text": "Aż 70–80% pacjentów z DID zgłasza słyszenie głosów. W dawnej koncepcji Kurta Schneidera słyszenie głosów dyskutujących lub komentujących uznawano za osiowy objaw I rzędu silnie sugerujący schizofrenię. To fatalna pułapka diagnostyczna! W DID głosy mają charakter dialogu wewnętrznego (lokalizowanego w głowie), są spójne z odrębnymi stanami tożsamości, a pacjent ma ZACHOWANY KRYTYCYZM w stanach neutralnych (nie tworzy urojeń o sterowaniu radiowym czy chipach). Brak rozkojarzenia toku myślenia, brak objawów ubytkowych i zachowana zdolność do kontaktu emocjonalnego wykluczają schizofrenię."
+    },
+    {
+      "title": "Maska neurologiczna: Padaczka płata skroniowego (TLE)",
+      "text": "Krótkotrwałe epizody odrealnienia, amnezji lub automatyzmów mogą wynikać z ogniskowych napadów padaczkowych płata skroniowego. CECHY TLE: 1) Czas trwania: napad padaczkowy trwa zazwyczaj 30–120 sekund (dysocjacja psychogenna trwa od kwadransów do wielu godzin); 2) Stereotypowość: każdy napad wygląda identycznie; 3) Aura: aura nadbrzuszna (uczucie wznoszenia ciepła/dyskomfortu z żołądka do gardła), omamy węchowe (zapach spalenizny) lub smakowe; 4) Stan ponapadowy (postictal): splątanie, senność, afazja. Wymagane wideo-EEG i MRI 3T z protokołem na hipokamp."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Oś różnicowa",
+      "DID",
+      "Borderline (BPD)",
+      "Schizofrenia",
+      "Padaczka skroniowa (TLE)"
+    ],
+    "rows": [
+      [
+        "Struktura tożsamości",
+        "Odrębne stany tożsamości (alterzy)",
+        "Jedna tożsamość, lecz chwiejna",
+        "Fragmentacja jaźni, urojenia owładnięcia",
+        "Nienaruszona (epizodyczne zakłócenie)"
+      ],
+      [
+        "Amnezja codzienna",
+        "Nawracająca, osiowa (time loss)",
+        "Brak (pamięta swoje zachowania)",
+        "Brak typowej amnezji dysocjacyjnej",
+        "Amnezja ponapadowa (minuty po napadzie)"
+      ],
+      [
+        "Fenomenologia głosów",
+        "Złożony dialog wewnątrz głowy, krytycyzm",
+        "Zwykle brak (lub w skrajnym stresie)",
+        "Głosy zewnętrzne, bezkrytyczne, urojenia",
+        "Halucynacje słuchowe elementarne (szum, pisk)"
+      ],
+      [
+        "Czas trwania epizodu",
+        "Godziny do dni (stany tożsamości)",
+        "Wahania w skali godzin",
+        "Objawy przewlekłe, wielotygodniowe",
+        "30–120 sekund (ściśle stereotypowe)"
+      ]
+    ]
+  },
+  "advanced": "W diagnostyce różnicowej DID i schizofrenii stosuje się ustrukturyzowany wywiad SCID-D (Structured Clinical Interview for DSM-IV Dissociative Disorders). Pozwala on obiektywnie odróżnić zjawiska pseudo-omamowe wynikające z wewnętrznego dialogu alterów od psychotycznych zaburzeń percepcji.",
+  "summary": "DID różni się od BPD obecnością odrębnych stanów tożsamości i amnezji codziennej; od schizofrenii zachowanym krytycyzmem i brakiem rozkojarzenia; od TLE brakiem aury nadbrzusznej i czasem trwania znacznie dłuższym niż 30–120 s.",
+  "sourceIds": [
+    "src-icd11-cddr-2024",
+    "src-dsm5-tr-2022",
+    "src-isstd-adult-did-2011"
+  ],
+  "questions": [
+    {
+      "id": "did-roznicowanie-bpd-i-psychoza-q1",
+      "lessonId": "did-roznicowanie-bpd-i-psychoza",
+      "prompt": "Co jest najważniejszym kryterium różnicującym DID od zaburzenia osobowości borderline (BPD)?",
+      "options": [
+        {
+          "text": "Obecność odrębnych stanów tożsamości z nawracającą amnezją codziennych zdarzeń w DID",
+          "explanation": "W BPD pacjent doświadcza siebie jako jednej osoby i pamięta swoje codzienne czyny, nawet jeśli był wzburzony."
+        },
+        {
+          "text": "W BPD nigdy nie dochodzi do samookaleczeń",
+          "explanation": "Samouszkodzenia są częste w BPD i nie różnicują go wprost od DID."
+        },
+        {
+          "text": "DID leczy się wyłącznie operacją neurochirurgiczną",
+          "explanation": "DID to zaburzenie psychogenne leczone psychoterapią, nie neurochirurgią."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "did-roznicowanie-bpd-i-psychoza-q2",
+      "lessonId": "did-roznicowanie-bpd-i-psychoza",
+      "prompt": "Dlaczego głosy wewnętrzne w DID bywają błędnie diagnozowane jako schizofrenia?",
+      "options": [
+        {
+          "text": "Ponieważ dialogujące głosy były dawniej traktowane jako rzekomo rozstrzygający objaw I rzędu Schneidera",
+          "explanation": "Współcześnie wiadomo, że głosy dialogujące występują w DID i bez innych cech psychozy nie świadczą o schizofrenii."
+        },
+        {
+          "text": "Głosy w DID zawsze znikają po podaniu penicyliny",
+          "explanation": "Penicylina to antybiotyk przeciwbakteryjny."
+        },
+        {
+          "text": "W schizofrenii nigdy nie słyszy się głosów w głowie",
+          "explanation": "Omamy słuchowe w schizofrenii mogą być lokalizowane różnie."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "did-roznicowanie-bpd-i-psychoza-q3",
+      "lessonId": "did-roznicowanie-bpd-i-psychoza",
+      "prompt": "Która cecha epizodu najbardziej przemawia za padaczką płata skroniowego (TLE) a nie za dysocjacją?",
+      "options": [
+        {
+          "text": "Ściśle stereotypowy czas trwania 30–120 sekund z aurą nadbrzuszną i mlaskaniem",
+          "explanation": "Napady TLE są paroksyzmalne, krótkie i stereotypowe, z towarzyszącymi automatizmami."
+        },
+        {
+          "text": "Epizod trwający bez przerwy 3 miesiące z płaczem",
+          "explanation": "To obraz zaburzenia nastroju lub adaptacyjnego, nie napadu padaczkowego."
+        },
+        {
+          "text": "Brak jakichkolwiek objawów somatycznych",
+          "explanation": "TLE prawie zawsze wykazuje wegetatywne objawy aury."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "did-roznicowanie-bpd-i-psychoza-q4",
+      "lessonId": "did-roznicowanie-bpd-i-psychoza",
+      "prompt": "Jaki jest stan formalnego toku myślenia u chorego z czystym DID?",
+      "options": [
+        {
+          "text": "Prawidłowy — brak rozkojarzenia, splątania wątków czy neologizmów typowych dla psychozy",
+          "explanation": "Pacjent z DID myśli logicznie i spójnie, nie prezentuje rozpadu myślenia schizofrenicznego."
+        },
+        {
+          "text": "Zawsze głęboko rozkojarzony z całkowitą sałatą słowną",
+          "explanation": "Sałata słowna to skrajny objaw schizofrenii lub ciężkiej afazji sensorycznej."
+        },
+        {
+          "text": "Myślenie jest możliwe wyłącznie w języku łacińskim",
+          "explanation": "Nonsens medyczny."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "did-roznicowanie-bpd-i-psychoza-q5",
+      "lessonId": "did-roznicowanie-bpd-i-psychoza",
+      "prompt": "Co należy zrobić, gdy pacjent z podejrzeniem dysocjacji zgłasza uczucie „wznoszenia z żołądka” i metaliczny smak przed odrealnieniem?",
+      "options": [
+        {
+          "text": "Pilnie skierować na diagnostykę neurologiczną (wideo-EEG, MRI OUN) celem wykluczenia padaczki",
+          "explanation": "To klasyczna aura nadbrzuszna i smakowa ogniska skroniowego; zaniechanie badań jest błędem sztuki."
+        },
+        {
+          "text": "Zwiększyć natychmiast dawkę neuroleptyku bez żadnych badań",
+          "explanation": "Leki przeciwpsychotyczne mogą wręcz obniżać próg drgawkowy."
+        },
+        {
+          "text": "Zapewnić, że to na pewno zwykły atak paniki i odesłać do domu",
+          "explanation": "Aura wymaga bezwzględnego wykluczenia ogniska padaczkowego."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

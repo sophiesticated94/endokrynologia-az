@@ -1,0 +1,255 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "psychoterapia-traumy-fazy-i-metody",
+  "objectives": [
+    {
+      "id": "psychoterapia-traumy-fazy-i-metody-obj-1",
+      "statement": "Poznasz 3-fazowy model leczenia traumy (Faza 1: stabilizacja, Faza 2: przetwarzanie, Faza 3: integracja).",
+      "kind": "mechanism"
+    },
+    {
+      "id": "psychoterapia-traumy-fazy-i-metody-obj-2",
+      "statement": "Opanujesz zasady TF-CBT i EMDR oraz bezwzględne przeciwwskazania do wczesnej ekspozycji.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "psychoterapia-traumy-fazy-i-metody-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "psychoterapia-traumy-fazy-i-metody-obj-1"
+    ],
+    "prompt": "Jaki jest bezwzględny pierwszy krok w 3-fazowym modelu leczenia złożonej traumy (Herman, ISTSS)?",
+    "options": [
+      "Faza 1: Bezpieczeństwo, stabilizacja emocjonalna i opanowanie zachowań destrukcyjnych",
+      "Natychmiastowe zmuszenie pacjenta do szczegółowego opisania gwałtu na pierwszej wizycie",
+      "Wdrożenie leczenia elektrowstrząsowego w pełnej narkozie"
+    ],
+    "optionFeedback": [
+      "Otwieranie traumy bez stabilizacji i narzędzi radzenia sobie z lękiem grozi ciężką dekompensacją.",
+      "To ciężki błąd sztuki prowadzący do retraumatyzacji.",
+      "ECT nie jest leczeniem pierwszego rzutu w traumie."
+    ],
+    "answer": 0,
+    "explanation": "Otwieranie traumy bez stabilizacji i narzędzi radzenia sobie z lękiem grozi ciężką dekompensacją.",
+    "hint": "Przeanalizuj mechanizm biologiczny i kryteria przed zaznaczeniem opcji.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "src-herman-trauma-1992",
+      "src-istss-guidelines-2019",
+      "src-nice-ng116-ptsd-2018"
+    ],
+    "claimIds": [
+      "claim-trauma-phase-based-treatment"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "psychoterapia-traumy-fazy-i-metody-block-1",
+      "title": "Model konsensusowy: 3-fazowy model leczenia traumy (Herman, ISTSS)",
+      "text": "Leczenie złożonych zaburzeń potraumatycznych (cPTSD, DID) nie może zaczynać się od natychmiastowego „otwierania traumy”. Obowiązuje model trójfazowy: FAZA 1: Bezpieczeństwo i stabilizacja — budowanie sojuszu terapeutycznego, psychoedukacja, regulacja afektu, umiejętności uziemienia (grounding), opanowanie samouszkodzeń i stabilizacja środowiskowa; FAZA 2: Przetwarzanie pamięci traumatycznej — konfrontacja z engramem urazowym metodami ustrukturyzowanymi (TF-CBT, EMDR, Prolonged Exposure) w celu wygaszenia i integracji; FAZA 3: Reintegracja i konsolidacja — odbudowa relacji społecznych, celów życiowych i nowej tożsamości po traumie.",
+      "sourceIds": [
+        "src-herman-trauma-1992",
+        "src-istss-guidelines-2019",
+        "src-nice-ng116-ptsd-2018"
+      ],
+      "checkpointId": "psychoterapia-traumy-fazy-i-metody-q2-checkpoint-1-v2",
+      "claimIds": [
+        "claim-trauma-phase-based-treatment",
+        "claim-trauma-exposure-contraindications"
+      ],
+      "inlineEnhancements": []
+    },
+    {
+      "id": "psychoterapia-traumy-fazy-i-metody-block-2",
+      "title": "Metody terapii opartej na dowodach: TF-CBT i EMDR",
+      "text": "W wytycznych NICE, APA i ISTSS metodami I rzutu w PTSD są: 1) Terapia poznawczo-behawioralna ukierunkowana na traumę (TF-CBT / CPT / PE) — identyfikacja i restrukturyzacja zniekształconych przekonań o winie i zagrożeniu połączona z kontrolowaną ekspozycją wyobrażeniową i in vivo; 2) Terapia odwrażliwiania i przetwarzania za pomocą ruchów gałek ocznych (EMDR) — obustronna stymulacja sensoryczna (ruch oczu, tapping) podczas aktywacji wspomnienia urazowego, obniżająca pobudzenie ciała migdałowatego i ułatwiająca integrację korową.",
+      "sourceIds": [
+        "src-herman-trauma-1992",
+        "src-istss-guidelines-2019",
+        "src-nice-ng116-ptsd-2018"
+      ],
+      "checkpointId": "psychoterapia-traumy-fazy-i-metody-q3-checkpoint-2-v2",
+      "claimIds": [
+        "claim-trauma-phase-based-treatment",
+        "claim-trauma-exposure-contraindications"
+      ],
+      "inlineEnhancements": []
+    },
+    {
+      "id": "psychoterapia-traumy-fazy-i-metody-block-3",
+      "title": "Kiedy trauma processing NALEŻY ODROCZYĆ? Przeciwwskazania",
+      "text": "BEZWZGLĘDNE ZASADY BEZPIECZEŃSTWA: Forsowanie ekspozycji lub Fazy 2 leczenia jest błędem sztuki w sytuacjach: 1) Aktywnej suicydalności lub niedawnych zagrażających życiu samouszkodzeniach; 2) Trwającego braku bezpieczeństwa zewnętrznego (pacjent nadal mieszka ze sprawcą przemocy lub jest szantażowany); 3) Czynnej intoksykacji lub ciężkiego uzależnienia od substancji; 4) Ostrej dekompensacji psychotycznej; 5) Ciężkiej dysocjacji, w której pacjent natychmiast traci kontakt z rzeczywistością w gabinecie (brak tzw. okna tolerancji afektu — window of tolerance).",
+      "sourceIds": [
+        "src-herman-trauma-1992",
+        "src-istss-guidelines-2019",
+        "src-nice-ng116-ptsd-2018"
+      ],
+      "claimIds": [
+        "claim-trauma-phase-based-treatment",
+        "claim-trauma-exposure-contraindications"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psychoterapia-traumy-fazy-i-metody-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "psychoterapia-traumy-fazy-i-metody-obj-1"
+      ],
+      "prompt": "W której sytuacji klinicznej należy BEZWZGLĘDNIE ODROCZYĆ ekspozycję na traumę (Fazę 2)?",
+      "options": [
+        "W stanie czynnego kryzysu samobójczego, ciężkich samookaleczeń lub trwającej przemocy domowej",
+        "Gdy pacjent ma w domu psa rasy golden retriever",
+        "Gdy temperatura powietrza na zewnątrz wynosi 22 stopnie Celsjusza"
+      ],
+      "optionFeedback": [
+        "Brak bezpieczeństwa wewnętrznego lub zewnętrznego jest bezwzględnym przeciwwskazaniem do ekspozycji.",
+        "Posiadanie zwierzęcia domowego może wspierać leczenie.",
+        "Brak związku z warunkami pogodowymi."
+      ],
+      "answer": 0,
+      "explanation": "Brak bezpieczeństwa wewnętrznego lub zewnętrznego jest bezwzględnym przeciwwskazaniem do ekspozycji.",
+      "hint": "Zwróć uwagę na ramy czasowe oraz kryteria wykluczenia.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-herman-trauma-1992",
+        "src-istss-guidelines-2019",
+        "src-nice-ng116-ptsd-2018"
+      ],
+      "claimIds": [
+        "claim-trauma-phase-based-treatment"
+      ]
+    },
+    {
+      "id": "psychoterapia-traumy-fazy-i-metody-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "psychoterapia-traumy-fazy-i-metody-obj-2"
+      ],
+      "prompt": "Które metody psychoterapii są uznawane za metody pierwszego wyboru o najwyższej randze dowodów w PTSD?",
+      "options": [
+        "TF-CBT (terapia poznawczo-behawioralna zorientowana na traumę) oraz EMDR",
+        "Terapia pijawkami lekarskimi i homeopatia",
+        "Wyłącznie izolowana kinezyterapia stawu kolanowego"
+      ],
+      "optionFeedback": [
+        "Obie metody posiadają najwyższą siłę rekomendacji w wytycznych NICE, APA i ISTSS.",
+        "To metody nienaukowe bez dowodów w medycynie opartej na faktach (EBM).",
+        "To rehabilitacja ortopedyczna."
+      ],
+      "answer": 0,
+      "explanation": "Obie metody posiadają najwyższą siłę rekomendacji w wytycznych NICE, APA i ISTSS.",
+      "hint": "Kluczem jest bezpieczeństwo i hierarchia postępowania.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-herman-trauma-1992",
+        "src-istss-guidelines-2019",
+        "src-nice-ng116-ptsd-2018"
+      ],
+      "claimIds": [
+        "claim-trauma-exposure-contraindications"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "psychoterapia-traumy-fazy-i-metody-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "psychoterapia-traumy-fazy-i-metody-obj-1",
+      "psychoterapia-traumy-fazy-i-metody-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejsze kryteria i pułapki różnicowania z lekcji „Fazy leczenia traumy: stabilizacja, TF-CBT, EMDR i ekspozycja”.",
+    "modelAnswer": "Leczenie traumy wymaga modelu 3-fazowego (stabilizacja -> przetwarzanie -> reintegracja). W Fazy 2 stosuje się TF-CBT lub EMDR. Przetwarzanie należy odroczyć przy suicydalności, braku bezpieczeństwa i aktywnej intoksykacji.",
+    "explanation": "Porównaj swoją odpowiedź z podsumowaniem klinicznym. Zwróć uwagę na kryteria decyzyjne i czerwone flagi.",
+    "difficulty": "both",
+    "reasoning": "safety",
+    "sourceIds": [
+      "src-herman-trauma-1992",
+      "src-istss-guidelines-2019",
+      "src-nice-ng116-ptsd-2018"
+    ],
+    "claimIds": [
+      "claim-trauma-phase-based-treatment",
+      "claim-trauma-exposure-contraindications"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "psychoterapia-traumy-fazy-i-metody-q4-exit-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "psychoterapia-traumy-fazy-i-metody-obj-1"
+      ],
+      "prompt": "Jaka jest rola farmakoterapii w leczeniu dysocjacyjnego zaburzenia tożsamości (DID)?",
+      "options": [
+        "Leki nie leczą samego DID; stosuje się je wyłącznie pomocniczo na objawy współistniejące (depresję, lęk)",
+        "Pojedyncza tabletka klozapiny całkowicie scala tożsamość w 5 minut",
+        "Farmakoterapia jest surowo zakazana pod karą więzienia"
+      ],
+      "optionFeedback": [
+        "Podstawową metodą leczenia DID jest długoterminowa psychoterapia integracyjna; brak swoistej farmakoterapii rozszczepienia tożsamości.",
+        "Brak takiego leku w światowej medycynie.",
+        "Leczenie wspomagające zaburzeń współistniejących jest dozwolone i często potrzebne."
+      ],
+      "answer": 0,
+      "explanation": "Podstawową metodą leczenia DID jest długoterminowa psychoterapia integracyjna; brak swoistej farmakoterapii rozszczepienia tożsamości.",
+      "hint": "Przypomnij sobie wzorce neurobiologiczne i kontrfaktyczne reguły decyzyjne.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-herman-trauma-1992",
+        "src-istss-guidelines-2019",
+        "src-nice-ng116-ptsd-2018"
+      ],
+      "claimIds": [
+        "claim-trauma-phase-based-treatment"
+      ]
+    },
+    {
+      "id": "psychoterapia-traumy-fazy-i-metody-q5-exit-2-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "psychoterapia-traumy-fazy-i-metody-obj-2"
+      ],
+      "prompt": "Na czym polega koncepcja „okna tolerancji afektu” (window of tolerance) w pracy z traumą?",
+      "options": [
+        "Na strefie optymalnego pobudzenia OUN, w której pacjent może przetwarzać emocje bez ucieczki w panikę lub odrętwienie",
+        "Na konieczności otwierania okna w gabinecie co 10 minut w celach wietrzenia",
+        "Na tolerowaniu spóźnień pacjenta o maksymalnie 30 sekund"
+      ],
+      "optionFeedback": [
+        "Praca terapeutyczna jest skuteczna tylko w granicach okna tolerancji (pomiędzy hiper-arousalem a hipo-arousalem dysocjacyjnym).",
+        "To pojęcie z zakresu higieny pomieszczeń, nie psychoterapii afektu.",
+        "Pojęcie dotyczy regulacji układu nerwowego, a nie punktualności."
+      ],
+      "answer": 0,
+      "explanation": "Praca terapeutyczna jest skuteczna tylko w granicach okna tolerancji (pomiędzy hiper-arousalem a hipo-arousalem dysocjacyjnym).",
+      "hint": "Wybierz informację o najwyższej wadze różnicującej.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "src-herman-trauma-1992",
+        "src-istss-guidelines-2019",
+        "src-nice-ng116-ptsd-2018"
+      ],
+      "claimIds": [
+        "claim-trauma-phase-based-treatment"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "trauma-dissociation-workbench"
+  ],
+  "widgetConfig": {},
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, CG78, ISTSS, pure content-src architecture"
+  }
+}

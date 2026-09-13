@@ -1,6 +1,10 @@
 import type { LessonExperienceV2 } from '../course-types.ts';
 
-export type PsychiatryModuleId = 'psych-afektywne' | 'psych-farmakologia' | 'psych-organiczne';
+export type PsychiatryModuleId =
+  | 'psych-afektywne'
+  | 'psych-farmakologia'
+  | 'psych-organiczne'
+  | 'psych-trauma-dysocjacja';
 
 export type PsychiatryLessonId =
   // Moduł 01: Fundamenty psychiatrii i diagnostyka kliniczna (16 lekcji)
@@ -56,7 +60,24 @@ export type PsychiatryLessonId =
   | 'bpsd-objawy-behawioralne-i-psychologiczne'
   | 'psychofarmakologia-wieku-podeszlego'
   | 'depresja-wieku-podeszlego-i-poznanie'
-  | 'zdolnosc-decyzyjna-capacity-i-safeguarding';
+  | 'zdolnosc-decyzyjna-capacity-i-safeguarding'
+  // Moduł 04: Trauma, dysocjacja i zaburzenia osobowości (16 lekcji)
+  | 'trauma-neurobiologia-zagrozenia'
+  | 'pamiec-traumatyczna-i-extinction'
+  | 'reakcja-na-stres-asr-vs-asd'
+  | 'ptsd-kryteria-i-fenomenologia'
+  | 'cptsd-zlozone-ptsd-icd11'
+  | 'spektrum-dysocjacji-kontinuum'
+  | 'depersonalizacja-i-derealizacja'
+  | 'amnezja-dysocjacyjna-i-fuga'
+  | 'did-tozsamosc-i-rozszczepienie'
+  | 'did-roznicowanie-bpd-i-psychoza'
+  | 'osobowosc-icd11-wymiary'
+  | 'borderline-bpd-mechanizmy'
+  | 'bpd-roznicowanie-cptsd-chad-adhd'
+  | 'trauma-somatyka-mimiki-i-bezpieczenstwo'
+  | 'psychoterapia-traumy-fazy-i-metody'
+  | 'dbt-interwencja-kryzysowa-i-bezpieczenstwo';
 
 export interface WhatWouldChangeYourMind {
   knownFacts: string[];
@@ -81,13 +102,14 @@ export interface PsychiatryLessonEnhancement {
     | 'pk-sensitivity'
     | 'safety-context'
     | 'neurocognitive-differential'
-    | 'geriatric-safety';
+    | 'geriatric-safety'
+    | 'trauma-dissociation-differential';
 }
 
 export interface PsychiatryWorkbenchPreset {
   id: string;
   title: string;
-  tab: 'psych-center' | 'diagnostic' | 'pharmacology' | 'safety' | 'neuro-geriatric';
+  tab: 'psych-center' | 'diagnostic' | 'pharmacology' | 'safety' | 'neuro-geriatric' | 'trauma-dissociation';
   patientSummary: string;
   data: Record<string, unknown>;
 }

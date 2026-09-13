@@ -1,0 +1,242 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "trauma-neurobiologia-zagrozenia",
+  "objectives": [
+    {
+      "id": "trauma-neurobiologia-zagrozenia-obj-1",
+      "statement": "Zrozumiesz obwód neurobiologiczny reakcji na zagrożenie: ciało migdałowate, vmPFC, hipokamp i PAG.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "trauma-neurobiologia-zagrozenia-obj-2",
+      "statement": "Poznasz fizjologię reakcji sympatyko-wagalnej oraz mechanizm załamania hamowania kory przedczołowej.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "trauma-neurobiologia-zagrozenia-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "trauma-neurobiologia-zagrozenia-obj-1"
+    ],
+    "prompt": "Jaki wzorzec aktywności neurofunkcjonalnej jest typowy dla klasycznego PTSD w badaniach fMRI?",
+    "options": [
+      "Hipoaktywacja vmPFC przy hiperaktywacji ciała migdałowatego",
+      "Jednoczesne zniszczenie wzgórza i kory potylicznej",
+      "Wybiórcza hiperaktywacja hipokampa z zanikiem ciała migdałowatego"
+    ],
+    "optionFeedback": [
+      "Osłabione hamowanie zstępujące kory czołowej pozwala ciału migdałowatemu na niekontrolowane wyzwalanie reakcji lękowej.",
+      "Wzgórze nie ulega zniszczeniu, dochodzi do dysfunkcji przetwarzania sensorycznego i limbicznego.",
+      "Hipokamp wykazuje tendencję do obniżenia objętości i hipofunkcji, a ciało migdałowate jest nadaktywne."
+    ],
+    "answer": 0,
+    "explanation": "Osłabione hamowanie zstępujące kory czołowej pozwala ciału migdałowatemu na niekontrolowane wyzwalanie reakcji lękowej.",
+    "hint": "Przeanalizuj mechanizm biologiczny i kryteria przed zaznaczeniem opcji.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "src-icd11-cddr-2024",
+      "src-apa-ptsd-guideline-2017"
+    ],
+    "claimIds": [
+      "claim-trauma-hpa-amygdala-threat"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "trauma-neurobiologia-zagrozenia-block-1",
+      "title": "Anatomia obwodu zagrożenia: Szybka i wolna ścieżka LeDoux",
+      "text": "Informacja o bodźcu zagrażającym dociera ze wzgórza do ciała migdałowatego dwiema drogami: szybką, niskorozdzielczą drogą podkorową („low road” — bezpośrednio ze wzgórza do jądra bocznego ciała migdałowatego, umożliwiającą natychmiastową reakcję wegetatywną w ułamku sekundy) oraz drogą korową („high road” — przez korę sensoryczną do kory przedczołowej i hipokampa, umożliwiającą precyzyjną ocenę kontekstualną). W traumie dochodzi do hiperaktywacji ciała migdałowatego przy jednoczesnym funkcjonalnym odłączeniu (hyporesponsiveness) brzuszno-przyśrodkowej kory przedczołowej (vmPFC) i przedniego zakrętu obręczy (dACC), co uniemożliwia zahamowanie reakcji lękowej.",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-apa-ptsd-guideline-2017"
+      ],
+      "checkpointId": "trauma-neurobiologia-zagrozenia-q2-checkpoint-1-v2",
+      "claimIds": [
+        "claim-trauma-hpa-amygdala-threat"
+      ],
+      "inlineEnhancements": []
+    },
+    {
+      "id": "trauma-neurobiologia-zagrozenia-block-2",
+      "title": "Rola substancji szarej okołowodociągowej (PAG) i reakcje obronne",
+      "text": "Substancja szara okołowodociągowa (PAG) w pniu mózgu koordynuje bezwarunkowe wzorce obronne. Grzbietowo-boczna część PAG (dlPAG) zawiaduje aktywnymi strategiami obrony (ucieczka/walka — fight/flight), wywołując tachykardię, nadciśnienie i hiperwentylację. Z kolei brzuszno-boczna część PAG (vlPAG) odpowiada za pasywne strategie obrony: znieruchomienie (freezing) oraz dysocjacyjne zwiotczenie/omdlenie (tonic immobility / collapse), charakteryzujące się bradykardią, hipotensją i analgezją opioidową. Jest to neurobiologiczny fundament dysocjacji peritraumatycznej w sytuacji nieuchronnego zagrożenia.",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-apa-ptsd-guideline-2017"
+      ],
+      "checkpointId": "trauma-neurobiologia-zagrozenia-q3-checkpoint-2-v2",
+      "claimIds": [
+        "claim-trauma-hpa-amygdala-threat"
+      ],
+      "inlineEnhancements": []
+    },
+    {
+      "id": "trauma-neurobiologia-zagrozenia-block-3",
+      "title": "Dysregulacja osi HPA i allostaza",
+      "text": "W ostrym stresie kortykoliberyna (CRH) z podwzgórza stymuluje wyrzut ACTH i kortyzolu. W przewlekłym PTSD obserwuje się paradoksalne zjawisko: podwyższone stężenie CRH w płynie mózgowo-rdzeniowym przy niskim lub prawidłowo-niskim poziomie kortyzolu w surowicy i dobowej zbiórce moczu. Wynika to z nadmiernej wrażliwości receptorów glukokortykoidowych (GR) w pętli ujemnego sprzężenia zwrotnego (hyper-suppression w teście z deksametazonem 0,5 mg). Utrwalony stan przeciążenia allostatycznego prowadzi do przewlekłego stanu zapalnego o niskim nasileniu (wzrost IL-6, TNF-alfa).",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-apa-ptsd-guideline-2017"
+      ],
+      "claimIds": [
+        "claim-trauma-hpa-amygdala-threat"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "trauma-neurobiologia-zagrozenia-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "trauma-neurobiologia-zagrozenia-obj-1"
+      ],
+      "prompt": "Która struktura pnia mózgu koordynuje zwiotczenie i znieruchomienie (tonic immobility) w obliczu nieuchronnego zagrożenia?",
+      "options": [
+        "Brzuszno-boczna część substancji szarej okołowodociągowej (vlPAG)",
+        "Istota czarna część zbita (SNpc)",
+        "Jądro pasma samotnego w mechanizmie czysto wymiotnym"
+      ],
+      "optionFeedback": [
+        "vlPAG odpowiada za strategię pasywną (bradykardia, hipotensja, zwiotczenie, hipoalgezja).",
+        "Istota czarna koordynuje szlak dopaminergiczny nigrostriatalny, odpowiadający za ruch.",
+        "NTS integruje sygnały trzewne, ale koordynatorem zachowań obronnych jest PAG."
+      ],
+      "answer": 0,
+      "explanation": "vlPAG odpowiada za strategię pasywną (bradykardia, hipotensja, zwiotczenie, hipoalgezja).",
+      "hint": "Zwróć uwagę na ramy czasowe oraz kryteria wykluczenia.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-apa-ptsd-guideline-2017"
+      ],
+      "claimIds": [
+        "claim-trauma-hpa-amygdala-threat"
+      ]
+    },
+    {
+      "id": "trauma-neurobiologia-zagrozenia-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "trauma-neurobiologia-zagrozenia-obj-2"
+      ],
+      "prompt": "Co charakteryzuje oś HPA u wielu chorych z przewlekłym klasycznym PTSD?",
+      "options": [
+        "Wzrost stężenia CRH w OUN przy zwiększonej wrażliwości receptorów GR i relatywnie niskim kortyzolu wolnym",
+        "Masywny guz chromochłonny nadnerczy",
+        "Niewrażliwość przysadki na kortykoliberynę z zanikiem ACTH"
+      ],
+      "optionFeedback": [
+        "Paradoks PTSD: silny napęd centralny CRH z jednoczesnym nadmiernym hamowaniem przez uwrażliwione receptory GR.",
+        "Guz chromochłonny to feochromocytoma rdzenia nadnerczy, a nie zaburzenie osi HPA.",
+        "Przysadka reaguje, ale ujemne sprzężenie zwrotne na poziomie receptora GR jest nadmiernie czułe."
+      ],
+      "answer": 0,
+      "explanation": "Paradoks PTSD: silny napęd centralny CRH z jednoczesnym nadmiernym hamowaniem przez uwrażliwione receptory GR.",
+      "hint": "Kluczem jest bezpieczeństwo i hierarchia postępowania.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-apa-ptsd-guideline-2017"
+      ],
+      "claimIds": [
+        "claim-trauma-hpa-amygdala-threat"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "trauma-neurobiologia-zagrozenia-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "trauma-neurobiologia-zagrozenia-obj-1",
+      "trauma-neurobiologia-zagrozenia-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejsze kryteria i pułapki różnicowania z lekcji „Neurobiologia zagrożenia i fizjologia stresu pourazowego”.",
+    "modelAnswer": "Neurobiologia traumy opiera się na załamaniu kontroli przedczołowej (vmPFC) nad ciałem migdałowatym, dysfunkcji hipokampa oraz nieadekwatnym uruchamianiu reakcji pniowych (PAG) i dysregulacji osi HPA z nadwrażliwością receptorów GR.",
+    "explanation": "Porównaj swoją odpowiedź z podsumowaniem klinicznym. Zwróć uwagę na kryteria decyzyjne i czerwone flagi.",
+    "difficulty": "both",
+    "reasoning": "safety",
+    "sourceIds": [
+      "src-icd11-cddr-2024",
+      "src-apa-ptsd-guideline-2017"
+    ],
+    "claimIds": [
+      "claim-trauma-hpa-amygdala-threat"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "trauma-neurobiologia-zagrozenia-q4-exit-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "trauma-neurobiologia-zagrozenia-obj-1"
+      ],
+      "prompt": "Czym różni się wzorzec neuroobrazowy podtypu dysocjacyjnego PTSD (PTSD-DS) od klasycznego PTSD?",
+      "options": [
+        "Nadmierną inhibicją czołową (hiperaktywacja vmPFC/dACC) tłumiącą ciało migdałowate",
+        "Zanikaniem kory móżdżku bez zmian w układzie limbicznym",
+        "Całkowitym brakiem reakcji na bodźce słuchowe i wzrokowe w pniu mózgu"
+      ],
+      "optionFeedback": [
+        "Podtyp dysocjacyjny cechuje się nadmierną kontrolą hamującą kory przedczołowej, co wywołuje depersonalizację i znieczulenie afektu.",
+        "Móżdżek nie jest głównym siedliskiem dysocjacji pourazowej.",
+        "Pień mózgu reaguje, blokada dotyczy integracji korowo-limbicznej."
+      ],
+      "answer": 0,
+      "explanation": "Podtyp dysocjacyjny cechuje się nadmierną kontrolą hamującą kory przedczołowej, co wywołuje depersonalizację i znieczulenie afektu.",
+      "hint": "Przypomnij sobie wzorce neurobiologiczne i kontrfaktyczne reguły decyzyjne.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-apa-ptsd-guideline-2017"
+      ],
+      "claimIds": [
+        "claim-trauma-hpa-amygdala-threat"
+      ]
+    },
+    {
+      "id": "trauma-neurobiologia-zagrozenia-q5-exit-2-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "trauma-neurobiologia-zagrozenia-obj-2"
+      ],
+      "prompt": "Dlaczego osłabienie funkcji hipokampa w trakcie ostrej traumy utrudnia późniejsze zdrowienie?",
+      "options": [
+        "Wspomnienie urazowe nie zostaje opatrzone znacznikiem czasu i miejsca, stając się intruzywnym fragmentem „tu i teraz”",
+        "Pacjent natychmiast trwale zapomina własne imię i nazwisko",
+        "Dochodzi do nieodwracalnej utraty pamięci proceduralnej (jazda na rowerze)"
+      ],
+      "optionFeedback": [
+        "Brak integracji hipokampa sprawia, że pamięć sensoryczna nie staje się bezpieczną przeszłością, lecz powraca jako flashback.",
+        "To amnezja uogólniona, rzadka i nietypowa dla typowego PTSD.",
+        "Pamięć proceduralna jest zależna od móżdżku i jąder podstawy, nie od hipokampa."
+      ],
+      "answer": 0,
+      "explanation": "Brak integracji hipokampa sprawia, że pamięć sensoryczna nie staje się bezpieczną przeszłością, lecz powraca jako flashback.",
+      "hint": "Wybierz informację o najwyższej wadze różnicującej.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-apa-ptsd-guideline-2017"
+      ],
+      "claimIds": [
+        "claim-trauma-hpa-amygdala-threat"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "trauma-dissociation-workbench"
+  ],
+  "widgetConfig": {},
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, CG78, ISTSS, pure content-src architecture"
+  }
+}

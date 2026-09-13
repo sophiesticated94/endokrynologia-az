@@ -1,0 +1,163 @@
+{
+  "id": "depersonalizacja-i-derealizacja",
+  "moduleId": "psych-trauma-dysocjacja",
+  "title": "Zespół depersonalizacji i derealizacji (DPDR)",
+  "subtitle": "Objawy obcości, intact reality testing, czynniki wyzwalające i różnicowanie z psychozą",
+  "group": "B. Dysocjacja",
+  "minutes": 18,
+  "goals": [
+    "Rozpoznasz objawy depersonalizacji i derealizacji oraz kluczowe kryterium zachowanego testowania rzeczywistości.",
+    "Zrozumiesz czynniki wyzwalające (THC, panika) i opanujesz różnicowanie z prodromem schizofrenii."
+  ],
+  "sections": [
+    {
+      "title": "Fenomenologia: Ciało jak z plastiku, świat jak zza szyby",
+      "text": "Depersonalizacja to subiektywne poczucie obcości, odłączenia lub bycia zewnętrznym obserwatorem własnego ciała, myśli czy emocji (np. „czuję się jak robot”, „mój głos brzmi obco”, „moje dłonie nie należą do mnie”). Derealizacja to poczucie obcości i nierealności otoczenia — świat wydaje się sztuczny, bezbarwny, dwuwymiarowy, jak plan filmowy lub widziany przez grubą szybę czy mgłę. Zespół depersonalizacji-derealizacji (DPDR wg ICD-11 6B66) diagnozuje się, gdy objawy te mają charakter przewlekły, nawracający i powodują znaczne cierpienie."
+    },
+    {
+      "title": "Klucz diagnostyczny: Zachowane testowanie rzeczywistości (Intact Reality Testing)",
+      "text": "FUNDAMENTALNY WARUNEK BEZPIECZEŃSTWA: Pacjent z DPDR w pełni zdaje sobie sprawę, że jego odczucia mają charakter subiektywny („Wiem, że to moje ręce, ale czuję, jakby nie były moje”). Testowanie rzeczywistości jest nienaruszone (intact reality testing). Pacjent boi się, że „zwariuje” lub że to początek schizofrenii, co rodzi wtórny lęk paniczny. Gdyby pacjent nabrał sztywnego, urojeniowego przekonania, że jego narządy rzeczywiście zniknęły lub świat fizycznie przestał istnieć, mamy do czynienia z psychozą (np. zespół Cotarda), a nie z DPDR!"
+    },
+    {
+      "title": "Wyzwalacze i neurobiologia: Kannabinoidy i ataki paniki",
+      "text": "Aż u 30–50% młodych chorych początek przewlekłego DPDR wiąże się z pojedynczym epizodem intoksykacji kannabinoidami (zwłaszcza marihuaną o wysokiej zawartości THC) lub napadem paniki. Aktywacja receptorów CB1 w hipokampie i ciele migdałowatym połączona z ostrym wyrzutem noradrenaliny wywołuje przejściową derealizację. Jeśli pacjent zinterpretuje ten stan katastroficznie („uszkodziłem sobie mózg na zawsze”), powstaje błędne koło hiper-czujności (metapoznawczy monitoring własnej percepcji), które utrwala objawy."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Cecha kliniczna",
+      "Zespół DPDR",
+      "Pierwotna psychoza (Schizofrenia)"
+    ],
+    "rows": [
+      [
+        "Testowanie rzeczywistości",
+        "NIENARUSZONE — pacjent wie, że to iluzja („jak gdyby”)",
+        "ZABURZONE — sztywne przekonanie urojeniowe o zmianie świata"
+      ],
+      [
+        "Stosunek do objawu",
+        "Egodystoniczny, budzi lęk i cierpienie („chcę wrócić do siebie”)",
+        "Egosyntoniczny lub urojeniowo zinterpretowany (wpływ z zewnątrz)"
+      ],
+      [
+        "Formalny tok myślenia",
+        "Prawidłowy, logiczny, zachowana krytyczna autoobserwacja",
+        "Rozkojarzenie, niespójność, ześlizgiwanie się myśli"
+      ],
+      [
+        "Wyzwalacz typowy",
+        "Marihuana, atak paniki, deprywacja snu, przemęczenie",
+        "Często podstępny początek bez ostrego pojedynczego wyzwalacza"
+      ]
+    ]
+  },
+  "advanced": "W badaniach fizjologicznych u chorych z DPDR wykazano tłumienie odpowiedzi układu autonomicznego na bodźce emocjonalne (płaska krzywa przewodnictwa skóry GSR przy oglądaniu drastycznych obrazów), co koreluje z nadmierną aktywacją prawej kory przedczołowej i jednoczesnym hamowaniem wyspy (insula) — struktury odpowiedzialnej za interocepcję i ucieleśnienie (embodiment).",
+  "summary": "DPDR to poczucie obcości jaźni i świata przy nienaruszonym testowaniu rzeczywistości. Często wyzwalane przez THC lub panikę. Odróżnia się od psychozy pełnym krytycyzmem chorego.",
+  "sourceIds": [
+    "src-icd11-cddr-2024",
+    "src-dsm5-tr-2022"
+  ],
+  "questions": [
+    {
+      "id": "depersonalizacja-i-derealizacja-q1",
+      "lessonId": "depersonalizacja-i-derealizacja",
+      "prompt": "Jaka cecha ma decydujące znaczenie w odróżnieniu zespołu DPDR od debiutu schizofrenii?",
+      "options": [
+        {
+          "text": "Zachowane testowanie rzeczywistości — pacjent wie, że odczucie nierealności jest subiektywne",
+          "explanation": "Krytycyzm i świadomość subiektywnego charakteru zmian percepcji definiują DPDR."
+        },
+        {
+          "text": "Podwyższona leukocytoza z neutrofilią",
+          "explanation": "To parametr stanu zapalnego, bez związku z różnicowaniem psychopatologicznym."
+        },
+        {
+          "text": "Obecność nadciśnienia tętniczego złośliwego",
+          "explanation": "To stan nagły w kardiologii, nie kryterium DPDR."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "depersonalizacja-i-derealizacja-q2",
+      "lessonId": "depersonalizacja-i-derealizacja",
+      "prompt": "Która substancja psychoaktywna jest najczęstszym wyzwalaczem przewlekłego DPDR u młodych dorosłych?",
+      "options": [
+        {
+          "text": "Kannabinoidy (marihuana, zwłaszcza szczepy o wysokim stężeniu THC)",
+          "explanation": "Agonizm receptorów CB1 w połączeniu z napadem lękowym jest klasycznym triggerem DPDR."
+        },
+        {
+          "text": "Witamina B12 w dawkach doustnych",
+          "explanation": "Witamina B12 jest bezpieczną substancją odżywczą."
+        },
+        {
+          "text": "Insulina ludzka",
+          "explanation": "Insulina reguluje glikemię, nie wyzwala specyficznie DPDR."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "depersonalizacja-i-derealizacja-q3",
+      "lessonId": "depersonalizacja-i-derealizacja",
+      "prompt": "Dlaczego pacjenci z DPDR często nieustannie sprawdzają swoje myśli i ciało w lustrze?",
+      "options": [
+        {
+          "text": "Wynika to z lękowego monitoringu metapoznawczego, który paradoksalnie nasila odczucie obcości",
+          "explanation": "Skupianie uwagi na percepcji utrudnia automatyczne doświadczanie i pogłębia derealizację."
+        },
+        {
+          "text": "Ponieważ wierzą, że ich twarz zamieniła się w twarz Napoleona Bonaparte",
+          "explanation": "To urojeniowa identyfikacja, typowa dla psychozy, a nie DPDR."
+        },
+        {
+          "text": "Mają bezwzględny zakaz spania wydany przez lekarza",
+          "explanation": "Brak takiego zalecenia medycznego."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "depersonalizacja-i-derealizacja-q4",
+      "lessonId": "depersonalizacja-i-derealizacja",
+      "prompt": "Jakie zmiany w odpowiedzi układu autonomicznego na bodźce afektywne obserwuje się w DPDR?",
+      "options": [
+        {
+          "text": "Tłumienie reaktywności wegetatywnej (obniżone przewodnictwo skóry GSR, emocjonalne znieczulenie)",
+          "explanation": "Mózg w DPDR wygasza rezonans afektywny, co pacjent odczuwa jako brak czucia emocji."
+        },
+        {
+          "text": "Ciągły częstoskurcz komorowy 300/min",
+          "explanation": "To stan bezpośredniego zagrożenia życia, nie profil DPDR."
+        },
+        {
+          "text": "Zupełny brak wydzielania potu na całym ciele przez całe życie",
+          "explanation": "To anhidroza wrodzona, rzadka choroba genetyczna."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "depersonalizacja-i-derealizacja-q5",
+      "lessonId": "depersonalizacja-i-derealizacja",
+      "prompt": "Gdyby pacjent zgłaszający, że „świat jest sztuczny”, oświadczył, że wszyscy ludzie to roboty sterowane przez satelitę:",
+      "options": [
+        {
+          "text": "Rozpoznanie przesuwa się w stronę zespołu urojeniowego/psychozy (utrata testowania rzeczywistości)",
+          "explanation": "Utrata krytycyzmu i treść urojeniowa przekraczają granice DPDR i wskazują na psychozę."
+        },
+        {
+          "text": "Potwierdza to łagodną, podręcznikową postać DPDR",
+          "explanation": "DPDR bezwzględnie wymaga zachowanego testowania rzeczywistości."
+        },
+        {
+          "text": "Należy natychmiast odstawić sól kuchenną",
+          "explanation": "Brak związku dietetycznego."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

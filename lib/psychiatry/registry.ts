@@ -7,13 +7,21 @@ import type {
 import { buildAllPsychiatryExperiences } from './experiences/index.ts';
 import { GENERAL_PSYCHIATRY_ENHANCEMENTS_DATA } from './registry-general.ts';
 import { NEUROCOGNITIVE_ENHANCEMENTS_DATA } from './registry-neuro.ts';
+import { TRAUMA_ENHANCEMENTS_DATA } from './registry-trauma.ts';
 
 export const PSYCHIATRY_LESSON_ENHANCEMENTS_DATA: Record<
   PsychiatryLessonId,
   Omit<PsychiatryLessonEnhancement, 'lessonId' | 'experience'>
 > = {
   ...GENERAL_PSYCHIATRY_ENHANCEMENTS_DATA,
-  ...(NEUROCOGNITIVE_ENHANCEMENTS_DATA as any),
+  ...(NEUROCOGNITIVE_ENHANCEMENTS_DATA as unknown as Record<
+    PsychiatryLessonId,
+    Omit<PsychiatryLessonEnhancement, 'lessonId' | 'experience'>
+  >),
+  ...(TRAUMA_ENHANCEMENTS_DATA as unknown as Record<
+    PsychiatryLessonId,
+    Omit<PsychiatryLessonEnhancement, 'lessonId' | 'experience'>
+  >),
 };
 
 export function buildPsychiatryEnhancementRegistry(

@@ -6,6 +6,7 @@ import { getPharmacologyReceptorsExperiences } from './pharmacology-receptors.ts
 import { getClinicalPharmacotherapyExperiences } from './clinical-pharmacotherapy.ts';
 import { getSafetyEmergenciesExperiences } from './safety-emergencies-interventions.ts';
 import { getNeuroGeriatricExperiences } from './neuro-geriatric.ts';
+import { traumaExperiences } from '../trauma-content.ts';
 
 export function buildAllPsychiatryExperiences(lessons: Lesson[]): Record<string, LessonExperienceV2> {
   const map = new Map(lessons.map(l => [l.id, l]));
@@ -17,6 +18,7 @@ export function buildAllPsychiatryExperiences(lessons: Lesson[]): Record<string,
     ...getClinicalPharmacotherapyExperiences(map),
     ...getSafetyEmergenciesExperiences(map),
     ...getNeuroGeriatricExperiences(map),
+    ...traumaExperiences,
   };
 
   // Ensure 100% coverage for any lesson

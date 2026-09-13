@@ -11,16 +11,18 @@ import type { Navigation } from './types';
 
 export function PsychiatryCourseMap({ state, go }: { state: LearningState; go: Navigation }) {
   const [activeTab, setActiveTab] = useState<
-    'all' | 'psych-afektywne' | 'psych-farmakologia' | 'psych-organiczne'
+    'all' | 'psych-afektywne' | 'psych-farmakologia' | 'psych-organiczne' | 'psych-trauma-dysocjacja'
   >('all');
 
   const afektywneLessons = psychiatryLessons.filter(l => l.moduleId === 'psych-afektywne');
   const farmakologiaLessons = psychiatryLessons.filter(l => l.moduleId === 'psych-farmakologia');
   const organiczneLessons = psychiatryLessons.filter(l => l.moduleId === 'psych-organiczne');
+  const traumaLessons = psychiatryLessons.filter(l => l.moduleId === 'psych-trauma-dysocjacja');
 
   const afektywneGroups = Array.from(new Set(afektywneLessons.map(l => l.group)));
   const farmakologiaGroups = Array.from(new Set(farmakologiaLessons.map(l => l.group)));
   const organiczneGroups = Array.from(new Set(organiczneLessons.map(l => l.group)));
+  const traumaGroups = Array.from(new Set(traumaLessons.map(l => l.group)));
 
   return (
     <>
@@ -54,6 +56,12 @@ export function PsychiatryCourseMap({ state, go }: { state: LearningState; go: N
           onClick={() => setActiveTab('psych-organiczne')}
         >
           Moduł 03: Organiczna i geriatria ({organiczneLessons.length})
+        </button>
+        <button
+          className={activeTab === 'psych-trauma-dysocjacja' ? 'active' : ''}
+          onClick={() => setActiveTab('psych-trauma-dysocjacja')}
+        >
+          Moduł 04: Trauma i dysocjacja ({traumaLessons.length})
         </button>
       </div>
 
@@ -120,6 +128,30 @@ export function PsychiatryCourseMap({ state, go }: { state: LearningState; go: N
                 <h3>{group}</h3>
                 <div className="lesson-list">
                   {organiczneLessons
+                    .filter(l => l.group === group)
+                    .map(l => (
+                      <LessonRow key={l.id} lesson={l} state={state} go={go} />
+                    ))}
+                </div>
+              </div>
+            ))}
+          </section>
+        )}
+
+        {/* Moduł 04 */}
+        {(activeTab === 'all' || activeTab === 'psych-trauma-dysocjacja') && (
+          <section className="module-group">
+            <header className="module-header">
+              <span className="eyebrow">MODUŁ 04 · {traumaLessons.length} LEKCJI</span>
+              <h2>Trauma, dysocjacja i zaburzenia osobowości</h2>
+              <p>Neurobiologia zagrożenia, PTSD, Complex PTSD (ICD-11), zjawiska dysocjacyjne i DID, wymiarowy model osobowości ICD-11, BPD, diagnostyka różnicowa i terapia oparta na dowodach.</p>
+            </header>
+
+            {traumaGroups.map(group => (
+              <div key={group} className="subgroup">
+                <h3>{group}</h3>
+                <div className="lesson-list">
+                  {traumaLessons
                     .filter(l => l.group === group)
                     .map(l => (
                       <LessonRow key={l.id} lesson={l} state={state} go={go} />

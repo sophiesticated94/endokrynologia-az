@@ -1,0 +1,251 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "reakcja-na-stres-asr-vs-asd",
+  "objectives": [
+    {
+      "id": "reakcja-na-stres-asr-vs-asd-obj-1",
+      "statement": "Odróżnisz ostrą reakcję na stres (ASR) od ostrego zaburzenia stresowego (ASD) wg kryteriów czasowych.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "reakcja-na-stres-asr-vs-asd-obj-2",
+      "statement": "Poznasz zasady Pierwszej Pomocy Psychologicznej (PFA) oraz dowody przeciwko psychologicznemu debriefingowi (CISD).",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "reakcja-na-stres-asr-vs-asd-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "reakcja-na-stres-asr-vs-asd-obj-1"
+    ],
+    "prompt": "Jaki jest kluczowy przedział czasowy trwania objawów dla rozpoznania ostrego zaburzenia stresowego (ASD)?",
+    "options": [
+      "Od 3 dni do maksymalnie 1 miesiąca po ekspozycji na uraz",
+      "Dokładnie pierwsze 60 minut od wypadku",
+      "Minimum 2 lata nieprzerwanych objawów"
+    ],
+    "optionFeedback": [
+      "Poniżej 3 dni to ASR (reakcja przejściowa), a powyżej 1 miesiąca to PTSD.",
+      "To natychmiastowa reakcja peritraumatyczna, nie ASD.",
+      "To przewlekłe zaburzenie, wykraczające daleko poza ramy ostrego zaburzenia."
+    ],
+    "answer": 0,
+    "explanation": "Poniżej 3 dni to ASR (reakcja przejściowa), a powyżej 1 miesiąca to PTSD.",
+    "hint": "Przeanalizuj mechanizm biologiczny i kryteria przed zaznaczeniem opcji.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "src-icd11-cddr-2024",
+      "src-dsm5-tr-2022",
+      "src-nice-ng116-ptsd-2018"
+    ],
+    "claimIds": [
+      "claim-trauma-asr-vs-asd-timing"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "reakcja-na-stres-asr-vs-asd-block-1",
+      "title": "Ramy czasowe: Od adaptacji do patologii",
+      "text": "Ostra reakcja na stres (ASR wg ICD-11 QE84) jest przemijającą odpowiedzią na zdarzenie wyjątkowo zagrażające. Rozwija się w ciągu minut do godzin i samoistnie ustępuje zwykle w ciągu 2–3 dni, gdy mija bezpośrednie zagrożenie. Nie stanowi jednostki chorobowej wymagającej leczenia farmakologicznego, lecz normalną reakcję adaptacyjną. Jeśli objawy intruzji, negatywnego nastroju, dysocjacji, unikania i pobudzenia utrzymują się od 3 dni do 1 miesiąca i powodują upośledzenie funkcjonowania, rozpoznaje się ostre zaburzenie stresowe (ASD wg DSM-5-TR / ICD-11).",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022",
+        "src-nice-ng116-ptsd-2018"
+      ],
+      "checkpointId": "reakcja-na-stres-asr-vs-asd-q2-checkpoint-1-v2",
+      "claimIds": [
+        "claim-trauma-asr-vs-asd-timing"
+      ],
+      "inlineEnhancements": []
+    },
+    {
+      "id": "reakcja-na-stres-asr-vs-asd-block-2",
+      "title": "Szkodliwość psychologicznego debriefingu (CISD)",
+      "text": "Wieloletnią praktyką było stosowanie grupowego debriefingu incydentów krytycznych (CISD) w ciągu 24–72 godzin od katastrofy. Liczne randomizowane badania kliniczne (RCT) i metaanalizy Cochrane wykazały, że wymuszone, wczesne szczegółowe odtwarzanie traumy i emocji u wszystkich poszkodowanych może paradoksalnie ZWIĘKSZAĆ ryzyko rozwoju PTSD. Mechanizm polega na retraumatyzacji w fazie niestabilności, zaburzeniu naturalnych mechanizmów samoregulacji i wtórnym warunkowaniu lęku.",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022",
+        "src-nice-ng116-ptsd-2018"
+      ],
+      "checkpointId": "reakcja-na-stres-asr-vs-asd-q3-checkpoint-2-v2",
+      "claimIds": [
+        "claim-trauma-asr-vs-asd-timing"
+      ],
+      "inlineEnhancements": []
+    },
+    {
+      "id": "reakcja-na-stres-asr-vs-asd-block-3",
+      "title": "Pierwsza Pomoc Psychologiczna (PFA) — standard WHO/NICE",
+      "text": "Obecnym złotym standardem wczesnej interwencji pourazowej jest Pierwsza Pomoc Psychologiczna (Psychological First Aid — PFA). Obejmuje ona 5 zasad Hobfolla: promowanie poczucia bezpieczeństwa, spokoju (wyciszenie wegetatywne), samowystarczalności (self-efficacy), więzi społecznej (reconnecting with loved ones) oraz nadziei. Interwencja skupia się na potrzebach praktycznych (woda, schronienie, informacja), a nie na eksploracji traumatycznych wspomnień.",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022",
+        "src-nice-ng116-ptsd-2018"
+      ],
+      "claimIds": [
+        "claim-trauma-asr-vs-asd-timing"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "reakcja-na-stres-asr-vs-asd-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "reakcja-na-stres-asr-vs-asd-obj-1"
+      ],
+      "prompt": "Dlaczego rutynowy psychologiczny debriefing (CISD) jest odradzany przez wytyczne NICE i WHO?",
+      "options": [
+        "Metaanalizy wykazały, że wymuszone wczesne odtwarzanie traumy może zwiększać ryzyko PTSD",
+        "Jest to procedura zakazana z powodów finansowych",
+        "Wymaga obecności chirurga naczyniowego na sali"
+      ],
+      "optionFeedback": [
+        "Debriefing zakłóca naturalną obronę psychologiczną i konsoliduje lęk w niestabilnym układzie nerwowym.",
+        "Przyczyną jest udowodniona szkodliwość kliniczna, a nie koszty.",
+        "To procedura psychologiczna, nie zabieg operacyjny."
+      ],
+      "answer": 0,
+      "explanation": "Debriefing zakłóca naturalną obronę psychologiczną i konsoliduje lęk w niestabilnym układzie nerwowym.",
+      "hint": "Zwróć uwagę na ramy czasowe oraz kryteria wykluczenia.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022",
+        "src-nice-ng116-ptsd-2018"
+      ],
+      "claimIds": [
+        "claim-trauma-asr-vs-asd-timing"
+      ]
+    },
+    {
+      "id": "reakcja-na-stres-asr-vs-asd-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "reakcja-na-stres-asr-vs-asd-obj-2"
+      ],
+      "prompt": "Która zasada wchodzi w skład 5 filarów Pierwszej Pomocy Psychologicznej (PFA wg Hobfolla)?",
+      "options": [
+        "Promowanie spokoju, bezpieczeństwa, sprawczości, więzi i nadziei",
+        "Natychmiastowe zmuszenie poszkodowanego do konfrontacji ze sprawcą",
+        "Podanie dożylne wysokiej dawki diazepamu każdemu uczestnikowi"
+      ],
+      "optionFeedback": [
+        "To 5 empirycznie potwierdzonych zasad wczesnego wsparcia pourazowego.",
+        "To działanie skrajnie niebezpieczne i retraumatyzujące.",
+        "Benzodiazepiny są przeciwwskazane we wczesnej prewencji PTSD."
+      ],
+      "answer": 0,
+      "explanation": "To 5 empirycznie potwierdzonych zasad wczesnego wsparcia pourazowego.",
+      "hint": "Kluczem jest bezpieczeństwo i hierarchia postępowania.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022",
+        "src-nice-ng116-ptsd-2018"
+      ],
+      "claimIds": [
+        "claim-trauma-asr-vs-asd-timing"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "reakcja-na-stres-asr-vs-asd-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "reakcja-na-stres-asr-vs-asd-obj-1",
+      "reakcja-na-stres-asr-vs-asd-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejsze kryteria i pułapki różnicowania z lekcji „Ostra reakcja na stres (ASR) a ostre zaburzenie stresowe (ASD)”.",
+    "modelAnswer": "ASR trwa do 3 dni, ASD od 3 dni do 1 miesiąca. Standardem wczesnym jest PFA (bezpieczeństwo, spokój, wsparcie praktyczne). Wymuszony debriefing (CISD) i benzodiazepiny są szkodliwe w prewencji PTSD.",
+    "explanation": "Porównaj swoją odpowiedź z podsumowaniem klinicznym. Zwróć uwagę na kryteria decyzyjne i czerwone flagi.",
+    "difficulty": "both",
+    "reasoning": "safety",
+    "sourceIds": [
+      "src-icd11-cddr-2024",
+      "src-dsm5-tr-2022",
+      "src-nice-ng116-ptsd-2018"
+    ],
+    "claimIds": [
+      "claim-trauma-asr-vs-asd-timing"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "reakcja-na-stres-asr-vs-asd-q4-exit-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "reakcja-na-stres-asr-vs-asd-obj-1"
+      ],
+      "prompt": "Dlaczego podawanie benzodiazepin bezpośrednio po ekspozycji na traumę jest niewskazane?",
+      "options": [
+        "Zaburzają fizjologiczne wygaszanie lęku i wiążą się z wyższym ryzykiem rozwoju przewlekłego PTSD",
+        "Wywołują natychmiastowe zapalenie trzustki",
+        "Trwale blokują receptory insulinowe w wątrobie"
+      ],
+      "optionFeedback": [
+        "BZD upośledzają mechanizmy adaptacyjnego uczenia się bezpieczeństwa w OUN.",
+        "BZD nie mają takiego działania toksycznego.",
+        "Nie wykazują bezpośredniego wpływu na receptor insulinowy."
+      ],
+      "answer": 0,
+      "explanation": "BZD upośledzają mechanizmy adaptacyjnego uczenia się bezpieczeństwa w OUN.",
+      "hint": "Przypomnij sobie wzorce neurobiologiczne i kontrfaktyczne reguły decyzyjne.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022",
+        "src-nice-ng116-ptsd-2018"
+      ],
+      "claimIds": [
+        "claim-trauma-asr-vs-asd-timing"
+      ]
+    },
+    {
+      "id": "reakcja-na-stres-asr-vs-asd-q5-exit-2-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "reakcja-na-stres-asr-vs-asd-obj-2"
+      ],
+      "prompt": "Co należy zrobić w pierwszej kolejności u osoby z ASR po pożarze mieszkania?",
+      "options": [
+        "Zapewnić bezpieczeństwo fizyczne, ciepło, kontakt z bliskimi i zaspokoić podstawowe potrzeby",
+        "Wdrożyć wieloletnią psychoterapię psychoanalityczną w ostrym dyżurze",
+        "Rozpocząć natychmiastową terapię elektrowstrząsową (ECT)"
+      ],
+      "optionFeedback": [
+        "Podstawowe wsparcie środowiskowe i PFA są najważniejszą interwencją w pierwszych dobach.",
+        "To nieadekwatna metoda do stanu nagłego.",
+        "ASR nie jest wskazaniem do ECT."
+      ],
+      "answer": 0,
+      "explanation": "Podstawowe wsparcie środowiskowe i PFA są najważniejszą interwencją w pierwszych dobach.",
+      "hint": "Wybierz informację o najwyższej wadze różnicującej.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022",
+        "src-nice-ng116-ptsd-2018"
+      ],
+      "claimIds": [
+        "claim-trauma-asr-vs-asd-timing"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "trauma-dissociation-workbench"
+  ],
+  "widgetConfig": {},
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, CG78, ISTSS, pure content-src architecture"
+  }
+}

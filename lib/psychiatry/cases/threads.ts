@@ -1,4 +1,5 @@
 import type { PatientThreadState, ThreadEvent, CounterfactualBranch } from './types.ts';
+import { TRAUMA_PATIENT_THREADS } from './trauma-threads.ts';
 
 export const PATIENT_THREADS: Record<string, PatientThreadState> = {
   'thread-bipolar-spectrum': {
@@ -116,6 +117,7 @@ export const PATIENT_THREADS: Record<string, PatientThreadState> = {
     smoking: false,
     eGfr: 82,
   },
+  ...TRAUMA_PATIENT_THREADS,
 };
 
 export function applyThreadEvent(

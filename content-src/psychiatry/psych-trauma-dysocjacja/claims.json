@@ -1,0 +1,514 @@
+[
+  {
+    "id": "claim-trauma-hpa-amygdala-threat",
+    "statement": "Odpowiedź na skrajne zagrożenie pourazowe angażuje obwód ciało migdałowate-vmPFC-hipokamp oraz osi HPA i PAG; osłabienie hamowania przez korę brzuszno-przyśrodkową czołową (vmPFC) prowadzi do utrwalonej nadreaktywności lękowej i braku wygaszania strachu.",
+    "category": "mechanistic",
+    "strength": "strong",
+    "sourceIds": [
+      "src-icd11-cddr-2024",
+      "src-apa-ptsd-guideline-2017"
+    ],
+    "lessonIds": [
+      "trauma-neurobiologia-zagrozenia"
+    ],
+    "tags": [
+      "neurobiology",
+      "threat-response",
+      "hpa",
+      "amygdala"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "MECHANISTIC_PATHWAY"
+  },
+  {
+    "id": "claim-trauma-memory-reconsolidation",
+    "statement": "Pamięć traumatyczna charakteryzuje się upośledzoną integracją kontekstualną w hipokampie; aktywacja śladu pamięciowego otwiera czasowe okno rekonsolidacji, co stanowi neurobiologiczną podstawę skuteczności terapii opartych na ekspozycji i przetwarzaniu poznawczym.",
+    "category": "mechanistic",
+    "strength": "strong",
+    "sourceIds": [
+      "src-istss-guidelines-2019",
+      "src-apa-ptsd-guideline-2017"
+    ],
+    "lessonIds": [
+      "pamiec-traumatyczna-i-extinction"
+    ],
+    "tags": [
+      "trauma-memory",
+      "extinction",
+      "reconsolidation"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "MECHANISTIC_PATHWAY"
+  },
+  {
+    "id": "claim-trauma-asr-vs-asd-timing",
+    "statement": "Ostra reakcja na stres (ASR) jest przemijającą odpowiedzią adaptacyjną trwającą zwykle do 3 dni; utrzymywanie się objawów intruzji, unikania i pobudzenia od 3 do 30 dni po traumie kwalifikuje się jako ostre zaburzenie stresowe (ASD), a powyżej 1 miesiąca jako PTSD.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "src-icd11-cddr-2024",
+      "src-dsm5-tr-2022"
+    ],
+    "lessonIds": [
+      "reakcja-na-stres-asr-vs-asd",
+      "ptsd-kryteria-i-fenomenologia"
+    ],
+    "tags": [
+      "asr",
+      "asd",
+      "ptsd",
+      "timing"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "DIAGNOSTIC_CRITERIA"
+  },
+  {
+    "id": "claim-trauma-ptsd-core-triad",
+    "statement": "Rozpoznanie PTSD wg ICD-11 wymaga ekspozycji na wydarzenie o skrajnie zagrażającym charakterze oraz współwystępowania trzech kluczowych grup objawów trwających min. kilka tygodni: ponownego przeżywania (intruzje/flashbacks), unikania bodźców i wzmożonego poczucia zagrożenia (hyperarousal).",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "src-icd11-cddr-2024",
+      "src-dsm5-tr-2022"
+    ],
+    "lessonIds": [
+      "ptsd-kryteria-i-fenomenologia"
+    ],
+    "tags": [
+      "ptsd",
+      "intrusions",
+      "avoidance",
+      "hyperarousal"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "DIAGNOSTIC_CRITERIA"
+  },
+  {
+    "id": "claim-trauma-cptsd-dso-triad",
+    "statement": "Złożony zespół stresu pourazowego (cPTSD wg ICD-11 6B41) obejmuje spełnienie pełnych kryteriów PTSD oraz obecność triady zaburzeń organizacji jaźni (DSO): 1) ciężkiej dysregulacji afektu, 2) trwałego negatywnego obrazu siebie (poczucie bezwartościowości i wstydu), 3) trudności w utrzymywaniu relacji.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "src-icd11-cddr-2024",
+      "src-istss-guidelines-2019"
+    ],
+    "lessonIds": [
+      "cptsd-zlozone-ptsd-icd11",
+      "bpd-roznicowanie-cptsd-chad-adhd"
+    ],
+    "tags": [
+      "cptsd",
+      "dso-triad",
+      "icd11",
+      "developmental-trauma"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "DIAGNOSTIC_CRITERIA"
+  },
+  {
+    "id": "claim-trauma-dissociation-continuum",
+    "statement": "Zjawiska dysocjacyjne tworzą kontinuum od normatywnej absorpcji i marzycielstwa po dysocjację peritraumatyczną i strukturalne rozszczepienie tożsamości; patologiczna dysocjacja wiąże się z załamaniem integracji pamięci, percepcji, tożsamości i kontroli motorycznej.",
+    "category": "mechanistic",
+    "strength": "conditional",
+    "sourceIds": [
+      "src-van-der-hart-dissociation-2006",
+      "src-isstd-adult-did-2011"
+    ],
+    "lessonIds": [
+      "spektrum-dysocjacji-kontinuum"
+    ],
+    "tags": [
+      "dissociation",
+      "continuum",
+      "structural-dissociation"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "CLINICAL_MODEL"
+  },
+  {
+    "id": "claim-trauma-dpdr-intact-reality",
+    "statement": "Kluczowym kryterium diagnostycznym zespołu depersonalizacji-derealizacji (DPDR) jest w pełni nienaruszone testowanie rzeczywistości (intact reality testing); pacjent ma świadomość, że odczucie obcości lub nierealności świata ma charakter subiektywny, co różnicuje DPDR z psychozą.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "src-icd11-cddr-2024",
+      "src-dsm5-tr-2022"
+    ],
+    "lessonIds": [
+      "depersonalizacja-i-derealizacja"
+    ],
+    "tags": [
+      "dpdr",
+      "reality-testing",
+      "differential-psychosis"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "DIAGNOSTIC_CRITERIA"
+  },
+  {
+    "id": "claim-trauma-substance-dpdr-exclusion",
+    "statement": "Objawy depersonalizacji i derealizacji występujące bezpośrednio w trakcie ostrej intoksykacji kannabinoidami, halucynogenami lub dysocjantami (ketamina) nie uprawniają do pierwotnego rozpoznania DPDR i wymagają oceny po ustąpieniu działania substancji.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "src-dsm5-tr-2022",
+      "src-who-mhgap-2023"
+    ],
+    "lessonIds": [
+      "depersonalizacja-i-derealizacja",
+      "trauma-somatyka-mimiki-i-bezpieczenstwo"
+    ],
+    "tags": [
+      "substances",
+      "dpdr",
+      "toxicology",
+      "cannabinoids"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "SAFETY_RULE"
+  },
+  {
+    "id": "claim-trauma-dissociative-amnesia-features",
+    "statement": "Amnezja dysocjacyjna polega na niemożności przypomnienia sobie ważnych informacji autobiograficznych (zwykle o charakterze urazowym); różni się od amnezji neurologicznej (np. zespołu Korsakowa, TGA) zachowaną zdolnością do zapamiętywania nowych bieżących informacji pozatragicznych.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "src-icd11-cddr-2024",
+      "src-dsm5-tr-2022"
+    ],
+    "lessonIds": [
+      "amnezja-dysocjacyjna-i-fuga"
+    ],
+    "tags": [
+      "amnesia",
+      "dissociative-amnesia",
+      "fugue",
+      "organic-differential"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "DIAGNOSTIC_CRITERIA"
+  },
+  {
+    "id": "claim-trauma-did-core-criteria",
+    "statement": "Rozpoznanie DID (ICD-11 6B60) wymaga dezintegracji tożsamości z obecnością min. dwóch odrębnych stanów tożsamości (z odmiennym poczuciem jaźni i sprawczości) oraz nawracających luk w pamięci autobiograficznej dotyczących codziennych zdarzeń, ważnych danych osobistych lub traumy.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "src-icd11-cddr-2024",
+      "src-dsm5-tr-2022",
+      "src-isstd-adult-did-2011"
+    ],
+    "lessonIds": [
+      "did-tozsamosc-i-rozszczepienie",
+      "did-roznicowanie-bpd-i-psychoza"
+    ],
+    "tags": [
+      "did",
+      "identity-disruption",
+      "amnesia",
+      "criteria"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "DIAGNOSTIC_CRITERIA"
+  },
+  {
+    "id": "claim-trauma-amnesia-everyday-did",
+    "statement": "Obecność luk w pamięci dotyczących bieżących, neutralnych czynności codziennych (everyday amnesia, np. niepamięć zakupów, rozmów) jest kryterium decyzyjnym odróżniającym DID od PTSD, w którym amnezja ogranicza się wyłącznie do fragmentów urazu.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "src-icd11-cddr-2024",
+      "src-dsm5-tr-2022"
+    ],
+    "lessonIds": [
+      "did-tozsamosc-i-rozszczepienie",
+      "did-roznicowanie-bpd-i-psychoza"
+    ],
+    "tags": [
+      "did",
+      "amnesia",
+      "everyday-events",
+      "ptsd-differential"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "DIAGNOSTIC_THRESHOLD"
+  },
+  {
+    "id": "claim-trauma-did-voices-not-psychosis",
+    "statement": "Słyszenie głosów wewnętrznych reprezentujących odrębne stany tożsamości w DID jest zjawiskiem częstym i mylnie kwalifikowanym jako objaw Schneiderowski I rzędu; przy braku formalnych zaburzeń myślenia i urojeniowej interpretacji nie uprawnia do rozpoznania schizofrenii.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "src-icd11-cddr-2024",
+      "src-isstd-adult-did-2011"
+    ],
+    "lessonIds": [
+      "did-roznicowanie-bpd-i-psychoza"
+    ],
+    "tags": [
+      "did",
+      "voices",
+      "schizophrenia",
+      "hallucinations-differential"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "DIFFERENTIAL_AXIS"
+  },
+  {
+    "id": "claim-trauma-bpd-identity-vs-did",
+    "statement": "Zaburzenie tożsamości w BPD polega na niestabilnym, zmiennym obrazie samego siebie i celów życiowych pod wpływem afektu i relacji, ale NIE wiąże się z wykształceniem autonomicznych stanów tożsamości z nawracającą amnezją dysocjacyjną codziennych zdarzeń.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "src-icd11-cddr-2024",
+      "src-nice-cg78-bpd-2009",
+      "src-linehan-dbt-1993"
+    ],
+    "lessonIds": [
+      "did-roznicowanie-bpd-i-psychoza",
+      "borderline-bpd-mechanizmy"
+    ],
+    "tags": [
+      "bpd",
+      "did",
+      "identity",
+      "differential"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "DIFFERENTIAL_AXIS"
+  },
+  {
+    "id": "claim-trauma-icd11-personality-dimensional",
+    "statement": "Klasyfikacja ICD-11 zastąpiła kategoryczne podziały zaburzeń osobowości modelem wymiarowym opartym na: 1) ocenie głębokości dysfunkcji (łagodne, umiarkowane, ciężkie), 2) pięciu domenach cech (negatywna afektywność, dystansowanie, dyssocjalność, rozhamowanie, anankastia) oraz 3) kwalifikatorze wzorca borderline.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "src-icd11-cddr-2024"
+    ],
+    "lessonIds": [
+      "osobowosc-icd11-wymiary"
+    ],
+    "tags": [
+      "personality-disorder",
+      "icd11",
+      "dimensional-model",
+      "trait-domains"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "DIAGNOSTIC_CRITERIA"
+  },
+  {
+    "id": "claim-trauma-bpd-abandonment-instability",
+    "statement": "Osiowe cechy BPD obejmują paniczny lęk przed porzuceniem, labilność afektu o wysokiej dynamice (godziny/dni), przewlekłe uczucie pustki, autoagresję oraz mikropsychotyczne lub dysocjacyjne objawy w warunkach ostrej dekompensacji interpersonalnej.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "src-icd11-cddr-2024",
+      "src-nice-cg78-bpd-2009",
+      "src-linehan-dbt-1993"
+    ],
+    "lessonIds": [
+      "borderline-bpd-mechanizmy"
+    ],
+    "tags": [
+      "bpd",
+      "abandonment",
+      "affective-instability",
+      "self-harm"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "DIAGNOSTIC_CRITERIA"
+  },
+  {
+    "id": "claim-trauma-cptsd-vs-bpd-attachment",
+    "statement": "W różnicowaniu cPTSD i BPD kluczowy jest wzorzec relacji: w BPD dominuje paniczny lęk przed porzuceniem i naprzemienna idealizacja/dewaluacja, podczas gdy w cPTSD przeważa unikanie bliskości, stałe wyobcowanie i wstyd bez gwałtownych żądań opieki.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "src-icd11-cddr-2024",
+      "src-istss-guidelines-2019",
+      "src-nice-cg78-bpd-2009"
+    ],
+    "lessonIds": [
+      "bpd-roznicowanie-cptsd-chad-adhd"
+    ],
+    "tags": [
+      "cptsd",
+      "bpd",
+      "attachment",
+      "interpersonal-pattern"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "DIFFERENTIAL_AXIS"
+  },
+  {
+    "id": "claim-trauma-bpd-vs-bipolar-cyclicity",
+    "statement": "Wahania afektu w BPD mają charakter reaktywny na bodźce relacyjne i zmieniają się w skali godzin, podczas gdy w chorobie afektywnej dwubiegunowej (ChAD II) epizody hipomanii i depresji trwają dni lub tygodnie i wykazują względną autonomię biologiczną.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "src-nice-cg78-bpd-2009",
+      "src-dsm5-tr-2022"
+    ],
+    "lessonIds": [
+      "bpd-roznicowanie-cptsd-chad-adhd"
+    ],
+    "tags": [
+      "bpd",
+      "bipolar",
+      "affective-dynamics",
+      "differential"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "DIFFERENTIAL_AXIS"
+  },
+  {
+    "id": "claim-trauma-tle-mimic-aura-stereotypy",
+    "statement": "Napady ogniskowe z płata skroniowego (TLE) mogą imitować epizody paniki lub dysocjacji; obecność aury nadbrzusznej (uczucie wznoszenia z żołądka), mlaskania, stereotypii oraz czasu trwania 30–120 sekund wymaga priorytetowej diagnostyki neurologicznej (wideo-EEG, MRI OUN).",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "src-who-mhgap-2023",
+      "src-icd11-cddr-2024"
+    ],
+    "lessonIds": [
+      "trauma-somatyka-mimiki-i-bezpieczenstwo"
+    ],
+    "tags": [
+      "tle",
+      "epilepsy",
+      "mimic",
+      "neurology",
+      "aura"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "SAFETY_RULE"
+  },
+  {
+    "id": "claim-trauma-no-negative-test-confirmation",
+    "statement": "Brak odchyleń w rutynowym badaniu neurologicznym, EEG i neuroobrazowaniu NIE stanowi dowodu potwierdzającego zaburzenie dysocjacyjne; rozpoznanie wymaga spełnienia kryteriów pozytywnych, a nie opierania się na błędzie konfirmacji z wykluczenia.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "src-isstd-adult-did-2011",
+      "src-icd11-cddr-2024"
+    ],
+    "lessonIds": [
+      "trauma-somatyka-mimiki-i-bezpieczenstwo"
+    ],
+    "tags": [
+      "confirmation-bias",
+      "safety",
+      "negative-test-fallacy"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "SAFETY_RULE"
+  },
+  {
+    "id": "claim-trauma-recovered-memory-harm",
+    "statement": "Stosowanie technik sugestywnych, hipnozy regresywnej lub presji na „odzyskiwanie wypartych wspomnień” niesie wysokie ryzyko iatrogennej kreacji fałszywych wspomnień i jest przeciwwskazane w standardach leczenia zaburzeń potraumatycznych.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "src-isstd-adult-did-2011",
+      "src-apa-ptsd-guideline-2017"
+    ],
+    "lessonIds": [
+      "trauma-somatyka-mimiki-i-bezpieczenstwo"
+    ],
+    "tags": [
+      "false-memories",
+      "suggestion",
+      "iatrogenic-harm",
+      "ethics"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "SAFETY_RULE"
+  },
+  {
+    "id": "claim-trauma-phase-based-treatment",
+    "statement": "Standard leczenia złożonej traumy i DID (model 3-fazowy Hermana / ISTSS) wymaga bezwzględnego ukończenia Fazy 1 (bezpieczeństwo, stabilizacja, regulacja emocji) przed przystąpieniem do Fazy 2 (przetwarzanie pamięci traumatycznej metodami TF-CBT lub EMDR).",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "src-herman-trauma-1992",
+      "src-istss-guidelines-2019",
+      "src-isstd-adult-did-2011"
+    ],
+    "lessonIds": [
+      "psychoterapia-traumy-fazy-i-metody"
+    ],
+    "tags": [
+      "phase-oriented-therapy",
+      "stabilization",
+      "tf-cbt",
+      "emdr"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "TREATMENT_PROTOCOL"
+  },
+  {
+    "id": "claim-trauma-exposure-contraindications",
+    "statement": "Bezpośrednia ekspozycja traumatyczna jest bezwzględnie przeciwwskazana w stanach czynnego kryzysu samobójczego, ciężkich samouszkodzeń, ostrej dekompensacji psychotycznej oraz braku zewnętrznego bezpieczeństwa (np. trwająca przemoc domowa).",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "src-istss-guidelines-2019",
+      "src-nice-ng116-ptsd-2018"
+    ],
+    "lessonIds": [
+      "psychoterapia-traumy-fazy-i-metody",
+      "dbt-interwencja-kryzysowa-i-bezpieczenstwo"
+    ],
+    "tags": [
+      "contraindications",
+      "exposure",
+      "crisis",
+      "safety"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "SAFETY_RULE"
+  },
+  {
+    "id": "claim-trauma-dbt-hierarchy-safety",
+    "statement": "W dialektycznej terapii behawioralnej (DBT) obowiązuje ścisła hierarchia celów terapeutycznych: 1) zachowania zagrażające życiu (suicydalność, ciężkie samouszkodzenia), 2) zachowania kolidujące z terapią, 3) zachowania niszczące jakość życia.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "src-linehan-dbt-1993",
+      "src-nice-cg78-bpd-2009"
+    ],
+    "lessonIds": [
+      "dbt-interwencja-kryzysowa-i-bezpieczenstwo"
+    ],
+    "tags": [
+      "dbt",
+      "hierarchy",
+      "crisis-intervention",
+      "bpd"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "TREATMENT_PROTOCOL"
+  },
+  {
+    "id": "claim-trauma-stanley-brown-safety-planning",
+    "statement": "Opracowanie pisemnego Planu Bezpieczeństwa (Stanley-Brown) z hierarchią sygnałów ostrzegawczych, strategii samouspokojenia, kontaktów wspierających i profesjonalnych redukuje ryzyko prób samobójczych i stanowi standard postępowania w kryzysie.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "src-stanley-brown-safety-2012",
+      "src-who-mhgap-2023"
+    ],
+    "lessonIds": [
+      "dbt-interwencja-kryzysowa-i-bezpieczenstwo"
+    ],
+    "tags": [
+      "safety-planning",
+      "stanley-brown",
+      "crisis",
+      "suicide-prevention"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "SAFETY_RULE"
+  }
+]

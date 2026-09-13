@@ -1,0 +1,242 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "pamiec-traumatyczna-i-extinction",
+  "objectives": [
+    {
+      "id": "pamiec-traumatyczna-i-extinction-obj-1",
+      "statement": "Zrozumiesz proces warunkowania lęku (fear conditioning) oraz mechanizm wygaszania (fear extinction).",
+      "kind": "mechanism"
+    },
+    {
+      "id": "pamiec-traumatyczna-i-extinction-obj-2",
+      "statement": "Poznasz zjawisko rekonsolidacji pamięci i warunki biologiczne skutecznej ekspozycji terapeutycznej.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "pamiec-traumatyczna-i-extinction-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "pamiec-traumatyczna-i-extinction-obj-1"
+    ],
+    "prompt": "Na czym polega proces wygaszania lęku (fear extinction) z punktu widzenia neurobiologii?",
+    "options": [
+      "Na utworzeniu nowego, hamującego śladu pamięciowego (CS-bezpieczeństwo) sterowanego przez vmPFC",
+      "Na mechanicznym zniszczeniu komórek ciała migdałowatego",
+      "Na wybiórczym wypłukaniu neurotransmiterów z płynu mózgowo-rdzeniowego"
+    ],
+    "optionFeedback": [
+      "Wygaszanie nie wymazuje starego śladu, lecz tworzy nowy ślad hamujący zależny od kory czołowej i interneuronów ITC.",
+      "Nie dochodzi do ablacji komórkowej ciała migdałowatego.",
+      "To proces neuroplastyczny, nie wypłukiwanie transmiterów."
+    ],
+    "answer": 0,
+    "explanation": "Wygaszanie nie wymazuje starego śladu, lecz tworzy nowy ślad hamujący zależny od kory czołowej i interneuronów ITC.",
+    "hint": "Przeanalizuj mechanizm biologiczny i kryteria przed zaznaczeniem opcji.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "src-istss-guidelines-2019",
+      "src-apa-ptsd-guideline-2017"
+    ],
+    "claimIds": [
+      "claim-trauma-memory-reconsolidation"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "pamiec-traumatyczna-i-extinction-block-1",
+      "title": "Warunkowanie lęku i uogólnienie bodźca (stimulus generalization)",
+      "text": "W trakcie zdarzenia traumatycznego bodziec bezwarunkowy (UCS, np. zagrożenie życia, ból) wiąże się z bodźcami obojętnymi (CS, np. zapach paliwa, dźwięk pisków opon, deszczowa pogoda). Powstaje silne warunkowanie lękowe (Pavlovian fear conditioning), w którym jądro podstawno-boczne ciała migdałowatego (BLA) koduje asocjację CS-UCS. U chorych na PTSD dochodzi do patologicznego uogólnienia bodźca (overgeneralization) — reakcja lękowa jest wyzwalana przez bodźce dalece odbiegające od pierwotnego kontekstu traumatycznego.",
+      "sourceIds": [
+        "src-istss-guidelines-2019",
+        "src-apa-ptsd-guideline-2017"
+      ],
+      "checkpointId": "pamiec-traumatyczna-i-extinction-q2-checkpoint-1-v2",
+      "claimIds": [
+        "claim-trauma-memory-reconsolidation"
+      ],
+      "inlineEnhancements": []
+    },
+    {
+      "id": "pamiec-traumatyczna-i-extinction-block-2",
+      "title": "Wygaszanie (fear extinction) jako nowe uczenie się, a nie wymazanie",
+      "text": "Wygaszanie strachu nie polega na zniszczeniu pierwotnego śladu pamięciowego (engramu), lecz na utworzeniu nowego, hamującego śladu pamięciowego (CS-bezpieczeństwo). Proces ten wymaga sprawnego działania kory brzuszno-przyśrodkowej (vmPFC), która wysyła glutaminergiczne projekcje do wtrąconych komórek GABA-ergicznych (ITC) ciała migdałowatego, blokując jądro środkowe (CeA). Zaburzenie wygaszania w PTSD wynika z deficytu hamowania ITC przez osłabioną korę vmPFC.",
+      "sourceIds": [
+        "src-istss-guidelines-2019",
+        "src-apa-ptsd-guideline-2017"
+      ],
+      "checkpointId": "pamiec-traumatyczna-i-extinction-q3-checkpoint-2-v2",
+      "claimIds": [
+        "claim-trauma-memory-reconsolidation"
+      ],
+      "inlineEnhancements": []
+    },
+    {
+      "id": "pamiec-traumatyczna-i-extinction-block-3",
+      "title": "Rekonsolidacja śladu pamięciowego i okno plastyczności",
+      "text": "Gdy skonsolidowane wspomnienie zostanie reaktywowane przez bodziec przypominający, przechodzi w stan labilny (destabilizacja śladu zależna od degradacji białek synaptycznych). Aby powrócić do stabilnej pamięci długotrwałej, wymaga ponownej syntezy białek (rekonsolidacja). Okno rekonsolidacji trwa około 4–6 godzin. W tym czasie ślad pamięciowy można zmodyfikować za pomocą interwencji behawioralnych (ekspozycja w oknie rekonsolidacji) lub farmakologicznych (blokada beta-adrenergiczna propranololem w protokołach eksperymentalnych), co osłabia ładunek emocjonalny wspomnienia bez niszczenia faktów biograficznych.",
+      "sourceIds": [
+        "src-istss-guidelines-2019",
+        "src-apa-ptsd-guideline-2017"
+      ],
+      "claimIds": [
+        "claim-trauma-memory-reconsolidation"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "pamiec-traumatyczna-i-extinction-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "pamiec-traumatyczna-i-extinction-obj-1"
+      ],
+      "prompt": "Jak długo trwa tzw. okno rekonsolidacji po reaktywacji śladu pamięciowego?",
+      "options": [
+        "Około 4–6 godzin",
+        "Zaledwie 20 milisekund",
+        "Dokładnie 7 tygodni bez zmian"
+      ],
+      "optionFeedback": [
+        "W tym przedziale czasowym ślad jest labilny i wymaga de novo syntezy białek do ponownej konsolidacji.",
+        "To czas pojedynczego potencjału czynnościowego, nie procesów transkrypcji i translacji.",
+        "Okno plastyczności zamyka się po kilku godzinach od reaktywacji."
+      ],
+      "answer": 0,
+      "explanation": "W tym przedziale czasowym ślad jest labilny i wymaga de novo syntezy białek do ponownej konsolidacji.",
+      "hint": "Zwróć uwagę na ramy czasowe oraz kryteria wykluczenia.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-istss-guidelines-2019",
+        "src-apa-ptsd-guideline-2017"
+      ],
+      "claimIds": [
+        "claim-trauma-memory-reconsolidation"
+      ]
+    },
+    {
+      "id": "pamiec-traumatyczna-i-extinction-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "pamiec-traumatyczna-i-extinction-obj-2"
+      ],
+      "prompt": "Co oznacza zjawisko nadmiernego uogólnienia bodźca (overgeneralization) w PTSD?",
+      "options": [
+        "Wyzwalanie pełnej reakcji lękowej przez bodźce bezpieczne, lecz powierzchownie podobne do traumatycznych",
+        "Utrata umiejętności mówienia w języku ojczystym",
+        "Zdolność do logicznego wnioskowania na tematy abstrakcyjne"
+      ],
+      "optionFeedback": [
+        "Np. lęk paniczny wywoływany przez każdy głośny trzask drzwi, przypominający wybuch.",
+        "To afazja, zaburzenie neurologiczne mowy.",
+        "To ogólna sprawność poznawcza, a nie uogólnienie strachu."
+      ],
+      "answer": 0,
+      "explanation": "Np. lęk paniczny wywoływany przez każdy głośny trzask drzwi, przypominający wybuch.",
+      "hint": "Kluczem jest bezpieczeństwo i hierarchia postępowania.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-istss-guidelines-2019",
+        "src-apa-ptsd-guideline-2017"
+      ],
+      "claimIds": [
+        "claim-trauma-memory-reconsolidation"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "pamiec-traumatyczna-i-extinction-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "pamiec-traumatyczna-i-extinction-obj-1",
+      "pamiec-traumatyczna-i-extinction-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejsze kryteria i pułapki różnicowania z lekcji „Pamięć traumatyczna, warunkowanie strachu i wygaszanie”.",
+    "modelAnswer": "Pamięć traumatyczna ulega patologicznemu uogólnieniu. Wygaszanie tworzy nowy ślad bezpieczeństwa zależny od vmPFC, a okno rekonsolidacji (4-6h po reaktywacji) umożliwia terapeutyczną modyfikację ładunku afektywnego wspomnienia.",
+    "explanation": "Porównaj swoją odpowiedź z podsumowaniem klinicznym. Zwróć uwagę na kryteria decyzyjne i czerwone flagi.",
+    "difficulty": "both",
+    "reasoning": "safety",
+    "sourceIds": [
+      "src-istss-guidelines-2019",
+      "src-apa-ptsd-guideline-2017"
+    ],
+    "claimIds": [
+      "claim-trauma-memory-reconsolidation"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "pamiec-traumatyczna-i-extinction-q4-exit-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "pamiec-traumatyczna-i-extinction-obj-1"
+      ],
+      "prompt": "Dlaczego przerwanie sesji przedłużonej ekspozycji w momencie szczytowego przerażenia jest błędem sztuki?",
+      "options": [
+        "Może utrwalić przekonanie o niebezpieczeństwie i wzmocnić rekonsolidację lęku zamiast wygaszania",
+        "Grozi natychmiastowym pęknięciem tętniaka aorty u każdego chorego",
+        "Prowadzi do nieodwracalnej utraty słuchu"
+      ],
+      "optionFeedback": [
+        "Ekspozycja musi trwać do momentu zauważalnego spadku pobudzenia i habituacji, aby wytworzyć ślad bezpieczeństwa.",
+        "Choć wzrasta ciśnienie tętnicze, błąd dotyczy mechanizmu uczenia się emocjonalnego.",
+        "Brak związku ze zmysłem słuchu."
+      ],
+      "answer": 0,
+      "explanation": "Ekspozycja musi trwać do momentu zauważalnego spadku pobudzenia i habituacji, aby wytworzyć ślad bezpieczeństwa.",
+      "hint": "Przypomnij sobie wzorce neurobiologiczne i kontrfaktyczne reguły decyzyjne.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-istss-guidelines-2019",
+        "src-apa-ptsd-guideline-2017"
+      ],
+      "claimIds": [
+        "claim-trauma-memory-reconsolidation"
+      ]
+    },
+    {
+      "id": "pamiec-traumatyczna-i-extinction-q5-exit-2-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "pamiec-traumatyczna-i-extinction-obj-2"
+      ],
+      "prompt": "Które komórki ciała migdałowatego pośredniczą w hamowaniu jądra środkowego (CeA) przez korę vmPFC?",
+      "options": [
+        "Wtrącone komórki GABA-ergiczne (intercalated cells, ITC)",
+        "Astrocyty glejowe pnia mózgu",
+        "Komórki Purkinjego móżdżku"
+      ],
+      "optionFeedback": [
+        "Neurony ITC odbierają sygnał glutaminergiczny z vmPFC i hamująco uderzają w jądro CeA, wyłączając reakcję stresową.",
+        "Astrocyty pełnią rolę troficzną i metaboliczną.",
+        "Komórki Purkinjego znajdują się wyłącznie w korze móżdżku."
+      ],
+      "answer": 0,
+      "explanation": "Neurony ITC odbierają sygnał glutaminergiczny z vmPFC i hamująco uderzają w jądro CeA, wyłączając reakcję stresową.",
+      "hint": "Wybierz informację o najwyższej wadze różnicującej.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "src-istss-guidelines-2019",
+        "src-apa-ptsd-guideline-2017"
+      ],
+      "claimIds": [
+        "claim-trauma-memory-reconsolidation"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "trauma-dissociation-workbench"
+  ],
+  "widgetConfig": {},
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, CG78, ISTSS, pure content-src architecture"
+  }
+}

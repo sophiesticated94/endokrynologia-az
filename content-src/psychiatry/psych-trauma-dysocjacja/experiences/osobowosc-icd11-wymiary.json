@@ -1,0 +1,233 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "osobowosc-icd11-wymiary",
+  "objectives": [
+    {
+      "id": "osobowosc-icd11-wymiary-obj-1",
+      "statement": "Poznasz rewolucyjny wymiarowy model zaburzeń osobowości w klasyfikacji ICD-11 (kod 6D10).",
+      "kind": "mechanism"
+    },
+    {
+      "id": "osobowosc-icd11-wymiary-obj-2",
+      "statement": "Zrozumiesz ocenę głębokości zaburzenia (Mild, Moderate, Severe) oraz 5 domen cech i wzorzec borderline.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "osobowosc-icd11-wymiary-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "osobowosc-icd11-wymiary-obj-1"
+    ],
+    "prompt": "Jaki jest pierwszy i fundamentalny krok w diagnostyce zaburzeń osobowości wg klasyfikacji ICD-11?",
+    "options": [
+      "Ocena ogólnego stopnia głębokości dysfunkcji (łagodne, umiarkowane, ciężkie zaburzenie)",
+      "Zaliczenie pacjenta do jednego z klastrów A, B lub C",
+      "Oznaczenie poziomu przeciwciał przeciwjądrowych ANA"
+    ],
+    "optionFeedback": [
+      "Najpierw ustala się czy i w jakim nasileniu występuje zaburzenie funkcjonowania self i relacji.",
+      "Klastry A, B, C to przestarzały system DSM, odrzucony w ICD-11.",
+      "Badania immunologiczne nie diagnozują osobowości."
+    ],
+    "answer": 0,
+    "explanation": "Najpierw ustala się czy i w jakim nasileniu występuje zaburzenie funkcjonowania self i relacji.",
+    "hint": "Przeanalizuj mechanizm biologiczny i kryteria przed zaznaczeniem opcji.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "src-icd11-cddr-2024"
+    ],
+    "claimIds": [
+      "claim-trauma-icd11-personality-dimensional"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "osobowosc-icd11-wymiary-block-1",
+      "title": "Dlaczego odrzucono sztywne kategorie (Cluster A, B, C)?",
+      "text": "Klasyczny podział na 10 odrębnych kategorii (paranoiczna, schizoidalna, borderline, histrioniczna, narcystyczna, antyspołeczna, unikająca, zależna, anankastyczna) w DSM-IV/ICD-10 był krytykowany za: ogromną współchorobowość (pacjenci spełniali kryteria 3–4 zaburzeń naraz), niestabilność diagnozy w czasie, arbitralne progi oraz brak odzwierciedlenia rzeczywistej biologii osobowości. W ICD-11 WHO całkowicie zrezygnowało z dawnych kategorii na rzecz modelu wymiarowego (dimensional approach).",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "checkpointId": "osobowosc-icd11-wymiary-q2-checkpoint-1-v2",
+      "claimIds": [
+        "claim-trauma-icd11-personality-dimensional"
+      ],
+      "inlineEnhancements": []
+    },
+    {
+      "id": "osobowosc-icd11-wymiary-block-2",
+      "title": "Krok 1: Ocena głębokości zaburzenia (Severity)",
+      "text": "Podstawą diagnozy w ICD-11 jest stwierdzenie uogólnionej dysfunkcji w dwóch obszarach: funkcjonowania własnego JA (tożsamość, poczucie własnej wartości, samokierowanie) oraz funkcjonowania INTERPERSONALNEGO (zdolność do empatii, bliskości, współpracy). Na tej podstawie ustala się stopień nasilenia: 1) Trudności osobowościowe (Personality Difficulty — stan subkliniczny); 2) Łagodne zaburzenie osobowości (Mild PD); 3) Umiarkowane zaburzenie osobowości (Moderate PD); 4) Ciężkie zaburzenie osobowości (Severe PD — całkowite załamanie ról społecznych, wysokie ryzyko szkód dla siebie/innych).",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "checkpointId": "osobowosc-icd11-wymiary-q3-checkpoint-2-v2",
+      "claimIds": [
+        "claim-trauma-icd11-personality-dimensional"
+      ],
+      "inlineEnhancements": []
+    },
+    {
+      "id": "osobowosc-icd11-wymiary-block-3",
+      "title": "Krok 2 i 3: Domeny cech i kwalifikator borderline",
+      "text": "Po ustaleniu nasilenia opisuje się profil pacjenta za pomocą 5 domen cech: 1) Negatywna afektywność (Negative Affectivity) — lęk, złość, podatność na zranienie; 2) Dystansowanie (Detachment) — wycofanie społeczne i emocjonalne; 3) Dyssocjalność (Dissociality) — brak empatii, wrogość, manipulacja; 4) Rozhamowanie (Disinhibition) — impulsywność, brak planowania; 5) Anankastia (Anankastia) — perfekcjonizm, sztywna kontrola. KROK 3: Kwalifikator wzorca borderline (Borderline pattern qualifier) — zachowany dla celów ciągłości klinicznej i refundacji sprawdzonych terapii (DBT).",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "claimIds": [
+        "claim-trauma-icd11-personality-dimensional"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "osobowosc-icd11-wymiary-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "osobowosc-icd11-wymiary-obj-1"
+      ],
+      "prompt": "Która domena cech w ICD-11 odpowiada za skrajny perfekcjonizm, sztywność reguł i nadmierną kontrolę?",
+      "options": [
+        "Anankastia (Anankastia)",
+        "Rozhamowanie (Disinhibition)",
+        "Dystansowanie (Detachment)"
+      ],
+      "optionFeedback": [
+        "Anankastia opisuje wzorzec sztywnego perfekcjonizmu i nadkontroli poznawczo-emocjonalnej.",
+        "Rozhamowanie to impulsywność i brak kontroli, przeciwieństwo anankastii.",
+        "Dystansowanie to wycofanie z relacji i anhedonia."
+      ],
+      "answer": 0,
+      "explanation": "Anankastia opisuje wzorzec sztywnego perfekcjonizmu i nadkontroli poznawczo-emocjonalnej.",
+      "hint": "Zwróć uwagę na ramy czasowe oraz kryteria wykluczenia.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "claimIds": [
+        "claim-trauma-icd11-personality-dimensional"
+      ]
+    },
+    {
+      "id": "osobowosc-icd11-wymiary-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "osobowosc-icd11-wymiary-obj-2"
+      ],
+      "prompt": "Dlaczego w ICD-11 zachowano kwalifikator wzorca borderline (Borderline pattern qualifier)?",
+      "options": [
+        "Dla zachowania ciągłości klinicznej i kierowania pacjentów do dedykowanych terapii (np. DBT)",
+        "Ponieważ jest to jedyne zaburzenie osobowości występujące na świecie",
+        "Z powodu nakazu Światowej Organizacji Handlu"
+      ],
+      "optionFeedback": [
+        "Kwalifikator ułatwia identyfikację pacjentów odnoszących korzyść z ustrukturyzowanych programów leczenia.",
+        "Zaburzenia osobowości mają zróżnicowany profil.",
+        "ICD-11 to dokument WHO, a nie WTO."
+      ],
+      "answer": 0,
+      "explanation": "Kwalifikator ułatwia identyfikację pacjentów odnoszących korzyść z ustrukturyzowanych programów leczenia.",
+      "hint": "Kluczem jest bezpieczeństwo i hierarchia postępowania.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "claimIds": [
+        "claim-trauma-icd11-personality-dimensional"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "osobowosc-icd11-wymiary-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "osobowosc-icd11-wymiary-obj-1",
+      "osobowosc-icd11-wymiary-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejsze kryteria i pułapki różnicowania z lekcji „Wymiarowy model zaburzeń osobowości wg ICD-11”.",
+    "modelAnswer": "ICD-11 zrezygnowało z dawnych kategorii na rzecz oceny stopnia głębokości (łagodne, umiarkowane, ciężkie), profilu 5 domen cech oraz opcjonalnego kwalifikatora wzorca borderline.",
+    "explanation": "Porównaj swoją odpowiedź z podsumowaniem klinicznym. Zwróć uwagę na kryteria decyzyjne i czerwone flagi.",
+    "difficulty": "both",
+    "reasoning": "safety",
+    "sourceIds": [
+      "src-icd11-cddr-2024"
+    ],
+    "claimIds": [
+      "claim-trauma-icd11-personality-dimensional"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "osobowosc-icd11-wymiary-q4-exit-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "osobowosc-icd11-wymiary-obj-1"
+      ],
+      "prompt": "Co charakteryzuje domenę dyssocjalności (Dissociality) w modelu wymiarowym ICD-11?",
+      "options": [
+        "Brak empatii, przedmiotowe traktowanie innych ludzi i lekceważenie ich praw",
+        "Ciągły paraliżujący lęk przed wyjściem z domu",
+        "Uporczywe mycie rąk 50 razy na dobę"
+      ],
+      "optionFeedback": [
+        "To rdzeń dyssocjalności (odpowiednik dawnego zaburzenia antyspołecznego i cech psychopatycznych).",
+        "To domena negatywnej afektywności lub dystansowania.",
+        "To objaw anankastyczny lub natręctwo w OCD."
+      ],
+      "answer": 0,
+      "explanation": "To rdzeń dyssocjalności (odpowiednik dawnego zaburzenia antyspołecznego i cech psychopatycznych).",
+      "hint": "Przypomnij sobie wzorce neurobiologiczne i kontrfaktyczne reguły decyzyjne.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "claimIds": [
+        "claim-trauma-icd11-personality-dimensional"
+      ]
+    },
+    {
+      "id": "osobowosc-icd11-wymiary-q5-exit-2-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "osobowosc-icd11-wymiary-obj-2"
+      ],
+      "prompt": "Co oznacza kategoria „Trudności osobowościowe” (Personality Difficulty) w ICD-11?",
+      "options": [
+        "Stan subkliniczny — widoczne cechy utrudniające życie w stresie, lecz niespełniające kryteriów pełnego zaburzenia",
+        "Ciężką postać schizofrenii paranoidalnej z katatonią",
+        "Śpiączkę wątrobową w marskości"
+      ],
+      "optionFeedback": [
+        "Pozwala na nazwanie problemu bez nieuzasadnionej stygmatyzacji pacjenta etykietą zaburzenia psychicznego.",
+        "To psychoza, a nie wariant struktury osobowości.",
+        "To stan somatyczny bezpośrednio zagrażający życiu."
+      ],
+      "answer": 0,
+      "explanation": "Pozwala na nazwanie problemu bez nieuzasadnionej stygmatyzacji pacjenta etykietą zaburzenia psychicznego.",
+      "hint": "Wybierz informację o najwyższej wadze różnicującej.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "claimIds": [
+        "claim-trauma-icd11-personality-dimensional"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "trauma-dissociation-workbench"
+  ],
+  "widgetConfig": {},
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, CG78, ISTSS, pure content-src architecture"
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "trauma-somatyka-mimiki-i-bezpieczenstwo",
+  "objectives": [
+    {
+      "id": "trauma-somatyka-mimiki-i-bezpieczenstwo-obj-1",
+      "statement": "Poznasz zasady wykluczania organicznych i toksycznych przyczyn objawów dysocjacyjnych.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "trauma-somatyka-mimiki-i-bezpieczenstwo-obj-2",
+      "statement": "Zrozumiesz błąd konfirmacji („negatywny test to nie dowód DID”) i etyczne ryzyko iatrogenii.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "trauma-somatyka-mimiki-i-bezpieczenstwo-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "trauma-somatyka-mimiki-i-bezpieczenstwo-obj-1"
+    ],
+    "prompt": "Na czym polega błąd konfirmacji negatywnego testu w diagnostyce zaburzeń dysocjacyjnych?",
+    "options": [
+      "Na błędnym uznaniu, że prawidłowy wynik EEG i MRI mózgu stanowi „dowód potwierdzający” etiologię dysocjacyjną",
+      "Na założeniu, że każdy pacjent musi mieć powtórzone badanie krwi 100 razy",
+      "Na odrzuceniu wyniku badania z powodu brzydkiego charakteru pisma lekarza"
+    ],
+    "optionFeedback": [
+      "Diagnoza dysocjacyjna wymaga spełnienia pozytywnych kryteriów klinicznych, a nie wynika z samego braku zmian w badaniach.",
+      "Brak związku z błędem konfirmacji.",
+      "To kwestia edycyjna, nie błąd metodologiczny."
+    ],
+    "answer": 0,
+    "explanation": "Diagnoza dysocjacyjna wymaga spełnienia pozytywnych kryteriów klinicznych, a nie wynika z samego braku zmian w badaniach.",
+    "hint": "Przeanalizuj mechanizm biologiczny i kryteria przed zaznaczeniem opcji.",
+    "difficulty": "student",
+    "reasoning": "differentiation",
+    "sourceIds": [
+      "src-who-mhgap-2023",
+      "src-isstd-adult-did-2011",
+      "src-icd11-cddr-2024"
+    ],
+    "claimIds": [
+      "claim-trauma-tle-mimic-aura-stereotypy"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "trauma-somatyka-mimiki-i-bezpieczenstwo-block-1",
+      "title": "Czerwone flagi neurologiczne: Kiedy dysocjacja jest objawem guza lub zapalenia mózgu?",
+      "text": "NIGDY nie wolno zakładać etiologii psychogennej przed rzetelnym badaniem somatycznym. Czerwone flagi neurologiczne wymagające natychmiastowej neurodiagnostyki: 1) Debiut po 40. roku życia bez wywiadu urazowego; 2) Objawy ogniskowe (asymetria odruchów, opadanie kącika ust, niedowład, objaw Babińskiego); 3) Napadowe epizody o ściśle stereotypowym przebiegu trwające <2 minut; 4) Obecność aury węchowej, smakowej lub nadbrzusznej; 5) Postępujące zaburzenia poznawcze, zaburzenia zwieraczy lub ataksja. Przypadki zapalenia mózgu z przeciwciałami przeciwko receptorom NMDA (anty-NMDAR) oraz guzy płata skroniowego bywają tragicznie mylone z dysocjacją!",
+      "sourceIds": [
+        "src-who-mhgap-2023",
+        "src-isstd-adult-did-2011",
+        "src-icd11-cddr-2024"
+      ],
+      "checkpointId": "trauma-somatyka-mimiki-i-bezpieczenstwo-q2-checkpoint-1-v2",
+      "claimIds": [
+        "claim-trauma-tle-mimic-aura-stereotypy",
+        "claim-trauma-no-negative-test-confirmation",
+        "claim-trauma-recovered-memory-harm"
+      ],
+      "inlineEnhancements": []
+    },
+    {
+      "id": "trauma-somatyka-mimiki-i-bezpieczenstwo-block-2",
+      "title": "Błąd konfirmacji: Prawidłowy wynik testu NIE jest dowodem zaburzenia psychicznego",
+      "text": "Kardynalny błąd logiczny w medycynie: „Zrobiliśmy MRI i EEG, wyszły prawidłowo, a więc to na 100% zaburzenie dysocjacyjne / psychogenne”. Normalny wynik badania dodatkowego wyklucza jedynie te patologie, które dana metoda jest w stanie wykryć (np. rutynowe między-napadowe EEG jest prawidłowe u 30–50% chorych z padaczką!). Rozpoznanie zaburzenia dysocjacyjnego wymaga spełnienia POZYTYWNYCH kryteriów psychopatologicznych, a nie stawiania diagnozy z samego braku uchwytnych zmian somatycznych.",
+      "sourceIds": [
+        "src-who-mhgap-2023",
+        "src-isstd-adult-did-2011",
+        "src-icd11-cddr-2024"
+      ],
+      "checkpointId": "trauma-somatyka-mimiki-i-bezpieczenstwo-q3-checkpoint-2-v2",
+      "claimIds": [
+        "claim-trauma-tle-mimic-aura-stereotypy",
+        "claim-trauma-no-negative-test-confirmation",
+        "claim-trauma-recovered-memory-harm"
+      ],
+      "inlineEnhancements": [
+        {
+          "id": "trauma-somatyka-mimiki-i-bezpieczenstwo-enh-workbench",
+          "kind": "workbench-deeplink",
+          "placement": "after-checkpoint",
+          "presetId": "trauma-neuro-mimic"
+        }
+      ]
+    },
+    {
+      "id": "trauma-somatyka-mimiki-i-bezpieczenstwo-block-3",
+      "title": "Iatrogenia, sugestia terapeutyczna i problem fałszywych wspomnień",
+      "text": "Historia psychiatrii zna dramatyczne lekcje z lat 80. i 90. XX wieku (tzw. „Memory Wars”), gdy nieodpowiedzialne techniki hipnotyczne, presja terapeutyczna i sugestywne pytania prowadziły do wykreowania fałszywych wspomnień o rzekomych rytualnych nadużyciach (False Memory Syndrome). ZASADA BEZPIECZEŃSTWA: Terapeuta nigdy nie powinien sugerować istnienia „ukrytych alterów”, nie wolno wymuszać „odzyskiwania wypartych wspomnień” ani prowadzić konfrontacji z rodziną na podstawie hipnotycznych wizji. Wspomnienia wytworzone pod wpływem sugestii są subiektywnie nieodróżnialne od prawdziwych, lecz klinicznie niszczące.",
+      "sourceIds": [
+        "src-who-mhgap-2023",
+        "src-isstd-adult-did-2011",
+        "src-icd11-cddr-2024"
+      ],
+      "claimIds": [
+        "claim-trauma-tle-mimic-aura-stereotypy",
+        "claim-trauma-no-negative-test-confirmation",
+        "claim-trauma-recovered-memory-harm"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "trauma-somatyka-mimiki-i-bezpieczenstwo-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "trauma-somatyka-mimiki-i-bezpieczenstwo-obj-1"
+      ],
+      "prompt": "Dlaczego wytyczne międzynarodowe bezwzględnie zakazują technik sugestywnych i hipnozy w celu „odzyskiwania wypartych wspomnień”?",
+      "options": [
+        "Niosą udowodnione wysokie ryzyko wygenerowania iatrogennych, destrukcyjnych fałszywych wspomnień (False Memory Syndrome)",
+        "Hipnoza jest procedurą zbyt kosztowną dla kas chorych",
+        "Hipnoza wywołuje natychmiastowe zakażenie wirusowym zapaleniem wątroby"
+      ],
+      "optionFeedback": [
+        "Umysł ludzki w hipnozie jest wybitnie podatny na konfabulacje i konfirmację oczekiwań terapeuty.",
+        "Przyczyną jest bezpieczeństwo kliniczne i zapobieganie szkodzie pacjenta.",
+        "Brak transmisji patogenów drogą psychologiczną."
+      ],
+      "answer": 0,
+      "explanation": "Umysł ludzki w hipnozie jest wybitnie podatny na konfabulacje i konfirmację oczekiwań terapeuty.",
+      "hint": "Zwróć uwagę na ramy czasowe oraz kryteria wykluczenia.",
+      "difficulty": "both",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "src-who-mhgap-2023",
+        "src-isstd-adult-did-2011",
+        "src-icd11-cddr-2024"
+      ],
+      "claimIds": [
+        "claim-trauma-tle-mimic-aura-stereotypy"
+      ]
+    },
+    {
+      "id": "trauma-somatyka-mimiki-i-bezpieczenstwo-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "trauma-somatyka-mimiki-i-bezpieczenstwo-obj-2"
+      ],
+      "prompt": "Który objaw u pacjenta z dysocjacją stanowi czerwoną flagę wymagającą pilnej konsultacji neurologicznej?",
+      "options": [
+        "Napadowość z aurą nadbrzuszną, stereotypowość 30–60 s lub początek po 40. r.ż. z objawami ogniskowymi",
+        "Płacz podczas rozmowy o zmarłym rodzicu",
+        "Uczucie zmęczenia po nieprzespanej nocy"
+      ],
+      "optionFeedback": [
+        "To objawy wskazujące na proces organiczny OUN (padaczka skroniowa, guz, zapalenie).",
+        "To naturalna reakcja żałoby i smutku.",
+        "To fizjologiczny skutek deprywacji snu."
+      ],
+      "answer": 0,
+      "explanation": "To objawy wskazujące na proces organiczny OUN (padaczka skroniowa, guz, zapalenie).",
+      "hint": "Kluczem jest bezpieczeństwo i hierarchia postępowania.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-who-mhgap-2023",
+        "src-isstd-adult-did-2011",
+        "src-icd11-cddr-2024"
+      ],
+      "claimIds": [
+        "claim-trauma-no-negative-test-confirmation"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "trauma-somatyka-mimiki-i-bezpieczenstwo-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "trauma-somatyka-mimiki-i-bezpieczenstwo-obj-1",
+      "trauma-somatyka-mimiki-i-bezpieczenstwo-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejsze kryteria i pułapki różnicowania z lekcji „Somatyczne mimiki, substancje i pułapki diagnostyczne”.",
+    "modelAnswer": "Czerwone flagi neurologiczne wymagają pilnej diagnostyki. Prawidłowy wynik testu nie jest dowodem na dysocjację. Narzucanie sugestii i odzyskiwanie wspomnień grozi wytworzeniem fałszywych engramów.",
+    "explanation": "Porównaj swoją odpowiedź z podsumowaniem klinicznym. Zwróć uwagę na kryteria decyzyjne i czerwone flagi.",
+    "difficulty": "both",
+    "reasoning": "safety",
+    "sourceIds": [
+      "src-who-mhgap-2023",
+      "src-isstd-adult-did-2011",
+      "src-icd11-cddr-2024"
+    ],
+    "claimIds": [
+      "claim-trauma-tle-mimic-aura-stereotypy",
+      "claim-trauma-no-negative-test-confirmation",
+      "claim-trauma-recovered-memory-harm"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "trauma-somatyka-mimiki-i-bezpieczenstwo-q4-exit-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "trauma-somatyka-mimiki-i-bezpieczenstwo-obj-1"
+      ],
+      "prompt": "Czym może manifestować się autoimmunologiczne zapalenie mózgu z przeciwciałami przeciwko receptorom NMDA (anty-NMDAR)?",
+      "options": [
+        "Ostrym początkiem psychozy, amnezji, dysocjacji, dyskinez i niestabilności wegetatywnej u młodej osoby",
+        "Izolowanym złamaniem kości piętowej",
+        "Trwałym brakiem linii papilarnych na palcach"
+      ],
+      "optionFeedback": [
+        "Zapalenie anty-NMDAR jest jednym z najczęstszych organicznych mimików zaburzeń psychicznych u młodych kobiet.",
+        "To uraz ortopedyczny.",
+        "To rzadka cecha dermatologiczna (adermatoglifia)."
+      ],
+      "answer": 0,
+      "explanation": "Zapalenie anty-NMDAR jest jednym z najczęstszych organicznych mimików zaburzeń psychicznych u młodych kobiet.",
+      "hint": "Przypomnij sobie wzorce neurobiologiczne i kontrfaktyczne reguły decyzyjne.",
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "src-who-mhgap-2023",
+        "src-isstd-adult-did-2011",
+        "src-icd11-cddr-2024"
+      ],
+      "claimIds": [
+        "claim-trauma-tle-mimic-aura-stereotypy"
+      ]
+    },
+    {
+      "id": "trauma-somatyka-mimiki-i-bezpieczenstwo-q5-exit-2-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "trauma-somatyka-mimiki-i-bezpieczenstwo-obj-2"
+      ],
+      "prompt": "Co należy zrobić, jeśli rutynowe badanie EEG u pacjenta z podejrzeniem padaczki skroniowej jest prawidłowe?",
+      "options": [
+        "Pamiętać, że pojedyncze rutynowe EEG ma ograniczoną czułość i w razie silnego podejrzenia zlecić wideo-EEG lub badanie po deprywacji snu",
+        "Natychmiast ogłosić, że pacjent symuluje chorobę",
+        "Podać dożylnie alkohol etylowy"
+      ],
+      "optionFeedback": [
+        "Prawidłowy zapis spoczynkowy nie wyklucza ogniska padaczkowego w głębokich strukturach skroniowych.",
+        "Symulacja jest rzadka i wymaga rzetelnego dowodu, a nie oparcia na ujemnym teście przesiewowym.",
+        "Alkohol jest przeciwwskazany w diagnostyce neurologicznej."
+      ],
+      "answer": 0,
+      "explanation": "Prawidłowy zapis spoczynkowy nie wyklucza ogniska padaczkowego w głębokich strukturach skroniowych.",
+      "hint": "Wybierz informację o najwyższej wadze różnicującej.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "src-who-mhgap-2023",
+        "src-isstd-adult-did-2011",
+        "src-icd11-cddr-2024"
+      ],
+      "claimIds": [
+        "claim-trauma-tle-mimic-aura-stereotypy"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "trauma-dissociation-workbench"
+  ],
+  "widgetConfig": {
+    "trauma-dissociation-workbench": {
+      "presetId": "trauma-neuro-mimic"
+    }
+  },
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, CG78, ISTSS, pure content-src architecture"
+  }
+}

@@ -12,17 +12,18 @@ import {
 } from '../lib/psychiatry/index.ts';
 import { isLessonCoreComplete, requiredCompletionActivityIds } from '../lib/lesson-v2.ts';
 
-test('all 51 psychiatry lessons use the complete v2 active learning structure', () => {
-  assert.equal(psychiatryLessons.length, 51);
-  assert.equal(Object.keys(psychiatryLessonExperiences).length, 51);
+test('all 51 original psychiatry lessons (modules 01-03) use the complete v2 active learning structure', () => {
+  const originalLessons = psychiatryLessons.filter(l => l.moduleId !== 'psych-trauma-dysocjacja');
+  assert.equal(originalLessons.length, 51);
+  assert.equal(originalLessons.every(l => psychiatryLessonExperiences[l.id]), true);
 
   const psychBundle = COURSES.psychiatry;
   assert.ok(psychBundle.lessonExperiences, 'CourseBundle psychiatry must have lessonExperiences');
-  assert.equal(Object.keys(psychBundle.lessonExperiences).length, 51);
+  assert.equal(originalLessons.every(l => psychBundle.lessonExperiences[l.id]), true);
 
   const allActivityIds = new Set();
 
-  for (const lesson of psychiatryLessons) {
+  for (const lesson of originalLessons) {
     const exp = psychiatryLessonExperiences[lesson.id];
     assert.ok(exp, `Missing experience for lesson: ${lesson.id}`);
     assert.equal(exp.experienceVersion, 2);
@@ -74,8 +75,8 @@ test('all 51 psychiatry lessons use the complete v2 active learning structure', 
   }
 });
 
-test('psychiatry lesson enhancement registry covers all 51 lessons with valid deep links and evidence', () => {
-  assert.equal(Object.keys(PSYCHIATRY_LESSON_ENHANCEMENTS).length, 51);
+test('psychiatry lesson enhancement registry covers all 67 lessons with valid deep links and evidence', () => {
+  assert.equal(Object.keys(PSYCHIATRY_LESSON_ENHANCEMENTS).length, 67);
 
   const caseIds = new Set(psychiatryCases.map(c => c.id));
   const threadIds = new Set(Object.keys(PATIENT_THREADS));

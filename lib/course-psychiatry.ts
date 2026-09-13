@@ -12,6 +12,7 @@ import { draftPsychiatryPart5c } from './course-psychiatry-5c.ts';
 import { psychiatrySources } from './course-psychiatry-sources.ts';
 import { psychiatryCases } from './cases-psychiatry.ts';
 import { psychiatryGlossary } from './glossary-psychiatry.ts';
+import { traumaLessons, traumaSources } from './psychiatry/trauma-content.ts';
 
 export const allPsychiatryDrafts: DraftLesson[] = [
   ...draftPsychiatryPart1,
@@ -26,7 +27,7 @@ export const allPsychiatryDrafts: DraftLesson[] = [
   ...draftPsychiatryPart5c,
 ];
 
-export const psychiatryLessons: Lesson[] = allPsychiatryDrafts.map((l, li) => {
+const draftLessons: Lesson[] = allPsychiatryDrafts.map((l, li) => {
   const subtitle = l.subtitle || l.title;
   const minutes = l.minutes || (l.readTime ? parseInt(l.readTime, 10) : 15);
   const sections = l.sections.map(s => ({
@@ -52,6 +53,8 @@ export const psychiatryLessons: Lesson[] = allPsychiatryDrafts.map((l, li) => {
     }),
   };
 });
+
+export const psychiatryLessons: Lesson[] = [...draftLessons, ...traumaLessons];
 
 export const psychiatryQuestions: Question[] = psychiatryLessons.flatMap(l => l.questions);
 
@@ -107,10 +110,21 @@ export const psychiatryModulesList = [
     count: 13,
     subtitle: 'Delirium (4AT, Cause Hunt), otępienia (AD, VaD, DLB, bvFTD), RPD, BPSD, Beers 2023, obciążenie antycholinergiczne (ACB), capacity i safeguarding',
   },
+  {
+    id: 'psych-trauma-dysocjacja' as const,
+    name: 'Trauma, dysocjacja i zaburzenia osobowości',
+    count: 16,
+    subtitle: 'Neurobiologia zagrożenia, PTSD, cPTSD (ICD-11), dysocjacja i DID, wymiarowy model osobowości ICD-11, BPD, diagnostyka różnicowa i DBT',
+  },
 ] as const;
 
 export const psychiatryPlannedModules = [
   'Zaburzenia odżywiania i psychosomatyka kliniczna',
 ];
 
-export { psychiatrySources, psychiatryCases, psychiatryGlossary };
+const mergedPsychiatrySources = {
+  ...psychiatrySources,
+  ...traumaSources,
+};
+
+export { mergedPsychiatrySources as psychiatrySources, psychiatryCases, psychiatryGlossary };

@@ -1,0 +1,164 @@
+{
+  "id": "reakcja-na-stres-asr-vs-asd",
+  "moduleId": "psych-trauma-dysocjacja",
+  "title": "Ostra reakcja na stres (ASR) a ostre zaburzenie stresowe (ASD)",
+  "subtitle": "Ramy czasowe, pierwsza pomoc psychologiczna (PFA) a szkodliwość wymuszonego debriefingu",
+  "group": "A. Trauma i odpowiedź na stres",
+  "minutes": 16,
+  "goals": [
+    "Odróżnisz ostrą reakcję na stres (ASR) od ostrego zaburzenia stresowego (ASD) wg kryteriów czasowych.",
+    "Poznasz zasady Pierwszej Pomocy Psychologicznej (PFA) oraz dowody przeciwko psychologicznemu debriefingowi (CISD)."
+  ],
+  "sections": [
+    {
+      "title": "Ramy czasowe: Od adaptacji do patologii",
+      "text": "Ostra reakcja na stres (ASR wg ICD-11 QE84) jest przemijającą odpowiedzią na zdarzenie wyjątkowo zagrażające. Rozwija się w ciągu minut do godzin i samoistnie ustępuje zwykle w ciągu 2–3 dni, gdy mija bezpośrednie zagrożenie. Nie stanowi jednostki chorobowej wymagającej leczenia farmakologicznego, lecz normalną reakcję adaptacyjną. Jeśli objawy intruzji, negatywnego nastroju, dysocjacji, unikania i pobudzenia utrzymują się od 3 dni do 1 miesiąca i powodują upośledzenie funkcjonowania, rozpoznaje się ostre zaburzenie stresowe (ASD wg DSM-5-TR / ICD-11)."
+    },
+    {
+      "title": "Szkodliwość psychologicznego debriefingu (CISD)",
+      "text": "Wieloletnią praktyką było stosowanie grupowego debriefingu incydentów krytycznych (CISD) w ciągu 24–72 godzin od katastrofy. Liczne randomizowane badania kliniczne (RCT) i metaanalizy Cochrane wykazały, że wymuszone, wczesne szczegółowe odtwarzanie traumy i emocji u wszystkich poszkodowanych może paradoksalnie ZWIĘKSZAĆ ryzyko rozwoju PTSD. Mechanizm polega na retraumatyzacji w fazie niestabilności, zaburzeniu naturalnych mechanizmów samoregulacji i wtórnym warunkowaniu lęku."
+    },
+    {
+      "title": "Pierwsza Pomoc Psychologiczna (PFA) — standard WHO/NICE",
+      "text": "Obecnym złotym standardem wczesnej interwencji pourazowej jest Pierwsza Pomoc Psychologiczna (Psychological First Aid — PFA). Obejmuje ona 5 zasad Hobfolla: promowanie poczucia bezpieczeństwa, spokoju (wyciszenie wegetatywne), samowystarczalności (self-efficacy), więzi społecznej (reconnecting with loved ones) oraz nadziei. Interwencja skupia się na potrzebach praktycznych (woda, schronienie, informacja), a nie na eksploracji traumatycznych wspomnień."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Jednostka / Stan",
+      "Czas trwania",
+      "Kluczowe postępowanie"
+    ],
+    "rows": [
+      [
+        "Ostra reakcja na stres (ASR)",
+        "Od godzin do maksymalnie 3 dni",
+        "Wsparcie praktyczne, zapewnienie bezpieczeństwa, PFA, brak leków"
+      ],
+      [
+        "Ostre zaburzenie stresowe (ASD)",
+        "Od 3 dni do 1 miesiąca",
+        "Monitorowanie, psychoedukacja, u części chorych trauma-focused CBT"
+      ],
+      [
+        "PTSD",
+        "Powyżej 1 miesiąca",
+        "Ustrukturyzowana terapia traumy (TF-CBT, EMDR, Prolonged Exposure)"
+      ],
+      [
+        "Debriefing (CISD)",
+        "Pierwsze 72 godziny",
+        "PRZECIWWSKAZANY — udowodnione ryzyko retraumatyzacji i utrwalenia PTSD"
+      ]
+    ]
+  },
+  "advanced": "W ostrym okresie po traumie nie zaleca się rutynowego podawania benzodiazepin. Badania prospektywne wykazały, że wczesne podawanie BZD (np. alprazolamu, diazepamu) hamuje naturalne procesy wygaszania strachu, upośledza konsolidację kontekstualną i wiąże się z wyższym odsetkiem rozwoju PTSD w obserwacji 6-miesięcznej.",
+  "summary": "ASR trwa do 3 dni, ASD od 3 dni do 1 miesiąca. Standardem wczesnym jest PFA (bezpieczeństwo, spokój, wsparcie praktyczne). Wymuszony debriefing (CISD) i benzodiazepiny są szkodliwe w prewencji PTSD.",
+  "sourceIds": [
+    "src-icd11-cddr-2024",
+    "src-dsm5-tr-2022",
+    "src-nice-ng116-ptsd-2018"
+  ],
+  "questions": [
+    {
+      "id": "reakcja-na-stres-asr-vs-asd-q1",
+      "lessonId": "reakcja-na-stres-asr-vs-asd",
+      "prompt": "Jaki jest kluczowy przedział czasowy trwania objawów dla rozpoznania ostrego zaburzenia stresowego (ASD)?",
+      "options": [
+        {
+          "text": "Od 3 dni do maksymalnie 1 miesiąca po ekspozycji na uraz",
+          "explanation": "Poniżej 3 dni to ASR (reakcja przejściowa), a powyżej 1 miesiąca to PTSD."
+        },
+        {
+          "text": "Dokładnie pierwsze 60 minut od wypadku",
+          "explanation": "To natychmiastowa reakcja peritraumatyczna, nie ASD."
+        },
+        {
+          "text": "Minimum 2 lata nieprzerwanych objawów",
+          "explanation": "To przewlekłe zaburzenie, wykraczające daleko poza ramy ostrego zaburzenia."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "reakcja-na-stres-asr-vs-asd-q2",
+      "lessonId": "reakcja-na-stres-asr-vs-asd",
+      "prompt": "Dlaczego rutynowy psychologiczny debriefing (CISD) jest odradzany przez wytyczne NICE i WHO?",
+      "options": [
+        {
+          "text": "Metaanalizy wykazały, że wymuszone wczesne odtwarzanie traumy może zwiększać ryzyko PTSD",
+          "explanation": "Debriefing zakłóca naturalną obronę psychologiczną i konsoliduje lęk w niestabilnym układzie nerwowym."
+        },
+        {
+          "text": "Jest to procedura zakazana z powodów finansowych",
+          "explanation": "Przyczyną jest udowodniona szkodliwość kliniczna, a nie koszty."
+        },
+        {
+          "text": "Wymaga obecności chirurga naczyniowego na sali",
+          "explanation": "To procedura psychologiczna, nie zabieg operacyjny."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "reakcja-na-stres-asr-vs-asd-q3",
+      "lessonId": "reakcja-na-stres-asr-vs-asd",
+      "prompt": "Która zasada wchodzi w skład 5 filarów Pierwszej Pomocy Psychologicznej (PFA wg Hobfolla)?",
+      "options": [
+        {
+          "text": "Promowanie spokoju, bezpieczeństwa, sprawczości, więzi i nadziei",
+          "explanation": "To 5 empirycznie potwierdzonych zasad wczesnego wsparcia pourazowego."
+        },
+        {
+          "text": "Natychmiastowe zmuszenie poszkodowanego do konfrontacji ze sprawcą",
+          "explanation": "To działanie skrajnie niebezpieczne i retraumatyzujące."
+        },
+        {
+          "text": "Podanie dożylne wysokiej dawki diazepamu każdemu uczestnikowi",
+          "explanation": "Benzodiazepiny są przeciwwskazane we wczesnej prewencji PTSD."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "reakcja-na-stres-asr-vs-asd-q4",
+      "lessonId": "reakcja-na-stres-asr-vs-asd",
+      "prompt": "Dlaczego podawanie benzodiazepin bezpośrednio po ekspozycji na traumę jest niewskazane?",
+      "options": [
+        {
+          "text": "Zaburzają fizjologiczne wygaszanie lęku i wiążą się z wyższym ryzykiem rozwoju przewlekłego PTSD",
+          "explanation": "BZD upośledzają mechanizmy adaptacyjnego uczenia się bezpieczeństwa w OUN."
+        },
+        {
+          "text": "Wywołują natychmiastowe zapalenie trzustki",
+          "explanation": "BZD nie mają takiego działania toksycznego."
+        },
+        {
+          "text": "Trwale blokują receptory insulinowe w wątrobie",
+          "explanation": "Nie wykazują bezpośredniego wpływu na receptor insulinowy."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "reakcja-na-stres-asr-vs-asd-q5",
+      "lessonId": "reakcja-na-stres-asr-vs-asd",
+      "prompt": "Co należy zrobić w pierwszej kolejności u osoby z ASR po pożarze mieszkania?",
+      "options": [
+        {
+          "text": "Zapewnić bezpieczeństwo fizyczne, ciepło, kontakt z bliskimi i zaspokoić podstawowe potrzeby",
+          "explanation": "Podstawowe wsparcie środowiskowe i PFA są najważniejszą interwencją w pierwszych dobach."
+        },
+        {
+          "text": "Wdrożyć wieloletnią psychoterapię psychoanalityczną w ostrym dyżurze",
+          "explanation": "To nieadekwatna metoda do stanu nagłego."
+        },
+        {
+          "text": "Rozpocząć natychmiastową terapię elektrowstrząsową (ECT)",
+          "explanation": "ASR nie jest wskazaniem do ECT."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

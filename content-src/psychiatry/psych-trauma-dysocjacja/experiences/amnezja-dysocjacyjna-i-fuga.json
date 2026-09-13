@@ -1,0 +1,242 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "amnezja-dysocjacyjna-i-fuga",
+  "objectives": [
+    {
+      "id": "amnezja-dysocjacyjna-i-fuga-obj-1",
+      "statement": "Poznasz typy amnezji dysocjacyjnej (zlokalizowana, selektywna, uogólniona) oraz zjawisko fugi dysocjacyjnej.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "amnezja-dysocjacyjna-i-fuga-obj-2",
+      "statement": "Opanujesz różnicowanie amnezji psychogennej z organicznymi uszkodzeniami OUN (TGA, udar, Korsakow).",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "amnezja-dysocjacyjna-i-fuga-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "amnezja-dysocjacyjna-i-fuga-obj-1"
+    ],
+    "prompt": "Który typ amnezji dysocjacyjnej występuje w praktyce klinicznej najczęściej?",
+    "options": [
+      "Amnezja zlokalizowana (brak pamięci zdarzeń z określonego przedziału czasu)",
+      "Całkowita utrata znajomości alfabetu",
+      "Wybiórcza niepamięć koloru zielonego"
+    ],
+    "optionFeedback": [
+      "Pacjent nie pamięta np. kilku godzin wokół wypadku lub napaści.",
+      "Pamięć semantyczna i umiejętności szkolne są zachowane.",
+      "Amnezja nie dotyczy pojedynczych modalności zmysłowych."
+    ],
+    "answer": 0,
+    "explanation": "Pacjent nie pamięta np. kilku godzin wokół wypadku lub napaści.",
+    "hint": "Przeanalizuj mechanizm biologiczny i kryteria przed zaznaczeniem opcji.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "src-icd11-cddr-2024",
+      "src-dsm5-tr-2022"
+    ],
+    "claimIds": [
+      "claim-trauma-dissociative-amnesia-features"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "amnezja-dysocjacyjna-i-fuga-block-1",
+      "title": "Kryteria amnezji dysocjacyjnej i jej podtypy",
+      "text": "Amnezja dysocjacyjna (ICD-11 6B61 / DSM-5-TR 300.12) to niemożność przypomnienia sobie ważnych informacji autobiograficznych, zazwyczaj o charakterze traumatycznym lub stresowym, która jest zbyt rozległa, by można ją było wyjaśnić zwykłym zapominaniem. Wyróżnia się podtypy: 1) Zlokalizowana (najczęstsza) — brak pamięci o określonym okresie czasu (np. kilku godzinach wypadku); 2) Selektywna — pacjent pamięta niektóre, ale nie wszystkie zdarzenia z danego okresu; 3) Uogólniona (rzadka) — całkowita utrata pamięci własnej tożsamości i całej historii życiowej; 4) Ciągła — zapominanie każdego kolejnego nowego zdarzenia od momentu traumy.",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022"
+      ],
+      "checkpointId": "amnezja-dysocjacyjna-i-fuga-q2-checkpoint-1-v2",
+      "claimIds": [
+        "claim-trauma-dissociative-amnesia-features"
+      ],
+      "inlineEnhancements": []
+    },
+    {
+      "id": "amnezja-dysocjacyjna-i-fuga-block-2",
+      "title": "Fuga dysocjacyjna: Ucieczka z utratą tożsamości",
+      "text": "W ICD-11 fuga dysocjacyjna stanowi specyfikator amnezji dysocjacyjnej. Polega na pozornie celowej podróży lub błądzeniu z dala od domu, połączonym z amnezją dotyczącą własnej tożsamości lub przyjęciem nowej tożsamości. W trakcie fugi podstawowe funkcjonowanie społeczne (kupno biletu, jedzenie) może wydawać się osobom postronnym całkowicie normalne. Po wyjściu ze stanu fugi pacjent zazwyczaj nie pamięta zdarzeń, które miały miejsce podczas jej trwania.",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022"
+      ],
+      "checkpointId": "amnezja-dysocjacyjna-i-fuga-q3-checkpoint-2-v2",
+      "claimIds": [
+        "claim-trauma-dissociative-amnesia-features"
+      ],
+      "inlineEnhancements": []
+    },
+    {
+      "id": "amnezja-dysocjacyjna-i-fuga-block-3",
+      "title": "Różnicowanie z amnezją organiczną i neurologiczną",
+      "text": "Kluczowe reguły różnicowania z przyczynami somatycznymi: 1) Przemijająca amnezja ogólna (TGA) — występuje u osób starszych, trwa <24 h, pacjent nieustannie zadaje te same pytania („co ja tu robię?”), ale PAMIĘTA własną tożsamość; 2) Zespół Korsakowa — upośledzenie zapamiętywania świeżego (amnezja następcza) z konfabulacjami w wywiadzie alkoholowym; 3) Amnezja dysocjacyjna — często paradoksalnie dotyczy tożsamości przy zachowanej zdolności do zapamiętywania nowych informacji (odwrotnie niż w organicznym zespole amnestycznym).",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022"
+      ],
+      "claimIds": [
+        "claim-trauma-dissociative-amnesia-features"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "amnezja-dysocjacyjna-i-fuga-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "amnezja-dysocjacyjna-i-fuga-obj-1"
+      ],
+      "prompt": "Czym charakteryzuje się fuga dysocjacyjna wg ICD-11?",
+      "options": [
+        "Pozornie celową podróżą z dala od domu z niepamięcią własnej tożsamości",
+        "Niekontrolowanymi napadami śmiechu bez utraty pamięci",
+        "Zapaleniem mięśnia sercowego w przebiegu grypy"
+      ],
+      "optionFeedback": [
+        "Fuga to amnezja autobiograficzna powiązana z przemieszczaniem się w przestrzeni.",
+        "To afekt rzekomoopuszkowy, zjawisko neurologiczne.",
+        "Brak związku z kardiologią."
+      ],
+      "answer": 0,
+      "explanation": "Fuga to amnezja autobiograficzna powiązana z przemieszczaniem się w przestrzeni.",
+      "hint": "Zwróć uwagę na ramy czasowe oraz kryteria wykluczenia.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022"
+      ],
+      "claimIds": [
+        "claim-trauma-dissociative-amnesia-features"
+      ]
+    },
+    {
+      "id": "amnezja-dysocjacyjna-i-fuga-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "amnezja-dysocjacyjna-i-fuga-obj-2"
+      ],
+      "prompt": "Jak najpewniej odróżnić amnezję dysocjacyjną uogólnioną od przemijającej amnezji ogólnej (TGA)?",
+      "options": [
+        "W TGA pacjent zawsze pamięta swoje imię i tożsamość, ale nie rejestruje nowych faktów",
+        "W amnezji dysocjacyjnej zawsze występuje krwiak podtwardówkowy",
+        "W TGA dochodzi do utraty obu gałek ocznych"
+      ],
+      "optionFeedback": [
+        "W TGA chory powtarza pytania i nie zapamiętuje bieżących odpowiedzi, ale wie kim jest; w uogólnionej amnezji dysocjacyjnej nie wie kim jest, ale zapamiętuje nowe fakty.",
+        "Krwiak to uszkodzenie organiczne wykluczające czystą amnezję dysocjacyjną.",
+        "Nonsens medyczny."
+      ],
+      "answer": 0,
+      "explanation": "W TGA chory powtarza pytania i nie zapamiętuje bieżących odpowiedzi, ale wie kim jest; w uogólnionej amnezji dysocjacyjnej nie wie kim jest, ale zapamiętuje nowe fakty.",
+      "hint": "Kluczem jest bezpieczeństwo i hierarchia postępowania.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022"
+      ],
+      "claimIds": [
+        "claim-trauma-dissociative-amnesia-features"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "amnezja-dysocjacyjna-i-fuga-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "amnezja-dysocjacyjna-i-fuga-obj-1",
+      "amnezja-dysocjacyjna-i-fuga-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejsze kryteria i pułapki różnicowania z lekcji „Amnezja dysocjacyjna i fuga dysocjacyjna”.",
+    "modelAnswer": "Amnezja dysocjacyjna to niemożność przypomnienia sobie faktów autobiograficznych (najczęściej urazowych). W fudze dochodzi do podróży z utratą tożsamości. Zachowane uczenie się nowych danych odróżnia ją od amnezji organicznej.",
+    "explanation": "Porównaj swoją odpowiedź z podsumowaniem klinicznym. Zwróć uwagę na kryteria decyzyjne i czerwone flagi.",
+    "difficulty": "both",
+    "reasoning": "safety",
+    "sourceIds": [
+      "src-icd11-cddr-2024",
+      "src-dsm5-tr-2022"
+    ],
+    "claimIds": [
+      "claim-trauma-dissociative-amnesia-features"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "amnezja-dysocjacyjna-i-fuga-q4-exit-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "amnezja-dysocjacyjna-i-fuga-obj-1"
+      ],
+      "prompt": "Dlaczego u pacjenta z zespołem Korsakowa nie rozpoznaje się amnezji dysocjacyjnej?",
+      "options": [
+        "Wynika z uszkodzenia organicznego ciał suteczkowatych w przebiegu niedoboru tiaminy",
+        "Ponieważ zespół Korsakowa dotyczy wyłącznie dzieci poniżej 3 roku życia",
+        "W zespole Korsakowa pamięć jest ponadprzeciętnie wzmocniona"
+      ],
+      "optionFeedback": [
+        "To encefalopatia organiczna z deficytem zapamiętywania świeżego i konfabulacjami.",
+        "Występuje niemal wyłącznie u dorosłych uzależnionych od alkoholu lub niedożywionych.",
+        "To ciężki deficyt pamięci amnestycznej."
+      ],
+      "answer": 0,
+      "explanation": "To encefalopatia organiczna z deficytem zapamiętywania świeżego i konfabulacjami.",
+      "hint": "Przypomnij sobie wzorce neurobiologiczne i kontrfaktyczne reguły decyzyjne.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022"
+      ],
+      "claimIds": [
+        "claim-trauma-dissociative-amnesia-features"
+      ]
+    },
+    {
+      "id": "amnezja-dysocjacyjna-i-fuga-q5-exit-2-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "amnezja-dysocjacyjna-i-fuga-obj-2"
+      ],
+      "prompt": "Co dzieje się z pamięcią proceduralną (np. gra na pianinie, jazda autem) w amnezji dysocjacyjnej?",
+      "options": [
+        "Zazwyczaj pozostaje w pełni nienaruszona",
+        "Zawsze zostaje całkowicie wykasowana",
+        "Ulega zamianie na pamięć węchową"
+      ],
+      "optionFeedback": [
+        "Amnezja dysocjacyjna dotyczy pamięci epizodycznej/autobiograficznej, nie proceduralnej.",
+        "Pamięć proceduralna opiera się na innych obwodach (móżdżek, prążkowie).",
+        "Brak takiego zjawiska w neurobiologii."
+      ],
+      "answer": 0,
+      "explanation": "Amnezja dysocjacyjna dotyczy pamięci epizodycznej/autobiograficznej, nie proceduralnej.",
+      "hint": "Wybierz informację o najwyższej wadze różnicującej.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022"
+      ],
+      "claimIds": [
+        "claim-trauma-dissociative-amnesia-features"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "trauma-dissociation-workbench"
+  ],
+  "widgetConfig": {},
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, CG78, ISTSS, pure content-src architecture"
+  }
+}

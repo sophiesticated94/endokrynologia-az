@@ -1,0 +1,164 @@
+{
+  "id": "trauma-somatyka-mimiki-i-bezpieczenstwo",
+  "moduleId": "psych-trauma-dysocjacja",
+  "title": "Somatyczne mimiki, substancje i pułapki diagnostyczne",
+  "subtitle": "Czerwone flagi neurologiczne, błąd konfirmacji negatywnego testu i ryzyko fałszywych wspomnień",
+  "group": "D. Różnicowanie kliniczne",
+  "minutes": 19,
+  "goals": [
+    "Poznasz zasady wykluczania organicznych i toksycznych przyczyn objawów dysocjacyjnych.",
+    "Zrozumiesz błąd konfirmacji („negatywny test to nie dowód DID”) i etyczne ryzyko iatrogenii."
+  ],
+  "sections": [
+    {
+      "title": "Czerwone flagi neurologiczne: Kiedy dysocjacja jest objawem guza lub zapalenia mózgu?",
+      "text": "NIGDY nie wolno zakładać etiologii psychogennej przed rzetelnym badaniem somatycznym. Czerwone flagi neurologiczne wymagające natychmiastowej neurodiagnostyki: 1) Debiut po 40. roku życia bez wywiadu urazowego; 2) Objawy ogniskowe (asymetria odruchów, opadanie kącika ust, niedowład, objaw Babińskiego); 3) Napadowe epizody o ściśle stereotypowym przebiegu trwające <2 minut; 4) Obecność aury węchowej, smakowej lub nadbrzusznej; 5) Postępujące zaburzenia poznawcze, zaburzenia zwieraczy lub ataksja. Przypadki zapalenia mózgu z przeciwciałami przeciwko receptorom NMDA (anty-NMDAR) oraz guzy płata skroniowego bywają tragicznie mylone z dysocjacją!"
+    },
+    {
+      "title": "Błąd konfirmacji: Prawidłowy wynik testu NIE jest dowodem zaburzenia psychicznego",
+      "text": "Kardynalny błąd logiczny w medycynie: „Zrobiliśmy MRI i EEG, wyszły prawidłowo, a więc to na 100% zaburzenie dysocjacyjne / psychogenne”. Normalny wynik badania dodatkowego wyklucza jedynie te patologie, które dana metoda jest w stanie wykryć (np. rutynowe między-napadowe EEG jest prawidłowe u 30–50% chorych z padaczką!). Rozpoznanie zaburzenia dysocjacyjnego wymaga spełnienia POZYTYWNYCH kryteriów psychopatologicznych, a nie stawiania diagnozy z samego braku uchwytnych zmian somatycznych."
+    },
+    {
+      "title": "Iatrogenia, sugestia terapeutyczna i problem fałszywych wspomnień",
+      "text": "Historia psychiatrii zna dramatyczne lekcje z lat 80. i 90. XX wieku (tzw. „Memory Wars”), gdy nieodpowiedzialne techniki hipnotyczne, presja terapeutyczna i sugestywne pytania prowadziły do wykreowania fałszywych wspomnień o rzekomych rytualnych nadużyciach (False Memory Syndrome). ZASADA BEZPIECZEŃSTWA: Terapeuta nigdy nie powinien sugerować istnienia „ukrytych alterów”, nie wolno wymuszać „odzyskiwania wypartych wspomnień” ani prowadzić konfrontacji z rodziną na podstawie hipnotycznych wizji. Wspomnienia wytworzone pod wpływem sugestii są subiektywnie nieodróżnialne od prawdziwych, lecz klinicznie niszczące."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Objaw / Sytuacja",
+      "Ryzyko błędu",
+      "Bezpieczne postępowanie kliniczne"
+    ],
+    "rows": [
+      [
+        "Prawidłowe EEG i MRI mózgu",
+        "Założenie, że to „dowód” na dysocjację lub symulację",
+        "Pamiętaj o czułości metod; zbadaj pozytywne kryteria kliniczne"
+      ],
+      [
+        "Aura węchowa / metaliczny posmak",
+        "Zignorowanie jako „objaw histeryczny”",
+        "Pilne wideo-EEG i MRI z protokołem padaczkowym"
+      ],
+      [
+        "Podejrzenie ukrytej traumy",
+        "Stosowanie hipnozy w celu „odzyskania wspomnień”",
+        "BEZWZGLĘDNIE ZAKAZANE — wysokie ryzyko iatrogennych fałszywych wspomnień"
+      ],
+      [
+        "Ostry początek u osoby 55+",
+        "Przypisanie nowej traumie psychicznej",
+        "Pilny panel internistyczny, toksykologiczny i neuroobrazowanie"
+      ]
+    ]
+  },
+  "advanced": "W badaniach laboratoryjnych nad plastycznością pamięci (Loftus i wsp.) wykazano, że za pomocą prostych pytań sugerujących u ponad 25–30% zdrowych dorosłych można w ciągu 3 wywiadów zaszczepić bogate, fałszywe wspomnienie autobiograficzne z dzieciństwa (np. zagubienie w centrum handlowym z interwencją policji), o którego autentyczności badani są głęboko przekonani.",
+  "summary": "Czerwone flagi neurologiczne wymagają pilnej diagnostyki. Prawidłowy wynik testu nie jest dowodem na dysocjację. Narzucanie sugestii i odzyskiwanie wspomnień grozi wytworzeniem fałszywych engramów.",
+  "sourceIds": [
+    "src-who-mhgap-2023",
+    "src-isstd-adult-did-2011",
+    "src-icd11-cddr-2024"
+  ],
+  "questions": [
+    {
+      "id": "trauma-somatyka-mimiki-i-bezpieczenstwo-q1",
+      "lessonId": "trauma-somatyka-mimiki-i-bezpieczenstwo",
+      "prompt": "Na czym polega błąd konfirmacji negatywnego testu w diagnostyce zaburzeń dysocjacyjnych?",
+      "options": [
+        {
+          "text": "Na błędnym uznaniu, że prawidłowy wynik EEG i MRI mózgu stanowi „dowód potwierdzający” etiologię dysocjacyjną",
+          "explanation": "Diagnoza dysocjacyjna wymaga spełnienia pozytywnych kryteriów klinicznych, a nie wynika z samego braku zmian w badaniach."
+        },
+        {
+          "text": "Na założeniu, że każdy pacjent musi mieć powtórzone badanie krwi 100 razy",
+          "explanation": "Brak związku z błędem konfirmacji."
+        },
+        {
+          "text": "Na odrzuceniu wyniku badania z powodu brzydkiego charakteru pisma lekarza",
+          "explanation": "To kwestia edycyjna, nie błąd metodologiczny."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "trauma-somatyka-mimiki-i-bezpieczenstwo-q2",
+      "lessonId": "trauma-somatyka-mimiki-i-bezpieczenstwo",
+      "prompt": "Dlaczego wytyczne międzynarodowe bezwzględnie zakazują technik sugestywnych i hipnozy w celu „odzyskiwania wypartych wspomnień”?",
+      "options": [
+        {
+          "text": "Niosą udowodnione wysokie ryzyko wygenerowania iatrogennych, destrukcyjnych fałszywych wspomnień (False Memory Syndrome)",
+          "explanation": "Umysł ludzki w hipnozie jest wybitnie podatny na konfabulacje i konfirmację oczekiwań terapeuty."
+        },
+        {
+          "text": "Hipnoza jest procedurą zbyt kosztowną dla kas chorych",
+          "explanation": "Przyczyną jest bezpieczeństwo kliniczne i zapobieganie szkodzie pacjenta."
+        },
+        {
+          "text": "Hipnoza wywołuje natychmiastowe zakażenie wirusowym zapaleniem wątroby",
+          "explanation": "Brak transmisji patogenów drogą psychologiczną."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "trauma-somatyka-mimiki-i-bezpieczenstwo-q3",
+      "lessonId": "trauma-somatyka-mimiki-i-bezpieczenstwo",
+      "prompt": "Który objaw u pacjenta z dysocjacją stanowi czerwoną flagę wymagającą pilnej konsultacji neurologicznej?",
+      "options": [
+        {
+          "text": "Napadowość z aurą nadbrzuszną, stereotypowość 30–60 s lub początek po 40. r.ż. z objawami ogniskowymi",
+          "explanation": "To objawy wskazujące na proces organiczny OUN (padaczka skroniowa, guz, zapalenie)."
+        },
+        {
+          "text": "Płacz podczas rozmowy o zmarłym rodzicu",
+          "explanation": "To naturalna reakcja żałoby i smutku."
+        },
+        {
+          "text": "Uczucie zmęczenia po nieprzespanej nocy",
+          "explanation": "To fizjologiczny skutek deprywacji snu."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "trauma-somatyka-mimiki-i-bezpieczenstwo-q4",
+      "lessonId": "trauma-somatyka-mimiki-i-bezpieczenstwo",
+      "prompt": "Czym może manifestować się autoimmunologiczne zapalenie mózgu z przeciwciałami przeciwko receptorom NMDA (anty-NMDAR)?",
+      "options": [
+        {
+          "text": "Ostrym początkiem psychozy, amnezji, dysocjacji, dyskinez i niestabilności wegetatywnej u młodej osoby",
+          "explanation": "Zapalenie anty-NMDAR jest jednym z najczęstszych organicznych mimików zaburzeń psychicznych u młodych kobiet."
+        },
+        {
+          "text": "Izolowanym złamaniem kości piętowej",
+          "explanation": "To uraz ortopedyczny."
+        },
+        {
+          "text": "Trwałym brakiem linii papilarnych na palcach",
+          "explanation": "To rzadka cecha dermatologiczna (adermatoglifia)."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "trauma-somatyka-mimiki-i-bezpieczenstwo-q5",
+      "lessonId": "trauma-somatyka-mimiki-i-bezpieczenstwo",
+      "prompt": "Co należy zrobić, jeśli rutynowe badanie EEG u pacjenta z podejrzeniem padaczki skroniowej jest prawidłowe?",
+      "options": [
+        {
+          "text": "Pamiętać, że pojedyncze rutynowe EEG ma ograniczoną czułość i w razie silnego podejrzenia zlecić wideo-EEG lub badanie po deprywacji snu",
+          "explanation": "Prawidłowy zapis spoczynkowy nie wyklucza ogniska padaczkowego w głębokich strukturach skroniowych."
+        },
+        {
+          "text": "Natychmiast ogłosić, że pacjent symuluje chorobę",
+          "explanation": "Symulacja jest rzadka i wymaga rzetelnego dowodu, a nie oparcia na ujemnym teście przesiewowym."
+        },
+        {
+          "text": "Podać dożylnie alkohol etylowy",
+          "explanation": "Alkohol jest przeciwwskazany w diagnostyce neurologicznej."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

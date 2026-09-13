@@ -1,0 +1,159 @@
+{
+  "id": "psychoterapia-traumy-fazy-i-metody",
+  "moduleId": "psych-trauma-dysocjacja",
+  "title": "Fazy leczenia traumy: stabilizacja, TF-CBT, EMDR i ekspozycja",
+  "subtitle": "Model 3-fazowy Hermana/ISTSS, techniki uziemienia, przetwarzanie poznawcze i przeciwwskazania",
+  "group": "E. Leczenie i interwencje",
+  "minutes": 19,
+  "goals": [
+    "Poznasz 3-fazowy model leczenia traumy (Faza 1: stabilizacja, Faza 2: przetwarzanie, Faza 3: integracja).",
+    "Opanujesz zasady TF-CBT i EMDR oraz bezwzględne przeciwwskazania do wczesnej ekspozycji."
+  ],
+  "sections": [
+    {
+      "title": "Model konsensusowy: 3-fazowy model leczenia traumy (Herman, ISTSS)",
+      "text": "Leczenie złożonych zaburzeń potraumatycznych (cPTSD, DID) nie może zaczynać się od natychmiastowego „otwierania traumy”. Obowiązuje model trójfazowy: FAZA 1: Bezpieczeństwo i stabilizacja — budowanie sojuszu terapeutycznego, psychoedukacja, regulacja afektu, umiejętności uziemienia (grounding), opanowanie samouszkodzeń i stabilizacja środowiskowa; FAZA 2: Przetwarzanie pamięci traumatycznej — konfrontacja z engramem urazowym metodami ustrukturyzowanymi (TF-CBT, EMDR, Prolonged Exposure) w celu wygaszenia i integracji; FAZA 3: Reintegracja i konsolidacja — odbudowa relacji społecznych, celów życiowych i nowej tożsamości po traumie."
+    },
+    {
+      "title": "Metody terapii opartej na dowodach: TF-CBT i EMDR",
+      "text": "W wytycznych NICE, APA i ISTSS metodami I rzutu w PTSD są: 1) Terapia poznawczo-behawioralna ukierunkowana na traumę (TF-CBT / CPT / PE) — identyfikacja i restrukturyzacja zniekształconych przekonań o winie i zagrożeniu połączona z kontrolowaną ekspozycją wyobrażeniową i in vivo; 2) Terapia odwrażliwiania i przetwarzania za pomocą ruchów gałek ocznych (EMDR) — obustronna stymulacja sensoryczna (ruch oczu, tapping) podczas aktywacji wspomnienia urazowego, obniżająca pobudzenie ciała migdałowatego i ułatwiająca integrację korową."
+    },
+    {
+      "title": "Kiedy trauma processing NALEŻY ODROCZYĆ? Przeciwwskazania",
+      "text": "BEZWZGLĘDNE ZASADY BEZPIECZEŃSTWA: Forsowanie ekspozycji lub Fazy 2 leczenia jest błędem sztuki w sytuacjach: 1) Aktywnej suicydalności lub niedawnych zagrażających życiu samouszkodzeniach; 2) Trwającego braku bezpieczeństwa zewnętrznego (pacjent nadal mieszka ze sprawcą przemocy lub jest szantażowany); 3) Czynnej intoksykacji lub ciężkiego uzależnienia od substancji; 4) Ostrej dekompensacji psychotycznej; 5) Ciężkiej dysocjacji, w której pacjent natychmiast traci kontakt z rzeczywistością w gabinecie (brak tzw. okna tolerancji afektu — window of tolerance)."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Faza leczenia",
+      "Główne cele i interwencje",
+      "Kryterium przejścia do kolejnej fazy"
+    ],
+    "rows": [
+      [
+        "Faza 1: Stabilizacja",
+        "Bezpieczeństwo, techniki uziemienia, kontrakt na życie, regulacja emocji",
+        "Brak ciężkich zachowań autodestrukcyjnych, zdolność do powrotu z dysocjacji"
+      ],
+      [
+        "Faza 2: Przetwarzanie",
+        "TF-CBT, EMDR, Prolonged Exposure, praca z pamięcią traumy",
+        "Znaczny spadek dystresu (SUDs) przy wspominaniu urazu, brak intruzji"
+      ],
+      [
+        "Faza 3: Reintegracja",
+        "Budowanie relacji, powrót do pracy, kreowanie przyszłości",
+        "Funkcjonowanie w rolach społecznych, integracja tożsamości"
+      ]
+    ]
+  },
+  "advanced": "W farmakoterapii PTSD lekami z wyboru o udowodnionej skuteczności są SSRI (sertralina, paroksetyna) oraz SNRI (wenlafaksyna). Na koszmary senne i nocny hyperarousal rekomendowany bywa prazosyn (antagonista receptora alfa-1-adrenergicznego). Co kluczowe: NIE ISTNIEJE farmakoterapia „lecząca DID” — leki w dysocjacji stosuje się wyłącznie objawowo na współistniejącą depresję, lęk lub zaburzenia snu.",
+  "summary": "Leczenie traumy wymaga modelu 3-fazowego (stabilizacja -> przetwarzanie -> reintegracja). W Fazy 2 stosuje się TF-CBT lub EMDR. Przetwarzanie należy odroczyć przy suicydalności, braku bezpieczeństwa i aktywnej intoksykacji.",
+  "sourceIds": [
+    "src-herman-trauma-1992",
+    "src-istss-guidelines-2019",
+    "src-nice-ng116-ptsd-2018"
+  ],
+  "questions": [
+    {
+      "id": "psychoterapia-traumy-fazy-i-metody-q1",
+      "lessonId": "psychoterapia-traumy-fazy-i-metody",
+      "prompt": "Jaki jest bezwzględny pierwszy krok w 3-fazowym modelu leczenia złożonej traumy (Herman, ISTSS)?",
+      "options": [
+        {
+          "text": "Faza 1: Bezpieczeństwo, stabilizacja emocjonalna i opanowanie zachowań destrukcyjnych",
+          "explanation": "Otwieranie traumy bez stabilizacji i narzędzi radzenia sobie z lękiem grozi ciężką dekompensacją."
+        },
+        {
+          "text": "Natychmiastowe zmuszenie pacjenta do szczegółowego opisania gwałtu na pierwszej wizycie",
+          "explanation": "To ciężki błąd sztuki prowadzący do retraumatyzacji."
+        },
+        {
+          "text": "Wdrożenie leczenia elektrowstrząsowego w pełnej narkozie",
+          "explanation": "ECT nie jest leczeniem pierwszego rzutu w traumie."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psychoterapia-traumy-fazy-i-metody-q2",
+      "lessonId": "psychoterapia-traumy-fazy-i-metody",
+      "prompt": "W której sytuacji klinicznej należy BEZWZGLĘDNIE ODROCZYĆ ekspozycję na traumę (Fazę 2)?",
+      "options": [
+        {
+          "text": "W stanie czynnego kryzysu samobójczego, ciężkich samookaleczeń lub trwającej przemocy domowej",
+          "explanation": "Brak bezpieczeństwa wewnętrznego lub zewnętrznego jest bezwzględnym przeciwwskazaniem do ekspozycji."
+        },
+        {
+          "text": "Gdy pacjent ma w domu psa rasy golden retriever",
+          "explanation": "Posiadanie zwierzęcia domowego może wspierać leczenie."
+        },
+        {
+          "text": "Gdy temperatura powietrza na zewnątrz wynosi 22 stopnie Celsjusza",
+          "explanation": "Brak związku z warunkami pogodowymi."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psychoterapia-traumy-fazy-i-metody-q3",
+      "lessonId": "psychoterapia-traumy-fazy-i-metody",
+      "prompt": "Które metody psychoterapii są uznawane za metody pierwszego wyboru o najwyższej randze dowodów w PTSD?",
+      "options": [
+        {
+          "text": "TF-CBT (terapia poznawczo-behawioralna zorientowana na traumę) oraz EMDR",
+          "explanation": "Obie metody posiadają najwyższą siłę rekomendacji w wytycznych NICE, APA i ISTSS."
+        },
+        {
+          "text": "Terapia pijawkami lekarskimi i homeopatia",
+          "explanation": "To metody nienaukowe bez dowodów w medycynie opartej na faktach (EBM)."
+        },
+        {
+          "text": "Wyłącznie izolowana kinezyterapia stawu kolanowego",
+          "explanation": "To rehabilitacja ortopedyczna."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psychoterapia-traumy-fazy-i-metody-q4",
+      "lessonId": "psychoterapia-traumy-fazy-i-metody",
+      "prompt": "Jaka jest rola farmakoterapii w leczeniu dysocjacyjnego zaburzenia tożsamości (DID)?",
+      "options": [
+        {
+          "text": "Leki nie leczą samego DID; stosuje się je wyłącznie pomocniczo na objawy współistniejące (depresję, lęk)",
+          "explanation": "Podstawową metodą leczenia DID jest długoterminowa psychoterapia integracyjna; brak swoistej farmakoterapii rozszczepienia tożsamości."
+        },
+        {
+          "text": "Pojedyncza tabletka klozapiny całkowicie scala tożsamość w 5 minut",
+          "explanation": "Brak takiego leku w światowej medycynie."
+        },
+        {
+          "text": "Farmakoterapia jest surowo zakazana pod karą więzienia",
+          "explanation": "Leczenie wspomagające zaburzeń współistniejących jest dozwolone i często potrzebne."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psychoterapia-traumy-fazy-i-metody-q5",
+      "lessonId": "psychoterapia-traumy-fazy-i-metody",
+      "prompt": "Na czym polega koncepcja „okna tolerancji afektu” (window of tolerance) w pracy z traumą?",
+      "options": [
+        {
+          "text": "Na strefie optymalnego pobudzenia OUN, w której pacjent może przetwarzać emocje bez ucieczki w panikę lub odrętwienie",
+          "explanation": "Praca terapeutyczna jest skuteczna tylko w granicach okna tolerancji (pomiędzy hiper-arousalem a hipo-arousalem dysocjacyjnym)."
+        },
+        {
+          "text": "Na konieczności otwierania okna w gabinecie co 10 minut w celach wietrzenia",
+          "explanation": "To pojęcie z zakresu higieny pomieszczeń, nie psychoterapii afektu."
+        },
+        {
+          "text": "Na tolerowaniu spóźnień pacjenta o maksymalnie 30 sekund",
+          "explanation": "Pojęcie dotyczy regulacji układu nerwowego, a nie punktualności."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

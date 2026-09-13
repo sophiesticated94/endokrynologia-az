@@ -1,14 +1,16 @@
 'use client';
 import { useState } from 'react';
-import { Activity, Beaker, GitBranch, TrendingUp, type LucideIcon } from 'lucide-react';
+import { Activity, Beaker, GitBranch, TrendingUp, Brain, type LucideIcon } from 'lucide-react';
 import type { Confidence, LearningActivity, LessonExperienceV2, ModuleId, PracticeRecordMeta } from '@/lib/course-types';
 import { PracticeActivityCard } from './practice-activity';
 import { AdrenalWorkbench } from '@/components/learning/endocrinology/AdrenalWorkbench';
 import { ParathyroidWorkbench } from '@/components/learning/endocrinology/ParathyroidWorkbench';
+import { TraumaDissociationWorkbench } from '@/components/learning/psychiatry/TraumaDissociationWorkbench';
 import {
   getPreset,
   type AdrenalWorkbenchPresetState,
   type ParathyroidWorkbenchPresetState,
+  type TraumaDissociationWorkbenchPresetState,
 } from '@/lib/content/preset-registry';
 import {
   getPsychiatryWidgetProvider,
@@ -25,6 +27,7 @@ const labels: Record<string, readonly [string, LucideIcon]> = {
   'pathway-builder': ['Ścieżka decyzji', GitBranch],
   'adrenal-workbench': ['Pracownia nadnerczy', Activity],
   'parathyroid-workbench': ['Pracownia przytarczyc', Beaker],
+  'trauma-dissociation-workbench': ['Pracownia traumy i dysocjacji', Brain],
 };
 
 type ActivityBaseInput = {
@@ -125,7 +128,12 @@ const ENDO_GENERAL_PROVIDERS: WidgetProvider = {
 };
 
 function getWidgetProvider(moduleId: ModuleId, lessonId?: string): WidgetProvider {
-  if (moduleId === 'psych-afektywne' || moduleId === 'psych-farmakologia') {
+  if (
+    moduleId === 'psych-afektywne' ||
+    moduleId === 'psych-farmakologia' ||
+    moduleId === 'psych-organiczne' ||
+    moduleId === 'psych-trauma-dysocjacja'
+  ) {
     return getPsychiatryWidgetProvider(lessonId);
   }
   if (moduleId === 'cukrzyca') {
@@ -197,6 +205,18 @@ export function WidgetRenderer({
         <ParathyroidWorkbench
           mode="embedded"
           preset={presetDef ? (presetDef.initialState as unknown as ParathyroidWorkbenchPresetState) : undefined}
+          definition={presetDef}
+        />
+      </div>
+    );
+  }
+
+  if (widgetId === 'trauma-dissociation-workbench') {
+    return (
+      <div className="embedded-workbench my-3 p-3 bg-white rounded-xl border border-slate-200 shadow-sm">
+        <TraumaDissociationWorkbench
+          mode="embedded"
+          preset={presetDef ? (presetDef.initialState as unknown as TraumaDissociationWorkbenchPresetState) : undefined}
           definition={presetDef}
         />
       </div>

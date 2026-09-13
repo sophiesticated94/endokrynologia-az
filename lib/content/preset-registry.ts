@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { ENDOCRINE_PRESETS } from '../endocrinology/presets/endocrine-presets.ts';
 import { ALL_PSYCHIATRY_PRESETS } from '../psychiatry/presets/index.ts';
+import { TRAUMA_PRESETS } from '../psychiatry/presets/trauma-presets.ts';
 
 export const AdrenalControlIdSchema = z.enum([
   'morningCortisol',
@@ -138,6 +139,58 @@ export const ParathyroidWorkbenchPresetSchema = z.object({
 
 export type ParathyroidWorkbenchPresetState = z.infer<typeof ParathyroidWorkbenchPresetSchema>;
 
+export const TraumaDissociationControlIdSchema = z.enum([
+  'identityDiscontinuity',
+  'amnesiaType',
+  'depersonalizationDerealization',
+  'realityTesting',
+  'traumaIntrusions',
+  'avoidanceHyperarousal',
+  'affectInstability',
+  'interpersonalPattern',
+  'hallucinations',
+  'thoughtDisorder',
+  'symptomDuration',
+  'neurologicalFeatures',
+  'substanceContext',
+  'suicidalityRisk',
+]);
+
+export type TraumaDissociationControlId = z.infer<typeof TraumaDissociationControlIdSchema>;
+
+export const TraumaDissociationPresetSchema = z.object({
+  focusSection: z.enum(['differential', 'dissociation_axes', 'safety_neurology']).optional(),
+  visibleControls: z.array(TraumaDissociationControlIdSchema).optional(),
+  lockedFields: z.array(TraumaDissociationControlIdSchema).optional(),
+  input: z.object({
+    identityDiscontinuity: z.enum(['none', 'disturbed_sense_of_self', 'distinct_personality_states']).optional(),
+    amnesiaType: z.enum(['none', 'trauma_specific', 'recurrent_daily_activities', 'generalized_identity_loss', 'brief_paroxysmal']).optional(),
+    depersonalizationDerealization: z.boolean().optional(),
+    realityTesting: z.enum(['intact', 'impaired_delusional', 'transient_stress_induced']).optional(),
+    traumaIntrusions: z.enum(['none', 'distressing_memories', 'flashbacks_acting_as_if']).optional(),
+    avoidanceHyperarousal: z.boolean().optional(),
+    affectInstability: z.enum(['none', 'rapid_reactive_hours', 'sustained_weeks']).optional(),
+    interpersonalPattern: z.enum(['stable', 'intense_fear_of_abandonment', 'alienated_avoidant']).optional(),
+    hallucinations: z.enum(['none', 'internal_dialogue_ego_dystonic', 'external_commentary_ego_syntonic', 'hypnagogic_or_sensory']).optional(),
+    thoughtDisorder: z.boolean().optional(),
+    symptomDuration: z.enum(['days_under_3', 'days_under_30', 'chronic_months', 'brief_episodes_seconds']).optional(),
+    neurologicalFeatures: z.object({
+      hasAuraOrEpigastricRising: z.boolean().optional(),
+      stereotypedSecondsDuration: z.boolean().optional(),
+      postictalConfusion: z.boolean().optional(),
+      focalDeficits: z.boolean().optional(),
+    }).strict().optional(),
+    substanceContext: z.object({
+      activeIntoxicationOrWithdrawal: z.boolean().optional(),
+      onsetDirectlyTiedToSubstance: z.boolean().optional(),
+      substanceDetails: z.string().optional(),
+    }).strict().optional(),
+    suicidalityRisk: z.enum(['none', 'passive_ideation', 'active_with_intent', 'recent_severe_self_harm']).optional(),
+  }).strict().optional(),
+}).strict();
+
+export type TraumaDissociationWorkbenchPresetState = z.infer<typeof TraumaDissociationPresetSchema>;
+
 export const WidgetPresetDefinitionSchema = z.object({
   id: z.string().min(1),
   widgetType: z.string().min(1),
@@ -159,6 +212,8 @@ export function validateWidgetPreset(preset: WidgetPresetDefinition): void {
     AdrenalWorkbenchPresetSchema.parse(preset.initialState);
   } else if (preset.widgetType === 'parathyroid-workbench') {
     ParathyroidWorkbenchPresetSchema.parse(preset.initialState);
+  } else if (preset.widgetType === 'trauma-dissociation-workbench') {
+    TraumaDissociationPresetSchema.parse(preset.initialState);
   }
 }
 
@@ -223,6 +278,12 @@ for (const [id, preset] of Object.entries(ENDOCRINE_PRESETS)) {
   allWidgetPresets[id] = preset;
 }
 for (const [id, preset] of Object.entries(psychiatryPresets)) {
+  if (allWidgetPresets[id]) {
+    throw new Error(`Duplicate preset ID detected: "${id}"`);
+  }
+  allWidgetPresets[id] = preset;
+}
+for (const [id, preset] of Object.entries(TRAUMA_PRESETS)) {
   if (allWidgetPresets[id]) {
     throw new Error(`Duplicate preset ID detected: "${id}"`);
   }

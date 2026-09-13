@@ -1,0 +1,169 @@
+{
+  "id": "bpd-roznicowanie-cptsd-chad-adhd",
+  "moduleId": "psych-trauma-dysocjacja",
+  "title": "Różnicowanie BPD: Complex PTSD, choroba afektywna dwubiegunowa i ADHD",
+  "subtitle": "Dynamika afektu, lęk przed porzuceniem a wyobcowanie, epizody autonomiczne i impulsywność",
+  "group": "D. Różnicowanie kliniczne",
+  "minutes": 20,
+  "goals": [
+    "Nauczysz się precyzyjnie różnicować BPD z Complex PTSD (ICD-11), chorobą afektywną (ChAD II) i ADHD.",
+    "Zrozumiesz odmienności dynamiki nastroju, struktury tożsamości i wzorca więzi."
+  ],
+  "sections": [
+    {
+      "title": "BPD a cPTSD: Dwa oblicza traumy relacyjnej",
+      "text": "BPD i cPTSD mają wspólny mianownik w postaci wczesnodziecięcej traumy i dysregulacji emocjonalnej. RÓŻNICOWANIE: 1) Relacje — w BPD dominuje paniczny lęk przed porzuceniem, walka o utrzymanie bliskości i gwałtowne zmiany idealizacja-dewaluacja; w cPTSD przeważa wycofanie z relacji, unikanie bliskości i trwałe poczucie wyobcowania. 2) Obraz siebie — w BPD obraz siebie jest niestabilny i zmienny („zmieniam się pod wpływem tego, z kim jestem”); w cPTSD obraz siebie jest stabilnie negatywny („jestem trwale zniszczony, gorszy, winny”). 3) Intruzje — cPTSD bezwzględnie wymaga obecności intruzji PTSD (re-experiencing w tu i teraz), które w czystym BPD nie są kryterium."
+    },
+    {
+      "title": "BPD a Choroba afektywna dwubiegunowa typu II (ChAD II)",
+      "text": "Bardzo częsty błąd diagnostyczny to mylenie labilności w BPD z hipomanią w ChAD II. KLUCZ CZASOWY I WYZWALACZE: W BPD zmiany nastroju (od euforii do rozpaczy i złości) zachodzą w ciągu GODZIN i są bezpośrednią reakcją na bodźce relacyjne (np. nieodebrany telefon). W ChAD II epizody hipomanii trwają min. 4 DNI, a depresji min. 2 TYGODNIE, wykazując względną autonomię od bieżących wydarzeń zewnętrznych. Ponadto w hipomanii ChAD występuje zmniejszona potrzeba snu (3 h snu i pełnia energii), a w euforii BPD sen zwykle nie ulega tak drastycznemu fizjologicznemu skróceniu."
+    },
+    {
+      "title": "BPD a ADHD u dorosłych: Impulsywność i dysregulacja",
+      "text": "ADHD u dorosłych wiąże się z dysregulacją emocjonalną (Rejection Sensitive Dysphoria — RSD) i impulsywnością, co przypomina BPD. RÓŻNICE: W ADHD impulsywność wynika z deficytu funkcji wykonawczych i dopaminergicznego poszukiwania stymulacji (nuda, trudność z czekaniem), a nie z lęku przed porzuceniem. W ADHD brak jest typowego dla BPD przewlekłego poczucia pustki wewnętrznej, celowych samookaleczeń (NSSI) i zaburzeń tożsamości. W wywiadzie ADHD objawy nieuwagi i nadruchliwości obecne są już przed 12. rokiem życia."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Jednostka",
+      "Dynamika afektu",
+      "Wzorzec relacji interpersonalnych",
+      "Obraz własnego Ja"
+    ],
+    "rows": [
+      [
+        "Borderline (BPD)",
+        "Reaktywna, skrajna, w skali godzin/dni",
+        "Lęk przed porzuceniem, splitting, burzliwość",
+        "Niestabilny, płynny, zależny od relacji"
+      ],
+      [
+        "Complex PTSD",
+        "Przewlekła dysforia, lęk, odrętwienie",
+        "Unikanie intymności, wyobcowanie, chłód",
+        "Stabilnie negatywny (wstyd, bezwartościowość)"
+      ],
+      [
+        "ChAD typu II",
+        "Fazy autonomiczne: hipomania >=4 dni, depresja >=2 tyg.",
+        "Zwykle stabilne między epizodami",
+        "Zmienia się z fazą (wielkościowość vs depresja)"
+      ],
+      [
+        "ADHD dorosłych",
+        "Krótkotrwałe wybuchy złości/nudy, szybki powrót",
+        "Trudności z uwagą i zapominaniem, brak terroru porzucenia",
+        "Stabilny, choć obniżona samoocena przez porażki"
+      ]
+    ]
+  },
+  "advanced": "W praktyce klinicznej możliwa jest współchorobowość (np. BPD + ADHD u 30–40% chorych, lub cPTSD + BPD). W takich sytuacjach leczenie ADHD stymulantami (metylofenidat) może istotnie zmniejszyć impulsywność bazową, ułatwiając pacjentowi korzystanie z treningu umiejętności DBT.",
+  "summary": "BPD od cPTSD odróżnia lęk przed porzuceniem i niestabilne Ja; od ChAD II krótkotrwałość i reaktywność zmian nastroju (godziny vs dni/tygodnie); od ADHD brak podłoża funkcji wykonawczych i obecność pustki oraz autoagresji.",
+  "sourceIds": [
+    "src-icd11-cddr-2024",
+    "src-nice-cg78-bpd-2009",
+    "src-dsm5-tr-2022"
+  ],
+  "questions": [
+    {
+      "id": "bpd-roznicowanie-cptsd-chad-adhd-q1",
+      "lessonId": "bpd-roznicowanie-cptsd-chad-adhd",
+      "prompt": "Jaka różnica w skali czasu trwania wahań nastroju najlepiej odróżnia BPD od ChAD typu II?",
+      "options": [
+        {
+          "text": "W BPD wahania trwają godziny i są reaktywne; w ChAD epizody trwają dni (hipomania >=4 dni) lub tygodnie",
+          "explanation": "Kryterium czasu i autonomii biologicznej jest osiowe w różnicowaniu z chorobą afektywną."
+        },
+        {
+          "text": "W ChAD nastroje zmieniają się co 15 sekund przy każdym oddechu",
+          "explanation": "Epizody afektywne wymagają dni i tygodni do rozwinięcia i ustąpienia."
+        },
+        {
+          "text": "W BPD pacjent zawsze śpi po 20 godzin na dobę",
+          "explanation": "Zaburzenia snu w BPD nie mają takiego sztywnego charakteru."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "bpd-roznicowanie-cptsd-chad-adhd-q2",
+      "lessonId": "bpd-roznicowanie-cptsd-chad-adhd",
+      "prompt": "Czym różni się stosunek do relacji u pacjenta z cPTSD w porównaniu z pacjentem z BPD?",
+      "options": [
+        {
+          "text": "W cPTSD dominuje wycofanie, unikanie bliskości i alienacja; w BPD desperacka walka przed porzuceniem",
+          "explanation": "cPTSD cechuje się trwałym unikaniem intymności, a BPD burzliwym dążeniem do fuzji i lękiem przed opuszczeniem."
+        },
+        {
+          "text": "W cPTSD pacjent nie wie, co to jest drugi człowiek",
+          "explanation": "To nie agnozja, lecz świadome wycofanie z powodu braku zaufania."
+        },
+        {
+          "text": "W BPD pacjent nigdy nie zawiera żadnych znajomości",
+          "explanation": "Osoby z BPD bardzo intensywnie wchodzą w relacje."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "bpd-roznicowanie-cptsd-chad-adhd-q3",
+      "lessonId": "bpd-roznicowanie-cptsd-chad-adhd",
+      "prompt": "Jak odróżnić impulsywność w ADHD u dorosłych od impulsywności w BPD?",
+      "options": [
+        {
+          "text": "W ADHD wynika z deficytu hamowania i nudy, w BPD ze znoszenia skrajnego bólu afektywnego i lęku porzucenia",
+          "explanation": "Etiologia impulsywności wykonawczej (dopamina w korze przedczołowej) różni się od afektywnej w BPD."
+        },
+        {
+          "text": "W ADHD impulsywność dotyczy wyłącznie kupowania pieczywa",
+          "explanation": "Nonsens medyczny."
+        },
+        {
+          "text": "U pacjentów z ADHD nigdy nie występuje złość",
+          "explanation": "W ADHD występuje dysregulacja emocjonalna, lecz o innym mechanizmie."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "bpd-roznicowanie-cptsd-chad-adhd-q4",
+      "lessonId": "bpd-roznicowanie-cptsd-chad-adhd",
+      "prompt": "Jak zachowuje się zapotrzebowanie na sen w epizodzie hipomanii w ChAD II w odróżnieniu od kryzysu w BPD?",
+      "options": [
+        {
+          "text": "W hipomanii występuje obiektywnie zmniejszona potrzeba snu z poczuciem wypoczęcia po 2–3 godzinach",
+          "explanation": "To osiowy biologiczny objaw spektrum dwubiegunowego."
+        },
+        {
+          "text": "W hipomanii pacjent zapada w nieprzerwaną śpiączkę 100-dniową",
+          "explanation": "To stan śmierci mózgu lub ciężkiego uszkodzenia OUN, nie hipomania."
+        },
+        {
+          "text": "W BPD pacjenci w ogóle nie potrzebują tlenu do oddychania",
+          "explanation": "Niedorzeczność biologiczna."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "bpd-roznicowanie-cptsd-chad-adhd-q5",
+      "lessonId": "bpd-roznicowanie-cptsd-chad-adhd",
+      "prompt": "Co cechuje obraz własnego „Ja” w cPTSD w porównaniu z płynną tożsamością w BPD?",
+      "options": [
+        {
+          "text": "W cPTSD obraz Ja jest stabilnie negatywny (poczucie trwałego uszkodzenia, wstydu i bycia gorszym)",
+          "explanation": "W cPTSD nie ma wahań od idealizacji siebie do nienawiści, lecz utrwalone przekonanie o własnej skazie."
+        },
+        {
+          "text": "W cPTSD pacjent uważa się za cesarza rzymskiego",
+          "explanation": "To urojenia wielkościowe w psychozie."
+        },
+        {
+          "text": "W BPD obraz siebie nigdy się nie zmienia przez 50 lat",
+          "explanation": "Tożsamość w BPD jest wybitnie niestabilna."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

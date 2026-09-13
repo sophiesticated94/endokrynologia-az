@@ -1,26 +1,33 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { psychiatryLessons, psychiatryQuestions, psychiatryFlashcards, psychiatryModulesList } from '../lib/course-psychiatry.ts';
+import {
+  psychiatryLessons,
+  psychiatryQuestions,
+  psychiatryFlashcards,
+  psychiatryModulesList,
+  psychiatrySources,
+} from '../lib/course-psychiatry.ts';
 import { psychiatryCases } from '../lib/cases-psychiatry.ts';
 import { psychiatryGlossary, psychiatryGlossaryMap } from '../lib/glossary-psychiatry.ts';
-import { psychiatrySources } from '../lib/course-psychiatry-sources.ts';
 import { COURSES, getCourse } from '../lib/courses-registry.ts';
 
-test('psychiatry curriculum structure: 51 lessons across 3 modules, 255 questions, 259 flashcards, 32 cases', () => {
-  assert.equal(psychiatryLessons.length, 51);
-  assert.equal(psychiatryQuestions.length, 255);
-  assert.equal(psychiatryFlashcards.length, 259);
+test('psychiatry curriculum structure: 67 lessons across 4 modules, 335 questions, 339 flashcards, 32 cases', () => {
+  assert.equal(psychiatryLessons.length, 67);
+  assert.equal(psychiatryQuestions.length, 335);
+  assert.equal(psychiatryFlashcards.length, 339);
   assert.equal(psychiatryCases.length, 32);
   assert.equal(psychiatryGlossary.length, 16);
-  assert.equal(psychiatryModulesList.length, 3);
+  assert.equal(psychiatryModulesList.length, 4);
 
   const affective = psychiatryLessons.filter(l => l.moduleId === 'psych-afektywne');
   const pharma = psychiatryLessons.filter(l => l.moduleId === 'psych-farmakologia');
   const organic = psychiatryLessons.filter(l => l.moduleId === 'psych-organiczne');
+  const trauma = psychiatryLessons.filter(l => l.moduleId === 'psych-trauma-dysocjacja');
 
   assert.equal(affective.length, 16, 'Affective & neurobiology module has 16 lessons');
   assert.equal(pharma.length, 22, 'Psychopharmacology & receptors module has 22 lessons');
   assert.equal(organic.length, 13, 'Organic & neurocognitive module has 13 lessons');
+  assert.equal(trauma.length, 16, 'Trauma & dissociation module has 16 lessons');
 
   for (const l of psychiatryLessons) {
     assert.equal(l.questions.length, 5, `Lesson ${l.id} must have 5 questions`);
@@ -60,9 +67,9 @@ test('courses registry holds valid bundles for endocrinology and psychiatry', ()
   const psych = getCourse('psychiatry');
   assert.equal(psych.id, 'psychiatry');
   assert.equal(psych.title, 'Psychiatria i Psychofarmakologia Kliniczna');
-  assert.equal(psych.lessons.length, 51);
-  assert.equal(psych.questions.length, 255);
-  assert.equal(psych.flashcards.length, 259);
+  assert.equal(psych.lessons.length, 67);
+  assert.equal(psych.questions.length, 335);
+  assert.equal(psych.flashcards.length, 339);
   assert.equal(psych.cases.length, 32);
   assert.equal(psych.glossary.length, 16);
 });

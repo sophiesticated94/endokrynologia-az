@@ -16,6 +16,7 @@ import {
 } from '../course-psychiatry.ts';
 import { psychiatryLessonExperiences } from '../psychiatry/index.ts';
 import {
+  discoverContentSrcModulesSync,
   isContentSrcModule,
   loadCourseModuleFromContentSrcSync,
 } from './authoring-loader.ts';
@@ -115,10 +116,12 @@ export function resolveCourseModuleSource(moduleId: string): CourseModuleSource 
 }
 
 export function getAllModuleIds(): string[] {
-  return [
+  const staticIds = [
     ...endoModulesList.map((m) => m.id),
     ...psychiatryModulesList.map((m) => m.id),
   ];
+  const contentSrcMods = discoverContentSrcModulesSync().map((m) => m.moduleId);
+  return Array.from(new Set([...staticIds, ...contentSrcMods]));
 }
 
 export function getAllCourseModuleSources(): CourseModuleSource[] {

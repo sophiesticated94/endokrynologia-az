@@ -1,0 +1,167 @@
+{
+  "id": "osobowosc-icd11-wymiary",
+  "moduleId": "psych-trauma-dysocjacja",
+  "title": "Wymiarowy model zaburzeń osobowości wg ICD-11",
+  "subtitle": "Koniec kategorii DSM-IV: poziomy nasilenia, 5 domen cech i kwalifikator borderline",
+  "group": "C. Zaburzenia osobowości",
+  "minutes": 19,
+  "goals": [
+    "Poznasz rewolucyjny wymiarowy model zaburzeń osobowości w klasyfikacji ICD-11 (kod 6D10).",
+    "Zrozumiesz ocenę głębokości zaburzenia (Mild, Moderate, Severe) oraz 5 domen cech i wzorzec borderline."
+  ],
+  "sections": [
+    {
+      "title": "Dlaczego odrzucono sztywne kategorie (Cluster A, B, C)?",
+      "text": "Klasyczny podział na 10 odrębnych kategorii (paranoiczna, schizoidalna, borderline, histrioniczna, narcystyczna, antyspołeczna, unikająca, zależna, anankastyczna) w DSM-IV/ICD-10 był krytykowany za: ogromną współchorobowość (pacjenci spełniali kryteria 3–4 zaburzeń naraz), niestabilność diagnozy w czasie, arbitralne progi oraz brak odzwierciedlenia rzeczywistej biologii osobowości. W ICD-11 WHO całkowicie zrezygnowało z dawnych kategorii na rzecz modelu wymiarowego (dimensional approach)."
+    },
+    {
+      "title": "Krok 1: Ocena głębokości zaburzenia (Severity)",
+      "text": "Podstawą diagnozy w ICD-11 jest stwierdzenie uogólnionej dysfunkcji w dwóch obszarach: funkcjonowania własnego JA (tożsamość, poczucie własnej wartości, samokierowanie) oraz funkcjonowania INTERPERSONALNEGO (zdolność do empatii, bliskości, współpracy). Na tej podstawie ustala się stopień nasilenia: 1) Trudności osobowościowe (Personality Difficulty — stan subkliniczny); 2) Łagodne zaburzenie osobowości (Mild PD); 3) Umiarkowane zaburzenie osobowości (Moderate PD); 4) Ciężkie zaburzenie osobowości (Severe PD — całkowite załamanie ról społecznych, wysokie ryzyko szkód dla siebie/innych)."
+    },
+    {
+      "title": "Krok 2 i 3: Domeny cech i kwalifikator borderline",
+      "text": "Po ustaleniu nasilenia opisuje się profil pacjenta za pomocą 5 domen cech: 1) Negatywna afektywność (Negative Affectivity) — lęk, złość, podatność na zranienie; 2) Dystansowanie (Detachment) — wycofanie społeczne i emocjonalne; 3) Dyssocjalność (Dissociality) — brak empatii, wrogość, manipulacja; 4) Rozhamowanie (Disinhibition) — impulsywność, brak planowania; 5) Anankastia (Anankastia) — perfekcjonizm, sztywna kontrola. KROK 3: Kwalifikator wzorca borderline (Borderline pattern qualifier) — zachowany dla celów ciągłości klinicznej i refundacji sprawdzonych terapii (DBT)."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Domena cech (ICD-11)",
+      "Biegun wysoki (cecha zaburzona)",
+      "Biegun niski (cecha adaptacyjna)"
+    ],
+    "rows": [
+      [
+        "Negatywna afektywność",
+        "Lękowość, chwiejność afektu, wrogość, depresyjność",
+        "Stabilność emocjonalna, spokój w stresie"
+      ],
+      [
+        "Dystansowanie (Detachment)",
+        "Izolacja społeczna, anhedonia, dystans emocjonalny",
+        "Towarzyskość, ekspresyjność, ciepło interpersonalne"
+      ],
+      [
+        "Dyssocjalność (Dissociality)",
+        "Bezduszność, wielkościowość, wykorzystywanie innych",
+        "Empatia, altruizm, szacunek dla norm społecznych"
+      ],
+      [
+        "Rozhamowanie (Disinhibition)",
+        "Impulsywność, ryzykanctwo, brak rozwagi",
+        "Skrupulatność, planowanie, odraczanie gratyfikacji"
+      ],
+      [
+        "Anankastia (Anankastia)",
+        "Sztywny perfekcjonizm, pedantyzm, hiper-kontrola",
+        "Elastyczność, tolerancja błędów, luz poznawczy"
+      ]
+    ]
+  },
+  "advanced": "Warto zauważyć, że wymiar Anankastia i wymiar Rozhamowanie stanowią przeciwstawne bieguny tej samej osi kontroli behawioralnej. Pacjent nie może jednocześnie prezentować skrajnego rozhamowania i skrajnej anankastii w tym samym zachowaniu, choć może przełączać się między nimi w różnych obszarach życia.",
+  "summary": "ICD-11 zrezygnowało z dawnych kategorii na rzecz oceny stopnia głębokości (łagodne, umiarkowane, ciężkie), profilu 5 domen cech oraz opcjonalnego kwalifikatora wzorca borderline.",
+  "sourceIds": [
+    "src-icd11-cddr-2024"
+  ],
+  "questions": [
+    {
+      "id": "osobowosc-icd11-wymiary-q1",
+      "lessonId": "osobowosc-icd11-wymiary",
+      "prompt": "Jaki jest pierwszy i fundamentalny krok w diagnostyce zaburzeń osobowości wg klasyfikacji ICD-11?",
+      "options": [
+        {
+          "text": "Ocena ogólnego stopnia głębokości dysfunkcji (łagodne, umiarkowane, ciężkie zaburzenie)",
+          "explanation": "Najpierw ustala się czy i w jakim nasileniu występuje zaburzenie funkcjonowania self i relacji."
+        },
+        {
+          "text": "Zaliczenie pacjenta do jednego z klastrów A, B lub C",
+          "explanation": "Klastry A, B, C to przestarzały system DSM, odrzucony w ICD-11."
+        },
+        {
+          "text": "Oznaczenie poziomu przeciwciał przeciwjądrowych ANA",
+          "explanation": "Badania immunologiczne nie diagnozują osobowości."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "osobowosc-icd11-wymiary-q2",
+      "lessonId": "osobowosc-icd11-wymiary",
+      "prompt": "Która domena cech w ICD-11 odpowiada za skrajny perfekcjonizm, sztywność reguł i nadmierną kontrolę?",
+      "options": [
+        {
+          "text": "Anankastia (Anankastia)",
+          "explanation": "Anankastia opisuje wzorzec sztywnego perfekcjonizmu i nadkontroli poznawczo-emocjonalnej."
+        },
+        {
+          "text": "Rozhamowanie (Disinhibition)",
+          "explanation": "Rozhamowanie to impulsywność i brak kontroli, przeciwieństwo anankastii."
+        },
+        {
+          "text": "Dystansowanie (Detachment)",
+          "explanation": "Dystansowanie to wycofanie z relacji i anhedonia."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "osobowosc-icd11-wymiary-q3",
+      "lessonId": "osobowosc-icd11-wymiary",
+      "prompt": "Dlaczego w ICD-11 zachowano kwalifikator wzorca borderline (Borderline pattern qualifier)?",
+      "options": [
+        {
+          "text": "Dla zachowania ciągłości klinicznej i kierowania pacjentów do dedykowanych terapii (np. DBT)",
+          "explanation": "Kwalifikator ułatwia identyfikację pacjentów odnoszących korzyść z ustrukturyzowanych programów leczenia."
+        },
+        {
+          "text": "Ponieważ jest to jedyne zaburzenie osobowości występujące na świecie",
+          "explanation": "Zaburzenia osobowości mają zróżnicowany profil."
+        },
+        {
+          "text": "Z powodu nakazu Światowej Organizacji Handlu",
+          "explanation": "ICD-11 to dokument WHO, a nie WTO."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "osobowosc-icd11-wymiary-q4",
+      "lessonId": "osobowosc-icd11-wymiary",
+      "prompt": "Co charakteryzuje domenę dyssocjalności (Dissociality) w modelu wymiarowym ICD-11?",
+      "options": [
+        {
+          "text": "Brak empatii, przedmiotowe traktowanie innych ludzi i lekceważenie ich praw",
+          "explanation": "To rdzeń dyssocjalności (odpowiednik dawnego zaburzenia antyspołecznego i cech psychopatycznych)."
+        },
+        {
+          "text": "Ciągły paraliżujący lęk przed wyjściem z domu",
+          "explanation": "To domena negatywnej afektywności lub dystansowania."
+        },
+        {
+          "text": "Uporczywe mycie rąk 50 razy na dobę",
+          "explanation": "To objaw anankastyczny lub natręctwo w OCD."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "osobowosc-icd11-wymiary-q5",
+      "lessonId": "osobowosc-icd11-wymiary",
+      "prompt": "Co oznacza kategoria „Trudności osobowościowe” (Personality Difficulty) w ICD-11?",
+      "options": [
+        {
+          "text": "Stan subkliniczny — widoczne cechy utrudniające życie w stresie, lecz niespełniające kryteriów pełnego zaburzenia",
+          "explanation": "Pozwala na nazwanie problemu bez nieuzasadnionej stygmatyzacji pacjenta etykietą zaburzenia psychicznego."
+        },
+        {
+          "text": "Ciężką postać schizofrenii paranoidalnej z katatonią",
+          "explanation": "To psychoza, a nie wariant struktury osobowości."
+        },
+        {
+          "text": "Śpiączkę wątrobową w marskości",
+          "explanation": "To stan somatyczny bezpośrednio zagrażający życiu."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

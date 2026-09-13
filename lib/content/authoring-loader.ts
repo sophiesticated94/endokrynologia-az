@@ -23,6 +23,13 @@ const ENDO_COURSE_INFO = {
   version: '2026.09.13',
 };
 
+const PSYCH_COURSE_INFO = {
+  id: 'psychiatry',
+  title: 'Psychiatria i Psychofarmakologia Kliniczna',
+  description: 'Podręcznik akademicki, mechanizmy neurobiologiczne i interaktywny symulator decyzyjny.',
+  version: '2026.09.13',
+};
+
 function canonicalHash(obj: unknown): string {
   const cleanAndSort = (item: unknown): unknown => {
     if (item === null || typeof item !== 'object') return item;
@@ -266,7 +273,7 @@ export function loadCourseModuleFromContentSrcSync(
   }
 
   return {
-    course: ENDO_COURSE_INFO,
+    course: found.courseId === 'psychiatry' ? PSYCH_COURSE_INFO : ENDO_COURSE_INFO,
     module: {
       id: moduleRaw.id,
       name: moduleRaw.name,

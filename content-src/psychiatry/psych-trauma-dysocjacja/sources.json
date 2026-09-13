@@ -1,0 +1,86 @@
+{
+  "src-icd11-cddr-2024": {
+    "id": "src-icd11-cddr-2024",
+    "title": "WHO ICD-11 — Clinical Descriptions and Diagnostic Requirements for Mental, Behavioural or Neurodevelopmental Disorders",
+    "year": "2024",
+    "url": "https://icd.who.int/browse/2024-01/mms/en",
+    "kind": "Międzynarodowa klasyfikacja diagnostyczna (WHO)"
+  },
+  "src-dsm5-tr-2022": {
+    "id": "src-dsm5-tr-2022",
+    "title": "American Psychiatric Association — Diagnostic and Statistical Manual of Mental Disorders, Fifth Edition, Text Revision (DSM-5-TR)",
+    "year": "2022",
+    "url": "https://doi.org/10.1176/appi.books.9780890425787",
+    "kind": "Standard nozologiczny APA"
+  },
+  "src-nice-ng116-ptsd-2018": {
+    "id": "src-nice-ng116-ptsd-2018",
+    "title": "NICE Guideline NG116 — Post-traumatic stress disorder: management",
+    "year": "2018",
+    "url": "https://www.nice.org.uk/guidance/ng116",
+    "kind": "Wytyczne praktyki klinicznej (NICE)"
+  },
+  "src-istss-guidelines-2019": {
+    "id": "src-istss-guidelines-2019",
+    "title": "ISTSS — Posttraumatic Stress Disorder Prevention and Treatment Guidelines (Methodology and Recommendations)",
+    "year": "2019",
+    "url": "https://istss.org/clinical-resources/treating-trauma/guidelines",
+    "kind": "Międzynarodowe wytyczne leczenia traumy (ISTSS)"
+  },
+  "src-nice-cg78-bpd-2009": {
+    "id": "src-nice-cg78-bpd-2009",
+    "title": "NICE Clinical Guideline CG78 — Borderline personality disorder: recognition and management",
+    "year": "2009",
+    "url": "https://www.nice.org.uk/guidance/cg78",
+    "kind": "Wytyczne praktyki klinicznej (NICE)"
+  },
+  "src-linehan-dbt-1993": {
+    "id": "src-linehan-dbt-1993",
+    "title": "Linehan MM — Cognitive-Behavioral Treatment of Borderline Personality Disorder",
+    "year": "1993",
+    "url": "https://guilford.com/books/Cognitive-Behavioral-Treatment-of-Borderline-Personality-Disorder/Marsha-Linehan/9780898621839",
+    "kind": "Podręcznik i protokół kliniczny DBT"
+  },
+  "src-herman-trauma-1992": {
+    "id": "src-herman-trauma-1992",
+    "title": "Herman JL — Trauma and Recovery: The Aftermath of Violence — From Domestic Abuse to Political Terror",
+    "year": "1992",
+    "url": "https://www.basicbooks.com/titles/judith-l-herman/trauma-and-recovery/9780465061716/",
+    "kind": "Monografia kliniczna: 3-fazowy model leczenia traumy"
+  },
+  "src-isstd-adult-did-2011": {
+    "id": "src-isstd-adult-did-2011",
+    "title": "ISSTD — Guidelines for Treating Dissociative Identity Disorder in Adults, Third Revision",
+    "year": "2011",
+    "url": "https://doi.org/10.1080/15299732.2011.537247",
+    "kind": "Eksperckie wytyczne kliniczne (ISSTD)"
+  },
+  "src-who-mhgap-2023": {
+    "id": "src-who-mhgap-2023",
+    "title": "WHO — mhGAP Intervention Guide for Mental, Neurological and Substance Use Disorders in Non-specialized Health Settings, Version 3.0",
+    "year": "2023",
+    "url": "https://www.who.int/publications/i/item/9789240084353",
+    "kind": "Podręcznik interwencji klinicznych WHO"
+  },
+  "src-stanley-brown-safety-2012": {
+    "id": "src-stanley-brown-safety-2012",
+    "title": "Stanley B, Brown GK — Safety Planning Intervention: A Brief Intervention to Mitigate Suicide Risk",
+    "year": "2012",
+    "url": "https://doi.org/10.1016/j.cbpra.2011.01.001",
+    "kind": "Standard interwencji kryzysowej i bezpieczeństwa"
+  },
+  "src-van-der-hart-dissociation-2006": {
+    "id": "src-van-der-hart-dissociation-2006",
+    "title": "Van der Hart O, Nijenhuis ERS, Steele K — The Haunted Self: Structural Dissociation and the Treatment of Chronic Traumatization",
+    "year": "2006",
+    "url": "https://wwnorton.com/books/9780393704013",
+    "kind": "Monografia: Teoria strukturalnej dysocjacji"
+  },
+  "src-apa-ptsd-guideline-2017": {
+    "id": "src-apa-ptsd-guideline-2017",
+    "title": "American Psychological Association — Clinical Practice Guideline for the Treatment of Posttraumatic Stress Disorder (PTSD) in Adults",
+    "year": "2017",
+    "url": "https://www.apa.org/ptsd-guideline",
+    "kind": "Wytyczne praktyki klinicznej APA"
+  }
+}
