@@ -64,7 +64,7 @@
   },
   {
     "id": "claim-trauma-ptsd-core-triad",
-    "statement": "Rozpoznanie PTSD wg ICD-11 wymaga ekspozycji na wydarzenie o skrajnie zagrażającym charakterze oraz współwystępowania trzech kluczowych grup objawów trwających min. kilka tygodni: ponownego przeżywania (intruzje/flashbacks), unikania bodźców i wzmożonego poczucia zagrożenia (hyperarousal).",
+    "statement": "Rozpoznanie PTSD wg ICD-11 wymaga ekspozycji na wydarzenie zagrażające oraz współwystępowania trzech domen: 1) ponownego przeżywania urazu w teraźniejszości (re-experiencing z jakością tu i teraz w postaci flashbacków lub koszmarów; samo dystresujące wspomnienie nie wystarcza), 2) unikania bodźców oraz 3) utrzymującego się poczucia aktualnego zagrożenia (hyperarousal).",
     "category": "guideline_recommendation",
     "strength": "strong",
     "sourceIds": [
@@ -85,7 +85,7 @@
   },
   {
     "id": "claim-trauma-cptsd-dso-triad",
-    "statement": "Złożony zespół stresu pourazowego (cPTSD wg ICD-11 6B41) obejmuje spełnienie pełnych kryteriów PTSD oraz obecność triady zaburzeń organizacji jaźni (DSO): 1) ciężkiej dysregulacji afektu, 2) trwałego negatywnego obrazu siebie (poczucie bezwartościowości, wstydu i porażki), 3) trudności w utrzymywaniu relacji interpersonalnych.",
+    "statement": "Złożony zespół stresu pourazowego (cPTSD, ICD-11 6B41) wymaga spełnienia pełnego rdzenia PTSD oraz obecności kompletnej triady zaburzeń organizacji jaźni (DSO): 1) trwałej dysregulacji afektu, 2) negatywnego obrazu siebie (poczucie porażki i bezwartościowości), 3) uporczywych trudności w utrzymywaniu bliskości relacyjnej. Częściowe cechy DSO nie uprawniają do pełnego rozpoznania cPTSD.",
     "category": "guideline_recommendation",
     "strength": "strong",
     "sourceIds": [
@@ -213,7 +213,7 @@
   },
   {
     "id": "claim-trauma-amnesia-everyday-did",
-    "statement": "Obecność luk w pamięci dotyczących bieżących, neutralnych czynności codziennych (everyday amnesia, np. niepamięć zakupów, rozmów) jest kluczowym kryterium różnicującym DID od PTSD, w którym amnezja ogranicza się zazwyczaj do fragmentów urazu.",
+    "statement": "Obecność nawracających luk w pamięci dotyczących bieżących czynności codziennych (everyday amnesia / time loss) silnie zwiększa prawdopodobieństwo DID i przemawia przeciwko prostemu PTSD; w ICD-11 CDDR amnezja może jednak początkowo ograniczać się do zdarzeń urazowych lub nie być wprost uświadamiana przez pacjenta.",
     "category": "guideline_recommendation",
     "strength": "strong",
     "sourceIds": [
@@ -235,7 +235,7 @@
   },
   {
     "id": "claim-trauma-did-voices-not-psychosis",
-    "statement": "Słyszenie głosów wewnętrznych reprezentujących stany tożsamości w DID jest częstym zjawiskiem fenomenologicznym; samo doświadczenie głosów przy zachowanym krytycyzmie, braku urojeniowej interpretacji i braku formalnych zaburzeń myślenia nie uprawnia do rozpoznania schizofrenii. Różnicowanie wymaga wieloosiowej oceny testowania rzeczywistości, toku myślenia i przebiegu podłużnego.",
+    "statement": "Słyszenie głosów w DID często przybiera postać wewnętrznego dialogu reprezentującego stany tożsamości; lokalizacja (wewnętrzna vs zewnętrzna) stanowi cechę fenomenologiczną, a nie regułę diagnostyczną. Różnicowanie z psychozą wymaga wieloosiowej oceny testowania rzeczywistości, urojeń, formalnego toku myślenia, objawów negatywnych i przebiegu podłużnego.",
     "category": "guideline_recommendation",
     "strength": "strong",
     "sourceIds": [
@@ -385,7 +385,7 @@
   },
   {
     "id": "claim-trauma-tle-mimic-aura-stereotypy",
-    "statement": "Napady ogniskowe z płata skroniowego (TLE) mogą imitować epizody paniki lub dysocjacji; obecność aury nadbrzusznej (uczucie wznoszenia z żołądka), napadowego stereotypowego przebiegu oraz przemijających zaburzeń przytomności lub objawów ruchowych stanowi wskazanie do priorytetowej diagnostyki neurologicznej (wideo-EEG, MRI OUN wg ILAE/NICE).",
+    "statement": "Napady ogniskowe ze struktur płata skroniowego (TLE) mogą imitować epizody paniki lub dysocjacji; obecność aury nadbrzusznej, napadowego stereotypowego przebiegu (30–120 s) oraz automatyzmów lub splątania ponapadowego stanowi wskazanie do specjalistycznej oceny neurologicznej. Badania EEG i MRI stanowią badania wspierające, a ich prawidłowy wynik nie wyklucza padaczki ani nie potwierdza dysocjacji (ILAE 2017, NICE NG217).",
     "category": "guideline_recommendation",
     "strength": "strong",
     "sourceIds": [

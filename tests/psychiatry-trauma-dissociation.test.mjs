@@ -26,8 +26,8 @@ test('Trauma Engine: DID requires identity discontinuity + autobiographical amne
     amnesiaType: 'recurrent_daily_activities',
     depersonalizationDerealization: true,
     realityTesting: 'intact',
-    traumaIntrusions: 'distressing_memories',
-    avoidanceHyperarousal: true,
+    reExperiencingInPresent: 'none',
+    avoidanceHyperarousal: false,
     affectInstability: 'none',
     interpersonalPattern: 'stable',
     negativeSelfConcept: 'none',
@@ -37,7 +37,7 @@ test('Trauma Engine: DID requires identity discontinuity + autobiographical amne
     suicidalityRisk: 'none',
   });
 
-  const didHyp = resValid.hypotheses.find(h => h.category === 'DID');
+  const didHyp = resValid.hypotheses.find((h) => h.category === 'DID');
   assert.ok(didHyp);
   assert.equal(didHyp.level, 'primary_candidate');
   assert.ok(didHyp.condition.includes('6B64'), 'DID must use ICD-11 6B64 code');
@@ -50,7 +50,7 @@ test('Trauma Engine: DID requires identity discontinuity + autobiographical amne
     amnesiaType: 'none',
     depersonalizationDerealization: true,
     realityTesting: 'intact',
-    traumaIntrusions: 'none',
+    reExperiencingInPresent: 'none',
     avoidanceHyperarousal: false,
     affectInstability: 'none',
     interpersonalPattern: 'stable',
@@ -61,34 +61,102 @@ test('Trauma Engine: DID requires identity discontinuity + autobiographical amne
     suicidalityRisk: 'none',
   });
 
-  const didNoAmnesiaHyp = resNoAmnesia.hypotheses.find(h => h.category === 'DID');
+  const didNoAmnesiaHyp = resNoAmnesia.hypotheses.find((h) => h.category === 'DID');
   assert.ok(didNoAmnesiaHyp);
-  assert.notEqual(didNoAmnesiaHyp.level, 'primary_candidate');
-  assert.ok(resNoAmnesia.opposingEvidence.DID.some(e => e.includes('amnezji')));
+  assert.equal(didNoAmnesiaHyp.level, 'possible_consideration');
+  assert.ok(resNoAmnesia.opposingEvidence.DID.some((e) => e.includes('luk pamięciowych')));
   assert.ok(resNoAmnesia.missingInformation.length > 0);
 });
 
-test('Trauma Engine: Hallucinations alone do not imply psychosis when reality testing is intact', () => {
+test('Trauma Engine: Comparative framework analysis (ICD-11 6B64 vs DSM-5-TR 300.14)', () => {
   const res = evaluateTraumaDissociation({
     identityDiscontinuity: 'distinct_personality_states',
     amnesiaType: 'recurrent_daily_activities',
     depersonalizationDerealization: true,
     realityTesting: 'intact',
-    traumaIntrusions: 'none',
-    avoidanceHyperarousal: false,
-    affectInstability: 'none',
-    interpersonalPattern: 'stable',
-    negativeSelfConcept: 'none',
+    symptomDuration: 'chronic_months',
+    suicidalityRisk: 'none',
+  });
+
+  assert.ok(res.frameworkAnalysis);
+  const { icd11, dsm5tr } = res.frameworkAnalysis;
+
+  // ICD-11 6B64 criteria
+  assert.equal(icd11.framework, 'icd11');
+  assert.equal(icd11.diagnosisCode, '6B64');
+  assert.equal(icd11.compatibility, 'meets');
+  assert.ok(icd11.criteriaMet.some((c) => c.includes('Kryterium tożsamości')));
+  assert.ok(icd11.criteriaMet.some((c) => c.includes('Kryterium pamięci')));
+
+  // DSM-5-TR 300.14 criteria
+  assert.equal(dsm5tr.framework, 'dsm5tr');
+  assert.equal(dsm5tr.diagnosisCode, '300.14');
+  assert.equal(dsm5tr.compatibility, 'meets');
+  assert.ok(dsm5tr.criteriaMet.some((c) => c.includes('Kryterium A')));
+  assert.ok(dsm5tr.criteriaMet.some((c) => c.includes('Kryterium B')));
+
+  // Invariant: framework presentation toggle does not alter underlying hypotheses
+  const didHyp = res.hypotheses.find((h) => h.category === 'DID');
+  assert.ok(didHyp);
+  assert.equal(didHyp.level, 'primary_candidate');
+});
+
+test('Trauma Engine: Decoupled confidence and data sufficiency invariants', () => {
+  // Missing critical information prevents 'high' confidence and 'primary_candidate'
+  const resIncomplete = evaluateTraumaDissociation({
+    identityDiscontinuity: 'distinct_personality_states',
+    amnesiaType: 'none',
+    realityTesting: 'intact',
+    symptomDuration: 'chronic_months',
+  });
+
+  const didHyp = resIncomplete.hypotheses.find((h) => h.category === 'DID');
+  assert.ok(didHyp);
+  assert.equal(didHyp.dataSufficiency, 'insufficient');
+  assert.notEqual(didHyp.confidence, 'high');
+  assert.notEqual(didHyp.level, 'primary_candidate');
+});
+
+test('Trauma Engine: Multi-axial differential for voice hearing and hallucinations vs psychosis', () => {
+  const resInternalVoices = evaluateTraumaDissociation({
+    identityDiscontinuity: 'distinct_personality_states',
+    amnesiaType: 'recurrent_daily_activities',
+    depersonalizationDerealization: true,
+    realityTesting: 'intact',
     hallucinations: 'internal_dialogue_ego_dystonic',
+    voicePhenomenology: {
+      present: true,
+      perceivedLocation: 'inside_head',
+      attribution: 'identity_state_related',
+      conviction: 'insight_preserved',
+    },
     thoughtDisorder: false,
     symptomDuration: 'chronic_months',
     suicidalityRisk: 'none',
   });
 
   // Psychosis hypothesis should NOT be primary candidate
-  const psychHyp = res.hypotheses.find(h => h.category === 'Psychosis');
-  assert.equal(psychHyp, undefined);
-  assert.ok(res.opposingEvidence.Psychosis.some(e => e.includes('nie stanowią dowodu schizofrenii')));
+  const psychHyp = resInternalVoices.hypotheses.find((h) => h.category === 'Psychosis');
+  assert.ok(psychHyp);
+  assert.notEqual(psychHyp.level, 'primary_candidate');
+  assert.equal(psychHyp.level, 'unlikely_or_incompatible');
+
+  // Invariant: Acoustic projection alone does NOT diagnose psychosis without impaired reality testing
+  const resAcoustic = evaluateTraumaDissociation({
+    identityDiscontinuity: 'none',
+    amnesiaType: 'none',
+    realityTesting: 'intact',
+    hallucinations: 'external_auditory_voices',
+    voicePhenomenology: {
+      present: true,
+      perceivedLocation: 'acoustic_external_space',
+      attribution: 'unclear',
+      conviction: 'insight_preserved',
+    },
+    symptomDuration: 'chronic_months',
+  });
+  const psychAcoustic = resAcoustic.hypotheses.find((h) => h.category === 'Psychosis');
+  assert.notEqual(psychAcoustic?.level, 'primary_candidate');
 });
 
 test('Trauma Engine: BPD identity disturbance != DID alter states', () => {
@@ -97,8 +165,6 @@ test('Trauma Engine: BPD identity disturbance != DID alter states', () => {
     amnesiaType: 'none',
     depersonalizationDerealization: true,
     realityTesting: 'transient_stress_induced',
-    traumaIntrusions: 'none',
-    avoidanceHyperarousal: false,
     affectInstability: 'rapid_reactive_hours',
     interpersonalPattern: 'intense_fear_of_abandonment',
     negativeSelfConcept: 'persistent_shame_guilt',
@@ -108,68 +174,119 @@ test('Trauma Engine: BPD identity disturbance != DID alter states', () => {
     suicidalityRisk: 'none',
   });
 
-  const bpdHyp = res.hypotheses.find(h => h.category === 'BPD');
+  const bpdHyp = res.hypotheses.find((h) => h.category === 'BPD');
   assert.ok(bpdHyp);
   assert.equal(bpdHyp.level, 'primary_candidate');
 
-  const didHyp = res.hypotheses.find(h => h.category === 'DID');
+  const didHyp = res.hypotheses.find((h) => h.category === 'DID');
   assert.ok(didHyp);
   assert.equal(didHyp.level, 'unlikely_or_incompatible');
-  assert.ok(res.opposingEvidence.DID.some(e => e.includes('zaburzeń osobowości')));
+  assert.ok(res.opposingEvidence.DID.some((e) => e.includes('zaburzeń osobowości')));
 });
 
-test('Trauma Engine: PTSD intrusions do not imply DID', () => {
-  const res = evaluateTraumaDissociation({
+test('Trauma Engine: PTSD core 3-domain rule (ICD-11 CDDR)', () => {
+  // Intrusive memories WITHOUT here-and-now quality do NOT satisfy core PTSD re-experiencing
+  const resMemoriesOnly = evaluateTraumaDissociation({
+    identityDiscontinuity: 'none',
+    amnesiaType: 'none',
+    realityTesting: 'intact',
+    reExperiencingInPresent: 'intrusive_memories_without_here_and_now_quality',
+    traumaAvoidance: 'both',
+    persistentCurrentThreat: 'hypervigilance',
+    symptomDuration: 'chronic_months',
+  });
+  const ptsdMemoriesHyp = resMemoriesOnly.hypotheses.find((h) => h.category === 'PTSD');
+  assert.equal(ptsdMemoriesHyp, undefined, 'Memories without here-and-now cannot make PTSD primary');
+
+  // Full re-experiencing + avoidance + threat satisfies core PTSD
+  const resFullCore = evaluateTraumaDissociation({
     identityDiscontinuity: 'none',
     amnesiaType: 'trauma_specific',
-    depersonalizationDerealization: false,
     realityTesting: 'intact',
-    traumaIntrusions: 'flashbacks_acting_as_if',
-    avoidanceHyperarousal: true,
-    affectInstability: 'none',
-    interpersonalPattern: 'stable',
-    negativeSelfConcept: 'none',
-    hallucinations: 'none',
-    thoughtDisorder: false,
+    reExperiencingInPresent: 'vivid_flashback_here_and_now',
+    traumaAvoidance: 'both',
+    persistentCurrentThreat: 'both',
     symptomDuration: 'chronic_months',
-    suicidalityRisk: 'none',
   });
-
-  const ptsdHyp = res.hypotheses.find(h => h.category === 'PTSD');
-  assert.ok(ptsdHyp);
-  assert.equal(ptsdHyp.level, 'primary_candidate');
-
-  const didHyp = res.hypotheses.find(h => h.category === 'DID');
-  assert.ok(didHyp);
-  assert.equal(didHyp.level, 'unlikely_or_incompatible');
+  const ptsdFullHyp = resFullCore.hypotheses.find((h) => h.category === 'PTSD');
+  assert.ok(ptsdFullHyp);
+  assert.equal(ptsdFullHyp.level, 'primary_candidate');
 });
 
-test('Trauma Engine: Neurological red flags block premature psychiatric closure and prioritize TLE', () => {
+test('Trauma Engine: cPTSD requires full DSO triad (affect, self-concept, relational)', () => {
+  // Full DSO triad present -> cPTSD primary candidate
+  const resFullDSO = evaluateTraumaDissociation({
+    identityDiscontinuity: 'disturbed_sense_of_self',
+    amnesiaType: 'none',
+    depersonalizationDerealization: true,
+    realityTesting: 'intact',
+    reExperiencingInPresent: 'vivid_flashback_here_and_now',
+    traumaAvoidance: 'both',
+    persistentCurrentThreat: 'both',
+    affectRegulation: { reactiveLability: 'marked', persistentDysregulation: 'hyperactivation' },
+    negativeSelfConcept: 'persistent_shame_guilt',
+    relationalDisturbance: { sustainedDifficultyWithCloseness: 'present', persistentDetachmentOrAlienation: 'present' },
+    symptomDuration: 'chronic_months',
+  });
+
+  const cptsdHyp = resFullDSO.hypotheses.find((h) => h.category === 'cPTSD');
+  assert.ok(cptsdHyp);
+  assert.equal(cptsdHyp.level, 'primary_candidate');
+  assert.ok(resFullDSO.supportingEvidence.cPTSD.some((e) => e.includes('Kompletna triada DSO')));
+
+  // Missing negativeSelfConcept ('none') -> cPTSD is NOT primary candidate (possible_consideration)
+  const resPartialDSO = evaluateTraumaDissociation({
+    identityDiscontinuity: 'disturbed_sense_of_self',
+    amnesiaType: 'none',
+    realityTesting: 'intact',
+    reExperiencingInPresent: 'vivid_flashback_here_and_now',
+    traumaAvoidance: 'both',
+    persistentCurrentThreat: 'both',
+    affectRegulation: { reactiveLability: 'marked', persistentDysregulation: 'hyperactivation' },
+    negativeSelfConcept: 'none',
+    relationalDisturbance: { sustainedDifficultyWithCloseness: 'present', persistentDetachmentOrAlienation: 'present' },
+    symptomDuration: 'chronic_months',
+  });
+
+  const ptsdHyp = resPartialDSO.hypotheses.find((h) => h.category === 'PTSD');
+  assert.ok(ptsdHyp);
+  assert.equal(ptsdHyp.level, 'primary_candidate');
+  const cptsdPartialHyp = resPartialDSO.hypotheses.find((h) => h.category === 'cPTSD');
+  assert.ok(cptsdPartialHyp);
+  assert.equal(cptsdPartialHyp.level, 'possible_consideration');
+  assert.ok(resPartialDSO.opposingEvidence.cPTSD.some((e) => e.includes('Brak pełnej triady DSO')));
+});
+
+test('Trauma Engine: Neurological red flags & TLE safety invariants', () => {
   const res = evaluateTraumaDissociation({
     identityDiscontinuity: 'none',
     amnesiaType: 'brief_paroxysmal',
     depersonalizationDerealization: true,
     realityTesting: 'intact',
-    traumaIntrusions: 'none',
-    avoidanceHyperarousal: false,
-    affectInstability: 'none',
-    interpersonalPattern: 'stable',
-    negativeSelfConcept: 'none',
-    hallucinations: 'none',
-    thoughtDisorder: false,
     symptomDuration: 'brief_episodes_seconds',
     neurologicalFeatures: {
       hasAuraOrEpigastricRising: true,
       stereotypedSecondsDuration: true,
+      episodeDuration: 'seconds',
+      episodicPattern: 'stereotyped',
     },
-    suicidalityRisk: 'none',
+    neurologicalInvestigations: {
+      routineEeg: 'normal',
+      brainMri: 'normal',
+    },
   });
 
-  assert.ok(res.redFlags.some(rf => rf.includes('workupu neurologicznego')));
-  const tleHyp = res.hypotheses.find(h => h.category === 'TLE');
+  // Red flags for priority neurology workup
+  assert.ok(res.redFlags.some((rf) => rf.includes('neurologicznego')));
+
+  // Safety invariant: TLE is NEVER diagnosed as confirmed / primary candidate
+  const tleHyp = res.hypotheses.find((h) => h.category === 'TLE');
   assert.ok(tleHyp);
   assert.equal(tleHyp.level, 'possible_consideration');
-  assert.ok(res.supportingEvidence.TLE.some(e => e.includes('Aura nadbrzuszna')));
+  assert.notEqual(tleHyp.level, 'primary_candidate');
+
+  // Normal EEG/MRI does NOT rule out TLE nor confirm dissociation
+  assert.ok(res.neurologicalAssessment.opposingFeatures.some((e) => e.includes('nie wyklucza')));
 });
 
 test('Trauma Engine: Active substance exposure precludes psychiatric etiology like DID', () => {
@@ -178,95 +295,32 @@ test('Trauma Engine: Active substance exposure precludes psychiatric etiology li
     amnesiaType: 'recurrent_daily_activities',
     depersonalizationDerealization: true,
     realityTesting: 'intact',
-    traumaIntrusions: 'none',
-    avoidanceHyperarousal: false,
-    affectInstability: 'none',
-    interpersonalPattern: 'stable',
-    negativeSelfConcept: 'none',
-    hallucinations: 'none',
-    thoughtDisorder: false,
     symptomDuration: 'chronic_months',
     substanceContext: {
       activeIntoxicationOrWithdrawal: true,
       substanceDetails: 'Syntetyczne katynony',
     },
-    suicidalityRisk: 'none',
   });
 
-  assert.ok(res.redFlags.some(rf => rf.includes('Aktywna intoksykacja')));
-  assert.ok(res.opposingEvidence.DID.some(e => e.includes('intoksykacji/odstawienia')));
-});
-
-test('Trauma Engine: cPTSD requires full DSO triad (affect dysregulation, negative self-concept, relational avoidance)', () => {
-  // Case A: Full DSO triad present -> cPTSD primary candidate
-  const resFullDSO = evaluateTraumaDissociation({
-    identityDiscontinuity: 'disturbed_sense_of_self',
-    amnesiaType: 'none',
-    depersonalizationDerealization: true,
-    realityTesting: 'intact',
-    traumaIntrusions: 'distressing_memories',
-    avoidanceHyperarousal: true,
-    affectInstability: 'rapid_reactive_hours',
-    interpersonalPattern: 'alienated_avoidant',
-    negativeSelfConcept: 'persistent_shame_guilt',
-    hallucinations: 'none',
-    thoughtDisorder: false,
-    symptomDuration: 'chronic_months',
-    suicidalityRisk: 'none',
-  });
-
-  const cptsdHyp = resFullDSO.hypotheses.find(h => h.category === 'cPTSD');
-  assert.ok(cptsdHyp);
-  assert.equal(cptsdHyp.level, 'primary_candidate');
-  assert.ok(resFullDSO.supportingEvidence.cPTSD.some(e => e.includes('Kompletna triada')));
-
-  // Case B: Missing negativeSelfConcept ('none') -> cPTSD is NOT primary candidate (should be possible_consideration)
-  const resPartialDSO = evaluateTraumaDissociation({
-    identityDiscontinuity: 'disturbed_sense_of_self',
-    amnesiaType: 'none',
-    depersonalizationDerealization: true,
-    realityTesting: 'intact',
-    traumaIntrusions: 'distressing_memories',
-    avoidanceHyperarousal: true,
-    affectInstability: 'rapid_reactive_hours',
-    interpersonalPattern: 'alienated_avoidant',
-    negativeSelfConcept: 'none',
-    hallucinations: 'none',
-    thoughtDisorder: false,
-    symptomDuration: 'chronic_months',
-    suicidalityRisk: 'none',
-  });
-
-  const ptsdHyp = resPartialDSO.hypotheses.find(h => h.category === 'PTSD');
-  assert.ok(ptsdHyp);
-  assert.equal(ptsdHyp.level, 'primary_candidate');
-  const cptsdPartialHyp = resPartialDSO.hypotheses.find(h => h.category === 'cPTSD');
-  assert.ok(cptsdPartialHyp);
-  assert.equal(cptsdPartialHyp.level, 'possible_consideration');
-  assert.ok(resPartialDSO.opposingEvidence.cPTSD.some(e => e.includes('Brak pełnej triady DSO')));
+  assert.ok(res.redFlags.some((rf) => rf.includes('Aktywna intoksykacja')));
+  assert.ok(res.opposingEvidence.DID.some((e) => e.includes('intoksykacji/odstawienia')));
 });
 
 test('Trauma Engine: Missing information and counterfactual reasoning provided', () => {
   const res = evaluateTraumaDissociation({
     identityDiscontinuity: 'distinct_personality_states',
-    amnesiaType: 'none', // Not yet confirmed
+    amnesiaType: 'none',
     depersonalizationDerealization: true,
     realityTesting: 'intact',
-    traumaIntrusions: 'none',
-    avoidanceHyperarousal: false,
-    affectInstability: 'none',
-    interpersonalPattern: 'stable',
-    negativeSelfConcept: 'none',
     hallucinations: 'internal_dialogue_ego_dystonic',
     thoughtDisorder: false,
     symptomDuration: 'chronic_months',
-    suicidalityRisk: 'none',
   });
 
   assert.ok(res.missingInformation.length >= 1);
   assert.ok(res.whatWouldChangeDecision.length >= 3);
-  assert.ok(res.whatWouldChangeDecision.some(w => w.includes('amnezję codzienną')));
-  assert.ok(res.whatWouldChangeDecision.some(w => w.includes('Prawidłowe wyniki EEG i neuroobrazowania')));
+  assert.ok(res.whatWouldChangeDecision.some((w) => w.toLowerCase().includes('amnezj') && w.toLowerCase().includes('codzienn')));
+  assert.ok(res.whatWouldChangeDecision.some((w) => w.includes('Prawidłowe wyniki EEG i MRI')));
 });
 
 // ---------------------------------------------------------------------------

@@ -144,17 +144,17 @@
       ],
       "prompt": "U 24-letniej pacjentki z objawami dysocjacji, chwiejnością afektu i okresowym słyszeniem dialogujących głosów różnicujesz DID, BPD oraz wczesną psychozę. Która brakująca informacja ma najwyższą wagę decyzyjną?",
       "options": [
-        "Ocena obecności obiektywnej amnezji codziennych zdarzeń (everyday amnesia) oraz krytycyzmu i toku myślenia w badaniu MSE",
-        "Dokładne oznaczenie poziomu hormonów tarczycy i witaminy B12",
-        "Potwierdzenie w wywiadzie przebytej w dzieciństwie hospitalizacji z powodu zapalenia płuc"
+        "Ocena obecności obiektywnej amnezji codziennych zdarzeń (everyday amnesia / time loss) oraz wieloosiowa ocena toku myślenia i urojeń w badaniu MSE",
+        "Wykonanie przesiewowego kwestionariusza samoopisowego DES-II w celu jednoznacznego potwierdzenia lub wykluczenia DID",
+        "Ocena wyłącznie lokalizacji głosów (wewnątrz vs z zewnątrz głowy) jako pojedynczej cechy rozstrzygającej między DID a psychozą"
       ],
       "optionFeedback": [
-        "Amnezja codzienna weryfikuje DID, a krytycyzm i prawidłowy tok myślenia wykluczają ostrą psychozę schizofreniczną.",
-        "Oznaczenia laboratoryjne są badaniami przesiewowymi, lecz nie rozstrzygają osiowej psychopatologii.",
-        "Zapalenie płuc w dzieciństwie nie ma wartości różnicującej."
+        "Obiektywizacja amnezji codziennych zdarzeń odróżnia DID od przejściowej dysocjacji w BPD, a ocena toku myślenia i krytycyzmu różnicuje z pierwotną psychozą.",
+        "Skale samoopisowe (np. DES-II) to narzędzia przesiewowe o charakterze pomocniczym — nie stanowią testu diagnostycznego rozstrzygającego nozologię.",
+        "Sama lokalizacja głosu jest cechą fenomenologiczną, a nie pojedynczą regułą diagnostyczną — głosy wewnętrzne bywają obecne w psychozie, a głosy z zewnątrz w dysocjacji."
       ],
       "answer": 0,
-      "explanation": "Amnezja codzienna weryfikuje DID, a krytycyzm i prawidłowy tok myślenia wykluczają ostrą psychozę schizofreniczną.",
+      "explanation": "Obiektywizacja amnezji codziennych zdarzeń odróżnia DID od przejściowej dysocjacji w BPD, a ocena toku myślenia i krytycyzmu różnicuje z pierwotną psychozą.",
       "hint": "Wybierz oś fenomenologiczną rozstrzygającą tożsamość i krytycyzm.",
       "difficulty": "doctor",
       "reasoning": "decision",

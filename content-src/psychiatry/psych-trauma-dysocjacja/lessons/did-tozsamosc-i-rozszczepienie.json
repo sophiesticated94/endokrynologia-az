@@ -15,8 +15,8 @@
       "text": "Współczesna psychiatria odrzuca popkulturową narrację o „wielu osobach mieszkających w jednym ciele”. Dysocjacyjne zaburzenie tożsamości (DID wg ICD-11 6B64 / DSM-5-TR 300.14) to zaburzenie polegające na braku integracji procesów psychicznych w jednolitą tożsamość. W modelach klinicznych (m.in. teorii strukturalnej dysocjacji) wiązane jest z przewlekłą traumą relacyjną we wczesnym dzieciństwie, utrudniającą naturalną konsolidację spójnego poczucia self. Dochodzi do manifestacji min. dwóch odrębnych stanów tożsamości (personality states), z których każdy wykazuje własny wzorzec postrzegania, wchodzenia w relacje oraz poczucie sprawczości (sense of agency). Sam wywiad urazowy stanowi istotny kontekst kliniczny, lecz nie jest formalnym kryterium diagnostycznym."
     },
     {
-      "title": "Kryterium decyzyjne: Nawracające luki w pamięci codziennej",
-      "text": "Obecność odmiennych stanów tożsamości nie wystarcza do diagnozy DID — niezbędnym kryterium współistniejącym są nawracające luki w pamięci autobiograficznej (recurrent amnesic gaps). Co kluczowe, luki te NIE ograniczają się wyłącznie do okresu traumy z przeszłości, lecz dotyczą BIEŻĄCYCH ZDARZEŃ CODZIENNYCH (everyday events). Pacjent doświadcza tzw. ubytków czasu (time loss) — np. orientuje się, że znajduje się w nieznanym miejscu, odkrywa w domu przedmioty lub ubrania, których nie pamięta kupować, albo spotyka ludzi traktujących go jak bliskiego znajomego, których zupełnie nie kojarzy."
+      "title": "Kryterium decyzyjne: Rola amnezji w ICD-11 i DSM-5-TR",
+      "text": "W obu systemach amnezja dysocjacyjna stanowi kluczowy element fenotypu DID, lecz wytyczne różnią się niuansami operacyjnymi. W DSM-5-TR Kryterium B wymaga nawracających luk w pamięci dotyczących zdarzeń codziennych, ważnych danych osobistych LUB zdarzeń urazowych. Z kolei w WHO ICD-11 CDDR (6B64) zaznaczono, że choć znaczna amnezja wobec zdarzeń codziennych (everyday amnesia / time loss) jest wysoce typowa i odróżnia DID od PTSD, to we wczesnym etapie amnezja może być ograniczona do urazów lub pacjent może nie być jej wprost świadomy (amnezja na amnezję). Dlatego brak natychmiast zgłaszanych luk codziennych nie unieważnia podejrzenia DID wg ICD-11, lecz wymaga obiektywizacji wywiadowczej."
     },
     {
       "title": "Kontekst kulturowy, religijny i wykluczenia",
@@ -107,7 +107,7 @@
       "options": [
         {
           "text": "Objawy będące bezpośrednim skutkiem napadów padaczkowych (np. TLE) lub intoksykacji/odstawienia substancji",
-          "explanation": "Zaburzenia napadowe OUN i stany substancyjne wykluczają rozpoznanie pierwotnego zaburzenia dysocjacyjnego."
+          "explanation": "Zaburzenia napadowe OUN i intoksykacje substancyjne wymagają priorytetowego wykluczenia przed postawieniem rozpoznania pierwotnego zaburzenia dysocjacyjnego."
         },
         {
           "text": "Współistnienie w wywiadzie epizodu depresyjnego o umiarkowanym nasileniu",

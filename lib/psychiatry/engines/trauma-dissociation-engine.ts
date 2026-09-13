@@ -1,68 +1,25 @@
-export type IdentityDiscontinuity = 'none' | 'disturbed_sense_of_self' | 'distinct_personality_states';
-export type AmnesiaType = 'none' | 'trauma_specific' | 'recurrent_daily_activities' | 'generalized_identity_loss' | 'brief_paroxysmal';
-export type RealityTesting = 'intact' | 'impaired_delusional' | 'transient_stress_induced';
-export type TraumaIntrusions = 'none' | 'distressing_memories' | 'flashbacks_acting_as_if';
-export type AffectInstability = 'none' | 'rapid_reactive_hours' | 'sustained_weeks';
-export type NegativeSelfConcept =
-  | 'none'
-  | 'persistent_shame_guilt'
-  | 'worthlessness_failure'
-  | 'trauma_related_negative_identity';
-export type InterpersonalPattern = 'stable' | 'intense_fear_of_abandonment' | 'alienated_avoidant';
-export type HallucinationType = 'none' | 'internal_dialogue_ego_dystonic' | 'external_commentary_ego_syntonic' | 'hypnagogic_or_sensory';
-export type SymptomDuration = 'days_under_3' | 'days_under_30' | 'chronic_months' | 'brief_episodes_seconds';
-export type SuicidalityRisk = 'none' | 'passive_ideation' | 'active_with_intent' | 'recent_severe_self_harm';
+// Trauma & Dissociation Clinical Reasoning Engine
+// Pure multi-axial domain reasoning with comparative framework analysis (ICD-11 / DSM-5-TR)
+// Strict invariants: No deterministic closure where criteria are probabilistic; file <= 500 lines.
 
-export interface NeurologicalFeatures {
-  hasAuraOrEpigastricRising?: boolean;
-  stereotypedSecondsDuration?: boolean;
-  postictalConfusion?: boolean;
-  focalDeficits?: boolean;
-}
+import type {
+  TraumaDissociationInput,
+  TraumaDissociationOutput,
+  DiagnosticHypothesis,
+  ReExperiencingInPresent,
+  TraumaAvoidance,
+  PersistentCurrentThreat,
+} from './trauma-dissociation-types.ts';
+import { evaluateFrameworkCriteria } from './trauma-framework-evaluator.ts';
+import { evaluateNeurologyFeatures } from './trauma-neurology-evaluator.ts';
 
-export interface SubstanceContext {
-  activeIntoxicationOrWithdrawal?: boolean;
-  onsetDirectlyTiedToSubstance?: boolean;
-  substanceDetails?: string;
-}
-
-export interface TraumaDissociationInput {
-  identityDiscontinuity: IdentityDiscontinuity;
-  amnesiaType: AmnesiaType;
-  depersonalizationDerealization: boolean;
-  realityTesting: RealityTesting;
-  traumaIntrusions: TraumaIntrusions;
-  avoidanceHyperarousal: boolean;
-  affectInstability: AffectInstability;
-  negativeSelfConcept: NegativeSelfConcept;
-  interpersonalPattern: InterpersonalPattern;
-  hallucinations: HallucinationType;
-  thoughtDisorder: boolean;
-  symptomDuration: SymptomDuration;
-  neurologicalFeatures?: NeurologicalFeatures;
-  substanceContext?: SubstanceContext;
-  suicidalityRisk: SuicidalityRisk;
-}
-
-export interface DiagnosticHypothesis {
-  condition: string;
-  category: 'DID' | 'BPD' | 'PTSD' | 'cPTSD' | 'DPDR' | 'DissociativeAmnesia' | 'Psychosis' | 'TLE' | 'SubstanceInduced';
-  level: 'primary_candidate' | 'possible_consideration' | 'unlikely_or_incompatible';
-  rationale: string;
-}
-
-export interface TraumaDissociationOutput {
-  redFlags: string[];
-  supportingEvidence: Record<string, string[]>;
-  opposingEvidence: Record<string, string[]>;
-  missingInformation: string[];
-  hypotheses: DiagnosticHypothesis[];
-  whatWouldChangeDecision: string[];
-  safetyActionRequired: string | null;
-}
+export * from './trauma-dissociation-types.ts';
 
 export function evaluateTraumaDissociation(input: TraumaDissociationInput): TraumaDissociationOutput {
   const redFlags: string[] = [];
+  const missingInfo: string[] = [];
+  const whatChanges: string[] = [];
+
   const supporting: Record<string, string[]> = {
     DID: [],
     BPD: [],
@@ -85,32 +42,24 @@ export function evaluateTraumaDissociation(input: TraumaDissociationInput): Trau
     TLE: [],
     SubstanceInduced: [],
   };
-  const missingInfo: string[] = [];
-  const whatChanges: string[] = [];
 
-  // 1. NEUROLOGICAL RED FLAGS & SAFETY
-  const neuro = input.neurologicalFeatures || {};
-  if (neuro.hasAuraOrEpigastricRising || neuro.stereotypedSecondsDuration || input.symptomDuration === 'brief_episodes_seconds') {
+  // 1. NEUROLOGY EVALUATION & SAFETY INVARIANTS
+  const neuroAssessment = evaluateNeurologyFeatures(input);
+  if (neuroAssessment.concern === 'high') {
     redFlags.push(
-      'Wskazanie do pilnego workupu neurologicznego: napadowe, stereotypowe epizody (30–120 s) lub aura nadbrzuszna wymagają wykluczenia padaczki płata skroniowego (EEG, MRI głowy) przed przypisaniem objawów pierwotnej dysocjacji.'
+      'Wysoki poziom niepokoju neurologicznego: stereotypowe napady lub objawy ogniskowe wymagają priorytetowej konsultacji / workupu neurologicznego (ILAE 2017 / NICE NG217).'
     );
-    supporting.TLE.push('Krótkotrwały, napadowy lub stereotypowy przebieg epizodów przemawiający za koniecznością diagnostyki neurologicznej');
-    if (neuro.hasAuraOrEpigastricRising) {
-      supporting.TLE.push('Aura nadbrzuszna lub czuciowa jako silny wskaźnik ogniska skroniowego');
-    }
-  } else {
-    opposing.TLE.push('Brak cech paroksyzmalnych, brak aury i brak stereotypowego przebiegu zmniejsza prawdopodobieństwo padaczki skroniowej');
   }
+  supporting.TLE.push(...neuroAssessment.supportingFeatures);
+  opposing.TLE.push(...neuroAssessment.opposingFeatures);
+  missingInfo.push(...neuroAssessment.missingCriticalInformation);
 
-  if (neuro.focalDeficits) {
-    redFlags.push('Ogniskowe objawy neurologiczne – bezwzględne wskazanie do pilnego obrazowania OUN (MRI/TK).');
-  }
-
-  // 2. SUICIDALITY & CRISIS
+  // 2. SUICIDALITY & CRISIS SAFETY
   let safetyAction: string | null = null;
   if (input.suicidalityRisk === 'active_with_intent') {
     redFlags.push('Aktywne myśli samobójcze z zamiarem i planem – bezpośrednie zagrożenie życia.');
-    safetyAction = 'Natychmiastowe wdrożenie planu bezpieczeństwa (Stanley-Brown) lub kwalifikacja do pilnej hospitalizacji. Bezwzględny zakaz technik ekspozycyjnych i konfrontacyjnych.';
+    safetyAction =
+      'Natychmiastowe wdrożenie planu bezpieczeństwa (Stanley-Brown) i ocena wskazań do pilnej hospitalizacji. Bezwzględne odroczenie technik konfrontacyjnych/ekspozycyjnych.';
   } else if (input.suicidalityRisk === 'recent_severe_self_harm') {
     redFlags.push('Niedawne ciężkie samouszkodzenia – priorytet stabilizacji i regulacji emocji (DBT).');
     safetyAction = 'Priorytet Fazy 1 leczenia (bezpieczeństwo, redukcja szkód). Odroczenie pogłębionej pracy z traumą.';
@@ -121,269 +70,369 @@ export function evaluateTraumaDissociation(input: TraumaDissociationInput): Trau
   if (sub.activeIntoxicationOrWithdrawal) {
     redFlags.push('Aktywna intoksykacja lub zespół odstawienny – objawy mogą mieć charakter bezpośrednio substancyjny.');
     supporting.SubstanceInduced.push('Zbieżność czasowa objawów z ekspozycją na substancję psychoaktywną');
-    opposing.DID.push('Objawy występujące wyłącznie w trakcie intoksykacji/odstawienia nie uprawniają do diagnozy DID');
-  } else if (sub.onsetDirectlyTiedToSubstance) {
-    supporting.SubstanceInduced.push('Początek dolegliwości bezpośrednio powiązany ze spożyciem substancji (np. kannabinoidy, dysocjanty)');
+    opposing.DID.push('Objawy występujące wyłącznie w trakcie intoksykacji/odstawienia uniemożliwiają pewne rozpoznanie DID');
   }
 
-  // 4. DID (Dissociative Identity Disorder, ICD-11 6B64) EVALUATION
-  if (input.identityDiscontinuity === 'distinct_personality_states') {
-    supporting.DID.push('Odrębne stany tożsamości z przerwaniem poczucia ciągłości ja i sprawczości (disruption of identity)');
-  } else if (input.identityDiscontinuity === 'disturbed_sense_of_self') {
-    opposing.DID.push('Niestabilny obraz siebie bez odrębnych stanów wykonawczych wskazuje raczej na profil zaburzeń osobowości (BPD), a nie DID');
+  // 4. FRAMEWORK EVALUATION (ICD-11 vs DSM-5-TR)
+  const frameworkAnalysis = evaluateFrameworkCriteria(input);
+
+  // 5. NORMALIZATION OF PTSD CORE DOMAINS (ICD-11 Triad)
+  const reExp: ReExperiencingInPresent =
+    input.reExperiencingInPresent ||
+    (input.traumaIntrusions === 'flashbacks_acting_as_if'
+      ? 'vivid_flashback_here_and_now'
+      : input.traumaIntrusions === 'distressing_memories'
+      ? 'intrusive_memories_without_here_and_now_quality'
+      : 'none');
+
+  const avoidance: TraumaAvoidance =
+    input.traumaAvoidance || (input.avoidanceHyperarousal ? 'both' : 'none');
+
+  const threat: PersistentCurrentThreat =
+    input.persistentCurrentThreat || (input.avoidanceHyperarousal ? 'both' : 'none');
+
+  const hasFullReExperiencing =
+    reExp === 'vivid_flashback_here_and_now' || reExp === 'trauma_nightmares_with_reexperiencing';
+  const hasAvoidance = avoidance !== 'none';
+  const hasCurrentThreat = threat !== 'none';
+  const hasCorePTSD = hasFullReExperiencing && hasAvoidance && hasCurrentThreat;
+
+  if (hasFullReExperiencing) {
+    supporting.PTSD.push('Ponowne przeżywanie w czasie teraźniejszym (flashbacks z poczuciem tu i teraz lub koszmary re-living)');
+  } else if (reExp === 'intrusive_memories_without_here_and_now_quality') {
+    opposing.PTSD.push('Dystresujące wspomnienia bez cech ponownego przeżywania w teraźniejszości (nie spełniają pełnego kryterium ICD-11 dla PTSD)');
   } else {
-    opposing.DID.push('Brak rozbicia tożsamości uniemożliwia rozpoznanie DID wg kryteriów ICD-11 6B64 / DSM-5-TR');
+    opposing.PTSD.push('Brak objawów ponownego przeżywania urazu w teraźniejszości');
   }
 
-  if (input.amnesiaType === 'recurrent_daily_activities') {
-    supporting.DID.push('Nawracające luki w pamięci bieżących zdarzeń codziennych (everyday amnesia / time loss)');
-    supporting.DissociativeAmnesia.push('Udokumentowane luki pamięciowe niewytłumaczalne zwykłym zapominaniem');
-  } else if (input.amnesiaType === 'trauma_specific') {
-    supporting.PTSD.push('Amnezja dysocjacyjna ograniczona do aspektów urazu');
-    supporting.DissociativeAmnesia.push('Amnezja zlokalizowana/selektywna wobec wydarzenia urazowego');
-    opposing.DID.push('Brak udokumentowanej amnezji codziennych zdarzeń osłabia rozpoznanie pełnoobjawowego DID');
-  } else if (input.amnesiaType === 'none') {
-    opposing.DID.push('Brak luk w pamięci autobiograficznej (brak amnezji) wyklucza pełnoobjawowe DID wg ICD-11 6B64 / DSM-5-TR');
-    opposing.DissociativeAmnesia.push('Brak amnezji wyklucza zaburzenie amnezyjne');
-  }
-
-  // 5. BPD EVALUATION & DISSOCIATION
-  if (input.interpersonalPattern === 'intense_fear_of_abandonment') {
-    supporting.BPD.push('Paniczny lęk przed porzuceniem i gwałtowne wysiłki zapobiegające osamotnieniu');
-  }
-  if (input.affectInstability === 'rapid_reactive_hours') {
-    supporting.BPD.push('Reaktywna, gwałtowna chwiejność afektu w skali godzin (dysforia, lęk, drażliwość)');
-  }
-  if (input.identityDiscontinuity === 'disturbed_sense_of_self') {
-    supporting.BPD.push('Niestabilność obrazu własnego ja i celów bez wyodrębnienia odrębnych stanów alter');
-  }
-  if (input.realityTesting === 'transient_stress_induced') {
-    supporting.BPD.push('Przemijające, indukowane stresem objawy dysocjacyjne lub paranoiczne (typowy element profilu BPD)');
-  }
-  if (input.identityDiscontinuity === 'distinct_personality_states' && input.amnesiaType === 'recurrent_daily_activities') {
-    opposing.BPD.push('Odrębne stany tożsamości z nawracającą amnezją codzienną wykraczają poza typowy profil BPD (wskazują na DID)');
-  }
-
-  // 6. PTSD & cPTSD EVALUATION (DSO TRIAD REQUIREMENT)
-  const hasCorePTSD = input.traumaIntrusions !== 'none' && input.avoidanceHyperarousal;
-  if (input.traumaIntrusions === 'flashbacks_acting_as_if') {
-    supporting.PTSD.push('Dysocjacyjne intruzje pourazowe (flashbacks)');
-    supporting.cPTSD.push('Intruzje urazowe spełniające kryterium ponownego przeżywania');
-  } else if (input.traumaIntrusions === 'distressing_memories') {
-    supporting.PTSD.push('Natrętne, dystresujące wspomnienia urazowe');
-    supporting.cPTSD.push('Natrętne wspomnienia spełniające kryterium intruzji');
+  if (hasAvoidance) {
+    supporting.PTSD.push(`Aktywne unikanie bodźców urazowych (${avoidance})`);
   } else {
-    opposing.PTSD.push('Brak intruzji urazowych uniemożliwia rozpoznanie PTSD');
-    opposing.cPTSD.push('Brak osi intruzji wyklucza rozpoznanie cPTSD');
+    opposing.PTSD.push('Brak aktywnego unikania bodźców przypominających uraz');
   }
 
-  if (input.avoidanceHyperarousal) {
-    supporting.PTSD.push('Współistnienie aktywnego unikania bodźców urazowych oraz wzmożonej czujności');
-    supporting.cPTSD.push('Obecność unikania bodźców i stanu wzmożonej czujności');
+  if (hasCurrentThreat) {
+    supporting.PTSD.push(`Utrzymujące się poczucie aktualnego zagrożenia (${threat})`);
   } else {
-    opposing.PTSD.push('Brak unikania lub wzmożonego wzbudzenia osłabia rozpoznanie PTSD');
-    opposing.cPTSD.push('Brak unikania lub wzmożonego wzbudzenia wyklucza rdzeń PTSD');
+    opposing.PTSD.push('Brak utrzymującego się wzmożonego wzbudzenia/czujności');
   }
 
-  // DSO Triad: 1. Affect dysregulation, 2. Negative self-concept, 3. Relational disturbance
-  const hasAffectDisturbance = input.affectInstability !== 'none';
-  const hasNegativeSelfConcept = input.negativeSelfConcept !== 'none';
-  const hasRelationalDisturbance = input.interpersonalPattern === 'alienated_avoidant';
-  const hasFullDSO = hasAffectDisturbance && hasNegativeSelfConcept && hasRelationalDisturbance;
+  // 6. cPTSD DSO TRIAD & BPD PROFILE
+  const affect = input.affectRegulation || {
+    reactiveLability: input.affectInstability === 'rapid_reactive_hours' ? 'marked' : 'none',
+    persistentDysregulation: input.affectInstability ? 'hyperactivation' : 'none',
+  };
+  const relational = input.relationalDisturbance || {
+    sustainedDifficultyWithCloseness: input.interpersonalPattern === 'alienated_avoidant' ? 'present' : 'none',
+    persistentDetachmentOrAlienation: input.interpersonalPattern === 'alienated_avoidant' ? 'present' : 'none',
+    unstableIntenseRelationships: input.interpersonalPattern === 'intense_fear_of_abandonment' ? 'present' : 'none',
+    abandonmentSensitivity: input.interpersonalPattern === 'intense_fear_of_abandonment' ? 'marked' : 'none',
+  };
 
-  if (hasCorePTSD && hasFullDSO) {
+  const hasDsoAffect = affect.persistentDysregulation !== 'none';
+  const hasDsoSelf = input.negativeSelfConcept !== 'none';
+  const hasDsoRelational =
+    relational.sustainedDifficultyWithCloseness === 'present' ||
+    relational.persistentDetachmentOrAlienation === 'present';
+  const hasFullDSO = hasDsoAffect && hasDsoSelf && hasDsoRelational;
+
+  if (hasFullDSO) {
     supporting.cPTSD.push(
-      'Kompletna triada zaburzeń organizacji jaźni (DSO: dysregulacja afektu, trwały negatywny obraz siebie, trudności relacyjne) towarzysząca rdzeniowi PTSD'
+      'Kompletna triada DSO (dysregulacja afektu, trwały negatywny obraz siebie, trudności w utrzymaniu bliskości relacyjnej)'
     );
-  } else if (hasCorePTSD) {
-    opposing.cPTSD.push(
-      'Brak pełnej triady DSO (wymaga jednoczesnej dysregulacji afektu, trwałego negatywnego obrazu siebie i trudności relacyjnych) – obraz odpowiada klasycznemu PTSD'
-    );
-  }
-
-  // 7. DPDR (Depersonalization/Derealization Disorder)
-  if (input.depersonalizationDerealization) {
-    if (input.realityTesting === 'intact') {
-      supporting.DPDR.push('Uporczywe poczucie obcości ciała lub otoczenia przy w pełni zachowanym testowaniu rzeczywistości (intact reality testing)');
-    } else {
-      opposing.DPDR.push('Zaburzone testowanie rzeczywistości (przekonanie urojeniowe o obcości) wskazuje na zespół psychotyczny, a nie DPDR');
-    }
   } else {
-    opposing.DPDR.push('Brak dominujących objawów depersonalizacji ani derealizacji');
+    const missingDso: string[] = [];
+    if (!hasDsoAffect) missingDso.push('trwała dysregulacja afektu');
+    if (!hasDsoSelf) missingDso.push('negatywny obraz siebie');
+    if (!hasDsoRelational) missingDso.push('zaburzenia relacji/bliskości');
+    opposing.cPTSD.push(`Brak pełnej triady DSO (brakujące domeny: ${missingDso.join(', ')})`);
   }
 
-  // 8. PSYCHOSIS vs DISSOCIATION (MULTIAXIAL & PROBABILISTIC)
-  if (input.realityTesting === 'impaired_delusional' || input.thoughtDisorder) {
-    supporting.Psychosis.push('Utrata testowania rzeczywistości lub formalne zaburzenia toku myślenia');
-    opposing.DID.push('Urojeniowe przypisanie głosów obcym siłom z utratą krytycyzmu silniej wskazuje na pierwotną psychozę');
-    opposing.DPDR.push('Utrata krytycyzmu wyklucza proste zaburzenie depersonalizacyjne');
+  // BPD Multi-axial traits
+  const hasBpdAffect = affect.reactiveLability === 'marked';
+  const hasBpdAbandonment = relational.abandonmentSensitivity === 'marked';
+  const hasBpdRelationships = relational.unstableIntenseRelationships === 'present';
+  const hasBpdIdentity = input.identityDiscontinuity === 'disturbed_sense_of_self';
+  const hasBpdStressDissociation = input.realityTesting === 'transient_stress_induced';
+
+  const bpdTraitsCount =
+    (hasBpdAffect ? 1 : 0) +
+    (hasBpdAbandonment ? 1 : 0) +
+    (hasBpdRelationships ? 1 : 0) +
+    (hasBpdIdentity ? 1 : 0) +
+    (hasBpdStressDissociation ? 1 : 0);
+
+  if (hasBpdAbandonment) supporting.BPD.push('Wyraźna wrażliwość na odrzucenie i lęk przed porzuceniem');
+  if (hasBpdAffect) supporting.BPD.push('Szybka, reaktywna chwiejność afektu w skali godzin');
+  if (hasBpdRelationships) supporting.BPD.push('Niestabilne, intensywne relacje interpersonalne');
+  if (hasBpdIdentity) {
+    supporting.BPD.push('Rozchwiany obraz własnego ja bez wyodrębnienia odrębnych alter-stanów');
+    opposing.DID.push('Rozchwianie tożsamości typowe dla zaburzeń osobowości (BPD), brak autonomicznych alter-stanów');
+  }
+  if (hasBpdStressDissociation) supporting.BPD.push('Przemijające, indukowane stresem objawy dysocjacyjne');
+
+  // 7. DID EVALUATION & AMNESIA NUANCE
+  const hasDistinctStates = input.identityDiscontinuity === 'distinct_personality_states';
+  const hasEverydayAmnesia = input.amnesiaType === 'recurrent_daily_activities';
+  const hasTraumaAmnesia = input.amnesiaType === 'trauma_specific';
+
+  if (hasDistinctStates) {
+    supporting.DID.push('Odrębne stany tożsamości z przerwaniem ciągłości poczucia ja i sprawczości');
+  } else {
+    opposing.DID.push('Brak odrębnych stanów tożsamości wykonawczej');
   }
 
-  if (input.hallucinations === 'external_commentary_ego_syntonic') {
-    supporting.Psychosis.push('Głosy o lokalizacji zewnętrznej, komentujące, z osłabionym krytycyzmem');
-    opposing.DID.push('Zewnętrzne omamy komentujące z urojeniową interpretacją silniej sugerują proces psychotyczny');
-  } else if (input.hallucinations === 'internal_dialogue_ego_dystonic') {
-    supporting.DID.push('Złożony dialog wewnętrzny między stanami jaźni (zjawisko częste w dysocjacji tożsamościowej)');
-    opposing.Psychosis.push('Wewnętrzne głosy z zachowanym krytycyzmem i tożsamościowym dialogiem nie stanowią dowodu schizofrenii');
+  if (hasEverydayAmnesia) {
+    supporting.DID.push('Nawracająca amnezja dotycząca bieżących zdarzeń codziennych (everyday amnesia / time loss)');
+    supporting.DissociativeAmnesia.push('Udokumentowane luki pamięciowe niewytłumaczalne zwykłym zapominaniem');
+  } else if (hasTraumaAmnesia) {
+    supporting.DID.push('Amnezja zdarzeń urazowych (zgodna z wczesnym profilem DID wg ICD-11 CDDR)');
+    supporting.DissociativeAmnesia.push('Amnezja ograniczona do zdarzeń urazowych');
+  } else if (input.amnesiaType === 'none') {
+    opposing.DID.push('Brak zgłaszanych luk pamięciowych / amnezji (wymaga różnicowania z amnezją na amnezję)');
+    opposing.DissociativeAmnesia.push('Brak luk w pamięci wyklucza zaburzenie amnezyjne');
   }
 
-  // 9. MISSING INFORMATION DETECTION
-  if (input.identityDiscontinuity === 'distinct_personality_states' && input.amnesiaType === 'none') {
-    missingInfo.push('Wymagana pogłębiona eksploracja amnezji codziennej: czy pacjent odkrywa nieznane przedmioty, ubrania lub notatki (dowody time loss)?');
+  // 8. PSYCHOSIS vs DISSOCIATION MULTI-AXIAL
+  const psychAxes = input.psychosisAxes;
+  const voice = input.voicePhenomenology;
+
+  const hasFixedDelusions =
+    psychAxes?.delusions.presence === 'present' && psychAxes.delusions.conviction === 'high';
+  const hasThoughtDisorder =
+    psychAxes?.formalThoughtDisorder === 'marked' || Boolean(input.thoughtDisorder);
+  const hasImpairedReality =
+    psychAxes?.realityTesting === 'markedly_impaired' || input.realityTesting === 'impaired_delusional';
+  const hasNegativeSymptoms =
+    psychAxes?.negativeSymptoms &&
+    Object.values(psychAxes.negativeSymptoms).filter(Boolean).length >= 2;
+  const hasFunctionalDecline = psychAxes?.functionalDecline === 'clear';
+
+  if (hasImpairedReality || hasFixedDelusions) {
+    supporting.Psychosis.push('Utrata krytycyzmu i utrwalone przekonania urojeniowe');
   }
-  if (input.hallucinations !== 'none' && input.realityTesting === 'intact' && !input.thoughtDisorder) {
-    missingInfo.push('Ocena fenomenologii głosów: czy głosy mają charakter dialogu wewnętrznego części tożsamości, czy też omamów z przekonaniem urojeniowym?');
+  if (hasThoughtDisorder) {
+    supporting.Psychosis.push('Formalne zaburzenia toku myślenia (rozkojarzenie, niespójność)');
   }
-  if (neuro.hasAuraOrEpigastricRising === undefined && input.symptomDuration === 'brief_episodes_seconds') {
-    missingInfo.push('Brak danych o aurze (węchowej, smakowej, nadbrzusznej) przy napadowych objawach.');
+  if (hasNegativeSymptoms) {
+    supporting.Psychosis.push('Objawy negatywne (spłycenie afektu, awolicja, alogia)');
   }
-  if (!sub.substanceDetails && sub.onsetDirectlyTiedToSubstance) {
-    missingInfo.push('Konieczny dokładny panel toksykologiczny (kannabinoidy, dysocjanty, syntetyczne katynony).');
-  }
-  if (hasCorePTSD && !hasFullDSO && (input.negativeSelfConcept === 'none' || input.interpersonalPattern !== 'alienated_avoidant')) {
-    missingInfo.push('Ocena wymiarów DSO (obraz siebie, poczucie wstydu/porażki, relacje społeczne) w celu rozstrzygnięcia PTSD vs cPTSD.');
+  if (hasFunctionalDecline) {
+    supporting.Psychosis.push('Postępujące pogorszenie funkcjonowania społecznego i poznawczego');
   }
 
-  // 10. COUNTERFACTUAL WHAT WOULD CHANGE DECISION
-  whatChanges.push(
-    'Gdyby wykluczyć nawracające luki w pamięci autobiograficznej (amnezję codzienną), pełne rozpoznanie DID staje się nieuprawnione, a obraz kliniczny odpowiada raczej BPD lub PTSD z dysocjacją.'
-  );
-  whatChanges.push(
-    'Gdyby epizody odrealnienia miały charakter ściśle napadowy (30–60 s) z aurą nadbrzuszną lub objawami ruchowymi, priorytetem staje się diagnostyka neurologiczna w kierunku padaczki (TLE).'
-  );
-  whatChanges.push(
-    'Gdyby pacjent z objawami odrealnienia utracił krytycyzm i uznał, że jego ciało rzeczywiście uległo zniszczeniu lub świat nie istnieje, stan wymaga kwalifikacji jako zespół psychotyczny.'
-  );
-  whatChanges.push(
-    'Prawidłowe wyniki EEG i neuroobrazowania nie potwierdzają rozpoznania dysocjacyjnego – diagnoza DID wymaga pozytywnych kryteriów klinicznych, a nie jedynie negatywnych wyników badań somatycznych.'
-  );
+  if (voice?.present) {
+    if (voice.attribution === 'identity_state_related') {
+      supporting.DID.push('Doświadczenia głosowe w formie dialogu między stanami tożsamości');
+    }
+    if (voice.conviction === 'fixed_external_attribution') {
+      supporting.Psychosis.push('Głosy z urojeniową atrybucją zewnętrzną i brakiem krytycyzmu');
+    } else if (voice.conviction === 'insight_preserved') {
+      opposing.Psychosis.push('Zachowany wgląd w subiektywny charakter głosów osłabia podejrzenie schizofrenii (nie wyklucza)');
+    }
+  }
 
-  // 11. HYPOTHESES SYNTHESIS
+  // 9. SYNTHESIS OF DIAGNOSTIC HYPOTHESES
   const hypotheses: DiagnosticHypothesis[] = [];
 
-  // DID Evaluation (ICD-11 6B64)
-  if (input.identityDiscontinuity === 'distinct_personality_states' && input.amnesiaType === 'recurrent_daily_activities' && input.realityTesting === 'intact') {
-    hypotheses.push({
-      condition: 'Dysocjacyjne zaburzenie tożsamości (DID, ICD-11 6B64)',
-      category: 'DID',
-      level: 'primary_candidate',
-      rationale: 'Obecność odrębnych stanów tożsamości z nawracającą amnezją codziennych zdarzeń oraz zachowanym krytycyzmem spełnia kryteria ICD-11 6B64 i DSM-5-TR.',
-    });
-  } else if (input.identityDiscontinuity === 'distinct_personality_states') {
-    hypotheses.push({
-      condition: 'Dysocjacyjne zaburzenie tożsamości (DID, ICD-11 6B64)',
-      category: 'DID',
-      level: 'possible_consideration',
-      rationale: 'Obecne rozbicie tożsamości, lecz brak potwierdzonej amnezji codziennej wymaga dalszej weryfikacji luk pamięciowych przed ustaleniem rozpoznania DID.',
-    });
-  } else {
-    hypotheses.push({
-      condition: 'Dysocjacyjne zaburzenie tożsamości (DID, ICD-11 6B64)',
-      category: 'DID',
-      level: 'unlikely_or_incompatible',
-      rationale: 'Brak odrębnych stanów tożsamości lub brak amnezji wyklucza pełne kryteria DID.',
-    });
+  // A. DID Hypothesis
+  const didMissing: string[] = [];
+  if (hasDistinctStates && input.amnesiaType === 'none') {
+    didMissing.push('Obiektywizacja luk pamięciowych (ocena pod kątem amnezji na amnezję)');
   }
+  const didDataSufficient = hasDistinctStates && (hasEverydayAmnesia || hasTraumaAmnesia);
+  const didLevel =
+    didDataSufficient && input.realityTesting === 'intact' && !sub.activeIntoxicationOrWithdrawal
+      ? 'primary_candidate'
+      : hasDistinctStates
+      ? 'possible_consideration'
+      : 'unlikely_or_incompatible';
 
-  // BPD Evaluation
-  if (
-    input.interpersonalPattern === 'intense_fear_of_abandonment' &&
-    input.affectInstability === 'rapid_reactive_hours' &&
-    input.identityDiscontinuity !== 'distinct_personality_states'
-  ) {
-    hypotheses.push({
-      condition: 'Zaburzenie osobowości typu borderline (BPD)',
-      category: 'BPD',
-      level: 'primary_candidate',
-      rationale: 'Dominujący lęk przed porzuceniem, szybka chwiejność afektu i niestabilność tożsamości bez odrębnych stanów wykonawczych i bez amnezji codziennej.',
-    });
-  } else if (input.interpersonalPattern === 'intense_fear_of_abandonment' || input.affectInstability === 'rapid_reactive_hours') {
-    hypotheses.push({
-      condition: 'Cechy osobowości borderline / BPD',
-      category: 'BPD',
-      level: 'possible_consideration',
-      rationale: 'Obecne cechy niestabilności afektywnej lub relacyjnej, konieczna ocena wymiarowa ICD-11.',
-    });
-  }
+  hypotheses.push({
+    condition: 'Dysocjacyjne zaburzenie tożsamości (DID, ICD-11 6B64)',
+    category: 'DID',
+    level: didLevel,
+    confidence: didLevel === 'primary_candidate' ? (hasEverydayAmnesia ? 'high' : 'moderate') : 'low',
+    dataSufficiency: didDataSufficient ? 'sufficient' : 'insufficient',
+    supportingEvidence: supporting.DID,
+    opposingEvidence: opposing.DID,
+    missingCriticalInformation: didMissing,
+    rationale:
+      didLevel === 'primary_candidate'
+        ? 'Obecność odrębnych stanów tożsamości z przerwaniem ciągłości sprawczości i amnezją autobiograficzną.'
+        : hasDistinctStates
+        ? 'Obecne rozbicie tożsamości, lecz wzorzec amnezji wymaga pogłębionej weryfikacji przed ostatecznym rozpoznaniem.'
+        : 'Brak autonomicznych stanów tożsamości wyklucza pełnoobjawowe DID.',
+  });
 
-  // cPTSD vs PTSD Evaluation
+  // B. cPTSD vs PTSD
   if (hasCorePTSD) {
     if (hasFullDSO) {
       hypotheses.push({
         condition: 'Złożony zespół stresu pourazowego (cPTSD, ICD-11 6B41)',
         category: 'cPTSD',
         level: 'primary_candidate',
-        rationale: 'Obecna pełna triada PTSD (intruzje, unikanie, wzbudzenie) wraz z kompletną triadą zaburzeń organizacji jaźni (DSO: afekt, trwały negatywny obraz siebie, wycofanie z relacji).',
+        confidence: 'high',
+        dataSufficiency: 'sufficient',
+        supportingEvidence: supporting.cPTSD,
+        opposingEvidence: opposing.cPTSD,
+        missingCriticalInformation: [],
+        rationale:
+          'Rdzeń PTSD (ponowne przeżywanie w teraźniejszości, unikanie, poczucie zagrożenia) wraz z kompletną triadą DSO.',
       });
-      if (input.affectInstability === 'rapid_reactive_hours') {
-        hypotheses.push({
-          condition: 'Współistnienie cech borderline (nakładanie wymiarowe cPTSD/BPD)',
-          category: 'BPD',
-          level: 'possible_consideration',
-          rationale: 'Dysregulacja afektu i urazowość wykazują wymiarowe nakładanie między cPTSD a BPD; różnicowanie opiera się na dominującym wzorcu relacji (alienacja vs lęk przed porzuceniem).',
-        });
-      }
     } else {
       hypotheses.push({
         condition: 'Zespół stresu pourazowego (PTSD, ICD-11 6B40)',
         category: 'PTSD',
         level: 'primary_candidate',
-        rationale: 'Klasyczna triada: intruzje (re-experiencing), unikanie bodźców i wzmożone wzbudzenie (hyperarousal) bez pełnej triady DSO.',
+        confidence: 'high',
+        dataSufficiency: 'sufficient',
+        supportingEvidence: supporting.PTSD,
+        opposingEvidence: opposing.PTSD,
+        missingCriticalInformation: [],
+        rationale: 'Klasyczna triada ICD-11: re-experiencing w teraźniejszości, unikanie i wzmożone poczucie zagrożenia bez pełnej triady DSO.',
       });
-      if (hasAffectDisturbance || hasNegativeSelfConcept) {
+      if (hasDsoAffect || hasDsoSelf || hasDsoRelational) {
         hypotheses.push({
           condition: 'Złożony zespół stresu pourazowego (cPTSD, ICD-11 6B41)',
           category: 'cPTSD',
           level: 'possible_consideration',
-          rationale: 'Obecny rdzeń PTSD oraz pojedyncze cechy DSO; wymaga weryfikacji pełnej triady zaburzeń organizacji jaźni.',
+          confidence: 'moderate',
+          dataSufficiency: 'sufficient',
+          supportingEvidence: supporting.cPTSD,
+          opposingEvidence: opposing.cPTSD,
+          missingCriticalInformation: ['Niekompletna triada DSO – obecne jedynie pojedyncze domeny jaźni.'],
+          rationale: 'Obecny rdzeń PTSD oraz pojedyncze elementy DSO; wymaga monitorowania pełnej triady zaburzeń organizacji jaźni.',
         });
       }
     }
   }
 
-  // DPDR
-  if (input.depersonalizationDerealization && input.realityTesting === 'intact') {
+  // C. BPD Hypothesis
+  const bpdLevel =
+    bpdTraitsCount >= 3 && !hasDistinctStates
+      ? 'primary_candidate'
+      : bpdTraitsCount >= 2
+      ? 'possible_consideration'
+      : 'unlikely_or_incompatible';
+
+  hypotheses.push({
+    condition: 'Zaburzenie osobowości typu borderline (BPD)',
+    category: 'BPD',
+    level: bpdLevel,
+    confidence: bpdLevel === 'primary_candidate' ? 'high' : 'moderate',
+    dataSufficiency: 'sufficient',
+    supportingEvidence: supporting.BPD,
+    opposingEvidence: opposing.BPD,
+    missingCriticalInformation: [],
+    rationale:
+      bpdLevel === 'primary_candidate'
+        ? 'Wyraźny profil niestabilności afektywnej, wrażliwości na porzucenie i relacji bez autonomicznych alter-stanów tożsamości.'
+        : 'Obecne wybrane cechy niestabilności afektywnej lub relacyjnej.',
+  });
+
+  // D. DPDR Hypothesis
+  if (input.depersonalizationDerealization) {
+    const dpdrLevel = input.realityTesting === 'intact' ? 'primary_candidate' : 'possible_consideration';
     hypotheses.push({
       condition: 'Zespół depersonalizacji-derealizacji (DPDR)',
       category: 'DPDR',
-      level: 'primary_candidate',
-      rationale: 'Dominujące poczucie obcości i odrealnienia z pełnym krytycyzmem i bez formalnych zaburzeń myślenia.',
+      level: dpdrLevel,
+      confidence: dpdrLevel === 'primary_candidate' ? 'high' : 'moderate',
+      dataSufficiency: 'sufficient',
+      supportingEvidence: ['Dominujące poczucie obcości ciała lub otoczenia z zachowanym krytycyzmem'],
+      opposingEvidence: [],
+      missingCriticalInformation: [],
+      rationale: 'Uporczywe poczucie odrealnienia przy w pełni zachowanym testowaniu rzeczywistości.',
     });
   }
 
-  // TLE Neurological Differential
-  if (neuro.hasAuraOrEpigastricRising || input.symptomDuration === 'brief_episodes_seconds') {
-    hypotheses.push({
-      condition: 'Wskazanie do diagnostyki w kierunku padaczki skroniowej (TLE)',
-      category: 'TLE',
-      level: 'possible_consideration',
-      rationale: 'Krótki, napadowy lub stereotypowy charakter epizodów z aurą wymaga priorytetowej weryfikacji neurologicznej (EEG, MRI głowy).',
-    });
+  // E. TLE Hypothesis
+  const tleLevel: DiagnosticHypothesis['level'] =
+    neuroAssessment.concern !== 'low' ? 'possible_consideration' : 'unlikely_or_incompatible';
+  hypotheses.push({
+    condition: 'Diagnostyka w kierunku padaczki skroniowej (TLE)',
+    category: 'TLE',
+    level: tleLevel,
+    confidence: neuroAssessment.concern === 'high' ? 'moderate' : 'low',
+    dataSufficiency: neuroAssessment.missingCriticalInformation.length === 0 ? 'sufficient' : 'insufficient',
+    supportingEvidence: neuroAssessment.supportingFeatures,
+    opposingEvidence: neuroAssessment.opposingFeatures,
+    missingCriticalInformation: neuroAssessment.missingCriticalInformation,
+    rationale:
+      tleLevel === 'possible_consideration'
+        ? 'Cechy paroksyzmalne, aura lub stereotypowość wymagają obiektywizacji neurologicznej przed zamknięciem psychogennym.'
+        : 'Brak cech sugerujących napadowy charakter padaczkowy.',
+  });
+
+  // F. Psychosis Hypothesis
+  const psychosisAxesCount =
+    (hasImpairedReality ? 1 : 0) +
+    (hasFixedDelusions ? 1 : 0) +
+    (hasThoughtDisorder ? 1 : 0) +
+    (hasNegativeSymptoms ? 1 : 0) +
+    (hasFunctionalDecline ? 1 : 0);
+
+  const psychLevel: DiagnosticHypothesis['level'] =
+    psychosisAxesCount >= 2
+      ? 'primary_candidate'
+      : psychosisAxesCount === 1 || voice?.conviction === 'fixed_external_attribution'
+      ? 'possible_consideration'
+      : 'unlikely_or_incompatible';
+
+  hypotheses.push({
+    condition: 'Pierwotne zaburzenie psychotyczne (Schizofrenia / Zaburzenie urojeniowe)',
+    category: 'Psychosis',
+    level: psychLevel,
+    confidence: psychLevel === 'primary_candidate' ? 'moderate' : 'low',
+    dataSufficiency: psychAxes ? 'sufficient' : 'insufficient',
+    supportingEvidence: supporting.Psychosis,
+    opposingEvidence: opposing.Psychosis,
+    missingCriticalInformation: psychAxes ? [] : ['Brak pełnej oceny osi psychozy (krytycyzm, urojenia, tok myślenia, objawy negatywne)'],
+    rationale:
+      psychLevel === 'primary_candidate'
+        ? 'Konwergencja zaburzeń testowania rzeczywistości, urojeń lub formalnych zaburzeń toku myślenia.'
+        : 'Brak konwergencji osi psychozy; pojedyncze zjawiska omamowe wymagają wieloosiowego różnicowania.',
+  });
+
+  // Collect missing critical information across all evaluated hypotheses
+  for (const hyp of hypotheses) {
+    for (const item of hyp.missingCriticalInformation) {
+      if (!missingInfo.includes(item)) {
+        missingInfo.push(item);
+      }
+    }
   }
 
-  // Psychosis Evaluation
-  if (input.realityTesting === 'impaired_delusional' || input.thoughtDisorder) {
-    hypotheses.push({
-      condition: 'Pierwotne zaburzenie psychotyczne (Schizofrenia / Zaburzenie urojeniowe)',
-      category: 'Psychosis',
-      level: 'primary_candidate',
-      rationale: 'Utrata testowania rzeczywistości lub formalne zaburzenia toku myślenia.',
-    });
-  } else if (input.hallucinations === 'external_commentary_ego_syntonic') {
-    hypotheses.push({
-      condition: 'Zaburzenie z kręgu psychotycznego (do weryfikacji)',
-      category: 'Psychosis',
-      level: 'possible_consideration',
-      rationale: 'Głosy komentujące wymagają weryfikacji krytycyzmu i wykluczenia wczesnego procesu psychotycznego.',
-    });
-  }
+  // 10. COUNTERFACTUAL WHAT WOULD CHANGE DECISION
+  whatChanges.push(
+    'Pojawienie się aury nadbrzusznej lub stereotypowych epizodów (30–60 s) radykalnie podnosi priorytet diagnostyki neurologicznej (TLE).'
+  );
+  whatChanges.push(
+    'Utrata wglądu w pochodzenie głosów i pojawienie się usystematyzowanych urojeń ksobnych zmienia diagnozę z dysocjacyjnej na psychotyczną.'
+  );
+  whatChanges.push(
+    'Brak ponownego przeżywania z jakością tu i teraz (jedynie dystresujące wspomnienia) wyklucza pełne rozpoznanie PTSD wg ICD-11.'
+  );
+  whatChanges.push(
+    'Prawidłowe wyniki EEG i MRI głowy NIE potwierdzają zaburzenia dysocjacyjnego ani nie wykluczają definitywnie padaczki.'
+  );
+  whatChanges.push(
+    'Obiektywne potwierdzenie amnezji codziennej (time loss) przekształca podejrzenie DID w pełną diagnozę spełniającą kryteria ICD-11 6B64 i DSM-5-TR.'
+  );
+
+  const overallDataSufficiency =
+    hypotheses.some((h) => h.dataSufficiency === 'insufficient') ? 'partial' : 'sufficient';
 
   return {
     redFlags,
+    overallDataSufficiency,
     supportingEvidence: supporting,
     opposingEvidence: opposing,
     missingInformation: missingInfo,
     hypotheses,
+    frameworkAnalysis,
+    neurologicalAssessment: neuroAssessment,
     whatWouldChangeDecision: whatChanges,
     safetyActionRequired: safetyAction,
   };
