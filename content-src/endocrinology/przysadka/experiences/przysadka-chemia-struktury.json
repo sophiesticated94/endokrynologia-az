@@ -1,0 +1,322 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "przysadka-chemia-struktury",
+  "objectives": [
+    {
+      "id": "przysadka-chemia-struktury-obj-1",
+      "statement": "Porównasz architekturę cząsteczkową hormonów glikoproteinowych (TSH, LH, FSH, hCG): identyczną podjednostkę alfa (CGA) i unikalne podjednostki beta oraz wpływ sialilacji na okres półtrwania.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "przysadka-chemia-struktury-obj-2",
+      "statement": "Przeanalizujesz strukturę nonapeptydów tylnego płata (wazopresyna i oksytocyna): pętlę cykliczną z mostkiem dwusiarczkowym Cys1-Cys6 i reszty decydujące o swoistości (Phe3/Arg8 vs Ile3/Leu8).",
+      "kind": "differentiation"
+    }
+  ],
+  "diagnostic": {
+    "id": "przysadka-chemia-struktury-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "przysadka-chemia-struktury-obj-1"
+    ],
+    "prompt": "Która podjednostka jest całkowicie identyczna pod względem sekwencji aminokwasowej w cząsteczkach TSH, LH, FSH oraz łożyskowego hCG u człowieka?",
+    "options": [
+      "Podjednostka alfa (kodowana przez pojedynczy gen CGA na chromosomie 6)",
+      "Podjednostka beta",
+      "Żadna — wszystkie podjednostki mają różną sekwencję"
+    ],
+    "optionFeedback": [
+      "Wszystkie cztery hormony to heterodimery dzielące dokładnie tę samą podjednostkę alfa złożoną z 92 aminokwasów.",
+      "Podjednostka beta jest unikalna dla każdego hormonu i nadaje swoistość receptorową.",
+      "Podjednostka alfa jest w 100% wspólna."
+    ],
+    "answer": 0,
+    "explanation": "Homologia hormonów glikoproteinowych opiera się na identycznej podjednostce alfa (CGA) i ewolucyjnie zróżnicowanych podjednostkach beta.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "glycoprotein_hormones"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "przysadka-chemia-struktury-block-1",
+      "title": "Heterodimery glikoproteinowe: Wspólny łańcuch alfa i swoiste beta",
+      "text": "Wszystkie hormony glikoproteinowe (TSH, LH, FSH, hCG) są niekowalencyjnymi heterodimerami alfa-beta. Wolne podjednostki są biologicznie nieaktywne – dopiero połączenie alfa-beta tworzy domenę wiążącą receptor GPCR.",
+      "sourceIds": [
+        "glycoprotein_hormones"
+      ],
+      "checkpointId": "przysadka-chemia-struktury-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "przysadka-chemia-struktury-block-2",
+      "title": "Węglowodany i sialilacja: Wpływ na t1/2 w krążeniu",
+      "text": "Łańcuchy oligosacharydowe zakończone kwasem sjalowym (N-acetyloneuraminowym) chronią hormon przed wychwytem przez receptory asjaloglikoproteinowe w wątrobie. hCG (bogate w kwas sjalowy) ma t1/2 = 24–36h, LH zaledwie 30–60 min.",
+      "sourceIds": [
+        "glycoprotein_hormones"
+      ],
+      "checkpointId": "przysadka-chemia-struktury-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "przysadka-chemia-struktury-block-3",
+      "title": "Nonapeptydy tylnego płata: Pętla disiarczkowa Cys1-Cys6",
+      "text": "Wazopresyna i oksytocyna to nonapeptydy o budowie cyklicznej: mostek dwusiarczkowy między Cys1 i Cys6 tworzy 6-aminokwasowy pierścień z 3-aminokwasowym ogonem amidowym. Różnią się zaledwie 2 aminokwasami (pozycje 3 i 8).",
+      "sourceIds": [
+        "glycoprotein_hormones"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "przysadka-chemia-struktury-q2-checkpoint-1-v2",
+      "type": "matching",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-chemia-struktury-obj-2"
+      ],
+      "prompt": "Dopasuj nonapeptyd tylnego płata przysadki do aminokwasów znajdujących się w kluczowych pozycjach 3 i 8 jego łańcucha:",
+      "pairs": [
+        [
+          "Wazopresyna argininowa (AVP)",
+          "Fenyloalanina w pozycji 3 (Phe3) oraz L-arginina w pozycji 8 (Arg8)"
+        ],
+        [
+          "Oksytocyna (OXT)",
+          "Izoleucyna w pozycji 3 (Ile3) oraz leucyna w pozycji 8 (Leu8)"
+        ],
+        [
+          "Desmopresyna (dDAVP)",
+          "Brak grupy aminowej na Cys1 oraz D-arginina w pozycji 8 (D-Arg8)"
+        ]
+      ],
+      "explanation": "Obecność aromatycznej Phe3 i zasadowej Arg8 determinuje powinowactwo do receptorów wazopresynowych V1a i V2, podczas gdy alifatyczne Ile3 i Leu8 odpowiadają za selektywność oksytocynową.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "glycoprotein_hormones"
+      ]
+    },
+    {
+      "id": "przysadka-chemia-struktury-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-chemia-struktury-obj-1"
+      ],
+      "prompt": "Dlaczego olbrzymie stężenia gonadotropiny kosmówkowej (hCG > 100 000–200 000 IU/l) w zaśniadzie groniastym lub kosmówczaku mogą wywołać jawną klinicznie i biochemicznie nadczynność tarczycy (tyreotoksykozę)?",
+      "options": [
+        "Dzięki niemal identycznej strukturze podjednostki alfa oraz wysokiej homologii podjednostek beta, hCG wykazuje słabe krzyżowe powinowactwo agonistyczne do receptora TSHR w tarczycy",
+        "hCG bezpośrednio niszczy tyreocyty na drodze apoptozy",
+        "hCG pobudza wydzielanie tyreoglobuliny w wątrobie"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-hcg-tshr-cross-reactivity",
+            "label": "Krzyżowa stymulacja receptora TSHR przez wysokie stężenia hCG",
+            "acceptedPhrases": [
+              "receptor tshr",
+              "stymulacja tshr",
+              "krzyżowe wiązanie",
+              "homologia",
+              "nadczynność tarczycy w zaśniadzie"
+            ]
+          },
+          {
+            "id": "c-alpha-subunit-homology",
+            "label": "Wspólna podjednostka alfa i homologia strukturalna",
+            "acceptedPhrases": [
+              "podjednostka alfa",
+              "homologia podjednostek",
+              "podobieństwo budowy"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Cząsteczka hCG jest słabym agonistą receptora TSHR (ok. 1/10 000 aktywności TSH); przy ogromnych stężeniach stymuluje tarczycę, tłumiąc endogenne TSH.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "glycoprotein_hormones"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Cząsteczka hCG jest słabym agonistą receptora TSHR (ok. 1/10 000 aktywności TSH); przy ogromnych stężeniach stymuluje tarczycę, tłumiąc endogenne TSH.",
+        "Nieprawidłowo: Cząsteczka hCG jest słabym agonistą receptora TSHR (ok. 1/10 000 aktywności TSH); przy ogromnych stężeniach stymuluje tarczycę, tłumiąc endogenne TSH.",
+        "Nieprawidłowo: Cząsteczka hCG jest słabym agonistą receptora TSHR (ok. 1/10 000 aktywności TSH); przy ogromnych stężeniach stymuluje tarczycę, tłumiąc endogenne TSH."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "przysadka-chemia-struktury-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "przysadka-chemia-struktury-obj-1"
+    ],
+    "prompt": "Wyjaśnij znaczenie reszt kwasu sjalowego (sialilacji) w glikoproteinach przysadkowych: dlaczego stopień sialilacji wpływa na klirens nerkowy/wątrobowy i różnicuje okres półtrwania hCG, FSH i LH?",
+    "modelAnswer": "Kwas sjalowy (kwas N-acetyloneuraminowy) stanowi ujemnie naładowane, końcowe zwieńczenie łańcuchów oligosacharydowych N- i O-glikozylacji. Pełni dwie kluczowe role: 1) Elektrostatycznie chroni cząsteczkę przed filtracją kłębuszkową w nerkach ze względu na ujemny ładunek błony filtracyjnej. 2) Maskuje leżące głębiej reszty galaktozy przed receptorami asjaloglikoproteinowymi (ASGPR) w hepatocytach, które wychwytują i degradują pozbawione kwasu sjalowego białka. hCG posiada unikalny C-końcowy peptyd CTP w podjednostce beta z licznymi resztami kwasu sjalowego, co wydłuża jego t_1/2 do 24–36 godzin. FSH jest umiarkowanie sialilowany (t_1/2 ok. 3–4 godziny), podczas gdy LH ma mało kwasu sjalowego i reszty sulfonowane, przez co jest gwałtownie usuwany w ciągu 20–30 minut.",
+    "explanation": "Sialilacja decyduje o farmakokinetyce i czasie przetrwania glikoprotein w krążeniu.",
+    "difficulty": "doctor",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "glycoprotein_hormones"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "przysadka-chemia-struktury-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "przysadka-chemia-struktury-obj-2"
+      ],
+      "prompt": "Jaki specyficzny typ wiązania chemicznego łączy reszty Cys1 i Cys6 w cząsteczce wazopresyny i jakie ma to znaczenie dla aktywności biologicznej hormonu?",
+      "modelAnswer": "Jest to kowalencyjne wiązanie dwusiarczkowe (mostek disiarczkowy -S-S-) powstający w wyniku utlenienia grup tiolowych (-SH) dwóch reszt cysteiny. Mostek ten zamyka pierścień heksapeptydowy, narzucając sztywną, konformacyjnie zdefiniowaną strukturę przestrzenną niezbędną do dopasowania do kieszeni wiążącej receptorów V1a, V1b i V2. Redukcja mostka dwusiarczkowego do wolnych grup tiolowych prowadzi do całkowitej utraty aktywności biologicznej hormonu.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-disulfide-bridge",
+            "label": "Kowalencyjny mostek dwusiarczkowy (-S-S-)",
+            "acceptedPhrases": [
+              "mostek dwusiarczkowy",
+              "wiązanie dwusiarczkowe",
+              "mostek disiarczkowy",
+              "-s-s-"
+            ]
+          },
+          {
+            "id": "c-cyclic-conformation-activity",
+            "label": "Zamknięcie pierścienia heksapeptydu / warunek aktywności",
+            "acceptedPhrases": [
+              "struktura cykliczna",
+              "zamknięcie pierścienia",
+              "konformacja",
+              "utrata aktywności po redukcji"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Mostek Cys1-Cys6 jest konieczny do zachowania biologicznie aktywnej konformacji pierścieniowej nonapeptydów.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "glycoprotein_hormones"
+      ]
+    },
+    {
+      "id": "przysadka-chemia-struktury-q5-exit-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-chemia-struktury-obj-1"
+      ],
+      "prompt": "W diagnostyce gruczolaków przysadki oznaczanie wolnej podjednostki alfa (alfa-GSU) w surowicy jest szczególnie przydatne w identyfikacji którego rzadkiego guza wydzielniczego?",
+      "options": [
+        "Gruczolaka wydzielającego TSH (TSH-oma) — charakteryzuje się znacznie podwyższonym stosunkiem molowym wolnej alfa-GSU do TSH",
+        "Prolactinoma",
+        "Gruczolaka somatotropowego wydzielającego GH"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-alpha-gsu-tshoma",
+            "label": "Alfa-GSU w diagnostyce TSH-oma (odróżnienie od RTH)",
+            "acceptedPhrases": [
+              "tsh-oma",
+              "alfa-gsu",
+              "wolna podjednostka alfa",
+              "stosunek molowy",
+              "oporność na hormony tarczycy"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Nadprodukcja niesparowanej wolnej alfa-GSU jest cechą nowotworową TSH-oma i pozwala odróżnić go od zespołu oporności na hormony tarczycy (RTH).",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "glycoprotein_hormones"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Nadprodukcja niesparowanej wolnej alfa-GSU jest cechą nowotworową TSH-oma i pozwala odróżnić go od zespołu oporności na hormony tarczycy (RTH).",
+        "Nieprawidłowo: Nadprodukcja niesparowanej wolnej alfa-GSU jest cechą nowotworową TSH-oma i pozwala odróżnić go od zespołu oporności na hormony tarczycy (RTH).",
+        "Nieprawidłowo: Nadprodukcja niesparowanej wolnej alfa-GSU jest cechą nowotworową TSH-oma i pozwala odróżnić go od zespołu oporności na hormony tarczycy (RTH)."
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "przysadka-chemia-struktury-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-chemia-struktury-obj-2"
+      ],
+      "prompt": "Dlaczego oksytocyna podawana w bardzo wysokich dawkach we wlewie dożylnym w celu indukcji porodu może wywołać powikłanie w postaci hiponatremii i zatrucia wodnego?",
+      "options": [
+        "Dzięki wysokiej homologii z wazopresyną (7 na 9 identycznych aminokwasów), w wysokich stężeniach oksytocyna stymuluje krzyżowo receptory V2 w cewkach zbiorczych nerek",
+        "Oksytocyna pobudza pragnienie w podwzgórzu",
+        "Oksytocyna rozkłada sód w osoczu"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-oxytocin-v2-cross",
+            "label": "Krzyżowa stymulacja receptora V2 w nerkach przez oksytocynę",
+            "acceptedPhrases": [
+              "stymulacja receptora v2",
+              "krzyżowe powinowactwo",
+              "działanie antydiuretyczne",
+              "homologia z wazopresyną"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Oksytocyna w dawkach farmakologicznych wykazuje słabe działanie wazopresynopodobne na receptor V2, co przy wlewie płynów bezelektrolitowych grozi hiponatremią.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "glycoprotein_hormones"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Oksytocyna w dawkach farmakologicznych wykazuje słabe działanie wazopresynopodobne na receptor V2, co przy wlewie płynów bezelektrolitowych grozi hiponatremią.",
+        "Nieprawidłowo: Oksytocyna w dawkach farmakologicznych wykazuje słabe działanie wazopresynopodobne na receptor V2, co przy wlewie płynów bezelektrolitowych grozi hiponatremią.",
+        "Nieprawidłowo: Oksytocyna w dawkach farmakologicznych wykazuje słabe działanie wazopresynopodobne na receptor V2, co przy wlewie płynów bezelektrolitowych grozi hiponatremią."
+      ]
+    },
+    {
+      "id": "przysadka-chemia-struktury-bank-2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-chemia-struktury-obj-1"
+      ],
+      "prompt": "Z ilu reszt aminokwasowych składa się dojrzała ludzka podjednostka alfa (CGA) wspólna dla TSH, LH, FSH i hCG po odcięciu peptydu sygnałowego?",
+      "answer": 92,
+      "tolerance": 0,
+      "unit": "aminokwasów",
+      "explanation": "Dojrzała ludzka podjednostka alfa glikoprotein przysadkowych i łożyskowych składa się dokładnie z 92 aminokwasów zawierających 5 mostków dwusiarczkowych.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "glycoprotein_hormones"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "axis-map"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

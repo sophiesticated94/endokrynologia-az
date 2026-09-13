@@ -1,0 +1,157 @@
+{
+  "id": "siadh",
+  "moduleId": "przysadka",
+  "title": "Zabójczy nadmiar wody",
+  "subtitle": "Zespół SIADH, hiponatremia hipoosmotyczna i ryzyko mielinolizy mostu",
+  "group": "Niedoczynność i gospodarka wodna",
+  "minutes": 18,
+  "goals": [
+    "Opanujesz kryteria rozpoznania zespołu nieadekwatnego wydzielania wazopresyny (SIADH / zespół Schwartz-Barttera).",
+    "Zrozumiesz śmiertelne niebezpieczeństwo zbyt szybkiej korekty hiponatremii (zespół mielinolizy mostu — CPM)."
+  ],
+  "sections": [
+    {
+      "title": "Patofizjologia: Za dużo wazopresyny w normowolemii",
+      "text": "Zespół nieadekwatnego wydzielania wazopresyny (SIADH) to stan, w którym AVP jest uwalniana w sposób ciągły, niezależnie od osmolalności osocza. Skutkiem jest niekontrolowane zatrzymywanie wolnej wody przez nerki. Prowadzi to do hiponatremii z rozcieńczenia (dilutional hyponatremia) oraz hipoosmolalności osocza. Kluczowa cecha: chory jest w stanie klinicznej normowolemii (euvolemia) — nie ma obrzęków obwodowych ani cech odwodnienia, ponieważ nadmiar wody przesuwa się wewnątrzkomórkowo."
+    },
+    {
+      "title": "Kryteria diagnostyczne wg Barttera i Schwartza",
+      "text": "Warunki konieczne do pewnego rozpoznania SIADH: 1) Hipoosmolalna hiponatremia (sód <135 mmol/l, osmolalność osocza <275 mOsm/kg); 2) Nieadekwatne zagęszczenie moczu (osmolalność moczu >100 mOsm/kg H2O przy niskiej osmolalności krwi); 3) Zwiększone wydalanie sodu w moczu (>30 mmol/l przy normalnej podaży soli); 4) Prawidłowa czynność nerek, tarczycy i kory nadnerczy (przed rozpoznaniem SIADH ZAWSZE wyklucz niedoczynność kory nadnerczy i niedoczynność tarczycy!); 5) Brak stosowania leków moczopędnych."
+    },
+    {
+      "title": "Leczenie i bezpieczna granica korekty sodu (CPM)",
+      "text": "W łagodnym/umiarkowanym SIADH leczeniem z wyboru jest restrykcja płynów (zwykle <800–1000 ml/dobę). W ciężkiej, objawowej hiponatremii (drgawki, śpiączka) stosuje się 3% NaCl. ŻELAZNA ZASADA BEZPIECZEŃSTWA: Tempo wzrostu sodu NIE MOŻE przekraczać 8–10 mmol/l na dobę (a u osób wysokiego ryzyka <6–8 mmol/l/24h)! Zbyt szybkie podnoszenie sodu powoduje odwodnienie komórek mózgu i nieodwracalne zniszczenie osłonek mielinowych — zespół osmotycznej demielinizacji (mielinoliza środkowa mostu — CPM), objawiający się porażeniem czterokończynowym i zespołem zamknięcia (locked-in)."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Parametr laboratoryjny",
+      "Wartość w SIADH"
+    ],
+    "rows": [
+      [
+        "Sód w surowicy",
+        "Obniżony (<135 mmol/l, często <125 mmol/l)"
+      ],
+      [
+        "Osmolalność osocza",
+        "Niska (<275 mOsm/kg H2O) — hipoosmolalność"
+      ],
+      [
+        "Osmolalność moczu",
+        "Nieadekwatnie wysoka (>100 mOsm/kg, często >300 mOsm/kg)"
+      ],
+      [
+        "Sód w moczu",
+        "Wysoki (>30 mmol/l przy prawidłowej diecie)"
+      ]
+    ]
+  },
+  "advanced": "Głównymi przyczynami ektopowego SIADH są nowotwory złośliwe (aż 75% przypadków stanowi drobnokomórkowy rak płuca — SCLC syntetyzujący AVP), choroby OUN (udar, krwawienie podpajęczynówkowe, zapalenie opon) oraz leki (SSRI, karbamazepina, cyklofosfamid). W opornym SIADH opcją terapeutyczną są antagoniści receptora V2 wazopresyny — waptany (np. tolwaptan).",
+  "summary": "SIADH to hipoosmotyczna hiponatremia w normowolemii z nieadekwatnie zagęszczonym moczem. Podstawą leczenia jest ograniczenie podaży płynów, a w ostrych stanach 3% NaCl. Maksymalny wzrost sodu to 8–10 mmol/l/24h, aby uniknąć śmiertelnej mielinolizy mostu.",
+  "sourceIds": [
+    "hyponatraemia"
+  ],
+  "questions": [
+    {
+      "id": "siadh-q1",
+      "lessonId": "siadh",
+      "prompt": "Jakie jest maksymalne bezpieczne tempo podnoszenia stężenia sodu w leczeniu przewlekłej hiponatremii w ciągu pierwszych 24 godzin?",
+      "options": [
+        {
+          "text": "Nie więcej niż 8–10 mmol/l na dobę (optymalnie 6–8 mmol/l)",
+          "explanation": "Przekroczenie tego tempa grozi nieodwracalną osmotyczną demielinizacją mostu (CPM)."
+        },
+        {
+          "text": "Co najmniej 25–30 mmol/l w ciągu pierwszych 6 godzin",
+          "explanation": "Tak gwałtowny wzrost doprowadziłby do zgonu lub porażenia czterokończynowego."
+        },
+        {
+          "text": "Sód należy natychmiast wyrównać do 145 mmol/l bez względu na czas",
+          "explanation": "Natychmiastowe wyrównanie jest błędem w sztuce lekarskiej o katastrofalnych skutkach neurologicznych."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "siadh-q2",
+      "lessonId": "siadh",
+      "prompt": "Który stan kliniczny należy bezwzględnie wykluczyć przed postawieniem pewnego rozpoznania zespołu SIADH?",
+      "options": [
+        {
+          "text": "Akromegalię",
+          "explanation": "Akromegalia nie jest stanem maskującym kryteria diagnostyczne SIADH."
+        },
+        {
+          "text": "Niedoczynność kory nadnerczy (niedobór glikokortykosteroidów) oraz ciężką niedoczynność tarczycy",
+          "explanation": "Niedobór kortyzolu sam w sobie upośledza wydalanie wolnej wody i doskonale imituje SIADH."
+        },
+        {
+          "text": "Przełom tarczycowy",
+          "explanation": "Przełom tarczycowy nie wywołuje izolowanej hipoosmotycznej normowolemicznej hiponatremii."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "siadh-q3",
+      "lessonId": "siadh",
+      "prompt": "Jaki jest stan objętości wewnątrznaczyniowej (wolemii) u pacjenta z typowym zespołem SIADH?",
+      "options": [
+        {
+          "text": "Ciężka hipowolemia ze spadkiem ciśnienia tętniczego i tachykardią",
+          "explanation": "Hipowolemia cechuje odwodnienie lub niewydolność nerek, a nie SIADH."
+        },
+        {
+          "text": "Masywne uogólnione obrzęki (anasarca) z wodobrzuszem",
+          "explanation": "Uogólnione obrzęki występują w niewydolności serca, marskości wątroby lub zespole nerczycowym."
+        },
+        {
+          "text": "Kliniczna normowolemia (euvolemia) — brak obrzęków obwodowych i brak cech odwodnienia",
+          "explanation": "Nadmiar wolnej wody rozmieszcza się w całym ustroju, nie dając obrzęków obwodowych ani zastoju płucnego."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "siadh-q4",
+      "lessonId": "siadh",
+      "prompt": "Co stanowi podstawowe postępowanie pierwszego rzutu u stabilnego pacjenta z bezobjawowym lub łagodnym SIADH?",
+      "options": [
+        {
+          "text": "Restrykcja płynów (ograniczenie picia płynów do poniżej 800–1000 ml/dobę)",
+          "explanation": "Zmniejszenie dowozu wody zmusza organizm do stopniowego zagęszczenia sodu drogą strat niewidocznych."
+        },
+        {
+          "text": "Podawanie dożylne 5% roztworu glukozy w dużej objętości",
+          "explanation": "Glukoza 5% to płyn hipotoniczny (czysta woda), który drastycznie pogłębiłby hiponatremię i wywołał obrzęk mózgu!"
+        },
+        {
+          "text": "Natychmiastowa dializoterapia",
+          "explanation": "Dializoterapia nie jest metodą pierwszego rzutu w niepowikłanym SIADH."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "siadh-q5",
+      "lessonId": "siadh",
+      "prompt": "Jaki nowotwór złośliwy najczęściej odpowiada za ektopowe wydzielanie wazopresyny i zespół SIADH?",
+      "options": [
+        {
+          "text": "Rak rdzeniasty tarczycy",
+          "explanation": "Rak rdzeniasty wydziela kalcytoninę, a nie wazopresynę."
+        },
+        {
+          "text": "Rak drobnokomórkowy płuca (SCLC)",
+          "explanation": "Aż kilkanaście procent chorych z tym nowotworem wykazuje biochemiczne cechy ektopowego SIADH."
+        },
+        {
+          "text": "Rak płaskonabłonkowy skóry",
+          "explanation": "Nowotwory skóry nie produkują ekotopowo wazopresyny."
+        }
+      ],
+      "answer": 1
+    }
+  ]
+}

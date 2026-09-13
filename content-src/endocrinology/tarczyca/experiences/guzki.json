@@ -1,0 +1,398 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "guzki",
+  "objectives": [
+    {
+      "id": "guzki-obj-1",
+      "statement": "Zintegrujesz ocenę ultrasonograficzną w skali EU-TIRADS z kryteriami kwalifikacji do biopsji aspiracyjnej cienkoigłowej (BACC) wg wytycznych ETA 2023.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "guzki-obj-2",
+      "statement": "Podejmiesz decyzję diagnostyczną u pacjenta z guzkiem tarczycy i obniżonym TSH (rola scyntygrafii i guzków autonomicznych).",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "guzki-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "guzki-obj-1"
+    ],
+    "prompt": "Jaki jest zalecany próg wielkości guzka w wytycznych ETA 2023 kwalifikujący zmianę kategorii EU-TIRADS 5 (wysokiego ryzyka) do biopsji BACC?",
+    "options": [
+      "Wymiar największy > 10 mm (chyba że występują podejrzane węzły chłonne)",
+      "Wymiar największy > 30 mm",
+      "Każda zmiana powyżej 2 mm bez względu na obraz"
+    ],
+    "optionFeedback": [
+      "Kategoria EU-TIRADS 5 kwalifikuje się do biopsji przy wymiarze przekraczającym 10 mm.",
+      "Próg 30 mm byłby niebezpiecznym opóźnieniem diagnostyki raka.",
+      "Biopsja mikrozmian <10 mm bez alarmowych cech zewnątrztarczycowych prowadzi do nadrozpoznawalności."
+    ],
+    "answer": 0,
+    "explanation": "Zgodnie z ETA 2023 próg BACC dla kategorii EU-TIRADS 5 to >10 mm.",
+    "difficulty": "student",
+    "reasoning": "interpretation",
+    "sourceIds": [
+      "nodules"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "guzki-block-1",
+      "title": "Dwa równoległe pytania",
+      "text": "Ocena guzka dotyczy jego czynności i ryzyka złośliwości. TSH odpowiada na pierwszą część, USG tarczycy i węzłów szyi na drugą. Większość guzków (>90–95%) jest łagodna.",
+      "sourceIds": [
+        "nodules"
+      ],
+      "checkpointId": "guzki-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "guzki-block-2",
+      "title": "Ryzyko w obrazie",
+      "text": "EU-TIRADS porządkuje cechy ultrasonograficzne. Znaczenie mają m.in. echogeniczność, kształt, granice i mikrozwapnienia. Wskazanie do BACC zależy od kategorii i rozmiaru.",
+      "sourceIds": [
+        "nodules"
+      ],
+      "checkpointId": "guzki-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "guzki-block-3",
+      "title": "Biopsja i następny krok",
+      "text": "Przy niskim TSH oceń autonomię: guzek gorący rzadko bywa złośliwy i nie wymaga rutynowej BACC. Wynik cytologii opisuje się w 6-stopniowej klasyfikacji Bethesda.",
+      "sourceIds": [
+        "nodules",
+        "cancer"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "guzki-q2-checkpoint-1-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "guzki-obj-2"
+      ],
+      "prompt": "U pacjenta z wykrytym w USG guzkiem o wymiarach 24 mm w prawym płacie TSH wynosi 0,08 mIU/l. Jaki krok diagnostyczny powinien poprzedzić decyzję o biopsji BACC?",
+      "options": [
+        "Wykonanie scyntygrafii radioizotopowej tarczycy (99mTc lub 131-I) w celu weryfikacji autonomii guzka",
+        "Natychmiastowe wykonanie pilnej biopsji BACC z oceną cytologiczną",
+        "Wdrożenie wysokiej dawki lewotyroksyny"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-scintigraphy-first",
+            "label": "Scyntygrafia w celu wykluczenia guzka gorącego",
+            "acceptedPhrases": [
+              "scyntygrafia",
+              "badanie izotopowe",
+              "guzek gorący",
+              "autonomia",
+              "99mtc"
+            ]
+          },
+          {
+            "id": "c-hot-nodule-benign",
+            "label": "Guzek gorący/autonomiczny rzadko złośliwy",
+            "acceptedPhrases": [
+              "rzadko złośliwy",
+              "brak wskazań do bacc",
+              "guzek autonomiczny nie wymaga biopsji"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-biopsy-first",
+            "patterns": [
+              "najpierw biopsja",
+              "bacc przed scyntygrafią"
+            ],
+            "severity": "warning",
+            "feedback": "Biopsja guzka autonomicznego często daje mylący obraz proliferacji pęcherzykowej (Bethesda III/IV)."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Przy obniżonym TSH pierwszym badaniem jest scyntygrafia. Guzek hiperfunkcjonujący („gorący”) niemal nigdy nie jest rakiem i nie wymaga BACC.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "nodules"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Przy obniżonym TSH pierwszym badaniem jest scyntygrafia. Guzek hiperfunkcjonujący („gorący”) niemal nigdy nie jest rakiem i nie wymaga BACC.",
+        "Nieprawidłowo: Przy obniżonym TSH pierwszym badaniem jest scyntygrafia. Guzek hiperfunkcjonujący („gorący”) niemal nigdy nie jest rakiem i nie wymaga BACC.",
+        "Nieprawidłowo: Przy obniżonym TSH pierwszym badaniem jest scyntygrafia. Guzek hiperfunkcjonujący („gorący”) niemal nigdy nie jest rakiem i nie wymaga BACC."
+      ]
+    },
+    {
+      "id": "guzki-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "guzki-obj-1"
+      ],
+      "prompt": "W USG tarczycy opisano lity, znacznie hipoechogeniczny guzek o wymiarach 14 x 12 x 16 mm, o orientacji „taller-than-wide” (grubość > szerokość) z mikrozwapnieniami (EU-TIRADS 5). Węzły szyjne są prawidłowe. Jaka jest decyzja?",
+      "options": [
+        "Kwalifikacja do biopsji aspiracyjnej cienkoigłowej (BACC), ponieważ zmiana przekracza próg 10 mm",
+        "Obserwacja za 2 lata bez nakłucia, ponieważ wymiar jest mniejszy niż 20 mm",
+        "Wykonanie tomografii klatki piersiowej zamiast biopsji"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-eutirads5-threshold",
+            "label": "Próg > 10 mm w kategorii EU-TIRADS 5",
+            "acceptedPhrases": [
+              "eu-tirads 5",
+              "próg 10 mm",
+              "kwalifikacja do bacc",
+              "wysokie ryzyko złośliwości"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Obecność cech wysokiego ryzyka (hipoechogeniczność, orientacja wyższa niż szersza, mikrozwapnienia) przy wymiarze >10 mm stanowi bezwzględne wskazanie do BACC wg ETA 2023.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "nodules"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Obecność cech wysokiego ryzyka (hipoechogeniczność, orientacja wyższa niż szersza, mikrozwapnienia) przy wymiarze >10 mm stanowi bezwzględne wskazanie do BACC wg ETA 2023.",
+        "Nieprawidłowo: Obecność cech wysokiego ryzyka (hipoechogeniczność, orientacja wyższa niż szersza, mikrozwapnienia) przy wymiarze >10 mm stanowi bezwzględne wskazanie do BACC wg ETA 2023.",
+        "Nieprawidłowo: Obecność cech wysokiego ryzyka (hipoechogeniczność, orientacja wyższa niż szersza, mikrozwapnienia) przy wymiarze >10 mm stanowi bezwzględne wskazanie do BACC wg ETA 2023."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "guzki-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "guzki-obj-1"
+    ],
+    "prompt": "Wymień studentowi cztery najważniejsze cechy ultrasonograficzne składające się na wysokie ryzyko złośliwości guzka w klasyfikacji EU-TIRADS.",
+    "modelAnswer": "Cztery cechy wysokiego ryzyka złośliwości to: 1) znaczna hipoechogeniczność (ciemniejsza niż mięśnie przedtarczowe); 2) kształt „wyższy niż szerszy” (taller-than-wide w przekroju poprzecznym); 3) nieregularne, zatarte lub zrazowate granice; 4) obecność punktowych mikrozwapnień (<1 mm bez cienia akustycznego).",
+    "explanation": "Zrozumienie kluczowych cech złośliwości pozwala precyzyjnie przypisać kategorię EU-TIRADS 5.",
+    "difficulty": "doctor",
+    "reasoning": "interpretation",
+    "sourceIds": [
+      "nodules"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "guzki-q4-exit-v2",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "guzki-obj-1"
+      ],
+      "prompt": "Oceń wpływ poniższych cech ultrasonograficznych na decyzję o zaniechaniu biopsji i bezpiecznej obserwacji:",
+      "hypothesis": "Guzek tarczycy w USG ma cechy łagodne i może być bezpiecznie obserwowany bez biopsji.",
+      "items": [
+        {
+          "id": "ev-1",
+          "text": "Zmiana całkowicie torbielowata (anéchogeniczna, 18 mm) z artefaktem wzmocnienia akustycznego",
+          "expected": "supports",
+          "explanation": "Proste torbiele tarczycy (EU-TIRADS 2) mają ryzyko złośliwości bliskie 0%."
+        },
+        {
+          "id": "ev-2",
+          "text": "Obecność mikrozwapnień i nieregularnych, naciekających granic",
+          "expected": "opposes",
+          "explanation": "To kardynalne cechy złośliwości (EU-TIRADS 5)."
+        },
+        {
+          "id": "ev-3",
+          "text": "Owalny kształt ze zdefiniowanym, cienkim halo łącznotkankowym",
+          "expected": "supports",
+          "explanation": "Obwodowe halo i gładki zarys to cechy zmiany typowo łagodnej."
+        },
+        {
+          "id": "ev-4",
+          "text": "Guzek ma wymiar 14 mm",
+          "expected": "neutral",
+          "explanation": "Wymiar sam w sobie bez charakterystyki echogeniczności nie decyduje o kwalifikacji do BACC."
+        }
+      ],
+      "explanation": "EU-TIRADS integruje cechy ryzyka ultrasonograficznego, decydując o kwalifikacji do BACC.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nodules",
+        "cancer"
+      ]
+    },
+    {
+      "id": "guzki-q5-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "guzki-obj-1"
+      ],
+      "prompt": "Wymień co najmniej 3 ultrasonograficzne cechy wysokiego ryzyka złośliwości guzka tarczycy (EU-TIRADS 5) wg wytycznych PTE/ETA.",
+      "modelAnswer": "Cechy wysokiego ryzyka w USG to: 1) wybitna hipoechogeniczność (ciemniejsza od mięśni przedtarczowych), 2) nieregularne, zatarte lub zrazikowe granice, 3) obecność mikrozwapnień, 4) kształt „wyższy niż szerszy” (taller-than-wide w przekroju poprzecznym), 5) cechy naciekania torebki lub tkanek sąsiadujących.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-hypoechoic-irregular",
+            "label": "Wybitna hipoechogeniczność lub nieregularne granice",
+            "acceptedPhrases": [
+              "hipoechogeniczność",
+              "znaczna hipoechogeniczność",
+              "nieregularne granice",
+              "zrazikowe marginesy"
+            ]
+          },
+          {
+            "id": "c-microcalc-taller",
+            "label": "Mikrozwapnienia lub kształt taller-than-wide",
+            "acceptedPhrases": [
+              "mikrozwapnienia",
+              "wyższy niż szerszy",
+              "taller-than-wide",
+              "naciek torebki"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Kombinacja tych cech definiuje kategorię EU-TIRADS 5 o ryzyku złośliwości 26–87%.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "nodules",
+        "cancer"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "guzki-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "guzki-obj-1"
+      ],
+      "prompt": "Guzek tarczycy w USG ma wymiary 8 mm, lecz w badaniu węzłów chłonnych szyi stwierdzono zaokrąglony węzeł o zatartej wnęce z mikrozwapnieniami i zwyrodnieniem płynowym. Czy należy wykonać biopsję?",
+      "options": [
+        "Tak, obecność podejrzanego węzła chłonnego znosi próg wielkości guzka i nakazuje wykonanie BACC węzła (oraz guzka) z oznaczeniem tyreoglobuliny w popłuczynach",
+        "Nie, bo guzek ma poniżej 10 mm",
+        "Należy zaczekać aż węzeł osiągnie 30 mm"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-lymph-node-override",
+            "label": "Podejrzany węzeł znosi kryterium wielkości",
+            "acceptedPhrases": [
+              "podejrzany węzeł",
+              "przerzut",
+              "znosi próg wielkości",
+              "bacc węzła",
+              "tg w popłuczynach"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Podejrzenie przerzutu do węzłów chłonnych szyi jest bezwzględnym wskazaniem do natychmiastowej diagnostyki inwazyjnej niezależnie od wymiarów ogniska pierwotnego.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nodules",
+        "cancer"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Podejrzenie przerzutu do węzłów chłonnych szyi jest bezwzględnym wskazaniem do natychmiastowej diagnostyki inwazyjnej niezależnie od wymiarów ogniska pierwotnego.",
+        "Nieprawidłowo: Podejrzenie przerzutu do węzłów chłonnych szyi jest bezwzględnym wskazaniem do natychmiastowej diagnostyki inwazyjnej niezależnie od wymiarów ogniska pierwotnego.",
+        "Nieprawidłowo: Podejrzenie przerzutu do węzłów chłonnych szyi jest bezwzględnym wskazaniem do natychmiastowej diagnostyki inwazyjnej niezależnie od wymiarów ogniska pierwotnego."
+      ]
+    },
+    {
+      "id": "guzki-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "guzki-obj-2"
+      ],
+      "prompt": "Jakie postępowanie obowiązuje przy wyniku cytologii tarczycy w kategorii Bethesda III (atypia o nieokreślonym znaczeniu / AUS/FLUS)?",
+      "modelAnswer": "Postępowanie obejmuje: ponowną ocenę cech USG i czynników ryzyka klinicznego, powtórzenie biopsji BACC (często po 3–6 miesiącach) lub wykonanie testów molekularnych (mutacje BRAF, RAS, rearanżacje RET/PTC), ewentualnie diagnostyczną lobektomię w przypadku utrzymującej się atypii.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-repeat-or-molecular",
+            "label": "Powtórzenie BACC lub testy molekularne / lobektomia",
+            "acceptedPhrases": [
+              "powtórzenie bacc",
+              "testy molekularne",
+              "lobektomia",
+              "ponowna biopsja"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Kategoria Bethesda III wiąże się z ryzykiem złośliwości rzędu 10–30% i wymaga wielodyscyplinarnej weryfikacji.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nodules",
+        "cancer"
+      ]
+    },
+    {
+      "id": "guzki-bank-3",
+      "type": "matching",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "guzki-obj-2"
+      ],
+      "prompt": "Dopasuj kategorię systemu Bethesda do odpowiadającego jej postępowania klinicznego:",
+      "pairs": [
+        [
+          "Bethesda II (Zmiana łagodna)",
+          "Obserwacja ultrasonograficzna bez konieczności operacji"
+        ],
+        [
+          "Bethesda IV (Podejrzenie nowotworu pęcherzykowego)",
+          "Diagnostyczna lobektomia tarczycy (ocena torebki i naczyń w histopatologii)"
+        ],
+        [
+          "Bethesda V (Podejrzenie złośliwości)",
+          "Leczenie operacyjne (lobektomia lub tyreoidektomia całkowita)"
+        ],
+        [
+          "Bethesda VI (Nowotwór złośliwy)",
+          "Radykalne leczenie chirurgiczne raka tarczycy"
+        ]
+      ],
+      "explanation": "Klasyfikacja Bethesda wyznacza ścieżkę decyzyjną między obserwacją a chirurgią.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "nodules",
+        "cancer"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

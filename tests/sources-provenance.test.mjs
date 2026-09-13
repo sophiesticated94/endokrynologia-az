@@ -7,18 +7,18 @@ import { diabetesSources } from '../lib/course-diabetes-sources.ts';
 import { gonadsSources } from '../lib/course-gonads-sources.ts';
 import { nenSources } from '../lib/course-nen-sources.ts';
 import { otyloscSources } from '../lib/course-otylosc-sources.ts';
-import { pituitarySources } from '../lib/course-pituitary-sources.ts';
-import { pituitaryMathChemSources } from '../lib/course-pituitary-math-chem.ts';
-import { thyroidMathChemSources } from '../lib/course-thyroid-math-chem.ts';
+import { thyroidSources, thyroidMathChemSources } from '../lib/endocrinology/tarczyca-content.ts';
+import { pituitarySources, pituitaryMathChemSources } from '../lib/endocrinology/przysadka-content.ts';
 
 const allCollections = [
+  { name: 'thyroidSources', dict: thyroidSources },
+  { name: 'pituitarySources', dict: pituitarySources },
   { name: 'adrenalSources', dict: adrenalSources },
   { name: 'diabetesSources', dict: diabetesSources },
   { name: 'gonadsSources', dict: gonadsSources },
   { name: 'nenSources', dict: nenSources },
   { name: 'otyloscSources', dict: otyloscSources },
   { name: 'parathyroidSources', dict: parathyroidSources },
-  { name: 'pituitarySources', dict: pituitarySources },
   { name: 'adrenalMathChemSources', dict: adrenalMathChemSources },
   { name: 'parathyroidMathChemSources', dict: parathyroidMathChemSources },
   { name: 'pituitaryMathChemSources', dict: pituitaryMathChemSources },

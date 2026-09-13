@@ -1,0 +1,338 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "przysadka-diagnostyka",
+  "objectives": [
+    {
+      "id": "przysadka-diagnostyka-obj-1",
+      "statement": "Zróżnicujesz mikrogruczolaka (<10 mm) i makrogruczolaka (>=10 mm) w badaniu MRI siodła tureckiego z kontrastem oraz zidentyfikujesz cechy inwazji siodła (skala Knospa).",
+      "kind": "differentiation"
+    },
+    {
+      "id": "przysadka-diagnostyka-obj-2",
+      "statement": "Wdrożysz algorytm przesiewowej oceny hormonalnej czynności osi przysadkowych (kortyzol rano, ACTH, TSH, FT4, PRL, IGF-1, LH, FSH, estradiol/testosteron).",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "przysadka-diagnostyka-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "przysadka-diagnostyka-obj-1"
+    ],
+    "prompt": "Jaka jest granica wielkości w największym wymiarze odróżniająca mikrogruczolaka od makrogruczolaka przysadki w badaniu MRI?",
+    "options": [
+      "10 mm (1 cm)",
+      "5 mm",
+      "20 mm (2 cm)"
+    ],
+    "optionFeedback": [
+      "Zmiany poniżej 10 mm to mikrogruczolaki, a zmiany równe lub większe niż 10 mm to makrogruczolaki.",
+      "5 mm to nie jest granica klasyfikacyjna mikrogruczolaka.",
+      "20 mm to kryterium czasami stosowane dla olbrzymich gruczolaków (>40 mm), ale granicą makrogruczolaka jest 10 mm."
+    ],
+    "answer": 0,
+    "explanation": "Zgodnie z klasyfikacją radiologiczno-kliniczną guzy <10 mm klasyfikujemy jako mikrogruczolaki, a >=10 mm jako makrogruczolaki.",
+    "difficulty": "student",
+    "reasoning": "differentiation",
+    "sourceIds": [
+      "pituitary_incidentaloma_2025"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "przysadka-diagnostyka-block-1",
+      "title": "Rezonans magnetyczny (MRI) siodła tureckiego",
+      "text": "Złotym standardem obrazowania jest celowane MRI przysadki w sekwencjach T1 i T2 z cienkimi warstwami (<=3 mm) przed i po podaniu kontrastu gadolinowego. Większość gruczolaków wzmacnia się słabiej i wolniej niż prawidłowy miąższ gruczołu.",
+      "sourceIds": [
+        "pituitary_incidentaloma_2025"
+      ],
+      "checkpointId": "przysadka-diagnostyka-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "przysadka-diagnostyka-block-2",
+      "title": "Ocena pola widzenia i okulistyka",
+      "text": "Każdy makrogruczolak ze wzrostem nadsiodłowym oraz zmiana zbliżająca się na odległość <2 mm do skrzyżowania wzrokowego wymaga pilnej perymetrii statycznej lub kinetycznej (pole widzenia).",
+      "sourceIds": [
+        "pituitary_incidentaloma_2025"
+      ],
+      "checkpointId": "przysadka-diagnostyka-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "przysadka-diagnostyka-block-3",
+      "title": "Przesiewowy panel hormonalny",
+      "text": "W ocenie czynnościowej przysadki badamy zarówno cechy nadczynności (PRL, IGF-1, 1 mg DST / UFC), jak i niedoczynności (poranny kortyzol, FT4 + TSH, wolny/całkowity testosteron lub estradiol + gonadotropiny).",
+      "sourceIds": [
+        "pituitary_incidentaloma_2025"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "przysadka-diagnostyka-q2-checkpoint-1-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-diagnostyka-obj-1"
+      ],
+      "prompt": "W MRI przysadki u 45-letniego mężczyzny uwidoczniono zmianę o wymiarach 14 mm w siodle tureckim. Guz przekracza boczną styczną tętnicy szyjnej wewnętrznej w zatoce jamistej (stopień 3 wg skali Knospa). Co oznacza ten wynik dla planowania operacji?",
+      "options": [
+        "Obecność inwazji zatoki jamistej znacznie zmniejsza szansę na całkowitą resekcję radykalną drogą przezklinową bez uszkodzenia naczyniowo-nerwowego",
+        "Guz jest całkowicie łagodny i nie wymaga żadnego leczenia",
+        "Stopień 3 oznacza, że guz znajduje się w komorze bocznej mózgu"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-knosp-invasion",
+            "label": "Inwazja zatoki jamistej wg Knospa",
+            "acceptedPhrases": [
+              "skala knospa",
+              "zatoka jamista",
+              "inwazja boczna",
+              "nieresekcyjność"
+            ]
+          },
+          {
+            "id": "c-subtotal-resection",
+            "label": "Trudność całkowitej resekcji / ryzyko naczyniowe",
+            "acceptedPhrases": [
+              "niepełna resekcja",
+              "uszkodzenie tętnicy szyjnej",
+              "pozostawienie resztki guza"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Skala Knospa ocenia stopień wrastania guza do zatoki jamistej; stopnie 3 i 4 wskazują na pewną inwazję i utrudniają doszczętną operację.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "pituitary_incidentaloma_2025"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Skala Knospa ocenia stopień wrastania guza do zatoki jamistej; stopnie 3 i 4 wskazują na pewną inwazję i utrudniają doszczętną operację.",
+        "Nieprawidłowo: Skala Knospa ocenia stopień wrastania guza do zatoki jamistej; stopnie 3 i 4 wskazują na pewną inwazję i utrudniają doszczętną operację.",
+        "Nieprawidłowo: Skala Knospa ocenia stopień wrastania guza do zatoki jamistej; stopnie 3 i 4 wskazują na pewną inwazję i utrudniają doszczętną operację."
+      ]
+    },
+    {
+      "id": "przysadka-diagnostyka-q3-checkpoint-2-v2",
+      "type": "matching",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-diagnostyka-obj-2"
+      ],
+      "prompt": "Dopasuj parametr laboratoryjny do ocenianej osi hormonalnej w panelu przysadkowym:",
+      "pairs": [
+        [
+          "Kortyzol o 8:00 rano + ACTH",
+          "Oś podwzgórze-przysadka-nadnercza (HPA)"
+        ],
+        [
+          "FT4 + TSH",
+          "Oś podwzgórze-przysadka-tarczyca (HPT)"
+        ],
+        [
+          "IGF-1 (somatomedyna C)",
+          "Oś hormonu wzrostu (GH/IGF-1)"
+        ],
+        [
+          "Prolaktyna (PRL)",
+          "Ocena laktotropowa (gruczolak vs odszypułowanie)"
+        ]
+      ],
+      "explanation": "Do przesiewowej oceny osi przysadkowych wykorzystuje się stężenia hormonów obwodowych skojarzone z hormonami tropowymi.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "pituitary_incidentaloma_2025"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "przysadka-diagnostyka-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "przysadka-diagnostyka-obj-2"
+    ],
+    "prompt": "Dlaczego w przesiewowej diagnostyce nadczynności osi somatotropowej (akromegalii) NIE oznacza się pojedynczego stężenia hormonu wzrostu (GH) w spoczynku, lecz oznacza się IGF-1?",
+    "modelAnswer": "Hormon wzrostu (GH) wydzielany jest w sposób wybitnie pulsacyjny, a jego okres półtrwania w osoczu jest bardzo krótki (ok. 20 minut). Pomiędzy wyrzutami pulsacyjnymi u zdrowego człowieka stężenie GH spada niemal do zera (<0,1 µg/l), z kolei w stresie lub po posiłku może gwałtownie wzrosnąć. IGF-1 (insulinopodobny czynnik wzrostu 1) syntetyzowany pod wpływem GH w wątrobie ma długi okres półtrwania związany z białkami IGFBP i wykazuje stabilne stężenie dobowe, precyzyjnie odzwierciedlające 24-godzinną ekspozycję ustroju na GH.",
+    "explanation": "IGF-1 jest złotym standardem przesiewowym ze względu na stabilność stężeń w osoczu.",
+    "difficulty": "doctor",
+    "reasoning": "interpretation",
+    "sourceIds": [
+      "pituitary_endo"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "przysadka-diagnostyka-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "przysadka-diagnostyka-obj-1"
+      ],
+      "prompt": "Wyjaśnij pojęcie 'incydentaloma przysadki' oraz wymień 2 bezwzględne badania, które należy wykonać przy jego wykryciu.",
+      "modelAnswer": "Incydentaloma przysadki to bezobjawowy guz przysadki wykryty przypadkowo podczas badania neuroobrazowego (MRI lub TK głowy) wykonywanego z innych wskazań (np. uraz głowy, bóle głowy, udar). Każdy pacjent z incydentaloma wymaga: 1) badania okulistycznego pola widzenia (jeśli guz dotyka skrzyżowania wzrokowego lub ma >=10 mm), 2) pełnej oceny laboratoryjnej czynności hormonalnej przysadki w kierunku nadczynności i niedoczynności.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-incidental-def",
+            "label": "Definicja guza wykrytego przypadkowo",
+            "acceptedPhrases": [
+              "przypadkowo wykryty",
+              "brak wcześniejszych objawów",
+              "inne wskazania"
+            ]
+          },
+          {
+            "id": "c-two-exams",
+            "label": "Pole widzenia oraz panel hormonalny",
+            "acceptedPhrases": [
+              "pole widzenia",
+              "perymetria",
+              "badania hormonalne",
+              "panel laboratoryjny",
+              "hormony"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Każde incydentaloma wymaga weryfikacji neurologiczno-okulistycznej i endokrynologicznej.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "pituitary_incidentaloma_2025"
+      ]
+    },
+    {
+      "id": "przysadka-diagnostyka-q5-exit-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-diagnostyka-obj-2"
+      ],
+      "prompt": "U 30-letniej kobiety w badaniu MRI głowy z powodu migreny stwierdzono mikrogruczolaka 4 mm. Brak objawów klinicznych, miesiączkuje regularnie. Poranny kortyzol, FT4, TSH, IGF-1 i PRL są w normie. Jakie jest właściwe postępowanie?",
+      "options": [
+        "Obserwacja i kontrolne MRI przysadki za 12 miesięcy; brak wskazań do operacji czy farmakoterapii",
+        "Pilna operacja neurochirurgiczna z obawy przed zezłośliwieniem",
+        "Natychmiastowe wdrożenie kabergoliny"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-watch-microincidentaloma",
+            "label": "Bezpieczna obserwacja mikrogruczolaka nieczynnego",
+            "acceptedPhrases": [
+              "obserwacja",
+              "kontrola mri",
+              "brak wskazań do operacji",
+              "mikrogruczolak nieczynny"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Nieczynne mikrogruczolaki mają znikomy potencjał wzrostu i wymagają jedynie okresowej kontroli radiologicznej.",
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "pituitary_incidentaloma_2025"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Nieczynne mikrogruczolaki mają znikomy potencjał wzrostu i wymagają jedynie okresowej kontroli radiologicznej.",
+        "Nieprawidłowo: Nieczynne mikrogruczolaki mają znikomy potencjał wzrostu i wymagają jedynie okresowej kontroli radiologicznej.",
+        "Nieprawidłowo: Nieczynne mikrogruczolaki mają znikomy potencjał wzrostu i wymagają jedynie okresowej kontroli radiologicznej."
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "przysadka-diagnostyka-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-diagnostyka-obj-1"
+      ],
+      "prompt": "U pacjenta z makrogruczolakiem 22 mm stwierdzono zachowaną rezerwę hormonalną i brak kontaktu ze skrzyżowaniem wzrokowym. Czy badanie pola widzenia jest konieczne?",
+      "options": [
+        "Tak, u każdego pacjenta z makrogruczolakiem (>=10 mm) badanie pola widzenia jest bezwzględnie zalecane jako wyjściowa ocena okulistyczna",
+        "Nie, badanie okulistyczne jest zbyteczne, jeśli guz nie przekracza przepony",
+        "Pole widzenia bada się wyłącznie po zabiegu operacyjnym"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-macro-field-mandate",
+            "label": "Bezwzględne wskazanie do pola widzenia w makrogruczolaku",
+            "acceptedPhrases": [
+              "makrogruczolak",
+              "wyjściowa ocena",
+              "zalecane pole widzenia",
+              "perymetria"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Zgodnie z konsensusem Pituitary Society każdy guz >=10 mm wymaga badania pola widzenia.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "pituitary_incidentaloma_2025"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Zgodnie z konsensusem Pituitary Society każdy guz >=10 mm wymaga badania pola widzenia.",
+        "Nieprawidłowo: Zgodnie z konsensusem Pituitary Society każdy guz >=10 mm wymaga badania pola widzenia.",
+        "Nieprawidłowo: Zgodnie z konsensusem Pituitary Society każdy guz >=10 mm wymaga badania pola widzenia."
+      ]
+    },
+    {
+      "id": "przysadka-diagnostyka-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "przysadka-diagnostyka-obj-2"
+      ],
+      "prompt": "Jakie badanie dynamiczne należy wykonać, gdy poranne stężenie kortyzolu w surowicy wynosi 7 µg/dl (strefa niepewna 5–14 µg/dl) w ocenie podejrzenia wtórnej niedoczynności nadnerczy?",
+      "modelAnswer": "Należy wykonać test stymulacyjny z syntetycznym ACTH (Synacthen 250 µg lub test niskodawkowy 1 µg) z oceną stężenia kortyzolu po 30 i 60 minutach, bądź test tolerancji insuliny (ITT — złoty standard) w celu oceny rezerwy osi HPA.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-acth-stimulation-test",
+            "label": "Test stymulacji Synacthenem (ACTH) lub ITT",
+            "acceptedPhrases": [
+              "synacthen",
+              "test z acth",
+              "stymulacja acth",
+              "itt",
+              "test tolerancji insuliny"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Wartości kortyzolu w strefie szarej wymagają dynamicznego potwierdzenia rezerwy nadnerczowej.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "pituitary_endo"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "axis-map"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

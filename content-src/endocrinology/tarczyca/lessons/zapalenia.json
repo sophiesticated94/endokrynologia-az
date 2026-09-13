@@ -1,0 +1,159 @@
+{
+  "id": "zapalenia",
+  "moduleId": "tarczyca",
+  "title": "Zapalenie ma różne oblicza",
+  "subtitle": "Bolesna szyja, fazy choroby i różnicowanie",
+  "group": "Praktyka kliniczna",
+  "minutes": 13,
+  "goals": [
+    "Rozpoznasz mechanizm destrukcyjnego zapalenia.",
+    "Odróżnisz zapalenie podostre od ropnego."
+  ],
+  "sections": [
+    {
+      "title": "Fazy zamiast stałej nadczynności",
+      "text": "W destrukcyjnym zapaleniu uszkodzone pęcherzyki uwalniają hormony. Faza tyreotoksyczna może przejść w niedoczynność, a następnie w powrót do prawidłowej czynności. Nie każdy chory przechodzi wszystkie fazy; część pozostaje z niedoborem hormonów. Potrzebne jest monitorowanie."
+    },
+    {
+      "title": "Ból jest wskazówką",
+      "text": "Podostre zapalenie de Quervaina często wiąże się z bólem szyi i podwyższonymi wskaźnikami zapalenia, niekiedy po infekcji dróg oddechowych. Poporodowe lub bezbolesne zapalenie może przebiegać bez bólu. Niska jodochwytność w fazie destrukcyjnej pomaga odróżnić ją od wzmożonej syntezy, ale badanie izotopowe ma przeciwwskazania, zwłaszcza w ciąży."
+    },
+    {
+      "title": "Leczenie zależy od mechanizmu",
+      "text": "W podostrym bolesnym zapaleniu stosuje się leczenie przeciwzapalne dobrane do nasilenia i przeciwwskazań, a objawy adrenergiczne można łagodzić. Tyreostatyki nie są rutynowym leczeniem destrukcji. Wysoka gorączka, ciężki stan, miejscowy obrzęk i podejrzenie ropnia wymagają pilnej diagnostyki zakażenia i odrębnego leczenia."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Postać",
+      "Wskazówka"
+    ],
+    "rows": [
+      [
+        "Podostre de Quervaina",
+        "Ból i podwyższone OB/CRP"
+      ],
+      [
+        "Bezbolesne / poporodowe",
+        "Destrukcja bez typowej bolesności"
+      ],
+      [
+        "Ropne",
+        "Zakażenie, możliwy ropień i ciężki stan"
+      ],
+      [
+        "Hashimoto",
+        "Przewlekła autoimmunizacja"
+      ]
+    ]
+  },
+  "advanced": "W różnicowaniu bolesnej tarczycy uwzględniaj krwawienie do guzka oraz ropne zapalenie. Nie rozpoczynaj glikokortykosteroidu mechanicznie przed oceną podejrzenia zakażenia. Po fazie tyreotoksycznej oznaczaj czynność ponownie, nawet jeśli dolegliwości ustąpiły.",
+  "summary": "Destrukcja uwalnia magazyn hormonów. Przebieg zmienia się w czasie, więc pojedynczy wynik nie zamyka obserwacji.",
+  "sourceIds": [
+    "thyroiditis",
+    "hashimoto"
+  ],
+  "questions": [
+    {
+      "id": "zapalenia-q1",
+      "lessonId": "zapalenia",
+      "prompt": "Bolesna tarczyca po infekcji i wysokie OB sugerują przede wszystkim:",
+      "options": [
+        {
+          "text": "Podostre zapalenie tarczycy",
+          "explanation": "To typowa wskazówka, choć trzeba wykluczyć inne przyczyny bólu."
+        },
+        {
+          "text": "Zawsze Gravesa-Basedowa",
+          "explanation": "Silna bolesność i OB nie są jego typowym wzorcem."
+        },
+        {
+          "text": "Wyłącznie guza przysadki",
+          "explanation": "Nie tłumaczy miejscowego bólu i zapalenia."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "zapalenia-q2",
+      "lessonId": "zapalenia",
+      "prompt": "Co może nastąpić po fazie tyreotoksycznej zapalenia destrukcyjnego?",
+      "options": [
+        {
+          "text": "Pewny rak tarczycy",
+          "explanation": "Taka ewolucja hormonalna nie oznacza raka."
+        },
+        {
+          "text": "Przejściowa niedoczynność",
+          "explanation": "Po opróżnieniu zapasów produkcja może być niewystarczająca."
+        },
+        {
+          "text": "Zawsze trwała nadczynność",
+          "explanation": "Przebieg jest często wielofazowy."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "zapalenia-q3",
+      "lessonId": "zapalenia",
+      "prompt": "Jakiej jodochwytności oczekujesz w typowej fazie destrukcyjnej?",
+      "options": [
+        {
+          "text": "Zawsze bardzo wysokiej",
+          "explanation": "Wysoki wychwyt sugeruje aktywną syntezę."
+        },
+        {
+          "text": "Jodochwytność mierzy się anty-TPO",
+          "explanation": "To różne badania."
+        },
+        {
+          "text": "Niskiej",
+          "explanation": "Hormony pochodzą głównie z uszkodzonych magazynów."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "zapalenia-q4",
+      "lessonId": "zapalenia",
+      "prompt": "Ciężki stan, gorączka i podejrzenie ropnia szyi. Co jest priorytetem?",
+      "options": [
+        {
+          "text": "Pilna ocena zakażenia i leczenie specjalistyczne",
+          "explanation": "Ropne zapalenie nie jest zwykłą samoograniczającą się destrukcją."
+        },
+        {
+          "text": "Rutynowa kontrola za rok",
+          "explanation": "Opóźnia leczenie poważnego zakażenia."
+        },
+        {
+          "text": "Sam tyreostatyk",
+          "explanation": "Nie usuwa ropnia ani zakażenia."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "zapalenia-q5",
+      "lessonId": "zapalenia",
+      "prompt": "Dlaczego kontrolować hormony po ustąpieniu bólu?",
+      "options": [
+        {
+          "text": "Każdy pacjent wymaga dożywotnio tyreostatyku",
+          "explanation": "Nie wynika to z mechanizmu zapalenia."
+        },
+        {
+          "text": "Może rozwinąć się niedoczynność",
+          "explanation": "Poprawa bólu nie dowodzi pełnego powrotu czynności."
+        },
+        {
+          "text": "Ból jest jedynym wskaźnikiem hormonów",
+          "explanation": "Objawy miejscowe nie mierzą czynności."
+        }
+      ],
+      "answer": 1
+    }
+  ],
+  "assetIds": []
+}

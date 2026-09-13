@@ -1,0 +1,323 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "przysadka-matematyka-pulsacja",
+  "objectives": [
+    {
+      "id": "przysadka-matematyka-pulsacja-obj-1",
+      "statement": "Zrozumiesz model matematyczny oscylatora Goodwina i nieliniowe sprzężenie zwrotne generujące pulsacyjność neurohormonów (pulsacja GnRH co 60–90 min vs desensytyzacja receptorów przy ciągłym wlewie).",
+      "kind": "mechanism"
+    },
+    {
+      "id": "przysadka-matematyka-pulsacja-obj-2",
+      "statement": "Zastosujesz analizę dekonwolucyjną do matematycznej rekonstrukcji pierwotnej sekrecji przysadkowej z profilu stężeń w surowicy na podstawie kinetyki eliminacji jednokompartmentowej.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "przysadka-matematyka-pulsacja-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "przysadka-matematyka-pulsacja-obj-1"
+    ],
+    "prompt": "Co dzieje się z wydzielaniem gonadotropin (LH i FSH) przez komórki przedniego płata przysadki pod wpływem CIĄGŁEGO (niepulsacyjnego) podawania analogu GnRH w stałym wlewie?",
+    "options": [
+      "Po krótkotrwałej początkowej stymulacji dochodzi do głębokiego zahamowania (desensytyzacji i internalizacji receptorów GnRHR), prowadząc do kastracji farmakologicznej",
+      "Dochodzi do niekontrolowanego, stale rosnącego wydzielania LH i FSH",
+      "Wydzielanie LH i FSH pozostaje całkowicie niezmienione"
+    ],
+    "optionFeedback": [
+      "Brak pulsacji wygasza transdukcję sygnału poprzez internalizację i down-regulation receptorów GnRHR, co stanowi podstawę leczenia raka prostaty i endometriozy.",
+      "Ciągła stymulacja nie prowadzi do stałej hipersekrecji ze względu na desensytyzację.",
+      "Odpowiedź komórek przysadki jest diametralnie różna w zależności od częstotliwości impulsów."
+    ],
+    "answer": 0,
+    "explanation": "Zjawisko desensytyzacji receptora GnRHR przy ciągłej stymulacji dowodzi, że pulsacyjność jest niezbędnym nośnikiem informacji biologicznej.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "pituitary_pulsatility"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "przysadka-matematyka-pulsacja-block-1",
+      "title": "Brak stałego stężenia: pulsacyjność jako kod informacyjny",
+      "text": "Stężenia hormonów przysadkowych podlegają oscylacjom o częstotliwości pulsacyjnej (ultradialnej) i okołodobowej (cyrkadialnej). Informacja jest kodowana nie tylko w amplitudzie wyrzutu, ale przede wszystkim w częstotliwości impulsów generatora podwzgórzowego.",
+      "sourceIds": [
+        "pituitary_pulsatility"
+      ],
+      "checkpointId": "przysadka-matematyka-pulsacja-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "przysadka-matematyka-pulsacja-block-2",
+      "title": "Model matematyczny oscylatora Goodwina",
+      "text": "Oscylator Goodwina opisuje dynamikę osi za pomocą układu nieliniowych równań różniczkowych z ujemnym sprzężeniem zwrotnym o nieliniowości typu Hilla: dx/dt = a / (1 + k*z^n) - b*x. Opóźnienie czasowe w pętli wywołuje stabilny cykl graniczny (oscylację).",
+      "sourceIds": [
+        "pituitary_pulsatility"
+      ],
+      "checkpointId": "przysadka-matematyka-pulsacja-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "przysadka-matematyka-pulsacja-block-3",
+      "title": "Rekonstrukcja dekonwolucyjna (Deconvolution Analysis)",
+      "text": "Zmierzony profil stężenia w surowicy C(t) jest splotem funkcji sekrecji S(t) i funkcji zaniku (kinetyki eliminacji E(t)): C(t) = S(t) * E(t). Za pomocą dekonwolucji matematycznej odzyskuje się rzeczywiste tempo wydzielania przysadkowego.",
+      "sourceIds": [
+        "pituitary_pulsatility"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "przysadka-matematyka-pulsacja-q2-checkpoint-1-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-matematyka-pulsacja-obj-1"
+      ],
+      "prompt": "W fizjologii cyklu menstruacyjnego zmiana częstotliwości pulsów podwzgórzowego GnRH decyduje o preferencyjnym wydzielaniu LH lub FSH. Jaka częstotliwość pulsacji GnRH faworyzuje transkrypcję i wydzielanie podjednostki beta-LH?",
+      "options": [
+        "Wysoka częstotliwość pulsów (np. 1 impuls co 60–90 minut)",
+        "Niska częstotliwość pulsów (np. 1 impuls co 180–240 minut)",
+        "Całkowity brak pulsacji (stężenie stałe)"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-high-frequency-lh",
+            "label": "Wysoka częstotliwość stymuluje wydzielanie LH",
+            "acceptedPhrases": [
+              "wysoka częstotliwość",
+              "częste pulsy",
+              "co 60-90 minut",
+              "stymulacja lh"
+            ]
+          },
+          {
+            "id": "c-low-frequency-fsh",
+            "label": "Niska częstotliwość stymuluje wydzielanie FSH",
+            "acceptedPhrases": [
+              "niska częstotliwość",
+              "wolne pulsy",
+              "faworyzuje fsh"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Szybkie pulsy GnRH indukują ekspresję genu LHbeta, podczas gdy wolne pulsy preferencyjnie stymulują ekspresję FSHbeta.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "pituitary_pulsatility"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Szybkie pulsy GnRH indukują ekspresję genu LHbeta, podczas gdy wolne pulsy preferencyjnie stymulują ekspresję FSHbeta.",
+        "Nieprawidłowo: Szybkie pulsy GnRH indukują ekspresję genu LHbeta, podczas gdy wolne pulsy preferencyjnie stymulują ekspresję FSHbeta.",
+        "Nieprawidłowo: Szybkie pulsy GnRH indukują ekspresję genu LHbeta, podczas gdy wolne pulsy preferencyjnie stymulują ekspresję FSHbeta."
+      ]
+    },
+    {
+      "id": "przysadka-matematyka-pulsacja-q3-checkpoint-2-v2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-matematyka-pulsacja-obj-2"
+      ],
+      "prompt": "Okres półtrwania hormonu wzrostu (GH) w osoczu w modelu jednokompartmentowym wynosi t_1/2 = 20 minut. Jaka jest stała szybkości eliminacji tego hormonu k_el [w min^-1], wyliczona ze wzoru k_el = ln(2) / t_1/2? (Podaj wynik z dokładnością do 3 miejsc po przecinku).",
+      "answer": 0.035,
+      "tolerance": 0.003,
+      "unit": "min^-1",
+      "explanation": "k_el = ln(2) / t_1/2 = 0,69315 / 20 = 0,03465 min^-1, czyli w zaokrągleniu 0,035 min^-1.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "pituitary_pulsatility"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "przysadka-matematyka-pulsacja-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "przysadka-matematyka-pulsacja-obj-2"
+    ],
+    "prompt": "Wyjaśnij matematyczną zasadę analizy dekonwolucyjnej (deconvolution analysis) stosowanej do badania wydzielania hormonów przysadki: dlaczego samo stężenie hormonu w osoczu nie odpowiada rzeczywistemu profilowi wyrzutów gruczołowych?",
+    "modelAnswer": "Stężenie hormonu w osoczu w danej chwili t jest wypadkową dwóch nakładających się procesów: nowego wydzielania (sekrecji S(t)) oraz jednoczesnego usuwania z krążenia hormonu wydzielonego wcześniej (kinetyki eliminacji E(t)). Matematycznie stężenie C(t) jest całką splotu: C(t) = całka_0^t S(tau) * E(t - tau) dtau. Z powodu powolnej eliminacji (t_1/2) hormon kumuluje się w krwiobiegu, co powoduje wygładzenie i zniekształcenie ostrych pików sekrecyjnych. Dekonwolucja jest operacją odwrotną do splotu – znając model eliminacji E(t), pozwala 'odwinąć' splot i zrekonstruować rzeczywiste tempo, amplitudę i czas trwania pojedynczych mikroimpulsów komórkowych.",
+    "explanation": "Dekonwolucja rozdziela proces sekrecji od procesu klirensu, ujawniając prawdziwe impulsy biologiczne.",
+    "difficulty": "doctor",
+    "reasoning": "interpretation",
+    "sourceIds": [
+      "pituitary_pulsatility"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "przysadka-matematyka-pulsacja-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "przysadka-matematyka-pulsacja-obj-1"
+      ],
+      "prompt": "Jakie matematyczne warunki muszą być spełnione w modelu Goodwina (współczynnik Hilla n, opóźnienie), aby układ zamiast punktu stałego osiągnął stabilne samopodtrzymujące się oscylacje (cykl graniczny)?",
+      "modelAnswer": "Układ Goodwina wymaga: 1) wystarczająco silnej nieliniowości w funkcji sprzężenia ujemnego (współczynnik kooperatywności Hilla n > 8 w klasycznym 3-zmiennym modelu lub mniejsze n przy wprowadzeniu wyraźnego opóźnienia czasowego tau), 2) odpowiednio małego tłumienia (wartości stałych degradacji), co prowadzi do bifurkacji Hopfa i przejścia układu ze stabilnego punktu równowagi w stabilny cykl graniczny.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-hill-coefficient-nonlinearity",
+            "label": "Wysoki współczynnik Hilla n lub opóźnienie czasowe",
+            "acceptedPhrases": [
+              "współczynnik hilla",
+              "nieliniowość",
+              "opóźnienie czasowe",
+              "bifurkacja hopfa"
+            ]
+          },
+          {
+            "id": "c-limit-cycle",
+            "label": "Cykl graniczny (stabilne oscylacje zamiast punktu stałego)",
+            "acceptedPhrases": [
+              "cykl graniczny",
+              "oscylacje samopodtrzymujące",
+              "brak stabilnego punktu"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Nieliniowe ujemne sprzężenie zwrotne z opóźnieniem generuje samopodtrzymujące się oscylacje hormonalne.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "pituitary_pulsatility"
+      ]
+    },
+    {
+      "id": "przysadka-matematyka-pulsacja-q5-exit-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-matematyka-pulsacja-obj-1"
+      ],
+      "prompt": "W jakim zaburzeniu neuroendokrynologicznym obserwuje się całkowitą utratę okołodobowego rytmu wydzielania ACTH i kortyzolu z brakiem fizjologicznego nocnego spadku stężeń?",
+      "options": [
+        "W zespole/chorobie Cushinga (autonomiczna sekrecja niereagująca na rytm nadrzędny)",
+        "W pierwotnej moczówce prostej",
+        "W izolowanym niedoborze prolaktyny"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-cushing-circadian-loss",
+            "label": "Utrata rytmu dobowego w zespole Cushinga",
+            "acceptedPhrases": [
+              "zespół cushinga",
+              "choroba cushinga",
+              "utrata rytmu",
+              "brak nocnego spadku",
+              "kortyzol o północy"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Brak fizjologicznego nocnego spadku kortyzolu (wysoki kortyzol o 23:00–24:00) jest jedną z najczulszych cech zespołu Cushinga.",
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "pituitary_pulsatility",
+        "pte_cushing"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Brak fizjologicznego nocnego spadku kortyzolu (wysoki kortyzol o 23:00–24:00) jest jedną z najczulszych cech zespołu Cushinga.",
+        "Nieprawidłowo: Brak fizjologicznego nocnego spadku kortyzolu (wysoki kortyzol o 23:00–24:00) jest jedną z najczulszych cech zespołu Cushinga.",
+        "Nieprawidłowo: Brak fizjologicznego nocnego spadku kortyzolu (wysoki kortyzol o 23:00–24:00) jest jedną z najczulszych cech zespołu Cushinga."
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "przysadka-matematyka-pulsacja-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-matematyka-pulsacja-obj-1"
+      ],
+      "prompt": "W leczeniu niepłodności w przebiegu hipogonadyzmu hipogonadotropowego pompę z GnRH programuje się tak, aby podawała puls leku co 90 minut. Jaki cel biologiczny ma taki schemat?",
+      "options": [
+        "Naśladowanie fizjologicznego generatora pulsów podwzgórza, co zapobiega down-regulation receptorów i przywraca prawidłowe wydzielanie LH i FSH",
+        "Zmniejszenie zużycia leku o 90%",
+        "Uniknięcie zakrzepicy w miejscu wkłucia"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-pulsatile-gnrh-pump",
+            "label": "Pulsacyjna pompa GnRH naśladuje fizjologię podwzgórza",
+            "acceptedPhrases": [
+              "naśladowanie fizjologii",
+              "pulsująca pompa",
+              "ochrona przed desensytyzacją",
+              "przywrócenie płodności"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Pulsacyjne podawanie GnRH naśladuje fizjologiczny oscylator, skutecznie stymulując spermatogenezę i owulację.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "pituitary_pulsatility"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Pulsacyjne podawanie GnRH naśladuje fizjologiczny oscylator, skutecznie stymulując spermatogenezę i owulację.",
+        "Nieprawidłowo: Pulsacyjne podawanie GnRH naśladuje fizjologiczny oscylator, skutecznie stymulując spermatogenezę i owulację.",
+        "Nieprawidłowo: Pulsacyjne podawanie GnRH naśladuje fizjologiczny oscylator, skutecznie stymulując spermatogenezę i owulację."
+      ]
+    },
+    {
+      "id": "przysadka-matematyka-pulsacja-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "przysadka-matematyka-pulsacja-obj-2"
+      ],
+      "prompt": "Czym różni się jednokompartmentowy model eliminacji hormonu od modelu dwukompartmentowego w analizie farmakokinetycznej stężeń przysadkowych?",
+      "modelAnswer": "Model jednokompartmentowy zakłada natychmiastowe i jednorodne rozmieszczenie hormonu w całej pozornej objętości dystrybucji z pojedynczym wykładniczym zanikiem opisanym jedną stałą eliminacji k_el. Model dwukompartmentowy wyróżnia kompartment centralny (krew i dobrze unaczynione narządy) oraz kompartment obwodowy (tkanki). Zanik stężenia jest dwufazowy: szybka faza dystrybucji (faza alfa) oraz wolniejsza faza rzeczywistej eliminacji wątrobowo-nerkowej (faza beta).",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-two-compartment-phases",
+            "label": "Faza dystrybucji (alfa) i eliminacji (beta)",
+            "acceptedPhrases": [
+              "faza dystrybucji",
+              "faza alfa",
+              "faza beta",
+              "kompartment centralny i obwodowy"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Większość hormonów białkowych przysadki (np. LH, GH) w precyzyjnych badaniach dekonwolucyjnych wykazuje kinetykę dwukompartmentową.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "pituitary_pulsatility"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "axis-map"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

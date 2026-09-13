@@ -1,0 +1,159 @@
+{
+  "id": "nowotwory",
+  "moduleId": "tarczyca",
+  "title": "Nowotwory tarczycy",
+  "subtitle": "Typ histologiczny, ryzyko i obserwacja",
+  "group": "Praktyka kliniczna",
+  "minutes": 15,
+  "goals": [
+    "Odróżnisz raki zróżnicowane od rdzeniastego.",
+    "Wyjaśnisz, dlaczego leczenie i markery są różne."
+  ],
+  "sections": [
+    {
+      "title": "Różne komórki, różne choroby",
+      "text": "Raki brodawkowaty i pęcherzykowy wywodzą się z komórek pęcherzykowych. Rak rdzeniasty pochodzi z komórek C i wiąże się z kalcytoniną. Rak anaplastyczny ma agresywny przebieg. Jedno określenie „rak tarczycy” nie wyznacza jednego leczenia."
+    },
+    {
+      "title": "Plan zależny od ryzyka",
+      "text": "Zakres leczenia chirurgicznego i ewentualne zastosowanie radiojodu w rakach zróżnicowanych zależą od zaawansowania i oceny ryzyka. Radiojod nie jest leczeniem każdego raka tarczycy. Decyzje powinny zapadać w zespole mającym doświadczenie w onkologii tarczycy."
+    },
+    {
+      "title": "Obserwacja jest częścią leczenia",
+      "text": "Po leczeniu zróżnicowanego raka ocenia się obraz szyi i — w odpowiednim kontekście leczenia — tyreoglobulinę wraz z przeciwciałami anty-Tg. Marker wymaga interpretacji w zależności od zachowanej tkanki i metody oznaczenia. W raku rdzeniastym istotne są kalcytonina, CEA i ocena genetyczna."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Typ",
+      "Ważna odrębność"
+    ],
+    "rows": [
+      [
+        "Brodawkowaty / pęcherzykowy",
+        "Pochodzenie pęcherzykowe; leczenie według ryzyka"
+      ],
+      [
+        "Rdzeniasty",
+        "Komórki C, kalcytonina, możliwy związek z RET"
+      ],
+      [
+        "Anaplastyczny",
+        "Pilna wielodyscyplinarna ocena"
+      ],
+      [
+        "Tyreoglobulina po leczeniu",
+        "Interpretuj wraz z anty-Tg i zakresem operacji"
+      ]
+    ]
+  },
+  "advanced": "W podejrzeniu dziedzicznego raka rdzeniastego istotna jest ocena zespołu MEN2. Przed planową operacją u chorego z MEN2 trzeba wykluczyć guz chromochłonny. Intensywność supresji TSH po raku zróżnicowanym dostosowuje się do ryzyka i odpowiedzi na leczenie, uwzględniając ryzyko sercowe i kostne.",
+  "summary": "Typ nowotworu określa dalszą ścieżkę. Nie przenoś markerów i metod leczenia między różnymi typami raka.",
+  "sourceIds": [
+    "cancer",
+    "nodules"
+  ],
+  "questions": [
+    {
+      "id": "nowotwory-q1",
+      "lessonId": "nowotwory",
+      "prompt": "Z jakich komórek wywodzi się rak rdzeniasty?",
+      "options": [
+        {
+          "text": "Z komórek przysadki",
+          "explanation": "Nowotwór jest zlokalizowany w tarczycy i ma inne pochodzenie."
+        },
+        {
+          "text": "Wyłącznie z limfocytów",
+          "explanation": "Takie pochodzenie dotyczyłoby chłoniaka."
+        },
+        {
+          "text": "Z komórek C",
+          "explanation": "Dlatego istotnym markerem jest kalcytonina."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "nowotwory-q2",
+      "lessonId": "nowotwory",
+      "prompt": "Czy każdy rak tarczycy leczy się radiojodem?",
+      "options": [
+        {
+          "text": "Nie",
+          "explanation": "Wskazania zależą od typu i ryzyka."
+        },
+        {
+          "text": "Tak, niezależnie od histologii",
+          "explanation": "Rak rdzeniasty nie podlega takiej rutynowej terapii."
+        },
+        {
+          "text": "Tak, zamiast każdej operacji",
+          "explanation": "Radiojod nie jest uniwersalnym zamiennikiem chirurgii."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "nowotwory-q3",
+      "lessonId": "nowotwory",
+      "prompt": "Z czym interpretować tyreoglobulinę po leczeniu raka zróżnicowanego?",
+      "options": [
+        {
+          "text": "Bez znajomości przebytego leczenia",
+          "explanation": "Resztkowa tkanka może wytwarzać tyreoglobulinę."
+        },
+        {
+          "text": "Z anty-Tg, zakresem leczenia i obrazem klinicznym",
+          "explanation": "Przeciwciała i pozostała tkanka wpływają na interpretację."
+        },
+        {
+          "text": "Wyłącznie z kolorem skóry",
+          "explanation": "Nie określa wiarygodności markera."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "nowotwory-q4",
+      "lessonId": "nowotwory",
+      "prompt": "Co należy wykluczyć przed planową operacją tarczycy u chorego z MEN2?",
+      "options": [
+        {
+          "text": "Wyłącznie niedobór żelaza",
+          "explanation": "Nie zastępuje oceny tego ryzyka w MEN2."
+        },
+        {
+          "text": "Obecność TBG",
+          "explanation": "TBG jest fizjologicznym białkiem transportowym."
+        },
+        {
+          "text": "Guz chromochłonny",
+          "explanation": "Nierozpoznany może stanowić istotne zagrożenie okołooperacyjne."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "nowotwory-q5",
+      "lessonId": "nowotwory",
+      "prompt": "Od czego zależy intensywność supresji TSH po raku zróżnicowanym?",
+      "options": [
+        {
+          "text": "Od ryzyka, odpowiedzi na leczenie i obciążeń chorego",
+          "explanation": "Postępowanie powinno być indywidualne."
+        },
+        {
+          "text": "Zawsze od maksymalnej dostępnej dawki",
+          "explanation": "Może prowadzić do niepotrzebnych działań niepożądanych."
+        },
+        {
+          "text": "Od samego dodatniego anty-TPO",
+          "explanation": "Nie jest główną podstawą oceny ryzyka onkologicznego."
+        }
+      ],
+      "answer": 0
+    }
+  ],
+  "assetIds": []
+}

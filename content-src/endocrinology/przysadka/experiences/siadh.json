@@ -1,0 +1,342 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "siadh",
+  "objectives": [
+    {
+      "id": "siadh-obj-1",
+      "statement": "Zastosujesz kryteria diagnostyczne zespołu Barttera-Schwartza (SIADH): hiponatremia hipotoniczna (<135 mmol/l), osmolalność osocza <275 mOsm/kg, nieodpowiednio stężony mocz (>100 mOsm/kg), sód w moczu >30 mmol/l w stanie klinicznej normowolemii.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "siadh-obj-2",
+      "statement": "Wdrożysz zasady bezpiecznej korekty hiponatremii: limit tempa wzrostu natremii <=8–10 mmol/l na pierwsze 24 godziny, aby zapobiec śmiertelnemu zespołowi demielinizacji osmotycznej (ODS / mielinoliza środkowa mostu).",
+      "kind": "safety"
+    }
+  ],
+  "diagnostic": {
+    "id": "siadh-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "siadh-obj-1"
+    ],
+    "prompt": "Jaki jest podstawowy warunek oceny wolemii u pacjenta, u którego podejrzewa się zespół nieadekwatnego wydzielania wazopresyny (SIADH)?",
+    "options": [
+      "Kliniczna normowolemia (eunowolemia — brak obrzęków obwodowych, prawidłowe ciśnienie tętnicze, brak cech odwodnienia)",
+      "Wyraźna hiperwolemia z uogólnionymi obrzękami i przesiękami w jamach ciała",
+      "Głębokie odwodnienie z hipotensją ortostatyczną"
+    ],
+    "optionFeedback": [
+      "Obecność normowolemii jest bezwzględnym kryterium wstępnym SIADH; obecność obrzęków wskazuje na niewydolność serca, marskość wątroby lub zespół nerczycowy.",
+      "Hiperwolemia z obrzękami wyklucza czysty SIADH.",
+      "Hipowolemia wskazuje na ucieczkę sodu przez nerki lub przewód pokarmowy."
+    ],
+    "answer": 0,
+    "explanation": "Zgodnie z kryteriami Barttera-Schwartza SIADH rozpoznaje się wyłącznie w stanie klinicznej normowolemii (brak obrzęków i brak odwodnienia).",
+    "difficulty": "student",
+    "reasoning": "differentiation",
+    "sourceIds": [
+      "siadh_guidelines"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "siadh-block-1",
+      "title": "Patofizjologia: Za dużo wazopresyny w normowolemii",
+      "text": "W SIADH nieadekwatne do osmolalności osocza uwalnianie AVP powoduje stałą retencję wolnej wody w cewkach zbiorczych przez akwaporyny AQP2. Dochodzi do hiponatremii z rozcieńczenia, a kompensacyjna natriureza (ANP/BNP) utrzymuje pozorne wrażenie normowolemii bez obrzęków.",
+      "sourceIds": [
+        "siadh_guidelines"
+      ],
+      "checkpointId": "siadh-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "siadh-block-2",
+      "title": "Kryteria diagnostyczne wg Barttera i Schwartza",
+      "text": "Wymagają spełnienia triady: 1) osmolalność osocza <275 mOsm/kg, 2) nieodpowiednio zagęszczony mocz (osmolalność moczu >100 mOsm/kg), 3) stężenie sodu w moczu >30 mmol/l przy normalnej podaży soli. Bezwzględnie należy wykluczyć niedoczynność kory nadnerczy, niedoczynność tarczycy i stosowanie tiazydów.",
+      "sourceIds": [
+        "siadh_guidelines"
+      ],
+      "checkpointId": "siadh-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "siadh-block-3",
+      "title": "Leczenie i bezpieczna granica korekty sodu (CPM)",
+      "text": "W łagodnym SIADH podstawą jest restrykcja płynów (<1000 lub <500 ml/d) oraz mocznik doustny. W objawowej ostrej hiponatremii podaje się 3% NaCl w bolusach 100–150 ml. Maksymalny wzrost sodu nie może przekroczyć 8–10 mmol/l na 24h, aby nie doprowadzić do demielinizacji mostu.",
+      "sourceIds": [
+        "siadh_guidelines"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "siadh-q2-checkpoint-1-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "siadh-obj-1"
+      ],
+      "prompt": "U 68-letniego pacjenta z rakiem drobnokomórkowym płuca w rutynowych badaniach stwierdzono: sód w surowicy = 122 mmol/l, osmolalność osocza = 255 mOsm/kg, sód w moczu = 58 mmol/l, osmolalność moczu = 440 mOsm/kg. Chory jest w stanie dobrym, bez obrzęków, ciśnienie 125/80 mmHg. TSH i poranny kortyzol są prawidłowe. Jakie jest rozpoznanie i postępowanie pierwszego rzutu?",
+      "options": [
+        "SIADH (zespół paraneoplastyczny); postępowaniem z wyboru jest restrykcja podaży płynów do 800–1000 ml/dobę",
+        "Moczówka prosta centralna; natychmiastowe podanie desmopresyny",
+        "Ciężkie odwodnienie; przetoczenie 3 litrów 0,9% NaCl"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-siadh-criteria-met",
+            "label": "Spełnione kryteria SIADH (rak drobnokomórkowy, hipoosmolalność, sód w moczu >30)",
+            "acceptedPhrases": [
+              "siadh",
+              "zespół barttera-schwartza",
+              "paraneoplastyczny",
+              "normowolemia"
+            ]
+          },
+          {
+            "id": "c-fluid-restriction",
+            "label": "Restrykcja płynów jako leczenie pierwszego rzutu",
+            "acceptedPhrases": [
+              "restrykcja płynów",
+              "ograniczenie podaży płynów",
+              "<1000 ml"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Spełnione są wszystkie kryteria Barttera-Schwartza; w łagodnym/umiarkowanym SIADH lekiem pierwszego wyboru jest restrykcja podaży płynów.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "siadh_guidelines"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Spełnione są wszystkie kryteria Barttera-Schwartza; w łagodnym/umiarkowanym SIADH lekiem pierwszego wyboru jest restrykcja podaży płynów.",
+        "Nieprawidłowo: Spełnione są wszystkie kryteria Barttera-Schwartza; w łagodnym/umiarkowanym SIADH lekiem pierwszego wyboru jest restrykcja podaży płynów.",
+        "Nieprawidłowo: Spełnione są wszystkie kryteria Barttera-Schwartza; w łagodnym/umiarkowanym SIADH lekiem pierwszego wyboru jest restrykcja podaży płynów."
+      ]
+    },
+    {
+      "id": "siadh-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "siadh-obj-2"
+      ],
+      "prompt": "U pacjenta z ciężką przewlekłą hiponatremią (sód 110 mmol/l) w ciągu pierwszych 18 godzin hospitalizacji stężenie sodu w surowicy wzrosło do 128 mmol/l (wzrost o 18 mmol/l). W 3. dobie u pacjenta pojawiło się porażenie czterokończynowe (tetrapareza), dysartria, dysfagia i zespół zamknięcia (locked-in syndrome). Co jest przyczyną tej katastrofy neurologicznej?",
+      "options": [
+        "Zespół demielinizacji osmotycznej (ODS / mielinoliza środkowa mostu — CPM) wywołany zbyt szybką korektą przewlekłej hiponatremii",
+        "Udar niedokrwienny pnia mózgu z zakrzepicy tętnicy podstawnej",
+        "Ostre bakteryjne zapalenie opon mózgowo-rdzeniowych"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-ods-cpm-etiology",
+            "label": "Zespół demielinizacji osmotycznej (ODS / CPM)",
+            "acceptedPhrases": [
+              "demielinizacja osmotyczna",
+              "mielinoliza mostu",
+              "ods",
+              "cpm",
+              "zbyt szybka korekta"
+            ]
+          },
+          {
+            "id": "c-exceeded-rate-limit",
+            "label": "Przekroczenie bezpiecznego limitu korekty sodu (>8–10 mmol/l/24h)",
+            "acceptedPhrases": [
+              "przekroczenie limitu",
+              "wzrost o 18 mmol",
+              "odwadnianie oligodendrocytów"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Zbyt szybka korekta hiponatremii odwadnia obkurczone neurony i komórki glejowe pnia mózgu, wywołując nieodwracalną demielinizację mostu.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "siadh_guidelines"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Zbyt szybka korekta hiponatremii odwadnia obkurczone neurony i komórki glejowe pnia mózgu, wywołując nieodwracalną demielinizację mostu.",
+        "Nieprawidłowo: Zbyt szybka korekta hiponatremii odwadnia obkurczone neurony i komórki glejowe pnia mózgu, wywołując nieodwracalną demielinizację mostu.",
+        "Nieprawidłowo: Zbyt szybka korekta hiponatremii odwadnia obkurczone neurony i komórki glejowe pnia mózgu, wywołując nieodwracalną demielinizację mostu."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "siadh-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "siadh-obj-2"
+    ],
+    "prompt": "Wytłumacz lekarzowi dyżurnemu na OIT, dlaczego przetoczenie 1000 ml izotonicznego roztworu 0,9% NaCl pacjentowi z ciężkim SIADH (o osmolalności moczu np. 600 mOsm/kg) może paradoksalnie POGŁĘBIĆ hiponatremię.",
+    "modelAnswer": "Płyn 0,9% NaCl ma stężenie sodu 154 mmol/l i osmolalność ok. 308 mOsm/kg. W nerkach pacjenta z SIADH mocz jest trwale zagęszczony do np. 616 mOsm/kg (dwukrotnie więcej niż podany płyn). Aby wydalić ładunek osmotyczny zawarty w 1 litrze 0,9% NaCl, nerki potrzebują zaledwie 500 ml wody. Pozostałe 500 ml wolnej wody zostaje zresorbowane w cewkach zbiorczych pod wpływem stałego nadmiaru wazopresyny i zatrzymane w ustroju. W rezultacie ustrój zyskuje 500 ml wolnej wody, a stężenie sodu w surowicy ulega dalszemu spadkowi.",
+    "explanation": "Zrozumienie paradoksu izotonicznego NaCl w SIADH zapobiega jatrogennemu pogorszeniu hiponatremii.",
+    "difficulty": "doctor",
+    "reasoning": "safety",
+    "sourceIds": [
+      "siadh_guidelines"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "siadh-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "siadh-obj-2"
+      ],
+      "prompt": "Jakie jest natychmiastowe postępowanie ratunkowe u pacjenta z ciężką objawową hiponatremią przebiegającą z drgawkami lub śpiączką wg wytycznych europejskich?",
+      "modelAnswer": "Należy natychmiast podać 150 ml 3% hipertonicznego roztworu NaCl we wlewie dożylnym trwającym 20 minut. W razie braku poprawy neurologicznej dawkę można powtórzyć po 20 minutach (do 3 bolusów łącznie), dążąc do doraźnego podniesienia natremii o ok. 5 mmol/l, co wystarcza do dekompresji obrzęku mózgu i przerwania drgawek.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-hypertonic-bolus",
+            "label": "Bolus 3% NaCl (100–150 ml w 20 minut)",
+            "acceptedPhrases": [
+              "3% nacl",
+              "hipertoniczny nacl",
+              "150 ml",
+              "bolus"
+            ]
+          },
+          {
+            "id": "c-target-5mmol-rise",
+            "label": "Doraźny wzrost sodu o 4–5 mmol/l przerywający drgawki",
+            "acceptedPhrases": [
+              "wzrost o 5 mmol",
+              "przerwanie drgawek",
+              "zmniejszenie obrzęku mózgu"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Europejskie wytyczne zalecają bolusy 150 ml 3% NaCl jako najbezpieczniejszą i najskuteczniejszą metodę ratunkową w obrzęku mózgu.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "siadh_guidelines"
+      ]
+    },
+    {
+      "id": "siadh-q5-exit-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "siadh-obj-1"
+      ],
+      "prompt": "Jakie dwa badania hormonalne należy bezwzględnie wykonać i potwierdzić ich prawidłowość przed ostatecznym postawieniem rozpoznania SIADH?",
+      "options": [
+        "Oznaczenie stężenia TSH oraz porannego kortyzolu (wykluczenie wtórnej niedoczynności nadnerczy i ciężkiej niedoczynności tarczycy)",
+        "Oznaczenie gastryny i kalcytoniny",
+        "Oznaczenie reniny i aldosteronu"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-rule-out-adrenal-thyroid",
+            "label": "Wykluczenie niedoczynności nadnerczy i tarczycy",
+            "acceptedPhrases": [
+              "kortyzol",
+              "niedoczynność nadnerczy",
+              "tsh",
+              "tarczyca",
+              "kryteria wykluczenia"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Niedobór glikokortykoidów odhamowuje wydzielanie CRH i AVP, dając obraz łudząco podobny do SIADH.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "siadh_guidelines"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Niedobór glikokortykoidów odhamowuje wydzielanie CRH i AVP, dając obraz łudząco podobny do SIADH.",
+        "Nieprawidłowo: Niedobór glikokortykoidów odhamowuje wydzielanie CRH i AVP, dając obraz łudząco podobny do SIADH.",
+        "Nieprawidłowo: Niedobór glikokortykoidów odhamowuje wydzielanie CRH i AVP, dając obraz łudząco podobny do SIADH."
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "siadh-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "siadh-obj-1"
+      ],
+      "prompt": "Dlaczego leki moczopędne z grupy tiazydów (np. hydrochlorotiazyd) mogą wywołać ciężką hiponatremię imitującą SIADH?",
+      "options": [
+        "Tiazydy blokują kotransporter Na-Cl w cewce krętej dalszej, upośledzając rozcieńczanie moczu przy zachowanym zagęszczaniu w rdzeniu pod wpływem AVP",
+        "Tiazydy stymulują produkcję wazopresyny w wątrobie",
+        "Tiazydy niszczą przysadkę mózgową"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-thiazide-dilution-defect",
+            "label": "Blokada segmentu rozcieńczającego w cewce dalszej",
+            "acceptedPhrases": [
+              "kotransporter na-cl",
+              "cewka dalsza",
+              "upośledzenie rozcieńczania",
+              "utrata sodu"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Tiazydowa hiponatremia to klasyczna pułapka diagnostyczna; rozpoznanie SIADH wymaga odstawienia tiazydów.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "siadh_guidelines"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Tiazydowa hiponatremia to klasyczna pułapka diagnostyczna; rozpoznanie SIADH wymaga odstawienia tiazydów.",
+        "Nieprawidłowo: Tiazydowa hiponatremia to klasyczna pułapka diagnostyczna; rozpoznanie SIADH wymaga odstawienia tiazydów.",
+        "Nieprawidłowo: Tiazydowa hiponatremia to klasyczna pułapka diagnostyczna; rozpoznanie SIADH wymaga odstawienia tiazydów."
+      ]
+    },
+    {
+      "id": "siadh-bank-2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "siadh-obj-2"
+      ],
+      "prompt": "Jaki jest maksymalny bezpieczny dobowy przyrost stężenia sodu w surowicy [w mmol/l] w pierwszych 24 godzinach leczenia przewlekłej hiponatremii wg zaleceń Europejskiego Towarzystwa Endokrynologicznego (aby zapobiec CPM)?",
+      "answer": 10,
+      "tolerance": 1,
+      "unit": "mmol/l/24h",
+      "explanation": "Wytyczne zalecają limit 10 mmol/l na pierwsze 24 godziny (a u chorych wysokiego ryzyka alkoholizmu lub niedożywienia nawet <=8 mmol/l/24h).",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "siadh_guidelines"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "axis-map"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

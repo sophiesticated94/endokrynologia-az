@@ -1,0 +1,160 @@
+{
+  "id": "niedoczynnosc",
+  "moduleId": "tarczyca",
+  "title": "Kiedy tarczyca zwalnia",
+  "subtitle": "Niedoczynność i racjonalne leczenie LT4",
+  "group": "Praktyka kliniczna",
+  "minutes": 16,
+  "goals": [
+    "Rozpoznasz objawy i biochemiczny wzorzec niedoczynności.",
+    "Wyjaśnisz zasady stosowania i monitorowania LT4."
+  ],
+  "sections": [
+    {
+      "title": "Od objawów do potwierdzenia",
+      "text": "Nietolerancja zimna, zaparcia, suchość skóry, spowolnienie i zmęczenie mogą sugerować niedoczynność, lecz są nieswoiste. Rozpoznanie pierwotnej jawnej niedoczynności opiera się na wysokim TSH i niskim FT4. Przyczyny obejmują autoimmunizację, leczenie operacyjne lub radiojodem oraz niektóre leki."
+    },
+    {
+      "title": "Leczenie zastępcze",
+      "text": "Lewotyroksyna (LT4) uzupełnia niedobór T4. Dawkę dobiera się indywidualnie z uwzględnieniem wieku, masy ciała, chorób serca i stopnia niedoboru. Stały sposób przyjmowania pomaga uzyskać stabilny efekt. Pokarm i część preparatów żelaza lub wapnia mogą zmniejszać wchłanianie; sprawdź wymagany odstęp w charakterystyce produktu."
+    },
+    {
+      "title": "Kontrola zamiast pośpiechu",
+      "text": "TSH zmienia się wolniej niż stężenie podanego hormonu. Po zmianie dawki ocenę zwykle planuje się po około 6–8 tygodniach. Utrzymujące się objawy przy prawidłowym TSH wymagają poszukiwania innych przyczyn, a nie automatycznej eskalacji dawki. Subkliniczna niedoczynność wymaga potwierdzenia i decyzji zależnej od ryzyka."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Problem",
+      "Co sprawdzić"
+    ],
+    "rows": [
+      [
+        "TSH nadal wysokie",
+        "Regularność, sposób przyjmowania, interakcje, wchłanianie"
+      ],
+      [
+        "TSH zbyt niskie podczas LT4",
+        "Możliwe nadmierne leczenie"
+      ],
+      [
+        "Starszy wiek lub choroba wieńcowa",
+        "Ostrożne rozpoczynanie i zwiększanie dawki"
+      ],
+      [
+        "Objawy mimo wyrównania",
+        "Inne choroby i przyczyny nieswoistych dolegliwości"
+      ]
+    ]
+  },
+  "advanced": "W niedoczynności centralnej monitorowanie opiera się przede wszystkim na FT4, nie na normalizacji TSH. Rutynowe leczenie skojarzone LT4/LT3 nie jest standardem dla każdego chorego. Przed uznaniem nieskuteczności LT4 oceniaj regularność przyjmowania i choroby przewodu pokarmowego.",
+  "summary": "LT4 uzupełnia niedobór. Bezpieczne leczenie wymaga czasu na ocenę efektu i kontroli interakcji.",
+  "sourceIds": [
+    "lt4",
+    "subclinical",
+    "central"
+  ],
+  "questions": [
+    {
+      "id": "niedoczynnosc-q1",
+      "lessonId": "niedoczynnosc",
+      "prompt": "Co jest standardowym leczeniem jawnej pierwotnej niedoczynności?",
+      "options": [
+        {
+          "text": "Tiamazol",
+          "explanation": "Hamuje syntezę hormonów i może pogłębić niedobór."
+        },
+        {
+          "text": "Radiojod",
+          "explanation": "Zmniejsza czynność tkanki, nie uzupełnia hormonów."
+        },
+        {
+          "text": "Lewotyroksyna",
+          "explanation": "Jest leczeniem zastępczym niedoboru T4."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "niedoczynnosc-q2",
+      "lessonId": "niedoczynnosc",
+      "prompt": "Kiedy zwykle ocenia się TSH po zmianie dawki LT4?",
+      "options": [
+        {
+          "text": "Po około 6–8 tygodniach",
+          "explanation": "Oś potrzebuje czasu do osiągnięcia nowej równowagi."
+        },
+        {
+          "text": "Po kilku godzinach",
+          "explanation": "To zbyt wcześnie na miarodajną odpowiedź TSH."
+        },
+        {
+          "text": "Dopiero po pięciu latach",
+          "explanation": "Tak długa przerwa uniemożliwia właściwe dostosowanie leczenia."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "niedoczynnosc-q3",
+      "lessonId": "niedoczynnosc",
+      "prompt": "Co może osłabić wchłanianie LT4?",
+      "options": [
+        {
+          "text": "Popicie wodą",
+          "explanation": "Woda jest właściwym sposobem przyjmowania tabletki."
+        },
+        {
+          "text": "Jednoczesne przyjęcie preparatu żelaza",
+          "explanation": "Możliwa jest interakcja w przewodzie pokarmowym."
+        },
+        {
+          "text": "Regularność przyjmowania",
+          "explanation": "Regularność poprawia przewidywalność działania."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "niedoczynnosc-q4",
+      "lessonId": "niedoczynnosc",
+      "prompt": "Jak rozpocząć leczenie u starszego chorego z chorobą wieńcową?",
+      "options": [
+        {
+          "text": "Maksymalną dawką u każdego",
+          "explanation": "Pomija ryzyko sercowe i indywidualne potrzeby."
+        },
+        {
+          "text": "Nigdy nie leczyć",
+          "explanation": "Choroba wieńcowa nie znosi wskazań do leczenia niedoboru."
+        },
+        {
+          "text": "Ostrożnie, z indywidualnym doborem dawki",
+          "explanation": "Zbyt gwałtowna substytucja może obciążyć serce."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "niedoczynnosc-q5",
+      "lessonId": "niedoczynnosc",
+      "prompt": "Zmęczenie utrzymuje się mimo prawidłowego TSH podczas LT4. Co jest rozsądne?",
+      "options": [
+        {
+          "text": "Ocenić inne przyczyny objawów",
+          "explanation": "Zmęczenie jest nieswoiste."
+        },
+        {
+          "text": "Zwiększać dawkę aż TSH zniknie",
+          "explanation": "Supresja może oznaczać nadmierne leczenie."
+        },
+        {
+          "text": "Dodać tyreostatyk",
+          "explanation": "Nie leczy zmęczenia przy wyrównanej niedoczynności."
+        }
+      ],
+      "answer": 0
+    }
+  ],
+  "assetIds": []
+}

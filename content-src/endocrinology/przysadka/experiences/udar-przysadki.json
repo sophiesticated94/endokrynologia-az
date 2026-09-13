@@ -1,0 +1,341 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "udar-przysadki",
+  "objectives": [
+    {
+      "id": "udar-przysadki-obj-1",
+      "statement": "Rozpoznasz triadę kliniczną udaru (apopleksji) przysadki: piorunujący ból głowy ('thunderclap headache'), nagłe zaburzenia widzenia oraz oftalmoplegię wskutek krwotoku lub martwicy w istniejącym gruczolaku.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "udar-przysadki-obj-2",
+      "statement": "Wdrożysz natychmiastowe leczenie ratunkowe: dożylny hydrokortyzon (profilaktyka zgonu z ostrej niewydolności kory nadnerczy) oraz podejmiesz decyzję o pilnej dekompresji neurochirurgicznej.",
+      "kind": "safety"
+    }
+  ],
+  "diagnostic": {
+    "id": "udar-przysadki-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "udar-przysadki-obj-1"
+    ],
+    "prompt": "Jaka triada objawów klinicznych u pacjenta z nierozpoznanym dotąd gruczolakiem przysadki nasuwa natychmiastowe podejrzenie apopleksji przysadki (pituitary apoplexy)?",
+    "options": [
+      "Nagły piorunujący ból głowy (często zaoczodołowy), pogorszenie ostrości wzroku/pola widzenia oraz podwójne widzenie (oftalmoplegia)",
+      "Gorączka, sztywność karku i świszczący oddech",
+      "Ból w klatce piersiowej, krwioplucie i duszność"
+    ],
+    "optionFeedback": [
+      "To klasyczna triada apopleksji wynikająca z nagłego wzrostu ciśnienia w siodle tureckim i ucisku na chiasmę oraz zatokę jamistą.",
+      "Objawy te sugerują zapalenie opon mózgowych lub sepsę.",
+      "Objawy te sugerują zatorowość płucną."
+    ],
+    "answer": 0,
+    "explanation": "Piorunujący ból głowy, ubytek widzenia i porażenie nerwów gałkoruchowych to klasyczna triada udaru przysadki.",
+    "difficulty": "student",
+    "reasoning": "differentiation",
+    "sourceIds": [
+      "pituitary_apoplexy"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "udar-przysadki-block-1",
+      "title": "Mechanizm i triada kliniczna apopleksji",
+      "text": "Apopleksja przysadki wynika z wylewu krwi lub martwicy niedokrwiennej w obrębie gruczolaka przysadki. Czynnikami spustowymi mogą być wahania ciśnienia tętniczego, operacje kardiochirurgiczne, próby czynnościowe lub leczenie przeciwkrzepliwe.",
+      "sourceIds": [
+        "pituitary_apoplexy"
+      ],
+      "checkpointId": "udar-przysadki-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "udar-przysadki-block-2",
+      "title": "Zagrożenie zgonem: Ostra wtórna niewydolność nadnerczy",
+      "text": "Najczęstszą przyczyną zgonu w apopleksji NIE jest krwotok śródczaszkowy, lecz ostra niewydolność kory nadnerczy wskutek nagłego braku ACTH. Każdy pacjent z podejrzeniem udaru przysadki musi natychmiast otrzymać hydrokortyzon i.v.",
+      "sourceIds": [
+        "pituitary_apoplexy"
+      ],
+      "checkpointId": "udar-przysadki-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "udar-przysadki-block-3",
+      "title": "Postępowanie: Neurochirurgia vs leczenie zachowawcze",
+      "text": "Wskazaniem do pilnej operacji przezklinowej w ciągu 24–48 godzin są postępujące ubytki pola widzenia lub zaburzenia świadomości. Pacjenci stabilni okulistycznie i hemodynamicznie mogą być bezpiecznie leczeni zachowawczo sterydami pod ścisłym nadzorem.",
+      "sourceIds": [
+        "pituitary_apoplexy"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "udar-przysadki-q2-checkpoint-1-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "udar-przysadki-obj-1"
+      ],
+      "prompt": "Do SOR trafia 54-letni mężczyzna z nagłym, najsilniejszym w życiu bólem głowy za gałkami ocznymi, opadaniem powieki prawej i diplopią. W TK głowy w oknie mózgowym nie ma cech krwawienia podpajęczynkowego, lecz siodło tureckie jest powiększone z hiperdensyjną masą. Jakie badanie rozstrzygnie obraz i potwierdzi apopleksję przysadki?",
+      "options": [
+        "Pilne badanie MRI przysadki (sekwencje T1, T2 i DWI wykazujące ogniska krwotoczne lub martwicze o różnym czasie trwania)",
+        "Punkcja lędźwiowa z posiewem płynu",
+        "USG doppler tętnic szyjnych"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-mri-apoplexy-gold",
+            "label": "MRI przysadki jako złoty standard wykrywania krwawienia/martwicy w siodle",
+            "acceptedPhrases": [
+              "mri przysadki",
+              "rezonans magnetyczny",
+              "ognisko krwotoczne",
+              "martwica"
+            ]
+          },
+          {
+            "id": "c-ct-low-sensitivity",
+            "label": "TK głowy ma niską czułość w siodle tureckim (artefakty kostne)",
+            "acceptedPhrases": [
+              "tk ma niższą czułość",
+              "artefakty kości",
+              "mri rozstrzyga"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "MRI przysadki jest metodą z wyboru w diagnostyce apopleksji, przewyższając tomografię komputerową.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "pituitary_apoplexy"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: MRI przysadki jest metodą z wyboru w diagnostyce apopleksji, przewyższając tomografię komputerową.",
+        "Nieprawidłowo: MRI przysadki jest metodą z wyboru w diagnostyce apopleksji, przewyższając tomografię komputerową.",
+        "Nieprawidłowo: MRI przysadki jest metodą z wyboru w diagnostyce apopleksji, przewyższając tomografię komputerową."
+      ]
+    },
+    {
+      "id": "udar-przysadki-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "udar-przysadki-obj-2"
+      ],
+      "prompt": "Co jest PIERWSZYM i najważniejszym krokiem leczniczym na SOR u chorego z podejrzeniem apopleksji przysadki, jeszcze przed wykonaniem pełnej diagnostyki obrazowej?",
+      "options": [
+        "Pobranie krwi na elektrolity i kortyzol oraz natychmiastowe dożylne podanie 100 mg hydrokortyzonu (ochrona przed wstrząsem z ostrego braku ACTH)",
+        "Podanie kwasu acetylosalicylowego w dawce 300 mg",
+        "Podanie mannitolu i heparyny drobnocząsteczkowej"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-emergency-hydrocortisone",
+            "label": "Natychmiastowe dożylne podanie hydrokortyzonu 100 mg",
+            "acceptedPhrases": [
+              "hydrokortyzon",
+              "100 mg",
+              "dożylnie",
+              "natychmiastowe podanie"
+            ]
+          },
+          {
+            "id": "c-prevent-fatal-collapse",
+            "label": "Zapobieganie zgonowi z ostrej wtórnej niewydolności nadnerczy",
+            "acceptedPhrases": [
+              "przełom nadnerczowy",
+              "ostra niewydolność nadnerczy",
+              "wstrząs",
+              "ochrona przed zgonem"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Nagła martwica przysadki pozbawia ustrój ACTH; podanie 100 mg hydrokortyzonu i.v. natychmiast ratuje życie przed zapaścią naczyniową.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "pituitary_apoplexy"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Nagła martwica przysadki pozbawia ustrój ACTH; podanie 100 mg hydrokortyzonu i.v. natychmiast ratuje życie przed zapaścią naczyniową.",
+        "Nieprawidłowo: Nagła martwica przysadki pozbawia ustrój ACTH; podanie 100 mg hydrokortyzonu i.v. natychmiast ratuje życie przed zapaścią naczyniową.",
+        "Nieprawidłowo: Nagła martwica przysadki pozbawia ustrój ACTH; podanie 100 mg hydrokortyzonu i.v. natychmiast ratuje życie przed zapaścią naczyniową."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "udar-przysadki-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "udar-przysadki-obj-2"
+    ],
+    "prompt": "Przedstaw kryteria kwalifikacji do pilnej dekompresji neurochirurgicznej drogą przez zatokę klinową u pacjenta z apopleksją przysadki wg wytycznych brytyjskich i Pituitary Society.",
+    "modelAnswer": "Wskazaniami do pilnej dekompresji operacyjnej (najlepiej w ciągu pierwszych 24–48 godzin) są: 1) ostre, ciężkie lub postępujące pogorszenie ostrości wzroku lub ubytki pola widzenia spowodowane uciskiem skrzyżowania wzrokowego, 2) postępujące zaburzenia świadomości (senność, śpiączka) wynikające ze wzrostu ciśnienia śródczaszkowego. W przypadku braku deficytów wzrokowych i zachowanej pełnej świadomości (nawet przy izolowanym porażeniu nerwów okoruchowych) dopuszcza się bezpieczne leczenie zachowawcze dużymi dawkami sterydów pod ścisłym nadzorem neurookulistycznym.",
+    "explanation": "Stan narządu wzroku i świadomość pacjenta to dwa kryteria decydujące o pilnej operacji w udarze przysadki.",
+    "difficulty": "doctor",
+    "reasoning": "safety",
+    "sourceIds": [
+      "pituitary_apoplexy"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "udar-przysadki-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "udar-przysadki-obj-1"
+      ],
+      "prompt": "Z jakimi dwoma groźnymi stanami naczyniowo-zapalnymi ośrodkowego układu nerwowego należy różnicować apopleksję przysadki ze względu na nagły początek z piorunującym bólem głowy?",
+      "modelAnswer": "Apopleksję przysadki należy różnicować z: 1) krwawieniem podpajęczynkowym (SAH z pękniętego tętniaka tętnicy mózgu), 2) ostrym bakteryjnym zapaleniem opon mózgowo-rdzeniowych (często towarzyszy meningizm i gorączka), 3) zakrzepicą zatoki jamistej.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-sah-diff",
+            "label": "Krwawienie podpajęczynkowe (SAH)",
+            "acceptedPhrases": [
+              "krwawienie podpajęczynkowe",
+              "sah",
+              "tętniak"
+            ]
+          },
+          {
+            "id": "c-meningitis-diff",
+            "label": "Zapalenie opon mózgowo-rdzeniowych lub zakrzepica zatoki jamistej",
+            "acceptedPhrases": [
+              "zapalenie opon",
+              "meningitis",
+              "zakrzepica zatoki jamistej"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Apopleksja bywa mylona z krwawieniem podpajęczynkowym lub zapaleniem opon mózgowych.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "pituitary_apoplexy"
+      ]
+    },
+    {
+      "id": "udar-przysadki-q5-exit-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "udar-przysadki-obj-2"
+      ],
+      "prompt": "Pacjent z udarem przysadki bez ubytków pola widzenia był leczony zachowawczo hydrokortyzonem z pełnym ustąpieniem bólu głowy. W kontrolnym MRI po 3 miesiącach stwierdzono pustosiodłową przestrzeń z płynem mózgowo-rdzeniowym i zanik guza. Jak nazywa się to zjawisko?",
+      "options": [
+        "Autoinfarkcja guza (samowyleczenie gruczolaka / spontaneous apoplexy cure) prowadząca do wtórnego zespołu pustego siodła",
+        "Transformacja w glejaka złośliwego",
+        "Wrodzona agenezja przysadki"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-auto-infarction",
+            "label": "Autoinfarkcja guza / samowyleczenie / wtórne puste siodło",
+            "acceptedPhrases": [
+              "autoinfarkcja",
+              "samowyleczenie",
+              "zanik guza",
+              "puste siodło",
+              "martwica guza"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Martwica guza w apopleksji może doprowadzić do jego całkowitej resorpcji i powstania pustego siodła.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "pituitary_apoplexy"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Martwica guza w apopleksji może doprowadzić do jego całkowitej resorpcji i powstania pustego siodła.",
+        "Nieprawidłowo: Martwica guza w apopleksji może doprowadzić do jego całkowitej resorpcji i powstania pustego siodła.",
+        "Nieprawidłowo: Martwica guza w apopleksji może doprowadzić do jego całkowitej resorpcji i powstania pustego siodła."
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "udar-przysadki-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "udar-przysadki-obj-1"
+      ],
+      "prompt": "Dlaczego u chorego z apopleksją przysadki porażenie nerwu odwodzącego (VI) może wystąpić obok uszkodzenia nerwu okoruchowego (III)?",
+      "options": [
+        "Nagły obrzęk i krwiak w siodle tureckim rozpycha boczne ściany siodła i uciska struktury nerwowe w świetle zatoki jamistej",
+        "Nerw VI odchodzi bezpośrednio z przysadki",
+        "Nerw VI jest niszczony przez kwas moczowy"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-cavernous-compression-apoplexy",
+            "label": "Rozdęcie bocznej ściany siodła i ucisk nerwów w zatoce jamistej",
+            "acceptedPhrases": [
+              "zatoka jamista",
+              "nerw vi",
+              "boczny rozrost krwiaka",
+              "wzrost ciśnienia w siodle"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Gwałtowny wzrost ciśnienia w siodle wywiera boczny nacisk na zatokę jamistą, porażając nerwy okoruchowe.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "pituitary_apoplexy"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Gwałtowny wzrost ciśnienia w siodle wywiera boczny nacisk na zatokę jamistą, porażając nerwy okoruchowe.",
+        "Nieprawidłowo: Gwałtowny wzrost ciśnienia w siodle wywiera boczny nacisk na zatokę jamistą, porażając nerwy okoruchowe.",
+        "Nieprawidłowo: Gwałtowny wzrost ciśnienia w siodle wywiera boczny nacisk na zatokę jamistą, porażając nerwy okoruchowe."
+      ]
+    },
+    {
+      "id": "udar-przysadki-bank-2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "udar-przysadki-obj-2"
+      ],
+      "prompt": "Jaka jest standardowa dawka bolusa dożylnego hydrokortyzonu [w mg], którą należy podać natychmiast u dorosłego pacjenta z podejrzeniem udaru przysadki?",
+      "answer": 100,
+      "tolerance": 10,
+      "unit": "mg",
+      "explanation": "Zgodnie z wytycznymi w ostrej niewydolności nadnerczy w przebiegu apopleksji podaje się natychmiast 100 mg hydrokortyzonu i.v., a następnie 50–100 mg co 6–8 godzin lub w ciągłym wlewie dobowym.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "pituitary_apoplexy"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "axis-map"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

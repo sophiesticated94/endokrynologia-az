@@ -1,0 +1,395 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "stany-nagle",
+  "objectives": [
+    {
+      "id": "stany-nagle-obj-1",
+      "statement": "Rozpoznasz przełom tarczycowy wg skali Burcha-Wartofsky'ego (BWPS >= 45) i wdrożysz natychmiastowe leczenie sekwencyjne na OIT.",
+      "kind": "safety"
+    },
+    {
+      "id": "stany-nagle-obj-2",
+      "statement": "Rozpoznasz śpiączkę hipometaboliczną (myxedema coma) i zaplanujesz pilną resuscytację z bezwzględną osłoną hydrokortyzonem przed LT4/LT3.",
+      "kind": "safety"
+    }
+  ],
+  "diagnostic": {
+    "id": "stany-nagle-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "stany-nagle-obj-1"
+    ],
+    "prompt": "Jaka liczba punktów w skali Burcha-Wartofsky'ego (BWPS) wskazuje na wysokie prawdopodobieństwo przełomu tarczycowego nakazujące natychmiastowe leczenie na OIT?",
+    "options": [
+      "Wynik >= 45 punktów",
+      "Wynik >= 10 punktów",
+      "Wynik równy dokładnie 0 punktów"
+    ],
+    "optionFeedback": [
+      "Wynik >= 45 pkt to przełom tarczycowy; 25–44 pkt to stan zagrożenia przełomem.",
+      "10 punktów nie spełnia kryteriów zagrożenia przełomem.",
+      "0 punktów oznacza całkowity brak cech dekompensacji."
+    ],
+    "answer": 0,
+    "explanation": "Próg 45 punktów w skali BWPS definiuje jednoznaczne rozpoznanie kliniczne przełomu tarczycowego.",
+    "difficulty": "student",
+    "reasoning": "safety",
+    "sourceIds": [
+      "storm",
+      "emergency"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "stany-nagle-block-1",
+      "title": "Przełom tarczycowy",
+      "text": "To zagrażająca życiu dekompensacja tyreotoksykozy (BWPS >= 45). Gorączka, tachykardia >140/min, zaburzenia świadomości i niewydolność krążenia wymagają natychmiastowego leczenia. Sam poziom FT4 nie mierzy ciężkości przełomu.",
+      "sourceIds": [
+        "storm",
+        "emergency"
+      ],
+      "checkpointId": "stany-nagle-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "stany-nagle-block-2",
+      "title": "Ciężka niedoczynność",
+      "text": "Hipotermia (<35°C), bradykardia, hipowentylacja i splątanie u osoby z niedoczynnością sugerują śpiączkę hipometaboliczną (myxoedema coma). Śmiertelność sięga 30–50%.",
+      "sourceIds": [
+        "coma",
+        "emergency"
+      ],
+      "checkpointId": "stany-nagle-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "stany-nagle-block-3",
+      "title": "Priorytety zespołu",
+      "text": "Najpierw ABC, wezwanie OIT i zabezpieczenie glikokortykosteroidem. W przełomie: sekwencja tyreostatyk -> jod po >= 1 h -> beta-bloker. W śpiączce: hydrokortyzon PRZED lub równolegle z hormonami tarczycy.",
+      "sourceIds": [
+        "storm",
+        "coma",
+        "emergency"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "stany-nagle-q2-checkpoint-1-v2",
+      "type": "ordering",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "stany-nagle-obj-1"
+      ],
+      "prompt": "Uporządkuj bezwzględną sekwencję farmakoterapii w przełomie tarczycowym (uwzględniając mechanizm biosyntezy hormonów):",
+      "items": [
+        "Podanie wysokiej dawki tyreostatyku (propylotiouracyl PTU 200 mg co 4 h lub tiamazol 20–30 mg co 6 h p.o. / przez sondę)",
+        "Odczekanie co najmniej 1 godziny (w celu zablokowania TPO przez tyreostatyk)",
+        "Podanie nieorganicznego jodu (płyn Lugola lub jodku potasu SSKI p.o.) w celu zablokowania uwalniania hormonów",
+        "Podanie dożylnego glikokortykosteroidu (hydrokortyzon 100 mg co 8 h) oraz beta-adrenolityku (propranolol)"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "explanation": "Podanie jodu PRZED zablokowaniem TPO przez tyreostatyk mogłoby dostarczyć substratu do syntezy i katastrofalnie nasilić tyreotoksykozę.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "storm",
+        "emergency"
+      ]
+    },
+    {
+      "id": "stany-nagle-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "stany-nagle-obj-2"
+      ],
+      "prompt": "Do SOR przywieziono 78-letnią wychłodzoną kobietę (temp. 33,2°C) z bradykardią 42/min, hiponatremią 118 mmol/l i obrzękiem śluzowatym twarzy. Podejrzewasz śpiączkę hipometaboliczną. Jaki lek podasz w pierwszej kolejności?",
+      "options": [
+        "Hydrokortyzon 100 mg dożylnie natychmiast PRZED lub równolegle z dożylną lewotyroksyną",
+        "Wysoką dawkę lewotyroksyny w bolusie 500 µg bez podawania sterydów",
+        "Insulinę dożylnie i chłodne płyny"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-hydrocortisone-first",
+            "label": "Hydrokortyzon przed lub równolegle z LT4",
+            "acceptedPhrases": [
+              "hydrokortyzon",
+              "osłona sterydowa",
+              "glikokortykosteroid",
+              "100 mg"
+            ]
+          },
+          {
+            "id": "c-prevent-adrenal-crisis",
+            "label": "Zapobieganie ostremu przełomowi nadnerczowemu",
+            "acceptedPhrases": [
+              "przełom nadnerczowy",
+              "niewydolność nadnerczy",
+              "przyspieszenie metabolizmu kortyzolu",
+              "zapaść"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-lt4-without-steroid",
+            "patterns": [
+              "sama lewotyroksyna",
+              "lt4 bez sterydu"
+            ],
+            "severity": "critical",
+            "feedback": "Podanie hormonów tarczycy bez osłony hydrokortyzonem w śpiączce hipometabolicznej może wywołać śmiertelny przełom nadnerczowy."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Hormony tarczycy gwałtownie przyspieszają klirens resztkowego kortyzolu; bez osłony hydrokortyzonem dojdzie do zgonu we wstrząsie nadnerczowym.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "coma",
+        "emergency",
+        "central"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Hormony tarczycy gwałtownie przyspieszają klirens resztkowego kortyzolu; bez osłony hydrokortyzonem dojdzie do zgonu we wstrząsie nadnerczowym.",
+        "Nieprawidłowo: Hormony tarczycy gwałtownie przyspieszają klirens resztkowego kortyzolu; bez osłony hydrokortyzonem dojdzie do zgonu we wstrząsie nadnerczowym.",
+        "Nieprawidłowo: Hormony tarczycy gwałtownie przyspieszają klirens resztkowego kortyzolu; bez osłony hydrokortyzonem dojdzie do zgonu we wstrząsie nadnerczowym."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "stany-nagle-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "stany-nagle-obj-1"
+    ],
+    "prompt": "Wymień zespołowi dyżurnemu cztery układy narządowe oceniane w skali Burcha-Wartofsky'ego (BWPS) oraz ich objawy dekompensacji w przełomie tarczycowym.",
+    "modelAnswer": "Cztery główne układy w skali BWPS to: 1) Termoregulacja (gorączka od 37,2°C do >40,0°C); 2) Ośrodkowy układ nerwowy (od pobudzenia, przez splątanie i majaczenie, po śpiączkę); 3) Układ krążenia (tachykardia >140/min, migotanie przedsionków, obrzęk płuc/niewydolność krążenia); 4) Układ pokarmowy (nudności, wymioty, biegunka, żółtaczka niewyjaśnionego pochodzenia).",
+    "explanation": "Skala BWPS opiera się na dysfunkcji wielonarządowej, a nie na samym poziomie hormonów.",
+    "difficulty": "doctor",
+    "reasoning": "safety",
+    "sourceIds": [
+      "storm",
+      "emergency"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "stany-nagle-q4-exit-v2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "stany-nagle-obj-1"
+      ],
+      "prompt": "Pacjentka z chorobą Gravesa po operacji usunięcia wyrostka robaczkowego: temp. 39,8°C, tętno 155/min, migotanie przedsionków, pobudzenie psychoruchowe, żółtaczka. BWPS = 65 pkt. Przedstaw 4 filary natychmiastowego leczenia szpitalnego na OIT.",
+      "modelAnswer": "Filary leczenia przełomu: 1) Hamowanie nowej syntezy hormonów: PTU (lub tiamazol); 2) Blokada uwalniania zmagazynowanych hormonów: jod nieorganiczny (płyn Lugola podany min. 1h po tyreostatyku); 3) Kontrola objawów adrenergicznych i obwodowej konwersji: propranolol i.v. oraz hydrokortyzon i.v. (hamuje konwersję T4 do T3 i zabezpiecza nadnercza); 4) Resuscytacja ogólna: chłodzenie fizykalne (unikać salicylanów!), płynoterapia, leczenie zakażenia wyzwalającego.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-antithyroid",
+            "label": "Terapia przeciwtarczycowa (tyreostatyk + jod)",
+            "requiredConcepts": [
+              {
+                "id": "c-thionamide-iodine",
+                "label": "Tyreostatyk i jod z odstępem min. 1h",
+                "acceptedPhrases": [
+                  "ptu",
+                  "tiamazol",
+                  "płyn lugola",
+                  "jod po godzinie"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dim-supportive",
+            "label": "Blokada adrenergiczna, steryd i intensywny nadzór",
+            "requiredConcepts": [
+              {
+                "id": "c-propranolol-steroid",
+                "label": "Propranolol i hydrokortyzon",
+                "acceptedPhrases": [
+                  "propranolol",
+                  "hydrokortyzon",
+                  "chłodzenie fizykalne",
+                  "unikać aspiryny"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "explanation": "Leczenie przełomu tarczycowego musi być wielokierunkowe i wdrożone natychmiast.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "storm",
+        "emergency"
+      ]
+    },
+    {
+      "id": "stany-nagle-q5-exit-v2",
+      "type": "multi_select",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "stany-nagle-obj-1"
+      ],
+      "prompt": "Dlaczego kwas acetylosalicylowy (aspiryna) jest BEZWZGLĘDNIE PRZECIWWSKAZANY do obniżania gorączki w przełomie tarczycowym?",
+      "options": [
+        "Konkuruje z hormonami tarczycy o wiązanie z białkami transportowymi (TBG i transtyretyną), wypierając je i gwałtownie zwiększając stężenie wolnego, aktywnego FT4/FT3",
+        "Nasilenie wolnej frakcji hormonów może doprowadzić do nagłego zgonu sercowego",
+        "Do walki z gorączką zaleca się paracetamol i metody chłodzenia fizykalnego",
+        "Aspiryna bezpośrednio pobudza tyreoperoksydazę w tarczycy"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "optionFeedback": [
+        "Salicylany wypierają T4 z TBG, drastycznie podnosząc stężenie wolnej frakcji.",
+        "Wzrost FT4 pogłębia dekompensację sercowo-naczyniową.",
+        "Paracetamol i chłodzenie zewnętrzne to bezpieczne metody.",
+        "Salicylany nie stymulują TPO; ich niebezpieczeństwo wynika z farmakokinetyki wiązania z białkami."
+      ],
+      "explanation": "Salicylany wypierają T4 z białek nośnikowych, dramatycznie podnosząc poziom wolnych hormonów.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "storm",
+        "emergency"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "stany-nagle-bank-1",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "stany-nagle-obj-2"
+      ],
+      "prompt": "Dlaczego aktywne, agresywne ogrzewanie zewnętrzne (np. gorące koce nadmuchowe) jest przeciwwskazane u pacjenta w głębokiej hipotermii w przebiegu śpiączki hipometabolicznej?",
+      "modelAnswer": "Agresywne ogrzewanie powierzchni ciała wywołuje gwałtowne rozszerzenie naczyń obwodowych skóry (wazodylatację). Prowadzi to do natychmiastowego załamania powrotu żylnego, spadku ciśnienia tętniczego i śmiertelnej zapaści naczyniowo-sercowej (tzw. rewind collapse / rewarmed shock). Prawidłowym postępowaniem jest powolne, pasywne ogrzewanie w temperaturze pokojowej przy użyciu zwykłych koców.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-vasodilation-collapse",
+            "label": "Rozszerzenie naczyń obwodowych i zapaść naczyniowa / wstrząs",
+            "acceptedPhrases": [
+              "rozszerzenie naczyń",
+              "wazodylatacja",
+              "zapaść",
+              "wstrząs",
+              "spadek powrotu żylnego",
+              "spadek ciśnienia"
+            ]
+          },
+          {
+            "id": "c-passive-rewarming",
+            "label": "Konieczność powolnego, pasywnego ogrzewania (koce)",
+            "acceptedPhrases": [
+              "ogrzewanie pasywne",
+              "powolne ogrzewanie",
+              "zwykłe koce",
+              "temperatura pokojowa"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Agresywne ogrzewanie obwodowe wywołuje wazodylatację i nagły spadek powrotu żylnego, prowadząc do zapaści krążeniowej.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "coma",
+        "emergency"
+      ]
+    },
+    {
+      "id": "stany-nagle-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "stany-nagle-obj-1"
+      ],
+      "prompt": "Jakie zaburzenie hemodynamiczne wywołane przełomem tarczycowym wymaga szczególnej ostrożności przy podawaniu beta-adrenolityków (propranololu lub esmololu)?",
+      "modelAnswer": "Szczególnej ostrożności wymaga ciężka skurczowa niewydolność serca z niskim rzutem serca (kardiomiopatia tyreotoksyczna z obniżoną frakcją wyrzutową LVEF). U takich chorych tachykardia może być jedynym mechanizmem kompensacyjnym utrzymującym rzut serca, a podanie beta-blokera może wywołać nagłe załamanie rzutu i wstrząs kardiogenny. Zaleca się stosowanie ultra-krótkodziałającego esmololu pod ścisłym monitorowaniem hemodynamicznym.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-heart-failure-beta-blocker",
+            "label": "Niewydolność skurczowa serca / wstrząs kardiogenny",
+            "acceptedPhrases": [
+              "niewydolność serca",
+              "niska frakcja wyrzutowa",
+              "lvef",
+              "wstrząs kardiogenny",
+              "esmolol"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "W niewydolności serca z niskim rzutem tachykardia bywa mechanizmem ratunkowym — beta-blokada wymaga monitorowania na OIT.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "storm",
+        "emergency"
+      ]
+    },
+    {
+      "id": "stany-nagle-bank-3",
+      "type": "multi_select",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "stany-nagle-obj-1"
+      ],
+      "prompt": "Które czynniki należą do najczęstszych wyzwalaczy (triggers) ostrego przełomu tarczycowego u pacjentów z nierozpoznaną lub niedostatecznie leczoną tyreotoksykozą?",
+      "options": [
+        "Ostra infekcja bakteryjna lub wirusowa (np. zapalenie płuc, urosepsa)",
+        "Zabieg operacyjny na tarczycy lub pozatarczycowy bez wcześniejszego wyrównania metabolicznego",
+        "Podanie dożylnego jodowego środka cieniującego do tomografii komputerowej",
+        "Nagłe odstawienie leków przeciwtarczycowych (tiamazolu/PTU)"
+      ],
+      "answers": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "optionFeedback": [
+        "Infekcja jest najczęstszym czynnikiem wyzwalającym przełom.",
+        "Stres okołooperacyjny wyzwala masywny wyrzut katecholamin i hormonów.",
+        "Kontrast dostarcza gramowych ilości substratu do tyreogenezy.",
+        "Przerwanie tyreostatyku wywołuje gwałtowne odhamowanie gruczołu."
+      ],
+      "explanation": "Identyfikacja i równoległe leczenie czynnika wyzwalającego jest warunkiem skutecznej terapii przełomu.",
+      "difficulty": "student",
+      "reasoning": "safety",
+      "sourceIds": [
+        "storm",
+        "emergency"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "id": "przysadka-zapalenia",
+  "moduleId": "przysadka",
+  "title": "Nacieczenia i zapalenia",
+  "subtitle": "Hipofizyty limfocytowe, powikłania immunoterapii onkologicznej (ICI) i choroby ziarniniakowe",
+  "group": "Sytuacje szczególne i chirurgia",
+  "minutes": 15,
+  "goals": [
+    "Poznasz autoimmunologiczne zapalenie przysadki (hipofizyt) w ciąży i połogu.",
+    "Zrozumiesz epidemię polekowych zapaleń przysadki po nowoczesnej immunoterapii onkologicznej (anty-CTLA-4, anty-PD-1)."
+  ],
+  "sections": [
+    {
+      "title": "Autoimmunologiczne limfocytowe zapalenie przysadki (LYH)",
+      "text": "Limfocytowe zapalenie przysadki (Lymphocytic Hypophysitis — LYH) to rzadka choroba autoimmunologiczna charakteryzująca się naciekiem limfocytarnym i niszczeniem miąższu gruczołu. Występuje klasycznie u kobiet w III trymestrze ciąży lub w pierwszych miesiącach połogu. W obrazie MRI przysadka jest symetrycznie powiększona, z pogrubieniem lejka szypuły (stalk thickening) i intensywnym, jednolitym wzmocnieniem kontrastowym, co bywa mylone z makrogruczolakiem! W odróżnieniu od guzów, w zapaleniu najwcześniej wypada oś ACTH i TSH, wywołując ciężkie osłabienie i hipotensję."
+    },
+    {
+      "title": "Rewolucja onkologiczna: Hipofizyt po inhibitorach punktów kontrolnych (ICI)",
+      "text": "Wprowadzenie przeciwciał blokujących punkty kontrolne układu odpornościowego w onkologii (zwłaszcza anty-CTLA-4: ipilimumab, a także anty-PD-1/PD-L1: niwolumab, pembrolizumab) wywołało nową jednostkę chorobową — polekowy hipofizyt immunologiczny. Występuje u nawet 5–15% chorych leczonych ipilimumabem, zazwyczaj 8–12 tygodni po rozpoczęciu terapii. Objawia się bólami głowy, narastającym zmęczeniem, nudnościami i hiponatremią z powodu wtórnej niedoczynności nadnerczy."
+    },
+    {
+      "title": "Choroby naciekowe i ziarniniakowe siodła",
+      "text": "Poza autoimmunizacją przysadka i podwzgórze mogą być zajęte przez choroby ogólnoustrojowe: 1) Sarkoidoza OUN (neurosarcoidosis): nacieki ziarniniakowe w szypule i podwzgórzu, dające moczówkę prostą i hiperprolaktynemię z odcięcia; 2) Histiocytoza z komórek Langerhansa (LCH): klasyczna triada z moczówką prostą u młodych chorych; 3) Hemochromatoza: odkładanie żelaza w komórkach gonadotropowych (hipogonadyzm hipogonadotropowy)."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Przyczyna zapalenia / nacieku",
+      "Charakterystyczne cechy"
+    ],
+    "rows": [
+      [
+        "Limfocytowe zapalenie (LYH)",
+        "Kobiety w ciąży i połogu; pogrubienie szypuły w MRI; wczesny niedobór ACTH"
+      ],
+      [
+        "Immunoterapia anty-CTLA-4",
+        "U chorych na czerniaka/raka nerki; bóle głowy, zmęczenie, hiponatremia"
+      ],
+      [
+        "Sarkoidoza / Histiocytoza",
+        "Częste zajęcie tylnego płata i szypuły = moczówka prosta + moczówka centralna"
+      ],
+      [
+        "Hemochromatoza",
+        "Selektywny zanik osi gonadotropowej (impotencja, brak miesiączki) przez żelazo"
+      ]
+    ]
+  },
+  "advanced": "W odróżnieniu od gruczolaków przysadki, w których lejek jest zepchnięty na bok (odchylenie szypuły), w hipofizycie oraz procesach ziarniniakowych lejek przysadki jest symetrycznie, wrzecionowato pogrubiały (>3–4 mm przy skrzyżowaniu) i wzmacnia się silnie po podaniu gadolinu. To kluczowy znak radiologiczny chroniący chorego przed niepotrzebną operacją.",
+  "summary": "Zapalenia przysadki (w ciąży lub po immunoterapii przeciwnowotworowej) imitują guza, lecz wcześnie niszczą oś ACTH i TSH. Wymagają szybkiej diagnostyki, substytucji hydrokortyzonem i monitorowania osi hormonalnych.",
+  "sourceIds": [
+    "fleseriu",
+    "pituitary_endo"
+  ],
+  "questions": [
+    {
+      "id": "przysadka-zapalenia-q1",
+      "lessonId": "przysadka-zapalenia",
+      "prompt": "U chorego na czerniaka leczonego ipilimumabem (anty-CTLA-4) pojawia się silny ból głowy, zmęczenie i sód 128 mmol/l. Co należy pilnie podejrzewać?",
+      "options": [
+        {
+          "text": "Chorobę Hashimoto z eutyreozą",
+          "explanation": "Obraz kliniczny i terapia ipilimumabem jednoznacznie kierują uwagę na zapalenie przysadki."
+        },
+        {
+          "text": "Polekowy hipofizyt (zapalenie przysadki) z wtórną niedoczynnością kory nadnerczy",
+          "explanation": "To częste powikłanie immunoterapii wymagające pilnego oznaczenia kortyzolu/ACTH i substytucji hydrokortyzonem."
+        },
+        {
+          "text": "Pewny przerzut czerniaka do kości stopy",
+          "explanation": "Ból głowy i hiponatremia wskazują na oś podwzgórzowo-przysadkową, a nie kości stopy."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "przysadka-zapalenia-q2",
+      "lessonId": "przysadka-zapalenia",
+      "prompt": "Który objaw radiologiczny w MRI siodła silnie przemawia za zapaleniem przysadki (hipofizytem), a nie za typowym gruczolakiem?",
+      "options": [
+        {
+          "text": "Zwapnienia w kształcie skorupki jajka",
+          "explanation": "Zwapnienia są typowe dla czaszkogardlaka lub tętniaka, a nie zapalenia."
+        },
+        {
+          "text": "Całkowity brak jakichkolwiek tkanek w siodle (puste siodło)",
+          "explanation": "Puste siodło to zanik tkanki, a w zapaleniu gruczoł jest obrzęknięty i powiększony."
+        },
+        {
+          "text": "Symetryczne, wrzecionowate pogrubienie lejka przysadki (szypuły) >3–4 mm",
+          "explanation": "W gruczolakach szypuła jest zwykle cienka i przemieszczona na bok, a w zapaleniu sama ulega nacieczeniu."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "przysadka-zapalenia-q3",
+      "lessonId": "przysadka-zapalenia",
+      "prompt": "Która oś hormonalna ulega najczęściej i najwcześniej upośledzeniu w przebiegu limfocytowego zapalenia przysadki?",
+      "options": [
+        {
+          "text": "Oś kortykotropowa (ACTH — kortyzol)",
+          "explanation": "W odróżnieniu od guzów, gdzie ACTH wypada na końcu, w zapaleniu oś ta jest niszczona wcześnie, zagrażając przełomem nadnerczowym."
+        },
+        {
+          "text": "Oś kalcytoninowa",
+          "explanation": "Kalcytonina to hormon tarczycy z komórek C, a nie przysadki."
+        },
+        {
+          "text": "Oś renina-angiotensyna",
+          "explanation": "Układ RAA jest nerkowo-wątrobowy i nie zależy od przysadki."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przysadka-zapalenia-q4",
+      "lessonId": "przysadka-zapalenia",
+      "prompt": "Kiedy najczęściej występuje klasyczne limfocytowe zapalenie przysadki (LYH)?",
+      "options": [
+        {
+          "text": "Wyłącznie u mężczyzn po 80. roku życia",
+          "explanation": "Klasyczna postać dotyczy w znakomitej większości młodych kobiet."
+        },
+        {
+          "text": "W III trymestrze ciąży oraz we wczesnym połogu",
+          "explanation": "Prawdopodobnie wiąże się to ze zmianami tolerancji immunologicznej w okresie okołoporodowym."
+        },
+        {
+          "text": "U noworodków w pierwszej dobie życia",
+          "explanation": "LYH nie jest chorobą okresu noworodkowego."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "przysadka-zapalenia-q5",
+      "lessonId": "przysadka-zapalenia",
+      "prompt": "Jaki objaw w zakresie tylnego płata często towarzyszy histiocytozie X i sarkoidozie z zajęciem siodła?",
+      "options": [
+        {
+          "text": "Ciężki wytrzeszcz gałek ocznych",
+          "explanation": "Wytrzeszcz nie jest typowy dla sarkoidozy przysadki."
+        },
+        {
+          "text": "Masywny rozrost żuchwy jak w akromegalii",
+          "explanation": "Zapalenia nie stymulują nadprodukcji hormonu wzrostu."
+        },
+        {
+          "text": "Moczówka prosta centralna na skutek nacieku podwzgórza i szypuły",
+          "explanation": "Procesy ziarniniakowe mają szczególne powinowactwo do lejka przysadki i niszczą neurony wazopresynowe."
+        }
+      ],
+      "answer": 2
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "id": "guzki",
+  "moduleId": "tarczyca",
+  "title": "Guzek nie znaczy nowotwór",
+  "subtitle": "USG, EU-TIRADS i biopsja",
+  "group": "Praktyka kliniczna",
+  "minutes": 16,
+  "goals": [
+    "Połączysz obraz USG z czynnością tarczycy.",
+    "Wyjaśnisz kwalifikację do biopsji według ryzyka."
+  ],
+  "sections": [
+    {
+      "title": "Dwa równoległe pytania",
+      "text": "Ocena guzka dotyczy jego czynności i ryzyka złośliwości. TSH odpowiada na pierwszą część, USG tarczycy i węzłów szyi na drugą. Większość guzków jest łagodna. Wywiad obejmuje napromienianie szyi, rodzinne nowotwory, tempo wzrostu i objawy uciskowe."
+    },
+    {
+      "title": "Ryzyko w obrazie",
+      "text": "EU-TIRADS porządkuje cechy ultrasonograficzne. Znaczenie mają m.in. echogeniczność, kształt, granice i punktowe zwapnienia. Nie można rozpoznać raka na podstawie pojedynczego słowa w opisie. Wskazanie do biopsji aspiracyjnej cienkoigłowej zależy od kategorii, rozmiaru oraz kontekstu klinicznego."
+    },
+    {
+      "title": "Biopsja i następny krok",
+      "text": "Wytyczne ETA 2023 stosują progi wielkości zależne od EU-TIRADS. Podejrzane węzły lub podejrzenie naciekania mogą zmienić postępowanie niezależnie od typowych progów. Cytologię opisuje się kategoriami Bethesda; wynik niediagnostyczny nie oznacza łagodności."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Kategoria ETA 2023",
+      "Typowy próg rozważenia BACC"
+    ],
+    "rows": [
+      [
+        "EU-TIRADS 3",
+        ">20 mm"
+      ],
+      [
+        "EU-TIRADS 4",
+        ">15 mm"
+      ],
+      [
+        "EU-TIRADS 5",
+        ">10 mm"
+      ],
+      [
+        "Podejrzane węzły / naciekanie",
+        "Indywidualna kwalifikacja niezależna od tych progów"
+      ]
+    ]
+  },
+  "advanced": "To progi ETA 2023, nie uniwersalny zamiennik polskich zaleceń onkologicznych. Przy niskim TSH oceń autonomię; czynny guzek zmienia ścieżkę diagnostyczną. Bethesda III/IV wymaga integracji cytologii, USG, ryzyka klinicznego i dostępności diagnostyki dodatkowej.",
+  "summary": "Łącz TSH, USG i kontekst. Biopsja wynika z ryzyka oraz rozmiaru, nie z samej obecności guzka.",
+  "sourceIds": [
+    "nodules",
+    "cancer"
+  ],
+  "questions": [
+    {
+      "id": "guzki-q1",
+      "lessonId": "guzki",
+      "prompt": "Co najlepiej ocenia strukturę guzka i węzły szyi?",
+      "options": [
+        {
+          "text": "Wyłącznie FT3",
+          "explanation": "FT3 nie klasyfikuje cech ultrasonograficznych."
+        },
+        {
+          "text": "USG",
+          "explanation": "Badanie pokazuje morfologię zmian i węzłów."
+        },
+        {
+          "text": "Samo TSH",
+          "explanation": "TSH ocenia regulację czynności, nie strukturę."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "guzki-q2",
+      "lessonId": "guzki",
+      "prompt": "Jaki typowy próg BACC podaje ETA 2023 dla EU-TIRADS 5 bez dodatkowych alarmów?",
+      "options": [
+        {
+          "text": "Powyżej 50 mm",
+          "explanation": "Mógłby nadmiernie opóźnić diagnostykę."
+        },
+        {
+          "text": "Każde 2 mm bez uwzględnienia kontekstu",
+          "explanation": "Nie jest to rutynowy próg ETA."
+        },
+        {
+          "text": "Powyżej 10 mm",
+          "explanation": "To próg tej kategorii w ETA 2023."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "guzki-q3",
+      "lessonId": "guzki",
+      "prompt": "Co oznacza niediagnostyczna cytologia?",
+      "options": [
+        {
+          "text": "Materiał nie wystarcza do rozstrzygnięcia",
+          "explanation": "Potrzebna jest dalsza ocena i często powtórzenie biopsji."
+        },
+        {
+          "text": "Pewną łagodność",
+          "explanation": "Brak wystarczającego materiału nie wyklucza złośliwości."
+        },
+        {
+          "text": "Pewny rak",
+          "explanation": "Niediagnostyczność nie jest rozpoznaniem nowotworu."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "guzki-q4",
+      "lessonId": "guzki",
+      "prompt": "Dlaczego oceniamy także węzły chłonne?",
+      "options": [
+        {
+          "text": "Każdy powiększony węzeł to przerzut",
+          "explanation": "Ocena wymaga morfologii i kontekstu."
+        },
+        {
+          "text": "Podejrzane węzły zmieniają ocenę ryzyka i postępowanie",
+          "explanation": "Nie można ograniczyć USG do samej tarczycy."
+        },
+        {
+          "text": "Węzły wyznaczają dawkę LT4",
+          "explanation": "Nie służą do tego celu."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "guzki-q5",
+      "lessonId": "guzki",
+      "prompt": "Co oznacza sam fakt wykrycia guzka?",
+      "options": [
+        {
+          "text": "Konieczność operacji u każdego",
+          "explanation": "Leczenie zależy od ryzyka i objawów."
+        },
+        {
+          "text": "Brak potrzeby jakiejkolwiek oceny",
+          "explanation": "Część zmian wymaga diagnostyki."
+        },
+        {
+          "text": "Potrzebę oceny ryzyka, nie automatyczne rozpoznanie raka",
+          "explanation": "Większość guzków jest łagodna."
+        }
+      ],
+      "answer": 2
+    }
+  ],
+  "assetIds": []
+}

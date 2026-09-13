@@ -1,0 +1,160 @@
+{
+  "id": "diagnostyka",
+  "moduleId": "tarczyca",
+  "title": "Czytaj wyniki ze zrozumieniem",
+  "subtitle": "TSH, FT4, FT3 i pułapki laboratoryjne",
+  "group": "Fundamenty",
+  "minutes": 15,
+  "goals": [
+    "Odróżnisz zaburzenie jawne od subklinicznego.",
+    "Rozpoznasz sytuacje, w których samo TSH nie wystarcza."
+  ],
+  "sections": [
+    {
+      "title": "Zacznij od pytania klinicznego",
+      "text": "U stabilnej osoby z podejrzeniem pierwotnej choroby tarczycy TSH jest zwykle pierwszym badaniem. Podwyższone TSH uzupełnij o FT4; obniżone — o FT4 i, gdy potrzebne, FT3. Przy podejrzeniu choroby przysadki oznacz TSH i FT4 od początku. Anty-TPO pomaga ustalić etiologię autoimmunizacyjną, a TRAb — chorobę Gravesa-Basedowa."
+    },
+    {
+      "title": "Jednostki i zakresy",
+      "text": "TSH podajemy w mIU/l, FT4 i FT3 często w pmol/l. W ćwiczeniach używamy przykładowych zakresów: TSH 0,4–4,0 mIU/l, FT4 12–22 pmol/l, FT3 3,1–6,8 pmol/l. Nie są to normy uniwersalne: obowiązują przedziały konkretnego laboratorium, metody i populacji. W ciąży potrzebny jest kontekst trymestru."
+    },
+    {
+      "title": "Gdy liczby nie pasują",
+      "text": "Zapytaj o leki, suplementy (zwłaszcza biotynę), niedawną ciężką chorobę i czas pobrania względem lewotyroksyny. Interferencja oznaczenia może imitować chorobę. Omów z laboratorium powtórzenie oznaczenia inną metodą; nie rozpoczynaj leczenia wyłącznie na podstawie niespójnego zestawu wyników."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Wzorzec",
+      "Najbardziej typowa interpretacja"
+    ],
+    "rows": [
+      [
+        "TSH ↑, FT4 ↓",
+        "Jawna pierwotna niedoczynność"
+      ],
+      [
+        "TSH ↑, FT4 w zakresie",
+        "Subkliniczna niedoczynność — potwierdź trwałość"
+      ],
+      [
+        "TSH ↓, FT4 i/lub FT3 ↑",
+        "Jawna tyreotoksykoza"
+      ],
+      [
+        "FT4 ↓, TSH niskie lub nieadekwatnie prawidłowe",
+        "Rozważ niedoczynność centralną i inne przyczyny"
+      ]
+    ]
+  },
+  "advanced": "W ciężkiej chorobie ogólnoustrojowej obserwuje się zespół pozatarczycowych zaburzeń hormonalnych. W niedoczynności centralnej przed wdrożeniem LT4 należy ocenić wydolność osi nadnerczowej. Nieprawidłowe FT4 z nieobniżonym TSH wymaga wykluczenia interferencji, zanim rozważy się rzadkie zaburzenia osi.",
+  "summary": "Interpretuj pary wyników, zakres laboratorium i kontekst. Prawidłowe TSH nie wyklucza choroby przysadki.",
+  "sourceIds": [
+    "central",
+    "subclinical",
+    "lt4"
+  ],
+  "questions": [
+    {
+      "id": "diagnostyka-q1",
+      "lessonId": "diagnostyka",
+      "prompt": "TSH 16 mIU/l, FT4 8 pmol/l. Jaki to wzorzec?",
+      "options": [
+        {
+          "text": "Jawna nadczynność",
+          "explanation": "Oczekiwalibyśmy niskiego TSH i wysokich hormonów."
+        },
+        {
+          "text": "Jawna pierwotna niedoczynność",
+          "explanation": "TSH rośnie, a FT4 jest poniżej zakresu ćwiczenia."
+        },
+        {
+          "text": "Subkliniczna niedoczynność",
+          "explanation": "W niej FT4 pozostaje w zakresie."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "diagnostyka-q2",
+      "lessonId": "diagnostyka",
+      "prompt": "FT4 jest niskie, a TSH prawidłowe u chorego po operacji przysadki. Co dalej?",
+      "options": [
+        {
+          "text": "Wykluczenie niedoczynności",
+          "explanation": "Samo TSH nie wystarcza przy chorobie przysadki."
+        },
+        {
+          "text": "Rozpoznanie Gravesa-Basedowa",
+          "explanation": "Niskie FT4 nie pasuje do jawnej nadczynności."
+        },
+        {
+          "text": "Ocena niedoczynności centralnej",
+          "explanation": "TSH może być nieadekwatnie prawidłowe."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "diagnostyka-q3",
+      "lessonId": "diagnostyka",
+      "prompt": "TSH jest obniżone, FT4 prawidłowe. Jakie badanie może ujawnić T3-tyreotoksykozę?",
+      "options": [
+        {
+          "text": "FT3",
+          "explanation": "Izolowany wzrost FT3 jest możliwy."
+        },
+        {
+          "text": "Samo anty-TPO",
+          "explanation": "Przeciwciała nie oceniają stężenia T3."
+        },
+        {
+          "text": "Wyłącznie USG",
+          "explanation": "Obrazowanie nie zastępuje oznaczenia hormonów."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "diagnostyka-q4",
+      "lessonId": "diagnostyka",
+      "prompt": "Wyniki sugerują nadczynność, lecz pacjent bez objawów przyjmuje wysokie dawki biotyny. Co uwzględnić?",
+      "options": [
+        {
+          "text": "Biotyna nie wpływa na żadne testy",
+          "explanation": "Niektóre testy immunochemiczne są podatne."
+        },
+        {
+          "text": "Interferencję laboratoryjną",
+          "explanation": "Wpływ zależy od metody; potrzebny kontakt z laboratorium."
+        },
+        {
+          "text": "Pewną chorobę Gravesa-Basedowa",
+          "explanation": "Najpierw wyjaśnij niespójność."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "diagnostyka-q5",
+      "lessonId": "diagnostyka",
+      "prompt": "Które zakresy referencyjne należy stosować?",
+      "options": [
+        {
+          "text": "Jedną normę internetową dla wszystkich",
+          "explanation": "Pomija różnice metod i populacji."
+        },
+        {
+          "text": "Wyłącznie wartości z tego quizu",
+          "explanation": "Są to dydaktyczne przykłady, nie uniwersalne normy."
+        },
+        {
+          "text": "Laboratorium, metody i właściwej populacji",
+          "explanation": "Zakresy nie są jednakowe, a ciąża wymaga odrębnej interpretacji."
+        }
+      ],
+      "answer": 2
+    }
+  ],
+  "assetIds": []
+}

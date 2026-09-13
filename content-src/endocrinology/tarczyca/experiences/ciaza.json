@@ -1,0 +1,410 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "ciaza",
+  "objectives": [
+    {
+      "id": "ciaza-obj-1",
+      "statement": "Zinterpretujesz adaptację hormonalną tarczycy w ciąży (stymulacja TSHR przez hCG, wzrost TBG pod wpływem estrogenów, zapotrzebowanie na jod).",
+      "kind": "interpretation"
+    },
+    {
+      "id": "ciaza-obj-2",
+      "statement": "Wdrożysz zasady bezpiecznej terapii tyreotoksykozy w ciąży (wybór PTU w I trymestrze, tiamazol w II/III trymestrze, bezwzględne przeciwwskazanie do 131-I) oraz monitorowanie TRAb u płodu.",
+      "kind": "safety"
+    },
+    {
+      "id": "ciaza-obj-3",
+      "statement": "Dostosujesz dawkę lewotyroksyny natychmiast po potwierdzeniu ciąży u kobiety z pierwotną niedoczynnością tarczycy (empiryczne zwiększenie o 20–30%).",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "ciaza-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "ciaza-obj-3"
+    ],
+    "prompt": "Kobieta lecząca się z powodu pierwotnej niedoczynności tarczycy dawką 75 µg LT4 zgłasza dodatni test ciążowy w 5. tygodniu. Jakie zalecenie powinna otrzymać natychmiast?",
+    "options": [
+      "Natychmiastowe empiryczne zwiększenie dawki LT4 o 20–30% (np. przyjmowanie 2 dodatkowych tabletek tygodniowo) oraz pilne badanie TSH",
+      "Natychmiastowe odstawienie lewotyroksyny z obawy o teratogenność",
+      "Utrzymanie dotychczasowej dawki i kontrola dopiero po porodzie"
+    ],
+    "optionFeedback": [
+      "Zapotrzebowanie na hormony tarczycy wzrasta gwałtownie już od pierwszych tygodni po zapłodnieniu.",
+      "Lewotyroksyna jest niezbędna do rozwoju ośrodkowego układu nerwowego płodu i nie jest teratogenna.",
+      "Brak korekty dawki grozi głębokim niedoborem hormonów w krytycznym okresie neurogenezy płodu."
+    ],
+    "answer": 0,
+    "explanation": "Natychmiastowe zwiększenie dawki LT4 o 20–30% po potwierdzeniu ciąży jest zaleceniem wytycznych PTE i ATA.",
+    "difficulty": "student",
+    "reasoning": "decision",
+    "sourceIds": [
+      "pregnancy",
+      "lt4"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "ciaza-block-1",
+      "title": "Nowy kontekst fizjologiczny",
+      "text": "hCG może pobudzać receptor TSH, zwłaszcza w I trymestrze ciąży (szczyt hCG w 8–11 tyg.). Estrogeny zwiększają stężenie TBG. Wyniki należy odnosić do zakresów trymestralnych.",
+      "sourceIds": [
+        "pregnancy"
+      ],
+      "checkpointId": "ciaza-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "ciaza-block-2",
+      "title": "Niedobór wymaga uwagi",
+      "text": "Płód do 16–20. tygodnia ciąży jest całkowicie zależny od matczynego tyroksyny przenikającej przez łożysko. Zapotrzebowanie wzrasta o 20–50%.",
+      "sourceIds": [
+        "pregnancy",
+        "lt4"
+      ],
+      "checkpointId": "ciaza-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "ciaza-block-3",
+      "title": "Nadczynność i dziecko",
+      "text": "W tyreotoksykozie wymagającej leczenia w I trymestrze preferuje się PTU, a w II i III trymestrze rozważa powrót do tiamazolu. Radiojod 131-I jest bezwzględnie przeciwwskazany.",
+      "sourceIds": [
+        "pregnancy",
+        "graves"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "ciaza-q2-checkpoint-1-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "ciaza-obj-2"
+      ],
+      "prompt": "U ciężarnej w 8. tygodniu ciąży rozpoznano jawną, objawową chorobę Gravesa-Basedowa. Który tyreostatyk wybierzesz w I trymestrze i z jakiego powodu?",
+      "options": [
+        "Propylotiouracyl (PTU), ze względu na mniejsze ryzyko ciężkich wad rozwojowych (embriopatii tiamazolowej)",
+        "Tiamazol w maksymalnej dawce, ponieważ jest całkowicie pozbawiony teratogenności",
+        "Radiojod 131-I w celu szybkiego wyleczenia"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-ptu-first-trimester",
+            "label": "Wybór PTU w I trymestrze",
+            "acceptedPhrases": [
+              "ptu",
+              "propylotiouracyl",
+              "pierwszy trymestr"
+            ]
+          },
+          {
+            "id": "c-thiamazole-teratogenicity",
+            "label": "Ryzyko wad wrodzonych po tiamazolu (aplasia cutis, atrezja)",
+            "acceptedPhrases": [
+              "embriopatia tiamazolowa",
+              "aplasia cutis",
+              "atrezja nozdrzy",
+              "wady wrodzone"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-radioiodine-pregnant",
+            "patterns": [
+              "radiojod w ciąży",
+              "131-i u ciężarnej"
+            ],
+            "severity": "critical",
+            "feedback": "Radiojod u kobiety w ciąży jest bezwzględnie przeciwwskazany."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "W I trymestrze ciąży preferuje się PTU z uwagi na teratogenność tiamazolu w okresie organogenezy.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "pregnancy",
+        "graves"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: W I trymestrze ciąży preferuje się PTU z uwagi na teratogenność tiamazolu w okresie organogenezy.",
+        "Nieprawidłowo: W I trymestrze ciąży preferuje się PTU z uwagi na teratogenność tiamazolu w okresie organogenezy.",
+        "Nieprawidłowo: W I trymestrze ciąży preferuje się PTU z uwagi na teratogenność tiamazolu w okresie organogenezy."
+      ]
+    },
+    {
+      "id": "ciaza-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "ciaza-obj-3"
+      ],
+      "prompt": "Kobieta lecząca się z powodu pierwotnej niedoczynności tarczycy dawką 75 µg lewotyroksyny na dobę uzyskała dodatni test ciążowy w 5. tygodniu. Jaka powinna być natychmiastowa modyfikacja dawkowania leku jeszcze przed wizytą kontrolną?",
+      "options": [
+        "Natychmiastowe empiryczne zwiększenie dawki LT4 o 20–30% (np. przyjmowanie 2 dodatkowych tabletek tygodniowo, łącznie 9 tabletek/tydzień) oraz pilne oznaczenie TSH i FT4",
+        "Utrzymanie dotychczasowej dawki 75 µg i ocena TSH dopiero w II trymestrze",
+        "Wstrzymanie leczenia lewotyroksyną z obawy przed działaniem teratogennym na zarodek"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-increase-dose",
+            "label": "Zwiększenie dawki o 20–30% (2 tabletki tygodniowo)",
+            "acceptedPhrases": [
+              "zwiększenie dawki",
+              "20-30%",
+              "2 tabletki",
+              "dodatkowe tabletki",
+              "zwiększenie o 20"
+            ]
+          },
+          {
+            "id": "c-fetal-neuro-early",
+            "label": "Zapotrzebowanie na hormony dla rozwoju OUN płodu we wczesnej ciąży",
+            "acceptedPhrases": [
+              "rozwój mózgu",
+              "oun płodu",
+              "organogeneza",
+              "zależność od tyroksyny matki",
+              "pierwszy trymestr"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-stop-lt4",
+            "patterns": [
+              "odstawienie lewotyroksyny",
+              "wstrzymanie euthyroxu"
+            ],
+            "severity": "critical",
+            "feedback": "Odstawienie lewotyroksyny w ciąży stwarza bezpośrednie zagrożenie dla rozwoju mózgu płodu."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Zapotrzebowanie na tyroksynę wzrasta gwałtownie od 4–6. tygodnia ciąży. Empiryczne zwiększenie dawki o 20–30% natychmiast po potwierdzeniu ciąży zapobiega wczesnej hipotyreozie u matki i płodu.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "pregnancy",
+        "lt4"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Zapotrzebowanie na tyroksynę wzrasta gwałtownie od 4–6. tygodnia ciąży. Empiryczne zwiększenie dawki o 20–30% natychmiast po potwierdzeniu ciąży zapobiega wczesnej hipotyreozie u matki i płodu.",
+        "Nieprawidłowo: Zapotrzebowanie na tyroksynę wzrasta gwałtownie od 4–6. tygodnia ciąży. Empiryczne zwiększenie dawki o 20–30% natychmiast po potwierdzeniu ciąży zapobiega wczesnej hipotyreozie u matki i płodu.",
+        "Nieprawidłowo: Zapotrzebowanie na tyroksynę wzrasta gwałtownie od 4–6. tygodnia ciąży. Empiryczne zwiększenie dawki o 20–30% natychmiast po potwierdzeniu ciąży zapobiega wczesnej hipotyreozie u matki i płodu."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "ciaza-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "ciaza-obj-1"
+    ],
+    "prompt": "Wytłumacz położnej, dlaczego u zdrowej kobiety w 9. tygodniu ciąży fizjologiczne stężenie TSH może wynosić 0,15 mIU/l i nie powinno być traktowane jako patologia.",
+    "modelAnswer": "Wczesna ciąża charakteryzuje się szczytem wydzielania gonadotropiny kosmówkowej (hCG). Cząsteczka hCG wykazuje homologię strukturalną z TSH i posiada słabe działanie agonistyczne na receptor TSHR. Przy bardzo wysokich stężeniach hCG w I trymestrze dochodzi do fizjologicznej, przejściowej stymulacji tarczycy, co w mechanizmie ujemnego sprzężenia zwrotnego obniża wydzielanie TSH w przysadce, bez cech patologii.",
+    "explanation": "Zrozumienie homologii hCG i TSH chroni przed nieuzasadnionym leczeniem tyreostatykiem w ciąży.",
+    "difficulty": "doctor",
+    "reasoning": "interpretation",
+    "sourceIds": [
+      "pregnancy"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "ciaza-q4-exit-v2",
+      "type": "multi_select",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "ciaza-obj-1",
+        "ciaza-obj-2"
+      ],
+      "prompt": "Które z poniższych procedur i schematów terapeutycznych są BEZWZGLĘDNIE PRZECIWWSKAZANE u kobiety w ciąży?",
+      "options": [
+        "Podanie jodu promieniotwórczego 131-I w celach diagnostycznych lub leczniczych",
+        "Schemat blokuj-i-zastępuj (block-and-replace: wysoka dawka tyreostatyku + LT4)",
+        "Scyntygrafia tarczycy z użyciem 99mTc",
+        "Substytucja lewotyroksyną w dawce 100 µg/d w jawnej niedoczynności"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "optionFeedback": [
+        "Radiojod niszczy tarczycę płodu po 10–12. tygodniu ciąży.",
+        "Schemat block-and-replace wymaga wysokich dawek tyreostatyku, który przechodzi przez łożysko znacznie silniej niż LT4, wywołując ciężkie wole i hipotyreozę u płodu.",
+        "Badania izotopowe są przeciwwskazane u ciężarnych.",
+        "Lewotyroksyna jest lekiem bezpiecznym i wskazanym."
+      ],
+      "explanation": "Radiojod, scyntygrafia oraz schemat block-and-replace są bezwzględnie zakazane w ciąży.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "pregnancy",
+        "graves"
+      ]
+    },
+    {
+      "id": "ciaza-q5-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "ciaza-obj-2"
+      ],
+      "prompt": "Jaki jest docelowy poziom wolnych hormonów (FT4) podczas leczenia tyreostatykiem u kobiety w ciąży i dlaczego nie dąży się do pełnej normalizacji TSH?",
+      "modelAnswer": "Celem jest utrzymanie FT4 w górnej granicy normy dla danego trymestru ciąży (lub nieco powyżej) przy użyciu najmniejszej możliwej dawki tyreostatyku. TSH może pozostawać stłumione przez wiele tygodni. Zbyt agresywne dążenie do normalizacji TSH skutkowałoby przedawkowaniem leku przeciwtarczycowego, który łatwo przenika przez łożysko, i wywołaniem groźnej niedoczynności tarczycy oraz wola u płodu.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-upper-normal-ft4",
+            "label": "FT4 w górnej granicy normy / najniższa dawka",
+            "acceptedPhrases": [
+              "górna granica normy",
+              "najniższa skuteczna dawka",
+              "górna połowa normy"
+            ]
+          },
+          {
+            "id": "c-prevent-fetal-hypo",
+            "label": "Ochrona płodu przed niedoczynnością i wolem",
+            "acceptedPhrases": [
+              "ochrona płodu",
+              "wole płodu",
+              "niedoczynność płodowa",
+              "przenikanie leku przez łożysko"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Ochrona tarczycy płodu przed jatrogenną hipotyreozą wymusza ostrożne dawkowanie tyreostatyku.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "pregnancy",
+        "graves"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "ciaza-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "ciaza-obj-1"
+      ],
+      "prompt": "U ciężarnej w 9. tygodniu z ciężkimi niepowściągliwymi wymiotami (hyperemesis gravidarum) stwierdzono TSH <0,02 mIU/l, FT4 = 28 pmol/l (podwyższone), TRAb ujemne. Nie ma wola ani orbitopatii. Jakie jest rozpoznanie i postępowanie?",
+      "options": [
+        "Przejściowa tyreotoksykoza ciężarnych indukowana hCG; leczenie polega na nawodnieniu i przeciwdziałaniu wymiotom bez tyreostatyków",
+        "Choroba Gravesa-Basedowa wymagająca natychmiastowej tyreoidektomii",
+        "Rak tarczycy indukowany ciążą"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-gestational-transient",
+            "label": "Przejściowa tyreotoksykoza ciężarnych / rola hCG",
+            "acceptedPhrases": [
+              "przejściowa tyreotoksykoza",
+              "gestational thyrotoxicosis",
+              "hyperemesis",
+              "hcg",
+              "brak wskazań do tyreostatyków"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "W hyperemesis gravidarum wysokie stężenia hCG wywołują przemijający wyrzut hormonów ustępujący samoistnie po 14–18. tygodniu.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "pregnancy"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: W hyperemesis gravidarum wysokie stężenia hCG wywołują przemijający wyrzut hormonów ustępujący samoistnie po 14–18. tygodniu.",
+        "Nieprawidłowo: W hyperemesis gravidarum wysokie stężenia hCG wywołują przemijający wyrzut hormonów ustępujący samoistnie po 14–18. tygodniu.",
+        "Nieprawidłowo: W hyperemesis gravidarum wysokie stężenia hCG wywołują przemijający wyrzut hormonów ustępujący samoistnie po 14–18. tygodniu."
+      ]
+    },
+    {
+      "id": "ciaza-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "ciaza-obj-1"
+      ],
+      "prompt": "Dlaczego zalecane dobowe spożycie jodu u kobiet w ciąży wzrasta ze 150 µg do 250 µg na dobę?",
+      "modelAnswer": "Zapotrzebowanie na jod w ciąży rośnie z trzech powodów: 1) około 50% wzrost produkcji hormonów tarczycy przez matkę w celu zaspokojenia potrzeb metabolizmu; 2) znaczny wzrost filtracji kłębuszkowej (GFR), co nasila utratę jodków z moczem; 3) konieczność przezłożyskowego transferu jodu dla rozwijającej się tarczycy płodu (od 12. tygodnia ciąży).",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-increased-gfr",
+            "label": "Zwiększony klirens nerkowy jodu",
+            "acceptedPhrases": [
+              "filtracja kłębuszkowa",
+              "utrata jodu z moczem",
+              "gfr"
+            ]
+          },
+          {
+            "id": "c-fetal-need",
+            "label": "Zapotrzebowanie płodu i wzrost syntezy u matki",
+            "acceptedPhrases": [
+              "potrzeby płodu",
+              "tarczyca płodu",
+              "zwiększona produkcja t4"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Zwiększone wydalanie nerkowe i transfer płodowy wymagają suplementacji 150–200 µg jodu/d.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "pregnancy"
+      ]
+    },
+    {
+      "id": "ciaza-bank-3",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "ciaza-obj-3"
+      ],
+      "prompt": "Pacjentka leczona z powodu choroby Hashimoto przyjmuje lewotyroksynę w dawce 100 µg/dobę. W 5. tygodniu ciąży zgłasza się do poradni. Zgodnie z wytycznymi endokrynologicznymi zalecono natychmiastowe empiryczne zwiększenie dawki dobowej o 25% (zwiększenie o 2 dodatkowe dawki w tygodniu lub zmianę dawki dobowej). Jaka powinna być nowa docelowa dawka dobowa lewotyroksyny [w µg/dobę]?",
+      "answer": 125,
+      "tolerance": 5,
+      "unit": "µg/dobę",
+      "explanation": "Zwiększenie dawki o 20–30% (najczęściej o 25%, czyli ze 100 µg/d na 125 µg/d lub przyjmowanie 2 dodatkowych tabletek 100 µg w tygodniu) jest niezbędne natychmiast po potwierdzeniu ciąży, aby zrekompensować wzrost TBG i zapotrzebowania ustroju matki i płodu.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "pregnancy",
+        "lt4"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

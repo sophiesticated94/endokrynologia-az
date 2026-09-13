@@ -240,7 +240,14 @@ export async function migrateModule(options = {}) {
     }
 
     // Sources
-    const usedSourceIds = new Set(targetLessons.flatMap((l) => l.sourceIds));
+    const claimSourceIds = moduleSource.claims
+      ? Object.values(moduleSource.claims).flatMap((c) => c.sourceIds || [])
+      : [];
+    const usedSourceIds = new Set([
+      ...targetLessons.flatMap((l) => l.sourceIds),
+      ...claimSourceIds,
+      ...Object.keys(staticSources || {}),
+    ]);
     console.log(`[migrate] Found ${usedSourceIds.size} unique canonical sources.`);
 
     if (isApply) {

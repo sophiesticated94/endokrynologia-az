@@ -1,0 +1,408 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "fizjologia",
+  "objectives": [
+    {
+      "id": "fizjologia-obj-1",
+      "statement": "Wyjaśnisz ujemne sprzężenie zwrotne osi TRH–TSH–FT4/FT3 oraz log-liniową odpowiedź przysadki na zmiany FT4.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "fizjologia-obj-2",
+      "statement": "Zrozumiesz etapy biosyntezy hormonów: wychwyt jodków przez NIS, organifikację przez TPO, syntezę na tyreoglobulinie oraz transport przez TBG.",
+      "kind": "mechanism"
+    }
+  ],
+  "diagnostic": {
+    "id": "fizjologia-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "fizjologia-obj-1"
+    ],
+    "prompt": "Jaka jest fizjologiczna odpowiedź przysadki na 20% spadek stężenia wolnej tyroksyny (FT4) w surowicy przy sprawnej osi HPT?",
+    "options": [
+      "Wykładniczy, kilkukrotny (200–400%) wzrost wydzielania TSH wynikający z log-liniowego sprzężenia zwrotnego",
+      "Liniowy, dokładnie 20% wzrost stężenia TSH",
+      "Całkowite zablokowanie wydzielania TRH w podwzgórzu"
+    ],
+    "optionFeedback": [
+      "Sprzężenie przysadkowo-tarczycowe działa jako logarytmiczny wzmacniacz sygnału błędu.",
+      "Zależność nie jest liniowa; mały spadek FT4 wywołuje potężną amplifikację TSH.",
+      "Spadek FT4 stymuluje, a nie hamuje oś podwzgórzowo-przysadkową."
+    ],
+    "answer": 0,
+    "explanation": "Zależność między FT4 a TSH ma charakter log-liniowy: drobny deficyt obwodowy wywołuje zwielokrotniony wyrzut TSH.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "physiology",
+      "spina"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "fizjologia-block-1",
+      "title": "Trzy piętra regulacji",
+      "text": "Podwzgórze wydziela TRH, które pobudza przysadkę do uwalniania TSH. TSH działa na komórki pęcherzykowe tarczycy, zwiększając syntezę i uwalnianie hormonów. Wzrost dostępności hormonów hamuje wydzielanie TRH i TSH.",
+      "sourceIds": [
+        "physiology",
+        "central"
+      ],
+      "checkpointId": "fizjologia-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "fizjologia-block-2",
+      "title": "Od jodu do działania",
+      "text": "Komórka pęcherzykowa wychwytuje jodek przez symporter sodowo-jodkowy (NIS). Tyreoperoksydaza (TPO) uczestniczy w jego utlenianiu, organifikacji i sprzęganiu jodotyrozyn na tyreoglobulinie.",
+      "sourceIds": [
+        "physiology"
+      ],
+      "checkpointId": "fizjologia-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "fizjologia-block-3",
+      "title": "Wynik nie jest całym układem",
+      "text": "Większość hormonów krąży związana z białkami, w tym TBG. Zmiana stężenia białek wiążących może zmienić całkowite T4 bez odpowiadającej jej zmiany czynności tarczycy.",
+      "sourceIds": [
+        "physiology",
+        "lt4"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "fizjologia-q2-checkpoint-1-v2",
+      "type": "ordering",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "fizjologia-obj-1"
+      ],
+      "prompt": "Uporządkuj sekwencję zdarzeń w osi HPT po nagłym podaniu suprafizjologicznej dawki wolnej tyroksyny (FT4):",
+      "items": [
+        "Pojawienie się nadmiaru FT4 w krążeniu naczyniowym",
+        "Wychwyt T4 przez tyreotropy przysadki i lokalna konwersja do T3 przez dejodynazę DIO2",
+        "Wiązanie T3 z receptorem jądrowym TRβ i hamowanie transkrypcji genów TSHB i CGA",
+        "Spadek stężenia TSH w surowicy krwi"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "explanation": "T4 trafia do przysadki, ulega lokalnej konwersji do T3 przez DIO2, po czym T3 hamuje transkrypcję TSH.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "physiology",
+        "spina"
+      ]
+    },
+    {
+      "id": "fizjologia-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "fizjologia-obj-2"
+      ],
+      "prompt": "U ciężarnej w I trymestrze stężenie TBG wzrosło 2-krotnie pod wpływem estrogenów. Jak wpłynie to na stężenie całkowitego T4 (TT4) i wolnego FT4 przy sprawnej osi?",
+      "options": [
+        "TT4 wzrośnie, a FT4 pozostanie prawidłowe",
+        "Zarówno TT4, jak i FT4 wzrosną 2-krotnie, wywołując tyreotoksykozę",
+        "Zarówno TT4, jak i FT4 spadną poniżej normy"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-tbg-pool",
+            "label": "Większa pula związana z TBG",
+            "acceptedPhrases": [
+              "pula związana",
+              "więcej tbg",
+              "wiązanie z tbg",
+              "całkowite t4 rośnie"
+            ]
+          },
+          {
+            "id": "c-free-fraction",
+            "label": "Prawidłowa frakcja wolna dzięki sprzężeniu HPT",
+            "acceptedPhrases": [
+              "ft4 w normie",
+              "frakcja wolna",
+              "eutyreoza",
+              "sprzężenie zwrotne wyrównuje"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-hyper",
+            "patterns": [
+              "rozwój nadczynności",
+              "tyreotoksykoza ciężarnych"
+            ],
+            "severity": "critical",
+            "feedback": "Wzrost TBG zwiększa pulę związaną, ale nie wywołuje nadczynności metabolicznej."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Estrogeny stymulują wątrobową syntezę TBG. Oś HPT zwiększa syntezę do wysycenia białka, utrzymując stałe, prawidłowe FT4.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "physiology"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Estrogeny stymulują wątrobową syntezę TBG. Oś HPT zwiększa syntezę do wysycenia białka, utrzymując stałe, prawidłowe FT4.",
+        "Nieprawidłowo: Estrogeny stymulują wątrobową syntezę TBG. Oś HPT zwiększa syntezę do wysycenia białka, utrzymując stałe, prawidłowe FT4.",
+        "Nieprawidłowo: Estrogeny stymulują wątrobową syntezę TBG. Oś HPT zwiększa syntezę do wysycenia białka, utrzymując stałe, prawidłowe FT4."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "fizjologia-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "fizjologia-obj-1"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami studentowi medycyny, dlaczego u pacjenta ze sprawną osią HPT nawet drobny spadek stężenia FT4 o 15% wywołuje spektakularny, kilkukrotny wzrost TSH.",
+    "modelAnswer": "Zależność między FT4 a TSH nie jest proporcjonalna ani liniowa, lecz logarytmiczno-liniowa. Tyreotropy przysadki działają jak biologiczny wzmacniacz błędu: drobne obniżenie obwodowej puli wolnych hormonów powoduje gwałtowne odhamowanie transkrypcji podjednostek TSH, co skutkuje wykładniczym wzrostem stężenia TSH w surowicy.",
+    "explanation": "Zrozumienie log-liniowej natury osi HPT jest kluczowe dla interpretacji wyników badań przesiewowych.",
+    "difficulty": "doctor",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "physiology",
+      "spina"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "fizjologia-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "fizjologia-obj-2"
+      ],
+      "prompt": "Jaka jest rola tyreoperoksydazy (TPO) w pęcherzyku tarczycowym i jakie dwa kluczowe procesy chemiczne katalizuje ten enzym?",
+      "modelAnswer": "Tyreoperoksydaza (TPO) jest enzymem hemo-zależnym na szczytowej błonie tyreocyta. Katalizuje utlenianie jodków (I-) przy udziale H2O2 oraz organifikację jodu (przyłączanie do reszt tyrozynowych tyreoglobuliny, tworząc MIT i DIT), a następnie sprzęganie jodotyrozyn w cząsteczki T4 i T3.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-organification",
+            "label": "Organifikacja jodu / jodowanie tyreoglobuliny",
+            "acceptedPhrases": [
+              "organifikacja",
+              "jodowanie tyrozyny",
+              "tworzenie mit i dit",
+              "przyłączanie jodu"
+            ]
+          },
+          {
+            "id": "c-coupling",
+            "label": "Sprzęganie jodotyrozyn",
+            "acceptedPhrases": [
+              "sprzęganie",
+              "synteza t4",
+              "łączenie dit",
+              "tworzenie t3 i t4"
+            ]
+          }
+        ],
+        "optionalConcepts": [
+          {
+            "id": "c-oxidation",
+            "label": "Utlenianie jodków z H2O2",
+            "acceptedPhrases": [
+              "utlenianie jodku",
+              "h2o2",
+              "nadtlenek wodoru"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "TPO odpowiada za organifikację oraz sprzęganie MIT i DIT na matrycy tyreoglobuliny.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "physiology"
+      ]
+    },
+    {
+      "id": "fizjologia-q5-exit-v2",
+      "type": "matching",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "fizjologia-obj-2"
+      ],
+      "prompt": "Dopasuj strukturę lub cząsteczkę tarczycową do jej zasadniczej roli biologicznej:",
+      "pairs": [
+        [
+          "NIS (Symporter sodowo-jodkowy)",
+          "Aktywny transport jodków do wnętrza tyreocyta wbrew gradientowi stężeń"
+        ],
+        [
+          "Koloid pęcherzykowy",
+          "Zewnątrzkomórkowy magazyn zjodowanej tyreoglobuliny"
+        ],
+        [
+          "Dejodynaza DIO1/DIO2",
+          "Obwodowa konwersja prohormonu T4 do aktywnego biologicznie T3"
+        ],
+        [
+          "TBG (Globulina wiążąca tyroksynę)",
+          "Wiązanie ponad 70% krążącej puli hormonów i ochrona przed szybką eliminacją"
+        ]
+      ],
+      "explanation": "Każdy komponent układu odpowiada za odrębny etap gospodarki jodo-hormonalnej.",
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "physiology"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "fizjologia-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "fizjologia-obj-2"
+      ],
+      "prompt": "Pacjent z wrodzoną rodzinną dysalbuminemią eutyreotyczną (FDH) ma podwyższone stężenie całkowitej tyroksyny (TT4). Jak należy zinterpretować stan pacjenta, jeśli TSH i wolna tyroksyna mierzona dializą równowagową są w normie?",
+      "options": [
+        "Jest to stan eutyreozy wynikający z obecności wariantu albuminy o wysokim powinowactwie do T4",
+        "Jest to wczesna subkliniczna nadczynność tarczycy wymagająca tiamazolu",
+        "Jest to zespół oporności na hormony tarczycy (RTH)"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-fdh-variant",
+            "label": "Wariant białka wiążącego / mutacja albuminy",
+            "acceptedPhrases": [
+              "mutacja albuminy",
+              "wariant albuminy",
+              "powinowactwo do t4",
+              "białko wiążące"
+            ]
+          },
+          {
+            "id": "c-euthyroid",
+            "label": "Prawidłowa frakcja wolna i eutyreoza",
+            "acceptedPhrases": [
+              "eutyreoza",
+              "brak objawów",
+              "prawidłowe ft4",
+              "nie wymaga leczenia"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Zwiększone powinowactwo nieprawidłowej albuminy podwyższa całkowity hormon, lecz frakcja wolna i sprzężenie HPT są prawidłowe.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "physiology"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Zwiększone powinowactwo nieprawidłowej albuminy podwyższa całkowity hormon, lecz frakcja wolna i sprzężenie HPT są prawidłowe.",
+        "Nieprawidłowo: Zwiększone powinowactwo nieprawidłowej albuminy podwyższa całkowity hormon, lecz frakcja wolna i sprzężenie HPT są prawidłowe.",
+        "Nieprawidłowo: Zwiększone powinowactwo nieprawidłowej albuminy podwyższa całkowity hormon, lecz frakcja wolna i sprzężenie HPT są prawidłowe."
+      ]
+    },
+    {
+      "id": "fizjologia-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "fizjologia-obj-1"
+      ],
+      "prompt": "Wyjaśnij mechanizm efektu Wolffa-Chaikoffa w tyreocytach po podaniu bardzo dużej dawki jodków nieorganicznych.",
+      "modelAnswer": "Ostre obciążenie dużą dawką jodków powoduje przejściowe, wewnątrzkomórkowe zablokowanie aktywności tyreoperoksydazy (TPO) oraz syntezy nadtlenku wodoru przez DUOX2, co gwałtownie hamuje organifikację jodu. Po kilku dniach zachodzi zjawisko ucieczki (escape) poprzez down-regulację symportera NIS.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-inhibition-tpo",
+            "label": "Zahamowanie TPO i organifikacji jodu",
+            "acceptedPhrases": [
+              "blokada tpo",
+              "zahamowanie organifikacji",
+              "spadek syntezy hormonów",
+              "blok tpo"
+            ]
+          },
+          {
+            "id": "c-escape-nis",
+            "label": "Zjawisko ucieczki przez spadek NIS",
+            "acceptedPhrases": [
+              "ucieczka",
+              "escape",
+              "spadek nis",
+              "down-regulacja nis"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Efekt Wolffa-Chaikoffa to fizjologiczny mechanizm obronny przed gwałtownym zalaniem tyreotoksycznym.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "physiology"
+      ]
+    },
+    {
+      "id": "fizjologia-bank-3",
+      "type": "multi_select",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "fizjologia-obj-1"
+      ],
+      "prompt": "Które z poniższych czynników fizjologicznych lub farmakologicznych hamują wydzielanie TSH na poziomie przysadki?",
+      "options": [
+        "Dopamina i jej agoniści",
+        "Somatostatyna",
+        "Wysokie stężenia glikokortykosteroidów",
+        "TRH (tyreoliberyna)"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "optionFeedback": [
+        "Dopamina wywiera toniczne działanie hamujące na tyreotropy.",
+        "Somatostatyna hamuje zarówno GH, jak i TSH.",
+        "Glikokortykosteroidy tłumią oś HPT.",
+        "TRH pobudza, a nie hamuje wydzielanie TSH."
+      ],
+      "explanation": "Dopamina, somatostatyna i glikokortykosteroidy hamują wydzielanie TSH, podczas gdy TRH je stymuluje.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "physiology"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "axis-map"
+  ],
+  "widgetConfig": {
+    "axis-map": {
+      "presetId": "tarczyca-axis-hpt"
+    }
+  },
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

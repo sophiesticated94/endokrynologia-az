@@ -1,0 +1,345 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "tarczyca-matematyka-sprzezenie",
+  "objectives": [
+    {
+      "id": "tarczyca-matematyka-sprzezenie-obj-1",
+      "statement": "Zrozumiesz wyprowadzenie parametrów strukturalnych SPINA-GT (wydajność gruczołu) oraz SPINA-GD (dejodynacja).",
+      "kind": "mechanism"
+    },
+    {
+      "id": "tarczyca-matematyka-sprzezenie-obj-2",
+      "statement": "Obliczysz wskaźnik supresji TSH Jostela (JTI) i zinterpretujesz odchylenia osi przysadka-tarczyca.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "tarczyca-matematyka-sprzezenie-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "tarczyca-matematyka-sprzezenie-obj-1"
+    ],
+    "prompt": "Co bezpośrednio mierzy parametr SPINA-GT w modelu Dietricha homeostazy osi HPT?",
+    "options": [
+      "Maksymalną teoretyczną wydajność sekrecyjną tarczycy (w pmol/s) przy maksymalnej stymulacji TSH",
+      "Sumaryczną aktywność obwodowych dejodynaz konwertujących T4 do T3",
+      "Stężenie przeciwciał przeciwko receptorowi TSH"
+    ],
+    "optionFeedback": [
+      "SPINA-GT odzwierciedla masę i wydolność czynnego miąższu tarczycy.",
+      "Aktywność dejodynaz mierzy parametr SPINA-GD.",
+      "Przeciwciała mierzy się mianami serologicznymi, a nie parametrami wydzielniczymi."
+    ],
+    "answer": 0,
+    "explanation": "SPINA-GT (G_hat_T) szacuje maksymalną pojemność wydzielniczą tyreocytów niezależnie od aktualnego TSH.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "spina"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "tarczyca-matematyka-sprzezenie-block-1",
+      "title": "Niewystarczalność klasycznej interpretacji TSH-FT4",
+      "text": "Klasyczne badanie TSH i FT4 odzwierciedla jedynie stan statyczny. SPINA pozwala obliczyć niezmienniki konstytucyjne gruczołu: SPINA-GT (wydolność tarczycy) oraz SPINA-GD (aktywność dejodynaz).",
+      "sourceIds": [
+        "spina"
+      ],
+      "checkpointId": "tarczyca-matematyka-sprzezenie-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "tarczyca-matematyka-sprzezenie-block-2",
+      "title": "SPINA-GT: Maksymalna wydajność sekrecyjna tarczycy",
+      "text": "SPINA-GT opiera się na kinetyce Michaelisa-Menten receptora TSH. Wartość referencyjna wynosi 1,4–8,7 pmol/s. Po tyreoidektomii lub atrofii SPINA-GT spada w pobliże zera.",
+      "sourceIds": [
+        "spina"
+      ],
+      "checkpointId": "tarczyca-matematyka-sprzezenie-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "tarczyca-matematyka-sprzezenie-block-3",
+      "title": "SPINA-GD i Wskaźnik Jostela (JTI)",
+      "text": "SPINA-GD mierzy konwersję T4 -> T3 (norma 20–40 nmol/s; spada w zespole niskiej T3). Wskaźnik Jostela JTI = ln(TSH) + 0,1345 * FT4 koryguje TSH o ujemne sprzężenie, wykrywając dysfunkcję przysadki.",
+      "sourceIds": [
+        "spina",
+        "central"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "tarczyca-matematyka-sprzezenie-q2-checkpoint-1-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "tarczyca-matematyka-sprzezenie-obj-1"
+      ],
+      "prompt": "U pacjenta w sepsie na OIT stwierdzono prawidłowy wskaźnik SPINA-GT (3,8 pmol/s, norma 1,4–8,7), lecz skrajnie obniżony SPINA-GD (8,2 nmol/s, norma 20–40). Jak należy to zinterpretować klinicznie?",
+      "options": [
+        "Jest to zespół eutyreozy chorobowej (low T3 syndrome) ze zablokowaną obwodową dejodynacją T4->T3, bez pierwotnego uszkodzenia samej tarczycy",
+        "Jest to ciężka pierwotna niedoczynność tarczycy wymagająca pilnego wlewu LT4",
+        "Jest to rozlany rak tarczycy"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-intact-thyroid",
+            "label": "Prawidłowa funkcja miąższu tarczycy (GT w normie)",
+            "acceptedPhrases": [
+              "prawidłowa tarczyca",
+              "sprawny miąższ",
+              "spina-gt w normie"
+            ]
+          },
+          {
+            "id": "c-impaired-deiodination",
+            "label": "Zablokowana obwodowa dejodynacja (niski GD)",
+            "acceptedPhrases": [
+              "zablokowane dejodynazy",
+              "niski gd",
+              "niska konwersja",
+              "zespół pozatarczycowy",
+              "low t3"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Rozdzielenie parametrów GT i GD pozwala precyzyjnie udowodnić obwodowy, a nie narządowy charakter deficytu T3.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "spina"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Rozdzielenie parametrów GT i GD pozwala precyzyjnie udowodnić obwodowy, a nie narządowy charakter deficytu T3.",
+        "Nieprawidłowo: Rozdzielenie parametrów GT i GD pozwala precyzyjnie udowodnić obwodowy, a nie narządowy charakter deficytu T3.",
+        "Nieprawidłowo: Rozdzielenie parametrów GT i GD pozwala precyzyjnie udowodnić obwodowy, a nie narządowy charakter deficytu T3."
+      ]
+    },
+    {
+      "id": "tarczyca-matematyka-sprzezenie-q3-checkpoint-2-v2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "tarczyca-matematyka-sprzezenie-obj-2"
+      ],
+      "prompt": "Oblicz wskaźnik supresji TSH Jostela (JTI) ze wzoru JTI = ln(TSH) + 0,1345 * FT4 dla pacjenta z TSH = 2,72 mIU/l (ln(2,72) = 1,0) oraz FT4 = 15 pmol/l:",
+      "answer": 3.02,
+      "tolerance": 0.1,
+      "unit": "pkt",
+      "explanation": "JTI = 1,0 + 0,1345 * 15 = 1,0 + 2,0175 = 3,02 (norma 1,3–4,1). Wskazuje na prawidłową funkcję tyreotropową przysadki.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "spina",
+        "central"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "tarczyca-matematyka-sprzezenie-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "tarczyca-matematyka-sprzezenie-obj-1"
+    ],
+    "prompt": "Dlaczego parametr SPINA-GT obliczony u pacjenta po całkowitej tyreoidektomii przyjmuje wartość bliską 0 pmol/s, nawet jeśli pacjent przyjmuje 150 µg lewotyroksyny i ma prawidłowe FT4 i TSH?",
+    "modelAnswer": "SPINA-GT estymuje endogenną zdolność sekrecyjną tyreocytów, rozwikłując nieliniowe równanie stanu stacjonarnego. Ponieważ po tyreoidektomii pacjent nie posiada własnego miąższu tarczycy, jego endogenne wydzielanie wynosi zero. Cała krążąca tyroksyna pochodzi z tabletki (z zewnątrz), co algorytm SPINA precyzyjnie identyfikuje jako zerową sprawność narządu.",
+    "explanation": "SPINA-GT mierzy biologiczną produkcję tkankową, a nie stężenie leku egzogennego.",
+    "difficulty": "doctor",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "spina"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "tarczyca-matematyka-sprzezenie-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "tarczyca-matematyka-sprzezenie-obj-2"
+      ],
+      "prompt": "Do czego klinicznie służy wskaźnik Jostela (JTI) i jak zinterpretujesz wynik JTI < 1,0 u pacjenta z niskim FT4?",
+      "modelAnswer": "Wskaźnik Jostela (JTI) mierzy wydolność tyreotropową przysadki, normalizując TSH względem ujemnego sprzężenia z FT4. Wynik JTI poniżej 1,3 (zwłaszcza <1,0) przy obniżonym FT4 dowodzi niedostatecznej, nieadekwatnej odpowiedzi przysadki i potwierdza wtórną (centralną) niedoczynność tarczycy.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-jti-pituitary-capacity",
+            "label": "Ocena wydolności tyreotropowej przysadki",
+            "acceptedPhrases": [
+              "wydolność przysadki",
+              "rezerwa tyreotropowa",
+              "funkcja przysadki"
+            ]
+          },
+          {
+            "id": "c-central-hypo-proof",
+            "label": "Dowód niedoczynności centralnej / wtórnej",
+            "acceptedPhrases": [
+              "niedoczynność centralna",
+              "niedoczynność wtórna",
+              "uszkodzenie przysadki"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "JTI jest matematycznym estymatorem stopnia zachowania funkcji tyreotropowej przysadki.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "spina",
+        "central"
+      ]
+    },
+    {
+      "id": "tarczyca-matematyka-sprzezenie-q5-exit-v2",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "tarczyca-matematyka-sprzezenie-obj-1"
+      ],
+      "prompt": "Oceń, jak poniższe dane genetyczne, obrazowe i biochemiczne wpływają na rozpoznanie zespołu RTHβ wobec TSH-oma:",
+      "hypothesis": "U pacjenta z hipertyreotropinemią występuje zespół uogólnionej oporności na hormony tarczycy (RTHβ), a nie gruczolak przysadki wydzielający TSH (TSH-oma).",
+      "items": [
+        {
+          "id": "ev-1",
+          "text": "Wykrycie heterozygotycznej mutacji w domenie wiążącej ligand genu receptora TRβ (THRB)",
+          "expected": "supports",
+          "explanation": "Mutacje THRB są bezpośrednią przyczyną ponad 85% przypadków RTHβ."
+        },
+        {
+          "id": "ev-2",
+          "text": "Obecność makrogruczolaka o wymiarach 18 mm w siodle tureckim w badaniu MRI",
+          "expected": "opposes",
+          "explanation": "Obecność guza przysadki przemawia za TSH-oma."
+        },
+        {
+          "id": "ev-3",
+          "text": "Stosunek molowy podjednostki alfa (alfa-GSU) do TSH jest znacznie podwyższony (>1,0)",
+          "expected": "opposes",
+          "explanation": "Nadprodukcja wolnej alfa-GSU jest typowym markerem gruczolaków przysadki TSH-oma."
+        },
+        {
+          "id": "ev-4",
+          "text": "Podwyższone stężenie FT4 i FT3 przy TSH w granicach normy lub lekko podwyższonym",
+          "expected": "neutral",
+          "explanation": "Ten profil hormonalny jest identyczny w RTH i TSH-oma i stanowi punkt wyjścia różnicowania."
+        }
+      ],
+      "explanation": "Mutacja THRB potwierdza RTH, podczas gdy alfa-GSU i gruczolak w MRI wskazują na TSH-oma.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "spina",
+        "central"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "tarczyca-matematyka-sprzezenie-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "tarczyca-matematyka-sprzezenie-obj-1"
+      ],
+      "prompt": "W jakim mechanizmie biofizycznym oś HPT zachowuje stabilność i nie wpada w chaotyczne oscylacje wokół punktu równowagi?",
+      "options": [
+        "Dzięki logarytmicznej amplifikacji sygnału w przysadce połączonej z nasycającą się kinetyką uwalniania hormonów w tarczycy oraz opóźnieniu transportowemu",
+        "Ponieważ hormony tarczycy rozkładają się natychmiast w ciągu 1 sekundy",
+        "Ponieważ przysadka nie reaguje na stężenie FT4"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-log-linear-saturation",
+            "label": "Sprzężenie logarytmiczne i kinetyka wysyceniowa",
+            "acceptedPhrases": [
+              "sprzężenie logarytmiczne",
+              "wysycenie",
+              "stabilny atraktor",
+              "punkt stały",
+              "ujemne sprzężenie"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Połączenie kontrolera logarytmicznego z nasycającym się elementem wykonawczym tworzy stabilny punkt w przestrzeni fazowej osi.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "spina"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Połączenie kontrolera logarytmicznego z nasycającym się elementem wykonawczym tworzy stabilny punkt w przestrzeni fazowej osi.",
+        "Nieprawidłowo: Połączenie kontrolera logarytmicznego z nasycającym się elementem wykonawczym tworzy stabilny punkt w przestrzeni fazowej osi.",
+        "Nieprawidłowo: Połączenie kontrolera logarytmicznego z nasycającym się elementem wykonawczym tworzy stabilny punkt w przestrzeni fazowej osi."
+      ]
+    },
+    {
+      "id": "tarczyca-matematyka-sprzezenie-bank-2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "tarczyca-matematyka-sprzezenie-obj-2"
+      ],
+      "prompt": "Oblicz orientacyjny TSH Index (TSHI wg Dietricha) ze wzoru TSHI = log10(TSH) + 0,1345 * FT4 dla TSH = 10 mIU/l (log10(10) = 1,0) i FT4 = 20 pmol/l:",
+      "answer": 3.69,
+      "tolerance": 0.1,
+      "unit": "pkt",
+      "explanation": "TSHI = 1,0 + 0,1345 * 20 = 1,0 + 2,69 = 3,69 (zakres referencyjny 1,3–3,9).",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "spina"
+      ]
+    },
+    {
+      "id": "tarczyca-matematyka-sprzezenie-bank-3",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "tarczyca-matematyka-sprzezenie-obj-1"
+      ],
+      "prompt": "Jakie znaczenie w wyprowadzeniu SPINA-GT ma uwzględnienie białek wiążących (TBG i transtyretyny)?",
+      "modelAnswer": "Tyreocyty uwalniają T4 do osocza, gdzie ponad 99,97% hormonu natychmiast wiąże się z białkami transportowymi. Aby obliczyć rzeczywisty strumień sekrecji, model musi uwzględnić stałe asocjacji i stężenia TBG oraz transtyretyny (TBPA), w przeciwnym razie wydajność tarczycy zostałaby zaniżona o kilka rzędów wielkości.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-binding-fraction-correction",
+            "label": "Korekta o pulę związaną z białkami",
+            "acceptedPhrases": [
+              "pula związana",
+              "stałe wiązania",
+              "tbg",
+              "korekta o białka"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Pojemność białek wiążących buforuje uwalniany hormon i musi być skorygowana w modelu matematycznym.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "spina"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "axis-map"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

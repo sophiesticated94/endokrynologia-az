@@ -1,0 +1,396 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "hashimoto",
+  "objectives": [
+    {
+      "id": "hashimoto-obj-1",
+      "statement": "Odróżnisz etiologię autoimmunologiczną (obecność anty-TPO/anty-Tg) od aktualnego stanu czynnościowego gruczołu (eutyreoza vs niedoczynność).",
+      "kind": "differentiation"
+    },
+    {
+      "id": "hashimoto-obj-2",
+      "statement": "Zidentyfikujesz wskazania do monitorowania, leczenia hormonalnego i diagnostyki innych chorób autoimmunologicznych (APS-2).",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "hashimoto-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "hashimoto-obj-1"
+    ],
+    "prompt": "Pacjentka bez objawów wykonała komercyjny pakiet badań: anty-TPO = 650 IU/ml (norma <35), TSH = 1,8 mIU/l, FT4 = 16,5 pmol/l. Jak zdefiniujesz jej stan?",
+    "options": [
+      "Autoimmunologiczne zapalenie tarczycy (Hashimoto) w stanie eutyreozy metabolicznej",
+      "Ciężka niedoczynność tarczycy wymagająca natychmiastowego leczenia",
+      "Stan po przebytej chorobie Gravesa-Basedowa"
+    ],
+    "optionFeedback": [
+      "Wysokie miano przeciwciał dowodzi autoimmunizacji, lecz funkcja hormonalna tarczycy jest w pełni zachowana.",
+      "Prawidłowe TSH i FT4 wykluczają niedoczynność na tym etapie.",
+      "Obraz nie wskazuje na chorobę Gravesa."
+    ],
+    "answer": 0,
+    "explanation": "Obecność autoprzeciwciał świadczy o etiologii autoimmunologicznej, ale nie jest równoznaczna z niedoczynnością.",
+    "difficulty": "student",
+    "reasoning": "differentiation",
+    "sourceIds": [
+      "hashimoto"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hashimoto-block-1",
+      "title": "Proces, a nie pojedyncza liczba",
+      "text": "Hashimoto jest przewlekłym autoimmunizacyjnym zapaleniem tarczycy. Uszkodzenie komórek może z czasem ograniczyć produkcję hormonów, lecz choroba może współistnieć z prawidłową czynnością gruczołu.",
+      "sourceIds": [
+        "hashimoto"
+      ],
+      "checkpointId": "hashimoto-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "hashimoto-block-2",
+      "title": "Co mierzymy, a co leczymy?",
+      "text": "TSH i FT4 służą do oceny czynności. Powtarzanie miana przeciwciał w celu dostosowania dawki LT4 nie jest właściwą strategią. Leczymy niedobór hormonów, a nie próbujemy wyzerować przeciwciała.",
+      "sourceIds": [
+        "hashimoto",
+        "lt4"
+      ],
+      "checkpointId": "hashimoto-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "hashimoto-block-3",
+      "title": "Żywienie bez obietnic",
+      "text": "Nie ma jednej diety usuwającej autoimmunizację. Należy unikać nadmiernej podaży jodu z suplementów. Dieta bezglutenowa wymaga odrębnego uzasadnienia, np. rozpoznanej celiakii.",
+      "sourceIds": [
+        "hashimoto"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "hashimoto-q2-checkpoint-1-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "hashimoto-obj-1",
+        "hashimoto-obj-2"
+      ],
+      "prompt": "Czy u pacjentki z eutyreozą (TSH 2,1 mIU/l, FT4 w normie) i bardzo wysokim mianem anty-TPO (>1000 IU/ml) należy wdrożyć lewotyroksynę w celu obniżenia przeciwciał?",
+      "options": [
+        "Nie, lewotyroksyna jest hormonem zastępczym, a nie lekiem immunosupresyjnym; miano przeciwciał nie stanowi celu terapii",
+        "Tak, lewotyroksyna natychmiast eliminuje autoprzeciwciała z krwi",
+        "Tak, należy włączyć maksymalną tolerowaną dawkę"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-no-lt4-for-antibodies",
+            "label": "LT4 nie służy do zbijania miana przeciwciał",
+            "acceptedPhrases": [
+              "przeciwciała nie są celem",
+              "nie leczymy przeciwciał",
+              "leczymy niedobór hormonów",
+              "eutyreoza"
+            ]
+          },
+          {
+            "id": "c-monitor-tsh",
+            "label": "Wskazana jest okresowa kontrola TSH",
+            "acceptedPhrases": [
+              "okresowa kontrola",
+              "monitorowanie tsh",
+              "ryzyko progresji"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-suppress-antibodies",
+            "patterns": [
+              "leczyć aby wyzerować przeciwciała",
+              "lt4 niszczy przeciwciała"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: lewotyroksyna nie jest lekiem immunosupresyjnym."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Leczymy dysfunkcję hormonalną gruczołu, a nie samo miano autoprzeciwciał.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "hashimoto",
+        "lt4"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Leczymy dysfunkcję hormonalną gruczołu, a nie samo miano autoprzeciwciał.",
+        "Nieprawidłowo: Leczymy dysfunkcję hormonalną gruczołu, a nie samo miano autoprzeciwciał.",
+        "Nieprawidłowo: Leczymy dysfunkcję hormonalną gruczołu, a nie samo miano autoprzeciwciał."
+      ]
+    },
+    {
+      "id": "hashimoto-q3-checkpoint-2-v2",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "hashimoto-obj-2"
+      ],
+      "prompt": "Oceń, jak poniższe objawy i wyniki badań wpływają na podejrzenie zespołu APS-2 u chorej:",
+      "hypothesis": "U pacjentki z przewlekłym zapaleniem Hashimoto rozwija się autoimmunologiczny zespół wielogruczołowy typu 2 (APS-2 / zespół Schmidta).",
+      "items": [
+        {
+          "id": "ev-1",
+          "text": "Pojawienie się ciemnienia skóry (melanodermii) w zgięciach dłoni oraz hipotensji ortostatycznej",
+          "expected": "supports",
+          "explanation": "Sugeruje dołączenie pierwotnej niedoczynności kory nadnerczy (choroby Addisona)."
+        },
+        {
+          "id": "ev-2",
+          "text": "Wystąpienie epizodów hiperglikemii na czczo z obecnością przeciwciał anty-GAD",
+          "expected": "supports",
+          "explanation": "Cukrzyca typu 1 jest klasycznym komponentem zespołu APS-2."
+        },
+        {
+          "id": "ev-3",
+          "text": "W USG tarczycy miąższ jest niejednorodny, obniżonej echogeniczności z pasmami włóknienia",
+          "expected": "neutral",
+          "explanation": "To typowy obraz samego Hashimoto, nie rozstrzygający o zespole wielogruczołowym."
+        },
+        {
+          "id": "ev-4",
+          "text": "Obecność kandydozy skóry i błon śluzowych oraz hipokalcemii z hipoparatyroidyzmem",
+          "expected": "opposes",
+          "explanation": "Triada: kandydoza + niedoczynność przytarczyc + Addison to zespół APS-1 (mutacja AIRE), a nie APS-2."
+        }
+      ],
+      "explanation": "APS-2 (zespół Schmidta) to współwystępowanie choroby Addisona z chorobą tarczycy i/lub cukrzycą typu 1.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "hashimoto"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "hashimoto-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "hashimoto-obj-1"
+    ],
+    "prompt": "Wytłumacz pacjentce, która naczytała się forów internetowych, dlaczego okresowe powtarzanie drogiego badania poziomu anty-TPO co miesiąc nie ma sensu i nie wpływa na dawkę jej leku.",
+    "modelAnswer": "Miano przeciwciał anty-TPO służy wyłącznie do jednorazowego potwierdzenia tła autoimmunologicznego choroby. Poziom przeciwciał fluktuuje naturalnie i nie koreluje ze stopniem uszkodzenia tarczycy ani z samopoczuciem. Dawkę lewotyroksyny dobiera się wyłącznie na podstawie stężenia TSH i FT4, które mierzą rzeczywistą sprawność hormonalną.",
+    "explanation": "Edukacja o braku wskazań do seryjnego monitorowania miana przeciwciał chroni przed zbędnymi kosztami.",
+    "difficulty": "student",
+    "reasoning": "differentiation",
+    "sourceIds": [
+      "hashimoto"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "hashimoto-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "hashimoto-obj-2"
+      ],
+      "prompt": "Pacjent z długoletnim zapaleniem Hashimoto zgłasza gwałtowne powiększenie tarczycy w ciągu ostatnich 4 tygodni z chrypką i trudnościami w połykaniu. Jakie rzadkie, groźne powikłanie onkologiczne musisz pilnie wykluczyć?",
+      "modelAnswer": "Należy pilnie wykluczyć pierwotnego chłoniaka tarczycy (najczęściej chłoniak rozlany z dużych komórek B - DLBCL), dla którego przewlekłe zapalenie Hashimoto jest udowodnionym czynnikiem ryzyka (zwiększa ryzyko 40–80-krotnie). Wymaga natychmiastowej biopsji gruboigłowej lub otwartej.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-lymphoma",
+            "label": "Chłoniak tarczycy",
+            "acceptedPhrases": [
+              "chłoniak",
+              "lymphoma",
+              "dlbcl",
+              "chłoniak z komórek b"
+            ]
+          },
+          {
+            "id": "c-urgent-biopsy",
+            "label": "Pilna biopsja / diagnostyka",
+            "acceptedPhrases": [
+              "pilna biopsja",
+              "bacc",
+              "biopsja gruboigłowa",
+              "bacc z immunofenotypowaniem"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Gwałtowny wzrost wola u chorego z Hashimoto jest objawem alarmowym w kierunku chłoniaka tarczycy.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "hashimoto"
+      ]
+    },
+    {
+      "id": "hashimoto-q5-exit-v2",
+      "type": "multi_select",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "hashimoto-obj-2"
+      ],
+      "prompt": "Wskaż racjonalne zasady postępowania dietetycznego u pacjentów z zapaleniem tarczycy Hashimoto poparte dowodami naukowymi:",
+      "options": [
+        "Unikanie suplementów zawierających wysokie, niekontrolowane dawki jodu (np. kelp, tabletki z algami)",
+        "Wprowadzenie diety bezglutenowej wyłącznie u pacjentów ze współistniejącą, potwierdzoną celiakią",
+        "Wyrównanie niedoboru witaminy D3 i żelaza",
+        "Eliminacja wszystkich warzyw krzyżowych w postaci gotowanej"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "optionFeedback": [
+        "Nadmiar jodu nasila autoimmunizację i może wywołać blok Wolffa-Chaikoffa.",
+        "Dieta bezglutenowa nie jest zalecana rutynowo u chorych bez celiakii.",
+        "Niedobory żelaza i D3 są częste i pogarszają funkcję enzymów tarczycowych.",
+        "Warzywa krzyżowe po ugotowaniu tracą większość goitrogenów i są bezpieczne."
+      ],
+      "explanation": "Zalecenia opierają się na unikaniu nadmiaru jodu, wyrównaniu niedoborów i celowanej diecie bezglutenowej w celiakii.",
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "hashimoto"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "hashimoto-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "hashimoto-obj-1"
+      ],
+      "prompt": "U pacjenta z chorobą Hashimoto w USG opisano liczne drobne, hipoechogeniczne ogniska rzekomoguzkowe z przegrodami łącznotkankowymi (obraz tzw. tarczycy geograficznej). TSH wynosi 4,8 mIU/l. Jak zakwalifikujesz te zmiany?",
+      "options": [
+        "Są to rzekomoguzki zapalne (pseudonodules) typowe dla zapalenia limfocytarnego, nie wymagające rutynowej biopsji BACC",
+        "Każde z ognisk wymaga osobnej biopsji aspiracyjnej cienkoigłowej",
+        "Jest to rak wieloogniskowy tarczycy"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-pseudonodules",
+            "label": "Rzekomoguzki zapalne",
+            "acceptedPhrases": [
+              "rzekomoguzki",
+              "pseudonodules",
+              "obraz zapalny",
+              "brak wskazań do biopsji",
+              "tło zapalne"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Naciek limfocytarny tworzy rzekomoguzki, które nie są prawdziwymi nowotworami i nie wymagają masowej biopsji.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "hashimoto",
+        "nodules"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Naciek limfocytarny tworzy rzekomoguzki, które nie są prawdziwymi nowotworami i nie wymagają masowej biopsji.",
+        "Nieprawidłowo: Naciek limfocytarny tworzy rzekomoguzki, które nie są prawdziwymi nowotworami i nie wymagają masowej biopsji.",
+        "Nieprawidłowo: Naciek limfocytarny tworzy rzekomoguzki, które nie są prawdziwymi nowotworami i nie wymagają masowej biopsji."
+      ]
+    },
+    {
+      "id": "hashimoto-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "hashimoto-obj-2"
+      ],
+      "prompt": "Dlaczego u chorego z chorobą Hashimoto i jednocześnie nierozpoznaną, rozwijającą się chorobą Addisona podanie lewotyroksyny przed wdrożeniem hydrokortyzonu może doprowadzić do zgonu?",
+      "modelAnswer": "Lewotyroksyna przyspiesza tempo metabolizmu podstawowego oraz nasila wątrobowy klirens i degradację kortyzolu. Przy skrajnie ograniczonej rezerwie kory nadnerczy gwałtowny spadek stężenia resztkowego kortyzolu wyzwala ostry, zagrażający życiu przełom nadnerczowy z wstrząsem naczyniowym.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-cortisol-clearance",
+            "label": "Przyspieszenie metabolizmu i klirensu kortyzolu",
+            "acceptedPhrases": [
+              "przyspieszenie klirensu kortyzolu",
+              "rozpad kortyzolu",
+              "zwiększone zapotrzebowanie na kortyzol"
+            ]
+          },
+          {
+            "id": "c-adrenal-crisis",
+            "label": "Wywołanie ostrego przełomu nadnerczowego",
+            "acceptedPhrases": [
+              "przełom nadnerczowy",
+              "zapaść naczyniowa",
+              "wstrząs",
+              "ostra niewydolność nadnerczy"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "LT4 przyspiesza metabolizm kortyzolu; w APS-2 bez osłony steroidowej grozi to przełomem nadnerczowym.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "hashimoto",
+        "central"
+      ]
+    },
+    {
+      "id": "hashimoto-bank-3",
+      "type": "matching",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "hashimoto-obj-1"
+      ],
+      "prompt": "Połącz przeciwciało tarczycowe z jego głównym znaczeniem klinicznym:",
+      "pairs": [
+        [
+          "Anty-TPO",
+          "Marker autoimmunologicznego zapalenia tarczycy (Hashimoto) o najwyższej czułości"
+        ],
+        [
+          "Anty-Tg",
+          "Pomocniczy marker autoimmunizacji oraz kluczowy parametr oceny wiarygodności tyreoglobuliny w raku tarczycy"
+        ],
+        [
+          "TRAb",
+          "Przeciwciała przeciw receptorowi TSH — marker różnicujący chorobę Gravesa-Basedowa"
+        ],
+        [
+          "Anty-21-OH",
+          "Autoprzeciwciała przeciw 21-hydroksylazie kory nadnerczy badane w zespole APS-2"
+        ]
+      ],
+      "explanation": "Różne profile przeciwciał pozwalają rozróżnić jednostki w obrębie autoimmunologii endokrynnej.",
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "hashimoto"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "pathway-builder"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

@@ -1,0 +1,324 @@
+[
+  {
+    "id": "claim-thy-nodules-eta2023-eutirads5",
+    "statement": "Wytyczne ETA 2023 ustalają próg kwalifikacji do biopsji aspiracyjnej cienkoigłowej (BACC) dla kategorii wysokiego ryzyka EU-TIRADS 5 na wymiar największy > 10 mm (chyba że występują podejrzane węzły chłonne lub cechy naciekania torebki).",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "nodules"
+    ],
+    "lessonIds": [
+      "guzki"
+    ],
+    "tags": [
+      "nodules",
+      "eu-tirads",
+      "fnac",
+      "eta2023"
+    ],
+    "reviewedAt": "2026-09-13",
+    "value": 10,
+    "unit": "mm",
+    "evidenceType": "GUIDELINE_THRESHOLD"
+  },
+  {
+    "id": "claim-thy-nodules-eta2023-eutirads4",
+    "statement": "W wytycznych ETA 2023 kategoria pośredniego ryzyka EU-TIRADS 4 kwalifikuje się do BACC przy wymiarze największym przekraczającym 15 mm.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "nodules"
+    ],
+    "lessonIds": [
+      "guzki"
+    ],
+    "tags": [
+      "nodules",
+      "eu-tirads",
+      "fnac"
+    ],
+    "reviewedAt": "2026-09-13",
+    "value": 15,
+    "unit": "mm",
+    "evidenceType": "GUIDELINE_THRESHOLD"
+  },
+  {
+    "id": "claim-thy-nodules-eta2023-eutirads3",
+    "statement": "W wytycznych ETA 2023 kategoria niskiego ryzyka EU-TIRADS 3 kwalifikuje się do biopsji BACC dopiero powyżej 20 mm w wymiarze największym.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "nodules"
+    ],
+    "lessonIds": [
+      "guzki"
+    ],
+    "tags": [
+      "nodules",
+      "eu-tirads",
+      "fnac"
+    ],
+    "reviewedAt": "2026-09-13",
+    "value": 20,
+    "unit": "mm",
+    "evidenceType": "GUIDELINE_THRESHOLD"
+  },
+  {
+    "id": "claim-thy-storm-bwps-threshold",
+    "statement": "Wynik w skali Burcha-Wartofsky'ego (BWPS) >= 45 punktów wskazuje na wysokie prawdopodobieństwo przełomu tarczycowego i nakazuje natychmiastowe wdrożenie intensywnego leczenia wielokierunkowego na OIT.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "storm",
+      "emergency"
+    ],
+    "lessonIds": [
+      "stany-nagle"
+    ],
+    "tags": [
+      "storm",
+      "bwps",
+      "emergency"
+    ],
+    "reviewedAt": "2026-09-13",
+    "value": 45,
+    "evidenceType": "DIAGNOSTIC_CUTOFF"
+  },
+  {
+    "id": "claim-thy-storm-sequence",
+    "statement": "W przełomie tarczycowym nieorganiczny jod (płyn Lugola lub SSKI) wolno podać dopiero po co najmniej 1 godzinie od podania tyreostatyku (PTU lub tiamazolu), aby zapobiec wykorzystaniu jodu jako substratu do syntezy nowych hormonów.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "storm",
+      "emergency"
+    ],
+    "lessonIds": [
+      "stany-nagle"
+    ],
+    "tags": [
+      "storm",
+      "pharmacology",
+      "safety"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "SAFETY_RULE"
+  },
+  {
+    "id": "claim-thy-myxedema-steroid-first",
+    "statement": "W śpiączce hipometabolicznej (myxoedema coma) należy bezwzględnie wdrożyć dożylną substytucję glikokortykosteroidami (hydrokortyzon 100 mg co 8 h) PRZED lub równolegle z podaniem hormonów tarczycy, aby uniknąć wywołania śmiertelnego przełomu nadnerczowego.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "coma",
+      "emergency",
+      "central"
+    ],
+    "lessonIds": [
+      "stany-nagle",
+      "niedoczynnosc"
+    ],
+    "tags": [
+      "myxedema",
+      "coma",
+      "hydrocortisone",
+      "safety"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "SAFETY_RULE"
+  },
+  {
+    "id": "claim-thy-pregnancy-lt4-adjustment",
+    "statement": "Kobiety z pierwotną niedoczynnością tarczycy leczone lewotyroksyną powinny natychmiast po potwierdzeniu ciąży zwiększyć dawkę LT4 o 20–30% (np. o 2 dodatkowe tabletki w tygodniu), aby sprostać gwałtownemu wzrostowi zapotrzebowania ustroju matki i płodu.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "pregnancy",
+      "lt4"
+    ],
+    "lessonIds": [
+      "ciaza",
+      "niedoczynnosc"
+    ],
+    "tags": [
+      "pregnancy",
+      "lt4",
+      "hypothyroidism"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "GUIDELINE_THRESHOLD"
+  },
+  {
+    "id": "claim-thy-pregnancy-ptu-first-trimester",
+    "statement": "W przypadku konieczności farmakoterapii tyreostatykiem u kobiety w I trymestrze ciąży lekiem z wyboru jest propylotiouracyl (PTU) ze względu na teratogenne powikłania tiamazolu (embriopatia tiamazolowa, w tym aplasia cutis i atrezja nozdrzy tylnych).",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "pregnancy",
+      "graves"
+    ],
+    "lessonIds": [
+      "ciaza",
+      "graves"
+    ],
+    "tags": [
+      "pregnancy",
+      "ptu",
+      "thiamazole",
+      "teratogenicity"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "SAFETY_RULE"
+  },
+  {
+    "id": "claim-thy-graves-agranulocytosis",
+    "statement": "Wystąpienie gorączki i bólu gardła u pacjenta przyjmującego tiamazol nakazuje natychmiastowe odstawienie leku i pilne wykonanie morfologii krwi z rozmazem z uwagi na ryzyko agranulocytozy (<0,5 x 10^9/l granulocytów).",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "graves"
+    ],
+    "lessonIds": [
+      "graves"
+    ],
+    "tags": [
+      "graves",
+      "thiamazole",
+      "agranulocytosis",
+      "safety"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "SAFETY_RULE"
+  },
+  {
+    "id": "claim-thy-subacute-iodine-uptake",
+    "statement": "W fazie tyreotoksycznej podostrego zapalenia tarczycy de Quervaina wychwyt radiojodu (RAIU) w scyntygrafii jest charakterystycznie stłumiony (<1–2%), co stanowi kluczową cechę różnicującą z chorobą Gravesa-Basedowa.",
+    "category": "mechanistic",
+    "sourceIds": [
+      "thyroiditis",
+      "graves"
+    ],
+    "lessonIds": [
+      "zapalenia",
+      "nadczynnosc"
+    ],
+    "tags": [
+      "subacute-thyroiditis",
+      "raiu",
+      "scintigraphy"
+    ],
+    "reviewedAt": "2026-09-13",
+    "value": 2,
+    "unit": "%",
+    "evidenceType": "DIAGNOSTIC_CUTOFF"
+  },
+  {
+    "id": "claim-thy-lt4-halflife-7days",
+    "statement": "Okres półtrwania lewotyroksyny w osoczu u pacjenta w eutyreozie wynosi około 7 dni (168 h), co sprawia, że stan stacjonarny Css osiągany jest po 4–6 tygodniach, a kontrolę TSH planuje się po 6–8 tygodniach od modyfikacji dawki.",
+    "category": "derived",
+    "sourceIds": [
+      "lt4",
+      "spina",
+      "physiology"
+    ],
+    "lessonIds": [
+      "niedoczynnosc",
+      "tarczyca-matematyka-kinetyka"
+    ],
+    "tags": [
+      "pharmacokinetics",
+      "lt4",
+      "half-life",
+      "steady-state"
+    ],
+    "reviewedAt": "2026-09-13",
+    "value": 7,
+    "unit": "dni",
+    "evidenceType": "PHARMACOKINETIC_CONSTANT"
+  },
+  {
+    "id": "claim-thy-mtc-pheo-exclusion-men2",
+    "statement": "Przed planową tyreoidektomią u każdego chorego z rakiem rdzeniastym tarczycy (MTC) należy bezwzględnie wykluczyć guza chromochłonnego nadnerczy (pheochromocytoma w zespole MEN2) poprzez oznaczenie wolnych metanefryn w osoczu.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "cancer",
+      "nodules"
+    ],
+    "lessonIds": [
+      "nowotwory"
+    ],
+    "tags": [
+      "mtc",
+      "men2",
+      "pheochromocytoma",
+      "safety"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "SAFETY_RULE"
+  },
+  {
+    "id": "claim-thy-ait2-glucocorticoids",
+    "statement": "Amiodaronowa tyreotoksykoza typu 2 (AIT 2 — proces destrukcyjny) charakteryzuje się brakiem unaczynienia w Color Doppler i wymaga leczenia glikokortykosteroidami doustnymi (prednizon 0,5–0,7 mg/kg/d), podczas gdy tyreostatyki są w niej nieskuteczne.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "amiodarone"
+    ],
+    "lessonIds": [
+      "leki"
+    ],
+    "tags": [
+      "amiodarone",
+      "ait2",
+      "prednisone",
+      "differentiation"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "GUIDELINE_RECOMMENDATION"
+  },
+  {
+    "id": "claim-thy-tsh-ft4-log-linear",
+    "statement": "Zależność między stężeniem FT4 a wydzielaniem TSH w przysadce ma charakter logarytmiczno-liniowy, co oznacza, że 15–20% spadek FT4 wywołuje kilkukrotny (200–400%) kompensacyjny wyrzut TSH.",
+    "category": "modelled",
+    "sourceIds": [
+      "spina",
+      "physiology"
+    ],
+    "lessonIds": [
+      "fizjologia",
+      "tarczyca-matematyka-kinetyka",
+      "tarczyca-matematyka-sprzezenie"
+    ],
+    "tags": [
+      "hpt-axis",
+      "feedback",
+      "log-linear",
+      "modelling"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "MATHEMATICAL_MODEL"
+  },
+  {
+    "id": "claim-thy-radioiodine-contraindication-pregnancy",
+    "statement": "Leczenie radiojodem 131-I oraz wykonywanie scyntygrafii radioizotopowej tarczycy jest bezwzględnie przeciwwskazane w okresie ciąży oraz podczas karmienia piersią z uwagi na ryzyko ablacji tarczycy u płodu i kancerogenezy.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "pregnancy",
+      "graves"
+    ],
+    "lessonIds": [
+      "ciaza",
+      "graves"
+    ],
+    "tags": [
+      "radioiodine",
+      "pregnancy",
+      "contraindication",
+      "safety"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "SAFETY_RULE"
+  }
+]

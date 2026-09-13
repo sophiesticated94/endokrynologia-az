@@ -1,0 +1,160 @@
+{
+  "id": "hashimoto",
+  "moduleId": "tarczyca",
+  "title": "Zrozumieć Hashimoto",
+  "subtitle": "Autoimmunizacja nie zawsze oznacza niedoczynność",
+  "group": "Praktyka kliniczna",
+  "minutes": 11,
+  "goals": [
+    "Oddzielisz etiologię choroby od stanu hormonalnego.",
+    "Wyjaśnisz znaczenie anty-TPO i wskazania do leczenia."
+  ],
+  "sections": [
+    {
+      "title": "Proces, a nie pojedyncza liczba",
+      "text": "Hashimoto jest przewlekłym autoimmunizacyjnym zapaleniem tarczycy. Uszkodzenie komórek może z czasem ograniczyć produkcję hormonów. Choroba może jednak współistnieć z prawidłową czynnością gruczołu. Dodatnie anty-TPO wspiera rozpoznanie autoimmunizacji, ale nie mówi samo, czy potrzebna jest substytucja."
+    },
+    {
+      "title": "Co mierzymy, a co leczymy?",
+      "text": "TSH i FT4 służą do oceny czynności. USG pomaga, gdy istnieją wskazania strukturalne, takie jak wole lub podejrzenie guzka. Powtarzanie miana przeciwciał w celu dostosowania dawki LT4 nie jest właściwą strategią. Leczymy niedobór hormonów i oceniamy dolegliwości, a nie próbujemy wyzerować przeciwciała."
+    },
+    {
+      "title": "Żywienie bez obietnic",
+      "text": "Nie ma jednej diety usuwającej autoimmunizację. Należy unikać nadmiernej podaży jodu z niekontrolowanych suplementów. Dieta bezglutenowa wymaga odrębnego uzasadnienia, np. rozpoznanej celiakii; nie jest automatycznym leczeniem Hashimoto u wszystkich."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Wynik",
+      "Znaczenie"
+    ],
+    "rows": [
+      [
+        "Anty-TPO dodatnie, TSH i FT4 prawidłowe",
+        "Autoimmunizacja z eutyreozą; obserwacja czynności"
+      ],
+      [
+        "TSH wysokie, FT4 niskie",
+        "Niedobór wymagający leczenia zastępczego"
+      ],
+      [
+        "Wysokie miano anty-TPO",
+        "Nie wyznacza dawki LT4"
+      ],
+      [
+        "Wole lub wyczuwalna zmiana",
+        "Ocena struktury, zwykle USG"
+      ]
+    ]
+  },
+  "advanced": "Hashimoto może współistnieć z innymi chorobami autoimmunizacyjnymi. Badania w ich kierunku dobieraj do obrazu klinicznego. Szybko powiększająca się tarczyca, ucisk lub asymetria wymagają odrębnej diagnostyki; nie przypisuj każdej nowej zmiany znanej autoimmunizacji.",
+  "summary": "Hashimoto opisuje przyczynę. TSH i FT4 opisują czynność. Leczenie zależy od tej drugiej i kontekstu klinicznego.",
+  "sourceIds": [
+    "hashimoto",
+    "subclinical",
+    "lt4"
+  ],
+  "questions": [
+    {
+      "id": "hashimoto-q1",
+      "lessonId": "hashimoto",
+      "prompt": "Anty-TPO dodatnie, TSH i FT4 prawidłowe u nieciężarnej osoby bez objawów. Co wynika z tych danych?",
+      "options": [
+        {
+          "text": "Autoimmunizacja może współistnieć z eutyreozą",
+          "explanation": "Dodatnie przeciwciała nie oznaczają automatycznie niedoboru hormonów."
+        },
+        {
+          "text": "Zawsze jawna niedoczynność",
+          "explanation": "W jawnej niedoczynności FT4 jest obniżone."
+        },
+        {
+          "text": "Zawsze konieczny radiojod",
+          "explanation": "Przeciwciała nie są takim wskazaniem."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "hashimoto-q2",
+      "lessonId": "hashimoto",
+      "prompt": "Na czym opiera się dostosowanie LT4 w pierwotnej niedoczynności?",
+      "options": [
+        {
+          "text": "Wyłącznie na wielkości wola",
+          "explanation": "Wielkość nie określa potrzeb hormonalnych."
+        },
+        {
+          "text": "Na czynności tarczycy i obrazie klinicznym",
+          "explanation": "TSH jest podstawowym parametrem kontroli."
+        },
+        {
+          "text": "Na dążeniu do zerowego anty-TPO",
+          "explanation": "Miano przeciwciał nie jest celem dawkowania."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "hashimoto-q3",
+      "lessonId": "hashimoto",
+      "prompt": "Czy każda osoba z Hashimoto powinna odstawić gluten?",
+      "options": [
+        {
+          "text": "Tak, zawsze",
+          "explanation": "Nie jest to uniwersalne leczenie autoimmunizacji."
+        },
+        {
+          "text": "Tak, zamiast LT4",
+          "explanation": "Dieta nie zastępuje hormonów przy ich niedoborze."
+        },
+        {
+          "text": "Nie, potrzebne jest odrębne wskazanie",
+          "explanation": "Na przykład rozpoznana celiakia uzasadnia taką dietę."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "hashimoto-q4",
+      "lessonId": "hashimoto",
+      "prompt": "Jak traktować duże dawki jodu z suplementów?",
+      "options": [
+        {
+          "text": "Unikać nieuzasadnionej nadmiernej podaży",
+          "explanation": "Nadmiar jodu może zaburzać czynność tarczycy."
+        },
+        {
+          "text": "Stosować do wyzerowania anty-TPO",
+          "explanation": "Nie jest to cel ani uzasadniona terapia."
+        },
+        {
+          "text": "Są obojętne w każdej dawce",
+          "explanation": "Dawka ma znaczenie dla działania biologicznego."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "hashimoto-q5",
+      "lessonId": "hashimoto",
+      "prompt": "Znane Hashimoto i szybko narastający ucisk szyi. Jak postąpić?",
+      "options": [
+        {
+          "text": "Zignorować przy prawidłowym TSH",
+          "explanation": "Prawidłowa czynność nie wyklucza problemu strukturalnego."
+        },
+        {
+          "text": "Podjąć odrębną pilną ocenę zmiany",
+          "explanation": "Nowe objawy strukturalne wymagają diagnostyki."
+        },
+        {
+          "text": "Uznać to za zwykły wzrost przeciwciał",
+          "explanation": "Miano nie tłumaczy automatycznie objawów ucisku."
+        }
+      ],
+      "answer": 1
+    }
+  ],
+  "assetIds": []
+}

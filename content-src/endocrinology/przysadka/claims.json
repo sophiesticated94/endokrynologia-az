@@ -1,0 +1,187 @@
+[
+  {
+    "id": "claim-pit-macroincidentaloma-field-mandate",
+    "statement": "Każdy makrogruczolak przysadki (wymiar największy >= 10 mm) lub guz przylegający do skrzyżowania wzrokowego (odległość <= 2 mm) bezwzględnie wymaga badania okulistycznego pola widzenia.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "pituitary_incidentaloma_2025"
+    ],
+    "lessonIds": [
+      "przysadka-diagnostyka",
+      "guzy-nieczynne"
+    ],
+    "tags": [
+      "incidentaloma",
+      "perymetry",
+      "chiasm"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "GUIDELINE_MANDATE"
+  },
+  {
+    "id": "claim-pit-prolactinoma-medical-first-line",
+    "statement": "Leczeniem pierwszego wyboru prolactinoma (nawet z uciskiem skrzyżowania wzrokowego) jest farmakoterapia agonistami dopaminy (kabergolina), a nie zabieg operacyjny.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "pituitary_prolactinoma_2023"
+    ],
+    "lessonIds": [
+      "prolactinoma"
+    ],
+    "tags": [
+      "prolactinoma",
+      "cabergoline",
+      "first-line"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "CLINICAL_TRIAL_META"
+  },
+  {
+    "id": "claim-pit-acromegaly-ogtt-gh-cutoff",
+    "statement": "Wykluczenie akromegalii w teście OGTT z 75 g glukozy wymaga stłumienia stężenia hormonu wzrostu (nadir GH) poniżej 1,0 µg/l (lub < 0,4 µg/l w testach chemiluminescencyjnych o wysokiej czułości).",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "acromegaly_consensus_2024"
+    ],
+    "lessonIds": [
+      "akromegalia"
+    ],
+    "tags": [
+      "acromegaly",
+      "ogtt",
+      "gh-nadir"
+    ],
+    "reviewedAt": "2026-09-13",
+    "value": 1,
+    "unit": "µg/l",
+    "evidenceType": "DIAGNOSTIC_THRESHOLD"
+  },
+  {
+    "id": "claim-pit-cushing-bipss-gradient",
+    "statement": "W badaniu obustronnego cewnikowania zatok skalistych dolnych (BIPSS) chorobę Cushinga potwierdza gradient stężeń ACTH (zatoka / krew obwodowa) wynoszący >= 2,0 wyjściowo oraz >= 3,0 po stymulacji CRH.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "pte_cushing"
+    ],
+    "lessonIds": [
+      "cushing-choroba"
+    ],
+    "tags": [
+      "cushing",
+      "bipss",
+      "acth-gradient"
+    ],
+    "reviewedAt": "2026-09-13",
+    "value": 2,
+    "evidenceType": "DIAGNOSTIC_THRESHOLD"
+  },
+  {
+    "id": "claim-pit-hypopituitarism-steroid-priority",
+    "statement": "W substytucji wielohormonalnej niedoczynności przysadki leczenie glikokortykoidowe hydrokortyzonem musi ZAWSZE wyprzedzać podanie lewotyroksyny, aby zapobiec wywołaniu śmiertelnego przełomu nadnerczowego.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "hypopituitarism_guidelines"
+    ],
+    "lessonIds": [
+      "hipopituitaryzm"
+    ],
+    "tags": [
+      "hypopituitarism",
+      "safety",
+      "hydrocortisone",
+      "adrenal-crisis"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "SAFETY_MANDATE"
+  },
+  {
+    "id": "claim-pit-copeptin-avp-d-cutoff",
+    "statement": "Stężenie stymulowanej kopeptyny > 4,9 pmol/l (po wlewie hipertonicznego 3% NaCl przy natremii > 147 mmol/l) wyklucza moczówkę prostą centralną (AVP-D) z czułością i swoistością powyżej 96%.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "diabetes_insipidus_guidelines"
+    ],
+    "lessonIds": [
+      "moczowka-prosta"
+    ],
+    "tags": [
+      "copeptin",
+      "avp-d",
+      "diabetes-insipidus"
+    ],
+    "reviewedAt": "2026-09-13",
+    "value": 4.9,
+    "unit": "pmol/l",
+    "evidenceType": "DIAGNOSTIC_THRESHOLD"
+  },
+  {
+    "id": "claim-pit-hyponatremia-correction-limit",
+    "statement": "Maksymalne bezpieczne tempo korekty przewlekłej hiponatremii wynosi 8–10 mmol/l w pierwszych 24 godzinach leczenia, aby zapobiec nieodwracalnemu zespołowi demielinizacji osmotycznej (ODS / CPM).",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "siadh_guidelines"
+    ],
+    "lessonIds": [
+      "siadh",
+      "przysadka-matematyka-osmolalnosc"
+    ],
+    "tags": [
+      "hyponatremia",
+      "siadh",
+      "ods",
+      "cpm",
+      "correction-limit"
+    ],
+    "reviewedAt": "2026-09-13",
+    "value": 10,
+    "unit": "mmol/l/24h",
+    "evidenceType": "SAFETY_THRESHOLD"
+  },
+  {
+    "id": "claim-pit-apoplexy-emergency-steroid",
+    "statement": "Każdy pacjent z podejrzeniem udaru (apopleksji) przysadki musi natychmiast otrzymać 100 mg hydrokortyzonu dożylnie w celu zapobieżenia zgonowi z ostrej wtórnej niedoczynności nadnerczy.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "pituitary_apoplexy"
+    ],
+    "lessonIds": [
+      "udar-przysadki"
+    ],
+    "tags": [
+      "apoplexy",
+      "emergency",
+      "hydrocortisone"
+    ],
+    "reviewedAt": "2026-09-13",
+    "value": 100,
+    "unit": "mg",
+    "evidenceType": "EMERGENCY_MANDATE"
+  },
+  {
+    "id": "claim-pit-transsphenoidal-trimodal-response",
+    "statement": "Po uszkodzeniu szypuły przysadki podczas operacji przezklinowej klasyczna odpowiedź gospodarki wodnej ma charakter trójfazowy: faza 1 (doba 1–2: moczówka prosta), faza 2 (doba 3–7: SIADH i hiponatremia), faza 3 (doba 8+: trwała moczówka).",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "transsphenoidal_surgery"
+    ],
+    "lessonIds": [
+      "przysadka-operacje"
+    ],
+    "tags": [
+      "tss",
+      "trimodal-response",
+      "siadh-postop"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "PHYSIOLOGICAL_RULE"
+  }
+]

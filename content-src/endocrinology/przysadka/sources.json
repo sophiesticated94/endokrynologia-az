@@ -1,0 +1,205 @@
+{
+  "pituitary_endo": {
+    "id": "pituitary_endo",
+    "title": "Endotext — Hypothalamic-Pituitary Axis Physiology",
+    "year": "2023",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK279140/",
+    "kind": "Podręcznik: fizjologia nadrzędna"
+  },
+  "pituitary_incidentaloma_2025": {
+    "id": "pituitary_incidentaloma_2025",
+    "title": "Fleseriu M et al. — Pituitary incidentaloma: a Pituitary Society international consensus guidance statement",
+    "year": "2025",
+    "url": "https://doi.org/10.1038/s41574-025-01134-8",
+    "kind": "Konsensus międzynarodowy (Pituitary Society)"
+  },
+  "pituitary_prolactinoma_2023": {
+    "id": "pituitary_prolactinoma_2023",
+    "title": "Petersenn S et al. — Diagnosis and management of prolactin-secreting pituitary adenomas: a Pituitary Society consensus statement",
+    "year": "2023",
+    "url": "https://doi.org/10.1038/s41574-023-00886-5",
+    "kind": "Konsensus międzynarodowy (Pituitary Society)"
+  },
+  "acromegaly_consensus_2024": {
+    "id": "acromegaly_consensus_2024",
+    "title": "Giustina A et al. — Acromegaly: consensus on diagnosis and treatment",
+    "year": "2024",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38233481/",
+    "kind": "Konsensus międzynarodowy"
+  },
+  "pte_cushing": {
+    "id": "pte_cushing",
+    "title": "Consensus on diagnosis and management of Cushing's disease: a guideline update",
+    "year": "2021",
+    "url": "https://doi.org/10.1016/S2213-8587(21)00235-7",
+    "kind": "Międzynarodowy konsensus: Cushing"
+  },
+  "hypopituitarism_guidelines": {
+    "id": "hypopituitarism_guidelines",
+    "title": "Higham CE et al. — Hypopituitarism: clinical practice guidelines",
+    "year": "2016",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/27038166/",
+    "kind": "Wytyczne"
+  },
+  "diabetes_insipidus_guidelines": {
+    "id": "diabetes_insipidus_guidelines",
+    "title": "Christ-Crain M et al. — Diabetes insipidus and polyuria-polydipsia syndrome: clinical consensus",
+    "year": "2023",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37452140/",
+    "kind": "Konsensus międzynarodowy"
+  },
+  "siadh_guidelines": {
+    "id": "siadh_guidelines",
+    "title": "Spasovski G et al. — Clinical practice guideline on diagnosis and treatment of hyponatraemia",
+    "year": "2014",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/24569125/",
+    "kind": "Wytyczne europejskie"
+  },
+  "hypophysitis_review": {
+    "id": "hypophysitis_review",
+    "title": "Caturegli P et al. — Autoimmune and drug-induced hypophysitis",
+    "year": "2017",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28555198/",
+    "kind": "Przegląd kliniczny"
+  },
+  "pituitary_apoplexy": {
+    "id": "pituitary_apoplexy",
+    "title": "Briet C et al. — Pituitary Apoplexy: Endocrine and Neurosurgical Management",
+    "year": "2015",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26084931/",
+    "kind": "Wytyczne"
+  },
+  "transsphenoidal_surgery": {
+    "id": "transsphenoidal_surgery",
+    "title": "Laws ER et al. — Transsphenoidal Surgery for Pituitary Tumors",
+    "year": "2020",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32415120/",
+    "kind": "Monografia neurochirurgiczna"
+  },
+  "pituitary_pulsatility": {
+    "id": "pituitary_pulsatility",
+    "title": "Veldhuis JD et al. — Mechanisms of pulsatile hormone secretion",
+    "year": "2008",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/18579450/",
+    "kind": "Podręcznik: matematyka i biofizyka"
+  },
+  "edelman_osmolality": {
+    "id": "edelman_osmolality",
+    "title": "Edelman IS et al. — Interrelations between serum sodium concentration and body composition",
+    "year": "1958",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/13598711/",
+    "kind": "Praca klasyczna"
+  },
+  "glycoprotein_hormones": {
+    "id": "glycoprotein_hormones",
+    "title": "Pierce JG, Parsons TF — Glycoprotein hormones: structure and function",
+    "year": "1981",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/6267989/",
+    "kind": "Monografia biochemiczna"
+  },
+  "dopamine_ergot_chem": {
+    "id": "dopamine_ergot_chem",
+    "title": "Kvernmo T et al. — Pharmacology of dopamine agonists and ergot alkaloids",
+    "year": "2006",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/16474130/",
+    "kind": "Farmakologia kliniczna"
+  },
+  "katznelson": {
+    "id": "katznelson",
+    "title": "Endocrine Society — Acromegaly: An Endocrine Society Clinical Practice Guideline",
+    "year": "2014",
+    "url": "https://doi.org/10.1210/jc.2014-2700",
+    "kind": "Wytyczne międzynarodowe"
+  },
+  "melmed": {
+    "id": "melmed",
+    "title": "Endocrine Society — Diagnosis and Treatment of Hyperprolactinemia: An Endocrine Society Clinical Practice Guideline",
+    "year": "2011",
+    "url": "https://doi.org/10.1210/jc.2010-1692",
+    "kind": "Wytyczne: prolactinoma"
+  },
+  "nieman": {
+    "id": "nieman",
+    "title": "Endocrine Society — Treatment of Cushing’s Syndrome: An Endocrine Society Clinical Practice Guideline",
+    "year": "2015",
+    "url": "https://doi.org/10.1210/jc.2015-1818",
+    "kind": "Wytyczne: hiperkortyzolemia"
+  },
+  "fleseriu": {
+    "id": "fleseriu",
+    "title": "Endocrine Society — Hormonal Replacement in Hypopituitarism in Adults: An Endocrine Society Clinical Practice Guideline",
+    "year": "2016",
+    "url": "https://doi.org/10.1210/jc.2016-2118",
+    "kind": "Wytyczne: niedoczynność przysadki"
+  },
+  "freda": {
+    "id": "freda",
+    "title": "Endocrine Society — Pituitary Incidentaloma: An Endocrine Society Clinical Practice Guideline",
+    "year": "2011",
+    "url": "https://doi.org/10.1210/jc.2010-1048",
+    "kind": "Wytyczne: incydentaloma i NFPA"
+  },
+  "baldeweg": {
+    "id": "baldeweg",
+    "title": "Society for Endocrinology Emergency Guidance: Emergency management of pituitary apoplexy in adult patients",
+    "year": "2016",
+    "url": "https://doi.org/10.1530/EC-16-0057",
+    "kind": "Wytyczne: stany nagłe"
+  },
+  "hyponatraemia": {
+    "id": "hyponatraemia",
+    "title": "ESE / ERA-EDTA — Clinical Practice Guideline on Hyponatraemia",
+    "year": "2014",
+    "url": "https://doi.org/10.1530/EJE-13-1020",
+    "kind": "Wytyczne: SIADH i zaburzenia sodowe"
+  },
+  "pte_acro": {
+    "id": "pte_acro",
+    "title": "PTE — Diagnostics and treatment of acromegaly: updated recommendations of the Polish Society of Endocrinology",
+    "year": "2019",
+    "url": "https://doi.org/10.5603/EP.a2018.0093",
+    "kind": "Polskie wytyczne: PTE"
+  },
+  "avpd_copeptin": {
+    "id": "avpd_copeptin",
+    "title": "Fenske W, Refardt J, Christ-Crain M et al. — A Copeptin-Based Approach in the Diagnosis of Diabetes Insipidus",
+    "year": "2018",
+    "url": "https://doi.org/10.1056/NEJMoa1803760",
+    "kind": "Złoty standard diagnostyki AVP-D (NEJM)"
+  },
+  "goodwin": {
+    "id": "goodwin",
+    "title": "Goodwin BC — Oscillatory behavior in enzymatic control processes",
+    "year": "1965",
+    "url": "https://doi.org/10.1016/0065-2571(65)90067-1",
+    "kind": "Dynamika nieliniowa"
+  },
+  "edelman": {
+    "id": "edelman",
+    "title": "Edelman IS et al. — Interrelations between serum sodium concentration, serum osmolarity and total exchangeable sodium",
+    "year": "1958",
+    "url": "https://doi.org/10.1172/JCI103712",
+    "kind": "Fizjologia elektrolitowa"
+  },
+  "physiology": {
+    "id": "physiology",
+    "title": "Endotext — Thyroid Hormone Synthesis and Secretion",
+    "year": "2015",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK285550/",
+    "kind": "Podręcznik: fizjologia"
+  },
+  "central": {
+    "id": "central",
+    "title": "ETA — Central Hypothyroidism",
+    "year": "2018",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6198777/",
+    "kind": "Wytyczne"
+  },
+  "pregnancy": {
+    "id": "pregnancy",
+    "title": "PTE — Thyroid diseases in pregnancy",
+    "year": "2021",
+    "url": "https://doi.org/10.5603/EP.a2021.0089",
+    "kind": "Polskie zalecenia"
+  }
+}

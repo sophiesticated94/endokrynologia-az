@@ -1,0 +1,164 @@
+{
+  "id": "przysadka-chemia-leki",
+  "moduleId": "przysadka",
+  "title": "Farmakofor ergolinowy agonistów dopaminy i modyfikacje wazopresyny",
+  "subtitle": "Kabergolina, selektywność desmopresyny (dDAVP) i analogi somatostatyny",
+  "group": "Chemia i biochemia",
+  "minutes": 20,
+  "goals": [
+    "Przeanalizujesz strukturę chemiczną pierścienia ergoliny i selektywność receptorową kabergoliny.",
+    "Wyjaśnisz modyfikacje strukturalne desmopresyny (dDAVP) eliminujące efekt presyjny i wydłużające t1/2."
+  ],
+  "sections": [
+    {
+      "title": "Farmakofor ergolinowy: Kabergolina i bromokryptyna",
+      "text": "Agoniści receptorów dopaminowych stosowani w prolactinoma wywodzą się z alkaloidów buławinki czerwonej (Claviceps purpurea). Szkielet ergoliny (tetracykliczny układ indolowy z pierścieniem chinolinowym) wykazuje wysokie powinowactwo do receptora dopaminowego D2R (sprzężonego z białkiem Gi, hamującego cyklazę adenylanową i sekrecję PRL). Kabergolina posiada łańcuch mocznikowy z grupą allilową, co nadaje jej wielodniowy czas półtrwania (t1/2 ≈ 65–110 h) i umożliwia dawkowanie 1–2 razy w tygodniu."
+    },
+    {
+      "title": "Selektywność receptorowa a powikłania zastawkowe",
+      "text": "Poza receptorem D2R, niektóre ergoliny wykazują powinowactwo do receptora serotoninowego 5-HT2B. Pobudzenie 5-HT2B na fibroblastach zastawek serca indukuje szlak mitogenny i proliferację tkanki łącznej, co w wysokich dawkach stosowanych w chorobie Parkinsona prowadziło do zwłóknienia zastawek. W mikro- i makroprolactinoma stosuje się dawki wielokrotnie mniejsze (zwykle 0,5–1,0 mg/tydzień), gdzie ryzyko kardiotoksyczności jest minimalne, lecz zaleca się kontrolne badanie echokardiograficzne."
+    },
+    {
+      "title": "Inżynieria cząsteczki desmopresyny: 1-deamino-8-D-arginino-wazopresyna",
+      "text": "Naturalna wazopresyna (AVP) ma krótki czas półtrwania (t1/2 ≈ 10–20 min) i działa silnie wazokonstrykcyjnie na naczynia krwionośne przez receptor V1aR. Desmopresyna (dDAVP) zawiera dwie kluczowe modyfikacje syntetyczne: 1) deaminację grupy aminowej Cys1 (zwiększa odporność na aminopeptydazy i wydłuża t1/2 do 2–4 h), oraz 2) substytucję naturalnej L-argininy stereoizomerem D-argininą w pozycji 8. Zmiana konfiguracji przestrzennej w poz. 8 znosi działanie presyjne na V1aR, zwiększając selektywność antydiuretyczną V2 aż 2000-krotnie."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Lek syntetyczny",
+      "Modyfikacja strukturalna",
+      "Zysk farmakologiczny"
+    ],
+    "rows": [
+      [
+        "Kabergolina",
+        "Podstawnik allilowy i mocznikowy w ergolinie",
+        "t1/2 wydłużony do 65–110 h, dawkowanie raz na tydzień, potężna supresja PRL"
+      ],
+      [
+        "Desmopresyna (dDAVP)",
+        "1-deamino + 8-D-arginina",
+        "2000-krotna selektywność V2R vs V1aR, brak skurczu naczyń, odporność na peptydazy"
+      ],
+      [
+        "Oktreotyd",
+        "Syntetyczny cykliczny oktapeptyd (D-Phe-Cys-Phe-D-Trp-Lys-Thr-Cys-Thr-ol)",
+        "Stabilny analog somatostatyny o t1/2 = 100 min (naturalna SST t1/2 = 2 min), hamuje GH"
+      ],
+      [
+        "Pasyreotyd",
+        "Cykloheksapeptyd o wysokim powinowactwie do SSTR5",
+        "Skuteczny w chorobie Cushinga i akromegalii opornej na oktreotyd"
+      ]
+    ]
+  },
+  "advanced": "Naturalna somatostatyna-14 ulega błyskawicznej degradacji przez endopeptydazy osoczowe w czasie 1–2 minut. W oktreotydzie zastąpienie naturalnego L-tryptofanu stereoizomerem D-Trp w pozycji 4 oraz redukcja C-końcowej treoniny do treoninolu uniemożliwia proteolizę, zachowując 4-aminokwasowy motyw beta-zwrotu (beta-turn) konieczny do aktywacji receptorów SSTR2.",
+  "summary": "Inżynieria leków przysadkowych opiera się na modyfikacjach stereochemicznych (D-aminokwasy w dDAVP i oktreotydzie) oraz syntetycznych pochodnych ergoliny (kabergolina).",
+  "sourceIds": [
+    "melmed",
+    "hyponatraemia",
+    "goodwin"
+  ],
+  "questions": [
+    {
+      "id": "przysadka-chemia-leki-q1",
+      "lessonId": "przysadka-chemia-leki",
+      "prompt": "Jakie dwie modyfikacje chemiczne wprowadzono w cząsteczce desmopresyny (dDAVP) w stosunku do naturalnej AVP?",
+      "options": [
+        {
+          "text": "Połączenie cząsteczki z albuminą ludzką wiązaniem estrowym",
+          "explanation": "Desmopresyna jest syntetycznym nonapeptydem bez modyfikacji albuminowej."
+        },
+        {
+          "text": "Usunięcie grupy aminowej z Cys1 oraz zamianę L-argininy na D-argininę w pozycji 8",
+          "explanation": "Daje to 2000-krotne zmniejszenie działania presyjnego V1a i chroni przed peptydazami."
+        },
+        {
+          "text": "Dodanie 5 atomów jodu do pierścienia fenolowego",
+          "explanation": "Jodowanie dotyczy hormonów tarczycy, a nie desmopresyny."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "przysadka-chemia-leki-q2",
+      "lessonId": "przysadka-chemia-leki",
+      "prompt": "Dlaczego kabergolinę można podawać w prolactinoma zaledwie raz lub dwa razy w tygodniu?",
+      "options": [
+        {
+          "text": "Ponieważ przekształca się w organizmie w stałą tkankę kostną",
+          "explanation": "Kabergolina jest metabolizowana w wątrobie i wydalana z kałem i moczem."
+        },
+        {
+          "text": "Ponieważ przysadka magazynuje ją w pęcherzykach żółciowych",
+          "explanation": "Lek gromadzi się w przednim płacie przysadki, a nie w żółci."
+        },
+        {
+          "text": "Charakteryzuje się bardzo długim losem metabolicznym i okresem półtrwania t1/2 wynoszącym 65–110 godzin",
+          "explanation": "Silne wiązanie z receptorem D2R i powolna dysocjacja tkankowa."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "przysadka-chemia-leki-q3",
+      "lessonId": "przysadka-chemia-leki",
+      "prompt": "Z pobudzeniem którego receptora serotoninowego wiąże się ryzyko włóknienia zastawek serca przy megadawkach ergolin?",
+      "options": [
+        {
+          "text": "Receptora serotoninowego 5-HT2B",
+          "explanation": "Aktywacja 5-HT2B stymuluje mitogenezę fibroblastów zastawek serca."
+        },
+        {
+          "text": "Receptora histaminowego H1",
+          "explanation": "Receptor H1 odpowiada za reakcje alergiczne, nie włóknienie zastawkowe."
+        },
+        {
+          "text": "Receptora muskarynowego M2",
+          "explanation": "Receptor M2 zwalnia czynność węzła zatokowego, nie powoduje fibrozy."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przysadka-chemia-leki-q4",
+      "lessonId": "przysadka-chemia-leki",
+      "prompt": "Jaki jest czas półtrwania (t1/2) naturalnej somatostatyny w osoczu człowieka?",
+      "options": [
+        {
+          "text": "Dokładnie 24 godziny",
+          "explanation": "Tak długi czas cechuje analogi syntetyczne o przedłużonym uwalnianiu, nie naturalny hormon."
+        },
+        {
+          "text": "Zaledwie 1–3 minuty (jest błyskawicznie degradowana przez peptydazy)",
+          "explanation": "Dlatego nie nadaje się do terapii bez formy ciągłego wlewu dożylnego."
+        },
+        {
+          "text": "Około 14 dni",
+          "explanation": "Naturalne peptydy proste ulegają szybkiej proteolizie."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "przysadka-chemia-leki-q5",
+      "lessonId": "przysadka-chemia-leki",
+      "prompt": "Który analog somatostatyny wykazuje 40-krotnie wyższe powinowactwo do receptora SSTR5 niż oktreotyd i jest stosowany w chorobie Cushinga?",
+      "options": [
+        {
+          "text": "Bromokryptyna",
+          "explanation": "Bromokryptyna jest agonistą receptora dopaminowego D2, a nie somatostatynowego."
+        },
+        {
+          "text": "Tiamazol",
+          "explanation": "Tiamazol jest tyreostatykiem hamującym peroksydazę tarczycową."
+        },
+        {
+          "text": "Pasyreotyd",
+          "explanation": "Jest uniwersalnym ligandem multireceptorowym (SSTR1, SSTR2, SSTR3, SSTR5)."
+        }
+      ],
+      "answer": 2
+    }
+  ]
+}

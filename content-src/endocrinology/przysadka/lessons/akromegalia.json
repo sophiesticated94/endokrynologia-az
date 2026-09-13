@@ -1,0 +1,158 @@
+{
+  "id": "akromegalia",
+  "moduleId": "przysadka",
+  "title": "Gdy dłonie i rysy twarzy stają się obce",
+  "subtitle": "Akromegalia, IGF-1, test OGTT dla GH i analogi somatostatyny",
+  "group": "Gruczolaki i hipersekrecja",
+  "minutes": 17,
+  "goals": [
+    "Rozpoznasz podstępne objawy akromegalii (rozrost tkanek miękkich, bezdech senny, cukrzyca, kardiomiopatia).",
+    "Opanujesz kryteria rozpoznania (IGF-1, brak supresji GH w OGTT <0,4 µg/l w ultraczułych testach / <1,0 µg/l) oraz leczenie skojarzone."
+  ],
+  "sections": [
+    {
+      "title": "Podstępny rozwój i fenotyp akromegalii",
+      "text": "Akromegalia wynika w >98% z gruczolaka somatotropowego przysadki wydzielającego hormon wzrostu (GH). Czas od pierwszych objawów do diagnozy wynosi średnio 7–10 lat! U dorosłych po zrośnięciu nasad kostnych dochodzi do rozrostu tkanek miękkich i kości twarzoczaszki: powiększenie nosa, warg, języka (makroglosja), żuchwy (prognatyzm), pogrubienie rysów twarzy, wzrost rozmiaru butów i rękawiczek (konieczność powiększania pierścionków). Dołączają potliwość, zespół cieśni nadgarstka, bóle stawów, obturacyjny bezdech senny (OBS), polipy jelita grubego oraz kardiomiopatia z niewydolnością serca."
+    },
+    {
+      "title": "Kryteria laboratoryjne: IGF-1 i test OGTT",
+      "text": "Diagnostyka dwuetapowa: 1) Badanie przesiewowe: stężenie IGF-1 w surowicy powyżej normy dla wieku i płci. 2) Test potwierdzenia: doustny test tolerancji 75 g glukozy (OGTT) z pomiarem GH w punktach 0, 30, 60, 90 i 120 minut. W warunkach fizjologicznych hiperglikemia hamuje wydzielanie GH <0,4 µg/l w nowoczesnych testach ultraczułych (lub <1,0 µg/l w starszych metodach poliklonalnych). Brak supresji GH potwierdza autonomiczną akromegalię."
+    },
+    {
+      "title": "Leczenie: Neurochirurgia i farmakoterapia",
+      "text": "Leczeniem pierwszego rzutu w akromegalii jest operacja neurochirurgiczna przez zatokę klinową (transsphenoidalna adenomektomia), która daje szansę na całkowite wyleczenie. Przy przetrwałej chorobie lub guzach nieresekcyjnych wkracza farmakoterapia: analogi somatostatyny pierwszej generacji (octreotide LAR, lanreotide autogel blokujące receptory SSTR2), a w drugiej kolejności antagonista receptora GH (pegwisomant) lub analog somatostatyny wieloreceptorowy (pasireotyd)."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Etap postępowania",
+      "Kryterium / Lek"
+    ],
+    "rows": [
+      [
+        "Przesiew laboratoryjny",
+        "Podwyższone stężenie IGF-1 skorygowane dla wieku i płci"
+      ],
+      [
+        "Potwierdzenie autonomii",
+        "Test OGTT 75 g glukozy — brak supresji GH <0,4 µg/l (<1,0 w starszych testach)"
+      ],
+      [
+        "Leczenie 1. rzutu",
+        "Operacja neurochirurgiczna przezklinowa (transsphenoidal surgery)"
+      ],
+      [
+        "Farmakoterapia uzupełniająca",
+        "Analogi somatostatyny (oktreotyd, lanreotyd), pegwisomant, kabergolina"
+      ]
+    ]
+  },
+  "advanced": "Pegwisomant to zmodyfikowana rekombinowana cząsteczka GH będąca antagonistą receptora obwodowego. Skutecznie normalizuje stężenie IGF-1 i cofa objawy obwodowe u >90% opornych chorych, jednak nie działa na sam guz przysadki (stężenie krążącego GH pozostaje bardzo wysokie, a wymiary guza wymagają monitorowania MRI pod kątem możliwego rozrostu).",
+  "summary": "Akromegalia to podstępna choroba ogólnoustrojowa skracająca życie o 10 lat z przyczyn sercowych i onkologicznych. Diagnozę stawia podwyższony IGF-1 i brak supresji GH w teście OGTT, a leczeniem z wyboru jest operacja przezklinowa.",
+  "sourceIds": [
+    "katznelson",
+    "pte_acro"
+  ],
+  "questions": [
+    {
+      "id": "akromegalia-q1",
+      "lessonId": "akromegalia",
+      "prompt": "Jak zachowuje się stężenie hormonu wzrostu (GH) podczas testu OGTT 75 g glukozy u osoby ze zdrową przysadką?",
+      "options": [
+        {
+          "text": "Pozostaje całkowicie niezmienne na poziomie wyjściowym",
+          "explanation": "Fizjologiczna oś GH wykazuje wyraźną dynamikę i podlega hamowaniu metabolicznemu."
+        },
+        {
+          "text": "Ulega supresji poniżej 1,0 µg/l (często <0,4 µg/l)",
+          "explanation": "Hiperglikemia fizjologicznie silnie hamuje uwalnianie somatotropiny z przysadki."
+        },
+        {
+          "text": "Wzrasta powyżej 10 µg/l",
+          "explanation": "Wzrost GH po glukozie jest paradoksalną reakcją patologiczną, a nie normą."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "akromegalia-q2",
+      "lessonId": "akromegalia",
+      "prompt": "Co jest leczeniem pierwszego wyboru u pacjenta z nowo rozpoznaną akromegalią i makrogruczolakiem przysadki?",
+      "options": [
+        {
+          "text": "Wyłącznie leczenie dietetyczne z ograniczeniem węglowodanów",
+          "explanation": "Dieta nie hamuje autonomicznego rozrostu gruczolaka przysadki."
+        },
+        {
+          "text": "Podawanie rekombinowanego ludzkiego hormonu wzrostu",
+          "explanation": "Podaż GH pogłębiłaby zagrażającą życiu intoksykację hormonalną."
+        },
+        {
+          "text": "Operacja neurochirurgiczna przez zatokę klinową (dostęp transsphenoidalny)",
+          "explanation": "Jest to jedyna metoda dająca natychmiastowe odbarczenie struktur nerwowych i szansę na całkowite wyleczenie."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "akromegalia-q3",
+      "lessonId": "akromegalia",
+      "prompt": "Które badanie profilaktyczne jest bezwzględnie zalecane u każdego pacjenta z akromegalią z uwagi na zwiększone ryzyko onkologiczne?",
+      "options": [
+        {
+          "text": "Kolonoskopia w kierunku polipów i raka jelita grubego",
+          "explanation": "Nadmiar GH i IGF-1 stymuluje proliferację nabłonka jelitowego, znacznie zwiększając ryzyko neoplazji."
+        },
+        {
+          "text": "Gastroskopia co 3 miesiące",
+          "explanation": "Gastroskopia nie jest badaniem rutynowo dedykowanym w algorytmie powikłań akromegalii."
+        },
+        {
+          "text": "Scyntygrafia kośćca z technetem",
+          "explanation": "Nie służy do wczesnego wykrywania nowotworów towarzyszących akromegalii."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "akromegalia-q4",
+      "lessonId": "akromegalia",
+      "prompt": "Jaki lek blokuje receptor obwodowy hormonu wzrostu i nie wymaga obecności receptorów somatostatynowych na guzie?",
+      "options": [
+        {
+          "text": "Lewotyroksyna",
+          "explanation": "Lewotyroksyna uzupełnia hormony tarczycy i nie ma wpływu na receptor GH."
+        },
+        {
+          "text": "Pegwisomant",
+          "explanation": "To genetycznie zmodyfikowany analog GH będący antagonistą receptora w wątrobie i tkankach obwodowych."
+        },
+        {
+          "text": "Oktreotyd LAR",
+          "explanation": "Oktreotyd działa przez receptory somatostatynowe SSTR2 na komórkach guza."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "akromegalia-q5",
+      "lessonId": "akromegalia",
+      "prompt": "Jaki jest typowy powód opóźnienia rozpoznania akromegalii o średnio 7–10 lat od początku choroby?",
+      "options": [
+        {
+          "text": "Brak dostępności badań laboratoryjnych w Europie",
+          "explanation": "Badania IGF-1 są powszechnie dostępne w standardowej diagnostyce."
+        },
+        {
+          "text": "Ciągłe gwałtowne spadki ciśnienia tętniczego",
+          "explanation": "W akromegalii dominuje nadciśnienie tętnicze, a nie hipotensja."
+        },
+        {
+          "text": "Bardzo powolny, dyskretny rozrost tkanek miękkich przypisywany starzeniu się lub zmianie wagi",
+          "explanation": "Zmiany wyglądu zachodzą tak powoli, że ani pacjent, ani bliscy nie zauważają ich z dnia na dzień."
+        }
+      ],
+      "answer": 2
+    }
+  ]
+}

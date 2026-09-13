@@ -1,0 +1,159 @@
+{
+  "id": "fizjologia",
+  "moduleId": "tarczyca",
+  "title": "Jak działa tarczyca?",
+  "subtitle": "Oś hormonalna, synteza i sprzężenie zwrotne",
+  "group": "Fundamenty",
+  "minutes": 12,
+  "goals": [
+    "Wyjaśnisz zależność TRH–TSH–T4/T3.",
+    "Połączysz syntezę hormonów z ich działaniem w tkankach."
+  ],
+  "sections": [
+    {
+      "title": "Trzy piętra regulacji",
+      "text": "Podwzgórze wydziela TRH, które pobudza przysadkę do uwalniania TSH. TSH działa na komórki pęcherzykowe tarczycy, zwiększając syntezę i uwalnianie hormonów. Wzrost dostępności hormonów hamuje wydzielanie TRH i TSH. To ujemne sprzężenie zwrotne: przy sprawnej osi niedobór hormonów nasila sygnał pobudzający gruczoł."
+    },
+    {
+      "title": "Od jodu do działania",
+      "text": "Komórka pęcherzykowa wychwytuje jodek. Tyreoperoksydaza (TPO) uczestniczy w jego utlenianiu, organifikacji i sprzęganiu jodotyrozyn na tyreoglobulinie. Koloid stanowi magazyn prekursorów hormonów. Tarczyca wydziela głównie T4; istotna część T3 powstaje poza gruczołem przez dejodynację T4. Hormony wpływają na metabolizm, termogenezę, serce oraz rozwój układu nerwowego."
+    },
+    {
+      "title": "Wynik nie jest całym układem",
+      "text": "Większość hormonów krąży związana z białkami, w tym TBG. Zmiana stężenia białek wiążących może zmienić całkowite T4 bez odpowiadającej jej zmiany czynności tarczycy. Dlatego wynik interpretuj w kontekście TSH, frakcji wolnej i sytuacji klinicznej."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Element",
+      "Rola"
+    ],
+    "rows": [
+      [
+        "TRH → przysadka",
+        "Pobudzenie wydzielania TSH"
+      ],
+      [
+        "TSH → tarczyca",
+        "Synteza i uwalnianie hormonów"
+      ],
+      [
+        "T4 → T3 w tkankach",
+        "Lokalna regulacja aktywności hormonów"
+      ],
+      [
+        "T4/T3 → podwzgórze i przysadka",
+        "Ujemne sprzężenie zwrotne"
+      ]
+    ]
+  },
+  "advanced": "Stężenie TSH nie jest bezpośrednim miernikiem działania hormonów w każdej tkance. Dejodynazy i transportery regulują lokalną dostępność T3. W uszkodzeniu przysadki prawidłowe laboratoryjnie TSH może być nieadekwatne do niskiego FT4; nie stosuj wówczas prostego algorytmu opartego wyłącznie na TSH.",
+  "summary": "Tarczyca jest częścią osi regulacyjnej. Najpierw rozumiej sprzężenie zwrotne, potem interpretuj pojedyncze liczby.",
+  "sourceIds": [
+    "physiology",
+    "central"
+  ],
+  "questions": [
+    {
+      "id": "fizjologia-q1",
+      "lessonId": "fizjologia",
+      "prompt": "Co bezpośrednio pobudza tarczycę do syntezy hormonów?",
+      "options": [
+        {
+          "text": "TSH",
+          "explanation": "TSH działa na receptor w komórce pęcherzykowej."
+        },
+        {
+          "text": "TRH",
+          "explanation": "TRH działa przede wszystkim na przysadkę."
+        },
+        {
+          "text": "TBG",
+          "explanation": "TBG transportuje hormony; nie jest sygnałem pobudzającym."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "fizjologia-q2",
+      "lessonId": "fizjologia",
+      "prompt": "Jaka jest główna odpowiedź sprawnej osi na wzrost FT4?",
+      "options": [
+        {
+          "text": "Wzrost TSH niezależny od FT4",
+          "explanation": "W sprawnej osi te sygnały są powiązane."
+        },
+        {
+          "text": "Spadek TSH",
+          "explanation": "To skutek ujemnego sprzężenia zwrotnego."
+        },
+        {
+          "text": "Wzrost TSH",
+          "explanation": "Nasiliłby produkcję mimo nadmiaru hormonów."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "fizjologia-q3",
+      "lessonId": "fizjologia",
+      "prompt": "Który proces wymaga udziału TPO?",
+      "options": [
+        {
+          "text": "Wydzielanie TRH",
+          "explanation": "TRH powstaje w podwzgórzu."
+        },
+        {
+          "text": "Transport T4 przez TBG",
+          "explanation": "Wiązanie z białkiem transportowym nie wymaga TPO."
+        },
+        {
+          "text": "Organifikacja jodu",
+          "explanation": "TPO uczestniczy także w sprzęganiu jodotyrozyn."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "fizjologia-q4",
+      "lessonId": "fizjologia",
+      "prompt": "Skąd pochodzi istotna część krążącego T3?",
+      "options": [
+        {
+          "text": "Z obwodowej konwersji T4",
+          "explanation": "Dejodynacja zachodzi w tkankach poza tarczycą."
+        },
+        {
+          "text": "Z przysadki",
+          "explanation": "Przysadka wydziela TSH, nie T3."
+        },
+        {
+          "text": "Wyłącznie z pożywienia",
+          "explanation": "Organizm syntetyzuje hormony z wykorzystaniem jodu."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "fizjologia-q5",
+      "lessonId": "fizjologia",
+      "prompt": "Co może zwiększyć całkowite T4 bez rzeczywistej nadczynności?",
+      "options": [
+        {
+          "text": "Zawsze choroba Gravesa-Basedowa",
+          "explanation": "Całkowite T4 samo nie rozstrzyga o nadczynności."
+        },
+        {
+          "text": "Wzrost TBG",
+          "explanation": "Więcej białka wiążącego zwiększa pulę związaną."
+        },
+        {
+          "text": "Brak białek transportowych",
+          "explanation": "Nie tłumaczy izolowanego wzrostu puli związanej."
+        }
+      ],
+      "answer": 1
+    }
+  ],
+  "assetIds": []
+}

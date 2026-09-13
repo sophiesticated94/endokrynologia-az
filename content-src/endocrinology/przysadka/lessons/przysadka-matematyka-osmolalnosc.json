@@ -1,0 +1,215 @@
+{
+  "id": "przysadka-matematyka-osmolalnosc",
+  "moduleId": "przysadka",
+  "title": "Równanie Edelmana i klirens wolnej wody w zaburzeniach wazopresyny",
+  "subtitle": "Matematyczna analiza hiponatremii, hipernatremii i formuła Adrogué-Madias",
+  "group": "Matematyka i modele",
+  "minutes": 21,
+  "goals": [
+    "Wyprowadzisz i zastosujesz równanie Edelmana do kalkulacji stężenia sodu w ustroju.",
+    "Obliczysz klirens wolnej wody (C_H2O) oraz przewidzianą zmianę natremii wg formuły Adrogué-Madias."
+  ],
+  "sections": [
+    {
+      "title": "Fizykochemiczne fundamenty równania Edelmana",
+      "text": "W 1958 r. Edelman wykazał eksperymentalnie, że stężenie sodu w osoczu [Na+] jest funkcją wymiennego sodu (Na_e), wymiennego potasu (K_e) oraz całkowitej wody ustrojowej (TBW): [Na+] = 1,11 * (Na_e + K_e) / TBW - 25,6, co klinicznie upraszcza się do wzoru: [Na+] ≈ (Na_e + K_e) / TBW. Oznacza to, że hiponatremia NIE jest izolowanym niedoborem sodu, lecz zaburzeniem proporcji między ilością kationów osmotycznie czynnych a objętością wody."
+    },
+    {
+      "title": "Klirens wolnej wody (C_H2O) i klirens elektrolitowy",
+      "text": "Całkowity wolumen moczu V składa się z klirensu osmotycznego Cosm oraz klirensu wolnej wody C_H2O: V = Cosm + C_H2O, gdzie Cosm = (U_osm * V) / P_osm. Po przekształceniu: C_H2O = V * (1 - U_osm / P_osm). W moczówce prostej U_osm << P_osm, więc C_H2O > 0 (masowa utrata czystej wody z hipernatremią). W SIADH U_osm > P_osm, stąd C_H2O < 0 (retencja czystej wody z narastającą hiponatremią)."
+    },
+    {
+      "title": "Formuła Adrogué-Madias i bezpieczne tempo wyrównywania",
+      "text": "Przewidywany wzrost natremii po przetoczeniu 1 litra płynu infuzyjnego opisuje formuła: $\\Delta [Na^+] = \\frac{[Na^+]_{\\text{infuzja}} + [K^+]_{\\text{infuzja}} - [Na^+]_{\\text{aktualne}}}{\\text{TBW} + 1}$. W hiponatremii zagrażającej obrzękiem mózgu stosuje się 3% NaCl ([Na+] = 513 mmol/L). Żelazny limit prędkości wynosi: nie więcej niż 8–10 mmol/L w ciągu pierwszych 24 h (oraz <18 mmol/L w 48 h), aby zapobiec odwodnieniu osłonki mielinowej komórek glejowych i osmotycznemu zespołowi demielinizacyjnemu (ODS / CPM)."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Płyn infuzyjny",
+      "[Na+] (mmol/L)",
+      "Δ[Na+] w 1 litrze u osoby 70 kg (TBW=42L)"
+    ],
+    "rows": [
+      [
+        "0,9% NaCl (sól fizjologiczna)",
+        "154 mmol/L",
+        "+0,8 mmol/L (nie nadaje się do szybkiej korekty ciężkiego SIADH)"
+      ],
+      [
+        "3% NaCl (hipertoniczna sól)",
+        "513 mmol/L",
+        "+9,0 mmol/L (100 ml podnosi Na+ o ok. 1 mmol/L)"
+      ],
+      [
+        "Płyn Ringera mleczan",
+        "130 mmol/L",
+        "0,0 do -0,2 mmol/L (może pogłębiać hiponatremię w SIADH!)"
+      ],
+      [
+        "5% Glukoza w wodzie",
+        "0 mmol/L",
+        "-3,1 mmol/L (czysta woda; leczenie hipernatremii w moczówce)"
+      ]
+    ]
+  },
+  "advanced": "Gdy w ciężkiej hiponatremii dojdzie do jatrogennego przestrzrzelenia natremii (>10 mmol/L/24h), włącza się natychmiast protokół ratunkowy re-indukcji hiponatremii: podanie 1–2 µg desmopresyny (dDAVP) i wlew 5% glukozy, aby bezpiecznie sprowadzić sód z powrotem poniżej dozwolonego limitu i ochronić most przed demielinizacją.",
+  "summary": "Równanie Edelmana dowodzi, że stężenie sodu zależy od kationów Na+ i K+ podzielonych przez TBW, a formuła Adrogué-Madias chroni przed groźnym zespołem demielinizacyjnym.",
+  "sourceIds": [
+    "edelman",
+    "hyponatraemia",
+    "fleseriu"
+  ],
+  "derivation": {
+    "title": "Wyprowadzenie formuły Adrogué-Madias z równania Edelmana",
+    "model": "Fizjologia elektrolitowa Edelmana i bilans wolnej wody",
+    "steps": [
+      {
+        "step": "Równanie Edelmana",
+        "equation": "[Na^+] = \\frac{Na_e + K_e}{\\text{TBW}}",
+        "explanation": "Stężenie sodu w surowicy to bilans wymiennego sodu i potasu ($Na_e + K_e$) podzielony przez całkowitą objętość wody ustrojowej ($\\text{TBW}$)."
+      },
+      {
+        "step": "Wyprowadzenie przyrostu natremii po wlewie 1 L roztworu",
+        "equation": "\\Delta [Na^+] = \\frac{[Na^+]_{\\text{infuzja}} + [K^+]_{\\text{infuzja}} - [Na^+]_{\\text{aktualne}}}{\\text{TBW} + 1}",
+        "explanation": "Wprowadzenie 1 L płynu o stężeniu elektrolitów $[Na^+]_{\\text{infuzja}}$ i $[K^+]_{\\text{infuzja}}$ zwiększa TBW o 1 L i zmienia pulę kationów."
+      }
+    ],
+    "clinicalTakeaway": "Formuła chroni przed zbyt szybką korekcją hiponatremii. Maksymalne tempo wyrównywania nie może przekraczać 8–10 mmol/L na 24 godziny, aby uniknąć demielinizacji mostu."
+  },
+  "workedExample": {
+    "title": "Kalkulacja wlewu 3% NaCl w objawowej hiponatremii w przebiegu SIADH",
+    "patient": "Kobieta, 58 lat, masa 60 kg, splątana, sód 114 mmol/l, osmolalność moczu 520 mOsm/kg H2O (SIADH).",
+    "inputs": [
+      {
+        "label": "Masa ciała",
+        "value": "60",
+        "unit": "kg"
+      },
+      {
+        "label": "Sód aktualny",
+        "value": "114",
+        "unit": "mmol/l"
+      },
+      {
+        "label": "Sód w 3% NaCl",
+        "value": "513",
+        "unit": "mmol/l"
+      },
+      {
+        "label": "Wskaźnik TBW (0,5)",
+        "value": "30",
+        "unit": "L"
+      }
+    ],
+    "calculationSteps": [
+      "Krok 1: Obliczenie wody ustrojowej: $\\text{TBW} = 60\\text{ kg} \\times 0{,}5 = 30\\text{ L}$.",
+      "Krok 2: Oczekiwany wzrost sodu po 1 L 3% NaCl: $\\Delta [Na^+] = \\frac{513 - 114}{30 + 1} = \\frac{399}{31} = 12{,}87\\,\\text{mmol/L}$.",
+      "Krok 3: Objętość 3% NaCl dla bezpiecznego wzrostu o 6 mmol/L w 6h: $V = \\frac{6}{12{,}87} = 0{,}466\\text{ L}$ (ok. $466\\text{ ml}$).",
+      "Krok 4: Prędkość wlewu: $\\frac{466\\text{ ml}}{6\\text{ h}} \\approx 78\\,\\text{ml/h}$."
+    ],
+    "result": "Wlew 3% NaCl z prędkością 75–80 ml/h pod ścisłą kontrolą jonogramu co 2–3 godziny; cel dobowy: maks. 122 mmol/l (+8 mmol/l/24h).",
+    "clinicalAction": "Hospitalizacja w sali intensywnego nadzoru, restrykcja płynów <800 ml/d, przygotowanie protokołu dDAVP na wypadek przestrzrzelenia natremii."
+  },
+  "questions": [
+    {
+      "id": "przysadka-matematyka-osmolalnosc-q1",
+      "lessonId": "przysadka-matematyka-osmolalnosc",
+      "prompt": "Co wyraża uproszczone równanie Edelmana w gospodarce wodno-elektrolitowej?",
+      "options": [
+        {
+          "text": "[Na+] = Ciśnienie skurczowe / eGFR",
+          "explanation": "Filtracja kłębuszkowa nie wchodzi bezpośrednio do wzoru Edelmana."
+        },
+        {
+          "text": "[Na+] = Masa ciała pomnożona przez stężenie albumin",
+          "explanation": "Albumina nie określa stężenia sodu w modelu Edelmana."
+        },
+        {
+          "text": "[Na+] = (Na_e + K_e) / TBW",
+          "explanation": "Stężenie sodu to stosunek sumy wymiennego sodu i potasu do całkowitej wody ustrojowej."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "przysadka-matematyka-osmolalnosc-q2",
+      "lessonId": "przysadka-matematyka-osmolalnosc",
+      "prompt": "Kiedy klirens wolnej wody (C_H2O) przyjmuje wartość ujemną (C_H2O < 0)?",
+      "options": [
+        {
+          "text": "Gdy osmolalność moczu przewyższa osmolalność osocza (U_osm > P_osm, np. w SIADH)",
+          "explanation": "Nerki zagęszczają mocz ponad osocze, zatrzymując czystą wodę w ustroju."
+        },
+        {
+          "text": "Gdy mocz jest skrajnie rozcieńczony (U_osm = 50 mOsm/kg)",
+          "explanation": "Wtedy C_H2O jest silnie dodatni (utrata wolnej wody)."
+        },
+        {
+          "text": "Gdy diureza dobowa przekracza 10 litrów",
+          "explanation": "Wielkość diurezy bez relacji do osmolalności nie determinuje znaku klirensu."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przysadka-matematyka-osmolalnosc-q3",
+      "lessonId": "przysadka-matematyka-osmolalnosc",
+      "prompt": "Jakie jest maksymalne bezpieczne tempo podnoszenia stężenia sodu w surowicy w przewlekłej hiponatremii?",
+      "options": [
+        {
+          "text": "Dokładnie 0,1 mmol/L na dobę",
+          "explanation": "Zbyt wolne tempo w objawowej hiponatremii naraża na zgon z obrzęku mózgu."
+        },
+        {
+          "text": "Nie więcej niż 8–10 mmol/L w ciągu pierwszych 24 godzin",
+          "explanation": "Zapobiega to obkurczeniu komórek śródbłonka i mielinolizie mostu (ODS)."
+        },
+        {
+          "text": "Przynajmniej 25–30 mmol/L w pierwszych 6 godzinach",
+          "explanation": "Tak gwałtowny skok wywołałby nieodwracalne uszkodzenie pnia mózgu i zgon."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "przysadka-matematyka-osmolalnosc-q4",
+      "lessonId": "przysadka-matematyka-osmolalnosc",
+      "prompt": "Ile milimoli sodu zawiera 1 litr 3% roztworu NaCl stosowanego w ratunkowym leczeniu obrzęku mózgu?",
+      "options": [
+        {
+          "text": "154 mmol Na+",
+          "explanation": "Tyle zawiera standardowa sól fizjologiczna 0,9% NaCl."
+        },
+        {
+          "text": "1000 mmol Na+",
+          "explanation": "Roztwór 1-molowy to 58,5 g/L, co odpowiada 5,85% NaCl."
+        },
+        {
+          "text": "513 mmol Na+ i 513 mmol Cl-",
+          "explanation": "Roztwór hipertoniczny 3% zawiera 30 g NaCl/L (30 / 58,44 ≈ 0,513 mol)."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "przysadka-matematyka-osmolalnosc-q5",
+      "lessonId": "przysadka-matematyka-osmolalnosc",
+      "prompt": "Dlaczego podanie 0,9% NaCl u pacjenta z zespołem SIADH może paradoksalnie pogłębić hiponatremię?",
+      "options": [
+        {
+          "text": "Bo nerki wydalą cały podany sód w małej objętości moczu (U_osm 600), a zatrzymają wolną wodę",
+          "explanation": "Zjawisko odsolenia infuzji: nerka zagęszcza sól ponad 154 mmol/L, a reszta wody rozcieńcza krew."
+        },
+        {
+          "text": "Bo 0,9% NaCl nie zawiera w ogóle sodu",
+          "explanation": "Sól fizjologiczna zawiera 154 mmol/L jonów sodowych."
+        },
+        {
+          "text": "Bo sód przekształca się w nerkach w potas",
+          "explanation": "Pierwiastki nie ulegają transmutacji w narządach ludzkich."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

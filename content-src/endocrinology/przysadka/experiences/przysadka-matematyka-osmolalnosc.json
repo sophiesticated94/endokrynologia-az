@@ -1,0 +1,304 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "przysadka-matematyka-osmolalnosc",
+  "objectives": [
+    {
+      "id": "przysadka-matematyka-osmolalnosc-obj-1",
+      "statement": "Wyprowadzisz i zinterpretujesz równanie Edelmana ([Na] = (Na_e + K_e) / TBW) oraz obliczysz klirens wolnej wody (C_H2O) w zaburzeniach wazopresyny.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "przysadka-matematyka-osmolalnosc-obj-2",
+      "statement": "Zastosujesz formułę Adrogué-Madias do bezpiecznego zaplanowania objętości i tempa wlewu 3% NaCl lub 5% glukozy w ostrych zaburzeniach natremii.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "przysadka-matematyka-osmolalnosc-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "przysadka-matematyka-osmolalnosc-obj-1"
+    ],
+    "prompt": "Zgodnie z klasycznym równaniem Edelmana, od jakich trzech parametrów fizykochemicznych zależy bezpośrednio stężenie sodu w surowicy krwi?",
+    "options": [
+      "Od całkowitej wymiennej puli sodu (Na_e), całkowitej wymiennej puli potasu (K_e) oraz całkowitej objętości wody ustrojowej (TBW)",
+      "Wyłącznie od dobowego spożycia soli kuchennej",
+      "Od stężenia wapnia, magnezu i fosforanów"
+    ],
+    "optionFeedback": [
+      "Równanie Edelmana dowodzi, że stężenie sodu w surowicy odzwierciedla relację sumy wymiennych kationów osmotycznie czynnych (Na + K) do całkowitej wody ustroju.",
+      "Podaż soli to tylko jeden z elementów wpływających na bilans sodu.",
+      "Wapń i fosforany nie są głównymi determinantami osmolalności płynu pozakomórkowego."
+    ],
+    "answer": 0,
+    "explanation": "Formuła Edelmana [Na] = (Na_e + K_e) / TBW jest fundamentem fizjologii zaburzeń gospodarki wodno-elektrolitowej.",
+    "difficulty": "student",
+    "reasoning": "interpretation",
+    "sourceIds": [
+      "edelman_osmolality"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "przysadka-matematyka-osmolalnosc-block-1",
+      "title": "Fizykochemiczne fundamenty równania Edelmana",
+      "text": "Hiponatremia nie jest jedynie zaburzeniem ilości sodu, lecz przede wszystkim zaburzeniem homeostazy wody. Z równania Edelmana wynika kluczowy wniosek: hipokaliemia pogłębia hiponatremię, a suplementacja potasu powoduje wzrost stężenia sodu w surowicy.",
+      "sourceIds": [
+        "edelman_osmolality"
+      ],
+      "checkpointId": "przysadka-matematyka-osmolalnosc-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "przysadka-matematyka-osmolalnosc-block-2",
+      "title": "Klirens wolnej wody (C_H2O) i klirens elektrolitowy",
+      "text": "Klirens wolnej wody definiuje wzór: C_H2O = V * (1 - U_osm / P_osm). W moczówce prostej C_H2O jest dodatni (masywna utrata wolnej wody). W SIADH klirens wolnej wody bez elektrolitów (EFWC) jest ujemny, co oznacza zatrzymywanie wody w ustroju.",
+      "sourceIds": [
+        "edelman_osmolality"
+      ],
+      "checkpointId": "przysadka-matematyka-osmolalnosc-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "przysadka-matematyka-osmolalnosc-block-3",
+      "title": "Formuła Adrogué-Madias i bezpieczne tempo wyrównywania",
+      "text": "Formuła Adrogué-Madias: Delta [Na] = (Na_inf - Na_surowicy) / (TBW + 1). Pozwala obliczyć przewidywany wzrost natremii po przetoczeniu 1 litra płynu (np. 3% NaCl zawierającego 513 mmol Na/l) i precyzyjnie kontrolować tempo korekty.",
+      "sourceIds": [
+        "edelman_osmolality",
+        "siadh_guidelines"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "przysadka-matematyka-osmolalnosc-q2-checkpoint-1-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-matematyka-osmolalnosc-obj-1"
+      ],
+      "prompt": "Dlaczego u pacjenta z jednoczesną ciężką hiponatremią i hipokaliemią (np. po tiazydach) dożylne podanie chlorku potasu (KCl) wywołuje wzrost stężenia sodu w surowicy, nawet bez podawania dodatkowego sodu?",
+      "options": [
+        "Podany potas wnika do wnętrza komórek, wypierając z nich jony sodu do przestrzeni zewnątrzkomórkowej zgodnie z równowagą Gibbsa-Donnana i równaniem Edelmana",
+        "Potas w nerkach przekształca się w sód",
+        "Potas pobudza przysadkę do wydzielania wazopresyny"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-potassium-sodium-shift",
+            "label": "Wnikanie potasu do komórek i wypieranie sodu do ECF",
+            "acceptedPhrases": [
+              "wypieranie sodu",
+              "potas wnika do komórek",
+              "przestrzeń zewnątrzkomórkowa",
+              "równanie edelmana"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Zgodnie z modelem Edelmana jony K_e są równoważne osmotycznie Na_e; wyrównanie hipokaliemii podnosi natremię i grozi niekontrolowanym przekroczeniem limitu dobowego.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "edelman_osmolality"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Zgodnie z modelem Edelmana jony K_e są równoważne osmotycznie Na_e; wyrównanie hipokaliemii podnosi natremię i grozi niekontrolowanym przekroczeniem limitu dobowego.",
+        "Nieprawidłowo: Zgodnie z modelem Edelmana jony K_e są równoważne osmotycznie Na_e; wyrównanie hipokaliemii podnosi natremię i grozi niekontrolowanym przekroczeniem limitu dobowego.",
+        "Nieprawidłowo: Zgodnie z modelem Edelmana jony K_e są równoważne osmotycznie Na_e; wyrównanie hipokaliemii podnosi natremię i grozi niekontrolowanym przekroczeniem limitu dobowego."
+      ]
+    },
+    {
+      "id": "przysadka-matematyka-osmolalnosc-q3-checkpoint-2-v2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-matematyka-osmolalnosc-obj-2"
+      ],
+      "prompt": "Kobieta o masie 60 kg (TBW = 0,5 * 60 = 30 litrów) ma stężenie sodu w surowicy 115 mmol/l. Planujesz przetoczenie 1 litra roztworu 3% NaCl (stężenie sodu w płynie infuzyjnym = 513 mmol/l). Zgodnie ze wzorem Adrogué-Madias: Delta [Na] = (513 - 115) / (30 + 1), o ile mmol/l wzrośnie stężenie sodu w surowicy po podaniu 1 litra tego płynu? (Podaj wynik z dokładnością do 1 miejsca po przecinku).",
+      "answer": 12.8,
+      "tolerance": 0.3,
+      "unit": "mmol/l",
+      "explanation": "Delta [Na] = (513 - 115) / 31 = 398 / 31 = 12,84 mmol/l (w zaokrągleniu 12,8 mmol/l). Pokazuje to, że 1 litr 3% NaCl podany w całości przekroczyłby bezpieczny limit dobowy (10 mmol/l/d).",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "edelman_osmolality",
+        "siadh_guidelines"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "przysadka-matematyka-osmolalnosc-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "przysadka-matematyka-osmolalnosc-obj-1"
+    ],
+    "prompt": "Wyprowadź pojęcie klirensu wolnej wody (free water clearance — C_H2O) z pojęcia klirensu osmotycznego (C_osm) i wyjaśnij, co oznacza ujemny klirens wolnej wody w zespole SIADH.",
+    "modelAnswer": "Całkowita objętość moczu V wydalana w jednostce czasu składa się z objętości niezbędnej do wydalenia substancji rozpuszczonych w stężeniu izoosmotycznym z osoczem (klirensu osmotycznego C_osm = V * U_osm / P_osm) oraz z objętości czystej wody wolnej od substancji rozpuszczonych (C_H2O). Stąd: V = C_osm + C_H2O, co daje C_H2O = V * (1 - U_osm / P_osm). Gdy mocz jest bardziej stężony niż osocze (U_osm > P_osm, jak w SIADH pod wpływem wazopresyny), człon (1 - U_osm / P_osm) jest ujemny, więc C_H2O < 0. Ujemny klirens wolnej wody oznacza, że nerki nie wydalają wolnej wody, lecz zatrzymują ją w ustroju, powodując postępujące rozcieńczenie płynów ustrojowych i hiponatremię.",
+    "explanation": "Zrozumienie bilansu C_H2O pozwala ilościowo interpretować zatrzymywanie lub utratę wody przez nerki.",
+    "difficulty": "doctor",
+    "reasoning": "interpretation",
+    "sourceIds": [
+      "edelman_osmolality"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "przysadka-matematyka-osmolalnosc-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "przysadka-matematyka-osmolalnosc-obj-2"
+      ],
+      "prompt": "W jakiej sytuacji klinicznej należy natychmiast ZATRZYMAĆ wlew hipertonicznego NaCl i rozważyć podanie 5% glukozy lub desmopresyny (tzw. re-lowering strategy)?",
+      "modelAnswer": "Procedurę obniżania stężenia sodu (re-lowering strategy) wdraża się natychmiast, gdy tempo korekty hiponatremii przekroczy bezpieczny limit (np. wzrost o >8–10 mmol/l w ciągu pierwszych 24h lub >18 mmol/l w 48h), bądź gdy po usunięciu przyczyny (np. po nawodnieniu w hipowolemii lub odstawieniu tiazydów) nastąpi gwałtowna samoistna poliuria wodna z drastycznym wzrostem sodu. Podanie 5% glukozy i desmopresyny zapobiega wtedy nieodwracalnemu uszkodzeniu osłonek mielinowych mostu (ODS).",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-overcorrection-limit",
+            "label": "Przekroczenie limitu korekty sodu (>8–10 mmol/l/24h) lub gwałtowny skok natremii",
+            "acceptedPhrases": [
+              "przekroczenie limitu",
+              "nadmierna korekta",
+              ">10 mmol",
+              "zbyt szybki wzrost",
+              "poliuria"
+            ]
+          },
+          {
+            "id": "c-re-lowering-strategy",
+            "label": "Strategia re-lowering (podanie 5% glukozy / desmopresyny dla ochrony mostu)",
+            "acceptedPhrases": [
+              "re-lowering",
+              "obniżenie sodu",
+              "5% glukoza",
+              "podanie desmopresyny",
+              "ochrona przed ods"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Gwałtowna nadkorekcja wymaga aktywnego obniżenia natremii (re-lowering) w celu ratowania mostu mózgu.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "siadh_guidelines"
+      ]
+    },
+    {
+      "id": "przysadka-matematyka-osmolalnosc-q5-exit-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-matematyka-osmolalnosc-obj-1"
+      ],
+      "prompt": "Jak oblicza się efektywną osmolalność osocza (toniczność), która decyduje o przepływie wody przez błony komórkowe mózgu?",
+      "options": [
+        "Toniczność = 2 * [Na] + [Glukoza] (stężenia w mmol/l); mocznik jest pomijany, ponieważ swobodnie przenika przez błony komórkowe jako nieefektywny osmolit",
+        "Toniczność = [Na] + [K] + [Mocznik]",
+        "Toniczność jest zawsze równa ciężarowi właściwemu moczu pomnożonemu przez 1000"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-effective-osmolality-formula",
+            "label": "Wzór na toniczność: 2*Na + Glukoza (bez mocznika)",
+            "acceptedPhrases": [
+              "2*na + glukoza",
+              "toniczność",
+              "efektywna osmolalność",
+              "mocznik przenika swobodnie"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Mocznik swobodnie dyfunduje przez błony komórkowe i nie generuje transkomórkowego gradientu osmotycznego.",
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "edelman_osmolality"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Mocznik swobodnie dyfunduje przez błony komórkowe i nie generuje transkomórkowego gradientu osmotycznego.",
+        "Nieprawidłowo: Mocznik swobodnie dyfunduje przez błony komórkowe i nie generuje transkomórkowego gradientu osmotycznego.",
+        "Nieprawidłowo: Mocznik swobodnie dyfunduje przez błony komórkowe i nie generuje transkomórkowego gradientu osmotycznego."
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "przysadka-matematyka-osmolalnosc-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-matematyka-osmolalnosc-obj-2"
+      ],
+      "prompt": "O ile mmol/l należy skorygować zmierzone stężenie sodu w surowicy u pacjenta z ciężką hiperglikemią wg klasycznej formuły Katza (na każde 100 mg/dl wzrostu glikemii powyżej 100 mg/dl)?",
+      "options": [
+        "Dodać około 1,6 mmol/l sodu na każde 100 mg/dl glukozy powyżej 100 mg/dl (hiperglikemia wyciąga wodę z komórek, rzekomo rozcieńczając sód)",
+        "Odjąć 5 mmol/l sodu",
+        "Nie wprowadza się żadnej korekty"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-katz-correction",
+            "label": "Korekta Katza: dodanie 1,6 mmol/l sodu na 100 mg/dl glukozy",
+            "acceptedPhrases": [
+              "1,6",
+              "formuła katza",
+              "translokacyjna hiponatremia",
+              "woda z komórek"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Glukoza jako efektywny osmolit wyciąga wodę z komórek, powodując hiponatremię translokacyjną.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "edelman_osmolality"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Glukoza jako efektywny osmolit wyciąga wodę z komórek, powodując hiponatremię translokacyjną.",
+        "Nieprawidłowo: Glukoza jako efektywny osmolit wyciąga wodę z komórek, powodując hiponatremię translokacyjną.",
+        "Nieprawidłowo: Glukoza jako efektywny osmolit wyciąga wodę z komórek, powodując hiponatremię translokacyjną."
+      ]
+    },
+    {
+      "id": "przysadka-matematyka-osmolalnosc-bank-2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-matematyka-osmolalnosc-obj-1"
+      ],
+      "prompt": "Oblicz osmolalność osocza [w mOsm/kg H2O] u pacjenta o stężeniach: Na = 140 mmol/l, glukoza = 90 mg/dl (5,0 mmol/l), mocznik = 30 mg/dl (BUN = 5,0 mmol/l), stosując wzór: P_osm = 2*Na + Glukoza + Mocznik (wszystkie w mmol/l).",
+      "answer": 290,
+      "tolerance": 2,
+      "unit": "mOsm/kg",
+      "explanation": "P_osm = 2 * 140 + 5,0 + 5,0 = 280 + 10 = 290 mOsm/kg H2O.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "edelman_osmolality"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "axis-map"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

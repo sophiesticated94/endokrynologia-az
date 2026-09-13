@@ -1,0 +1,158 @@
+{
+  "id": "prolactinoma",
+  "moduleId": "przysadka",
+  "title": "Mlekotok, niepłodność i dopamina",
+  "subtitle": "Prolactinoma, pułapka makroprolaktyny i leczenie kabergoliną",
+  "group": "Gruczolaki i hipersekrecja",
+  "minutes": 16,
+  "goals": [
+    "Rozpoznasz objawy prolactinoma u kobiet i mężczyzn oraz zróżnicujesz guz prolaktynowy z hiperprolaktynemią czynnościową i polekową.",
+    "Zrozumiesz pułapki laboratoryjne: makroprolaktynemię (PEG) oraz efekt „hook”."
+  ],
+  "sections": [
+    {
+      "title": "Obraz kliniczny u kobiet i mężczyzn",
+      "text": "Prolactinoma to najczęstszy czynnościowo hormonalnie guz przysadki. U kobiet w wieku rozrodczym manifestuje się wcześnie jako mikrogruczolak: rzadkie miesiączki (oligomenorrhea) lub ich brak (amenorrhea), mlekotok (galactorrhea) oraz niepłodność na skutek hamowania pulsacyjnego wydzielania GnRH. U mężczyzn objawy są podstępne: spadek libido, zaburzenia wzwodu, ginekomastia i oligospermia; z tego powodu u mężczyzn guz jest najczęściej diagnozowany późno, jako duży makrogruczolak dający ubytki pola widzenia i bóle głowy."
+    },
+    {
+      "title": "Pułapki laboratoryjne: Makroprolaktyna i Efekt Hook",
+      "text": "Wysokie stężenie prolaktyny wymaga ostrożności: 1) Makroprolaktyna (big-big PRL): kompleksy prolaktyny z przeciwciałami IgG. Są nieaktywne biologicznie, lecz wykrywane przez testy laboratoryjne. Przy braku objawów konieczne jest wytrącanie glikolem polietylenowym (PEG). 2) Efekt „hook” (haczyka): przy gigantycznych stężeniach PRL (>5000 ng/ml w wielkich makroprolactinoma) nadmiar antygenu wysyca przeciwciała wychwytujące i znakujące w teście immunometrycznym, dając fałszywie niski wynik (np. 40 ng/ml). Wymaga powtórzenia oznaczenia w rozcieńczeniu surowicy 1:100!"
+    },
+    {
+      "title": "Leczenie farmakologiczne: Kabergolina lekiem z wyboru",
+      "text": "W odróżnieniu od niemal wszystkich innych guzów przysadki, prolactinoma jest chorobą leczoną pierwotnie farmakologicznie, a nie operacyjnie! Lekiem pierwszego rzutu jest kabergolina (długodziałający selektywny agonista receptora dopaminowego D2), skuteczniejsza i lepiej tolerowana niż bromokryptyna. Kabergolina normalizuje stężenie prolaktyny u >85% chorych oraz powoduje znaczne zmniejszenie masy guza (nawet o >50%), co często cofa ubytki pola widzenia w ciągu dni."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Stężenie PRL",
+      "Prawdopodobna przyczyna"
+    ],
+    "rows": [
+      [
+        "25–100 ng/ml",
+        "Polekowa (neuroleptyki, metoklopramid), ucisk szypuły (stalk effect), niedoczynność tarczycy"
+      ],
+      [
+        "100–250 ng/ml",
+        "Mikroprolactinoma lub makroprolactinoma; wymaga wykluczenia makroprolaktyny"
+      ],
+      [
+        ">250–5000+ ng/ml",
+        "Pewny makroprolactinoma; w wielkich guzach pamiętaj o efekcie „hook”"
+      ],
+      [
+        "Wysoka PRL bez objawów",
+        "Podejrzenie makroprolaktynemii — zleć test precypitacji PEG"
+      ]
+    ]
+  },
+  "advanced": "W przypadku stosowania bardzo wysokich dawek kabergoliny (znanych z leczenia choroby Parkinsona, >3 mg/dobę) opisywano ryzyko włóknienia zastawek serca przez pobudzenie receptorów 5-HT2B. W dawkach endokrynologicznych (zwykle 0,5–1,0 mg/tydzień) ryzyko to jest minimalne, jednak wytyczne zalecają wykonanie wyjściowego echokardiogramu (ECHO serca) przed długotrwałym leczeniem.",
+  "summary": "Prolactinoma leczy się farmakologicznie agonistami dopaminy (kabergolina), uzyskując normalizację hormonów i regresję guza. Zawsze wykluczaj leki, niedoczynność tarczycy, makroprolaktynę (PEG) oraz efekt hook w makrogruczolakach.",
+  "sourceIds": [
+    "melmed",
+    "pituitary_prolactinoma_2023"
+  ],
+  "questions": [
+    {
+      "id": "prolactinoma-q1",
+      "lessonId": "prolactinoma",
+      "prompt": "Jaka jest podstawowa metoda leczenia pierwszego rzutu w większości przypadków prolactinoma?",
+      "options": [
+        {
+          "text": "Farmakoterapia agonistą dopaminy (kabergoliną)",
+          "explanation": "Kabergolina cofa hiperprolaktynemię i zmniejsza wymiary guza u znakomitej większości pacjentów."
+        },
+        {
+          "text": "Natychmiastowa operacja neurochirurgiczna przez zatokę klinową",
+          "explanation": "Operacja jest zarezerwowana dla rzadkich przypadków oporności na leki lub nietolerancji."
+        },
+        {
+          "text": "Radioterapia protonowa siodła tureckiego",
+          "explanation": "Radioterapia jest metodą odległego rzutu stosowaną sporadycznie w guzach złośliwych."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "prolactinoma-q2",
+      "lessonId": "prolactinoma",
+      "prompt": "Na czym polega efekt „hook” (haczyka) w diagnostyce wielkich guzów prolaktynowych?",
+      "options": [
+        {
+          "text": "Obecność przeciwciał IgG fałszywie zawyża wynik prolaktyny",
+          "explanation": "Obecność kompleksów IgG z prolaktyną to mechanizm makroprolaktynemii, a nie efektu hook."
+        },
+        {
+          "text": "Ekstremalnie wysokie stężenie PRL wysyca przeciwciała w teście, dając fałszywie niski wynik",
+          "explanation": "Wymaga oznaczenia po 100-krotnym rozcieńczeniu surowicy, by uniknąć błędnego rozpoznania NFPA."
+        },
+        {
+          "text": "Prolaktyna fałszywie blokuje receptory dla hormonu wzrostu",
+          "explanation": "Efekt hook dotyczy interferencji laboratoryjnej w teście immunoenzymatycznym, a nie receptorów GH."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "prolactinoma-q3",
+      "lessonId": "prolactinoma",
+      "prompt": "Pacjentka bez objawów hipogonadyzmu ma stężenie PRL 85 ng/ml. Miesiączkuje regularnie i ma dwoje dzieci. Co należy zrobić w pierwszej kolejności?",
+      "options": [
+        {
+          "text": "Pilnie skierować pacjentkę na operację usunięcia przysadki",
+          "explanation": "Brak objawów i izolowane umiarkowane podwyższenie PRL nie upoważnia do operacji."
+        },
+        {
+          "text": "Natychmiast wdrożyć maksymalną dawkę kabergoliny",
+          "explanation": "Włączanie leczenia bez weryfikacji aktywnej biologicznie monomerycznej prolaktyny jest błędem."
+        },
+        {
+          "text": "Wykonać test precypitacji glikolem polietylenowym (PEG) w kierunku makroprolaktyny",
+          "explanation": "Obecność wielkocząsteczkowej makroprolaktyny nie wymaga leczenia i nie daje objawów klinicznych."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "prolactinoma-q4",
+      "lessonId": "prolactinoma",
+      "prompt": "Która grupa leków najczęściej wywołuje polekową hiperprolaktynemię w mechanizmie blokady receptorów D2?",
+      "options": [
+        {
+          "text": "Klasyczne i atypowe leki przeciwpsychotyczne (neuroleptyki) oraz metoklopramid",
+          "explanation": "Blokada receptorów dopaminowych D2 w przysadce znosi fizjologiczne hamowanie prolaktyny."
+        },
+        {
+          "text": "Inhibitory konwertazy angiotensyny (ACE-I)",
+          "explanation": "Leki hipotensyjne z grupy ACE-I nie wpływają na oś prolaktynową."
+        },
+        {
+          "text": "Antybiotyki beta-laktamowe",
+          "explanation": "Antybiotyki nie modulują przewodnictwa dopaminergicznego w podwzgórzu."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "prolactinoma-q5",
+      "lessonId": "prolactinoma",
+      "prompt": "Dlaczego prolactinoma u mężczyzn jest najczęściej diagnozowany w stadium dużego makrogruczolaka?",
+      "options": [
+        {
+          "text": "U mężczyzn mikrogruczolaki w ogóle nie powstają",
+          "explanation": "Powstają, ale rzadko dają wczesne, alarmujące objawy takie jak brak miesiączki u kobiet."
+        },
+        {
+          "text": "Objawy hipogonadyzmu (spadek libido, impotencja) są przez lata bagatelizowane przez pacjentów",
+          "explanation": "Mężczyźni zgłaszają się do lekarza dopiero, gdy guz powoduje bóle głowy lub uciska skrzyżowanie wzrokowe."
+        },
+        {
+          "text": "Męska przysadka nie reaguje na dopaminę",
+          "explanation": "Przysadka męska i żeńska posiadają identyczne receptory D2 i podlegają temu samemu hamowaniu."
+        }
+      ],
+      "answer": 1
+    }
+  ]
+}

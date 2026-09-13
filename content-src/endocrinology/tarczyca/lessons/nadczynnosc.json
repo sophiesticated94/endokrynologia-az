@@ -1,0 +1,160 @@
+{
+  "id": "nadczynnosc",
+  "moduleId": "tarczyca",
+  "title": "Kiedy hormonów jest za dużo",
+  "subtitle": "Tyreotoksykoza, nadczynność i różnicowanie",
+  "group": "Praktyka kliniczna",
+  "minutes": 14,
+  "goals": [
+    "Odróżnisz nadprodukcję od uwalniania zapasów hormonów.",
+    "Dobierzesz badania do przyczyny tyreotoksykozy."
+  ],
+  "sections": [
+    {
+      "title": "Dwa pojęcia",
+      "text": "Tyreotoksykoza oznacza nadmiar działania hormonów tarczycy niezależnie od źródła. Nadczynność jest jej podtypem wynikającym ze wzmożonej produkcji w gruczole. Zapalenie destrukcyjne uwalnia gotowe hormony, a przyjmowanie nadmiaru LT4 dostarcza je z zewnątrz. Te mechanizmy wymagają innego postępowania."
+    },
+    {
+      "title": "Objawy i ryzyko",
+      "text": "Kołatanie serca, drżenie, nietolerancja ciepła i spadek masy ciała kierują uwagę na tyreotoksykozę. U starszej osoby dominować może migotanie przedsionków lub osłabienie. Oceń tętno, stan krążenia, TSH, FT4 i FT3. Nie ograniczaj diagnostyki do samego samopoczucia."
+    },
+    {
+      "title": "Przyczyna wyznacza leczenie",
+      "text": "TRAb wspiera rozpoznanie Gravesa-Basedowa. Guzki i obniżone TSH mogą uzasadniać scyntygrafię w celu oceny autonomii. Tyreostatyki hamują nową syntezę, dlatego nie rozwiązują mechanizmu destrukcyjnego zapalenia. Beta-adrenolityk łagodzi objawy u odpowiednio dobranych pacjentów, ale nie zastępuje leczenia przyczyny."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Mechanizm",
+      "Przykład"
+    ],
+    "rows": [
+      [
+        "Nadprodukcja rozlana",
+        "Graves-Basedow"
+      ],
+      [
+        "Nadprodukcja autonomiczna",
+        "Guzek autonomiczny lub wole wieloguzkowe toksyczne"
+      ],
+      [
+        "Uwolnienie zapasów",
+        "Destrukcyjne zapalenie tarczycy"
+      ],
+      [
+        "Źródło zewnętrzne",
+        "Nadmierna dawka LT4"
+      ]
+    ]
+  },
+  "advanced": "Subkliniczna nadczynność oznacza utrwalone niskie TSH przy prawidłowych FT4/FT3. Oceniaj nasilenie supresji, wiek, ryzyko arytmii i powikłań kostnych. Niskie TSH może utrzymywać się po poprawie FT4/FT3, dlatego wczesna kontrola terapii nie opiera się tylko na TSH.",
+  "summary": "Nie każda tyreotoksykoza oznacza nadprodukcję. Ustal mechanizm przed wyborem terapii.",
+  "sourceIds": [
+    "graves",
+    "thyroiditis",
+    "nodules"
+  ],
+  "questions": [
+    {
+      "id": "nadczynnosc-q1",
+      "lessonId": "nadczynnosc",
+      "prompt": "Który stan jest tyreotoksykozą bez zwiększonej syntezy hormonów?",
+      "options": [
+        {
+          "text": "Guzek autonomiczny",
+          "explanation": "Guzek aktywnie produkuje hormony."
+        },
+        {
+          "text": "Destrukcyjne zapalenie tarczycy",
+          "explanation": "Uszkodzone pęcherzyki uwalniają zgromadzone hormony."
+        },
+        {
+          "text": "Graves-Basedow",
+          "explanation": "Receptor TSH jest pobudzany do syntezy."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "nadczynnosc-q2",
+      "lessonId": "nadczynnosc",
+      "prompt": "Co sugeruje nowo wykryte migotanie przedsionków u starszej osoby z utratą masy ciała?",
+      "options": [
+        {
+          "text": "Wykluczenie choroby tarczycy przez wiek",
+          "explanation": "Starszy wiek nie wyklucza nadczynności."
+        },
+        {
+          "text": "Pewną niedoczynność",
+          "explanation": "Opis bardziej sugeruje nadmiar hormonów, lecz wymaga badań."
+        },
+        {
+          "text": "Potrzebę oceny czynności tarczycy",
+          "explanation": "Tyreotoksykoza może przebiegać bez typowego pobudzenia."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "nadczynnosc-q3",
+      "lessonId": "nadczynnosc",
+      "prompt": "Dlaczego tyreostatyk zwykle nie pomaga w fazie tyreotoksycznej zapalenia destrukcyjnego?",
+      "options": [
+        {
+          "text": "Nie hamuje uwalniania już zgromadzonych hormonów",
+          "explanation": "Jego zasadniczym celem jest nowa synteza."
+        },
+        {
+          "text": "Zawsze zwiększa syntezę",
+          "explanation": "Tyreostatyki ją hamują."
+        },
+        {
+          "text": "Nie działa na żadną chorobę tarczycy",
+          "explanation": "Jest przydatny w nadprodukcji hormonów."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "nadczynnosc-q4",
+      "lessonId": "nadczynnosc",
+      "prompt": "TSH jest niskie, a w USG widoczny guzek. Co może ocenić jego autonomię?",
+      "options": [
+        {
+          "text": "Wyłącznie palpacja",
+          "explanation": "Nie określa aktywności hormonalnej zmiany."
+        },
+        {
+          "text": "Scyntygrafia, jeśli nie ma przeciwwskazań",
+          "explanation": "Pokazuje czynność tkanki."
+        },
+        {
+          "text": "Samo anty-TPO",
+          "explanation": "Nie pokazuje autonomicznej produkcji guzka."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "nadczynnosc-q5",
+      "lessonId": "nadczynnosc",
+      "prompt": "Jaka jest główna rola beta-adrenolityku w stabilnej tyreotoksykozie?",
+      "options": [
+        {
+          "text": "Usunięcie guzka",
+          "explanation": "Nie jest metodą usuwania zmian strukturalnych."
+        },
+        {
+          "text": "Trwałe zniszczenie przeciwciał",
+          "explanation": "Nie eliminuje autoimmunizacji."
+        },
+        {
+          "text": "Łagodzenie objawów adrenergicznych",
+          "explanation": "Nie zastępuje ustalenia i leczenia przyczyny."
+        }
+      ],
+      "answer": 2
+    }
+  ],
+  "assetIds": []
+}

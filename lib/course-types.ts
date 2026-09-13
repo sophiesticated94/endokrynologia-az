@@ -19,6 +19,49 @@ export type ModuleId =
 export type ObjectiveKind = 'mechanism' | 'interpretation' | 'differentiation' | 'decision' | 'safety';
 export type ActivityDifficulty = 'student' | 'doctor' | 'both';
 export type Confidence = 1 | 2 | 3;
+export type AssessmentLevel = 'recognition' | 'application' | 'generation';
+export type RubricEvaluationStatus = 'correct' | 'partially_correct' | 'needs_revision' | 'ungraded';
+
+export interface RubricConcept {
+  id: string;
+  label: string;
+  acceptedPhrases: string[];
+  negationSensitive?: boolean;
+}
+
+export interface RubricContradiction {
+  id: string;
+  patterns: string[];
+  severity: 'critical' | 'warning';
+  feedback: string;
+}
+
+export interface RubricDefinition {
+  requiredConcepts: RubricConcept[];
+  optionalConcepts?: RubricConcept[];
+  contradictions?: RubricContradiction[];
+  minRequired: number;
+}
+
+export interface RubricDimension {
+  id: string;
+  label: string;
+  requiredConcepts: RubricConcept[];
+  optionalConcepts?: RubricConcept[];
+  criticalErrors?: RubricContradiction[];
+}
+
+export interface MultiDimensionalRubricDefinition {
+  dimensions: RubricDimension[];
+  criticalErrors?: RubricContradiction[];
+}
+
+export interface EvidenceWeightingItem {
+  id: string;
+  text: string;
+  expected: 'supports' | 'opposes' | 'neutral';
+  explanation: string;
+}
 
 export type LearningObjective = {
   id: string;
@@ -37,10 +80,26 @@ type ActivityBase = {
   sourceIds: string[];
   optionFeedback?: string[];
   claimIds?: string[];
+  assessmentLevel?: AssessmentLevel;
 };
 
-export type PracticeAnswerType = 'choice_index' | 'choice_indexes' | 'ordered_indexes' | 'matching_map' | 'numeric_value' | 'self_assessment';
-export type PracticeRecordMeta = { answerType: PracticeAnswerType; elapsedMs: number };
+export type PracticeAnswerType =
+  | 'choice_index'
+  | 'choice_indexes'
+  | 'ordered_indexes'
+  | 'matching_map'
+  | 'numeric_value'
+  | 'self_assessment'
+  | 'text_rubric'
+  | 'select_and_justify'
+  | 'clinical_reasoning'
+  | 'evidence_weighting';
+
+export type PracticeRecordMeta = {
+  answerType: PracticeAnswerType;
+  elapsedMs: number;
+  evaluationStatus?: RubricEvaluationStatus;
+};
 
 export type LearningActivity =
   | (ActivityBase & { type: 'single_choice' | 'lab' | 'trend' | 'missing_information'; options: string[]; answer: number })
@@ -48,7 +107,11 @@ export type LearningActivity =
   | (ActivityBase & { type: 'ordering'; items: string[]; correctOrder: number[] })
   | (ActivityBase & { type: 'matching'; pairs: Pair[] })
   | (ActivityBase & { type: 'numeric'; answer: number; tolerance: number; unit: string })
-  | (ActivityBase & { type: 'recall'; modelAnswer: string });
+  | (ActivityBase & { type: 'recall'; modelAnswer: string })
+  | (ActivityBase & { type: 'short_answer'; modelAnswer: string; rubric: RubricDefinition })
+  | (ActivityBase & { type: 'select_and_justify'; options: string[]; answer: number | number[]; rationaleRubric: RubricDefinition })
+  | (ActivityBase & { type: 'clinical_reasoning'; modelAnswer: string; rubric: MultiDimensionalRubricDefinition })
+  | (ActivityBase & { type: 'evidence_weighting'; hypothesis: string; items: EvidenceWeightingItem[] });
 
 export type InlineEnhancementRef = {
   id: string;
@@ -76,6 +139,7 @@ export type LessonExperienceV2 = {
   activities: LearningActivity[];
   teachBack: LearningActivity & { type: 'recall' };
   exitTicket: LearningActivity[];
+  assessmentBank?: LearningActivity[];
   widgetIds: Array<
     | 'axis-map'
     | 'lab-workbench'

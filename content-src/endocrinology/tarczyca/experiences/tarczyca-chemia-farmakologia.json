@@ -1,0 +1,375 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "tarczyca-chemia-farmakologia",
+  "objectives": [
+    {
+      "id": "tarczyca-chemia-farmakologia-obj-1",
+      "statement": "Wyjaśnisz mechanizm inhibicji TPO przez tionamidy (tiamazol, PTU) na poziomie koordynacji z żelazem porfirynowym.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "tarczyca-chemia-farmakologia-obj-2",
+      "statement": "Scharakteryzujesz chemię katalityczną selenocysteiny (Sec) w dejodynazach jodopochodnych DIO1, DIO2 i DIO3.",
+      "kind": "mechanism"
+    }
+  ],
+  "diagnostic": {
+    "id": "tarczyca-chemia-farmakologia-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "tarczyca-chemia-farmakologia-obj-1"
+    ],
+    "prompt": "Jakie ugrupowanie chemiczne w cząsteczkach tiamazolu i propylotiouracylu odpowiada za hamowanie peroksydazy tarczycowej (TPO)?",
+    "options": [
+      "Ugrupowanie tiomocznikowe S=C-N (tionamidowe) z nukleofilowym atomem siarki",
+      "Pierścień steroidowy cyklopentanoperhydrofenantrenu",
+      "Łańcuch polipeptydowy z wiązaniami estrowymi"
+    ],
+    "optionFeedback": [
+      "Nukleofilowa siarka tionamidowa wiąże się z hemem TPO i redukuje aktywny Compound I.",
+      "Tionamidy nie mają struktury steroidowej.",
+      "Leki przeciwtarczycowe są drobnocząsteczkowymi heterocyklami."
+    ],
+    "answer": 0,
+    "explanation": "Grupa tiomocznikowa S=C-N jest farmakoforem odpowiedzialnym za inhibicję enzymu TPO.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "tpo_chem"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "tarczyca-chemia-farmakologia-block-1",
+      "title": "Farmakofor tionamidów: Grupa tiomocznikowa S=C-N",
+      "text": "Tiamazol i PTU zawierają ugrupowanie tionamidowe. Siarka tionamidowa działa jako silny nukleofil: koordynuje z żelazem hemu TPO i redukuje wysoce reaktywny Compound I z powrotem do nieaktywnego Fe(III), blokując organifikację.",
+      "sourceIds": [
+        "tpo_chem",
+        "graves"
+      ],
+      "checkpointId": "tarczyca-chemia-farmakologia-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "tarczyca-chemia-farmakologia-block-2",
+      "title": "Selenocysteina (Sec) — 21. aminokwas w centrum dejodynaz",
+      "text": "Dejodynazy (DIO1–3) to selenoproteiny. Grupa selenolowa (-SeH) w Sec ma pKa ≈ 5,2, co sprawia, że w pH 7,4 występuje w 99% jako zjonizowany anion selenolanowy (R-Se-), będący potężnym nukleofilem.",
+      "sourceIds": [
+        "tpo_chem"
+      ],
+      "checkpointId": "tarczyca-chemia-farmakologia-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "tarczyca-chemia-farmakologia-block-3",
+      "title": "Mechanizm dejodynacji i rola PTU",
+      "text": "Anion selenolanowy atakuje atom jodu, tworząc przejściowy addukt E-Se-I. Regeneracja wymaga glutationu (GSH). PTU (ale nie tiamazol) blokuje DIO1 poprzez nieodwracalne wiązanie z kompleksem E-Se-I.",
+      "sourceIds": [
+        "tpo_chem",
+        "storm"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "tarczyca-chemia-farmakologia-q2-checkpoint-1-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "tarczyca-chemia-farmakologia-obj-2"
+      ],
+      "prompt": "Dlaczego selenocysteina (Sec) w centrum aktywnym dejodynaz jest nieporównywalnie silniejszym katalizatorem reakcji usuwania jodu niż zwykła cysteina (Cys)?",
+      "options": [
+        "Ponieważ pKa grupy selenolowej (-SeH) wynosi ok. 5,2, więc w pH fizjologicznym selenol jest w pełni zjonizowany do nukleofilowego anionu selenolanowego (R-Se-), podczas gdy tiol cysteiny (pKa 8,3) pozostaje w 90% obojętny",
+        "Ponieważ selen jest metalem ciężkim rozpuszczającym pierścienie fenolowe",
+        "Cysteina w ogóle nie występuje w białkach ssaków"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-low-pka-selenol",
+            "label": "Niskie pKa selenolu (~5,2) i pełna jonizacja",
+            "acceptedPhrases": [
+              "pka 5.2",
+              "niskie pka",
+              "anion selenolanowy",
+              "pełna jonizacja w ph 7.4"
+            ]
+          },
+          {
+            "id": "c-strong-nucleophile",
+            "label": "Potężny nukleofil atakujący jod",
+            "acceptedPhrases": [
+              "silny nukleofil",
+              "atak nukleofilowy",
+              "przewaga nad cysteiną"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "W fizjologicznym pH 7,4 selenocysteina występuje niemal wyłącznie w reaktywnej formie anionowej R-Se-.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "tpo_chem"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: W fizjologicznym pH 7,4 selenocysteina występuje niemal wyłącznie w reaktywnej formie anionowej R-Se-.",
+        "Nieprawidłowo: W fizjologicznym pH 7,4 selenocysteina występuje niemal wyłącznie w reaktywnej formie anionowej R-Se-.",
+        "Nieprawidłowo: W fizjologicznym pH 7,4 selenocysteina występuje niemal wyłącznie w reaktywnej formie anionowej R-Se-."
+      ]
+    },
+    {
+      "id": "tarczyca-chemia-farmakologia-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "tarczyca-chemia-farmakologia-obj-1"
+      ],
+      "prompt": "Dlaczego propylotiouracyl (PTU) w odróżnieniu od tiamazolu powoduje szybki spadek stężenia aktywnego T3 w surowicy już w ciągu pierwszych godzin od podania?",
+      "options": [
+        "PTU hamuje dodatkowo obwodową dejodynazę DIO1 w wątrobie i nerkach poprzez wiązanie z adduktem enzym-Se-I, blokując konwersję T4 do T3",
+        "PTU przyspiesza wydalanie T3 przez przewód pokarmowy",
+        "PTU niszczy krążące cząsteczki T3 w surowicy krwi"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-dio1-inhibition-ptu",
+            "label": "Inhibicja dejodynazy DIO1 przez PTU",
+            "acceptedPhrases": [
+              "hamowanie dio1",
+              "blokada konwersji obwodowej",
+              "addukt e-se-i",
+              "tiamazol nie hamuje dio1"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "PTU wykazuje unikalne działanie hamujące wobec obwodowej dejodynazy DIO1, co uzasadniało jego dawne stosowanie w przełomie tarczycowym.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "tpo_chem",
+        "storm"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: PTU wykazuje unikalne działanie hamujące wobec obwodowej dejodynazy DIO1, co uzasadniało jego dawne stosowanie w przełomie tarczycowym.",
+        "Nieprawidłowo: PTU wykazuje unikalne działanie hamujące wobec obwodowej dejodynazy DIO1, co uzasadniało jego dawne stosowanie w przełomie tarczycowym.",
+        "Nieprawidłowo: PTU wykazuje unikalne działanie hamujące wobec obwodowej dejodynazy DIO1, co uzasadniało jego dawne stosowanie w przełomie tarczycowym."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "tarczyca-chemia-farmakologia-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "tarczyca-chemia-farmakologia-obj-2"
+    ],
+    "prompt": "Wymień trzy enzymy z rodziny dejodynaz jodotyroninowych (DIO1, DIO2, DIO3), podaj ich główną lokalizację narządową oraz rolę w aktywacji vs inaktywacji hormonów tarczycy.",
+    "modelAnswer": "DIO1: wątroba i nerki; przeprowadza dejodynację pierścienia zewnętrznego (aktywacja T4 -> T3) oraz wewnętrznego; hamowana przez PTU. DIO2: mózg, przysadka, brązowa tkanka tłuszczowa; wyłącznie dejodynacja pierścienia zewnętrznego (lokalna aktywacja T4 -> T3); oporna na PTU. DIO3: łożysko, mózg, tkanki płodowe; wybiórcza dejodynacja pierścienia wewnętrznego (inaktywacja T4 do rT3 oraz T3 do nieaktywnego T2).",
+    "explanation": "Zrozumienie profili DIO1, DIO2 i DIO3 tłumaczy lokalną autoregulację hormonalną w tkankach.",
+    "difficulty": "doctor",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "tpo_chem",
+      "physiology"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "tarczyca-chemia-farmakologia-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "tarczyca-chemia-farmakologia-obj-2"
+      ],
+      "prompt": "Jaki wewnątrzkomórkowy układ kofaktorowy jest niezbędny do zredukowania adduktu enzym-Se-I i zregenerowania aktywnej formy selenocysteiny w dejodynazach?",
+      "modelAnswer": "Regeneracja wymaga donorów grup tiolowych (-SH), którymi in vivo są zredukowany glutation (GSH) oraz tioredoksyna wraz z reduktazą tioredoksyny. Przenoszą one równoważniki redukcyjne na atom selenu, odszczepiając jod i przywracając aktywny anion selenolanowy enzymu.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-thiol-donors",
+            "label": "Glutation (GSH) lub tioredoksyna",
+            "acceptedPhrases": [
+              "glutation",
+              "gsh",
+              "tioredoksyna",
+              "donory grup tiolowych",
+              "układ redukcyjny"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Aktywność katalityczna dejodynaz jest ściśle powiązana z wewnątrzkomórkowym statusem redoks glutationu.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "tpo_chem"
+      ]
+    },
+    {
+      "id": "tarczyca-chemia-farmakologia-q5-exit-v2",
+      "type": "matching",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "tarczyca-chemia-farmakologia-obj-1"
+      ],
+      "prompt": "Dopasuj lek przeciwtarczycowy do jego specyficznej właściwości farmakologicznej:",
+      "pairs": [
+        [
+          "Tiamazol (metimazol)",
+          "Lek z wyboru o długim t1/2 umożliwiającym dawkowanie raz na dobę; silny inhibitor hemu TPO"
+        ],
+        [
+          "Propylotiouracyl (PTU)",
+          "Krótki t1/2 (wymaga dawek co 8 h); hamuje obwodową dejodynazę DIO1; lek z wyboru w I trymestrze ciąży"
+        ],
+        [
+          "Nadchloran potasu",
+          "Kompetycyjny inhibitor symportera sodowo-jodkowego (NIS); blokuje wychwyt jodków"
+        ],
+        [
+          "Płyn Lugola (jod nieorganiczny)",
+          "Hamuje proteolizę tyreoglobuliny i uwalnianie hormonów; zmniejsza przepływ naczyniowy w tarczycy"
+        ]
+      ],
+      "explanation": "Każdy lek przeciwtarczycowy działa na inny etap syntezy lub uwalniania hormonów.",
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "tpo_chem",
+        "graves",
+        "storm"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "tarczyca-chemia-farmakologia-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "tarczyca-chemia-farmakologia-obj-2"
+      ],
+      "prompt": "W rzadkim zespole genetycznym wywołanym mutacją genu SECISBP2 (białka wiążącego element SECIS) dochodzi do zaburzenia wbudowywania selenocysteiny we wszystkie selenoproteiny ustroju. Jaki profil hormonalny tarczycy rozwinie się u takiego pacjenta?",
+      "options": [
+        "Podwyższone FT4, obniżone FT3 oraz podwyższone rT3 z prawidłowym lub lekko podwyższonym TSH (brak aktywacji T4->T3 przez DIO1/DIO2)",
+        "Niemierzalnie niskie FT4 z TSH >200 mIU/l",
+        "Ostra tyreotoksykoza z wytrzeszczem"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-secisbp2-profile",
+            "label": "Zaburzenie konwersji T4->T3 (wysokie FT4, niskie FT3)",
+            "acceptedPhrases": [
+              "wysokie ft4",
+              "niskie ft3",
+              "brak konwersji",
+              "defekt dejodynaz",
+              "upośledzenie dio1 i dio2"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Niedobór selenoprotein blokuje dejodynazy DIO1 i DIO2, uniemożliwiając konwersję T4 do T3.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "tpo_chem"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Niedobór selenoprotein blokuje dejodynazy DIO1 i DIO2, uniemożliwiając konwersję T4 do T3.",
+        "Nieprawidłowo: Niedobór selenoprotein blokuje dejodynazy DIO1 i DIO2, uniemożliwiając konwersję T4 do T3.",
+        "Nieprawidłowo: Niedobór selenoprotein blokuje dejodynazy DIO1 i DIO2, uniemożliwiając konwersję T4 do T3."
+      ]
+    },
+    {
+      "id": "tarczyca-chemia-farmakologia-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "tarczyca-chemia-farmakologia-obj-1"
+      ],
+      "prompt": "Dlaczego tionamidy nie wywołują natychmiastowego spadku stężenia krążących hormonów tarczycy po podaniu pierwszej dawki i na efekt kliniczny trzeba czekać 1–3 tygodnie?",
+      "modelAnswer": "Tionamidy hamują wyłącznie syntezę nowych cząsteczek hormonów poprzez zablokowanie enzymu TPO, natomiast nie hamują uwalniania ani działania hormonów uprzednio zsyntetyzowanych. W pęcherzykach tarczycy znajduje się koloid z zapasem zjodowanej tyreoglobuliny wystarczającym na 2–4 tygodnie, który musi ulec stopniowemu wyczerpaniu, zanim ujawni się pełny efekt leku.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-colloid-reserve",
+            "label": "Zapas hormonów w koloidzie (2–4 tygodnie)",
+            "acceptedPhrases": [
+              "zapas w koloidzie",
+              "zapas na 2-4 tygodnie",
+              "gotowe zapasy tyreoglobuliny"
+            ]
+          },
+          {
+            "id": "c-synthesis-only",
+            "label": "Hamowanie wyłącznie syntezy de novo",
+            "acceptedPhrases": [
+              "hamuje nową syntezę",
+              "brak wpływu na uwolnienie zapasów"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Opóźnienie działania tionamidów wynika z konieczności opróżnienia obfitych zapasów koloidu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "tpo_chem",
+        "graves"
+      ]
+    },
+    {
+      "id": "tarczyca-chemia-farmakologia-bank-3",
+      "type": "multi_select",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "tarczyca-chemia-farmakologia-obj-2"
+      ],
+      "prompt": "Które z poniższych enzymów w organizmie człowieka są selenoproteinami zawierającymi w centrum katalitycznym selenocysteinę (Sec)?",
+      "options": [
+        "Dejodynazy jodotyroninowe (DIO1, DIO2, DIO3)",
+        "Peroksydazy glutationowe (GPx)",
+        "Reduktazy tioredoksyny (TrxR)",
+        "Tyreoperoksydaza (TPO)"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "optionFeedback": [
+        "DIO1–3 to kluczowe selenoproteiny tarczycy.",
+        "GPx chroni komórki przed stresem oksydacyjnym.",
+        "TrxR regeneruje tioredoksynę.",
+        "TPO nie jest selenoproteiną — zawiera grupę hemową b z jonem żelaza."
+      ],
+      "explanation": "TPO jest enzymem hemowym żelazozależnym, podczas gdy DIO1–3, GPx i TrxR zawierają selenocysteinę.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "tpo_chem"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "axis-map"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

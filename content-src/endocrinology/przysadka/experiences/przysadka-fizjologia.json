@@ -1,0 +1,350 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "przysadka-fizjologia",
+  "objectives": [
+    {
+      "id": "przysadka-fizjologia-obj-1",
+      "statement": "Zidentyfikujesz topografię siodła tureckiego, skrzyżowania wzrokowego i zatok jamistych oraz powiążesz je z objawami neurologicznymi (niedowidzenie połowicze dwuskroniowe, porażenie nerwów III, IV, VI, V1, V2).",
+      "kind": "differentiation"
+    },
+    {
+      "id": "przysadka-fizjologia-obj-2",
+      "statement": "Zrozumiesz rolę układu wrotnego podwzgórzowo-przysadkowego i neurohormonów regulujących płat przedni oraz magazynowanie oksytocyny i wazopresyny w płacie tylnym.",
+      "kind": "mechanism"
+    }
+  ],
+  "diagnostic": {
+    "id": "przysadka-fizjologia-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "przysadka-fizjologia-obj-1"
+    ],
+    "prompt": "Guz przysadki rosnący dogłowowo i uciskający centralną część skrzyżowania wzrokowego (chiasma opticum) wywołuje charakterystyczny ubytek w polu widzenia. Jaki to ubytek?",
+    "options": [
+      "Niedowidzenie połowicze dwuskroniowe (bitemporal hemianopsia) wskutek uszkodzenia skrzyżowanych włókien nosowych siatkówki",
+      "Niedowidzenie połowicze jednoimienne (homonymous hemianopsia)",
+      "Mroczek centralny w jednym oku bez ubytków obwodowych"
+    ],
+    "optionFeedback": [
+      "Centralny ucisk na skrzyżowanie uszkadza włókna pochodzące z nosowych części siatkówki, które odpowiadają za widzenie w skroniowych połowach pola widzenia.",
+      "Niedowidzenie jednoimienne występuje przy uszkodzeniu pasma wzrokowego (tractus opticus) za skrzyżowaniem.",
+      "Mroczek centralny wynika zwykle z uszkodzenia plamki żółtej lub zapalenia nerwu wzrokowego."
+    ],
+    "answer": 0,
+    "explanation": "Skrzyżowanie wzrokowe leży bezpośrednio nad przeponą siodła; ucisk guza od dołu na włókna skrzyżowane prowadzi do klasycznego niedowidzenia połowiczego dwuskroniowego.",
+    "difficulty": "student",
+    "reasoning": "differentiation",
+    "sourceIds": [
+      "pituitary_endo"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "przysadka-fizjologia-block-1",
+      "title": "Anatomia siodła tureckiego i otoczenie",
+      "text": "Przysadka leży w dole przysadki kości klinowej (siodle tureckim). Ku górze sąsiaduje ze skrzyżowaniem wzrokowym przez oponową przeponę siodła, a bocznie z zatokami jamistymi zawierającymi tętnicę szyjną wewnętrzną oraz nerwy czaszkowe III, IV, V1, V2 i VI.",
+      "sourceIds": [
+        "pituitary_endo"
+      ],
+      "checkpointId": "przysadka-fizjologia-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "przysadka-fizjologia-block-2",
+      "title": "Przedni płat i krążenie wrotne podwzgórzowo-przysadkowe",
+      "text": "Przedni płat (adenohypophysis) powstaje z kieszonki Rathkego. Pozbawiony jest bezpośredniego unerwienia – jest sterowany humoralnie przez neurohormony podwzgórza docierające przez pierwotną i wtórną sieć naczyń wrotnych w szypule przysadki.",
+      "sourceIds": [
+        "pituitary_endo"
+      ],
+      "checkpointId": "przysadka-fizjologia-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "przysadka-fizjologia-block-3",
+      "title": "Tylny płat i magazyn neurohormonów",
+      "text": "Tylny płat (neurohypophysis) jest bezpośrednią wypustką podwzgórza. Zawiera zakończenia aksonów neuronów jąder nadwzrokowych i przykomorowych, które syntetyzują wazopresynę (AVP) i oksytocynę.",
+      "sourceIds": [
+        "pituitary_endo"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "przysadka-fizjologia-q2-checkpoint-1-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-fizjologia-obj-1"
+      ],
+      "prompt": "Pacjent z makrogruczolakiem przysadki zgłasza nagłe podwójne widzenie (diplopię) oraz opadanie powieki prawej. W badaniu neurologicznym stwierdzono poszerzenie prawej źrenicy i upośledzenie przywodzenia gałki ocznej prawej. Która struktura anatomiczna została objęta procesem chorobowym?",
+      "options": [
+        "Prawa zatoka jamista z uciskiem na nerw okoruchowy (III)",
+        "Skrzyżowanie wzrokowe (chiasma opticum)",
+        "Płat potyliczny kory mózgowej"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-cavernous-sinus",
+            "label": "Nacieczenie prawej zatoki jamistej",
+            "acceptedPhrases": [
+              "zatoka jamista",
+              "prawa zatoka jamista",
+              "boczny rozrost"
+            ]
+          },
+          {
+            "id": "c-cranial-nerve-3",
+            "label": "Porażenie nerwu okoruchowego (III)",
+            "acceptedPhrases": [
+              "nerw iii",
+              "nerw okoruchowy",
+              "opadanie powieki",
+              "poszerzenie źrenicy"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Boczna ekspansja guza do zatoki jamistej prowadzi do ucisku nerwów okoruchowych (najczęściej III, IV lub VI), powodując diplopię i oftalmoplegię.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "pituitary_endo"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Boczna ekspansja guza do zatoki jamistej prowadzi do ucisku nerwów okoruchowych (najczęściej III, IV lub VI), powodując diplopię i oftalmoplegię.",
+        "Nieprawidłowo: Boczna ekspansja guza do zatoki jamistej prowadzi do ucisku nerwów okoruchowych (najczęściej III, IV lub VI), powodując diplopię i oftalmoplegię.",
+        "Nieprawidłowo: Boczna ekspansja guza do zatoki jamistej prowadzi do ucisku nerwów okoruchowych (najczęściej III, IV lub VI), powodując diplopię i oftalmoplegię."
+      ]
+    },
+    {
+      "id": "przysadka-fizjologia-q3-checkpoint-2-v2",
+      "type": "matching",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-fizjologia-obj-2"
+      ],
+      "prompt": "Dopasuj podwzgórzowy neurohormon do jego głównego efektu na komórki przedniego płata przysadki:",
+      "pairs": [
+        [
+          "TRH (tyreoliberyna)",
+          "Pobudza wydzielanie TSH oraz prolaktyny"
+        ],
+        [
+          "Dopamina (PIF)",
+          "Hamuje tonicznie wydzielanie prolaktyny"
+        ],
+        [
+          "Somatostatyna (SS)",
+          "Hamuje wydzielanie GH oraz TSH"
+        ],
+        [
+          "GnRH (gonadoliberyna)",
+          "Pobudza pulsacyjne wydzielanie LH i FSH"
+        ]
+      ],
+      "explanation": "Podwzgórze sprawuje kontrolę zarówno stymulującą (TRH, CRH, GnRH, GHRH), jak i tonicznie hamującą (dopamina na prolaktynę, somatostatyna na GH).",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "pituitary_endo"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "przysadka-fizjologia-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "przysadka-fizjologia-obj-2"
+    ],
+    "prompt": "Wyjaśnij studentowi medycyny, dlaczego przerwanie szypuły przysadki (np. w urazie czaszkowo-mózgowym) powoduje spadek stężeń większości hormonów przysadkowych, ale WZROST stężenia prolaktyny.",
+    "modelAnswer": "Przedni płat przysadki jest zależny od podwzgórzowych liberyn docierających krążeniem wrotnym szypuły (CRH, TRH, GnRH, GHRH) – przerwanie szypuły odcina tę stymulację, powodując wtórną niedoczynność kory nadnerczy, tarczycy i gonad. Jedynym wyjątkiem jest prolaktyna, której wydzielanie podlega stałemu, tonicznemu HAMOWANIU przez podwzgórzową dopaminę. Przerwanie szypuły znosi ten hamujący wpływ (tzw. efekt odszypułowania / stalk effect), co prowadzi do autonomicznej hiperprolaktynemii.",
+    "explanation": "Zrozumienie efektu odszypułowania jest kluczowe w interpretacji umiarkowanej hiperprolaktynemii towarzyszącej guzom nieprolaktynowym.",
+    "difficulty": "doctor",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "pituitary_endo"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "przysadka-fizjologia-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "przysadka-fizjologia-obj-1"
+      ],
+      "prompt": "Wymień co najmniej 3 nerwy czaszkowe przebiegające w świetle lub ścianie zatoki jamistej, których uszkodzenie może wystąpić przy bocznym naciekaniu makrogruczolaka przysadki.",
+      "modelAnswer": "Przez zatokę jamistą przebiegają nerwy: 1) nerw okoruchowy (III), 2) nerw bloczkowy (IV), 3) gałąź oczna nerwu trójdzielnego (V1), 4) gałąź szczękowa nerwu trójdzielnego (V2), 5) nerw odwodzący (VI, biegnący w świetle zatoki tuż obok tętnicy szyjnej wewnętrznej).",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-nerves-3-4-6",
+            "label": "Nerwy gałkoruchowe (III, IV lub VI)",
+            "acceptedPhrases": [
+              "nerw iii",
+              "nerw iv",
+              "nerw vi",
+              "okoruchowy",
+              "bloczkowy",
+              "odwodzący"
+            ]
+          },
+          {
+            "id": "c-nerve-5",
+            "label": "Gałęzie nerwu trójdzielnego (V1 lub V2)",
+            "acceptedPhrases": [
+              "v1",
+              "v2",
+              "nerw trójdzielny",
+              "gałąź oczna",
+              "gałąź szczękowa"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Ucisk nerwów w zatoce jamistej manifestuje się oftalmoplegią i zaburzeniami czucia w górnej części twarzy.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "pituitary_endo"
+      ]
+    },
+    {
+      "id": "przysadka-fizjologia-q5-exit-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-fizjologia-obj-2"
+      ],
+      "prompt": "Gdzie w organizmie człowieka syntetyzowane są wazopresyna (AVP) i oksytocyna, które uwalniane są z tylnego płata przysadki do krwiobiegu?",
+      "options": [
+        "W ciałach wielkokomórkowych neuronów jąder nadwzrokowych i przykomorowych podwzgórza",
+        "W komórkach chromofobnych przedniego płata przysadki",
+        "W pituicytach tylnego płata przysadki"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-hypothalamic-nuclei",
+            "label": "Jądra nadwzrokowe i przykomorowe podwzgórza",
+            "acceptedPhrases": [
+              "podwzgórze",
+              "jądro nadwzrokowe",
+              "jądro przykomorowe",
+              "neurony wielkokomórkowe"
+            ]
+          },
+          {
+            "id": "c-posterior-pituitary-storage",
+            "label": "Tylny płat jest jedynie magazynem",
+            "acceptedPhrases": [
+              "magazyn",
+              "zakończenia aksonów",
+              "tylny płat magazynuje",
+              "pituicyty to komórki glejowe"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Neurohormony tylnego płata powstają w perykarionach neuronów podwzgórza i spływają aksonalnie do przysadki.",
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "pituitary_endo"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Neurohormony tylnego płata powstają w perykarionach neuronów podwzgórza i spływają aksonalnie do przysadki.",
+        "Nieprawidłowo: Neurohormony tylnego płata powstają w perykarionach neuronów podwzgórza i spływają aksonalnie do przysadki.",
+        "Nieprawidłowo: Neurohormony tylnego płata powstają w perykarionach neuronów podwzgórza i spływają aksonalnie do przysadki."
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "przysadka-fizjologia-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-fizjologia-obj-1"
+      ],
+      "prompt": "Pacjent po resekcji makrogruczolaka przysadki skarży się na przeczulicę i ból w okolicy czoła i grzbietu nosa po stronie lewej. Który nerw w ścianie zatoki jamistej został podrażniony podczas hemostazy?",
+      "options": [
+        "Nerw oczny (V1 — pierwsza gałąź nerwu trójdzielnego)",
+        "Nerw odwodzący (VI)",
+        "Nerw podjęzykowy (XII)"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-v1-ophthalmic",
+            "label": "Nerw oczny (V1) unerwiający czuciowo czoło i grzbiet nosa",
+            "acceptedPhrases": [
+              "v1",
+              "nerw oczny",
+              "pierwsza gałąź",
+              "czucie czoła"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "V1 biegnie w bocznej ścianie zatoki jamistej i odpowiada za czucie skóry czoła, oka i grzbietu nosa.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "pituitary_endo"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: V1 biegnie w bocznej ścianie zatoki jamistej i odpowiada za czucie skóry czoła, oka i grzbietu nosa.",
+        "Nieprawidłowo: V1 biegnie w bocznej ścianie zatoki jamistej i odpowiada za czucie skóry czoła, oka i grzbietu nosa.",
+        "Nieprawidłowo: V1 biegnie w bocznej ścianie zatoki jamistej i odpowiada za czucie skóry czoła, oka i grzbietu nosa."
+      ]
+    },
+    {
+      "id": "przysadka-fizjologia-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "przysadka-fizjologia-obj-2"
+      ],
+      "prompt": "Jakie znaczenie fizjologiczne ma brak bariery krew-mózg w obrębie wyniosłości pośrodkowej podwzgórza i przedniego płata przysadki?",
+      "modelAnswer": "Brak bariery krew-mózg w wyniosłości pośrodkowej i przysadce umożliwia swobodny transport peptydowych neurohormonów podwzgórza do naczyń wrotnych oraz pozwala komórkom przysadki i podwzgórza na bezpośrednie monitorowanie stężenia obwodowych hormonów (kortyzolu, hormonów tarczycy, hormonów płciowych) i glukozy w mechanizmach ujemnego sprzężenia zwrotnego.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-feedback-sensing",
+            "label": "Czujnik stężeń hormonów obwodowych i ujemne sprzężenie",
+            "acceptedPhrases": [
+              "sprzężenie zwrotne",
+              "monitorowanie stężeń",
+              "hormony obwodowe",
+              "dostęp do krążenia"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Okolice okołokomorowe bez bariery krew-mózg pełnią kluczową rolę narządów zmysłu biochemicznego ustroju.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "pituitary_endo"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "axis-map"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

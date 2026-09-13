@@ -1,0 +1,360 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "zapalenia",
+  "objectives": [
+    {
+      "id": "zapalenia-obj-1",
+      "statement": "Zróżnicujesz podostre zapalenie tarczycy de Quervaina, bezbolesne zapalenie, zapalenie poporodowe oraz ostre ropne zapalenie tarczycy.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "zapalenia-obj-2",
+      "statement": "Zrozumiesz trójfazowy przebieg hormonalny destrukcyjnego zapalenia (tyreotoksykoza -> przejściowa niedoczynność -> powrót do eutyreozy) i wdrożysz właściwe leczenie fazowe.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "zapalenia-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "zapalenia-obj-1"
+    ],
+    "prompt": "Który z poniższych objawów klinicznych i laboratoryjnych jest najbardziej charakterystyczny dla podostrego zapalenia tarczycy de Quervaina?",
+    "options": [
+      "Silny ból przedniej powierzchni szyi promieniujący do żuchwy lub uszu oraz bardzo wysokie OB (>60–100 mm/h)",
+      "Wysokie miano przeciwciał TRAb z obustronnym wytrzeszczem oczu",
+      "Wyłącznie wysoka gorączka z obecnością chełboczącego ropnia na szyi"
+    ],
+    "optionFeedback": [
+      "Ból szyi i spektakularnie wysokie OB to znak rozpoznawczy choroby de Quervaina.",
+      "To cechy choroby Gravesa-Basedowa, a nie zapalenia de Quervaina.",
+      "Chełbotanie i ropień cechują ostre bakteryjne ropne zapalenie tarczycy."
+    ],
+    "answer": 0,
+    "explanation": "Zapalenie de Quervaina (granulomatozowe) przebiega z silnym bólem szyi i wysokimi wykładnikami stanu zapalnego (OB, CRP).",
+    "difficulty": "student",
+    "reasoning": "differentiation",
+    "sourceIds": [
+      "thyroiditis"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "zapalenia-block-1",
+      "title": "Fazy zamiast stałej nadczynności",
+      "text": "W destrukcyjnym zapaleniu uszkodzone pęcherzyki uwalniają hormony. Faza tyreotoksyczna przechodzi w przejściową niedoczynność, a następnie u większości w eutyreozę.",
+      "sourceIds": [
+        "thyroiditis"
+      ],
+      "checkpointId": "zapalenia-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "zapalenia-block-2",
+      "title": "Ból jest wskazówką",
+      "text": "Podostre zapalenie de Quervaina wiąże się z silnym bólem szyi i wysokim OB/CRP, często po infekcji wirusowej. Poporodowe lub bezbolesne zapalenie przebiega bez bolesności.",
+      "sourceIds": [
+        "thyroiditis"
+      ],
+      "checkpointId": "zapalenia-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "zapalenia-block-3",
+      "title": "Leczenie zależy od mechanizmu",
+      "text": "W zapaleniu de Quervaina stosuje się NLPZ (kwas acetylosalicylowy, ibuprofen) lub prednizon w ciężkich przypadkach. Tyreostatyki są nieskuteczne. Podejrzenie ropnia wymaga pilnej interwencji chirurgicznej.",
+      "sourceIds": [
+        "thyroiditis"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "zapalenia-q2-checkpoint-1-v2",
+      "type": "ordering",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "zapalenia-obj-2"
+      ],
+      "prompt": "Uporządkuj chronologicznie klasyczne fazy ewolucji hormonalnej w przebiegu destrukcyjnego zapalenia tarczycy:",
+      "items": [
+        "Faza wczesna: Tyreotoksykoza z gwałtownego uwolnienia zmagazynowanych hormonów z uszkodzonych pęcherzyków (2–6 tygodni)",
+        "Faza przejściowej eutyreozy po wyczerpaniu zmagazynowanego koloidu",
+        "Faza hipotyreozy (niedoczynności) na skutek przejściowego wyczerpania zapasów i regeneracji tyreocytów (2–8 tygodni)",
+        "Faza powrotu do trwałej eutyreozy po pełnej regeneracji pęcherzyków (u >90% chorych)"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "explanation": "Zrozumienie wielofazowego przebiegu zapobiega niepotrzebnemu włączaniu tyreostatyków lub pochopnemu dożywotniemu orzekaniu niedoczynności.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "thyroiditis"
+      ]
+    },
+    {
+      "id": "zapalenia-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "zapalenia-obj-1",
+        "zapalenia-obj-2"
+      ],
+      "prompt": "Pacjent z podostrym zapaleniem de Quervaina od 4 dni przyjmuje ibuprofen w pełnej dawce (1800 mg/d), lecz silny ból szyi z gorączką 38,5°C nadal uniemożliwia połykanie. Jak zmodyfikujesz terapię?",
+      "options": [
+        "Zamiana NLPZ na doustny prednizon w dawce początkowej 30–40 mg/dobę ze stopniową redukcją przez 4–6 tygodni",
+        "Włączenie tiamazolu w dawce 40 mg/d",
+        "Skierowanie na pilną tyreoidektomię"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-prednisone-indication",
+            "label": "Wskazanie do prednizonu przy braku poprawy po NLPZ",
+            "acceptedPhrases": [
+              "prednizon",
+              "sterydoterapia",
+              "brak poprawy po nlpz",
+              "30-40 mg"
+            ]
+          },
+          {
+            "id": "c-tapering",
+            "label": "Stopniowa redukcja dawki sterydu",
+            "acceptedPhrases": [
+              "stopniowa redukcja",
+              "tapering",
+              "odstawianie przez 4-6 tygodni",
+              "zapobieganie nawrotom"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "W ciężkim przebiegu lub braku odpowiedzi na NLPZ w ciągu 48–72 h prednizon przynosi spektakularną ulgę w ciągu kilkunastu godzin.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "thyroiditis"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: W ciężkim przebiegu lub braku odpowiedzi na NLPZ w ciągu 48–72 h prednizon przynosi spektakularną ulgę w ciągu kilkunastu godzin.",
+        "Nieprawidłowo: W ciężkim przebiegu lub braku odpowiedzi na NLPZ w ciągu 48–72 h prednizon przynosi spektakularną ulgę w ciągu kilkunastu godzin.",
+        "Nieprawidłowo: W ciężkim przebiegu lub braku odpowiedzi na NLPZ w ciągu 48–72 h prednizon przynosi spektakularną ulgę w ciągu kilkunastu godzin."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "zapalenia-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "zapalenia-obj-2"
+    ],
+    "prompt": "Pacjent w 8. tygodniu po początku zapalenia de Quervaina otrzymał wynik: TSH = 12 mIU/l, FT4 = 9 pmol/l (obniżone). Przerażony pyta, dlaczego wpadł w niedoczynność i czy musi brać hormony do końca życia. Co mu odpowiesz?",
+    "modelAnswer": "Wyjaśnię pacjentowi, że to naturalna, spodziewana faza hipotyreozy po opróżnieniu zapasów hormonów. Uszkodzone pęcherzyki tarczycy aktualnie się regenerują. U ponad 90–95% pacjentów stan ten jest całkowicie przejściowy i tarczyca w pełni podejmie pracę w ciągu kolejnych 4–8 tygodni. Jeśli objawy są nasilone, można wdrożyć lewotyroksynę tymczasowo z planem jej odstawienia za 2–3 miesiące.",
+    "explanation": "Edukacja o przejściowym charakterze fazy hipotyreozy chroni przed nieuzasadnionym trwałym etykietowaniem pacjenta.",
+    "difficulty": "doctor",
+    "reasoning": "interpretation",
+    "sourceIds": [
+      "thyroiditis"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "zapalenia-q4-exit-v2",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "zapalenia-obj-1"
+      ],
+      "prompt": "Oceń, jak poniższe cechy kliniczne i wyniki badań wpływają na prawdopodobieństwo ostrego ropnego zapalenia tarczycy:",
+      "hypothesis": "U gorączkującego pacjenta z bólem szyi występuje ostre ropne bakteryjne zapalenie tarczycy, a nie zapalenie de Quervaina.",
+      "items": [
+        {
+          "id": "ev-1",
+          "text": "Obecność chełboczącej zmiany płynowej w USG tarczycy z odczynem zapalnym otaczających tkanek miękkich",
+          "expected": "supports",
+          "explanation": "Płyn i chełbotanie wskazują na formowanie ropnia bakteryjnego."
+        },
+        {
+          "id": "ev-2",
+          "text": "W BACC stwierdzono gęstą treść ropną z przewagą granulocytów obojętnochłonnych i obecnością bakterii w barwieniu Grama",
+          "expected": "supports",
+          "explanation": "To bezpośredni mikrobiologiczny dowód ostrego zakażenia bakteryjnego."
+        },
+        {
+          "id": "ev-3",
+          "text": "Obecność komórek olbrzymich wielojądrowych i ziarniniaków w materiale biopsyjnym",
+          "expected": "opposes",
+          "explanation": "Ziarniniaki i komórki olbrzymie są patognomoniczne dla zapalenia de Quervaina (granulomatozowego)."
+        },
+        {
+          "id": "ev-4",
+          "text": "Przebyta infekcja górnych dróg oddechowych 3 tygodnie wcześniej",
+          "expected": "neutral",
+          "explanation": "Infekcja wirusowa poprzedza zapalenie de Quervaina, ale zakażenie bakteryjne również może szerzyć się z gardła."
+        }
+      ],
+      "explanation": "Ostre ropne zapalenie wymaga pilnego drenażu i antybiotykoterapii celowanej.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "thyroiditis"
+      ]
+    },
+    {
+      "id": "zapalenia-q5-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "zapalenia-obj-1"
+      ],
+      "prompt": "Jakie anatomiczne wrodzone zaburzenie rozwojowe szyi u dzieci i młodych dorosłych stanowi najczęstszą drogę szerzenia zakażenia w ostrym ropnym zapaleniu tarczycy?",
+      "modelAnswer": "Najczęstszą przyczyną nawracającego ostrego ropnego zapalenia tarczycy (zwykle lewego płata) jest przetoka z zachyłka gruszkowatego gardła (fistula of the pyriform sinus), będąca pozostałością trzeciej lub czwartej kieszonki skrzelowej.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-pyriform-sinus",
+            "label": "Przetoka z zachyłka gruszkowatego / kieszonka skrzelowa",
+            "acceptedPhrases": [
+              "zachyłek gruszkowaty",
+              "przetoka",
+              "kieszonka skrzelowa",
+              "fistula",
+              "przewód tarczowo-językowy"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Przetoka z zachyłka gruszkowatego umożliwia bezpośrednią inwazję flory jamy ustnej do lewego płata tarczycy.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "thyroiditis"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "zapalenia-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "zapalenia-obj-1"
+      ],
+      "prompt": "Kobieta 4 miesiące po porodzie zgłasza kołatanie serca i drażliwość. TSH = 0,05 mIU/l, FT4 = 26 pmol/l. Tarczyca jest niebolesna, TRAb ujemne, a anty-TPO silnie dodatnie. Jakie jest rozpoznanie?",
+      "options": [
+        "Poporodowe zapalenie tarczycy (PPT) w fazie tyreotoksycznej",
+        "Choroba Gravesa-Basedowa z przełomem",
+        "Ostre ropne zapalenie tarczycy"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-ppt-diagnosis",
+            "label": "Poporodowe zapalenie tarczycy",
+            "acceptedPhrases": [
+              "poporodowe zapalenie",
+              "ppt",
+              "niebolesna tarczyca",
+              "ujemne trab"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Poporodowe zapalenie tarczycy to wariant bezbolesnego zapalenia autoimmunologicznego występujący w 1. roku po porodzie.",
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "thyroiditis",
+        "pregnancy"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Poporodowe zapalenie tarczycy to wariant bezbolesnego zapalenia autoimmunologicznego występujący w 1. roku po porodzie.",
+        "Nieprawidłowo: Poporodowe zapalenie tarczycy to wariant bezbolesnego zapalenia autoimmunologicznego występujący w 1. roku po porodzie.",
+        "Nieprawidłowo: Poporodowe zapalenie tarczycy to wariant bezbolesnego zapalenia autoimmunologicznego występujący w 1. roku po porodzie."
+      ]
+    },
+    {
+      "id": "zapalenia-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "zapalenia-obj-2"
+      ],
+      "prompt": "Dlaczego w fazie tyreotoksycznej poporodowego zapalenia tarczycy lekiem z wyboru w przypadku dokuczliwych objawów sercowych jest propranolol, a tyreostatyki są przeciwwskazane?",
+      "modelAnswer": "Poporodowe zapalenie tarczycy jest procesem destrukcyjnym, w którym dochodzi do uwolnienia gotowych hormonów ze zniszczonych pęcherzyków, a nie do ich nadprodukcji. Tyreostatyki nie zahamują uwalniania zmagazynowanych hormonów, a mogłyby nasilić i przyspieszyć nadchodzącą fazę hipotyreozy. Propranolol skutecznie blokuje objawy adrenergiczne.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-ppt-mechanism",
+            "label": "Mechanizm destrukcyjny / brak wskazań do tyreostatyku",
+            "acceptedPhrases": [
+              "proces destrukcyjny",
+              "uwolnienie hormonów",
+              "brak syntezy de novo",
+              "tyreostatyk nieskuteczny"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Tyreostatyk w PPT nie przynosi korzyści, a może pogłębić fazę niedoczynności.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "thyroiditis",
+        "pregnancy"
+      ]
+    },
+    {
+      "id": "zapalenia-bank-3",
+      "type": "matching",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "zapalenia-obj-1"
+      ],
+      "prompt": "Dopasuj jednostkę chorobową do jej charakterystycznej cechy klinicznej:",
+      "pairs": [
+        [
+          "Zapalenie de Quervaina",
+          "Bolesność palpacyjna tarczycy i skrajnie wysokie OB/CRP"
+        ],
+        [
+          "Zapalenie Riedla",
+          "Kamiennie twarda tarczyca wrastająca w struktury szyi (włóknienie z IgG4)"
+        ],
+        [
+          "Poporodowe zapalenie tarczycy",
+          "Przemijająca dysfunkcja w 1. roku po porodzie u kobiet z anty-TPO"
+        ],
+        [
+          "Ostre ropne zapalenie",
+          "Wysoka gorączka, chełbotanie i konieczność drenażu ropnia"
+        ]
+      ],
+      "explanation": "Zapalenia tarczycy reprezentują zróżnicowane mechanizmy: od infekcji bakteryjnej, przez proces ziarniniakowy, po włóknienie IgG4-zależne.",
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "thyroiditis"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "cushing-choroba",
+  "objectives": [
+    {
+      "id": "cushing-choroba-obj-1",
+      "statement": "Zróżnicujesz pojęcie zespołu Cushinga (każdy stan hiperkortyzolemii) od choroby Cushinga (gruczolak przysadki wydzielający ACTH) oraz odróżnisz postacie ACTH-zależne od ACTH-niezależnych.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "cushing-choroba-obj-2",
+      "statement": "Wdrożysz trzystopniowy algorytm diagnostyczny: 1) potwierdzenie hiperkortyzolemii (1 mg DST, UFC, kortyzol w ślinie o północy), 2) stężenie ACTH, 3) lokalizacja źródła (MRI, HDST, BIPSS z gradientem centralno-obwodowym).",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "cushing-choroba-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "cushing-choroba-obj-1"
+    ],
+    "prompt": "Czym różni się 'zespół Cushinga' od 'choroby Cushinga' w ścisłej nomenklaturze endokrynologicznej?",
+    "options": [
+      "Zespół Cushinga to każdy stan hiperkortyzolemii (niezależnie od przyczyny), natomiast choroba Cushinga to wyłącznie guz przysadki wydzielający ACTH",
+      "Zespół Cushinga dotyczy wyłącznie dzieci, a choroba Cushinga dorosłych",
+      "Choroba Cushinga to postać jatrogenna po podaniu sterydów z zewnątrz"
+    ],
+    "optionFeedback": [
+      "To fundamentalne rozróżnienie: zespół to pojęcie nadrzędne kliniczne, a choroba Cushinga to konkretna etiologia przysadkowa (ok. 70% endogennych przypadków zespołu Cushinga).",
+      "Kryterium różnicującym jest etiologia, a nie wiek pacjenta.",
+      "Postać jatrogenna to egzogenny zespół Cushinga."
+    ],
+    "answer": 0,
+    "explanation": "Choroba Cushinga (morbus Cushing) to hiperkortyzolemia wywołana gruczolakiem kortykotropowym przysadki wydzielającym ACTH.",
+    "difficulty": "student",
+    "reasoning": "differentiation",
+    "sourceIds": [
+      "pte_cushing"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "cushing-choroba-block-1",
+      "title": "Zespół a choroba Cushinga: Różnica pojęciowa i fenotyp",
+      "text": "Objawy obejmują otyłość brzuszną, bawoli kark, twarz księżycowatą, szerokie purpurowe rozstępy (>1 cm), miopatię proksymalną mięśni obręczy, osteoporozę, nadciśnienie i zaburzenia nastroju. Najczęstszą przyczyną endogenną jest choroba Cushinga (70%).",
+      "sourceIds": [
+        "pte_cushing"
+      ],
+      "checkpointId": "cushing-choroba-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "cushing-choroba-block-2",
+      "title": "Krok 1: Potwierdzenie autonomicznej hiperkortyzolemii",
+      "text": "Wymaga co najmniej 2 dodatnich testów z różnych grup: test nocnego hamowania 1 mg deksametazonu (kortyzol rano >1,8 µg/dl / 50 nmol/l), wolny kortyzol w dobowej zbiórce moczu (UFC) oraz stężenie kortyzolu w ślinie o 23:00.",
+      "sourceIds": [
+        "pte_cushing"
+      ],
+      "checkpointId": "cushing-choroba-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "cushing-choroba-block-3",
+      "title": "Krok 2 i 3: Oznaczenie ACTH i cewnikowanie zatok (BIPSS)",
+      "text": "Niewykrywalne ACTH (<5 pg/ml) wskazuje na guz nadnercza (ACTH-niezależny). Podwyższone ACTH (>15-20 pg/ml) to postać ACTH-zależna. Różnicowanie przysadka vs ektopowe ACTH opiera się na MRI, teście z 8 mg deksametazonu (HDST), teście z CRH oraz obustronnym cewnikowaniu zatok skalistych dolnych (BIPSS).",
+      "sourceIds": [
+        "pte_cushing"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "cushing-choroba-q2-checkpoint-1-v2",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "cushing-choroba-obj-1"
+      ],
+      "prompt": "Oceń, jak poniższe cechy kliniczne i biochemiczne wpływają na prawdopodobieństwo ektopowego wydzielania ACTH (np. przez rakowiaka oskrzela lub drobnokomórkowego raka płuca) w porównaniu z chorobą Cushinga:",
+      "hypothesis": "U pacjenta z zespołem Cushinga występuje ektopowe wydzielanie ACTH (guz neuroendokrynny), a nie gruczolak przysadki.",
+      "items": [
+        {
+          "id": "ev-1",
+          "text": "Głęboka, oporna na leczenie hipokaliemia (<3,0 mmol/l) z zasadowicą metaboliczną i gwałtownie narastającą hiperpigmentacją skóry",
+          "expected": "supports",
+          "explanation": "Ogromne stężenia ektopowego ACTH nasycają 11beta-HSD2, co wywołuje ciężki efekt mineralokortykoidowy kortyzolu."
+        },
+        {
+          "id": "ev-2",
+          "text": "W badaniu MRI przysadki widoczny jest typowy mikrogruczolak o wymiarach 6 mm ze słabszym wzmocnieniem po kontraście",
+          "expected": "opposes",
+          "explanation": "Uwidocznienie mikrogruczolaka przysadki silnie przemawia za chorobą Cushinga."
+        },
+        {
+          "id": "ev-3",
+          "text": "Wysokie stężenie ACTH w osoczu (180 pg/ml)",
+          "expected": "neutral",
+          "explanation": "Zarówno choroba Cushinga, jak i ektopowe ACTH przebiegają ze zwiększonym stężeniem ACTH."
+        },
+        {
+          "id": "ev-4",
+          "text": "Hamowanie stężenia kortyzolu o >50% w teście wysokodawkowym z deksametazonem (HDST 8 mg)",
+          "expected": "opposes",
+          "explanation": "Hamowanie w HDST jest typowe dla gruczolaka przysadki (zachowana częściowa wrażliwość receptorów glikokortykoidowych)."
+        }
+      ],
+      "explanation": "Ciężka hipokaliemia, brak supresji w teście 8 mg i brak mikrogruczolaka w MRI sugerują źródło ektopowe.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "pte_cushing"
+      ]
+    },
+    {
+      "id": "cushing-choroba-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "cushing-choroba-obj-2"
+      ],
+      "prompt": "U 34-letniej kobiety potwierdzono ACTH-zależny zespół Cushinga (ACTH = 65 pg/ml), lecz badanie MRI przysadki nie uwidoczniło żadnego gruczolaka (obraz prawidłowy). Jakie inwazyjne badanie naczyniowe stanowi złoty standard w różnicowaniu mikrogruczolaka przysadki niewidocznego w MRI od ektopowego wydzielania ACTH?",
+      "options": [
+        "Obustronne jednoczesne cewnikowanie zatok skalistych dolnych (BIPSS) z oznaczeniem gradientu stężeń ACTH (zatoka / krew obwodowa) przed i po stymulacji CRH",
+        "Angiografia tętnic nerkowych",
+        "Scyntygrafia kośćca"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-bipss-gradient",
+            "label": "BIPSS z oceną gradientu centralno-obwodowego ACTH",
+            "acceptedPhrases": [
+              "bipss",
+              "cewnikowanie zatok skalistych",
+              "zatoki skaliste",
+              "gradient acth",
+              "stymulacja crh"
+            ]
+          },
+          {
+            "id": "c-occult-microadenoma",
+            "label": "Wykrycie mikrogruczolaka niewidocznego w MRI przysadki",
+            "acceptedPhrases": [
+              "niewidoczny w mri",
+              "mikrogruczolak",
+              "rozstrzygnięcie źródła",
+              "ektopowe acth"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Gradient ACTH zatoka skalista/obwód >=2 w spoczynku lub >=3 po CRH potwierdza przysadkowe źródło ACTH z czułością i swoistością >95%.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "pte_cushing"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Gradient ACTH zatoka skalista/obwód >=2 w spoczynku lub >=3 po CRH potwierdza przysadkowe źródło ACTH z czułością i swoistością >95%.",
+        "Nieprawidłowo: Gradient ACTH zatoka skalista/obwód >=2 w spoczynku lub >=3 po CRH potwierdza przysadkowe źródło ACTH z czułością i swoistością >95%.",
+        "Nieprawidłowo: Gradient ACTH zatoka skalista/obwód >=2 w spoczynku lub >=3 po CRH potwierdza przysadkowe źródło ACTH z czułością i swoistością >95%."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "cushing-choroba-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "cushing-choroba-obj-2"
+    ],
+    "prompt": "Wyjaśnij rezydentowi medycyny, dlaczego u pacjenta z otyłością olbrzymią i depresją ujemny wynik nocnego testu z 1 mg deksametazonu (kortyzol rano <1,8 µg/dl / <50 nmol/l) z niemal 100% pewnością WYKLUCZA zespół Cushinga.",
+    "modelAnswer": "Nocny test z 1 mg deksametazonu charakteryzuje się bardzo wysoką czułością przekraczającą 95–98% przy zastosowaniu rygorystycznego punktu odcięcia 1,8 µg/dl (50 nmol/l). Ujemny wynik (stłumienie kortyzolu <1,8 µg/dl) dowodzi, że oś HPA podlega prawidłowemu ujemnemu sprzężeniu zwrotnemu i wyklucza autonomiczną hiperkortyzolemię. U pacjentów z otyłością, depresją lub alkoholizmem (tzw. rzekomy zespół Cushinga / pseudo-Cushing) zdarzają się wyniki fałszywie dodatnie (brak supresji), ale prawidłowe stłumienie definitywnie zamyka diagnostykę w kierunku zespołu Cushinga.",
+    "explanation": "Wysoka czułość testu 1 mg DST sprawia, że jest to idealny test wykluczający (wysoka ujemna wartość predykcyjna).",
+    "difficulty": "doctor",
+    "reasoning": "decision",
+    "sourceIds": [
+      "pte_cushing"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "cushing-choroba-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "cushing-choroba-obj-2"
+      ],
+      "prompt": "Jakie wartości gradientu ACTH (stężenie w zatoce skalistej dolnej do stężenia w żyle obwodowej: IPS/P) w badaniu BIPSS potwierdzają chorobę Cushinga: 1) wyjściowo, 2) po stymulacji CRH?",
+      "modelAnswer": "Chorobę Cushinga (przysadkowe źródło ACTH) potwierdza: 1) gradient wyjściowy (przed stymulacją) IPS/P >= 2,0; 2) gradient szczytowy po stymulacji CRH (lub desmopresyną) IPS/P >= 3,0. Wartości poniżej tych progów przemawiają za ektopowym wydzielaniem ACTH.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-bipss-cutoffs",
+            "label": "Gradient >=2 wyjściowo i >=3 po stymulacji CRH",
+            "acceptedPhrases": [
+              ">=2",
+              ">=3",
+              "2,0",
+              "3,0",
+              "2 wyjściowo",
+              "3 po crh"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Kryteria BIPSS to IPS/P >=2 wyjściowo oraz >=3 po podaniu CRH.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "pte_cushing"
+      ]
+    },
+    {
+      "id": "cushing-choroba-q5-exit-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "cushing-choroba-obj-2"
+      ],
+      "prompt": "Jaka jest metoda leczenia pierwszego wyboru w chorobie Cushinga u kwalifikującego się chorego?",
+      "options": [
+        "Selektywna resekcja mikrogruczolaka przysadki drogą przez zatokę klinową (TSS — transsphenoidal surgery)",
+        "Obustronna adrenalektomia w pierwszym etapie",
+        "Przewlekłe leczenie ketokonazolem w monoterapii"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-tss-first-line",
+            "label": "Operacja przezklinowa przysadki (TSS) jako leczenie z wyboru",
+            "acceptedPhrases": [
+              "operacja przez zatokę klinową",
+              "tss",
+              "resekcja gruczolaka",
+              "zabieg neurochirurgiczny"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Zabieg przez zatokę klinową (TSS) daje szansę na całkowite wyleczenie u 70–85% pacjentów z mikrogruczolakiem.",
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "pte_cushing"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Zabieg przez zatokę klinową (TSS) daje szansę na całkowite wyleczenie u 70–85% pacjentów z mikrogruczolakiem.",
+        "Nieprawidłowo: Zabieg przez zatokę klinową (TSS) daje szansę na całkowite wyleczenie u 70–85% pacjentów z mikrogruczolakiem.",
+        "Nieprawidłowo: Zabieg przez zatokę klinową (TSS) daje szansę na całkowite wyleczenie u 70–85% pacjentów z mikrogruczolakiem."
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "cushing-choroba-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "cushing-choroba-obj-1"
+      ],
+      "prompt": "U pacjenta po obustronnej adrenalektomii wykonanej z powodu opornej na leczenie choroby Cushinga po 2 latach pojawiła się wybitna hiperpigmentacja skóry oraz ubytki pola widzenia. W MRI uwidoczniono gwałtownie rosnącego makrogruczolaka przysadki z ACTH >2000 pg/ml. Jak nazywa się ten zespół?",
+      "options": [
+        "Zespół Nelsona (agresywny rozrost gruczolaka kortykotropowego po usunięciu nadnerczy)",
+        "Zespół Schmidta",
+        "Zespół Sheehana"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-nelson-syndrome",
+            "label": "Zespół Nelsona po obustronnej adrenalektomii",
+            "acceptedPhrases": [
+              "zespół nelsona",
+              "nelson",
+              "brak sprzężenia",
+              "usunięcie nadnerczy"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Usunięcie nadnerczy znosi hamowanie kortyzolowe, co w zespole Nelsona prowadzi do agresywnego wzrostu gruczolaka przysadki.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "pte_cushing"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Usunięcie nadnerczy znosi hamowanie kortyzolowe, co w zespole Nelsona prowadzi do agresywnego wzrostu gruczolaka przysadki.",
+        "Nieprawidłowo: Usunięcie nadnerczy znosi hamowanie kortyzolowe, co w zespole Nelsona prowadzi do agresywnego wzrostu gruczolaka przysadki.",
+        "Nieprawidłowo: Usunięcie nadnerczy znosi hamowanie kortyzolowe, co w zespole Nelsona prowadzi do agresywnego wzrostu gruczolaka przysadki."
+      ]
+    },
+    {
+      "id": "cushing-choroba-bank-2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "cushing-choroba-obj-2"
+      ],
+      "prompt": "Jaki jest punkt odcięcia stężenia kortyzolu w surowicy krwi rano [w µg/dl] w teście nocnego hamowania 1 mg deksametazonu, poniżej którego wynik uznaje się za prawidłowe stłumienie wykluczające zespół Cushinga?",
+      "answer": 1.8,
+      "tolerance": 0.1,
+      "unit": "µg/dl",
+      "explanation": "Wartość kortyzolu < 1,8 µg/dl (50 nmol/l) o godzinie 8:00–9:00 rano po przyjęciu 1 mg deksametazonu o 23:00 wyklucza autonomiczną hiperkortyzolemię.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "pte_cushing"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "axis-map"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "id": "udar-przysadki",
+  "moduleId": "przysadka",
+  "title": "Gdy pęka naczynie w siodle",
+  "subtitle": "Apopleksja przysadki, nagłe objawy oczne i pilne leczenie sterydami",
+  "group": "Sytuacje szczególne i chirurgia",
+  "minutes": 16,
+  "goals": [
+    "Rozpoznasz triadę objawów udaru przysadki (apopleksji): nagły piorunujący ból głowy, zaburzenia widzenia i oftalmoplegia.",
+    "Ustalisz priorytety ratunkowe: natychmiastowy hydrokortyzon dożylnie i pilna konsultacja neurochirurgiczna."
+  ],
+  "sections": [
+    {
+      "title": "Mechanizm i triada kliniczna apopleksji",
+      "text": "Udar niedokrwienny lub krwotoczny przysadki (apopleksja przysadki) to stan bezpośredniego zagrożenia życia wynikający z nagłego krwawienia lub zawału w obrębie gruczolaka przysadki (rzadziej w zdrowym gruczole). Guz rosnąc szybko, przerasta swoje unaczynienie lub uciska naczynia w otworze przepony siodła. Triada objawów: 1) Nagły, „piorunujący” ból głowy (często zagałkowy lub czołowy, imitujący krwawienie podpajęczynówkowe z tętniaka); 2) Ostre zaburzenia wzroku (spadek ostrości, ubytki pola widzenia z powodu nagłego uniesienia chiazmy); 3) Oftalmoplegia (opadanie powieki, podwójne widzenie wskutek ucisku nerwów III, IV, VI w ścianie zatoki jamistej)."
+    },
+    {
+      "title": "Zagrożenie zgonem: Ostra wtórna niewydolność nadnerczy",
+      "text": "Najczęstszą bezpośrednią przyczyną zgonu w apopleksji przysadki NIE jest uszkodzenie mózgu, lecz ostra niewydolność kory nadnerczy! Zniszczenie komórek kortykotropowych i gwałtowny spadek ACTH prowadzi do załamania stężenia kortyzolu, ciężkiej hipotensji, wstrząsu hemodynamicznego i zgonu. Dlatego każdy pacjent z podejrzeniem apopleksji musi NATYCHMIAST otrzymać dożylnie hydrokortyzon (100 mg w bolusie i 200 mg/dobę w ciągłym wlewie lub dawkach podzielonych) bez czekania na wyniki badań hormonalnych!"
+    },
+    {
+      "title": "Postępowanie: Neurochirurgia vs leczenie zachowawcze",
+      "text": "Wskazania do natychmiastowej operacji odbarczającej (transsphenoidalnej w ciągu pierwszych 24–48 godzin): postępujące pogorszenie ostrości wzroku, ubytki pola widzenia, zaburzenia świadomości (śpiączka) lub niestabilność neurologiczna. Jeśli pacjent jest stabilny, a wzrok zachowany i nie pogarsza się, dopuszczalne jest ścisłe monitorowanie na OIT i leczenie zachowawcze wysokimi dawkami sterydów."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Objaw apopleksji",
+      "Mechanizm patofizjologiczny"
+    ],
+    "rows": [
+      [
+        "Piorunujący ból głowy",
+        "Nagłe rozciągnięcie opony twardej siodła tureckiego i gałęzi n. trójdzielnego"
+      ],
+      [
+        "Opadanie powieki / podwójne widzenie",
+        "Boczny ucisk nerwów gałkoruchowych (zwłaszcza n. III) w zatoce jamistej"
+      ],
+      [
+        "Ślepota / niedowidzenie",
+        "Nagłe uciśnięcie skrzyżowania wzrokowego przez krwiak nadsiodłowy"
+      ],
+      [
+        "Hipotensja / wstrząs naczyniowy",
+        "Ostra niewydolność nadnerczy z powodu zniszczenia komórek ACTH"
+      ]
+    ]
+  },
+  "advanced": "Czynniki wyzwalające apopleksję przysadki to m.in. leczenie przeciwkrzepliwe lub trombolityczne, operacje kardiochirurgiczne w krążeniu pozaustrojowym, nagłe wahania ciśnienia tętniczego, próby dynamiczne (stymulacja TRH/GnRH) oraz ciąża. W badaniu CT w fazie ostrej widoczna jest hiperdensyjna masa krwi w siodle, jednak MRI pozostaje badaniem o najwyższej czułości.",
+  "summary": "Apopleksja przysadki to ostry zespół neurologiczno-endokrynologiczny. Ratunkiem pierwszego rzutu jest natychmiastowe podanie hydrokortyzonu, a pogorszenie widzenia stanowi bezwzględne wskazanie do pilnego odbarczenia neurochirurgicznego.",
+  "sourceIds": [
+    "baldeweg"
+  ],
+  "questions": [
+    {
+      "id": "udar-przysadki-q1",
+      "lessonId": "udar-przysadki",
+      "prompt": "Jaki lek należy podać natychmiast każdemu choremu z podejrzeniem apopleksji przysadki, jeszcze przed wynikami badań laboratoryjnych?",
+      "options": [
+        {
+          "text": "Duże dawki aspiryny doustnie",
+          "explanation": "Leki przeciwpłytkowe nasiliłyby krwawienie śródczaszkowe wewnątrz guza."
+        },
+        {
+          "text": "Wlew dożylny dopaminy bez sterydów",
+          "explanation": "Sama dopamina nie zastąpi niezbędnego dla przeżycia kortyzolu."
+        },
+        {
+          "text": "Hydrokortyzon dożylnie w dawce stresowej (np. 100 mg bolus)",
+          "explanation": "Chroni chorego przed śmiertelnym wstrząsem w przebiegu ostrej wtórnej niedoczynności nadnerczy."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "udar-przysadki-q2",
+      "lessonId": "udar-przysadki",
+      "prompt": "Który objaw u chorego z apopleksją przysadki kwalifikuje go do pilnej operacji neurochirurgicznej w trybie ostrym?",
+      "options": [
+        {
+          "text": "Postępujący ubytek pola widzenia i nagłe pogorszenie ostrości wzroku",
+          "explanation": "Dekompresja chiazmy wzrokowej w ciągu 24–48 godzin zapobiega nieodwracalnej ślepocie."
+        },
+        {
+          "text": "Izolowany ból gardła",
+          "explanation": "Ból gardła nie jest objawem apopleksji ani wskazaniem do operacji."
+        },
+        {
+          "text": "Stężenie prolaktyny wynoszące 28 ng/ml",
+          "explanation": "Wartość prolaktyny nie decyduje o pilności odbarczenia struktur mózgowia."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "udar-przysadki-q3",
+      "lessonId": "udar-przysadki",
+      "prompt": "Z jakim innym zagrażającym życiu stanem neurologicznym najczęściej mylona jest apopleksja przysadki ze względu na nagły ból głowy?",
+      "options": [
+        {
+          "text": "Zapaleniem nerwu kulszowego (rwą kulszową)",
+          "explanation": "Rwa kulszowa dotyczy kończyny dolnej i kręgosłupa lędźwiowego."
+        },
+        {
+          "text": "Krwawieniem podpajęczynówkowym z pękniętego tętniaka mózgu (SAH)",
+          "explanation": "W obu stanach ból głowy ma charakter nagłego, piorunującego uderzenia o maksymalnym nasileniu."
+        },
+        {
+          "text": "Nawracającym łagodnym napięciowym bólem głowy",
+          "explanation": "Ból napięciowy narasta powoli i nie wiąże się z objawami neurologicznymi ani wstrząsem."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "udar-przysadki-q4",
+      "lessonId": "udar-przysadki",
+      "prompt": "Dlaczego porażenie nerwu okoruchowego (III) jest typowym powikłaniem udaru guza przysadki?",
+      "options": [
+        {
+          "text": "Nerw III jest niszczony przez brak hormonów tarczycy",
+          "explanation": "Hormony tarczycy nie odpowiadają bezpośrednio za mechaniczną kompresję nerwu."
+        },
+        {
+          "text": "Przysadka produkuje substancje paraliżujące nerwy obwodowe",
+          "explanation": "Gruczolaki nie wytwarzają neurotoksyn porażających nerwy czaszkowe."
+        },
+        {
+          "text": "Krwiak i obrzęk gwałtownie rozszerzają się na boki, uciskając nerw biegnący w ścianie zatoki jamistej",
+          "explanation": "Objawia się to opadaniem powieki (ptosis), rozszerzeniem źrenicy i zaburzeniami ruchów gałki ocznej."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "udar-przysadki-q5",
+      "lessonId": "udar-przysadki",
+      "prompt": "W jakiej strukturze najczęściej dochodzi do krwawienia w apopleksji przysadki?",
+      "options": [
+        {
+          "text": "W obrębie wcześniej istniejącego makrogruczolaka przysadki",
+          "explanation": "Nieprawidłowo unaczynione, przerośnięte tkanki guza są wysoce podatne na zawał i wylew krwi."
+        },
+        {
+          "text": "W prawidłowym rdzeniu kręgowym",
+          "explanation": "Apopleksja przysadki dotyczy wnętrza siodła tureckiego w czaszce."
+        },
+        {
+          "text": "W ścianie pęcherzyka żółciowego",
+          "explanation": "Pęcherzyk żółciowy nie ma związku z apopleksją przysadki."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

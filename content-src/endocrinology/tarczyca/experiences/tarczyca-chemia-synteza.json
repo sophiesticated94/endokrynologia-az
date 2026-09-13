@@ -1,0 +1,349 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "tarczyca-chemia-synteza",
+  "objectives": [
+    {
+      "id": "tarczyca-chemia-synteza-obj-1",
+      "statement": "Poznasz geometrię przestrzenną cząsteczki tyroksyny z kątem walencyjnym mostka C-O-C ~120° oraz prostopadłą orientacją pierścieni.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "tarczyca-chemia-synteza-obj-2",
+      "statement": "Przeanalizujesz cykl katalityczny hemu peroksydazy tarczycowej (TPO) z udziałem Compound I i rodników fenoksylowych.",
+      "kind": "mechanism"
+    }
+  ],
+  "diagnostic": {
+    "id": "tarczyca-chemia-synteza-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "tarczyca-chemia-synteza-obj-1"
+    ],
+    "prompt": "Jaki kąt tworzy mostek eterowy C-O-C łączący dwa pierścienie aromatyczne w cząsteczce tyroksyny (T4)?",
+    "options": [
+      "Około 120° (wynikający z hybrydyzacji tlenu i delokalizacji elektronów)",
+      "Dokładnie 180° (płaska cząsteczka liniowa)",
+      "Poniżej 60° (naprężony pierścień trójczłonowy)"
+    ],
+    "optionFeedback": [
+      "Kąt C-O-C wynosi ok. 120°, a pierścienie przyjmują wzajemnie prostopadłą orientację.",
+      "Wiązania eterowe nie są liniowe.",
+      "Tlen nie tworzy pierścienia trójczłonowego w tyroninach."
+    ],
+    "answer": 0,
+    "explanation": "Kąt walencyjny C-O-C bliski 120° i prostopadłe ułożenie pierścieni decydują o dopasowaniu do receptora jądrowego TRβ.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "tpo_chem"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "tarczyca-chemia-synteza-block-1",
+      "title": "Geometria cząsteczki tyroksyny",
+      "text": "Tyroksyna składa się z dwóch pierścieni połączonych mostkiem tlenowym o kącie C-O-C ~120°. Ze względu na zawadę steryczną atomów jodu w pozycjach 3 i 5 pierścień zewnętrzny przyjmuje orientację prostopadłą (kąt torsyjny ~90°).",
+      "sourceIds": [
+        "tpo_chem"
+      ],
+      "checkpointId": "tarczyca-chemia-synteza-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "tarczyca-chemia-synteza-block-2",
+      "title": "Cykl katalityczny hemu TPO: Compound I",
+      "text": "TPO posiada grupę prostetyczną hem b. Reakcja z H2O2 generowanym przez DUOX2 utlenia Fe(III) do kationorodnika ferrylo-okso [Fe(IV)=O]+• (Compound I), który utlenia jodki.",
+      "sourceIds": [
+        "tpo_chem"
+      ],
+      "checkpointId": "tarczyca-chemia-synteza-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "tarczyca-chemia-synteza-block-3",
+      "title": "Mechanizm rodnikowego sprzęgania MIT i DIT",
+      "text": "TPO katalizuje jednoelektronowe utlenienie reszt DIT do rodników fenoksylowych. Po ataku rodnikowym powstaje mostek chinolowo-eterowy, a odszczepiony łańcuch boczny pozostaje w tyreoglobulinie jako dehydroalanina.",
+      "sourceIds": [
+        "tpo_chem",
+        "physiology"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "tarczyca-chemia-synteza-q2-checkpoint-1-v2",
+      "type": "ordering",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "tarczyca-chemia-synteza-obj-2"
+      ],
+      "prompt": "Uporządkuj sekwencję stanów pośrednich w cyklu katalitycznym hemu TPO podczas biosyntezy hormonów tarczycy:",
+      "items": [
+        "Stan spoczynkowy: jon żelaza hemu na stopniu utlenienia Fe(III)",
+        "Dwuelektronowe utlenienie przez H2O2 do kationorodnika ferrylu Compound I ([Fe(IV)=O]+•)",
+        "Jednoelektronowa redukcja do Compound II ([Fe(IV)=O]) z jednoczesnym utlenieniem jodku (I-)",
+        "Generowanie rodników fenoksylowych DIT• i sprzężenie do tyroksyny z eliminacją reszty dehydroalaniny"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "explanation": "Cykl katalityczny TPO przechodzi przez wysoce elektrofilowe stany ferrylu Fe(IV).",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "tpo_chem"
+      ]
+    },
+    {
+      "id": "tarczyca-chemia-synteza-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "tarczyca-chemia-synteza-obj-1"
+      ],
+      "prompt": "Dlaczego trójjodotyronina (T3) wykazuje 10–15 razy większe powinowactwo do receptora jądrowego TRβ niż tyroksyna (T4)?",
+      "options": [
+        "Brak atomu jodu w pozycji 5' znosi zawadę steryczną pierścienia zewnętrznego, umożliwiając idealne domknięcie helisy H12 w kieszeni wiążącej receptora",
+        "Ponieważ T3 ma większą masę cząsteczkową",
+        "Ponieważ T3 nie posiada mostka eterowego"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-steric-hindrance-loss",
+            "label": "Brak jodu 5' i zniesienie zawady sterycznej",
+            "acceptedPhrases": [
+              "brak jodu w pozycji 5'",
+              "zawada steryczna",
+              "domknięcie helisy h12",
+              "dopasowanie do receptora tr"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Usunięcie jodu w pozycji 5' pozwala na rotację pierścienia i ścisłe dopasowanie ligandu do domeny LBD receptora TRβ.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "tpo_chem",
+        "physiology"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Usunięcie jodu w pozycji 5' pozwala na rotację pierścienia i ścisłe dopasowanie ligandu do domeny LBD receptora TRβ.",
+        "Nieprawidłowo: Usunięcie jodu w pozycji 5' pozwala na rotację pierścienia i ścisłe dopasowanie ligandu do domeny LBD receptora TRβ.",
+        "Nieprawidłowo: Usunięcie jodu w pozycji 5' pozwala na rotację pierścienia i ścisłe dopasowanie ligandu do domeny LBD receptora TRβ."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "tarczyca-chemia-synteza-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "tarczyca-chemia-synteza-obj-2"
+    ],
+    "prompt": "Wyjaśnij studentowi chemii, czym jest reszta dehydroalaniny powstająca w łańcuchu tyreoglobuliny podczas reakcji sprzęgania dwóch cząsteczek DIT do T4.",
+    "modelAnswer": "Podczas sprzęgania rodnikowego cząsteczka DIT (donor pierścienia zewnętrznego) oddaje swój pierścień fenolowy. Jej łańcuch alaninowy w szkielecie tyreoglobuliny traci atom wodoru i ulega przekształceniu w nienasyconą resztę dehydroalaniny z wiązaniem podwójnym C=C. Reszta ta pozostaje trwałym śladem chemicznym po odszczepionym pierścieniu w cząsteczce tyreoglobuliny.",
+    "explanation": "Powstanie dehydroalaniny dowodzi mechanizmu rodnikowego rozpadu mostka chinolowego.",
+    "difficulty": "doctor",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "tpo_chem"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "tarczyca-chemia-synteza-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "tarczyca-chemia-synteza-obj-2"
+      ],
+      "prompt": "Jaka jest rola oksydazy podwójnej 2 (DUOX2) i jej białka dojrzewania DUOXA2 na szczytowej błonie tyreocyta?",
+      "modelAnswer": "DUOX2 jest zależną od NADPH i jonów wapnia oksydazą zlokalizowaną w szczytowej błonie komórkowej tyreocyta, która generuje nadtlenek wodoru (H2O2) do przestrzeni koloidu. H2O2 jest niezbędnym kosubstratem utleniającym żelazo hemu TPO do Compound I. Brak DUOX2 uniemożliwia organifikację jodu i prowadzi do wrodzonej niedoczynności tarczycy.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-h2o2-generation",
+            "label": "Generowanie nadtlenku wodoru (H2O2)",
+            "acceptedPhrases": [
+              "wytwarzanie h2o2",
+              "synteza nadtlenku wodoru",
+              "donor h2o2"
+            ]
+          },
+          {
+            "id": "c-tpo-activation",
+            "label": "Aktywacja hemu TPO / organifikacja",
+            "acceptedPhrases": [
+              "niezbędny dla tpo",
+              "utlenianie hemu",
+              "organifikacja"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "DUOX2 dostarcza H2O2 niezbędnego do katalitycznej aktywacji peroksydazy tarczycowej.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "tpo_chem",
+        "physiology"
+      ]
+    },
+    {
+      "id": "tarczyca-chemia-synteza-q5-exit-v2",
+      "type": "matching",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "tarczyca-chemia-synteza-obj-1"
+      ],
+      "prompt": "Dopasuj cechę stereochemiczną tyroksyny do jej właściwości fizykochemicznej:",
+      "pairs": [
+        [
+          "Promień van der Waalsa jodu (2,15 Å)",
+          "Powoduje masywną zawadę steryczną wymuszającą prostopadłe ułożenie pierścieni"
+        ],
+        [
+          "Kąt walencyjny C-O-C (~120°)",
+          "Geometria mostka eterowego łączącego pierścienie fenylowe"
+        ],
+        [
+          "Wysoka lipofilność atomów jodu",
+          "Ułatwia bierne i nośnikowe przenikanie przez błony komórkowe"
+        ],
+        [
+          "Kationorodnik ferrylu [Fe(IV)=O]+•",
+          "Ekstremalnie silny utleniacz zdolny do jedno- i dwuelektronowego utleniania jodków"
+        ]
+      ],
+      "explanation": "Stereochemia tyronin opiera się na wielkości i geometrii podstawników jodowych.",
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "tpo_chem"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "tarczyca-chemia-synteza-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "tarczyca-chemia-synteza-obj-2"
+      ],
+      "prompt": "U noworodka z wrodzoną niedoczynnością tarczycy stwierdzono prawidłowy wychwyt jodków w tarczycy, lecz całkowity brak ich organifikacji (pozytywny test wymywania nadchloranem). Mutacje genu TPO zostały wykluczone. W jakim enzymie należy poszukiwać defektu molekularnego?",
+      "options": [
+        "W oksydazie podwójnej 2 (DUOX2) lub jej białku pomocniczym DUOXA2",
+        "W albuminie osoczowej",
+        "W receptorze TSHR"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-duox2-mutation",
+            "label": "Defekt DUOX2 / brak H2O2",
+            "acceptedPhrases": [
+              "duox2",
+              "duoxa2",
+              "brak h2o2",
+              "defekt wytwarzania nadtlenku"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Niedobór DUOX2 pozbawia TPO niezbędnego kofaktora H2O2, blokując organifikację mimo obecności enzymu TPO.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "tpo_chem",
+        "physiology"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Niedobór DUOX2 pozbawia TPO niezbędnego kofaktora H2O2, blokując organifikację mimo obecności enzymu TPO.",
+        "Nieprawidłowo: Niedobór DUOX2 pozbawia TPO niezbędnego kofaktora H2O2, blokując organifikację mimo obecności enzymu TPO.",
+        "Nieprawidłowo: Niedobór DUOX2 pozbawia TPO niezbędnego kofaktora H2O2, blokując organifikację mimo obecności enzymu TPO."
+      ]
+    },
+    {
+      "id": "tarczyca-chemia-synteza-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "tarczyca-chemia-synteza-obj-1"
+      ],
+      "prompt": "Dlaczego reszty tyrozylowe w łańcuchu tyreoglobuliny nie ulegają jodowaniu losowo, lecz w ściśle określonych domenach sterycznych białka?",
+      "modelAnswer": "Tyreoglobulina jest olbrzymim homodimerem (660 kDa). Reszty tyrozynowe podlegające wydajnemu jodowaniu i sprzęganiu (np. Tyr5, Tyr130, Tyr2554, Tyr2747) znajdują się w elastycznych pętlach na powierzchni białka i są przestrzennie zorientowane w parach w odległości kilku angstremów, co umożliwia utworzenie mostka chinolowego po aktywacji rodnikowej przez TPO.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-spatial-pairing",
+            "label": "Przestrzenne parowanie tyrozyn w strukturze 3D tyreoglobuliny",
+            "acceptedPhrases": [
+              "przestrzenne parowanie",
+              "odległość reszt tyrozynowych",
+              "architektura 3d",
+              "domeny tyreoglobuliny"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Precyzyjna architektura przestrzenna tyreoglobuliny umożliwia zbliżenie reszt tyrozynowych do reakcji sprzęgania.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "tpo_chem"
+      ]
+    },
+    {
+      "id": "tarczyca-chemia-synteza-bank-3",
+      "type": "multi_select",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "tarczyca-chemia-synteza-obj-2"
+      ],
+      "prompt": "Które z poniższych etapów biosyntezy tyroksyny wymagają obecności aktywnej postaci hemu peroksydazy tarczycowej (TPO)?",
+      "options": [
+        "Utlenienie jodków do postaci elektrofilowej",
+        "Jodowanie reszt tyrozynowych do MIT i DIT",
+        "Sprzęganie dwóch cząsteczek DIT w cząsteczkę T4",
+        "Aktywny transport jodków przez symporter NIS na przypodstawnej błonie"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "optionFeedback": [
+        "TPO utlenia jodki.",
+        "TPO katalizuje organifikację.",
+        "TPO katalizuje sprzęganie fenoli.",
+        "NIS działa niezależnie od TPO jako wtórnie aktywny transporter napędzany gradientem sodowym Na+/K+ ATPazy."
+      ],
+      "explanation": "TPO katalizuje utlenianie, organifikację i sprzęganie; transport przez NIS jest niezależny od hemu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "tpo_chem",
+        "physiology"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "axis-map"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

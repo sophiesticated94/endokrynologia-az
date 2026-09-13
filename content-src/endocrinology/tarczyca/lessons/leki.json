@@ -1,0 +1,160 @@
+{
+  "id": "leki",
+  "moduleId": "tarczyca",
+  "title": "Leki, jod i tarczyca",
+  "subtitle": "Amiodaron, interakcje i wyniki pozorne",
+  "group": "Sytuacje szczególne",
+  "minutes": 13,
+  "goals": [
+    "Odróżnisz mechanizmy tyreotoksykozy po amiodaronie.",
+    "Uwzględnisz kontrast, suplementy i interakcje LT4."
+  ],
+  "sections": [
+    {
+      "title": "Amiodaron: więcej niż jedna możliwość",
+      "text": "Amiodaron wpływa na gospodarkę jodową i metabolizm hormonów. Może wywołać niedoczynność albo tyreotoksykozę. Typ 1 AIT wiąże się z nadmierną syntezą, często w zmienionym gruczole, a typ 2 z destrukcją. Występują także postacie mieszane."
+    },
+    {
+      "title": "Przyczyna wpływa na terapię",
+      "text": "W typie 1 stosuje się przede wszystkim leczenie hamujące syntezę, w typie 2 istotną rolę mają glikokortykosteroidy. Decyzja o kontynuacji amiodaronu zależy także od wskazania kardiologicznego i wymaga współpracy specjalistów. Nie odstawia się go automatycznie bez uwzględnienia ryzyka arytmii."
+    },
+    {
+      "title": "Zbierz pełną listę",
+      "text": "Kontrast jodowy może zaburzyć czynność u osób podatnych. Lit i niektóre terapie immunologiczne również wpływają na tarczycę. Suplementy mogą zmieniać wchłanianie LT4 lub wynik oznaczenia: biotyna to przykład interferencji, a preparaty żelaza i wapnia mogą zmniejszać wchłanianie hormonu."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Ekspozycja",
+      "Możliwy problem"
+    ],
+    "rows": [
+      [
+        "Amiodaron",
+        "Niedoczynność, AIT 1, AIT 2 lub postać mieszana"
+      ],
+      [
+        "Kontrast jodowy",
+        "Zaburzenia czynności u osób podatnych"
+      ],
+      [
+        "Biotyna",
+        "Interferencja niektórych testów"
+      ],
+      [
+        "Żelazo / wapń z LT4",
+        "Gorsze wchłanianie LT4"
+      ]
+    ]
+  },
+  "advanced": "Rozróżnienie AIT 1 i 2 bywa trudne; pomocne są obraz gruczołu, unaczynienie i kontekst kliniczny. W ciężkiej tyreotoksykozie z chorobą serca pilność leczenia jest większa. Prawidłowy wcześniejszy wynik nie wyklucza późniejszego zaburzenia, więc monitorowanie powinno wynikać z ekspozycji i objawów.",
+  "summary": "Pytaj o leki i suplementy przed interpretacją wyników. Ten sam lek może powodować różne mechanizmy choroby.",
+  "sourceIds": [
+    "amiodarone",
+    "iodine",
+    "lt4"
+  ],
+  "questions": [
+    {
+      "id": "leki-q1",
+      "lessonId": "leki",
+      "prompt": "Jaki mechanizm dominuje w AIT typu 2?",
+      "options": [
+        {
+          "text": "Niedobór TSH z przysadki",
+          "explanation": "Nie opisuje AIT typu 2."
+        },
+        {
+          "text": "Destrukcyjne zapalenie",
+          "explanation": "Hormony uwalniają się z uszkodzonej tkanki."
+        },
+        {
+          "text": "Wyłącznie autonomiczna nowa synteza",
+          "explanation": "To bliższe AIT typu 1."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "leki-q2",
+      "lessonId": "leki",
+      "prompt": "Czy amiodaron może powodować niedoczynność?",
+      "options": [
+        {
+          "text": "Nie, tylko nadczynność",
+          "explanation": "Pomija rozpoznaną postać polekowej niedoczynności."
+        },
+        {
+          "text": "Nie wpływa na tarczycę",
+          "explanation": "Wpływa na gospodarkę jodową i metabolizm hormonów."
+        },
+        {
+          "text": "Tak",
+          "explanation": "Dysfunkcja po tym leku nie ogranicza się do nadczynności."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "leki-q3",
+      "lessonId": "leki",
+      "prompt": "Jak podejmować decyzję o odstawieniu amiodaronu?",
+      "options": [
+        {
+          "text": "Wspólnie z kardiologiem, zależnie od sytuacji",
+          "explanation": "Wskazanie antyarytmiczne może być kluczowe."
+        },
+        {
+          "text": "Zawsze natychmiast bez konsultacji",
+          "explanation": "Może narazić chorego na ryzyko kardiologiczne."
+        },
+        {
+          "text": "Wyłącznie według anty-TPO",
+          "explanation": "Przeciwciała nie wyznaczają pełnego bilansu ryzyka."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "leki-q4",
+      "lessonId": "leki",
+      "prompt": "Który suplement może zafałszować niektóre oznaczenia tarczycowe?",
+      "options": [
+        {
+          "text": "Każdy produkt białkowy zawsze",
+          "explanation": "Nie jest to uniwersalna właściwość żywności."
+        },
+        {
+          "text": "Biotyna",
+          "explanation": "Wpływ zależy od konstrukcji testu."
+        },
+        {
+          "text": "Woda",
+          "explanation": "Nie ma takiego mechanizmu."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "leki-q5",
+      "lessonId": "leki",
+      "prompt": "Co sprawdzić przed uznaniem, że dawka LT4 jest za mała?",
+      "options": [
+        {
+          "text": "Tylko kolor tabletki",
+          "explanation": "Nie ocenia regularności ani wchłaniania."
+        },
+        {
+          "text": "Wyłącznie wynik USG",
+          "explanation": "USG nie wyjaśnia interakcji lekowych."
+        },
+        {
+          "text": "Sposób przyjmowania i interakcje",
+          "explanation": "Gorsze wchłanianie może tłumaczyć wysokie TSH."
+        }
+      ],
+      "answer": 2
+    }
+  ],
+  "assetIds": []
+}

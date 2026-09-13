@@ -1,0 +1,317 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "przysadka-operacje",
+  "objectives": [
+    {
+      "id": "przysadka-operacje-obj-1",
+      "statement": "Zrozumiesz anatomię i technikę operacji przez zatokę klinową (dostęp transsphenoidalny TSS endoskopowy / mikroskopowy) oraz rozpoznasz powikłanie w postaci płynotoku nosowego (CSF leak) z testem beta-2-transferryny.",
+      "kind": "decision"
+    },
+    {
+      "id": "przysadka-operacje-obj-2",
+      "statement": "Zinterpretujesz i poprowadzisz klasyczną trójfazową odpowiedź wazopresynową po operacji przysadki (Faza 1: wczesna moczówka prosta, Faza 2: przejściowy SIADH, Faza 3: trwała moczówka prosta).",
+      "kind": "differentiation"
+    }
+  ],
+  "diagnostic": {
+    "id": "przysadka-operacje-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "przysadka-operacje-obj-1"
+    ],
+    "prompt": "Jakie badanie biochemiczne wydzieliny z nosa stanowi złoty standard potwierdzenia wycieku płynu mózgowo-rdzeniowego (płynotoku nosowego / CSF leak) po zabiegu przez zatokę klinową?",
+    "options": [
+      "Oznaczenie stężenia beta-2-transferryny (oraz białka beta-trace) w płynie wyciekającym z nosa",
+      "Paskowy test na obecność glukozy w śluzie",
+      "Oznaczenie poziomu albuminy w wymazie"
+    ],
+    "optionFeedback": [
+      "Beta-2-transferryna jest izoformą transferryny występującą wyłącznie w płynie mózgowo-rdzeniowym, perilimfie ucha i ciele szklistym oka; jej obecność w wydzielinie z nosa ze swoistością niemal 100% potwierdza płynotok.",
+      "Test paskowy na glukozę daje liczne wyniki fałszywie dodatnie (śluz nosowy zawiera glukozę, zwłaszcza w infekcjach) i nie jest rekomendowany.",
+      "Albumina jest powszechna we wszystkich wydzielinach ustrojowych."
+    ],
+    "answer": 0,
+    "explanation": "Wykrycie beta-2-transferryny jest złotym standardem potwierdzenia obecności płynu mózgowo-rdzeniowego.",
+    "difficulty": "student",
+    "reasoning": "decision",
+    "sourceIds": [
+      "transsphenoidal_surgery"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "przysadka-operacje-block-1",
+      "title": "Dostęp przezklinowy (transsphenoidal surgery — TSS)",
+      "text": "Dostęp przez zatokę klinową (mikroskopowy lub w pełni endoskopowy rozszerzony EEA) umożliwia resekcję guza bez otwierania czaszki. Kluczowe ryzyko powikłań to uszkodzenie tętnicy szyjnej wewnętrznej w zatoce jamistej oraz przetoka płynowa (CSF leak).",
+      "sourceIds": [
+        "transsphenoidal_surgery"
+      ],
+      "checkpointId": "przysadka-operacje-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "przysadka-operacje-block-2",
+      "title": "Trójfazowa odpowiedź wazopresynowa po operacji",
+      "text": "Po zabiegu może wystąpić charakterystyczna trójfazowa sekwencja: Doba 1–2: moczówka prosta (szok aksonalny). Doba 3–7: zespół SIADH z głęboką hiponatremią (niekontrolowane uwalnianie AVP z obumierających aksonów). Doba 8+: trwała moczówka lub normalizacja.",
+      "sourceIds": [
+        "transsphenoidal_surgery"
+      ],
+      "checkpointId": "przysadka-operacje-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "przysadka-operacje-block-3",
+      "title": "Nadzór pooperacyjny: Płynotok i ocena remisji",
+      "text": "W 2. i 3. dobie bada się poranny kortyzol przed podaniem sterydów (w chorobie Cushinga kortyzol <2 µg/dl potwierdza wczesną remisję). Płynotok nosowy wymaga pilnego uszczelnienia oponowego płatem naczyniowym z przegrody nosa (Hadad flap).",
+      "sourceIds": [
+        "transsphenoidal_surgery"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "przysadka-operacje-q2-checkpoint-1-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-operacje-obj-1"
+      ],
+      "prompt": "Pacjent w 3. dobie po endoskopowej resekcji makrogruczolaka przysadki zgłasza jednostronny wodnisty wyciek z prawej dziurki nosa nasilający się przy pochylaniu głowy ku przodowi oraz uczucie słonawego smaku w gardle. Jakie postępowanie należy wdrożyć?",
+      "options": [
+        "Pobrać wydzielinę na badanie beta-2-transferryny, zalecić reżim łóżkowy z uniesieniem wezgłowia łóżka, unikać parcia i pilnie skonsultować neurochirurga",
+        "Zalecić intensywne wydmuchiwanie nosa i aerozole obkurczające",
+        "Zignorować objaw jako typowy pooperacyjny nieżyt nosa"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-csf-leak-action",
+            "label": "Podejrzenie przetoki płynowej / beta-2-transferryna",
+            "acceptedPhrases": [
+              "płynotok",
+              "csf leak",
+              "beta-2-transferryna",
+              "przetoka oponowa"
+            ]
+          },
+          {
+            "id": "c-avoid-pressure",
+            "label": "Reżim łóżkowy, uniesienie głowy, zakaz parcia i dmuchania nosa",
+            "acceptedPhrases": [
+              "uniesienie wezgłowia",
+              "zakaz dmuchania nosa",
+              "konsultacja neurochirurgiczna",
+              "reżim łóżkowy"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Płynotok stwarza bezpośrednie ryzyko wstępującego zapalenia opon mózgowo-rdzeniowych i wymaga natychmiastowych procedur protekcyjnych.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "transsphenoidal_surgery"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Płynotok stwarza bezpośrednie ryzyko wstępującego zapalenia opon mózgowo-rdzeniowych i wymaga natychmiastowych procedur protekcyjnych.",
+        "Nieprawidłowo: Płynotok stwarza bezpośrednie ryzyko wstępującego zapalenia opon mózgowo-rdzeniowych i wymaga natychmiastowych procedur protekcyjnych.",
+        "Nieprawidłowo: Płynotok stwarza bezpośrednie ryzyko wstępującego zapalenia opon mózgowo-rdzeniowych i wymaga natychmiastowych procedur protekcyjnych."
+      ]
+    },
+    {
+      "id": "przysadka-operacje-q3-checkpoint-2-v2",
+      "type": "ordering",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-operacje-obj-2"
+      ],
+      "prompt": "Uporządkuj fazy klasycznej trójfazowej odpowiedzi gospodarki wodno-elektrolitowej po uszkodzeniu szypuły przysadki podczas zabiegu operacyjnego:",
+      "items": [
+        "Faza 1 (doba 1–2): Wczesna moczówka prosta (szok aksonalny i zahamowanie uwalniania AVP)",
+        "Faza 2 (doba 3–7): Zespół SIADH (niekontrolowane uwalnianie zapasów AVP z ulegających martwicy aksonów i hiponatremia)",
+        "Faza 3 (od 7–10 doby): Trwała moczówka prosta (po całkowitym wyczerpaniu zmagazynowanej AVP przy zniszczeniu perykarionów)"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Klasyczny cykl: wczesna moczówka prosta (faza 1) -> przejściowy SIADH (faza 2) -> trwała moczówka (faza 3). Świadomość fazy 2 chroni przed podaniem desmopresyny w fazie zagrażającej hiponatremią.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "transsphenoidal_surgery"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "przysadka-operacje-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "przysadka-operacje-obj-2"
+    ],
+    "prompt": "Dlaczego rutynowe, automatyczne podawanie długodziałającej desmopresyny (dDAVP) w pierwszej fazie moczówki pooperacyjnej (w 1.–2. dobie) jest niebezpieczne i może doprowadzić do śmiertelnej hiponatremii w kolejnych dobach?",
+    "modelAnswer": "Wczesna moczówka prosta (faza 1) może po 48–72 godzinach przejść w fazę 2 trójfazowej odpowiedzi (SIADH), w której dochodzi do gwałtownego, autonomicznego uwalniania zmagazynowanej wazopresyny z degenerujących neuronów. Jeśli w tym samym czasie w ustroju pacjenta działa jeszcze podana długodziałająca desmopresyna, dochodzi do nałożenia się działania dwóch silnych czynników antydiuretycznych. W połączeniu ze standardową podażą płynów pooperacyjnych prowadzi to do katastrofalnej, gwałtownej hiponatremii z obrzękiem mózgu i drgawkami. Dlatego w fazie 1 zaleca się stosowanie preparatów krótkodziałających lub zezwolenie na krótkie okresy diurezy ('okna diuretyczne') przed kolejną dawką.",
+    "explanation": "Zrozumienie ryzyka fazy 2 nakazuje ostrożne miareczkowanie dDAVP z kontrolą sodu w 4.–7. dobie pooperacyjnej.",
+    "difficulty": "doctor",
+    "reasoning": "safety",
+    "sourceIds": [
+      "transsphenoidal_surgery"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "przysadka-operacje-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "przysadka-operacje-obj-1"
+      ],
+      "prompt": "Jakie stężenie porannego kortyzolu w surowicy krwi w 2. dobie po operacji usunięcia mikrogruczolaka przysadki drogą przezklinową u chorego na chorobę Cushinga uznaje się za kryterium wczesnej remisji pooperacyjnej?",
+      "modelAnswer": "Stężenie porannego kortyzolu <2 µg/dl (lub <50 nmol/l) bez podawania hydrokortyzonu pooperacyjnie. Świadczy to o całkowitym usunięciu autonomicznego gruczolaka i fizjologicznym uśpieniu (supresji) prawidłowych komórek kortykotropowych, co potwierdza radykalność zabiegu.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-cortisol-remission-cutoff",
+            "label": "Kortyzol rano <2 µg/dl (<50 nmol/l)",
+            "acceptedPhrases": [
+              "<2",
+              "<2 µg/dl",
+              "<50 nmol/l",
+              "poniżej 2"
+            ]
+          },
+          {
+            "id": "c-suppressed-normal-tissue",
+            "label": "Uśpienie zdrowych komórek kortykotropowych potwierdza wyleczenie",
+            "acceptedPhrases": [
+              "uśpienie osi",
+              "remisja",
+              "radykalność operacji",
+              "brak guza"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Głęboka hipokortyzolemia pooperacyjna (<2 µg/dl) jest najlepszym dowodem wyleczenia choroby Cushinga.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "transsphenoidal_surgery"
+      ]
+    },
+    {
+      "id": "przysadka-operacje-q5-exit-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-operacje-obj-2"
+      ],
+      "prompt": "Pacjent wypisany do domu w 4. dobie po operacji przysadki w dobrym stanie z prawidłowym sodem (139 mmol/l) zgłasza się na SOR w 7. dobie z silnymi nudnościami, splątaniem i bólem głowy. Sód w surowicy wynosi 119 mmol/l. W jakiej fazie odpowiedzi pooperacyjnej znajduje się pacjent?",
+      "options": [
+        "W fazie 2 odpowiedzi trójfazowej (opóźniona hiponatremia w przebiegu przejściowego SIADH z rozpadu aksonów)",
+        "W fazie 1 moczówki prostej",
+        "W kwasicy ketonowej"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-delayed-hyponatremia-phase2",
+            "label": "Opóźniona hiponatremia pooperacyjna (faza 2 SIADH w 6.–8. dobie)",
+            "acceptedPhrases": [
+              "faza 2",
+              "siadh pooperacyjny",
+              "opóźniona hiponatremia",
+              "rozpad neuronów"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Opóźniona hiponatremia w 6.–8. dobie po TSS występuje u 10–15% operowanych i jest najczęstszą przyczyną readmisji pooperacyjnej.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "transsphenoidal_surgery"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Opóźniona hiponatremia w 6.–8. dobie po TSS występuje u 10–15% operowanych i jest najczęstszą przyczyną readmisji pooperacyjnej.",
+        "Nieprawidłowo: Opóźniona hiponatremia w 6.–8. dobie po TSS występuje u 10–15% operowanych i jest najczęstszą przyczyną readmisji pooperacyjnej.",
+        "Nieprawidłowo: Opóźniona hiponatremia w 6.–8. dobie po TSS występuje u 10–15% operowanych i jest najczęstszą przyczyną readmisji pooperacyjnej."
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "przysadka-operacje-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-operacje-obj-1"
+      ],
+      "prompt": "Jakie naczynie tętnicze o kluczowym znaczeniu życiowym przebiega w bezpośrednim sąsiedztwie bocznej ściany siodła tureckiego i może ulec śmiertelnemu uszkodzeniu podczas resekcji guzów naciekających zatokę jamistą?",
+      "options": [
+        "Tętnica szyjna wewnętrzna (ICA — część jamista tętnicy szyjnej)",
+        "Tętnica kręgowa",
+        "Tętnica skroniowa powierzchowna"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-internal-carotid-ica",
+            "label": "Tętnica szyjna wewnętrzna (ICA)",
+            "acceptedPhrases": [
+              "tętnica szyjna wewnętrzna",
+              "ica",
+              "część jamista",
+              "krwawienie tętnicze"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Uszkodzenie części jamistej ICA jest najbardziej dramatycznym powikłaniem naczyniowym chirurgii przezklinowej.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "transsphenoidal_surgery"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Uszkodzenie części jamistej ICA jest najbardziej dramatycznym powikłaniem naczyniowym chirurgii przezklinowej.",
+        "Nieprawidłowo: Uszkodzenie części jamistej ICA jest najbardziej dramatycznym powikłaniem naczyniowym chirurgii przezklinowej.",
+        "Nieprawidłowo: Uszkodzenie części jamistej ICA jest najbardziej dramatycznym powikłaniem naczyniowym chirurgii przezklinowej."
+      ]
+    },
+    {
+      "id": "przysadka-operacje-bank-2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-operacje-obj-2"
+      ],
+      "prompt": "W której dobie po zabiegu operacyjnym przez zatokę klinową przypada typowo szczyt występowania opóźnionej pooperacyjnej hiponatremii (fazy 2 trójfazowej odpowiedzi wazopresynowej)?",
+      "answer": 7,
+      "tolerance": 1,
+      "unit": "doba",
+      "explanation": "Szczyt częstości pooperacyjnej hiponatremii przypada na 6.–8. dobę po zabiegu (średnio 7. doba), dlatego zaleca się rutynową kontrolę sodu w tym okresie.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "transsphenoidal_surgery"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "axis-map"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

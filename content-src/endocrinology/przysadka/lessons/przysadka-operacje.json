@@ -1,0 +1,158 @@
+{
+  "id": "przysadka-operacje",
+  "moduleId": "przysadka",
+  "title": "Dojście przez zatokę klinową",
+  "subtitle": "Neurochirurgia przezklinowa, trójfazowa odpowiedź wazopresynowa i opieka pooperacyjna",
+  "group": "Sytuacje szczególne i chirurgia",
+  "minutes": 16,
+  "goals": [
+    "Zrozumiesz zasady operacji przez zatokę klinową (dostęp transsphenoidalny — endoskopowy / mikroskopowy).",
+    "Opanujesz monitorowanie powikłań pooperacyjnych: wycieku płynu mózgowo-rdzeniowego oraz klasycznej trójfazowej odpowiedzi wazopresyny."
+  ],
+  "sections": [
+    {
+      "title": "Dostęp przezklinowy (transsphenoidal surgery — TSS)",
+      "text": "Operacja przez zatokę klinową jest podstawową techniką usuwania guzów siodła tureckiego. Współczesnym złotym standardem jest chirurgia endoskopowa z użyciem neuronawigacji: neurochirurg wprowadza endoskop przez nozdrza i jamę nosową, otwiera przednią ścianę zatoki klinowej i dno siodła tureckiego, zyskując doskonały wgląd w gruczolaka bez konieczności otwierania sklepienia czaszki (kraniotomii). Pozwala to na selektywną adenomektomię z oszczędzeniem zdrowego płata przysadki."
+    },
+    {
+      "title": "Trójfazowa odpowiedź wazopresynowa po operacji",
+      "text": "Manipulacja na szypule i tylnym płacie przysadki podczas operacji może wywołać klasyczną trójfazową reakcję gospodarki wodnej w pierwszych 2 tygodniach: 1) Faza 1 (Doba 1–2): Moczówka prosta (brak AVP z powodu „szoku” neuronów — poliuria, wzrost sodu); 2) Faza 2 (Doba 3–7): SIADH (przejściowa intoksykacja wodna z powodu niekontrolowanego uwalniania zmagazynowanej AVP z obumierających aksonów — oliguria, groźna hiponatremia!); 3) Faza 3 (Po 7–10 dniach): Utrwalona moczówka prosta (jeśli neurony podwzgórza obumarły) lub powrót do pełnej eutyreozy wodnej."
+    },
+    {
+      "title": "Nadzór pooperacyjny: Płynotok i ocena remisji",
+      "text": "Wczesny nadzór wymaga: 1) Kontroli wycieku płynu mózgowo-rdzeniowego przez nos (płynotok nosowy — CSF leak: wodnisty wyciek z nosa nasilający się przy pochyleniu; potwierdza go obecność beta-2-transferyny w płynie; niesie ryzyko zapalenia opon mózgowo-rdzeniowych); 2) Oceny osi ACTH w 2.–3. dobie (kortyzol rano <5 µg/dl świadczy o remisji choroby Cushinga, lecz wymaga natychmiastowej substytucji hydrokortyzonem; kortyzol >15 µg/dl wskazuje na przetrwałą chorobę); 3) Kontrolnego MRI po 3–6 miesiącach."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Faza pooperacyjna",
+      "Mechanizm i postępowanie"
+    ],
+    "rows": [
+      [
+        "Faza 1 (doba 1–2): Moczówka",
+        "Szok szypuły; poliuria >300 ml/h; podawaj desmopresynę dopiero po potwierdzeniu hipernatremii"
+      ],
+      [
+        "Faza 2 (doba 3–7): SIADH",
+        "Uwalnianie zapasów AVP; groźba hiponatremii; bezwzględna restrykcja płynów!"
+      ],
+      [
+        "Faza 3 (po 7–10 dniach)",
+        "Utrwalona moczówka lub powrót normy; konieczny pomiar sodu przed wypisem do domu"
+      ],
+      [
+        "Wyciek CSF z nosa",
+        "Podejrzenie płynotoku; zakaz dmuchania nosa, leżenie z uniesionym wezgłowiem, pilny neurochirurg"
+      ]
+    ]
+  },
+  "advanced": "Dlaczego nie należy podawać desmopresyny w fazie 1 „na zapas” przy pojedynczej dużej zbiórce moczu? Ponieważ gdy po 2 dniach pacjent wejdzie w fazę 2 (masywny wyrzut endogennej wazopresyny z lizy aksonów), dodanie egzogennej desmopresyny doprowadzi do katastrofalnej intoksykacji wodnej, spadku sodu do <115 mmol/l i drgawek!",
+  "summary": "Nowoczesna chirurgia przysadki przez zatokę klinową jest mało inwazyjna, lecz wymaga ścisłego monitorowania: unikania powikłań płynotoku, czujności wobec trójfazowej odpowiedzi wazopresyny oraz wczesnej oceny remisji hormonalnej.",
+  "sourceIds": [
+    "fleseriu",
+    "baldeweg"
+  ],
+  "questions": [
+    {
+      "id": "przysadka-operacje-q1",
+      "lessonId": "przysadka-operacje",
+      "prompt": "Czym charakteryzuje się druga faza klasycznej trójfazowej odpowiedzi po operacji przysadki (zwykle między 3. a 7. dobą)?",
+      "options": [
+        {
+          "text": "Zespołem SIADH z zatrzymaniem wody i ryzykiem ciężkiej hiponatremii na skutek uwalniania zmagazynowanej wazopresyny",
+          "explanation": "Umierające aksony podwzgórzowe biernie uwalniają zapasy AVP do krążenia."
+        },
+        {
+          "text": "Całkowitym ustąpieniem wszelkich zaburzeń na zawsze",
+          "explanation": "Faza 2 jest podstępna, po niej może nastąpić utrwalona moczówka."
+        },
+        {
+          "text": "Masywną utratą potasu z hipernatremią powyżej 170 mmol/l",
+          "explanation": "W fazie 2 sód spada z powodu retencji wody, a nie rośnie."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przysadka-operacje-q2",
+      "lessonId": "przysadka-operacje",
+      "prompt": "Jakie stężenie kortyzolu w surowicy rano w 2.–3. dobie po operacji choroby Cushinga wskazuje na doszczętne usunięcie gruczolaka (remisję)?",
+      "options": [
+        {
+          "text": "Stężenie dokładnie równe 15 µg/dl",
+          "explanation": "Wartość 15 µg/dl budzi podejrzenie braku pełnej remisji choroby."
+        },
+        {
+          "text": "Bardzo niskie stężenie (<2–5 µg/dl), świadczące o stłumieniu zdrowych komórek kortykotropowych",
+          "explanation": "Zdrowe komórki przysadki były przez lata uśpione ujemnym sprzężeniem; ich obudzenie trwa miesiące."
+        },
+        {
+          "text": "Wysokie stężenie (>35 µg/dl)",
+          "explanation": "Wysokie stężenie kortyzolu świadczy o niecałkowitej resekcji i przetrwałym guzie."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "przysadka-operacje-q3",
+      "lessonId": "przysadka-operacje",
+      "prompt": "Pacjent po operacji przezklinowej zgłasza wyciek przezroczystego, słodkawego płynu z nosa nasilający się przy pochyleniu głowy do przodu. Jakie powikłanie należy podejrzewać?",
+      "options": [
+        {
+          "text": "Zwykły alergiczny nieżyt nosa",
+          "explanation": "Płynotok pooperacyjny jest groźnym powikłaniem neurochirurgicznym i nigdy nie może być lekceważony jako katar."
+        },
+        {
+          "text": "Ostre zapalenie spojówek",
+          "explanation": "Zapalenie spojówek dotyczy worka spojówkowego, a nie wycieku z nosa."
+        },
+        {
+          "text": "Płynotok nosowy (wyciek płynu mózgowo-rdzeniowego — CSF leak)",
+          "explanation": "Uszkodzenie pajęczynówki i opony w dnie siodła stwarza bezpośrednie wrota dla zakażenia opon mózgowo-rdzeniowych."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "przysadka-operacje-q4",
+      "lessonId": "przysadka-operacje",
+      "prompt": "Dlaczego po operacji przysadki desmopresyny nie podaje się automatycznie przy pierwszych objawach poliurii?",
+      "options": [
+        {
+          "text": "Poliuria może być przejściowa, a podanie leku przed drugą fazą (SIADH) grozi śmiertelnym zatruciem wodnym",
+          "explanation": "Desmopresynę podaje się rozważnie, dopiero gdy poliurii towarzyszy hipernatremia lub znaczny dyskomfort chorego."
+        },
+        {
+          "text": "Desmopresyna jest lekiem toksycznym dla kości klinowej",
+          "explanation": "Desmopresyna jest nanopeptydem i nie uszkadza kości klinowej."
+        },
+        {
+          "text": "Desmopresynę wolno podawać wyłącznie przed operacją",
+          "explanation": "Lek stosuje się w leczeniu pooperacyjnym, ale według ścisłych wskazań."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przysadka-operacje-q5",
+      "lessonId": "przysadka-operacje",
+      "prompt": "Który marker biochemiczny w płynie wyciekającym z nosa pozwala definitywnie odróżnić płyn mózgowo-rdzeniowy od wydzieliny śluzowej nosa?",
+      "options": [
+        {
+          "text": "Obecność hemoglobiny glikowanej HbA1c",
+          "explanation": "HbA1c to wskaźnik glikemii w krwinkach czerwonych, bezużyteczny w płynotoku."
+        },
+        {
+          "text": "Beta-2-transferyna (lub beta-trace protein)",
+          "explanation": "Białko to występuje wyłącznie w płynie mózgowo-rdzeniowym i perylimfie ucha wewnętrznego."
+        },
+        {
+          "text": "Stężenie kwasu moczowego",
+          "explanation": "Kwas moczowy nie różnicuje płynu mózgowo-rdzeniowego od śluzu nosowego."
+        }
+      ],
+      "answer": 1
+    }
+  ]
+}

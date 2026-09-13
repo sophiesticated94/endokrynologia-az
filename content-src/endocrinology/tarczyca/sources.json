@@ -1,0 +1,128 @@
+{
+  "physiology": {
+    "id": "physiology",
+    "title": "Endotext — Thyroid Hormone Synthesis and Secretion",
+    "year": "2015",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK285550/",
+    "kind": "Podręcznik: fizjologia"
+  },
+  "central": {
+    "id": "central",
+    "title": "ETA — Central Hypothyroidism",
+    "year": "2018",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6198777/",
+    "kind": "Wytyczne"
+  },
+  "lt4": {
+    "id": "lt4",
+    "title": "ETA — Levothyroxine preparations in monotherapy",
+    "year": "2025",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12323320/",
+    "kind": "Wytyczne"
+  },
+  "hashimoto": {
+    "id": "hashimoto",
+    "title": "NIDDK — Hashimoto’s Disease",
+    "year": "2021",
+    "url": "https://www.niddk.nih.gov/health-information/endocrine-diseases/hashimotos-disease",
+    "kind": "Materiał uzupełniający: podstawy"
+  },
+  "subclinical": {
+    "id": "subclinical",
+    "title": "ETA — Subclinical Hypothyroidism",
+    "year": "2013",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3923601/",
+    "kind": "Wytyczne"
+  },
+  "graves": {
+    "id": "graves",
+    "title": "ETA — Management of Graves’ Hyperthyroidism",
+    "year": "2018",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6140607/",
+    "kind": "Wytyczne"
+  },
+  "eyes": {
+    "id": "eyes",
+    "title": "EUGOGO — Graves’ orbitopathy",
+    "year": "2021",
+    "url": "https://doi.org/10.1530/EJE-21-0479",
+    "kind": "Wytyczne"
+  },
+  "thyroiditis": {
+    "id": "thyroiditis",
+    "title": "Endotext — Subacute Thyroiditis",
+    "year": "2018",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK279084/",
+    "kind": "Podręcznik: różnicowanie"
+  },
+  "nodules": {
+    "id": "nodules",
+    "title": "ETA — Thyroid nodule management",
+    "year": "2023",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10448590/",
+    "kind": "Wytyczne"
+  },
+  "cancer": {
+    "id": "cancer",
+    "title": "Polskie towarzystwa naukowe — Rak tarczycy u dorosłych",
+    "year": "2022",
+    "url": "https://doi.org/10.5603/EP.a2022.0028",
+    "kind": "Polskie rekomendacje"
+  },
+  "pregnancy": {
+    "id": "pregnancy",
+    "title": "PTE — Thyroid diseases in pregnancy",
+    "year": "2021",
+    "url": "https://doi.org/10.5603/EP.a2021.0089",
+    "kind": "Polskie zalecenia"
+  },
+  "amiodarone": {
+    "id": "amiodarone",
+    "title": "ETA — Amiodarone-associated thyroid dysfunction",
+    "year": "2018",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5869486/",
+    "kind": "Wytyczne"
+  },
+  "iodine": {
+    "id": "iodine",
+    "title": "ETA — Iodine-based contrast media-induced thyroid dysfunction",
+    "year": "2021",
+    "url": "https://doi.org/10.1159/000517175",
+    "kind": "Wytyczne"
+  },
+  "storm": {
+    "id": "storm",
+    "title": "Joint consensus — Management of thyroid storm",
+    "year": "2026",
+    "url": "https://doi.org/10.1530/ETJ-26-0043",
+    "kind": "Konsensus; zakres rozpoznania i pilności"
+  },
+  "coma": {
+    "id": "coma",
+    "title": "Joint consensus — Management of myxoedema coma",
+    "year": "2026",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13452032/",
+    "kind": "Konsensus"
+  },
+  "emergency": {
+    "id": "emergency",
+    "title": "Endotext — Thyroid Storm",
+    "year": "2025",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK278927/",
+    "kind": "Podręcznik: postępowanie w stanach nagłych"
+  },
+  "spina": {
+    "id": "spina",
+    "title": "Dietrich JW et al. — Calculated Parameters of Thyroid Homeostasis: Emerging Tools for Differential Diagnosis and Clinical Research",
+    "year": "2016",
+    "url": "https://doi.org/10.3389/fendo.2016.00057",
+    "kind": "Model matematyczny"
+  },
+  "tpo_chem": {
+    "id": "tpo_chem",
+    "title": "Coscia F et al. — The structure of human thyroglobulin",
+    "year": "2020",
+    "url": "https://doi.org/10.1038/s41586-020-1995-4",
+    "kind": "Biochemia i stereochemia"
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "id": "przysadka-matematyka-pulsacja",
+  "moduleId": "przysadka",
+  "title": "Dynamika nieliniowa i pulsacyjność wydzielania przysadkowego",
+  "subtitle": "Oscylator Goodwina, dekonwolucja wyrzutów i całka splotu",
+  "group": "Matematyka i modele",
+  "minutes": 19,
+  "goals": [
+    "Poznasz równania różniczkowe oscylatora Goodwina opisujące pulsacyjne generowanie neurohormonów (GnRH, GHRH).",
+    "Zastosujesz całkę splotu do rekonstrukcji pierwotnej sekrecji przysadkowej z profilu stężeń w surowicy."
+  ],
+  "sections": [
+    {
+      "title": "Brak stałego stężenia: pulsacyjność jako kod informacyjny",
+      "text": "Większość hormonów przedniego płata przysadki (LH, FSH, GH, ACTH, PRL) nie jest wydzielana w sposób ciągły, lecz w postaci dyskretnych impulsów (bursts). Generator podwzgórzowy (np. neurony KNDy: kisspeptyna, neurokinina B, dynorfina) wyzwala synchroniczne salwy potencjałów czynnościowych co 60–90 minut. Ciągły wlew GnRH prowadzi do paradoksalnej desensytyzacji i down-regulacji receptorów GnRHR, co jest podstawą stosowania analogów GnRH w leczeniu raka prostaty i endometriozy."
+    },
+    {
+      "title": "Model matematyczny oscylatora Goodwina",
+      "text": "Sprzężenie zwrotne podwzgórze-przysadka-gonada opisuje układ 3 nieliniowych równań różniczkowych Goodwina z ujemnym sprzężeniem opóźnionym: dX/dt = [a1 / (1 + k1 * Z^n)] - b1 * X; dY/dt = a2 * X - b2 * Y; dZ/dt = a3 * Y - b3 * Z, gdzie X to GnRH, Y to LH, a Z to testosteron/estradiol. Dla współczynnika Hilla n >= 8 układ generuje stabilny cykl graniczny (limit cycle) w przestrzeni fazowej bez konieczności zewnętrznego zegara."
+    },
+    {
+      "title": "Rekonstrukcja dekonwolucyjna (Deconvolution Analysis)",
+      "text": "Zmierzony profil stężenia w surowicy C(t) jest splotem funkcji sekrecji S(t) i kinetyki zaniku E(t): C(t) = ∫ S(τ) * exp(-λ(t-τ)) dτ, gdzie λ = ln(2)/t1/2. Dekonwolucja pozwala obliczyć: liczbę epizodów wydzielniczych na dobę, masę wydzieloną w pojedynczym pulsie, czas trwania wyrzutu oraz bazalną (niepulsacyjną) sekrecję. W akromegalii dochodzi do utraty dobowego wyciszenia i wzrostu sekrecji bazalnej."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Oś hormonalna",
+      "Częstość pulsacji",
+      "Znaczenie patofizjologiczne"
+    ],
+    "rows": [
+      [
+        "GnRH ⟶ LH/FSH",
+        "Co 60–90 min (faza folikularna)",
+        "Rytm determinuje dojrzewanie pęcherzyka; zanika w zespole Kallmanna"
+      ],
+      [
+        "GHRH/GHIH ⟶ GH",
+        "6–10 wyrzutów/dobę (szczyt w fazie NREM)",
+        "W akromegalii podwyższona sekrecja bazalna bez supresji w nocy"
+      ],
+      [
+        "CRH/AVP ⟶ ACTH",
+        "Rytm dobowy (szczyt 6:00–8:00 rano)",
+        "W chorobie Cushinga zanik fizjologicznego spadku kortyzolu o północy"
+      ],
+      [
+        "Dopamina ⟶ PRL",
+        "Tonistyczne hamowanie z mikropulsami",
+        "Uwolnienie od hamowania szypuły (stalk effect) powoduje stały wzrost PRL"
+      ]
+    ]
+  },
+  "advanced": "W modelu Goldbetera dynamika wydzielania pulsującego zapobiega adaptacji receptorowej (receptor desensitization). Jeśli interwał między impulsami jest krótszy niż czas defosforylacji i recyklingu receptora GPCR (t_rec ≈ 30–45 min), receptor ulega internalizacji za pośrednictwem beta-arestyny. Dlatego pulsacja o częstotliwości 1 impuls/h utrzymuje wysoką wrażliwość tkankową, a wlew ciągły całkowicie gasi odpowiedź biologiczną.",
+  "summary": "Pulsacyjność osi podwzgórzowo-przysadkowej jest opisana nieliniowymi cyklami granicznymi Goodwina i chroni receptory przed zjawiskiem desensytyzacji.",
+  "sourceIds": [
+    "goodwin",
+    "fleseriu",
+    "melmed"
+  ],
+  "derivation": {
+    "title": "Wyprowadzenie oscylatora Goodwina i warunku bifurkacji Hopfa",
+    "model": "Układ nieliniowych równań różniczkowych Goodwin (1965)",
+    "steps": [
+      {
+        "step": "Układ równań dynamiki osi podwzgórze-przysadka-gonada",
+        "equation": "\\begin{cases} \\frac{dX}{dt} = \\frac{a_1}{1 + k_1 Z^n} - b_1 X \\\\[4pt] \\frac{dY}{dt} = a_2 X - b_2 Y \\\\[4pt] \\frac{dZ}{dt} = a_3 Y - b_3 Z \\end{cases}",
+        "explanation": "X oznacza GnRH, Y to przysadkowe LH, a Z to krążący steroid (testosteron). W mianowniku X występuje nieliniowa inhibicja allosteryczna o współczynniku Hilla n."
+      },
+      {
+        "step": "Linearyzacja wokół punktu stałego i macierz Jacobiego",
+        "equation": "\\det(J - \\lambda I) = 0 \\implies (\\lambda + b)^3 + a_1 a_2 a_3 \\cdot |f'(Z_0)| = 0",
+        "explanation": "Wartości własne $\\lambda$ określają stabilność. Warunkiem wystąpienia samowzbudnych niegasnących oscylacji (bifurkacja Hopfa) jest $\\sec(\\pi/3) < n$, czyli $n > 8$."
+      },
+      {
+        "step": "Rekonstrukcja dekonwolucyjna profilu sekrecji",
+        "equation": "C(t) = \\int_{0}^{t} S(\\tau) \\cdot e^{-\\lambda(t - \\tau)}\\,d\\tau",
+        "explanation": "Stężenie w surowicy $C(t)$ to splot chwilowej szybkości wyrzutu $S(t)$ z funkcją zaniku jednokompartmentowego."
+      }
+    ],
+    "clinicalTakeaway": "Wysoka nieliniowość ($n \\ge 8$) jest niezbędna do wygenerowania periodycznych wyrzutów bez zewnętrznego stymulatora. Wlew ciągły agonisty GnRH niszczy pulsację i gasi wydzielanie LH."
+  },
+  "workedExample": {
+    "title": "Dekonwolucja nocnego profilu wyrzutów GH w diagnostyce akromegalii",
+    "patient": "Mężczyzna, 38 lat, podejrzenie wczesnej akromegalii (bóle głowy, powiększenie dłoni i stóp, IGF-1 420 ng/ml).",
+    "inputs": [
+      {
+        "label": "Wyrzuty GH",
+        "value": "14",
+        "unit": "na dobę"
+      },
+      {
+        "label": "Sekrecja bazalna",
+        "value": "2,1",
+        "unit": "µg/l (podwyższona)"
+      },
+      {
+        "label": "GH w teście OGTT 75g",
+        "value": "1,4",
+        "unit": "µg/l (brak supresji <0,4)"
+      }
+    ],
+    "calculationSteps": [
+      "Krok 1: W zdrowej osi somatotropowej nocna sekrecja bazowa ulega wygaszeniu do <0,1 µg/l, a 85% dobowej masy GH uwalniane jest w 4–6 ostrych pulsach w fazie snu głębokiego (NREM).",
+      "Krok 2: Analiza dekonwolucyjna u pacjenta ujawniła 14 nieskoordynowanych epizodów na dobę oraz stałą, wysoką sekrecję niepulsacyjną (bazalną) 2,1 µg/l.",
+      "Krok 3: W teście OGTT 75g glikemia nie zahamowała stężenia GH poniżej progu odcięcia 0,4 µg/l (GH_min = 1,4 µg/l)."
+    ],
+    "result": "Potwierdzenie autonomicznej, niesupresyjnej hipersekrecji GH przez gruczolak somatotropowy przysadki.",
+    "clinicalAction": "Skierowanie na MRI celowany na przysadkę z kontrastem oraz kwalifikacja do operacji przeznosowej (TSS)."
+  },
+  "questions": [
+    {
+      "id": "przysadka-matematyka-pulsacja-q1",
+      "lessonId": "przysadka-matematyka-pulsacja",
+      "prompt": "Dlaczego ciągły wlew agonisty receptora GnRH hamuje wydzielanie LH i FSH zamiast je stymulować?",
+      "options": [
+        {
+          "text": "Blokuje wchłanianie cholesterolu w jelicie cienkim",
+          "explanation": "Mechanizm dotyczy receptora błonowego w przednim płacie przysadki."
+        },
+        {
+          "text": "Powoduje internalizację i down-regulację receptorów GnRHR na gonadotrofach",
+          "explanation": "Brak przerw między stymulacjami uniemożliwia recykling receptora z endosomów."
+        },
+        {
+          "text": "Bezpośrednio niszczy komórki przysadki przez martwicę",
+          "explanation": "Analogi GnRH nie działają toksycznie ani litycznie na komórki."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "przysadka-matematyka-pulsacja-q2",
+      "lessonId": "przysadka-matematyka-pulsacja",
+      "prompt": "Jaka całka matematyczna opisuje zależność między chwilową sekrecją hormonu S(t) a jego stężeniem w osoczu C(t)?",
+      "options": [
+        {
+          "text": "Całka podwójna z objętości krwi krążącej",
+          "explanation": "Kinetyka farmakokinetyczna jest opisywana w domenie czasu jako splot jedno- lub dwuwymiarowy."
+        },
+        {
+          "text": "Równanie różniczkowe wyłącznie rzędu zerowego",
+          "explanation": "Wydzielanie pulsujące i eliminacja wymagają całki splotowej lub układu rzędu pierwszego."
+        },
+        {
+          "text": "Całka splotu z wykładniczą funkcją zaniku jednokompartmentowego",
+          "explanation": "Stężenie jest sumą (splotem) wszystkich wcześniejszych wyrzutów wygasających wg exp(-λt)."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "przysadka-matematyka-pulsacja-q3",
+      "lessonId": "przysadka-matematyka-pulsacja",
+      "prompt": "Kiedy u zdrowego człowieka występuje fizjologiczny, największy dobowy szczyt wydzielania hormonu wzrostu (GH)?",
+      "options": [
+        {
+          "text": "W pierwszych godzinach głębokiego snu wolnofalowego (NREM faza N3)",
+          "explanation": "Wyrzut jest skorelowany z falami delta w EEG i odpowiada za regenerację anaboliczną."
+        },
+        {
+          "text": "Dokładnie w południe po posiłku węglowodanowym",
+          "explanation": "Wysokie stężenie glukozy hamuje wydzielanie GH, zamiast je stymulować."
+        },
+        {
+          "text": "Podczas nagłego ataku śmiechu w ciągu dnia",
+          "explanation": "Rytm GH ma charakter dobowy zsynchronizowany ze snem wolnofalowym."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przysadka-matematyka-pulsacja-q4",
+      "lessonId": "przysadka-matematyka-pulsacja",
+      "prompt": "Co dzieje się z fizjologiczną pulsacją ACTH i kortyzolu u pacjenta z chorobą Cushinga (gruczolak ACTH)?",
+      "options": [
+        {
+          "text": "Kortyzol wydziela się wyłącznie w niedziele rano",
+          "explanation": "Choroba Cushinga znosi rytm dobowy na przestrzeni całego tygodnia."
+        },
+        {
+          "text": "Zanika fizjologiczny spadek o północy, a sekrecja bazalna staje się stale podwyższona",
+          "explanation": "Brak fizjologicznego nadiru kortyzolu w ślinie o 23:00 to kluczowy test przesiewowy."
+        },
+        {
+          "text": "Częstotliwość pulsów rośnie do miliona na sekundę",
+          "explanation": "Częstość jest ograniczona fizjologią pęcherzyków wydzielniczych."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "przysadka-matematyka-pulsacja-q5",
+      "lessonId": "przysadka-matematyka-pulsacja",
+      "prompt": "Które neurony podwzgórza pełnią kluczową rolę jako generator pulsów GnRH (tzw. pulsator GnRH)?",
+      "options": [
+        {
+          "text": "Komórki glejowe nerwu wzrokowego",
+          "explanation": "Glej wzrokowy nie ma właściwości sekrecji neuroendokrynnej."
+        },
+        {
+          "text": "Komórki rdzenia nadnerczy produkujące dopaminę",
+          "explanation": "Generator pulsów GnRH znajduje się anatomicznie w podwzgórzu."
+        },
+        {
+          "text": "Neurony KNDy (wydzielające kisspeptynę, neurokininę B i dynorfinę)",
+          "explanation": "Tworzą zsynchronizowaną sieć oscylacyjną w jądrze łukowatym."
+        }
+      ],
+      "answer": 2
+    }
+  ]
+}

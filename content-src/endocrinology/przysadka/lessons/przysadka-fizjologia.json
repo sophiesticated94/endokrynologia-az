@@ -1,0 +1,157 @@
+{
+  "id": "przysadka-fizjologia",
+  "moduleId": "przysadka",
+  "title": "Jak rządzona jest orkiestra?",
+  "subtitle": "Anatomia siodła tureckiego, płaty i krążenie wrotne",
+  "group": "Fundamenty",
+  "minutes": 14,
+  "goals": [
+    "Poznasz anatomiczne sąsiedztwo przysadki (chiazma opticum, zatoki jamiste) i jego znaczenie kliniczne.",
+    "Zrozumiesz rolę krążenia wrotnego przysadki i podwzgórzowych neurohormonów regulujących przedni i tylny płat."
+  ],
+  "sections": [
+    {
+      "title": "Anatomia siodła tureckiego i otoczenie",
+      "text": "Przysadka mózgowa leży w zagłębieniu kości klinowej zwanym siodłem tureckim. Od góry przykrywa ją przepona siodła, a bezpośrednio nad nią przebiega skrzyżowanie wzrokowe (chiasma opticum). Po bokach siodła znajdują się zatoki jamiste zawierające tętnicę szyjną wewnętrzną oraz nerwy czaszkowe III, IV, V1, V2 i VI. Ekspansja nadsiodłowa guza powoduje ucisk na chiazmę, co wywołuje typowe obustronne niedowidzenie połowicze dwuskroniowe (hemianopsia bitemporalis)."
+    },
+    {
+      "title": "Przedni płat i krążenie wrotne podwzgórzowo-przysadkowe",
+      "text": "Przedni płat (gruczołowy, adenohypophysis) powstaje z kieszonki Rathkego. Komórki dokrewne wytwarzają hormony tropowe: TSH, ACTH, LH, FSH oraz hormony działające obwodowo: GH i prolaktynę (PRL). Podwzgórze kontroluje przedni płat drogą naczyniową przez układ wrotny przysadki za pomocą neurohormonów uwalniających (TRH, CRH, GnRH, GHRH) oraz hamujących (dopamina dla prolaktyny i somatostatyna dla GH i TSH). Kluczowy fakt: dopamina stale hamuje wydzielanie prolaktyny; ucisk szypuły guzem odcina dopaminę, powodując wzrost PRL."
+    },
+    {
+      "title": "Tylny płat i magazyn neurohormonów",
+      "text": "Tylny płat (nerwowy, neurohypophysis) jest bezpośrednim przedłużeniem podwzgórza, połączonym szypułą (lejkiem). Ciała neuronów w jądrach nadwzrokowym (SON) i przykomorowym (PVN) podwzgórza syntetyzują wazopresynę (AVP / ADH) oraz oksytocynę. Aksony transportują te nanopeptydy do tylnego płata, skąd są uwalniane do krwi. Uszkodzenie szypuły lub podwzgórza prowadzi do moczówki prostej centralnej z powodu braku AVP."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Struktura / Hormon",
+      "Rola i powiązanie kliniczne"
+    ],
+    "rows": [
+      [
+        "Chiazma opticum (nad siodłem)",
+        "Wzrost guza w górę uciska włókna nosowe, dając niedowidzenie dwuskroniowe"
+      ],
+      [
+        "Zatoki jamiste (bocznie)",
+        "Naciek guza poraża nerwy gałkoruchowe (III, IV, VI) i powoduje podwójne widzenie"
+      ],
+      [
+        "Dopamina z podwzgórza",
+        "Fizjologiczny hamulec prolaktyny; ucisk szypuły = hiperprolaktynemia z odcięcia"
+      ],
+      [
+        "Tylny płat (AVP / Oksytocyna)",
+        "Magazyn hormonów podwzgórza; brak AVP wywołuje moczówkę prostą"
+      ]
+    ]
+  },
+  "advanced": "W mikroskopii i immunohistochemii dawny podział na komórki kwasochłonne, zasadochłonne i barwioobojętne zastąpiono klasyfikacją opartą na czynnikach transkrypcyjnych (PIT1: linia GH, PRL, TSH; TPIT: linia ACTH; SF1: linia gonadotropin). Pozwala to precyzyjnie ustalić linię komórkową nawet w nowotworach nieczynnych hormonalnie (tzw. ciche gruczolaki corticotroph/somatotroph, które bywają bardziej agresywne klinicznie).",
+  "summary": "Przysadka to strategiczny węzeł łączący układ nerwowy i dokrewny. Znajomość anatomii siodła tłumaczy objawy ucisku (chiazma, zatoka jamista), a mechanizm hamowania dopaminergicznego wyjaśnia hiperprolaktynemię z odcięcia szypuły.",
+  "sourceIds": [
+    "pituitary_endo"
+  ],
+  "questions": [
+    {
+      "id": "przysadka-fizjologia-q1",
+      "lessonId": "przysadka-fizjologia",
+      "prompt": "Jaki objaw okulistyczny jest najbardziej typowy dla makrogruczolaka przysadki uciskającego chiazmę?",
+      "options": [
+        {
+          "text": "Wytrzeszcz osiowy gałek ocznych",
+          "explanation": "To objaw orbitopatii tarczycowej, a nie ucisku chiazmy w siodle tureckim."
+        },
+        {
+          "text": "Niedowidzenie połowicze dwuskroniowe",
+          "explanation": "Wynika z ucisku na krzyżujące się w chiazmie włókna nosowe siatkówki."
+        },
+        {
+          "text": "Jednostronna ślepota barw",
+          "explanation": "Nie odpowiada anatomicznemu wzorcowi ucisku skrzyżowania wzrokowego."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "przysadka-fizjologia-q2",
+      "lessonId": "przysadka-fizjologia",
+      "prompt": "Jaki jest główny fizjologiczny czynnik kontrolujący wydzielanie prolaktyny?",
+      "options": [
+        {
+          "text": "Ciągła stymulacja przez neurohormon PRH",
+          "explanation": "Głównym mechanizmem regulacji prolaktyny jest toniczne hamowanie, a nie pobudzanie."
+        },
+        {
+          "text": "Bezpośrednia stymulacja przez kortyzol",
+          "explanation": "Kortyzol nie jest pierwotnym czynnikiem regulującym syntezę prolaktyny."
+        },
+        {
+          "text": "Stale hamujący wpływ dopaminy z podwzgórza",
+          "explanation": "Dopamina dociera naczyniami wrotnymi i tonicznie blokuje wydzielanie PRL."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "przysadka-fizjologia-q3",
+      "lessonId": "przysadka-fizjologia",
+      "prompt": "Gdzie syntetyzowana jest wazopresyna (AVP) magazynowana w tylnym płacie przysadki?",
+      "options": [
+        {
+          "text": "W jądrach nadwzrokowym i przykomorowym podwzgórza",
+          "explanation": "Tylny płat przysadki jedynie magazynuje i uwalnia AVP zsyntetyzowaną w podwzgórzu."
+        },
+        {
+          "text": "W komórkach pęcherzykowych przedniego płata",
+          "explanation": "Przedni płat nie wytwarza wazopresyny ani oksytocyny."
+        },
+        {
+          "text": "W rdzeniu nadnerczy",
+          "explanation": "Rdzeń nadnerczy syntetyzuje katecholaminy, a nie hormon antydiuretyczny."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przysadka-fizjologia-q4",
+      "lessonId": "przysadka-fizjologia",
+      "prompt": "Co dzieje się ze stężeniem prolaktyny, gdy niefunkcjonujący guz uciska szypułę przysadki?",
+      "options": [
+        {
+          "text": "Pozostaje całkowicie niezmienione",
+          "explanation": "Zablokowanie transportu dopaminy wrotnej zawsze zmienia czynność laktotrofów."
+        },
+        {
+          "text": "Rośnie umiarkowanie (efekt odcięcia szypuły)",
+          "explanation": "Ucisk szypuły odcina dopływ podwzgórzowej dopaminy, uwalniając laktotrofy spod hamowania."
+        },
+        {
+          "text": "Spada do zera",
+          "explanation": "Odcięcie hamulca dopaminergicznego powoduje wzrost, a nie spadek prolaktyny."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "przysadka-fizjologia-q5",
+      "lessonId": "przysadka-fizjologia",
+      "prompt": "Które nerwy czaszkowe mogą ulec uszkodzeniu przy bocznej ekspansji guza przysadki do zatoki jamistej?",
+      "options": [
+        {
+          "text": "Nerwy VII i VIII",
+          "explanation": "Nerwy twarzowy i słuchowy przebiegają w przewodzie słuchowym wewnętrznym, z dala od siodła."
+        },
+        {
+          "text": "Nerwy IX, X i XII",
+          "explanation": "Nerwy dolnej grupy opuszkowej leżą w rejonie otworu szyjnego i dołu tylnego czaszki."
+        },
+        {
+          "text": "Nerwy III, IV, VI oraz gałęzie V1 i V2 nerwu trójdzielnego",
+          "explanation": "Biegną one w ścianie i świetle zatoki jamistej bocznie od siodła tureckiego."
+        }
+      ],
+      "answer": 2
+    }
+  ]
+}

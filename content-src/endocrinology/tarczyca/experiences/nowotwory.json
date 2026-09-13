@@ -1,0 +1,408 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "nowotwory",
+  "objectives": [
+    {
+      "id": "nowotwory-obj-1",
+      "statement": "Odróżnisz zróżnicowane raki tarczycy (brodawkowaty PTC, pęcherzykowy FTC) od raka rdzeniastego (MTC) i anaplastycznego (ATC) pod względem histogenezy i biologii.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "nowotwory-obj-2",
+      "statement": "Zastosujesz protokół bezpieczeństwa w raku rdzeniastym tarczycy (MTC): badanie mutacji protoonkogenu RET, kalcytonina oraz wykluczenie pheochromocytoma przed operacją (MEN2).",
+      "kind": "safety"
+    },
+    {
+      "id": "nowotwory-obj-3",
+      "statement": "Zaplanujesz monitorowanie pooperacyjne raka zróżnicowanego (Tg, anty-Tg, USG szyi, supresja TSH zależna od stratyfikacji ryzyka ATA).",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "nowotwory-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "nowotwory-obj-1"
+    ],
+    "prompt": "Z jakiej linii komórkowej wywodzi się rak rdzeniasty tarczycy (MTC) i jaki peptyd stanowi jego swoisty marker nowotworowy?",
+    "options": [
+      "Z komórek okołopęcherzykowych C wytwarzających kalcytoninę",
+      "Z komórek pęcherzykowych tyreocytów wytwarzających tyreoglobulinę",
+      "Z limfocytów B naciekających gruczoł"
+    ],
+    "optionFeedback": [
+      "Rak rdzeniasty jest nowotworem neuroendokrynnym wywodzącym się z grzebienia nerwowego i komórek C.",
+      "Tyreocyty dają początek rakowi brodawkowatemu i pęcherzykowemu.",
+      "Z limfocytów powstają chłoniaki tarczycy."
+    ],
+    "answer": 0,
+    "explanation": "Rak rdzeniasty wywodzi się z komórek C wydzielających kalcytoninę i nie gromadzi radiojodu.",
+    "difficulty": "student",
+    "reasoning": "differentiation",
+    "sourceIds": [
+      "cancer"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "nowotwory-block-1",
+      "title": "Różne komórki, różne choroby",
+      "text": "Raki brodawkowaty (PTC) i pęcherzykowy (FTC) wywodzą się z komórek pęcherzykowych. Rak rdzeniasty (MTC) pochodzi z komórek C i wiąże się z kalcytoniną. Rak anaplastyczny (ATC) ma skrajnie agresywny przebieg.",
+      "sourceIds": [
+        "cancer"
+      ],
+      "checkpointId": "nowotwory-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "nowotwory-block-2",
+      "title": "Plan zależny od ryzyka",
+      "text": "W raku rdzeniastym MTC kluczowe jest wykluczenie zespołu MEN2 (mutacja RET). Przed planowaną tyreoidektomią bezwzględnie należy wykluczyć guza chromochłonnego nadnerczy.",
+      "sourceIds": [
+        "cancer"
+      ],
+      "checkpointId": "nowotwory-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "nowotwory-block-3",
+      "title": "Obserwacja jest częścią leczenia",
+      "text": "Po leczeniu zróżnicowanego raka ocenia się tyreoglobulinę (Tg) zawsze łącznie z przeciwciałami anty-Tg. W MTC monitoruje się kalcytoninę i CEA.",
+      "sourceIds": [
+        "cancer",
+        "nodules"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "nowotwory-q2-checkpoint-1-v2",
+      "type": "matching",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "nowotwory-obj-1"
+      ],
+      "prompt": "Dopasuj typ histologiczny raka tarczycy do jego charakterystycznej biologii i drogi przerzutowania:",
+      "pairs": [
+        [
+          "Rak brodawkowaty (PTC)",
+          "Najczęstszy rak tarczycy; wczesne przerzuty drogą chłonną do węzłów szyjnych"
+        ],
+        [
+          "Rak pęcherzykowy (FTC)",
+          "Inwazja torebki i naczyń krwionośnych; preferencyjne przerzuty krwiopochodne do kości i płuc"
+        ],
+        [
+          "Rak rdzeniasty (MTC)",
+          "Pochodzenie z komórek C; brak odpowiedzi na radiojod; związek z mutacją RET"
+        ],
+        [
+          "Rak anaplastyczny (ATC)",
+          "Niezróżnicowany nowotwór o gwałtownym wzroście, naciekający tchawicę i przełyk"
+        ]
+      ],
+      "explanation": "Histogeneza definiuje drogi rozsiewu, czułość na radiojod i rokowanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "cancer"
+      ]
+    },
+    {
+      "id": "nowotwory-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "nowotwory-obj-2"
+      ],
+      "prompt": "U pacjenta z potwierdzonym w biopsji rakiem rdzeniastym tarczycy (MTC) planowana jest operacja tyreoidektomii. Jakie badanie laboratoryjne należy bezwzględnie wykonać PRZED zabiegiem chirurgicznym?",
+      "options": [
+        "Oznaczenie wolnych metanefryn w osoczu w celu wykluczenia guza chromochłonnego nadnerczy (pheochromocytoma w zespole MEN2)",
+        "Oznaczenie stężenia tyreoglobuliny",
+        "Scyntygrafię całego ciała z radiojodem 131-I"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-exclude-pheo",
+            "label": "Wykluczenie pheochromocytoma / wolne metanefryny",
+            "acceptedPhrases": [
+              "pheochromocytoma",
+              "guz chromochłonny",
+              "metanefryny",
+              "men2",
+              "men 2a",
+              "men 2b"
+            ]
+          },
+          {
+            "id": "c-fatal-hypertension",
+            "label": "Ryzyko przełomu nadciśnieniowego w anestezji",
+            "acceptedPhrases": [
+              "przełom nadciśnieniowy",
+              "zgon na stole",
+              "zagrożenie życia w znieczuleniu"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-radioiodine-mtc",
+            "patterns": [
+              "radiojod w raku rdzeniastym",
+              "leczenie jodem 131"
+            ],
+            "severity": "critical",
+            "feedback": "Rak rdzeniasty wywodzi się z komórek C i nie wychwytuje radiojodu."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Nierozpoznany guz chromochłonny w zespole MEN2 podczas indukcji znieczulenia może doprowadzić do śmiertelnego przełomu adrenergicznego.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "cancer"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Nierozpoznany guz chromochłonny w zespole MEN2 podczas indukcji znieczulenia może doprowadzić do śmiertelnego przełomu adrenergicznego.",
+        "Nieprawidłowo: Nierozpoznany guz chromochłonny w zespole MEN2 podczas indukcji znieczulenia może doprowadzić do śmiertelnego przełomu adrenergicznego.",
+        "Nieprawidłowo: Nierozpoznany guz chromochłonny w zespole MEN2 podczas indukcji znieczulenia może doprowadzić do śmiertelnego przełomu adrenergicznego."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "nowotwory-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "nowotwory-obj-3"
+    ],
+    "prompt": "Wyjaśnij młodszemu lekarzowi, dlaczego badanie stężenia tyreoglobuliny (Tg) po tyreoidektomii z powodu raka brodawkowatego musi być ZAWSZE zlecane łącznie z mianem przeciwciał anty-Tg.",
+    "modelAnswer": "Przeciwciała anty-Tg obecne w surowicy interferują w teście immunometrycznym tyreoglobuliny, powodując fałszywie ujemne (zaniżone) odczyty stężenia Tg. Może to zamaskować wznowę lub obecność odległych przerzutów raka. Jeśli anty-Tg są obecne, sam pomiar Tg metodą immunochemiczną jest niewiarygodny, a samo utrzymywanie się lub narastanie miana anty-Tg traktuje się jako wskaźnik przetrwałej choroby.",
+    "explanation": "Interferencja anty-Tg uniemożliwia prawidłową ocenę tyreoglobuliny jako markera wznowy.",
+    "difficulty": "doctor",
+    "reasoning": "decision",
+    "sourceIds": [
+      "cancer"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "nowotwory-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "nowotwory-obj-2"
+      ],
+      "prompt": "Jakie badanie genetyczne należy wykonać u każdego pacjenta z nowo rozpoznanym rakiem rdzeniastym tarczycy (MTC), nawet jeśli wywiad rodzinny jest pozornie ujemny?",
+      "modelAnswer": "Należy wykonać badanie mutacji germinalnych protoonkogenu RET (metodą sekwencjonowania DNA z krwi obwodowej), ponieważ około 25% przypadków pozornie sporadycznych okazuje się dziedzicznym zespołem MEN2A, MEN2B lub rodzinnym rakiem rdzeniastym (FMTC), co ma krytyczne znaczenie dla badań przesiewowych u krewnych i profilaktycznej tyreoidektomii u dzieci.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-ret-mutation",
+            "label": "Badanie mutacji protoonkogenu RET",
+            "acceptedPhrases": [
+              "mutacja ret",
+              "protoonkogen ret",
+              "gen ret",
+              "sekwencjonowanie ret"
+            ]
+          },
+          {
+            "id": "c-family-screening",
+            "label": "Badania przesiewowe u krewnych / MEN2",
+            "acceptedPhrases": [
+              "krewni",
+              "badania rodzinne",
+              "men2",
+              "profilaktyczna tyreoidektomia"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Rutynowa diagnostyka RET w każdym MTC pozwala na wczesne wykrycie nosicielstwa u członków rodziny.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "cancer"
+      ]
+    },
+    {
+      "id": "nowotwory-q5-exit-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "nowotwory-obj-3"
+      ],
+      "prompt": "Pacjent po całkowitej tyreoidektomii i ablacji 131-I z powodu raka brodawkowatego tarczycy należy do grupy wysokiego ryzyka wznowy wg ATA. Jaki jest docelowy zakres TSH podczas supresyjnego leczenia lewotyroksyną w pierwszym roku obserwacji?",
+      "options": [
+        "TSH < 0,1 mIU/l (pełna supresja TSH)",
+        "TSH w granicach 2,0–4,0 mIU/l",
+        "TSH > 10 mIU/l"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-high-risk-tsh",
+            "label": "Docelowe TSH < 0,1 mIU/l w grupie wysokiego ryzyka",
+            "acceptedPhrases": [
+              "tsh < 0.1",
+              "poniżej 0.1",
+              "pełna supresja",
+              "supresja tsh"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "W grupie wysokiego ryzyka wznowy supresja TSH <0,1 mIU/l hamuje proliferację resztkowych tyreocytów nowotworowych.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "cancer"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: W grupie wysokiego ryzyka wznowy supresja TSH <0,1 mIU/l hamuje proliferację resztkowych tyreocytów nowotworowych.",
+        "Nieprawidłowo: W grupie wysokiego ryzyka wznowy supresja TSH <0,1 mIU/l hamuje proliferację resztkowych tyreocytów nowotworowych.",
+        "Nieprawidłowo: W grupie wysokiego ryzyka wznowy supresja TSH <0,1 mIU/l hamuje proliferację resztkowych tyreocytów nowotworowych."
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "nowotwory-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "nowotwory-obj-1"
+      ],
+      "prompt": "Czy rak rdzeniasty tarczycy może być leczony terapią radiojodem 131-I?",
+      "options": [
+        "Nie, ponieważ komórki C nie posiadają symportera sodowo-jodkowego (NIS) i nie wychwytują jodu; leczenie radiojodem jest nieskuteczne",
+        "Tak, każdy rak tarczycy jest bezwzględnie wrażliwy na radiojod",
+        "Tak, ale tylko w dawce 10-krotnie wyższej niż w raku brodawkowatym"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-no-nis-in-c-cells",
+            "label": "Brak symportera NIS i wychwytu jodu w komórkach C",
+            "acceptedPhrases": [
+              "brak nis",
+              "nie wychwytuje jodu",
+              "komórki c nie gromadzą jodu",
+              "nieskuteczny radiojod"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Komórki C nie mają mechanizmów transportu jodu — radiojod w MTC nie ma żadnego zastosowania.",
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "cancer"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Komórki C nie mają mechanizmów transportu jodu — radiojod w MTC nie ma żadnego zastosowania.",
+        "Nieprawidłowo: Komórki C nie mają mechanizmów transportu jodu — radiojod w MTC nie ma żadnego zastosowania.",
+        "Nieprawidłowo: Komórki C nie mają mechanizmów transportu jodu — radiojod w MTC nie ma żadnego zastosowania."
+      ]
+    },
+    {
+      "id": "nowotwory-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "nowotwory-obj-3"
+      ],
+      "prompt": "Pacjent po leczeniu raka brodawkowatego tarczycy (tyreoidektomia + 131-I) ma po 12 miesiącach stężenie tyreoglobuliny stymulowanej rhTSH wynoszące 8,4 ng/ml (wcześniej <0,2) oraz ujemne anty-Tg. W USG szyi nie stwierdza się wznowy miejscowej. Przedstaw tok rozumowania i plan dalszej diagnostyki lokalizacyjnej.",
+      "modelAnswer": "Tok postępowania: 1) Stężenie Tg >2 ng/ml po stymulacji przy ujemnych anty-Tg dowodzi biochemicznej wznowy lub rozsiewu raka zróżnicowanego; 2) Kolejny krok to diagnostyka obrazowa: scyntygrafia całego ciała 131-I (WBS), tomografia klatki piersiowej wysokiej rozdzielczości HRCT (przerzuty do płuc) oraz ewentualnie 18F-FDG PET/CT w przypadku utraty jodochwytności; 3) Po zlokalizowaniu ogniska decyzja o ponownym radiojodzie lub leczeniu celowanym (inhibitory kinaz).",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-diagnosis",
+            "label": "Rozpoznanie biochemicznej wznowy",
+            "requiredConcepts": [
+              {
+                "id": "c-biochem-recurrence",
+                "label": "Biochemiczna wznowa / obecność tkanki nowotworowej",
+                "acceptedPhrases": [
+                  "wznowa biochemiczna",
+                  "wzrost tg",
+                  "przetrwała choroba"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dim-imaging",
+            "label": "Plan badań obrazowych",
+            "requiredConcepts": [
+              {
+                "id": "c-imaging-plan",
+                "label": "TK klatki, WBS 131-I, PET/CT",
+                "acceptedPhrases": [
+                  "scyntygrafia całego ciała",
+                  "tk klatki piersiowej",
+                  "pet-ct",
+                  "poszukiwanie przerzutów"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "explanation": "Narastająca tyreoglobulina bez widocznej wznowy w USG wymaga poszukiwania odległych przerzutów (płuca, kości).",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "cancer"
+      ]
+    },
+    {
+      "id": "nowotwory-bank-3",
+      "type": "multi_select",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "nowotwory-obj-2"
+      ],
+      "prompt": "Które cechy fenotypowe nasuwają podejrzenie zespołu mnogiej gruczolakowatości wewnątrzwydzielniczej typu 2B (MEN2B)?",
+      "options": [
+        "Nerwiakowłókniaki (nerwiaki śluzówkowe) na języku, wargach i spojówkach",
+        "Marfanoidalna budowa ciała z długimi kończynami",
+        "Wczesny i wysoce agresywny rak rdzeniasty tarczycy w pierwszych latach życia",
+        "Pierwotna nadczynność przytarczyc w 100% przypadków"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "optionFeedback": [
+        "Nerwiaki śluzówkowe to znak rozpoznawczy MEN2B.",
+        "Habitus marfanoidalny jest typowy dla MEN2B.",
+        "MTC w MEN2B ma piorunujący przebieg u małych dzieci.",
+        "Nadczynność przytarczyc występuje w MEN2A, a niemal nigdy w MEN2B."
+      ],
+      "explanation": "MEN2B cechuje się nerwiakami śluzówkowymi, marfanoidalną sylwetką i wczesnym, agresywnym MTC bez hiperparatyroidyzmu.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "cancer"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

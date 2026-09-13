@@ -1,0 +1,336 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "moczowka-prosta",
+  "objectives": [
+    {
+      "id": "moczowka-prosta-obj-1",
+      "statement": "Zróżnicujesz moczówkę prostą centralną (AVP-D — niedobór wazopresyny) od moczówki nerkowej (AVP-R — oporność receptora V2) i polidypsji pierwotnej za pomocą testu odwodnieniowego i stymulacji kopeptyny.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "moczowka-prosta-obj-2",
+      "statement": "Wdrożysz leczenie substytucyjne desmopresyną (dDAVP) w AVP-D z miareczkowaniem dawki zapobiegającym groźnej hiponatremii z przewodnienia.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "moczowka-prosta-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "moczowka-prosta-obj-1"
+    ],
+    "prompt": "Jaka jest nowa oficjalna nomenklatura konsensusu międzynarodowego dla moczówki prostej centralnej związanej z niedoborem wazopresyny?",
+    "options": [
+      "AVP-D (Arginine Vasopressin Deficiency — niedobór wazopresyny argininowej)",
+      "AVP-R (Arginine Vasopressin Resistance)",
+      "SIADH"
+    ],
+    "optionFeedback": [
+      "W 2022/2023 r. wprowadzono termin AVP-D (niedobór wazopresyny), aby wyeliminować mylenie moczówki (diabetes insipidus) z cukrzycą (diabetes mellitus).",
+      "AVP-R to postać nerkowa (oporność na wazopresynę).",
+      "SIADH to zespół nadmiernego, a nie niedostatecznego wydzielania wazopresyny."
+    ],
+    "answer": 0,
+    "explanation": "Nowa nomenklatura AVP-D precyzyjnie definiuje mechanizm molekularny i chroni pacjentów przed pomyłkami lekowymi.",
+    "difficulty": "student",
+    "reasoning": "differentiation",
+    "sourceIds": [
+      "diabetes_insipidus_guidelines"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "moczowka-prosta-block-1",
+      "title": "Objawy: Poliuria, polidypsja i nowa nomenklatura AVP-D / AVP-R",
+      "text": "Objawia się oddawaniem olbrzymich objętości rozcieńczonego moczu (>50 ml/kg/dobę lub >3-4 l/dobę) o ciężarze <1,005 i osmolalności <300 mOsm/kg H2O oraz kompulsywnym pragnieniem (polidypsja z preferencją zimnej wody).",
+      "sourceIds": [
+        "diabetes_insipidus_guidelines"
+      ],
+      "checkpointId": "moczowka-prosta-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "moczowka-prosta-block-2",
+      "title": "Różnicowanie: Centralna (AVP-D) vs Nerkowa (AVP-R) vs Psychogenna",
+      "text": "W polidypsji pierwotnej ustrój ma prawidłowe zasoby AVP, ale nadmierna podaż wody tłumi jej sekrecję. W teście odwodnieniowym dochodzi do zagęszczenia moczu. W AVP-D mocz nie zagęszcza się bez podania egzogennej desmopresyny.",
+      "sourceIds": [
+        "diabetes_insipidus_guidelines"
+      ],
+      "checkpointId": "moczowka-prosta-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "moczowka-prosta-block-3",
+      "title": "Diagnostyka: Test z desmopresyną oraz nowoczesna ocena kopeptyny",
+      "text": "Kopeptyna to C-końcowy fragment prepro-AVP o wysokiej stabilności w osoczu. Stężenie kopeptyny >4,9 pmol/l po stymulacji 3% NaCl (natremia >147 mmol/l) lub po infuzji argininy z 97% czułością i swoistością wyklucza AVP-D.",
+      "sourceIds": [
+        "diabetes_insipidus_guidelines"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "moczowka-prosta-q2-checkpoint-1-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "moczowka-prosta-obj-1"
+      ],
+      "prompt": "W teście odwodnieniowym u 30-letniego mężczyzny z dobową diurezą 7 litrów, po 8 godzinach restrykcji płynów osmolalność osocza wzrosła do 305 mOsm/kg, a osmolalność moczu pozostała niska (180 mOsm/kg). Po podaniu 2 µg desmopresyny (dDAVP) s.c. osmolalność moczu wzrosła o 130% do 420 mOsm/kg. Jaka jest diagnoza?",
+      "options": [
+        "Moczówka prosta centralna (AVP-D — niedobór wazopresyny)",
+        "Moczówka prosta nerkowa (AVP-R — oporność cewek nerkowych)",
+        "Polidypsja psychogenna"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-response-to-ddavp",
+            "label": "Wzrost osmolalności moczu >50% po dDAVP potwierdza postać centralną",
+            "acceptedPhrases": [
+              "postać centralna",
+              "avp-d",
+              "wzrost po desmopresynie",
+              "brak endogennej wazopresyny",
+              ">50%"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Gwałtowny wzrost osmolalności moczu o >50% po podaniu egzogennej desmopresyny świadczy o sprawności nerek i pierwotnym braku wydzielania AVP z przysadki.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "diabetes_insipidus_guidelines"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Gwałtowny wzrost osmolalności moczu o >50% po podaniu egzogennej desmopresyny świadczy o sprawności nerek i pierwotnym braku wydzielania AVP z przysadki.",
+        "Nieprawidłowo: Gwałtowny wzrost osmolalności moczu o >50% po podaniu egzogennej desmopresyny świadczy o sprawności nerek i pierwotnym braku wydzielania AVP z przysadki.",
+        "Nieprawidłowo: Gwałtowny wzrost osmolalności moczu o >50% po podaniu egzogennej desmopresyny świadczy o sprawności nerek i pierwotnym braku wydzielania AVP z przysadki."
+      ]
+    },
+    {
+      "id": "moczowka-prosta-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "moczowka-prosta-obj-2"
+      ],
+      "prompt": "Pacjent z rozpoznaną AVP-D przyjmuje doustnie desmopresynę (Minirin Melt). Jakie najważniejsze zalecenie dotyczące spożywania płynów należy mu przekazać, aby zapobiec zagrażającemu życiu zatruciu wodnemu?",
+      "options": [
+        "Pij wyłącznie wtedy, gdy odczuwasz pragnienie (nie pij nawykowo dużych ilości płynów po zażyciu leku), a kolejną dawkę przyjmuj dopiero przy nawrocie diurezy",
+        "Wypijaj co najmniej 5 litrów wody dziennie bez względu na pragnienie",
+        "Całkowicie unikaj soli w diecie"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-thirst-driven-drinking",
+            "label": "Picie sterowane pragnieniem / unikanie nawykowego picia",
+            "acceptedPhrases": [
+              "picie sterowane pragnieniem",
+              "nie pić na zapas",
+              "ryzyko hiponatremii",
+              "zatrucie wodne"
+            ]
+          },
+          {
+            "id": "c-breakthrough-diuresis",
+            "label": "Zezwolenie na krótką diurezę przed kolejną dawką",
+            "acceptedPhrases": [
+              "nawrót diurezy",
+              "okno diuretyczne",
+              "przełamanie działania"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Desmopresyna blokuje wydalanie wody przez nerki; nawykowe picie dużej ilości płynów doprowadzi do ciężkiej hiponatremii z obrzękiem mózgu.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "diabetes_insipidus_guidelines"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Desmopresyna blokuje wydalanie wody przez nerki; nawykowe picie dużej ilości płynów doprowadzi do ciężkiej hiponatremii z obrzękiem mózgu.",
+        "Nieprawidłowo: Desmopresyna blokuje wydalanie wody przez nerki; nawykowe picie dużej ilości płynów doprowadzi do ciężkiej hiponatremii z obrzękiem mózgu.",
+        "Nieprawidłowo: Desmopresyna blokuje wydalanie wody przez nerki; nawykowe picie dużej ilości płynów doprowadzi do ciężkiej hiponatremii z obrzękiem mózgu."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "moczowka-prosta-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "moczowka-prosta-obj-1"
+    ],
+    "prompt": "Dlaczego oznaczanie kopeptyny po stymulacji 3% NaCl lub argininą zastąpiło klasyczny test odwodnieniowy w nowoczesnych algorytmach diagnostyki moczówki prostej?",
+    "modelAnswer": "Klasyczny test odwodnieniowy trwa kilkanaście godzin, jest bardzo uciążliwy dla pacjenta i obarczony ryzykiem błędu diagnostycznego (nawet do 30% nakładania się wyników w częściowej AVP-D i polidypsji). Kopeptyna jest stabilnym peptydem uwalnianym z prepro-AVP w stosunku równomolowym z wazopresyną. Po bezpiecznym podwyższeniu natremii >147 mmol/l wlewem 3% NaCl, stężenie kopeptyny <=4,9 pmol/l z czułością i swoistością >96% potwierdza AVP-D, podczas gdy wyższe stężenia wskazują na polidypsję pierwotną lub moczówkę nerkową.",
+    "explanation": "Oznaczanie kopeptyny oferuje bezprecedensową precyzję diagnostyczną bez konieczności wielogodzinnej męczącej dehydratacji.",
+    "difficulty": "doctor",
+    "reasoning": "differentiation",
+    "sourceIds": [
+      "diabetes_insipidus_guidelines"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "moczowka-prosta-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "moczowka-prosta-obj-1"
+      ],
+      "prompt": "Jaki jest patognomoniczny objaw radiologiczny tylnego płata przysadki w sekwencji T1-zależnej MRI głowy u zdrowego człowieka i co oznacza jego brak u chorego z poliurią?",
+      "modelAnswer": "Prawidłowy tylny płat przysadki wykazuje cechę wysokiego sygnału w obrazach T1-zależnych (tzw. 'jasna plamka' tylnego płata / pituitary bright spot), co wynika z obecności fosfolipidowych pęcherzyków magazynujących kompleksy wazopresyny i neurofizyny II. Brak tego jasnego sygnału u pacjenta z poliurią wskazuje na brak zapasów wazopresyny i potwierdza rozpoznanie moczówki prostej centralnej (AVP-D).",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-bright-spot",
+            "label": "Jasna plamka tylnego płata (wysoki sygnał w T1)",
+            "acceptedPhrases": [
+              "jasna plamka",
+              "bright spot",
+              "wysoki sygnał w t1",
+              "hiperintensywny"
+            ]
+          },
+          {
+            "id": "c-avp-storage-loss",
+            "label": "Brak zapasów neurohormonu w AVP-D",
+            "acceptedPhrases": [
+              "brak sygnału",
+              "brak wazopresyny",
+              "zanik jasnej plamki",
+              "potwierdzenie avp-d"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Zanik 'bright spot' w T1 MRI to klasyczny radiologiczny dowód braku wazopresyny w tylnym płacie.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "diabetes_insipidus_guidelines"
+      ]
+    },
+    {
+      "id": "moczowka-prosta-q5-exit-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "moczowka-prosta-obj-2"
+      ],
+      "prompt": "Który lek stosowany w psychiatrii jest najczęstszą przyczyną nabytej moczówki prostej nerkowej (AVP-R) wskutek akumulacji w komórkach głównych cewki zbiorczej przez kanały ENaC i blokowania akwaporyny 2 (AQP2)?",
+      "options": [
+        "Sole litu (węglan litu)",
+        "Sertralina",
+        "Kwas walproinowy"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-lithium-nephrogenic",
+            "label": "Lit jako przyczyna moczówki nerkowej (blokowanie AQP2)",
+            "acceptedPhrases": [
+              "lit",
+              "węglan litu",
+              "sole litu",
+              "enac",
+              "akwaporyna 2",
+              "aqp2"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Lit wnika przez kanały ENaC i upośledza szlak sygnałowy cAMP-AQP2, wywołując oporność na wazopresynę u 20–40% leczonych.",
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "diabetes_insipidus_guidelines"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Lit wnika przez kanały ENaC i upośledza szlak sygnałowy cAMP-AQP2, wywołując oporność na wazopresynę u 20–40% leczonych.",
+        "Nieprawidłowo: Lit wnika przez kanały ENaC i upośledza szlak sygnałowy cAMP-AQP2, wywołując oporność na wazopresynę u 20–40% leczonych.",
+        "Nieprawidłowo: Lit wnika przez kanały ENaC i upośledza szlak sygnałowy cAMP-AQP2, wywołując oporność na wazopresynę u 20–40% leczonych."
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "moczowka-prosta-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "moczowka-prosta-obj-1"
+      ],
+      "prompt": "U pacjenta po ciężkim urazie podstawy czaszki wystąpiła diureza 600 ml/godzinę, ciężar właściwy moczu 1,002, a stężenie sodu w surowicy wzrosło do 152 mmol/l. Jakie jest pilne postępowanie?",
+      "options": [
+        "Podanie desmopresyny (dDAVP) i natychmiastowe wyrównanie ujemnego bilansu płynowego dożylnym wlewem płynów bezelektrolitowych (5% glukoza)",
+        "Podanie furosemidu w celu wymuszenia diurezy",
+        "Podanie 3% NaCl"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-post-traumatic-di",
+            "label": "Pourazowa moczówka prosta — desmopresyna i płyny bezelektrolitowe",
+            "acceptedPhrases": [
+              "desmopresyna",
+              "ddavp",
+              "5% glukoza",
+              "nawodnienie",
+              "moczówka pourazowa"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Pourazowa AVP-D wymaga szybkiej substytucji dDAVP i wyrównania strat wolnej wody za pomocą 5% glukozy.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "diabetes_insipidus_guidelines"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Pourazowa AVP-D wymaga szybkiej substytucji dDAVP i wyrównania strat wolnej wody za pomocą 5% glukozy.",
+        "Nieprawidłowo: Pourazowa AVP-D wymaga szybkiej substytucji dDAVP i wyrównania strat wolnej wody za pomocą 5% glukozy.",
+        "Nieprawidłowo: Pourazowa AVP-D wymaga szybkiej substytucji dDAVP i wyrównania strat wolnej wody za pomocą 5% glukozy."
+      ]
+    },
+    {
+      "id": "moczowka-prosta-bank-2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "moczowka-prosta-obj-2"
+      ],
+      "prompt": "Jakie jest progowe stężenie kopeptyny [w pmol/l] po stymulacji hipertonicznym roztworem NaCl (gdy natremia przekroczy 147 mmol/l), powyżej którego z wysoką pewnością wyklucza się moczówkę prostą centralną (AVP-D)?",
+      "answer": 4.9,
+      "tolerance": 0.2,
+      "unit": "pmol/l",
+      "explanation": "Zgodnie z badaniami klinicznymi konsensualnymi stężenie stymulowanej kopeptyny > 4,9 pmol/l wyklucza centralną postać moczówki prostej z dokładnością >96%.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "diabetes_insipidus_guidelines"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "axis-map"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

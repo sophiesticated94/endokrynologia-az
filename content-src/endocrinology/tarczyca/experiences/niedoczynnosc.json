@@ -1,0 +1,422 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "niedoczynnosc",
+  "objectives": [
+    {
+      "id": "niedoczynnosc-obj-1",
+      "statement": "Rozpoznasz jawną i subkliniczną pierwotną niedoczynność tarczycy oraz ustalisz wskazania do wdrożenia lewotyroksyny.",
+      "kind": "decision"
+    },
+    {
+      "id": "niedoczynnosc-obj-2",
+      "statement": "Zaplanujesz bezpieczne dawkowanie LT4 u chorego w wieku podeszłym lub z chorobą wieńcową oraz zasady monitorowania TSH.",
+      "kind": "safety"
+    }
+  ],
+  "diagnostic": {
+    "id": "niedoczynnosc-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "niedoczynnosc-obj-1"
+    ],
+    "prompt": "Jaka jest orientacyjna pełna dobowa dawka substytucyjna lewotyroksyny (LT4) u młodego, zdrowego dorosłego po całkowitej tyreoidektomii?",
+    "options": [
+      "Około 1,6 µg/kg masy ciała na dobę",
+      "Około 0,2 µg/kg masy ciała na dobę",
+      "Zawsze stała dawka 25 µg na dobę u każdego pacjenta"
+    ],
+    "optionFeedback": [
+      "Wskaźnik 1,6 µg/kg/d (często w granicach 1,5–1,8 µg/kg/d) odpowiada dobowej endogennej produkcji tarczycy.",
+      "Dawka 0,2 µg/kg/d jest znikoma i nie zaspokaja zapotrzebowania.",
+      "Stała dawka 25 µg jest dawką początkową u seniorów, a nie dawką docelową u młodego człowieka."
+    ],
+    "answer": 0,
+    "explanation": "Zapotrzebowanie na LT4 zależy od beztłuszczowej masy ciała i wynosi średnio 1,6 µg/kg mc/d.",
+    "difficulty": "student",
+    "reasoning": "decision",
+    "sourceIds": [
+      "lt4"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "niedoczynnosc-block-1",
+      "title": "Od objawów do potwierdzenia",
+      "text": "Nietolerancja zimna, zaparcia, suchość skóry, spowolnienie i zmęczenie mogą sugerować niedoczynność, lecz są nieswoiste. Rozpoznanie pierwotnej jawnej niedoczynności opiera się na wysokim TSH i niskim FT4.",
+      "sourceIds": [
+        "lt4",
+        "subclinical"
+      ],
+      "checkpointId": "niedoczynnosc-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "niedoczynnosc-block-2",
+      "title": "Leczenie zastępcze",
+      "text": "Lewotyroksyna (LT4) uzupełnia niedobór T4. Stały sposób przyjmowania (na czczo 30–60 min przed śniadaniem popijając wodą) pomaga uzyskać stabilny efekt. Pokarm, żelazo i wapń zmniejszają wchłanianie.",
+      "sourceIds": [
+        "lt4"
+      ],
+      "checkpointId": "niedoczynnosc-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "niedoczynnosc-block-3",
+      "title": "Kontrola zamiast pośpiechu",
+      "text": "TSH zmienia się wolniej niż stężenie podanego hormonu. Po zmianie dawki ocenę planuje się po 6–8 tygodniach. Subkliniczna niedoczynność wymaga potwierdzenia i decyzji zależnej od ryzyka.",
+      "sourceIds": [
+        "lt4",
+        "subclinical"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "niedoczynnosc-q2-checkpoint-1-v2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "niedoczynnosc-obj-1"
+      ],
+      "prompt": "Oblicz przewidywaną dobową dawkę lewotyroksyny (w µg) dla 30-letniej pacjentki o masie ciała 65 kg ze świeżo rozpoznaną jawną niedoczynnością tarczycy po tyreoidektomii (przyjmij przelicznik 1,6 µg/kg mc):",
+      "answer": 104,
+      "tolerance": 8,
+      "unit": "µg",
+      "explanation": "65 kg * 1,6 µg/kg = 104 µg/dobę. Typowo przepisuje się preparat 100 µg lub naprzemiennie 100/112 µg.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "lt4"
+      ]
+    },
+    {
+      "id": "niedoczynnosc-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "niedoczynnosc-obj-2"
+      ],
+      "prompt": "U 76-letniego mężczyzny z chorobą wieńcową po zawale i TSH = 14 mIU/l, FT4 = 8,5 pmol/l, jak należy rozpocząć leczenie lewotyroksyną?",
+      "options": [
+        "Ostrożnie od dawki 12,5–25 µg/dobę, zwiększając dawkę co 4–6 tygodni pod kontrolą kardiologiczną („start low, go slow”)",
+        "Od pełnej dawki należnej 125 µg/dobę w celu natychmiastowego usunięcia objawów",
+        "Należy całkowicie odstąpić od leczenia z powodu przeciwwskazań wieńcowych"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-start-low",
+            "label": "Start low go slow / niska dawka początkowa",
+            "acceptedPhrases": [
+              "start low",
+              "niska dawka",
+              "12.5",
+              "25 ug",
+              "stopniowe zwiększanie"
+            ]
+          },
+          {
+            "id": "c-cardiac-risk",
+            "label": "Ryzyko zaostrzenia wieńcowego lub arytmii",
+            "acceptedPhrases": [
+              "zaostrzenie dławicy",
+              "zawał",
+              "arytmia",
+              "zwiększenie zapotrzebowania mięśnia sercowego na tlen"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-full-dose",
+            "patterns": [
+              "pełna dawka od początku",
+              "100 ug od razu"
+            ],
+            "severity": "critical",
+            "feedback": "Podanie pełnej dawki LT4 seniorowi z chorobą wieńcową grozi zawałem serca lub groźnymi zaburzeniami rytmu."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Hormony tarczycy zwiększają zapotrzebowanie mięśnia sercowego na tlen i mogą wywołać dławicę lub zawał serca.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "lt4"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Hormony tarczycy zwiększają zapotrzebowanie mięśnia sercowego na tlen i mogą wywołać dławicę lub zawał serca.",
+        "Nieprawidłowo: Hormony tarczycy zwiększają zapotrzebowanie mięśnia sercowego na tlen i mogą wywołać dławicę lub zawał serca.",
+        "Nieprawidłowo: Hormony tarczycy zwiększają zapotrzebowanie mięśnia sercowego na tlen i mogą wywołać dławicę lub zawał serca."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "niedoczynnosc-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "niedoczynnosc-obj-2"
+    ],
+    "prompt": "Jakie instrukcje przekażesz pacjentowi rozpoczynającemu leczenie lewotyroksyną odnośnie pory przyjmowania leku, popijania oraz odstępu od posiłków i suplementów żelaza/wapnia?",
+    "modelAnswer": "Lewotyroksynę należy przyjmować rano, ściśle na czczo, 30–60 minut przed śniadaniem lub kawą, popijając wyłącznie niegazowaną wodą. Preparaty żelaza, wapnia oraz leki zobojętniające kwas solny (IPP) należy przyjmować z zachowaniem co najmniej 4 godzin odstępu, gdyż drastycznie blokują one wchłanianie hormonu w jelicie.",
+    "explanation": "Błędy w przyjmowaniu LT4 są najczęstszą przyczyną rzekomej oporności na leczenie.",
+    "difficulty": "student",
+    "reasoning": "safety",
+    "sourceIds": [
+      "lt4"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "niedoczynnosc-q4-exit-v2",
+      "type": "multi_select",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "niedoczynnosc-obj-2"
+      ],
+      "prompt": "Które z poniższych leków i substancji istotnie upośledzają wchłanianie lewotyroksyny w przewodzie pokarmowym?",
+      "options": [
+        "Siarczan żelaza",
+        "Węglan wapnia",
+        "Inhibitory pompy protonowej (omeprazol)",
+        "Czysta woda niegazowana"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "optionFeedback": [
+        "Żelazo chelatuje LT4.",
+        "Wapń tworzy nierozpuszczalne kompleksy.",
+        "Zmniejszenie kwasowości soku żołądkowego upośledza rozpad tabletki.",
+        "Woda jest zalecanym płynem do popijania."
+      ],
+      "explanation": "Związki żelaza, wapnia i leki alkalizujące żołądek wymagają minimum 4 godzin odstępu od LT4.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "lt4"
+      ]
+    },
+    {
+      "id": "niedoczynnosc-q5-exit-v2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "niedoczynnosc-obj-1",
+        "niedoczynnosc-obj-2"
+      ],
+      "prompt": "34-letnia kobieta zgłasza utrzymujące się zmęczenie mimo przyjmowania LT4 w dawce 175 µg/d (2,5 µg/kg). TSH wynosi 9,8 mIU/l. Przedstaw plan postępowania wyjaśniającego ten stan.",
+      "modelAnswer": "Problem: Rzekoma oporność na LT4. Należy ocenić: 1) Compliance (czy pacjentka bierze lek regularnie i na czczo); 2) Interakcje lekowe (kawa, żelazo, wapń, leki przeciwpadaczkowe); 3) Zespoły złego wchłaniania (badanie w kierunku celiakii, zakażenia Helicobacter pylori, atroficznego zapalenia żołądka); 4) Test wchłaniania lewotyroksyny pod nadzorem.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-adherence",
+            "label": "Ocena compliance i sposobu przyjmowania",
+            "requiredConcepts": [
+              {
+                "id": "c-adherence",
+                "label": "Sprawdzenie regularności i techniki brania leku",
+                "acceptedPhrases": [
+                  "regularność",
+                  "sposób przyjmowania",
+                  "na czczo",
+                  "interakcje z posiłkiem",
+                  "compliance"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dim-malabsorption",
+            "label": "Diagnostyka gastroenterologiczna / złego wchłaniania",
+            "requiredConcepts": [
+              {
+                "id": "c-malabsorption",
+                "label": "Celiakia, H. pylori, zapalenie żołądka",
+                "acceptedPhrases": [
+                  "celiakia",
+                  "malabsorpcja",
+                  "złe wchłanianie",
+                  "helicobacter",
+                  "żołądek"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-escalate-only",
+            "patterns": [
+              "zwiększyć dawkę do 300 ug bez wywiadu",
+              "od razu operacja"
+            ],
+            "severity": "critical",
+            "feedback": "Eskalacja dawki bez diagnostyki przyczyn nieskuteczności jest błędem."
+          }
+        ]
+      },
+      "explanation": "Zapotrzebowanie na LT4 przekraczające 2 µg/kg/d wymaga weryfikacji compliance oraz wykluczenia celiakii i interakcji.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "lt4"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "niedoczynnosc-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "niedoczynnosc-obj-1"
+      ],
+      "prompt": "U 28-letniej kobiety planującej ciążę stwierdzono w badaniach kontrolnych TSH = 6,2 mIU/l, FT4 = 14,5 pmol/l (norma) oraz anty-TPO = 350 IU/ml. Jaka jest decyzja terapeutyczna?",
+      "options": [
+        "Wdrożenie małej dawki lewotyroksyny (np. 25–50 µg/d) z uwagi na plany prokreacyjne i obecność przeciwciał",
+        "Odstąpienie od leczenia i ponowna kontrola za 5 lat",
+        "Wdrożenie tiamazolu w celu obniżenia przeciwciał"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-pregnancy-goal",
+            "label": "Cel TSH < 2,5 w planach ciążowych",
+            "acceptedPhrases": [
+              "plany ciążowe",
+              "ciąża",
+              "tsh < 2.5",
+              "ryzyko poronienia"
+            ]
+          },
+          {
+            "id": "c-anti-tpo-risk",
+            "label": "Dodatnie przeciwciała zwiększające ryzyko progresji",
+            "acceptedPhrases": [
+              "obecność przeciwciał",
+              "anty-tpo",
+              "ryzyko niedoczynności w ciąży"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "U kobiet planujących ciążę z subkliniczną niedoczynnością i dodatnimi anty-TPO zaleca się włączenie LT4 z celem TSH < 2,5 mIU/l.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "subclinical",
+        "pregnancy"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: U kobiet planujących ciążę z subkliniczną niedoczynnością i dodatnimi anty-TPO zaleca się włączenie LT4 z celem TSH < 2,5 mIU/l.",
+        "Nieprawidłowo: U kobiet planujących ciążę z subkliniczną niedoczynnością i dodatnimi anty-TPO zaleca się włączenie LT4 z celem TSH < 2,5 mIU/l.",
+        "Nieprawidłowo: U kobiet planujących ciążę z subkliniczną niedoczynnością i dodatnimi anty-TPO zaleca się włączenie LT4 z celem TSH < 2,5 mIU/l."
+      ]
+    },
+    {
+      "id": "niedoczynnosc-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "niedoczynnosc-obj-2"
+      ],
+      "prompt": "Dlaczego kontrolne badanie stężenia TSH należy zlecać najwcześniej po 6–8 tygodniach od modyfikacji dawki lewotyroksyny?",
+      "modelAnswer": "Lewotyroksyna ma długi okres półtrwania (t1/2 wynosi około 7 dni). Do osiągnięcia nowego stanu stacjonarnego stężenia T4 w osoczu potrzeba 5 okresów półtrwania (około 5 tygodni). Ponadto tyreotropy przysadki potrzebują kolejnych 1–2 tygodni na adaptację transkrypcji TSH do nowego poziomu hormonów obwodowych.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-half-life-7d",
+            "label": "Okres półtrwania T4 ~7 dni / stan stacjonarny",
+            "acceptedPhrases": [
+              "okres półtrwania 7 dni",
+              "t1/2",
+              "stan stacjonarny",
+              "steady state",
+              "5 okresów półtrwania"
+            ]
+          },
+          {
+            "id": "c-hpt-lag",
+            "label": "Opóźnienie odpowiedzi przysadki",
+            "acceptedPhrases": [
+              "odpowiedź przysadki",
+              "nowa równowaga",
+              "adaptacja tsh"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Zbyt wczesna kontrola TSH po 1-2 tygodniach odzwierciedla stan przejściowy i prowadzi do błędnych korekt dawki.",
+      "difficulty": "student",
+      "reasoning": "safety",
+      "sourceIds": [
+        "lt4",
+        "spina"
+      ]
+    },
+    {
+      "id": "niedoczynnosc-bank-3",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "niedoczynnosc-obj-1"
+      ],
+      "prompt": "U 84-letniego pensjonariusza DPS w rutynowych badaniach stwierdzono TSH = 6,8 mIU/l, FT4 = 15 pmol/l (norma). Pacjent nie ma objawów. Jaka jest właściwa strategia wg wytycznych ETA dla osób >80 r.ż.?",
+      "options": [
+        "Obserwacja bez włączania lewotyroksyny; w wieku podeszłym stężenie TSH do 7–8 mIU/l może być fizjologiczną adaptacją",
+        "Natychmiastowe włączenie LT4 w dawce 75 µg/d",
+        "Operacyjne usunięcie tarczycy"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-elderly-tsh-shift",
+            "label": "Fizjologiczne przesunięcie normy TSH w wieku podeszłym",
+            "acceptedPhrases": [
+              "wiek podeszły",
+              "norma wiekowa",
+              "fizjologiczne",
+              "powyżej 80 lat",
+              "brak korzyści z leczenia"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "U osób po 80–85. roku życia nie zaleca się rutynowego leczenia subklinicznej niedoczynności przy TSH < 10 mIU/l.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "subclinical",
+        "lt4"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: U osób po 80–85. roku życia nie zaleca się rutynowego leczenia subklinicznej niedoczynności przy TSH < 10 mIU/l.",
+        "Nieprawidłowo: U osób po 80–85. roku życia nie zaleca się rutynowego leczenia subklinicznej niedoczynności przy TSH < 10 mIU/l.",
+        "Nieprawidłowo: U osób po 80–85. roku życia nie zaleca się rutynowego leczenia subklinicznej niedoczynności przy TSH < 10 mIU/l."
+      ]
+    }
+  ],
+  "widgetIds": [
+    "timeline"
+  ],
+  "widgetConfig": {
+    "timeline": {
+      "presetId": "tarczyca-lt4-timeline"
+    }
+  },
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

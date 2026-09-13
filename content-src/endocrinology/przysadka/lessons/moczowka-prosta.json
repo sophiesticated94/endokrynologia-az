@@ -1,0 +1,158 @@
+{
+  "id": "moczowka-prosta",
+  "moduleId": "przysadka",
+  "title": "Pragnienie nie do ugaszenia",
+  "subtitle": "Moczówka prosta (AVP-D / AVP-R), test odwodnieniowy i diagnostyka kopeptyną",
+  "group": "Niedoczynność i gospodarka wodna",
+  "minutes": 17,
+  "goals": [
+    "Zrozumiesz patofizjologię niedoboru wazopresyny (AVP-D, moczówka centralna) i oporności nerkowej (AVP-R) oraz rolę kopeptyny.",
+    "Opanujesz test z desmopresyną, diagnostykę kopeptyną po 3% NaCl lub argininie oraz zasady leczenia dDAVP."
+  ],
+  "sections": [
+    {
+      "title": "Objawy: Poliuria, polidypsja i nowa nomenklatura AVP-D / AVP-R",
+      "text": "Moczówka prosta (Diabetes Insipidus — obecnie według międzynarodowego konsensusu określana jako AVP-D: niedobór wazopresyny lub AVP-R: oporność na wazopresynę) to zespół objawów wynikający z braku działania arginino-wazopresyny (AVP). Skutkiem jest niezdolność nerek do zagęszczania moczu. Pacjent oddaje ogromne ilości (>3–10 litrów/dobę) skrajnie rozcieńczonego moczu (ciężar właściwy <1,005 g/ml, osmolalność moczu <300 mOsm/kg H2O — hipostenuria). Towarzyszy temu nieposkromione pragnienie (polidypsja) oraz nykturia. Dopóki chory ma zachowane pragnienie i swobodny dostęp do wody, sód we krwi pozostaje w normie (zwykle 140–143 mmol/l)."
+    },
+    {
+      "title": "Różnicowanie: Centralna (AVP-D) vs Nerkowa (AVP-R) vs Psychogenna",
+      "text": "Trzy główne stany kliniczne: 1) AVP-D (moczówka centralna): brak AVP (urazy głowy, operacje siodła, histiocytoza z komórek Langerhansa, sarkoidoza, idiopatyczna); 2) AVP-R (moczówka nerkowa): nerki nie reagują na AVP (leczenie litem, hiperkalcemia, hipokaliemia, wrodzone mutacje receptora V2); 3) Polidypsja pierwotna: nadmierne przymusowe picie wody pierwotnie rozcieńcza krew i fizjologicznie hamuje wydzielanie AVP (przysadka i nerki są w pełni zdrowe!)."
+    },
+    {
+      "title": "Diagnostyka: Test z desmopresyną oraz nowoczesna ocena kopeptyny",
+      "text": "W klasycznym teście odwodnieniowym ocenia się zagęszczanie moczu (w polidypsji rośnie >750 mOsm/kg, w AVP-D/AVP-R pozostaje <300 mOsm/kg, a podanie desmopresyny dDAVP daje wzrost >50% w postaci centralnej AVP-D). Nowoczesnym złotym standardem (wg wytycznych Christ-Crain i Pituitary Society) jest pomiar stymulowanej kopeptyny (stabilnego zastępczego markera AVP): po wlewie 3% NaCl (do stężenia sodu >=150 mmol/l) stężenie kopeptyny <4,9 pmol/l z wysoką trafnością (~96%) potwierdza AVP-D, a >=4,9 pmol/l dowodzi polidypsji pierwotnej. Test stymulacji argininą okazał się w badaniach head-to-head wyraźnie mniej trafny diagnostycznie (~74% vs ~96% dla NaCl) i wymaga modelu dwugranicznego: stężenie <=3,0 pmol/l silnie przemawia za AVP-D, >5,2 pmol/l za polidypsją pierwotną, a przedział 3,0–5,2 pmol/l stanowi strefę nierozstrzygającą. Wyjściowa kopeptyna >21,4 pmol/l bez odwodnienia potwierdza nerkową AVP-R."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Jednostka chorobowa",
+      "Test z desmopresyną (dDAVP)",
+      "Stymulowana kopeptyna"
+    ],
+    "rows": [
+      [
+        "AVP-D (moczówka centralna)",
+        "Wzrost osmolalności moczu >50% po dDAVP",
+        "<4,9 pmol/l po 3% NaCl (lub <=3,0 pmol/l po argininie)"
+      ],
+      [
+        "AVP-R (moczówka nerkowa)",
+        "Brak wzrostu osmolalności (<50% po dDAVP)",
+        "Wyjściowo >21,4 pmol/l bez odwodnienia"
+      ],
+      [
+        "Polidypsja pierwotna",
+        "Mocz zagęszczony już w fazie odwodnienia (>750 mOsm/kg)",
+        ">=4,9 pmol/l po 3% NaCl (lub >5,2 pmol/l po argininie)"
+      ]
+    ]
+  },
+  "advanced": "W badaniu MRI mózgowia zdrowy tylny płat przysadki daje charakterystyczny sygnał wysokiej intensywności („jasny punkt” tylnego płata — posterior pituitary bright spot w obrazach T1-zależnych), który odpowiada magazynom kompleksów wazopresyna-neurofizyna. Zanik tego „jasnego punktu” w T1 jest znaleziskiem wspierającym, ale nieswoistym — może zanikać z wiekiem u osób całkowicie zdrowych, a u części pacjentów z AVP-D pozostawać widoczny.",
+  "summary": "Moczówka prosta to poliuria i polidypsja (AVP-D lub AVP-R). Test z desmopresyną lub nowoczesny test stymulacji kopeptyny (3% NaCl, model dwugraniczny po argininie) rozstrzygają o etiologii, a leczenie AVP-D opiera się na doustnej lub podjęzykowej desmopresynie.",
+  "sourceIds": [
+    "baldeweg",
+    "avpd_copeptin"
+  ],
+  "questions": [
+    {
+      "id": "moczowka-prosta-q1",
+      "lessonId": "moczowka-prosta",
+      "prompt": "Jak zachowuje się osmolalność moczu po podaniu desmopresyny u pacjenta z moczówką prostą centralną?",
+      "options": [
+        {
+          "text": "Spada do zera",
+          "explanation": "Desmopresyna zatrzymuje wodę w nerkach, więc osmolalność moczu rośnie, a nie spada."
+        },
+        {
+          "text": "Pozostaje całkowicie bez zmian (brak jakiejkolwiek reakcji)",
+          "explanation": "Brak reakcji na desmopresynę charakteryzuje moczówkę nerkową, a nie centralną."
+        },
+        {
+          "text": "Gwałtownie wzrasta (o ponad 50%), wykazując prawidłową reakcję nerek na brakujący hormon",
+          "explanation": "Podanie desmopresyny uzupełnia brak endogennej wazopresyny i umożliwia zagęszczenie moczu."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "moczowka-prosta-q2",
+      "lessonId": "moczowka-prosta",
+      "prompt": "Co jest głównym niebezpieczeństwem u chorego z moczówką prostą, który traci przytomność lub zostaje pozbawiony dostępu do wody?",
+      "options": [
+        {
+          "text": "Ciężkie hiperosmotyczne odwodnienie z hipernatremią (sód >160 mmol/l) grożące obrzękiem i krwawieniem śródczaszkowym",
+          "explanation": "Utrata hipotonicznego moczu bez uzupełniania płynów prowadzi do zagęszczenia osocza i załamania krążenia."
+        },
+        {
+          "text": "Gwałtowny rozwój hiponatremii i przewodnienia komórkowego",
+          "explanation": "Moczówka prowadzi do utraty czystej wody i hipernatremii, a nie hiponatremii."
+        },
+        {
+          "text": "Nagły atak dny moczanowej",
+          "explanation": "Dna moczanowa nie jest bezpośrednim ostrym powikłaniem braku wazopresyny."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "moczowka-prosta-q3",
+      "lessonId": "moczowka-prosta",
+      "prompt": "Który powszechnie stosowany lek psychiatryczny jest klasyczną przyczyną nabytej moczówki prostej nerkowej?",
+      "options": [
+        {
+          "text": "Paracetamol",
+          "explanation": "Paracetamol nie wywołuje moczówki nerkowej."
+        },
+        {
+          "text": "Węglan litu",
+          "explanation": "Lit akumuluje się w komórkach głównych cewek zbiorczych nerek i blokuje odpowiedź na AVP."
+        },
+        {
+          "text": "Kwas acetylosalicylowy (aspiryna)",
+          "explanation": "Aspiryna w dawkach kardiologicznych nie uszkadza receptora wazopresynowego."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "moczowka-prosta-q4",
+      "lessonId": "moczowka-prosta",
+      "prompt": "Jakie stężenie sodu w surowicy cechuje stabilnego pacjenta z moczówką prostą, który wypija 8 litrów wody dziennie zgodnie ze swoim pragnieniem?",
+      "options": [
+        {
+          "text": "Ciężka hiponatremia (<115 mmol/l)",
+          "explanation": "Hiponatremia występuje w SIADH lub zatruciu wodnym, a nie w moczówce prostej."
+        },
+        {
+          "text": "Stężenie sodu równe zeru",
+          "explanation": "Wartość zerowa sodu jest biologicznie niemożliwa."
+        },
+        {
+          "text": "Prawidłowe stężenie sodu (zwykle 140–143 mmol/l, przy górnej granicy normy)",
+          "explanation": "Sprawne pragnienie i picie wody w pełni kompensują utratę płynów przez nerki."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "moczowka-prosta-q5",
+      "lessonId": "moczowka-prosta",
+      "prompt": "Jaka jest preferowana postać i droga podawania desmopresyny w przewlekłym leczeniu moczówki prostej centralnej?",
+      "options": [
+        {
+          "text": "Doustne tabletki podjęzykowe (melt) lub tabletki doustne",
+          "explanation": "Są wygodne dla pacjenta, umożliwiają precyzyjne dawkowanie i eliminują podrażnienia błony śluzowej nosa."
+        },
+        {
+          "text": "Dożylne wlewy ciągłe przez cewnik centralny przez całe życie",
+          "explanation": "Wlewy dożylne stosuje się w stanach ostrych na OIT, a nie w terapii ambulatoryjnej."
+        },
+        {
+          "text": "Inhalacje proszkowe do płuc",
+          "explanation": "Desmopresyna nie jest podawana w inhalatorach proszkowych."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

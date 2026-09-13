@@ -1,0 +1,165 @@
+{
+  "id": "tarczyca-chemia-synteza",
+  "moduleId": "tarczyca",
+  "title": "Stereochemia jodotyronin i rodnikowy mechanizm peroksydazy TPO",
+  "subtitle": "Compound I, ferryl-oxo, kąt walencyjny C-O-C ~120° i sprzęganie fenoli",
+  "group": "Chemia i biochemia",
+  "minutes": 19,
+  "goals": [
+    "Poznasz geometrię przestrzenną cząsteczki tyroksyny z kątem walencyjnym mostka C-O-C ~120° oraz prostopadłą orientacją pierścieni (kąt torsyjny ~90°).",
+    "Przeanalizujesz cykl katalityczny hemu peroksydazy tarczycowej (TPO) z udziałem Compound I i rodników fenoksylowych."
+  ],
+  "sections": [
+    {
+      "title": "Geometria cząsteczki tyroksyny: mostek eterowy C-O-C ~120° i ułożenie pierścieni",
+      "text": "Cząsteczka tyroksyny (3,5,3',5'-tetrajodo-L-tyronina) składa się z dwóch pierścieni aromatycznych połączonych mostkiem tlenowym (eter difenylowy). Wiązanie C-O-C tworzy charakterystyczny kąt walencyjny wynoszący około 120° (wynikający z częściowej delokalizacji wolnych par tlenu do pierścieni). Z kolei ze względu na odpychanie steryczne dużych atomów jodu w pozycjach 3 i 5 pierścienia wewnętrznego (tyrozynowego), pierścień zewnętrzny (fenolowy) przyjmuje orientację prostopadłą do wewnętrznego (kąt torsyjny/dwuścienny bliski 90°). Ta trójwymiarowa architektura decyduje o dopasowaniu do kieszeni wiążącej receptora jądrowego TRbeta."
+    },
+    {
+      "title": "Cykl katalityczny hemu TPO: Utlenienie do Compound I",
+      "text": "TPO posiada grupę prostetyczną w postaci hemu b (protoporfiryna IX z jonem żelaza Fe3+). Katalityczny cykl rozpoczyna się od reakcji z H2O2 generowanym przez enzym DUOX2 na szczytowej błonie tyreocyta. Dwuelektronowe utlenienie przekształca Fe(III) w kationorodnik ferrylo-okso [Fe(IV)=O]+•, znany jako Compound I. Ten wysoce elektrofilowy kompleks utlenia aniony jodkowe (I-) do elektrofilowych form [I+] lub rodników I•."
+    },
+    {
+      "title": "Mechanizm rodnikowego sprzęgania MIT i DIT",
+      "text": "Po jodowaniu pierścieni tyrozylowych tyreoglobuliny do MIT i DIT, TPO katalizuje ich sprzęganie. Dochodzi do jednoelektronowego utlenienia reszt DIT do rodników fenoksylowych (DIT•). Następuje atak rodnikowy z utworzeniem przejściowego mostka chinolowo-eterowego, po czym następuje rozpad z eliminacją łańcucha alaninowego (pozostającego w Tg jako dehydroalanina) i wytworzeniem wiązania eterowego tyroksyny."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Stan pośredni TPO",
+      "Stopień utlenienia Fe",
+      "Rola chemiczna w tyreogenezie"
+    ],
+    "rows": [
+      [
+        "Stan spoczynkowy",
+        "Fe(III) (żelazowy)",
+        "Wiąże cząsteczkę H2O2 generowaną przez DUOX2"
+      ],
+      [
+        "Compound I",
+        "[Fe(IV)=O]+• (ferrylo-okso)",
+        "Ekstremalnie silny utleniacz; utlenia I- do jodu elektrofilowego"
+      ],
+      [
+        "Compound II",
+        "[Fe(IV)=O] (ferryl)",
+        "Produkt jednoelektronowej redukcji; generuje rodniki DIT•"
+      ],
+      [
+        "Eter difenylowy (T4)",
+        "Kąt C-O-C ~120°",
+        "Wymusza prostopadłe ułożenie pierścieni niezbędne dla TRβ"
+      ]
+    ]
+  },
+  "advanced": "Obecność czterech atomów jodu nadaje tyroksynie unikalną gęstość elektronową i wysoką lipofilność. Promień van der Waalsa jodu (2,15 Å) powoduje masywną zawadę przestrzenną (steric hindrance). W trójjodotyroninie (T3) brak jodu w pozycji 5' znosi symetrię pierścienia zewnętrznego, co umożliwia obrót wokół wiązania C-O i zwiększa powinowactwo do receptora TRbeta aż 10–15-krotnie w porównaniu z T4.",
+  "summary": "Stereochemia tyronin opiera się na 120-stopniowym kącie walencyjnym mostka eterowego C-O-C i prostopadłym ułożeniu pierścieni, a ich synteza wymaga generowania kationorodnika ferrylu [Fe(IV)=O]+• przez hem peroksydazy tarczycowej.",
+  "sourceIds": [
+    "tpo_chem",
+    "physiology",
+    "graves"
+  ],
+  "questions": [
+    {
+      "id": "tarczyca-chemia-synteza-q1",
+      "lessonId": "tarczyca-chemia-synteza",
+      "prompt": "Jaki kąt tworzy wiązanie eterowe C-O-C łączące dwa pierścienie aromatyczne w cząsteczce tyroksyny?",
+      "options": [
+        {
+          "text": "Dokładnie 180° (płaska cząsteczka liniowa)",
+          "explanation": "Wiązanie eterowe diarylowe charakteryzuje się kątem walencyjnym C-O-C bliskim 120° i nie jest liniowe."
+        },
+        {
+          "text": "Poniżej 45°",
+          "explanation": "Kąt walencyjny tlenu w eterach nie przyjmuje tak ostrych wartości."
+        },
+        {
+          "text": "Około 120° (konformacja prostopadła pierścieni)",
+          "explanation": "Zapobiega kolizji sterycznej między atomami jodu w pozycjach 3 i 5."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "tarczyca-chemia-synteza-q2",
+      "lessonId": "tarczyca-chemia-synteza",
+      "prompt": "Czym pod względem chemicznym jest Compound I w cyklu katalitycznym TPO?",
+      "options": [
+        {
+          "text": "Kationorodnikiem ferrylo-okso [Fe(IV)=O]+•",
+          "explanation": "Zawiera żelazo na IV stopniu utlenienia oraz rodnik porfirynowy."
+        },
+        {
+          "text": "Nierozpuszczalnym kryształem jodu elementarnego",
+          "explanation": "Compound I to aktywny stan enzymu hemo-zależnego."
+        },
+        {
+          "text": "Kompleksem wapniowo-białkowym kalcytoniny",
+          "explanation": "Kalcytonina nie uczestniczy w syntezie hormonów tarczycy."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "tarczyca-chemia-synteza-q3",
+      "lessonId": "tarczyca-chemia-synteza",
+      "prompt": "Jaki produkt uboczny powstaje w łańcuchu tyreoglobuliny podczas odszczepienia pierścienia fenolowego w reakcji sprzęgania DIT do T4?",
+      "options": [
+        {
+          "text": "Cząsteczka kwasu moczowego",
+          "explanation": "Kwas moczowy jest produktem katabolizmu puryn, a nie sprzęgania jodotyrozyn."
+        },
+        {
+          "text": "Reszta dehydroalaniny",
+          "explanation": "Powstaje w miejscu cząsteczki tyreoglobuliny oddającej swój pierścień aromatyczny."
+        },
+        {
+          "text": "Czysty amoniak gazowy",
+          "explanation": "Reakcja zachodzi w obrębie szkieletu polipeptydowego tyreoglobuliny."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "tarczyca-chemia-synteza-q4",
+      "lessonId": "tarczyca-chemia-synteza",
+      "prompt": "Dlaczego trójjodotyronina (T3) wiąże się z receptorem jądrowym TRβ z 10–15 razy większym powinowactwem niż T4?",
+      "options": [
+        {
+          "text": "Ponieważ T3 ma masę cząsteczkową większą o 50%",
+          "explanation": "T3 jest lżejsza od T4 o jeden atom jodu (127 Da mniej)."
+        },
+        {
+          "text": "Ponieważ T3 nie posiada mostka tlenowego",
+          "explanation": "Oba hormony posiadają identyczny mostek eterowy C-O-C."
+        },
+        {
+          "text": "Brak jodu w pozycji 5' zmniejsza zawadę przestrzenną i ułatwia dopasowanie do kieszeni receptora",
+          "explanation": "Asymetryczna konformacja T3 perfekcyjnie stabilizuje helisę H12 receptora."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "tarczyca-chemia-synteza-q5",
+      "lessonId": "tarczyca-chemia-synteza",
+      "prompt": "Który enzym dostarcza nadtlenek wodoru (H2O2) niezbędny do aktywacji hemu TPO?",
+      "options": [
+        {
+          "text": "Oksydaza podwójna 2 (DUOX2)",
+          "explanation": "Jest to zależna od NADPH i wapnia oksydaza umiejscowiona w szczytowej błonie komórki."
+        },
+        {
+          "text": "Katalaza wątrobowa",
+          "explanation": "Katalaza rozkłada H2O2, zamiast go syntezować dla TPO."
+        },
+        {
+          "text": "Dejodynaza typu 3",
+          "explanation": "Dejodynazy odczepiają jod, nie wytwarzają nadtlenków."
+        }
+      ],
+      "answer": 0
+    }
+  ],
+  "assetIds": []
+}

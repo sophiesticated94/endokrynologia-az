@@ -1,0 +1,400 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "graves",
+  "objectives": [
+    {
+      "id": "graves-obj-1",
+      "statement": "Wyjaśnisz patogenezę choroby Gravesa-Basedowa (stymulujące TRAb) i orbitopatii tarczycowej (receptory TSHR i IGF-1R w fibroblastach oczodołu).",
+      "kind": "mechanism"
+    },
+    {
+      "id": "graves-obj-2",
+      "statement": "Rozpoznasz zagrażające życiu powikłanie farmakoterapii tiamazolem (agranulocytoza) i wdrożysz natychmiastowe procedury bezpieczeństwa.",
+      "kind": "safety"
+    },
+    {
+      "id": "graves-obj-3",
+      "statement": "Dobierzesz metodę leczenia (tyreostatyk, radiojod 131-I, tyreoidektomia) z uwzględnieniem aktywności orbitopatii i planów rozrodczych.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "graves-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "graves-obj-1"
+    ],
+    "prompt": "Który typ autoprzeciwciał jest bezpośrednim czynnikiem patogenetycznym odpowiedzialnym za nadprodukcję hormonów w chorobie Gravesa-Basedowa?",
+    "options": [
+      "Przeciwciała przeciwko receptorowi TSH o działaniu stymulującym (TRAb / TSAb)",
+      "Przeciwciała przeciwko peroksydazie tarczycowej (anty-TPO)",
+      "Przeciwciała przeciwko tyreoglobulinie (anty-Tg)"
+    ],
+    "optionFeedback": [
+      "TRAb łączą się z receptorem TSHR, naśladując działanie TSH i stale stymulując cyklazę adenylanową.",
+      "Anty-TPO występują w wielu chorobach tarczycy i nie wywołują nadprodukcji hormonów.",
+      "Anty-Tg nie mają działania agonistycznego na receptor TSH."
+    ],
+    "answer": 0,
+    "explanation": "Stymulujące TRAb pobudzają komórki pęcherzykowe niezależnie od ujemnego sprzężenia zwrotnego.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "graves"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "graves-block-1",
+      "title": "Receptor bez właściwego hamulca",
+      "text": "Pobudzające przeciwciała przeciw receptorowi TSH prowadzą do nadprodukcji hormonów. Orbitopatia jest związanym procesem autoimmunizacyjnym w oczodole (TSHR i IGF-1R na fibroblastach).",
+      "sourceIds": [
+        "graves",
+        "eyes"
+      ],
+      "checkpointId": "graves-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "graves-block-2",
+      "title": "Trzy drogi leczenia",
+      "text": "Do metod należą tyreostatyki, radiojod i operacja. Gorączka lub ból gardła podczas tyreostatyku wymagają natychmiastowego przerwania przyjmowania leku i pilnej morfologii ze względu na ryzyko agranulocytozy.",
+      "sourceIds": [
+        "graves"
+      ],
+      "checkpointId": "graves-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "graves-block-3",
+      "title": "Chroń wzrok",
+      "text": "Zaprzestanie palenia i utrzymanie eutyreozy są kluczowe. Pogorszenie ostrości wzroku lub widzenia barw wymaga pilnej oceny z uwagi na zagrożenie neuropatią nerwu wzrokowego.",
+      "sourceIds": [
+        "eyes"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "graves-q2-checkpoint-1-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "graves-obj-2"
+      ],
+      "prompt": "Pacjentka leczona tiamazolem od 3 tygodni zgłasza się z gorączką 38,9°C i silnym bólem gardła. Jaki jest Twój natychmiastowy krok?",
+      "options": [
+        "Natychmiastowe odstawienie tiamazolu i pilne skierowanie na morfologię krwi z rozmazem manualnym",
+        "Zwiększenie dawki tiamazolu i przepisanie antybiotyku doustnego bez badań",
+        "Poinformowanie, że to zwykłe przeziębienie i zalecenie paracetamolu"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-stop-drug",
+            "label": "Natychmiastowe wstrzymanie leku",
+            "acceptedPhrases": [
+              "odstawienie leku",
+              "odstawić tiamazol",
+              "wstrzymanie tyreostatyku"
+            ]
+          },
+          {
+            "id": "c-agranulocytosis-risk",
+            "label": "Ryzyko agranulocytozy / ocena neutrofili",
+            "acceptedPhrases": [
+              "agranulocytoza",
+              "neutropenia",
+              "morfologia z rozmazem",
+              "bezwzględna liczba neutrofili"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-continue-thiamazole",
+            "patterns": [
+              "kontynuować tiamazol",
+              "zwiększyć dawkę"
+            ],
+            "severity": "critical",
+            "feedback": "Kontynuacja tyreostatyku przy agranulocytozie grozi śmiercią w mechanizmie sepsy."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Gorączka i ból gardła podczas tyreostatyku to objaw zagrażającej życiu agranulocytozy do czasu wykluczenia w morfologii.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "graves"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Gorączka i ból gardła podczas tyreostatyku to objaw zagrażającej życiu agranulocytozy do czasu wykluczenia w morfologii.",
+        "Nieprawidłowo: Gorączka i ból gardła podczas tyreostatyku to objaw zagrażającej życiu agranulocytozy do czasu wykluczenia w morfologii.",
+        "Nieprawidłowo: Gorączka i ból gardła podczas tyreostatyku to objaw zagrażającej życiu agranulocytozy do czasu wykluczenia w morfologii."
+      ]
+    },
+    {
+      "id": "graves-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "graves-obj-3"
+      ],
+      "prompt": "U pacjenta z jawną chorobą Gravesa i aktywną, umiarkowaną do ciężkiej orbitopatią tarczycową (CAS = 5/7) rozważano leczenie radiojodem 131-I. Czy kwalifikacja jest właściwa?",
+      "options": [
+        "Nie, radiojod jest względnie przeciwwskazany w aktywnej orbitopatii, gdyż grozi zaostrzeniem zmian ocznych; jeśli jest konieczny, wymaga osłony glikokortykosteroidami",
+        "Tak, radiojod zawsze wyleczy orbitopatię w ciągu kilku dni",
+        "Tak, radiojod nie ma żadnego wpływu na oczodół"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-orbitopathy-flare",
+            "label": "Zaostrzenie orbitopatii po radiojodzie",
+            "acceptedPhrases": [
+              "zaostrzenie orbitopatii",
+              "pogorszenie oczu",
+              "uwolnienie antygenu tsh-r"
+            ]
+          },
+          {
+            "id": "c-steroid-prophylaxis",
+            "label": "Konieczność profilaktyki glikokortykosteroidowej lub wybór innej metody",
+            "acceptedPhrases": [
+              "osłona sterydowa",
+              "prednizon",
+              "kortykosteroidy",
+              "tyreoidektomia"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Rozpad tyreocytów po 131-I uwalnia antygeny TSHR, powodując gwałtowny wyrzut TRAb i zaostrzenie orbitopatii.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "graves",
+        "eyes"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Rozpad tyreocytów po 131-I uwalnia antygeny TSHR, powodując gwałtowny wyrzut TRAb i zaostrzenie orbitopatii.",
+        "Nieprawidłowo: Rozpad tyreocytów po 131-I uwalnia antygeny TSHR, powodując gwałtowny wyrzut TRAb i zaostrzenie orbitopatii.",
+        "Nieprawidłowo: Rozpad tyreocytów po 131-I uwalnia antygeny TSHR, powodując gwałtowny wyrzut TRAb i zaostrzenie orbitopatii."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "graves-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "graves-obj-1"
+    ],
+    "prompt": "Wyjaśnij mechanizm powstawania obrzęku i wytrzeszczu w orbitopatii tarczycowej, uwzględniając rolę fibroblastów oczodołowych i glikozaminoglikanów.",
+    "modelAnswer": "Przeciwciała TRAb stymulują receptory TSHR oraz współistniejące receptory IGF-1R na fibroblastach oczodołowych. Prowadzi to do ich aktywacji, różnicowania w adipocyty oraz masywnej produkcji hydrofilnych glikozaminoglikanów (głównie kwasu hialuronowego). Kwas hialuronowy wiąże ogromne ilości wody, co powoduje obrzęk mięśni gałkoruchowych i tkanki tłuszczowej w zamkniętej przestrzeni kostnej oczodołu, wypychając gałkę oczną ku przodowi (wytrzeszcz).",
+    "explanation": "Zrozumienie patofizjologii orbitopatii wyjaśnia mechanizm działania celowanych terapii biologicznych (np. teprotumu-mab przeciwko IGF-1R).",
+    "difficulty": "doctor",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "graves",
+      "eyes"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "graves-q4-exit-v2",
+      "type": "multi_select",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "graves-obj-1",
+        "graves-obj-3"
+      ],
+      "prompt": "Wskaż objawy alarmowe orbitopatii tarczycowej nakazujące natychmiastowe skierowanie pacjenta do pilnej oceny okulistycznej w referencyjnym ośrodku EUGOGO:",
+      "options": [
+        "Nowo powstałe pogorszenie ostrości wzroku lub zaburzenia widzenia barw",
+        "Uporczywe podwójne widzenie (diplopia) w pozycji na wprost",
+        "Niedomykalność szpar powiekowych z owrzodzeniem lub zmętnieniem rogówki",
+        "Uczucie piasku pod powiekami przy wietrznej pogodzie"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "optionFeedback": [
+        "Sugeruje ucisk na nerw wzrokowy na szczycie oczodołu (DON - neuropatia nerwu wzrokowego).",
+        "Wskazuje na znaczne ograniczenie ruchomości mięśni gałkoruchowych.",
+        "Grozi perforacją rogówki i utratą wzroku.",
+        "To łagodny objaw zespołu suchego oka wymagający jedynie sztucznych łez."
+      ],
+      "explanation": "Neuropatia nerwu wzrokowego (DON) i uszkodzenie rogówki to stany naglące w orbitopatii.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "eyes"
+      ]
+    },
+    {
+      "id": "graves-q5-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "graves-obj-3"
+      ],
+      "prompt": "Jakie są wskazania do tyreoidektomii (radykalnego leczenia chirurgicznego) jako leczenia z wyboru w chorobie Gravesa-Basedowa?",
+      "modelAnswer": "Główne wskazania to: 1) duże wole uciskające tchawicę lub wole zamostkowe; 2) współistnienie podejrzanego guzka tarczycy o cechach złośliwości w USG/BACC; 3) umiarkowana do ciężkiej aktywna orbitopatia tarczycowa (gdzie radiojod jest przeciwwskazany); 4) nietolerancja tyreostatyków lub brak zgody chorego na radiojod.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-compressive-goiter",
+            "label": "Duże wole uciskowe lub guz podejrzany",
+            "acceptedPhrases": [
+              "duże wole",
+              "objawy ucisku",
+              "wole zamostkowe",
+              "podejrzenie raka",
+              "guzek podejrzany"
+            ]
+          },
+          {
+            "id": "c-orbitopathy-indication",
+            "label": "Współistniejąca ciężka orbitopatia",
+            "acceptedPhrases": [
+              "orbitopatia",
+              "aktywna choroba oczu",
+              "przeciwwskazanie do radiojodu"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Tyreoidektomia pozwala na szybkie i definitywne wyleczenie nadczynności bez ryzyka zaostrzenia orbitopatii.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "graves",
+        "eyes"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "graves-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "graves-obj-3"
+      ],
+      "prompt": "24-letnia kobieta z chorobą Gravesa planuje zajście w ciążę za około 3–4 miesiące. Która metoda leczenia radykalnego lub postępowania farmakologicznego jest u niej najbardziej racjonalna?",
+      "options": [
+        "Leczenie operacyjne (tyreoidektomia) lub kontynuacja najmniejszej dawki tyreostatyku z zamianą na PTU przed koncepcją (po radiojodzie ciąża jest przeciwwskazana przez min. 6 miesięcy)",
+        "Leczenie radiojodem 131-I z natychmiastowym planowaniem poczęcia w kolejnym cyklu",
+        "Podanie lewotyroksyny w celu zablokowania jajników"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-rai-pregnancy-delay",
+            "label": "Przeciwwskazanie do ciąży przez 6 miesięcy po radiojodzie",
+            "acceptedPhrases": [
+              "radiojod przeciwwskazany",
+              "6 miesięcy odstępu",
+              "planowanie ciąży",
+              "tyreoidektomia"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Po podaniu 131-I bezwzględnie zaleca się odroczenie ciąży na co najmniej 6 miesięcy z uwagi na teratogenność promieniowania.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "graves",
+        "pregnancy"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Po podaniu 131-I bezwzględnie zaleca się odroczenie ciąży na co najmniej 6 miesięcy z uwagi na teratogenność promieniowania.",
+        "Nieprawidłowo: Po podaniu 131-I bezwzględnie zaleca się odroczenie ciąży na co najmniej 6 miesięcy z uwagi na teratogenność promieniowania.",
+        "Nieprawidłowo: Po podaniu 131-I bezwzględnie zaleca się odroczenie ciąży na co najmniej 6 miesięcy z uwagi na teratogenność promieniowania."
+      ]
+    },
+    {
+      "id": "graves-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "graves-obj-1"
+      ],
+      "prompt": "Dlaczego palenie tytoniu jest najsilniejszym modyfikowalnym czynnikiem ryzyka rozwoju i zaostrzenia orbitopatii tarczycowej?",
+      "modelAnswer": "Dym tytoniowy indukuje hipoksję tkanek oczodołu, nasila wytwarzanie wolnych rodników tlenowych, pobudza ekspresję antygenów HLA-DR i receptorów TSHR na fibroblastach oraz stymuluje produkcję cytokin prozapalnych (IL-1, TNF-alfa) i glikozaminoglikanów, zwiększając ryzyko zaostrzenia orbitopatii nawet 4–8-krotnie.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-hypoxia-inflammation",
+            "label": "Hipoksja, stres oksydacyjny i stymulacja fibroblastów",
+            "acceptedPhrases": [
+              "niedotlenienie",
+              "hipoksja",
+              "cytokiny",
+              "stymulacja fibroblastów",
+              "kwas hialuronowy"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Zaprzestanie palenia tytoniu jest bezwzględnym zaleceniem I rzutu w wytycznych EUGOGO.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "eyes"
+      ]
+    },
+    {
+      "id": "graves-bank-3",
+      "type": "multi_select",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "graves-obj-2"
+      ],
+      "prompt": "Jakie działania niepożądane tiamazolu (poza agranulocytozą) wymagają natychmiastowej modyfikacji leczenia lub odstawienia leku?",
+      "options": [
+        "Ostre zapalenie trzustki (ostre powikłanie tiamazolu wpisane w ChPL)",
+        "Polekowe uszkodzenie wątroby o typie cholestazy",
+        "Zapalenie naczyń z przeciwciałami ANCA",
+        "Przejściowe, łagodne swędzenie skóry ustępujące po lekach przeciwhistaminowych"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "optionFeedback": [
+        "Ostre zapalenie trzustki stanowi bezwzględne przeciwwskazanie do ponownego podania tiamazolu.",
+        "Tiamazol może wywołać cholestazę, a PTU martwicę komórek wątrobowych.",
+        "Zapalenie naczyń ANCA jest groźnym powikłaniem tionamidów.",
+        "Łagodne zmiany skórne można leczyć objawowo bez konieczności odstawiania leku."
+      ],
+      "explanation": "Zapalenie trzustki, cholestaza i waskulopatia ANCA to ciężkie wskazania do odstawienia tiamazolu.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "graves"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

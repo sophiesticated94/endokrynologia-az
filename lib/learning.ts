@@ -1,6 +1,6 @@
 import { questionObjectiveMap } from './course.ts';
 import type { Question } from './course.ts';
-import type { Confidence, LearningActivity, PracticeRecordMeta } from './course-types';
+import type { Confidence, LearningActivity, PracticeRecordMeta, RubricEvaluationStatus } from './course-types';
 export const intervals=[1,3,7,14,30] as const;
 export type Review={stage:number;dueAt:string};
 export function scheduleReview(previous:Review|undefined,remembered:boolean,now=new Date()):Review {
@@ -28,8 +28,31 @@ export type MasteryRecord={status:MasteryStatus;correctEvidence:number;lastAttem
 export type MistakeRecord={eventId:string;activityId:string;lessonId:string;objectiveIds:string[];confidence?:Confidence;createdAt:string};
 export type LearningState={completed:string[];reviews:Record<string,Review>;attempts:Activity[];level:'student'|'doctor';mastery:Record<string,MasteryRecord>;mistakes:MistakeRecord[]};
 
-export function practicePayload(lessonId:string,activity:LearningActivity,correct:boolean,confidence:Confidence|undefined,scored:boolean,meta?:PracticeRecordMeta):Record<string,unknown>{
-  return {lessonId,objectiveIds:activity.objectiveIds,correct,confidence,activityType:activity.type,answerType:meta?.answerType,elapsedMs:meta?.elapsedMs,scored};
+export function practicePayload(
+  lessonId: string,
+  activity: LearningActivity,
+  correct: boolean,
+  confidence: Confidence | undefined,
+  scored: boolean,
+  meta?: PracticeRecordMeta,
+  evaluationStatus?: RubricEvaluationStatus
+): Record<string, unknown> {
+  const status: RubricEvaluationStatus = evaluationStatus || meta?.evaluationStatus || (scored ? (correct ? 'correct' : 'needs_revision') : 'ungraded');
+  const masteryEligible = status === 'correct';
+  const mistakeEligible = status === 'needs_revision';
+  return {
+    lessonId,
+    objectiveIds: activity.objectiveIds,
+    correct,
+    confidence,
+    activityType: activity.type,
+    answerType: meta?.answerType,
+    elapsedMs: meta?.elapsedMs,
+    scored,
+    evaluationStatus: status,
+    masteryEligible,
+    mistakeEligible,
+  };
 }
 
 export function parseStoredActivities(raw:string|null):Activity[]{
@@ -37,7 +60,7 @@ export function parseStoredActivities(raw:string|null):Activity[]{
   try{const value=JSON.parse(raw);return Array.isArray(value)?value.filter(item=>item&&typeof item.id==='string'&&typeof item.kind==='string'):[];}catch{return[];}
 }
 
-type Evidence={correct:boolean;activityType:string;createdAt:string;confidence?:Confidence};
+type Evidence = { correct: boolean; activityType: string; createdAt: string; confidence?: Confidence; evalStatus?: RubricEvaluationStatus };
 function asConfidence(value:unknown):Confidence|undefined{return value===1||value===2||value===3?value:undefined}
 function masteryFrom(evidence:Evidence[]):MasteryRecord{
   const latest=evidence[evidence.length-1];
@@ -46,8 +69,20 @@ function masteryFrom(evidence:Evidence[]):MasteryRecord{
   const first=correct[0]&&Date.parse(correct[0].createdAt);
   const last=correct.at(-1)&&Date.parse(correct.at(-1)!.createdAt);
   const spaced=Boolean(first&&last&&last-first>=86400000);
-  const status:MasteryStatus=!latest.correct?'learning':correct.length>=2&&distinctTypes.size>=2&&spaced?'mastered':'practicing';
-  return {status,correctEvidence:correct.length,lastAttemptAt:latest.createdAt,highConfidenceError:evidence.some(item=>!item.correct&&item.confidence===3)};
+  const qualifiedForMastered = correct.length >= 2 && distinctTypes.size >= 2 && spaced;
+
+  let status: MasteryStatus = 'learning';
+  if (latest.evalStatus === 'partially_correct') {
+    status = qualifiedForMastered ? 'mastered' : 'practicing';
+  } else if (!latest.correct) {
+    status = 'learning';
+  } else if (qualifiedForMastered) {
+    status = 'mastered';
+  } else {
+    status = 'practicing';
+  }
+
+  return {status,correctEvidence:correct.length,lastAttemptAt:latest.createdAt,highConfidenceError:evidence.some(item=>!item.correct&&item.confidence===3&&item.evalStatus!=='partially_correct')};
 }
 export function projectActivities(rows:Activity[]):LearningState{
   const state:LearningState={completed:[],reviews:{},attempts:[],level:'student',mastery:{},mistakes:[]};
@@ -62,11 +97,18 @@ export function projectActivities(rows:Activity[]):LearningState{
     if(row.kind==='practice'){
       const ids=Array.isArray(row.payload.objectiveIds)?row.payload.objectiveIds.filter((id):id is string=>typeof id==='string'):[];
       const correct=row.payload.correct===true;
+      const evalStatus = typeof row.payload.evaluationStatus === 'string' ? (row.payload.evaluationStatus as RubricEvaluationStatus) : undefined;
+      const masteryEligible = typeof row.payload.masteryEligible === 'boolean'
+        ? row.payload.masteryEligible
+        : (evalStatus ? evalStatus === 'correct' : correct);
+      const mistakeEligible = typeof row.payload.mistakeEligible === 'boolean'
+        ? row.payload.mistakeEligible
+        : (evalStatus ? evalStatus === 'needs_revision' : !correct);
       const activityType=typeof row.payload.activityType==='string'?row.payload.activityType:'practice';
       latestPractice.set(row.target_id,correct);
-      if(row.payload.scored!==false){
-        for(const objectiveId of ids)evidence.set(objectiveId,[...(evidence.get(objectiveId)??[]),{correct,activityType,createdAt:row.created_at,confidence:asConfidence(row.payload.confidence)}]);
-        if(!correct)state.mistakes.push({eventId:row.id,activityId:row.target_id,lessonId:String(row.payload.lessonId??''),objectiveIds:ids,confidence:asConfidence(row.payload.confidence),createdAt:row.created_at});
+      if(row.payload.scored!==false && evalStatus !== 'ungraded'){
+        for(const objectiveId of ids)evidence.set(objectiveId,[...(evidence.get(objectiveId)??[]),{correct:masteryEligible,activityType,createdAt:row.created_at,confidence:asConfidence(row.payload.confidence),evalStatus}]);
+        if(mistakeEligible)state.mistakes.push({eventId:row.id,activityId:row.target_id,lessonId:String(row.payload.lessonId??''),objectiveIds:ids,confidence:asConfidence(row.payload.confidence),createdAt:row.created_at});
       }
     }
     if(['quiz','exam','case'].includes(row.kind)&&Array.isArray(row.payload.questions)){

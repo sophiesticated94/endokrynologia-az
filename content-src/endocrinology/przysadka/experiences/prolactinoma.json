@@ -1,0 +1,356 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "prolactinoma",
+  "objectives": [
+    {
+      "id": "prolactinoma-obj-1",
+      "statement": "Zróżnicujesz hiperprolaktynemię organiczną (guz prolaktynowy) od hiperprolaktynemi czynnościowej, polekowej (neuroleptyki, metoklopramid) i makroprolaktynemii (test z PEG).",
+      "kind": "differentiation"
+    },
+    {
+      "id": "prolactinoma-obj-2",
+      "statement": "Rozpoznasz i wyeliminujesz efekt 'hook' (haczyka) w gigantycznych guzach prolaktynowych oraz wdrożysz leczenie agonistami dopaminy (kabergolina jako lek pierwszego wyboru).",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "prolactinoma-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "prolactinoma-obj-1"
+    ],
+    "prompt": "Który z poniższych leków jest najczęstszą przyczyną jatrogennej hiperprolaktynemy w praktyce klinicznej ze względu na silne blokowanie receptorów dopaminowych D2 w przysadce?",
+    "options": [
+      "Neuroleptyki klasyczne i atypowe (np. haloperidol, risperidon) oraz prokinetyki (metoklopramid)",
+      "Beta-adrenolityki (np. bisoprolol)",
+      "Statyny (np. atorwastatyna)"
+    ],
+    "optionFeedback": [
+      "Blokada receptora D2 znosi toniczne hamowanie wydzielania prolaktyny przez dopaminę, powodując znaczny wzrost PRL.",
+      "Beta-blokery nie wpływają istotnie na oś prolaktynową.",
+      "Statyny nie mają mechanizmu wpływającego na sekrecję prolaktyny."
+    ],
+    "answer": 0,
+    "explanation": "Leki przeciwpsychotyczne blokujące receptor D2 są wiodącą przyczyną polekowej hiperprolaktynemii.",
+    "difficulty": "student",
+    "reasoning": "differentiation",
+    "sourceIds": [
+      "pituitary_prolactinoma_2023"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "prolactinoma-block-1",
+      "title": "Obraz kliniczny u kobiet i mężczyzn",
+      "text": "U kobiet prolactinoma objawia się zaburzeniami miesiączkowania (oligomenorrhoea/amenorrhoea), mlekotokiem (galactorrhoea) i niepłodnością. U mężczyzn przebiega podstępnie: spadek libido, zaburzenia erekcji, ginekomastia i cechy ucisku guza (bóle głowy, ubytki pola widzenia).",
+      "sourceIds": [
+        "pituitary_prolactinoma_2023"
+      ],
+      "checkpointId": "prolactinoma-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "prolactinoma-block-2",
+      "title": "Pułapki laboratoryjne: Makroprolaktyna i Efekt Hook",
+      "text": "Makroprolaktyna (kompleks PRL-IgG) daje wysokie stężenia w teście, lecz jest nieaktywna biologicznie – diagnozuje się ją precypitacją PEG. Efekt hook (wysokie stężenie nasyca przeciwciała w teście immunometrycznym) daje fałszywie niskie odczyty w olbrzymich prolactinoma – wymaga rozcieńczenia surowicy 1:100.",
+      "sourceIds": [
+        "pituitary_prolactinoma_2023"
+      ],
+      "checkpointId": "prolactinoma-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "prolactinoma-block-3",
+      "title": "Leczenie farmakologiczne: Kabergolina lekiem z wyboru",
+      "text": "Prolactinoma jest jedynym gruczolakiem przysadki, w którym leczenie pierwszego rzutu jest FARMAKOLOGICZNE, nawet przy ucisku skrzyżowania wzrokowego. Kabergolina normalizuje PRL i redukuje masę guza u >85% chorych.",
+      "sourceIds": [
+        "pituitary_prolactinoma_2023"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "prolactinoma-q2-checkpoint-1-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "prolactinoma-obj-1"
+      ],
+      "prompt": "28-letnia bezobjawowa kobieta z regularnymi cyklami owulacyjnymi zgłasza się z wynikiem prolaktyny 95 ng/ml (norma do 25). W teście z glikolem polietylenowym (PEG) odzysk monomeru PRL wyniósł 18% (poniżej 40%). Jakie jest rozpoznanie i postępowanie?",
+      "options": [
+        "Makroprolaktynemia (obecność 'big-big prolactin'); stan ten nie wymaga leczenia dopaminergicznego ani MRI przysadki",
+        "Złośliwy guz prolaktynowy wymagający pilnej resekcji",
+        "Ciężka niewydolność nerek"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-macroprolactin-dx",
+            "label": "Rozpoznanie makroprolaktynemii na podstawie testu z PEG",
+            "acceptedPhrases": [
+              "makroprolaktyna",
+              "makroprolaktynemia",
+              "test z peg",
+              "niski odzysk monomeru"
+            ]
+          },
+          {
+            "id": "c-no-treatment-needed",
+            "label": "Brak konieczności leczenia i zbędność MRI",
+            "acceptedPhrases": [
+              "brak leczenia",
+              "nie wymaga leczenia",
+              "nieaktywna biologicznie",
+              "brak objawów"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Odzysk monomeru <40% po strąceniu PEG potwierdza obecność nieaktywnej biologicznie makroprolaktyny, która nie wymaga interwencji terapeutycznej.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "pituitary_prolactinoma_2023"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Odzysk monomeru <40% po strąceniu PEG potwierdza obecność nieaktywnej biologicznie makroprolaktyny, która nie wymaga interwencji terapeutycznej.",
+        "Nieprawidłowo: Odzysk monomeru <40% po strąceniu PEG potwierdza obecność nieaktywnej biologicznie makroprolaktyny, która nie wymaga interwencji terapeutycznej.",
+        "Nieprawidłowo: Odzysk monomeru <40% po strąceniu PEG potwierdza obecność nieaktywnej biologicznie makroprolaktyny, która nie wymaga interwencji terapeutycznej."
+      ]
+    },
+    {
+      "id": "prolactinoma-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "prolactinoma-obj-2"
+      ],
+      "prompt": "U 42-letniego mężczyzny z makrogruczolakiem przysadki o wymiarach 35 mm uciskającym skrzyżowanie wzrokowe oznaczono stężenie prolaktyny: wynik wynosi 48 ng/ml (nieznacznie podwyższony). Klinicysta podejrzewa 'efekt haczyka' (hook effect). Jakie zlecenie laboratoryjne rozstrzygnie sprawę?",
+      "options": [
+        "Ponowne oznaczenie stężenia prolaktyny po seryjnym rozcieńczeniu surowicy (np. 1:100)",
+        "Pobranie płynu mózgowo-rdzeniowego na prolaktynę",
+        "Wykonanie scyntygrafii kośćca"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-dilution-hook",
+            "label": "Seryjne rozcieńczenie próbki surowicy (1:100)",
+            "acceptedPhrases": [
+              "rozcieńczenie",
+              "rozcieńczenie surowicy",
+              "1:100",
+              "efekt hook",
+              "efekt haczyka"
+            ]
+          },
+          {
+            "id": "c-unmask-giant-prl",
+            "label": "Odsłonięcie rzeczywistego bardzo wysokiego stężenia PRL",
+            "acceptedPhrases": [
+              "odmaskowanie",
+              "rzeczywiste stężenie",
+              "bardzo wysoka prolaktyna",
+              "nasycenie przeciwciał"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Niezwykle wysokie stężenia PRL nasycają przeciwciała wychwytujące i detekcyjne w teście immunometrycznym sandwich, dając fałszywie niski sygnał. Rozcieńczenie 1:100 odmaskowuje stężenia rzędu tysięcy ng/ml.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "pituitary_prolactinoma_2023"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Niezwykle wysokie stężenia PRL nasycają przeciwciała wychwytujące i detekcyjne w teście immunometrycznym sandwich, dając fałszywie niski sygnał. Rozcieńczenie 1:100 odmaskowuje stężenia rzędu tysięcy ng/ml.",
+        "Nieprawidłowo: Niezwykle wysokie stężenia PRL nasycają przeciwciała wychwytujące i detekcyjne w teście immunometrycznym sandwich, dając fałszywie niski sygnał. Rozcieńczenie 1:100 odmaskowuje stężenia rzędu tysięcy ng/ml.",
+        "Nieprawidłowo: Niezwykle wysokie stężenia PRL nasycają przeciwciała wychwytujące i detekcyjne w teście immunometrycznym sandwich, dając fałszywie niski sygnał. Rozcieńczenie 1:100 odmaskowuje stężenia rzędu tysięcy ng/ml."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "prolactinoma-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "prolactinoma-obj-2"
+    ],
+    "prompt": "Wyjaśnij młodszemu koledze, dlaczego u chorego z makroprolactinoma 28 mm powodującym ubytek w polu widzenia NIE kwalifikuje się pacjenta w pierwszej kolejności do operacji neurochirurgicznej, lecz wdraża kabergolinę.",
+    "modelAnswer": "Gruczolaki prolaktynowe wykazują niezwykłą wrażliwość na agonistów receptora dopaminowego D2 (kabergolinę). Już w ciągu pierwszych 24–72 godzin od podania pierwszej dawki kabergoliny dochodzi do gwałtownego obkurczenia komórek guza i zmniejszenia obrzęku, co prowadzi do szybkiej dekompresji skrzyżowania wzrokowego i poprawy pola widzenia w tempie porównywalnym lub szybszym niż zabieg operacyjny. Dodatkowo leczenie farmakologiczne pozwala uniknąć powikłań operacji w siodle tureckim (uszkodzenie przysadki, wyciek płynu mózgowo-rdzeniowego) i u ponad 80% chorych prowadzi do trwałej kontroli guza.",
+    "explanation": "Agoniści dopaminy są leczeniem pierwszego wyboru w makroprolactinoma nawet z uciskiem chiasmy.",
+    "difficulty": "doctor",
+    "reasoning": "decision",
+    "sourceIds": [
+      "pituitary_prolactinoma_2023"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "prolactinoma-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "prolactinoma-obj-1"
+      ],
+      "prompt": "Wymień 3 różne mechanizmy (niebędące guzem prolaktynowym), które mogą prowadzić do podwyższenia stężenia prolaktyny w surowicy.",
+      "modelAnswer": "Przyczyny to: 1) polekowa (antagoniści D2: neuroleptyki, metoklopramid; leki przeciwdepresyjne, werapamil), 2) efekt odszypułowania (inny guz uciskający szypułę przysadki i blokujący dopływ dopaminy), 3) pierwotna niedoczynność tarczycy (wysokie TRH pobudza laktotrofy), 4) przewlekła niewydolność nerek lub marskość wątroby (obniżony klirens PRL), 5) ciąża i laktacja (fizjologia), 6) makroprolaktynemia.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-drugs-or-stalk",
+            "label": "Leki (neuroleptyki) lub efekt odszypułowania",
+            "acceptedPhrases": [
+              "leki",
+              "neuroleptyki",
+              "metoklopramid",
+              "efekt odszypułowania",
+              "ucisk szypuły"
+            ]
+          },
+          {
+            "id": "c-hypothyroidism-or-renal",
+            "label": "Pierwotna niedoczynność tarczycy lub niewydolność nerek/wątroby",
+            "acceptedPhrases": [
+              "niedoczynność tarczycy",
+              "trh",
+              "niewydolność nerek",
+              "niewydolność wątroby",
+              "ciąża"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Różnicowanie hiperprolaktynemii wymaga wykluczenia przyczyn farmakologicznych, układowych i odszypułowania.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "pituitary_prolactinoma_2023"
+      ]
+    },
+    {
+      "id": "prolactinoma-q5-exit-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "prolactinoma-obj-2"
+      ],
+      "prompt": "Jaki jest lek pierwszego rzutu w leczeniu prolactinoma wg wytycznych Pituitary Society i jakie badanie echokardiograficzne należy rozważyć przy długoterminowym stosowaniu wysokich dawek?",
+      "options": [
+        "Kabergolina; badanie echo serca w kierunku niedomykalności zastawek (stymulacja receptora 5-HT2B)",
+        "Bromokryptyna; brak konieczności badań kardiologicznych",
+        "Lewotyroksyna w wysokiej dawce supresyjnej"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-cabergoline-choice",
+            "label": "Kabergolina jako lek z wyboru",
+            "acceptedPhrases": [
+              "kabergolina",
+              "dostinex",
+              "agonista dopaminy"
+            ]
+          },
+          {
+            "id": "c-valve-fibrosis",
+            "label": "Ocena zastawek serca (włóknienie przez 5-HT2B)",
+            "acceptedPhrases": [
+              "echo serca",
+              "zastawki",
+              "włóknienie zastawek",
+              "niedomykalność",
+              "5-ht2b"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Kabergolina cechuje się najwyższą skutecznością i tolerancją; przy wysokich dawkach monitoruje się zastawki serca.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "pituitary_prolactinoma_2023"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Kabergolina cechuje się najwyższą skutecznością i tolerancją; przy wysokich dawkach monitoruje się zastawki serca.",
+        "Nieprawidłowo: Kabergolina cechuje się najwyższą skutecznością i tolerancją; przy wysokich dawkach monitoruje się zastawki serca.",
+        "Nieprawidłowo: Kabergolina cechuje się najwyższą skutecznością i tolerancją; przy wysokich dawkach monitoruje się zastawki serca."
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "prolactinoma-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "prolactinoma-obj-1"
+      ],
+      "prompt": "U 24-letniej kobiety z wtórnym brakiem miesiączki stwierdzono stężenie TSH = 8,4 mIU/l, FT4 = 8,1 pmol/l (obniżone) oraz stężenie prolaktyny = 58 ng/ml. W MRI siodła tarczyca i przysadka są nieznacznie powiększone bez ognisk gruczolaka. Jakie jest pierwotne leczenie?",
+      "options": [
+        "Substytucja lewotyroksyną (LT4) – normalizacja hormonów tarczycy zniesie stymulację laktotrofów przez TRH i przywróci normoprolaktynemię",
+        "Natychmiastowe wdrożenie kabergoliny 1 mg tygodniowo",
+        "Klinowa resekcja jajników"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-treat-primary-hypo",
+            "label": "Wyrównanie niedoczynności tarczycy lewotyroksyną",
+            "acceptedPhrases": [
+              "lewotyroksyna",
+              "lt4",
+              "leczenie niedoczynności tarczycy",
+              "spadek trh"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "W pierwotnej niedoczynności tarczycy wysokie TRH stymuluje wydzielanie prolaktyny; leczenie tyroksyną cofa hiperprolaktynemię.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "pituitary_prolactinoma_2023"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: W pierwotnej niedoczynności tarczycy wysokie TRH stymuluje wydzielanie prolaktyny; leczenie tyroksyną cofa hiperprolaktynemię.",
+        "Nieprawidłowo: W pierwotnej niedoczynności tarczycy wysokie TRH stymuluje wydzielanie prolaktyny; leczenie tyroksyną cofa hiperprolaktynemię.",
+        "Nieprawidłowo: W pierwotnej niedoczynności tarczycy wysokie TRH stymuluje wydzielanie prolaktyny; leczenie tyroksyną cofa hiperprolaktynemię."
+      ]
+    },
+    {
+      "id": "prolactinoma-bank-2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "prolactinoma-obj-2"
+      ],
+      "prompt": "Kobieta leczona kabergoliną z powodu mikroprolactinoma osiągnęła normoprolaktynemię i całkowity zanik guza w MRI. Zgodnie z wytycznymi próbę ostrożnego odstawienia leku można rozważyć po co najmniej ilu latach skutecznej terapii podtrzymującej małą dawką?",
+      "answer": 2,
+      "tolerance": 0.5,
+      "unit": "lata",
+      "explanation": "Wytyczne Pituitary Society zalecają rozważenie próby odstawienia agonisty dopaminy po co najmniej 2 latach leczenia, jeśli stężenie prolaktyny jest prawidłowe, a guz w MRI nie jest widoczny lub zmniejszył się o >50%.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "pituitary_prolactinoma_2023"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "axis-map"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

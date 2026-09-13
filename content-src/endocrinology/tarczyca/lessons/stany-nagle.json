@@ -1,0 +1,161 @@
+{
+  "id": "stany-nagle",
+  "moduleId": "tarczyca",
+  "title": "Gdy liczy się czas",
+  "subtitle": "Przełom tarczycowy i ciężka dekompensacja niedoczynności",
+  "group": "Sytuacje szczególne",
+  "minutes": 15,
+  "goals": [
+    "Rozpoznasz objawy dekompensacji wielonarządowej.",
+    "Ustalisz priorytety pilnej pomocy bez czekania na komplet badań."
+  ],
+  "sections": [
+    {
+      "title": "Przełom tarczycowy",
+      "text": "To zagrażająca życiu dekompensacja tyreotoksykozy, oceniana w skali Burcha-Wartofsky’ego (BWPS >= 45 pkt) lub kryteriach japońskich Akamizu. Gorączka, znaczna tachykardia, zaburzenia świadomości, niewydolność serca i objawy przewodu pokarmowego powinny uruchomić pilne postępowanie. Częstym czynnikiem wyzwalającym jest zakażenie, zabieg lub przerwanie leczenia. Rozpoznanie opiera się na obrazie klinicznym; sam poziom FT4 nie mierzy ciężkości przełomu."
+    },
+    {
+      "title": "Ciężka niedoczynność",
+      "text": "Hipotermia, bradykardia, hipowentylacja i zaburzenia świadomości u osoby z niedoczynnością sugerują jej ciężką dekompensację, określaną jako śpiączka hipometaboliczna. Pełna śpiączka nie musi być obecna. Stan wymaga pilnej hospitalizacji i monitorowania narządowego."
+    },
+    {
+      "title": "Priorytety zespołu",
+      "text": "Najpierw ocena ABC, wezwanie pomocy i leczenie w warunkach intensywnego nadzoru. Równolegle pobiera się badania i szuka czynnika wyzwalającego. Leczenie jest wielokierunkowe, ale jego sekwencja i dobór zależą m.in. od hemodynamiki, funkcji serca, podejrzenia niewydolności nadnerczy, ciąży i wcześniejszej terapii. Materiał pokazuje mechanizm decyzji, a nie schemat dawkowania dla pacjenta."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Obraz",
+      "Pilna hipoteza"
+    ],
+    "rows": [
+      [
+        "Gorączka + tachykardia + zaburzenia świadomości",
+        "Przełom w kontekście tyreotoksykozy (BWPS >= 45)"
+      ],
+      [
+        "Hipotermia + bradykardia + hipowentylacja",
+        "Ciężka dekompensacja niedoczynności"
+      ],
+      [
+        "Zakażenie / przerwanie leczenia",
+        "Możliwy czynnik wyzwalający"
+      ],
+      [
+        "Sekwencja leczenia przełomu",
+        "Tyreostatyk -> jod po >= 1h -> beta-bloker + steroid"
+      ]
+    ]
+  },
+  "advanced": "W przełomie z upośledzoną funkcją serca beta-blokada wymaga szczególnej ostrożności hemodynamicznej. Jeśli zespół stosuje tionamid i jod, kolejność wynika z mechanizmu syntezy hormonów i musi być zgodna z aktualnym protokołem. W ciężkiej niedoczynności przed hormonem tarczycy lub równolegle ocenia się potrzebę empirycznego zabezpieczenia glikokortykosteroidem. Szczegóły należą do postępowania szpitalnego.",
+  "summary": "Ciężkość określa stan narządów, nie sama liczba hormonów. Rozpoznaj alarm i uruchom pilną pomoc.",
+  "sourceIds": [
+    "storm",
+    "coma",
+    "emergency",
+    "central"
+  ],
+  "questions": [
+    {
+      "id": "stany-nagle-q1",
+      "lessonId": "stany-nagle",
+      "prompt": "Tyreotoksykoza, gorączka, tętno 150/min i splątanie. Jaki priorytet?",
+      "options": [
+        {
+          "text": "Kontrola TSH za pół roku",
+          "explanation": "Nie odpowiada pilności stanu."
+        },
+        {
+          "text": "Wyłącznie planowe USG",
+          "explanation": "Nie zabezpiecza zagrożenia życia."
+        },
+        {
+          "text": "Podejrzenie przełomu i natychmiastowa pomoc szpitalna",
+          "explanation": "To objawy możliwej dekompensacji wielonarządowej."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "stany-nagle-q2",
+      "lessonId": "stany-nagle",
+      "prompt": "Czy bardzo wysokie FT4 samo rozpoznaje przełom?",
+      "options": [
+        {
+          "text": "Nie, decyduje także obraz kliniczny",
+          "explanation": "Stężenie hormonów nie odzwierciedla wprost dekompensacji."
+        },
+        {
+          "text": "Tak, bez oceny chorego",
+          "explanation": "Pomija funkcję narządów i objawy."
+        },
+        {
+          "text": "Przełom zawsze ma prawidłowe FT4",
+          "explanation": "Nie jest to prawidłowa zasada."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "stany-nagle-q3",
+      "lessonId": "stany-nagle",
+      "prompt": "Co sugeruje ciężką dekompensację niedoczynności?",
+      "options": [
+        {
+          "text": "Bezobjawowy mały guzek",
+          "explanation": "Nie odpowiada temu zespołowi."
+        },
+        {
+          "text": "Hipotermia, bradykardia i zaburzenia świadomości",
+          "explanation": "To alarmowy zestaw objawów w odpowiednim kontekście."
+        },
+        {
+          "text": "Izolowane dodatnie anty-TPO",
+          "explanation": "Nie dowodzi ostrej dekompensacji."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "stany-nagle-q4",
+      "lessonId": "stany-nagle",
+      "prompt": "Dlaczego w ciężkiej niedoczynności ocenia się oś nadnerczową?",
+      "options": [
+        {
+          "text": "Kortyzol jest markerem raka rdzeniastego",
+          "explanation": "Tym markerem jest m.in. kalcytonina."
+        },
+        {
+          "text": "Każde TSH określa kortyzol",
+          "explanation": "TSH nie ocenia wydolności nadnerczy."
+        },
+        {
+          "text": "Może współistnieć niedobór kortyzolu",
+          "explanation": "Wymaga zabezpieczenia przy wdrażaniu hormonów tarczycy."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "stany-nagle-q5",
+      "lessonId": "stany-nagle",
+      "prompt": "Czy należy czekać na pełny panel wyników przy niestabilności i podejrzeniu przełomu?",
+      "options": [
+        {
+          "text": "Nie, rozpocząć pilną ocenę i zabezpieczenie równolegle z badaniami",
+          "explanation": "Zwłoka może być niebezpieczna."
+        },
+        {
+          "text": "Tak, zawsze do kompletnej dokumentacji",
+          "explanation": "Nie można odkładać stabilizacji."
+        },
+        {
+          "text": "Zrezygnować z badań całkowicie",
+          "explanation": "Badania są potrzebne, ale prowadzi się je równolegle."
+        }
+      ],
+      "answer": 0
+    }
+  ],
+  "assetIds": []
+}

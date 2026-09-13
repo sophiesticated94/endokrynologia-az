@@ -1,0 +1,335 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "guzy-nieczynne",
+  "objectives": [
+    {
+      "id": "guzy-nieczynne-obj-1",
+      "statement": "Zdefiniujesz biologię gruczolaków nieczynnych hormonalnie (NFPA — najczęściej nieme gruczolaki gonadotropowe) i powiążesz je z objawami efektu masy i niedoczynności przysadki.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "guzy-nieczynne-obj-2",
+      "statement": "Ustalisz kryteria kwalifikacji do operacji przezklinowej vs bezpiecznej obserwacji radiologicznej wg wytycznych Pituitary Society 2025.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "guzy-nieczynne-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "guzy-nieczynne-obj-1"
+    ],
+    "prompt": "Z jakiej linii komórkowej przedniego płata przysadki wywodzi się większość klinicznie nieczynnych gruczolaków przysadki (NFPA)?",
+    "options": [
+      "Z linii gonadotropowej (nieme guzy wykazujące ekspresję SF-1, podjednostki beta-LH/FSH lub alfa-GSU, niewydzielające biologicznie aktywnych hormonów w ilości powodującej zespół kliniczny)",
+      "Z komórek somatotropowych",
+      "Z komórek glejowych tylnego płata"
+    ],
+    "optionFeedback": [
+      "Ponad 80% NFPA to immunohistochemicznie nieme gruczolaki gonadotropowe (gonadotroph adenomas).",
+      "Gruczolaki somatotropowe dają objawy akromegalii lub gigantyzmu.",
+      "Komórki glejowe tylnego płata (pituicyty) dają niezwykle rzadkie pituicytoma, a nie klasyczne gruczolaki NFPA."
+    ],
+    "answer": 0,
+    "explanation": "Większość NFPA wywodzi się z komórek gonadotropowych pod ścisłą kontrolą czynnika transkrypcyjnego SF-1.",
+    "difficulty": "student",
+    "reasoning": "differentiation",
+    "sourceIds": [
+      "pituitary_incidentaloma_2025"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "guzy-nieczynne-block-1",
+      "title": "Czym są gruczolaki nieczynne hormonalnie (NFPA)?",
+      "text": "NFPA (non-functioning pituitary adenomas) stanowią 30–40% wszystkich guzów przysadki. Nie wywołują zespołu hipersekrecji hormonalnej. Manifestują się uciskiem na skrzyżowanie wzrokowe, bólami głowy lub postępującą niedoczynnością przysadki.",
+      "sourceIds": [
+        "pituitary_incidentaloma_2025"
+      ],
+      "checkpointId": "guzy-nieczynne-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "guzy-nieczynne-block-2",
+      "title": "Incydentaloma przysadki — przypadek z rezonansu",
+      "text": "Częstość wykrywania incydentaloma w MRI wynosi 10–20% populacji ogólnej (w większości to mikrogruczolaki). Każdy wykryty guz wymaga wykluczenia subklinicznej nadczynności (PRL, IGF-1, 1 mg DST) oraz hipopituitaryzmu.",
+      "sourceIds": [
+        "pituitary_incidentaloma_2025"
+      ],
+      "checkpointId": "guzy-nieczynne-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "guzy-nieczynne-block-3",
+      "title": "Wskazania do leczenia operacyjnego",
+      "text": "Wskazaniem do pilnej operacji przezklinowej jest ubytek w polu widzenia spowodowany uciskiem skrzyżowania wzrokowego. Wskazaniem względnym jest guz przylegający do chiasmy, wielkość >20 mm lub progresja wymiarów w kolejnych badaniach MRI.",
+      "sourceIds": [
+        "pituitary_incidentaloma_2025"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "guzy-nieczynne-q2-checkpoint-1-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "guzy-nieczynne-obj-1"
+      ],
+      "prompt": "62-letni mężczyzna z rozpoznanym makrogruczolakiem nieczynnym 18 mm zgłasza postępujące osłabienie, utratę apetytu i spadek libido. W badaniach: TSH 1,1 mIU/l, FT4 7,8 pmol/l (obniżone), kortyzol 8:00 rano 3,2 µg/dl (obniżony), testosteron 0,8 nmol/l (obniżony). Jaki jest patomechanizm tych zaburzeń?",
+      "options": [
+        "Niedoczynność wielohormonalna przysadki wskutek mechanicznego ucisku guza na prawidłowy miąższ gruczołu i szypułę",
+        "Pierwotna choroba Addisona i zapalenie tarczycy",
+        "Jatrogenne uszkodzenie polekowe"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-compression-hypopit",
+            "label": "Ucisk guza na miąższ przysadki powodujący wtórną niedoczynność",
+            "acceptedPhrases": [
+              "ucisk guza",
+              "wtórna niedoczynność",
+              "niedoczynność przysadki",
+              "zniszczenie miąższu"
+            ]
+          },
+          {
+            "id": "c-central-pattern",
+            "label": "Niski kortyzol i niskie FT4 przy nieadekwatnym TSH",
+            "acceptedPhrases": [
+              "niedoczynność centralna",
+              "niskie ft4",
+              "nieodpowiednie tsh"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Rosnący makrogruczolak niszczy prawidłowe komórki kwasochłonne i zasadochłonne przysadki, prowadząc do wtórnej niedoczynności nadnerczy, tarczycy i gonad.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "pituitary_incidentaloma_2025"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Rosnący makrogruczolak niszczy prawidłowe komórki kwasochłonne i zasadochłonne przysadki, prowadząc do wtórnej niedoczynności nadnerczy, tarczycy i gonad.",
+        "Nieprawidłowo: Rosnący makrogruczolak niszczy prawidłowe komórki kwasochłonne i zasadochłonne przysadki, prowadząc do wtórnej niedoczynności nadnerczy, tarczycy i gonad.",
+        "Nieprawidłowo: Rosnący makrogruczolak niszczy prawidłowe komórki kwasochłonne i zasadochłonne przysadki, prowadząc do wtórnej niedoczynności nadnerczy, tarczycy i gonad."
+      ]
+    },
+    {
+      "id": "guzy-nieczynne-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "guzy-nieczynne-obj-2"
+      ],
+      "prompt": "U 58-letniego mężczyzny wykryto incydentaloma przysadki o wymiarach 16 mm. W badaniu perymetrycznym stwierdzono ubytek w górnych skroniowych kwadrantach obu oczu (kwadrantanopsja dwuskroniowa). Czynność hormonalna jest zachowana. Jaka jest decyzja kliniczna?",
+      "options": [
+        "Kwalifikacja do leczenia operacyjnego drogą przez zatokę klinową (TSS) w celu dekompresji skrzyżowania wzrokowego i ochrony wzroku",
+        "Obserwacja w kontrolnym MRI za 12 miesięcy",
+        "Radioterapia stereotaktyczna jako leczenie pierwszego rzutu"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-surgery-visual-defect",
+            "label": "Wskazanie do operacji przy ubytkach pola widzenia",
+            "acceptedPhrases": [
+              "operacja",
+              "zabieg przezklinowy",
+              "tss",
+              "ubytek pola widzenia",
+              "dekompresja chiasmy"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Obecność ubytku w polu widzenia wywołanego uciskiem guza jest bezwzględnym wskazaniem do resekcji neurochirurgicznej.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "pituitary_incidentaloma_2025"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Obecność ubytku w polu widzenia wywołanego uciskiem guza jest bezwzględnym wskazaniem do resekcji neurochirurgicznej.",
+        "Nieprawidłowo: Obecność ubytku w polu widzenia wywołanego uciskiem guza jest bezwzględnym wskazaniem do resekcji neurochirurgicznej.",
+        "Nieprawidłowo: Obecność ubytku w polu widzenia wywołanego uciskiem guza jest bezwzględnym wskazaniem do resekcji neurochirurgicznej."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "guzy-nieczynne-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "guzy-nieczynne-obj-2"
+    ],
+    "prompt": "Przedstaw zasady bezpiecznej obserwacji radiologicznej u pacjenta z nieoperacyjnym incydentaloma przysadki: jak często wykonuje się kontrolne MRI w przypadku mikrogruczolaka (<10 mm), a jak w przypadku makrogruczolaka (>=10 mm bez kontaktu z chiasmą)?",
+    "modelAnswer": "Zgodnie z wytycznymi Pituitary Society: 1) W mikrogruczolakach (<10 mm): kontrolne MRI po 12 miesiącach; w przypadku braku progresji kolejne badanie za 2–3 lata, a w razie stabilności można zaprzestać rutynowych badań obrazowych. 2) W makrogruczolakach (>=10 mm): kontrolne MRI wykonuje się po 6 miesiącach, następnie po 12 miesiącach i corocznie przez 3–5 lat, a następnie co 2–3 lata, monitorując równocześnie pole widzenia i osie hormonalne.",
+    "explanation": "Makrogruczolaki mają wyższy potencjał wzrostu, dlatego wymagają częstszego monitorowania MRI (po 6 i 12 mies.).",
+    "difficulty": "doctor",
+    "reasoning": "decision",
+    "sourceIds": [
+      "pituitary_incidentaloma_2025"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "guzy-nieczynne-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "guzy-nieczynne-obj-1"
+      ],
+      "prompt": "Dlaczego u chorego z makrogruczolakiem nieczynnym hormonalnie o wielkości 25 mm stężenie prolaktyny wynosi 60 ng/ml (norma do 20) i dlaczego ten stan nie upoważnia do rozpoznania prolactinoma?",
+      "modelAnswer": "Jest to tzw. efekt odszypułowania (stalk effect). Duży guz mechanicznie uciska szypułę przysadki i naczynia wrotne, hamując transport dopaminy z podwzgórza do prawidłowych laktotrofów, co uwalnia je od tonicznej supresji i podnosi stężenie PRL (zazwyczaj <100–150 ng/ml). Prawdziwy makrogruczolak prolaktynowy tej wielkości (25 mm) charakteryzowałby się stężeniem prolaktyny wynoszącym co najmniej 200–1000 ng/ml lub więcej.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-stalk-effect-concept",
+            "label": "Efekt odszypułowania (ucisk szypuły i blok dopaminy)",
+            "acceptedPhrases": [
+              "efekt odszypułowania",
+              "stalk effect",
+              "ucisk szypuły",
+              "brak dopaminy"
+            ]
+          },
+          {
+            "id": "c-disproportionate-prl",
+            "label": "Prawdziwy makroprolactinoma miałby znacznie wyższą PRL (>200 ng/ml)",
+            "acceptedPhrases": [
+              "za małe stężenie prl",
+              "w prolactinoma >200",
+              "nieproporcjonalnie niska"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Różnicowanie makrogruczolaka nieczynnego z umiarkowaną hiperprolaktynemią od prawdziwego prolactinoma chroni przed niepotrzebnym leczeniem agonistami dopaminy guza nieresagującego.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "pituitary_incidentaloma_2025"
+      ]
+    },
+    {
+      "id": "guzy-nieczynne-q5-exit-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "guzy-nieczynne-obj-2"
+      ],
+      "prompt": "U 70-letniej kobiety z makrogruczolakiem nieczynnym 14 mm bez ucisku skrzyżowania wzrokowego w badaniu kontrolnym po roku guz powiększył się do 21 mm i pojawił się kontakt z chiasmą. Jakie jest zalecane postępowanie?",
+      "options": [
+        "Kwalifikacja do operacji przez zatokę klinową (TSS) ze względu na udokumentowaną progresję wymiarów guza i zagrożenie skrzyżowania wzrokowego",
+        "Dalsza bierna obserwacja i kolejne MRI za 2 lata",
+        "Wstrzyknięcie alkoholu do siodła tureckiego"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-growth-progression-op",
+            "label": "Wskazanie do operacji przy progresji wymiarów guza",
+            "acceptedPhrases": [
+              "progresja",
+              "wzrost guza",
+              "kontakt z chiasmą",
+              "kwalifikacja do tss",
+              "leczenie operacyjne"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Udokumentowany znaczący wzrost guza zbliżającego się do skrzyżowania jest wskazaniem do interwencji neurochirurgicznej.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "pituitary_incidentaloma_2025"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Udokumentowany znaczący wzrost guza zbliżającego się do skrzyżowania jest wskazaniem do interwencji neurochirurgicznej.",
+        "Nieprawidłowo: Udokumentowany znaczący wzrost guza zbliżającego się do skrzyżowania jest wskazaniem do interwencji neurochirurgicznej.",
+        "Nieprawidłowo: Udokumentowany znaczący wzrost guza zbliżającego się do skrzyżowania jest wskazaniem do interwencji neurochirurgicznej."
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "guzy-nieczynne-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "guzy-nieczynne-obj-1"
+      ],
+      "prompt": "Dlaczego w badaniu histopatologicznym usuniętego NFPA kluczowe jest wykonanie immunohistochemii w kierunku czynników transkrypcyjnych (Pit-1, T-pit, SF-1)?",
+      "options": [
+        "Czynniki transkrypcyjne pozwalają precyzyjnie ustalić linię komórkową guza (np. niemy guz kortykotropowy T-pit, który ma wysokie ryzyko agresywnej wznowy)",
+        "Badanie to służy jedynie celom statystycznym",
+        "Czynniki transkrypcyjne informują o grupie krwi pacjenta"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-transcription-factors-who",
+            "label": "Klasyfikacja WHO oparta na czynnikach transkrypcyjnych (prognoza agresywności)",
+            "acceptedPhrases": [
+              "klasyfikacja who",
+              "t-pit",
+              "sf-1",
+              "pit-1",
+              "agresywna wznowa",
+              "niemy kortykotropowy"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Zgodnie z klasyfikacją WHO guzy T-pit (nieme kortykotropy) mają bardziej agresywny przebieg kliniczny niż klasyczne guzy SF-1.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "pituitary_incidentaloma_2025"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Zgodnie z klasyfikacją WHO guzy T-pit (nieme kortykotropy) mają bardziej agresywny przebieg kliniczny niż klasyczne guzy SF-1.",
+        "Nieprawidłowo: Zgodnie z klasyfikacją WHO guzy T-pit (nieme kortykotropy) mają bardziej agresywny przebieg kliniczny niż klasyczne guzy SF-1.",
+        "Nieprawidłowo: Zgodnie z klasyfikacją WHO guzy T-pit (nieme kortykotropy) mają bardziej agresywny przebieg kliniczny niż klasyczne guzy SF-1."
+      ]
+    },
+    {
+      "id": "guzy-nieczynne-bank-2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "guzy-nieczynne-obj-2"
+      ],
+      "prompt": "Jaka minimalna odległość guza przysadki od skrzyżowania wzrokowego w badaniu MRI [w mm] nakazuje bezwzględne wykonanie badania pola widzenia wg wytycznych Pituitary Society (jeśli guz zbliża się do chiasmy)?",
+      "answer": 2,
+      "tolerance": 0.5,
+      "unit": "mm",
+      "explanation": "Każdy guz znajdujący się w odległości <= 2 mm od skrzyżowania wzrokowego lub stykający się z nim wymaga bezwzględnej oceny perymetrycznej.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "pituitary_incidentaloma_2025"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "axis-map"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

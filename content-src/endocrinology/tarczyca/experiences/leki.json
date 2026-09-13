@@ -1,0 +1,384 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "leki",
+  "objectives": [
+    {
+      "id": "leki-obj-1",
+      "statement": "Zróżnicujesz indukowaną amiodaronem tyreotoksykozę typu 1 (AIT 1 — nadprodukcja, zjawisko Jod-Basedow) od typu 2 (AIT 2 — destrukcyjne zapalenie) oraz ustalisz optymalne leczenie.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "leki-obj-2",
+      "statement": "Zidentyfikujesz interakcje lekowe i suplementacyjne zaburzające wchłanianie LT4 lub fałszujące wyniki immunochemiczne (biotyna, lit, inhibitory kinaz tyrozynowych, checkpoint inhibitors).",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "leki-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "leki-obj-1"
+    ],
+    "prompt": "Ile miligramów jodu nieorganicznego uwalnia się do krążenia podczas metabolizmu standardowej dawki dobowej amiodaronu (200 mg)?",
+    "options": [
+      "Około 6–7 mg czystego jodu (ponad 40-krotność dobowego zapotrzebowania ustroju!)",
+      "Dokładnie 150 mikrogramów (norma dobowa)",
+      "Amiodaron nie zawiera atomów jodu w swojej strukturze"
+    ],
+    "optionFeedback": [
+      "Każda tabletka 200 mg zawiera 75 mg jodu, z czego ok. 10% (6–7 mg) ulega codziennemu uwolnieniu jako wolny jodek.",
+      "150 µg to norma żywieniowa; dawka z amiodaronu jest gigantyczna.",
+      "Amiodaron jest jodowaną pochodną benzofuranu."
+    ],
+    "answer": 0,
+    "explanation": "Masywne obciążenie jodem z amiodaronu tłumaczy częstotliwość wywoływanych przez niego dysfunkcji tarczycy.",
+    "difficulty": "student",
+    "reasoning": "interpretation",
+    "sourceIds": [
+      "amiodarone",
+      "iodine"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "leki-block-1",
+      "title": "Amiodaron: więcej niż jedna możliwość",
+      "text": "Amiodaron może wywołać niedoczynność lub tyreotoksykozę. Typ 1 AIT wiąże się z nadmierną syntezą (zjawisko Jod-Basedow, często w zmienionym wolu), a typ 2 z destrukcją pęcherzyków.",
+      "sourceIds": [
+        "amiodarone"
+      ],
+      "checkpointId": "leki-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "leki-block-2",
+      "title": "Przyczyna wpływa na terapię",
+      "text": "W typie 1 stosuje się leki hamujące syntezę (tiamazol, nadchloran potasu), w typie 2 prednizon. Decyzja o odstawieniu leku zależy od wskazań kardiologicznych (ryzyko arytmii).",
+      "sourceIds": [
+        "amiodarone"
+      ],
+      "checkpointId": "leki-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "leki-block-3",
+      "title": "Zbierz pełną listę",
+      "text": "Kontrast jodowy może zaburzyć czynność u osób z autonomią. Lit hamuje uwalnianie hormonów. Inhibitory punktów kontrolnych (anty-PD-1, anty-CTLA-4) wywołują autoimmunologiczne zapalenie tarczycy.",
+      "sourceIds": [
+        "iodine",
+        "lt4"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "leki-q2-checkpoint-1-v2",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "leki-obj-1"
+      ],
+      "prompt": "Oceń, jak poniższe cechy kliniczne i wyniki badań wpływają na rozpoznanie AIT typu 2 u pacjenta leczonego amiodaronem:",
+      "hypothesis": "U pacjenta z tyreotoksykozą w trakcie terapii amiodaronem występuje AIT typu 2 (destrukcyjne), a nie AIT typu 1 (nadprodukcja).",
+      "items": [
+        {
+          "id": "ev-1",
+          "text": "Badanie Color Doppler wykazuje całkowity brak unaczynienia miąższu tarczycy (wzorzec 0)",
+          "expected": "supports",
+          "explanation": "Brak unaczynienia jest kluczową cechą destrukcyjnego zapalenia w AIT 2."
+        },
+        {
+          "id": "ev-2",
+          "text": "W USG widoczne jest duże wole guzkowe z bogatym unaczynieniem wewnątrzbrzeżnym",
+          "expected": "opposes",
+          "explanation": "Obecność wcześniejszego wola i bogatego przepływu naczyniowego przemawia za AIT 1."
+        },
+        {
+          "id": "ev-3",
+          "text": "Gwałtowny spadek stężenia FT4 i ustąpienie objawów po wdrożeniu prednizonu w dawce 40 mg/d",
+          "expected": "supports",
+          "explanation": "Spektakularna odpowiedź na glikokortykosteroidy to cecha swoista dla AIT 2."
+        },
+        {
+          "id": "ev-4",
+          "text": "Stężenie TSH wynosi <0,01 mIU/l",
+          "expected": "neutral",
+          "explanation": "Supresja TSH występuje w obu postaciach tyreotoksykozy amiodaronowej."
+        }
+      ],
+      "explanation": "Brak unaczynienia w Color Doppler i odpowiedź na prednizon to kardynalne cechy AIT 2.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "amiodarone"
+      ]
+    },
+    {
+      "id": "leki-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "leki-obj-1"
+      ],
+      "prompt": "Pacjent z kardiomiopatią rozstrzeniową, LVEF 25% i wszczepionym kardiowerterem-defibrylatorem (ICD) po nawracających złośliwych częstoskurczach komorowych rozwinął AIT 2. Czy należy natychmiast odstawić amiodaron?",
+      "options": [
+        "Nie bez ścisłej konsultacji z kardiologiem elektrofizjologiem; odstawienie amiodaronu grozi nawrotem śmiertelnych arytmii, a lek ma okres półtrwania ~50–100 dni; w AIT 2 skuteczne jest leczenie prednizonem przy kontynuacji amiodaronu",
+        "Tak, należy natychmiast wyrzucić lek do kosza",
+        "Tak, amiodaron można natychmiast zastąpić naparem z melisy"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-long-halflife",
+            "label": "Bardzo długi okres półtrwania amiodaronu (50–100 dni)",
+            "acceptedPhrases": [
+              "okres półtrwania",
+              "długi t1/2",
+              "50-100 dni",
+              "odstawienie nie da natychmiastowego efektu"
+            ]
+          },
+          {
+            "id": "c-arrhythmia-risk",
+            "label": "Ryzyko zgonu arytmicznego po odstawieniu",
+            "acceptedPhrases": [
+              "złośliwa arytmia",
+              "zagrożenie życia",
+              "częstoskurcz komorowy",
+              "wskazanie kardiologiczne"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Amiodaron kumuluje się w tkance tłuszczowej (t1/2 do 100 dni); jego nagłe odstawienie nie leczy natychmiast tarczycy, a może zabić chorego w mechanizmie arytmii.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "amiodarone"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Amiodaron kumuluje się w tkance tłuszczowej (t1/2 do 100 dni); jego nagłe odstawienie nie leczy natychmiast tarczycy, a może zabić chorego w mechanizmie arytmii.",
+        "Nieprawidłowo: Amiodaron kumuluje się w tkance tłuszczowej (t1/2 do 100 dni); jego nagłe odstawienie nie leczy natychmiast tarczycy, a może zabić chorego w mechanizmie arytmii.",
+        "Nieprawidłowo: Amiodaron kumuluje się w tkance tłuszczowej (t1/2 do 100 dni); jego nagłe odstawienie nie leczy natychmiast tarczycy, a może zabić chorego w mechanizmie arytmii."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "leki-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "leki-obj-1"
+    ],
+    "prompt": "Zestaw w zwięzłej tabeli myślowej różnice między AIT typu 1 a AIT typu 2 (mechanizm, obraz w Color Doppler, leczenie I rzutu).",
+    "modelAnswer": "AIT 1: mechanizm to wzmożona synteza hormonów (zjawisko Jod-Basedow w zmienionej tarczycy z utajoną autonomią); Color Doppler wykazuje bogate unaczynienie (wzorce II-III); leczenie I rzutu to wysokie dawki tyreostatyku (tiamazol) + ewentualnie nadchloran potasu. AIT 2: mechanizm to destrukcyjne zapalenie wywołane cytotoksycznością amiodaronu; Color Doppler wykazuje brak unaczynienia (wzorzec 0); leczenie I rzutu to prednizon doustnie (0,5–0,7 mg/kg/d).",
+    "explanation": "Precyzyjne różnicowanie AIT 1 i 2 jest fundamentem bezpieczeństwa w kardioendokrynologii.",
+    "difficulty": "doctor",
+    "reasoning": "differentiation",
+    "sourceIds": [
+      "amiodarone"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "leki-q4-exit-v2",
+      "type": "matching",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "leki-obj-2"
+      ],
+      "prompt": "Dopasuj lek lub substancję do jej mechanizmu interferencji z osią tarczycową lub wynikami badań:",
+      "pairs": [
+        [
+          "Węglan litu",
+          "Hamuje uwalnianie hormonów z tarczycy; wywołuje wole i niedoczynność tarczycy"
+        ],
+        [
+          "Pembrolizumab / Niwolumab (anty-PD-1)",
+          "Autoimmunologiczne zapalenie tarczycy (przejściowa destrukcja przechodząca w trwałą hipotyreozę)"
+        ],
+        [
+          "Biotyna w dawkach >5–10 mg/d",
+          "Fałszywie obniża TSH i fałszywie zawyża FT4 w testach streptawidyna-biotyna"
+        ],
+        [
+          "Inhibitory kinaz tyrozynowych (sunitynib)",
+          "Atrofia gruczołu i gwałtowny wzrost zapotrzebowania na lewotyroksynę"
+        ]
+      ],
+      "explanation": "Współczesna onkologia i farmakoterapia wymagają znajomości polekowych powikłań tarczycowych.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "amiodarone",
+        "lt4"
+      ]
+    },
+    {
+      "id": "leki-q5-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "leki-obj-2"
+      ],
+      "prompt": "W jaki sposób węglan litu stosowany w chorobie afektywnej dwubiegunowej wpływa na wydzielanie hormonów tarczycy i jak to wykorzystywano w medycynie?",
+      "modelAnswer": "Lit kumuluje się w tyreocytach i stabilizuje tubulinę mikrotubul, hamując koloidocytozę i proteolityczne uwalnianie hormonów (T4 i T3) z tyreoglobuliny do krwi. Z tego powodu może wywołać niedoczynność tarczycy i wole, ale bywał też stosowany doraźnie w ciężkiej tyreotoksykozie w celu zablokowania uwalniania hormonów.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-lithium-release-block",
+            "label": "Zahamowanie proteolizy tyreoglobuliny i uwalniania hormonów",
+            "acceptedPhrases": [
+              "blok uwalniania",
+              "hamuje wydzielanie",
+              "blokada koloidocytozy",
+              "zahamowanie proteolizy"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Lit wybiórczo blokuje uwalnianie hormonów z pęcherzyków, wywołując niedoczynność u ok. 15–20% leczonych.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "amiodarone",
+        "storm"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "leki-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "leki-obj-2"
+      ],
+      "prompt": "U 68-letniego pacjenta z wolem wieloguzkowym i subkliniczną nadczynnością (TSH 0,18 mIU/l) planowana jest pilna tomografia komputerowa z dożylnym kontrastem jodowym (ok. 30–40 g jodu!). Jakie powikłanie grozi pacjentowi i jak można mu zapobiec?",
+      "options": [
+        "Grozi ostra jawna tyreotoksykoza (zjawisko Jod-Basedow); u osób z grupy ryzyka profilaktycznie stosuje się tiamazol lub nadchloran sodu",
+        "Grozi natychmiastowa trwała niedoczynność tarczycy",
+        "Kontrast jodowy nie wpływa na czynność gruczołu"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-jod-basedow-risk",
+            "label": "Zjawisko Jod-Basedow / ostra tyreotoksykoza",
+            "acceptedPhrases": [
+              "jod-basedow",
+              "tyreotoksykoza pokontrastowa",
+              "nadprodukcja hormonów",
+              "autonomia"
+            ]
+          },
+          {
+            "id": "c-prevention-thiamazole",
+            "label": "Profilaktyka tyreostatykiem / nadchloranem",
+            "acceptedPhrases": [
+              "tiamazol",
+              "nadchloran",
+              "blokada wychwytu",
+              "profilaktyka"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Podanie dużej ilości jodu w kontraście pacjentowi z autonomią tarczycową wywołuje gwałtowną syntezę hormonów (Jod-Basedow).",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "iodine"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Podanie dużej ilości jodu w kontraście pacjentowi z autonomią tarczycową wywołuje gwałtowną syntezę hormonów (Jod-Basedow).",
+        "Nieprawidłowo: Podanie dużej ilości jodu w kontraście pacjentowi z autonomią tarczycową wywołuje gwałtowną syntezę hormonów (Jod-Basedow).",
+        "Nieprawidłowo: Podanie dużej ilości jodu w kontraście pacjentowi z autonomią tarczycową wywołuje gwałtowną syntezę hormonów (Jod-Basedow)."
+      ]
+    },
+    {
+      "id": "leki-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "leki-obj-1"
+      ],
+      "prompt": "Co to jest mieszana postać amiodaronowej tyreotoksykozy (AIT typ mieszany) i jakie leczenie skojarzone wdraża się w przypadku braku jednoznacznego rozstrzygnięcia?",
+      "modelAnswer": "Postać mieszana łączy cechy nadprodukcji (Jod-Basedow w zmienionym gruczole) oraz cytotoksycznej destrukcji pęcherzyków. W przypadku wątpliwości diagnostycznych i ciężkiego stanu kardiologicznego wytyczne ETA zalecają wdrożenie leczenia skojarzonego: wysokiej dawki tiamazolu (30–40 mg/d) razem z doustnym glikokortykosteroidem (prednizon 30–40 mg/d).",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-mixed-ait",
+            "label": "Połączenie nadprodukcji i destrukcji",
+            "acceptedPhrases": [
+              "postać mieszana",
+              "nakładanie cech",
+              "oba mechanizmy"
+            ]
+          },
+          {
+            "id": "c-combined-therapy",
+            "label": "Leczenie skojarzone: tiamazol + prednizon",
+            "acceptedPhrases": [
+              "tiamazol i prednizon",
+              "skojarzone",
+              "tyreostatyk ze sterydem"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Leczenie skojarzone zabezpiecza chorego przed oboma komponentami patogenetycznymi AIT.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "amiodarone"
+      ]
+    },
+    {
+      "id": "leki-bank-3",
+      "type": "multi_select",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "leki-obj-2"
+      ],
+      "prompt": "Które z poniższych leków mogą wywołać niedoczynność tarczycy u pacjenta z dotychczas prawidłową czynnością gruczołu?",
+      "options": [
+        "Amiodaron (poprzez efekt Wolffa-Chaikoffa i hamowanie dejodynaz)",
+        "Węglan litu",
+        "Interferon alfa (w leczeniu wirusowego zapalenia wątroby)",
+        "Paracetamol w dawkach terapeutycznych"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "optionFeedback": [
+        "Amiodaron wywołuje AIH u ok. 10–20% pacjentów w rejonach o wystarczającej podaży jodu.",
+        "Lit blokuje uwalnianie hormonów.",
+        "Interferon alfa indukuje autoimmunologiczne zapalenie tarczycy.",
+        "Paracetamol nie ma wpływu na tarczycę."
+      ],
+      "explanation": "Amiodaron, lit i interferon to klasyczne leki wywołujące jatrogenną niedoczynność tarczycy.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "amiodarone",
+        "lt4"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

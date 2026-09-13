@@ -1,0 +1,333 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "tarczyca-matematyka-kinetyka",
+  "objectives": [
+    {
+      "id": "tarczyca-matematyka-kinetyka-obj-1",
+      "statement": "Wyprowadzisz wzór na stężenie stacjonarne Css lewotyroksyny w modelu jedno- i dwukompartmentowym.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "tarczyca-matematyka-kinetyka-obj-2",
+      "statement": "Obliczysz czas do osiągnięcia stanu równowagi na podstawie stałej eliminacji ke i t1/2.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "tarczyca-matematyka-kinetyka-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "tarczyca-matematyka-kinetyka-obj-1"
+    ],
+    "prompt": "Jaki jest rząd kinetyki eliminacji lewotyroksyny z osocza w zakresie stężeń terapeutycznych?",
+    "options": [
+      "Kinetyka pierwszego rzędu (szybkość eliminacji dC/dt jest wprost proporcjonalna do chwilowego stężenia leku)",
+      "Kinetyka zerowego rzędu (stała ilość leku usuwana w jednostce czasu niezależnie od stężenia)",
+      "Kinetyka enzymatyczna Michaelisa-Menten z pełnym wysyceniem przy dawkach 50 µg"
+    ],
+    "optionFeedback": [
+      "T4 podlega kinetyce pierwszego rzędu: dC/dt = -ke * C.",
+      "Kinetyka zerowego rzędu cechuje np. etanol lub fenytoinę w wysokich dawkach.",
+      "Wysycenie klirensu nie zachodzi w zakresie dawek terapeutycznych."
+    ],
+    "answer": 0,
+    "explanation": "Eliminacja tyroksyny podlega prawu kinetyki I rzędu, co oznacza stały okres półtrwania niezależny od dawki.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "spina",
+      "lt4"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "tarczyca-matematyka-kinetyka-block-1",
+      "title": "Model jedno- i dwukompartmentowy dystrybucji T4",
+      "text": "Lewotyroksyna (T4) ma pozorną objętość dystrybucji Vd wynoszącą około 11–15 L. Ponad 99,97% krąży w połączeniu z białkami osocza. W modelu dwukompartmentowym po podaniu doustnym następuje faza szybkiej dystrybucji naczyniowej (V1), po której następuje powolna wymiana z pulą tkankową (V2).",
+      "sourceIds": [
+        "physiology",
+        "spina"
+      ],
+      "checkpointId": "tarczyca-matematyka-kinetyka-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "tarczyca-matematyka-kinetyka-block-2",
+      "title": "Kinetyka rzędu pierwszego i czas półtrwania (t1/2 = 7 dni)",
+      "text": "Eliminacja T4 podlega kinetyce I rzędu: dC/dt = -ke * C, gdzie ke ≈ 0,10 na dobę. t1/2 = ln(2)/ke ≈ 7 dni. Stan równowagi stacjonarnej (steady-state, >95% Css) osiągany jest po 4,5–5 okresach półtrwania, czyli po 30–35 dniach.",
+      "sourceIds": [
+        "lt4",
+        "spina"
+      ],
+      "checkpointId": "tarczyca-matematyka-kinetyka-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "tarczyca-matematyka-kinetyka-block-3",
+      "title": "Formuła stężenia stacjonarnego i fluktuacje międzydawkowe",
+      "text": "Średnie stężenie w stanie stacjonarnym wynosi: Css = (F * D) / (Cl * tau). Z uwagi na długi t1/2 wskaźnik fluktuacji międzydawkowej wynosi zaledwie 10–14%, co tłumaczy, dlaczego pominięcie jednej tabletki ma znikomy wpływ.",
+      "sourceIds": [
+        "spina",
+        "lt4"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "tarczyca-matematyka-kinetyka-q2-checkpoint-1-v2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "tarczyca-matematyka-kinetyka-obj-2"
+      ],
+      "prompt": "Jeśli okres półtrwania lewotyroksyny wynosi t1/2 = 7 dni, ile dni potrzeba, aby pacjent osiągnął 96,9% stężenia stacjonarnego Css po zmianie dawki (odpowiada to 5 okresom półtrwania)?",
+      "answer": 35,
+      "tolerance": 2,
+      "unit": "dni",
+      "explanation": "5 * 7 dni = 35 dni (5 tygodni). Do tego dochodzi czas adaptacji przysadki, stąd kontrola TSH po 6–8 tygodniach.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "lt4",
+        "spina"
+      ]
+    },
+    {
+      "id": "tarczyca-matematyka-kinetyka-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "tarczyca-matematyka-kinetyka-obj-1"
+      ],
+      "prompt": "Dlaczego u pacjenta z ciężką, nieleczoną nadczynnością tarczycy okres półtrwania T4 ulega skróceniu do 3–4 dni, a w ciężkiej niedoczynności wydłuża się do 9–10 dni?",
+      "options": [
+        "Hormony tarczycy regulują własny metabolizm: w nadczynności przyspiesza wątrobowa dejodynacja i sprzęganie z glukuronianem (wzrost klirensu Cl), co skraca t1/2",
+        "W nadczynności nerki filtrują całe cząsteczki TBG do moczu",
+        "W niedoczynności tarczyca syntetyzuje dodatkowe cząsteczki T4 z zapasów"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-metabolic-clearance",
+            "label": "Klirens wątrobowy zależny od stanu metabolicznego",
+            "acceptedPhrases": [
+              "klirens metaboliczny",
+              "przyspieszony metabolizm",
+              "indukcja enzymów",
+              "sprzęganie i dejodynacja"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Klirens lewotyroksyny rośnie w nadczynności i maleje w hipometabolizmie, wpływając bezpośrednio na t1/2 = ln(2)*Vd/Cl.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "spina",
+        "lt4"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Klirens lewotyroksyny rośnie w nadczynności i maleje w hipometabolizmie, wpływając bezpośrednio na t1/2 = ln(2)*Vd/Cl.",
+        "Nieprawidłowo: Klirens lewotyroksyny rośnie w nadczynności i maleje w hipometabolizmie, wpływając bezpośrednio na t1/2 = ln(2)*Vd/Cl.",
+        "Nieprawidłowo: Klirens lewotyroksyny rośnie w nadczynności i maleje w hipometabolizmie, wpływając bezpośrednio na t1/2 = ln(2)*Vd/Cl."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "tarczyca-matematyka-kinetyka-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "tarczyca-matematyka-kinetyka-obj-1"
+    ],
+    "prompt": "Wyjaśnij pacjentowi na podstawie wzoru na stężenie stacjonarne Css = (F * D)/(Cl * tau), dlaczego wypicie porannej kawy lub zjedzenie śniadania bezpośrednio po tabletce LT4 może obniżyć stężenie hormonu w osoczu o 30–40%.",
+    "modelAnswer": "Kawa, błonnik pokarmowy oraz składniki śniadania wiążą fizycznie cząsteczki lewotyroksyny w świetle przewodu pokarmowego, drastycznie zmniejszając ułamek wchłoniętej dawki, czyli biodostępność (F) z fizjologicznych 70–80% do 40–50%. Ponieważ Css jest wprost proporcjonalne do F, spadek biodostępności powoduje proporcjonalne obniżenie stężenia stacjonarnego tyroksyny we krwi.",
+    "explanation": "Zrozumienie parametru F (biodostępności) tłumaczy konieczność zachowania 30–60 min odstępu przed posiłkiem.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "lt4",
+      "spina"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "tarczyca-matematyka-kinetyka-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "tarczyca-matematyka-kinetyka-obj-1"
+      ],
+      "prompt": "Wyjaśnij, dlaczego fluktuacja międzydawkowa stężenia lewotyroksyny (Cmax - Cmin)/Css wynosi zaledwie 10–14%, podczas gdy dla liotyroniny (T3) przekracza 100%.",
+      "modelAnswer": "Wynika to bezpośrednio z różnicy okresów półtrwania: lewotyroksyna (T4) ma t1/2 wynoszący aż 7 dni (168 h), co przy dawkowaniu co 24 h oznacza eliminację zaledwie ok. 10% puli ustrojowej na dobę. Liotyronina (T3) ma krótki t1/2 wynoszący ok. 18–24 h, przez co w ciągu doby stężenie spada o połowę, generując ostre piki po wchłonięciu i głębokie spadki przed kolejną dawką.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-halflife-difference",
+            "label": "Różnica t1/2 (T4 7 dni vs T3 1 dzień)",
+            "acceptedPhrases": [
+              "t1/2 7 dni",
+              "t3 krótki okres półtrwania",
+              "18-24 h",
+              "szybka eliminacja t3"
+            ]
+          },
+          {
+            "id": "c-fluctuation-damping",
+            "label": "Długi t1/2 amortyzuje wahania międzydawkowe",
+            "acceptedPhrases": [
+              "małe wahania t4",
+              "duża pula ustrojowa",
+              "piki stężenia t3"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Długi t1/2 T4 zapewnia stabilny profil stężeń przy dawkowaniu raz na dobę.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "lt4",
+        "spina"
+      ]
+    },
+    {
+      "id": "tarczyca-matematyka-kinetyka-q5-exit-v2",
+      "type": "matching",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "tarczyca-matematyka-kinetyka-obj-2"
+      ],
+      "prompt": "Połącz parametr farmakokinetyczny lewotyroksyny z jego wartością liczbową i znaczeniem klinicznym:",
+      "pairs": [
+        [
+          "Okres półtrwania (t1/2)",
+          "7 dni (168 h) — uzasadnia kontrolę TSH po 6–8 tygodniach"
+        ],
+        [
+          "Objętość dystrybucji (Vd)",
+          "11–15 L (0,18 L/kg) — ograniczona do osocza i wątroby przez wiązanie z TBG"
+        ],
+        [
+          "Biodostępność (F na czczo)",
+          "65–80% — pokarm i suplementy żelaza redukują ją nawet o połowę"
+        ],
+        [
+          "Wiązanie z białkami osocza",
+          ">99,97% — zaledwie 0,03% stanowi czynna frakcja wolna FT4"
+        ]
+      ],
+      "explanation": "Parametry PK lewotyroksyny definiują zasady jej bezpiecznego stosowania w praktyce.",
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "physiology",
+        "lt4",
+        "spina"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "tarczyca-matematyka-kinetyka-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "tarczyca-matematyka-kinetyka-obj-2"
+      ],
+      "prompt": "Pacjent zapomniał przyjąć sobotnią tabletkę LT4 100 µg. W niedzielę rano pyta lekarza, jak ma postąpić. Jaka jest poprawna odpowiedź oparta na kinetyce leku?",
+      "options": [
+        "Może przyjąć w niedzielę dwie tabletki (sobotnią i niedzielną) lub przyjąć pominiętą dawkę w ciągu dnia; przy t1/2 = 7 dni jednorazowe opóźnienie nie wywoła toksyczności",
+        "Musi przerwać leczenie na 2 tygodnie",
+        "Pominięcie tabletki wymaga natychmiastowego wezwania pogotowia"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-double-dose-safe",
+            "label": "Bezpieczeństwo przyjęcia pominiętej dawki przy długim t1/2",
+            "acceptedPhrases": [
+              "można przyjąć podwójną",
+              "przyjąć zapomnianą dawkę",
+              "duża pula ustrojowa",
+              "długi okres półtrwania"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Pula ustrojowa T4 wynosi ok. 1000 µg, więc pominięcie i późniejsze uzupełnienie 100 µg nie zagraża bezpieczeństwu.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "lt4",
+        "spina"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Pula ustrojowa T4 wynosi ok. 1000 µg, więc pominięcie i późniejsze uzupełnienie 100 µg nie zagraża bezpieczeństwu.",
+        "Nieprawidłowo: Pula ustrojowa T4 wynosi ok. 1000 µg, więc pominięcie i późniejsze uzupełnienie 100 µg nie zagraża bezpieczeństwu.",
+        "Nieprawidłowo: Pula ustrojowa T4 wynosi ok. 1000 µg, więc pominięcie i późniejsze uzupełnienie 100 µg nie zagraża bezpieczeństwu."
+      ]
+    },
+    {
+      "id": "tarczyca-matematyka-kinetyka-bank-2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "tarczyca-matematyka-kinetyka-obj-2"
+      ],
+      "prompt": "Jeśli stała szybkości eliminacji tyroksyny wynosi ke = 0,099 na dobę, oblicz dokładny okres półtrwania t1/2 w dniach (wykorzystaj zależność t1/2 = ln(2)/ke, przyjmij ln(2) ≈ 0,693):",
+      "answer": 7,
+      "tolerance": 0.5,
+      "unit": "dni",
+      "explanation": "0,693 / 0,099 = 7,0 dni.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "spina"
+      ]
+    },
+    {
+      "id": "tarczyca-matematyka-kinetyka-bank-3",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "tarczyca-matematyka-kinetyka-obj-1"
+      ],
+      "prompt": "Jak równanie różniczkowe kinetyki I rzędu dC/dt = -ke * C tłumaczy, dlaczego u pacjenta po przedawkowaniu lewotyroksyny czas powrotu do normy jest stały niezależnie od przyjętej dawki?",
+      "modelAnswer": "W kinetyce pierwszego rzędu szybkość eliminacji leku jest proporcjonalna do aktualnego stężenia. Oznacza to, że w każdym okresie półtrwania (t1/2) ulega eliminacji dokładnie 50% pozostałej w ustroju substancji. Niezależnie od tego, czy stężenie wyjściowe wynosiło 20 czy 80 pmol/l, po 5 okresach półtrwania (ok. 35 dniach) zostanie wyeliminowane ponad 96% nadmiaru leku.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-constant-fraction",
+            "label": "Stały ułamek (50%) usuwany w jednostce czasu",
+            "acceptedPhrases": [
+              "stały ułamek",
+              "50% w każdym t1/2",
+              "proporcjonalna szybkość eliminacji"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "W kinetyce I rzędu czas eliminacji zależy od t1/2, a nie od bezwzględnej dawki.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "spina",
+        "lt4"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "axis-map"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

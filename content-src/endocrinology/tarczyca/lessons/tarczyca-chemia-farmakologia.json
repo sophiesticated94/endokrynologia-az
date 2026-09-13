@@ -1,0 +1,165 @@
+{
+  "id": "tarczyca-chemia-farmakologia",
+  "moduleId": "tarczyca",
+  "title": "Mechanizm tionamidów i selenoproteiny dejodynaz DIO1-3",
+  "subtitle": "Koordynacja S=C-N z hemem, selenocysteina Sec i redukcja tiolowa",
+  "group": "Chemia i biochemia",
+  "minutes": 18,
+  "goals": [
+    "Wyjaśnisz mechanizm inhibicji TPO przez tionamidy (tiamazol, PTU) na poziomie koordynacji z żelazem porfirynowym.",
+    "Scharakteryzujesz chemię katalityczną selenocysteiny (Sec) w dejodynazach jodopochodnych DIO1, DIO2 i DIO3."
+  ],
+  "sections": [
+    {
+      "title": "Farmakofor tionamidów: Grupa tiomocznikowa S=C-N",
+      "text": "Tiamazol (metimazol) oraz propylotiouracyl (PTU) zawierają ugrupowanie tionamidowe S=C-N-R w pierścieniu imidazolowym lub pirymidynowym. Siarka tionamidowa działa jako silny nukleofil i donor elektronów. Tionamidy wiążą się bezpośrednio z żelazem hemu TPO lub redukują wysoce reaktywny Compound I z powrotem do nieaktywnego Fe(III), uniemożliwiając utlenienie jodków i organifikację."
+    },
+    {
+      "title": "Selenocysteina (Sec, U) — 21. aminokwas w centrum dejodynaz",
+      "text": "Dejodynazy jodotyroninowe (DIO1, DIO2, DIO3) to białka selenozależne. W centrum aktywnym zawierają rzadki aminokwas selenocysteinę (kodowany przez kodon UGA z elementem SECIS w mRNA). Selen (Se) ma znacznie niższe pKa grupy selenolowej (-SeH ≈ 5,2) niż siarka w cysteinie (-SH ≈ 8,3), co sprawia, że w pH fizjologicznym selenol występuje w całości w formie zjonizowanego anionu selenolanowego (R-Se-), będącego potężnym nukleofilem."
+    },
+    {
+      "title": "Mechanizm kwasowo-zasadowy dejodynacji pierścienia",
+      "text": "Anion selenolanowy przeprowadza atak nukleofilowy na elektrofilowy atom jodu w pozycji 5' (pierścień zewnętrzny — aktywacja T4 -> T3 przez DIO1/DIO2) lub pozycji 5 (pierścień wewnętrzny — inaktywacja T4 -> rT3 przez DIO3). Powstaje przejściowy kowalencyjny addukt enzym-Se-I, a hormon ulega protonowaniu. Regeneracja zredukowanego enzymu wymaga kofaktora tiolowego (glutationu lub tioredoksyny). PTU (ale nie tiamazol) blokuje DIO1 poprzez wiązanie z kompleksem E-Se-I."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Enzym / Cząsteczka",
+      "Kluczowe ugrupowanie",
+      "Mechanizm biochemiczny"
+    ],
+    "rows": [
+      [
+        "Tiamazol / PTU",
+        "Grupa tiomocznikowa S=C-N",
+        "Koordynacja do Fe hemu TPO i redukcja Compound I"
+      ],
+      [
+        "DIO1 (wątroba, nerki)",
+        "Selenocysteina (Sec) w pKa 5,2",
+        "Dejodynacja pierścienia zewnętrznego i wewnętrznego; hamowany przez PTU"
+      ],
+      [
+        "DIO2 (mózg, przysadka)",
+        "Wewnątrzkomórkowa Sec",
+        "Lokalne wytwarzanie T3 dla przysadki i mózgu; oporna na PTU"
+      ],
+      [
+        "DIO3 (łożysko, płód)",
+        "Inaktywująca Sec",
+        "Dejodynacja pierścienia wewnętrznego: inaktywuje T4 do rT3 oraz T3 do T2"
+      ]
+    ]
+  },
+  "advanced": "Różnica farmakologiczna między PTU a tiamazolem polega na tym, że PTU jest inhibitorem niekompetycyjnym względem kofaktora tiolowego dejodynazy DIO1. Dlatego w przełomie tarczycowym dawniej preferowano PTU, gdyż natychmiastowo hamuje obwodową konwersję T4 do aktywnego T3 w wątrobie i nerkach, podczas gdy tiamazol hamuje wyłącznie syntezę de novo w tarczycy.",
+  "summary": "Tionamidy blokują utlenianie hemu TPO dzięki nukleofilowej siarce tiomocznikowej, a dejodynazy wykorzystują zjonizowany selenolan selenocysteiny (Sec) do usuwania atomów jodu.",
+  "sourceIds": [
+    "tpo_chem",
+    "amiodarone",
+    "storm"
+  ],
+  "questions": [
+    {
+      "id": "tarczyca-chemia-farmakologia-q1",
+      "lessonId": "tarczyca-chemia-farmakologia",
+      "prompt": "Jakie ugrupowanie chemiczne w cząsteczce tiamazolu odpowiada za inhibicję peroksydazy tarczycowej (TPO)?",
+      "options": [
+        {
+          "text": "Grupa tiomocznikowa (S=C-N)",
+          "explanation": "Nukleofilowy atom siarki redukuje kationorodnik ferrylu w hemie TPO."
+        },
+        {
+          "text": "Pierścień steroidowy cyklopentanu",
+          "explanation": "Tionamidy nie są cząsteczkami steroidowymi."
+        },
+        {
+          "text": "Łańcuch polipeptydowy z mostkiem dwusiarczkowym",
+          "explanation": "Tiamazol jest małą cząsteczką heterocykliczną (pochodną imidazolu)."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "tarczyca-chemia-farmakologia-q2",
+      "lessonId": "tarczyca-chemia-farmakologia",
+      "prompt": "Dlaczego selenocysteina (Sec) w dejodynazach jest znacznie silniejszym nukleofilem w pH fizjologicznym niż zwykła cysteina?",
+      "options": [
+        {
+          "text": "Ponieważ selen tworzy nieodwracalne wiązania jonowe z sodem",
+          "explanation": "Selen w selenocysteinie bierze udział w odwracalnym transferze jodu."
+        },
+        {
+          "text": "Grupa selenolowa ma niskie pKa (~5,2) i jest w 99% zjonizowana do anionu selenolanowego",
+          "explanation": "Podczas gdy grupa tiolowa cysteiny (pKa ~8,3) pozostaje w większości obojętna."
+        },
+        {
+          "text": "Ponieważ selen ma mniejszą masę atomową od węgla",
+          "explanation": "Selen ma masę atomową ok. 79 Da, znacznie większą od węgla (12 Da)."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "tarczyca-chemia-farmakologia-q3",
+      "lessonId": "tarczyca-chemia-farmakologia",
+      "prompt": "Która dejodynaza odpowiada za inaktywację hormonów tarczycy poprzez usuwanie jodu z pierścienia wewnętrznego?",
+      "options": [
+        {
+          "text": "Dejodynaza typu 2 (DIO2)",
+          "explanation": "DIO2 odpowiada za aktywację T4 do aktywnego metabolicznie T3."
+        },
+        {
+          "text": "Tyreoglobulina",
+          "explanation": "Tyreoglobulina jest białkiem macierzystym, a nie enzymem dejodującym."
+        },
+        {
+          "text": "Dejodynaza typu 3 (DIO3)",
+          "explanation": "Przekształca T4 w nieaktywny biologicznie rT3 oraz T3 w T2."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "tarczyca-chemia-farmakologia-q4",
+      "lessonId": "tarczyca-chemia-farmakologia",
+      "prompt": "Dlaczego propylotiouracyl (PTU) w odróżnieniu od tiamazolu hamuje obwodową konwersję T4 do T3 w wątrobie?",
+      "options": [
+        {
+          "text": "Wchodzi w reakcję z przejściowym adduktem E-Se-I dejodynazy DIO1",
+          "explanation": "Tworzy stabilny kompleks enzymatyczny blokowany przed redukcją tiolową."
+        },
+        {
+          "text": "Wiąże się nieodwracalnie z albuminami osocza",
+          "explanation": "Wiązanie z białkami nie tłumaczy hamowania enzymatycznego DIO1."
+        },
+        {
+          "text": "Destruuje jądro komórkowe tyreocytów",
+          "explanation": "Tionamidy nie wykazują działania cytolitycznego na jądro."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "tarczyca-chemia-farmakologia-q5",
+      "lessonId": "tarczyca-chemia-farmakologia",
+      "prompt": "Jaki kofaktor wewnątrzkomórkowy jest niezbędny do regeneracji aktywnej formy selenocysteiny w dejodynazach po odszczepieniu jodu?",
+      "options": [
+        {
+          "text": "ATP i glukoza w szlaku glikolizy",
+          "explanation": "Regeneracja enzymu wymaga donorów grup tiolowych (-SH), a nie bezpośrednio ATP."
+        },
+        {
+          "text": "Zredukowany glutation (GSH) lub tioredoksyna",
+          "explanation": "Dostarczają równoważników redukcyjnych do redukcji wiązania selen-jod."
+        },
+        {
+          "text": "Kwas solny żołądkowy",
+          "explanation": "Reakcja zachodzi w cytosolu komórek obwodowych, nie w żołądku."
+        }
+      ],
+      "answer": 1
+    }
+  ],
+  "assetIds": []
+}

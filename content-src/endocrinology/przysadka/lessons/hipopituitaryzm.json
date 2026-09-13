@@ -1,0 +1,157 @@
+{
+  "id": "hipopituitaryzm",
+  "moduleId": "przysadka",
+  "title": "Kiedy przysadka gaśnie",
+  "subtitle": "Niedoczynność przysadki, zespół Sheehana i żelazna zasada substytucji",
+  "group": "Niedoczynność i gospodarka wodna",
+  "minutes": 16,
+  "goals": [
+    "Poznasz typową kolejność wypadania osi hormonalnych w powolnym niszczeniu przedniego płata.",
+    "Zapamiętasz krytyczną dla życia zasadę: leczenie sterydowe (hydrokortyzon) ZAWSZE wdraża się PRZED lewotyroksyną!"
+  ],
+  "sections": [
+    {
+      "title": "Etiologia i kolejność wypadania osi hormonalnych",
+      "text": "Niedoczynność przysadki (hipopituitaryzm) to niedobór jednego, kilku (częściowa) lub wszystkich (panhipopituitaryzm) hormonów przedniego i/lub tylnego płata. Najczęstszą przyczyną u dorosłych są guzy siodła (makrogruczolaki) oraz stan po ich operacji lub radioterapii. W powolnym ucisku osie hormonalne wypadają w charakterystycznej kolejności: 1. GH (somatotropina) $\\to$ 2. LH i FSH (gonadotropiny) $\\to$ 3. TSH (tyreotropina) $\\to$ 4. ACTH (kortykotropina). Ostatnia wypadająca oś ACTH jest kluczowa dla przeżycia!"
+    },
+    {
+      "title": "Zespół Sheehana — martwica poporodowa",
+      "text": "Zespół Sheehana to poporodowa martwica niedokrwienna przedniego płata przysadki wywołana masywnym krwotokiem okołoporodowym i wstrząsem hipowolemicznym. W ciąży przysadka fizjologicznie powiększa się nawet dwukrotnie (głównie rozrost laktotrofów), stając się niezwykle wrażliwa na niedokrwienie. Pierwszym charakterystycznym objawem po porodzie jest całkowity brak laktacji (agnozja laktacyjna) oraz brak powrotu miesiączkowania, po których w ciągu miesięcy rozwija się wtórna niedoczynność tarczycy i kory nadnerczy."
+    },
+    {
+      "title": "Żelazna zasada substytucji wielohormonalnej",
+      "text": "ZASADA RATUJĄCA ŻYCIE: U pacjenta z wtórną niedoczynnością tarczycy (niskie FT4) i współistniejącym niedoborem osi ACTH-kortyzol, leczenie substytucyjne hydrokortyzonem należy bezwzględnie włączyć PRZED rozpoczęciem podawania lewotyroksyny (LT4) lub co najmniej jednocześnie! Włączenie samej lewotyroksyny przyspiesza metabolizm wątrobowy i obwodowy resztek endogennego kortyzolu, co może wywołać natychmiastowy, śmiertelny przełom nadnerczowy!"
+    }
+  ],
+  "table": {
+    "headers": [
+      "Oś hormonalna",
+      "Zasady leczenia substytucyjnego"
+    ],
+    "rows": [
+      [
+        "Oś ACTH — Kortyzol",
+        "Hydrokortyzon doustnie (15–25 mg/d w 2–3 dawkach podzielonych); ZAWSZE PIERWSZY!"
+      ],
+      [
+        "Oś TSH — T4",
+        "Lewotyroksyna (LT4); dawkuj według stężenia FT4 (nie TSH!); dopiero po zabezpieczeniu sterydem"
+      ],
+      [
+        "Oś LH/FSH — Gonady",
+        "Testosteron u mężczyzn; terapia estrogenowo-progestagenowa u kobiet (o ile brak przeciwwskazań)"
+      ],
+      [
+        "Oś GH — Hormon wzrostu",
+        "Rekombinowany hGH u dorosłych z ciężkim niedoborem i zaburzeniami metabolicznymi"
+      ]
+    ]
+  },
+  "advanced": "W odróżnieniu od pierwotnej niedoczynności nadnerczy (choroby Addisona), w niedoczynności przysadkowej (wtórnej) NIE dochodzi do niedoboru mineralokortykosteroidów (aldosteronu), ponieważ warstwa kłębkowata kory nadnerczy jest regulowana przez układ renina-angiotensyna-aldosteron (RAA) i stężenie potasu, a nie przez ACTH. Dlatego chorzy ci nie wymagają substytucji fludrokortyzonem i rzadko mają hiperkaliemię.",
+  "summary": "Hipopituitaryzm wymaga substytucji brakujących hormonów w ściśle określonej kolejności: hydrokortyzon musi poprzedzać lewotyroksynę. Dawkowanie LT4 kontroluje się poziomem FT4, a nie stłumionym lub nieadekwatnym TSH.",
+  "sourceIds": [
+    "fleseriu"
+  ],
+  "questions": [
+    {
+      "id": "hipopituitaryzm-q1",
+      "lessonId": "hipopituitaryzm",
+      "prompt": "Dlaczego u pacjenta ze złożoną niedoczynnością przysadki hydrokortyzon musi być podany PRZED lewotyroksyną?",
+      "options": [
+        {
+          "text": "Hydrokortyzon pobudza przysadkę do samoistnej regeneracji",
+          "explanation": "Hydrokortyzon uzupełnia niedobór na obwodzie, nie regeneruje martwiczo zmienionej przysadki."
+        },
+        {
+          "text": "Podanie lewotyroksyny nasila metabolizm i zużycie resztek kortyzolu, co grozi ostrym przełomem nadnerczowym",
+          "explanation": "To fundamentalna zasada bezpieczeństwa endokrynologicznego ratująca życie."
+        },
+        {
+          "text": "Lewotyroksyna trwale neutralizuje działanie hydrokortyzonu w żołądku",
+          "explanation": "Leki te nie neutralizują się chemicznie w przewodzie pokarmowym."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "hipopituitaryzm-q2",
+      "lessonId": "hipopituitaryzm",
+      "prompt": "Jaki jest najwcześniejszy objaw kliniczny zespołu Sheehana w okresie połogu?",
+      "options": [
+        {
+          "text": "Masywny wytrzeszcz obu gałek ocznych",
+          "explanation": "Wytrzeszcz to cecha choroby Gravesa-Basedowa, a nie martwicy poporodowej przysadki."
+        },
+        {
+          "text": "Wysoka gorączka z drgawkami tężcowymi",
+          "explanation": "To nie jest obraz poporodowej niedoczynności przysadki."
+        },
+        {
+          "text": "Brak laktacji (brak napływu pokarmu) pomimo chęci karmienia piersią",
+          "explanation": "Związany jest z ostrym niedokrwieniem i martwicą komórek laktotropowych przysadki."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "hipopituitaryzm-q3",
+      "lessonId": "hipopituitaryzm",
+      "prompt": "Który parametr laboratoryjny służy do monitorowania prawidłowości dawki lewotyroksyny w niedoczynności przysadkowej?",
+      "options": [
+        {
+          "text": "Stężenie wolnej tyroksyny (FT4) we krwi",
+          "explanation": "TSH jest uszkodzone lub nieadekwatnie prawidłowe, dlatego celem jest utrzymanie FT4 w górnej połowie normy."
+        },
+        {
+          "text": "Stężenie TSH w surowicy",
+          "explanation": "TSH w niedoczynności wtórnej jest niemiarodajne i nie może służyć do monitorowania dawki."
+        },
+        {
+          "text": "Wydalanie jodu w dobowej zbiórce moczu",
+          "explanation": "Joduria nie odzwierciedla wyrównania hormonalnego pacjenta na lewotyroksynie."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "hipopituitaryzm-q4",
+      "lessonId": "hipopituitaryzm",
+      "prompt": "Dlaczego chory z wtórną niedoczynnością kory nadnerczy w przebiegu hipopituitaryzmu nie wymaga przyjmowania fludrokortyzonu?",
+      "options": [
+        {
+          "text": "Fludrokortyzon jest bezwzględnie toksyczny dla przysadki mózgowej",
+          "explanation": "Nie jest toksyczny, po prostu nie ma wskazań do jego stosowania w niedoczynności wtórnej."
+        },
+        {
+          "text": "Wydzielanie aldosteronu w nadnerczach jest kontrolowane przez układ RAA i potas, a nie przez ACTH",
+          "explanation": "Warstwa kłębkowata zachowuje czynność nawet przy całkowitym braku przysadkowego ACTH."
+        },
+        {
+          "text": "Przysadka sama produkuje aldosteron bezpośrednio do nerek",
+          "explanation": "Przysadka nie syntetyzuje aldosteronu."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "hipopituitaryzm-q5",
+      "lessonId": "hipopituitaryzm",
+      "prompt": "Jaka jest zazwyczaj pierwsza oś hormonalna ulegająca upośledzeniu w powolnym niszczeniu przysadki przez guz?",
+      "options": [
+        {
+          "text": "Oś ACTH (kortykotropowa)",
+          "explanation": "Oś ACTH jest ewolucyjnie najbardziej odporna i wypada zazwyczaj jako ostatnia."
+        },
+        {
+          "text": "Tylny płat i wydzielanie oksytocyny",
+          "explanation": "Tylny płat leży poza główną strefą powolnego ucisku przedniego płata."
+        },
+        {
+          "text": "Oś hormonu wzrostu (GH)",
+          "explanation": "Komórki somatotropowe są najbardziej wrażliwe na ucisk mechaniczny i zanikają jako pierwsze."
+        }
+      ],
+      "answer": 2
+    }
+  ]
+}

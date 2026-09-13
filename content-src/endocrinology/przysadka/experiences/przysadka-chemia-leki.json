@@ -1,0 +1,316 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "przysadka-chemia-leki",
+  "objectives": [
+    {
+      "id": "przysadka-chemia-leki-obj-1",
+      "statement": "Przeanalizujesz strukturę farmakoforu ergolinowego agonistów dopaminy (bromokryptyna, kabergolina) oraz powiążesz powinowactwo do receptora 5-HT2B z ryzykiem włóknienia zastawek serca.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "przysadka-chemia-leki-obj-2",
+      "statement": "Zrozumiesz chemiczne modyfikacje cząsteczki desmopresyny (1-deamino-8-D-arginino-wazopresyna): usunięcie grupy aminowej (wydłużenie t1/2) oraz izomeryzacja D-Arg8 (selektywność V2 i brak skurczu naczyń).",
+      "kind": "differentiation"
+    }
+  ],
+  "diagnostic": {
+    "id": "przysadka-chemia-leki-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "przysadka-chemia-leki-obj-2"
+    ],
+    "prompt": "Jakie dwie specyficzne modyfikacje chemiczne odróżniają cząsteczkę desmopresyny (dDAVP) od naturalnej wazopresyny argininowej (AVP)?",
+    "options": [
+      "Deaminacja pozycji 1 (usunięcie grupy aminowej z Cys1) oraz podstawienie L-argininy przez D-argininę w pozycji 8",
+      "Dodanie reszty glukozowej i jodu",
+      "Metylowanie mostka dwusiarczkowego"
+    ],
+    "optionFeedback": [
+      "Deaminacja Cys1 chroni przed aminopeptydazami (wydłużając t1/2), a enancjomer D w pozycji 8 drastycznie obniża powinowactwo do receptora presyjnego V1a, zachowując działanie antydiuretyczne V2.",
+      "Desmopresyna nie zawiera glukozy ani jodu.",
+      "Mostek dwusiarczkowy w dDAVP pozostaje nienaruszony."
+    ],
+    "answer": 0,
+    "explanation": "Nazwa dDAVP odzwierciedla modyfikacje: 1-deamino-8-D-arginine vasopressin.",
+    "difficulty": "student",
+    "reasoning": "differentiation",
+    "sourceIds": [
+      "dopamine_ergot_chem"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "przysadka-chemia-leki-block-1",
+      "title": "Farmakofor ergolinowy: Kabergolina i bromokryptyna",
+      "text": "Pochodne sporyszu (ergoliny) zawierają czteropierścieniowy układ ergoliny naśladujący strukturę dopaminy. Kabergolina wykazuje wysokie powinowactwo do receptora D2 w laktotrofach (Ki = 0,7 nM) i powolną dysocjację, co warunkuje dawkowanie 1–2 razy w tygodniu.",
+      "sourceIds": [
+        "dopamine_ergot_chem"
+      ],
+      "checkpointId": "przysadka-chemia-leki-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "przysadka-chemia-leki-block-2",
+      "title": "Selektywność receptorowa a powikłania zastawkowe",
+      "text": "Agoniści ergolinowi pobudzają także receptory serotoninowe 5-HT2B na fibroblastach zastawek serca. Przewlekła stymulacja szlaku Gq-PLC-mitogenów wywołuje proliferację i włóknienie zastawek, co obserwowano przy wysokich dawkach w chorobie Parkinsona.",
+      "sourceIds": [
+        "dopamine_ergot_chem"
+      ],
+      "checkpointId": "przysadka-chemia-leki-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "przysadka-chemia-leki-block-3",
+      "title": "Inżynieria cząsteczki desmopresyny: 1-deamino-8-D-arginino-wazopresyna",
+      "text": "Naturalna wazopresyna działa na receptory V1a (skurcz naczyń, wzrost RR) oraz V2 (antydiureza). Zastąpienie L-Arg przez D-Arg8 zmniejszyło aktywność presyjną V1a ponad 2000-krotnie, a deaminacja pozycji 1 wydłużyła czas działania z 20 minut do 8–12 godzin.",
+      "sourceIds": [
+        "dopamine_ergot_chem"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "przysadka-chemia-leki-q2-checkpoint-1-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-chemia-leki-obj-1"
+      ],
+      "prompt": "Który podtyp receptora serotoninowego odpowiada za indukcję włóknienia zastawek serca (valvulopathy) podczas długotrwałego stosowania wysokich dawek ergolinowych agonistów dopaminy (pergolid, kabergolina)?",
+      "options": [
+        "Receptor 5-HT2B (obecny na fibroblastach i komórkach śródbłonka zastawkowego)",
+        "Receptor 5-HT1A",
+        "Receptor 5-HT3"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-5ht2b-valvular-fibrosis",
+            "label": "Stymulacja receptora 5-HT2B i proliferacja fibroblastów zastawkowych",
+            "acceptedPhrases": [
+              "5-ht2b",
+              "receptor 5-ht2b",
+              "włóknienie zastawek",
+              "fibroblasty",
+              "valvulopathy"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Pobudzenie receptora 5-HT2B wyzwala szlaki mitogenne w fibroblastach zastawek, prowadząc do odkładania glikozaminoglikanów i niedomykalności.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "dopamine_ergot_chem"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Pobudzenie receptora 5-HT2B wyzwala szlaki mitogenne w fibroblastach zastawek, prowadząc do odkładania glikozaminoglikanów i niedomykalności.",
+        "Nieprawidłowo: Pobudzenie receptora 5-HT2B wyzwala szlaki mitogenne w fibroblastach zastawek, prowadząc do odkładania glikozaminoglikanów i niedomykalności.",
+        "Nieprawidłowo: Pobudzenie receptora 5-HT2B wyzwala szlaki mitogenne w fibroblastach zastawek, prowadząc do odkładania glikozaminoglikanów i niedomykalności."
+      ]
+    },
+    {
+      "id": "przysadka-chemia-leki-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-chemia-leki-obj-2"
+      ],
+      "prompt": "Dlaczego naturalna wazopresyna (AVP) podana dożylnie pacjentowi z moczówką prostą wywołałaby silne skurcze naczyń, wzrost ciśnienia tętniczego i ból wieńcowy, podczas gdy desmopresyna (dDAVP) jest pozbawiona tego niebezpieczeństwa?",
+      "options": [
+        "Izomeryzacja do D-argininy w pozycji 8 w cząsteczce dDAVP dramatycznie obniża powinowactwo do receptora naczyniowego V1a, selektywnie aktywując receptor nerkowy V2",
+        "Desmopresyna nie wchłania się do krwi",
+        "Naturalna wazopresyna jest lekiem kardiotoksycznym niszczącym miocyty"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-d-arg-selectivity",
+            "label": "D-arginina w pozycji 8 eliminuje aktywność presyjną V1a",
+            "acceptedPhrases": [
+              "d-arginina",
+              "d-arg8",
+              "selektywność v2",
+              "brak aktywności v1a",
+              "brak skurczu naczyń"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Podstawienie D-Arg eliminuje efekt wazokonstrykcyjny zależny od V1a, czyniąc desmopresynę czystym lekiem antydiuretycznym.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "dopamine_ergot_chem"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Podstawienie D-Arg eliminuje efekt wazokonstrykcyjny zależny od V1a, czyniąc desmopresynę czystym lekiem antydiuretycznym.",
+        "Nieprawidłowo: Podstawienie D-Arg eliminuje efekt wazokonstrykcyjny zależny od V1a, czyniąc desmopresynę czystym lekiem antydiuretycznym.",
+        "Nieprawidłowo: Podstawienie D-Arg eliminuje efekt wazokonstrykcyjny zależny od V1a, czyniąc desmopresynę czystym lekiem antydiuretycznym."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "przysadka-chemia-leki-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "przysadka-chemia-leki-obj-2"
+    ],
+    "prompt": "Wytłumacz studentowi farmacji lub medycyny, jak modyfikacja chemiczna usunięcia grupy alfa-aminowej z cysteiny w pozycji 1 (deaminacja) chroni cząsteczkę desmopresyny przed degradacją enzymatyczną.",
+    "modelAnswer": "Naturalna wazopresyna argininowa (AVP) posiada na N-końcowej reszcie cysteiny wolną grupę alfa-aminową (-NH2). Jest ona głównym punktem ataku obwodowych i nerkowych aminopeptydaz, które szybko odszczepiają aminokwasy N-końcowe, dezaktywując hormon w ciągu kilkunastu minut (t_1/2 AVP wynosi zaledwie 10–20 minut). Usunięcie grupy aminowej w pozycji 1 (1-deamino) sprawia, że reszta staje się kwasem beta-merkaptopropionowym, całkowicie niewrażliwym na działanie aminopeptydaz. W połączeniu z mostkiem dwusiarczkowym zapewnia to desmopresynie wysoką stabilność metaboliczną i wydłuża okres półtrwania w osoczu do kilku godzin, umożliwiając wygodne podawanie 1–3 razy na dobę.",
+    "explanation": "1-deaminacja blokuje hydrolizę enzymatyczną przez aminopeptydazy, drastycznie wydłużając czas działania leku.",
+    "difficulty": "doctor",
+    "reasoning": "differentiation",
+    "sourceIds": [
+      "dopamine_ergot_chem"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "przysadka-chemia-leki-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "przysadka-chemia-leki-obj-1"
+      ],
+      "prompt": "Dlaczego nieergolinowy agonista dopaminy — chinagolid (Norprolac) — nie stwarza ryzyka włóknienia zastawek serca, w przeciwieństwie do wysokich dawek kabergoliny?",
+      "modelAnswer": "Chinagolid nie posiada pierścienia ergolinowego (jest nieergolinowym selektywnym agonistą receptora D2) i nie wykazuje powinowactwa agonistycznego do receptora serotoninowego 5-HT2B. Brak stymulacji receptora 5-HT2B oznacza brak aktywacji szlaków mitogennych w fibroblastach zastawek serca, co całkowicie eliminuje ryzyko zastawkowego włóknienia serca.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-quinagolide-no-5ht2b",
+            "label": "Brak pierścienia ergolinowego i brak aktywności na receptor 5-HT2B",
+            "acceptedPhrases": [
+              "nieergolinowy",
+              "brak 5-ht2b",
+              "nie pobudza 5-ht2b",
+              "brak powinowactwa do 5-ht2b"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Chinagolid to agonista nieergolinowy pozbawiony aktywności 5-HT2B, co chroni zastawki serca.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "dopamine_ergot_chem"
+      ]
+    },
+    {
+      "id": "przysadka-chemia-leki-q5-exit-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-chemia-leki-obj-2"
+      ],
+      "prompt": "Desmopresyna podana w wysokiej dawce dożylnej znajduje również zastosowanie w hematologii w łagodnej hemofilii A i chorobie von Willebranda typu 1. Jaki jest receptorowy mechanizm tego działania?",
+      "options": [
+        "Pobudzenie receptorów V2 w komórkach śródbłonka naczyniowego powoduje uwalnianie czynnika von Willebranda (vWF) i czynnika VIII z ciałek Weibela-Palade'a do krążenia",
+        "Desmopresyna stymuluje syntezę hemoglobiny w szpiku",
+        "Desmopresyna jest inhibitorem fibrynolizy"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-v2-endothelial-vwf-release",
+            "label": "Pobudzenie receptora V2 w śródbłonku i uwolnienie vWF / czynnika VIII",
+            "acceptedPhrases": [
+              "receptor v2",
+              "śródbłonek",
+              "uwolnienie vwf",
+              "czynnik viii",
+              "ciałka weibela-palade"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Śródbłonkowe receptory V2 odpowiadają za eksocytozę ciałek Weibela-Palade'a zawierających vWF i czynnik VIII.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "dopamine_ergot_chem"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Śródbłonkowe receptory V2 odpowiadają za eksocytozę ciałek Weibela-Palade'a zawierających vWF i czynnik VIII.",
+        "Nieprawidłowo: Śródbłonkowe receptory V2 odpowiadają za eksocytozę ciałek Weibela-Palade'a zawierających vWF i czynnik VIII.",
+        "Nieprawidłowo: Śródbłonkowe receptory V2 odpowiadają za eksocytozę ciałek Weibela-Palade'a zawierających vWF i czynnik VIII."
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "przysadka-chemia-leki-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-chemia-leki-obj-1"
+      ],
+      "prompt": "Dlaczego u chorych leczonych kabergoliną z powodu prolactinoma (gdzie typowa dawka wynosi 0,5–1,0 mg na tydzień) ryzyko klinicznie istotnego włóknienia zastawek serca jest skrajnie niskie w porównaniu z pacjentami z chorobą Parkinsona?",
+      "options": [
+        "Dawki stosowane w endokrynologii są od 10 do 20 razy niższe niż dawki stosowane w chorobie Parkinsona (gdzie dawka dobowa wynosiła 3–5 mg/dobę, czyli 20–35 mg/tydzień)",
+        "Laktotrofy niszczą receptory 5-HT2B",
+        "Prolaktyna chroni zastawki serca przed włóknieniem"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-dose-difference-cabergoline",
+            "label": "Wielokrotnie niższa dawka skumulowana w prolactinoma niż w chorobie Parkinsona",
+            "acceptedPhrases": [
+              "znacznie niższa dawka",
+              "dawka 0,5-1 mg/tydzień",
+              "parkinson wymagał 3-5 mg/d",
+              "dawka skumulowana"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Ryzyko valvulopathy zależy od dawki skumulowanej; w dawkach endokrynologicznych (<2 mg/tydzień) ryzyko jest minimalne.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "dopamine_ergot_chem"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Ryzyko valvulopathy zależy od dawki skumulowanej; w dawkach endokrynologicznych (<2 mg/tydzień) ryzyko jest minimalne.",
+        "Nieprawidłowo: Ryzyko valvulopathy zależy od dawki skumulowanej; w dawkach endokrynologicznych (<2 mg/tydzień) ryzyko jest minimalne.",
+        "Nieprawidłowo: Ryzyko valvulopathy zależy od dawki skumulowanej; w dawkach endokrynologicznych (<2 mg/tydzień) ryzyko jest minimalne."
+      ]
+    },
+    {
+      "id": "przysadka-chemia-leki-bank-2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-chemia-leki-obj-2"
+      ],
+      "prompt": "Ile reszt aminokwasowych buduje łańcuch peptydowy cząsteczki desmopresyny (podobnie jak naturalnej wazopresyny)?",
+      "answer": 9,
+      "tolerance": 0,
+      "unit": "aminokwasów",
+      "explanation": "Desmopresyna jest analogiem nonapeptydu (zbudowana z 9 reszt aminokwasowych, gdzie pierwsza reszta to zdeaminowana cysteina).",
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "dopamine_ergot_chem"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "axis-map"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

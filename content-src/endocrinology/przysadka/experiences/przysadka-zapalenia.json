@@ -1,0 +1,325 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "przysadka-zapalenia",
+  "objectives": [
+    {
+      "id": "przysadka-zapalenia-obj-1",
+      "statement": "Zróżnicujesz autoimmunologiczne limfocytowe zapalenie przysadki (LYH — typowo u kobiet w III trymestrze ciąży lub połogu) od gruczolaka przysadki w obrazie MRI (symetryczne powiększenie, pogrubienie szypuły, jednorodne wzmocnienie).",
+      "kind": "differentiation"
+    },
+    {
+      "id": "przysadka-zapalenia-obj-2",
+      "statement": "Zidentyfikujesz polekowe zapalenie przysadki wywołane inhibitorami punktów kontrolnych (anty-CTLA-4 ipilimumab, anty-PD-1) i wdrożysz natychmiastową substytucję hydrokortyzonem.",
+      "kind": "safety"
+    }
+  ],
+  "diagnostic": {
+    "id": "przysadka-zapalenia-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "przysadka-zapalenia-obj-1"
+    ],
+    "prompt": "Która cecha w badaniu MRI siodła tureckiego silnie przemawia za autoimmunologicznym zapaleniem przysadki (hipofizytem), a występuje niezwykle rzadko w klasycznym gruczolaku przysadki?",
+    "options": [
+      "Znaczne, symetryczne pogrubienie szypuły przysadki (>3–4 mm) z jej jednorodnym wzmocnieniem kontrastowym",
+      "Asymetryczne rozdęcie dna siodła z ubytkiem kostnym",
+      "Obecność torbieli z poziomem płyn-płyn"
+    ],
+    "optionFeedback": [
+      "Pogrubienie szypuły przysadki (infundibulohypophysitis) i symetryczne powiększenie gruczołu to kardynalne cechy zapalenia przysadki.",
+      "Asymetryczny rozrost z niszczeniem kości jest typowy dla gruczolaków lub przerzutów nowotworowych.",
+      "Poziom płynów spotyka się w torbieli Rathkego lub po krwawieniu do guza."
+    ],
+    "answer": 0,
+    "explanation": "Pogrubienie szypuły przysadki oraz symetryczne powiększenie z silnym jednorodnym wzmocnieniem kontrastowym to typowy obraz zapalenia przysadki (hipofizytu).",
+    "difficulty": "doctor",
+    "reasoning": "differentiation",
+    "sourceIds": [
+      "hypophysitis_review"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "przysadka-zapalenia-block-1",
+      "title": "Autoimmunologiczne limfocytowe zapalenie przysadki (LYH)",
+      "text": "Dotyka przeważnie młodych kobiet w późnej ciąży lub połogu. Nacieczenie limfocytarno-plazmatyczne niszczy przedni płat, prowadząc do wczesnej wtórnej niedoczynności nadnerczy, moczówki prostej (częstej w LYH, rzadkiej w gruczolakach!) oraz bólów głowy.",
+      "sourceIds": [
+        "hypophysitis_review"
+      ],
+      "checkpointId": "przysadka-zapalenia-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "przysadka-zapalenia-block-2",
+      "title": "Rewolucja onkologiczna: Hipofizyt po inhibitorach punktów kontrolnych (ICI)",
+      "text": "Stosowanie leków immunoonkologicznych (zwłaszcza anty-CTLA-4 ipilimumabu, u 5–15% chorych) wywołuje autoimmunologiczne zapalenie przysadki z ekspresją CTLA-4 w laktotrofach i tyreotrofach. Wczesnym objawem jest osłabienie i hipotensja.",
+      "sourceIds": [
+        "hypophysitis_review"
+      ],
+      "checkpointId": "przysadka-zapalenia-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "przysadka-zapalenia-block-3",
+      "title": "Choroby naciekowe i ziarniniakowe siodła",
+      "text": "Inne rzadkie zapalenia to hipofizyt IgG4-zależny (część choroby układowej IgG4-RD, spektakularna odpowiedź na sterydoterapię), sarkoidoza, histiocytoza z komórek Langerhansa oraz gruźlica.",
+      "sourceIds": [
+        "hypophysitis_review"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "przysadka-zapalenia-q2-checkpoint-1-v2",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-zapalenia-obj-1"
+      ],
+      "prompt": "Oceń, jak poniższe fakty kliniczne i radiologiczne wpływają na rozpoznanie limfocytowego zapalenia przysadki (LYH) w porównaniu z gruczolakiem nieczynnym:",
+      "hypothesis": "U pacjentki występuje autoimmunologiczne limfocytowe zapalenie przysadki (LYH), a nie gruczolak przysadki.",
+      "items": [
+        {
+          "id": "ev-1",
+          "text": "Początek objawów (bóle głowy, poliuria i osłabienie) wystąpił w 34. tygodniu ciąży",
+          "expected": "supports",
+          "explanation": "Związek z III trymestrem ciąży i wczesnym połogiem jest klasyczny dla LYH."
+        },
+        {
+          "id": "ev-2",
+          "text": "Wczesne pojawienie się moczówki prostej z zanikiem 'bright spot' w MRI",
+          "expected": "supports",
+          "explanation": "Moczówka prosta występuje często w zapaleniach szypuły, a jest skrajnie rzadka w nieleczonych gruczolakach przysadki."
+        },
+        {
+          "id": "ev-3",
+          "text": "Asymetryczna erozja dna siodła tureckiego z widocznym wygięciem kości klinowej",
+          "expected": "opposes",
+          "explanation": "Przewlekła erozja kostna świadczy o wieloletnim wzroście gruczolaka, nie pasując do zapalenia."
+        },
+        {
+          "id": "ev-4",
+          "text": "W MRI widoczna masa nadsiodłowa o wymiarze 14 mm",
+          "expected": "neutral",
+          "explanation": "Powiększenie masy przysadki może wystąpić w obu jednostkach chorobowych."
+        }
+      ],
+      "explanation": "Związek z ciążą, wczesna moczówka prosta i pogrubienie szypuły silnie wskazują na hipofizyt.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "hypophysitis_review"
+      ]
+    },
+    {
+      "id": "przysadka-zapalenia-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-zapalenia-obj-2"
+      ],
+      "prompt": "Pacjent z czerniakiem w trakcie leczenia skojarzonego ipilimumabem (anty-CTLA-4) i niwolumabem (anty-PD-1) po 8 tygodniach zgłasza nagłe narastające zmęczenie, nudności, jadłowstręt i zawroty głowy przy pionizacji (RR 85/55 mmHg). W badaniach: sód 128 mmol/l, glukoza 62 mg/dl, kortyzol 8:00 rano = 1,1 µg/dl, ACTH <5 pg/ml. Jakie jest natychmiastowe postępowanie?",
+      "options": [
+        "Rozpoznanie wtórnej niedoczynności nadnerczy w przebiegu polekowego hipofizytu i natychmiastowe podanie hydrokortyzonu (ratowanie życia)",
+        "Zwiększenie dawki immunoterapii",
+        "Podanie lewotyroksyny w wysokiej dawce"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-ici-hypophysitis-adrenal",
+            "label": "Hipofizyt po inhibitorach punktów kontrolnych z wtórną niewydolnością nadnerczy",
+            "acceptedPhrases": [
+              "hipofizyt po ici",
+              "ipilimumab",
+              "wtórna niedoczynność nadnerczy",
+              "niedobór acth"
+            ]
+          },
+          {
+            "id": "c-immediate-hydrocortisone",
+            "label": "Natychmiastowy hydrokortyzon ratujący życie",
+            "acceptedPhrases": [
+              "hydrokortyzon",
+              "substytucja sterydowa",
+              "osłona sterydowa"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Zapalenie przysadki po anty-CTLA-4 prowadzi do izolowanego lub skojarzonego niedoboru ACTH; brak natychmiastowej substytucji hydrokortyzonem grozi zgonem.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "hypophysitis_review"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Zapalenie przysadki po anty-CTLA-4 prowadzi do izolowanego lub skojarzonego niedoboru ACTH; brak natychmiastowej substytucji hydrokortyzonem grozi zgonem.",
+        "Nieprawidłowo: Zapalenie przysadki po anty-CTLA-4 prowadzi do izolowanego lub skojarzonego niedoboru ACTH; brak natychmiastowej substytucji hydrokortyzonem grozi zgonem.",
+        "Nieprawidłowo: Zapalenie przysadki po anty-CTLA-4 prowadzi do izolowanego lub skojarzonego niedoboru ACTH; brak natychmiastowej substytucji hydrokortyzonem grozi zgonem."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "przysadka-zapalenia-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "przysadka-zapalenia-obj-2"
+    ],
+    "prompt": "Dlaczego u chorego leczonego ipilimumabem z powodu nowotworu rozwój hipofizytu zazwyczaj NIE wymaga trwałego zakończenia immunoterapii onkologicznej po opanowaniu ostrej fazy?",
+    "modelAnswer": "Hipofizyt polekowy po inhibitorach punktów kontrolnych (ICI) jest powikłaniem endokrynnym, które po zniszczeniu komórek przysadki powoduje trwały, lecz łatwy do zastąpienia niedobór hormonalny (najczęściej wtórną niedoczynność nadnerczy i tarczycy). Wdrożenie substytucji hydrokortyzonem (i ew. lewotyroksyną) całkowicie znosi objawy kliniczne i zagrożenie życia. Ponieważ wystąpienie działań niepożądanych o podłożu immunologicznym (irAEs) często koreluje z lepszą odpowiedzią przeciwnowotworową, po ustabilizowaniu stanu pacjenta i wdrożeniu substytucji hormonalnej można bezpiecznie kontynuować skuteczną onkologicznie immunoterapię.",
+    "explanation": "Hipofizyt po ICI leczy się substytucją hormonalną; rzadko stanowi powód definitywnego przerwania onkoterapii.",
+    "difficulty": "doctor",
+    "reasoning": "safety",
+    "sourceIds": [
+      "hypophysitis_review"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "przysadka-zapalenia-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "przysadka-zapalenia-obj-1"
+      ],
+      "prompt": "Jakie stężenie autoprzeciwciał w surowicy krwi należy oznaczyć przy podejrzeniu zapalenia przysadki w przebiegu choroby układowej charakteryzującej się włóknieniem narządów (np. zapalenie trzustki, ślinianek, zaotrzewnowe)?",
+      "modelAnswer": "Należy oznaczyć stężenie immunoglobulin IgG4 w surowicy (podejrzenie hipofizytu w przebiegu choroby związanej z IgG4 / IgG4-related disease — IgG4-RD).",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-igg4-antibodies",
+            "label": "Stężenie IgG4 w surowicy (choroba IgG4-RD)",
+            "acceptedPhrases": [
+              "igg4",
+              "igg4-rd",
+              "podklasa igg4",
+              "przeciwciała igg4"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Hipofizyt IgG4-zależny jest manifestacją narządową choroby układowej IgG4-RD i spektakularnie cofa się po glikokortykosteroidach.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "hypophysitis_review"
+      ]
+    },
+    {
+      "id": "przysadka-zapalenia-q5-exit-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-zapalenia-obj-2"
+      ],
+      "prompt": "Która oś hormonalna u pacjentów z zapaleniem przysadki po immunoterapii anty-CTLA-4 (ipilimumab) ulega trwałemu uszkodzeniu w ponad 90% przypadków i wymaga dożywotniej substytucji?",
+      "options": [
+        "Oś kortykotropowa (ACTH-kortyzol) — wtórna niedoczynność kory nadnerczy",
+        "Oś prolaktynowa",
+        "Wydzielanie oksytocyny"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-acth-permanent-loss",
+            "label": "Trwałe wypadnięcie osi ACTH wymagające dożywotniego hydrokortyzonu",
+            "acceptedPhrases": [
+              "oś acth",
+              "oś kortykotropowa",
+              "niedoczynność nadnerczy",
+              "dożywotnia substytucja",
+              "brak powrotu funkcji"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "O ile funkcja osi TSH i LH/FSH może częściowo powrócić, o tyle niedobór ACTH po hipofizycie ICI jest niemal zawsze nieodwracalny.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "hypophysitis_review"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: O ile funkcja osi TSH i LH/FSH może częściowo powrócić, o tyle niedobór ACTH po hipofizycie ICI jest niemal zawsze nieodwracalny.",
+        "Nieprawidłowo: O ile funkcja osi TSH i LH/FSH może częściowo powrócić, o tyle niedobór ACTH po hipofizycie ICI jest niemal zawsze nieodwracalny.",
+        "Nieprawidłowo: O ile funkcja osi TSH i LH/FSH może częściowo powrócić, o tyle niedobór ACTH po hipofizycie ICI jest niemal zawsze nieodwracalny."
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "przysadka-zapalenia-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-zapalenia-obj-1"
+      ],
+      "prompt": "Dlaczego w limfocytowym zapaleniu przysadki u ciężarnej unika się niepotrzebnej interwencji neurochirurgicznej i preferuje leczenie przeciwzapalne prednizonem?",
+      "options": [
+        "Proces zapalny wykazuje wysoką wrażliwość na sterydoterapię i po porodzie może ulec samoistnej inwolucji; operacja niepotrzebnie zniszczyłaby resztki zdrowego miąższu",
+        "Przysadka w ciąży jest całkowicie niedostępna operacyjnie",
+        "Zapalenie przysadki zawsze cofa się po aspirynie"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-steroid-response-lyh",
+            "label": "Odpowiedź na sterydy i samoistna inwolucja po porodzie",
+            "acceptedPhrases": [
+              "sterydoterapia",
+              "prednizon",
+              "inwolucja",
+              "ochrona miąższu",
+              "unikanie operacji"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Glikokortykosteroidy szybko zmniejszają obrzęk i masę gruczołu w LYH, chroniąc przed niepotrzebną resekcją.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "hypophysitis_review"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Glikokortykosteroidy szybko zmniejszają obrzęk i masę gruczołu w LYH, chroniąc przed niepotrzebną resekcją.",
+        "Nieprawidłowo: Glikokortykosteroidy szybko zmniejszają obrzęk i masę gruczołu w LYH, chroniąc przed niepotrzebną resekcją.",
+        "Nieprawidłowo: Glikokortykosteroidy szybko zmniejszają obrzęk i masę gruczołu w LYH, chroniąc przed niepotrzebną resekcją."
+      ]
+    },
+    {
+      "id": "przysadka-zapalenia-bank-2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przysadka-zapalenia-obj-2"
+      ],
+      "prompt": "Jaka jest standardowa początkowa dawka dobowa prednizonu [w mg/dobę] zalecana w ostrej fazie autoimmunologicznego zapalenia przysadki z efektem masy i uciskiem na skrzyżowanie wzrokowe?",
+      "answer": 50,
+      "tolerance": 10,
+      "unit": "mg/dobę",
+      "explanation": "W ostrej fazie z objawami ucisku stosuje się wysokie dawki glikokortykosteroidów (np. prednizon 40–60 mg/dobę, czyli średnio 50 mg/d) z powolną redukcją.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "hypophysitis_review"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "axis-map"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "id": "przysadka-diagnostyka",
+  "moduleId": "przysadka",
+  "title": "Zajrzyj w głąb siodła",
+  "subtitle": "Rezonans magnetyczny, pole widzenia i ocena rezerwy hormonalnej",
+  "group": "Fundamenty",
+  "minutes": 15,
+  "goals": [
+    "Nauczysz się różnicować mikrogruczolaki (<10 mm) od makrogruczolaków (>=10 mm) w badaniu MRI.",
+    "Opanujesz algorytm laboratoryjnej oceny hormonalnej czynnościowej przysadki."
+  ],
+  "sections": [
+    {
+      "title": "Rezonans magnetyczny (MRI) siodła tureckiego",
+      "text": "Złotym standardem obrazowania przysadki jest MRI z celowanym protokołem na siodło tureckie (cienkie warstwy <=3 mm w płaszczyznach czołowej i strzałkowej, w obrazach T1 i T2 przed i po dożylnym podaniu kontrastu gadolinowego). Gruczolaki przysadki w sekwencji dynamicznej wzmacniają się wolniej niż zdrowy miąższ gruczołu, uwidaczniając się jako strefa hipointensywna. Rozmiar <10 mm definiuje mikrogruczolaka, a >=10 mm makrogruczolaka."
+    },
+    {
+      "title": "Ocena pola widzenia i okulistyka",
+      "text": "Każdy guz przysadki o wymiarze >=10 mm lub guz dochodzący do skrzyżowania wzrokowego wymaga pilnego badania okulistycznego: perymetrii statycznej (komputerowego pola widzenia) oraz oceny dna oka (zanik tarcz nerwów wzrokowych). Asymetryczny ucisk może wywołać niedowidzenie jednooczne lub mroczki paracentralne. Poprawa pola widzenia jest kluczowym wskaźnikiem powodzenia operacji dekompresyjnej lub farmakoterapii."
+    },
+    {
+      "title": "Przesiewowy panel hormonalny",
+      "text": "Wykrycie zmiany w siodle wymaga pełnej oceny hormonalnej: 1) Nadmiar: prolaktyna (PRL), IGF-1 (marker przesiewowy GH), test hamowania 1 mg deksametazonu (dla ACTH), wolne podjednostki alfa, TSH i FT4; 2) Niedobór: poranny kortyzol i ACTH, TSH i FT4, LH, FSH i estradiol/testosteron, IGF-1, elektrolity (sód, potas) i osmolalność moczu/osocza."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Badanie",
+      "Znaczenie kliniczne"
+    ],
+    "rows": [
+      [
+        "MRI siodła z kontrastem",
+        "Złoty standard oceny wielkości, inwazyjności i relacji do chiazmy"
+      ],
+      [
+        "Komputerowe pole widzenia",
+        "Wykrywa bezobjawowy ucisk na chiazmę; kwalifikuje do pilnej operacji"
+      ],
+      [
+        "Stężenie IGF-1 w surowicy",
+        "Stabilny dobowo marker nadmiaru GH w akromegalii (GH pulsuje)"
+      ],
+      [
+        "Test 1 mg deksametazonu",
+        "Przesiew w kierunku autonomicznej produkcji ACTH/kortyzolu"
+      ]
+    ]
+  },
+  "advanced": "W przypadku guzów przysadki tomografia komputerowa (CT) jest badaniem drugiego rzutu, niezastąpionym jednak w ocenie kostnych granic siodła, stopnia upowietrznienia zatoki klinowej przed planowaną operacją transsphenoidalną oraz w poszukiwaniu zwapnień sugerujących czaszkogardlaka (craniopharyngioma).",
+  "summary": "Diagnostyka guza przysadki to zawsze tandem: obrazowanie MRI oceniające anatomię i chiazmę oraz precyzyjny panel laboratoryjny wykluczający nadczynność hormonalną i niedoczynność osi obwodowych.",
+  "sourceIds": [
+    "freda",
+    "pituitary_endo"
+  ],
+  "questions": [
+    {
+      "id": "przysadka-diagnostyka-q1",
+      "lessonId": "przysadka-diagnostyka",
+      "prompt": "Jaki wymiar guza przysadki stanowi granicę między mikrogruczolakiem a makrogruczolakiem?",
+      "options": [
+        {
+          "text": "5 mm",
+          "explanation": "5 mm to zbyt mały próg; guzy do 9 mm są wciąż klasyfikowane jako mikro."
+        },
+        {
+          "text": "20 mm",
+          "explanation": "20 mm to duży makrogruczolak, granica klasyfikacyjna przebiega przy 10 mm."
+        },
+        {
+          "text": "10 mm (1 cm)",
+          "explanation": "Zmiany poniżej 10 mm to mikrogruczolaki, od 10 mm wzwyż to makrogruczolaki."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "przysadka-diagnostyka-q2",
+      "lessonId": "przysadka-diagnostyka",
+      "prompt": "Dlaczego w przesiewowej diagnostyce akromegalii oznacza się IGF-1, a nie pojedyncze stężenie hormonu wzrostu (GH)?",
+      "options": [
+        {
+          "text": "GH wydziela się pulsacyjnie i ma krótki okres półtrwania, a IGF-1 jest stabilny w ciągu doby",
+          "explanation": "IGF-1 odzwierciedla zintegrowane dobowe działanie GH i nie zależy od pojedynczych wyrzutów."
+        },
+        {
+          "text": "GH nie krąży w ogóle we krwi obwodowej",
+          "explanation": "GH krąży we krwi, lecz jego stężenie gwałtownie fluktuuje między pikami a zerem."
+        },
+        {
+          "text": "IGF-1 jest hormonem przysadkowym, a GH wątrobowym",
+          "explanation": "Jest dokładnie odwrotnie: GH pochodzi z przysadki, a IGF-1 powstaje w wątrobie."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przysadka-diagnostyka-q3",
+      "lessonId": "przysadka-diagnostyka",
+      "prompt": "Jak wzmacniają się gruczolaki przysadki w dynamicznym badaniu MRI po podaniu kontrastu?",
+      "options": [
+        {
+          "text": "Gruczolaki przysadki nigdy nie ulegają wzmocnieniu kontrastowemu",
+          "explanation": "Ulegają wzmocnieniu, ale z opóźnieniem w stosunku do bogato unaczynionego miąższu."
+        },
+        {
+          "text": "Wolniej niż zdrowy miąższ przedniego płata przysadki",
+          "explanation": "Dlatego w fazie wczesnej uwidaczniają się jako obszar hipointensywny na tle jasnego gruczołu."
+        },
+        {
+          "text": "Natychmiast silniej niż jakakolwiek inna tkanka mózgu",
+          "explanation": "Szybkie, intensywne wzmocnienie cechuje oponiaki, a nie typowe gruczolaki."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "przysadka-diagnostyka-q4",
+      "lessonId": "przysadka-diagnostyka",
+      "prompt": "U chorego z makrogruczolakiem 18 mm wykonujesz perymetrię. Kiedy badanie to należy powtórzyć w trybie pilnym?",
+      "options": [
+        {
+          "text": "Dopiero po 5 latach od operacji",
+          "explanation": "To zbyt długi odstęp stwarzający ryzyko nieodwracalnej ślepoty."
+        },
+        {
+          "text": "Tylko wtedy, gdy prolaktyna spadnie poniżej normy",
+          "explanation": "Ocena pola widzenia wynika z mechanicznego ucisku nerwów, a nie stężenia prolaktyny."
+        },
+        {
+          "text": "Przy nagłym pogorszeniu ostrości wzroku lub nasileniu bólów głowy",
+          "explanation": "Może to świadczyć o wzroście guza lub krwawieniu do jego wnętrza (apopleksji)."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "przysadka-diagnostyka-q5",
+      "lessonId": "przysadka-diagnostyka",
+      "prompt": "Co wchodzi w skład wstępnego panelu hormonalnego u każdego pacjenta z nowo wykrytym incydentaloma przysadki?",
+      "options": [
+        {
+          "text": "PRL, IGF-1, test 1 mg deksametazonu, TSH, FT4, LH, FSH i elektrolity",
+          "explanation": "Pozwala to równolegle ocenić autonomiczną nadprodukcję oraz ewentualną niedoczynność."
+        },
+        {
+          "text": "Wyłącznie badanie stężenia glukozy na czczo",
+          "explanation": "Glukoza nie diagnozuje czynności wydzielniczej przysadki."
+        },
+        {
+          "text": "Samo TSH bez oznaczania FT4 ani innych hormonów",
+          "explanation": "Samo TSH jest niewystarczające z powodu pułapki niedoczynności wtórnej."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

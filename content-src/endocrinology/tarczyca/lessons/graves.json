@@ -1,0 +1,159 @@
+{
+  "id": "graves",
+  "moduleId": "tarczyca",
+  "title": "Graves-Basedow i oczy",
+  "subtitle": "TRAb, wybór terapii i orbitopatia",
+  "group": "Praktyka kliniczna",
+  "minutes": 17,
+  "goals": [
+    "Połączysz TRAb z mechanizmem nadczynności.",
+    "Rozpoznasz alarmowe objawy oczne i powikłania leków."
+  ],
+  "sections": [
+    {
+      "title": "Receptor bez właściwego hamulca",
+      "text": "Pobudzające przeciwciała przeciw receptorowi TSH prowadzą do nadprodukcji hormonów. Rozpoznanie wspierają TRAb, rozlane zmiany gruczołu i typowy obraz kliniczny. Orbitopatia jest związanym procesem autoimmunizacyjnym w oczodole; jej nasilenie nie musi odpowiadać stężeniom hormonów."
+    },
+    {
+      "title": "Trzy drogi leczenia",
+      "text": "Do metod należą tyreostatyki, radiojod i operacja. Wybór uwzględnia orbitopatię, wielkość wola, plany rozrodcze, nawroty i preferencje chorego. Tiamazol jest zwykle stosowany poza szczególnymi sytuacjami, takimi jak pierwszy trymestr ciąży. Gorączka lub ból gardła podczas tyreostatyku wymagają przerwania przyjmowania leku i pilnego kontaktu medycznego z oceną morfologii ze względu na ryzyko agranulocytozy."
+    },
+    {
+      "title": "Chroń wzrok",
+      "text": "Zaprzestanie palenia i utrzymanie eutyreozy są istotne w orbitopatii. Pogorszenie ostrości wzroku lub widzenia barw, a także uszkodzenie rogówki wymagają pilnej oceny specjalistycznej. Leczenie zależy od aktywności i ciężkości choroby, a nie wyłącznie od obecności wytrzeszczu."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Sygnał",
+      "Znaczenie"
+    ],
+    "rows": [
+      [
+        "TRAb dodatnie",
+        "Wspiera etiologię Gravesa-Basedowa"
+      ],
+      [
+        "Ból gardła i gorączka podczas tyreostatyku",
+        "Wyklucz agranulocytozę pilnie"
+      ],
+      [
+        "Pogorszenie widzenia barw",
+        "Podejrzenie zagrożenia nerwu wzrokowego"
+      ],
+      [
+        "Palenie tytoniu",
+        "Modyfikowalny czynnik ryzyka orbitopatii"
+      ]
+    ]
+  },
+  "advanced": "Aktywność zapalna i ciężkość orbitopatii są odrębnymi wymiarami oceny. Aktywna orbitopatia o umiarkowanym lub ciężkim przebiegu wpływa na wybór leczenia nadczynności i wymaga zespołu endokrynologiczno-okulistycznego. Radiojod może pogorszyć orbitopatię; kwalifikacja i ewentualna profilaktyka są zależne od ryzyka.",
+  "summary": "Lecz nadczynność i oceniaj oczy równolegle. Objawy agranulocytozy oraz zagrożenia wzroku wymagają szybkiej reakcji.",
+  "sourceIds": [
+    "graves",
+    "eyes"
+  ],
+  "questions": [
+    {
+      "id": "graves-q1",
+      "lessonId": "graves",
+      "prompt": "Które przeciwciała są szczególnie pomocne w rozpoznaniu Gravesa-Basedowa?",
+      "options": [
+        {
+          "text": "Wyłącznie anty-TPO",
+          "explanation": "Nie są swoiste dla tej przyczyny nadczynności."
+        },
+        {
+          "text": "Przeciwciała przeciw insulinie",
+          "explanation": "Nie identyfikują tego mechanizmu."
+        },
+        {
+          "text": "TRAb",
+          "explanation": "Dotyczą receptora TSH."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "graves-q2",
+      "lessonId": "graves",
+      "prompt": "Gorączka i ból gardła podczas tiamazolu. Jaki jest właściwy krok?",
+      "options": [
+        {
+          "text": "Wstrzymać lek i pilnie ocenić morfologię oraz stan chorego",
+          "explanation": "Trzeba wykluczyć agranulocytozę."
+        },
+        {
+          "text": "Zwiększyć dawkę tiamazolu",
+          "explanation": "Może pogłębić zagrożenie polekowe."
+        },
+        {
+          "text": "Zaczekać miesiąc",
+          "explanation": "Opóźnia rozpoznanie groźnego powikłania."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "graves-q3",
+      "lessonId": "graves",
+      "prompt": "Co jest modyfikowalnym czynnikiem ryzyka orbitopatii?",
+      "options": [
+        {
+          "text": "Grupa krwi",
+          "explanation": "Nie służy do redukcji ryzyka orbitopatii."
+        },
+        {
+          "text": "Palenie tytoniu",
+          "explanation": "Zaprzestanie palenia jest elementem postępowania."
+        },
+        {
+          "text": "Kolor tęczówki",
+          "explanation": "Nie jest celem tej interwencji."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "graves-q4",
+      "lessonId": "graves",
+      "prompt": "Który objaw wymaga pilnej oceny okulistycznej?",
+      "options": [
+        {
+          "text": "Sam dodatni anty-TPO bez objawów ocznych",
+          "explanation": "Nie jest oznaką ostrego zagrożenia wzroku."
+        },
+        {
+          "text": "Prawidłowe TSH bez objawów",
+          "explanation": "Nie jest alarmowym objawem ocznym."
+        },
+        {
+          "text": "Nowe pogorszenie widzenia barw",
+          "explanation": "Może sygnalizować neuropatię wzrokową."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "graves-q5",
+      "lessonId": "graves",
+      "prompt": "Co uwzględnić przed radiojodem w Gravesie-Basedowie?",
+      "options": [
+        {
+          "text": "Aktywność i ciężkość orbitopatii",
+          "explanation": "Leczenie może wpływać na przebieg choroby oczu."
+        },
+        {
+          "text": "Wyłącznie wiek metrykalny",
+          "explanation": "Nie wystarcza do kwalifikacji."
+        },
+        {
+          "text": "Założenie, że radiojod zawsze poprawia oczy",
+          "explanation": "Może nasilić orbitopatię."
+        }
+      ],
+      "answer": 0
+    }
+  ],
+  "assetIds": []
+}

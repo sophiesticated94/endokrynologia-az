@@ -16,6 +16,49 @@ export const LearningObjectiveSchema = z.object({
   kind: ObjectiveKindSchema,
 });
 
+export const AssessmentLevelSchema = z.enum(['recognition', 'application', 'generation']);
+
+export const RubricConceptSchema = z.object({
+  id: z.string(),
+  label: z.string(),
+  acceptedPhrases: z.array(z.string()),
+  negationSensitive: z.boolean().optional(),
+});
+
+export const RubricContradictionSchema = z.object({
+  id: z.string(),
+  patterns: z.array(z.string()),
+  severity: z.enum(['critical', 'warning']),
+  feedback: z.string(),
+});
+
+export const RubricDefinitionSchema = z.object({
+  requiredConcepts: z.array(RubricConceptSchema),
+  optionalConcepts: z.array(RubricConceptSchema).optional(),
+  contradictions: z.array(RubricContradictionSchema).optional(),
+  minRequired: z.number(),
+});
+
+export const RubricDimensionSchema = z.object({
+  id: z.string(),
+  label: z.string(),
+  requiredConcepts: z.array(RubricConceptSchema),
+  optionalConcepts: z.array(RubricConceptSchema).optional(),
+  criticalErrors: z.array(RubricContradictionSchema).optional(),
+});
+
+export const MultiDimensionalRubricDefinitionSchema = z.object({
+  dimensions: z.array(RubricDimensionSchema),
+  criticalErrors: z.array(RubricContradictionSchema).optional(),
+});
+
+export const EvidenceWeightingItemSchema = z.object({
+  id: z.string(),
+  text: z.string(),
+  expected: z.enum(['supports', 'opposes', 'neutral']),
+  explanation: z.string(),
+});
+
 const ActivityBaseSchema = z.object({
   id: z.string(),
   objectiveIds: z.array(z.string()),
@@ -27,6 +70,7 @@ const ActivityBaseSchema = z.object({
   sourceIds: z.array(z.string()),
   claimIds: z.array(z.string()).optional(),
   optionFeedback: z.array(z.string()).optional(),
+  assessmentLevel: AssessmentLevelSchema.optional(),
 });
 
 export const LearningActivitySchema = z.union([
@@ -58,6 +102,27 @@ export const LearningActivitySchema = z.union([
   ActivityBaseSchema.extend({
     type: z.literal('recall'),
     modelAnswer: z.string(),
+  }),
+  ActivityBaseSchema.extend({
+    type: z.literal('short_answer'),
+    modelAnswer: z.string(),
+    rubric: RubricDefinitionSchema,
+  }),
+  ActivityBaseSchema.extend({
+    type: z.literal('select_and_justify'),
+    options: z.array(z.string()),
+    answer: z.union([z.number(), z.array(z.number())]),
+    rationaleRubric: RubricDefinitionSchema,
+  }),
+  ActivityBaseSchema.extend({
+    type: z.literal('clinical_reasoning'),
+    modelAnswer: z.string(),
+    rubric: MultiDimensionalRubricDefinitionSchema,
+  }),
+  ActivityBaseSchema.extend({
+    type: z.literal('evidence_weighting'),
+    hypothesis: z.string(),
+    items: z.array(EvidenceWeightingItemSchema),
   }),
 ]);
 
@@ -103,6 +168,7 @@ export const LessonExperienceV2Schema = z.object({
     })
   ),
   exitTicket: z.array(LearningActivitySchema),
+  assessmentBank: z.array(LearningActivitySchema).optional(),
   widgetIds: z.array(z.string()),
   widgetConfig: z.record(z.object({ presetId: z.string().optional() })).optional(),
   review: z.object({

@@ -1,0 +1,158 @@
+{
+  "id": "guzy-nieczynne",
+  "moduleId": "przysadka",
+  "title": "Cisi lokatorzy siodła",
+  "subtitle": "Gruczolaki nieczynne hormonalnie (NFPA), incydentaloma i wskazania neurochirurgiczne",
+  "group": "Gruczolaki i hipersekrecja",
+  "minutes": 14,
+  "goals": [
+    "Zdefiniujesz pojęcie guza nieczynnego hormonalnie (NFPA) oraz incydentaloma przysadki.",
+    "Opanujesz kryteria kwalifikacji do leczenia operacyjnego vs bezpiecznej obserwacji w rezonansie."
+  ],
+  "sections": [
+    {
+      "title": "Czym są gruczolaki nieczynne hormonalnie (NFPA)?",
+      "text": "Gruczolaki nieczynne hormonalnie (Non-Functioning Pituitary Adenomas — NFPA) stanowią około 30–40% wszystkich guzów przysadki. Nie wydzielają do krwi biologicznie aktywnych hormonów w ilościach dających objawy obwodowej nadczynności (choć immunohistochemicznie najczęściej wywodzą się z komórek gonadotropowych syntetyzujących podjednostki alfa lub beta-LH/FSH). Przez lata rosną bezobjawowo, osiągając znaczne rozmiary (makrogruczolaki), zanim zostaną wykryte z powodu ucisku na sąsiednie struktury."
+    },
+    {
+      "title": "Incydentaloma przysadki — przypadek z rezonansu",
+      "text": "Incydentaloma to bezobjawowy guz przysadki wykryty przypadkowo podczas tomografii lub rezonansu głowy wykonywanego z innych wskazań (np. po urazie głowy, w diagnostyce migreny czy zawrotów głowy). Szacuje się, że małe mikrogruczolaki występują u nawet 10–15% zdrowej populacji! Postępowanie zależy od rozmiaru: mikrogruczolaki (<10 mm) rzadko rosną i zwykle wymagają jedynie kontrolnego MRI po 12 miesiącach oraz wyjściowych badań hormonalnych; makrogruczolaki (>=10 mm) wymagają pełnego panelu, perymetrii i częstszego nadzoru."
+    },
+    {
+      "title": "Wskazania do leczenia operacyjnego",
+      "text": "Ponieważ leczenie farmakologiczne w NFPA jest nieskuteczne (brak odpowiedzi na kabergolinę czy analogi somatostatyny w stopniu zmniejszającym masę guza), podstawą leczenia jest operacja neurochirurgiczna przez zatokę klinową. Bezwzględne wskazania do operacji: 1) Ubytek pola widzenia spowodowany bezpośrednim uciskiem na skrzyżowanie wzrokowe lub nerwy wzrokowe; 2) Guz przylegający do chiazmy lub powodujący ucisk pnia mózgu; 3) Apopleksja przysadki z ostrymi objawami neurologicznymi; 4) Udokumentowany postępujący wzrost makrogruczolaka w kontrolnych badaniach MRI."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Wymiar / Sytuacja kliniczna",
+      "Zalecane postępowanie"
+    ],
+    "rows": [
+      [
+        "Mikrogruczolak (<10 mm), brak objawów",
+        "Wyjściowy panel hormonalny, kontrolny MRI za 12 miesięcy; brak operacji"
+      ],
+      [
+        "Makrogruczolak bez ucisku chiazmy",
+        "Pełny panel hormonalny, perymetria, kontrola MRI za 6 miesięcy"
+      ],
+      [
+        "Guz uciskający chiazmę wzrokową",
+        "Pilna kwalifikacja do operacji przez zatokę klinową (dostęp transsphenoidalny)"
+      ],
+      [
+        "Utrata wzroku / objawy apopleksji",
+        "Pilna dekompresja neurochirurgiczna w trybie ostrym"
+      ]
+    ]
+  },
+  "advanced": "W przypadku guzów nieoperacyjnych lub niecałkowicie zrespektowanych makrogruczolaków NFPA wykazujących tendencję do wznowy w sąsiedztwie zatoki jamistej metodą z wyboru zapobiegającą dalszemu wzrostowi jest precyzyjna radioterapia stereotaktyczna (np. Gamma Knife lub CyberKnife), która zatrzymuje proliferację u ponad 90% chorych.",
+  "summary": "Gruczolaki nieczynne (NFPA) ujawniają się objawami masy (ubytki wzroku, bóle głowy, niedoczynność przysadki z ucisku). Leczeniem z wyboru w przypadku ucisku na skrzyżowanie wzrokowe jest operacja przezklinowa; bezobjawowe mikrogruczolaki wymagają jedynie bezpiecznego nadzoru.",
+  "sourceIds": [
+    "freda",
+    "pituitary_incidentaloma_2025"
+  ],
+  "questions": [
+    {
+      "id": "guzy-nieczynne-q1",
+      "lessonId": "guzy-nieczynne",
+      "prompt": "Jakie jest bezwzględne wskazanie do operacji neurochirurgicznej u pacjenta z gruczolakiem nieczynnym hormonalnie (NFPA)?",
+      "options": [
+        {
+          "text": "Ubytek pola widzenia wywołany uciskiem na skrzyżowanie wzrokowe",
+          "explanation": "Odbarczenie chiazmy wzrokowej zapobiega trwałej i nieodwracalnej utracie wzroku."
+        },
+        {
+          "text": "Wykrycie mikrogruczolaka o średnicy 4 mm w badaniu po urazie głowy",
+          "explanation": "Bezobjawowe mikrogruczolaki nie stanowią wskazania do operacji."
+        },
+        {
+          "text": "Obecność pojedynczych przeciwciał anty-TPO w surowicy",
+          "explanation": "Przeciwciała tarczycowe nie mają związku ze wskazaniami do operacji przysadki."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "guzy-nieczynne-q2",
+      "lessonId": "guzy-nieczynne",
+      "prompt": "Czy leczenie farmakologiczne kabergoliną jest standardową terapią pierwszego rzutu w gruczolakach nieczynnych hormonalnie (NFPA)?",
+      "options": [
+        {
+          "text": "Tak, ale wyłącznie w skojarzeniu z lewotyroksyną",
+          "explanation": "Lewotyroksyna jest hormonem tarczycy, a nie lekiem przeciwnowotworowym na przysadkę."
+        },
+        {
+          "text": "Nie, leczenie farmakologiczne nie powoduje istotnego zmniejszenia masy NFPA, metodą z wyboru jest chirurgia",
+          "explanation": "Agoniści dopaminy są wysoce skuteczni w prolactinoma, ale nie w guzach nieczynnych hormonalnie."
+        },
+        {
+          "text": "Tak, każdy guz przysadki leczy się najpierw kabergoliną przez 5 lat",
+          "explanation": "Takie postępowanie opóźniłoby konieczną operację i naraziło chorego na utratę wzroku."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "guzy-nieczynne-q3",
+      "lessonId": "guzy-nieczynne",
+      "prompt": "Jak często małe, przypadkowo wykryte mikrogruczolaki przysadki (<10 mm) ulegają powiększeniu w wieloletniej obserwacji?",
+      "options": [
+        {
+          "text": "W 100% przypadków w ciągu pierwszych 2 miesięcy",
+          "explanation": "Gruczolaki przysadki nie wykazują tak gwałtownego, złośliwego tempa wzrostu."
+        },
+        {
+          "text": "Nigdy żaden mikrogruczolak się nie powiększa",
+          "explanation": "Niewielki odsetek może powoli rosnąć, dlatego zaleca się kontrolne badanie MRI po 12 miesiącach."
+        },
+        {
+          "text": "Rzadko (w poniżej 10–15% przypadków)",
+          "explanation": "Większość mikrogruczolaków pozostaje stabilna przez całe życie pacjenta, stąd zalecenie zachowawczej obserwacji."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "guzy-nieczynne-q4",
+      "lessonId": "guzy-nieczynne",
+      "prompt": "W jaki sposób duży nieczynny makrogruczolak przysadki może doprowadzić do niedoczynności tarczycy lub kory nadnerczy?",
+      "options": [
+        {
+          "text": "Poprzez mechaniczny ucisk i niszczenie zdrowego miąższu przedniego płata przysadki",
+          "explanation": "Masa guza prowadzi do zaniku komórek tyreotropowych i kortykotropowych, wywołując hipopituitaryzm."
+        },
+        {
+          "text": "Poprzez produkcję toksyn niszczących bezpośrednio nadnercza i tarczycę na obwodzie",
+          "explanation": "Guzy przysadki nie wydzielają toksyn obwodowych."
+        },
+        {
+          "text": "Nie może wywołać niedoczynności innych osi",
+          "explanation": "Niedoczynność z ucisku jest jednym z najczęstszych powikłań dużych makrogruczolaków."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "guzy-nieczynne-q5",
+      "lessonId": "guzy-nieczynne",
+      "prompt": "Pacjent ma przypadkowo wykrytego mikrogruczolaka 6 mm bez objawów klinicznych i z prawidłowym polem widzenia. Jaki jest prawidłowy plan nadzoru?",
+      "options": [
+        {
+          "text": "Zaniechanie jakiejkolwiek kontroli i usunięcie dokumentacji",
+          "explanation": "Konieczne jest co najmniej jednorazowe potwierdzenie stabilności zmiany po roku."
+        },
+        {
+          "text": "Oznaczenie profilu hormonalnego i kontrolne badanie MRI za 12 miesięcy",
+          "explanation": "To bezpieczne, rekomendowane przez Endocrine Society postępowanie oszczędzające choremu niepotrzebnej operacji."
+        },
+        {
+          "text": "Pilna kraniotomia z otwarciem pokrywy czaszki w ciągu 24 godzin",
+          "explanation": "Kraniotomia byłaby błędem w sztuce i nieuzasadnionym narażeniem życia chorego."
+        }
+      ],
+      "answer": 1
+    }
+  ]
+}

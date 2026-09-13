@@ -1,0 +1,353 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "akromegalia",
+  "objectives": [
+    {
+      "id": "akromegalia-obj-1",
+      "statement": "Rozpoznasz wczesne i późne objawy akromegalii (rozrost żuchwy, powiększenie dłoni i stóp, zespół cieśni nadgarstka, bezdech senny, cukrzyca, kardiomiopatia).",
+      "kind": "differentiation"
+    },
+    {
+      "id": "akromegalia-obj-2",
+      "statement": "Zastosujesz kryteria laboratoryjne rozpoznania (IGF-1 powyżej normy dla wieku, brak supresji GH w OGTT <0,4 µg/l lub <1,0 µg/l) oraz zaplanujesz leczenie (operacja przezklinowa, analogi somatostatyny, pegwisomant).",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "akromegalia-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "akromegalia-obj-2"
+    ],
+    "prompt": "Jaki jest złoty standard laboratoryjnego potwierdzenia autonomicznej nadprodukcji hormonu wzrostu w diagnostyce akromegalii?",
+    "options": [
+      "Brak supresji stężenia GH poniżej 1,0 µg/l (lub <0,4 µg/l w teście ultraczułym) w 60.–120. minucie doustnego testu obciążenia glukozą (OGTT z 75 g glukozy)",
+      "Pojedynczy pomiar stężenia GH na czczo",
+      "Test stymulacji klonidyną"
+    ],
+    "optionFeedback": [
+      "U zdrowego człowieka hiperglikemia hamuje wydzielanie GH; brak supresji w OGTT potwierdza autonomiczną sekrecję z gruczolaka somatotropowego.",
+      "GH wydziela się pulsacyjnie, więc pomiar spoczynkowy nie pozwala na wykluczenie ani potwierdzenie akromegalii.",
+      "Test z klonidyną służy do oceny niedoboru GH, a nie jego nadmiaru."
+    ],
+    "answer": 0,
+    "explanation": "Złotym standardem potwierdzenia akromegalii przy podwyższonym IGF-1 jest brak supresji GH w teście OGTT.",
+    "difficulty": "student",
+    "reasoning": "decision",
+    "sourceIds": [
+      "acromegaly_consensus_2024"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "akromegalia-block-1",
+      "title": "Podstępny rozwój i fenotyp akromegalii",
+      "text": "Czas od pierwszych objawów do rozpoznania wynosi średnio 7–10 lat. Narasta rozmiar obuwia i pierścionków, pogrubiają się rysy twarzy (macroglossia, prognatyzm). Występuje nadciśnienie, kardiomiopatia przerostowa, bezdech senny i polipy jelita grubego.",
+      "sourceIds": [
+        "acromegaly_consensus_2024"
+      ],
+      "checkpointId": "akromegalia-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "akromegalia-block-2",
+      "title": "Kryteria laboratoryjne: IGF-1 i test OGTT",
+      "text": "Przesiewowym testem jest IGF-1 odniesione do norm dla wieku i płci. Rozpoznanie potwierdza brak supresji GH w OGTT (75 g glukozy) poniżej 1,0 µg/l (lub <0,4 µg/l w testach chemiluminescencyjnych).",
+      "sourceIds": [
+        "acromegaly_consensus_2024"
+      ],
+      "checkpointId": "akromegalia-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "akromegalia-block-3",
+      "title": "Leczenie: Neurochirurgia i farmakoterapia",
+      "text": "Leczeniem pierwszego wyboru jest operacja przez zatokę klinową (TSS). W przypadku braku remisji stosuje się analogi somatostatyny I generacji (oktreotyd, lanreotyd), pasyreotyd lub antagonistę receptora GH (pegwisomant).",
+      "sourceIds": [
+        "acromegaly_consensus_2024"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "akromegalia-q2-checkpoint-1-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "akromegalia-obj-1"
+      ],
+      "prompt": "50-letni mężczyzna zgłasza się z nowo rozpoznanym nadciśnieniem tętniczym, cukrzycą typu 2 oraz obustronnym zespołem cieśni nadgarstka. Zauważył konieczność powiększenia obrączki i pogłębienie głosu. Jakie badanie przesiewowe zlecisz w pierwszej kolejności?",
+      "options": [
+        "Stężenie IGF-1 w surowicy",
+        "Dobową zbiórkę moczu na metanefryny",
+        "Kortyzol w ślinie o północy"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-igf1-screening",
+            "label": "Oznaczenie IGF-1 jako badanie przesiewowe w akromegalii",
+            "acceptedPhrases": [
+              "igf-1",
+              "igf1",
+              "somatomedyna c",
+              "badanie przesiewowe"
+            ]
+          },
+          {
+            "id": "c-acromegaly-features",
+            "label": "Powiększenie rąk, cieśń nadgarstka, cukrzyca to fenotyp akromegalii",
+            "acceptedPhrases": [
+              "akromegalia",
+              "rozrost tkanek",
+              "cieśń nadgarstka",
+              "obrączka",
+              "pogrubienie głosu"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Klasyczny fenotyp rozrostu tkanek miękkich i powikłań metabolicznych nakazuje w pierwszej kolejności oznaczenie IGF-1.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "acromegaly_consensus_2024"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Klasyczny fenotyp rozrostu tkanek miękkich i powikłań metabolicznych nakazuje w pierwszej kolejności oznaczenie IGF-1.",
+        "Nieprawidłowo: Klasyczny fenotyp rozrostu tkanek miękkich i powikłań metabolicznych nakazuje w pierwszej kolejności oznaczenie IGF-1.",
+        "Nieprawidłowo: Klasyczny fenotyp rozrostu tkanek miękkich i powikłań metabolicznych nakazuje w pierwszej kolejności oznaczenie IGF-1."
+      ]
+    },
+    {
+      "id": "akromegalia-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "akromegalia-obj-2"
+      ],
+      "prompt": "Pacjent po zabiegu operacyjnym resekcji gruczolaka somatotropowego ma stężenie IGF-1 przekraczające normę oraz najniższe stężenie GH w OGTT wynoszące 2,8 µg/l. Jaki lek wybierzesz jako farmakoterapię drugiego rzutu?",
+      "options": [
+        "Długodziałający analog somatostatyny pierwszej generacji (oktreotyd LAR lub lanreotyd autogel)",
+        "Kabergolinę w monoterapii w małej dawce",
+        "Lewotyroksynę w dawce supresyjnej"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-ssa-first-line-medical",
+            "label": "Analogi somatostatyny (oktreotyd / lanreotyd)",
+            "acceptedPhrases": [
+              "analog somatostatyny",
+              "oktreotyd",
+              "lanreotyd",
+              "ssa"
+            ]
+          },
+          {
+            "id": "c-persistent-disease",
+            "label": "Brak remisji pooperacyjnej (GH w OGTT >1,0 µg/l i podwyższone IGF-1)",
+            "acceptedPhrases": [
+              "brak remisji",
+              "przetrwała choroba",
+              "niepowodzenie operacji",
+              "gh > 1"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Przy braku remisji pooperacyjnej analogi somatostatyny I generacji są leczeniem farmakologicznym z wyboru.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "acromegaly_consensus_2024"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Przy braku remisji pooperacyjnej analogi somatostatyny I generacji są leczeniem farmakologicznym z wyboru.",
+        "Nieprawidłowo: Przy braku remisji pooperacyjnej analogi somatostatyny I generacji są leczeniem farmakologicznym z wyboru.",
+        "Nieprawidłowo: Przy braku remisji pooperacyjnej analogi somatostatyny I generacji są leczeniem farmakologicznym z wyboru."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "akromegalia-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "akromegalia-obj-2"
+    ],
+    "prompt": "Wyjaśnij mechanizm działania pegwisomantu oraz wyjaśnij, dlaczego podczas jego stosowania NIE można monitorować skuteczności leczenia za pomocą stężenia hormonu wzrostu (GH).",
+    "modelAnswer": "Pegwisomant jest zmodyfikowanym analogiem GH będącym wybiórczym antagonistą receptora dla hormonu wzrostu (blokerem receptora GHR). Wiąże się z receptorem, lecz nie wywołuje jego prawidłowej dimeryzacji ani transdukcji sygnału JAK2/STAT5, blokując wątrobową syntezę IGF-1. Podczas terapii stężenie GH w surowicy wzrasta (zniesienie ujemnego sprzężenia zwrotnego przez obniżony IGF-1), a sam pegwisomant może krzyżowo reagować w testach immunometrycznych GH. Dlatego jedynym biomarkerem skuteczności leczenia pegwisomantem jest stężenie IGF-1.",
+    "explanation": "Pegwisomant blokuje receptor obwodowy, dlatego markerem kontroli jest wyłącznie stężenie IGF-1.",
+    "difficulty": "doctor",
+    "reasoning": "decision",
+    "sourceIds": [
+      "acromegaly_consensus_2024"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "akromegalia-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "akromegalia-obj-1"
+      ],
+      "prompt": "Jakie badanie endoskopowe przewodu pokarmowego jest bezwzględnie zalecane u każdego pacjenta w momencie rozpoznania akromegalii i z jakiego powodu?",
+      "modelAnswer": "Zalecana jest pełna kolonoskopia przesiewowa. Przewlekły nadmiar GH i IGF-1 stymuluje proliferację komórek nabłonka jelitowego, co wiąże się ze znacznie zwiększonym ryzykiem rozwoju polipów gruczolakowatych oraz raka jelita grubego (rak jelita grubego jest jedną z głównych przyczyn zgonu u nieleczonych chorych na akromegalię).",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-colonoscopy-indication",
+            "label": "Kolonoskopia przesiewowa",
+            "acceptedPhrases": [
+              "kolonoskopia",
+              "badanie endoskopowe jelita grubego"
+            ]
+          },
+          {
+            "id": "c-colon-cancer-risk",
+            "label": "Ryzyko polipów gruczolakowatych i raka jelita grubego",
+            "acceptedPhrases": [
+              "rak jelita grubego",
+              "polipy",
+              "gruczolaki",
+              "proliferacja nabłonka"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Zwiększone ryzyko raka jelita grubego nakazuje wykonanie kolonoskopii w chwili rozpoznania akromegalii.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "acromegaly_consensus_2024"
+      ]
+    },
+    {
+      "id": "akromegalia-q5-exit-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "akromegalia-obj-2"
+      ],
+      "prompt": "U pacjenta z akromegalią leczonego analogiem somatostatyny II generacji — pasyreotydem (Signifor) — należy zwrócić szczególną uwagę na które działanie niepożądane ze względu na powinowactwo do receptora SSTR5 w komórkach beta trzustki?",
+      "options": [
+        "Wybitna hiperglikemia i rozwój lub znaczne pogorszenie wyrównania cukrzycy (spadek wydzielania insuliny i inkretyn GLP-1)",
+        "Ciężka hipokaliemia z zasadowicą",
+        "Włóknienie płuc"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-hyperglycemia-pasireotide",
+            "label": "Hiperglikemia / cukrzyca po pasyreotydzie",
+            "acceptedPhrases": [
+              "hiperglikemia",
+              "cukrzyca",
+              "wzrost glikemii",
+              "hamowanie insuliny"
+            ]
+          },
+          {
+            "id": "c-sstr5-mechanism",
+            "label": "Hamowanie sekrecji insuliny i GLP-1 przez receptor SSTR5",
+            "acceptedPhrases": [
+              "sstr5",
+              "komórki beta",
+              "hamowanie glp-1",
+              "spadek insuliny"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Pasyreotyd silnie pobudza SSTR5, hamując wydzielanie insuliny i GLP-1, co u większości chorych wywołuje hiperglikemię.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "acromegaly_consensus_2024"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Pasyreotyd silnie pobudza SSTR5, hamując wydzielanie insuliny i GLP-1, co u większości chorych wywołuje hiperglikemię.",
+        "Nieprawidłowo: Pasyreotyd silnie pobudza SSTR5, hamując wydzielanie insuliny i GLP-1, co u większości chorych wywołuje hiperglikemię.",
+        "Nieprawidłowo: Pasyreotyd silnie pobudza SSTR5, hamując wydzielanie insuliny i GLP-1, co u większości chorych wywołuje hiperglikemię."
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "akromegalia-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "akromegalia-obj-1"
+      ],
+      "prompt": "Dlaczego u pacjenta z akromegalią i zespołem bezdechu sennego (OBS) leczenie aparatem CPAP jest kluczowe przed planowanym znieczuleniem ogólnym do operacji przezklinowej?",
+      "options": [
+        "Przerost tkanek miękkich gardła, krtani i języka stwarza wysokie ryzyko trudnej intubacji i niedrożności dróg oddechowych",
+        "CPAP niszczy gruczolaka przysadki",
+        "Aparat CPAP zapobiega krwawieniu śródoperacyjnemu"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-difficult-airway",
+            "label": "Ryzyko trudnej intubacji i niedrożności dróg oddechowych",
+            "acceptedPhrases": [
+              "trudna intubacja",
+              "przerost tkanek",
+              "macroglossia",
+              "obrzęk krtani",
+              "drogi oddechowe"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Przerost języka i krtani w akromegalii to klasyczna przyczyna trudnych dróg oddechowych w anestezjologii.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "acromegaly_consensus_2024"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Przerost języka i krtani w akromegalii to klasyczna przyczyna trudnych dróg oddechowych w anestezjologii.",
+        "Nieprawidłowo: Przerost języka i krtani w akromegalii to klasyczna przyczyna trudnych dróg oddechowych w anestezjologii.",
+        "Nieprawidłowo: Przerost języka i krtani w akromegalii to klasyczna przyczyna trudnych dróg oddechowych w anestezjologii."
+      ]
+    },
+    {
+      "id": "akromegalia-bank-2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "akromegalia-obj-2"
+      ],
+      "prompt": "Jaki jest klasyczny próg stężenia nadiru hormonu wzrostu (GH) w teście OGTT z 75 g glukozy [w µg/l], poniżej którego uznaje się wynik za prawidłowy (wykluczający akromegalię) w standardowych testach immunochemicznych?",
+      "answer": 1,
+      "tolerance": 0.1,
+      "unit": "µg/l",
+      "explanation": "Standardowy próg wykluczenia akromegalii w teście OGTT wynosi nadir GH < 1,0 µg/l (a w nowszych testach chemiluminescencyjnych o wysokiej czułości < 0,4 µg/l).",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "acromegaly_consensus_2024"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "axis-map"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

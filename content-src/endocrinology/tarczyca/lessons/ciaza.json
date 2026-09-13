@@ -1,0 +1,159 @@
+{
+  "id": "ciaza",
+  "moduleId": "tarczyca",
+  "title": "Tarczyca w ciąży",
+  "subtitle": "Fizjologiczne zmiany i bezpieczeństwo terapii",
+  "group": "Sytuacje szczególne",
+  "minutes": 16,
+  "goals": [
+    "Uwzględnisz trymestr i metodę oznaczenia.",
+    "Rozpoznasz szczególne zasady leczenia w ciąży."
+  ],
+  "sections": [
+    {
+      "title": "Nowy kontekst fizjologiczny",
+      "text": "hCG może pobudzać receptor TSH, zwłaszcza we wczesnej ciąży. Estrogeny zwiększają TBG. Wyniki trzeba odnosić do zakresów odpowiednich dla ciąży i metody, a nie mechanicznie do norm dla osób nieciężarnych. Samo niskie TSH nie dowodzi Gravesa-Basedowa."
+    },
+    {
+      "title": "Niedobór wymaga uwagi",
+      "text": "U kobiety leczonej LT4 zapotrzebowanie może wzrosnąć już wcześnie. Plan kontroli i modyfikacji leczenia powinien być ustalony przed ciążą lub szybko po jej potwierdzeniu. Jawna niedoczynność wymaga leczenia. Nie odstawia się automatycznie LT4 z powodu ciąży."
+    },
+    {
+      "title": "Nadczynność i dziecko",
+      "text": "Należy odróżnić przejściową tyreotoksykozę ciążową od Gravesa-Basedowa. Jeśli tyreostatyk jest niezbędny, wybór leku zależy od etapu ciąży; zwykle w pierwszym trymestrze preferuje się PTU. Radiojod jest przeciwwskazany. TRAb może przechodzić przez łożysko, dlatego historia Gravesa-Basedowa ma znaczenie nawet po leczeniu radykalnym."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Sytuacja",
+      "Zasada"
+    ],
+    "rows": [
+      [
+        "Interpretacja TSH/FT4",
+        "Zakresy ciążowe i kontekst metody"
+      ],
+      [
+        "Wcześniejsze leczenie LT4",
+        "Wczesna kontrola i indywidualne dostosowanie"
+      ],
+      [
+        "Konieczny tyreostatyk w I trymestrze",
+        "Zwykle PTU pod nadzorem specjalisty"
+      ],
+      [
+        "Radiojod",
+        "Przeciwwskazany w ciąży"
+      ]
+    ]
+  },
+  "advanced": "Unika się schematu block-and-replace w ciąży. Celem jest najmniejsza skuteczna dawka tyreostatyku z oceną hormonów i dobrostanu płodu. Wysokie TRAb wymaga odrębnej oceny ryzyka płodowego. Po porodzie należy ponownie dostosować kontrolę i leczenie; możliwy jest nawrót Gravesa lub zapalenie poporodowe.",
+  "summary": "Ciąża zmienia interpretację badań i dobór leczenia. Uwzględniaj także płód i przeciwciała matki.",
+  "sourceIds": [
+    "pregnancy",
+    "graves"
+  ],
+  "questions": [
+    {
+      "id": "ciaza-q1",
+      "lessonId": "ciaza",
+      "prompt": "Dlaczego TSH może obniżyć się we wczesnej ciąży?",
+      "options": [
+        {
+          "text": "hCG może pobudzać receptor TSH",
+          "explanation": "To element fizjologii, wymagający kontekstowej interpretacji."
+        },
+        {
+          "text": "Każda ciąża oznacza Gravesa-Basedowa",
+          "explanation": "Niskie TSH nie rozstrzyga etiologii."
+        },
+        {
+          "text": "TBG bezpośrednio wydziela TSH",
+          "explanation": "TBG jest białkiem transportowym."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ciaza-q2",
+      "lessonId": "ciaza",
+      "prompt": "Co zrobić po potwierdzeniu ciąży u kobiety przyjmującej LT4?",
+      "options": [
+        {
+          "text": "Poczekać z oceną do porodu",
+          "explanation": "Pomija istotny okres rozwoju płodu."
+        },
+        {
+          "text": "Wcześnie skontrolować czynność i dostosować plan leczenia",
+          "explanation": "Zapotrzebowanie na hormon często rośnie."
+        },
+        {
+          "text": "Automatycznie odstawić LT4",
+          "explanation": "Może doprowadzić do niedoboru hormonów."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "ciaza-q3",
+      "lessonId": "ciaza",
+      "prompt": "Które leczenie jest przeciwwskazane w ciąży?",
+      "options": [
+        {
+          "text": "LT4 przy jawnej niedoczynności",
+          "explanation": "Jest potrzebnym leczeniem zastępczym."
+        },
+        {
+          "text": "Każde badanie krwi",
+          "explanation": "Oznaczenia są elementem kontroli."
+        },
+        {
+          "text": "Radiojod",
+          "explanation": "Nie stosuje się go u ciężarnych."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "ciaza-q4",
+      "lessonId": "ciaza",
+      "prompt": "Który tyreostatyk zwykle preferuje się w pierwszym trymestrze, gdy leczenie jest konieczne?",
+      "options": [
+        {
+          "text": "PTU",
+          "explanation": "Wybór uwzględnia profil ryzyka i wymaga nadzoru."
+        },
+        {
+          "text": "Zawsze tiamazol bez oceny ryzyka",
+          "explanation": "Pierwszy trymestr wymaga szczególnego doboru terapii."
+        },
+        {
+          "text": "Radiojod zamiast leku",
+          "explanation": "Jest przeciwwskazany w ciąży."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ciaza-q5",
+      "lessonId": "ciaza",
+      "prompt": "Dlaczego TRAb ma znaczenie po wcześniejszej tyreoidektomii z powodu Gravesa?",
+      "options": [
+        {
+          "text": "TRAb jest wyłącznie markerem raka",
+          "explanation": "Dotyczy receptora TSH i autoimmunizacji."
+        },
+        {
+          "text": "Może utrzymywać się i przechodzić przez łożysko",
+          "explanation": "Brak tarczycy u matki nie eliminuje ryzyka przeciwciał dla płodu."
+        },
+        {
+          "text": "Operacja zawsze usuwa wszystkie przeciwciała",
+          "explanation": "Nie usuwa automatycznie odpowiedzi immunologicznej."
+        }
+      ],
+      "answer": 1
+    }
+  ],
+  "assetIds": []
+}

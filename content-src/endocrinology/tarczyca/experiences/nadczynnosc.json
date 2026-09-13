@@ -1,0 +1,403 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "nadczynnosc",
+  "objectives": [
+    {
+      "id": "nadczynnosc-obj-1",
+      "statement": "Zróżnicujesz tyreotoksykozę z nadprodukcją hormonów (Graves-Basedow, guzek autonomiczny) od tyreotoksykozy z destrukcji pęcherzyków lub jatrogennej.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "nadczynnosc-obj-2",
+      "statement": "Wdrożysz postępowanie objawowe (beta-adrenolityk) i przyczynowe zależnie od mechanizmu tyreotoksykozy.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "nadczynnosc-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "nadczynnosc-obj-1"
+    ],
+    "prompt": "Czym różni się pojęcie tyreotoksykozy od pojęcia nadczynności tarczycy (hyperthyroidism)?",
+    "options": [
+      "Tyreotoksykoza to zespół objawów nadmiaru hormonów tarczycy niezależnie od źródła, a nadczynność to postać wynikająca z nadmiernej produkcji w gruczole",
+      "To pojęcia ściśle tożsame oznaczające wyłącznie zapalenie tarczycy",
+      "Tyreotoksykoza oznacza wyłącznie przedawkowanie lewotyroksyny"
+    ],
+    "optionFeedback": [
+      "Tyreotoksykoza obejmuje nadprodukcję, destrukcję pęcherzyków oraz źródła egzogenne.",
+      "Każda nadczynność jest tyreotoksykozą, ale nie każda tyreotoksykoza wynika z nadczynności.",
+      "Tyreotoksykoza może mieć etiologię endogenną lub egzogenną."
+    ],
+    "answer": 0,
+    "explanation": "Pojęcie tyreotoksykozy jest szersze i definiuje stan kliniczny nadmiaru działania hormonów w tkankach.",
+    "difficulty": "student",
+    "reasoning": "differentiation",
+    "sourceIds": [
+      "graves",
+      "thyroiditis"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "nadczynnosc-block-1",
+      "title": "Dwa pojęcia",
+      "text": "Tyreotoksykoza oznacza nadmiar działania hormonów tarczycy niezależnie od źródła. Nadczynność jest jej podtypem wynikającym ze wzmożonej produkcji w gruczole. Zapalenie destrukcyjne uwalnia gotowe hormony, a przedawkowanie dostarcza je z zewnątrz.",
+      "sourceIds": [
+        "graves",
+        "thyroiditis"
+      ],
+      "checkpointId": "nadczynnosc-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "nadczynnosc-block-2",
+      "title": "Objawy i ryzyko",
+      "text": "Kołatanie serca, drżenie, nietolerancja ciepła i spadek masy ciała kierują uwagę na tyreotoksykozę. U starszej osoby dominować może migotanie przedsionków lub osłabienie (tzw. apathetic thyrotoxicosis).",
+      "sourceIds": [
+        "graves",
+        "nodules"
+      ],
+      "checkpointId": "nadczynnosc-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "nadczynnosc-block-3",
+      "title": "Przyczyna wyznacza leczenie",
+      "text": "TRAb wspiera rozpoznanie Gravesa-Basedowa. Guzki i obniżone TSH uzasadniają scyntygrafię w celu oceny autonomii. Tyreostatyki hamują nową syntezę, dlatego nie rozwiązują mechanizmu destrukcyjnego zapalenia.",
+      "sourceIds": [
+        "graves",
+        "thyroiditis",
+        "nodules"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "nadczynnosc-q2-checkpoint-1-v2",
+      "type": "matching",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "nadczynnosc-obj-1"
+      ],
+      "prompt": "Połącz postać tyreotoksykozy z dominującym mechanizmem patofizjologicznym:",
+      "pairs": [
+        [
+          "Choroba Gravesa-Basedowa",
+          "Rozlana nadprodukcja hormonów wywołana stymulacją receptora TSHR przez przeciwciała TRAb"
+        ],
+        [
+          "Wole guzkowe toksyczne",
+          "Autonomiczna, niezależna od TSH nadprodukcja hormonów przez zmutowane klony komórek"
+        ],
+        [
+          "Podostre zapalenie tarczycy",
+          "Przejściowe uwolnienie zmagazynowanych hormonów na skutek uszkodzenia pęcherzyków"
+        ],
+        [
+          "Tyreotoksykoza rzekoma (factitia)",
+          "Jatrogenne lub celowe przyjmowanie suprafizjologicznych dawek egzogennych hormonów"
+        ]
+      ],
+      "explanation": "Zróżnicowanie mechanizmu ma fundamentalne znaczenie dla wyboru terapii.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "graves",
+        "thyroiditis"
+      ]
+    },
+    {
+      "id": "nadczynnosc-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "nadczynnosc-obj-2"
+      ],
+      "prompt": "Pacjent w fazie tyreotoksycznej podostrego zapalenia de Quervaina ma tachykardię 115/min i drżenie rąk. Dlaczego wdrożenie tiamazolu jest u niego błędem terapeutycznym?",
+      "options": [
+        "Ponieważ tyreostatyki hamują syntezę hormonów de novo, a w zapaleniu destrukcyjnym problemem jest uwalnianie gotowych zapasów; lekiem z wyboru jest beta-bloker i NLPZ",
+        "Ponieważ tiamazol jest wskazany wyłącznie u dzieci",
+        "Ponieważ tiamazol nasiliłby ból szyi"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-destr-release",
+            "label": "Destrukcyjne uwalnianie zapasów bez nowej syntezy",
+            "acceptedPhrases": [
+              "destrukcja pęcherzyków",
+              "uwolnienie zapasów",
+              "brak nowej syntezy",
+              "synteza jest zablokowana"
+            ]
+          },
+          {
+            "id": "c-symptomatic-therapy",
+            "label": "Leczenie objawowe beta-blokerem",
+            "acceptedPhrases": [
+              "beta-bloker",
+              "propranolol",
+              "nlpz",
+              "leczenie objawowe"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "W tyreotoksykozie destrukcyjnej tarczyca nie syntetyzuje nowych hormonów — tyreostatyki nie mają punktu uchwytu.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "thyroiditis",
+        "graves"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: W tyreotoksykozie destrukcyjnej tarczyca nie syntetyzuje nowych hormonów — tyreostatyki nie mają punktu uchwytu.",
+        "Nieprawidłowo: W tyreotoksykozie destrukcyjnej tarczyca nie syntetyzuje nowych hormonów — tyreostatyki nie mają punktu uchwytu.",
+        "Nieprawidłowo: W tyreotoksykozie destrukcyjnej tarczyca nie syntetyzuje nowych hormonów — tyreostatyki nie mają punktu uchwytu."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "nadczynnosc-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "nadczynnosc-obj-1"
+    ],
+    "prompt": "Jakie badanie obrazowe i izotopowe zlecisz w celu jednoznacznego rozróżnienia nadczynności z nadprodukcją (np. Graves) od tyreotoksykozy z destrukcji (zapalenie podostre) i jaki wynik uzyskasz?",
+    "modelAnswer": "Zlecę scyntygrafię tarczycy z użyciem 131-I lub 99mTc (ewentualnie USG z oceną przepływów naczyniowych Color Doppler). W chorobie Gravesa wychwyt znacznika jest wysoki i rozlany, a w USG widoczne jest bogate unaczynienie (tzw. inferno tarczycowe). W zapaleniu destrukcyjnym wychwyt radioznacznika jest skrajnie stłumiony (<1–2%), a przepływ naczyniowy w USG jest znikomy.",
+    "explanation": "Scyntygrafia radioizotopowa różnicuje aktywną tyreogenezę od uwolnienia destrukcyjnego.",
+    "difficulty": "doctor",
+    "reasoning": "differentiation",
+    "sourceIds": [
+      "graves",
+      "thyroiditis"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "nadczynnosc-q4-exit-v2",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "nadczynnosc-obj-1"
+      ],
+      "prompt": "Oceń, jak poniższe wyniki badań i objawy wpływają na prawdopodobieństwo hipotezy roboczej:",
+      "hypothesis": "Przyczyną tyreotoksykozy u 72-letniej chorej jest wole guzkowe toksyczne (autonomia tarczycy), a nie choroba Gravesa-Basedowa.",
+      "items": [
+        {
+          "id": "ev-1",
+          "text": "W scyntygrafii widoczne ognisko wzmożonego wychwytu („gorący guzek”) z wygaszeniem wychwytu w pozostałym miąższu gruczołu",
+          "expected": "supports",
+          "explanation": "Ogniskowa autonomia z supresją zdrowego miąższu to klasyczny obraz guzka autonomicznego."
+        },
+        {
+          "id": "ev-2",
+          "text": "Wysokie miano przeciwciał przeciw receptorowi TSH (TRAb > 3,5 IU/l)",
+          "expected": "opposes",
+          "explanation": "Dodatnie TRAb to swoisty marker autoimmunologicznej choroby Gravesa-Basedowa."
+        },
+        {
+          "id": "ev-3",
+          "text": "Obecność obustronnego wytrzeszczu i obrzęku powiek (orbitopatii)",
+          "expected": "opposes",
+          "explanation": "Orbitopatia tarczycowa występuje wyłącznie w chorobie Gravesa-Basedowa."
+        },
+        {
+          "id": "ev-4",
+          "text": "Nowo rozpoznane migotanie przedsionków z szybką akcją komór",
+          "expected": "neutral",
+          "explanation": "Migotanie przedsionków może wystąpić w tyreotoksykozie o dowolnej etiologii."
+        }
+      ],
+      "explanation": "Scyntygrafia i profil przeciwciał TRAb jednoznacznie różnicują autonomię guzkową od choroby Gravesa.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nodules",
+        "graves"
+      ]
+    },
+    {
+      "id": "nadczynnosc-q5-exit-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "nadczynnosc-obj-2"
+      ],
+      "prompt": "U 65-letniego chorego z jawną chorobą Gravesa i tachykardią 120/min włączasz propranolol. Pacjent choruje na ciężką astmę oskrzelową z częstymi skurczami oskrzeli. Jak postąpisz?",
+      "options": [
+        "Zastąpisz nieselektywny propranolol kardioselektywnym beta-1-blokerem (np. bisoprololem, metoprololem) lub blokerem kanału wapniowego (werapamil/diltiazem)",
+        "Zwiększysz dawkę propranololu do 160 mg/dobę",
+        "Pozostawisz chorego bez kontroli tętna"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-asthma-contraindication",
+            "label": "Przeciwwskazanie do nieselektywnych beta-blokerów w astmie",
+            "acceptedPhrases": [
+              "skurcz oskrzeli",
+              "przeciwwskazanie w astmie",
+              "astma oskrzelowa",
+              "beta-2 blokada"
+            ]
+          },
+          {
+            "id": "c-selective-alternative",
+            "label": "Alternatywa: beta-1 selektywny lub werapamil/diltiazem",
+            "acceptedPhrases": [
+              "beta-1 kardioselektywny",
+              "bisoprolol",
+              "metoprolol",
+              "werapamil",
+              "diltiazem",
+              "bloker wapniowy"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Nieselektywne beta-blokery mogą wywołać śmiertelny skurcz oskrzeli u astmatyka; alternatywą są leki kardioselektywne lub niedihydropirydynowi antagoniści wapnia.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "graves"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Nieselektywne beta-blokery mogą wywołać śmiertelny skurcz oskrzeli u astmatyka; alternatywą są leki kardioselektywne lub niedihydropirydynowi antagoniści wapnia.",
+        "Nieprawidłowo: Nieselektywne beta-blokery mogą wywołać śmiertelny skurcz oskrzeli u astmatyka; alternatywą są leki kardioselektywne lub niedihydropirydynowi antagoniści wapnia.",
+        "Nieprawidłowo: Nieselektywne beta-blokery mogą wywołać śmiertelny skurcz oskrzeli u astmatyka; alternatywą są leki kardioselektywne lub niedihydropirydynowi antagoniści wapnia."
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "nadczynnosc-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "nadczynnosc-obj-1"
+      ],
+      "prompt": "Młoda kobieta z objawami tyreotoksykozy ma TSH <0,01 mIU/l, wysokie FT4, ale stężenie tyreoglobuliny (Tg) w surowicy jest niemierzalnie niskie (<0,1 ng/ml), a w USG tarczyca jest mała i jednorodna. Jakie jest najbardziej prawdopodobne rozpoznanie?",
+      "options": [
+        "Egzogenne przyjmowanie hormonów tarczycy (tyreotoksykoza rzekoma / factitia)",
+        "Ciężka postać choroby Gravesa-Basedowa",
+        "Podostre zapalenie tarczycy de Quervaina"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-low-tg",
+            "label": "Niskie/stłumione stężenie tyreoglobuliny",
+            "acceptedPhrases": [
+              "niska tyreoglobulina",
+              "brak tg",
+              "tg stłumione",
+              "egzogenne t4"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "W egzogennej tyreotoksykozie TSH hamuje tarczycę, co skutkuje niemierzalnym stężeniem tyreoglobuliny (Tg). W chorobie Gravesa i zapaleniach Tg jest wysoka.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "graves",
+        "thyroiditis"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: W egzogennej tyreotoksykozie TSH hamuje tarczycę, co skutkuje niemierzalnym stężeniem tyreoglobuliny (Tg). W chorobie Gravesa i zapaleniach Tg jest wysoka.",
+        "Nieprawidłowo: W egzogennej tyreotoksykozie TSH hamuje tarczycę, co skutkuje niemierzalnym stężeniem tyreoglobuliny (Tg). W chorobie Gravesa i zapaleniach Tg jest wysoka.",
+        "Nieprawidłowo: W egzogennej tyreotoksykozie TSH hamuje tarczycę, co skutkuje niemierzalnym stężeniem tyreoglobuliny (Tg). W chorobie Gravesa i zapaleniach Tg jest wysoka."
+      ]
+    },
+    {
+      "id": "nadczynnosc-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "nadczynnosc-obj-2"
+      ],
+      "prompt": "Jakie są wskazania do leczenia subklinicznej nadczynności tarczycy (TSH <0,1 mIU/l przy prawidłowych FT4 i FT3) u osoby po 65. roku życia?",
+      "modelAnswer": "Wskazaniami są: podeszły wiek (>=65 lat), zwiększone ryzyko powikłań sercowo-naczyniowych (zwłaszcza migotania przedsionków i niewydolności serca), osteoporoza lub wysokie ryzyko złamań kości oraz obecność objawów tyreotoksykozy.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-afib-risk",
+            "label": "Ryzyko migotania przedsionków / powikłań sercowych",
+            "acceptedPhrases": [
+              "migotanie przedsionków",
+              "arytmia",
+              "powikłania sercowe",
+              "układ krążenia"
+            ]
+          },
+          {
+            "id": "c-osteoporosis-risk",
+            "label": "Osteoporoza / spadek gęstości mineralnej kości",
+            "acceptedPhrases": [
+              "osteoporoza",
+              "złamania kości",
+              "utrata masy kostnej"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Trwała supresja TSH u seniorów znacząco zwiększa śmiertelność sercową i przyspiesza demineralizację kości.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "graves",
+        "nodules"
+      ]
+    },
+    {
+      "id": "nadczynnosc-bank-3",
+      "type": "multi_select",
+      "assessmentLevel": "recognition",
+      "objectiveIds": [
+        "nadczynnosc-obj-1"
+      ],
+      "prompt": "Które z poniższych cech przemawiają za chorobą Gravesa-Basedowa, a NIE za wolem wieloguzkowym toksycznym?",
+      "options": [
+        "Obecność orbitopatii naciekowej lub obrzęku przedgoleniowego (dermopatii)",
+        "Wysokie miano przeciwciał TRAb",
+        "Rozlane, symetryczne powiększenie tarczycy z bogatym unaczynieniem",
+        "Występowanie wyłącznie u osób powyżej 80. roku życia z wieloletnim wolem obojętnym"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "optionFeedback": [
+        "Objawy pozatarczycowe są swoiste dla Gravesa.",
+        "TRAb to bezpośredni marker patogenetyczny.",
+        "Rozlany charakter unaczynienia cechuje proces immunologiczny.",
+        "Wieloletnie wole wieloguzkowe u seniorów to typowy obraz autonomii guzkowej."
+      ],
+      "explanation": "TRAb, orbitopatia i rozlane unaczynienie to triada swoista dla choroby Gravesa-Basedowa.",
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "graves"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

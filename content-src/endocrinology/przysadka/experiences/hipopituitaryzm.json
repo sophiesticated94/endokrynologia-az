@@ -1,0 +1,347 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "hipopituitaryzm",
+  "objectives": [
+    {
+      "id": "hipopituitaryzm-obj-1",
+      "statement": "Zidentyfikujesz kolejność wypadania osi przysadkowych w przewlekłym procesie niszczenia (GH -> LH/FSH -> TSH -> ACTH) oraz rozpoznasz zespół Sheehana.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "hipopituitaryzm-obj-2",
+      "statement": "Wdrożysz żelazną zasadę substytucji wielohormonalnej: ZAWSZE podawaj hydrokortyzon PRZED lewotyroksyną, aby zapobiec śmiertelnemu przełomowi nadnerczowemu.",
+      "kind": "safety"
+    }
+  ],
+  "diagnostic": {
+    "id": "hipopituitaryzm-q1-diagnostic-v2",
+    "type": "single_choice",
+    "assessmentLevel": "recognition",
+    "objectiveIds": [
+      "hipopituitaryzm-obj-2"
+    ],
+    "prompt": "U pacjenta z nowo rozpoznaną niedoczynnością wielohormonalną przysadki (wtórna niedoczynność kory nadnerczy i wtórna niedoczynność tarczycy) które leczenie substytucyjne należy wdrożyć w pierwszej kolejności?",
+    "options": [
+      "Hydrokortyzon ZAWSZE przed lewotyroksyną (lub równocześnie), nigdy lewotyroksyna w monoterapii",
+      "Lewotyroksynę na 2 tygodnie przed hydrokortyzonem",
+      "Hormon wzrostu w pierwszej kolejności"
+    ],
+    "optionFeedback": [
+      "Podanie lewotyroksyny bez osłony hydrokortyzonem przyspiesza metabolizm wątrobowy i klirens resztkowego kortyzolu, prowokując natychmiastowy zagrażający życiu przełom nadnerczowy.",
+      "To błąd śmiertelny: wdrożenie LT4 wywoła krytyczny przełom nadnerczowy.",
+      "Hormon wzrostu nie jest lekiem ratującym życie w stanie ostrym."
+    ],
+    "answer": 0,
+    "explanation": "Zasada bezpieczeństwa: substytucja glikokortykoidowa musi bezwzględnie wyprzedzać substytucję hormonami tarczycy.",
+    "difficulty": "student",
+    "reasoning": "safety",
+    "sourceIds": [
+      "hypopituitarism_guidelines"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hipopituitaryzm-block-1",
+      "title": "Etiologia i kolejność wypadania osi hormonalnych",
+      "text": "W powolnym ucisku lub niszczeniu przedniego płata osie wypadają w przewidywalnej sekwencji: 1. GH, 2. LH i FSH (hipogonadyzm), 3. TSH (hipotyreoza), 4. ACTH (niedoczynność nadnerczy). Oś ACTH jest najbardziej odporna.",
+      "sourceIds": [
+        "hypopituitarism_guidelines"
+      ],
+      "checkpointId": "hipopituitaryzm-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "hipopituitaryzm-block-2",
+      "title": "Zespół Sheehana — martwica poporodowa",
+      "text": "Powstaje w wyniku niedokrwiennej martwicy fizjologicznie powiększonej w ciąży przysadki wskutek masywnego krwotoku okołoporodowego ze wstrząsem hipowolemicznym. Pierwszym objawem jest brak laktacji (agolaktia) oraz brak powrotu miesiączek.",
+      "sourceIds": [
+        "hypopituitarism_guidelines"
+      ],
+      "checkpointId": "hipopituitaryzm-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "hipopituitaryzm-block-3",
+      "title": "Żelazna zasada substytucji wielohormonalnej",
+      "text": "Substytucja obejmuje hydrokortyzon (15–20 mg/d w dawkach podzielonych), lewotyroksynę (monitorowaną stężeniem FT4, a NIE TSH!) oraz hormony płciowe. Podanie LT4 przed sterydem grozi śmiertelnym przełomem nadnerczowym.",
+      "sourceIds": [
+        "hypopituitarism_guidelines"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "hipopituitaryzm-q2-checkpoint-1-v2",
+      "type": "ordering",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "hipopituitaryzm-obj-1"
+      ],
+      "prompt": "Uporządkuj osie hormonalne przedniego płata przysadki w kolejności ich typowego wypadania w przebiegu powolnego procesu niszczącego (od najwcześniej do najpóźniej traconej):",
+      "items": [
+        "Oś hormonu wzrostu (GH)",
+        "Oś gonadotropowa (LH i FSH)",
+        "Oś tyreotropowa (TSH)",
+        "Oś kortykotropowa (ACTH)"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "explanation": "Kolejność wypadania: GH -> LH/FSH -> TSH -> ACTH. Oś ACTH wypada jako ostatnia, co stanowi ewolucyjny mechanizm przetrwania.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "hypopituitarism_guidelines"
+      ]
+    },
+    {
+      "id": "hipopituitaryzm-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "hipopituitaryzm-obj-2"
+      ],
+      "prompt": "Lekarz POZ otrzymał wyniki 45-letniego pacjenta z makrogruczolakiem: TSH = 0,6 mIU/l, FT4 = 6,2 pmol/l (znacznie obniżone), kortyzol 8:00 rano = 2,5 µg/dl (ciężki niedobór). Lekarz planuje wypisać receptę na Euthyrox 100 µg i odesłać chorego do domu. Jaki krytyczny błąd popełnia?",
+      "options": [
+        "Zastosowanie lewotyroksyny bez uprzedniego zabezpieczenia hydrokortyzonem wywoła ostry przełom nadnerczowy ze wstrząsem naczyniowym z powodu nagłego przyspieszenia klirensu wątrobowego kortyzolu",
+        "Euthyrox należy podawać wyłącznie wieczorem",
+        "Dawka 100 µg jest zbyt niska i pacjent zapadnie w śpiączkę metaboliczną"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-adrenal-crisis-risk",
+            "label": "Ryzyko ostrego przełomu nadnerczowego po samej lewotyroksynie",
+            "acceptedPhrases": [
+              "przełom nadnerczowy",
+              "wstrząs",
+              "zapaść krążeniowa",
+              "zgon",
+              "kryzys nadnerczowy"
+            ]
+          },
+          {
+            "id": "c-accelerated-cortisol-clearance",
+            "label": "Przyspieszenie metabolizmu i klirensu resztkowego kortyzolu przez LT4",
+            "acceptedPhrases": [
+              "klirens kortyzolu",
+              "przyspieszenie metabolizmu",
+              "zwiększone zapotrzebowanie"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Lewotyroksyna zwiększa tempo przemiany materii i zużycie kortyzolu; podana przy niewydolności kory nadnerczy bez hydrokortyzonu wywołuje zagrażający życiu przełom.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "hypopituitarism_guidelines"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Lewotyroksyna zwiększa tempo przemiany materii i zużycie kortyzolu; podana przy niewydolności kory nadnerczy bez hydrokortyzonu wywołuje zagrażający życiu przełom.",
+        "Nieprawidłowo: Lewotyroksyna zwiększa tempo przemiany materii i zużycie kortyzolu; podana przy niewydolności kory nadnerczy bez hydrokortyzonu wywołuje zagrażający życiu przełom.",
+        "Nieprawidłowo: Lewotyroksyna zwiększa tempo przemiany materii i zużycie kortyzolu; podana przy niewydolności kory nadnerczy bez hydrokortyzonu wywołuje zagrażający życiu przełom."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "hipopituitaryzm-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "hipopituitaryzm-obj-2"
+    ],
+    "prompt": "Wyjaśnij asystentowi w poradni endokrynologicznej, dlaczego u pacjenta z wtórną (przysadkową) niedoczynnością tarczycy NIE WOLNO monitorować dawki lewotyroksyny za pomocą stężenia TSH.",
+    "modelAnswer": "W niedoczynności wtórnej uszkodzona przysadka traci zdolność do prawidłowej odpowiedzi sprzężeniem zwrotnym. Przysadka może produkować znikome ilości TSH lub uwalniać cząsteczki TSH biologicznie nieaktywne (o zaburzonej glikozylacji), które są wykrywane w testach laboratoryjnych, lecz nie stymulują tarczycy. Dlatego stężenie TSH jest stale niskie lub niemiarodajne. Jedynym wskaźnikiem wyrównania jest stężenie wolnej tyroksyny (FT4), które powinno być utrzymywane w górnej połowie zakresu referencyjnego dla danego laboratorium.",
+    "explanation": "W niedoczynności centralnej markerem monitorowania jest FT4, a nie TSH.",
+    "difficulty": "doctor",
+    "reasoning": "safety",
+    "sourceIds": [
+      "hypopituitarism_guidelines"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "hipopituitaryzm-q4-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "hipopituitaryzm-obj-1"
+      ],
+      "prompt": "Kobieta 6 miesięcy po porodzie powikłanym masywnym krwotokiem i wstrząsem zgłasza całkowity brak pokarmu od porodu, brak powrotu miesiączkowania, osłabienie i wypadanie włosów pachowych i łonowych. Jakie jest rozpoznanie i jaki mechanizm doprowadził do tego zespołu?",
+      "modelAnswer": "Jest to zespół Sheehana (poporodowa martwica przysadki). W czasie ciąży przysadka ulega fizjologicznemu powiększeniu pod wpływem estrogenów bez proporcjonalnego rozbudowania unaczynienia. Masywny krwotok okołoporodowy i hipotensja prowadzą do skurczu naczyń wrotnych i niedokrwiennej martwicy przedniego płata przysadki, co objawia się brakiem laktacji (niedobór PRL), brakiem miesiączek (niedobór LH/FSH) i wtórną niedoczynnością nadnerczy i tarczycy.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-sheehan-name",
+            "label": "Zespół Sheehana",
+            "acceptedPhrases": [
+              "zespół sheehana",
+              "sheehan",
+              "martwica poporodowa"
+            ]
+          },
+          {
+            "id": "c-ischemic-necrosis",
+            "label": "Niedokrwienna martwica przysadki po krwotoku/wstrząsie",
+            "acceptedPhrases": [
+              "niedokrwienie",
+              "martwica",
+              "krwotok okołoporodowy",
+              "wstrząs",
+              "hipotensja"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Zespół Sheehana to klasyczna postać poporodowej panhipopituitaryzmu z agolaktią i brakiem miesiączek.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "hypopituitarism_guidelines"
+      ]
+    },
+    {
+      "id": "hipopituitaryzm-q5-exit-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "hipopituitaryzm-obj-2"
+      ],
+      "prompt": "Czy u pacjenta z wtórną niedoczynnością kory nadnerczy w przebiegu hipopituitaryzmu konieczna jest rutynowa substytucja mineralokortykoidowa fludrokortyzonem?",
+      "options": [
+        "Nie, ponieważ wydzielanie aldosteronu przez warstwę kłębkowatą nadnerczy jest regulowane głównie przez układ renina-angiotensyna (RAA) i stężenie potasu, a nie przez ACTH",
+        "Tak, fludrokortyzon jest bezwzględnie konieczny w dawce 0,1 mg/d",
+        "Tak, ale tylko w okresie zimowym"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-raa-preservation",
+            "label": "Układ RAA kontroluje aldosteron niezależnie od ACTH",
+            "acceptedPhrases": [
+              "układ raa",
+              "renina",
+              "aldosteron",
+              "warstwa kłębkowata",
+              "brak konieczności fludrokortyzonu"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "W niedoczynności wtórnej warstwa kłębkowata kory nadnerczy funkcjonuje prawidłowo pod kontrolą angiotensyny II; fludrokortyzon jest zbędny.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "hypopituitarism_guidelines"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: W niedoczynności wtórnej warstwa kłębkowata kory nadnerczy funkcjonuje prawidłowo pod kontrolą angiotensyny II; fludrokortyzon jest zbędny.",
+        "Nieprawidłowo: W niedoczynności wtórnej warstwa kłębkowata kory nadnerczy funkcjonuje prawidłowo pod kontrolą angiotensyny II; fludrokortyzon jest zbędny.",
+        "Nieprawidłowo: W niedoczynności wtórnej warstwa kłębkowata kory nadnerczy funkcjonuje prawidłowo pod kontrolą angiotensyny II; fludrokortyzon jest zbędny."
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "hipopituitaryzm-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "hipopituitaryzm-obj-1"
+      ],
+      "prompt": "Dlaczego u chorych z panhipopituitaryzmem nie występuje hiperpigmentacja skóry, która jest kardynalnym objawem pierwotnej choroby Addisona?",
+      "options": [
+        "W niedoczynności wtórnej stężenie ACTH i proopiomelanokortyny (POMC) jest bardzo niskie, więc receptory melanokortynowe MC1R w skórze nie są stymulowane",
+        "W hipopituitaryzmie barwnik skóry gromadzi się w wątrobie",
+        "Przysadka wydziela substancje wybielające skórę"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-low-acth-pale-skin",
+            "label": "Brak stymulacji MC1R przez ACTH/POMC (bladość skóry alabastrowa)",
+            "acceptedPhrases": [
+              "niskie acth",
+              "brak acth",
+              "brak pomc",
+              "mc1r",
+              "blada skóra",
+              "brak hiperpigmentacji"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Hiperpigmentacja wynika z nadmiaru ACTH/MSH; w hipopituitaryzmie ACTH jest nieobecne, co daje charakterystyczną alabastrową bladość skóry.",
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "hypopituitarism_guidelines"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Hiperpigmentacja wynika z nadmiaru ACTH/MSH; w hipopituitaryzmie ACTH jest nieobecne, co daje charakterystyczną alabastrową bladość skóry.",
+        "Nieprawidłowo: Hiperpigmentacja wynika z nadmiaru ACTH/MSH; w hipopituitaryzmie ACTH jest nieobecne, co daje charakterystyczną alabastrową bladość skóry.",
+        "Nieprawidłowo: Hiperpigmentacja wynika z nadmiaru ACTH/MSH; w hipopituitaryzmie ACTH jest nieobecne, co daje charakterystyczną alabastrową bladość skóry."
+      ]
+    },
+    {
+      "id": "hipopituitaryzm-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "hipopituitaryzm-obj-2"
+      ],
+      "prompt": "Jakie postępowanie w zakresie dawkowania hydrokortyzonu należy zalecić pacjentowi z przewlekłą wtórną niedoczynnością nadnerczy w przypadku wystąpienia ostrej gorączki (>38,5°C) lub ciężkiej infekcji bakteryjnej?",
+      "modelAnswer": "Zaleca się zasadę 'sick-day rules': natychmiastowe podwojenie lub potrojenie dotychczasowej dawki doustnej hydrokortyzonu (np. z 20 mg do 40–60 mg/dobę w dawkach podzielonych) oraz obfite nawodnienie. W przypadku wystąpienia wymiotów lub biegunki uniemożliwiającej wchłanianie leku chory musi bezzwłocznie otrzymać 100 mg hydrokortyzonu domięśniowo lub dożylnie i zgłosić się do szpitala.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-double-triple-dose",
+            "label": "Podwojenie/potrojenie dawki w gorączce (sick-day rules)",
+            "acceptedPhrases": [
+              "podwojenie dawki",
+              "potrojenie",
+              "zwiększenie dawki",
+              "sick day",
+              "40-60 mg"
+            ]
+          },
+          {
+            "id": "c-parenteral-in-vomiting",
+            "label": "Droga pozajelitowa (100 mg i.v./i.m.) przy wymiotach",
+            "acceptedPhrases": [
+              "wymioty",
+              "domięśniowo",
+              "dożylnie",
+              "100 mg",
+              "szpital"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Edukacja o regułach dni chorobowych (sick-day rules) ratuje życie pacjenta przed przełomem nadnerczowym.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "hypopituitarism_guidelines"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "axis-map"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

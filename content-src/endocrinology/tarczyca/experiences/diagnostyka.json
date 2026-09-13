@@ -1,0 +1,431 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "diagnostyka",
+  "objectives": [
+    {
+      "id": "diagnostyka-obj-1",
+      "statement": "Zróżnicujesz pierwotne i centralne zaburzenia czynności tarczycy na podstawie par TSH i FT4/FT3.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "diagnostyka-obj-2",
+      "statement": "Rozpoznasz interferencje laboratoryjne (biotyna, przeciwciała heterofilne) oraz zespół eutyreozy chorobowej (low T3 syndrome).",
+      "kind": "interpretation"
+    },
+    {
+      "id": "diagnostyka-obj-3",
+      "statement": "Podejmiesz racjonalne decyzje diagnostyczne przy niespójnych wynikach testów czynnościowych.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "diagnostyka-q1-diagnostic-v2",
+    "type": "lab",
+    "assessmentLevel": "application",
+    "objectiveIds": [
+      "diagnostyka-obj-1"
+    ],
+    "prompt": "Oceń panel hormonalny: TSH 18,2 mIU/l (norma 0,4–4,0), FT4 6,8 pmol/l (norma 12–22). Jak zinterpretujesz ten wzorzec?",
+    "options": [
+      "Jawna pierwotna niedoczynność tarczycy",
+      "Subkliniczna niedoczynność tarczycy",
+      "Wtórna (centralna) niedoczynność tarczycy"
+    ],
+    "optionFeedback": [
+      "Wysokie TSH z obniżonym FT4 to klasyczny obraz jawnej niedoczynności pierwotnej.",
+      "W postaci subklinicznej FT4 mieści się w granicach normy.",
+      "W niedoczynności centralnej TSH byłoby niskie lub nieadekwatnie prawidłowe."
+    ],
+    "answer": 0,
+    "explanation": "Zaburzenie pierwotne cechuje się odwrotnym kierunkiem zmian TSH i FT4.",
+    "difficulty": "student",
+    "reasoning": "interpretation",
+    "sourceIds": [
+      "central",
+      "subclinical"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "diagnostyka-block-1",
+      "title": "Zacznij od pytania klinicznego",
+      "text": "U stabilnej osoby z podejrzeniem pierwotnej choroby tarczycy TSH jest zwykle pierwszym badaniem. Przy podejrzeniu choroby przysadki oznacz TSH i FT4 od początku.",
+      "sourceIds": [
+        "central",
+        "subclinical"
+      ],
+      "checkpointId": "diagnostyka-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "diagnostyka-block-2",
+      "title": "Jednostki i zakresy",
+      "text": "TSH podajemy w mIU/l, FT4 i FT3 w pmol/l. Obowiązują przedziały konkretnego laboratorium, metody i populacji. W ciąży potrzebny jest kontekst trymestru.",
+      "sourceIds": [
+        "subclinical",
+        "lt4"
+      ],
+      "checkpointId": "diagnostyka-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "diagnostyka-block-3",
+      "title": "Gdy liczby nie pasują",
+      "text": "Zapytaj o leki, suplementy (zwłaszcza biotynę), niedawną ciężką chorobę i czas pobrania względem lewotyroksyny. Interferencja oznaczenia może imitować chorobę.",
+      "sourceIds": [
+        "central",
+        "lt4"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "diagnostyka-q2-checkpoint-1-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "diagnostyka-obj-1",
+        "diagnostyka-obj-3"
+      ],
+      "prompt": "Pacjent po operacji makrogruczolaka przysadki ma FT4 = 8,1 pmol/l (norma 12–22) oraz TSH = 1,9 mIU/l (norma 0,4–4,0). Jakie jest właściwe rozpoznanie i postępowanie?",
+      "options": [
+        "Centralna niedoczynność tarczycy; TSH jest nieadekwatnie prawidłowe i nie wyklucza choroby przysadki",
+        "Prawidłowa funkcja tarczycy, ponieważ TSH mieści się w normie",
+        "Choroba Gravesa-Basedowa w fazie utajonej"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-inadequate-tsh",
+            "label": "Nieadekwatnie prawidłowe lub niskie TSH",
+            "acceptedPhrases": [
+              "nieadekwatne tsh",
+              "tsh nie wystarcza",
+              "brak wyrzutu tsh",
+              "uszkodzenie przysadki"
+            ]
+          },
+          {
+            "id": "c-central-hypo",
+            "label": "Rozpoznanie centralnej niedoczynności",
+            "acceptedPhrases": [
+              "niedoczynność wtórna",
+              "niedoczynność centralna",
+              "substytucja lt4"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-tsh-alone",
+            "patterns": [
+              "tsh jest w normie więc pacjent zdrowy",
+              "wyklucza chorobę"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: w chorobie przysadki stężenie TSH traci wartość diagnostyczną."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "W uszkodzeniu przysadki TSH może mieścić się w przedziale referencyjnym, lecz jest biologicznie nieaktywne lub nieadekwatne do niskiego FT4.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "central"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: W uszkodzeniu przysadki TSH może mieścić się w przedziale referencyjnym, lecz jest biologicznie nieaktywne lub nieadekwatne do niskiego FT4.",
+        "Nieprawidłowo: W uszkodzeniu przysadki TSH może mieścić się w przedziale referencyjnym, lecz jest biologicznie nieaktywne lub nieadekwatne do niskiego FT4.",
+        "Nieprawidłowo: W uszkodzeniu przysadki TSH może mieścić się w przedziale referencyjnym, lecz jest biologicznie nieaktywne lub nieadekwatne do niskiego FT4."
+      ]
+    },
+    {
+      "id": "diagnostyka-q3-checkpoint-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "diagnostyka-obj-2",
+        "diagnostyka-obj-3"
+      ],
+      "prompt": "Bezobjawowa pacjentka przyjmująca wysokie dawki biotyny (10 mg/d na włosy) otrzymała wyniki: TSH <0,01 mIU/l, FT4 42 pmol/l (znacznie podwyższone). Jaki krok podejmiesz przed rozpoznaniem choroby Gravesa?",
+      "options": [
+        "Odstawienie biotyny na min. 3–5 dni i powtórzenie oznaczeń, ewentualnie inną platformą analityczną",
+        "Natychmiastowe włączenie tiamazolu w wysokiej dawce 40 mg/d",
+        "Skierowanie na pilną scyntygrafię radiojodową"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-biotin-interference",
+            "label": "Interferencja biotynowa w testach streptawidyna-biotyna",
+            "acceptedPhrases": [
+              "interferencja biotyny",
+              "streptawidyna",
+              "fałszywe wyniki",
+              "fałszywie wysokie ft4"
+            ]
+          },
+          {
+            "id": "c-washout",
+            "label": "Odstawienie i powtórzenie badania",
+            "acceptedPhrases": [
+              "odstawienie biotyny",
+              "powtórzenie badania",
+              "odczekać kilka dni"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Biotyna konkuruje ze streptawidyną w testach immunochemicznych, dając fałszywie niskie TSH i fałszywie wysokie FT4/FT3.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "central",
+        "lt4"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Biotyna konkuruje ze streptawidyną w testach immunochemicznych, dając fałszywie niskie TSH i fałszywie wysokie FT4/FT3.",
+        "Nieprawidłowo: Biotyna konkuruje ze streptawidyną w testach immunochemicznych, dając fałszywie niskie TSH i fałszywie wysokie FT4/FT3.",
+        "Nieprawidłowo: Biotyna konkuruje ze streptawidyną w testach immunochemicznych, dając fałszywie niskie TSH i fałszywie wysokie FT4/FT3."
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "diagnostyka-teach-back-v2",
+    "type": "recall",
+    "assessmentLevel": "generation",
+    "objectiveIds": [
+      "diagnostyka-obj-1"
+    ],
+    "prompt": "Wyjaśnij asystentowi w poradni, dlaczego u pacjenta po zabiegu neurochirurgicznym przysadki stężenie TSH traci jakąkolwiek wartość w monitorowaniu leczenia lewotyroksyną.",
+    "modelAnswer": "Uszkodzona przysadka nie reaguje na obwodowe stężenie hormonów ujemnym sprzężeniem zwrotnym. Może wydzielać cząsteczki TSH o zmienionej glikozylacji, które są widoczne w teście laboratoryjnym, ale pozbawione aktywności biologicznej. Dlatego jedynym wskaźnikiem wyrównania niedoczynności centralnej jest stężenie FT4 (utrzymywane w górnej połowie zakresu normy).",
+    "explanation": "W niedoczynności centralnej TSH nie odzwierciedla stanu eutyreozy obwodowej.",
+    "difficulty": "doctor",
+    "reasoning": "differentiation",
+    "sourceIds": [
+      "central"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "diagnostyka-q4-exit-v2",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "diagnostyka-obj-2"
+      ],
+      "prompt": "Oceń, jak poniższe fakty kliniczne i laboratoryjne wpływają na prawdopodobieństwo hipotezy roboczej:",
+      "hypothesis": "U pacjenta na OIT po zawale serca rozpoznano zespół eutyreozy chorobowej (euthyroid sick syndrome / low T3 syndrome), a nie pierwotną chorobę tarczycy.",
+      "items": [
+        {
+          "id": "ev-1",
+          "text": "Znacznie obniżone stężenie FT3 przy prawidłowym stężeniu FT4 i prawidłowym/nisko-prawidłowym TSH",
+          "expected": "supports",
+          "explanation": "Spadek aktywności dejodynazy DIO1 w ciężkiej chorobie wybiórczo obniża stężenie FT3."
+        },
+        {
+          "id": "ev-2",
+          "text": "Bardzo wysokie miano przeciwciał TRAb oraz obecność orbitopatii",
+          "expected": "opposes",
+          "explanation": "Obecność TRAb i orbitopatii jednoznacznie wskazuje na chorobę Gravesa-Basedowa."
+        },
+        {
+          "id": "ev-3",
+          "text": "Podwyższone stężenie rewers-T3 (rT3) w surowicy",
+          "expected": "supports",
+          "explanation": "Zahamowanie klirensu rT3 i preferencyjna inaktywacja T4 przez DIO3 to cecha charakterystyczna zespołu pozatarczycowego."
+        },
+        {
+          "id": "ev-4",
+          "text": "Pacjent ma 68 lat",
+          "expected": "neutral",
+          "explanation": "Wiek sam w sobie nie rozstrzyga o etiologii zaburzeń metabolicznych."
+        }
+      ],
+      "explanation": "Zespół niskiej T3 charakteryzuje się izolowanym spadkiem FT3 i wzrostem rT3 w odpowiedzi na ciężki stres ustrojowy.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "central",
+        "subclinical"
+      ]
+    },
+    {
+      "id": "diagnostyka-q5-exit-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "diagnostyka-obj-3"
+      ],
+      "prompt": "Jakie dwa zjawiska należy wykluczyć u bezobjawowego pacjenta z izolowanym, trwałym umiarkowanym wzrostem TSH (np. 7,5 mIU/l) przy prawidłowym FT4, zanim rozpozna się chorobę i wdroży leczenie?",
+      "modelAnswer": "Należy wykluczyć: 1) obecność makro-TSH (kompleksu TSH z immunoglobulinami IgG, pozbawionego aktywności in vivo); 2) przemijający charakter odchylenia po przebytej niedawno ostrej infekcji wirusowej lub zapaleniu (potrzebne powtórzenie badania po 2–3 miesiącach z oceną przeciwciał anty-TPO).",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-macro-tsh",
+            "label": "Makro-TSH lub interferencja przeciwciał heterofilnych",
+            "acceptedPhrases": [
+              "makro-tsh",
+              "makro tsh",
+              "przeciwciała heterofilne",
+              "interferencja immunologiczna"
+            ]
+          },
+          {
+            "id": "c-transient",
+            "label": "Przejściowy charakter / powtórzenie po 2–3 miesiącach",
+            "acceptedPhrases": [
+              "powtórzenie po 2-3 miesiącach",
+              "potwierdzenie trwałości",
+              "przemijające",
+              "stan po infekcji"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "W subklinicznej niedoczynności potwierdzenie trwałości odchylenia po 2-3 miesiącach chroni przed pochopnym leczeniem.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "subclinical"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "diagnostyka-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "diagnostyka-obj-1"
+      ],
+      "prompt": "U chorego stwierdzono: FT4 = 34 pmol/l (podwyższone), FT3 = 11 pmol/l (podwyższone), lecz TSH wynosi 3,8 mIU/l (nieobniżone!). Jakie są dwie główne hipotezy diagnostyczne różnicujące ten rzadki zespół?",
+      "options": [
+        "Gruczolak przysadki wydzielający TSH (TSH-oma) vs zespół oporności na hormony tarczycy (RTHβ)",
+        "Choroba Hashimoto w fazie niedoczynności vs wole obojętne",
+        "Choroba Gravesa-Basedowa vs wole guzkowe toksyczne"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-tshoma-rth",
+            "label": "TSH-oma lub RTH",
+            "acceptedPhrases": [
+              "tsh-oma",
+              "tshoma",
+              "gruczolak przysadki",
+              "oporność na hormony tarczycy",
+              "rth"
+            ]
+          },
+          {
+            "id": "c-inappropriate-tsh",
+            "label": "Brak ujemnego sprzężenia przysadkowego",
+            "acceptedPhrases": [
+              "niezahamowane tsh",
+              "brak supresji tsh",
+              "sprzężenie zwrotne zniesione"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Wysokie FT4 przy nieobniżonym TSH to cecha patologii osi: autonomicznej produkcji TSH (TSH-oma) lub defektu receptora TRβ (RTH).",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "central"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Wysokie FT4 przy nieobniżonym TSH to cecha patologii osi: autonomicznej produkcji TSH (TSH-oma) lub defektu receptora TRβ (RTH).",
+        "Nieprawidłowo: Wysokie FT4 przy nieobniżonym TSH to cecha patologii osi: autonomicznej produkcji TSH (TSH-oma) lub defektu receptora TRβ (RTH).",
+        "Nieprawidłowo: Wysokie FT4 przy nieobniżonym TSH to cecha patologii osi: autonomicznej produkcji TSH (TSH-oma) lub defektu receptora TRβ (RTH)."
+      ]
+    },
+    {
+      "id": "diagnostyka-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "diagnostyka-obj-2"
+      ],
+      "prompt": "Opisz, w jaki sposób przeciwciała heterofilne (HAMA) w surowicy pacjenta mogą zafałszować wynik oznaczenia TSH metodą dwustronną typu sandwich.",
+      "modelAnswer": "Przeciwciała heterofilne wiążą się nieswoiście jednocześnie z przeciwciałem wychwytującym i znakowanym detekcyjnym, tworząc sztuczny mostek w teście kanapkowym bez udziału cząsteczki TSH. Skutkuje to fałszywie wysokim odczytem stężenia TSH w aparacie.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-bridging",
+            "label": "Mostkowanie przeciwciał testu sandwich",
+            "acceptedPhrases": [
+              "mostkowanie",
+              "tworzenie mostka",
+              "wiązanie z dwoma przeciwciałami",
+              "fałszywy sygnał"
+            ]
+          },
+          {
+            "id": "c-false-high",
+            "label": "Fałszywie wysoki wynik TSH",
+            "acceptedPhrases": [
+              "fałszywie wysokie",
+              "zawyżony wynik",
+              "artefakt laboratoryjny"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Przeciwciała heterofilne to klasyczna przyczyna fałszywej hipertyreotropinopenii.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "central"
+      ]
+    },
+    {
+      "id": "diagnostyka-bank-3",
+      "type": "lab",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "diagnostyka-obj-3"
+      ],
+      "prompt": "Młoda kobieta w 10. tygodniu ciąży ma TSH = 0,15 mIU/l oraz FT4 = 18 pmol/l (w normie). Nie zgłasza kołatań serca ani drżeń. Jakie postępowanie jest właściwe?",
+      "options": [
+        "Rozpoznanie fizjologicznej tyreotoksykozy ciążowej związanej z hCG i obserwacja bez leków przeciwtarczycowych",
+        "Wdrożenie tiamazolu w dawce 10 mg/d",
+        "Wykonanie pilnej biopsji tarczycy"
+      ],
+      "answer": 0,
+      "explanation": "W I trymestrze ciąży hCG stymuluje receptor TSHR, powodując fizjologiczny spadek TSH. Przy prawidłowym FT4 nie wdraża się leczenia.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "pregnancy",
+        "subclinical"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: W I trymestrze ciąży hCG stymuluje receptor TSHR, powodując fizjologiczny spadek TSH. Przy prawidłowym FT4 nie wdraża się leczenia.",
+        "Nieprawidłowo: W I trymestrze ciąży hCG stymuluje receptor TSHR, powodując fizjologiczny spadek TSH. Przy prawidłowym FT4 nie wdraża się leczenia.",
+        "Nieprawidłowo: W I trymestrze ciąży hCG stymuluje receptor TSHR, powodując fizjologiczny spadek TSH. Przy prawidłowym FT4 nie wdraża się leczenia."
+      ]
+    }
+  ],
+  "widgetIds": [
+    "tarczyca-lab-workbench",
+    "tarczyca-pathway-builder"
+  ],
+  "widgetConfig": {
+    "lab-workbench": {
+      "presetId": "tarczyca-lab-workbench"
+    }
+  },
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Weryfikacja kliniczna V2 z wielopoziomowym profilem assessment (Recognition, Application, Generation)"
+  }
+}

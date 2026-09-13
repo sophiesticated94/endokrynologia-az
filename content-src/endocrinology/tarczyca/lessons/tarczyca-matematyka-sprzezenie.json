@@ -1,0 +1,210 @@
+{
+  "id": "tarczyca-matematyka-sprzezenie",
+  "moduleId": "tarczyca",
+  "title": "Wskaźniki SPINA-GT i SPINA-GD oraz nieliniowe sprzężenie ujemne",
+  "subtitle": "Modelowanie matematyczne homeostazy osi HPT i wskaźnik Jostela",
+  "group": "Matematyka i modele",
+  "minutes": 20,
+  "goals": [
+    "Zrozumiesz wyprowadzenie parametrów strukturalnych SPINA-GT (wydajność gruczołu) oraz SPINA-GD (dejodynacja).",
+    "Obliczysz wskaźnik supresji TSH Jostela (JTI) i zinterpretujesz odchylenia osi przysadka-tarczyca."
+  ],
+  "sections": [
+    {
+      "title": "Niewystarczalność klasycznej interpretacji TSH-FT4",
+      "text": "Klasyczne badanie TSH i FT4 odzwierciedla jedynie stan równowagi statycznej. Dwoje pacjentów o identycznym TSH może mieć zupełnie odmienną rezerwę wydzielniczą tarczycy lub sprawność obwodowej konwersji T4 do T3. Matematyczne modelowanie układów homeostatycznych (SPINA — Structure Parameter Inference Approach) pozwala rozwikłać sprzężenie zwrotne i obliczyć niezmienniki konstytucyjne gruczołu."
+    },
+    {
+      "title": "SPINA-GT: Maksymalna teoretyczna wydajność wydzielnicza tarczycy",
+      "text": "SPINA-GT (G_hat_T) szacuje maksymalną ilość T4, jaką tarczyca może uwolnić w jednostce czasu przy maksymalnej stymulacji TSH. Wzór opiera się na kinetyce wysycenia Michelisa-Menten receptora TSH: G_hat_T = [beta_T * (D_T + [TSH]) * (1 + K41*[TBG] + K42*[TBPA]) * [FT4]] / (alpha_T * [TSH]). Wartość referencyjna wynosi 1,4–8,7 pmol/s. W zapaleniu Hashimoto lub po resekcji SPINA-GT drastycznie spada przed wzrostem TSH."
+    },
+    {
+      "title": "SPINA-GD i Wskaźnik Jostela (JTI)",
+      "text": "SPINA-GD mierzy sumaryczną aktywność dejodynaz obwodowych (konwersję T4 -> T3): G_hat_D = [beta_31 * (K_M + [FT4]) * [FT3]] / (alpha_31 * [FT4]), norma: 20–40 nmol/s. Spada w zespole eutyreozy chorobowej (low T3 syndrome). Wskaźnik Jostela JTI = ln(TSH) + 0,1345 * FT4 koryguje TSH o stężenie hormonu tarczycy, ujawniając subkliniczną dysfunkcję przysadki."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Wskaźnik matematyczny",
+      "Wzór / Estymator",
+      "Interpretacja kliniczna"
+    ],
+    "rows": [
+      [
+        "SPINA-GT",
+        "β_T(D_T + TSH)·FT4 / (α_T·TSH)",
+        "Pojemność sekrecyjna tarczycy (pmol/s); obniżona w atrofii gruczołu"
+      ],
+      [
+        "SPINA-GD",
+        "β_31(K_M + FT4)·FT3 / (α_31·FT4)",
+        "Sumaryczna aktywność dejodynaz (nmol/s); niska w chorobach układowych"
+      ],
+      [
+        "Jostel JTI",
+        "ln(TSH) + 0,1345 · FT4",
+        "Wskaźnik tyreotropowy przysadki; różnicuje niedoczynność wtórną"
+      ],
+      [
+        "TSHI (TSH Index)",
+        "log(TSH) + 0,1345 · FT4",
+        "Logarytmiczny wskaźnik sprzężenia zwrotnego wg Dietricha"
+      ]
+    ]
+  },
+  "advanced": "W modelu nieliniowym sprzężenia zwrotnego przysadka działa jako kontroler logarytmiczny z opóźnieniem czasowym rzędu 60–90 minut, a tarczyca jako nasycający się człon wykonawczy rzędu zerowego/pierwszego. Połączenie to tworzy stabilny punkt stały w przestrzeni fazowej [FT4, TSH]. Zaburzenia topologii tego atraktora odpowiadają zespołom oporności na hormony tarczycy (RTH).",
+  "summary": "Wskaźniki SPINA rozdzielają wydolność samej tarczycy (GT) od sprawności tkankowej konwersji dejodynaz (GD), umożliwiając głębszą diagnostykę zaburzeń metabolicznych.",
+  "sourceIds": [
+    "spina",
+    "physiology",
+    "central"
+  ],
+  "questions": [
+    {
+      "id": "tarczyca-matematyka-sprzezenie-q1",
+      "lessonId": "tarczyca-matematyka-sprzezenie",
+      "prompt": "Co bezpośrednio mierzy parametr matematyczny SPINA-GT?",
+      "options": [
+        {
+          "text": "Stężenie przeciwciał przeciwko tyreoperoksydazie",
+          "explanation": "Przeciwciała są mierzone w mianach immunologicznych IU/ml, nie w pmol/s."
+        },
+        {
+          "text": "Maksymalną teoretyczną zdolność wydzielniczą tarczycy (pmol/s)",
+          "explanation": "Odzwierciedla masę i czynność sprawnych tyreocytów niezależnie od aktualnego TSH."
+        },
+        {
+          "text": "Wskaźnik wchłaniania jodu w nerkach",
+          "explanation": "Wydalaniem jodu steruje filtracja kłębuszkowa, a nie parametr SPINA-GT."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "tarczyca-matematyka-sprzezenie-q2",
+      "lessonId": "tarczyca-matematyka-sprzezenie",
+      "prompt": "Jaki stan metaboliczny charakteryzuje się prawidłowym SPINA-GT, lecz znacznie obniżonym SPINA-GD?",
+      "options": [
+        {
+          "text": "Choroba Gravesa-Basedowa z wytrzeszczem",
+          "explanation": "W chorobie Gravesa SPINA-GT jest znacznie podwyższone przez stymulację TRAb."
+        },
+        {
+          "text": "Pierwotna wrodzona bezsoczność tarczycy",
+          "explanation": "W agenezji tarczycy SPINA-GT wynosi 0 pmol/s."
+        },
+        {
+          "text": "Zespół niskiej T3 w ciężkich chorobach ogólnoustrojowych (TACITUS/NTIS)",
+          "explanation": "Tarczyca jest zdrowa, ale obwodowa dejodynacja T4 do T3 przez DIO1/DIO2 jest zablokowana."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "tarczyca-matematyka-sprzezenie-q3",
+      "lessonId": "tarczyca-matematyka-sprzezenie",
+      "prompt": "Do czego służy wskaźnik Jostela (Jostel’s TSH Index — JTI)?",
+      "options": [
+        {
+          "text": "Do obiektywnej oceny wydzielania TSH skorygowanego o ujemne sprzężenie z FT4",
+          "explanation": "Pozwala wykryć nieadekwatnie niskie lub wysokie TSH w zaburzeniach podwzgórzowo-przysadkowych."
+        },
+        {
+          "text": "Do wyliczania dawki dobowej hydrokortyzonu",
+          "explanation": "JTI dotyczy osi HPT, a nie osi HPA kortyzolu."
+        },
+        {
+          "text": "Do szacowania złośliwości guzków w skali EU-TIRADS",
+          "explanation": "EU-TIRADS to klasyfikacja ultrasonograficzna, nie model matematyczny osi."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "tarczyca-matematyka-sprzezenie-q4",
+      "lessonId": "tarczyca-matematyka-sprzezenie",
+      "prompt": "Jak zmienia się wartość SPINA-GT u pacjenta po całkowitym wycięciu tarczycy (tyreoidektomii)?",
+      "options": [
+        {
+          "text": "Pozostaje dokładnie na poziomie 4,5 pmol/s",
+          "explanation": "Parametr strukturalny narządu zanika po jego resekcji."
+        },
+        {
+          "text": "Spada do wartości bliskiej 0 pmol/s",
+          "explanation": "Brak tkanki gruczołowej oznacza zerową endogenną zdolność sekrecyjną."
+        },
+        {
+          "text": "Rośnie kompensacyjnie do 50 pmol/s",
+          "explanation": "Usunięty gruczoł nie jest w stanie zwiększyć sekrecji."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "tarczyca-matematyka-sprzezenie-q5",
+      "lessonId": "tarczyca-matematyka-sprzezenie",
+      "prompt": "Dlaczego korelacja między TSH a FT4 jest przedstawiana na skali log-liniowej?",
+      "options": [
+        {
+          "text": "Ponieważ TSH i FT4 to te same cząsteczki chemiczne",
+          "explanation": "TSH to glikoproteina przysadkowa, a FT4 to jodowana pochodna tyrozyny."
+        },
+        {
+          "text": "Jest to wyłącznie błąd aparatury laboratoryjnej",
+          "explanation": "Krzywa log-liniowa odzwierciedla rzeczywistą biofizykę transkrypcji genu TSHB."
+        },
+        {
+          "text": "Ponieważ niewielki spadek FT4 wywołuje wykładniczy wzrost TSH w przysadce",
+          "explanation": "Oś HPT ma charakter logarytmicznego wzmacniacza sygnału deficytu hormonalnego."
+        }
+      ],
+      "answer": 2
+    }
+  ],
+  "assetIds": [],
+  "derivation": {
+    "title": "Wyprowadzenie wskaźnika wydolności tarczycy SPINA-GT",
+    "model": "Nieliniowy model homeostazy osi HPT (Dietrich et al.)",
+    "steps": [
+      {
+        "step": "Wydzielanie tarczycy jako kinetyka saturacyjna",
+        "equation": "\\frac{d[T_4]}{dt} = \\hat{G}_T \\cdot \\frac{[TSH]}{D_T + [TSH]} - k_{44} \\cdot [FT_4]",
+        "explanation": "Wydzielanie T4 przez tyreocyty podlega stymulacji TSH o charakterze wysyceniowym Michaelisa-Menten ze stałą dysocjacji $D_T$."
+      },
+      {
+        "step": "Stan stacjonarny i rozwikłanie względem G_T",
+        "equation": "\\hat{G}_T = \\frac{\\beta_T (D_T + [TSH])(1 + K_{41}[TBG])[FT_4]}{\\alpha_T [TSH]}",
+        "explanation": "W stanie równowagi $\\frac{d[T_4]}{dt} = 0$. Przekształcenie pozwala wyizolować maksymalną pojemność sekrecyjną tarczycy ($\\hat{G}_T$) niezależnie od przysadkowego TSH."
+      }
+    ],
+    "clinicalTakeaway": "SPINA-GT bezpośrednio mierzy masę czynnego miąższu tarczycy (norma 1,4–8,7 pmol/s). Wykrywa utajoną hipoplazję zanim ujawni się w rutynowym TSH."
+  },
+  "workedExample": {
+    "title": "Diagnostyka zespołu niskiej T3 (Euthyroid Sick Syndrome) w OIT",
+    "patient": "Mężczyzna, 65 lat, OIT z powodu ciężkiego zapalenia płuc. Wyniki: TSH 1,8 mIU/l, FT4 14,2 pmol/l, FT3 1,8 pmol/l (obniżone <3,1).",
+    "inputs": [
+      {
+        "label": "TSH",
+        "value": "1,8",
+        "unit": "mIU/l"
+      },
+      {
+        "label": "FT4",
+        "value": "14,2",
+        "unit": "pmol/l"
+      },
+      {
+        "label": "FT3",
+        "value": "1,8",
+        "unit": "pmol/l"
+      }
+    ],
+    "calculationSteps": [
+      "Krok 1: Wskaźnik SPINA-GT: $\\hat{G}_T = 3{,}2\\,\\text{pmol/s}$ (norma 1,4–8,7) $\\longrightarrow$ pierwotna funkcja tarczycy jest prawidłowa.",
+      "Krok 2: Wskaźnik SPINA-GD: $\\hat{G}_D = 11{,}2\\,\\text{nmol/s}$ (obniżone, norma 20–40) $\\longrightarrow$ zahamowanie obwodowych dejodynaz DIO1/DIO2.",
+      "Krok 3: Wskaźnik Jostela: $JTI = \\ln(1{,}8) + 0{,}1345 \\times 14{,}2 = 0{,}588 + 1{,}91 = 2{,}50$ (norma 1,3–4,1) $\\longrightarrow$ brak cech niedoczynności centralnej."
+    ],
+    "result": "Wyizolowany defekt konwersji obwodowej T4 ⟶ T3 w ciężkiej chorobie ogólnoustrojowej (zespół pozatarczycowy TACIS / ESS).",
+    "clinicalAction": "Brak wskazań do leczenia lewotyroksyną ani T3. Substytucja hormonalna w ESS nie poprawia rokowania i może nasilić katabolizm."
+  }
+}

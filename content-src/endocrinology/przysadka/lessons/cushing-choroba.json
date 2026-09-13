@@ -1,0 +1,158 @@
+{
+  "id": "cushing-choroba",
+  "moduleId": "przysadka",
+  "title": "Podstępny nadmiar kortyzolu",
+  "subtitle": "Choroba Cushinga, gruczolaki kortykotropowe i różnicowanie hiperkortyzolemii",
+  "group": "Gruczolaki i hipersekrecja",
+  "minutes": 18,
+  "goals": [
+    "Rozróżnisz pojęcie zespołu Cushinga (każdy nadmiar kortyzolu) od choroby Cushinga (gruczolak przysadki wydzielający ACTH).",
+    "Zrozumiesz trzystopniowy algorytm diagnostyczny: potwierdzenie hiperkortyzolemii $\\to$ oznaczenie ACTH $\\to$ lokalizacja źródła."
+  ],
+  "sections": [
+    {
+      "title": "Zespół a choroba Cushinga: Różnica pojęciowa i fenotyp",
+      "text": "Zespół Cushinga to zespół objawów klinicznych wywołanych przewlekłym nadmiarem glikokortykosteroidów (najczęściej jatrogennym z powodu leków!). Choroba Cushinga to specyficzna postać endogenna: gruczolak przysadki wydzielający w nadmiarze ACTH (odpowiada za ok. 70% endogennych postaci). Objawy o największej swoistości: proksymalne osłabienie mięśniowe (trudność we wstawaniu z przysiadu), szerokie (>1 cm) żywoczerwone lub purpurowe rozstępy na brzuchu i udach, łatwe siniaczenie przy minimalnym urazie, zaokrąglenie twarzy („księżyc w pełni”), bawoli kark i otyłość trzewna."
+    },
+    {
+      "title": "Krok 1: Potwierdzenie autonomicznej hiperkortyzolemii",
+      "text": "Nigdy nie oznacza się pojedynczego porannego kortyzolu we krwi (stres podbija wynik)! Zgodnie z wytycznymi stosuje się co najmniej dwa różne testy przesiewowe pierwszego rzutu: 1) Test nocnego hamowania 1 mg deksametazonu: podanie 1 mg deksametazonu o godz. 23:00 i pomiar kortyzolu w surowicy o 8:00–9:00 rano następnego dnia. Norma: kortyzol <1,8 µg/dl (50 nmol/l). Wynik >=1,8 potwierdza brak hamowania. 2) Dobowe wydalanie wolnego kortyzolu w moczu (UFC) — co najmniej dwukrotnie. 3) Stężenie kortyzolu w ślinie o północy (ocena zaniku fizjologicznego rytmu dobowego)."
+    },
+    {
+      "title": "Krok 2 i 3: Oznaczenie ACTH i cewnikowanie zatok (BIPSS)",
+      "text": "Po potwierdzeniu hiperkortyzolemii mierzy się stężenie ACTH w osoczu rano: ACTH <5 pg/ml oznacza postać ACTH-niezależną (guz lub rozrost nadnerczy — zleć TK nadnerczy). ACTH >15–20 pg/ml oznacza postać ACTH-zależną (choroba Cushinga vs ektopowe wydzielanie ACTH np. przez rakowiaka płuc). Ponieważ mikrogruczolaki kortykotropowe w chorobie Cushinga są mikroskopijne (<5 mm) i w 40% niewidoczne w MRI, złotym standardem różnicowania jest obustronne cewnikowanie zatok skalistych dolnych (BIPSS) ze stymulacją CRH."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Badanie / Test",
+      "Kryterium diagnostyczne"
+    ],
+    "rows": [
+      [
+        "Test 1 mg deksametazonu",
+        "Brak hamowania kortyzolu rano >=1,8 µg/dl (50 nmol/l) = patologia"
+      ],
+      [
+        "Kortyzol w ślinie o 23:00",
+        "Wzrost stężenia świadczy o zniesieniu fizjologicznego rytmu dobowego"
+      ],
+      [
+        "Stężenie ACTH w osoczu",
+        "<5 pg/ml = guz nadnercza; >15 pg/ml = postać ACTH-zależna (przysadka / ektopia)"
+      ],
+      [
+        "Cewnikowanie BIPSS",
+        "Gradient ACTH przysadka/obwód >2 (lub >3 po CRH) potwierdza chorobę Cushinga"
+      ]
+    ]
+  },
+  "advanced": "W przypadku guzów ektopowo wydzielających ACTH (np. drobnokomórkowy rak płuca, rakowiaki oskrzela) choroba rozwija się bardzo gwałtownie z ciężką hipokaliemią i hiperpigmentacją skóry z powodu stymulacji receptorów MC1R przez olbrzymie stężenia proopiomelanokortyny (POMC) i ACTH, często zanim wykształci się pełny fenotyp otyłości.",
+  "summary": "Choroba Cushinga to gruczolak przysadki stymulujący nadnercza przez ACTH. Rozpoznanie wymaga najpierw potwierdzenia braku hamowania kortyzolu (test 1 mg deksametazonu <1,8 µg/dl), a następnie wykazania nieobniżonego ACTH i lokalizacji w siodle (MRI / BIPSS).",
+  "sourceIds": [
+    "nieman",
+    "pte_cushing"
+  ],
+  "questions": [
+    {
+      "id": "cushing-choroba-q1",
+      "lessonId": "cushing-choroba",
+      "prompt": "Jakie stężenie kortyzolu w surowicy krwi o godz. 8:00 rano po przyjęciu 1 mg deksametazonu o 23:00 wyklucza zespół Cushinga?",
+      "options": [
+        {
+          "text": "Poniżej 10 µg/dl",
+          "explanation": "Wartość 10 µg/dl jest zdecydowanie zbyt wysoka i nie wyklucza łagodnej hiperkortyzolemii."
+        },
+        {
+          "text": "Dokładnie zero mikrogramów",
+          "explanation": "W surowicy zawsze oznacza się śladowe ilości; punkt odcięcia ustalono na 1,8 µg/dl."
+        },
+        {
+          "text": "Poniżej 1,8 µg/dl (50 nmol/l)",
+          "explanation": "Prawidłowa oś podwzgórze-przysadka ulega pełnemu stłumieniu poniżej tego punktu odcięcia."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cushing-choroba-q2",
+      "lessonId": "cushing-choroba",
+      "prompt": "Czym różni się choroba Cushinga od zespołu Cushinga?",
+      "options": [
+        {
+          "text": "Choroba Cushinga to wyłącznie postać wywołana gruczolakiem przysadki wydzielającym ACTH",
+          "explanation": "Zespół Cushinga to pojęcie nadrzędne obejmujące każdą przyczynę hiperkortyzolemii (w tym leki i guzy nadnerczy)."
+        },
+        {
+          "text": "Choroba Cushinga dotyczy wyłącznie dzieci, a zespół dorosłych",
+          "explanation": "Obie jednostki mogą występować w każdym wieku."
+        },
+        {
+          "text": "W chorobie Cushinga kortyzol jest niski, a w zespole wysoki",
+          "explanation": "W obu stanach występuje patologiczny nadmiar kortyzolu."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "cushing-choroba-q3",
+      "lessonId": "cushing-choroba",
+      "prompt": "U pacjenta potwierdzono hiperkortyzolemię. Stężenie ACTH w osoczu wynosi <2 pg/ml (całkowicie stłumione). Gdzie zlokalizowana jest przyczyna?",
+      "options": [
+        {
+          "text": "W jądrach podwzgórza",
+          "explanation": "Podwzgórze w tym stanie jest zablokowane ujemnym sprzężeniem zwrotnym."
+        },
+        {
+          "text": "W korze nadnerczy (autonomiczny guz lub rozrost nadnercza)",
+          "explanation": "Nadmiar kortyzolu z nadnercza hamuje przysadkowe ACTH na drodze ujemnego sprzężenia zwrotnego."
+        },
+        {
+          "text": "W przysadce mózgowej",
+          "explanation": "Gruczolak przysadki powodowałby wysokie lub nieadekwatnie prawidłowe ACTH, a nie stłumione."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "cushing-choroba-q4",
+      "lessonId": "cushing-choroba",
+      "prompt": "Dlaczego pojedyncze poranne stężenie kortyzolu we krwi NIE służy do wstępnego wykluczenia zespołu Cushinga?",
+      "options": [
+        {
+          "text": "Kortyzol rano w ogóle nie występuje we krwi u ludzi",
+          "explanation": "Fizjologiczny szczyt wydzielania kortyzolu przypada właśnie na wczesne godziny poranne."
+        },
+        {
+          "text": "Oznaczenie kortyzolu wymaga pobrania płynu mózgowo-rdzeniowego",
+          "explanation": "Kortyzol rutynowo oznacza się w surowicy, moczu lub ślinie, a nie w PMR."
+        },
+        {
+          "text": "Kortyzol wydziela się pulsacyjnie, a stres związany z wkłuciem igły może fałszywie podwyższyć wynik u osoby zdrowej",
+          "explanation": "Dlatego stosuje się testy oceniające brak hamowania (deksametazon) lub zanik rytmu dobowego (ślina o północy)."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "cushing-choroba-q5",
+      "lessonId": "cushing-choroba",
+      "prompt": "Kiedy stosuje się obustronne cewnikowanie zatok skalistych dolnych (BIPSS)?",
+      "options": [
+        {
+          "text": "W celu odróżnienia przysadkowej choroby Cushinga od ektopowego wydzielania ACTH, gdy MRI siodła jest niejednoznaczne",
+          "explanation": "Porównanie stężeń ACTH we krwi odpływającej z przysadki i we krwi obwodowej daje 99% pewności co do źródła."
+        },
+        {
+          "text": "Jako rutynowe badanie przesiewowe u każdego chorego z otyłością",
+          "explanation": "Jest to inwazyjna procedura naczyniowa zarezerwowana dla trudnych przypadków specjalistycznych."
+        },
+        {
+          "text": "W celu usunięcia gruczolaka przysadki bez operacji",
+          "explanation": "BIPSS to badanie czysto diagnostyczne, a nie zabieg terapeutyczny."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}
