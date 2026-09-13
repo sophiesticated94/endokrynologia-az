@@ -7,7 +7,6 @@ import type {
   Question,
 } from './course-types.ts';
 
-const PILOT_MODULES = new Set(['tarczyca', 'cukrzyca', 'przysadka']);
 function classifyObjective(statement: string): ObjectiveKind {
   const value = statement.toLocaleLowerCase('pl');
   if (/bezpie|piln|przeciwwsk|monitor|zagroż|alarm/.test(value)) return 'safety';
@@ -43,17 +42,17 @@ function toActivity(
 function widgetIds(lesson: Lesson): LessonExperienceV2['widgetIds'] {
   const id = lesson.id;
   const widgets = new Set<LessonExperienceV2['widgetIds'][number]>();
-  if (/fizjologia|diagnostyka|dka|hhs|zapalenia|niedoczynnosc|nadczynnosc|prolactinoma|akromegalia|cushing|hipopituitaryzm/.test(id)) widgets.add('axis-map');
-  if (/diagnostyka|dka|hhs|ciaza|cgm|stany-nagle|niedoczynnosc|nadczynnosc|moczowka|siadh|osmolalnosc/.test(id)) widgets.add('lab-workbench');
-  if (/dka|hhs|cgm|zapalenia|niedoczynnosc|ciaza|technologie|pulsacja|operacje/.test(id)) widgets.add('timeline');
-  if (/diagnostyka|guzki|dka|hhs|klasyfikacja|stany-nagle|guzy-nieczynne|udar-przysadki/.test(id)) widgets.add('pathway-builder');
-  if (!widgets.size) widgets.add(lesson.moduleId === 'cukrzyca' ? 'lab-workbench' : 'axis-map');
+  if (/fizjologia|diagnostyka|dka|hhs|zapalenia|niedoczynnosc|nadczynnosc|prolactinoma|akromegalia|cushing|hipopituitaryzm|hpa|hpg|tarczyca|adrenal|gonady|hpt/.test(id)) widgets.add('axis-map');
+  if (/diagnostyka|dka|hhs|ciaza|cgm|stany-nagle|niedoczynnosc|nadczynnosc|moczowka|siadh|osmolalnosc|lab|wapn|fosfor|ogtt|krzywa|kortyzol|aldosteron/.test(id)) widgets.add('lab-workbench');
+  if (/dka|hhs|cgm|zapalenia|niedoczynnosc|ciaza|technologie|pulsacja|operacje|timeline|kinetyka|przetoczenia|porod/.test(id)) widgets.add('timeline');
+  if (/diagnostyka|guzki|dka|hhs|klasyfikacja|stany-nagle|guzy-nieczynne|udar-przysadki|algorytm|pathway|nen|rakowiak|bariatria/.test(id)) widgets.add('pathway-builder');
+  if (!widgets.size) widgets.add(lesson.moduleId === 'cukrzyca' || lesson.moduleId === 'przytarczyce' ? 'lab-workbench' : 'axis-map');
   return [...widgets].slice(0, 2);
 }
 
 export function buildPilotExperiences(lessons: Lesson[]): Record<string, LessonExperienceV2> {
   return Object.fromEntries(
-    lessons.filter(lesson => lesson.moduleId && PILOT_MODULES.has(lesson.moduleId)).map(lesson => {
+    lessons.map(lesson => {
       const objectives: LearningObjective[] = lesson.goals.slice(0, 4).map((statement, index) => ({
         id: `${lesson.id}-objective-${index + 1}`,
         statement,

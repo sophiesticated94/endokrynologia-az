@@ -23,13 +23,7 @@ import { getDefaultObjectStorage } from '../lib/storage/create-object-storage.ts
 import { ContentAssetRepository } from '../lib/content/asset-repository.ts';
 import { AssetService } from '../lib/content/asset-service.ts';
 import { buildCourseAssetKey } from '../lib/content/course-asset-key-builder.ts';
-import {
-  lessons as staticLessons,
-  lessonExperiences as staticExperiences,
-  sources as staticSources,
-  modulesList,
-  CONTENT_VERSION,
-} from '../lib/course.ts';
+import { resolveCourseModuleSource } from '../lib/content/source-adapter.ts';
 
 function cleanAndSort(obj) {
   if (obj === null || typeof obj !== 'object') return obj;
@@ -129,16 +123,12 @@ export async function migrateModule(options = {}) {
   const isVerifyOnly = options.verify || false;
   const databaseUrl = options.databaseUrl || process.env.DATABASE_URL;
 
-  const targetLessons = staticLessons.filter((l) => l.moduleId === moduleId);
-  if (targetLessons.length === 0) {
-    throw new Error(`No lessons found for module: ${moduleId}`);
-  }
-
-  const moduleMeta = modulesList.find((m) => m.id === moduleId) || {
-    id: moduleId,
-    name: moduleId.charAt(0).toUpperCase() + moduleId.slice(1),
-    subtitle: '',
-  };
+  const moduleSource = resolveCourseModuleSource(moduleId);
+  const targetLessons = moduleSource.lessons;
+  const moduleMeta = moduleSource.module;
+  const courseMeta = moduleSource.course;
+  const staticExperiences = moduleSource.lessonExperiences;
+  const staticSources = moduleSource.sources;
 
   const { db, close } = createDatabase(databaseUrl);
   const storage = getDefaultObjectStorage();
@@ -202,16 +192,17 @@ export async function migrateModule(options = {}) {
       await db
         .insert(courses)
         .values({
-          id: 'endocrinology',
-          title: 'Endokrynologia od A do Z',
-          description: 'Interaktywny podręcznik i symulator kliniczny endokrynologii.',
-          version: CONTENT_VERSION,
+          id: courseMeta.id,
+          title: courseMeta.title,
+          description: courseMeta.description,
+          version: courseMeta.version,
         })
         .onConflictDoUpdate({
           target: courses.id,
           set: {
-            title: 'Endokrynologia od A do Z',
-            version: CONTENT_VERSION,
+            title: courseMeta.title,
+            description: courseMeta.description,
+            version: courseMeta.version,
             updatedAt: new Date(),
           },
         });
@@ -220,20 +211,46 @@ export async function migrateModule(options = {}) {
         .insert(modules)
         .values({
           id: moduleId,
-          courseId: 'endocrinology',
+          courseId: courseMeta.id,
           title: moduleMeta.name,
           subtitle: moduleMeta.subtitle || '',
-          sortOrder: Math.max(1, modulesList.findIndex((m) => m.id === moduleId) + 1),
+          sortOrder: moduleMeta.sortOrder,
         })
         .onConflictDoUpdate({
           target: modules.id,
           set: {
             title: moduleMeta.name,
             subtitle: moduleMeta.subtitle || '',
-            sortOrder: Math.max(1, modulesList.findIndex((m) => m.id === moduleId) + 1),
+            sortOrder: moduleMeta.sortOrder,
             updatedAt: new Date(),
           },
         });
+
+      // Pre-upsert all lessons in module so foreign keys from widget_presets are always satisfied
+      for (let i = 0; i < targetLessons.length; i++) {
+        const l = targetLessons[i];
+        await db
+          .insert(lessons)
+          .values({
+            id: l.id,
+            moduleId: moduleId,
+            title: l.title,
+            subtitle: l.subtitle || l.title,
+            sortOrder: i + 1,
+            minutes: l.minutes,
+            updatedAt: new Date(),
+          })
+          .onConflictDoUpdate({
+            target: lessons.id,
+            set: {
+              title: l.title,
+              subtitle: l.subtitle || l.title,
+              sortOrder: i + 1,
+              minutes: l.minutes,
+              updatedAt: new Date(),
+            },
+          });
+      }
     }
 
     // Sources

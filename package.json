@@ -23,7 +23,9 @@
     "db:seed:cukrzyca": "node scripts/migrate-module.mjs --module=cukrzyca --apply",
     "db:verify:cukrzyca": "node scripts/migrate-module.mjs --module=cukrzyca --verify",
     "db:seed:przysadka": "node scripts/migrate-module.mjs --module=przysadka --apply",
-    "db:verify:przysadka": "node scripts/migrate-module.mjs --module=przysadka --verify"
+    "db:verify:przysadka": "node scripts/migrate-module.mjs --module=przysadka --verify",
+    "db:seed:all": "node scripts/migrate-all.mjs --apply",
+    "db:verify:all": "node scripts/migrate-all.mjs --verify"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

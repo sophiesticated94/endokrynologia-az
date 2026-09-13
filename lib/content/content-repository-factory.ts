@@ -25,13 +25,16 @@ export function getContentRepository(
     (process.env.CONTENT_SOURCE as 'static' | 'database' | 'compare') ||
     'static';
 
+  const moduleId = options.moduleId?.toLowerCase().trim();
+
   const enabledModules = (process.env.CONTENT_DB_MODULES || '')
     .split(',')
     .map((m) => m.trim().toLowerCase())
     .filter(Boolean);
 
-  const moduleId = options.moduleId?.toLowerCase();
-  const isDbEnabledForModule = moduleId ? enabledModules.includes(moduleId) : false;
+  const isDbEnabledForModule = moduleId
+    ? enabledModules.includes('*') || enabledModules.includes('all') || enabledModules.includes(moduleId)
+    : false;
 
   // If the requested module is NOT enabled in CONTENT_DB_MODULES, serve statically
   if (moduleId && !isDbEnabledForModule) {

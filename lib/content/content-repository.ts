@@ -10,7 +10,35 @@ import {
   type LessonRevisionDocument,
 } from './schemas/lesson-revision.ts';
 import { compareLessonDocuments } from './structured-diff.ts';
-import { lessons as staticLessons, lessonExperiences as staticExperiences } from '../course.ts';
+import {
+  lessons as endoLessons,
+  lessonExperiences as endoExperiences,
+  modulesList as endoModules,
+} from '../course.ts';
+import {
+  psychiatryLessons,
+  psychiatryModulesList,
+} from '../course-psychiatry.ts';
+import { psychiatryLessonExperiences } from '../psychiatry/index.ts';
+
+const allStaticLessons = [...endoLessons, ...psychiatryLessons];
+const allStaticExperiences = { ...endoExperiences, ...psychiatryLessonExperiences };
+const allStaticModules: ModuleSummary[] = [
+  ...endoModules.map((m, idx) => ({
+    id: m.id,
+    courseId: 'endocrinology',
+    title: m.name,
+    subtitle: m.subtitle,
+    sortOrder: idx + 1,
+  })),
+  ...psychiatryModulesList.map((m, idx) => ({
+    id: m.id,
+    courseId: 'psychiatry',
+    title: m.name,
+    subtitle: m.subtitle,
+    sortOrder: idx + 1,
+  })),
+];
 
 export interface ModuleSummary {
   id: string;
@@ -28,10 +56,10 @@ export interface ContentRepository {
 
 export class StaticContentRepository implements ContentRepository {
   async getLesson(lessonId: string): Promise<LessonRevisionDocument | null> {
-    const lesson = staticLessons.find((l) => l.id === lessonId);
+    const lesson = allStaticLessons.find((l) => l.id === lessonId);
     if (!lesson) return null;
 
-    const experience = staticExperiences[lessonId];
+    const experience = allStaticExperiences[lessonId];
     const doc: LessonRevisionDocument = {
       id: lesson.id,
       moduleId: lesson.moduleId || 'tarczyca',
@@ -57,7 +85,7 @@ export class StaticContentRepository implements ContentRepository {
   }
 
   async listLessons(moduleId: string): Promise<LessonRevisionDocument[]> {
-    const matched = staticLessons.filter((l) => l.moduleId === moduleId);
+    const matched = allStaticLessons.filter((l) => l.moduleId === moduleId);
     const results: LessonRevisionDocument[] = [];
     for (const l of matched) {
       const doc = await this.getLesson(l.id);
@@ -67,14 +95,8 @@ export class StaticContentRepository implements ContentRepository {
   }
 
   async getModule(moduleId: string): Promise<ModuleSummary | null> {
-    const l = staticLessons.find((l) => l.moduleId === moduleId);
-    if (!l) return null;
-    return {
-      id: moduleId,
-      courseId: 'endocrinology',
-      title: moduleId.charAt(0).toUpperCase() + moduleId.slice(1),
-      sortOrder: 0,
-    };
+    const mod = allStaticModules.find((m) => m.id === moduleId);
+    return mod || null;
   }
 }
 

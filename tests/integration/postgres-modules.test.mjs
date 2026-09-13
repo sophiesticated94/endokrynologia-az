@@ -24,8 +24,18 @@ const TEST_DB_URL =
 
 const MODULES_TO_TEST = [
   { id: 'tarczyca', expectedLessonCount: 16, sampleLessonId: 'fizjologia' },
-  { id: 'cukrzyca', expectedLessonCount: 16, sampleLessonId: 'cukrzyca-fizjologia' },
   { id: 'przysadka', expectedLessonCount: 16, sampleLessonId: 'przysadka-fizjologia' },
+  { id: 'nadnercza', expectedLessonCount: 16, sampleLessonId: 'nadnercza-anatomia' },
+  { id: 'przytarczyce', expectedLessonCount: 16, sampleLessonId: 'przytarczyce-fizjologia' },
+  { id: 'cukrzyca', expectedLessonCount: 16, sampleLessonId: 'cukrzyca-fizjologia' },
+  { id: 'gonady', expectedLessonCount: 26, sampleLessonId: 'gonady-fizjologia-hpg' },
+  { id: 'nen', expectedLessonCount: 20, sampleLessonId: 'nen-biologia-markery' },
+  { id: 'otylosc', expectedLessonCount: 20, sampleLessonId: 'otylosc-biologia-tkanki-tluszczowej' },
+  { id: 'pediatria', expectedLessonCount: 16, sampleLessonId: 'ped-niski-wzrost-algorytm' },
+  { id: 'ciaza', expectedLessonCount: 16, sampleLessonId: 'ciaza-tarczyca-fizjologia-zakresy' },
+  { id: 'psych-afektywne', expectedLessonCount: 16, sampleLessonId: 'wywiad-psychiatryczny-mse' },
+  { id: 'psych-farmakologia', expectedLessonCount: 22, sampleLessonId: 'farmakokinetyka-oun-bariera' },
+  { id: 'psych-organiczne', expectedLessonCount: 13, sampleLessonId: 'delirium-rozpoznanie-i-dynamika' },
 ];
 
 test('PostgreSQL Integration: Parameterized Modules Migration & System Invariants', async (t) => {

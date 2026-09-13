@@ -5,14 +5,11 @@ import { gradeActivity } from '../lib/activity-grading.ts';
 import { parseStoredActivities, practicePayload, projectActivities } from '../lib/learning.ts';
 import { findRepeatableActivity, isLessonCoreComplete, requiredCompletionActivityIds } from '../lib/lesson-v2.ts';
 
-test('all 48 thyroid, diabetes, and pituitary lessons use the complete v2 learning structure', () => {
-  const pilot = lessons.filter(
-    lesson => lesson.moduleId === 'tarczyca' || lesson.moduleId === 'cukrzyca' || lesson.moduleId === 'przysadka'
-  );
-  assert.equal(pilot.length, 48);
-  assert.equal(Object.keys(lessonExperiences).length, 48);
+test('all 178 endocrinology lessons use the complete v2 learning structure', () => {
+  assert.equal(lessons.length, 178);
+  assert.equal(Object.keys(lessonExperiences).length, 178);
   const ids = new Set();
-  for (const lesson of pilot) {
+  for (const lesson of lessons) {
     const experience = lessonExperiences[lesson.id];
     assert.equal(experience.experienceVersion, 2);
     assert.ok(experience.objectives.length >= 2 && experience.objectives.length <= 4);
@@ -42,9 +39,7 @@ test('all 48 thyroid, diabetes, and pituitary lessons use the complete v2 learni
 });
 
 test('legacy question ids map to v2 objectives without rewriting snapshots', () => {
-  for (const lesson of lessons.filter(
-    item => item.moduleId === 'tarczyca' || item.moduleId === 'cukrzyca' || item.moduleId === 'przysadka'
-  )) {
+  for (const lesson of lessons) {
     assert.ok(lesson.questions.every(question => questionObjectiveMap[question.id]?.length));
   }
 });

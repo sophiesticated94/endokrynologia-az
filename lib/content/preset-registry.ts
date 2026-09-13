@@ -31,6 +31,20 @@ function mapPsychiatryWidgetType(tab: string): string {
   }
 }
 
+function mapPsychiatryModuleId(tab: string): string {
+  switch (tab) {
+    case 'diagnostic':
+      return 'psych-afektywne';
+    case 'pharmacology':
+    case 'safety':
+      return 'psych-farmakologia';
+    case 'neuro-geriatric':
+      return 'psych-organiczne';
+    default:
+      return 'psych-afektywne';
+  }
+}
+
 function buildPsychiatryPresets(): Record<string, WidgetPresetDefinition> {
   const result: Record<string, WidgetPresetDefinition> = {};
   for (const [id, p] of Object.entries(ALL_PSYCHIATRY_PRESETS)) {
@@ -38,7 +52,8 @@ function buildPsychiatryPresets(): Record<string, WidgetPresetDefinition> {
       id: p.id,
       widgetType: mapPsychiatryWidgetType(p.tab),
       schemaVersion: 1,
-      moduleId: 'psychiatry',
+      moduleId: mapPsychiatryModuleId(p.tab),
+      lessonId: (p.data as Record<string, unknown> | undefined)?.lessonId as string | undefined,
       title: p.title,
       initialState: {
         tab: p.tab,
