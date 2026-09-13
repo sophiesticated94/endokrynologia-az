@@ -1,0 +1,387 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna",
+  "objectives": [
+    {
+      "id": "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna-obj-1",
+      "statement": "Obliczysz skorygowany odstęp QTc za pomocą bezpieczniejszej formuły Fridericia (QTcF) zamiast Bazetta.",
+      "kind": "safety"
+    },
+    {
+      "id": "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna-obj-2",
+      "statement": "Zidentyfikujesz leki psychotropowe o udowodnionym ryzyku wywoływania Torsade de Pointes wg CredibleMeds.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna-obj-3",
+      "statement": "Wdrożysz postępowanie profilaktyczne i modyfikację leczenia przy wydłużeniu QTc > 500 ms.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-card-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna-obj-1"
+    ],
+    "prompt": "Dlaczego w monitorowaniu bezpieczeństwa leków psychotropowych zaleca się stosowanie wzoru Fridericia (QTcF) zamiast klasycznego wzoru Bazetta?",
+    "options": [
+      "Wzór Bazetta niedoszacowuje QTc przy częstoskurczu, maskując groźne zaburzenia repolaryzacji",
+      "Formuła Bazetta drastycznie zawyża wartość QTc przy tachykardii (częstość akcji serca > 80–90/min), generując fałszywe alarmy",
+      "Wzór Bazetta jest zalecany wyłącznie u pacjentów ze stymulatorem komorowym i blokiem lewej odnogi"
+    ],
+    "optionFeedback": [
+      "Główną wadą Bazetta przy tachykardii jest przeszacowanie (nadrozpoznawalność długiego QT), a nie niedoszacowanie.",
+      "Formuła Fridericia oparta na pierwiastku sześciennym zapewnia precyzyjną ocenę repolaryzacji niezależnie od tętna.",
+      "W obecności poszerzonego QRS stosuje się formuły dedykowane (np. Bogossa), a Bazett nadmiernie zależy od częstości rytmu."
+    ],
+    "answer": 1,
+    "explanation": "Formuła Fridericia oparta na pierwiastku sześciennym zapewnia precyzyjną ocenę repolaryzacji niezależnie od tętna.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "crediblemeds-qt",
+      "maudsley15",
+      "canmat-mdd-2023"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna-block-1",
+      "title": "Elektrofizjologia: blokada kanałów hERG i arytmia TdP",
+      "text": "Wydłużenie odstępu QT w zapisie EKG odzwierciedla opóźnioną repolaryzację komór serca. Wiele leków psychotropowych (zwłaszcza citalopram, escitalopram, haloperydol i.v., sertindol, amisulpryd) blokuje bramkowane napięciem kanały potasowe hERG (IKr). Przekroczenie krytycznego progu stwarza ryzyko wystąpienia wczesnych depolaryzacji następczych (EAD) i wyzwolenia wielokształtnego częstoskurczu komorowego Torsade de Pointes (TdP), przechodzącego w migotanie komór.",
+      "sourceIds": [
+        "crediblemeds-qt",
+        "maudsley15",
+        "canmat-mdd-2023"
+      ],
+      "checkpointId": "psych-card-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "widget-fridericia-qtc-calculator",
+          "kind": "interactive-widget",
+          "placement": "after-text"
+        },
+        {
+          "id": "deeplink-qtc-crediblemeds",
+          "kind": "workbench-deeplink",
+          "placement": "end-of-block",
+          "presetId": "qtc-crediblemeds-001"
+        }
+      ]
+    },
+    {
+      "id": "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna-block-2",
+      "title": "Korekcja częstotliwości: Formuła Fridericia vs Bazetta",
+      "text": "Klasyczna formuła Bazetta (QTc = QT / sqrt(RR)) wykazuje dramatyczny błąd nadkorekcji przy tachykardii (> 80–100/min), prowadząc do fałszywych rozpoznań zespołu długiego QT. Wytyczne kardiologiczne i psychiatryczne jednoznacznie zalecają stosowanie formuły Fridericia (QTcF = QT / cbrt(RR) – pierwiastek sześcienny), która zachowuje liniowość w pełnym zakresie rytmu serca.",
+      "sourceIds": [
+        "crediblemeds-qt",
+        "maudsley15",
+        "canmat-mdd-2023"
+      ],
+      "checkpointId": "psych-card-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-prolactin-hyperprolactinemia-workup",
+          "kind": "evidence-panel",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna-block-3",
+      "title": "Progi alarmowe i algorytm postępowania",
+      "text": "Prawidłowy QTc wynosi < 450 ms u mężczyzn i < 460 ms u kobiet. Wartości graniczne to 450–500 ms (wymagają czujności i kontroli elektrolitów: K+ > 4,0 mmol/l, Mg2+ > 0,8 mmol/l). Wartość bezwzględna QTc > 500 ms lub wydłużenie QTc o > 60 ms względem badania wyjściowego stanowi stan bezpośredniego zagrożenia arytmią i bezwzględne wskazanie do redukcji dawki lub odstawienia leku.",
+      "sourceIds": [
+        "crediblemeds-qt",
+        "maudsley15",
+        "canmat-mdd-2023"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-card-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna-obj-2"
+      ],
+      "prompt": "Jaki bezwzględny czas trwania odstępu QTc w zapisie EKG uznaje się za krytyczny próg alarmowy wymagający pilnej redukcji lub odstawienia leku?",
+      "options": [
+        "QTc powyżej 440 ms u mężczyzn i 450 ms u kobiet",
+        "QTc powyżej 600 ms wyłącznie w obecności bloku prawej odnogi pęczka Hisa",
+        "QTc powyżej 500 ms (lub przyrost o > 60 ms względem badania wyjściowego)"
+      ],
+      "optionFeedback": [
+        "Wartości te stanowią górną granicę normy, lecz nie są bezwzględnym progiem pilnego odstawienia.",
+        "Próg 500 ms jest krytycznym punktem odcięcia dla ryzyka TdP u każdego chorego bez względu na morfologię QRS.",
+        "Powyżej 500 ms gwałtownie rośnie ryzyko wystąpienia wielokształtnego częstoskurczu komorowego Torsade de Pointes."
+      ],
+      "answer": 2,
+      "explanation": "Powyżej 500 ms gwałtownie rośnie ryzyko wystąpienia wielokształtnego częstoskurczu komorowego Torsade de Pointes.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "crediblemeds-qt",
+        "maudsley15",
+        "canmat-mdd-2023"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-card-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna-obj-3"
+      ],
+      "prompt": "Jaki lek podaje się dożylnie w pierwszej kolejności u pacjenta z napadem częstoskurczu komorowego Torsade de Pointes z zachowanym tętnem?",
+      "options": [
+        "Siarczan magnezu (MgSO4) 2 g dożylnie w bolusie",
+        "Amiodaron 300 mg we wlewie dożylnym",
+        "Lidokaina 1 mg/kg m.c. w bolusie przed podaniem magnezu"
+      ],
+      "optionFeedback": [
+        "Magnez stabilizuje błonę miocytów i blokuje wczesne depolaryzacje następcze EAD.",
+        "Amiodaron sam w sobie wydłuża repolaryzację komór i jest przeciwwskazany w TdP polekowym.",
+        "Lidokaina jest lekiem drugiego rzutu; postępowaniem pierwszego wyboru pozostaje natychmiastowy siarczan magnezu."
+      ],
+      "answer": 0,
+      "explanation": "Magnez stabilizuje błonę miocytów i blokuje wczesne depolaryzacje następcze EAD.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "crediblemeds-qt",
+        "maudsley15",
+        "canmat-mdd-2023"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna-obj-1",
+      "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna-obj-2",
+      "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Bezpieczeństwo kardiometaboliczne: QTc, hERG i prolaktyna”.",
+    "modelAnswer": "Blokada kanałów potasowych hERG grozi śmiertelnym częstoskurczem TdP. Rekomendowaną metodą kalkulacji jest wzór Fridericia (QTcF). QTc > 500 ms nakazuje natychmiastową weryfikację i redukcję lub odstawienie leku; lekiem I rzutu w napadzie TdP jest MgSO4 i.v.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "crediblemeds-qt",
+      "maudsley15",
+      "canmat-mdd-2023"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-card-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna-obj-1"
+      ],
+      "prompt": "Które dwa leki przeciwdepresyjne z grupy SSRI cechują się najniższym ryzykiem wydłużenia odstępu QTc i są preferowane u pacjentów ze schorzeniami kardiologicznymi?",
+      "options": [
+        "Klomipramina i amitryptylina",
+        "Sertralina oraz paroksetyna",
+        "Citalopram w dawce 60 mg i escitalopram w dawce 40 mg"
+      ],
+      "optionFeedback": [
+        "TLPD silnie wydłużają repolaryzację i blokują kanały sodowe.",
+        "Badania SADHART potwierdziły pełne bezpieczeństwo kardiologiczne sertraliny nawet po zawale serca.",
+        "Dawki te są przekroczeniem limitów bezpieczeństwa FDA/EMA z uwagi na ryzyko arytmii."
+      ],
+      "answer": 1,
+      "explanation": "Badania SADHART potwierdziły pełne bezpieczeństwo kardiologiczne sertraliny nawet po zawale serca.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "crediblemeds-qt",
+        "maudsley15",
+        "canmat-mdd-2023"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-card-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna-obj-1"
+      ],
+      "prompt": "Jaki kanał jonowy w kardiomiocytach jest bezpośrednio blokowany przez leki wydłużające odstęp repolaryzacji komór (QTc)?",
+      "options": [
+        "Kanał chlorowy cystic fibrosis CFTR",
+        "Akwaporyna 2 w nerkach",
+        "Kanał potasowy hERG (IKr - szybki prąd potasowy odkomorowy)"
+      ],
+      "optionFeedback": [
+        "CFTR odpowiada za mukowiscydozę w nabłonkach, nie za repolaryzację serca.",
+        "Akwaporyna transportuje wodę w cewkach zbiorczych nerek.",
+        "Blokada IKr uniemożliwia sprawny wypływ potasu z komórki, wydłużając czas trwania potencjału czynnościowego."
+      ],
+      "answer": 2,
+      "explanation": "Blokada IKr uniemożliwia sprawny wypływ potasu z komórki, wydłużając czas trwania potencjału czynnościowego.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "crediblemeds-qt",
+        "maudsley15",
+        "canmat-mdd-2023"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "qtc-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna-obj-1"
+      ],
+      "claimIds": [
+        "claim-ph-qtc-fridericia"
+      ],
+      "prompt": "W kontrolnym EKG u 58-letniej pacjentki leczonej citalopramem w dawce 40 mg skorygowany odstęp QT wg wzoru Fridericii (QTcF) wynosi 515 ms (wartość wyjściowa: 430 ms). W badaniach krwi potas wynosi 3,2 mmol/l. Jakie postępowanie jest priorytetem?",
+      "options": [
+        "Pilna suplementacja potasu do wartości >4,0 mmol/l oraz redukcja dawki lub odstawienie citalopramu ze względu na krytyczne ryzyko TdP (QTcF > 500 ms)",
+        "Zignorowanie wyniku, ponieważ QTcF ma znaczenie dopiero powyżej 600 ms",
+        "Włączenie leku przeciwarytmicznego klasy IA"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-qtc-threshold-500",
+            "label": "QTcF > 500 ms lub wydłużenie o >60 ms jako krytyczny próg TdP",
+            "acceptedPhrases": [
+              "powyżej 500",
+              ">500 ms",
+              "torsade de pointes",
+              "tdp",
+              "ryzyko arytmii"
+            ]
+          },
+          {
+            "id": "c-hypokalemia-correction",
+            "label": "Wyrównanie hipokaliemii i redukcja/zamiana leku",
+            "acceptedPhrases": [
+              "wyrównanie potasu",
+              "suplementacja potasu",
+              "odstawienie citalopramu",
+              "redukcja dawki"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-class-ia-antiarrhythmic",
+            "patterns": [
+              "klasa ia",
+              "chinidyna"
+            ],
+            "severity": "critical",
+            "feedback": "BŁĄD KRYTYCZNY: Leki klasy IA również wydłużają QT i nasilają ryzyko zgonu."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "QTcF > 500 ms w połączeniu z hipokaliemią stanowi stan zagrożenia złośliwą arytmią komorową Torsade de Pointes.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "crediblemeds-qt",
+        "maudsley15"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "qtc-bank-2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna-obj-1"
+      ],
+      "claimIds": [
+        "claim-ph-qtc-fridericia"
+      ],
+      "prompt": "U pacjenta w zapisie EKG surowy odstęp QT wynosi 400 ms przy częstości rytmu serca 60/min (odstęp RR = 1,0 s). Oblicz skorygowany odstęp QTcF wg wzoru Fridericii (w milisekundach).",
+      "answer": 400,
+      "tolerance": 1,
+      "unit": "ms",
+      "explanation": "Wg wzoru Fridericii QTcF = QT / (RR^(1/3)). Dla RR = 1,0 s (HR = 60), RR^(1/3) = 1,0, więc QTcF wynosi dokładnie 400 ms.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "crediblemeds-qt"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "qtc-bank-3",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna-obj-2",
+        "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna-obj-3"
+      ],
+      "prompt": "Wyjaśnij mechanizm, w jakim leki przeciwpsychotyczne silnie blokujące receptory D2 (np. rysperydon, amisulpryd) wywołują hiperprolaktynemię i jakie są jej długofalowe skutki ogólnomedyczne.",
+      "modelAnswer": "Dopamina uwalniana w szlaku guzkowo-lejkowym działa fizjologicznie jako prolaktostatyna (hamuje wydzielanie prolaktyny przez komórki laktotropowe przedniego płata przysadki za pośrednictwem receptorów D2). Blokada D2 znosi ten hamulec, prowadząc do masywnego wyrzutu prolaktyny. Długofalowo przewlekła hiperprolaktynemia hamuje oś podwzgórze-przysadka-gonady (spadek GnRH, LH i FSH), co prowadzi do hipogonadyzmu, zaburzeń miesiączkowania, bezpłodności, ginekomastii, dysfunkcji seksualnych oraz przyspieszonej osteopenii i osteoporozy.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-tuberoinfundibular-block",
+            "label": "Zniesienie fizjologicznego hamowania prolaktyny w szlaku guzkowo-lejkowym",
+            "acceptedPhrases": [
+              "szlak guzkowo-lejkowy",
+              "prolaktostatyna",
+              "komórki laktotropowe",
+              "zniesienie hamulca"
+            ]
+          },
+          {
+            "id": "c-hypogonadism-osteoporosis",
+            "label": "Hipogonadyzm i przyspieszona osteoporoza jako skutki długofalowe",
+            "acceptedPhrases": [
+              "osteoporoza",
+              "hipogonadyzm",
+              "zaburzenia miesiączkowania",
+              "spadek gęstości mineralnej"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Blokada D2 w przysadce znosi hamowanie prolaktyny, co wywołuje hipogonadyzm i osteoporozę.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "stahl-essential",
+        "maudsley15"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "timeline"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy AGNP 2026 TDM, CPIC PGx, Maudsley 15th ed., Kapur PET D2, Hunter criteria oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

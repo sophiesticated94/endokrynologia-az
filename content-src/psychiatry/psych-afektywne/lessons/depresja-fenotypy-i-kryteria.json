@@ -1,0 +1,172 @@
+{
+  "id": "depresja-fenotypy-i-kryteria",
+  "moduleId": "psych-afektywne",
+  "title": "Epizod depresyjny i MDD: fenotypy melancholiczny, atypowy i psychotyczny",
+  "subtitle": "Kryteria osiowe, różnicowanie fenotypowe, biologia anhedonii i wytyczne leczenia",
+  "group": "Klinika zaburzeń afektywnych",
+  "minutes": 19,
+  "goals": [
+    "Zdiagnozujesz epizod depresyjny wg ICD-11 i DSM-5-TR z określeniem stopnia ciężkości.",
+    "Rozpoznasz specyficzne fenotypy: depresję melancholiczną, atypową i psychotyczną.",
+    "Wdrożysz leczenie pierwszego rzutu zgodnie z wytycznymi CANMAT 2023 i NICE NG222."
+  ],
+  "sections": [
+    {
+      "title": "Kryteria osiowe i gradacja ciężkości epizodu",
+      "text": "Rozpoznanie wymaga trwania objawów przez co najmniej 2 tygodnie. Wymóg ICD-11 to obecność co najmniej 5 z 10 objawów (w tym obniżony nastrój lub anhedonia). Stopnie ciężkości: 1) Łagodny: 5 objawów, funkcjonowanie zachowane przy znacznym wysiłku; 2) Umiarkowany: 6–7 objawów, wyraźne trudności w pracy i relacjach; 3) Ciężki bez objawów psychotycznych: >=8 objawów lub skrajne cierpienie, całkowita niezdolność do codziennych czynności; 4) Ciężki z objawami psychotycznymi (urojenia winy, kary, zubożenia lub omamy słuchowe zgodne lub niezgodne z nastrojem)."
+    },
+    {
+      "title": "Depresja melancholiczna vs atypowa",
+      "text": "1) Fenotyp melancholiczny (endogenny): całkowita utrata reaktywności nastroju na pozytywne bodźce, jakościowo odmienny głęboki smutek (często odczuwany fizycznie w klatce piersiowej), bezsenność z wybudzaniem wcześnie rano (co najmniej 2h przed czasem), gorsze samopoczucie rano (rytm dobowy), znaczne spowolnienie lub pobudzenie psychoruchowe, jadłowstręt i spadek masy ciała; 2) Fenotyp atypowy: zachowana reaktywność nastroju (chwilowa poprawa pod wpływem miłych wydarzeń), wzmożone łaknienie (hiperfagia/wzrost wagi), hipersomnia (sen >10h na dobę), ołowiana bezwładność kończyn (leaden paralysis) oraz przewlekła nadwrażliwość na odrzucenie w relacjach."
+    },
+    {
+      "title": "Zasady leczenia i wytyczne EBM",
+      "text": "Zgodnie z CANMAT 2023 i NICE: w depresji łagodnej lekami z wyboru są niefarmakologiczne interwencje psychologiczne (CBT, psychoterapia interpersonalna). W depresji umiarkowanej i ciężkiej leczeniem I rzutu są leki nowej generacji: SSRI (sertralina, escitalopram), SNRI (wenlafaksyna, duloksetyna), wortioksetyna lub mirtazapina. W depresji melancholicznej wyższą skuteczność wykazują leki o mechanizmie podwójnym (SNRI, TLPD). W depresji psychotycznej konieczne jest bezwzględne połączenie leku przeciwdepresyjnego z lekiem przeciwpsychotycznym II generacji (np. sertralina + olanzapina) lub pilne ECT."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Cecha kliniczna",
+      "Depresja melancholiczna",
+      "Depresja atypowa",
+      "Depresja psychotyczna"
+    ],
+    "rows": [
+      [
+        "Reaktywność nastroju",
+        "Całkowicie zniesiona (brak reakcji na bodźce)",
+        "Zachowana (poprawa w odpowiedzi na nagrodę)",
+        "Całkowicie zniesiona"
+      ],
+      [
+        "Rytm snu",
+        "Bezsenność wczesnoporanna (early morning awakening)",
+        "Hipersomnia (>10h snu/dobę)",
+        "Ciężka bezsenność całkowita"
+      ],
+      [
+        "Łaknienie i masa ciała",
+        "Jadłowstręt, szybki spadek wagi",
+        "Wzmożone łaknienie (hiperfagia, tycie)",
+        "Jadłowstręt, ryzyko odwodnienia"
+      ],
+      [
+        "Leczenie preferowane",
+        "SNRI, TLPD, mirtazapina, ECT",
+        "SSRI, bupropion, MAOI (moklobemid)",
+        "Antydepresant + lek przeciwpsychotyczny LUB pilne ECT"
+      ]
+    ]
+  },
+  "advanced": "W depresji z objawami psychotycznymi monoterapia lekiem przeciwdepresyjnym jest błędem w sztuce i wykazuje skuteczność rzędu zaledwie 20-30%. Dopiero skojarzenie z neuroleptykiem podnosi odsetek remisji do 60-70%, a w stanach zagrożenia życia (odmowa picia i jedzenia) zabiegiem z wyboru o skuteczności >85% pozostają elektrowstrząsy (ECT).",
+  "summary": "Rozpoznaj fenotyp: melancholia to brak reaktywności i wybudzanie rano (leki dualne/ECT); atypowa to hiperfagia i hipersomnia (SSRI/MAOI); psychotyczna wymaga bezwzględnie antydepresantu z neuroleptykiem lub ECT.",
+  "sourceIds": [
+    "canmat-mdd-2023",
+    "nice-depression",
+    "icd11-cddr",
+    "dsm5tr"
+  ],
+  "questions": [
+    {
+      "id": "psych-mdd-q1",
+      "lessonId": "depresja-fenotypy-i-kryteria",
+      "prompt": "Który zestaw objawów definiuje fenotyp depresji z cechami atypowymi wg DSM-5-TR?",
+      "options": [
+        {
+          "text": "Zachowana reaktywność nastroju, hipersomnia, hiperfagia (przyrost wagi) i ołowiana bezwładność kończyn",
+          "explanation": "W depresji atypowej pacjent potrafi na chwilę poczuć się lepiej pod wpływem nagrody, dużo śpi i ma wilczy apetyt."
+        },
+        {
+          "text": "Całkowity brak reaktywności nastroju, wybudzanie 2h przed czasem i jadłowstręt",
+          "explanation": "To klasyczny fenotyp melancholiczny."
+        },
+        {
+          "text": "Urojenia zubożenia i omamy potępiające",
+          "explanation": "To fenotyp psychotyczny."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-mdd-q2",
+      "lessonId": "depresja-fenotypy-i-kryteria",
+      "prompt": "Jakie jest prawidłowe postępowanie farmakologiczne I rzutu w ciężkim epizodzie depresji z urojeniami zubożenia i winy (depresja psychotyczna)?",
+      "options": [
+        {
+          "text": "Podanie wyłącznie leku nasennego grupy Z",
+          "explanation": "Leki Z nie leczą depresji psychotycznej."
+        },
+        {
+          "text": "Połączenie leku przeciwdepresyjnego z lekiem przeciwpsychotycznym II generacji (lub pilne ECT)",
+          "explanation": "Sama monoterapia antydepresantem nie znosi urojeń psychotycznych i ma znikomą skuteczność."
+        },
+        {
+          "text": "Monoterapia dziurawcem zwyczajnym w małej dawce",
+          "explanation": "Ziołolecznictwo jest nieskuteczne i niebezpieczne w psychozie."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-mdd-q3",
+      "lessonId": "depresja-fenotypy-i-kryteria",
+      "prompt": "O ile wcześniej budzi się pacjent z typowym fenotypem depresji melancholicznej w porównaniu ze swoim nawykowym czasem snu?",
+      "options": [
+        {
+          "text": "Budzi się dokładnie 5 minut przed budzikiem w doskonałym nastroju",
+          "explanation": "To prawidłowy fizjologiczny rytm."
+        },
+        {
+          "text": "Śpi nieprzerwanie przez 18 godzin i budzi się wypoczęty",
+          "explanation": "To hipersomnia."
+        },
+        {
+          "text": "Co najmniej 2 godziny wcześniej, z niemożnością ponownego zaśnięcia i najgorszym nastrojem rano",
+          "explanation": "Wczesnoporanne wybudzanie jest biologicznym markerem ciężkiej depresji melancholicznej."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-mdd-q4",
+      "lessonId": "depresja-fenotypy-i-kryteria",
+      "prompt": "Kiedy zgodnie z wytycznymi CANMAT 2023 i NICE zaleca się wdrożenie farmakoterapii w epizodzie depresyjnym?",
+      "options": [
+        {
+          "text": "W epizodach o nasileniu umiarkowanym i ciężkim lub w łagodnych nieodpowiadających na psychoterapię",
+          "explanation": "W łagodnej depresji pierwszym wyborem są interwencje psychologiczne (CBT) i higiena snu."
+        },
+        {
+          "text": "U każdego człowieka zgłaszającego 1-dniowy smutek po kłótni",
+          "explanation": "Krótkotrwały smutek reaktywny nie jest chorobą."
+        },
+        {
+          "text": "Dopiero po 15 latach nieskutecznej psychoterapii psychoanalitycznej",
+          "explanation": "Odwlekanie leczenia w ciężkiej depresji grozi samobójstwem."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-mdd-q5",
+      "lessonId": "depresja-fenotypy-i-kryteria",
+      "prompt": "Które badanie somatyczne jest bezwzględnie konieczne w diagnostyce różnicowej każdego pierwszego epizodu depresji?",
+      "options": [
+        {
+          "text": "RTG klatki piersiowej na stojąco bez wskazań",
+          "explanation": "Nie służy diagnostyce nastroju."
+        },
+        {
+          "text": "Oznaczenie stężenia TSH (w celu wykluczenia pierwotnej niedoczynności tarczycy)",
+          "explanation": "Niedoczynność tarczycy doskonale imituje depresję ze spowolnieniem, apatią i sennością."
+        },
+        {
+          "text": "Biopsja wątroby w znieczuleniu ogólnym",
+          "explanation": "Nie ma uzasadnienia diagnostycznego."
+        }
+      ],
+      "answer": 1
+    }
+  ],
+  "assetIds": []
+}

@@ -1,0 +1,374 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "farmakogenetyka-cyp-pgx",
+  "objectives": [
+    {
+      "id": "farmakogenetyka-cyp-pgx-obj-1",
+      "statement": "Zinterpretujesz 4 fenotypy metaboliczne CYP (PM, IM, NM, UM) wg wytycznych CPIC.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "farmakogenetyka-cyp-pgx-obj-2",
+      "statement": "Dostosujesz dawkowanie SSRI i TLPD u pacjentów z fenotypem wolnego (PM) i ultratymczasowego (UM) metabolizatora.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "farmakogenetyka-cyp-pgx-obj-3",
+      "statement": "Zrozumiesz zjawisko fenokonwersji (np. silny inhibitor 2D6 przekształca pacjenta NM w funkcjonalnego PM).",
+      "kind": "mechanism"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-pgx-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "farmakogenetyka-cyp-pgx-obj-1"
+    ],
+    "prompt": "Jakie zalecenie terapeutyczne formułuje CPIC dla pacjenta z fenotypem wolnego metabolizatora CYP2C19 (Poor Metabolizer) kwalifikowanego do leczenia escitalopramem?",
+    "options": [
+      "Całkowite odstawienie wody pitnej na czas kuracji",
+      "Zredukowanie standardowej dawki leku o 50% z uwagi na ryzyko kumulacji stężenia i wydłużenia odstępu QTc",
+      "Podwojenie dawki początkowej do 40 mg/d od pierwszego dnia"
+    ],
+    "optionFeedback": [
+      "Nie ma żadnego uzasadnienia medycznego.",
+      "Spowolniony metabolizm u osób PM prowadzi do 2–3-krotnie wyższych stężeń osoczowych przy typowych dawkach.",
+      "Doprowadziłoby to do ciężkich powikłań kardiologicznych i zespołu serotoninowego."
+    ],
+    "answer": 1,
+    "explanation": "Spowolniony metabolizm u osób PM prowadzi do 2–3-krotnie wyższych stężeń osoczowych przy typowych dawkach.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "cpic-cyp2d6-2c19",
+      "agnp-tdm-2026",
+      "clozapine-consensus"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "farmakogenetyka-cyp-pgx-block-1",
+      "title": "Polimorfizmy enzymatyczne cytochromu P450 (CYP450)",
+      "text": "Większość psychotropów jest metabolizowana w wątrobie przez enzymy mikrosomalne cytochromu P450, głównie izoenzymy CYP2D6, CYP2C19, CYP3A4 i CYP1A2. Geny kodujące CYP2D6 i CYP2C19 wykazują skrajny polimorfizm genetyczny w populacji. Konsorcjum CPIC (Clinical Pharmacogenetics Implementation Consortium) definiuje 4 fenotypy: wolny metabolizator (Poor Metabolizer - PM), pośredni (Intermediate - IM), prawidłowy (Normal - NM) oraz ultraszybki (Ultrarapid Metabolizer - UM).",
+      "sourceIds": [
+        "cpic-cyp2d6-2c19",
+        "agnp-tdm-2026",
+        "clozapine-consensus"
+      ],
+      "checkpointId": "psych-pgx-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-cyp-network",
+          "kind": "diagram",
+          "placement": "after-text"
+        },
+        {
+          "id": "deeplink-cyp-pgx",
+          "kind": "workbench-deeplink",
+          "placement": "end-of-block",
+          "presetId": "cyp-interaction-001"
+        }
+      ]
+    },
+    {
+      "id": "farmakogenetyka-cyp-pgx-block-2",
+      "title": "Rekomendacje CPIC dla CYP2D6 i CYP2C19",
+      "text": "Dla CYP2C19: pacjenci o fenotypie ultrarapid (UM) metabolizują escitalopram, citalopram i sertralinę tak szybko, że osiągają subterapeutyczne stężenia – CPIC zaleca wybór alternatywnego leku (np. paroksetyna, wenlafaksyna). Z kolei u pacjentów z fenotypem PM stężenie leku gwałtownie rośnie, co rodzi ryzyko wydłużenia QTc i zespołu serotoninowego – zaleca się redukcję dawki o 50%.",
+      "sourceIds": [
+        "cpic-cyp2d6-2c19",
+        "agnp-tdm-2026",
+        "clozapine-consensus"
+      ],
+      "checkpointId": "psych-pgx-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-cpic-phenotype-dosing",
+          "kind": "evidence-panel",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "farmakogenetyka-cyp-pgx-block-3",
+      "title": "Fenokonwersja: pułapka interakcji lekowych",
+      "text": "Genotyp nie zawsze odpowiada rzeczywistemu fenotypowi pacjenta. Fenokonwersja to zjawisko, w którym pacjent o prawidłowym genotypie CYP2D6 (NM) pod wpływem silnego inhibitora enzymatycznego (np. fluoksetyny, paroksetyny czy bupropionu) staje się funkcjonalnym wolnym metabolizatorem (PM). Dołączenie innego leku metabolizowanego przez CYP2D6 (np. arypiprazolu, risperidonu, tramadolu) może wywołać ciężką toksyczność.",
+      "sourceIds": [
+        "cpic-cyp2d6-2c19",
+        "agnp-tdm-2026",
+        "clozapine-consensus"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-pgx-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "farmakogenetyka-cyp-pgx-obj-2"
+      ],
+      "prompt": "Na czym polega zjawisko fenokonwersji enzymatycznej w farmakoterapii psychiatrycznej?",
+      "options": [
+        "Na mutacji jądrowego DNA pod wpływem fal radiowych",
+        "Na natychmiastowej zamianie płci pod wpływem psychotropów",
+        "Na przekształceniu funkcjonalnym pacjenta o genotypie prawidłowym (NM) w wolnego metabolizatora (PM) pod wpływem silnego inhibitora lekowego"
+      ],
+      "optionFeedback": [
+        "DNA jądrowe pacjenta nie ulega zmianie pod wpływem fal radiowych.",
+        "Psychotropy nie zmieniają genetycznej płci pacjenta.",
+        "Np. dodanie paroksetyny (silny inhibitor 2D6) blokuje enzym, symulując mutację genetyczną typu PM."
+      ],
+      "answer": 2,
+      "explanation": "Np. dodanie paroksetyny (silny inhibitor 2D6) blokuje enzym, symulując mutację genetyczną typu PM.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "cpic-cyp2d6-2c19",
+        "agnp-tdm-2026",
+        "clozapine-consensus"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-pgx-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "farmakogenetyka-cyp-pgx-obj-3"
+      ],
+      "prompt": "Co dzieje się ze stężeniem klozapiny we krwi u nałogowego palacza papierosów, który nagle zaprzestaje palenia po przyjęciu na oddział zamknięty?",
+      "options": [
+        "Stężenie klozapiny w surowicy gwałtownie wzrasta (nawet o 50–100%), grożąc toksycznością i napadami drgawkowymi",
+        "Stężenie klozapiny spada natychmiastowo do zera",
+        "Klozapina przekształca się w witaminę B12"
+      ],
+      "optionFeedback": [
+        "Brak węglowodorów aromatycznych z dymu znosi indukcję enzymu CYP1A2, spowalniając klirens klozapiny.",
+        "Klirens leku ulega zmniejszeniu, a stężenie rośnie, a nie spada.",
+        "Jest to biologicznie niemożliwe."
+      ],
+      "answer": 0,
+      "explanation": "Brak węglowodorów aromatycznych z dymu znosi indukcję enzymu CYP1A2, spowalniając klirens klozapiny.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "cpic-cyp2d6-2c19",
+        "agnp-tdm-2026",
+        "clozapine-consensus"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "farmakogenetyka-cyp-pgx-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "farmakogenetyka-cyp-pgx-obj-1",
+      "farmakogenetyka-cyp-pgx-obj-2",
+      "farmakogenetyka-cyp-pgx-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Farmakogenetyka w psychiatrii: fenotypy CYP2D6 i CYP2C19 wg CPIC”.",
+    "modelAnswer": "Polimorfizmy CYP2D6 i CYP2C19 decydują o stężeniu leków w OUN. Rekomendacje CPIC nakazują redukcję dawek u PM i zmianę leków u UM. Węglowodory dymu tytoniowego indukują CYP1A2, regulując stężenie klozapiny i olanzapiny.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "cpic-cyp2d6-2c19",
+      "agnp-tdm-2026",
+      "clozapine-consensus"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-pgx-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "farmakogenetyka-cyp-pgx-obj-1"
+      ],
+      "prompt": "Dlaczego u pacjenta o fenotypie ultraszybkiego metabolizatora CYP2C19 (Ultrarapid Metabolizer) standardowe dawki sertraliny są nieskuteczne?",
+      "options": [
+        "Sertralina ulega natychmiastowej polimeryzacji w tkance tłuszczowej",
+        "Lek jest eliminowany z organizmu zbyt szybko, przez co stężenie we krwi nie osiąga progu terapeutycznego (~80% wysycenia SERT)",
+        "Lek odkłada się w postaci kamieni w pęcherzyku żółciowym"
+      ],
+      "optionFeedback": [
+        "Nie ma takiego procesu biochemicznego.",
+        "Klinicznie imituje to stan lekooporności, podczas gdy przyczyną jest genetyczny hipermetabolizm.",
+        "Sertralina nie krystalizuje w pęcherzyku żółciowym."
+      ],
+      "answer": 1,
+      "explanation": "Klinicznie imituje to stan lekooporności, podczas gdy przyczyną jest genetyczny hipermetabolizm.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "cpic-cyp2d6-2c19",
+        "agnp-tdm-2026",
+        "clozapine-consensus"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-pgx-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "farmakogenetyka-cyp-pgx-obj-1"
+      ],
+      "prompt": "Które dwa leki przeciwdepresyjne z grupy SSRI są najsilniejszymi znanymi inhibitorami izoenzymu CYP2D6?",
+      "options": [
+        "Escitalopram i citalopram",
+        "Wortioksetyna i milnacypran",
+        "Paroksetyna oraz fluoksetyna"
+      ],
+      "optionFeedback": [
+        "Citalopram i escitalopram mają minimalny, klinicznie nieistotny wpływ na CYP2D6.",
+        "Leki te nie są silnymi inhibitorami CYP2D6.",
+        "Stosowanie ich z lekami metabolizowanymi przez CYP2D6 (np. metoprolol, rysperydon) wymaga szczególnej ostrożności."
+      ],
+      "answer": 2,
+      "explanation": "Stosowanie ich z lekami metabolizowanymi przez CYP2D6 (np. metoprolol, rysperydon) wymaga szczególnej ostrożności.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "cpic-cyp2d6-2c19",
+        "agnp-tdm-2026",
+        "clozapine-consensus"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "pgx-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "farmakogenetyka-cyp-pgx-obj-1"
+      ],
+      "claimIds": [
+        "claim-ph-cyp2c19-escitalopram"
+      ],
+      "prompt": "Badanie farmakogenetyczne wykazało u pacjenta genotyp CYP2C19 o fenotypie wolno metabolizującym (poor metabolizer — PM). Lekarz planuje włączyć escitalopram. Jakie zalecenie wynika z wytycznych CPIC?",
+      "options": [
+        "Zmniejszenie zalecanej dawki początkowej escitalopramu o 50% ze względu na ryzyko kumulacji i wydłużenia QTc",
+        "Podwojenie dawki w celu przełamania bloku enzymatycznego",
+        "Genotyp CYP2C19 nie ma żadnego znaczenia dla escitalopramu"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-cpic-pm-recommendation",
+            "label": "Zmniejszenie dawki o 50% lub wybór leku niemetabolizowanego przez CYP2C19",
+            "acceptedPhrases": [
+              "redukcja o 50%",
+              "zmniejszenie dawki",
+              "50%",
+              "poor metabolizer",
+              "pm"
+            ]
+          },
+          {
+            "id": "c-qtc-toxicity-risk",
+            "label": "Ochrona przed kumulacją stężenia i wydłużeniem odstępu QTc",
+            "acceptedPhrases": [
+              "kumulacja",
+              "wydłużenie qtc",
+              "toksyczność",
+              "stężenie we krwi"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Wytyczne CPIC zalecają redukcję dawki escitalopramu o 50% u osób z fenotypem CYP2C19 PM z uwagi na ryzyko wydłużenia QTc.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "cpic-cyp2d6-2c19"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "farmakogenetyka-cyp-pgx-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "farmakogenetyka-cyp-pgx-obj-2"
+      ],
+      "prompt": "Wyjaśnij mechanizm molekularny lub receptorowy leżący u podstaw tematu: farmakogenetyka cyp pgx.",
+      "modelAnswer": "Kluczowe znaczenie ma zrozumienie profilu receptorowego, kaskad przekaźnictwa wewnątrzkomórkowego oraz adaptacji plastycznych w OUN.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-receptor-action",
+            "label": "Działanie na receptory / enzymy",
+            "acceptedPhrases": [
+              "receptor",
+              "enzym",
+              "mechanizm",
+              "transporter"
+            ]
+          },
+          {
+            "id": "c-clinical-effect",
+            "label": "Wpływ na funkcję OUN i objawy kliniczne",
+            "acceptedPhrases": [
+              "efekt kliniczny",
+              "adaptacja",
+              "plastyczność",
+              "neuroprzekaźnictwo"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Wyjaśnienie mechanizmu na poziomie molekularnym i klinicznym.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "farmakogenetyka-cyp-pgx-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "farmakogenetyka-cyp-pgx-obj-1",
+        "farmakogenetyka-cyp-pgx-obj-3"
+      ],
+      "prompt": "Przed wdrożeniem lub modyfikacją farmakoterapii w temacie farmakogenetyka cyp pgx, jakiej kluczowej informacji brakuje w wywiadzie?",
+      "options": [
+        "Wywiadu dotyczącego leków współistniejących pod kątem interakcji enzymatycznych (CYP) i wydolności nerek/wątroby",
+        "Profilu rzadkich przeciwciał neuronalnych",
+        "Rutynowego badania rezonansu magnetycznego głowy bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Ocena interakcji lekowych i wydolności narządów eliminujących to fundamentalny warunek bezpieczeństwa farmakoterapii.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "maudsley15"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "pathway-builder"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy AGNP 2026 TDM, CPIC PGx, Maudsley 15th ed., Kapur PET D2, Hunter criteria oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

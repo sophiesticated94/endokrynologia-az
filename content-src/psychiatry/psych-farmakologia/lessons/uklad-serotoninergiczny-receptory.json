@@ -1,0 +1,177 @@
+{
+  "id": "uklad-serotoninergiczny-receptory",
+  "moduleId": "psych-farmakologia",
+  "title": "Układ serotoninergiczny: receptory 5-HT1A, 2A, 2C, 3 i 7",
+  "subtitle": "Różnorodność receptorowa, autoreceptory a modulacja uwalniania monoamin",
+  "group": "Receptorologia i układy przekaźnikowe",
+  "minutes": 18,
+  "goals": [
+    "Zróżnicujesz funkcje i lokalizację receptorów 5-HT1A, 5-HT2A, 5-HT2C, 5-HT3 i 5-HT7.",
+    "Zrozumiesz, dlaczego antagonizm 5-HT2A leków atypowych chroni przed EPS i prolaktynemią.",
+    "Wyjaśnisz działanie przeciwwymiotne i propoznawcze antagonizmu receptorów 5-HT3 i 5-HT7."
+  ],
+  "sections": [
+    {
+      "title": "Autoreceptory 5-HT1A a postsynaptyczne 5-HT2A",
+      "text": "Serotonina oddziałuje na co najmniej 14 podtypów receptorów. Somatodendrytyczne receptory 5-HT1A w jądrach szwu pełnią funkcję hamulca uwalniania serotoniny. Z kolei receptory postsynaptyczne 5-HT2A (sprzężone z białkiem Gq) zlokalizowane na neuronach piramidowych kory i interneuronach GABA-ergicznych hamują uwalnianie dopaminy w prążkowiu i korze czołowej."
+    },
+    {
+      "title": "Antagonizm 5-HT2A jako znak rozpoznawczy SGA",
+      "text": "Leki przeciwpsychotyczne II generacji (SGA: klozapina, olanzapina, kwetiapina) charakteryzują się wyższym powinowactwem do receptora 5-HT2A niż do D2. Zablokowanie 5-HT2A znosi hamowanie uwalniania dopaminy w prążkowiu (przez interneurony GABA), co powoduje lokalny wyrzut dopaminy konkurującej z lekiem o receptor D2. Chroni to pacjenta przed objawami pozapiramidowymi (EPS) pomimo terapeutycznej dawki leku."
+    },
+    {
+      "title": "Receptory 5-HT2C, 5-HT3 i 5-HT7 w psychofarmakologii",
+      "text": "Blokada receptora 5-HT2C (np. przez mirtazapinę, olanzapinę czy agomelatynę) odhamowuje uwalnianie dopaminy i noradrenaliny w korze przedczołowej, co poprawia nastrój, lecz sprzyja przyrostowi masy ciała. Antagonizm 5-HT3 (wortioksetyna, mirtazapina) znosi nudności i poprawia przekaźnictwo acetylocholinowe, a antagonizm 5-HT7 reguluje rytmy okołodobowe i funkcje wykonawcze."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Podtyp receptora",
+      "Mechanizm sygnałowy",
+      "Efekt stymulacji",
+      "Efekt blokady (antagonizmu)"
+    ],
+    "rows": [
+      [
+        "5-HT1A",
+        "Gi/o (spadek cAMP)",
+        "Przeciwlękowy, desensytyzacja w szwie",
+        "Brak autoregulacji uwalniania"
+      ],
+      [
+        "5-HT2A",
+        "Gq (wzrost IP3/DAG, Ca2+)",
+        "Halucynacje (agoniści 5-HT2A), hamowanie DA",
+        "Działanie przeciwpsychotyczne, redukcja EPS (SGA)"
+      ],
+      [
+        "5-HT2C",
+        "Gq (wzrost IP3/DAG)",
+        "Tłumienie apetytu, spadek DA/NA w PFC",
+        "Wzrost apetytu i wagi, wyrzut DA/NA w korze"
+      ],
+      [
+        "5-HT3",
+        "Kanał jonowy (napływ Na+/Ca2+)",
+        "Nudności, wymioty, spadek ACh",
+        "Działanie przeciwwymiotne, propoznawcze"
+      ],
+      [
+        "5-HT7",
+        "Gs (wzrost cAMP)",
+        "Regulacja rytmu dobowego, termoregulacja",
+        "Poprawa rytmu snu, działanie przeciwdepresyjne"
+      ]
+    ]
+  },
+  "advanced": "Wortioksetyna jest przykładem multimodalnego leku przeciwdepresyjnego: hamuje SERT, działa jako agonista 5-HT1A, częściowy agonista 5-HT1B oraz antagonista 5-HT1D, 5-HT3 i 5-HT7. Złożona modulacja odhamowuje uwalnianie acetylocholiny, dopaminy i histaminy w hipokampie, wywierając bezpośredni korzystny wpływ na funkcje poznawcze w depresji.",
+  "summary": "Profil receptorowy 5-HT decyduje o tolerancji leków. Antagonizm 5-HT2A chroni przed EPS w lekach atypowych, blokada 5-HT2C zwiększa stężenie DA/NA w korze, a antagonizm 5-HT3 eliminuje nudności.",
+  "sourceIds": [
+    "stahl-essential",
+    "pet-d2-kapur",
+    "canmat-mdd-2023"
+  ],
+  "questions": [
+    {
+      "id": "psych-5ht-q1",
+      "lessonId": "uklad-serotoninergiczny-receptory",
+      "prompt": "Dlaczego leki przeciwpsychotyczne II generacji (SGA) o silnym antagonizmie 5-HT2A wywołują znacznie mniej objawów pozapiramidowych (EPS) niż haloperydol?",
+      "options": [
+        {
+          "text": "Antagonizm 5-HT2A całkowicie uniemożliwia wchłanianie leku do krwi",
+          "explanation": "Leki SGA wchłaniają się prawidłowo z przewodu pokarmowego."
+        },
+        {
+          "text": "Blokada receptorów 5-HT2A w prążkowiu odhamowuje uwalnianie dopaminy, która konkuruje z lekiem o receptory D2 w szlaku nigrostriatalnym",
+          "explanation": "Chroni to układ pozapiramidowy przed nadmierną blokadą transmisyjną."
+        },
+        {
+          "text": "Leki II generacji niszczą prążkowie, więc pacjent nie ma czym drżeć",
+          "explanation": "Leki psychotropowe nie powodują destrukcji prążkowia."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-5ht-q2",
+      "lessonId": "uklad-serotoninergiczny-receptory",
+      "prompt": "Który podtyp receptora serotoninowego jest bezpośrednim kanałem jonowym bramkowanym ligandem (nie receptorem metabotropowym sprzężonym z białkiem G)?",
+      "options": [
+        {
+          "text": "Receptor 5-HT1A",
+          "explanation": "5-HT1A jest receptorem sprzężonym z białkiem Gi/o hamującym cyklazę adenylanową."
+        },
+        {
+          "text": "Receptor 5-HT2A",
+          "explanation": "5-HT2A jest receptorem sprzężonym z białkiem Gq stymulującym fosfolipazę C."
+        },
+        {
+          "text": "Receptor 5-HT3",
+          "explanation": "Jest to pentameryczny kanał kationowy; jego blokada wywiera silny efekt przeciwwymiotny i prokognitywny."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-5ht-q3",
+      "lessonId": "uklad-serotoninergiczny-receptory",
+      "prompt": "Jaki efekt kliniczny wywołuje silny antagonizm receptorów 5-HT2C (np. w działaniu mirtazapiny lub olanzapiny)?",
+      "options": [
+        {
+          "text": "Wzrost łaknienia, zwiększenie masy ciała oraz odhamowanie uwalniania DA i NA w korze przedczołowej",
+          "explanation": "Receptor 5-HT2C fizjologicznie hamuje apetyt i wyrzut katecholamin korowych."
+        },
+        {
+          "text": "Natychmiastowe zatrzymanie krążenia w mechanizmie asystolii",
+          "explanation": "Blokada 5-HT2C nie wywołuje asystolii."
+        },
+        {
+          "text": "Gwałtowny spadek masy ciała o 20 kg w ciągu tygodnia",
+          "explanation": "Blokada 5-HT2C promuje tycie, a nie chudnięcie."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-5ht-q4",
+      "lessonId": "uklad-serotoninergiczny-receptory",
+      "prompt": "Który lek przeciwdepresyjny łączy blokadę SERT z bezpośrednim antagonizmem receptorów 5-HT3 i 5-HT7 oraz agonizmem 5-HT1A (profil multimodalny)?",
+      "options": [
+        {
+          "text": "Maprotylina",
+          "explanation": "Maprotylina jest czteropierścieniowym selektywnym inhibitorem NET."
+        },
+        {
+          "text": "Wortioksetyna",
+          "explanation": "Profil ten zapewnia poprawę funkcji poznawczych w depresji i niskie ryzyko dysfunkcji seksualnych."
+        },
+        {
+          "text": "Doksepina",
+          "explanation": "Doksepina jest trójpierścieniowym lekiem przeciwdepresyjnym o silnym działaniu antyhistaminowym."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-5ht-q5",
+      "lessonId": "uklad-serotoninergiczny-receptory",
+      "prompt": "Gdzie zlokalizowane są somatodendrytyczne autoreceptory 5-HT1A wygaszające wyładowania neuronów serotoninowych?",
+      "options": [
+        {
+          "text": "W rogach tylnych rdzenia kręgowego",
+          "explanation": "Rogi tylne przewodzą czucie somatyczne i ból."
+        },
+        {
+          "text": "W opuszce węchowej",
+          "explanation": "Opuszka węchowa odbiera bodźce zapachowe."
+        },
+        {
+          "text": "W jądrach szwu pnia mózgu (raphe nuclei)",
+          "explanation": "Ich desensytyzacja po 2–4 tygodniach ekspozycji na SSRI odblokowuje trwałe uwalnianie serotoniny w mózgowiu."
+        }
+      ],
+      "answer": 2
+    }
+  ],
+  "assetIds": []
+}

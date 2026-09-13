@@ -1,0 +1,400 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "lekoopornosc-i-klozapina",
+  "objectives": [
+    {
+      "id": "lekoopornosc-i-klozapina-obj-1",
+      "statement": "Zdefiniujesz schizofrenię lekooporną (TRS) wg kryteriów konsensusu TRRIP.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "lekoopornosc-i-klozapina-obj-2",
+      "statement": "Wdrożysz bezpieczną titrację klozapiny od 12,5 mg/d i osiągniesz stężenie docelowe 350–600 ng/ml.",
+      "kind": "safety"
+    },
+    {
+      "id": "lekoopornosc-i-klozapina-obj-3",
+      "statement": "Zapobiegniesz zagrażającej życiu hipomotoryce przewodu pokarmowego (clozapine-induced gastrointestinal hypomotility).",
+      "kind": "mechanism"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-cloz-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "lekoopornosc-i-klozapina-obj-1"
+    ],
+    "prompt": "Kiedy zgodnie z konsensusem TRRIP należy podjąć decyzję o włączeniu klozapiny w schizofrenii?",
+    "options": [
+      "Po braku adekwatnej odpowiedzi na co najmniej 2 różne leki przeciwpsychotyczne stosowane w odpowiedniej dawce przez min. 6 tygodni każdy",
+      "Wyłącznie po wyczerpaniu wszystkich neuroleptyków atypowych w politerapii trwającej minimum 5 lat",
+      "Jako lek I rzutu w pierwszym dniu pierwszego epizodu psychozy u każdego chorego"
+    ],
+    "optionFeedback": [
+      "Odwlekanie wdrożenia klozapiny o lata drastycznie pogarsza szanse na remisję poznawczą i społeczną.",
+      "Zgodnie z TRRIP wystarczą 2 nieudane próby terapeutyczne (min. 6 tygodni każda); zwlekanie z wdrożeniem klozapiny utrwala lekooporność.",
+      "Klozapina nie jest lekiem pierwszego rzutu w niepowikłanym pierwszym epizodzie z uwagi na profil bezpieczeństwa i wymogi TDM."
+    ],
+    "answer": 0,
+    "explanation": "Odwlekanie wdrożenia klozapiny o lata drastycznie pogarsza szanse na remisję poznawczą i społeczną.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "clozapine-consensus",
+      "wfsbp-schizophrenia",
+      "nice-schizophrenia"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "lekoopornosc-i-klozapina-block-1",
+      "title": "Kryteria lekooporności wg konsensusu TRRIP",
+      "text": "Zgodnie z międzynarodowym konsensusem TRRIP (Treatment Response and Resistance in Psychosis) schizofrenię lekooporną (TRS) rozpoznaje się, gdy u pacjenta nie uzyskano zadowalającej poprawy (redukcja PANSS < 20% lub brak remisji) po co najmniej dwóch kolejnych próbach terapeutycznych różnymi lekami przeciwpsychotycznymi w odpowiedniej dawce (ekwiwalent >= 600 mg chlorpromazyny/d) przez co najmniej 6 tygodni każda, przy potwierdzonej dobrej adherencji (np. badaniem TDM).",
+      "sourceIds": [
+        "clozapine-consensus",
+        "wfsbp-schizophrenia",
+        "nice-schizophrenia"
+      ],
+      "checkpointId": "psych-cloz-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-trs-definition-criteria",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        },
+        {
+          "id": "deeplink-clozapine-smoking",
+          "kind": "workbench-deeplink",
+          "placement": "end-of-block",
+          "presetId": "clozapine-smoking-001"
+        }
+      ]
+    },
+    {
+      "id": "lekoopornosc-i-klozapina-block-2",
+      "title": "Klozapina w schizofrenii lekoopornej (TRS)",
+      "text": "Klozapina jest jedynym lekiem o udowodnionej przewadze w TRS. Ze względu na ryzyko ostrej hipotensji ortostatycznej i zapaści naczyniowej wdrażanie rozpoczyna się od mikrodawki 12,5 mg lub 25 mg na noc, zwiększając dawkę powoli o 25–50 mg co 1–2 dni do dawki docelowej 300–450 mg/d. Stężenie terapeutyczne w surowicy krwi powinno wynosić 350–600 ng/ml.",
+      "sourceIds": [
+        "clozapine-consensus",
+        "wfsbp-schizophrenia",
+        "nice-schizophrenia"
+      ],
+      "checkpointId": "psych-cloz-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-anc-monitoring-hematology",
+          "kind": "evidence-panel",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "lekoopornosc-i-klozapina-block-3",
+      "title": "Zaparcia i atonia jelit: cichy zabójca na klozapinie",
+      "text": "Choć agranulocytoza budzi największy lęk, to ciężka hipomotoryka przewodu pokarmowego (atonia, niedrożność porażenna jelit) jest przyczyną większej liczby zgonów na klozapinie niż powikłania hematologiczne. Silna blokada receptorów M1–M4 i 5-HT3 paraliżuje perystaltykę. Profilaktyka wymaga rutynowego monitorowania wypróżnień i wczesnego wdrażania leków osmotycznych (makrogole/PEG) od pierwszych dni leczenia.",
+      "sourceIds": [
+        "clozapine-consensus",
+        "wfsbp-schizophrenia",
+        "nice-schizophrenia"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-cloz-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "lekoopornosc-i-klozapina-obj-2"
+      ],
+      "prompt": "Które powikłanie klozapiny statystycznie odpowiada za większą liczbę zgonów pacjentów niż agranulocytoza?",
+      "options": [
+        "Ostre zatrzymanie moczu bez cech infekcji pęcherza",
+        "Porażenna niedrożność jelit wywołana ciężką hipomotoryką przewodu pokarmowego (clozapine-induced gastrointestinal hypomotility)",
+        "Ciężki parkinsonizm polekowy z wczesnymi dyskinezami późnymi"
+      ],
+      "optionFeedback": [
+        "Choć działanie antycholinergiczne może utrudniać mikcję, zagrażającym życiu powikłaniem hipomotorycznym o najwyższej śmiertelności jest niedrożność i martwica jelit.",
+        "Silne działanie antycholinergiczne i serotoninergiczne prowadzi do zalegania mas kałowych, martwicy jelita i sepsy.",
+        "Klozapina charakteryzuje się minimalnym powinowactwem do prążkowiowych receptorów D2 i niemal nie wywołuje EPS ani dyskinez późnych."
+      ],
+      "answer": 1,
+      "explanation": "Silne działanie antycholinergiczne i serotoninergiczne prowadzi do zalegania mas kałowych, martwicy jelita i sepsy.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "clozapine-consensus",
+        "wfsbp-schizophrenia",
+        "nice-schizophrenia"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-cloz-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "lekoopornosc-i-klozapina-obj-3"
+      ],
+      "prompt": "Jaki zakres stężenia klozapiny we krwi w badaniu TDM uznaje się za optymalny w leczeniu schizofrenii lekoopornej?",
+      "options": [
+        "50 do 150 ng/ml",
+        "1200 do 2000 ng/ml",
+        "350 do 600 ng/ml"
+      ],
+      "optionFeedback": [
+        "Stężenia poniżej 200–350 ng/ml są z reguły subterapeutyczne w schizofrenii lekoopornej i korelują z brakiem remisji wg AGNP.",
+        "Stężenia powyżej 1000 ng/ml wiążą się z gwałtownym skokiem toksyczności, głębokiej sedacji, mioklonii i napadów drgawkowych.",
+        "Poniżej 350 ng/ml brak skuteczności w TRS, a powyżej 1000 ng/ml drastycznie rośnie ryzyko drgawek padaczkowych."
+      ],
+      "answer": 2,
+      "explanation": "Poniżej 350 ng/ml brak skuteczności w TRS, a powyżej 1000 ng/ml drastycznie rośnie ryzyko drgawek padaczkowych.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "clozapine-consensus",
+        "wfsbp-schizophrenia",
+        "nice-schizophrenia"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "lekoopornosc-i-klozapina-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "lekoopornosc-i-klozapina-obj-1",
+      "lekoopornosc-i-klozapina-obj-2",
+      "lekoopornosc-i-klozapina-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Lekooporność w schizofrenii (TRS) i algorytm włączania klozapiny”.",
+    "modelAnswer": "Klozapina jest lekiem I wyboru w lekooporności (TRS) po nieskuteczności 2 neuroleptyków. Wymaga wolnej titracji, nadzoru hematologicznego (ANC) oraz aktywnej prewencji śmiertelnej atonii jelit makrogolami.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "clozapine-consensus",
+      "wfsbp-schizophrenia",
+      "nice-schizophrenia"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-cloz-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "lekoopornosc-i-klozapina-obj-1"
+      ],
+      "prompt": "W jaki sposób leczy się uciążliwy ślinotok nocny (sialorrhea) u pacjenta leczonego klozapiną?",
+      "options": [
+        "Miejscowym podaniem podjęzykowym kropli z lekiem antycholinergicznym (np. bromek ipratropium lub atropina pod język na noc)",
+        "Eskalacją dawki klozapiny o 100 mg przed snem",
+        "Doustnym podaniem chlorpromazyny o silnym działaniu sedatywnym"
+      ],
+      "optionFeedback": [
+        "Miejscowe zablokowanie receptorów w śliniankach ogranicza wydzielanie śliny bez nasilania zaparć ogólnoustrojowych.",
+        "Zwiększenie dawki nasili pobudzenie receptorów muskarynowych i pogłębi hipersaliwację oraz sedację.",
+        "Dodanie kolejnego leku przeciwpsychotycznego p.o. zwiększa ogólne obciążenie antycholinergiczne i ryzyko zaparć bez kontroli ślinianek."
+      ],
+      "answer": 0,
+      "explanation": "Miejscowe zablokowanie receptorów w śliniankach ogranicza wydzielanie śliny bez nasilania zaparć ogólnoustrojowych.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "clozapine-consensus",
+        "wfsbp-schizophrenia",
+        "nice-schizophrenia"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-cloz-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "lekoopornosc-i-klozapina-obj-1"
+      ],
+      "prompt": "Od jakiej dawki początkowej należy bezwzględnie rozpoczynać terapię klozapiną, aby zapobiec ostrej zapaści naczyniowej i ciężkiej hipotensji ortostatycznej?",
+      "options": [
+        "300 mg w pojedynczej dawce wieczornej",
+        "12,5 mg do 25 mg podane na noc",
+        "100 mg 2 razy na dobę od pierwszego dnia"
+      ],
+      "optionFeedback": [
+        "Dawka 300 mg jest dawką docelową osiąganą po 2–3 tygodniach ostrożnej titracji, nie dawką startową.",
+        "Klozapina silnie blokuje receptory alfa-1 adrenergiczne; zbyt szybka titracja grozi utratą przytomności i wstrząsem.",
+        "Rozpoczęcie od 200 mg/d wiąże się ze skrajnym ryzykiem ostrej zapaści naczyniowej, tachykardii odruchowej i drgawek."
+      ],
+      "answer": 1,
+      "explanation": "Klozapina silnie blokuje receptory alfa-1 adrenergiczne; zbyt szybka titracja grozi utratą przytomności i wstrząsem.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "clozapine-consensus",
+        "wfsbp-schizophrenia",
+        "nice-schizophrenia"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "clz-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "lekoopornosc-i-klozapina-obj-1"
+      ],
+      "claimIds": [
+        "claim-ph-clozapine-anc"
+      ],
+      "prompt": "U pacjenta leczonego klozapiną od 8 tygodni rutynowe cotygodniowe badanie morfologii wykazało bezwzględną liczbę neutrofilów (ANC) wynoszącą 850/µl. Pacjent nie ma gorączki. Jakie działanie nakazują międzynarodowe wytyczne bezpieczeństwa?",
+      "options": [
+        "Natychmiastowe i bezwzględne przerwanie stosowania klozapiny, pilna konsultacja hematologiczna i codzienne monitorowanie ANC",
+        "Zmniejszenie dawki o połowę i powtórzenie badania za tydzień",
+        "Podanie paracetamolu i kontynuacja leczenia"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-anc-threshold-1000",
+            "label": "ANC < 1000/µl oznacza ciężką neutropenię / agranulocytozę",
+            "acceptedPhrases": [
+              "poniżej 1000",
+              "<1000",
+              "agranulocytoza",
+              "neutropenia",
+              "anc"
+            ]
+          },
+          {
+            "id": "c-immediate-cessation",
+            "label": "Natychmiastowe odstawienie klozapiny i zakaz ponownego włączania bez zgody hematologa",
+            "acceptedPhrases": [
+              "odstawienie klozapiny",
+              "przerwanie leczenia",
+              "pilna konsultacja",
+              "nadzór hematologiczny"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-dose-reduction-only",
+            "patterns": [
+              "zmniejszenie dawki",
+              "kontynuacja klozapiny",
+              "powtórzenie za tydzień"
+            ],
+            "severity": "critical",
+            "feedback": "BŁĄD KRYTYCZNY: Przy ANC < 1000/µl klozapina musi być natychmiast odstawiona ze względu na ryzyko zgonu z posocznicy."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Spadek ANC < 1000/µl to bezwzględne wskazanie do natychmiastowego przerwania klozapiny.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "clozapine-consensus",
+        "maudsley15"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "clz-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "lekoopornosc-i-klozapina-obj-2"
+      ],
+      "claimIds": [
+        "claim-ph-clozapine-smoking"
+      ],
+      "prompt": "Wyjaśnij mechanizm interakcji farmakokinetycznej między dymem tytoniowym a klozapiną. Co dzieje się ze stężeniem leku, gdy pacjent hospitalizowany na oddziale zamkniętym nagle przestaje palić?",
+      "modelAnswer": "Wielopierścieniowe węglowodory aromatyczne zawarte w dymie tytoniowym (nie nikotyna!) są silnymi induktorami izoenzymu CYP1A2, który odpowiada za główną drogę metabolizmu klozapiny. Nagłe zaprzestanie palenia (np. w szpitalu) wygasza indukcję CYP1A2, co prowadzi do gwałtownego spadku klirensu i wzrostu stężenia klozapiny we krwi nawet o 50–100%. Może to wywołać ciężką toksyczność: sedację, drgawki, zaburzenia rytmu serca i niedrożność porażenną jelit.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-cyp1a2-induction-hydrocarbons",
+            "label": "Dym tytoniowy (węglowodory) indukuje enzym CYP1A2",
+            "acceptedPhrases": [
+              "cyp1a2",
+              "indukcja cyp1a2",
+              "dym tytoniowy",
+              "węglowodory aromatyczne"
+            ]
+          },
+          {
+            "id": "c-smoking-cessation-rise",
+            "label": "Zaprzestanie palenia powoduje wzrost stężenia klozapiny o 50-100% i ryzyko intoksykacji",
+            "acceptedPhrases": [
+              "wzrost stężenia klozapiny",
+              "kumulacja",
+              "toksyczność",
+              "drgawki",
+              "spadek klirensu"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Dym tytoniowy indukuje CYP1A2; rzucenie palenia drastycznie podnosi stężenie klozapiny i grozi zatruciem.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "clozapine-consensus",
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "clz-bank-3",
+      "type": "multi_select",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "lekoopornosc-i-klozapina-obj-1",
+        "lekoopornosc-i-klozapina-obj-3"
+      ],
+      "claimIds": [
+        "claim-ph-clozapine-cardio"
+      ],
+      "prompt": "Zaznacz wszystkie objawy alarmowe wymagające natychmiastowej diagnostyki w kierunku zapalenia mięśnia sercowego (myocarditis) w pierwszych 4 tygodniach terapii klozapiną.",
+      "options": [
+        "Uporczywa tachykardia spoczynkowa (>100/min) nieproporcjonalna do temperatury",
+        "Ból w klatce piersiowej, duszność lub cechy niewydolności krążenia",
+        "Wzrost stężenia troponin sercowych lub białka CRP we krwi",
+        "Łagodny ślinotok nocny bez gorączki"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Tachykardia spoczynkowa, duszność, ból w klatce oraz wzrost troponin/CRP to klasyczne objawy zapalenia mięśnia sercowego po klozapinie. Ślinotok nocny to częste, uciążliwe działanie niepożądane (stymulacja M4), ale nie świadczy o myocarditis.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "clozapine-consensus"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "timeline",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy AGNP 2026 TDM, CPIC PGx, Maudsley 15th ed., Kapur PET D2, Hunter criteria oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

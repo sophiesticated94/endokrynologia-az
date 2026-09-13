@@ -1,0 +1,364 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "leki-przeciwpsychotyczne-generacje",
+  "objectives": [
+    {
+      "id": "leki-przeciwpsychotyczne-generacje-obj-1",
+      "statement": "Porównasz trzy generacje leków przeciwpsychotycznych pod kątem receptorologii i objawów niepożądanych.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "leki-przeciwpsychotyczne-generacje-obj-2",
+      "statement": "Scharakteryzujesz unikalną pozycję klozapiny w schizofrenii lekoopornej (TRS).",
+      "kind": "mechanism"
+    },
+    {
+      "id": "leki-przeciwpsychotyczne-generacje-obj-3",
+      "statement": "Dobierzesz neuroleptyk minimalizujący ryzyko metaboliczne, kardiologiczne lub sedację.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-antipsy-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "leki-przeciwpsychotyczne-generacje-obj-1"
+    ],
+    "prompt": "Który z leków przeciwpsychotycznych II generacji wiąże się z największym ryzykiem powikłań metabolicznych (znacznego przyrostu masy ciała, cukrzycy typu 2 i dyslipidemii)?",
+    "options": [
+      "Olanzapina (oraz klozapina)",
+      "Aripiprazol",
+      "Zyprazydon"
+    ],
+    "optionFeedback": [
+      "Silna blokada receptorów histaminowych H1 i serotoninowych 5-HT2C w podwzgórzu prowadzi do żarłoczności i insulinooporności.",
+      "Aripiprazol jest lekiem o neutralnym profilu metabolicznym.",
+      "Zyprazydon nie powoduje przyrostu masy ciała, wymaga jednak podawania z posiłkiem min. 500 kcal."
+    ],
+    "answer": 0,
+    "explanation": "Silna blokada receptorów histaminowych H1 i serotoninowych 5-HT2C w podwzgórzu prowadzi do żarłoczności i insulinooporności.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "wfsbp-schizophrenia",
+      "nice-schizophrenia",
+      "clozapine-consensus"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "leki-przeciwpsychotyczne-generacje-block-1",
+      "title": "I generacja (FGA): silna blokada D2 i wysokie ryzyko EPS",
+      "text": "Klasyczne neuroleptyki (FGA: haloperydol, chlorpromazyna, zuklopentyksol) to silni antagoniści receptorów D2 w całym mózgowiu. O ile skutecznie tłumią psychozę, o tyle blokada w szlaku nigrostriatalnym wywołuje ostry parkinsonizm, akatyzję, dystonie oraz po latach stosowania nieodwracalne dyskinezy późne (tardive dyskinesia - TD) wskutek up-regulacji receptorów postsynaptycznych.",
+      "sourceIds": [
+        "wfsbp-schizophrenia",
+        "nice-schizophrenia",
+        "clozapine-consensus"
+      ],
+      "checkpointId": "psych-antipsy-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-d2-pathways",
+          "kind": "diagram",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "leki-przeciwpsychotyczne-generacje-block-2",
+      "title": "II generacja (SGA): synergia D2/5-HT2A i profil metaboliczny",
+      "text": "Atypowe leki przeciwpsychotyczne (SGA: olanzapina, kwetiapina, rysperydon, zyprazydon) łączą słabszą blokadę D2 z silnym antagonizmem 5-HT2A. Znacznie rzadziej wywołują EPS, jednak niektóre z nich (zwłaszcza olanzapina i klozapina) charakteryzują się bardzo wysokim ryzykiem zespołu metabolicznego: przyrostu masy ciała, cukrzycy de novo i dyslipidemii aterogennej wskutek blokady receptorów H1 i 5-HT2C.",
+      "sourceIds": [
+        "wfsbp-schizophrenia",
+        "nice-schizophrenia",
+        "clozapine-consensus"
+      ],
+      "checkpointId": "psych-antipsy-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-fga-sga-tga-profiles",
+          "kind": "evidence-panel",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "leki-przeciwpsychotyczne-generacje-block-3",
+      "title": "III generacja: stabilizatory dopaminowe (częściowi agoniści)",
+      "text": "Aripiprazol, brekspiprazol i kariprazyna stanowią nową erę. Działają jak częściowi agoniści receptorów D2 i D3 oraz antagoniści 5-HT2A. Cechują się niemal metaboliczną i hormonalną neutralnością (nie powodują tycia ani hiperprolaktynemii), natomiast najczęstszym działaniem niepożądanym w pierwszych dniach leczenia jest akatyzja (niepokój ruchowy), którą można opanować powolnym włączaniem lub małą dawką beta-blokera.",
+      "sourceIds": [
+        "wfsbp-schizophrenia",
+        "nice-schizophrenia",
+        "clozapine-consensus"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-antipsy-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "leki-przeciwpsychotyczne-generacje-obj-2"
+      ],
+      "prompt": "Jaki jest mechanizm działania aripiprazolu i kariprazyny na receptor dopaminowy D2?",
+      "options": [
+        "Czysty agonizm identyczny jak endogenna dopamina",
+        "Częściowy agonizm (modulacja wewnętrznej aktywności)",
+        "Całkowita, nieodwracalna destrukcja receptora D2"
+      ],
+      "optionFeedback": [
+        "Czysty agonista wywołałby gwałtowne zaostrzenie objawów psychotycznych.",
+        "W warunkach nadmiaru dopaminy zachowują się jak antagoniści, a w warunkach niedoboru podtrzymują bazową transmisję.",
+        "Leki nie niszczą cząsteczek receptorowych."
+      ],
+      "answer": 1,
+      "explanation": "W warunkach nadmiaru dopaminy zachowują się jak antagoniści, a w warunkach niedoboru podtrzymują bazową transmisję.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "wfsbp-schizophrenia",
+        "nice-schizophrenia",
+        "clozapine-consensus"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-antipsy-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "leki-przeciwpsychotyczne-generacje-obj-3"
+      ],
+      "prompt": "Dlaczego u pacjenta leczonego haloperydolem w wysokiej dawce rozwija się sztywność mięśniowa typu \"koła zębatego\" i maskowata twarz?",
+      "options": [
+        "Ponieważ haloperydol wywołuje natychmiastowe złamania kości twarzoczaszki",
+        "Z powodu braku witaminy C w diecie",
+        "Ponieważ blokada receptorów D2 w szlaku nigrostriatalnym przekracza 80%, wywołując polekowy zespół parkinsonowski"
+      ],
+      "optionFeedback": [
+        "Jest to zaburzenie neuroprzekaźnictwa, a nie uraz mechaniczny.",
+        "Objawy pozapiramidowe nie mają związku z poziomem kwasu askorbinowego.",
+        "Niedobór dopaminy w prążkowiu odhamowuje układ cholinergiczny i powoduje wzmożenie napięcia pozapiramidowego."
+      ],
+      "answer": 2,
+      "explanation": "Niedobór dopaminy w prążkowiu odhamowuje układ cholinergiczny i powoduje wzmożenie napięcia pozapiramidowego.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "wfsbp-schizophrenia",
+        "nice-schizophrenia",
+        "clozapine-consensus"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "leki-przeciwpsychotyczne-generacje-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "leki-przeciwpsychotyczne-generacje-obj-1",
+      "leki-przeciwpsychotyczne-generacje-obj-2",
+      "leki-przeciwpsychotyczne-generacje-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Leki przeciwpsychotyczne I, II i III generacji: profil receptorowy”.",
+    "modelAnswer": "FGA skutecznie hamują psychozę, lecz niosą ryzyko EPS. SGA chronią przed EPS, ale olanzapina wywołuje powikłania metaboliczne. Leki III generacji (aripiprazol) są bezpieczne metabolicznie, a klozapina ratuje pacjentów lekoopornych.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "wfsbp-schizophrenia",
+      "nice-schizophrenia",
+      "clozapine-consensus"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-antipsy-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "leki-przeciwpsychotyczne-generacje-obj-1"
+      ],
+      "prompt": "Jakie badanie krwi jest bezwzględnie obligatoryjne przed włączeniem oraz w trakcie terapii klozapiną z uwagi na ryzyko zgonu?",
+      "options": [
+        "Bezwzględna liczba neutrofilów (ANC - Absolute Neutrophil Count) w morfologii krwi",
+        "Stężenie hormonu wzrostu co 3 dni",
+        "Odczyn Biernackiego (OB) raz na 10 lat"
+      ],
+      "optionFeedback": [
+        "Klozapina może wywołać agranulocytozę (ANC < 500/ul); spadek poniżej normy wymaga natychmiastowego odstawienia leku.",
+        "Hormon wzrostu nie jest parametrem monitorowania bezpieczeństwa klozapiny.",
+        "OB nie jest wskaźnikiem zagrożenia agranulocytozą."
+      ],
+      "answer": 0,
+      "explanation": "Klozapina może wywołać agranulocytozę (ANC < 500/ul); spadek poniżej normy wymaga natychmiastowego odstawienia leku.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "wfsbp-schizophrenia",
+        "nice-schizophrenia",
+        "clozapine-consensus"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-antipsy-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "leki-przeciwpsychotyczne-generacje-obj-1"
+      ],
+      "prompt": "Który lek przeciwpsychotyczny II generacji wykazuje najwyższe ryzyko wywołania objawowej hiperprolaktynemii z mlekotokiem?",
+      "options": [
+        "Aripiprazol",
+        "Rysperydon (oraz paliperydon)",
+        "Kwetiapina"
+      ],
+      "optionFeedback": [
+        "Aripiprazol jako częściowy agonista wręcz obniża stężenie prolaktyny.",
+        "Silna blokada D2 w naczyniach przysadkowych szlaku guzkowo-lejkowego znosi fizjologiczne hamowanie laktotrofów.",
+        "Kwetiapina bardzo szybko dysocjuje z receptora D2 i nie podwyższa prolaktyny."
+      ],
+      "answer": 1,
+      "explanation": "Silna blokada D2 w naczyniach przysadkowych szlaku guzkowo-lejkowego znosi fizjologiczne hamowanie laktotrofów.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "wfsbp-schizophrenia",
+        "nice-schizophrenia",
+        "clozapine-consensus"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "leki-przeciwpsychotyczne-generacje-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "leki-przeciwpsychotyczne-generacje-obj-1"
+      ],
+      "prompt": "Oceń decyzję terapeutyczną i mechanizmy bezpieczeństwa w temacie lekcji „leki przeciwpsychotyczne generacje”.",
+      "options": [
+        "Postępowanie zgodne z wytycznymi EBM i monitorowaniem bezpieczeństwa",
+        "Modyfikacja leczenia bez uwzględnienia farmakokinetyki i interakcji",
+        "Nagłe odstawienie leku z ryzykiem powikłań z odbicia"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-pk-rationale",
+            "label": "Uzasadnienie oparte na PK/PD i bezpieczeństwie",
+            "acceptedPhrases": [
+              "bezpieczeństwo",
+              "pk/pd",
+              "wytyczne",
+              "mechanizm"
+            ]
+          },
+          {
+            "id": "c-monitoring-rationale",
+            "label": "Monitorowanie parametrów klinicznych",
+            "acceptedPhrases": [
+              "monitoring",
+              "stężenie",
+              "interakcje"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Decyzja wymaga uwzględnienia parametrów farmakokinetycznych i profilu bezpieczeństwa.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "maudsley15",
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "leki-przeciwpsychotyczne-generacje-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "leki-przeciwpsychotyczne-generacje-obj-2"
+      ],
+      "prompt": "Wyjaśnij mechanizm molekularny lub receptorowy leżący u podstaw tematu: leki przeciwpsychotyczne generacje.",
+      "modelAnswer": "Kluczowe znaczenie ma zrozumienie profilu receptorowego, kaskad przekaźnictwa wewnątrzkomórkowego oraz adaptacji plastycznych w OUN.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-receptor-action",
+            "label": "Działanie na receptory / enzymy",
+            "acceptedPhrases": [
+              "receptor",
+              "enzym",
+              "mechanizm",
+              "transporter"
+            ]
+          },
+          {
+            "id": "c-clinical-effect",
+            "label": "Wpływ na funkcję OUN i objawy kliniczne",
+            "acceptedPhrases": [
+              "efekt kliniczny",
+              "adaptacja",
+              "plastyczność",
+              "neuroprzekaźnictwo"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Wyjaśnienie mechanizmu na poziomie molekularnym i klinicznym.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "leki-przeciwpsychotyczne-generacje-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "leki-przeciwpsychotyczne-generacje-obj-1",
+        "leki-przeciwpsychotyczne-generacje-obj-3"
+      ],
+      "prompt": "Przed wdrożeniem lub modyfikacją farmakoterapii w temacie leki przeciwpsychotyczne generacje, jakiej kluczowej informacji brakuje w wywiadzie?",
+      "options": [
+        "Wywiadu dotyczącego leków współistniejących pod kątem interakcji enzymatycznych (CYP) i wydolności nerek/wątroby",
+        "Profilu rzadkich przeciwciał neuronalnych",
+        "Rutynowego badania rezonansu magnetycznego głowy bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Ocena interakcji lekowych i wydolności narządów eliminujących to fundamentalny warunek bezpieczeństwa farmakoterapii.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "maudsley15"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "pathway-builder"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy AGNP 2026 TDM, CPIC PGx, Maudsley 15th ed., Kapur PET D2, Hunter criteria oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

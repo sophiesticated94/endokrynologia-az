@@ -1,0 +1,177 @@
+{
+  "id": "racjonalna-polipragmazja-i-augmentacja",
+  "moduleId": "psych-farmakologia",
+  "title": "Racjonalna polipragmazja i strategie augmentacji",
+  "subtitle": "Lit, atypowe leki przeciwpsychotyczne, hormony tarczycy i kombinacje mechanizmów",
+  "group": "Precyzyjna psychofarmakologia i metabolizm",
+  "minutes": 18,
+  "goals": [
+    "Zastosujesz strategie augmentacji lekoopornej depresji (TRD) o najwyższym stopniu dowodów (lit, aripiprazol, kwetiapina).",
+    "Zróżnicujesz racjonalną polipragmazję synergistyczną od bezkrytycznej politerapii antagonistycznej.",
+    "Scharakteryzujesz augmentację trójjodotyroniną (T3) oraz kombinacje wielomechanizmowe (np. Kalifornia Rocket Fuel)."
+  ],
+  "sections": [
+    {
+      "title": "Kiedy augmentować, a kiedy zmieniać lek?",
+      "text": "W depresji lekoopornej (TRD – brak remisji po co najmniej dwóch kolejnych prawidłowych kuracjach przeciwdepresyjnych) klinicysta ma do wyboru: zamianę leku na inną klasę lub augmentację (dołączenie leku niebędącego klasycznym antydepresantem). Jeśli przy aktualnym leku występuje częściowa odpowiedź kliniczna (poprawa rzędu 25–49%), augmentacja jest strategią preferowaną w stosunku do zamiany, gdyż zachowuje dotychczas uzyskane korzyści."
+    },
+    {
+      "title": "Strategie augmentacji o najwyższym poziomie dowodów (Level 1)",
+      "text": "Zgodnie z wytycznymi CANMAT i WFSBP złotym standardem augmentacji są: 1) Węglan litu (stężenie docelowe 0,4–0,8 mmol/l – silny efekt przeciwdepresyjny i antysuicydalny); 2) Atypowe leki przeciwpsychotyczne w małych dawkach: aripiprazol (2–5 mg/d), kwetiapina (150–300 mg/d) lub brekspiprazol. Zapewniają one synergizm receptorowy poprzez modulację układów dopaminergicznego i glutaminergicznego."
+    },
+    {
+      "title": "Kombinacje synergistyczne i pułapki polipragmazji",
+      "text": "Przykładem racjonalnej synergii jest tzw. California Rocket Fuel (połączenie wenlafaksyny z mirtazapiną): jednoczesne zablokowanie SERT, NET oraz odhamowanie wyrzutu monoamin przez blokadę autoreceptorów alfa-2 adrenergicznych. Z kolei nieracjonalna polipragmazja polega na łączeniu dwóch leków o tym samym mechanizmie (np. dwóch SSRI) lub o wzajemnie znoszącym się działaniu (np. agonista dopaminowy + silny bloker D2)."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Strategia augmentacji",
+      "Poziom dowodów EBM",
+      "Sugerowana dawka / Cel",
+      "Mechanizm synergizmu"
+    ],
+    "rows": [
+      [
+        "Węglan litu",
+        "Poziom 1 (Najwyższy)",
+        "Stężenie w surowicy 0,4–0,8 mmol/l",
+        "Hamowanie GSK-3beta, stymulacja syntezy 5-HT i BDNF"
+      ],
+      [
+        "Aripiprazol",
+        "Poziom 1",
+        "2–5 mg/d (mała dawka)",
+        "Częściowy agonizm D2/D3, agonizm 5-HT1A"
+      ],
+      [
+        "Kwetiapina XR",
+        "Poziom 1",
+        "150–300 mg/d",
+        "Aktywny metabolit norkwetiapina blokuje NET i 5-HT2A"
+      ],
+      [
+        "Trójjodotyronina (T3)",
+        "Poziom 2",
+        "25–50 ug/d",
+        "Zwiększenie wrażliwości receptorów monoaminowych w korze"
+      ],
+      [
+        "Wenlafaksyna + Mirtazapina",
+        "Poziom 2",
+        "Pełne dawki terapeutyczne obu leków",
+        "Wielopoziomowa stymulacja 5-HT i NA (\"California Rocket Fuel\")"
+      ]
+    ]
+  },
+  "advanced": "Augmentacja litem w lekoopornej depresji wykazuje szybki czas latencji: poprawa kliniczna u responderów pojawia się często już w ciągu 7–14 dni od osiągnięcia stężenia we krwi > 0,4–0,6 mmol/l. Jeśli po 4 tygodniach w optymalnym stężeniu brak poprawy, lit należy bezpiecznie odstawić.",
+  "summary": "Augmentacja jest preferowana przy częściowej odpowiedzi na lek I rzutu. Poziom 1 dowodów posiadają lit oraz aripiprazol i kwetiapina. Racjonalna polipragmazja opiera się na komplementarnych mechanizmach molekularnych.",
+  "sourceIds": [
+    "canmat-mdd-2023",
+    "wfsbp-schizophrenia",
+    "maudsley15"
+  ],
+  "questions": [
+    {
+      "id": "psych-aug-q1",
+      "lessonId": "racjonalna-polipragmazja-i-augmentacja",
+      "prompt": "Jaka strategia leczenia jest najbardziej wskazana u pacjenta z ciężką depresją, który po 6 tygodniach optymalnej dawki sertraliny uzyskał 35% poprawy (częściowa odpowiedź)?",
+      "options": [
+        {
+          "text": "Augmentacja dotychczasowej terapii litem lub atypowym lekiem przeciwpsychotycznym (aripiprazol / kwetiapina)",
+          "explanation": "Pozwala to na wykorzystanie dotychczasowej częściowej odpowiedzi bez ryzyka załamania stanu po odstawieniu leku bazowego."
+        },
+        {
+          "text": "Natychmiastowe odstawienie sertraliny z dnia na dzień i brak leczenia przez 6 miesięcy",
+          "explanation": "Wywoła to ciężki nawrót depresji i zespół odstawienny."
+        },
+        {
+          "text": "Włączenie drugiego leku z grupy SSRI w maksymalnej dawce",
+          "explanation": "Łączenie dwóch SSRI to nieracjonalna polipragmazja zwiększająca ryzyko działań niepożądanych bez korzyści terapeutycznej."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-aug-q2",
+      "lessonId": "racjonalna-polipragmazja-i-augmentacja",
+      "prompt": "Jakie stężenie litu w surowicy krwi jest wystarczające w strategii augmentacji leku przeciwdepresyjnego w lekoopornej depresji jednobiegunowej?",
+      "options": [
+        {
+          "text": "Dokładnie 0,01 mmol/l",
+          "explanation": "Jest to stężenie subterapeutyczne, niemające wpływu na GSK-3beta."
+        },
+        {
+          "text": "0,4 do 0,8 mmol/l",
+          "explanation": "W augmentacji depresji skuteczne są nieco niższe stężenia niż w ostrej manii dwubiegunowej."
+        },
+        {
+          "text": "Powyżej 2,5 mmol/l",
+          "explanation": "Jest to stężenie wysoce toksyczne, zagrażające zgonem."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-aug-q3",
+      "lessonId": "racjonalna-polipragmazja-i-augmentacja",
+      "prompt": "Na czym polega mechanizm synergizmu w kombinacji zwanej potocznie \"California Rocket Fuel\"?",
+      "options": [
+        {
+          "text": "Połączenie morfiny z fencyklidyną",
+          "explanation": "Nie jest to schemat psychiatryczny, lecz kombinacja toksyczna."
+        },
+        {
+          "text": "Połączenie pięciu różnych neuroleptyków I generacji",
+          "explanation": "Jest to rażący błąd polipragmazji prowadzący do ciężkich dyskinez i NMS."
+        },
+        {
+          "text": "Połączenie wenlafaksyny (hamowanie SERT i NET) z mirtazapiną (odhamowanie uwalniania monoamin przez blokadę alfa-2)",
+          "explanation": "Daje to masywny, synergistyczny wzrost transmisji serotoninowej i noradrenergicznej w korze mózgu."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-aug-q4",
+      "lessonId": "racjonalna-polipragmazja-i-augmentacja",
+      "prompt": "W jakiej dawce dobowej stosuje się aripiprazol jako lek augmentujący w depresji lekoopornej?",
+      "options": [
+        {
+          "text": "W małych dawkach: 2 do 5 mg/d (maksymalnie 10 mg/d)",
+          "explanation": "W małej dawce aripiprazol działa głównie proserotoninergicznie i prokognitywnie, nie wywołując sedacji."
+        },
+        {
+          "text": "W dawkach 60 do 90 mg/d",
+          "explanation": "Jest to dawka toksyczna przekraczająca rejestrację."
+        },
+        {
+          "text": "0,001 mg raz w miesiącu",
+          "explanation": "Dawka ta nie wykazuje mierzalnego occupancy receptorowego."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-aug-q5",
+      "lessonId": "racjonalna-polipragmazja-i-augmentacja",
+      "prompt": "Który hormon obwodowy w dawkach 25–50 ug/d posiada status Level 2 dowodów naukowych w augmentacji lekoopornej depresji?",
+      "options": [
+        {
+          "text": "Wazopresyna we wlewie ciągłym",
+          "explanation": "Wazopresyna nie ma zastosowania przeciwdepresyjnego."
+        },
+        {
+          "text": "Trójjodotyronina (T3 - liotyronina)",
+          "explanation": "T3 uwrażliwia receptory serotoninowe w OUN i stymuluje metabolizm neuronalny."
+        },
+        {
+          "text": "Parathormon (PTH)",
+          "explanation": "PTH nie jest stosowany w leczeniu depresji."
+        }
+      ],
+      "answer": 1
+    }
+  ],
+  "assetIds": []
+}

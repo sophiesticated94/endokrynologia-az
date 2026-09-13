@@ -1,0 +1,386 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "psychopatologia-objawow",
+  "objectives": [
+    {
+      "id": "psychopatologia-objawow-obj-1",
+      "statement": "Zróżnicujesz złudzenia (iluzje), omamy właściwe (halucynacje) oraz omamy rzekome (pseudohalucynacje).",
+      "kind": "differentiation"
+    },
+    {
+      "id": "psychopatologia-objawow-obj-2",
+      "statement": "Scharakteryzujesz cechy urojeń i odróżnisz je od myśli nadwartościowych oraz natręctw (obsesji).",
+      "kind": "differentiation"
+    },
+    {
+      "id": "psychopatologia-objawow-obj-3",
+      "statement": "Rozpoznasz formalne zaburzenia toku myślenia: rozkojarzenie, niespójność, perseweracje i gonitwę myśli.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-patho-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "psychopatologia-objawow-obj-1"
+    ],
+    "prompt": "Pacjent twierdzi, że słyszy obcy głos komentujący jego czyny, który rozbrzmiewa bezpośrednio wewnątrz jego czaszki (w głowie). Jest to objaw:",
+    "options": [
+      "Klasycznej iluzji wzrokowej",
+      "Wyłącznie myśli nadwartościowej",
+      "Pseudohalucynacji (omamu rzekomego)"
+    ],
+    "optionFeedback": [
+      "Iluzja dotyczy zniekształcenia bodźca zewnętrznego.",
+      "Myśl nadwartościowa nie jest doznaniem zmysłowo-percepcyjnym.",
+      "Rzutowanie doznania zmysłowego w przestrzeń wewnętrzną (do głowy) definiuje pseudohalucynację."
+    ],
+    "answer": 2,
+    "explanation": "Rzutowanie doznania zmysłowego w przestrzeń wewnętrzną (do głowy) definiuje pseudohalucynację.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "icd11-cddr",
+      "dsm5tr",
+      "stahl-essential"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "psychopatologia-objawow-block-1",
+      "title": "Zaburzenia spostrzegania: iluzje, halucynacje i pseudohalucynacje",
+      "text": "1) Złudzenia (iluzje): zniekształcone spostrzeżenie realnie istniejącego bodźca zewnętrznego (np. płaszcz na wieszaku w mroku brany za włamywacza), podlegające korekcie pod wpływem uwagi; 2) Omamy właściwe (halucynacje): spostrzeżenia zmysłowe powstające bez bodźca zewnętrznego, rzutowane w przestrzeń zewnętrzną z pełnym poczuciem realności (sądem realizującym); 3) Omamy rzekome (pseudohalucynacje): doznania zmysłowe rzutowane w przestrzeń wewnętrzną (doznawane w głowie, za okiem, w ciele), często z poczuciem ich obcości lub nasyłania przez siły zewnętrzne (klasyczny objaw Kandinskiego-Clérambaulta w schizofrenii).",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "stahl-essential"
+      ],
+      "checkpointId": "psych-patho-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-hallucination-pseudohallucination",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "psychopatologia-objawow-block-2",
+      "title": "Zaburzenia treści myślenia: urojenia, myśli nadwartościowe i obsesje",
+      "text": "1) Urojenia (delusions): błędne, fałszywe przekonania o niezłomnej pewności subiektywnej, niepodatne na racjonalną perswazję i niezgodne z kontekstem kulturowym pacjenta; 2) Myśli nadwartościowe: przekonania silnie naładowane emocjonalnie, dominujące w życiu pacjenta, lecz teoretycznie korygowalne (np. skrajne idee polityczne lub religijne); 3) Myśli natrętne (obsesje): natarczywe, nawracające myśli ego-dystoniczne (pacjent ocenia je jako własne, lecz niechciane, absurdalne i budzące lęk, podejmując próby ich neutralizacji).",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "stahl-essential"
+      ],
+      "checkpointId": "psych-patho-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-psychosis-differential",
+          "kind": "diagram",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "psychopatologia-objawow-block-3",
+      "title": "Formalne zaburzenia toku myślenia",
+      "text": "Dotyczą formy, tempa i dynamiki myślenia: 1) Gonitwa myśli (fuga idearum): skrajne przyspieszenie toku z utratą wątku głównego i kojarzeniem na podstawie dźwięków (rymy, asonanse); 2) Spowolnienie toku myślenia (zahamowanie w depresji); 3) Rozkojarzenie: utrata logicznego związku między zdaniami przy zachowanej gramatyce; 4) Sałata słowna (schizofazja): całkowity rozpad gramatyczny i semantyczny języka; 5) Perseweracje: uporczywe powtarzanie tego samego słowa lub frazy mimo zmiany pytania.",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "stahl-essential"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-patho-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "psychopatologia-objawow-obj-2"
+      ],
+      "prompt": "Jaka cecha jednoznacznie odróżnia myśl natrętną (obsesję w OCD) od urojenia w schizofrenii?",
+      "options": [
+        "Obsesja jest ego-dystoniczna — pacjent uznaje ją za absurdalną i niechcianą, podczas gdy urojenie jest ego-syntoniczne i bezkrytyczne",
+        "Obsesje występują wyłącznie w nocy podczas snu REM",
+        "Urojenia zawsze ustępują po prostej prośbie rodziny"
+      ],
+      "optionFeedback": [
+        "Poczucie obcości myśli przy jednoczesnym uznawaniu jej za wytwór własnego umysłu jest cechą osiową natręctwa.",
+        "Obsesje występują w stanie pełnej czuwania.",
+        "Urojenia są z definicji niepodatne na racjonalną perswazję."
+      ],
+      "answer": 0,
+      "explanation": "Poczucie obcości myśli przy jednoczesnym uznawaniu jej za wytwór własnego umysłu jest cechą osiową natręctwa.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-patho-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "psychopatologia-objawow-obj-3"
+      ],
+      "prompt": "Widzenie potwora w cieniu rzucanym przez stojący w ciemnym pokoju fotel, które znika po zapaleniu światła, to:",
+      "options": [
+        "Urojenie ksobne pierwszego stopnia",
+        "Złudzenie (iluzja)",
+        "Omam właściwy rzutowany w nieskończoność"
+      ],
+      "optionFeedback": [
+        "To zaburzenie percepcji zmysłowej, nie izolowany sąd myślowy.",
+        "Bodziec realny (fotel w cieniu) został błędnie zinterpretowany, lecz uległ korekcie po doświetleniu.",
+        "Omam nie ma bodźca fizycznego i nie koryguje się zapaleniem światła."
+      ],
+      "answer": 1,
+      "explanation": "Bodziec realny (fotel w cieniu) został błędnie zinterpretowany, lecz uległ korekcie po doświetleniu.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "psychopatologia-objawow-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "psychopatologia-objawow-obj-1",
+      "psychopatologia-objawow-obj-2",
+      "psychopatologia-objawow-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Psychopatologia ogólna: spostrzeganie, myślenie, pamięć i świadomość”.",
+    "modelAnswer": "Omam właściwy rzutowany jest na zewnątrz, pseudohalucynacja do wnętrza głowy. Urojenie jest niekorygowalnym sądem fałszywym (ego-syntonicznym), a obsesja natręctwem niechcianym (ego-dystonicznym).",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "icd11-cddr",
+      "dsm5tr",
+      "stahl-essential"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-patho-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "psychopatologia-objawow-obj-1"
+      ],
+      "prompt": "Na czym polega rozkojarzenie toku myślenia w schizofrenii?",
+      "options": [
+        "Na mówieniu szeptem z powodu zapalenia krtani",
+        "Na błyskawicznym kojarzeniu wyłącznie na podstawie rymów",
+        "Na utracie logicznych powiązań semantycznych między zdaniami przy zachowanej poprawności gramatycznej"
+      ],
+      "optionFeedback": [
+        "To objaw czysto laryngologiczny.",
+        "To gonitwa myśli (fuga idearum).",
+        "Zdania są poprawnie zbudowane, ale brak między nimi logicznego związku przyczynowo-skutkowego."
+      ],
+      "answer": 2,
+      "explanation": "Zdania są poprawnie zbudowane, ale brak między nimi logicznego związku przyczynowo-skutkowego.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-patho-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "psychopatologia-objawow-obj-1"
+      ],
+      "prompt": "Co charakteryzuje urojenia oddziaływania (wpływu, owładnięcia)?",
+      "options": [
+        "Przekonanie pacjenta, że jego myśli, uczucia lub ruchy ciała są kontrolowane przez zewnętrzną siłę lub aparaturę",
+        "Poczucie, że pacjent jest najbogatszym człowiekiem na świecie",
+        "Przekonanie o całkowitym zniszczeniu narządów wewnętrznych (zespół Cotarda)"
+      ],
+      "optionFeedback": [
+        "Urojenia owładnięcia należą do klasycznych objawów osiowych schizofrenii w ICD-11.",
+        "To urojenie wielkościowe.",
+        "To urojenie nihilistyczne."
+      ],
+      "answer": 0,
+      "explanation": "Urojenia owładnięcia należą do klasycznych objawów osiowych schizofrenii w ICD-11.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "psychopath-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "psychopatologia-objawow-obj-1"
+      ],
+      "claimIds": [
+        "claim-af-pseudohallucinations"
+      ],
+      "prompt": "Pacjent twierdzi, że sąsiad za pomocą fal radiowych odczytuje i komentuje jego myśli wewnątrz głowy. Jak zdefiniujesz to zjawisko psychopatologiczne?",
+      "options": [
+        "Zaburzenie treści myślenia: urojenia nasyłania/odsłonięcia myśli",
+        "Zaburzenie toku myślenia: gonitwa myśli",
+        "Zaburzenie pamięci: konfabulacja"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-delusion-thought-alienation",
+            "label": "Urojenia odsłonięcia, nasyłania lub odciągania myśli",
+            "acceptedPhrases": [
+              "odsłonięcie myśli",
+              "nasyłanie",
+              "wpływ",
+              "ksobne",
+              "treść myślenia",
+              "urojenia"
+            ]
+          },
+          {
+            "id": "c-false-unshakable",
+            "label": "Fałszywy sąd niepodlegający perswazji",
+            "acceptedPhrases": [
+              "błędny sąd",
+              "niepodlegający korekcie",
+              "fałszywe przekonanie"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Urojenia odsłonięcia i nasyłania myśli to zaburzenia treści myślenia o charakterze utraty poczucia własności myśli.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "icd11-cddr",
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "psychopath-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "psychopatologia-objawow-obj-2"
+      ],
+      "claimIds": [
+        "claim-af-pseudohallucinations"
+      ],
+      "prompt": "Wyjaśnij różnicę między urojeniami ksobnymi (odniesienia) a urojeniami prześladowczymi oraz podaj po jednym przykładzie wypowiedzi pacjenta.",
+      "modelAnswer": "Urojenia ksobne polegają na fałszywym przekonaniu, że neutralne zdarzenia, gesty lub wypowiedzi osób trzecich (np. w telewizji) odnoszą się bezpośrednio do pacjenta („spiker w radiu nadaje zaszyfrowany komunikat o mnie”). Urojenia prześladowcze to przekonanie o celowym działaniu wrogich sił mających na celu skrzywdzenie, otrucie lub zniszczenie pacjenta („sąsiedzi wpuszczają gaz pod drzwi, aby mnie zabić”).",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-ksobne-meaning",
+            "label": "Urojenia ksobne: neutralne bodźce odnoszone do siebie",
+            "acceptedPhrases": [
+              "odniesienia",
+              "ksobne",
+              "dotyczy mnie",
+              "neutralne zdarzenia",
+              "znaki"
+            ]
+          },
+          {
+            "id": "c-przesladowcze-meaning",
+            "label": "Urojenia prześladowcze: celowe działanie wrogie / chęć skrzywdzenia",
+            "acceptedPhrases": [
+              "prześladowcze",
+              "krzywda",
+              "spisek",
+              "trucie",
+              "wrogie siły"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Urojenia ksobne przypisują intencję odniesienia, prześladowcze przypisują zamiar wrogiego działania i krzywdy.",
+      "difficulty": "both",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "icd11-cddr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "psychopath-bank-3",
+      "type": "matching",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "psychopatologia-objawow-obj-1",
+        "psychopatologia-objawow-obj-3"
+      ],
+      "prompt": "Dopasuj objaw psychopatologiczny do jego definicji klinicznej.",
+      "pairs": [
+        [
+          "Otamowanie myślenia",
+          "Nagłe, subiektywne zatrzymanie toku myśli w trakcie wypowiedzi"
+        ],
+        [
+          "Rozkojarzenie",
+          "Utrata logicznego związku między zdaniami przy zachowanej gramatyce"
+        ],
+        [
+          "Gonitwa myśli",
+          "Skrajne przyspieszenie toku z presją mowy i luźnymi skojarzeniami"
+        ],
+        [
+          "Mutyzm",
+          "Całkowity brak kontaktu werbalnego przy sprawnym aparacie mowy"
+        ]
+      ],
+      "explanation": "Każdy termin opisuje odrębne zaburzenie toku myślenia lub ekspresji werbalnej.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "icd11-cddr"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "pathway-builder",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., CANMAT oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "id": "zaburzenia-osobowosci-wymiarowe",
+  "moduleId": "psych-afektywne",
+  "title": "Zaburzenia osobowości: model wymiarowy ICD-11 i wiązki DSM-5-TR",
+  "subtitle": "Kategorie wiązek A/B/C, domeny cech w ICD-11 oraz zaburzenie z pogranicza (BPD)",
+  "group": "Zaburzenia osobowości",
+  "minutes": 18,
+  "goals": [
+    "Zrozumiesz przejście z modelu kategorialnego (wiązki A, B, C) do modelu wymiarowego w ICD-11.",
+    "Scharakteryzujesz 5 domen cech osobowości w ICD-11 i poziomy nasilenia zaburzeń.",
+    "Zdiagnozujesz zaburzenie osobowości typu borderline (BPD) i wdrożysz zasady terapii DBT."
+  ],
+  "sections": [
+    {
+      "title": "Przełom w ICD-11: odejście od sztywnych kategorii",
+      "text": "Klasyczne podejście DSM-5 dzieli zaburzenia osobowości na trzy wiązki: A (dziwaczno-ekscentryczna: paranoiczne, schizoidalne, schizotypowe), B (dramatyczno-emocjonalna: borderline, antyspołeczna, narcystyczna, histrioniczna) oraz C (lękowo-nadmiarowa: unikająca, zależna, obsesyjno-kompulsyjna). ICD-11 dokonało rewolucji, rezygnując z tych kategorii na rzecz oceny stopnia upośledzenia funkcjonowania (łagodne, umiarkowane, ciężkie) oraz profilu 5 domen cech."
+    },
+    {
+      "title": "Pięć domen cech osobowości wg ICD-11",
+      "text": "Profil osobowości w ICD-11 opisuje 5 domen: 1) Negatywna afektywność (labilność, lęk, wrogość), 2) Dystansowanie się (wycofanie społeczne i emocjonalne), 3) Dyssocjalność (bezduszność, manipulacja, egoizm), 4) Odhamowanie (impulsywność, brak planowania), 5) Anankastia (perfekcjonizm, sztywność kontroli). Dodatkowo zachowano kwalifikator wzorca z pogranicza (Borderline pattern)."
+    },
+    {
+      "title": "Zaburzenie osobowości z pogranicza (Borderline - BPD)",
+      "text": "BPD cechuje niestabilność relacji interpersonalnych, obrazu samego siebie i afektu, połączona z wyraźną impulsywnością. Typowe są zachowania parasuicydalne (samookaleczenia bez intencji samobójczej), paniczny lęk przed odrzuceniem, chroniczne poczucie pustki oraz rozszczepienie (czarno-białe widzenie świata). Terapią z wyboru jest Dialektyczno-Behawioralna Terapia (DBT)."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Klasyfikacja",
+      "Podstawa diagnozy",
+      "Główne jednostki / domeny",
+      "Podejście do komorbidności"
+    ],
+    "rows": [
+      [
+        "DSM-5-TR (kategorialna)",
+        "Kryteria wieloobjawowe dla 10 typów",
+        "Wiązki A (dziwaczne), B (dramatyczne), C (lękowe)",
+        "Częste współwystępowanie wielu nakładających się typów"
+      ],
+      [
+        "ICD-11 (wymiarowa)",
+        "Ogólny poziom dysfunkcji Ja i relacji + domeny cech",
+        "Negatywny afekt, Odhamowanie, Dystans, Dyssocjalność, Anankastia",
+        "Jedna spójna diagnoza z profilem cech i nasilenia"
+      ],
+      [
+        "Wzorzec Borderline (BPD)",
+        "Specyficzny kwalifikator w ICD-11 / kategoria DSM",
+        "Labilność, lęk przed odrzuceniem, samookaleczenia, rozszczepienie",
+        "Często współistnieje z PTSD i zaburzeniami nastroju"
+      ]
+    ]
+  },
+  "advanced": "Farmakoterapia w zaburzeniach osobowości ma charakter wyłącznie objawowy i pomocniczy (np. niska dawka leku przeciwpsychotycznego II generacji w celu redukcji impulsywności lub SSRI w objawach dysforycznych). Podstawową metodą leczenia o udowodnionej skuteczności w BPD jest psychoterapia (DBT, MBT, TFP).",
+  "summary": "ICD-11 zastąpiło sztuczne kategorie zaburzeń osobowości oceną wymiarową (stopień zaburzenia + 5 domen cech) z zachowaniem wzorca borderline. Złotym standardem leczenia BPD jest psychoterapia DBT.",
+  "sourceIds": [
+    "icd11-cddr",
+    "dsm5tr",
+    "nice-bpd"
+  ],
+  "questions": [
+    {
+      "id": "psych-pers-q1",
+      "lessonId": "zaburzenia-osobowosci-wymiarowe",
+      "prompt": "Jak w klasyfikacji ICD-11 określa się diagnozę zaburzenia osobowości?",
+      "options": [
+        {
+          "text": "Przez przypisanie pacjenta do jednej z 50 odrębnych sztywnych podgrup",
+          "explanation": "ICD-11 uprościło system do nasilenia i 5 domen cech."
+        },
+        {
+          "text": "Poprzez ocenę ogólnego stopnia nasilenia zaburzenia funkcjonowania oraz profilu 5 domen cech",
+          "explanation": "ICD-11 odeszło od 10 sztywnych jednostek kategorialnych na rzecz podejścia wymiarowego."
+        },
+        {
+          "text": "Wyłącznie na podstawie badania stężenia serotoniny w płynie mózgowo-rdzeniowym",
+          "explanation": "Zaburzeń osobowości nie diagnozuje się markerami laboratoryjnymi."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-pers-q2",
+      "lessonId": "zaburzenia-osobowosci-wymiarowe",
+      "prompt": "Które cechy składają się na wzorzec zaburzenia osobowości z pogranicza (Borderline) wg ICD-11 i DSM-5-TR?",
+      "options": [
+        {
+          "text": "Brak jakichkolwiek emocji, całkowite wycofanie ze społeczeństwa i brak mowy",
+          "explanation": "To obraz katatonii lub ciężkiej schizofrenii prostej, a nie BPD."
+        },
+        {
+          "text": "Przekonanie o posiadaniu zdolności telepatycznych bez zaburzeń nastroju",
+          "explanation": "Poglądy magiczne są charakterystyczne dla osobowości schizotypowej."
+        },
+        {
+          "text": "Niestabilność relacji, lęk przed porzuceniem, impulsywność, samouszkodzenia i chroniczne poczucie pustki",
+          "explanation": "Są to osiowe przejawy dysregulacji emocjonalnej i tożsamościowej w BPD."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-pers-q3",
+      "lessonId": "zaburzenia-osobowosci-wymiarowe",
+      "prompt": "Jaka forma psychoterapii została pierwotnie opracowana przez Marshę Linehan specjalnie do leczenia BPD i zachowań samobójczych?",
+      "options": [
+        {
+          "text": "Terapia dialektyczno-behawioralna (DBT - Dialectical Behavior Therapy)",
+          "explanation": "DBT łączy akceptację z mindfulness oraz techniki behawioralnej zmiany i regulacji emocji."
+        },
+        {
+          "text": "Terapia psychoanalityczna w milczeniu analityka",
+          "explanation": "Tradycyjna neutralna analiza może nasilać lęk przed odrzuceniem i samookaleczenia u pacjentów z BPD."
+        },
+        {
+          "text": "Trening słuchowy Tomatisa",
+          "explanation": "Trening uwagi słuchowej nie jest terapią zaburzeń osobowości."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-pers-q4",
+      "lessonId": "zaburzenia-osobowosci-wymiarowe",
+      "prompt": "Która domena cech w modelu wymiarowym ICD-11 odpowiada za skrajny perfekcjonizm, sztywność reguł i nadmierną kontrolę?",
+      "options": [
+        {
+          "text": "Dyssocjalność",
+          "explanation": "Dyssocjalność odzwierciedla brak empatii, manipulację i wrogość wobec norm społecznych."
+        },
+        {
+          "text": "Anankastia",
+          "explanation": "Anankastia w ICD-11 reprezentuje cechy obsesyjno-kompulsyjne (sztywność poznawcza i perfekcjonizm)."
+        },
+        {
+          "text": "Odhamowanie (Disinhibition)",
+          "explanation": "Odhamowanie oznacza impulsywność i brak kontroli nad zachowaniem."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-pers-q5",
+      "lessonId": "zaburzenia-osobowosci-wymiarowe",
+      "prompt": "Jaka jest rola farmakoterapii w leczeniu zaburzeń osobowości według wytycznych NICE?",
+      "options": [
+        {
+          "text": "Leki przeciwpsychotyczne są lekiem przyczynowym usuwającym zaburzenie na stałe",
+          "explanation": "Leki nie modyfikują utrwalonych schematów poznawczych i osobowościowych."
+        },
+        {
+          "text": "Farmakoterapia jest bezwzględnie zakazana i prawnie zabroniona",
+          "explanation": "Leki mogą być bezpiecznie i celowo stosowane w stanach dekompensacji."
+        },
+        {
+          "text": "Ma charakter wyłącznie objawowy i pomocniczy w zaostrzeniach; podstawą leczenia jest psychoterapia",
+          "explanation": "Żaden lek nie leczy struktury osobowości jako takiej; farmakologia łagodzi jedynie kryzysy afektywne lub impulsywność."
+        }
+      ],
+      "answer": 2
+    }
+  ],
+  "assetIds": []
+}

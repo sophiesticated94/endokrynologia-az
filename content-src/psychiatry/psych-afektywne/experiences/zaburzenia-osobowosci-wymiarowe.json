@@ -1,0 +1,365 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "zaburzenia-osobowosci-wymiarowe",
+  "objectives": [
+    {
+      "id": "zaburzenia-osobowosci-wymiarowe-obj-1",
+      "statement": "Zrozumiesz przejście z modelu kategorialnego (wiązki A, B, C) do modelu wymiarowego w ICD-11.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "zaburzenia-osobowosci-wymiarowe-obj-2",
+      "statement": "Scharakteryzujesz 5 domen cech osobowości w ICD-11 i poziomy nasilenia zaburzeń.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "zaburzenia-osobowosci-wymiarowe-obj-3",
+      "statement": "Zdiagnozujesz zaburzenie osobowości typu borderline (BPD) i wdrożysz zasady terapii DBT.",
+      "kind": "mechanism"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-pers-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "zaburzenia-osobowosci-wymiarowe-obj-1"
+    ],
+    "prompt": "Jak w klasyfikacji ICD-11 określa się diagnozę zaburzenia osobowości?",
+    "options": [
+      "Przez przypisanie pacjenta do jednej z 50 odrębnych sztywnych podgrup",
+      "Poprzez ocenę ogólnego stopnia nasilenia zaburzenia funkcjonowania oraz profilu 5 domen cech",
+      "Wyłącznie na podstawie badania stężenia serotoniny w płynie mózgowo-rdzeniowym"
+    ],
+    "optionFeedback": [
+      "ICD-11 uprościło system do nasilenia i 5 domen cech.",
+      "ICD-11 odeszło od 10 sztywnych jednostek kategorialnych na rzecz podejścia wymiarowego.",
+      "Zaburzeń osobowości nie diagnozuje się markerami laboratoryjnymi."
+    ],
+    "answer": 1,
+    "explanation": "ICD-11 odeszło od 10 sztywnych jednostek kategorialnych na rzecz podejścia wymiarowego.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "icd11-cddr",
+      "dsm5tr",
+      "nice-bpd"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "zaburzenia-osobowosci-wymiarowe-block-1",
+      "title": "Przełom w ICD-11: odejście od sztywnych kategorii",
+      "text": "Klasyczne podejście DSM-5 dzieli zaburzenia osobowości na trzy wiązki: A (dziwaczno-ekscentryczna: paranoiczne, schizoidalne, schizotypowe), B (dramatyczno-emocjonalna: borderline, antyspołeczna, narcystyczna, histrioniczna) oraz C (lękowo-nadmiarowa: unikająca, zależna, obsesyjno-kompulsyjna). ICD-11 dokonało rewolucji, rezygnując z tych kategorii na rzecz oceny stopnia upośledzenia funkcjonowania (łagodne, umiarkowane, ciężkie) oraz profilu 5 domen cech.",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "nice-bpd"
+      ],
+      "checkpointId": "psych-pers-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-icd11-personality-severity",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "zaburzenia-osobowosci-wymiarowe-block-2",
+      "title": "Pięć domen cech osobowości wg ICD-11",
+      "text": "Profil osobowości w ICD-11 opisuje 5 domen: 1) Negatywna afektywność (labilność, lęk, wrogość), 2) Dystansowanie się (wycofanie społeczne i emocjonalne), 3) Dyssocjalność (bezduszność, manipulacja, egoizm), 4) Odhamowanie (impulsywność, brak planowania), 5) Anankastia (perfekcjonizm, sztywność kontroli). Dodatkowo zachowano kwalifikator wzorca z pogranicza (Borderline pattern).",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "nice-bpd"
+      ],
+      "checkpointId": "psych-pers-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-dsm-clusters-vs-dimensions",
+          "kind": "evidence-panel",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "zaburzenia-osobowosci-wymiarowe-block-3",
+      "title": "Zaburzenie osobowości z pogranicza (Borderline - BPD)",
+      "text": "BPD cechuje niestabilność relacji interpersonalnych, obrazu samego siebie i afektu, połączona z wyraźną impulsywnością. Typowe są zachowania parasuicydalne (samookaleczenia bez intencji samobójczej), paniczny lęk przed odrzuceniem, chroniczne poczucie pustki oraz rozszczepienie (czarno-białe widzenie świata). Terapią z wyboru jest Dialektyczno-Behawioralna Terapia (DBT).",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "nice-bpd"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-pers-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "zaburzenia-osobowosci-wymiarowe-obj-2"
+      ],
+      "prompt": "Które cechy składają się na wzorzec zaburzenia osobowości z pogranicza (Borderline) wg ICD-11 i DSM-5-TR?",
+      "options": [
+        "Brak jakichkolwiek emocji, całkowite wycofanie ze społeczeństwa i brak mowy",
+        "Przekonanie o posiadaniu zdolności telepatycznych bez zaburzeń nastroju",
+        "Niestabilność relacji, lęk przed porzuceniem, impulsywność, samouszkodzenia i chroniczne poczucie pustki"
+      ],
+      "optionFeedback": [
+        "To obraz katatonii lub ciężkiej schizofrenii prostej, a nie BPD.",
+        "Poglądy magiczne są charakterystyczne dla osobowości schizotypowej.",
+        "Są to osiowe przejawy dysregulacji emocjonalnej i tożsamościowej w BPD."
+      ],
+      "answer": 2,
+      "explanation": "Są to osiowe przejawy dysregulacji emocjonalnej i tożsamościowej w BPD.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "nice-bpd"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-pers-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "zaburzenia-osobowosci-wymiarowe-obj-3"
+      ],
+      "prompt": "Jaka forma psychoterapii została pierwotnie opracowana przez Marshę Linehan specjalnie do leczenia BPD i zachowań samobójczych?",
+      "options": [
+        "Terapia dialektyczno-behawioralna (DBT - Dialectical Behavior Therapy)",
+        "Terapia psychoanalityczna w milczeniu analityka",
+        "Trening słuchowy Tomatisa"
+      ],
+      "optionFeedback": [
+        "DBT łączy akceptację z mindfulness oraz techniki behawioralnej zmiany i regulacji emocji.",
+        "Tradycyjna neutralna analiza może nasilać lęk przed odrzuceniem i samookaleczenia u pacjentów z BPD.",
+        "Trening uwagi słuchowej nie jest terapią zaburzeń osobowości."
+      ],
+      "answer": 0,
+      "explanation": "DBT łączy akceptację z mindfulness oraz techniki behawioralnej zmiany i regulacji emocji.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "nice-bpd"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "zaburzenia-osobowosci-wymiarowe-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "zaburzenia-osobowosci-wymiarowe-obj-1",
+      "zaburzenia-osobowosci-wymiarowe-obj-2",
+      "zaburzenia-osobowosci-wymiarowe-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Zaburzenia osobowości: model wymiarowy ICD-11 i wiązki DSM-5-TR”.",
+    "modelAnswer": "ICD-11 zastąpiło sztuczne kategorie zaburzeń osobowości oceną wymiarową (stopień zaburzenia + 5 domen cech) z zachowaniem wzorca borderline. Złotym standardem leczenia BPD jest psychoterapia DBT.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "icd11-cddr",
+      "dsm5tr",
+      "nice-bpd"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-pers-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "zaburzenia-osobowosci-wymiarowe-obj-1"
+      ],
+      "prompt": "Która domena cech w modelu wymiarowym ICD-11 odpowiada za skrajny perfekcjonizm, sztywność reguł i nadmierną kontrolę?",
+      "options": [
+        "Dyssocjalność",
+        "Anankastia",
+        "Odhamowanie (Disinhibition)"
+      ],
+      "optionFeedback": [
+        "Dyssocjalność odzwierciedla brak empatii, manipulację i wrogość wobec norm społecznych.",
+        "Anankastia w ICD-11 reprezentuje cechy obsesyjno-kompulsyjne (sztywność poznawcza i perfekcjonizm).",
+        "Odhamowanie oznacza impulsywność i brak kontroli nad zachowaniem."
+      ],
+      "answer": 1,
+      "explanation": "Anankastia w ICD-11 reprezentuje cechy obsesyjno-kompulsyjne (sztywność poznawcza i perfekcjonizm).",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "nice-bpd"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-pers-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "zaburzenia-osobowosci-wymiarowe-obj-1"
+      ],
+      "prompt": "Jaka jest rola farmakoterapii w leczeniu zaburzeń osobowości według wytycznych NICE?",
+      "options": [
+        "Leki przeciwpsychotyczne są lekiem przyczynowym usuwającym zaburzenie na stałe",
+        "Farmakoterapia jest bezwzględnie zakazana i prawnie zabroniona",
+        "Ma charakter wyłącznie objawowy i pomocniczy w zaostrzeniach; podstawą leczenia jest psychoterapia"
+      ],
+      "optionFeedback": [
+        "Leki nie modyfikują utrwalonych schematów poznawczych i osobowościowych.",
+        "Leki mogą być bezpiecznie i celowo stosowane w stanach dekompensacji.",
+        "Żaden lek nie leczy struktury osobowości jako takiej; farmakologia łagodzi jedynie kryzysy afektywne lub impulsywność."
+      ],
+      "answer": 2,
+      "explanation": "Żaden lek nie leczy struktury osobowości jako takiej; farmakologia łagodzi jedynie kryzysy afektywne lub impulsywność.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "nice-bpd"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "zaburzenia-osobowosci-wymiarowe-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "zaburzenia-osobowosci-wymiarowe-obj-1"
+      ],
+      "prompt": "Zastosuj kryteria diagnostyczne i standardy postępowania klinicznego w przypadku pacjenta z tematu: zaburzenia osobowosci wymiarowe.",
+      "options": [
+        "Wdrożenie standaryzowanego postępowania klinicznego opartego na wytycznych EBM",
+        "Postępowanie wyczekujące bez diagnostyki różnicowej",
+        "Natychmiastowe włączenie polipragmazji bez oceny wskazań"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-clinical-rationale-1",
+            "label": "Uzasadnienie oparte na kryteriach i bezpieczeństwie",
+            "acceptedPhrases": [
+              "bezpieczeństwo",
+              "kryteria",
+              "wytyczne",
+              "diagnostyka"
+            ]
+          },
+          {
+            "id": "c-clinical-rationale-2",
+            "label": "Ocena różnicowa i czynniki modyfikujące",
+            "acceptedPhrases": [
+              "różnicowanie",
+              "czynniki ryzyka",
+              "przebieg"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Postępowanie wymaga standaryzowanej oceny klinicznej, wykluczenia przyczyn wtórnych i przestrzegania wytycznych.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "zaburzenia-osobowosci-wymiarowe-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "zaburzenia-osobowosci-wymiarowe-obj-2"
+      ],
+      "prompt": "Wyjaśnij kluczowe zasady różnicowania klinicznego oraz pułapki diagnostyczne w zagadnieniu: zaburzenia osobowosci wymiarowe.",
+      "modelAnswer": "Kluczowe jest odróżnienie pierwotnych zaburzeń psychicznych od masek somatycznych i toksycznych, uwzględnienie dynamiki czasowej oraz unikanie pochopnego rozpoznania na podstawie pojedynczego objawu.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-diff-organic",
+            "label": "Wykluczenie przyczyn somatycznych i substancji",
+            "acceptedPhrases": [
+              "przyczyny somatyczne",
+              "substancje",
+              "toksyczne",
+              "organiczne"
+            ]
+          },
+          {
+            "id": "c-diff-longitudinal",
+            "label": "Ocena przebiegu podłużnego i kryteriów czasowych",
+            "acceptedPhrases": [
+              "przebieg podłużny",
+              "kryteria czasowe",
+              "dynamika",
+              "czas trwania"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Ocena kliniczna wymaga analizy podłużnej i systematycznego wykluczenia przyczyn wtórnych.",
+      "difficulty": "both",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "icd11-cddr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "zaburzenia-osobowosci-wymiarowe-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "zaburzenia-osobowosci-wymiarowe-obj-1",
+        "zaburzenia-osobowosci-wymiarowe-obj-3"
+      ],
+      "prompt": "W analizie przypadku klinicznego z obszaru zaburzenia osobowosci wymiarowe pacjent zgłasza nietypowy zestaw objawów. Jakiej informacji brakuje w pierwszej kolejności?",
+      "options": [
+        "Wywiadu toksykologicznego i badań laboratoryjnych wykluczających podłoże organiczne",
+        "Profilu genetycznego rzadkich mutacji enzymatycznych",
+        "Wyniku tomografii komputerowej bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Podstawą rzetelnej oceny psychiatrycznej jest wykluczenie czynników egzogennych, intoksykacji i zaburzeń metabolicznych.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "pathway-builder",
+    "timeline"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., CANMAT oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "id": "psychoza-i-szlaki-dopaminy",
+  "moduleId": "psych-afektywne",
+  "title": "Psychoza i schizofrenia: objawy wytwórcze, negatywne i szlaki dopaminy",
+  "subtitle": "Kryteria schizofrenii 6A20, mezolimbiczna nadaktywność, kora przedczołowa i wczesna interwencja",
+  "group": "Fundamenty i diagnostyka ogólna",
+  "minutes": 18,
+  "goals": [
+    "Zestawisz objawy pozytywne, negatywne i poznawcze psychozy w kontekście neurobiologicznym.",
+    "Powiążesz nadaktywność szlaku mezolimbicznego z powstawaniem doznań znaczenia urojeniowego (aberrant salience).",
+    "Wyjaśnisz pojęcie DUP (Duration of Untreated Psychosis) i znaczenie wczesnej interwencji w pierwszym epizodzie (FEP)."
+  ],
+  "sections": [
+    {
+      "title": "Koncepcja psychozy i aberrant salience (Kapur)",
+      "text": "Współczesna neurobiologia definiuje psychozę jako stan nieprawidłowego nadawania znaczenia obojętnym bodźcom (aberrant salience). Prawidłowo dopamina w prążkowiu brzusznym sygnalizuje bodźce istotne dla przetrwania. W psychozie patologiczny, hiperergiczny wyrzut dopaminy w szlaku mezolimbicznym sprawia, że przypadkowe zdarzenia (np. czerwony samochód za oknem, kaszlnięcie przechodnia) zyskują skrajnie doniosłe, intymne znaczenie. Umysł pacjenta konstruuje urojenia jako wtórną próbę poznawczego wyjaśnienia tego obezwładniającego poczucia doniosłości."
+    },
+    {
+      "title": "Kryteria schizofrenii ICD-11 CDDR (6A20) i podział objawów",
+      "text": "ICD-11 wymaga co najmniej 2 objawów przez minimum 1 miesiąc (w tym min. 1 podstawowego: uporczywe urojenia, omamy, zaburzenia toku myślenia, doznania owładnięcia/wpływu). Wymiary psychopatologiczne: 1) Pozytywny (urojenia prześladowcze, ksobne, nasyłania myśli; omamy słuchowe komentujące); 2) Negatywny (alogia, awolicja, anhedonia, spłaszczenie afektu, asocjalność — 5A); 3) Poznawczy (spadek pamięci roboczej, funkcji wykonawczych i uwagi); 4) Dezorganizacji (dziwaczne zachowanie, niespójność wypowiedzi)."
+    },
+    {
+      "title": "Pierwszy epizod psychozy (FEP) i czas nieleczonej psychozy (DUP)",
+      "text": "Okres od wystąpienia pierwszych jawnych objawów psychotycznych do wdrożenia skutecznego leczenia przeciwpsychotycznego definiuje się jako DUP (Duration of Untreated Psychosis). Badania jednoznacznie dowodzą, że długi DUP (>12 tygodni) koreluje z nieodwracalną utratą substancji szarej w korze czołowej i skroniowej, opornością na leczenie i trwałym inwalidztwem społecznym. Wczesna interwencja farmakologiczna i psychospołeczna w FEP jest najsilniejszym czynnikiem neuroprotekcyjnym."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Wymiar objawów",
+      "Przykłady objawów",
+      "Patofizjologia w OUN",
+      "Wpływ leków blokujących D2"
+    ],
+    "rows": [
+      [
+        "Wymiar pozytywny",
+        "Urojenia ksobne, omamy słuchowe, poczucie nasyłania myśli",
+        "Hipersekrecja dopaminy w szlaku mezolimbicznym",
+        "Wysoka skuteczność (redukcja o >50% w PANSS)"
+      ],
+      [
+        "Wymiar negatywny",
+        "Awolicja, anhedonia, alogia, asocjalność, spłaszczony afekt",
+        "Hipofunkcja D1 w korze przedczołowej (DLPFC)",
+        "Znikoma (FGA mogą wręcz nasilać objawy negatywne)"
+      ],
+      [
+        "Wymiar poznawczy",
+        "Spadek pamięci operacyjnej i elastyczności myślenia",
+        "Zaburzenia synaptyczne receptorów NMDA i interneuronów GABA",
+        "Brak poprawy; kluczowa rehabilitacja poznawcza"
+      ]
+    ]
+  },
+  "advanced": "Hipoteza glutaminianergiczna schizofrenii wyjaśnia ograniczenia samej teorii dopaminowej: hipofunkcja receptorów NMDA na interneuronach GABA-ergicznych kory prowadzi do odhamowania neuronów glutaminianergicznych rzutujących do VTA, co wtórnie napędza hipersekrecję dopaminy w układzie mezolimbicznym, a jednocześnie wywołuje hipodopaminergię w korze przedczołowej.",
+  "summary": "Psychoza wynika z aberrant salience napędzanego hipersekrecją dopaminy mezolimbicznej. Kluczowe jest skracanie czasu nieleczonej psychozy (DUP <12 tyg.) w celu ochrony kory mózgowej.",
+  "sourceIds": [
+    "icd11-cddr",
+    "dsm5tr",
+    "wfsbp-schizophrenia",
+    "nice-schizophrenia"
+  ],
+  "questions": [
+    {
+      "id": "psych-psy-q1",
+      "lessonId": "psychoza-i-szlaki-dopaminy",
+      "prompt": "Na czym polega zjawisko „aberrant salience” opisane przez Shita Kapura w patofizjologii psychozy?",
+      "options": [
+        {
+          "text": "Na całkowitej utracie zdolności widzenia barw",
+          "explanation": "Brak związku z percepcją barw."
+        },
+        {
+          "text": "Na nagłym wzroście łaknienia węglowodanów",
+          "explanation": "Dotyczy przetwarzania znaczenia poznawczego, nie łaknienia."
+        },
+        {
+          "text": "Na patologicznym, hiperdopaminergicznym przypisywaniu skrajnego znaczenia neutralnym bodźcom z otoczenia",
+          "explanation": "Błędnie zasygnalizowane znaczenie zmusza mózg do urojeniowego wyjaśnienia sytuacji."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-psy-q2",
+      "lessonId": "psychoza-i-szlaki-dopaminy",
+      "prompt": "Co oznacza skrót DUP w kontekście wczesnej interwencji w psychozie i dlaczego ma kluczowe znaczenie?",
+      "options": [
+        {
+          "text": "Duration of Untreated Psychosis (czas trwania nieleczonej psychozy) — jego wydłużenie nieodwracalnie pogarsza rokowanie",
+          "explanation": "Dłuższy DUP wiąże się z neuroprogresją, ubytkiem substancji szarej i rozwojem lekooporności."
+        },
+        {
+          "text": "Dose of Unused Pills (dawka niewykorzystanych tabletek)",
+          "explanation": "To nie jest medyczna definicja DUP."
+        },
+        {
+          "text": "Degree of Unilateral Paralysis (stopień porażenia połowiczego)",
+          "explanation": "To termin neurologiczny z zakresu udarów."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-psy-q3",
+      "lessonId": "psychoza-i-szlaki-dopaminy",
+      "prompt": "Który z wymienionych objawów należy do tzw. wymiaru negatywnego (osiowych objawów deficytowych) schizofrenii?",
+      "options": [
+        {
+          "text": "Omamy słuchowe wrogie",
+          "explanation": "Omamy to wymiar pozytywny."
+        },
+        {
+          "text": "Awolicja (brak woli i niezdolność do inicjowania działań ukierunkowanych na cel)",
+          "explanation": "Awolicja, alogia, anhedonia, spłaszczenie afektu i asocjalność tworzą tzw. wymiar 5A objawów negatywnych."
+        },
+        {
+          "text": "Urojenia prześladowcze",
+          "explanation": "Urojenia to wymiar pozytywny (wytwórczy)."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-psy-q4",
+      "lessonId": "psychoza-i-szlaki-dopaminy",
+      "prompt": "Jaki jest minimalny czas trwania objawów wymagany przez ICD-11 CDDR do postawienia diagnozy schizofrenii (kod 6A20)?",
+      "options": [
+        {
+          "text": "Dokładnie 24 godziny",
+          "explanation": "Wymaga dłuższego trwania; 24h to ostra psychoza przemijająca."
+        },
+        {
+          "text": "Minimum 5 lat",
+          "explanation": "5 lat to zdecydowanie za długo; opóźniłoby leczenie o lata."
+        },
+        {
+          "text": "Minimum 1 miesiąc",
+          "explanation": "W ICD-11 kryterium czasowe wynosi co najmniej 1 miesiąc obecności objawów osiowych."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-psy-q5",
+      "lessonId": "psychoza-i-szlaki-dopaminy",
+      "prompt": "W jaki sposób leki przeciwpsychotyczne I generacji (np. haloperidol) mogą wpływać na objawy negatywne schizofrenii?",
+      "options": [
+        {
+          "text": "Mogą je pogłębiać poprzez dodatkową blokadę receptorów D2 w i tak hipodopaminergicznej korze przedczołowej",
+          "explanation": "Zjawisko to nosi nazwę wtórnych objawów negatywnych (neuroleptic-induced deficit syndrome)."
+        },
+        {
+          "text": "Natychmiast całkowicie usuwają objawy negatywne w ciągu 2 godzin",
+          "explanation": "FGA nie leczą objawów negatywnych."
+        },
+        {
+          "text": "Zmieniają objawy negatywne w ciężką manię",
+          "explanation": "FGA działają przeciwmaniakalnie."
+        }
+      ],
+      "answer": 0
+    }
+  ],
+  "assetIds": []
+}

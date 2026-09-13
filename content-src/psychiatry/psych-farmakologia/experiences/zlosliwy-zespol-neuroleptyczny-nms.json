@@ -1,0 +1,400 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "zlosliwy-zespol-neuroleptyczny-nms",
+  "objectives": [
+    {
+      "id": "zlosliwy-zespol-neuroleptyczny-nms-obj-1",
+      "statement": "Zdiagnozujesz klasyczną tetradę objawów NMS (sztywność, hipertermia, dysautonomia, zaburzenia świadomości).",
+      "kind": "mechanism"
+    },
+    {
+      "id": "zlosliwy-zespol-neuroleptyczny-nms-obj-2",
+      "statement": "Zinterpretujesz wzrost stężenia kinazy kreatynowej (CPK > 1000–10000 IU/l) i ryzyko ostrej niewydolności nerek.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "zlosliwy-zespol-neuroleptyczny-nms-obj-3",
+      "statement": "Wdrożysz leczenie farmakologiczne: bromokryptynę, amantadynę oraz dantrolen w OIT.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-nms-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "zlosliwy-zespol-neuroleptyczny-nms-obj-1"
+    ],
+    "prompt": "Jaki enzym mięśniowy ulega dramatycznemu podwyższeniu w surowicy krwi w przebiegu Złośliwego Zespołu Neuroleptycznego (NMS) wskutek rabdomiolizy?",
+    "options": [
+      "Kinaza kreatynowa (CPK / CK)",
+      "Dehydrogenaza mleczanowa (LDH) jako jedyny marker uszkodzenia",
+      "Aminotransferaza alaninowa (ALT) bez wzrostu AST"
+    ],
+    "optionFeedback": [
+      "Wartości przekraczają często 10 000–50 000 IU/l i korelują z ryzykiem ostrej martwicy cewek nerkowych.",
+      "Choć LDH rośnie w rozpadzie tkanek, parametrem decyzyjnym o kluczowej dynamice jest kinaza kreatynowa (CK).",
+      "W uszkodzeniu mięśni szkieletowych AST dominuje nad ALT, lecz żaden z nich nie służy do monitorowania ciężkości NMS tak jak CPK."
+    ],
+    "answer": 0,
+    "explanation": "Wartości przekraczają często 10 000–50 000 IU/l i korelują z ryzykiem ostrej martwicy cewek nerkowych.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "nms-consensus",
+      "maudsley15",
+      "wfsbp-schizophrenia"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "zlosliwy-zespol-neuroleptyczny-nms-block-1",
+      "title": "Patofizjologia ostrej blokady dopaminergicznej",
+      "text": "Złośliwy zespół neuroleptyczny (Neuroleptic Malignant Syndrome - NMS) jest zagrażającym życiu powikłaniem (śmiertelność 5–10%) wywołanym nagłą, głęboką blokadą receptorów D2 w szlaku nigrostriatalnym i podwzgórzu lub nagłym odstawieniem agonistów dopaminy (np. lewodopy w chorobie Parkinsona). Blokada podwzgórzowych receptorów D2 rozregulowuje ośrodek termoregulacji, prowadząc do złośliwej hipertermii.",
+      "sourceIds": [
+        "nms-consensus",
+        "maudsley15",
+        "wfsbp-schizophrenia"
+      ],
+      "checkpointId": "psych-nms-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-serotonin-nms-hunter",
+          "kind": "diagram",
+          "placement": "after-text"
+        },
+        {
+          "id": "deeplink-nms-differential",
+          "kind": "workbench-deeplink",
+          "placement": "end-of-block",
+          "presetId": "nms-differential-001"
+        }
+      ]
+    },
+    {
+      "id": "zlosliwy-zespol-neuroleptyczny-nms-block-2",
+      "title": "Tetrada objawów klinicznych i markery laboratoryjne",
+      "text": "NMS manifestuje się tetradą: 1) Skrajna sztywność mięśniowa typu \"rury ołowianej\" (lead-pipe rigidity); 2) Wysoka gorączka (często > 38,5–40°C); 3) Niestabilność wegetatywna (labilne ciśnienie tętnicze, tachykardia, bladość, tachypnoe); 4) Zaburzenia świadomości (od przymglenia do śpiączki). W badaniach laboratoryjnych kluczowy jest gwałtowny wzrost kinazy kreatynowej (CPK > 1000, często > 10 000–50 000 IU/l) wskutek rabdomiolizy oraz leukocytoza (> 10 000–40 000/ul).",
+      "sourceIds": [
+        "nms-consensus",
+        "maudsley15",
+        "wfsbp-schizophrenia"
+      ],
+      "checkpointId": "psych-nms-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-lead-pipe-vs-clonus-differentiation",
+          "kind": "evidence-panel",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "zlosliwy-zespol-neuroleptyczny-nms-block-3",
+      "title": "Protokół leczenia na oddziale intensywnej terapii",
+      "text": "Podstawą jest natychmiastowe odstawienie neuroleptyku oraz intensywna terapia: agresywne nawadnianie dożylne w celu ochrony nerek przed nefropatią mioglobinuryczną (forsowana diureza), chłodzenie fizykalne. Farmakologicznie stosuje się: agonistę receptorów dopaminowych – bromokryptynę (2,5–10 mg p.o. co 8h), amantadynę oraz bezpośredni lek zwiotczający mięśnie – dantrolen (1–2,5 mg/kg i.v. w bolusie, powtarzany do maks. 10 mg/kg/d).",
+      "sourceIds": [
+        "nms-consensus",
+        "maudsley15",
+        "wfsbp-schizophrenia"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-nms-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "zlosliwy-zespol-neuroleptyczny-nms-obj-2"
+      ],
+      "prompt": "Jaki lek będący blokerem receptorów rianodynowych (RyR1) stosuje się w dożylnej terapii NMS w celu przerwania skurczu mięśni i hipertermii?",
+      "options": [
+        "Baklofen w wysokich dawkach doustnych",
+        "Dantrolen",
+        "Sukcynylocholina w bolusie i.v."
+      ],
+      "optionFeedback": [
+        "Baklofen jest agonistą receptora GABAB o powolnym początku i nie przerywa ostrej kaskady wapniowej RyR1 w OIT.",
+        "Hamuje uwalnianie wapnia z siateczki sarkoplazmatycznej, przerywając hipermetabolizm mięśniowy.",
+        "Depolaryzujące leki zwiotczające są bezwzględnie przeciwwskazane, gdyż wyzwalają masywną hiperkaliemię i grożą zatrzymaniem krążenia."
+      ],
+      "answer": 1,
+      "explanation": "Hamuje uwalnianie wapnia z siateczki sarkoplazmatycznej, przerywając hipermetabolizm mięśniowy.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "nms-consensus",
+        "maudsley15",
+        "wfsbp-schizophrenia"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-nms-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "zlosliwy-zespol-neuroleptyczny-nms-obj-3"
+      ],
+      "prompt": "Który agonista receptorów dopaminowych jest powszechnie stosowany w farmakoterapii NMS w celu przełamania ośrodkowego deficytu dopaminy?",
+      "options": [
+        "Haloperydol w wysokiej dawce",
+        "Nalokson dożylnie",
+        "Bromokryptyna (lub amantadyna)"
+      ],
+      "optionFeedback": [
+        "Haloperydol jest silnym antagonistą D2 i nasiliłby śmiertelność w NMS.",
+        "Nalokson jest antagonistą receptorów opioidowych.",
+        "Stymuluje zablokowane receptory D2 w podwzgórzu i prążkowiu, normalizując termoregulację."
+      ],
+      "answer": 2,
+      "explanation": "Stymuluje zablokowane receptory D2 w podwzgórzu i prążkowiu, normalizując termoregulację.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "nms-consensus",
+        "maudsley15",
+        "wfsbp-schizophrenia"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "zlosliwy-zespol-neuroleptyczny-nms-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "zlosliwy-zespol-neuroleptyczny-nms-obj-1",
+      "zlosliwy-zespol-neuroleptyczny-nms-obj-2",
+      "zlosliwy-zespol-neuroleptyczny-nms-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Złośliwy Zespół Neuroleptyczny (NMS): patofizjologia i terapia”.",
+    "modelAnswer": "NMS to ostra blokada D2 z sztywnością rury ołowianej, hipertermią, skokiem CPK i leukocytozą. Terapia wymaga natychmiastowego odstawienia leków, forsowanej diurezy, dantrolenu i.v. oraz bromokryptyny w OIT.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "nms-consensus",
+      "maudsley15",
+      "wfsbp-schizophrenia"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-nms-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "zlosliwy-zespol-neuroleptyczny-nms-obj-1"
+      ],
+      "prompt": "Jaki charakter ma wzmożone napięcie mięśniowe w NMS w badaniu neurologicznym?",
+      "options": [
+        "Plastyczna sztywność o charakterze \"rury ołowianej\" (lead-pipe rigidity) jednakowa w całym zakresie ruchu",
+        "Napięcie spastyczne scyzorykowe (piramidowe) zależne od prędkości ruchu",
+        "Hipotonia mięśniowa z zachowanym objawem koła zębatego"
+      ],
+      "optionFeedback": [
+        "Świadczy o głębokiej blokadzie pozapiramidowej w szlaku nigrostriatalnym.",
+        "Sztywność w NMS jest pozapiramidowa (plastyczna), jednakowa w całym zakresie ruchu, bez fenomenu scyzoryka.",
+        "Hipotonia nie występuje w NMS; sztywność obejmuje cały układ mięśniowy."
+      ],
+      "answer": 0,
+      "explanation": "Świadczy o głębokiej blokadzie pozapiramidowej w szlaku nigrostriatalnym.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nms-consensus",
+        "maudsley15",
+        "wfsbp-schizophrenia"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-nms-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "zlosliwy-zespol-neuroleptyczny-nms-obj-1"
+      ],
+      "prompt": "Jakie powikłanie narządowe jest główną przyczyną zgonu u pacjentów z nieleczoną rabdomiolizą w przebiegu NMS?",
+      "options": [
+        "Przetoka oskrzelowo-płucna z odmą prężną",
+        "Ostra martwica cewek nerkowych i niewydolność nerek wywołana zatkaniem przez mioglobinę",
+        "Ostra niewydolność wątroby z encefalopatią wrotno-układową"
+      ],
+      "optionFeedback": [
+        "Powikłania płucne wynikają z aspiracji lub hipowentylacji, a nie z przetoki miąższowej.",
+        "Mioglobina wytrąca się w kanalikach nerkowych, co wymaga agresywnej płynoterapii i forsowanej diurezy.",
+        "Choć enzymy wątrobowe mogą rosnąć z powodu hipoperfuzji, bezpośrednim zagrożeniem z rozpadu mięśni jest nefropatia mioglobinuryczna."
+      ],
+      "answer": 1,
+      "explanation": "Mioglobina wytrąca się w kanalikach nerkowych, co wymaga agresywnej płynoterapii i forsowanej diurezy.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "nms-consensus",
+        "maudsley15",
+        "wfsbp-schizophrenia"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "nms-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "zlosliwy-zespol-neuroleptyczny-nms-obj-1"
+      ],
+      "claimIds": [
+        "claim-ph-nms-triad",
+        "claim-ph-nms-tx"
+      ],
+      "prompt": "U pacjenta leczonego haloperidolem w 4. dobie wystąpiła uogólniona sztywność mięśniowa typu „ołowiana rura”, gorączka 39,2°C, labilne ciśnienie tętnicze, tachykardia 120/min i zaburzenia świadomości. W badaniach laboratoryjnych kinaza kreatynowa (CK) wynosi 14 000 j./l, leukocytoza 18 000/µl. Jaki stan kliniczny rozpoznasz?",
+      "options": [
+        "Złośliwy zespół neuroleptyczny (NMS); natychmiastowe odstawienie neuroleptyku i intensywna terapia",
+        "Zespół serotoninowy; podanie cyproheptadyny",
+        "Zapalenie opon mózgowo-rdzeniowych; natychmiastowa punkcja lędźwiowa bez odstawiania leków"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-lead-pipe-rigidity",
+            "label": "Sztywność typu ołowiana rura i potężny wzrost CK",
+            "acceptedPhrases": [
+              "ołowiana rura",
+              "sztywność mięśniowa",
+              "ck",
+              "kinaza kreatynowa",
+              "rabdomioliza"
+            ]
+          },
+          {
+            "id": "c-nms-management",
+            "label": "Natychmiastowe odstawienie neuroleptyku i nawadnianie",
+            "acceptedPhrases": [
+              "odstawienie neuroleptyku",
+              "nawodnienie",
+              "nms",
+              "intensywna terapia"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-clonus-confusion",
+            "patterns": [
+              "zespół serotoninowy z klonusem",
+              "antagonista 5-ht"
+            ],
+            "severity": "warning",
+            "feedback": "Sztywność typu ołowiana rura i wysokie CK to triada NMS, a nie zespołu serotoninowego (gdzie dominuje klonus i hiperrefleksja)."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "NMS charakteryzuje się sztywnością „ołowiana rura”, hipertermią, niestabilnością wegetatywną i rabdomiolizą z wysokim CK.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "nms-consensus",
+        "maudsley15"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "nms-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "zlosliwy-zespol-neuroleptyczny-nms-obj-2"
+      ],
+      "claimIds": [
+        "claim-ph-nms-triad"
+      ],
+      "prompt": "Wskaż dwie kluczowe różnice neurologiczne w badaniu przedmiotowym między złośliwym zespołem neuroleptycznym (NMS) a ostrym zespołem serotoninowym.",
+      "modelAnswer": "1) Napięcie mięśniowe: w NMS występuje uogólniona, symetryczna sztywność mięśniowa typu „ołowiana rura” (lead-pipe rigidity), natomiast w zespole serotoninowym dominuje klonus (spontaniczny, indukowany lub oczny) oraz wygórowanie odruchów ścięgnistych (hiperrefleksja). 2) Odruchy głębokie: w zespole serotoninowym są wygórowane (hiperrefleksja, zwłaszcza w kończynach dolnych), podczas gdy w NMS są prawidłowe lub osłabione przez skrajne napięcie mięśniowe.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-rigidity-vs-clonus",
+            "label": "NMS = sztywność ołowiana rura vs ZS = klonus",
+            "acceptedPhrases": [
+              "ołowiana rura",
+              "sztywność",
+              "klonus",
+              "drżenie"
+            ]
+          },
+          {
+            "id": "c-reflexes-difference",
+            "label": "Odruchy: w ZS wygórowane (hiperrefleksja), w NMS prawidłowe lub osłabione",
+            "acceptedPhrases": [
+              "hiperrefleksja",
+              "odruchy wygórowane",
+              "odruchy w nms osłabione"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Klonus i hiperrefleksja definiują zespół serotoninowy; sztywność ołowiana rura definiuje NMS.",
+      "difficulty": "both",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "nms-consensus",
+        "hunter-criteria"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "nms-bank-3",
+      "type": "ordering",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "zlosliwy-zespol-neuroleptyczny-nms-obj-1",
+        "zlosliwy-zespol-neuroleptyczny-nms-obj-3"
+      ],
+      "claimIds": [
+        "claim-ph-nms-tx"
+      ],
+      "prompt": "Uporządkuj chronologicznie działania ratunkowe u pacjenta ze złośliwym zespołem neuroleptycznym (NMS).",
+      "items": [
+        "Natychmiastowe odstawienie leku przeciwpsychotycznego",
+        "Intensywne nawadnianie dożylne krystaloidami w celu zapobieżenia ostrej niewydolności nerek z mioglobinurii",
+        "Fizykalne chłodzenie ciała i monitorowanie parametrów życiowych w OIT",
+        "W ciężkich przypadkach wdrożenie farmakoterapii celowanej (bromokryptyna, dantrolen)"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "explanation": "Odcięcie neuroleptyku i intensywne nawadnianie w celu ochrony nerek przed mioglobinurią to bezwzględne pierwsze kroki.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nms-consensus",
+        "maudsley15"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "pathway-builder",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy AGNP 2026 TDM, CPIC PGx, Maudsley 15th ed., Kapur PET D2, Hunter criteria oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

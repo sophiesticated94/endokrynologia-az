@@ -1,0 +1,171 @@
+{
+  "id": "ocd-i-petla-cstc",
+  "moduleId": "psych-afektywne",
+  "title": "Zaburzenia obsesyjno-kompulsyjne (OCD) i pętla CSTC",
+  "subtitle": "Obwody korowo-prążkowiowe, myśli natrętne i wysokie dawki SSRI",
+  "group": "Zaburzenia obsesyjno-kompulsyjne",
+  "minutes": 18,
+  "goals": [
+    "Zrozumiesz rolę pętli korowo-prążkowiowo-wzgórzowo-korowej (CSTC) w patogenezie natręctw.",
+    "Rozróżnisz myśli intruzywne (obsesje) od czynności zabezpieczających (kompulsji).",
+    "Wdrożysz protokół farmakoterapii OCD oparty na maksymalnych dawkach SSRI i psychoterapii ERP."
+  ],
+  "sections": [
+    {
+      "title": "Neuroanatomia pętli CSTC i brak hamowania wzgórzowego",
+      "text": "W zaburzeniu obsesyjno-kompulsyjnym (OCD) dochodzi do dysfunkcji pętli korowo-prążkowiowo-wzgórzowo-korowej (cortico-striato-thalamo-cortical, CSTC), obejmującej korę oczodołowo-czołową (OFC), przedni zakręt obręczy (ACC) oraz jądro ogoniaste. Uszkodzenie wewnętrznego filtra prążkowiowego powoduje, że wzgórze stale przesyła do kory sygnały o błędzie lub zagrożeniu, co pacjent odczuwa jako natrętną, intruzywną myśl (obsesję)."
+    },
+    {
+      "title": "Obsesje a kompulsje w ujęciu behawioralnym",
+      "text": "Obsesje to nawracające, uporczywe myśli, impulsy lub wyobrażenia (np. skażenie, symetria, agresja), które wywołują silny lęk. Kompulsje to powtarzające się zachowania (mycie rąk, sprawdzanie zamków) lub akty psychiczne mające na celu neutralizację lęku. Wykonanie kompulsji przynosi chwilową ulgę, co poprzez mechanizm wzmocnienia negatywnego utrwala pętlę objawu."
+    },
+    {
+      "title": "Farmakoterapia OCD: konieczność wysokich dawek i długiego czasu",
+      "text": "Leczenie farmakologiczne OCD wymaga znacznie wyższych dawek SSRI niż leczenie depresji (np. sertralina 200 mg/d, fluoksetyna 60–80 mg/d, escitalopram 20–30 mg/d). Czas oczekiwania na pełną odpowiedź wynosi 10–12 tygodni (nie 2–4). Złotym standardem psychoterapii jest terapia ekspozycji z powstrzymaniem reakcji (ERP)."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Lek",
+      "Dawka w MDD",
+      "Dawka docelowa w OCD",
+      "Czas oczekiwania na odpowiedź"
+    ],
+    "rows": [
+      [
+        "Sertralina",
+        "50–100 mg/d",
+        "150–200 mg/d",
+        "8–12 tygodni"
+      ],
+      [
+        "Fluoksetyna",
+        "20–40 mg/d",
+        "60–80 mg/d",
+        "10–12 tygodni"
+      ],
+      [
+        "Klomipramina (TLPD)",
+        "75–150 mg/d",
+        "150–250 mg/d",
+        "8–12 tygodni"
+      ],
+      [
+        "Escitalopram",
+        "10–20 mg/d",
+        "20–30 mg/d (z EKG)",
+        "10–12 tygodni"
+      ]
+    ]
+  },
+  "advanced": "W przypadkach lekoopornego OCD (brak poprawy po 2 próbach wysokimi dawkami SSRI + ERP) wytyczne NICE i WFSBP rekomendują augmentację atypowym lekiem przeciwpsychotycznym o niskim profilu antydopaminergicznym (aripiprazol 5–10 mg lub rysperydon 1–2 mg), który moduluje prążkowiowy wyrzut dopaminy.",
+  "summary": "OCD to organiczna dysfunkcja pętli CSTC. Sukces terapeutyczny wymaga wysokich dawek SSRI stosowanych przez minimum 10–12 tygodni w połączeniu z psychoterapią ERP oraz ewentualną augmentacją aripiprazolem.",
+  "sourceIds": [
+    "nice-ocd",
+    "wfsbp-anxiety",
+    "maudsley15"
+  ],
+  "questions": [
+    {
+      "id": "psych-ocd-q1",
+      "lessonId": "ocd-i-petla-cstc",
+      "prompt": "Czym różni się dawkowanie SSRI w OCD od typowego dawkowania w epizodzie depresyjnym (MDD)?",
+      "options": [
+        {
+          "text": "W OCD SSRI podaje się wyłącznie dożylnie w warunkach szpitalnych",
+          "explanation": "SSRI w OCD stosuje się standardowo drogą doustną ambulatoryjnie."
+        },
+        {
+          "text": "W OCD stosuje się maksymalne lub ponadstandardowe dawki, a czas do oceny odpowiedzi wynosi 8–12 tygodni",
+          "explanation": "Desensytyzacja receptorów w pętli CSTC wymaga wyższego stopnia wysycenia SERT i dłuższego czasu niż w depresji."
+        },
+        {
+          "text": "W OCD stosuje się wyłącznie mikrodawki przez 7 dni",
+          "explanation": "Mikrodawki nie wywierają żadnego mierzalnego efektu w obwodach CSTC w OCD."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-ocd-q2",
+      "lessonId": "ocd-i-petla-cstc",
+      "prompt": "Jaki obwód neuronalny wykazuje udowodnioną neuroobrazowo nadaktywność u pacjentów z OCD?",
+      "options": [
+        {
+          "text": "Droga siatkowo-rdzeniowa boczna",
+          "explanation": "Droga siatkowo-rdzeniowa kontroluje napięcie mięśniowe, nie generuje myśli intruzywnych."
+        },
+        {
+          "text": "Pęczek łukowaty lewej półkuli",
+          "explanation": "Pęczek łukowaty łączy ośrodki mowy Broki i Wernickego."
+        },
+        {
+          "text": "Pętla korowo-prążkowiowo-wzgórzowo-korowa (CSTC)",
+          "explanation": "Nadaktywność OFC i jądra ogoniastego generuje nieustanne poczucie błędu i przymus wykonania czynności."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-ocd-q3",
+      "lessonId": "ocd-i-petla-cstc",
+      "prompt": "Jaka metoda psychoterapii poznawczo-behawioralnej jest złotym standardem o najwyższej skuteczności w OCD?",
+      "options": [
+        {
+          "text": "Ekspozycja z powstrzymaniem reakcji (ERP - Exposure and Response Prevention)",
+          "explanation": "Narażenie na bodziec wyzwalający bez wykonania kompulsji prowadzi do habituacji i wygaszenia lęku."
+        },
+        {
+          "text": "Klasyczna psychoanaliza bez zadań domowych",
+          "explanation": "Brak aktywnej ekspozycji behawioralnej nie przerywa pętli kompulsyjnej w OCD."
+        },
+        {
+          "text": "Hipnoterapia regresyjna",
+          "explanation": "Hipnoterapia nie posiada dowodów klasy I w randomizowanych badaniach w OCD."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-ocd-q4",
+      "lessonId": "ocd-i-petla-cstc",
+      "prompt": "Jaki lek z grupy TLPD o silnym komponencie serotoninergicznym jest zarejestrowany i wysoce skuteczny w OCD?",
+      "options": [
+        {
+          "text": "Maprotylina",
+          "explanation": "Maprotylina jest selektywnym inhibitorem wychwytu noradrenaliny bez wpływu na 5-HT."
+        },
+        {
+          "text": "Klomipramina",
+          "explanation": "Klomipramina jest najsilniejszym inhibitorem wychwytu zwrotnego serotoniny wśród TLPD i wykazuje dużą siłę w OCD."
+        },
+        {
+          "text": "Amitryptylina",
+          "explanation": "Amitryptylina działa silnie sedatywnie i przeciwbólowo, lecz ustępuje klomipraminie w OCD."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-ocd-q5",
+      "lessonId": "ocd-i-petla-cstc",
+      "prompt": "Który lek jest rekomendowany w I kolejności do augmentacji SSRI w przypadku lekoopornego OCD wg wytycznych NICE?",
+      "options": [
+        {
+          "text": "Diazepam w dawce 40 mg/d",
+          "explanation": "Benzodiazepiny nie wykazują skuteczności przeciwobsesyjnej i nie przerywają natręctw."
+        },
+        {
+          "text": "Metylotransferaza w iniekcjach domięśniowych",
+          "explanation": "Nie jest to substancja stosowana w farmakoterapii psychiatrycznej."
+        },
+        {
+          "text": "Aripiprazol lub rysperydon w małej dawce",
+          "explanation": "Częściowy agonizm D2 aripiprazolu lub mała dawka rysperydonu moduluje przekaźnictwo dopaminowe w prążkowiu."
+        }
+      ],
+      "answer": 2
+    }
+  ],
+  "assetIds": []
+}

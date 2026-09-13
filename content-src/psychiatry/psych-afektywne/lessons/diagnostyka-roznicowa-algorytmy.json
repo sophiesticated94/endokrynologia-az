@@ -1,0 +1,171 @@
+{
+  "id": "diagnostyka-roznicowa-algorytmy",
+  "moduleId": "psych-afektywne",
+  "title": "Algorytmy diagnostyki różnicowej: imitacje somatyczne i neurologiczne",
+  "subtitle": "Niedoczynność tarczycy, hiperkortyzolemia, zapalenia mózgu i neuroinfekcje",
+  "group": "Diagnostyka i semiotyka psychiatryczna",
+  "minutes": 18,
+  "goals": [
+    "Wykluczysz najczęstsze somatyczne imitacje depresji, lęku, manii i psychozy.",
+    "Rozpoznasz autoimmunologiczne zapalenie mózgu (np. anty-NMDAR) jako przyczynę ostrej psychozy.",
+    "Wdrożysz ustrukturyzowany panel badań laboratoryjnych i neuroobrazowych w pierwszym epizodzie."
+  ],
+  "sections": [
+    {
+      "title": "Endokrynne maski zaburzeń psychicznych",
+      "text": "Zaburzenia osi hormonalnych bezpośrednio modulują neuroprzekaźnictwo. Ciężka niedoczynność tarczycy manifestuje się lekooporną depresją, apatią, a w skrajnych przypadkach majaczeniem (\"myxedema madness\"). Nadczynność tarczycy oraz guz chromochłonny (pheochromocytoma) imitują lęk napadowy i pobudzenie. Z kolei zespół Cushinga wywołuje depresję z labilnością emocjonalną, a choroba Addisona – zespół asteniczno-depresyjny z hipotensją."
+    },
+    {
+      "title": "Neurologiczne maski i autoimmunologiczne zapalenie mózgu",
+      "text": "Nowo powstała psychoza u osoby młodej bez wywiadu psychiatrycznego wymaga wykluczenia autoimmunologicznego zapalenia mózgu z przeciwciałami przeciw receptorom NMDA (anty-NMDAR). Choroba zaczyna się od objawów grypopodobnych, po których następuje gwałtowna psychoza, dyskinezy ustno-twarzowe, niestabilność wegetatywna, katatonia i napady padaczkowe. U młodych kobiet w 50% przypadków wiąże się z potworniakiem jajnika."
+    },
+    {
+      "title": "Minimalny panel diagnostyczny w pierwszym epizodzie (FEP)",
+      "text": "U każdego pacjenta z pierwszym epizodem psychotycznym (First Episode Psychosis - FEP) lub afektywnym konieczne są: morfologia, elektrolity (Na, K, Ca), mocznik, kreatynina, próby wątrobowe, TSH, fT4, witamina B12, kwas foliowy, glukoza, CRP, badanie ogólne moczu, toksykologia moczu oraz neuroobrazowanie mózgu (MRI lub CT) w celu wykluczenia guzów i krwiaków."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Schorzenie somatyczne",
+      "Manifestacja psychiatryczna",
+      "Kluczowe badania laboratoryjne",
+      "Cechy odróżniające od schorzenia pierwotnego"
+    ],
+    "rows": [
+      [
+        "Niedoczynność tarczycy",
+        "Depresja, spowolnienie, osłabienie pamięci",
+        "TSH podwyższone, wolne T4 obniżone",
+        "Zimna sucha skóra, obrzęki podudzi, zaparcia, oporne na SSRI"
+      ],
+      [
+        "Guz chromochłonny",
+        "Napady paniki, lęk napadowy, pobudzenie",
+        "Metanefryny w moczu dobowym / osoczu",
+        "Ciężkie skoki ciśnienia tętniczego, bladość twarzy, poty"
+      ],
+      [
+        "Autoimmunologiczne ZM (anty-NMDAR)",
+        "Psychoza, katatonia, zaburzenia mowy",
+        "Przeciwciała anty-NMDAR w PMR/surowicy, MRI mózgu",
+        "Dyskinezy orofacjalne, napady drgawkowe, niestabilność krążenia"
+      ],
+      [
+        "Guz płata czołowego",
+        "Zmiana osobowości, odhamowanie lub apatia",
+        "Rezonans magnetyczny (MRI) głowy z kontrastem",
+        "Objawy ogniskowe, odruchy deliberacyjne, ból głowy"
+      ]
+    ]
+  },
+  "advanced": "Gwałtowne wystąpienie objawów psychotycznych u pacjenta po 40.–50. roku życia bez wcześniejszego wywiadu psychiatrycznego jest silnym sygnałem ostrzegawczym (\"red flag\") i niemal zawsze wskazuje na tło organiczne (udar, guz OUN, neuroinfekcja, proces neurozwyrodnieniowy).",
+  "summary": "Diagnostyka różnicowa w pierwszym epizodzie wymaga wykluczenia tła organicznego. Panel badań laboratoryjnych, toksykologia i neuroobrazowanie chronią przed przeoczeniem guzów OUN, dysfunkcji tarczycy czy zapalenia anty-NMDAR.",
+  "sourceIds": [
+    "icd11-cddr",
+    "ptp-standardy",
+    "wfsbp-schizophrenia"
+  ],
+  "questions": [
+    {
+      "id": "psych-diff-q1",
+      "lessonId": "diagnostyka-roznicowa-algorytmy",
+      "prompt": "Młoda kobieta (22 lata) bez wywiadu psychiatrycznego rozwija ostrą psychozę z omamami, po czym dołączają dyskinezy ustno-twarzowe i niestabilność ciśnienia. Jakie schorzenie należy pilnie wykluczyć?",
+      "options": [
+        {
+          "text": "Typową schizofrenię paranoidalną bez konieczności dalszych badań",
+          "explanation": "Schizofrenia nie wywołuje ostrych dyskinez orofacjalnych i niestabilności wegetatywnej u osoby nieleczonej neuroleptykami."
+        },
+        {
+          "text": "Prostą reakcję adaptacyjną na stres",
+          "explanation": "Obraz kliniczny wskazuje na ciężkie, zagrażające życiu zapalenie mózgu."
+        },
+        {
+          "text": "Autoimmunologiczne zapalenie mózgu z przeciwciałami przeciw receptorom NMDA (anty-NMDAR)",
+          "explanation": "Typowo towarzyszy mu potworniak jajnika i wymaga natychmiastowej immunoterapii oraz onkologicznego USG miednicy mniejszej."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-diff-q2",
+      "lessonId": "diagnostyka-roznicowa-algorytmy",
+      "prompt": "Które badanie laboratoryjne jest obligatoryjne przed rozpoznaniem lekoopornej depresji u pacjenta ze spowolnieniem psychoruchowym i suchą skórą?",
+      "options": [
+        {
+          "text": "Stężenie TSH oraz wolnych hormonów tarczycy (fT3, fT4)",
+          "explanation": "Ciężka niedoczynność tarczycy może doskonale imitować lekooporną depresję lub otępienie."
+        },
+        {
+          "text": "Stężenie amylazy w ślinie",
+          "explanation": "Amylaza ślinowa nie ma znaczenia w diagnostyce różnicowej depresji."
+        },
+        {
+          "text": "Test troponinowy co 2 godziny przez dobę",
+          "explanation": "Troponiny oceniają martwicę mięśnia sercowego w zawale serca."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-diff-q3",
+      "lessonId": "diagnostyka-roznicowa-algorytmy",
+      "prompt": "Który parametr kliniczny stanowi tzw. czerwoną flagę (red flag) silnie sugerującą organiczne podłoże psychozy?",
+      "options": [
+        {
+          "text": "Obecność urojeń ksobnych i odsłonięcia",
+          "explanation": "Urojenia te są typowe dla schizofrenii."
+        },
+        {
+          "text": "Pojawienie się pierwszego w życiu epizodu psychotycznego po 45.–50. roku życia",
+          "explanation": "Pierwotna schizofrenia rozwija się typowo w wieku 18–30 lat; późny początek sugeruje guzy, udary lub otępienie."
+        },
+        {
+          "text": "Wystąpienie objawów w wieku 20 lat po przewlekłym stresie",
+          "explanation": "Jest to typowy wiek zachorowania na schizofrenię."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-diff-q4",
+      "lessonId": "diagnostyka-roznicowa-algorytmy",
+      "prompt": "Guz chromochłonny nadnerczy (pheochromocytoma) najczęściej błędnie diagnozowany jest w gabinecie psychiatrycznym jako:",
+      "options": [
+        {
+          "text": "Choroba Alzheimera o wczesnym początku",
+          "explanation": "Guz chromochłonny nie wywołuje pierwotnego deficytu pamięci autobiograficznej."
+        },
+        {
+          "text": "Jadłowstręt psychiczny (anorexia nervosa)",
+          "explanation": "Brak zaburzenia obrazu własnego ciała wyklucza jadłowstręt."
+        },
+        {
+          "text": "Zaburzenie lękowe z napadami paniki (Panic Disorder)",
+          "explanation": "Rzuty wydzielania katecholamin powodują nagły lęk, palpitacje, bladość i skoki ciśnienia tętniczego."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-diff-q5",
+      "lessonId": "diagnostyka-roznicowa-algorytmy",
+      "prompt": "Co wchodzi w skład minimalnego standardu laboratoryjnego pierwszego epizodu psychotycznego (FEP)?",
+      "options": [
+        {
+          "text": "Morfologia, elektrolity, TSH, próby wątrobowe, nerkowe, glukoza, witamina B12, toksykologia moczu i badanie neuroobrazowe (MRI/CT)",
+          "explanation": "Pakiet ten pozwala wykluczyć metaboliczne, toksyczne i anatomiczne przyczyny psychozy."
+        },
+        {
+          "text": "Wyłącznie badanie grupy krwi i Rh",
+          "explanation": "Grupa krwi nie wnosi żadnych informacji o etiologii psychozy."
+        },
+        {
+          "text": "Pobranie wycinka ze skóry przedramienia",
+          "explanation": "Biopsja skóry nie ma zastosowania w diagnostyce pierwszego epizodu psychozy."
+        }
+      ],
+      "answer": 0
+    }
+  ],
+  "assetIds": []
+}

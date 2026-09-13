@@ -1,0 +1,367 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "interwencje-biologiczne-ect-rtms-ketamina",
+  "objectives": [
+    {
+      "id": "interwencje-biologiczne-ect-rtms-ketamina-obj-1",
+      "statement": "Wskażesz bezwzględne i pilne wskazania do terapii elektrowstrząsowej (ECT: katatonia, stupor depresyjny, ciężka suicydalność).",
+      "kind": "safety"
+    },
+    {
+      "id": "interwencje-biologiczne-ect-rtms-ketamina-obj-2",
+      "statement": "Zrozumiesz zasady neurostymulacji magnetycznej (rTMS) lewej grzbietowo-bocznej kory przedczołowej (dlPFC).",
+      "kind": "mechanism"
+    },
+    {
+      "id": "interwencje-biologiczne-ect-rtms-ketamina-obj-3",
+      "statement": "Wdrożysz protokół podawania donosowej esketaminy w depresji lekoopornej (TRD).",
+      "kind": "mechanism"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-bio-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "interwencje-biologiczne-ect-rtms-ketamina-obj-1"
+    ],
+    "prompt": "Jakie jest jedyne bezwzględne przeciwwskazanie do przeprowadzenia zabiegu terapii elektrowstrząsowej (ECT)?",
+    "options": [
+      "Rozpoznanie depresji z objawami psychotycznymi",
+      "Znacznie podwyższone ciśnienie wewnątrzczaszkowe (np. guz mózgu z efektem masy, świeży krwotok śródczaszkowy)",
+      "Wiek powyżej 65 lat"
+    ],
+    "optionFeedback": [
+      "Jest to jedno z głównych wskazań do ECT, a nie przeciwwskazanie.",
+      "Podczas napadu drgawkowego przejściowo wzrasta przepływ mózgowy, co przy ciasnocie śródczaszkowej grozi śmiertelnym wgłobieniem migdałków móżdżku.",
+      "Wiek podeszły nie jest przeciwwskazaniem; seniorzy często doskonale tolerują ECT."
+    ],
+    "answer": 1,
+    "explanation": "Podczas napadu drgawkowego przejściowo wzrasta przepływ mózgowy, co przy ciasnocie śródczaszkowej grozi śmiertelnym wgłobieniem migdałków móżdżku.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "apa-ect-guidelines",
+      "krystal-ketamine",
+      "canmat-mdd-2023"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "interwencje-biologiczne-ect-rtms-ketamina-block-1",
+      "title": "Terapia elektrowstrząsowa (ECT): wysoka skuteczność w lekooporności i stanach nagłych",
+      "text": "Terapia elektrowstrząsowa (Electroconvulsive Therapy - ECT) pozostaje metodą o najwyższej udokumentowanej skuteczności w ciężkich, zagrażających życiu zaburzeniach afektywnych i katatonii (odpowiedź kliniczna 70–90%). Zabieg przeprowadza się w znieczuleniu ogólnym (krótkodziałający anestetyk, np. propofol/etomidat) i zwiotczeniu mięśniowym (sukcynylocholina). Impuls elektryczny wywołuje uogólniony napad drgawkowy w EEG (trwający min. 25–30 sekund). Proponowane mechanizmy biologiczne obejmują indukcję neuroplastyczności, wyrzut BDNF i VEGF oraz neuromodulację sieci neuronalnych.",
+      "sourceIds": [
+        "apa-ect-guidelines",
+        "krystal-ketamine",
+        "canmat-mdd-2023"
+      ],
+      "checkpointId": "psych-bio-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-bdnf-trkb",
+          "kind": "diagram",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "interwencje-biologiczne-ect-rtms-ketamina-block-2",
+      "title": "Przezczaszkowa stymulacja magnetyczna (rTMS)",
+      "text": "Powtarzalna przezczaszkowa stymulacja magnetyczna (repetitive Transcranial Magnetic Stimulation - rTMS) to nieinwazyjna metoda modulacji kory mózgu za pomocą zmiennego pola magnetycznego, niewymagająca znieczulenia. Standardowy protokół w depresji opiera się na stymulacji wysokoczęstotliwościowej (10–20 Hz lub protokół theta-burst iTBS) lewej grzbietowo-bocznej kory przedczołowej (dlPFC), co przywraca jej aktywność metaboliczną i hamuje nadaktywne ciało migdałowate.",
+      "sourceIds": [
+        "apa-ect-guidelines",
+        "krystal-ketamine",
+        "canmat-mdd-2023"
+      ],
+      "checkpointId": "psych-bio-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-ect-seizure-efficacy-hemodynamics",
+          "kind": "evidence-panel",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "interwencje-biologiczne-ect-rtms-ketamina-block-3",
+      "title": "Esketamina donosowa w depresji lekoopornej (TRD)",
+      "text": "S-enancjomer ketaminy podawany donosowo w połączeniu z nowym SSRI/SNRI zrewolucjonizował leczenie TRD. Esketamina jako niekompetycyjny antagonista NMDA wywołuje szybki efekt przeciwdepresyjny i antysuicydalny (w ciągu 24–48h). Proponowany model mechanizmu obejmuje przejściowy wyrzut glutaminianu i kaskadę mTOR/BDNF. Ze względu na przejściowe skoki ciśnienia tętniczego, sedację i objawy dysocjacyjne aplikacja odbywa się w certyfikowanym ośrodku pod 2-godzinnym bezpośrednim nadzorem medycznym.",
+      "sourceIds": [
+        "apa-ect-guidelines",
+        "krystal-ketamine",
+        "canmat-mdd-2023"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-bio-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "interwencje-biologiczne-ect-rtms-ketamina-obj-2"
+      ],
+      "prompt": "W jaki sposób zabezpiecza się pacjenta przed złamaniami kości i urazami mięśniowymi podczas zabiegu ECT?",
+      "options": [
+        "Przez podanie lewodopy z benserazydem 30 minut przed zabiegiem",
+        "Przez unieruchomienie wyłącznie pasami bez farmakologicznego zwiotczenia mięśni",
+        "Poprzez podanie leku zwiotczającego mięśnie (sukcynylocholiny) po uprzednim uśpieniu pacjenta krótkodziałającym anestetykiem"
+      ],
+      "optionFeedback": [
+        "Agoniści dopaminy nie wykazują działania zwiotczającego ani nie zapobiegają urazom narządu ruchu podczas napadu drgawkowego.",
+        "Unieruchomienie mechaniczne bez leków miorelaksacyjnych stwarza wysokie ryzyko złamań kompresyjnych kręgów i zerwania mięśni.",
+        "Dzięki zwiotczeniu drgawki widoczne są jedynie w zapisie EEG lub jako minimalne drżenie palców stopy."
+      ],
+      "answer": 2,
+      "explanation": "Dzięki zwiotczeniu drgawki widoczne są jedynie w zapisie EEG lub jako minimalne drżenie palców stopy.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "apa-ect-guidelines",
+        "krystal-ketamine",
+        "canmat-mdd-2023"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-bio-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "interwencje-biologiczne-ect-rtms-ketamina-obj-3"
+      ],
+      "prompt": "Który rejon kory mózgowej jest celem stymulacji wysokoczęstotliwościowej w standardowym protokole rTMS w leczeniu depresji?",
+      "options": [
+        "Lewa grzbietowo-boczna kora przedczołowa (left dlPFC)",
+        "Pierwszorzędowa kora słuchowa w płacie skroniowym",
+        "Móżdżek i jądro zębate"
+      ],
+      "optionFeedback": [
+        "W depresji wykazuje ona hipometabolizm, który stymulacja magnetyczna odwraca.",
+        "Kora słuchowa nie jest celem w terapii depresji.",
+        "Móżdżek odpowiada głównie za koordynację ruchową."
+      ],
+      "answer": 0,
+      "explanation": "W depresji wykazuje ona hipometabolizm, który stymulacja magnetyczna odwraca.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "apa-ect-guidelines",
+        "krystal-ketamine",
+        "canmat-mdd-2023"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "interwencje-biologiczne-ect-rtms-ketamina-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "interwencje-biologiczne-ect-rtms-ketamina-obj-1",
+      "interwencje-biologiczne-ect-rtms-ketamina-obj-2",
+      "interwencje-biologiczne-ect-rtms-ketamina-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Nowoczesne interwencje biologiczne: ECT, rTMS i ketamina”.",
+    "modelAnswer": "ECT to najsilniejsza metoda ratunkowa w katatonii i depresji psychotycznej (znieczulenie + zwiotczenie). rTMS moduluje lewą dlPFC bez znieczulenia. Donosowa esketamina zapewnia efekt przeciwdepresyjny w ciągu godzin.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "apa-ect-guidelines",
+      "krystal-ketamine",
+      "canmat-mdd-2023"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-bio-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "interwencje-biologiczne-ect-rtms-ketamina-obj-1"
+      ],
+      "prompt": "Dlaczego po inhalacji donosowej esketaminy pacjent musi pozostać pod bezpośrednią obserwacją personelu medycznego przez co najmniej 2 godziny?",
+      "options": [
+        "W celu monitorowania stężenia leku we krwi i wykonania pilnego TDM po 120 minutach",
+        "Z uwagi na ryzyko przejściowego skoku ciśnienia tętniczego krwi, sedacji oraz objawów dysocjacji psychicznej",
+        "Z uwagi na ryzyko opóźnionej złośliwej hipertermii rozwijającej się w drugiej godzinie"
+      ],
+      "optionFeedback": [
+        "Esketamina donosowa nie wymaga rutynowego oznaczania stężenia TDM w surowicy podczas standardowych aplikacji klinicznych.",
+        "Objawy te osiągają szczyt w ciągu pierwszych 40 minut i ustępują samoistnie po ok. 90–120 minutach.",
+        "Hipertermia nie jest typowym działaniem niepożądanym esketaminy; nadzór koncentruje się na układzie krążenia i dysocjacji."
+      ],
+      "answer": 1,
+      "explanation": "Objawy te osiągają szczyt w ciągu pierwszych 40 minut i ustępują samoistnie po ok. 90–120 minutach.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "apa-ect-guidelines",
+        "krystal-ketamine",
+        "canmat-mdd-2023"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-bio-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "interwencje-biologiczne-ect-rtms-ketamina-obj-1"
+      ],
+      "prompt": "W jakim stanie klinicznym terapia elektrowstrząsowa (ECT) stanowi bezwzględną interwencję ratującą życie o najwyższej skuteczności?",
+      "options": [
+        "W izolowanej bezsenności pierwotnej bez objawów afektywnych",
+        "W łagodnych zaburzeniach adaptacyjnych z obniżeniem nastroju po zmianie pracy",
+        "W ostrej katatonii złośliwej oraz w ciężkim stuporze depresyjnym z odmową przyjmowania płynów i pokarmów"
+      ],
+      "optionFeedback": [
+        "Izolowane zaburzenia snu leczy się metodami behawioralnymi (CBT-I) i farmakoterapią doraźną, nie procedurami inwazyjnymi.",
+        "Wskazaniem do ECT są ciężkie, oporne lub zagrażające życiu stany afektywne i katatoniczne, a nie łagodne reakcje adaptacyjne.",
+        "Zabieg natychmiastowo przerywa stan katatoniczny i zabezpiecza przed zgonem z odwodnienia i powikłań zatorowych."
+      ],
+      "answer": 2,
+      "explanation": "Zabieg natychmiastowo przerywa stan katatoniczny i zabezpiecza przed zgonem z odwodnienia i powikłań zatorowych.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "apa-ect-guidelines",
+        "krystal-ketamine",
+        "canmat-mdd-2023"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "ect-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "interwencje-biologiczne-ect-rtms-ketamina-obj-1"
+      ],
+      "claimIds": [
+        "claim-ph-ect-indications"
+      ],
+      "prompt": "72-letnia pacjentka z ciężkim epizodem depresyjnym psychotycznym od 5 dni odmawia przyjmowania jakichkolwiek płynów i pokarmów, ma cechy ciężkiego odwodnienia i hiponatremię. Jakie leczenie biologiczne jest metodą z wyboru w stanie bezpośredniego zagrożenia życia?",
+      "options": [
+        "Pilna terapia elektrowstrząsowa (ECT) w znieczuleniu ogólnym po wstępnym wyrównaniu hemodynamicznym",
+        "Czekanie na efekt nowo włączonego SSRI przez kolejne 4 tygodnie",
+        "Psychoterapia poznawczo-behawioralna w warunkach ambulatoryjnych"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-ect-life-saving",
+            "label": "ECT jako leczenie ratujące życie w ciężkiej depresji z odmową jedzenia i picia",
+            "acceptedPhrases": [
+              "ect",
+              "elektrowstrząsy",
+              "ratujące życie",
+              "odmowa płynów",
+              "ciężkie odwodnienie"
+            ]
+          },
+          {
+            "id": "c-rapid-response-rate",
+            "label": "Najwyższa i najszybsza skuteczność w depresji psychotycznej (>80%)",
+            "acceptedPhrases": [
+              "wysoka skuteczność",
+              "szybka odpowiedź",
+              "depresja psychotyczna"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "ECT jest metodą z wyboru w stanach bezpośredniego zagrożenia życia (odmowa jedzenia/picia, skrajne pobudzenie, katatonia).",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "apa-ect-guidelines"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "interwencje-biologiczne-ect-rtms-ketamina-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "interwencje-biologiczne-ect-rtms-ketamina-obj-2"
+      ],
+      "prompt": "Wyjaśnij mechanizm molekularny lub receptorowy leżący u podstaw tematu: interwencje biologiczne ect rtms ketamina.",
+      "modelAnswer": "Kluczowe znaczenie ma zrozumienie profilu receptorowego, kaskad przekaźnictwa wewnątrzkomórkowego oraz adaptacji plastycznych w OUN.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-receptor-action",
+            "label": "Działanie na receptory / enzymy",
+            "acceptedPhrases": [
+              "receptor",
+              "enzym",
+              "mechanizm",
+              "transporter"
+            ]
+          },
+          {
+            "id": "c-clinical-effect",
+            "label": "Wpływ na funkcję OUN i objawy kliniczne",
+            "acceptedPhrases": [
+              "efekt kliniczny",
+              "adaptacja",
+              "plastyczność",
+              "neuroprzekaźnictwo"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Wyjaśnienie mechanizmu na poziomie molekularnym i klinicznym.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "interwencje-biologiczne-ect-rtms-ketamina-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "interwencje-biologiczne-ect-rtms-ketamina-obj-1",
+        "interwencje-biologiczne-ect-rtms-ketamina-obj-3"
+      ],
+      "prompt": "Przed wdrożeniem lub modyfikacją farmakoterapii w temacie interwencje biologiczne ect rtms ketamina, jakiej kluczowej informacji brakuje w wywiadzie?",
+      "options": [
+        "Wywiadu dotyczącego leków współistniejących pod kątem interakcji enzymatycznych (CYP) i wydolności nerek/wątroby",
+        "Profilu rzadkich przeciwciał neuronalnych",
+        "Rutynowego badania rezonansu magnetycznego głowy bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Ocena interakcji lekowych i wydolności narządów eliminujących to fundamentalny warunek bezpieczeństwa farmakoterapii.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "maudsley15"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "pathway-builder",
+    "timeline"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy AGNP 2026 TDM, CPIC PGx, Maudsley 15th ed., Kapur PET D2, Hunter criteria oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

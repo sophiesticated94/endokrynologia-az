@@ -1,0 +1,369 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy",
+  "objectives": [
+    {
+      "id": "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy-obj-1",
+      "statement": "Zróżnicujesz ostre dystonie, parkinsonizm polekowy, akatyzję oraz późne dyskinezy (TD).",
+      "kind": "differentiation"
+    },
+    {
+      "id": "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy-obj-2",
+      "statement": "Zastosujesz natychmiastowe leczenie ostrej dystonii (biperyden / prometazyna i.m./i.v.).",
+      "kind": "decision"
+    },
+    {
+      "id": "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy-obj-3",
+      "statement": "Wdrożysz nowoczesne leczenie późnych dyskinez za pomocą inhibitorów VMAT2 (deutetrabenazyna, walbenazyna).",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-eps-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy-obj-1"
+    ],
+    "prompt": "Młody mężczyzna po 24 godzinach od podania haloperydolu doznaje nagłego bolesnego skrętu szyi w bok i przymusowego patrzenia ku górze. Jaki lek należy podać natychmiast w iniekcji?",
+    "options": [
+      "Doustną witaminę C w proszku",
+      "Kolejną podwójną dawkę haloperydolu i.m.",
+      "Biperyden (2,5–5 mg i.m. lub powolny wlew i.v.)"
+    ],
+    "optionFeedback": [
+      "Witamina C nie znosi ostrej dystonii krtaniowo-szyjnej.",
+      "Zwiększenie dawki neuroleptyku doprowadziłoby do skrajnego skurczu krtani i uduszenia.",
+      "Lek przeciwcholinergiczny natychmiast przywraca zachwianą równowagę dopaminowo-acetylocholinową w prążkowiu."
+    ],
+    "answer": 2,
+    "explanation": "Lek przeciwcholinergiczny natychmiast przywraca zachwianą równowagę dopaminowo-acetylocholinową w prążkowiu.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "wfsbp-schizophrenia",
+      "maudsley15",
+      "stahl-essential"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy-block-1",
+      "title": "Spektrum pozapiramidowych powikłań ruchowych",
+      "text": "Objawy pozapiramidowe (EPS) wynikają z blokady receptorów D2 w szlaku nigrostriatalnym. Ostre dystonie pojawiają się w pierwszych godzinach do dni (bolesne skurcze mięśni szyi, kręcz karku, napady spojrzeniowe). Zespół parkinsonowski (drżenie spoczynkowe, bradykinezja, sztywność) rozwija się po tygodniach wskutek braku hamowania neuronów cholinergicznych. Akatyzja to subiektywne, męczące poczucie przymusu poruszania kończynami.",
+      "sourceIds": [
+        "wfsbp-schizophrenia",
+        "maudsley15",
+        "stahl-essential"
+      ],
+      "checkpointId": "psych-eps-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-akathisia-vs-anxiety-vs-parkinsonism",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy-block-2",
+      "title": "Leczenie stanów ostrych: przełamanie przewagi cholinergicznej",
+      "text": "W ostrej dystonii natychmiastową ulgę przynosi dożylne lub domięśniowe podanie leku antycholinergicznego (biperyden 2,5–5 mg i.m./i.v. lub prometazyna), co przywraca równowagę dopaminowo-cholinergiczną w prążkowiu. W akatyzji lekami I wyboru są lipofilne beta-adrenolityki (propranolol 20–80 mg/d) lub doraźnie benzodiazepiny.",
+      "sourceIds": [
+        "wfsbp-schizophrenia",
+        "maudsley15",
+        "stahl-essential"
+      ],
+      "checkpointId": "psych-eps-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-tardive-dyskinesia-vmat2-treatment",
+          "kind": "evidence-panel",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy-block-3",
+      "title": "Późne dyskinezy (Tardive Dyskinesia - TD) i inhibitory VMAT2",
+      "text": "TD to mimowolne, powtarzające się ruchy pląsawicze lub atetotyczne twarzy, języka (\"zespół żucia gumy\") lub kończyn, rozwijające się po miesiącach lub latach terapii wskutek nadwrażliwości odnerwieniowej i up-regulacji receptorów D2. Leki cholinolityczne są w TD bezwzględnie przeciwwskazane, gdyż nasilają objawy! Rewolucją w terapii TD są inhibitory pęcherzykowego transportera monoamin 2 (VMAT2: deutetrabenazyna, walbenazyna).",
+      "sourceIds": [
+        "wfsbp-schizophrenia",
+        "maudsley15",
+        "stahl-essential"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-eps-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy-obj-2"
+      ],
+      "prompt": "Jaka grupa leków stanowi leczenie I rzutu w uciążliwej akatyzji polekowej wg wytycznych międzynarodowych?",
+      "options": [
+        "Lipofilne beta-adrenolityki (np. propranolol 20–80 mg/d)",
+        "Glikokortykosteroidy w megadawkach",
+        "Preparaty żelaza dożylnie"
+      ],
+      "optionFeedback": [
+        "Propranolol przenika do OUN i wygasza hiperaktywność noradrenergiczną w pniu mózgu i rdzeniu kręgowym.",
+        "Steroidy nie mają zastosowania w leczeniu akatyzacji.",
+        "Żelazo stosuje się w idiopatycznym zespole niespokojnych nóg (RLS), nie w polekowej akatyzji bez anemii."
+      ],
+      "answer": 0,
+      "explanation": "Propranolol przenika do OUN i wygasza hiperaktywność noradrenergiczną w pniu mózgu i rdzeniu kręgowym.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "wfsbp-schizophrenia",
+        "maudsley15",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-eps-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy-obj-3"
+      ],
+      "prompt": "Dlaczego stosowanie leków cholinolitycznych (np. biperydenu) jest bezwzględnie PRZECIWWSKAZANE w późnych dyskinezach (Tardive Dyskinesia - TD)?",
+      "options": [
+        "Wywołuje nieodwracalną utratę słuchu",
+        "Zablokowanie receptorów muskarynowych odhamowuje nadwrażliwe receptory dopaminowe w prążkowiu, drastycznie nasilając ruchy mimowolne",
+        "Powoduje natychmiastową perforację jelita grubego"
+      ],
+      "optionFeedback": [
+        "Biperyden nie jest lekiem ototoksycznym.",
+        "Cholinolityki pomagają w ostrym parkinsonizmie, lecz utrwalają i pogarszają późne dyskinezy.",
+        "Biperyden może powodować atonię jelit, lecz w TD kluczowy jest mechanizm receptorowy w mózgu."
+      ],
+      "answer": 1,
+      "explanation": "Cholinolityki pomagają w ostrym parkinsonizmie, lecz utrwalają i pogarszają późne dyskinezy.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "wfsbp-schizophrenia",
+        "maudsley15",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy-obj-1",
+      "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy-obj-2",
+      "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Polekowe zaburzenia ruchowe: parkinsonizm, akatyzja i dyskinezy TD”.",
+    "modelAnswer": "Ostre dystonie leczy się biperydenem i.m., akatyzję propranololem, a parkinsonizm redukcją D2. W późnych dyskinezach cholinolityki są szkodliwe; przełomem są inhibitory VMAT2 lub zmiana na klozapinę.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "wfsbp-schizophrenia",
+      "maudsley15",
+      "stahl-essential"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-eps-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy-obj-1"
+      ],
+      "prompt": "Jaki nowoczesny cel molekularny reprezentują leki zarejestrowane specjalnie do leczenia późnych dyskinez (walbenazyna, deutetrabenazyna)?",
+      "options": [
+        "Hamowanie pompy protonowej w żołądku",
+        "Stymulacja receptorów insuliny w mięśniach",
+        "Hamowanie pęcherzykowego transportera monoamin 2 (VMAT2)"
+      ],
+      "optionFeedback": [
+        "IPPs leczą chorobę wrzodową, nie dyskinezy.",
+        "Insulina nie reguluje mimowolnych ruchów języka.",
+        "Zmniejsza to pakowanie dopaminy do pęcherzyków presynaptycznych i ogranicza jej wyrzut do szczeliny synaptycznej."
+      ],
+      "answer": 2,
+      "explanation": "Zmniejsza to pakowanie dopaminy do pęcherzyków presynaptycznych i ogranicza jej wyrzut do szczeliny synaptycznej.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "wfsbp-schizophrenia",
+        "maudsley15",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-eps-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy-obj-1"
+      ],
+      "prompt": "Który lek przeciwpsychotyczny cechuje się najniższym ryzykiem wywołania późnych dyskinez (TD) i jest lekiem z wyboru, gdy TD już wystąpią?",
+      "options": [
+        "Klozapina",
+        "Haloperydol w zastrzykach o przedłużonym uwalnianiu",
+        "Zuklopentyksol"
+      ],
+      "optionFeedback": [
+        "Klozapina nie tylko nie indukuje późnych dyskinez, lecz wykazuje właściwości tłumiące istniejące ruchy mimowolne.",
+        "Jest to lek o najwyższym znanym ryzyku wywołania i zaostrzenia TD.",
+        "Klasyczny neuroleptyk FGA o wysokim profilu ryzyka dyskinez."
+      ],
+      "answer": 0,
+      "explanation": "Klozapina nie tylko nie indukuje późnych dyskinez, lecz wykazuje właściwości tłumiące istniejące ruchy mimowolne.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "wfsbp-schizophrenia",
+        "maudsley15",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "eps-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy-obj-1"
+      ],
+      "claimIds": [
+        "claim-ph-eps-dystonia",
+        "claim-ph-tardive-dyskinesia-vmat2"
+      ],
+      "prompt": "22-letni pacjent 24 godziny po podaniu haloperidolu w izbie przyjęć rozwinął bolesny skurcz mięśni szyi (kręcz karku) oraz przymusowe wykręcanie gałek ocznych ku górze (napad spojrzeniowy). Jaki lek należy podać natychmiast?",
+      "options": [
+        "Biperyden 2,5–5 mg domięśniowo lub dożylnie (cholinolityk ośrodkowy)",
+        "Kolejną dawkę haloperidolu",
+        "Doustny preparat żelaza"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-acute-dystonia-antidote",
+            "label": "Ostra dystonia polekowa leczona cholinolitykiem (biperyden / pridinol)",
+            "acceptedPhrases": [
+              "biperyden",
+              "cholinolityk",
+              "antycholinergiczny",
+              "ostra dystonia",
+              "kręcz karku"
+            ]
+          },
+          {
+            "id": "c-cholinergic-dopaminergic-balance",
+            "label": "Przywrócenie równowagi dopaminergiczno-cholinergicznej w prążkowiu",
+            "acceptedPhrases": [
+              "równowaga",
+              "prążkowie",
+              "nadmiar acetylocholiny",
+              "antagonizm d2"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Ostra dystonia wynika z gwałtownego zachwiania równowagi dopamina/acetylocholina i ustępuje spektakularnie po podaniu biperydenu.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "maudsley15"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy-obj-2"
+      ],
+      "prompt": "Wyjaśnij mechanizm molekularny lub receptorowy leżący u podstaw tematu: zaburzenia ruchowe polekowe eps dysdyskinezy.",
+      "modelAnswer": "Kluczowe znaczenie ma zrozumienie profilu receptorowego, kaskad przekaźnictwa wewnątrzkomórkowego oraz adaptacji plastycznych w OUN.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-receptor-action",
+            "label": "Działanie na receptory / enzymy",
+            "acceptedPhrases": [
+              "receptor",
+              "enzym",
+              "mechanizm",
+              "transporter"
+            ]
+          },
+          {
+            "id": "c-clinical-effect",
+            "label": "Wpływ na funkcję OUN i objawy kliniczne",
+            "acceptedPhrases": [
+              "efekt kliniczny",
+              "adaptacja",
+              "plastyczność",
+              "neuroprzekaźnictwo"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Wyjaśnienie mechanizmu na poziomie molekularnym i klinicznym.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy-obj-1",
+        "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy-obj-3"
+      ],
+      "prompt": "Przed wdrożeniem lub modyfikacją farmakoterapii w temacie zaburzenia ruchowe polekowe eps dysdyskinezy, jakiej kluczowej informacji brakuje w wywiadzie?",
+      "options": [
+        "Wywiadu dotyczącego leków współistniejących pod kątem interakcji enzymatycznych (CYP) i wydolności nerek/wątroby",
+        "Profilu rzadkich przeciwciał neuronalnych",
+        "Rutynowego badania rezonansu magnetycznego głowy bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Ocena interakcji lekowych i wydolności narządów eliminujących to fundamentalny warunek bezpieczeństwa farmakoterapii.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "maudsley15"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "pathway-builder",
+    "timeline"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy AGNP 2026 TDM, CPIC PGx, Maudsley 15th ed., Kapur PET D2, Hunter criteria oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

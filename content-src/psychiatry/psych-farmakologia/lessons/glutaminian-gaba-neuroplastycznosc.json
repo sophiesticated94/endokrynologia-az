@@ -1,0 +1,171 @@
+{
+  "id": "glutaminian-gaba-neuroplastycznosc",
+  "moduleId": "psych-farmakologia",
+  "title": "Układy glutaminergiczny i GABA-ergiczny: kaskada neuroplastyczności",
+  "subtitle": "Receptory NMDA, AMPA, GABAA oraz rola szlaku BDNF-TrkB w OUN",
+  "group": "Receptorologia i układy przekaźnikowe",
+  "minutes": 18,
+  "goals": [
+    "Zrozumiesz rolę równowagi między pobudzeniem (Glu) a hamowaniem (GABA) w OUN.",
+    "Scharakteryzujesz mechanizm szybkiego działania przeciwdepresyjnego poprzez blokadę NMDA i wyrzut BDNF.",
+    "Wyjaśnisz budowę receptora GABAA i allosteryczną modulację przez benzodiazepiny."
+  ],
+  "sections": [
+    {
+      "title": "Glutaminian i neurotoksyczność ekscytotoksyczna",
+      "text": "Kwas glutaminowy jest głównym przekaźnikiem pobudzającym w OUN, działającym na receptory jonotropowe (AMPA, NMDA, kainowe) i metabotropowe (mGluR). Fizjologicznie aktywacja AMPA depolaryzuje błonę, usuwając jon magnezu (Mg2+) blokujący kanał receptora NMDA i umożliwiając napływ jonów Ca2+. Przewlekły stres i nadmiar glutaminianu prowadzą do ekscytotoksyczności, zaniku kolców dendrytycznych i atrofii hipokampa."
+    },
+    {
+      "title": "Ketamina i przełom w neurobiologii depresji",
+      "text": "Ketamina (enancjomer S-ketamina / esketamina) podana w subanestetycznych dawkach paradoksalnie blokuje receptory NMDA na hamujących interneuronach GABA-ergicznych. Prowadzi to do rozhamowania neuronów piramidowych i gwałtownego wyrzutu glutaminianu, który stymuluje receptory AMPA. W kaskadzie wewnątrzkomórkowej aktywowany zostaje szlak mTORC1, co skutkuje masywną syntezą i uwalnianiem czynnika BDNF (Brain-Derived Neurotrophic Factor) oraz odbudową synaps w ciągu zaledwie kilku godzin."
+    },
+    {
+      "title": "Układ GABA i receptor GABAA",
+      "text": "Kwas gamma-aminomasłowy (GABA) jest głównym neuroprzekaźnikiem hamującym. Receptor GABAA to pentameryczny kanał chlorkowy (najczęściej 2alfa, 2beta, 1gamma). Przyłączenie GABA otwiera kanał, powodując napływ jonów Cl- i hiperpolaryzację błony. Leki uspokajające i przeciwlękowe (benzodiazepiny) wiążą się allosterycznie na styku podjednostek alfa i gamma, zwiększając częstość otwarcia kanału w obecności GABA."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Receptor / Układ",
+      "Mechanizm molekularny",
+      "Główny ligand / Lek",
+      "Znaczenie kliniczne"
+    ],
+    "rows": [
+      [
+        "NMDA (Glu)",
+        "Kanał kationowy (Ca2+, Na+) blokowany przez Mg2+",
+        "Ketamina, esketamina, memantyna",
+        "Szybka synaptogeneza, neuroplastyczność, pamięć LTP"
+      ],
+      [
+        "AMPA (Glu)",
+        "Szybki kanał sodowy (depolaryzacja błony)",
+        "Glutaminian, potentiatory AMPA",
+        "Inicjacja LTP, aktywacja wyrzutu BDNF"
+      ],
+      [
+        "GABAA",
+        "Kanał chlorkowy (hiperpolaryzacja Cl-)",
+        "GABA, benzodiazepiny, leki Z, barbiturany",
+        "Działanie przeciwlękowe, sedatywne, przeciwdrgawkowe"
+      ],
+      [
+        "Szlak BDNF / TrkB",
+        "Receptor kinazy tyrozynowej B",
+        "BDNF (aktywacja przez SSRI, ketaminę, ruch)",
+        "Neurogeneza w hipokampie, przeżycie neuronów"
+      ]
+    ]
+  },
+  "advanced": "Mutacja w genie kodującym BDNF (polimorfizm Val66Met) upośledza zależne od aktywności uwalnianie BDNF z pęcherzyków presynaptycznych. Nosiciele allelu Met wykazują mniejszą objętość hipokampa, większą podatność na depresję wywołaną stresem oraz słabszą odpowiedź na klasyczne leki przeciwdepresyjne.",
+  "summary": "Równowaga Glu/GABA kontroluje pobudliwość kory. Ketamina poprzez przejściowy wyrzut glutaminianu i aktywację AMPA indukuje ekspresję BDNF i naprawę synaps w ciągu godzin, a receptory GABAA warunkują hamowanie lęku.",
+  "sourceIds": [
+    "krystal-ketamine",
+    "stahl-essential",
+    "canmat-mdd-2023"
+  ],
+  "questions": [
+    {
+      "id": "psych-glu-q1",
+      "lessonId": "glutaminian-gaba-neuroplastycznosc",
+      "prompt": "Jaki jest mechanizm błyskawicznego (w ciągu kilku godzin) działania przeciwdepresyjnego subanestetycznych dawek ketaminy/esketaminy?",
+      "options": [
+        {
+          "text": "Trwałe zablokowanie wszystkich receptorów serotoninowych w całym organizmie",
+          "explanation": "Ketamina nie blokuje receptorów 5-HT w mechanizmie osiowym."
+        },
+        {
+          "text": "Zahamowanie produkcji glukozy w hepatocytach",
+          "explanation": "Metabolizm wątrobowy nie jest celem przeciwdepresyjnym ketaminy."
+        },
+        {
+          "text": "Blokada receptorów NMDA na interneuronach GABA-ergicznych, wyrzut glutaminianu, stymulacja receptorów AMPA i gwałtowna synteza BDNF przez szlak mTOR",
+          "explanation": "Prowadzi to do odbudowy kolców dendrytycznych i połączeń synaptycznych w korze przedczołowej."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-glu-q2",
+      "lessonId": "glutaminian-gaba-neuroplastycznosc",
+      "prompt": "Który jon blokuje kanał receptora NMDA w warunkach spoczynkowego potencjału błonowego komórki nerwowej?",
+      "options": [
+        {
+          "text": "Jon magnezu (Mg2+)",
+          "explanation": "Dopiero depolaryzacja błony wywołana przez receptory AMPA usuwa \"korek magnezowy\", umożliwiając napływ Ca2+."
+        },
+        {
+          "text": "Jon żelaza (Fe3+)",
+          "explanation": "Żelazo nie pełni funkcji bramkującej kanał NMDA."
+        },
+        {
+          "text": "Jon miedzi (Cu2+)",
+          "explanation": "Miedź nie jest fizjologicznym blokerem kanału NMDA."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-glu-q3",
+      "lessonId": "glutaminian-gaba-neuroplastycznosc",
+      "prompt": "W jaki sposób benzodiazepiny nasilają hamowanie neuronalne za pośrednictwem receptora GABAA?",
+      "options": [
+        {
+          "text": "Same wiążą się w miejscu wiązania glutaminianu i go niszczą",
+          "explanation": "BZD wiążą się na styku podjednostek alfa/gamma receptora GABAA."
+        },
+        {
+          "text": "Działają jako dodatni modulator allosteryczny (PAM), zwiększając częstotliwość otwarcia kanału chlorkowego pod wpływem GABA",
+          "explanation": "Napływ jonów Cl- do wnętrza komórki wywołuje hiperpolaryzację błony i spadek jej pobudliwości."
+        },
+        {
+          "text": "Zamykają kanały potasowe w komórkach glejowych",
+          "explanation": "BZD nie modulują bezpośrednio kanałów potasowych gleju."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-glu-q4",
+      "lessonId": "glutaminian-gaba-neuroplastycznosc",
+      "prompt": "Jaki czynnik troficzny i jego receptor o kluczowym znaczeniu dla neurogenezy w zakręcie zębatym hipokampa ulegają nasilonej ekspresji podczas skutecznej terapii przeciwdepresyjnej?",
+      "options": [
+        {
+          "text": "Insulina i receptor IGF-2",
+          "explanation": "Chociaż insulina wpływa na metabolizm mózgu, to BDNF-TrkB jest osiowym szlakiem plastyczności w depresji."
+        },
+        {
+          "text": "Trombopoetyna i receptor Mpl",
+          "explanation": "Trombopoetyna reguluje wytwarzanie płytek krwi w szpiku kostnym."
+        },
+        {
+          "text": "BDNF (Brain-Derived Neurotrophic Factor) i receptor TrkB",
+          "explanation": "Aktywacja kaskady BDNF-TrkB stymuluje przeżycie neuronów i tworzenie nowych kolców dendrytycznych."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-glu-q5",
+      "lessonId": "glutaminian-gaba-neuroplastycznosc",
+      "prompt": "Jaki jest skutek przewlekłej, nadmiernej aktywacji receptorów NMDA przez wysokie stężenia glutaminianu w warunkach niedokrwienia lub przewlekłego stresu?",
+      "options": [
+        {
+          "text": "Masywny, toksyczny napływ jonów Ca2+ prowadzący do aktywacji proteaz, wolnych rodników i śmierci komórki (ekscytotoksyczność)",
+          "explanation": "Ekscytotoksyczność leży u podstaw zaniku struktur hipokampa w przewlekłej nieleczonej depresji."
+        },
+        {
+          "text": "Wzmocnienie pamięci fotograficznej bez żadnych skutków ubocznych",
+          "explanation": "Nadmiar glutaminianu niszczy neurony i upośledza pamięć."
+        },
+        {
+          "text": "Przekształcenie neuronów w komórki nowotworowe glejaka",
+          "explanation": "Ekscytotoksyczność prowadzi do apoptozy i nekrozy, a nie transformacji nowotworowej."
+        }
+      ],
+      "answer": 0
+    }
+  ],
+  "assetIds": []
+}

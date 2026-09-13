@@ -1,0 +1,171 @@
+{
+  "id": "farmakoterapia-adhd-stymulanty",
+  "moduleId": "psych-farmakologia",
+  "title": "Farmakoterapia ADHD: psychostymulanty i leki niestymulujące",
+  "subtitle": "Metylofenidat, lisdeksamfetamina, atomoksetyna i guanfacyna – farmakodynamika",
+  "group": "Farmakoterapia zaburzeń neurorozwojowych",
+  "minutes": 18,
+  "goals": [
+    "Zróżnicujesz mechanizmy działania metylofenidatu, atomoksetyny i guanfacyny.",
+    "Scharakteryzujesz formulacje o przedłużonym uwalnianiu (CR, OROS) i ich profile stężenia.",
+    "Wdrożysz monitorowanie kardiologiczne (RR, tętno, EKG) u pacjentów leczonych stymulantami."
+  ],
+  "sections": [
+    {
+      "title": "Psychostymulanty: metylofenidat i pochodne amfetaminy",
+      "text": "Psychostymulanty są lekami I rzutu w leczeniu ADHD o bardzo wysokiej wielkości efektu (d Cohena > 0.8). Metylofenidat (MPH) działa jako inhibitor wychwytu zwrotnego dopaminy i noradrenaliny (NDRI), blokując transportery DAT i NET. Deksamfetamina i lisdeksamfetamina nie tylko blokują DAT/NET, ale również odwracają kierunek transportu i ułatwiają uwalnianie monoamin z pęcherzyków presynaptycznych przez transporter VMAT2."
+    },
+    {
+      "title": "Formulacje farmaceutyczne: rola kinetyki uwalniania",
+      "text": "Formy o natychmiastowym uwalnianiu (IR) dają szybki szczyt stężenia (Tmax 1–2h) i gwałtowny spadek, co sprzyja zjawisku \"zjazdu\" (rebound effect) pod wieczór oraz stwarza wyższy potencjał nadużywania. Nowoczesne formulacje o zmodyfikowanym uwalnianiu (np. system osmotyczny OROS czy kapsułki z mikropelletkami) zapewniają dwufazowe uwalnianie i stałą kontrolę objawów przez 8–12 godzin bez skoków dopaminowych w prążkowiu."
+    },
+    {
+      "title": "Leki niestymulujące: atomoksetyna i agoniści alfa-2",
+      "text": "U pacjentów z przeciwwskazaniami do stymulantów (czynne uzależnienia w wywiadzie, ciężkie zaburzenia rytmu serca, jaskra, nasilone tiki) lekami z wyboru są leki niestymulujące: atomoksetyna (selektywny inhibitor NET zwiększający DA i NA selektywnie w korze przedczołowej, bez wpływu na prążkowie i układ nagrody) oraz guanfacyna (selektywny agonista postsynaptycznych receptorów alfa-2A adrenergicznych w dlPFC)."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Lek",
+      "Mechanizm molekularny",
+      "Czas działania formulacji",
+      "Główne zalety kliniczne"
+    ],
+    "rows": [
+      [
+        "Metylofenidat (MPH IR)",
+        "Blokada DAT i NET",
+        "3–4 godziny",
+        "Szybki początek, elastyczne dawkowanie doraźne"
+      ],
+      [
+        "Metylofenidat (OROS/CR)",
+        "Blokada DAT i NET (system pompy)",
+        "8–12 godzin",
+        "Stały poziom, brak wahań nastroju w ciągu dnia, niska podatność na nadużycia"
+      ],
+      [
+        "Atomoksetyna",
+        "Selektywna blokada NET w PFC",
+        "24 godziny (efekt ciągły)",
+        "Brak potencjału uzależniającego, jednoczesne działanie przeciwlękowe"
+      ],
+      [
+        "Guanfacyna",
+        "Agonista postsynaptyczny alfa-2A",
+        "24 godziny",
+        "Poprawa pamięci roboczej, redukcja tików i impulsywności, obniża ciśnienie"
+      ]
+    ]
+  },
+  "advanced": "W korze przedczołowej (PFC) występuje bardzo mała gęstość transporterów dopaminy (DAT). Dopamina jest tam usuwana ze szczeliny synaptycznej głównie przez transporter noradrenaliny (NET). Dlatego atomoksetyna, będąc wybiórczym inhibitorem NET, podwyższa stężenie zarówno NA, jak i DA w korze czołowej, nie wpływając na stężenie dopaminy w jądrze półleżącym (brak efektu euforyzującego i uzależnienia).",
+  "summary": "Metylofenidat blokuje DAT/NET i stanowi I rzut w ADHD (preferowane formy o przedłużonym uwalnianiu). U osób z ryzykiem uzależnienia lub tikami lekiem z wyboru jest atomoksetyna lub guanfacyna.",
+  "sourceIds": [
+    "nice-adhd",
+    "wfsbp-adhd",
+    "stahl-essential"
+  ],
+  "questions": [
+    {
+      "id": "psych-adhddrug-q1",
+      "lessonId": "farmakoterapia-adhd-stymulanty",
+      "prompt": "Dlaczego atomoksetyna, będąc selektywnym inhibitorem wychwytu noradrenaliny (NET), zwiększa stężenie dopaminy w korze przedczołowej, ale NIE w jądrze półleżącym?",
+      "options": [
+        {
+          "text": "Atomoksetyna przekształca się w jądro półleżącym w czysty kwas solny",
+          "explanation": "Jest to absurdalny mechanizm."
+        },
+        {
+          "text": "Transporter noradrenaliny w jądrze półleżącym produkuje adrenalinę",
+          "explanation": "Jądro półleżące nie syntetyzuje adrenaliny."
+        },
+        {
+          "text": "W korze przedczołowej występuje znikoma ilość transporterów DAT i dopamina jest tam wychwytywana przez transporter NET; w jądrze półleżącym dominuje DAT",
+          "explanation": "Dzięki temu atomoksetyna poprawia koncentrację w korze bez stymulacji układu nagrody i bez potencjału euforyzującego."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-adhddrug-q2",
+      "lessonId": "farmakoterapia-adhd-stymulanty",
+      "prompt": "Jakie parametry życiowe należy obowiązkowo skontrolować przed włączeniem oraz podczas terapii metylofenidatem wg wytycznych NICE?",
+      "options": [
+        {
+          "text": "Ciśnienie tętnicze krwi, częstość akcji serca (tętno) oraz EKG (w razie obciążeń kardiologicznych)",
+          "explanation": "Stymulanty podnoszą napięcie układu współczulnego, co może wywołać tachykardię i nadciśnienie."
+        },
+        {
+          "text": "Stężenie kwasu moczowego w dobowej zbiórce moczu",
+          "explanation": "Kwas moczowy nie ma znaczenia w bezpieczeństwie stymulantów."
+        },
+        {
+          "text": "Audiogram i pole widzenia",
+          "explanation": "Nie są to rutynowe badania wymagane przed stymulantami."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-adhddrug-q3",
+      "lessonId": "farmakoterapia-adhd-stymulanty",
+      "prompt": "Jaka jest główna zaleta stosowania formulacji metylofenidatu w technologii OROS w porównaniu z klasycznymi tabletkami o natychmiastowym uwalnianiu (IR)?",
+      "options": [
+        {
+          "text": "Całkowicie znosi potrzebę snu na 7 dni",
+          "explanation": "Stymulanty nie eliminują fizjologicznej potrzeby snu."
+        },
+        {
+          "text": "Zapewnia stabilne stężenie leku przez 10–12 godzin, eliminując wahania nastroju i potrzebę dyskretnego przyjmowania dawek w szkole/pracy",
+          "explanation": "Ponadto wolniejszy wzrost stężenia do OUN minimalizuje potencjał nadużywania i uzależnienia."
+        },
+        {
+          "text": "Tabletka OROS rozpuszcza się już w jamie ustnej w 3 sekundy",
+          "explanation": "OROS to osmotyczna pompa uwalniająca lek przez 12 godzin w przewodzie pokarmowym."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-adhddrug-q4",
+      "lessonId": "farmakoterapia-adhd-stymulanty",
+      "prompt": "Który lek stosowany w ADHD działa jako selektywny agonista postsynaptycznych receptorów alfa-2A adrenergicznych w korze przedczołowej?",
+      "options": [
+        {
+          "text": "Haloperydol",
+          "explanation": "Haloperydol blokuje receptory D2 i nasila deficyty uwagi."
+        },
+        {
+          "text": "Propranolol",
+          "explanation": "Propranolol jest nieselektywnym beta-adrenolitykiem."
+        },
+        {
+          "text": "Guanfacyna",
+          "explanation": "Wzmacnia przewodnictwo w sieciach grzbietowo-bocznej kory przedczołowej, redukując impulsywność i objawy tikowe."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-adhddrug-q5",
+      "lessonId": "farmakoterapia-adhd-stymulanty",
+      "prompt": "U którego pacjenta z ADHD atomoksetyna będzie lekiem preferowanym w stosunku do metylofenidatu?",
+      "options": [
+        {
+          "text": "U pacjenta z aktywnym uzależnieniem od substancji psychoaktywnych w wywiadzie oraz współistniejącym silnym lękiem",
+          "explanation": "Atomoksetyna nie jest substancją kontrolowaną, nie daje euforii i wykazuje właściwości anksjolityczne."
+        },
+        {
+          "text": "U pacjenta wymagającego natychmiastowego efektu w ciągu pierwszych 30 minut od pierwszej tabletki",
+          "explanation": "Atomoksetyna wymaga 4–8 tygodni regularnego stosowania do osiągnięcia pełnego efektu klinicznego."
+        },
+        {
+          "text": "U pacjenta z ostrą niedrożnością dróg żółciowych",
+          "explanation": "Niedrożność dróg żółciowych nie jest wskazaniem preferencyjnym dla atomoksetyny."
+        }
+      ],
+      "answer": 0
+    }
+  ],
+  "assetIds": []
+}

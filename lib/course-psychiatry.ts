@@ -1,33 +1,21 @@
 import type { Lesson, Question, DraftLesson } from './course-types.ts';
-import { draftPsychiatryPart1 } from './course-psychiatry-1.ts';
-import { draftPsychiatryPart1b } from './course-psychiatry-1b.ts';
-import { draftPsychiatryPart2 } from './course-psychiatry-2.ts';
-import { draftPsychiatryPart3 } from './course-psychiatry-3.ts';
-import { draftPsychiatryPart3b } from './course-psychiatry-3b.ts';
-import { draftPsychiatryPart4 } from './course-psychiatry-4.ts';
-import { draftPsychiatryPart4b } from './course-psychiatry-4b.ts';
 import { draftPsychiatryPart5 } from './course-psychiatry-5.ts';
 import { draftPsychiatryPart5b } from './course-psychiatry-5b.ts';
 import { draftPsychiatryPart5c } from './course-psychiatry-5c.ts';
-import { psychiatrySources } from './course-psychiatry-sources.ts';
+import { psychiatrySources as basePsychiatrySources } from './course-psychiatry-sources.ts';
 import { psychiatryCases } from './cases-psychiatry.ts';
 import { psychiatryGlossary } from './glossary-psychiatry.ts';
+import { affectiveLessons, affectiveSources } from './psychiatry/affective-content.ts';
+import { pharmacologyLessons, pharmacologySources } from './psychiatry/pharmacology-content.ts';
 import { traumaLessons, traumaSources } from './psychiatry/trauma-content.ts';
 
-export const allPsychiatryDrafts: DraftLesson[] = [
-  ...draftPsychiatryPart1,
-  ...draftPsychiatryPart1b,
-  ...draftPsychiatryPart2,
-  ...draftPsychiatryPart3,
-  ...draftPsychiatryPart3b,
-  ...draftPsychiatryPart4,
-  ...draftPsychiatryPart4b,
+export const organicDrafts: DraftLesson[] = [
   ...draftPsychiatryPart5,
   ...draftPsychiatryPart5b,
   ...draftPsychiatryPart5c,
 ];
 
-const draftLessons: Lesson[] = allPsychiatryDrafts.map((l, li) => {
+const organicLessons: Lesson[] = organicDrafts.map((l, li) => {
   const subtitle = l.subtitle || l.title;
   const minutes = l.minutes || (l.readTime ? parseInt(l.readTime, 10) : 15);
   const sections = l.sections.map(s => ({
@@ -54,7 +42,12 @@ const draftLessons: Lesson[] = allPsychiatryDrafts.map((l, li) => {
   };
 });
 
-export const psychiatryLessons: Lesson[] = [...draftLessons, ...traumaLessons];
+export const psychiatryLessons: Lesson[] = [
+  ...affectiveLessons,
+  ...pharmacologyLessons,
+  ...organicLessons,
+  ...traumaLessons,
+];
 
 export const psychiatryQuestions: Question[] = psychiatryLessons.flatMap(l => l.questions);
 
@@ -123,7 +116,9 @@ export const psychiatryPlannedModules = [
 ];
 
 const mergedPsychiatrySources = {
-  ...psychiatrySources,
+  ...basePsychiatrySources,
+  ...affectiveSources,
+  ...pharmacologySources,
   ...traumaSources,
 };
 

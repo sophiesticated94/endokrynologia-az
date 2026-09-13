@@ -1,0 +1,171 @@
+{
+  "id": "psychopatologia-objawow",
+  "moduleId": "psych-afektywne",
+  "title": "Psychopatologia ogólna: spostrzeganie, myślenie, pamięć i świadomość",
+  "subtitle": "Złudzenia, omamy, omamy rzekome, urojenia, natręctwa i zaburzenia toku myślenia",
+  "group": "Fundamenty i diagnostyka ogólna",
+  "minutes": 18,
+  "goals": [
+    "Zróżnicujesz złudzenia (iluzje), omamy właściwe (halucynacje) oraz omamy rzekome (pseudohalucynacje).",
+    "Scharakteryzujesz cechy urojeń i odróżnisz je od myśli nadwartościowych oraz natręctw (obsesji).",
+    "Rozpoznasz formalne zaburzenia toku myślenia: rozkojarzenie, niespójność, perseweracje i gonitwę myśli."
+  ],
+  "sections": [
+    {
+      "title": "Zaburzenia spostrzegania: iluzje, halucynacje i pseudohalucynacje",
+      "text": "1) Złudzenia (iluzje): zniekształcone spostrzeżenie realnie istniejącego bodźca zewnętrznego (np. płaszcz na wieszaku w mroku brany za włamywacza), podlegające korekcie pod wpływem uwagi; 2) Omamy właściwe (halucynacje): spostrzeżenia zmysłowe powstające bez bodźca zewnętrznego, rzutowane w przestrzeń zewnętrzną z pełnym poczuciem realności (sądem realizującym); 3) Omamy rzekome (pseudohalucynacje): doznania zmysłowe rzutowane w przestrzeń wewnętrzną (doznawane w głowie, za okiem, w ciele), często z poczuciem ich obcości lub nasyłania przez siły zewnętrzne (klasyczny objaw Kandinskiego-Clérambaulta w schizofrenii)."
+    },
+    {
+      "title": "Zaburzenia treści myślenia: urojenia, myśli nadwartościowe i obsesje",
+      "text": "1) Urojenia (delusions): błędne, fałszywe przekonania o niezłomnej pewności subiektywnej, niepodatne na racjonalną perswazję i niezgodne z kontekstem kulturowym pacjenta; 2) Myśli nadwartościowe: przekonania silnie naładowane emocjonalnie, dominujące w życiu pacjenta, lecz teoretycznie korygowalne (np. skrajne idee polityczne lub religijne); 3) Myśli natrętne (obsesje): natarczywe, nawracające myśli ego-dystoniczne (pacjent ocenia je jako własne, lecz niechciane, absurdalne i budzące lęk, podejmując próby ich neutralizacji)."
+    },
+    {
+      "title": "Formalne zaburzenia toku myślenia",
+      "text": "Dotyczą formy, tempa i dynamiki myślenia: 1) Gonitwa myśli (fuga idearum): skrajne przyspieszenie toku z utratą wątku głównego i kojarzeniem na podstawie dźwięków (rymy, asonanse); 2) Spowolnienie toku myślenia (zahamowanie w depresji); 3) Rozkojarzenie: utrata logicznego związku między zdaniami przy zachowanej gramatyce; 4) Sałata słowna (schizofazja): całkowity rozpad gramatyczny i semantyczny języka; 5) Perseweracje: uporczywe powtarzanie tego samego słowa lub frazy mimo zmiany pytania."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Fenomen psychopatologiczny",
+      "Bodziec realny",
+      "Lokalizacja rzutowania",
+      "Sąd realizujący (poczucie realności)"
+    ],
+    "rows": [
+      [
+        "Złudzenie (iluzja)",
+        "Obecny (zniekształcony)",
+        "Przestrzeń zewnętrzna",
+        "Korygowalny pod wpływem uwagi lub weryfikacji"
+      ],
+      [
+        "Omam właściwy",
+        "Brak bodźca",
+        "Przestrzeń zewnętrzna (fizyczna)",
+        "Pełny, bezkrytyczny (pacjent słyszy głos zza ściany)"
+      ],
+      [
+        "Pseudohalucynacja",
+        "Brak bodźca",
+        "Przestrzeń wewnętrzna (w głowie/umyśle)",
+        "Często poczucie obcości lub nasyłania"
+      ],
+      [
+        "Urojenie",
+        "Sąd myślowy",
+        "Nie dotyczy percepcji zmysłowej",
+        "Bezwzględny, niekorygowalny perswazją"
+      ]
+    ]
+  },
+  "advanced": "W różnicowaniu psychopatologicznym kluczowe jest pojęcie ego-syntoniczności vs ego-dystoniczności. Urojenia są z natury ego-syntoniczne (pacjent traktuje je jako część swojej rzeczywistości), podczas gdy obsesje w OCD są ego-dystoniczne (pacjent cierpi z powodu ich obecności i pragnie się od nich uwolnić). Utrata ego-dystoniczności w OCD może zwiastować transformację w zespół urojeniowy.",
+  "summary": "Omam właściwy rzutowany jest na zewnątrz, pseudohalucynacja do wnętrza głowy. Urojenie jest niekorygowalnym sądem fałszywym (ego-syntonicznym), a obsesja natręctwem niechcianym (ego-dystonicznym).",
+  "sourceIds": [
+    "icd11-cddr",
+    "dsm5tr",
+    "stahl-essential"
+  ],
+  "questions": [
+    {
+      "id": "psych-patho-q1",
+      "lessonId": "psychopatologia-objawow",
+      "prompt": "Pacjent twierdzi, że słyszy obcy głos komentujący jego czyny, który rozbrzmiewa bezpośrednio wewnątrz jego czaszki (w głowie). Jest to objaw:",
+      "options": [
+        {
+          "text": "Klasycznej iluzji wzrokowej",
+          "explanation": "Iluzja dotyczy zniekształcenia bodźca zewnętrznego."
+        },
+        {
+          "text": "Wyłącznie myśli nadwartościowej",
+          "explanation": "Myśl nadwartościowa nie jest doznaniem zmysłowo-percepcyjnym."
+        },
+        {
+          "text": "Pseudohalucynacji (omamu rzekomego)",
+          "explanation": "Rzutowanie doznania zmysłowego w przestrzeń wewnętrzną (do głowy) definiuje pseudohalucynację."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-patho-q2",
+      "lessonId": "psychopatologia-objawow",
+      "prompt": "Jaka cecha jednoznacznie odróżnia myśl natrętną (obsesję w OCD) od urojenia w schizofrenii?",
+      "options": [
+        {
+          "text": "Obsesja jest ego-dystoniczna — pacjent uznaje ją za absurdalną i niechcianą, podczas gdy urojenie jest ego-syntoniczne i bezkrytyczne",
+          "explanation": "Poczucie obcości myśli przy jednoczesnym uznawaniu jej za wytwór własnego umysłu jest cechą osiową natręctwa."
+        },
+        {
+          "text": "Obsesje występują wyłącznie w nocy podczas snu REM",
+          "explanation": "Obsesje występują w stanie pełnej czuwania."
+        },
+        {
+          "text": "Urojenia zawsze ustępują po prostej prośbie rodziny",
+          "explanation": "Urojenia są z definicji niepodatne na racjonalną perswazję."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-patho-q3",
+      "lessonId": "psychopatologia-objawow",
+      "prompt": "Widzenie potwora w cieniu rzucanym przez stojący w ciemnym pokoju fotel, które znika po zapaleniu światła, to:",
+      "options": [
+        {
+          "text": "Urojenie ksobne pierwszego stopnia",
+          "explanation": "To zaburzenie percepcji zmysłowej, nie izolowany sąd myślowy."
+        },
+        {
+          "text": "Złudzenie (iluzja)",
+          "explanation": "Bodziec realny (fotel w cieniu) został błędnie zinterpretowany, lecz uległ korekcie po doświetleniu."
+        },
+        {
+          "text": "Omam właściwy rzutowany w nieskończoność",
+          "explanation": "Omam nie ma bodźca fizycznego i nie koryguje się zapaleniem światła."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-patho-q4",
+      "lessonId": "psychopatologia-objawow",
+      "prompt": "Na czym polega rozkojarzenie toku myślenia w schizofrenii?",
+      "options": [
+        {
+          "text": "Na mówieniu szeptem z powodu zapalenia krtani",
+          "explanation": "To objaw czysto laryngologiczny."
+        },
+        {
+          "text": "Na błyskawicznym kojarzeniu wyłącznie na podstawie rymów",
+          "explanation": "To gonitwa myśli (fuga idearum)."
+        },
+        {
+          "text": "Na utracie logicznych powiązań semantycznych między zdaniami przy zachowanej poprawności gramatycznej",
+          "explanation": "Zdania są poprawnie zbudowane, ale brak między nimi logicznego związku przyczynowo-skutkowego."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-patho-q5",
+      "lessonId": "psychopatologia-objawow",
+      "prompt": "Co charakteryzuje urojenia oddziaływania (wpływu, owładnięcia)?",
+      "options": [
+        {
+          "text": "Przekonanie pacjenta, że jego myśli, uczucia lub ruchy ciała są kontrolowane przez zewnętrzną siłę lub aparaturę",
+          "explanation": "Urojenia owładnięcia należą do klasycznych objawów osiowych schizofrenii w ICD-11."
+        },
+        {
+          "text": "Poczucie, że pacjent jest najbogatszym człowiekiem na świecie",
+          "explanation": "To urojenie wielkościowe."
+        },
+        {
+          "text": "Przekonanie o całkowitym zniszczeniu narządów wewnętrznych (zespół Cotarda)",
+          "explanation": "To urojenie nihilistyczne."
+        }
+      ],
+      "answer": 0
+    }
+  ],
+  "assetIds": []
+}

@@ -1,0 +1,364 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "farmakoterapia-adhd-stymulanty",
+  "objectives": [
+    {
+      "id": "farmakoterapia-adhd-stymulanty-obj-1",
+      "statement": "Zróżnicujesz mechanizmy działania metylofenidatu, atomoksetyny i guanfacyny.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "farmakoterapia-adhd-stymulanty-obj-2",
+      "statement": "Scharakteryzujesz formulacje o przedłużonym uwalnianiu (CR, OROS) i ich profile stężenia.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "farmakoterapia-adhd-stymulanty-obj-3",
+      "statement": "Wdrożysz monitorowanie kardiologiczne (RR, tętno, EKG) u pacjentów leczonych stymulantami.",
+      "kind": "safety"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-adhddrug-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "farmakoterapia-adhd-stymulanty-obj-1"
+    ],
+    "prompt": "Dlaczego atomoksetyna, będąc selektywnym inhibitorem wychwytu noradrenaliny (NET), zwiększa stężenie dopaminy w korze przedczołowej, ale NIE w jądrze półleżącym?",
+    "options": [
+      "Atomoksetyna przekształca się w jądro półleżącym w czysty kwas solny",
+      "Transporter noradrenaliny w jądrze półleżącym produkuje adrenalinę",
+      "W korze przedczołowej występuje znikoma ilość transporterów DAT i dopamina jest tam wychwytywana przez transporter NET; w jądrze półleżącym dominuje DAT"
+    ],
+    "optionFeedback": [
+      "Jest to absurdalny mechanizm.",
+      "Jądro półleżące nie syntetyzuje adrenaliny.",
+      "Dzięki temu atomoksetyna poprawia koncentrację w korze bez stymulacji układu nagrody i bez potencjału euforyzującego."
+    ],
+    "answer": 2,
+    "explanation": "Dzięki temu atomoksetyna poprawia koncentrację w korze bez stymulacji układu nagrody i bez potencjału euforyzującego.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "nice-adhd",
+      "wfsbp-adhd",
+      "stahl-essential"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "farmakoterapia-adhd-stymulanty-block-1",
+      "title": "Psychostymulanty: metylofenidat i pochodne amfetaminy",
+      "text": "Psychostymulanty są lekami I rzutu w leczeniu ADHD o bardzo wysokiej wielkości efektu (d Cohena > 0.8). Metylofenidat (MPH) działa jako inhibitor wychwytu zwrotnego dopaminy i noradrenaliny (NDRI), blokując transportery DAT i NET. Deksamfetamina i lisdeksamfetamina nie tylko blokują DAT/NET, ale również odwracają kierunek transportu i ułatwiają uwalnianie monoamin z pęcherzyków presynaptycznych przez transporter VMAT2.",
+      "sourceIds": [
+        "nice-adhd",
+        "wfsbp-adhd",
+        "stahl-essential"
+      ],
+      "checkpointId": "psych-adhddrug-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-mph-vs-ldx-kinetics",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "farmakoterapia-adhd-stymulanty-block-2",
+      "title": "Formulacje farmaceutyczne: rola kinetyki uwalniania",
+      "text": "Formy o natychmiastowym uwalnianiu (IR) dają szybki szczyt stężenia (Tmax 1–2h) i gwałtowny spadek, co sprzyja zjawisku \"zjazdu\" (rebound effect) pod wieczór oraz stwarza wyższy potencjał nadużywania. Nowoczesne formulacje o zmodyfikowanym uwalnianiu (np. system osmotyczny OROS czy kapsułki z mikropelletkami) zapewniają dwufazowe uwalnianie i stałą kontrolę objawów przez 8–12 godzin bez skoków dopaminowych w prążkowiu.",
+      "sourceIds": [
+        "nice-adhd",
+        "wfsbp-adhd",
+        "stahl-essential"
+      ],
+      "checkpointId": "psych-adhddrug-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-cardiovascular-baseline-workup",
+          "kind": "evidence-panel",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "farmakoterapia-adhd-stymulanty-block-3",
+      "title": "Leki niestymulujące: atomoksetyna i agoniści alfa-2",
+      "text": "U pacjentów z przeciwwskazaniami do stymulantów (czynne uzależnienia w wywiadzie, ciężkie zaburzenia rytmu serca, jaskra, nasilone tiki) lekami z wyboru są leki niestymulujące: atomoksetyna (selektywny inhibitor NET zwiększający DA i NA selektywnie w korze przedczołowej, bez wpływu na prążkowie i układ nagrody) oraz guanfacyna (selektywny agonista postsynaptycznych receptorów alfa-2A adrenergicznych w dlPFC).",
+      "sourceIds": [
+        "nice-adhd",
+        "wfsbp-adhd",
+        "stahl-essential"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-adhddrug-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "farmakoterapia-adhd-stymulanty-obj-2"
+      ],
+      "prompt": "Jakie parametry życiowe należy obowiązkowo skontrolować przed włączeniem oraz podczas terapii metylofenidatem wg wytycznych NICE?",
+      "options": [
+        "Ciśnienie tętnicze krwi, częstość akcji serca (tętno) oraz EKG (w razie obciążeń kardiologicznych)",
+        "Stężenie kwasu moczowego w dobowej zbiórce moczu",
+        "Audiogram i pole widzenia"
+      ],
+      "optionFeedback": [
+        "Stymulanty podnoszą napięcie układu współczulnego, co może wywołać tachykardię i nadciśnienie.",
+        "Kwas moczowy nie ma znaczenia w bezpieczeństwie stymulantów.",
+        "Nie są to rutynowe badania wymagane przed stymulantami."
+      ],
+      "answer": 0,
+      "explanation": "Stymulanty podnoszą napięcie układu współczulnego, co może wywołać tachykardię i nadciśnienie.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "nice-adhd",
+        "wfsbp-adhd",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-adhddrug-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "farmakoterapia-adhd-stymulanty-obj-3"
+      ],
+      "prompt": "Jaka jest główna zaleta stosowania formulacji metylofenidatu w technologii OROS w porównaniu z klasycznymi tabletkami o natychmiastowym uwalnianiu (IR)?",
+      "options": [
+        "Całkowicie znosi potrzebę snu na 7 dni",
+        "Zapewnia stabilne stężenie leku przez 10–12 godzin, eliminując wahania nastroju i potrzebę dyskretnego przyjmowania dawek w szkole/pracy",
+        "Tabletka OROS rozpuszcza się już w jamie ustnej w 3 sekundy"
+      ],
+      "optionFeedback": [
+        "Stymulanty nie eliminują fizjologicznej potrzeby snu.",
+        "Ponadto wolniejszy wzrost stężenia do OUN minimalizuje potencjał nadużywania i uzależnienia.",
+        "OROS to osmotyczna pompa uwalniająca lek przez 12 godzin w przewodzie pokarmowym."
+      ],
+      "answer": 1,
+      "explanation": "Ponadto wolniejszy wzrost stężenia do OUN minimalizuje potencjał nadużywania i uzależnienia.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "nice-adhd",
+        "wfsbp-adhd",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "farmakoterapia-adhd-stymulanty-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "farmakoterapia-adhd-stymulanty-obj-1",
+      "farmakoterapia-adhd-stymulanty-obj-2",
+      "farmakoterapia-adhd-stymulanty-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Farmakoterapia ADHD: psychostymulanty i leki niestymulujące”.",
+    "modelAnswer": "Metylofenidat blokuje DAT/NET i stanowi I rzut w ADHD (preferowane formy o przedłużonym uwalnianiu). U osób z ryzykiem uzależnienia lub tikami lekiem z wyboru jest atomoksetyna lub guanfacyna.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "nice-adhd",
+      "wfsbp-adhd",
+      "stahl-essential"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-adhddrug-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "farmakoterapia-adhd-stymulanty-obj-1"
+      ],
+      "prompt": "Który lek stosowany w ADHD działa jako selektywny agonista postsynaptycznych receptorów alfa-2A adrenergicznych w korze przedczołowej?",
+      "options": [
+        "Haloperydol",
+        "Propranolol",
+        "Guanfacyna"
+      ],
+      "optionFeedback": [
+        "Haloperydol blokuje receptory D2 i nasila deficyty uwagi.",
+        "Propranolol jest nieselektywnym beta-adrenolitykiem.",
+        "Wzmacnia przewodnictwo w sieciach grzbietowo-bocznej kory przedczołowej, redukując impulsywność i objawy tikowe."
+      ],
+      "answer": 2,
+      "explanation": "Wzmacnia przewodnictwo w sieciach grzbietowo-bocznej kory przedczołowej, redukując impulsywność i objawy tikowe.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nice-adhd",
+        "wfsbp-adhd",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-adhddrug-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "farmakoterapia-adhd-stymulanty-obj-1"
+      ],
+      "prompt": "U którego pacjenta z ADHD atomoksetyna będzie lekiem preferowanym w stosunku do metylofenidatu?",
+      "options": [
+        "U pacjenta z aktywnym uzależnieniem od substancji psychoaktywnych w wywiadzie oraz współistniejącym silnym lękiem",
+        "U pacjenta wymagającego natychmiastowego efektu w ciągu pierwszych 30 minut od pierwszej tabletki",
+        "U pacjenta z ostrą niedrożnością dróg żółciowych"
+      ],
+      "optionFeedback": [
+        "Atomoksetyna nie jest substancją kontrolowaną, nie daje euforii i wykazuje właściwości anksjolityczne.",
+        "Atomoksetyna wymaga 4–8 tygodni regularnego stosowania do osiągnięcia pełnego efektu klinicznego.",
+        "Niedrożność dróg żółciowych nie jest wskazaniem preferencyjnym dla atomoksetyny."
+      ],
+      "answer": 0,
+      "explanation": "Atomoksetyna nie jest substancją kontrolowaną, nie daje euforii i wykazuje właściwości anksjolityczne.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "nice-adhd",
+        "wfsbp-adhd",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "farmakoterapia-adhd-stymulanty-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "farmakoterapia-adhd-stymulanty-obj-1"
+      ],
+      "prompt": "Oceń decyzję terapeutyczną i mechanizmy bezpieczeństwa w temacie lekcji „farmakoterapia adhd stymulanty”.",
+      "options": [
+        "Postępowanie zgodne z wytycznymi EBM i monitorowaniem bezpieczeństwa",
+        "Modyfikacja leczenia bez uwzględnienia farmakokinetyki i interakcji",
+        "Nagłe odstawienie leku z ryzykiem powikłań z odbicia"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-pk-rationale",
+            "label": "Uzasadnienie oparte na PK/PD i bezpieczeństwie",
+            "acceptedPhrases": [
+              "bezpieczeństwo",
+              "pk/pd",
+              "wytyczne",
+              "mechanizm"
+            ]
+          },
+          {
+            "id": "c-monitoring-rationale",
+            "label": "Monitorowanie parametrów klinicznych",
+            "acceptedPhrases": [
+              "monitoring",
+              "stężenie",
+              "interakcje"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Decyzja wymaga uwzględnienia parametrów farmakokinetycznych i profilu bezpieczeństwa.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "maudsley15",
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "farmakoterapia-adhd-stymulanty-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "farmakoterapia-adhd-stymulanty-obj-2"
+      ],
+      "prompt": "Wyjaśnij mechanizm molekularny lub receptorowy leżący u podstaw tematu: farmakoterapia adhd stymulanty.",
+      "modelAnswer": "Kluczowe znaczenie ma zrozumienie profilu receptorowego, kaskad przekaźnictwa wewnątrzkomórkowego oraz adaptacji plastycznych w OUN.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-receptor-action",
+            "label": "Działanie na receptory / enzymy",
+            "acceptedPhrases": [
+              "receptor",
+              "enzym",
+              "mechanizm",
+              "transporter"
+            ]
+          },
+          {
+            "id": "c-clinical-effect",
+            "label": "Wpływ na funkcję OUN i objawy kliniczne",
+            "acceptedPhrases": [
+              "efekt kliniczny",
+              "adaptacja",
+              "plastyczność",
+              "neuroprzekaźnictwo"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Wyjaśnienie mechanizmu na poziomie molekularnym i klinicznym.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "farmakoterapia-adhd-stymulanty-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "farmakoterapia-adhd-stymulanty-obj-1",
+        "farmakoterapia-adhd-stymulanty-obj-3"
+      ],
+      "prompt": "Przed wdrożeniem lub modyfikacją farmakoterapii w temacie farmakoterapia adhd stymulanty, jakiej kluczowej informacji brakuje w wywiadzie?",
+      "options": [
+        "Wywiadu dotyczącego leków współistniejących pod kątem interakcji enzymatycznych (CYP) i wydolności nerek/wątroby",
+        "Profilu rzadkich przeciwciał neuronalnych",
+        "Rutynowego badania rezonansu magnetycznego głowy bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Ocena interakcji lekowych i wydolności narządów eliminujących to fundamentalny warunek bezpieczeństwa farmakoterapii.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "maudsley15"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "timeline"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy AGNP 2026 TDM, CPIC PGx, Maudsley 15th ed., Kapur PET D2, Hunter criteria oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

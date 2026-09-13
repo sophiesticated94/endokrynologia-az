@@ -1,0 +1,365 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "przypadki-integracyjne-diagnostyka",
+  "objectives": [
+    {
+      "id": "przypadki-integracyjne-diagnostyka-obj-1",
+      "statement": "Zintegrujesz dane z MSE, wywiadu rozwojowego, skal i badań laboratoryjnych w spójną diagnozę.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "przypadki-integracyjne-diagnostyka-obj-2",
+      "statement": "Sformułujesz wieloaspektowy plan postępowania diagnostyczno-terapeutycznego.",
+      "kind": "decision"
+    },
+    {
+      "id": "przypadki-integracyjne-diagnostyka-obj-3",
+      "statement": "Zabezpieczysz pacjenta w sytuacjach niejednoznacznych klinicznie i stanach nagłych.",
+      "kind": "safety"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-integ-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "przypadki-integracyjne-diagnostyka-obj-1"
+    ],
+    "prompt": "Dlaczego u pacjenta z ciężkim przygnębieniem, bezsennością i przyspieszonym tokiem myśli wdrożenie monoterapii SSRI niesie wysokie ryzyko?",
+    "options": [
+      "Może sprowokować przejście w pełnoobjawową manię lub stan mieszany ze skrajnym ryzykiem samobójczym",
+      "Powoduje natychmiastowe zniszczenie receptorów dopaminowych w korze wzrokowej",
+      "Jest bezwzględnie zakazane przez prawo farmaceutyczne pod karą więzienia"
+    ],
+    "optionFeedback": [
+      "Pobudzenie napędu przy dysforii ułatwia podjęcie impulsywnej próby samobójczej.",
+      "SSRI nie niszczą receptorów dopaminowych.",
+      "Jest to błąd kliniczny, nie przestępstwo karne."
+    ],
+    "answer": 0,
+    "explanation": "Pobudzenie napędu przy dysforii ułatwia podjęcie impulsywnej próby samobójczej.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "icd11-cddr",
+      "canmat-isbd-bipolar",
+      "ptp-standardy"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "przypadki-integracyjne-diagnostyka-block-1",
+      "title": "Integracja wielowymiarowa w ujęciu biopsychospołecznym",
+      "text": "Nowoczesna diagnoza psychiatryczna nie ogranicza się do nadania kodu ICD-11. Wymaga syntezy czterech filarów: 1) Osiowej symptomatologii i jej dynamiki czasowej, 2) Biologicznego tła somatycznego (badania krwi, neuroobrazowanie, toksykologia), 3) Przedchorobowej struktury osobowości i stylu radzenia sobie ze stresem, 4) Kontekstu psychospołecznego, traum i zasobów oparcia.",
+      "sourceIds": [
+        "icd11-cddr",
+        "canmat-isbd-bipolar",
+        "ptp-standardy"
+      ],
+      "checkpointId": "psych-integ-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "microcase-multimorbid-psych",
+          "kind": "micro-case",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "przypadki-integracyjne-diagnostyka-block-2",
+      "title": "Analiza przypadku: pacjent z objawami mieszanymi i bezsennością",
+      "text": "Pacjent 42-letni zgłasza się z powodu ciężkiej bezsenności, gonitwy myśli i lęku. W wywiadzie rodzinnym: samobójstwo wujka. W badaniu fizykalnym: tachykardia 105/min, drżenie rąk. Standardowy odruch włączenia leku przeciwdepresyjnego (SSRI) bez weryfikacji wywiadu hipomaniakalnego grozi wyzwoleniem ostrego stanu manii lub nasileniem ryzyka samobójczego. Precyzyjne MSE ujawnia wzmożony napęd psychoruchowy pod maską skarg na lęk – diagnoza: epizod mieszany w przebiegu ChAD.",
+      "sourceIds": [
+        "icd11-cddr",
+        "canmat-isbd-bipolar",
+        "ptp-standardy"
+      ],
+      "checkpointId": "psych-integ-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-longitudinal-formulation",
+          "kind": "evidence-panel",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "przypadki-integracyjne-diagnostyka-block-3",
+      "title": "Formułowanie planu terapeutycznego i kontraktu bezpieczeństwa",
+      "text": "Plan postępowania musi uwzględniać: doraźną stabilizację i prewencję suicydalną (zabezpieczenie środków farmakologicznych przez rodzinę), optymalny dobór farmakoterapii celowanej przyczynowo, psychoedukację pacjenta i bliskich oraz zaplanowanie kontroli w ściśle zdefiniowanym interwale (np. 48–72h w stanach niestabilnych).",
+      "sourceIds": [
+        "icd11-cddr",
+        "canmat-isbd-bipolar",
+        "ptp-standardy"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-integ-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "przypadki-integracyjne-diagnostyka-obj-2"
+      ],
+      "prompt": "Jakie postępowanie jest najbezpieczniejsze u pacjenta z nietypowym obrazem afektywnym, gdy nie można wykluczyć ChAD?",
+      "options": [
+        "Odesłanie pacjenta bez leczenia na okres 12 miesięcy",
+        "Rozpoczęcie od leku o profilu stabilizującym nastrój (np. kwetiapina lub lurasidon) zamiast czystego antydepresantu",
+        "Podanie maksymalnej dawki wenlafaksyny z klomipraminą"
+      ],
+      "optionFeedback": [
+        "Pozostawienie pacjenta bez opieki stwarza bezpośrednie zagrożenie zdrowia i życia.",
+        "Leki te posiadają udowodnioną skuteczność w depresji dwubiegunowej bez ryzyka indukcji manii.",
+        "Silne leki o profilu noradrenergicznym najłatwiej indukują zmianę fazy w manię."
+      ],
+      "answer": 1,
+      "explanation": "Leki te posiadają udowodnioną skuteczność w depresji dwubiegunowej bez ryzyka indukcji manii.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "icd11-cddr",
+        "canmat-isbd-bipolar",
+        "ptp-standardy"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-integ-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "przypadki-integracyjne-diagnostyka-obj-3"
+      ],
+      "prompt": "Który element badania MSE ma kluczowe znaczenie przy różnicowaniu omamów rzekomych (pseudohalucynacji) od omamów prawdziwych?",
+      "options": [
+        "Godzina występowania objawu w ciągu doby",
+        "Stopień zażółcenia twardówek",
+        "Lokalizacja źródła doznań (przestrzeń wewnętrzna vs obiektywna przestrzeń zewnętrzna)"
+      ],
+      "optionFeedback": [
+        "Pora dnia nie definiuje fenomenu pseudohalucynacji.",
+        "Żółtaczka świadczy o chorobie wątroby, nie różnicuje omamów.",
+        "Pseudohalucynacje lokalizowane są wewnątrz głowy i brak im cech doznania zmysłowego w przestrzeni zewnętrznej."
+      ],
+      "answer": 2,
+      "explanation": "Pseudohalucynacje lokalizowane są wewnątrz głowy i brak im cech doznania zmysłowego w przestrzeni zewnętrznej.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "icd11-cddr",
+        "canmat-isbd-bipolar",
+        "ptp-standardy"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "przypadki-integracyjne-diagnostyka-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "przypadki-integracyjne-diagnostyka-obj-1",
+      "przypadki-integracyjne-diagnostyka-obj-2",
+      "przypadki-integracyjne-diagnostyka-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Kompleksowa diagnostyka psychiatryczna: przypadki integracyjne”.",
+    "modelAnswer": "Kompleksowa diagnoza łączy MSE, badania somatyczne, wywiad rozwojowy i ocenę ryzyka suicydalnego. W wątpliwościach afektywnych unika się monoterapii antydepresantem, zabezpieczając pacjenta normotymicznie.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "icd11-cddr",
+      "canmat-isbd-bipolar",
+      "ptp-standardy"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-integ-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "przypadki-integracyjne-diagnostyka-obj-1"
+      ],
+      "prompt": "Co oznacza pojęcie \"kontraktu bezpieczeństwa\" w ambulatoryjnej opiece psychiatrycznej?",
+      "options": [
+        "Uzgodnienie z pacjentem i rodziną planu postępowania i kontaktu w razie nagłego nasilenia myśli suicydalnych",
+        "Notarialne zrzeczenie się odpowiedzialności przez pacjenta na piśmie",
+        "Bezwzględne zamknięcie pacjenta w izolatce domowej przez bliskich"
+      ],
+      "optionFeedback": [
+        "Plan obejmuje usunięcie niebezpiecznych przedmiotów, telefony zaufania i kontakt z izbą przyjęć.",
+        "Kontrakt nie jest umową prawno-majątkową, lecz narzędziem relacyjnym.",
+        "Izolacja mechaniczna nie ma zastosowania w opiece domowej."
+      ],
+      "answer": 0,
+      "explanation": "Plan obejmuje usunięcie niebezpiecznych przedmiotów, telefony zaufania i kontakt z izbą przyjęć.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "canmat-isbd-bipolar",
+        "ptp-standardy"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-integ-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "przypadki-integracyjne-diagnostyka-obj-1"
+      ],
+      "prompt": "Dlaczego u osób w wieku podeszłym z nagłym pogorszeniem funkcjonowania poznawczego zawsze należy wykonać badanie ogólne moczu?",
+      "options": [
+        "Izolowany bakteriomocz bez objawów ogólnych stanowi bezpośrednie wskazanie do sedacji neuroleptykiem",
+        "Infekcja układu moczowego (ZUM) jest u seniorów najczęstszą somatyczną przyczyną ostrego zespołu majaczeniowego (delirium)",
+        "Białkomocz powyżej 1 g/d bezpośrednio hamuje korowe receptory NMDA"
+      ],
+      "optionFeedback": [
+        "Bezobjawowy bakteriomocz u seniorów nie wymaga antybiotykoterapii ani sedacji bez klinicznych i laboratoryjnych cech aktywnej infekcji.",
+        "Często przebiega bez gorączki i dyzurii, manifestując się wyłącznie zaburzeniami świadomości i pobudzeniem.",
+        "Nefropatia białkomoczowa nie wywołuje ostrego zespołu majaczeniowego w mechanizmie bezpośredniej blokady receptorowej bez cech mocznicy."
+      ],
+      "answer": 1,
+      "explanation": "Często przebiega bez gorączki i dyzurii, manifestując się wyłącznie zaburzeniami świadomości i pobudzeniem.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "icd11-cddr",
+        "canmat-isbd-bipolar",
+        "ptp-standardy"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "przypadki-integracyjne-diagnostyka-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przypadki-integracyjne-diagnostyka-obj-1"
+      ],
+      "prompt": "Zastosuj kryteria diagnostyczne i standardy postępowania klinicznego w przypadku pacjenta z tematu: przypadki integracyjne diagnostyka.",
+      "options": [
+        "Wdrożenie standaryzowanego postępowania klinicznego opartego na wytycznych EBM",
+        "Postępowanie wyczekujące bez diagnostyki różnicowej",
+        "Natychmiastowe włączenie polipragmazji bez oceny wskazań"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-clinical-rationale-1",
+            "label": "Uzasadnienie oparte na kryteriach i bezpieczeństwie",
+            "acceptedPhrases": [
+              "bezpieczeństwo",
+              "kryteria",
+              "wytyczne",
+              "diagnostyka"
+            ]
+          },
+          {
+            "id": "c-clinical-rationale-2",
+            "label": "Ocena różnicowa i czynniki modyfikujące",
+            "acceptedPhrases": [
+              "różnicowanie",
+              "czynniki ryzyka",
+              "przebieg"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Postępowanie wymaga standaryzowanej oceny klinicznej, wykluczenia przyczyn wtórnych i przestrzegania wytycznych.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "przypadki-integracyjne-diagnostyka-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "przypadki-integracyjne-diagnostyka-obj-2"
+      ],
+      "prompt": "Wyjaśnij kluczowe zasady różnicowania klinicznego oraz pułapki diagnostyczne w zagadnieniu: przypadki integracyjne diagnostyka.",
+      "modelAnswer": "Kluczowe jest odróżnienie pierwotnych zaburzeń psychicznych od masek somatycznych i toksycznych, uwzględnienie dynamiki czasowej oraz unikanie pochopnego rozpoznania na podstawie pojedynczego objawu.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-diff-organic",
+            "label": "Wykluczenie przyczyn somatycznych i substancji",
+            "acceptedPhrases": [
+              "przyczyny somatyczne",
+              "substancje",
+              "toksyczne",
+              "organiczne"
+            ]
+          },
+          {
+            "id": "c-diff-longitudinal",
+            "label": "Ocena przebiegu podłużnego i kryteriów czasowych",
+            "acceptedPhrases": [
+              "przebieg podłużny",
+              "kryteria czasowe",
+              "dynamika",
+              "czas trwania"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Ocena kliniczna wymaga analizy podłużnej i systematycznego wykluczenia przyczyn wtórnych.",
+      "difficulty": "both",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "icd11-cddr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "przypadki-integracyjne-diagnostyka-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przypadki-integracyjne-diagnostyka-obj-1",
+        "przypadki-integracyjne-diagnostyka-obj-3"
+      ],
+      "prompt": "W analizie przypadku klinicznego z obszaru przypadki integracyjne diagnostyka pacjent zgłasza nietypowy zestaw objawów. Jakiej informacji brakuje w pierwszej kolejności?",
+      "options": [
+        "Wywiadu toksykologicznego i badań laboratoryjnych wykluczających podłoże organiczne",
+        "Profilu genetycznego rzadkich mutacji enzymatycznych",
+        "Wyniku tomografii komputerowej bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Podstawą rzetelnej oceny psychiatrycznej jest wykluczenie czynników egzogennych, intoksykacji i zaburzeń metabolicznych.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "timeline",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., CANMAT oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

@@ -1,0 +1,404 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "normotymiki-lit-walproinian-lamotrygina",
+  "objectives": [
+    {
+      "id": "normotymiki-lit-walproinian-lamotrygina-obj-1",
+      "statement": "Zastosujesz lek pierwszego rzutu w profilaktyce ChAD – węglan litu – i zinterpretujesz stężenia we krwi.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "normotymiki-lit-walproinian-lamotrygina-obj-2",
+      "statement": "Scharakteryzujesz teratogenność kwasu walproinowego i zasady programu zapobiegania ciąży.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "normotymiki-lit-walproinian-lamotrygina-obj-3",
+      "statement": "Wdrożysz bezpieczny, powolny schemat titracji lamotryginy w prewencji zespołu Stevensa-Johnsona.",
+      "kind": "safety"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-norm-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "normotymiki-lit-walproinian-lamotrygina-obj-1"
+    ],
+    "prompt": "Jaki jest referencyjny zakres stężenia węglanu litu w surowicy krwi 12 godzin po ostatniej dawce w leczeniu podtrzymującym ChAD wg AGNP?",
+    "options": [
+      "2,5 do 4,0 mmol/l",
+      "0,01 do 0,05 mmol/l",
+      "0,6 do 0,8 mmol/l"
+    ],
+    "optionFeedback": [
+      "Tak wysokie stężenie litu powoduje śpiączkę, drgawki i zgon.",
+      "Są to stężenia homeopatyczne, całkowicie pozbawione efektu leczniczego.",
+      "W ostrej manii dopuszcza się 0,8–1,0 mmol/l; stężenia powyżej 1,2 mmol/l grożą ciężkim zatruciem."
+    ],
+    "answer": 2,
+    "explanation": "W ostrej manii dopuszcza się 0,8–1,0 mmol/l; stężenia powyżej 1,2 mmol/l grożą ciężkim zatruciem.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "canmat-isbd-bipolar",
+      "agnp-tdm-2026",
+      "maudsley15"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "normotymiki-lit-walproinian-lamotrygina-block-1",
+      "title": "Węglan litu: lek pierwszego rzutu w ChAD i prewencji suicydalnej",
+      "text": "Lit pozostaje lekiem I wyboru w zapobieganiu nawrotom manii i depresji w ChAD oraz jedynym o udowodnionym bezpośrednim działaniu antysuicydalnym. Hamuje monofosfatazę inozytolową (IMPaza) oraz kinazę syntazy glikogenu 3-beta (GSK-3beta), promując neuroprotekcję. Wymaga ścisłego TDM: stężenie terapeutyczne w podtrzymaniu wynosi 0,6–0,8 mmol/l (w ostrej manii 0,8–1,0 mmol/l). Toksyczność pojawia się powyżej 1,2 mmol/l.",
+      "sourceIds": [
+        "canmat-isbd-bipolar",
+        "agnp-tdm-2026",
+        "maudsley15"
+      ],
+      "checkpointId": "psych-norm-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "widget-lithium-tdm-interpreter",
+          "kind": "interactive-widget",
+          "placement": "after-text"
+        },
+        {
+          "id": "deeplink-lithium-preset",
+          "kind": "workbench-deeplink",
+          "placement": "end-of-block",
+          "presetId": "lithium-tdm-measured-001"
+        }
+      ]
+    },
+    {
+      "id": "normotymiki-lit-walproinian-lamotrygina-block-2",
+      "title": "Kwas walproinowy / walproinian sodu (VPA)",
+      "text": "Walproinian nasila transmisję GABA-ergiczną (hamuje transaminazę GABA i wychwyt), blokuje kanały sodowe Nav oraz działa jako inhibitor deacetylaz histonowych (HDAC). Jest lekiem z wyboru w manii z szybką zmianą faz (rapid cycling) i stanach mieszanych. Bezwzględnym ograniczeniem jest skrajna teratogenność (wady cewy nerwowej, rozszczep kręgosłupa, spadek IQ potomstwa o 7–10 pkt), co wyklucza jego stosowanie u kobiet w wieku rozrodczym bez spełnienia wymogów programu prewencji ciąży.",
+      "sourceIds": [
+        "canmat-isbd-bipolar",
+        "agnp-tdm-2026",
+        "maudsley15"
+      ],
+      "checkpointId": "psych-norm-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-valproate-lamotrigine-safety",
+          "kind": "evidence-panel",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "normotymiki-lit-walproinian-lamotrygina-block-3",
+      "title": "Lamotrygina: prewencja epizodów depresyjnych",
+      "text": "Lamotrygina blokuje bramkowane napięciem kanały sodowe Nav i zmniejsza presynaptyczne uwalnianie glutaminianu. Jest wysoce skuteczna w zapobieganiu nawrotom depresji dwubiegunowej (nie działa w ostrej manii). Wymaga powolnej titracji (start od 25 mg/d przez 2 tyg., potem 50 mg/d przez 2 tyg.), aby zminimalizować ryzyko zagrażających życiu odczynów skórnych: zespołu Stevensa-Johnsona (SJS) i toksycznej nekrolizy naskórka (TEN).",
+      "sourceIds": [
+        "canmat-isbd-bipolar",
+        "agnp-tdm-2026",
+        "maudsley15"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-norm-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "normotymiki-lit-walproinian-lamotrygina-obj-2"
+      ],
+      "prompt": "Dlaczego kwas walproinowy jest przeciwwskazany u dziewcząt i kobiet w wieku rozrodczym, chyba że spełnione są warunki rygorystycznego programu zapobiegania ciąży?",
+      "options": [
+        "Wykazuje silne działanie teratogenne (wady cewy nerwowej, rozszczep kręgosłupa) oraz obniża IQ dziecka o 7–10 punktów i zwiększa ryzyko autyzmu",
+        "Powoduje natychmiastową bezpłodność u 100% pacjentek po jednej dawce",
+        "Wywołuje nieodwracalne wypadanie wszystkich zębów u matki"
+      ],
+      "optionFeedback": [
+        "Jest to najsilniejszy znany teratogen spośród powszechnych leków psychotropowych.",
+        "Walproinian nie powoduje trwałej kastracji chemicznej, lecz wady wrodzone u płodu.",
+        "Nie ma takiego powikłania polekowego."
+      ],
+      "answer": 0,
+      "explanation": "Jest to najsilniejszy znany teratogen spośród powszechnych leków psychotropowych.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "canmat-isbd-bipolar",
+        "agnp-tdm-2026",
+        "maudsley15"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-norm-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "normotymiki-lit-walproinian-lamotrygina-obj-3"
+      ],
+      "prompt": "Jakie jest kardynalne zalecenie dotyczące dawkowania lamotryginy w celu uniknięcia zespołu Stevensa-Johnsona (SJS)?",
+      "options": [
+        "Podawanie leku wyłącznie w bezpośrednim wlewie do komory mózgowej",
+        "Bardzo powolne zwiększanie dawki (rozpoczynanie od 25 mg/d i podwajanie nie częściej niż co 2 tygodnie)",
+        "Podanie dawki uderzeniowej 400 mg w pierwszym dniu"
+      ],
+      "optionFeedback": [
+        "Lamotrygina jest lekiem doustnym.",
+        "Szybka eskalacja dawki drastycznie potęguje ryzyko martwicy naskórka.",
+        "Dawka uderzeniowa 400 mg stwarza bezpośrednie ryzyko śmiertelnego SJS/TEN."
+      ],
+      "answer": 1,
+      "explanation": "Szybka eskalacja dawki drastycznie potęguje ryzyko martwicy naskórka.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "canmat-isbd-bipolar",
+        "agnp-tdm-2026",
+        "maudsley15"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "normotymiki-lit-walproinian-lamotrygina-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "normotymiki-lit-walproinian-lamotrygina-obj-1",
+      "normotymiki-lit-walproinian-lamotrygina-obj-2",
+      "normotymiki-lit-walproinian-lamotrygina-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Stabilizatory nastroju: lit, kwas walproinowy i lamotrygina”.",
+    "modelAnswer": "Lit jest lekiem z wyboru o działaniu antysuicydalnym (TDM 0,6–0,8 mmol/l). Walproinian skutecznie kontroluje manię, lecz jest bezwzględnie teratogenny. Lamotrygina chroni przed depresją w ChAD i wymaga powolnego wdrażania.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "canmat-isbd-bipolar",
+      "agnp-tdm-2026",
+      "maudsley15"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-norm-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "normotymiki-lit-walproinian-lamotrygina-obj-1"
+      ],
+      "prompt": "Co należy zrobić z dawkowaniem lamotryginy, jeśli jest ona dołączana do schematu leczenia pacjenta przyjmującego kwas walproinowy?",
+      "options": [
+        "Zwiększyć dawkę lamotryginy 4-krotnie od pierwszego dnia",
+        "Leki te znoszą się wzajemnie, więc dawkowanie nie ma znaczenia",
+        "Zredukować dawkę początkową i tempo zwiększania lamotryginy o co najmniej 50%, ponieważ walproinian hamuje jej glukuronidację"
+      ],
+      "optionFeedback": [
+        "Doprowadziłoby to do toksycznego stężenia i martwicy naskórka.",
+        "Leki nie znoszą się, lecz wchodzą w istotną interakcję farmakokinetyczną.",
+        "Walproinian podwaja stężenie lamotryginy we krwi przez blokowanie enzymu UGT."
+      ],
+      "answer": 2,
+      "explanation": "Walproinian podwaja stężenie lamotryginy we krwi przez blokowanie enzymu UGT.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "canmat-isbd-bipolar",
+        "agnp-tdm-2026",
+        "maudsley15"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-norm-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "normotymiki-lit-walproinian-lamotrygina-obj-1"
+      ],
+      "prompt": "Jakie badania laboratoryjne należy bezwzględnie kontrolować u pacjenta przewlekle leczonego węglanem litu?",
+      "options": [
+        "Stężenie TSH (ryzyko niedoczynności tarczycy) oraz kreatyninę/eGFR (ryzyko nefropatii)",
+        "Wyłącznie stężenie kwasu moczowego w paznokciach",
+        "Stężenie bilirubiny co 24 godziny"
+      ],
+      "optionFeedback": [
+        "Lit kumuluje się w tarczycy i nerkach, mogąc wywołać wole, niedoczynność oraz moczówkę prostą nerkopochodną.",
+        "Badanie paznokci nie jest parametrem monitorowania litu.",
+        "Lit nie jest metabolizowany w wątrobie i wydala się w 100% przez nerki w postaci niezmienionej."
+      ],
+      "answer": 0,
+      "explanation": "Lit kumuluje się w tarczycy i nerkach, mogąc wywołać wole, niedoczynność oraz moczówkę prostą nerkopochodną.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "canmat-isbd-bipolar",
+        "agnp-tdm-2026",
+        "maudsley15"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "mood-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "normotymiki-lit-walproinian-lamotrygina-obj-1"
+      ],
+      "claimIds": [
+        "claim-ph-lithium-window",
+        "claim-ph-lithium-interactions"
+      ],
+      "prompt": "Pacjent z ChAD leczony węglanem litu w stabilnej dawce z powodu bólu kolana zaczął przyjmować ketoprofen (NLPZ) bez konsultacji. Po 5 dniach zgłasza nasilone grubofaliste drżenie rąk, nudności, biegunkę i ataksję. Jaki mechanizm odpowiada za ten stan i co należy zrobić?",
+      "options": [
+        "Interakcja NLPZ z litem: spadek filtracji kłębuszkowej i retencja litu; natychmiastowe odstawienie litu i NLPZ oraz pilne oznaczenie litemii",
+        "Zwykłe działanie uboczne ketoprofenu; kontynuacja leczenia",
+        "Nawrót epizodu manii wymagający podwojenia dawki litu"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-nsaid-lithium-interaction",
+            "label": "NLPZ hamują prostaglandyny nerkowe, obniżając GFR i klirens litu",
+            "acceptedPhrases": [
+              "hamowanie prostaglandyn",
+              "spadek gfr",
+              "klirens litu",
+              "kumulacja litu",
+              "nlpz"
+            ]
+          },
+          {
+            "id": "c-urgent-tdm-action",
+            "label": "Pilne odstawienie leków i oznaczenie stężenia litu w surowicy",
+            "acceptedPhrases": [
+              "oznaczenie litu",
+              "litemia",
+              "odstawienie litu",
+              "toksyczność litu"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-dose-increase",
+            "patterns": [
+              "zwiększenie dawki",
+              "podwojenie litu"
+            ],
+            "severity": "critical",
+            "feedback": "BŁĄD KRYTYCZNY: Zwiększenie dawki litu u pacjenta z intoksykacją może doprowadzić do zgonu."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "NLPZ zmniejszają wydalanie nerkowe litu, prowadząc do zagrażającej życiu kumulacji i neurotoksyczności.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "agnp-tdm-2026",
+        "maudsley15"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "mood-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "normotymiki-lit-walproinian-lamotrygina-obj-2"
+      ],
+      "claimIds": [
+        "claim-ph-lamotrigine-titration"
+      ],
+      "prompt": "Dlaczego u pacjenta leczonego kwasem walproinowym dawkę początkową i tempo miareczkowania lamotryginy należy zmniejszyć o połowę?",
+      "modelAnswer": "Kwas walproinowy jest silnym inhibitorem enzymów glukuronidacji (UGT1A4), które stanowią główną drogę metabolizmu lamotryginy. Jednoczesne stosowanie wydłuża ponad dwukrotnie okres półtrwania lamotryginy i gwałtownie podnosi jej stężenie we krwi. Zbyt szybkie miareczkowanie niesie krytyczne ryzyko zagrażających życiu ciężkich odczynów skórnych, w tym zespołu Stevensa-Johnsona (SJS) i toksycznej nekrolizy naskórka (TEN).",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-ugt-inhibition",
+            "label": "Hamowanie glukuronidacji (UGT) przez walproinian i wzrost stężenia lamotryginy",
+            "acceptedPhrases": [
+              "glukuronidacja",
+              "ugt",
+              "hamowanie metabolizmu",
+              "podwojenie stężenia",
+              "wzrost stężenia"
+            ]
+          },
+          {
+            "id": "c-sjs-ten-risk",
+            "label": "Ryzyko zespołu Stevensa-Johnsona (SJS) lub toksycznej nekrolizy (TEN)",
+            "acceptedPhrases": [
+              "stevensa-johnsona",
+              "sjs",
+              "ten",
+              "odczyny skórne",
+              "zespół stevensa"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-inducer-claim",
+            "patterns": [
+              "walproinian indukuje",
+              "przyspiesza metabolizm"
+            ],
+            "severity": "critical",
+            "feedback": "Walproinian jest inhibitorem, a nie induktorem glukuronidacji."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Walproinian hamuje glukuronidację lamotryginy; ignorowanie tej interakcji grozi śmiertelnym zespołem Stevensa-Johnsona.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "maudsley15",
+        "canmat-isbd-bipolar"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "mood-bank-3",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "normotymiki-lit-walproinian-lamotrygina-obj-1",
+        "normotymiki-lit-walproinian-lamotrygina-obj-3"
+      ],
+      "claimIds": [
+        "claim-ph-lithium-window"
+      ],
+      "prompt": "Podaj dolną granicę optymalnego stężenia litu w surowicy krwi (w mmol/l) pobranej dokładnie 12 godzin po dawce wieczornej w fazie leczenia podtrzymującego ChAD wg wytycznych AGNP 2026.",
+      "answer": 0.6,
+      "tolerance": 0.05,
+      "unit": "mmol/l",
+      "explanation": "Zgodnie z konsensusem AGNP 2026 optymalne okno terapeutyczne w profilaktyce ChAD to 0,6–0,8 mmol/l.",
+      "difficulty": "both",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "agnp-tdm-2026"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "timeline"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy AGNP 2026 TDM, CPIC PGx, Maudsley 15th ed., Kapur PET D2, Hunter criteria oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

@@ -1,0 +1,365 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "zaburzenia-lekowe-gad-napadowy",
+  "objectives": [
+    {
+      "id": "zaburzenia-lekowe-gad-napadowy-obj-1",
+      "statement": "Zróżnicujesz napad paniki od przewlekłego lęku wolnopłynącego w GAD.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "zaburzenia-lekowe-gad-napadowy-obj-2",
+      "statement": "Scharakteryzujesz rolę jądra migdałowatego i kory przedczołowej w neurobiologii lęku.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "zaburzenia-lekowe-gad-napadowy-obj-3",
+      "statement": "Wdrożysz leczenie farmakologiczne I rzutu (SSRI/SNRI, pregabalina) bez uzależnienia od benzodiazepin.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-gad-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "zaburzenia-lekowe-gad-napadowy-obj-1"
+    ],
+    "prompt": "Dlaczego u pacjentów z lękiem napadowym zaleca się rozpoczynanie leczenia SSRI od połowy typowej dawki początkowej?",
+    "options": [
+      "Aby uniknąć przejściowego nasilenia lęku (jitteriness syndrome) w pierwszych dniach terapii",
+      "Ponieważ pacjenci z lękiem metabolizują leki 4-krotnie wolniej niż inni",
+      "Ponieważ SSRI w pełnej dawce natychmiastowo uszkadzają kanały wapniowe"
+    ],
+    "optionFeedback": [
+      "Początkowy wyrzut serotoniny pobudza receptory 5-HT2A/2C, co może sprowokować ciężki napad paniki.",
+      "Metabolizm wątrobowy nie zależy od rozpoznania zespołu lękowego.",
+      "SSRI nie blokują destrukcyjnie kanałów wapniowych."
+    ],
+    "answer": 0,
+    "explanation": "Początkowy wyrzut serotoniny pobudza receptory 5-HT2A/2C, co może sprowokować ciężki napad paniki.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "wfsbp-anxiety",
+      "nice-depression",
+      "pregabalin-consensus"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "zaburzenia-lekowe-gad-napadowy-block-1",
+      "title": "Neurobiologia lęku i obwód amygdalar",
+      "text": "Lęk uogólniony (GAD) charakteryzuje się ciągłym, nadmiernym zamartwianiem się (worry) trwającym co najmniej 6 miesięcy, połączonym z objawami napięcia wegetatywnego i mięśniowego. Neurobiologicznie wynika z osłabienia hamowania zstępującego z brzuszno-przyśrodkowej kory przedczołowej (vmPFC) na jądro środkowe ciała migdałowatego (CeA), co skutkuje toniczną hiperaktywacją pnia mózgu (locus coeruleus) i podwzgórza.",
+      "sourceIds": [
+        "wfsbp-anxiety",
+        "nice-depression",
+        "pregabalin-consensus"
+      ],
+      "checkpointId": "psych-gad-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-fear-circuit",
+          "kind": "diagram",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "zaburzenia-lekowe-gad-napadowy-block-2",
+      "title": "Lęk napadowy (Panic Disorder) a agorafobia",
+      "text": "Napad paniki to nagły wyrzut obezwładniającego przerażenia z palpitacjami, dusznością, zawrotami głowy i depersonalizacją, osiągający szczyt w ciągu 10 minut. W odróżnieniu od zawału serca czy guza chromochłonnego, lęk antycypacyjny (lęk przed kolejnym napadem) prowadzi do zachowań unikających i agorafobii.",
+      "sourceIds": [
+        "wfsbp-anxiety",
+        "nice-depression",
+        "pregabalin-consensus"
+      ],
+      "checkpointId": "psych-gad-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-panic-vs-somatization",
+          "kind": "evidence-panel",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "zaburzenia-lekowe-gad-napadowy-block-3",
+      "title": "Zasady leczenia I rzutu: SSRI, SNRI i pregabalina",
+      "text": "Zgodnie z wytycznymi WFSBP i NICE lekami I rzutu w GAD i lęku napadowym są SSRI (escitalopram, sertralina) oraz SNRI (wenlafaksyna). Alternatywą w GAD jest pregabalina modyfikująca podjednostkę alfa-2-delta kanałów wapniowych (VGCC). Benzodiazepiny mogą być stosowane jedynie doraźnie przez maksymalnie 2–4 tygodnie ze względu na ryzyko tachyfilaksji i uzależnienia.",
+      "sourceIds": [
+        "wfsbp-anxiety",
+        "nice-depression",
+        "pregabalin-consensus"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-gad-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "zaburzenia-lekowe-gad-napadowy-obj-2"
+      ],
+      "prompt": "Jaki jest mechanizm przeciwlękowego działania pregabaliny w uogólnionym zaburzeniu lękowym (GAD)?",
+      "options": [
+        "Selektywne blokowanie transportera serotoniny SERT w korze czołowej",
+        "Wiązanie z podjednostką alfa-2-delta zależnych od napięcia kanałów wapniowych i redukcja wyrzutu glutaminianu",
+        "Bezpośrednie allosteryczne pobudzenie receptora GABAA w miejscu benzodiazepinowym"
+      ],
+      "optionFeedback": [
+        "Pregabalina nie wykazuje powinowactwa do transporterów monoaminowych.",
+        "Pregabalina moduluje bramkowanie jonów Ca2+, hamując presynaptyczne uwalnianie neuroprzekaźników pobudzających.",
+        "Pregabalina nie wiąże się z receptorem benzodiazepinowym ani nie zwiększa prądu chlorkowego bezpośrednio."
+      ],
+      "answer": 1,
+      "explanation": "Pregabalina moduluje bramkowanie jonów Ca2+, hamując presynaptyczne uwalnianie neuroprzekaźników pobudzających.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "wfsbp-anxiety",
+        "nice-depression",
+        "pregabalin-consensus"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-gad-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "zaburzenia-lekowe-gad-napadowy-obj-3"
+      ],
+      "prompt": "Jaki jest dopuszczalny bezpieczny czas stosowania benzodiazepin w opanowywaniu ostrego lęku wg standardów międzynarodowych?",
+      "options": [
+        "Minimum 6 miesięcy w stałej dawce dobowej",
+        "Bezterminowo, pod warunkiem regularnej kontroli stężenia we krwi",
+        "Maksymalnie 2 do 4 tygodni, z równoległym wdrożeniem SSRI i psychoterapii"
+      ],
+      "optionFeedback": [
+        "Przewlekłe stosowanie BZD prowadzi do down-regulacji receptorów GABA-A i uzależnienia.",
+        "Benzodiazepiny nie są lekami do bezterminowej monoterapii lęku.",
+        "Ograniczenie do 2-4 tygodni minimalizuje ryzyko tolerancji, uzależnienia psychofizycznego i zespołu z odbicia."
+      ],
+      "answer": 2,
+      "explanation": "Ograniczenie do 2-4 tygodni minimalizuje ryzyko tolerancji, uzależnienia psychofizycznego i zespołu z odbicia.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "wfsbp-anxiety",
+        "nice-depression",
+        "pregabalin-consensus"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "zaburzenia-lekowe-gad-napadowy-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "zaburzenia-lekowe-gad-napadowy-obj-1",
+      "zaburzenia-lekowe-gad-napadowy-obj-2",
+      "zaburzenia-lekowe-gad-napadowy-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Zaburzenia lękowe: lęk uogólniony (GAD) i lęk napadowy”.",
+    "modelAnswer": "Zaburzenia lękowe wynikają z dysregulacji pętli vmPFC-ciało migdałowate. Podstawą terapii są SSRI/SNRI w ostrożnej titracji oraz CBT; pregabalina stanowi niebenzodiazepinową alternatywę w GAD.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "wfsbp-anxiety",
+      "nice-depression",
+      "pregabalin-consensus"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-gad-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "zaburzenia-lekowe-gad-napadowy-obj-1"
+      ],
+      "prompt": "Która struktura anatomiczna stanowi główne centrum wykonawcze generujące autonomiczne i behawioralne objawy ostrej paniki?",
+      "options": [
+        "Ciało migdałowate (amygdala)",
+        "Kora potyliczna pierwszorzędowa",
+        "Przedni róg rdzenia kręgowego"
+      ],
+      "optionFeedback": [
+        "Jądro środkowe ciała migdałowatego wysyła projekcje do pnia mózgu i podwzgórza, wyzwalając reakcję walki lub ucieczki.",
+        "Kora potyliczna odpowiada za percepcję wzrokową, nie za generowanie paniki.",
+        "Rogi przednie zawierają motoneurony obwodowe, nie inicjują lęku."
+      ],
+      "answer": 0,
+      "explanation": "Jądro środkowe ciała migdałowatego wysyła projekcje do pnia mózgu i podwzgórza, wyzwalając reakcję walki lub ucieczki.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "wfsbp-anxiety",
+        "nice-depression",
+        "pregabalin-consensus"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-gad-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "zaburzenia-lekowe-gad-napadowy-obj-1"
+      ],
+      "prompt": "Kiedy zgodnie z kryteriami diagnostycznymi można rozpoznać zespół lęku uogólnionego (GAD)?",
+      "options": [
+        "Wyłącznie wtedy, gdy występuje współistniejąca bezsenność z koszmarami nocnymi",
+        "Gdy nadmierny, trudny do kontrolowania lęk utrzymuje się przez co najmniej 6 miesięcy przez większość dni",
+        "Wystarczy obecność 2 napadów lękowych w ciągu ostatnich 7 dni"
+      ],
+      "optionFeedback": [
+        "Koszmary nocne są typowe dla PTSD, a nie obligatoryjne dla GAD.",
+        "Wymóg 6 miesięcy odróżnia przewlekły GAD od przejściowych adaptacyjnych reakcji na stresory życiowe.",
+        "Dwa napady lękowe w ciągu tygodnia sugerują lęk napadowy, nie GAD."
+      ],
+      "answer": 1,
+      "explanation": "Wymóg 6 miesięcy odróżnia przewlekły GAD od przejściowych adaptacyjnych reakcji na stresory życiowe.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "wfsbp-anxiety",
+        "nice-depression",
+        "pregabalin-consensus"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "zaburzenia-lekowe-gad-napadowy-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "zaburzenia-lekowe-gad-napadowy-obj-1"
+      ],
+      "prompt": "Zastosuj kryteria diagnostyczne i standardy postępowania klinicznego w przypadku pacjenta z tematu: zaburzenia lekowe gad napadowy.",
+      "options": [
+        "Wdrożenie standaryzowanego postępowania klinicznego opartego na wytycznych EBM",
+        "Postępowanie wyczekujące bez diagnostyki różnicowej",
+        "Natychmiastowe włączenie polipragmazji bez oceny wskazań"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-clinical-rationale-1",
+            "label": "Uzasadnienie oparte na kryteriach i bezpieczeństwie",
+            "acceptedPhrases": [
+              "bezpieczeństwo",
+              "kryteria",
+              "wytyczne",
+              "diagnostyka"
+            ]
+          },
+          {
+            "id": "c-clinical-rationale-2",
+            "label": "Ocena różnicowa i czynniki modyfikujące",
+            "acceptedPhrases": [
+              "różnicowanie",
+              "czynniki ryzyka",
+              "przebieg"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Postępowanie wymaga standaryzowanej oceny klinicznej, wykluczenia przyczyn wtórnych i przestrzegania wytycznych.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "zaburzenia-lekowe-gad-napadowy-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "zaburzenia-lekowe-gad-napadowy-obj-2"
+      ],
+      "prompt": "Wyjaśnij kluczowe zasady różnicowania klinicznego oraz pułapki diagnostyczne w zagadnieniu: zaburzenia lekowe gad napadowy.",
+      "modelAnswer": "Kluczowe jest odróżnienie pierwotnych zaburzeń psychicznych od masek somatycznych i toksycznych, uwzględnienie dynamiki czasowej oraz unikanie pochopnego rozpoznania na podstawie pojedynczego objawu.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-diff-organic",
+            "label": "Wykluczenie przyczyn somatycznych i substancji",
+            "acceptedPhrases": [
+              "przyczyny somatyczne",
+              "substancje",
+              "toksyczne",
+              "organiczne"
+            ]
+          },
+          {
+            "id": "c-diff-longitudinal",
+            "label": "Ocena przebiegu podłużnego i kryteriów czasowych",
+            "acceptedPhrases": [
+              "przebieg podłużny",
+              "kryteria czasowe",
+              "dynamika",
+              "czas trwania"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Ocena kliniczna wymaga analizy podłużnej i systematycznego wykluczenia przyczyn wtórnych.",
+      "difficulty": "both",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "icd11-cddr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "zaburzenia-lekowe-gad-napadowy-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "zaburzenia-lekowe-gad-napadowy-obj-1",
+        "zaburzenia-lekowe-gad-napadowy-obj-3"
+      ],
+      "prompt": "W analizie przypadku klinicznego z obszaru zaburzenia lekowe gad napadowy pacjent zgłasza nietypowy zestaw objawów. Jakiej informacji brakuje w pierwszej kolejności?",
+      "options": [
+        "Wywiadu toksykologicznego i badań laboratoryjnych wykluczających podłoże organiczne",
+        "Profilu genetycznego rzadkich mutacji enzymatycznych",
+        "Wyniku tomografii komputerowej bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Podstawą rzetelnej oceny psychiatrycznej jest wykluczenie czynników egzogennych, intoksykacji i zaburzeń metabolicznych.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "timeline",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., CANMAT oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

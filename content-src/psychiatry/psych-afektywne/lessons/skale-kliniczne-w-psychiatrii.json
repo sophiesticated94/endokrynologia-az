@@ -1,0 +1,177 @@
+{
+  "id": "skale-kliniczne-w-psychiatrii",
+  "moduleId": "psych-afektywne",
+  "title": "Psychometryczne skale kliniczne: HAM-D, MADRS, YMRS i PANSS",
+  "subtitle": "Narzędzia oceny nasilenia objawów, progi remisji i monitorowanie leczenia",
+  "group": "Diagnostyka i semiotyka psychiatryczna",
+  "minutes": 18,
+  "goals": [
+    "Zastosujesz skale oceny depresji (HAM-D, MADRS, PHQ-9) oraz manii (YMRS).",
+    "Zrozumiesz strukturę i progi punktowe skali PANSS w badaniach schizofrenii.",
+    "Zdefiniujesz kryteria odpowiedzi terapeutycznej (spadek >= 50%) i remisji klinicznej w EBM."
+  ],
+  "sections": [
+    {
+      "title": "Skale depresji: HAM-D, MADRS i samoopisowe PHQ-9",
+      "text": "W ocenie nasilenia depresji złotym standardem badań klinicznych są skale wypełniane przez lekarza: 17-punktowa skala Hamiltona (HAM-D-17) oraz skala Montgomery-Åsberg (MADRS). MADRS wykazuje wyższą czułość na wczesne zmiany farmakoterapeutyczne i skupia się na objawach psychicznych, podczas gdy HAM-D silnie punktuje objawy somatyczne i bezsenność. W opiece ambulatoryjnej standardem przesiewowym jest 9-pytaniowy kwestionariusz pacjenta PHQ-9."
+    },
+    {
+      "title": "Skala YMRS w manii oraz PANSS w schizofrenii",
+      "text": "Skala YMRS (Young Mania Rating Scale, 11 pozycji) służy do kwantyfikacji nasilenia hipomanii i manii (próg remisji <= 12 pkt). Z kolei skala PANSS (Positive and Negative Syndrome Scale, 30 pozycji w podskalach: pozytywnej, negatywnej i ogólnej psychopatologii) pozwala ocenić dynamikę objawów wytwórczych schizofrenii i skuteczność leków przeciwpsychotycznych."
+    },
+    {
+      "title": "Kryteria EBM: odpowiedź (response) a remisja (remission)",
+      "text": "W medycynie opartej na faktach (EBM) \"odpowiedź na leczenie\" definiuje się jako redukcję całkowitej punktacji w skali klinicznej (np. MADRS, HAM-D, PANSS) o co najmniej 50% w stosunku do wartości wyjściowej. \"Remisja\" oznacza spadek poniżej ściśle określonego progu bezwzględnego (dla MADRS typowo <= 10 pkt, dla HAM-D <= 7 pkt), co odpowiada powrotowi do prawidłowego funkcjonowania."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Skala",
+      "Obszar kliniczny",
+      "Liczba pozycji / Wypełniający",
+      "Próg remisji klinicznej"
+    ],
+    "rows": [
+      [
+        "HAM-D 17",
+        "Depresja ogólna i somatyczna",
+        "17 pozycji / Lekarz",
+        "<= 7 punktów"
+      ],
+      [
+        "MADRS",
+        "Depresja (wysoka czułość na leki)",
+        "10 pozycji / Lekarz",
+        "<= 10 punktów"
+      ],
+      [
+        "YMRS",
+        "Mania i hipomania",
+        "11 pozycji / Lekarz",
+        "<= 12 punktów"
+      ],
+      [
+        "PHQ-9",
+        "Przesiew depresji w POZ",
+        "9 pozycji / Pacjent (samoocena)",
+        "< 5 punktów (brak depresji)"
+      ],
+      [
+        "PANSS",
+        "Schizofrenia (pozytywne/negatywne)",
+        "30 pozycji / Doświadczony badacz",
+        "<= 3 punkty w każdej z kluczowych pozycji"
+      ]
+    ]
+  },
+  "advanced": "W skali HAM-D aż 6 z 17 punktów dotyczy bezsenności i objawów żołądkowo-jelitowych. Leki silnie sedatywne (np. mirtazapina, mianseryna) mogą dawać fałszywie szybki spadek w HAM-D wynikający wyłącznie z poprawy snu, podczas gdy MADRS precyzyjniej wychwytuje poprawę nastroju i popędu.",
+  "summary": "Skale kliniczne obiektywizują przebieg leczenia. Odpowiedź terapeutyczna to redukcja objawów o >= 50%, a remisja to osiągnięcie wyniku w granicach normy (HAM-D <= 7, MADRS <= 10, YMRS <= 12).",
+  "sourceIds": [
+    "canmat-mdd-2023",
+    "canmat-isbd-bipolar",
+    "wfsbp-schizophrenia"
+  ],
+  "questions": [
+    {
+      "id": "psych-skale-q1",
+      "lessonId": "skale-kliniczne-w-psychiatrii",
+      "prompt": "Jak w medycynie opartej na faktach (EBM) definiuje się odpowiedź na leczenie przeciwdepresyjne (response)?",
+      "options": [
+        {
+          "text": "Spadek całkowitej punktacji w standaryzowanej skali (np. MADRS lub HAM-D) o co najmniej 50% względem stanu wyjściowego",
+          "explanation": "Jest to uniwersalny standard oceny skuteczności we wszystkich badaniach rejestracyjnych."
+        },
+        {
+          "text": "Ustąpienie dokładnie każdego z 17 objawów w skali Hamiltona w ciągu 48 godzin",
+          "explanation": "Taki stan to natychmiastowa całkowita remisja, niespotykana w praktyce."
+        },
+        {
+          "text": "Subiektywne poczucie pacjenta bez konieczności wypełniania skali",
+          "explanation": "EBM wymaga obiektywizacji kwantytatywnej za pomocą zwalidowanego narzędzia."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-skale-q2",
+      "lessonId": "skale-kliniczne-w-psychiatrii",
+      "prompt": "Jaki jest referencyjny punkt odcięcia oznaczający pełną remisję objawów w skali MADRS?",
+      "options": [
+        {
+          "text": "Wynik powyżej 35 punktów",
+          "explanation": "Wynik > 35 punktów świadczy o ciężkim, zagrażającym epizodzie depresyjnym."
+        },
+        {
+          "text": "Wynik 10 punktów lub mniej",
+          "explanation": "Punktacja MADRS <= 10 odpowiada stanowi eutymii bez istotnych klinicznie objawów resztkowych."
+        },
+        {
+          "text": "Wynik 0 punktów bezwzględnie",
+          "explanation": "W skali dopuszcza się minimalne punkty za fizjologiczne wahania snu czy apetytu."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-skale-q3",
+      "lessonId": "skale-kliniczne-w-psychiatrii",
+      "prompt": "Czym różni się skala MADRS od klasycznej skali HAM-D-17 pod względem profilu pytań?",
+      "options": [
+        {
+          "text": "MADRS jest skalą przeznaczoną wyłącznie dla dzieci poniżej 5. roku życia",
+          "explanation": "MADRS stosuje się powszechnie u osób dorosłych."
+        },
+        {
+          "text": "W skali MADRS oceniane są wyłącznie objawy wytwórcze schizofrenii",
+          "explanation": "MADRS to skala depresji, a nie psychozy."
+        },
+        {
+          "text": "MADRS koncentruje się na objawach psychicznych i jest bardziej czuła na zmiany farmakoterapeutyczne, podczas gdy HAM-D mocno uwzględnia objawy somatyczne i sen",
+          "explanation": "Dzięki temu MADRS jest mniej podatna na fałszywe zawyżanie wyników przez leki sedatywne."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-skale-q4",
+      "lessonId": "skale-kliniczne-w-psychiatrii",
+      "prompt": "Do oceny jakiego zaburzenia służy skala YMRS (Young Mania Rating Scale)?",
+      "options": [
+        {
+          "text": "Nasilenia manii i stanów hipomaniakalnych w przebiegu ChAD",
+          "explanation": "YMRS ocenia 11 objawów, w tym drażliwość, wielomówność, popęd seksualny i wielkościowość."
+        },
+        {
+          "text": "Głębokości otępienia w chorobie Alzheimera",
+          "explanation": "Do oceny otępienia służy skala MMSE lub MoCA."
+        },
+        {
+          "text": "Stopnia uzależnienia od nikotyny",
+          "explanation": "Do nikotynizmu służy test Fagerströma."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-skale-q5",
+      "lessonId": "skale-kliniczne-w-psychiatrii",
+      "prompt": "Z ilu pozycji i podskal składa się skala PANSS stosowana powszechnie w badaniach schizofrenii?",
+      "options": [
+        {
+          "text": "100 pytań wypełnianych wyłącznie przez rodzinę pacjenta",
+          "explanation": "Skalę wypełnia doświadczony klinicysta na podstawie wywiadu i obserwacji."
+        },
+        {
+          "text": "30 pozycji podzielonych na 3 podskale: pozytywną, negatywną i ogólnej psychopatologii",
+          "explanation": "Każda pozycja oceniana jest od 1 (brak) do 7 (skrajnie nasilony)."
+        },
+        {
+          "text": "5 pytań tak/nie ocenianych przez pielęgniarkę",
+          "explanation": "PANSS jest rozbudowanym narzędziem klinicznym wymagającym szkolenia certyfikacyjnego."
+        }
+      ],
+      "answer": 1
+    }
+  ],
+  "assetIds": []
+}

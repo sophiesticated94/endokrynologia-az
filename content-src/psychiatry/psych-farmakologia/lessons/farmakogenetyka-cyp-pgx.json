@@ -1,0 +1,171 @@
+{
+  "id": "farmakogenetyka-cyp-pgx",
+  "moduleId": "psych-farmakologia",
+  "title": "Farmakogenetyka w psychiatrii: fenotypy CYP2D6 i CYP2C19 wg CPIC",
+  "subtitle": "Polimorfizmy cytochromów P450, fenokonwersja i dobór dawki wg wytycznych CPIC",
+  "group": "Precyzyjna psychofarmakologia i metabolizm",
+  "minutes": 18,
+  "goals": [
+    "Zinterpretujesz 4 fenotypy metaboliczne CYP (PM, IM, NM, UM) wg wytycznych CPIC.",
+    "Dostosujesz dawkowanie SSRI i TLPD u pacjentów z fenotypem wolnego (PM) i ultratymczasowego (UM) metabolizatora.",
+    "Zrozumiesz zjawisko fenokonwersji (np. silny inhibitor 2D6 przekształca pacjenta NM w funkcjonalnego PM)."
+  ],
+  "sections": [
+    {
+      "title": "Polimorfizmy enzymatyczne cytochromu P450 (CYP450)",
+      "text": "Większość psychotropów jest metabolizowana w wątrobie przez enzymy mikrosomalne cytochromu P450, głównie izoenzymy CYP2D6, CYP2C19, CYP3A4 i CYP1A2. Geny kodujące CYP2D6 i CYP2C19 wykazują skrajny polimorfizm genetyczny w populacji. Konsorcjum CPIC (Clinical Pharmacogenetics Implementation Consortium) definiuje 4 fenotypy: wolny metabolizator (Poor Metabolizer - PM), pośredni (Intermediate - IM), prawidłowy (Normal - NM) oraz ultraszybki (Ultrarapid Metabolizer - UM)."
+    },
+    {
+      "title": "Rekomendacje CPIC dla CYP2D6 i CYP2C19",
+      "text": "Dla CYP2C19: pacjenci o fenotypie ultrarapid (UM) metabolizują escitalopram, citalopram i sertralinę tak szybko, że osiągają subterapeutyczne stężenia – CPIC zaleca wybór alternatywnego leku (np. paroksetyna, wenlafaksyna). Z kolei u pacjentów z fenotypem PM stężenie leku gwałtownie rośnie, co rodzi ryzyko wydłużenia QTc i zespołu serotoninowego – zaleca się redukcję dawki o 50%."
+    },
+    {
+      "title": "Fenokonwersja: pułapka interakcji lekowych",
+      "text": "Genotyp nie zawsze odpowiada rzeczywistemu fenotypowi pacjenta. Fenokonwersja to zjawisko, w którym pacjent o prawidłowym genotypie CYP2D6 (NM) pod wpływem silnego inhibitora enzymatycznego (np. fluoksetyny, paroksetyny czy bupropionu) staje się funkcjonalnym wolnym metabolizatorem (PM). Dołączenie innego leku metabolizowanego przez CYP2D6 (np. arypiprazolu, risperidonu, tramadolu) może wywołać ciężką toksyczność."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Enzym / Genotyp",
+      "Wpływ na psychotropy",
+      "Konsekwencja kliniczna",
+      "Rekomendacja CPIC"
+    ],
+    "rows": [
+      [
+        "CYP2C19 - Wolny metabolizator (PM)",
+        "Spowolniony rozkład escitalopramu, sertraliny",
+        "Wysokie stężenia we krwi, ryzyko wydłużenia QTc",
+        "Zmniejsz dawkę o 50% lub zmień lek"
+      ],
+      [
+        "CYP2C19 - Ultraszybki metabolizator (UM)",
+        "Błyskawiczna eliminacja escitalopramu, citalopramu",
+        "Brak stężenia terapeutycznego, rzekoma lekooporność",
+        "Zmień na lek niezależny od 2C19 (np. wenlafaksyna)"
+      ],
+      [
+        "CYP2D6 - Wolny metabolizator (PM)",
+        "Kumulacja rysperydonu, aripiprazolu, nortryptyliny",
+        "Nasilone objawy pozapiramidowe i kardiotoksyczność",
+        "Zmniejsz dawkę o 50–70%"
+      ],
+      [
+        "CYP1A2 - Indukcja przez dym tytoniowy",
+        "Dym papierosowy indukuje CYP1A2",
+        "Spadek stężenia klozapiny i olanzapiny o 40–50%",
+        "U palaczy konieczne wyższe dawki; po rzuceniu grozi toksyczność"
+      ]
+    ]
+  },
+  "advanced": "Kluczowa interakcja klozapiny z dymem tytoniowym: to nie nikotyna, lecz wielopierścieniowe węglowodory aromatyczne zawarte w dymie tytoniowym silnie indukują enzym CYP1A2. Pacjent unieruchomiony w szpitalu z zakazem palenia doświadcza gwałtownego wygaśnięcia indukcji CYP1A2, co może podwoić stężenie klozapiny we krwi i doprowadzić do śpiączki i drgawek bez żadnej zmiany dawki leku w tabletkach.",
+  "summary": "Polimorfizmy CYP2D6 i CYP2C19 decydują o stężeniu leków w OUN. Rekomendacje CPIC nakazują redukcję dawek u PM i zmianę leków u UM. Węglowodory dymu tytoniowego indukują CYP1A2, regulując stężenie klozapiny i olanzapiny.",
+  "sourceIds": [
+    "cpic-cyp2d6-2c19",
+    "agnp-tdm-2026",
+    "clozapine-consensus"
+  ],
+  "questions": [
+    {
+      "id": "psych-pgx-q1",
+      "lessonId": "farmakogenetyka-cyp-pgx",
+      "prompt": "Jakie zalecenie terapeutyczne formułuje CPIC dla pacjenta z fenotypem wolnego metabolizatora CYP2C19 (Poor Metabolizer) kwalifikowanego do leczenia escitalopramem?",
+      "options": [
+        {
+          "text": "Całkowite odstawienie wody pitnej na czas kuracji",
+          "explanation": "Nie ma żadnego uzasadnienia medycznego."
+        },
+        {
+          "text": "Zredukowanie standardowej dawki leku o 50% z uwagi na ryzyko kumulacji stężenia i wydłużenia odstępu QTc",
+          "explanation": "Spowolniony metabolizm u osób PM prowadzi do 2–3-krotnie wyższych stężeń osoczowych przy typowych dawkach."
+        },
+        {
+          "text": "Podwojenie dawki początkowej do 40 mg/d od pierwszego dnia",
+          "explanation": "Doprowadziłoby to do ciężkich powikłań kardiologicznych i zespołu serotoninowego."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-pgx-q2",
+      "lessonId": "farmakogenetyka-cyp-pgx",
+      "prompt": "Na czym polega zjawisko fenokonwersji enzymatycznej w farmakoterapii psychiatrycznej?",
+      "options": [
+        {
+          "text": "Na mutacji jądrowego DNA pod wpływem fal radiowych",
+          "explanation": "DNA jądrowe pacjenta nie ulega zmianie pod wpływem fal radiowych."
+        },
+        {
+          "text": "Na natychmiastowej zamianie płci pod wpływem psychotropów",
+          "explanation": "Psychotropy nie zmieniają genetycznej płci pacjenta."
+        },
+        {
+          "text": "Na przekształceniu funkcjonalnym pacjenta o genotypie prawidłowym (NM) w wolnego metabolizatora (PM) pod wpływem silnego inhibitora lekowego",
+          "explanation": "Np. dodanie paroksetyny (silny inhibitor 2D6) blokuje enzym, symulując mutację genetyczną typu PM."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-pgx-q3",
+      "lessonId": "farmakogenetyka-cyp-pgx",
+      "prompt": "Co dzieje się ze stężeniem klozapiny we krwi u nałogowego palacza papierosów, który nagle zaprzestaje palenia po przyjęciu na oddział zamknięty?",
+      "options": [
+        {
+          "text": "Stężenie klozapiny w surowicy gwałtownie wzrasta (nawet o 50–100%), grożąc toksycznością i napadami drgawkowymi",
+          "explanation": "Brak węglowodorów aromatycznych z dymu znosi indukcję enzymu CYP1A2, spowalniając klirens klozapiny."
+        },
+        {
+          "text": "Stężenie klozapiny spada natychmiastowo do zera",
+          "explanation": "Klirens leku ulega zmniejszeniu, a stężenie rośnie, a nie spada."
+        },
+        {
+          "text": "Klozapina przekształca się w witaminę B12",
+          "explanation": "Jest to biologicznie niemożliwe."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-pgx-q4",
+      "lessonId": "farmakogenetyka-cyp-pgx",
+      "prompt": "Dlaczego u pacjenta o fenotypie ultraszybkiego metabolizatora CYP2C19 (Ultrarapid Metabolizer) standardowe dawki sertraliny są nieskuteczne?",
+      "options": [
+        {
+          "text": "Sertralina ulega natychmiastowej polimeryzacji w tkance tłuszczowej",
+          "explanation": "Nie ma takiego procesu biochemicznego."
+        },
+        {
+          "text": "Lek jest eliminowany z organizmu zbyt szybko, przez co stężenie we krwi nie osiąga progu terapeutycznego (~80% wysycenia SERT)",
+          "explanation": "Klinicznie imituje to stan lekooporności, podczas gdy przyczyną jest genetyczny hipermetabolizm."
+        },
+        {
+          "text": "Lek odkłada się w postaci kamieni w pęcherzyku żółciowym",
+          "explanation": "Sertralina nie krystalizuje w pęcherzyku żółciowym."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-pgx-q5",
+      "lessonId": "farmakogenetyka-cyp-pgx",
+      "prompt": "Które dwa leki przeciwdepresyjne z grupy SSRI są najsilniejszymi znanymi inhibitorami izoenzymu CYP2D6?",
+      "options": [
+        {
+          "text": "Escitalopram i citalopram",
+          "explanation": "Citalopram i escitalopram mają minimalny, klinicznie nieistotny wpływ na CYP2D6."
+        },
+        {
+          "text": "Wortioksetyna i milnacypran",
+          "explanation": "Leki te nie są silnymi inhibitorami CYP2D6."
+        },
+        {
+          "text": "Paroksetyna oraz fluoksetyna",
+          "explanation": "Stosowanie ich z lekami metabolizowanymi przez CYP2D6 (np. metoprolol, rysperydon) wymaga szczególnej ostrożności."
+        }
+      ],
+      "answer": 2
+    }
+  ],
+  "assetIds": []
+}

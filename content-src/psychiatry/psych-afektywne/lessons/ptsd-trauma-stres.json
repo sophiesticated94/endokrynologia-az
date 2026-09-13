@@ -1,0 +1,165 @@
+{
+  "id": "ptsd-trauma-stres",
+  "moduleId": "psych-afektywne",
+  "title": "Zaburzenia pourazowe: PTSD, złożony PTSD i ostra reakcja na stres",
+  "subtitle": "Obwód strachu, hipokamp, neuroplastyczność i farmakoterapia wspomagająca",
+  "group": "Zaburzenia lękowe i adaptacyjne",
+  "minutes": 18,
+  "goals": [
+    "Zróżnicujesz PTSD od ostrej reakcji na stres (ASD) oraz złożonego PTSD (cPTSD wg ICD-11).",
+    "Wyjaśnisz rolę atrofii hipokampa i deficytu wygaszania lęku w patofizjologii traumy.",
+    "Sformułujesz plan leczenia oparty na psychoterapii traumy (TF-CBT, EMDR) oraz farmakoterapii."
+  ],
+  "sections": [
+    {
+      "title": "Triada objawów PTSD a ramy czasowe",
+      "text": "Zespół stresu pourazowego (PTSD) rozwija się po narażeniu na zdarzenie zagrażające życiu lub integralności cielesnej. Obejmuje triadę objawów: ponowne przeżywanie traumy (flashbacks, koszmary), unikanie bodźców skojarzonych oraz objawy wzmożonego wzbudzenia (hipervigilance, drażliwość, przestrach). Jeśli objawy trwają krócej niż miesiąc, rozpoznaje się ostrą reakcję na stres (ASD)."
+    },
+    {
+      "title": "Złożone PTSD (cPTSD) w klasyfikacji ICD-11",
+      "text": "ICD-11 wprowadziło odrębną jednostkę – złożony zespół stresu pourazowego (complex PTSD), wynikający z długotrwałej, powtarzającej się traumy, z której ucieczka była niemożliwa (np. przemoc domowa, niewola). Oprócz osiowych cech PTSD obejmuje: ciężką dysregulację afektu, chroniczne poczucie bezwartościowości i wstydu oraz trudności w utrzymywaniu relacji interpersonalnych."
+    },
+    {
+      "title": "Neurobiologia traumy i zasady leczenia",
+      "text": "W PTSD obserwuje się zmniejszenie objętości hipokampa (upośledzenie pamięci kontekstowej), nadreaktywność ciała migdałowatego oraz obniżenie aktywności kory przedczołowej. Leczeniem I rzutu jest celowana psychoterapia traumy: TF-CBT (terapia poznawczo-behawioralna zorientowana na traumę) lub EMDR. Farmakoterapią o potwierdzonej skuteczności są SSRI (sertralina, paroksetyna) oraz wenlafaksyna."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Jednostka",
+      "Czas trwania objawów",
+      "Kluczowe składowe kliniczne",
+      "Interwencja I wyboru"
+    ],
+    "rows": [
+      [
+        "Ostra reakcja na stres (ASD)",
+        "3 dni do 1 miesiąca od traumy",
+        "Wzbudzenie, unikanie, dysocjacja pourazowa",
+        "Wsparcie psychologiczne, psychoedukacja"
+      ],
+      [
+        "PTSD",
+        "> 1 miesiąc",
+        "Intruzje/flashbacks, unikanie, wzmożona czujność",
+        "TF-CBT, EMDR, sertralina/paroksetyna"
+      ],
+      [
+        "Złożone PTSD (cPTSD)",
+        "Przewlekły przebieg po wieloletniej traumie",
+        "PTSD + dysregulacja emocji + negatywny obraz siebie + relacje",
+        "Długoterminowa psychoterapia relacyjna / fazowa CBT"
+      ]
+    ]
+  },
+  "advanced": "Do redukcji koszmarów sennych pourazowych i poprawy jakości snu w PTSD stosuje się prazosynę – antagonistę receptorów alfa-1 adrenergicznych, który blokuje nadmierną stymulację noradrenergiczną w locus coeruleus w czasie fazy REM.",
+  "summary": "PTSD to deficyt korowego wygaszania strachu z zaburzeniem pamięci kontekstowej hipokampa. Standardem leczenia jest psychoterapia TF-CBT/EMDR; SSRI stanowią wsparcie farmakologiczne, a prazosyna redukuje koszmary senne.",
+  "sourceIds": [
+    "nice-ptsd",
+    "wfsbp-anxiety",
+    "icd11-cddr"
+  ],
+  "questions": [
+    {
+      "id": "psych-ptsd-q1",
+      "lessonId": "ptsd-trauma-stres",
+      "prompt": "Jaki minimalny czas trwania objawów jest wymagany do postawienia diagnozy PTSD po ekspozycji na traumę?",
+      "options": [
+        {
+          "text": "Przynajmniej 12 miesięcy bez żadnej przerwy",
+          "explanation": "12 miesięcy nie jest warunkiem wstępnym, leczenie wdraża się znacznie wcześniej."
+        },
+        {
+          "text": "Wystarczą 24 godziny bezpośrednio po wypadku",
+          "explanation": "Pierwsze 48 godzin to fizjologiczna reakcja ostra na silny stres."
+        },
+        {
+          "text": "Co najmniej 1 miesiąc utrzymywania się objawów",
+          "explanation": "Objawy trwające od 3 dni do 1 miesiąca klasyfikuje się jako ostrą reakcję na stres (ASD)."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-ptsd-q2",
+      "lessonId": "ptsd-trauma-stres",
+      "prompt": "Czym charakteryzuje się złożony zespół stresu pourazowego (cPTSD) wprowadzony w ICD-11?",
+      "options": [
+        {
+          "text": "Obecnością pełnych objawów PTSD oraz dodatkowo dysregulacji emocji, poczucia bezwartościowości i trudności w relacjach",
+          "explanation": "cPTSD wynika z długotrwałej, powtarzającej się traumy relacyjnej lub niewoli."
+        },
+        {
+          "text": "Występowaniem wyłącznie omamów słuchowych bez lęku",
+          "explanation": "cPTSD nie jest pierwotnym zaburzeniem psychotycznym."
+        },
+        {
+          "text": "Brakiem jakichkolwiek myśli intruzywnych i flashbacków",
+          "explanation": "Intruzje są obligatoryjnym elementem każdego wariantu PTSD."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-ptsd-q3",
+      "lessonId": "ptsd-trauma-stres",
+      "prompt": "Jaki lek blokujący receptory alfa-1 adrenergiczne wykazuje udowodnioną skuteczność w redukcji koszmarów nocnych w PTSD?",
+      "options": [
+        {
+          "text": "Doksazosyna w monoterapii",
+          "explanation": "Doksazosyna słabiej penetruje do OUN w porównaniu z prazosyną."
+        },
+        {
+          "text": "Prazosyna",
+          "explanation": "Prazosyna przenika przez barierę krew-mózg i hamuje hiperaktywność noradrenergiczną w OUN podczas snu REM."
+        },
+        {
+          "text": "Propranolol w małej dawce",
+          "explanation": "Propranolol jest nieselektywnym beta-adrenolitykiem, rzadziej stosowanym w redukcji koszmarów sennych."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-ptsd-q4",
+      "lessonId": "ptsd-trauma-stres",
+      "prompt": "Jakie zmiany w strukturach mózgowych są najbardziej powtarzalne w badaniach wolumetrycznych u pacjentów z przewlekłym PTSD?",
+      "options": [
+        {
+          "text": "Masywny przerost kory skroniowej z obrzękiem móżdżku",
+          "explanation": "W PTSD nie dochodzi do przerostu struktur korowych."
+        },
+        {
+          "text": "Całkowita utrata istoty czarnej pnia mózgu",
+          "explanation": "Utrata istoty czarnej to patologia choroby Parkinsona, nie PTSD."
+        },
+        {
+          "text": "Zmniejszenie objętości hipokampa oraz obniżona aktywność kory przedczołowej przy nadaktywności ciała migdałowatego",
+          "explanation": "Prowadzi to do niezdolności do hamowania wyuczonej reakcji lękowej i braku pamięci kontekstowej."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-ptsd-q5",
+      "lessonId": "ptsd-trauma-stres",
+      "prompt": "Jakie interwencje psychoterapeutyczne stanowią leczenie I rzutu w PTSD według wytycznych NICE?",
+      "options": [
+        {
+          "text": "TF-CBT (terapia poznawczo-behawioralna ukierunkowana na traumę) oraz EMDR",
+          "explanation": "Obie metody mają najwyższy poziom dowodów naukowych w odwrażliwianiu śladów pamięciowych traumy."
+        },
+        {
+          "text": "Wyłącznie trening relaksacyjny Jacobsona",
+          "explanation": "Relaksacja jest metodą pomocniczą, nie usuwa rdzennych mechanizmów intruzji traumatycznych."
+        },
+        {
+          "text": "Terapia elektrowstrząsowa w trybie pilnym",
+          "explanation": "ECT nie jest leczeniem I rzutu w zaburzeniach pourazowych."
+        }
+      ],
+      "answer": 0
+    }
+  ],
+  "assetIds": []
+}

@@ -1,0 +1,166 @@
+{
+  "id": "klasyfikacje-dsm5-icd11",
+  "moduleId": "psych-afektywne",
+  "title": "Klasyfikacje diagnostyczne: DSM-5-TR vs ICD-11 CDDR",
+  "subtitle": "Podejście operacyjne, wymiarowość, progi czasowe i różnice kategoryzacji",
+  "group": "Fundamenty i diagnostyka ogólna",
+  "minutes": 17,
+  "goals": [
+    "Porównasz filozofię diagnostyczną DSM-5-TR (kryteria twarde) z ICD-11 CDDR (elastyczność kliniczna).",
+    "Wskażesz główne różnice w kategoryzacji zaburzeń osobowości, PTSD i żałoby powikłanej.",
+    "Zastosujesz operacyjne progi czasowe i kryteria wykluczenia w codziennej praktyce."
+  ],
+  "sections": [
+    {
+      "title": "Filozofia DSM-5-TR vs ICD-11 CDDR (2024)",
+      "text": "DSM-5-TR (APA 2022) opiera się na sztywnych kryteriach operacyjnych (algorytmy typu „co najmniej X z Y objawów przez Z czasu”), stworzonych głównie dla standaryzacji badań klinicznych. Z kolei ICD-11 CDDR (WHO 2024 — Clinical Descriptions and Diagnostic Requirements) stawia na globalną użyteczność kliniczną (clinical utility), zmniejsza arbitralną liczbę progów objawowych i kładzie nacisk na wymiarowe nasilenie oraz wpływ na funkcjonowanie w różnych kręgach kulturowych."
+    },
+    {
+      "title": "Kluczowe różnice nozologiczne",
+      "text": "Najważniejsze rozbieżności obejmują: 1) Zaburzenia osobowości: ICD-11 całkowicie zrezygnowało z tradycyjnych kategorii (paranoidalna, histrioniczna, schizoidalna) na rzecz oceny stopnia ciężkości (łagodne, umiarkowane, ciężkie) oraz 5 domen cechowych; zachowano jedynie wyróżnik Borderline pattern. DSM-5 zachował 10 tradycyjnych kategorii w 3 wiązkach (A, B, C); 2) Trauma: ICD-11 wprowadziło odrębną jednostkę — Złożone PTSD (Complex PTSD — CPTSD), obejmującą dysregulację afektu, negatywny obraz siebie i trudności w relacjach; 3) Żałoba: ICD-11 definiuje Prolonged Grief Disorder po 6 miesiącach, a DSM-5-TR po 12 miesiącach."
+    },
+    {
+      "title": "Hierarchia diagnostyczna i wykluczenia",
+      "text": "W obu systemach obowiązują uniwersalne zasady wykluczenia: 1) Objawy nie mogą wynikać z bezpośredniego działania fizjologicznego substancji (leku, narkotyku) ani toksyny; 2) Objawy nie mogą być bezpośrednim skutkiem innego stanu somatycznego lub neurologicznego; 3) Diagnoza wyższego rzędu unieważnia diagnozę niższego rzędu (np. objawy psychotyczne występujące wyłącznie w epizodzie manii nie uprawniają do diagnozy schizofrenii)."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Jednostka kliniczna",
+      "ICD-11 CDDR (2024)",
+      "DSM-5-TR (2022)"
+    ],
+    "rows": [
+      [
+        "Zaburzenia osobowości",
+        "Wymiarowe (stopień ciężkości + 5 domen cech)",
+        "Kategoryczne (10 typów w wiązkach A, B, C)"
+      ],
+      [
+        "Złożona trauma (CPTSD)",
+        "Odrębna kategoria obok klasycznego PTSD",
+        "Brak odrębnej jednostki (ujęte w podtypie dysocjacyjnym PTSD)"
+      ],
+      [
+        "Przedłużona żałoba",
+        "Prolonged Grief Disorder po 6 miesiącach",
+        "Prolonged Grief Disorder po 12 miesiącach u dorosłych"
+      ],
+      [
+        "Schizofrenia",
+        "Usunięcie podtypów, min. 1 miesiąc objawów",
+        "Usunięcie podtypów, min. 1 miesiąc ostrych w 6 mies. przebiegu"
+      ]
+    ]
+  },
+  "advanced": "Inicjatywa RDoC (Research Domain Criteria) NIMH stanowi alternatywę biologiczną dla obu klasyfikacji, badając wymiary behawioralne (np. negative valence, reward processing) od poziomu genów i obwodów neuronalnych po zachowanie, bez przywiązania do tradycyjnych jednostek nozologicznych.",
+  "summary": "ICD-11 stawia na elastyczność kliniczną i podejście wymiarowe (np. w zaburzeniach osobowości i CPTSD), podczas gdy DSM-5-TR utrzymuje sztywne algorytmy kryterialne.",
+  "sourceIds": [
+    "icd11-cddr",
+    "dsm5tr",
+    "ptp-standardy"
+  ],
+  "questions": [
+    {
+      "id": "psych-class-q1",
+      "lessonId": "klasyfikacje-dsm5-icd11",
+      "prompt": "Jak klasyfikacja ICD-11 CDDR rewolucyjnie zmieniła diagnozowanie zaburzeń osobowości w porównaniu z DSM-5-TR?",
+      "options": [
+        {
+          "text": "Zabroniła diagnozowania zaburzeń osobowości u osób dorosłych",
+          "explanation": "Zaburzenia osobowości pozostają ważną jednostką diagnostyczną."
+        },
+        {
+          "text": "Zastąpiła 10 tradycyjnych kategorii oceną stopnia ciężkości (łagodne/umiarkowane/ciężkie) oraz domenami cechowymi",
+          "explanation": "ICD-11 zrezygnowało z arbitralnych podziałów na rzecz modelu wymiarowego, zachowując jedynie specyfikator cech Borderline."
+        },
+        {
+          "text": "Wprowadziła 40 nowych odrębnych podtypów osobowości",
+          "explanation": "Wręcz przeciwnie — zmniejszyła fragmentację kategoryczną."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-class-q2",
+      "lessonId": "klasyfikacje-dsm5-icd11",
+      "prompt": "Jaka odrębna jednostka związana z ciężką, powtarzalną traumą istnieje w ICD-11, a nie została wyodrębniona jako osobna choroba w DSM-5-TR?",
+      "options": [
+        {
+          "text": "Schizofrenia paranoidalna o późnym początku",
+          "explanation": "Schizofrenia paranoidalna została wycofana z obu klasyfikacji."
+        },
+        {
+          "text": "Proste zaburzenie lękowe",
+          "explanation": "Zaburzenia lękowe istnieją w obu systemach."
+        },
+        {
+          "text": "Złożony zespół stresu pourazowego (Complex PTSD — CPTSD)",
+          "explanation": "CPTSD w ICD-11 obejmuje klasyczną triadę PTSD plus zaburzenia regulacji afektu, poczucie bezwartościowości i trudności relacyjne."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-class-q3",
+      "lessonId": "klasyfikacje-dsm5-icd11",
+      "prompt": "Jaki jest minimalny próg czasowy trwania żałoby powikłanej (Prolonged Grief Disorder) wymagany w ICD-11 CDDR?",
+      "options": [
+        {
+          "text": "Co najmniej 6 miesięcy od śmierci bliskiej osoby",
+          "explanation": "W ICD-11 próg wynosi 6 miesięcy, podczas gdy DSM-5-TR wymaga 12 miesięcy u osób dorosłych."
+        },
+        {
+          "text": "Wystarczą 2 dni po pogrzebie",
+          "explanation": "Reakcja w pierwszych dniach jest fizjologiczną żałobą, nie zaburzeniem psychicznym."
+        },
+        {
+          "text": "Dokładnie 10 lat ciągłego płaczu",
+          "explanation": "10 lat to stanowczo zbyt długi próg, uniemożliwiający pomoc terapeutyczną."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-class-q4",
+      "lessonId": "klasyfikacje-dsm5-icd11",
+      "prompt": "Co jest podstawową zasadą wykluczenia obowiązującą w obu systemach klasyfikacyjnych?",
+      "options": [
+        {
+          "text": "Brak możliwości współwystępowania więcej niż jednego rozpoznania",
+          "explanation": "Współchorobowość (komorbidność) jest powszechna i dopuszczalna."
+        },
+        {
+          "text": "Wykluczenie bezpośredniego wpływu substancji psychoaktywnych lub ogólnego stanu somatycznego na objawy",
+          "explanation": "Przed postawieniem diagnozy pierwotnej należy upewnić się, że objawy nie są wtórne do zatrucia lub choroby ciała."
+        },
+        {
+          "text": "Konieczność wykonania biopsji mózgu przed wdrożeniem leków",
+          "explanation": "Biopsja mózgu nie jest elementem rutynowej diagnostyki psychiatrycznej."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-class-q5",
+      "lessonId": "klasyfikacje-dsm5-icd11",
+      "prompt": "Czym charakteryzuje się podejście Research Domain Criteria (RDoC) w psychiatrii naukowej?",
+      "options": [
+        {
+          "text": "Zaleca diagnozowanie chorób wyłącznie na podstawie astrologii",
+          "explanation": "RDoC to ściśle biologiczny projekt neuropsychologiczny NIMH."
+        },
+        {
+          "text": "Wycofuje wszystkie leki przeciwdepresyjne z rynku",
+          "explanation": "RDoC służy lepszemu zrozumieniu patomechanizmów i celowanemu rozwojowi leków."
+        },
+        {
+          "text": "Bada wymiary neurobiologiczne (obwody, geny, przetwarzanie nagrody) niezależnie od granic jednostek nozologicznych",
+          "explanation": "RDoC bada fundamentalne mechanizmy psychiczne w poprzek tradycyjnych rozpoznań DSM i ICD."
+        }
+      ],
+      "answer": 2
+    }
+  ],
+  "assetIds": []
+}

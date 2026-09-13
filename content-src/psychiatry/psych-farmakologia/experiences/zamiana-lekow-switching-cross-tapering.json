@@ -1,0 +1,380 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "zamiana-lekow-switching-cross-tapering",
+  "objectives": [
+    {
+      "id": "zamiana-lekow-switching-cross-tapering-obj-1",
+      "statement": "Wdrożysz odpowiednią strategię zamiany leku: bezpośrednią (direct), nakładkową (cross-tapering) lub z wypłukiwaniem (washout).",
+      "kind": "decision"
+    },
+    {
+      "id": "zamiana-lekow-switching-cross-tapering-obj-2",
+      "statement": "Zdiagnozujesz objawy zespołu dyskontynuacji leków przeciwdepresyjnych wg akronimu FINISH.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "zamiana-lekow-switching-cross-tapering-obj-3",
+      "statement": "Zapobiegniesz zagrażającym interakcjom przy zamianie SSRI na inhibitory MAO (protokół 2- lub 5-tygodniowy).",
+      "kind": "mechanism"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-switch-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "zamiana-lekow-switching-cross-tapering-obj-1"
+    ],
+    "prompt": "Ile tygodni musi wynosić okres wypłukiwania (washout) po odstawieniu fluoksetyny przed bezpiecznym włączeniem inhibitora MAO?",
+    "options": [
+      "Dokładnie 24 godziny",
+      "Wypłukiwanie nie jest konieczne, leki podaje się razem",
+      "Co najmniej 5 tygodni"
+    ],
+    "optionFeedback": [
+      "Po 24 godzinach stężenie fluoksetyny i norfluoksetyny jest maksymalne, co wywoła śmiertelny zespół serotoninowy.",
+      "Jednoczesne podanie SSRI z iMAO jest kardynalnym, śmiertelnym błędem medycznym.",
+      "Wynika to z bardzo długiego okresu biologicznego półtrwania aktywnego metabolitu fluoksetyny – norfluoksetyny (t1/2 do 14 dni)."
+    ],
+    "answer": 2,
+    "explanation": "Wynika to z bardzo długiego okresu biologicznego półtrwania aktywnego metabolitu fluoksetyny – norfluoksetyny (t1/2 do 14 dni).",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "bap-switching",
+      "maudsley15",
+      "horowitz-tapering"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "zamiana-lekow-switching-cross-tapering-block-1",
+      "title": "Strategie zamiany leków psychotropowych wg wytycznych BAP",
+      "text": "British Association for Psychopharmacology (BAP) wyróżnia 3 podstawowe metody: 1) Zamiana bezpośrednia (direct switch) – odstawienie leku A i rozpoczęcie leku B następnego dnia (dopuszczalne w ramach tej samej klasy o zbliżonym profilu, np. citalopram -> sertralina); 2) Zamiana krzyżowa (cross-tapering) – stopniowa redukcja leku A przy jednoczesnym powolnym dołączaniu leku B (metoda preferowana w większości sytuacji klinicznych); 3) Zamiana z przerwą (washout) – konieczna przy przejściu na lub z inhibitorów MAO.",
+      "sourceIds": [
+        "bap-switching",
+        "maudsley15",
+        "horowitz-tapering"
+      ],
+      "checkpointId": "psych-switch-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-cross-tapering-washout-rules",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "zamiana-lekow-switching-cross-tapering-block-2",
+      "title": "Zespół dyskontynuacji: akronim FINISH",
+      "text": "Nagłe odstawienie leków serotoninergicznych (zwłaszcza o krótkim t1/2, np. paroksetyny, wenlafaksyny) wywołuje zespół dyskontynuacji opisany akronimem FINISH: Flu-like symptoms (objawy grypopodobne), Insomnia (bezsenność), Nausea (nudności), Imbalance (zawroty głowy, ataksja), Sensory disturbances (parestezje, wyładowania prądowe w głowie tzw. \"brain zaps\"), Hyperarousal (lęk, pobudzenie). Objawy te nie są nawrotem choroby i ustępują po ponownym podaniu dawki leku.",
+      "sourceIds": [
+        "bap-switching",
+        "maudsley15",
+        "horowitz-tapering"
+      ],
+      "checkpointId": "psych-switch-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "microcase-ssri-to-vortioxetine",
+          "kind": "micro-case",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "zamiana-lekow-switching-cross-tapering-block-3",
+      "title": "Zasady bezpieczeństwa i przejście na iMAO",
+      "text": "Najbardziej krytyczną procedurą jest przejście z leku serotoninergicznego na inhibitor MAO: wymaga bezwzględnego zachowania okresu wypłukiwania trwającego minimum 2 tygodnie (dla paroksetyny, sertraliny, wenlafaksyny) oraz aż 5 tygodni dla fluoksetyny z uwagi na długi czas eliminacji norfluoksetyny. Złamanie tej zasady grozi śmiertelnym zespołem serotoninowym.",
+      "sourceIds": [
+        "bap-switching",
+        "maudsley15",
+        "horowitz-tapering"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-switch-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "zamiana-lekow-switching-cross-tapering-obj-2"
+      ],
+      "prompt": "Co oznacza akronim FINISH opisujący zespół dyskontynuacji leków przeciwdepresyjnych?",
+      "options": [
+        "Flu-like symptoms, Insomnia, Nausea, Imbalance, Sensory disturbances (brain zaps), Hyperarousal",
+        "Gorączka, Utrata wzroku, Złamania kości, Głuchota",
+        "Objawy zawału serca z uniesieniem odcinka ST"
+      ],
+      "optionFeedback": [
+        "Jest to ustrukturyzowany wzorzec objawów odstawiennych po gwałtownym przerwaniu SSRI/SNRI.",
+        "Zespół dyskontynuacji nie wywołuje utraty wzroku ani złamań kości.",
+        "FINISH dotyczy zespołu odstawiennego w OUN, nie zawału STEMI."
+      ],
+      "answer": 0,
+      "explanation": "Jest to ustrukturyzowany wzorzec objawów odstawiennych po gwałtownym przerwaniu SSRI/SNRI.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "bap-switching",
+        "maudsley15",
+        "horowitz-tapering"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-switch-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "zamiana-lekow-switching-cross-tapering-obj-3"
+      ],
+      "prompt": "Które dwa leki przeciwdepresyjne niosą najwyższe ryzyko ciężkiego zespołu odstawiennego po nagłym pominięciu dawki z uwagi na krótki t1/2?",
+      "options": [
+        "Woda destylowana i glikol",
+        "Paroksetyna oraz wenlafaksyna",
+        "Fluoksetyna oraz norfluoksetyna"
+      ],
+      "optionFeedback": [
+        "Substancje te nie są lekami przeciwdepresyjnymi.",
+        "Krótki okres półtrwania powoduje gwałtowny spadek stężenia i nagłe odhamowanie receptorów.",
+        "Fluoksetyna dzięki długiemu t1/2 \"sama się taperuje\" i rzadko daje objawy nagłego odstawienia."
+      ],
+      "answer": 1,
+      "explanation": "Krótki okres półtrwania powoduje gwałtowny spadek stężenia i nagłe odhamowanie receptorów.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "bap-switching",
+        "maudsley15",
+        "horowitz-tapering"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "zamiana-lekow-switching-cross-tapering-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "zamiana-lekow-switching-cross-tapering-obj-1",
+      "zamiana-lekow-switching-cross-tapering-obj-2",
+      "zamiana-lekow-switching-cross-tapering-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Strategie zamiany leków: cross-tapering i zespół FINISH”.",
+    "modelAnswer": "Cross-tapering jest złotym standardem bezpiecznej rotacji leków. Nagłe odstawienie SSRI wywołuje zespół FINISH. Zamiana na iMAO wymaga 2–5 tygodni ścisłego washout w celu uniknięcia toksyczności serotoninowej.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "bap-switching",
+      "maudsley15",
+      "horowitz-tapering"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-switch-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "zamiana-lekow-switching-cross-tapering-obj-1"
+      ],
+      "prompt": "Na czym polega technika zamiany leków typu cross-tapering?",
+      "options": [
+        "Na natychmiastowym podwojeniu dawek obu leków przez 6 miesięcy",
+        "Na podawaniu leku pierwszego wyłącznie w dni parzyste, a drugiego w nieparzyste w pełnych dawkach",
+        "Na stopniowym zmniejszaniu dawki leku dotychczasowego przy jednoczesnym powolnym zwiększaniu dawki nowego leku"
+      ],
+      "optionFeedback": [
+        "Postępowanie takie wywołałoby natychmiastową ciężką toksyczność wielolekową.",
+        "Taki schemat powoduje chaos farmakokinetyczny i wahania stężeń.",
+        "Zapobiega to zarówno zaostrzeniu choroby podstawowej, jak i objawom odstawiennym."
+      ],
+      "answer": 2,
+      "explanation": "Zapobiega to zarówno zaostrzeniu choroby podstawowej, jak i objawom odstawiennym.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "bap-switching",
+        "maudsley15",
+        "horowitz-tapering"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-switch-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "zamiana-lekow-switching-cross-tapering-obj-1"
+      ],
+      "prompt": "Jakie powikłanie z odbicia (rebound) grozi pacjentowi po nagłym odstawieniu klozapiny lub olanzapiny w dużej dawce?",
+      "options": [
+        "Ostre objawy cholinergiczne z odbicia (nudności, zlewna potliwość, biegunka, ciężki niepokój i bezsenność)",
+        "Natychmiastowe wypadnięcie kości ramiennej",
+        "Wzrost stężenia sodu powyżej 200 mmol/l"
+      ],
+      "optionFeedback": [
+        "Wynika to z nagłego odblokowania przewlekle hamowanych receptorów muskarynowych M1-M4.",
+        "Odstawienie leków nie wywołuje zwichnięć stawowych.",
+        "Nie ma bezpośredniego związku z hipernatremią."
+      ],
+      "answer": 0,
+      "explanation": "Wynika to z nagłego odblokowania przewlekle hamowanych receptorów muskarynowych M1-M4.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "bap-switching",
+        "maudsley15",
+        "horowitz-tapering"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "switch-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "zamiana-lekow-switching-cross-tapering-obj-1"
+      ],
+      "claimIds": [
+        "claim-ph-maoi-washout"
+      ],
+      "prompt": "Lekarz planuje zamianę fluoksetyny na nieselektywny inhibitor monoaminooksydazy (moklobemid / fenelzynę). Ile wynosi wymagany minimalny okres wymywania (washout) po odstawieniu fluoksetyny przed włączeniem MAOI?",
+      "options": [
+        "Minimum 5 tygodni ze względu na długi okres półtrwania aktywnego metabolitu (norfluoksetyny: 7–15 dni)",
+        "Dokładnie 24 godziny",
+        "3 dni"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-fluoxetine-washout-5weeks",
+            "label": "Wymóg 5 tygodni okresu wymywania po fluoksetynie",
+            "acceptedPhrases": [
+              "5 tygodni",
+              "pięć tygodni",
+              "washout",
+              "okres wymywania"
+            ]
+          },
+          {
+            "id": "c-norfluoxetine-half-life",
+            "label": "Długi okres półtrwania metabolitu (norfluoksetyna t1/2 do 2 tygodni)",
+            "acceptedPhrases": [
+              "norfluoksetyna",
+              "długi okres półtrwania",
+              "t1/2",
+              "zespół serotoninowy"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-short-washout",
+            "patterns": [
+              "24 godziny",
+              "kilka dni",
+              "bez washoutu"
+            ],
+            "severity": "critical",
+            "feedback": "BŁĄD KRYTYCZNY: Zbyt krótki washout grozi śmiertelnym zespołem serotoninowym."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Norfluoksetyna ma okres półtrwania do 15 dni; włączenie MAOI przed upływem 5 tygodni niesie śmiertelne ryzyko zespołu serotoninowego.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "bap-switching",
+        "maudsley15"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "zamiana-lekow-switching-cross-tapering-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "zamiana-lekow-switching-cross-tapering-obj-2"
+      ],
+      "prompt": "Wyjaśnij mechanizm molekularny lub receptorowy leżący u podstaw tematu: zamiana lekow switching cross tapering.",
+      "modelAnswer": "Kluczowe znaczenie ma zrozumienie profilu receptorowego, kaskad przekaźnictwa wewnątrzkomórkowego oraz adaptacji plastycznych w OUN.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-receptor-action",
+            "label": "Działanie na receptory / enzymy",
+            "acceptedPhrases": [
+              "receptor",
+              "enzym",
+              "mechanizm",
+              "transporter"
+            ]
+          },
+          {
+            "id": "c-clinical-effect",
+            "label": "Wpływ na funkcję OUN i objawy kliniczne",
+            "acceptedPhrases": [
+              "efekt kliniczny",
+              "adaptacja",
+              "plastyczność",
+              "neuroprzekaźnictwo"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Wyjaśnienie mechanizmu na poziomie molekularnym i klinicznym.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "zamiana-lekow-switching-cross-tapering-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "zamiana-lekow-switching-cross-tapering-obj-1",
+        "zamiana-lekow-switching-cross-tapering-obj-3"
+      ],
+      "prompt": "Przed wdrożeniem lub modyfikacją farmakoterapii w temacie zamiana lekow switching cross tapering, jakiej kluczowej informacji brakuje w wywiadzie?",
+      "options": [
+        "Wywiadu dotyczącego leków współistniejących pod kątem interakcji enzymatycznych (CYP) i wydolności nerek/wątroby",
+        "Profilu rzadkich przeciwciał neuronalnych",
+        "Rutynowego badania rezonansu magnetycznego głowy bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Ocena interakcji lekowych i wydolności narządów eliminujących to fundamentalny warunek bezpieczeństwa farmakoterapii.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "maudsley15"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "timeline",
+    "pathway-builder"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy AGNP 2026 TDM, CPIC PGx, Maudsley 15th ed., Kapur PET D2, Hunter criteria oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

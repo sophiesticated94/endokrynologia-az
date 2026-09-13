@@ -1,0 +1,380 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "substancje-i-secondary-causes",
+  "objectives": [
+    {
+      "id": "substancje-i-secondary-causes-obj-1",
+      "statement": "Zróżnicujesz pierwotne zaburzenia psychotyczne i afektywne od wywołanych substancjami psychoaktywnymi.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "substancje-i-secondary-causes-obj-2",
+      "statement": "Rozpoznasz zagrażające życiu zespoły odstawienne (alkoholowy zespół majaczeniowy, opioidy, BZD).",
+      "kind": "safety"
+    },
+    {
+      "id": "substancje-i-secondary-causes-obj-3",
+      "statement": "Wdrożysz protokół badań przesiewowych (WHO ASSIST, toksykologia moczu) i detoksykacji.",
+      "kind": "mechanism"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-subst-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "substancje-i-secondary-causes-obj-1"
+    ],
+    "prompt": "Dlaczego u pacjenta z podejrzeniem alkoholowego zespołu abstynencyjnego i hipoglikemii tiaminę należy podać PRZED roztworem glukozy?",
+    "options": [
+      "Glukoza powoduje natychmiastową neutralizację chemiczną cząsteczki tiaminy we krwi",
+      "Tiamina w połączeniu z glukozą wywołuje ciężki obrzęk płuc",
+      "Podanie glukozy bez tiaminy gwałtownie zużywa zapasy witaminy B1 i może wywołać nieodwracalną encefalopatię Wernickego"
+    ],
+    "optionFeedback": [
+      "Glukoza nie wchodzi w bezpośrednią reakcję chemiczną niszczącą tiaminę.",
+      "Nie ma takiego mechanizmu patofizjologicznego.",
+      "Tiamina jest niezbędnym koenzymem dehydrogenazy pirogronianowej w cyklu Krebsa komórek nerwowych."
+    ],
+    "answer": 2,
+    "explanation": "Tiamina jest niezbędnym koenzymem dehydrogenazy pirogronianowej w cyklu Krebsa komórek nerwowych.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "who-assist",
+      "icd11-cddr",
+      "ptp-standardy"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "substancje-i-secondary-causes-block-1",
+      "title": "Diagnostyka toksykologiczna i maski substancyjne",
+      "text": "Nadużywanie substancji psychoaktywnych może imitować niemal każdy stan psychiatryczny: intoksykacja stymulantami (kokaina, amfetamina, syntetyczne katynony) wywołuje paranoiczne psychozy i manię; kanabinoidy wyzwalają derealizację i zaostrzenia psychotyczne; z kolei odstawienie alkoholu lub benzodiazepin prowadzi do lęku napadowego i majaczenia (delirium tremens). Toksykologia moczu i stężenie alkoholu w wydychanym powietrzu są obligatoryjne przy każdej ostrej hospitalizacji.",
+      "sourceIds": [
+        "who-assist",
+        "icd11-cddr",
+        "ptp-standardy"
+      ],
+      "checkpointId": "psych-subst-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-tox-withdrawal-timeline",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "substancje-i-secondary-causes-block-2",
+      "title": "Alkoholowy zespół majaczeniowy (Delirium Tremens - DT)",
+      "text": "Delirium tremens rozwija się typowo w 48–72 godziny po nagłym zaprzestaniu lub ograniczeniu picia u osoby uzależnionej. Cechuje się przymgleniem świadomości, dezorientacją allopsychiczną, iluzjami i omamami wzrokowymi (np. mikropsje, zooopsje), drżeniem grubofalistym, zlewającymi potami, tachykardią i gorączką. Śmiertelność w nieleczonym DT sięga 5–15% wskutek zapaści sercowo-naczyniowej lub hipertermii.",
+      "sourceIds": [
+        "who-assist",
+        "icd11-cddr",
+        "ptp-standardy"
+      ],
+      "checkpointId": "psych-subst-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "microcase-delirium-tremens",
+          "kind": "micro-case",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "substancje-i-secondary-causes-block-3",
+      "title": "Zasady leczenia stanów odstawiennych: protokół CIWA-Ar",
+      "text": "W alkoholowym zespole abstynencyjnym (AWA) złotym standardem są długodziałające benzodiazepiny (diazepam, chlordiazepoksyd) dawkowane wg skali nasilenia objawów CIWA-Ar. U pacjentów z niewydolnością wątroby stosuje się leki nielorazepamowane lub lorazepam/oksazepam (metabolizowane drogą glukuronidacji bez udziału CYP450). Obowiązkowa jest wysoka podaż tiaminy (wit. B1 i.v./i.m.) przed glukozą w celu prewencji zespołu Wernickego-Korsakowa.",
+      "sourceIds": [
+        "who-assist",
+        "icd11-cddr",
+        "ptp-standardy"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-subst-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "substancje-i-secondary-causes-obj-2"
+      ],
+      "prompt": "Które benzodiazepiny są lekami z wyboru w alkoholowym zespole odstawiennym u pacjenta z zaawansowaną marskością wątroby?",
+      "options": [
+        "Lorazepam lub oksazepam (sprzęgane przez glukuronidację z pominięciem enzymów mikrosomalnych CYP450)",
+        "Diazepam w maksymalnych dawkach dobowych",
+        "Klonazepam w połączeniu z midazolamem doustnym"
+      ],
+      "optionFeedback": [
+        "Leki te nie ulegają utlenianiu wątrobowemu i nie kumulują się niebezpiecznie w niewydolności wątroby.",
+        "Diazepam ulega oksydacji przez CYP i ma bardzo długi czas półtrwania metabolitów, grożąc śpiączką wątrobową.",
+        "Nie są to leki rekomendowane w dysfunkcji hepatocytów."
+      ],
+      "answer": 0,
+      "explanation": "Leki te nie ulegają utlenianiu wątrobowemu i nie kumulują się niebezpiecznie w niewydolności wątroby.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "who-assist",
+        "icd11-cddr",
+        "ptp-standardy"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-subst-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "substancje-i-secondary-causes-obj-3"
+      ],
+      "prompt": "Jaki objaw w badaniu fizykalnym jednoznacznie odróżnia ostre przedawkowanie opioidów od intoksykacji kokainą?",
+      "options": [
+        "Występowanie drżenia zamiarowego w kokainie",
+        "Wąskie, szpilkowate źrenice (miosis) i spowolnienie oddechów w opioidach vs rozszerzone źrenice (mydriasis) i tachykardia w kokainie",
+        "Podwyższenie temperatury ciała powyżej 42 stopni wyłącznie w opioidach"
+      ],
+      "optionFeedback": [
+        "Drżenie zamiarowe wskazuje na uszkodzenie móżdżku.",
+        "Wąskie źrenice i depresja oddechowa to kluczowe cechy osiowe toksydromu opioidowego.",
+        "Hipertermia jest typowa dla stymulantów i zespołu serotoninowego, nie dla czystych opioidów."
+      ],
+      "answer": 1,
+      "explanation": "Wąskie źrenice i depresja oddechowa to kluczowe cechy osiowe toksydromu opioidowego.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "who-assist",
+        "icd11-cddr",
+        "ptp-standardy"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "substancje-i-secondary-causes-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "substancje-i-secondary-causes-obj-1",
+      "substancje-i-secondary-causes-obj-2",
+      "substancje-i-secondary-causes-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Substancje psychoaktywne i maski somatopsychiatryczne”.",
+    "modelAnswer": "Substancje psychoaktywne maskują i indukują psychozy oraz afektywne dekompensacje. Ostre zespoły odstawienne wymagają BZD wg CIWA-Ar i wczesnej profilaktyki encefalopatii tiaminą przed wlewem glukozy.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "who-assist",
+      "icd11-cddr",
+      "ptp-standardy"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-subst-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "substancje-i-secondary-causes-obj-1"
+      ],
+      "prompt": "W jakim przedziale czasowym po zaprzestaniu picia alkoholu rozwija się typowo pełnoobjawowe majaczenie drżenne (Delirium Tremens)?",
+      "options": [
+        "W ciągu pierwszych 15 minut od ostatniego kieliszka",
+        "Dopiero po 6 miesiącach całkowitej abstynencji",
+        "48 do 72 godzin od ostatniej dawki alkoholu"
+      ],
+      "optionFeedback": [
+        "W ciągu 15 minut stężenie alkoholu rośnie, a nie spada.",
+        "Po 6 miesiącach ryzyko ostrego delirium tremens nie występuje.",
+        "DT rozwija się w 2–3 dobie po przerwaniu ciągu, wyprzedzane przez niepowikłane objawy abstynencyjne."
+      ],
+      "answer": 2,
+      "explanation": "DT rozwija się w 2–3 dobie po przerwaniu ciągu, wyprzedzane przez niepowikłane objawy abstynencyjne.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "who-assist",
+        "icd11-cddr",
+        "ptp-standardy"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-subst-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "substancje-i-secondary-causes-obj-1"
+      ],
+      "prompt": "Która skala kliniczna jest międzynarodowym standardem do monitorowania nasilenia alkoholowego zespołu abstynencyjnego i dawkowania BZD?",
+      "options": [
+        "Skala CIWA-Ar (Clinical Institute Withdrawal Assessment for Alcohol)",
+        "Skala PANSS dla schizofrenii",
+        "Skala Glasgow Coma Scale w urazach głowy"
+      ],
+      "optionFeedback": [
+        "Punktacja CIWA-Ar warunkuje dawkę doraźną benzodiazepiny w protokole objawowym (symptom-triggered).",
+        "PANSS służy do oceny objawów wytwórczych i ubytkowych schizofrenii.",
+        "GCS ocenia poziom przytomności, nie specyficzne objawy abstynencyjne."
+      ],
+      "answer": 0,
+      "explanation": "Punktacja CIWA-Ar warunkuje dawkę doraźną benzodiazepiny w protokole objawowym (symptom-triggered).",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "who-assist",
+        "icd11-cddr",
+        "ptp-standardy"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "subst-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "substancje-i-secondary-causes-obj-1"
+      ],
+      "claimIds": [
+        "claim-af-alcohol-delirium"
+      ],
+      "prompt": "Pacjent z uzależnieniem od alkoholu w 3. dobie od nagłego zaprzestania picia staje się zdezorientowany, pobudzony, ma omamy wzrokowe („widzi robaki na ścianie”), tachykardię 130/min i zlewne poty. Jaki stan kliniczny rozpoznasz i jaki lek podasz w pierwszej kolejności?",
+      "options": [
+        "Majaczenie drżenne (delirium tremens); leczenie: benzodiazepiny (np. diazepam) dożylnie/doustnie",
+        "Ostra schizofrenia paranoidalna; leczenie: haloperidol domięśniowo",
+        "Napad paniki; leczenie: hydroksyzyna doustnie"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-dt-recognition",
+            "label": "Majaczenie drżenne (delirium tremens) w 48-72h od odstawienia",
+            "acceptedPhrases": [
+              "delirium tremens",
+              "majaczenie drżenne",
+              "zespół odstawienny",
+              "48-72"
+            ]
+          },
+          {
+            "id": "c-bzd-treatment",
+            "label": "Benzodiazepiny jako leczenie z wyboru",
+            "acceptedPhrases": [
+              "diazepam",
+              "benzodiazepiny",
+              "bzd",
+              "sedacja"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-fga-monotherapy",
+            "patterns": [
+              "haloperidol w monoterapii",
+              "neuroleptyk zamiast bzd"
+            ],
+            "severity": "critical",
+            "feedback": "BŁĄD KRYTYCZNY: Neuroleptyki w monoterapii obniżają próg drgawkowy w majaczeniu alkoholowym; podstawą są benzodiazepiny."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Majaczenie drżenne to stan zagrożenia życia; lekami pierwszego rzutu są benzodiazepiny (np. diazepam) wg protokołu objawowego.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "who-assist",
+        "ptp-standardy"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "substancje-i-secondary-causes-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "substancje-i-secondary-causes-obj-2"
+      ],
+      "prompt": "Wyjaśnij kluczowe zasady różnicowania klinicznego oraz pułapki diagnostyczne w zagadnieniu: substancje i secondary causes.",
+      "modelAnswer": "Kluczowe jest odróżnienie pierwotnych zaburzeń psychicznych od masek somatycznych i toksycznych, uwzględnienie dynamiki czasowej oraz unikanie pochopnego rozpoznania na podstawie pojedynczego objawu.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-diff-organic",
+            "label": "Wykluczenie przyczyn somatycznych i substancji",
+            "acceptedPhrases": [
+              "przyczyny somatyczne",
+              "substancje",
+              "toksyczne",
+              "organiczne"
+            ]
+          },
+          {
+            "id": "c-diff-longitudinal",
+            "label": "Ocena przebiegu podłużnego i kryteriów czasowych",
+            "acceptedPhrases": [
+              "przebieg podłużny",
+              "kryteria czasowe",
+              "dynamika",
+              "czas trwania"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Ocena kliniczna wymaga analizy podłużnej i systematycznego wykluczenia przyczyn wtórnych.",
+      "difficulty": "both",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "icd11-cddr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "substancje-i-secondary-causes-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "substancje-i-secondary-causes-obj-1",
+        "substancje-i-secondary-causes-obj-3"
+      ],
+      "prompt": "W analizie przypadku klinicznego z obszaru substancje i secondary causes pacjent zgłasza nietypowy zestaw objawów. Jakiej informacji brakuje w pierwszej kolejności?",
+      "options": [
+        "Wywiadu toksykologicznego i badań laboratoryjnych wykluczających podłoże organiczne",
+        "Profilu genetycznego rzadkich mutacji enzymatycznych",
+        "Wyniku tomografii komputerowej bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Podstawą rzetelnej oceny psychiatrycznej jest wykluczenie czynników egzogennych, intoksykacji i zaburzeń metabolicznych.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "timeline",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., CANMAT oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

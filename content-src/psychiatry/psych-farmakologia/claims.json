@@ -1,0 +1,526 @@
+[
+  {
+    "id": "claim-ph-lithium-window",
+    "statement": "Optymalne stężenie litu w surowicy 12 h po dawce wieczornej w profilaktyce podtrzymującej ChAD wynosi 0,6–0,8 mmol/l wg AGNP 2026.",
+    "category": "guideline_recommendation",
+    "evidenceType": "tdm_reference",
+    "strength": "strong",
+    "value": "0.6-0.8",
+    "unit": "mmol/l",
+    "sourceIds": [
+      "agnp-tdm-2026"
+    ],
+    "lessonIds": [
+      "normotymiki-lit-walproinian-lamotrygina",
+      "monitorowanie-stezen-tdm"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "lit",
+      "tdm",
+      "chad"
+    ]
+  },
+  {
+    "id": "claim-ph-lithium-toxicity",
+    "statement": "Stężenie litu > 1,2 mmol/l wywołuje objawy neurotoksyczności (grubofaliste drżenie, ataksja, dyzartria), a stężenie > 2,0 mmol/l zagraża życiu.",
+    "category": "guideline_recommendation",
+    "evidenceType": "toxicology",
+    "strength": "strong",
+    "value": "1.2",
+    "unit": "mmol/l",
+    "sourceIds": [
+      "agnp-tdm-2026",
+      "maudsley15"
+    ],
+    "lessonIds": [
+      "normotymiki-lit-walproinian-lamotrygina"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "lit",
+      "toksycznosc",
+      "safety"
+    ]
+  },
+  {
+    "id": "claim-ph-lithium-extrip",
+    "statement": "Wskazaniem do hemodializy wg EXTRIP w zatruciu litem jest stężenie > 4,0 mmol/l niezależnie od objawów lub > 2,5 mmol/l przy ciężkich objawach neurologicznych lub niewydolności nerek.",
+    "category": "guideline_recommendation",
+    "evidenceType": "dialysis_indication",
+    "strength": "strong",
+    "sourceIds": [
+      "extrip-lithium"
+    ],
+    "lessonIds": [
+      "normotymiki-lit-walproinian-lamotrygina"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "lit",
+      "extrip",
+      "dializa"
+    ]
+  },
+  {
+    "id": "claim-ph-lithium-interactions",
+    "statement": "NLPZ, inhibitory ACE, sartany oraz diuretyki tiazydowe zmniejszają klirens nerkowy litu i gwałtownie zwiększają ryzyko ciężkiej intoksykacji.",
+    "category": "guideline_recommendation",
+    "evidenceType": "drug_interaction",
+    "strength": "strong",
+    "sourceIds": [
+      "maudsley15",
+      "agnp-tdm-2026"
+    ],
+    "lessonIds": [
+      "normotymiki-lit-walproinian-lamotrygina",
+      "monitorowanie-stezen-tdm"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "lit",
+      "interakcje",
+      "safety"
+    ]
+  },
+  {
+    "id": "claim-ph-kapur-window",
+    "statement": "Skuteczność przeciwpsychotyczna leków blokujących D2 wymaga occupancy w prążkowiu w zakresie 65–80% (okno Kapura); occupancy > 80% gwałtownie zwiększa ryzyko objawów pozapiramidowych (EPS) i hiperprolaktynemii.",
+    "category": "modelled",
+    "evidenceType": "pet_occupancy",
+    "strength": "strong",
+    "value": "65-80",
+    "unit": "%",
+    "sourceIds": [
+      "pet-d2-kapur"
+    ],
+    "lessonIds": [
+      "receptory-dopaminowe-okno-kapura",
+      "leki-przeciwpsychotyczne-generacje"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "d2",
+      "kapur",
+      "pet"
+    ]
+  },
+  {
+    "id": "claim-ph-aripiprazole-partial",
+    "statement": "Arypiprazol jako częściowy agonista D2 wykazuje wysokie occupancy (>80%), lecz dzięki aktywności wewnętrznej (~30%) nie wywołuje typowych EPS ani hiperprolaktynemii, choć może indukować akatyzję.",
+    "category": "mechanistic",
+    "evidenceType": "pharmacology",
+    "strength": "strong",
+    "sourceIds": [
+      "pet-d2-kapur",
+      "stahl-essential"
+    ],
+    "lessonIds": [
+      "receptory-dopaminowe-okno-kapura"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "aripiprazol",
+      "agonista-czesciowy"
+    ]
+  },
+  {
+    "id": "claim-ph-sert-plateau",
+    "statement": "Zależność między dawką SSRI a wysyceniem transporterów SERT ma charakter hiperboliczny; minimalna dawka terapeutyczna wysyca już ~80% transporterów SERT (badania PET Meyera).",
+    "category": "modelled",
+    "evidenceType": "pet_occupancy",
+    "strength": "strong",
+    "value": "80",
+    "unit": "%",
+    "sourceIds": [
+      "pet-sert-meyer"
+    ],
+    "lessonIds": [
+      "transportery-monoamin-sert-net-dat",
+      "klasyczne-antydepresanty-ssri-snri-tlpd-maoi"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "sert",
+      "pet",
+      "meyer"
+    ]
+  },
+  {
+    "id": "claim-ph-hunter-clonus",
+    "statement": "Zgodnie z kryteriami Huntera klonus (spontaniczny, indukowany lub oczny) u pacjenta przyjmującego lek serotoninergiczny jest kluczowym warunkiem rozpoznania zespołu serotoninowego.",
+    "category": "guideline_recommendation",
+    "evidenceType": "diagnostic_criteria",
+    "strength": "strong",
+    "sourceIds": [
+      "hunter-criteria"
+    ],
+    "lessonIds": [
+      "ostre-stany-toksyczne-zespol-serotoninowy"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "hunter",
+      "serotonina",
+      "klonus"
+    ]
+  },
+  {
+    "id": "claim-ph-serotonin-syndrome-tx",
+    "statement": "Leczenie zespołu serotoninowego polega na natychmiastowym odstawieniu leków serotoninergicznych, sedacji benzodiazepinami i chłodzeniu; w ciężkich przypadkach stosuje się cyproheptadynę i intubację.",
+    "category": "guideline_recommendation",
+    "evidenceType": "emergency_treatment",
+    "strength": "strong",
+    "sourceIds": [
+      "hunter-criteria",
+      "maudsley15"
+    ],
+    "lessonIds": [
+      "ostre-stany-toksyczne-zespol-serotoninowy"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "zespol-serotoninowy",
+      "terapia",
+      "safety"
+    ]
+  },
+  {
+    "id": "claim-ph-nms-triad",
+    "statement": "Złośliwy zespół neuroleptyczny (NMS) charakteryzuje się uogólnioną sztywnością mięśniową typu „ołowiana rura”, hipertermią, niestabilnością autonomiczną oraz znacznym wzrostem aktywności kinazy kreatynowej (CK > 1000 j./l).",
+    "category": "guideline_recommendation",
+    "evidenceType": "diagnostic_criteria",
+    "strength": "strong",
+    "sourceIds": [
+      "nms-consensus"
+    ],
+    "lessonIds": [
+      "zlosliwy-zespol-neuroleptyczny-nms"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "nms",
+      "sztywnosc",
+      "ck"
+    ]
+  },
+  {
+    "id": "claim-ph-nms-tx",
+    "statement": "Podstawą postępowania w NMS jest natychmiastowe odstawienie neuroleptyku, intensywne nawodnienie i wyrównanie elektrolitów; leki dopaminergiczne (bromokryptyna) lub dantrolen mogą być stosowane w ciężkich postaciach.",
+    "category": "guideline_recommendation",
+    "evidenceType": "emergency_treatment",
+    "strength": "strong",
+    "sourceIds": [
+      "nms-consensus",
+      "maudsley15"
+    ],
+    "lessonIds": [
+      "zlosliwy-zespol-neuroleptyczny-nms"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "nms",
+      "leczenie",
+      "safety"
+    ]
+  },
+  {
+    "id": "claim-ph-clozapine-anc",
+    "statement": "Terapię klozapiną należy natychmiast przerwać, jeśli bezwzględna liczba neutrofilów (ANC) spadnie poniżej 1000/µl (lub < 1500/µl przy BEN), ze względu na ryzyko zagrażającej życiu agranulocytozy.",
+    "category": "guideline_recommendation",
+    "evidenceType": "safety_monitoring",
+    "strength": "strong",
+    "value": "1000",
+    "unit": "/µl",
+    "sourceIds": [
+      "clozapine-consensus"
+    ],
+    "lessonIds": [
+      "lekoopornosc-i-klozapina"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "klozapina",
+      "anc",
+      "agranulocytoza"
+    ]
+  },
+  {
+    "id": "claim-ph-clozapine-smoking",
+    "statement": "Dym tytoniowy indukuje enzym CYP1A2; nagłe rzucenie palenia przez pacjenta leczonego klozapiną prowadzi do wzrostu jej stężenia we krwi nawet o 50–100% i ryzyka ciężkiej toksyczności.",
+    "category": "guideline_recommendation",
+    "evidenceType": "cyp_induction",
+    "strength": "strong",
+    "sourceIds": [
+      "clozapine-consensus",
+      "maudsley15"
+    ],
+    "lessonIds": [
+      "lekoopornosc-i-klozapina"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "klozapina",
+      "cyp1a2",
+      "palenie"
+    ]
+  },
+  {
+    "id": "claim-ph-clozapine-cardio",
+    "statement": "Klozapina niesie ryzyko zapalenia mięśnia sercowego (myocarditis), zwłaszcza w pierwszych 4 tygodniach; monitoruje się troponiny, CRP i EKG.",
+    "category": "guideline_recommendation",
+    "evidenceType": "cardiac_safety",
+    "strength": "strong",
+    "sourceIds": [
+      "clozapine-consensus"
+    ],
+    "lessonIds": [
+      "lekoopornosc-i-klozapina"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "klozapina",
+      "myocarditis",
+      "safety"
+    ]
+  },
+  {
+    "id": "claim-ph-qtc-fridericia",
+    "statement": "Ocenę odstępu QTc należy przeprowadzać przy użyciu wzoru Fridericii (QTcF = QT / RR^(1/3)); wartości > 500 ms lub wydłużenie o > 60 ms względem wartości wyjściowej stanowią krytyczne ryzyko TdP.",
+    "category": "guideline_recommendation",
+    "evidenceType": "cardiac_safety",
+    "strength": "strong",
+    "value": "500",
+    "unit": "ms",
+    "sourceIds": [
+      "crediblemeds-qt"
+    ],
+    "lessonIds": [
+      "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "qtc",
+      "fridericia",
+      "cardio"
+    ]
+  },
+  {
+    "id": "claim-ph-maoi-washout",
+    "statement": "Przed włączeniem leku proserotoninergicznego po odstawieniu nieselektywnego MAOI konieczny jest co najmniej 14-dniowy okres wymywania (washout); po fluoksetynie przed MAOI wymagane jest 5 tygodni ze względu na długi okres półtrwania norfluoksetyny.",
+    "category": "guideline_recommendation",
+    "evidenceType": "washout_period",
+    "strength": "strong",
+    "value": "14",
+    "unit": "dni",
+    "sourceIds": [
+      "bap-switching",
+      "maudsley15"
+    ],
+    "lessonIds": [
+      "zamiana-lekow-switching-cross-tapering",
+      "klasyczne-antydepresanty-ssri-snri-tlpd-maoi"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "maoi",
+      "washout",
+      "switching"
+    ]
+  },
+  {
+    "id": "claim-ph-valproate-teratogen",
+    "statement": "Kwas walproinowy jest bezwzględnie przeciwwskazany u kobiet w wieku rozrodczym bez spełnienia kryteriów Programu Zapobiegania Ciąży ze względu na wysokie ryzyko wad cewy nerwowej i zaburzeń neurorozwojowych.",
+    "category": "guideline_recommendation",
+    "evidenceType": "teratogenicity_safety",
+    "strength": "strong",
+    "sourceIds": [
+      "ptp-standardy",
+      "maudsley15"
+    ],
+    "lessonIds": [
+      "normotymiki-lit-walproinian-lamotrygina"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "walproinian",
+      "ciaza",
+      "teratogennosc"
+    ]
+  },
+  {
+    "id": "claim-ph-lamotrigine-titration",
+    "statement": "Lamotrygina wymaga powolnego miareczkowania dawki początkowej (25 mg/d przez 2 tyg.), a przy równoczesnym stosowaniu walproinianu (inhibitora glukuronidacji) dawkę startową zmniejsza się o połowę (25 mg co drugi dzień) w celu uniknięcia zespołu Stevensa-Johnsona.",
+    "category": "guideline_recommendation",
+    "evidenceType": "dosing_titration",
+    "strength": "strong",
+    "sourceIds": [
+      "maudsley15",
+      "canmat-isbd-bipolar"
+    ],
+    "lessonIds": [
+      "normotymiki-lit-walproinian-lamotrygina"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "lamotrygina",
+      "sjs",
+      "walproinian"
+    ]
+  },
+  {
+    "id": "claim-ph-cyp2d6-substrates",
+    "statement": "Wenlafaksyna, rysperydon, arypiprazol i wortioksetyna są metabolizowane przez CYP2D6; u osób o fenotypie wolno metabolizującym (poor metabolizers — PM) dochodzi do kumulacji leków i zwiększonego ryzyka działań niepożądanych.",
+    "category": "guideline_recommendation",
+    "evidenceType": "pgx_guideline",
+    "strength": "strong",
+    "sourceIds": [
+      "cpic-cyp2d6-2c19"
+    ],
+    "lessonIds": [
+      "farmakogenetyka-cyp-pgx"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "cyp2d6",
+      "pgx",
+      "cpic"
+    ]
+  },
+  {
+    "id": "claim-ph-cyp2c19-escitalopram",
+    "statement": "Escitalopram i sertralina są metabolizowane przez CYP2C19; wytyczne CPIC zalecają redukcję dawki startowej escitalopramu o 50% u pacjentów z fenotypem PM w celu uniknięcia wydłużenia QTc.",
+    "category": "guideline_recommendation",
+    "evidenceType": "pgx_guideline",
+    "strength": "strong",
+    "sourceIds": [
+      "cpic-cyp2d6-2c19"
+    ],
+    "lessonIds": [
+      "farmakogenetyka-cyp-pgx"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "cyp2c19",
+      "escitalopram",
+      "cpic"
+    ]
+  },
+  {
+    "id": "claim-ph-bupropion-contraindications",
+    "statement": "Bupropion obniża próg drgawkowy i jest bezwzględnie przeciwwskazany u pacjentów z padaczką oraz z rozpoznaniem bulimii lub jadłowstrętu psychicznego.",
+    "category": "guideline_recommendation",
+    "evidenceType": "contraindication",
+    "strength": "strong",
+    "sourceIds": [
+      "maudsley15",
+      "stahl-essential"
+    ],
+    "lessonIds": [
+      "atypowe-antydepresanty-multimodalne"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "bupropion",
+      "drgawki",
+      "przeciwwskazania"
+    ]
+  },
+  {
+    "id": "claim-ph-ashton-tapering",
+    "statement": "Bezpieczne odstawianie benzodiazepin wg protokołu Ashtona polega na zamianie krótko działającej BZD na diazepam i stopniowej redukcji dawki o 1–2 mg co 1–2 tygodnie.",
+    "category": "guideline_recommendation",
+    "evidenceType": "tapering_protocol",
+    "strength": "strong",
+    "sourceIds": [
+      "ashton-manual"
+    ],
+    "lessonIds": [
+      "benzodiazepiny-leki-z-tapering"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "bzd",
+      "ashton",
+      "tapering"
+    ]
+  },
+  {
+    "id": "claim-ph-eps-dystonia",
+    "statement": "Ostra dystonia polekowa (np. kręcz karku, napady spojrzeniowe) ustępuje po podaniu leku cholinolitycznego o działaniu ośrodkowym (biperyden 2,5–5 mg i.m./i.v.).",
+    "category": "guideline_recommendation",
+    "evidenceType": "emergency_antidote",
+    "strength": "strong",
+    "sourceIds": [
+      "maudsley15"
+    ],
+    "lessonIds": [
+      "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "dystonia",
+      "biperyden",
+      "eps"
+    ]
+  },
+  {
+    "id": "claim-ph-tardive-dyskinesia-vmat2",
+    "statement": "Dyskinezy późne wywołane przewlekłą blokadą D2 leczy się inhibitorami VMAT2 (np. deutetrabenazyna, walbenazyna); cholinolityki są nieskuteczne i mogą nasilać objawy.",
+    "category": "guideline_recommendation",
+    "evidenceType": "treatment_guideline",
+    "strength": "strong",
+    "sourceIds": [
+      "wfsbp-schizophrenia",
+      "maudsley15"
+    ],
+    "lessonIds": [
+      "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "dyskinezy-pozne",
+      "vmat2"
+    ]
+  },
+  {
+    "id": "claim-ph-sga-metabolic",
+    "statement": "Olanzapina i klozapina niosą najwyższe ryzyko zespołu metabolicznego (przyrost masy ciała, hiperglikemia, dyslipidemia); wymagają monitorowania glikemii na czczo i profilu lipidowego po 3 miesiącach, a następnie co roku.",
+    "category": "guideline_recommendation",
+    "evidenceType": "metabolic_monitoring",
+    "strength": "strong",
+    "sourceIds": [
+      "maudsley15",
+      "nice-schizophrenia"
+    ],
+    "lessonIds": [
+      "profilaktyka-dzialan-niepozadanych",
+      "leki-przeciwpsychotyczne-generacje"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "sga",
+      "metaboliczny",
+      "monitoring"
+    ]
+  },
+  {
+    "id": "claim-ph-ect-indications",
+    "statement": "Terapia elektrowstrząsowa (ECT) jest metodą z wyboru w stanach bezpośredniego zagrożenia życia: ciężkiej depresji z odmową jedzenia i picia, depresji z silnymi tendencjami samobójczymi, katatonii oraz złośliwym zespole neuroleptycznym.",
+    "category": "guideline_recommendation",
+    "evidenceType": "emergency_indication",
+    "strength": "strong",
+    "sourceIds": [
+      "apa-ect-guidelines"
+    ],
+    "lessonIds": [
+      "interwencje-biologiczne-ect-rtms-ketamina"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "ect",
+      "wskazania",
+      "stany-nagle"
+    ]
+  }
+]

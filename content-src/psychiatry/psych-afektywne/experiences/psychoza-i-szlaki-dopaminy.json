@@ -1,0 +1,392 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "psychoza-i-szlaki-dopaminy",
+  "objectives": [
+    {
+      "id": "psychoza-i-szlaki-dopaminy-obj-1",
+      "statement": "Zestawisz objawy pozytywne, negatywne i poznawcze psychozy w kontekście neurobiologicznym.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "psychoza-i-szlaki-dopaminy-obj-2",
+      "statement": "Powiążesz nadaktywność szlaku mezolimbicznego z powstawaniem doznań znaczenia urojeniowego (aberrant salience).",
+      "kind": "mechanism"
+    },
+    {
+      "id": "psychoza-i-szlaki-dopaminy-obj-3",
+      "statement": "Wyjaśnisz pojęcie DUP (Duration of Untreated Psychosis) i znaczenie wczesnej interwencji w pierwszym epizodzie (FEP).",
+      "kind": "mechanism"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-psy-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "psychoza-i-szlaki-dopaminy-obj-1"
+    ],
+    "prompt": "Na czym polega zjawisko „aberrant salience” opisane przez Shita Kapura w patofizjologii psychozy?",
+    "options": [
+      "Na całkowitej utracie zdolności widzenia barw",
+      "Na nagłym wzroście łaknienia węglowodanów",
+      "Na patologicznym, hiperdopaminergicznym przypisywaniu skrajnego znaczenia neutralnym bodźcom z otoczenia"
+    ],
+    "optionFeedback": [
+      "Brak związku z percepcją barw.",
+      "Dotyczy przetwarzania znaczenia poznawczego, nie łaknienia.",
+      "Błędnie zasygnalizowane znaczenie zmusza mózg do urojeniowego wyjaśnienia sytuacji."
+    ],
+    "answer": 2,
+    "explanation": "Błędnie zasygnalizowane znaczenie zmusza mózg do urojeniowego wyjaśnienia sytuacji.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "icd11-cddr",
+      "dsm5tr",
+      "wfsbp-schizophrenia",
+      "nice-schizophrenia"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "psychoza-i-szlaki-dopaminy-block-1",
+      "title": "Koncepcja psychozy i aberrant salience (Kapur)",
+      "text": "Współczesna neurobiologia definiuje psychozę jako stan nieprawidłowego nadawania znaczenia obojętnym bodźcom (aberrant salience). Prawidłowo dopamina w prążkowiu brzusznym sygnalizuje bodźce istotne dla przetrwania. W psychozie patologiczny, hiperergiczny wyrzut dopaminy w szlaku mezolimbicznym sprawia, że przypadkowe zdarzenia (np. czerwony samochód za oknem, kaszlnięcie przechodnia) zyskują skrajnie doniosłe, intymne znaczenie. Umysł pacjenta konstruuje urojenia jako wtórną próbę poznawczego wyjaśnienia tego obezwładniającego poczucia doniosłości.",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "wfsbp-schizophrenia",
+        "nice-schizophrenia"
+      ],
+      "checkpointId": "psych-psy-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-d2-pathways",
+          "kind": "diagram",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "psychoza-i-szlaki-dopaminy-block-2",
+      "title": "Kryteria schizofrenii ICD-11 CDDR (6A20) i podział objawów",
+      "text": "ICD-11 wymaga co najmniej 2 objawów przez minimum 1 miesiąc (w tym min. 1 podstawowego: uporczywe urojenia, omamy, zaburzenia toku myślenia, doznania owładnięcia/wpływu). Wymiary psychopatologiczne: 1) Pozytywny (urojenia prześladowcze, ksobne, nasyłania myśli; omamy słuchowe komentujące); 2) Negatywny (alogia, awolicja, anhedonia, spłaszczenie afektu, asocjalność — 5A); 3) Poznawczy (spadek pamięci roboczej, funkcji wykonawczych i uwagi); 4) Dezorganizacji (dziwaczne zachowanie, niespójność wypowiedzi).",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "wfsbp-schizophrenia",
+        "nice-schizophrenia"
+      ],
+      "checkpointId": "psych-psy-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-psychosis-differential",
+          "kind": "diagram",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "psychoza-i-szlaki-dopaminy-block-3",
+      "title": "Pierwszy epizod psychozy (FEP) i czas nieleczonej psychozy (DUP)",
+      "text": "Okres od wystąpienia pierwszych jawnych objawów psychotycznych do wdrożenia skutecznego leczenia przeciwpsychotycznego definiuje się jako DUP (Duration of Untreated Psychosis). Badania jednoznacznie dowodzą, że długi DUP (>12 tygodni) koreluje z nieodwracalną utratą substancji szarej w korze czołowej i skroniowej, opornością na leczenie i trwałym inwalidztwem społecznym. Wczesna interwencja farmakologiczna i psychospołeczna w FEP jest najsilniejszym czynnikiem neuroprotekcyjnym.",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "wfsbp-schizophrenia",
+        "nice-schizophrenia"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-psy-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "psychoza-i-szlaki-dopaminy-obj-2"
+      ],
+      "prompt": "Co oznacza skrót DUP w kontekście wczesnej interwencji w psychozie i dlaczego ma kluczowe znaczenie?",
+      "options": [
+        "Duration of Untreated Psychosis (czas trwania nieleczonej psychozy) — jego wydłużenie nieodwracalnie pogarsza rokowanie",
+        "Dose of Unused Pills (dawka niewykorzystanych tabletek)",
+        "Degree of Unilateral Paralysis (stopień porażenia połowiczego)"
+      ],
+      "optionFeedback": [
+        "Dłuższy DUP wiąże się z neuroprogresją, ubytkiem substancji szarej i rozwojem lekooporności.",
+        "To nie jest medyczna definicja DUP.",
+        "To termin neurologiczny z zakresu udarów."
+      ],
+      "answer": 0,
+      "explanation": "Dłuższy DUP wiąże się z neuroprogresją, ubytkiem substancji szarej i rozwojem lekooporności.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "wfsbp-schizophrenia",
+        "nice-schizophrenia"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-psy-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "psychoza-i-szlaki-dopaminy-obj-3"
+      ],
+      "prompt": "Który z wymienionych objawów należy do tzw. wymiaru negatywnego (osiowych objawów deficytowych) schizofrenii?",
+      "options": [
+        "Omamy słuchowe wrogie",
+        "Awolicja (brak woli i niezdolność do inicjowania działań ukierunkowanych na cel)",
+        "Urojenia prześladowcze"
+      ],
+      "optionFeedback": [
+        "Omamy to wymiar pozytywny.",
+        "Awolicja, alogia, anhedonia, spłaszczenie afektu i asocjalność tworzą tzw. wymiar 5A objawów negatywnych.",
+        "Urojenia to wymiar pozytywny (wytwórczy)."
+      ],
+      "answer": 1,
+      "explanation": "Awolicja, alogia, anhedonia, spłaszczenie afektu i asocjalność tworzą tzw. wymiar 5A objawów negatywnych.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "wfsbp-schizophrenia",
+        "nice-schizophrenia"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "psychoza-i-szlaki-dopaminy-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "psychoza-i-szlaki-dopaminy-obj-1",
+      "psychoza-i-szlaki-dopaminy-obj-2",
+      "psychoza-i-szlaki-dopaminy-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Psychoza i schizofrenia: objawy wytwórcze, negatywne i szlaki dopaminy”.",
+    "modelAnswer": "Psychoza wynika z aberrant salience napędzanego hipersekrecją dopaminy mezolimbicznej. Kluczowe jest skracanie czasu nieleczonej psychozy (DUP <12 tyg.) w celu ochrony kory mózgowej.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "icd11-cddr",
+      "dsm5tr",
+      "wfsbp-schizophrenia",
+      "nice-schizophrenia"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-psy-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "psychoza-i-szlaki-dopaminy-obj-1"
+      ],
+      "prompt": "Jaki jest minimalny czas trwania objawów wymagany przez ICD-11 CDDR do postawienia diagnozy schizofrenii (kod 6A20)?",
+      "options": [
+        "Dokładnie 24 godziny",
+        "Minimum 5 lat",
+        "Minimum 1 miesiąc"
+      ],
+      "optionFeedback": [
+        "Wymaga dłuższego trwania; 24h to ostra psychoza przemijająca.",
+        "5 lat to zdecydowanie za długo; opóźniłoby leczenie o lata.",
+        "W ICD-11 kryterium czasowe wynosi co najmniej 1 miesiąc obecności objawów osiowych."
+      ],
+      "answer": 2,
+      "explanation": "W ICD-11 kryterium czasowe wynosi co najmniej 1 miesiąc obecności objawów osiowych.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "wfsbp-schizophrenia",
+        "nice-schizophrenia"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-psy-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "psychoza-i-szlaki-dopaminy-obj-1"
+      ],
+      "prompt": "W jaki sposób leki przeciwpsychotyczne I generacji (np. haloperidol) mogą wpływać na objawy negatywne schizofrenii?",
+      "options": [
+        "Mogą je pogłębiać poprzez dodatkową blokadę receptorów D2 w i tak hipodopaminergicznej korze przedczołowej",
+        "Natychmiast całkowicie usuwają objawy negatywne w ciągu 2 godzin",
+        "Zmieniają objawy negatywne w ciężką manię"
+      ],
+      "optionFeedback": [
+        "Zjawisko to nosi nazwę wtórnych objawów negatywnych (neuroleptic-induced deficit syndrome).",
+        "FGA nie leczą objawów negatywnych.",
+        "FGA działają przeciwmaniakalnie."
+      ],
+      "answer": 0,
+      "explanation": "Zjawisko to nosi nazwę wtórnych objawów negatywnych (neuroleptic-induced deficit syndrome).",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "wfsbp-schizophrenia",
+        "nice-schizophrenia"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "psych-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "psychoza-i-szlaki-dopaminy-obj-1"
+      ],
+      "claimIds": [
+        "claim-af-schizoaffective-diff"
+      ],
+      "prompt": "24-letni pacjent od 3 miesięcy ma utrwalone urojenia prześladowcze i omamy słuchowe nakazujące. Od 10 dni dołączył ciężki epizod depresyjny z anhedonią. Jakie rozpoznanie jest najbardziej prawdopodobne w osi podłużnej?",
+      "options": [
+        "Schizofrenia z wtórnym epizodem depresyjnym",
+        "Epizod depresyjny z cechami psychotycznymi zgodnymi z nastrojem",
+        "Zaburzenie urojeniowe izolowane"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-longitudinal-timeline",
+            "label": "Psychoza obecna przed objawami nastroju i trwająca niezależnie",
+            "acceptedPhrases": [
+              "psychoza przed nastrojem",
+              "niezależna psychoza",
+              "3 miesiące psychozy",
+              "przebieg podłużny"
+            ]
+          },
+          {
+            "id": "c-schizophrenia-criteria",
+            "label": "Spełnienie kryteriów schizofrenii (czas trwania > 1 miesiąca)",
+            "acceptedPhrases": [
+              "schizofrenia",
+              "objawy osiowe",
+              "prześladowcze"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "W depresji psychotycznej objawy urojeniowe pojawiają się wyłącznie w trakcie epizodu nastroju. Trwające od 3 miesięcy urojenia przed depresją wskazują na schizofrenię.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "psych-bank-2",
+      "type": "matching",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "psychoza-i-szlaki-dopaminy-obj-2"
+      ],
+      "prompt": "Dopasuj szlak dopaminergiczny w OUN do konsekwencji klinicznych jego nadaktywności lub blokady farmakologicznej.",
+      "pairs": [
+        [
+          "Szlak mezolimbiczny",
+          "Nadaktywność odpowiada za objawy wytwórcze (omamy, urojenia)"
+        ],
+        [
+          "Szlak mezokortykalny",
+          "Hipoaktywność koreluje z objawami negatywnymi i deficytami poznawczymi"
+        ],
+        [
+          "Szlak nigrostriatalny",
+          "Blokada receptorów D2 wywołuje objawy pozapiramidowe (EPS) i parkinsonizm"
+        ],
+        [
+          "Szlak guzkowo-lejkowy",
+          "Blokada D2 uwalnia hamulec wydzielania prolaktyny, powodując hiperprolaktynemię"
+        ]
+      ],
+      "explanation": "Cztery szlaki dopaminergiczne determinują zarówno psychopatologię psychoz, jak i profil działań niepożądanych leków przeciwpsychotycznych.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "psych-bank-3",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "psychoza-i-szlaki-dopaminy-obj-1",
+        "psychoza-i-szlaki-dopaminy-obj-3"
+      ],
+      "claimIds": [
+        "claim-af-schizoaffective-diff"
+      ],
+      "prompt": "Jakie jest kluczowe kryterium różnicowania zaburzenia schizoafektywnego od zaburzenia afektywnego z objawami psychotycznymi?",
+      "modelAnswer": "W zaburzeniu schizoafektywnym objawy psychotyczne (urojenia lub omamy) muszą występować przez co najmniej 2 tygodnie przy całkowitym braku istotnych objawów afektywnych (depresyjnych lub maniakalnych). W zaburzeniu afektywnym z psychozą objawy psychotyczne pojawiają się wyłącznie w trakcie trwania epizodu nastroju.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-schizoaffective-2weeks",
+            "label": "Psychoza przez minimum 2 tygodnie bez objawów nastroju",
+            "acceptedPhrases": [
+              "2 tygodnie",
+              "dwa tygodnie",
+              "bez objawów nastroju",
+              "bez afektu",
+              "samodzielna psychoza"
+            ]
+          },
+          {
+            "id": "c-affective-concomitant",
+            "label": "W zaburzeniach afektywnych psychoza tylko w trakcie epizodu nastroju",
+            "acceptedPhrases": [
+              "tylko w trakcie epizodu",
+              "równocześnie z nastrojem",
+              "zależna od nastroju"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Zaburzenie schizoafektywne wymaga dowodu autonomicznej psychozy trwającej co najmniej 2 tygodnie poza epizodem afektywnym.",
+      "difficulty": "both",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "dsm5tr",
+        "icd11-cddr"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "pathway-builder",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., CANMAT oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

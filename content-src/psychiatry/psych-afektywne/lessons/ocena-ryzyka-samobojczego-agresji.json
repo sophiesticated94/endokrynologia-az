@@ -1,0 +1,165 @@
+{
+  "id": "ocena-ryzyka-samobojczego-agresji",
+  "moduleId": "psych-afektywne",
+  "title": "Ocena ryzyka samobójczego (C-SSRS) i postępowanie w ostrym pobudzeniu",
+  "subtitle": "Identyfikacja czynników ryzyka, deeskalacja i bezpieczeństwo pacjenta",
+  "group": "Stany nagłe i bezpieczeństwo",
+  "minutes": 18,
+  "goals": [
+    "Przeprowadzisz ustrukturyzowaną ocenę intencji samobójczych za pomocą skali C-SSRS.",
+    "Zróżnicujesz pasywne myśli rezygnacyjne od aktywnego zamiaru z planem i dostępem do środków.",
+    "Zastosujesz zasady deeskalacji słownej oraz bezpieczną farmakoterapię ostrego pobudzenia."
+  ],
+  "sections": [
+    {
+      "title": "Skala C-SSRS i gradacja myśli samobójczych",
+      "text": "Columbia-Suicide Severity Rating Scale (C-SSRS) jest szeroko walidowanym narzędziem ustrukturyzowanego wywiadu klinicznego w ocenie nasilenia myśli i zachowań samobójczych. Narzędzie standaryzuje komunikację kliniczną, choć nie zastępuje całościowej oceny ryzyka ani nie wylicza indywidualnego prawdopodobieństwa samobójstwa. Rozróżnia 5 poziomów nasilenia myśli: 1) Pasywne życzenie śmierci (\"chciałbym zasnąć i nie obudzić się\"), 2) Aktywne nieswoiste myśli samobójcze, 3) Aktywne myśli z metodą (bez planu), 4) Myśli z intencją bez konkretnego planu, 5) Myśli samobójcze z konkretnym planem i zamiarem. Poziomy 4 i 5 oznaczają bezpośrednie zagrożenie życia i bezwzględne wskazanie do natychmiastowej interwencji i zabezpieczenia pacjenta."
+    },
+    {
+      "title": "Statyczne i modyfikowalne czynniki ryzyka",
+      "text": "Najsilniejszym pojedynczym czynnikiem ryzyka dokonanego samobójstwa jest wcześniejsza próba samobójcza w wywiadzie. Czynniki statyczne obejmują: płeć męską, starszy wiek, samotność, obciążenie genetyczne. Czynniki modyfikowalne (cel natychmiastowej interwencji) to: ciężka bezsenność, pobudzenie psychoruchowe, anhedonia, ból somatyczny, dostęp do broni/leków oraz brak oparcia społecznego."
+    },
+    {
+      "title": "Postępowanie w ostrym pobudzeniu: deeskalacja i farmakologia",
+      "text": "W ostrym pobudzeniu i agresji pierwszym krokiem jest deeskalacja werbalna (spokojny ton, zachowanie dystansu fizycznego, otwarta przestrzeń). W przypadku nieskuteczności lekiem I wyboru jest szybko działający atypowy neuroleptyk i/lub benzodiazepina (np. olanzapina i.m./p.o. lub lorazepam i.m./p.o.). Nigdy nie należy łączyć olanzapiny i.m. z benzodiazepiną i.m. w odstępie mniejszym niż 2 godziny z uwagi na ryzyko zapaści oddechowo-krążeniowej."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Poziom C-SSRS",
+      "Charakterystyka myśli",
+      "Przykładowa wypowiedź",
+      "Konieczne działanie"
+    ],
+    "rows": [
+      [
+        "Poziom 1",
+        "Pasywne życzenie śmierci",
+        "\"Chciałbym zasnąć i się nie obudzić\"",
+        "Ocena wsparcia, optymalizacja leczenia, plan bezpieczeństwa"
+      ],
+      [
+        "Poziom 2–3",
+        "Aktywne myśli z niespecyficzną metodą",
+        "\"Myślę o przedawkowaniu, ale nie wiem czym\"",
+        "Ścisły nadzór, usunięcie leków, wizyta za 24-48h lub szpital"
+      ],
+      [
+        "Poziom 4–5",
+        "Konkretny plan, zamiar, dostęp do środków",
+        "\"Kupiłem sznur / mam leki, zrobię to dzisiaj\"",
+        "Natychmiastowa hospitalizacja psychiatryczna (tryb pilny)"
+      ]
+    ]
+  },
+  "advanced": "Dwoma lekami o udowodnionym w randomizowanych badaniach klinicznych niezależnym działaniu antysuicydalnym (obniżającym śmiertelność z przyczyn samobójczych) są lit (w chorobie afektywnej dwubiegunowej i depresji jednobiegunowej) oraz klozapina (w schizofrenii i zaburzeniach schizoafektywnych).",
+  "summary": "Skala C-SSRS ustrukturyzowuje wywiad suicydologiczny, ułatwiając gradację nasilenia myśli samobójczych. W ostrym pobudzeniu kluczowa jest deeskalacja werbalna; farmakoterapia wymaga ostrożności przed jednoczesnym podaniem olanzapiny i.m. z benzodiazepinami.",
+  "sourceIds": [
+    "cssrs-scale",
+    "ptp-standardy",
+    "maudsley15"
+  ],
+  "questions": [
+    {
+      "id": "psych-suic-q1",
+      "lessonId": "ocena-ryzyka-samobojczego-agresji",
+      "prompt": "Które dwa leki posiadają najwyższy poziom dowodów naukowych na specyficzne, bezpośrednie działanie antysuicydalne?",
+      "options": [
+        {
+          "text": "Haloperydol w zastrzykach depot i propranolol",
+          "explanation": "Neuroleptyki typowe nie posiadają rejestracji w prewencji suicydalnej."
+        },
+        {
+          "text": "Lit oraz klozapina",
+          "explanation": "Oba leki redukują wskaźnik dokonanych samobójstw niezależnie od innych leków."
+        },
+        {
+          "text": "Hydroksyzyna oraz piracetam",
+          "explanation": "Leki te nie wykazują żadnego wpływu na redukcję śmiertelności samobójczej."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-suic-q2",
+      "lessonId": "ocena-ryzyka-samobojczego-agresji",
+      "prompt": "Dlaczego jednoczesne podanie olanzapiny w iniekcji domięśniowej (i.m.) z benzodiazepiną i.m. jest bezwzględnie przeciwwskazane?",
+      "options": [
+        {
+          "text": "Powoduje natychmiastowe uszkodzenie trzustki z martwicą krwotoczną",
+          "explanation": "Mieszanina nie wywołuje ostrego martwiczego zapalenia trzustki."
+        },
+        {
+          "text": "Olanzapina powoduje natychmiastowe wytrącenie kryształów benzodiazepiny w mięśniu",
+          "explanation": "Chodzi o synergizm farmakodynamiczny depresji krążeniowo-oddechowej w OUN."
+        },
+        {
+          "text": "Grozi zapaścią naczyniową, ciężką hipotensją i śmiertelną depresją ośrodka oddechowego",
+          "explanation": "Wymagany jest co najmniej 2-godzinny odstęp między iniekcjami domięśniowymi tych dwóch leków."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-suic-q3",
+      "lessonId": "ocena-ryzyka-samobojczego-agresji",
+      "prompt": "Jaki pojedynczy czynnik w wywiadzie pacjenta jest najsilniejszym statystycznym predyktorem dokonanego samobójstwa w przyszłości?",
+      "options": [
+        {
+          "text": "Przebyta próba samobójcza w przeszłości",
+          "explanation": "Osoby po próbie samobójczej mają 30–40-krotnie wyższe ryzyko zgonu w wyniku kolejnej próby niż populacja ogólna."
+        },
+        {
+          "text": "Przebyta ospa wietrzna w wieku przedszkolnym",
+          "explanation": "Przebyte infekcje wirusowe wieku dziecięcego nie korelują z ryzykiem samobójczym."
+        },
+        {
+          "text": "Posiadanie prawa jazdy kategorii B",
+          "explanation": "Nie ma żadnego związku ze wskaźnikami suicydalnymi."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-suic-q4",
+      "lessonId": "ocena-ryzyka-samobojczego-agresji",
+      "prompt": "Pacjent w C-SSRS odpowiada: \"Mam przygotowane tabletki w szufladzie i zamierzam je połknąć dziś wieczorem, gdy rodzina zaśnie\". Jaki to poziom C-SSRS i jakie jest postępowanie?",
+      "options": [
+        {
+          "text": "Poziom 2 – zalecenie wykonania badania EEG w trybie ambulatoryjnym",
+          "explanation": "EEG nie ma zastosowania w natychmiastowym zabezpieczeniu pacjenta suicydalnego."
+        },
+        {
+          "text": "Poziom 5 (konkretny plan i zamiar) – stan bezpośredniego zagrożenia życia wymagający natychmiastowej hospitalizacji",
+          "explanation": "Wymaga stałego nadzoru personelu i zabezpieczenia pacjenta przed opuszczeniem gabinetu."
+        },
+        {
+          "text": "Poziom 1 – wystarczy zalecenie ciepłej herbaty i kontroli za miesiąc",
+          "explanation": "Jest to rażący błąd w sztuce lekarskiej bagatelizujący śmiertelne zagrożenie."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-suic-q5",
+      "lessonId": "ocena-ryzyka-samobojczego-agresji",
+      "prompt": "Jaka jest podstawowa zasada deeskalacji werbalnej w kontakcie z pacjentem silnie pobudzonym i agresywnym?",
+      "options": [
+        {
+          "text": "Podchodzenie na odległość kilku centymetrów i głośne krzyczenie na pacjenta",
+          "explanation": "Prowokuje natychmiastowy atak fizyczny ze strony pobudzonego pacjenta."
+        },
+        {
+          "text": "Natychmiastowe zamknięcie drzwi na klucz i zgaszenie światła w gabinecie",
+          "explanation": "Zwiększa paranoję i lęk u pacjenta, dramatycznie potęgując agresję."
+        },
+        {
+          "text": "Zachowanie bezpiecznego dystansu, spokojny i pewny ton głosu oraz pozostawienie otwartej drogi ewakuacji",
+          "explanation": "Zapewnia to bezpieczeństwo zarówno lekarza, jak i pacjenta, zapobiegając poczuciu osaczenia."
+        }
+      ],
+      "answer": 2
+    }
+  ],
+  "assetIds": []
+}

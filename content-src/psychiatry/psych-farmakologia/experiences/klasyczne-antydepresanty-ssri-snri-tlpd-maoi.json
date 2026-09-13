@@ -1,0 +1,364 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "klasyczne-antydepresanty-ssri-snri-tlpd-maoi",
+  "objectives": [
+    {
+      "id": "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-obj-1",
+      "statement": "Porównasz mechanizmy, skuteczność i tolerancję SSRI, SNRI, TLPD oraz inhibitorów MAO.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-obj-2",
+      "statement": "Rozpoznasz specyficzne powikłania kardiologiczne i antycholinergiczne trójpierścieniowych leków (TLPD).",
+      "kind": "interpretation"
+    },
+    {
+      "id": "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-obj-3",
+      "statement": "Wdrożysz zasady diety ubogotyraminowej i bezpiecznego stosowania inhibitorów monoaminooksydazy.",
+      "kind": "safety"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-clas-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-obj-1"
+    ],
+    "prompt": "Jaka jest odtrutka z wyboru w ciężkim zatruciu TLPD z poszerzeniem zespołu QRS > 120 ms w zapisie EKG?",
+    "options": [
+      "Dożylny roztwór wodorowęglanu sodu (NaHCO3)",
+      "Dożylna digoksyna w bolusie",
+      "Podanie dużej dawki potasu w szybkim wlewie"
+    ],
+    "optionFeedback": [
+      "Alkalizacja krwi i ładunek jonów sodu wypierają cząsteczki TLPD z sercowych kanałów sodowych Nav1.5.",
+      "Digoksyna nasiliłaby kardiotoksyczność i ryzyko zgonu.",
+      "Szybki wlew potasu grozi natychmiastowym asystolią serca."
+    ],
+    "answer": 0,
+    "explanation": "Alkalizacja krwi i ładunek jonów sodu wypierają cząsteczki TLPD z sercowych kanałów sodowych Nav1.5.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "canmat-mdd-2023",
+      "nice-depression",
+      "tyramine-pressor"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-block-1",
+      "title": "SSRI i SNRI jako fundament leczenia I rzutu",
+      "text": "Inhibitory wychwytu zwrotnego serotoniny (SSRI: sertralina, escitalopram, citalopram, fluoksetyna, paroksetyna) oraz serotoniny i noradrenaliny (SNRI: wenlafaksyna, duloksetyna) są lekami I rzutu ze względu na wysoki wskaźnik bezpieczeństwa w przedawkowaniu i korzystny profil tolerancji. Działania niepożądane (nudności, dysfunkcje seksualne, bezsenność) wynikają głównie z pobudzenia obwodowych receptorów 5-HT2 i 5-HT3.",
+      "sourceIds": [
+        "canmat-mdd-2023",
+        "nice-depression",
+        "tyramine-pressor"
+      ],
+      "checkpointId": "psych-clas-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-ssri-snri-differential",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-block-2",
+      "title": "Trójpierścieniowe leki przeciwdepresyjne (TLPD): wysoka skuteczność, wąskie okno",
+      "text": "TLPD (klomipramina, amitryptylina, nortryptylina) silnie blokują SERT i NET, lecz wykazują też silny antagonizm receptorów muskarynowych M1 (suchość w ustach, zaparcia, majaczenie), histaminowych H1 (sedacja, tycie) oraz adrenergicznych alfa-1 (hipotensja ortostatyczna). Ponadto blokują sercowe kanały sodowe (Nav1.5), co w przedawkowaniu prowadzi do poszerzenia QRS, komorowych zaburzeń rytmu i zgonu.",
+      "sourceIds": [
+        "canmat-mdd-2023",
+        "nice-depression",
+        "tyramine-pressor"
+      ],
+      "checkpointId": "psych-clas-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-tlpd-toxic-window",
+          "kind": "evidence-panel",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-block-3",
+      "title": "Inhibitory monoaminooksydazy (iMAO) i reakcja tyraminowa",
+      "text": "iMAO nieodwracalne (np. fenelzyna, tranylcypromina) hamują enzym MAO-A i MAO-B, blokując rozkład monoamin. Spożycie pokarmów bogatych w tyraminę (dojrzałe sery, wino, wędzone ryby) wywołuje przełom nadciśnieniowy (\"cheese effect\"), gdyż niewybiórczo zablokowana MAO w jelitach i wątrobie nie neutralizuje tyraminy, co skutkuje masowym wyrzutem noradrenaliny. Odwracalny inhibitor MAO-A (moklobemid) jest pod tym względem znacznie bezpieczniejszy.",
+      "sourceIds": [
+        "canmat-mdd-2023",
+        "nice-depression",
+        "tyramine-pressor"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-clas-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-obj-2"
+      ],
+      "prompt": "Dlaczego pacjenci przyjmujący nieodwracalne inhibitory MAO (np. tranylcyprominę) muszą bezwzględnie przestrzegać diety ubogiej w dojrzałe sery i wina?",
+      "options": [
+        "Wino powoduje natychmiastowe unieczynnienie leku w żołądku",
+        "Zawierają one tyraminę, która z powodu braku jelitowej MAO przedostaje się do krążenia i wywołuje zagrażający życiu przełom nadciśnieniowy",
+        "Sery wchodzą w bezpośrednią reakcję chemiczną niszczącą nerki"
+      ],
+      "optionFeedback": [
+        "Chodzi o śmiertelną interakcję naczyniową, a nie brak wchłaniania leku.",
+        "Zjawisko to określa się tradycyjnie mianem reakcji serowej (cheese reaction).",
+        "Tyramina nie niszczy nerek bezpośrednio, lecz indukuje gwałtowny wyrzut noradrenaliny."
+      ],
+      "answer": 1,
+      "explanation": "Zjawisko to określa się tradycyjnie mianem reakcji serowej (cheese reaction).",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "canmat-mdd-2023",
+        "nice-depression",
+        "tyramine-pressor"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-clas-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-obj-3"
+      ],
+      "prompt": "Który z SSRI wykazuje najsilniejsze właściwości sedatywne i cholinolityczne wskutek powinowactwa do receptorów muskarynowych?",
+      "options": [
+        "Escitalopram",
+        "Sertralina",
+        "Paroksetyna"
+      ],
+      "optionFeedback": [
+        "Escitalopram jest niemal pozbawiony powinowactwa do receptorów muskarynowych.",
+        "Sertralina wykazuje słabe hamowanie DAT, bez istotnego wpływu cholinolitycznego.",
+        "Paroksetyna posiada słabe działanie antycholinergiczne, co może sprzyjać sedacji, zaparciom i przyrostowi wagi."
+      ],
+      "answer": 2,
+      "explanation": "Paroksetyna posiada słabe działanie antycholinergiczne, co może sprzyjać sedacji, zaparciom i przyrostowi wagi.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "canmat-mdd-2023",
+        "nice-depression",
+        "tyramine-pressor"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-obj-1",
+      "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-obj-2",
+      "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Klasyczne leki przeciwdepresyjne: SSRI, SNRI, TLPD i iMAO”.",
+    "modelAnswer": "SSRI i SNRI wyparły TLPD z I rzutu z uwagi na bezpieczeństwo kardiologiczne. TLPD grożą śmiertelnymi arytmiami przez blokadę kanałów sodowych (odtrutka: NaHCO3), a klasyczne iMAO wymagają ścisłej diety ubogotyraminowej.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "canmat-mdd-2023",
+      "nice-depression",
+      "tyramine-pressor"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-clas-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-obj-1"
+      ],
+      "prompt": "Jaki parametr hemodynamiczny wymaga regularnego monitorowania u pacjentów leczonych wysokimi dawkami SNRI (np. wenlafaksyną >= 225 mg/d)?",
+      "options": [
+        "Ciśnienie tętnicze krwi i tętno",
+        "Pojemność życiowa płuc w spirometrii",
+        "Czas krwawienia metodą Duke’a"
+      ],
+      "optionFeedback": [
+        "Wzrost stężenia noradrenaliny w synapsach obwodowych może prowadzić do utrwalonego nadciśnienia tętniczego.",
+        "SNRI nie wpływają negatywnie na parametry spirometryczne płuc.",
+        "Mimo wpływu 5-HT na płytki, to kontrola ciśnienia tętniczego jest kluczowa dla bezpieczeństwa kardiologicznego SNRI."
+      ],
+      "answer": 0,
+      "explanation": "Wzrost stężenia noradrenaliny w synapsach obwodowych może prowadzić do utrwalonego nadciśnienia tętniczego.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "canmat-mdd-2023",
+        "nice-depression",
+        "tyramine-pressor"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-clas-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-obj-1"
+      ],
+      "prompt": "Który lek jest odwracalnym selektywnym inhibitorem monoaminooksydazy typu A (RIMA), niewymagającym tak rygorystycznej diety ubogotyraminowej?",
+      "options": [
+        "Fenelzyna",
+        "Moklobemid",
+        "Klomipramina"
+      ],
+      "optionFeedback": [
+        "Fenelzyna jest klasycznym, nieodwracalnym i nieselektywnym inhibitorem MAO.",
+        "Moklobemid może zostać wyparty z enzymu przez wysokie stężenia tyraminy, co drastycznie obniża ryzyko przełomu.",
+        "Klomipramina jest trójpierścieniowym lekiem przeciwdepresyjnym."
+      ],
+      "answer": 1,
+      "explanation": "Moklobemid może zostać wyparty z enzymu przez wysokie stężenia tyraminy, co drastycznie obniża ryzyko przełomu.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "canmat-mdd-2023",
+        "nice-depression",
+        "tyramine-pressor"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-obj-1"
+      ],
+      "prompt": "Oceń decyzję terapeutyczną i mechanizmy bezpieczeństwa w temacie lekcji „klasyczne antydepresanty ssri snri tlpd maoi”.",
+      "options": [
+        "Postępowanie zgodne z wytycznymi EBM i monitorowaniem bezpieczeństwa",
+        "Modyfikacja leczenia bez uwzględnienia farmakokinetyki i interakcji",
+        "Nagłe odstawienie leku z ryzykiem powikłań z odbicia"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-pk-rationale",
+            "label": "Uzasadnienie oparte na PK/PD i bezpieczeństwie",
+            "acceptedPhrases": [
+              "bezpieczeństwo",
+              "pk/pd",
+              "wytyczne",
+              "mechanizm"
+            ]
+          },
+          {
+            "id": "c-monitoring-rationale",
+            "label": "Monitorowanie parametrów klinicznych",
+            "acceptedPhrases": [
+              "monitoring",
+              "stężenie",
+              "interakcje"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Decyzja wymaga uwzględnienia parametrów farmakokinetycznych i profilu bezpieczeństwa.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "maudsley15",
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-obj-2"
+      ],
+      "prompt": "Wyjaśnij mechanizm molekularny lub receptorowy leżący u podstaw tematu: klasyczne antydepresanty ssri snri tlpd maoi.",
+      "modelAnswer": "Kluczowe znaczenie ma zrozumienie profilu receptorowego, kaskad przekaźnictwa wewnątrzkomórkowego oraz adaptacji plastycznych w OUN.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-receptor-action",
+            "label": "Działanie na receptory / enzymy",
+            "acceptedPhrases": [
+              "receptor",
+              "enzym",
+              "mechanizm",
+              "transporter"
+            ]
+          },
+          {
+            "id": "c-clinical-effect",
+            "label": "Wpływ na funkcję OUN i objawy kliniczne",
+            "acceptedPhrases": [
+              "efekt kliniczny",
+              "adaptacja",
+              "plastyczność",
+              "neuroprzekaźnictwo"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Wyjaśnienie mechanizmu na poziomie molekularnym i klinicznym.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-obj-1",
+        "klasyczne-antydepresanty-ssri-snri-tlpd-maoi-obj-3"
+      ],
+      "prompt": "Przed wdrożeniem lub modyfikacją farmakoterapii w temacie klasyczne antydepresanty ssri snri tlpd maoi, jakiej kluczowej informacji brakuje w wywiadzie?",
+      "options": [
+        "Wywiadu dotyczącego leków współistniejących pod kątem interakcji enzymatycznych (CYP) i wydolności nerek/wątroby",
+        "Profilu rzadkich przeciwciał neuronalnych",
+        "Rutynowego badania rezonansu magnetycznego głowy bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Ocena interakcji lekowych i wydolności narządów eliminujących to fundamentalny warunek bezpieczeństwa farmakoterapii.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "maudsley15"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "timeline"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy AGNP 2026 TDM, CPIC PGx, Maudsley 15th ed., Kapur PET D2, Hunter criteria oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

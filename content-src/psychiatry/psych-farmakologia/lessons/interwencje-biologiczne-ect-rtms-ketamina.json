@@ -1,0 +1,171 @@
+{
+  "id": "interwencje-biologiczne-ect-rtms-ketamina",
+  "moduleId": "psych-farmakologia",
+  "title": "Nowoczesne interwencje biologiczne: ECT, rTMS i ketamina",
+  "subtitle": "Elektrowstrząsy, przezczaszkowa stymulacja magnetyczna, esketamina i mechanizmy",
+  "group": "Precyzyjna psychofarmakologia i metabolizm",
+  "minutes": 18,
+  "goals": [
+    "Wskażesz bezwzględne i pilne wskazania do terapii elektrowstrząsowej (ECT: katatonia, stupor depresyjny, ciężka suicydalność).",
+    "Zrozumiesz zasady neurostymulacji magnetycznej (rTMS) lewej grzbietowo-bocznej kory przedczołowej (dlPFC).",
+    "Wdrożysz protokół podawania donosowej esketaminy w depresji lekoopornej (TRD)."
+  ],
+  "sections": [
+    {
+      "title": "Terapia elektrowstrząsowa (ECT): wysoka skuteczność w lekooporności i stanach nagłych",
+      "text": "Terapia elektrowstrząsowa (Electroconvulsive Therapy - ECT) pozostaje metodą o najwyższej udokumentowanej skuteczności w ciężkich, zagrażających życiu zaburzeniach afektywnych i katatonii (odpowiedź kliniczna 70–90%). Zabieg przeprowadza się w znieczuleniu ogólnym (krótkodziałający anestetyk, np. propofol/etomidat) i zwiotczeniu mięśniowym (sukcynylocholina). Impuls elektryczny wywołuje uogólniony napad drgawkowy w EEG (trwający min. 25–30 sekund). Proponowane mechanizmy biologiczne obejmują indukcję neuroplastyczności, wyrzut BDNF i VEGF oraz neuromodulację sieci neuronalnych."
+    },
+    {
+      "title": "Przezczaszkowa stymulacja magnetyczna (rTMS)",
+      "text": "Powtarzalna przezczaszkowa stymulacja magnetyczna (repetitive Transcranial Magnetic Stimulation - rTMS) to nieinwazyjna metoda modulacji kory mózgu za pomocą zmiennego pola magnetycznego, niewymagająca znieczulenia. Standardowy protokół w depresji opiera się na stymulacji wysokoczęstotliwościowej (10–20 Hz lub protokół theta-burst iTBS) lewej grzbietowo-bocznej kory przedczołowej (dlPFC), co przywraca jej aktywność metaboliczną i hamuje nadaktywne ciało migdałowate."
+    },
+    {
+      "title": "Esketamina donosowa w depresji lekoopornej (TRD)",
+      "text": "S-enancjomer ketaminy podawany donosowo w połączeniu z nowym SSRI/SNRI zrewolucjonizował leczenie TRD. Esketamina jako niekompetycyjny antagonista NMDA wywołuje szybki efekt przeciwdepresyjny i antysuicydalny (w ciągu 24–48h). Proponowany model mechanizmu obejmuje przejściowy wyrzut glutaminianu i kaskadę mTOR/BDNF. Ze względu na przejściowe skoki ciśnienia tętniczego, sedację i objawy dysocjacyjne aplikacja odbywa się w certyfikowanym ośrodku pod 2-godzinnym bezpośrednim nadzorem medycznym."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Interwencja biologiczna",
+      "Inwazyjność / Wymóg anestezjologa",
+      "Szybkość efektu klinicznego",
+      "Kluczowe wskazanie kliniczne"
+    ],
+    "rows": [
+      [
+        "Terapia elektrowstrząsowa (ECT)",
+        "Znieczulenie ogólne i zwiotczenie (OIT/sala zabiegowa)",
+        "Wysoka (1–2 tygodnie / seria 6–12 zabiegów)",
+        "Katatonia zagrażająca życiu, stupor, depresja psychotyczna"
+      ],
+      [
+        "rTMS (stymulacja magnetyczna)",
+        "Nieinwazyjna, bez znieczulenia (pacjent przytomny)",
+        "Stopniowa (4–6 tygodni codziennych sesji)",
+        "Lekooporna depresja bez wskazań do pilnego ratowania życia"
+      ],
+      [
+        "Esketamina donosowa",
+        "Aplikacja donosowa pod 2h nadzorem RR",
+        "Błyskawiczna (2–24 godziny)",
+        "TRD, bezpośrednie zagrożenie samobójcze"
+      ],
+      [
+        "Głęboka stymulacja mózgu (DBS)",
+        "Zabieg neurochirurgiczny (implantacja elektrod)",
+        "Zróżnicowana (długoterminowa neuromodulacja)",
+        "Eksperymentalnie w skrajnie lekoopornym OCD i TRD"
+      ]
+    ]
+  },
+  "advanced": "Jedynym bezwzględnym przeciwwskazaniem do klasycznej terapii elektrowstrząsowej (ECT) jest podwyższone ciśnienie wewnątrzczaszkowe (wzrost ICP spowodowany guzem mózgu, obrzękiem lub świeżym krwawieniem śródczaszkowym), z uwagi na ryzyko wgłobienia pnia mózgu podczas wywołanego napadu drgawkowego.",
+  "summary": "ECT to najsilniejsza metoda ratunkowa w katatonii i depresji psychotycznej (znieczulenie + zwiotczenie). rTMS moduluje lewą dlPFC bez znieczulenia. Donosowa esketamina zapewnia efekt przeciwdepresyjny w ciągu godzin.",
+  "sourceIds": [
+    "apa-ect-guidelines",
+    "krystal-ketamine",
+    "canmat-mdd-2023"
+  ],
+  "questions": [
+    {
+      "id": "psych-bio-q1",
+      "lessonId": "interwencje-biologiczne-ect-rtms-ketamina",
+      "prompt": "Jakie jest jedyne bezwzględne przeciwwskazanie do przeprowadzenia zabiegu terapii elektrowstrząsowej (ECT)?",
+      "options": [
+        {
+          "text": "Rozpoznanie depresji z objawami psychotycznymi",
+          "explanation": "Jest to jedno z głównych wskazań do ECT, a nie przeciwwskazanie."
+        },
+        {
+          "text": "Znacznie podwyższone ciśnienie wewnątrzczaszkowe (np. guz mózgu z efektem masy, świeży krwotok śródczaszkowy)",
+          "explanation": "Podczas napadu drgawkowego przejściowo wzrasta przepływ mózgowy, co przy ciasnocie śródczaszkowej grozi śmiertelnym wgłobieniem migdałków móżdżku."
+        },
+        {
+          "text": "Wiek powyżej 65 lat",
+          "explanation": "Wiek podeszły nie jest przeciwwskazaniem; seniorzy często doskonale tolerują ECT."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-bio-q2",
+      "lessonId": "interwencje-biologiczne-ect-rtms-ketamina",
+      "prompt": "W jaki sposób zabezpiecza się pacjenta przed złamaniami kości i urazami mięśniowymi podczas zabiegu ECT?",
+      "options": [
+        {
+          "text": "Przez podanie lewodopy z benserazydem 30 minut przed zabiegiem",
+          "explanation": "Agoniści dopaminy nie wykazują działania zwiotczającego ani nie zapobiegają urazom narządu ruchu podczas napadu drgawkowego."
+        },
+        {
+          "text": "Przez unieruchomienie wyłącznie pasami bez farmakologicznego zwiotczenia mięśni",
+          "explanation": "Unieruchomienie mechaniczne bez leków miorelaksacyjnych stwarza wysokie ryzyko złamań kompresyjnych kręgów i zerwania mięśni."
+        },
+        {
+          "text": "Poprzez podanie leku zwiotczającego mięśnie (sukcynylocholiny) po uprzednim uśpieniu pacjenta krótkodziałającym anestetykiem",
+          "explanation": "Dzięki zwiotczeniu drgawki widoczne są jedynie w zapisie EEG lub jako minimalne drżenie palców stopy."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-bio-q3",
+      "lessonId": "interwencje-biologiczne-ect-rtms-ketamina",
+      "prompt": "Który rejon kory mózgowej jest celem stymulacji wysokoczęstotliwościowej w standardowym protokole rTMS w leczeniu depresji?",
+      "options": [
+        {
+          "text": "Lewa grzbietowo-boczna kora przedczołowa (left dlPFC)",
+          "explanation": "W depresji wykazuje ona hipometabolizm, który stymulacja magnetyczna odwraca."
+        },
+        {
+          "text": "Pierwszorzędowa kora słuchowa w płacie skroniowym",
+          "explanation": "Kora słuchowa nie jest celem w terapii depresji."
+        },
+        {
+          "text": "Móżdżek i jądro zębate",
+          "explanation": "Móżdżek odpowiada głównie za koordynację ruchową."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-bio-q4",
+      "lessonId": "interwencje-biologiczne-ect-rtms-ketamina",
+      "prompt": "Dlaczego po inhalacji donosowej esketaminy pacjent musi pozostać pod bezpośrednią obserwacją personelu medycznego przez co najmniej 2 godziny?",
+      "options": [
+        {
+          "text": "W celu monitorowania stężenia leku we krwi i wykonania pilnego TDM po 120 minutach",
+          "explanation": "Esketamina donosowa nie wymaga rutynowego oznaczania stężenia TDM w surowicy podczas standardowych aplikacji klinicznych."
+        },
+        {
+          "text": "Z uwagi na ryzyko przejściowego skoku ciśnienia tętniczego krwi, sedacji oraz objawów dysocjacji psychicznej",
+          "explanation": "Objawy te osiągają szczyt w ciągu pierwszych 40 minut i ustępują samoistnie po ok. 90–120 minutach."
+        },
+        {
+          "text": "Z uwagi na ryzyko opóźnionej złośliwej hipertermii rozwijającej się w drugiej godzinie",
+          "explanation": "Hipertermia nie jest typowym działaniem niepożądanym esketaminy; nadzór koncentruje się na układzie krążenia i dysocjacji."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-bio-q5",
+      "lessonId": "interwencje-biologiczne-ect-rtms-ketamina",
+      "prompt": "W jakim stanie klinicznym terapia elektrowstrząsowa (ECT) stanowi bezwzględną interwencję ratującą życie o najwyższej skuteczności?",
+      "options": [
+        {
+          "text": "W izolowanej bezsenności pierwotnej bez objawów afektywnych",
+          "explanation": "Izolowane zaburzenia snu leczy się metodami behawioralnymi (CBT-I) i farmakoterapią doraźną, nie procedurami inwazyjnymi."
+        },
+        {
+          "text": "W łagodnych zaburzeniach adaptacyjnych z obniżeniem nastroju po zmianie pracy",
+          "explanation": "Wskazaniem do ECT są ciężkie, oporne lub zagrażające życiu stany afektywne i katatoniczne, a nie łagodne reakcje adaptacyjne."
+        },
+        {
+          "text": "W ostrej katatonii złośliwej oraz w ciężkim stuporze depresyjnym z odmową przyjmowania płynów i pokarmów",
+          "explanation": "Zabieg natychmiastowo przerywa stan katatoniczny i zabezpiecza przed zgonem z odwodnienia i powikłań zatorowych."
+        }
+      ],
+      "answer": 2
+    }
+  ],
+  "assetIds": []
+}

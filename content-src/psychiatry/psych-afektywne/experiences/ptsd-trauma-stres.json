@@ -1,0 +1,365 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "ptsd-trauma-stres",
+  "objectives": [
+    {
+      "id": "ptsd-trauma-stres-obj-1",
+      "statement": "Zróżnicujesz PTSD od ostrej reakcji na stres (ASD) oraz złożonego PTSD (cPTSD wg ICD-11).",
+      "kind": "differentiation"
+    },
+    {
+      "id": "ptsd-trauma-stres-obj-2",
+      "statement": "Wyjaśnisz rolę atrofii hipokampa i deficytu wygaszania lęku w patofizjologii traumy.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "ptsd-trauma-stres-obj-3",
+      "statement": "Sformułujesz plan leczenia oparty na psychoterapii traumy (TF-CBT, EMDR) oraz farmakoterapii.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-ptsd-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "ptsd-trauma-stres-obj-1"
+    ],
+    "prompt": "Jaki minimalny czas trwania objawów jest wymagany do postawienia diagnozy PTSD po ekspozycji na traumę?",
+    "options": [
+      "Przynajmniej 12 miesięcy bez żadnej przerwy",
+      "Wystarczą 24 godziny bezpośrednio po wypadku",
+      "Co najmniej 1 miesiąc utrzymywania się objawów"
+    ],
+    "optionFeedback": [
+      "12 miesięcy nie jest warunkiem wstępnym, leczenie wdraża się znacznie wcześniej.",
+      "Pierwsze 48 godzin to fizjologiczna reakcja ostra na silny stres.",
+      "Objawy trwające od 3 dni do 1 miesiąca klasyfikuje się jako ostrą reakcję na stres (ASD)."
+    ],
+    "answer": 2,
+    "explanation": "Objawy trwające od 3 dni do 1 miesiąca klasyfikuje się jako ostrą reakcję na stres (ASD).",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "nice-ptsd",
+      "wfsbp-anxiety",
+      "icd11-cddr"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "ptsd-trauma-stres-block-1",
+      "title": "Triada objawów PTSD a ramy czasowe",
+      "text": "Zespół stresu pourazowego (PTSD) rozwija się po narażeniu na zdarzenie zagrażające życiu lub integralności cielesnej. Obejmuje triadę objawów: ponowne przeżywanie traumy (flashbacks, koszmary), unikanie bodźców skojarzonych oraz objawy wzmożonego wzbudzenia (hipervigilance, drażliwość, przestrach). Jeśli objawy trwają krócej niż miesiąc, rozpoznaje się ostrą reakcję na stres (ASD).",
+      "sourceIds": [
+        "nice-ptsd",
+        "wfsbp-anxiety",
+        "icd11-cddr"
+      ],
+      "checkpointId": "psych-ptsd-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-fear-circuit",
+          "kind": "diagram",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "ptsd-trauma-stres-block-2",
+      "title": "Złożone PTSD (cPTSD) w klasyfikacji ICD-11",
+      "text": "ICD-11 wprowadziło odrębną jednostkę – złożony zespół stresu pourazowego (complex PTSD), wynikający z długotrwałej, powtarzającej się traumy, z której ucieczka była niemożliwa (np. przemoc domowa, niewola). Oprócz osiowych cech PTSD obejmuje: ciężką dysregulację afektu, chroniczne poczucie bezwartościowości i wstydu oraz trudności w utrzymywaniu relacji interpersonalnych.",
+      "sourceIds": [
+        "nice-ptsd",
+        "wfsbp-anxiety",
+        "icd11-cddr"
+      ],
+      "checkpointId": "psych-ptsd-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-ptsd-vs-cptsd-icd11",
+          "kind": "evidence-panel",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "ptsd-trauma-stres-block-3",
+      "title": "Neurobiologia traumy i zasady leczenia",
+      "text": "W PTSD obserwuje się zmniejszenie objętości hipokampa (upośledzenie pamięci kontekstowej), nadreaktywność ciała migdałowatego oraz obniżenie aktywności kory przedczołowej. Leczeniem I rzutu jest celowana psychoterapia traumy: TF-CBT (terapia poznawczo-behawioralna zorientowana na traumę) lub EMDR. Farmakoterapią o potwierdzonej skuteczności są SSRI (sertralina, paroksetyna) oraz wenlafaksyna.",
+      "sourceIds": [
+        "nice-ptsd",
+        "wfsbp-anxiety",
+        "icd11-cddr"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-ptsd-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "ptsd-trauma-stres-obj-2"
+      ],
+      "prompt": "Czym charakteryzuje się złożony zespół stresu pourazowego (cPTSD) wprowadzony w ICD-11?",
+      "options": [
+        "Obecnością pełnych objawów PTSD oraz dodatkowo dysregulacji emocji, poczucia bezwartościowości i trudności w relacjach",
+        "Występowaniem wyłącznie omamów słuchowych bez lęku",
+        "Brakiem jakichkolwiek myśli intruzywnych i flashbacków"
+      ],
+      "optionFeedback": [
+        "cPTSD wynika z długotrwałej, powtarzającej się traumy relacyjnej lub niewoli.",
+        "cPTSD nie jest pierwotnym zaburzeniem psychotycznym.",
+        "Intruzje są obligatoryjnym elementem każdego wariantu PTSD."
+      ],
+      "answer": 0,
+      "explanation": "cPTSD wynika z długotrwałej, powtarzającej się traumy relacyjnej lub niewoli.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "nice-ptsd",
+        "wfsbp-anxiety",
+        "icd11-cddr"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-ptsd-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "ptsd-trauma-stres-obj-3"
+      ],
+      "prompt": "Jaki lek blokujący receptory alfa-1 adrenergiczne wykazuje udowodnioną skuteczność w redukcji koszmarów nocnych w PTSD?",
+      "options": [
+        "Doksazosyna w monoterapii",
+        "Prazosyna",
+        "Propranolol w małej dawce"
+      ],
+      "optionFeedback": [
+        "Doksazosyna słabiej penetruje do OUN w porównaniu z prazosyną.",
+        "Prazosyna przenika przez barierę krew-mózg i hamuje hiperaktywność noradrenergiczną w OUN podczas snu REM.",
+        "Propranolol jest nieselektywnym beta-adrenolitykiem, rzadziej stosowanym w redukcji koszmarów sennych."
+      ],
+      "answer": 1,
+      "explanation": "Prazosyna przenika przez barierę krew-mózg i hamuje hiperaktywność noradrenergiczną w OUN podczas snu REM.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "nice-ptsd",
+        "wfsbp-anxiety",
+        "icd11-cddr"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "ptsd-trauma-stres-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "ptsd-trauma-stres-obj-1",
+      "ptsd-trauma-stres-obj-2",
+      "ptsd-trauma-stres-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Zaburzenia pourazowe: PTSD, złożony PTSD i ostra reakcja na stres”.",
+    "modelAnswer": "PTSD to deficyt korowego wygaszania strachu z zaburzeniem pamięci kontekstowej hipokampa. Standardem leczenia jest psychoterapia TF-CBT/EMDR; SSRI stanowią wsparcie farmakologiczne, a prazosyna redukuje koszmary senne.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "nice-ptsd",
+      "wfsbp-anxiety",
+      "icd11-cddr"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-ptsd-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "ptsd-trauma-stres-obj-1"
+      ],
+      "prompt": "Jakie zmiany w strukturach mózgowych są najbardziej powtarzalne w badaniach wolumetrycznych u pacjentów z przewlekłym PTSD?",
+      "options": [
+        "Masywny przerost kory skroniowej z obrzękiem móżdżku",
+        "Całkowita utrata istoty czarnej pnia mózgu",
+        "Zmniejszenie objętości hipokampa oraz obniżona aktywność kory przedczołowej przy nadaktywności ciała migdałowatego"
+      ],
+      "optionFeedback": [
+        "W PTSD nie dochodzi do przerostu struktur korowych.",
+        "Utrata istoty czarnej to patologia choroby Parkinsona, nie PTSD.",
+        "Prowadzi to do niezdolności do hamowania wyuczonej reakcji lękowej i braku pamięci kontekstowej."
+      ],
+      "answer": 2,
+      "explanation": "Prowadzi to do niezdolności do hamowania wyuczonej reakcji lękowej i braku pamięci kontekstowej.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nice-ptsd",
+        "wfsbp-anxiety",
+        "icd11-cddr"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-ptsd-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "ptsd-trauma-stres-obj-1"
+      ],
+      "prompt": "Jakie interwencje psychoterapeutyczne stanowią leczenie I rzutu w PTSD według wytycznych NICE?",
+      "options": [
+        "TF-CBT (terapia poznawczo-behawioralna ukierunkowana na traumę) oraz EMDR",
+        "Wyłącznie trening relaksacyjny Jacobsona",
+        "Terapia elektrowstrząsowa w trybie pilnym"
+      ],
+      "optionFeedback": [
+        "Obie metody mają najwyższy poziom dowodów naukowych w odwrażliwianiu śladów pamięciowych traumy.",
+        "Relaksacja jest metodą pomocniczą, nie usuwa rdzennych mechanizmów intruzji traumatycznych.",
+        "ECT nie jest leczeniem I rzutu w zaburzeniach pourazowych."
+      ],
+      "answer": 0,
+      "explanation": "Obie metody mają najwyższy poziom dowodów naukowych w odwrażliwianiu śladów pamięciowych traumy.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "nice-ptsd",
+        "wfsbp-anxiety",
+        "icd11-cddr"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "ptsd-trauma-stres-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "ptsd-trauma-stres-obj-1"
+      ],
+      "prompt": "Zastosuj kryteria diagnostyczne i standardy postępowania klinicznego w przypadku pacjenta z tematu: ptsd trauma stres.",
+      "options": [
+        "Wdrożenie standaryzowanego postępowania klinicznego opartego na wytycznych EBM",
+        "Postępowanie wyczekujące bez diagnostyki różnicowej",
+        "Natychmiastowe włączenie polipragmazji bez oceny wskazań"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-clinical-rationale-1",
+            "label": "Uzasadnienie oparte na kryteriach i bezpieczeństwie",
+            "acceptedPhrases": [
+              "bezpieczeństwo",
+              "kryteria",
+              "wytyczne",
+              "diagnostyka"
+            ]
+          },
+          {
+            "id": "c-clinical-rationale-2",
+            "label": "Ocena różnicowa i czynniki modyfikujące",
+            "acceptedPhrases": [
+              "różnicowanie",
+              "czynniki ryzyka",
+              "przebieg"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Postępowanie wymaga standaryzowanej oceny klinicznej, wykluczenia przyczyn wtórnych i przestrzegania wytycznych.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "ptsd-trauma-stres-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "ptsd-trauma-stres-obj-2"
+      ],
+      "prompt": "Wyjaśnij kluczowe zasady różnicowania klinicznego oraz pułapki diagnostyczne w zagadnieniu: ptsd trauma stres.",
+      "modelAnswer": "Kluczowe jest odróżnienie pierwotnych zaburzeń psychicznych od masek somatycznych i toksycznych, uwzględnienie dynamiki czasowej oraz unikanie pochopnego rozpoznania na podstawie pojedynczego objawu.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-diff-organic",
+            "label": "Wykluczenie przyczyn somatycznych i substancji",
+            "acceptedPhrases": [
+              "przyczyny somatyczne",
+              "substancje",
+              "toksyczne",
+              "organiczne"
+            ]
+          },
+          {
+            "id": "c-diff-longitudinal",
+            "label": "Ocena przebiegu podłużnego i kryteriów czasowych",
+            "acceptedPhrases": [
+              "przebieg podłużny",
+              "kryteria czasowe",
+              "dynamika",
+              "czas trwania"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Ocena kliniczna wymaga analizy podłużnej i systematycznego wykluczenia przyczyn wtórnych.",
+      "difficulty": "both",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "icd11-cddr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "ptsd-trauma-stres-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "ptsd-trauma-stres-obj-1",
+        "ptsd-trauma-stres-obj-3"
+      ],
+      "prompt": "W analizie przypadku klinicznego z obszaru ptsd trauma stres pacjent zgłasza nietypowy zestaw objawów. Jakiej informacji brakuje w pierwszej kolejności?",
+      "options": [
+        "Wywiadu toksykologicznego i badań laboratoryjnych wykluczających podłoże organiczne",
+        "Profilu genetycznego rzadkich mutacji enzymatycznych",
+        "Wyniku tomografii komputerowej bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Podstawą rzetelnej oceny psychiatrycznej jest wykluczenie czynników egzogennych, intoksykacji i zaburzeń metabolicznych.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "timeline",
+    "pathway-builder"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., CANMAT oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

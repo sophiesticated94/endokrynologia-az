@@ -1,0 +1,365 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "skale-kliniczne-w-psychiatrii",
+  "objectives": [
+    {
+      "id": "skale-kliniczne-w-psychiatrii-obj-1",
+      "statement": "Zastosujesz skale oceny depresji (HAM-D, MADRS, PHQ-9) oraz manii (YMRS).",
+      "kind": "interpretation"
+    },
+    {
+      "id": "skale-kliniczne-w-psychiatrii-obj-2",
+      "statement": "Zrozumiesz strukturę i progi punktowe skali PANSS w badaniach schizofrenii.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "skale-kliniczne-w-psychiatrii-obj-3",
+      "statement": "Zdefiniujesz kryteria odpowiedzi terapeutycznej (spadek >= 50%) i remisji klinicznej w EBM.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-skale-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "skale-kliniczne-w-psychiatrii-obj-1"
+    ],
+    "prompt": "Jak w medycynie opartej na faktach (EBM) definiuje się odpowiedź na leczenie przeciwdepresyjne (response)?",
+    "options": [
+      "Spadek całkowitej punktacji w standaryzowanej skali (np. MADRS lub HAM-D) o co najmniej 50% względem stanu wyjściowego",
+      "Ustąpienie dokładnie każdego z 17 objawów w skali Hamiltona w ciągu 48 godzin",
+      "Subiektywne poczucie pacjenta bez konieczności wypełniania skali"
+    ],
+    "optionFeedback": [
+      "Jest to uniwersalny standard oceny skuteczności we wszystkich badaniach rejestracyjnych.",
+      "Taki stan to natychmiastowa całkowita remisja, niespotykana w praktyce.",
+      "EBM wymaga obiektywizacji kwantytatywnej za pomocą zwalidowanego narzędzia."
+    ],
+    "answer": 0,
+    "explanation": "Jest to uniwersalny standard oceny skuteczności we wszystkich badaniach rejestracyjnych.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "canmat-mdd-2023",
+      "canmat-isbd-bipolar",
+      "wfsbp-schizophrenia"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "skale-kliniczne-w-psychiatrii-block-1",
+      "title": "Skale depresji: HAM-D, MADRS i samoopisowe PHQ-9",
+      "text": "W ocenie nasilenia depresji złotym standardem badań klinicznych są skale wypełniane przez lekarza: 17-punktowa skala Hamiltona (HAM-D-17) oraz skala Montgomery-Åsberg (MADRS). MADRS wykazuje wyższą czułość na wczesne zmiany farmakoterapeutyczne i skupia się na objawach psychicznych, podczas gdy HAM-D silnie punktuje objawy somatyczne i bezsenność. W opiece ambulatoryjnej standardem przesiewowym jest 9-pytaniowy kwestionariusz pacjenta PHQ-9.",
+      "sourceIds": [
+        "canmat-mdd-2023",
+        "canmat-isbd-bipolar",
+        "wfsbp-schizophrenia"
+      ],
+      "checkpointId": "psych-skale-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-madrs-hamd-cutoffs",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "skale-kliniczne-w-psychiatrii-block-2",
+      "title": "Skala YMRS w manii oraz PANSS w schizofrenii",
+      "text": "Skala YMRS (Young Mania Rating Scale, 11 pozycji) służy do kwantyfikacji nasilenia hipomanii i manii (próg remisji <= 12 pkt). Z kolei skala PANSS (Positive and Negative Syndrome Scale, 30 pozycji w podskalach: pozytywnej, negatywnej i ogólnej psychopatologii) pozwala ocenić dynamikę objawów wytwórczych schizofrenii i skuteczność leków przeciwpsychotycznych.",
+      "sourceIds": [
+        "canmat-mdd-2023",
+        "canmat-isbd-bipolar",
+        "wfsbp-schizophrenia"
+      ],
+      "checkpointId": "psych-skale-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "widget-panss-dimensions",
+          "kind": "interactive-widget",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "skale-kliniczne-w-psychiatrii-block-3",
+      "title": "Kryteria EBM: odpowiedź (response) a remisja (remission)",
+      "text": "W medycynie opartej na faktach (EBM) \"odpowiedź na leczenie\" definiuje się jako redukcję całkowitej punktacji w skali klinicznej (np. MADRS, HAM-D, PANSS) o co najmniej 50% w stosunku do wartości wyjściowej. \"Remisja\" oznacza spadek poniżej ściśle określonego progu bezwzględnego (dla MADRS typowo <= 10 pkt, dla HAM-D <= 7 pkt), co odpowiada powrotowi do prawidłowego funkcjonowania.",
+      "sourceIds": [
+        "canmat-mdd-2023",
+        "canmat-isbd-bipolar",
+        "wfsbp-schizophrenia"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-skale-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "skale-kliniczne-w-psychiatrii-obj-2"
+      ],
+      "prompt": "Jaki jest referencyjny punkt odcięcia oznaczający pełną remisję objawów w skali MADRS?",
+      "options": [
+        "Wynik powyżej 35 punktów",
+        "Wynik 10 punktów lub mniej",
+        "Wynik 0 punktów bezwzględnie"
+      ],
+      "optionFeedback": [
+        "Wynik > 35 punktów świadczy o ciężkim, zagrażającym epizodzie depresyjnym.",
+        "Punktacja MADRS <= 10 odpowiada stanowi eutymii bez istotnych klinicznie objawów resztkowych.",
+        "W skali dopuszcza się minimalne punkty za fizjologiczne wahania snu czy apetytu."
+      ],
+      "answer": 1,
+      "explanation": "Punktacja MADRS <= 10 odpowiada stanowi eutymii bez istotnych klinicznie objawów resztkowych.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "canmat-mdd-2023",
+        "canmat-isbd-bipolar",
+        "wfsbp-schizophrenia"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-skale-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "skale-kliniczne-w-psychiatrii-obj-3"
+      ],
+      "prompt": "Czym różni się skala MADRS od klasycznej skali HAM-D-17 pod względem profilu pytań?",
+      "options": [
+        "MADRS jest skalą przeznaczoną wyłącznie dla dzieci poniżej 5. roku życia",
+        "W skali MADRS oceniane są wyłącznie objawy wytwórcze schizofrenii",
+        "MADRS koncentruje się na objawach psychicznych i jest bardziej czuła na zmiany farmakoterapeutyczne, podczas gdy HAM-D mocno uwzględnia objawy somatyczne i sen"
+      ],
+      "optionFeedback": [
+        "MADRS stosuje się powszechnie u osób dorosłych.",
+        "MADRS to skala depresji, a nie psychozy.",
+        "Dzięki temu MADRS jest mniej podatna na fałszywe zawyżanie wyników przez leki sedatywne."
+      ],
+      "answer": 2,
+      "explanation": "Dzięki temu MADRS jest mniej podatna na fałszywe zawyżanie wyników przez leki sedatywne.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "canmat-mdd-2023",
+        "canmat-isbd-bipolar",
+        "wfsbp-schizophrenia"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "skale-kliniczne-w-psychiatrii-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "skale-kliniczne-w-psychiatrii-obj-1",
+      "skale-kliniczne-w-psychiatrii-obj-2",
+      "skale-kliniczne-w-psychiatrii-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Psychometryczne skale kliniczne: HAM-D, MADRS, YMRS i PANSS”.",
+    "modelAnswer": "Skale kliniczne obiektywizują przebieg leczenia. Odpowiedź terapeutyczna to redukcja objawów o >= 50%, a remisja to osiągnięcie wyniku w granicach normy (HAM-D <= 7, MADRS <= 10, YMRS <= 12).",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "canmat-mdd-2023",
+      "canmat-isbd-bipolar",
+      "wfsbp-schizophrenia"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-skale-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "skale-kliniczne-w-psychiatrii-obj-1"
+      ],
+      "prompt": "Do oceny jakiego zaburzenia służy skala YMRS (Young Mania Rating Scale)?",
+      "options": [
+        "Nasilenia manii i stanów hipomaniakalnych w przebiegu ChAD",
+        "Głębokości otępienia w chorobie Alzheimera",
+        "Stopnia uzależnienia od nikotyny"
+      ],
+      "optionFeedback": [
+        "YMRS ocenia 11 objawów, w tym drażliwość, wielomówność, popęd seksualny i wielkościowość.",
+        "Do oceny otępienia służy skala MMSE lub MoCA.",
+        "Do nikotynizmu służy test Fagerströma."
+      ],
+      "answer": 0,
+      "explanation": "YMRS ocenia 11 objawów, w tym drażliwość, wielomówność, popęd seksualny i wielkościowość.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "canmat-mdd-2023",
+        "canmat-isbd-bipolar",
+        "wfsbp-schizophrenia"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-skale-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "skale-kliniczne-w-psychiatrii-obj-1"
+      ],
+      "prompt": "Z ilu pozycji i podskal składa się skala PANSS stosowana powszechnie w badaniach schizofrenii?",
+      "options": [
+        "100 pytań wypełnianych wyłącznie przez rodzinę pacjenta",
+        "30 pozycji podzielonych na 3 podskale: pozytywną, negatywną i ogólnej psychopatologii",
+        "5 pytań tak/nie ocenianych przez pielęgniarkę"
+      ],
+      "optionFeedback": [
+        "Skalę wypełnia doświadczony klinicysta na podstawie wywiadu i obserwacji.",
+        "Każda pozycja oceniana jest od 1 (brak) do 7 (skrajnie nasilony).",
+        "PANSS jest rozbudowanym narzędziem klinicznym wymagającym szkolenia certyfikacyjnego."
+      ],
+      "answer": 1,
+      "explanation": "Każda pozycja oceniana jest od 1 (brak) do 7 (skrajnie nasilony).",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "canmat-mdd-2023",
+        "canmat-isbd-bipolar",
+        "wfsbp-schizophrenia"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "skale-kliniczne-w-psychiatrii-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "skale-kliniczne-w-psychiatrii-obj-1"
+      ],
+      "prompt": "Zastosuj kryteria diagnostyczne i standardy postępowania klinicznego w przypadku pacjenta z tematu: skale kliniczne w psychiatrii.",
+      "options": [
+        "Wdrożenie standaryzowanego postępowania klinicznego opartego na wytycznych EBM",
+        "Postępowanie wyczekujące bez diagnostyki różnicowej",
+        "Natychmiastowe włączenie polipragmazji bez oceny wskazań"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-clinical-rationale-1",
+            "label": "Uzasadnienie oparte na kryteriach i bezpieczeństwie",
+            "acceptedPhrases": [
+              "bezpieczeństwo",
+              "kryteria",
+              "wytyczne",
+              "diagnostyka"
+            ]
+          },
+          {
+            "id": "c-clinical-rationale-2",
+            "label": "Ocena różnicowa i czynniki modyfikujące",
+            "acceptedPhrases": [
+              "różnicowanie",
+              "czynniki ryzyka",
+              "przebieg"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Postępowanie wymaga standaryzowanej oceny klinicznej, wykluczenia przyczyn wtórnych i przestrzegania wytycznych.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "skale-kliniczne-w-psychiatrii-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "skale-kliniczne-w-psychiatrii-obj-2"
+      ],
+      "prompt": "Wyjaśnij kluczowe zasady różnicowania klinicznego oraz pułapki diagnostyczne w zagadnieniu: skale kliniczne w psychiatrii.",
+      "modelAnswer": "Kluczowe jest odróżnienie pierwotnych zaburzeń psychicznych od masek somatycznych i toksycznych, uwzględnienie dynamiki czasowej oraz unikanie pochopnego rozpoznania na podstawie pojedynczego objawu.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-diff-organic",
+            "label": "Wykluczenie przyczyn somatycznych i substancji",
+            "acceptedPhrases": [
+              "przyczyny somatyczne",
+              "substancje",
+              "toksyczne",
+              "organiczne"
+            ]
+          },
+          {
+            "id": "c-diff-longitudinal",
+            "label": "Ocena przebiegu podłużnego i kryteriów czasowych",
+            "acceptedPhrases": [
+              "przebieg podłużny",
+              "kryteria czasowe",
+              "dynamika",
+              "czas trwania"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Ocena kliniczna wymaga analizy podłużnej i systematycznego wykluczenia przyczyn wtórnych.",
+      "difficulty": "both",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "icd11-cddr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "skale-kliniczne-w-psychiatrii-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "skale-kliniczne-w-psychiatrii-obj-1",
+        "skale-kliniczne-w-psychiatrii-obj-3"
+      ],
+      "prompt": "W analizie przypadku klinicznego z obszaru skale kliniczne w psychiatrii pacjent zgłasza nietypowy zestaw objawów. Jakiej informacji brakuje w pierwszej kolejności?",
+      "options": [
+        "Wywiadu toksykologicznego i badań laboratoryjnych wykluczających podłoże organiczne",
+        "Profilu genetycznego rzadkich mutacji enzymatycznych",
+        "Wyniku tomografii komputerowej bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Podstawą rzetelnej oceny psychiatrycznej jest wykluczenie czynników egzogennych, intoksykacji i zaburzeń metabolicznych.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "pathway-builder"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., CANMAT oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

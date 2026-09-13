@@ -1,0 +1,142 @@
+{
+  "icd11-cddr": {
+    "id": "icd11-cddr",
+    "title": "WHO — ICD-11 Clinical Descriptions and Diagnostic Requirements (CDDR) for Mental Disorders",
+    "year": "2024",
+    "url": "https://icd.who.int/browse/2024-01/mms/en",
+    "kind": "Międzynarodowy standard diagnostyczny (główny)"
+  },
+  "dsm5tr": {
+    "id": "dsm5tr",
+    "title": "APA — Diagnostic and Statistical Manual of Mental Disorders, Fifth Edition, Text Revision (DSM-5-TR)",
+    "year": "2022",
+    "url": "https://doi.org/10.1176/appi.books.9780890425787",
+    "kind": "Standard diagnostyczny (kryteria porównawcze)"
+  },
+  "stahl-essential": {
+    "id": "stahl-essential",
+    "title": "Stahl SM — Stahl’s Essential Psychopharmacology: Neuroscientific Basis and Practical Applications, 5th ed.",
+    "year": "2021",
+    "url": "https://doi.org/10.1017/9781108869850",
+    "kind": "Podręcznik mechanizmów neurobiologicznych"
+  },
+  "ptp-standardy": {
+    "id": "ptp-standardy",
+    "title": "Polskie Towarzystwo Psychiatryczne — Standardy leczenia farmakologicznego zaburzeń psychicznych",
+    "year": "2024",
+    "url": "https://www.psychiatria.org.pl/standardy_leczenia",
+    "kind": "Polskie zalecenia kliniczne"
+  },
+  "canmat-mdd-2023": {
+    "id": "canmat-mdd-2023",
+    "title": "CANMAT 2023 Clinical Guidelines for the Management of Major Depressive Disorder in Adults",
+    "year": "2023",
+    "url": "https://doi.org/10.1177/07067437231198544",
+    "kind": "Wytyczne kliniczne (EBM)"
+  },
+  "nice-depression": {
+    "id": "nice-depression",
+    "title": "NICE Guideline [NG222] — Depression in adults: treatment and management",
+    "year": "2024",
+    "url": "https://www.nice.org.uk/guidance/ng222",
+    "kind": "Wytyczne postępowania klinicznego NICE"
+  },
+  "canmat-isbd-bipolar": {
+    "id": "canmat-isbd-bipolar",
+    "title": "CANMAT and ISBD Guidelines for the Management of Patients with Bipolar Disorder",
+    "year": "2023",
+    "url": "https://doi.org/10.1111/bdi.13101",
+    "kind": "Wytyczne kliniczne (ChAD)"
+  },
+  "wfsbp-schizophrenia": {
+    "id": "wfsbp-schizophrenia",
+    "title": "WFSBP Guidelines for Biological Treatment of Schizophrenia: Pharmacological Management",
+    "year": "2024",
+    "url": "https://doi.org/10.1080/15622975.2023.2285124",
+    "kind": "Wytyczne biologicznego leczenia schizofrenii (WFSBP)"
+  },
+  "nice-schizophrenia": {
+    "id": "nice-schizophrenia",
+    "title": "NICE Guideline [CG178] — Psychosis and schizophrenia in adults: prevention and management",
+    "year": "2024",
+    "url": "https://www.nice.org.uk/guidance/cg178",
+    "kind": "Wytyczne kliniczne schizofrenii i psychoz NICE"
+  },
+  "wfsbp-anxiety": {
+    "id": "wfsbp-anxiety",
+    "title": "Bandelow B et al. — WFSBP Guidelines for Biological Treatment of Anxiety, OCD and PTSD",
+    "year": "2023",
+    "url": "https://doi.org/10.1080/15622975.2022.2140413",
+    "kind": "Wytyczne biologicznego leczenia zaburzeń lękowych WFSBP"
+  },
+  "pregabalin-consensus": {
+    "id": "pregabalin-consensus",
+    "title": "Baldwin DS et al. — Evidence-based Pharmacotherapy of GAD: Mechanisms of Calcium Channel Modulation",
+    "year": "2024",
+    "url": "https://doi.org/10.1177/02698811231215432",
+    "kind": "Konsensus farmakoterapii GAD i modulacji VGCC"
+  },
+  "nice-ocd": {
+    "id": "nice-ocd",
+    "title": "NICE Guideline [CG31] — Obsessive-compulsive disorder and body dysmorphic disorder",
+    "year": "2024",
+    "url": "https://www.nice.org.uk/guidance/cg31",
+    "kind": "Wytyczne postępowania w OCD i zaburzeniach pokrewnych"
+  },
+  "maudsley15": {
+    "id": "maudsley15",
+    "title": "Taylor D, Barnes TRE, Young AH — The Maudsley Prescribing Guidelines in Psychiatry, 15th Edition",
+    "year": "2025",
+    "url": "https://www.wiley.com/en-us/The+Maudsley+Prescribing+Guidelines+in+Psychiatry%2C+15th+Edition-p-9781119822981",
+    "kind": "Referencyjne wytyczne farmakoterapii (Maudsley)"
+  },
+  "nice-ptsd": {
+    "id": "nice-ptsd",
+    "title": "NICE Guideline [NG116] — Post-traumatic stress disorder: management",
+    "year": "2023",
+    "url": "https://www.nice.org.uk/guidance/ng116",
+    "kind": "Wytyczne postępowania w PTSD i traumie psychicznej"
+  },
+  "nice-adhd": {
+    "id": "nice-adhd",
+    "title": "NICE Guideline [NG87] — Attention deficit hyperactivity disorder: diagnosis and management",
+    "year": "2024",
+    "url": "https://www.nice.org.uk/guidance/ng87",
+    "kind": "Wytyczne kliniczne ADHD u dzieci i dorosłych (NICE)"
+  },
+  "wfsbp-adhd": {
+    "id": "wfsbp-adhd",
+    "title": "WFSBP Guidelines for the Biological Treatment of ADHD in Adults",
+    "year": "2023",
+    "url": "https://doi.org/10.1080/15622975.2023.2185042",
+    "kind": "Wytyczne biologicznego leczenia ADHD u dorosłych (WFSBP)"
+  },
+  "nice-bpd": {
+    "id": "nice-bpd",
+    "title": "NICE Clinical Guideline [CG78] — Borderline personality disorder: recognition and management",
+    "year": "2023",
+    "url": "https://www.nice.org.uk/guidance/cg78",
+    "kind": "Wytyczne postępowania w zaburzeniu osobowości z pogranicza"
+  },
+  "who-assist": {
+    "id": "who-assist",
+    "title": "WHO — The Alcohol, Smoking and Substance Involvement Screening Test (ASSIST)",
+    "year": "2023",
+    "url": "https://www.who.int/publications/i/item/978924159938-2",
+    "kind": "Narzędzie przesiewowe WHO dla substancji psychoaktywnych"
+  },
+  "cssrs-scale": {
+    "id": "cssrs-scale",
+    "title": "Posner K et al. — The Columbia-Suicide Severity Rating Scale: Validity and Reliability (Am J Psychiatry)",
+    "year": "2011",
+    "url": "https://doi.org/10.1176/appi.ajp.2011.10111704",
+    "kind": "Walidowana skala oceny ryzyka suicydalnego"
+  },
+  "davis-extinction": {
+    "id": "davis-extinction",
+    "title": "Davis M et al. — Neural Systems Involved in Fear Extinction and CBT Augmentation",
+    "year": "2021",
+    "url": "https://doi.org/10.1038/npp.2009.139",
+    "kind": "Neurobiologia obwodów lękowych i wygaszania (Neuropsychopharmacology)"
+  }
+}

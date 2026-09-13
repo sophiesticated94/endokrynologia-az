@@ -1,0 +1,409 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "wywiad-psychiatryczny-mse",
+  "objectives": [
+    {
+      "id": "wywiad-psychiatryczny-mse-obj-1",
+      "statement": "Przeprowadzisz ustrukturyzowane badanie stanu psychicznego (Mental Status Examination — MSE).",
+      "kind": "interpretation"
+    },
+    {
+      "id": "wywiad-psychiatryczny-mse-obj-2",
+      "statement": "Zróżnicujesz afekt dostosowany, spłaszczony, blady, niedostosowany i labilny.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "wywiad-psychiatryczny-mse-obj-3",
+      "statement": "Ocenisz krytycyzm chorobowy (wgląd / insight) oraz poczucie chorobowości.",
+      "kind": "mechanism"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-mse-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "wywiad-psychiatryczny-mse-obj-1"
+    ],
+    "prompt": "Jaka jest fundamentalna różnica między nastrojem (mood) a afektem (affect) w badaniu psychiatrycznym?",
+    "options": [
+      "Nastrój to subiektywny, utrwalony stan emocjonalny deklarowany przez pacjenta, a afekt to obiektywny wyraz obserwowany przez badacza",
+      "Nastrój dotyczy wyłącznie chorób psychotycznych, a afekt zaburzeń nerwicowych",
+      "Afekt ocenia się wyłącznie testami laboratoryjnymi z krwi"
+    ],
+    "optionFeedback": [
+      "Nastrój porównuje się do klimatu, a afekt do chwilowej pogody obserwowalnej w mimice i mowie.",
+      "Obie domeny ocenia się u każdego pacjenta.",
+      "Afekt jest elementem oceny klinicznej MSE."
+    ],
+    "answer": 0,
+    "explanation": "Nastrój porównuje się do klimatu, a afekt do chwilowej pogody obserwowalnej w mimice i mowie.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "icd11-cddr",
+      "dsm5tr",
+      "stahl-essential"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "wywiad-psychiatryczny-mse-block-1",
+      "title": "Domeny badania stanu psychicznego (MSE)",
+      "text": "Badanie stanu psychicznego (MSE) jest psychiatrycznym odpowiednikiem badania fizykalnego. Obejmuje standaryzowaną ocenę: 1) Wyglądu ogólnego i zachowania (higiena, kontakt wzrokowy, ubiór, mimika, współpraca); 2) Aktywności psychoruchowej i napędu (spowolnienie, osłupienie, pobudzenie, akatyzja, tiki, manieryzmy); 3) Mowy (tempo, głośność, modulacja, latencja odpowiedzi, ciągłość); 4) Nastroju (deklarowany przez pacjenta stan emocjonalny) i afektu (obserwowalny wyraz emocjonalny); 5) Toku i treści myślenia; 6) Spostrzegania; 7) Funkcji poznawczych (orientacja, uwaga, pamięć); 8) Krytycyzmu i oceny rzeczywistości.",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "stahl-essential"
+      ],
+      "checkpointId": "psych-mse-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-mse-map",
+          "kind": "diagram",
+          "placement": "after-text"
+        },
+        {
+          "id": "deeplink-mse-preset",
+          "kind": "workbench-deeplink",
+          "placement": "end-of-block",
+          "presetId": "mse-young-adult-001"
+        }
+      ]
+    },
+    {
+      "id": "wywiad-psychiatryczny-mse-block-2",
+      "title": "Ocena afektu: wymiary i psychopatologia",
+      "text": "Afekt opisuje się w czterech wymiarach: modulacji (odpowiedź na bodźce), zakresu (szeroki vs wąski), adekwatności (zgodność z wypowiadaną treścią) oraz stabilności. Wyróżniamy: afekt spłaszczony (znaczne zubożenie ekspresji mimicznej i modulacji głosu, typowy dla objawów negatywnych), afekt blady/tępy (utrata zdolności głębszego przeżywania), afekt labilny (nagłe, nieadekwatne fluktuacje od śmiechu do płaczu) oraz afekt niedostosowany / paratymię (dysonans między treścią wypowiedzi a wyrazem emocjonalnym, np. uśmiech przy relacji o tragedii).",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "stahl-essential"
+      ],
+      "checkpointId": "psych-mse-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-affect-differentiation",
+          "kind": "evidence-panel",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "wywiad-psychiatryczny-mse-block-3",
+      "title": "Krytycyzm chorobowy (Insight) i sojusz terapeutyczny",
+      "text": "Krytycyzm ocenia się stopniowo: od pełnego braku poczucia choroby (anozognozja — przekonanie o pełnym zdrowiu mimo skrajnych objawów psychotycznych, częste w schizofrenii i manii), przez krytycyzm częściowy (uznawanie problemów nerwowych lub somatycznych bez wglądu w naturę psychiczną), po pełny wgląd (rozumienie etiologii, konieczności leczenia i przestrzegania zaleceń). Ocena wglądu jest kluczowa dla decyzji o leczeniu ambulatoryjnym vs hospitalizacji.",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "stahl-essential"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-mse-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "wywiad-psychiatryczny-mse-obj-2"
+      ],
+      "prompt": "Co oznacza pojęcie paratymii (afektu niedostosowanego)?",
+      "options": [
+        "Błyskawiczne przechodzenie od wściekłości do euforii w ciągu sekundy",
+        "Niezgodność między wyrazem emocjonalnym a treścią przeżyć lub wypowiedzi",
+        "Całkowity brak jakichkolwiek emocji i zastyganie"
+      ],
+      "optionFeedback": [
+        "To cecha labilności emocjonalnej.",
+        "Klasycznym przykładem jest wesołkowaty uśmiech podczas opowiadania o śmierci bliskiej osoby.",
+        "To opis stuporu lub skrajnego spłaszczenia afektu."
+      ],
+      "answer": 1,
+      "explanation": "Klasycznym przykładem jest wesołkowaty uśmiech podczas opowiadania o śmierci bliskiej osoby.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-mse-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "wywiad-psychiatryczny-mse-obj-3"
+      ],
+      "prompt": "Czym charakteryzuje się anozognozja w przebiegu ostrej psychozy lub manii?",
+      "options": [
+        "Przekonaniem pacjenta, że jest chory na nieuleczalną chorobę somatyczną",
+        "Symulowaniem objawów w celu uzyskania korzyści materialnej",
+        "Całkowitym brakiem poczucia choroby i nieświadomością istnienia objawów psychotycznych"
+      ],
+      "optionFeedback": [
+        "To cecha urojeń hipochondrycznych.",
+        "To symulacja (malingering).",
+        "Anozognozja wynika z neurobiologicznego zaburzenia wglądu, nie ze złośliwości pacjenta."
+      ],
+      "answer": 2,
+      "explanation": "Anozognozja wynika z neurobiologicznego zaburzenia wglądu, nie ze złośliwości pacjenta.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "wywiad-psychiatryczny-mse-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "wywiad-psychiatryczny-mse-obj-1",
+      "wywiad-psychiatryczny-mse-obj-2",
+      "wywiad-psychiatryczny-mse-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Wywiad psychiatryczny i badanie stanu psychicznego (MSE)”.",
+    "modelAnswer": "MSE standaryzuje ocenę wyglądu, napędu, mowy, nastroju, afektu, myślenia, percepcji i wglądu. Kluczowe jest odróżnienie afektu spłaszczonego od labilnego i ocena krytycyzmu chorobowego.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "icd11-cddr",
+      "dsm5tr",
+      "stahl-essential"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-mse-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "wywiad-psychiatryczny-mse-obj-1"
+      ],
+      "prompt": "Które z poniższych zachowań świadczy o otamowaniu (blocking) toku myślenia?",
+      "options": [
+        "Nagłe, nieprzewidywalne przerwanie wątku wypowiedzi w pół słowa z poczuciem pustki w głowie",
+        "Wypowiadanie słów z ogromną prędkością i rymowanie",
+        "Ciągłe powtarzanie tego samego słowa zadanego przez lekarza"
+      ],
+      "optionFeedback": [
+        "Otamowanie to nagłe zatrzymanie toku myślenia, po którym pacjent często nie pamięta, o czym mówił.",
+        "To gonitwa myśli (flight of ideas).",
+        "To echolalia lub perseweracja."
+      ],
+      "answer": 0,
+      "explanation": "Otamowanie to nagłe zatrzymanie toku myślenia, po którym pacjent często nie pamięta, o czym mówił.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-mse-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "wywiad-psychiatryczny-mse-obj-1"
+      ],
+      "prompt": "Jaki element wywiadu psychiatrycznego ma kluczowe znaczenie prognostyczne przy podejrzeniu choroby afektywnej dwubiegunowej?",
+      "options": [
+        "Wyłącznie ocena uzębienia pacjenta",
+        "Dokładny wywiad rodzinny w kierunku ChAD, samobójstw i epizodów hipomanii po lekach",
+        "Grupa krwi pacjenta i poziom cholesterolu całkowitego"
+      ],
+      "optionFeedback": [
+        "Nie determinuje podtypu choroby afektywnej.",
+        "Obciążenie genetyczne ChAD sięga 70-80% heritability, a wcześniejsza hipomania po SSRI silnie wspiera diagnozę spektrum bipolarnego.",
+        "Nie mają wartości diagnostycznej w różnicowaniu ChAD."
+      ],
+      "answer": 1,
+      "explanation": "Obciążenie genetyczne ChAD sięga 70-80% heritability, a wcześniejsza hipomania po SSRI silnie wspiera diagnozę spektrum bipolarnego.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "mse-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "wywiad-psychiatryczny-mse-obj-2"
+      ],
+      "claimIds": [
+        "claim-af-pseudohallucinations"
+      ],
+      "prompt": "32-letni pacjent opisuje, że od tygodnia słyszy wewnątrz swojej głowy głosy komentujące jego myśli, ale zaznacza: „wiem, że to moje myśli wymknęły się spod kontroli, nikt z zewnątrz nie mówi”. Jak zaklasyfikować ten objaw w MSE?",
+      "options": [
+        "Omam rzekomy (pseudohalucynacja) z zachowanym częściowym krytycyzmem",
+        "Omam słuchowy prawdziwy w przestrzeni zewnętrznej z anozognozją",
+        "Zaburzenie toku myślenia pod postacią otamowania"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-pseudohallucination-space",
+            "label": "Rzutowanie w przestrzeń wewnętrzną (w głowie)",
+            "acceptedPhrases": [
+              "przestrzeń wewnętrzna",
+              "w głowie",
+              "subiektywna przestrzeń",
+              "wewnątrz głowy"
+            ]
+          },
+          {
+            "id": "c-insight-partial",
+            "label": "Zachowany krytycyzm lub wgląd w naturę objawu",
+            "acceptedPhrases": [
+              "częściowy krytycyzm",
+              "wgląd",
+              "poczucie nierealności",
+              "krytycyzm"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Omamy rzekome (pseudohalucynacje) rzutowane są w przestrzeń wewnętrzną i nie mają pełnego charakteru obiektywnej zmysłowości zewnętrznej.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "icd11-cddr",
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "mse-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "wywiad-psychiatryczny-mse-obj-1"
+      ],
+      "claimIds": [
+        "claim-af-insight-anosognosia"
+      ],
+      "prompt": "Wytłumacz, czym różni się pojęcie nastroju (mood) od afektu (affect) w badaniu psychiatrycznym i jak zinterpretujesz paratymię.",
+      "modelAnswer": "Nastrój to subiektywny, względnie stały klimat emocjonalny deklarowany przez pacjenta, natomiast afekt to obserwowalna przez badacza reaktywność i wyraz emocjonalny w mimice, tonie głosu i zachowaniu. Paratymia (afekt niedostosowany) to niezgodność między wyrazem emocjonalnym a wypowiadaną treścią (np. uśmiech przy relacji o śmierci bliskiej osoby).",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-mood-vs-affect",
+            "label": "Nastrój jako subiektywny/stały vs afekt jako obiektywny wyraz",
+            "acceptedPhrases": [
+              "nastrój subiektywny",
+              "afekt obiektywny",
+              "klimat a pogoda",
+              "wyraz emocjonalny",
+              "obserwowalny"
+            ]
+          },
+          {
+            "id": "c-paratymia-incongruence",
+            "label": "Paratymia jako niezgodność wyrazu z treścią",
+            "acceptedPhrases": [
+              "niezgodność",
+              "niedostosowany",
+              "dysonans",
+              "rozbieżność",
+              "nieadekwatny"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-mood-affect-identical",
+            "patterns": [
+              "nastrój i afekt to to samo",
+              "synonimy",
+              "brak różnicy"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: Nastrój i afekt to odrębne domeny MSE."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Nastrój to stan zgłaszany subiektywnie, afekt to obserwowana ekspresja. Paratymia to dysonans między treścią a afektem.",
+      "difficulty": "both",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "mse-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "wywiad-psychiatryczny-mse-obj-3"
+      ],
+      "claimIds": [
+        "claim-af-insight-anosognosia"
+      ],
+      "prompt": "Oceń znaczenie podanych obserwacji klinicznych dla oceny wglądu chorobowego (krytycyzmu) u pacjenta po ostrym epizodzie psychotycznym.",
+      "hypothesis": "Pacjent prezentuje zachowany, konstruktywny krytycyzm chorobowy (wgląd) wobec przebytego epizodu psychotycznego.",
+      "explanation": "Ocena krytycyzmu opiera się na gotowości do uznania psychotycznej natury objawów i współpracy w leczeniu.",
+      "items": [
+        {
+          "id": "mse-ew-1",
+          "text": "Pacjent deklaruje, że głosy w głowie były objawem choroby i zgadza się przyjmować leki przeciwpsychotyczne",
+          "expected": "supports",
+          "explanation": "Wskazuje na pełny wgląd intelektualny i gotowość do współpracy w farmakoterapii."
+        },
+        {
+          "id": "mse-ew-2",
+          "text": "Pacjent twierdzi, że hospitalizacja była niepotrzebna, a policja sfałszowała jego zachowanie",
+          "expected": "opposes",
+          "explanation": "Przemawia za anozognozją (brakiem wglądu chorobowego) i utrwalonymi sądami urojeniowymi."
+        },
+        {
+          "id": "mse-ew-3",
+          "text": "Pacjent prosi o zaświadczenie lekarskie do pracy o czasowej niezdolności",
+          "expected": "neutral",
+          "explanation": "Potrzeba zwolnienia może wynikać z pragmatyzmu i nie rozstrzyga o obecności wglądu psychopatologicznego."
+        }
+      ],
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "icd11-cddr"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "timeline"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., CANMAT oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

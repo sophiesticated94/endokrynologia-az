@@ -1,0 +1,167 @@
+{
+  "id": "mania-hipomania-spektrum",
+  "moduleId": "psych-afektywne",
+  "title": "Mania, hipomania i spektrum ChAD: kryteria, stany mieszane i pułapki",
+  "subtitle": "Kryteria ChAD I vs ChAD II, cechy mieszane (mixed features) i pułapka antydepresantów",
+  "group": "Klinika zaburzeń afektywnych",
+  "minutes": 19,
+  "goals": [
+    "Precyzyjnie odróżnisz manię (ChAD I) od hipomanii (ChAD II) na podstawie kryteriów czasowych i funkcjonalnych.",
+    "Zdiagnozujesz epizod mieszany oraz specyfikator mixed features wg DSM-5-TR i ICD-11.",
+    "Wskażesz śmiertelne pułapki włączania antydepresantów u chorych z niezdiagnozowanym spektrum ChAD."
+  ],
+  "sections": [
+    {
+      "title": "Mania (ChAD I) vs Hipomania (ChAD II): kryteria różnicowe",
+      "text": "1) Mania: trwa co najmniej 7 dni (lub krócej, jeśli wymaga natychmiastowej hospitalizacji); charakteryzuje się wzmożonym, ekspansywnym lub drażliwym nastrojem, gonitwą myśli, skrajnym spadkiem potrzeby snu (np. 2h snu z poczuciem pełnej energii), wielomównością, podejmowaniem lekkomyślnych działań o wysokim ryzyku (zakupy, ryzykowne zachowania seksualne, nieprzemyślane inwestycje). Prowadzi do ZNACZNEGO upośledzenia funkcjonowania i może przebiegać z objawami psychotycznymi (urojenia wielkościowe, posłannicze). Pojedynczy epizod manii w życiu definiuje ChAD typu I; 2) Hipomania: trwa co najmniej 4 kolejne dni; objawy są wyraźną zmianą w stosunku do normy, ale NIE powodują istotnego upośledzenia funkcjonowania społecznego/zawodowego, NIE wymagają hospitalizacji i NIGDY nie mają cech psychotycznych. Występuje w ChAD typu II (wraz z co najmniej jednym ciężkim epizodem depresyjnym)."
+    },
+    {
+      "title": "Stany mieszane (Mixed Features): najwyższe ryzyko suicydalne",
+      "text": "W DSM-5-TR i ICD-11 stany mieszane definiuje się jako występowanie objawów z przeciwnego bieguna w trakcie epizodu dominującego (np. pełny epizod depresyjny z co najmniej 3 objawami maniakalnymi/hipomaniakalnymi: gonitwa myśli, pobudzenie psychoruchowe, przyspieszona mowa). Stan ten charakteryzuje się ogromnym napięciem dysforycznym, drażliwością, bezradnością i jednoczesnym odhamowaniem napędu ruchowego. Wiąże się z najwyższym wskaźnikiem prób samobójczych w całej psychiatrii!"
+    },
+    {
+      "title": "Pułapka antydepresantów (Antidepressant-Induced Switch)",
+      "text": "Zastosowanie leku przeciwdepresyjnego (zwłaszcza TLPD lub SNRI, w mniejszym stopniu SSRI) w monoterapii u pacjenta z nierozpoznanym ChAD lub cechami mieszanymi niesie katastrofalne skutki: może wywołać nagły przełom maniakalny (switch), zaindukować cyklotymię z szybką zmianą faz (rapid cycling — >=4 epizody w roku) lub drastycznie nasilić pobudzenie w stanie mieszanym, prowokując samobójstwo. Złotą zasadą w ChAD jest bezwzględne stosowanie stabilizatora nastroju (lit, walproinian, kwetiapina) przed jakimkolwiek rozważeniem ostrożnego dołączenia antydepresantu."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Cecha różnicowa",
+      "Mania (ChAD I)",
+      "Hipomania (ChAD II)"
+    ],
+    "rows": [
+      [
+        "Minimalny czas trwania",
+        "Co najmniej 7 dni (lub hospitalizacja)",
+        "Co najmniej 4 kolejne dni"
+      ],
+      [
+        "Wpływ na funkcjonowanie",
+        "Wyraźne załamanie funkcjonowania zawodowego/społecznego",
+        "Funkcjonowanie zachowane, często subiektywny wzrost produktywności"
+      ],
+      [
+        "Konieczność hospitalizacji",
+        "Częsta, nierzadko w trybie nagłym",
+        "Bezwzględnie brak wskazań do hospitalizacji (jeśli hospitalizacja → to mania)"
+      ],
+      [
+        "Objawy psychotyczne",
+        "Mogą występować (urojenia wielkościowe)",
+        "BEZWZGLĘDNIE BRAK (obecność psychozy = zawsze mania)"
+      ]
+    ]
+  },
+  "advanced": "Spektrum choroby afektywnej dwubiegunowej wg Akiskala obejmuje podtypy takie jak: ChAD I½ (depresja z przedłużoną hipomanią), ChAD II½ (depresja nałożona na temperament cyklotymiczny), ChAD III (mania/hipomania wywołana wyłącznie lekami przeciwdepresyjnymi) oraz ChAD IV (depresja nałożona na temperament hipertymiczny). Wykrycie cech spektrum chroni przed błędem jatrogennym włączenia monoterapii SSRI.",
+  "summary": "ChAD I to mania (>=7 dni, upośledzenie, psychoza); ChAD II to hipomania (>=4 dni, brak psychozy i bez hospitalizacji) + depresja. Monoterapia antydepresantami w ChAD jest błędem sztuki.",
+  "sourceIds": [
+    "canmat-isbd-bipolar",
+    "icd11-cddr",
+    "dsm5tr",
+    "ptp-standardy"
+  ],
+  "questions": [
+    {
+      "id": "psych-bip-q1",
+      "lessonId": "mania-hipomania-spektrum",
+      "prompt": "Pojawienie się urojeń wielkościowych (np. przekonanie o byciu wysłannikiem Boga) u pacjenta w stanie podwyższonego nastroju oznacza:",
+      "options": [
+        {
+          "text": "Wyłącznie zespół odstawienny po nikotynie",
+          "explanation": "Nikotyna nie wywołuje urojeń wielkościowych."
+        },
+        {
+          "text": "Zawsze epizod pełnej manii (ChAD I), ponieważ hipomania z definicji wyklucza objawy psychotyczne",
+          "explanation": "Obecność jakichkolwiek objawów psychotycznych natychmiast klasyfikuje epizod jako manię, niezależnie od czasu trwania."
+        },
+        {
+          "text": "Ciężką postać hipomanii",
+          "explanation": "W hipomanii objawy psychotyczne nigdy nie występują."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-bip-q2",
+      "lessonId": "mania-hipomania-spektrum",
+      "prompt": "Jaki jest minimalny czas trwania wzmożonego nastroju wymagany do rozpoznania epizodu hipomanii w DSM-5-TR i ICD-11?",
+      "options": [
+        {
+          "text": "Dokładnie 1 godzina po kawie",
+          "explanation": "Krótkotrwałe pobudzenie nie jest hipomanią."
+        },
+        {
+          "text": "Co najmniej 6 miesięcy bez przerwy",
+          "explanation": "6 miesięcy dotyczy innych jednostek przewlekłych."
+        },
+        {
+          "text": "Co najmniej 4 kolejne dni",
+          "explanation": "4 dni to formalny próg hipomanii; dla manii wynosi on 7 dni lub wymaga hospitalizacji."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-bip-q3",
+      "lessonId": "mania-hipomania-spektrum",
+      "prompt": "Dlaczego stan mieszany (epizod depresyjny z cechami mieszanymi wg DSM-5-TR) niesie najwyższe ryzyko samobójstwa w psychiatrii?",
+      "options": [
+        {
+          "text": "Łączy głębokie cierpienie i rozpacz depresyjną ze wzmożonym napędem psychoruchowym i gonitwą myśli",
+          "explanation": "Pacjent ma energię do realizacji autodestrukcyjnych impulsów przy skrajnej dysforii psychicznej."
+        },
+        {
+          "text": "Ponieważ pacjent w tym stanie stale śpi",
+          "explanation": "W stanie mieszanym występuje ciężka bezsenność."
+        },
+        {
+          "text": "Ponieważ wiąże się ze spadkiem ciśnienia tętniczego",
+          "explanation": "Ciśnienie tętnicze nie determinuje tendencji samobójczych."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-bip-q4",
+      "lessonId": "mania-hipomania-spektrum",
+      "prompt": "Co grozi pacjentowi z nierozpoznaną chorobą afektywną dwubiegunową po włączeniu leku przeciwdepresyjnego w monoterapii?",
+      "options": [
+        {
+          "text": "Rozwój raka trzustki w ciągu 24 godzin",
+          "explanation": "Brak takiego związku onkologicznego."
+        },
+        {
+          "text": "Inwersja fazy w manię (switch), przyspieszenie cykli (rapid cycling) lub wywołanie groźnego stanu mieszanego",
+          "explanation": "Monoterapia antydepresantem destabilizuje układ afektywny u chorych predysponowanych do ChAD."
+        },
+        {
+          "text": "Natychmiastowe trwałe wyleczenie z ChAD",
+          "explanation": "Leki przeciwdepresyjne nie leczą ChAD w monoterapii."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-bip-q5",
+      "lessonId": "mania-hipomania-spektrum",
+      "prompt": "Jaki lek stanowi fundament farmakoterapii w zapobieganiu nawrotom manii i depresji oraz ma udowodnione działanie przeciwautodestrukcyjne?",
+      "options": [
+        {
+          "text": "Hydroksyzyna w kroplach",
+          "explanation": "Hydroksyzyna działa sedatywnie, ale nie stabilizuje przebiegu ChAD."
+        },
+        {
+          "text": "Monoterapia fluoksetyną",
+          "explanation": "Może wywołać epizod maniakalny."
+        },
+        {
+          "text": "Węglan litu",
+          "explanation": "Lit redukuje ryzyko zgonu z przyczyn samobójczych w ChAD nawet 5-krotnie i jest złotym standardem podtrzymującym."
+        }
+      ],
+      "answer": 2
+    }
+  ],
+  "assetIds": []
+}

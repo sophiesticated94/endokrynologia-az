@@ -1,0 +1,177 @@
+{
+  "id": "leki-przeciwpsychotyczne-generacje",
+  "moduleId": "psych-farmakologia",
+  "title": "Leki przeciwpsychotyczne I, II i III generacji: profil receptorowy",
+  "subtitle": "FGA vs SGA vs agoniści częściowi – skuteczność, tolerancja i algorytmy wyboru",
+  "group": "Farmakoterapia psychoz i schizofrenii",
+  "minutes": 18,
+  "goals": [
+    "Porównasz trzy generacje leków przeciwpsychotycznych pod kątem receptorologii i objawów niepożądanych.",
+    "Scharakteryzujesz unikalną pozycję klozapiny w schizofrenii lekoopornej (TRS).",
+    "Dobierzesz neuroleptyk minimalizujący ryzyko metaboliczne, kardiologiczne lub sedację."
+  ],
+  "sections": [
+    {
+      "title": "I generacja (FGA): silna blokada D2 i wysokie ryzyko EPS",
+      "text": "Klasyczne neuroleptyki (FGA: haloperydol, chlorpromazyna, zuklopentyksol) to silni antagoniści receptorów D2 w całym mózgowiu. O ile skutecznie tłumią psychozę, o tyle blokada w szlaku nigrostriatalnym wywołuje ostry parkinsonizm, akatyzję, dystonie oraz po latach stosowania nieodwracalne dyskinezy późne (tardive dyskinesia - TD) wskutek up-regulacji receptorów postsynaptycznych."
+    },
+    {
+      "title": "II generacja (SGA): synergia D2/5-HT2A i profil metaboliczny",
+      "text": "Atypowe leki przeciwpsychotyczne (SGA: olanzapina, kwetiapina, rysperydon, zyprazydon) łączą słabszą blokadę D2 z silnym antagonizmem 5-HT2A. Znacznie rzadziej wywołują EPS, jednak niektóre z nich (zwłaszcza olanzapina i klozapina) charakteryzują się bardzo wysokim ryzykiem zespołu metabolicznego: przyrostu masy ciała, cukrzycy de novo i dyslipidemii aterogennej wskutek blokady receptorów H1 i 5-HT2C."
+    },
+    {
+      "title": "III generacja: stabilizatory dopaminowe (częściowi agoniści)",
+      "text": "Aripiprazol, brekspiprazol i kariprazyna stanowią nową erę. Działają jak częściowi agoniści receptorów D2 i D3 oraz antagoniści 5-HT2A. Cechują się niemal metaboliczną i hormonalną neutralnością (nie powodują tycia ani hiperprolaktynemii), natomiast najczęstszym działaniem niepożądanym w pierwszych dniach leczenia jest akatyzja (niepokój ruchowy), którą można opanować powolnym włączaniem lub małą dawką beta-blokera."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Generacja / Lek",
+      "Mechanizm wiodący",
+      "Ryzyko EPS / TD",
+      "Ryzyko metaboliczne (tycie, glukoza)"
+    ],
+    "rows": [
+      [
+        "FGA (Haloperydol)",
+        "Silny antagonizm D2",
+        "Bardzo wysokie",
+        "Niskie / neutralne"
+      ],
+      [
+        "SGA (Olanzapina)",
+        "Antagonizm 5-HT2A > D2, H1, 5-HT2C",
+        "Bardzo niskie",
+        "Bardzo wysokie (tycie, cukrzyca)"
+      ],
+      [
+        "SGA (Rysperydon)",
+        "Antagonizm 5-HT2A + D2, alfa-1",
+        "Umiarkowane (zależne od dawki > 4–6 mg)",
+        "Umiarkowane (silna hiperprolaktynemia)"
+      ],
+      [
+        "III gen. (Aripiprazol)",
+        "Częściowy agonizm D2/D3 + 5-HT2A",
+        "Bardzo niskie (ryzyko akatyzji)",
+        "Minimalne / neutralne metabolicznie"
+      ],
+      [
+        "Klozapina (Lek z wyboru w TRS)",
+        "Słaby D2, silny 5-HT2A, alfa-1, M1, H1",
+        "Praktycznie zerowe",
+        "Bardzo wysokie + ryzyko agranulocytozy"
+      ]
+    ]
+  },
+  "advanced": "Klozapina jest jedynym lekiem przeciwpsychotycznym o udowodnionej przewadze w lekoopornej schizofrenii (redukuje objawy u ok. 30–60% pacjentów opornych na inne leki). Ze względu na ryzyko agranulocytozy (ok. 0,8%) wymaga obowiązkowego cotygodniowego monitorowania morfologii (ANC) przez pierwsze 18 tygodni leczenia.",
+  "summary": "FGA skutecznie hamują psychozę, lecz niosą ryzyko EPS. SGA chronią przed EPS, ale olanzapina wywołuje powikłania metaboliczne. Leki III generacji (aripiprazol) są bezpieczne metabolicznie, a klozapina ratuje pacjentów lekoopornych.",
+  "sourceIds": [
+    "wfsbp-schizophrenia",
+    "nice-schizophrenia",
+    "clozapine-consensus"
+  ],
+  "questions": [
+    {
+      "id": "psych-antipsy-q1",
+      "lessonId": "leki-przeciwpsychotyczne-generacje",
+      "prompt": "Który z leków przeciwpsychotycznych II generacji wiąże się z największym ryzykiem powikłań metabolicznych (znacznego przyrostu masy ciała, cukrzycy typu 2 i dyslipidemii)?",
+      "options": [
+        {
+          "text": "Olanzapina (oraz klozapina)",
+          "explanation": "Silna blokada receptorów histaminowych H1 i serotoninowych 5-HT2C w podwzgórzu prowadzi do żarłoczności i insulinooporności."
+        },
+        {
+          "text": "Aripiprazol",
+          "explanation": "Aripiprazol jest lekiem o neutralnym profilu metabolicznym."
+        },
+        {
+          "text": "Zyprazydon",
+          "explanation": "Zyprazydon nie powoduje przyrostu masy ciała, wymaga jednak podawania z posiłkiem min. 500 kcal."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-antipsy-q2",
+      "lessonId": "leki-przeciwpsychotyczne-generacje",
+      "prompt": "Jaki jest mechanizm działania aripiprazolu i kariprazyny na receptor dopaminowy D2?",
+      "options": [
+        {
+          "text": "Czysty agonizm identyczny jak endogenna dopamina",
+          "explanation": "Czysty agonista wywołałby gwałtowne zaostrzenie objawów psychotycznych."
+        },
+        {
+          "text": "Częściowy agonizm (modulacja wewnętrznej aktywności)",
+          "explanation": "W warunkach nadmiaru dopaminy zachowują się jak antagoniści, a w warunkach niedoboru podtrzymują bazową transmisję."
+        },
+        {
+          "text": "Całkowita, nieodwracalna destrukcja receptora D2",
+          "explanation": "Leki nie niszczą cząsteczek receptorowych."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-antipsy-q3",
+      "lessonId": "leki-przeciwpsychotyczne-generacje",
+      "prompt": "Dlaczego u pacjenta leczonego haloperydolem w wysokiej dawce rozwija się sztywność mięśniowa typu \"koła zębatego\" i maskowata twarz?",
+      "options": [
+        {
+          "text": "Ponieważ haloperydol wywołuje natychmiastowe złamania kości twarzoczaszki",
+          "explanation": "Jest to zaburzenie neuroprzekaźnictwa, a nie uraz mechaniczny."
+        },
+        {
+          "text": "Z powodu braku witaminy C w diecie",
+          "explanation": "Objawy pozapiramidowe nie mają związku z poziomem kwasu askorbinowego."
+        },
+        {
+          "text": "Ponieważ blokada receptorów D2 w szlaku nigrostriatalnym przekracza 80%, wywołując polekowy zespół parkinsonowski",
+          "explanation": "Niedobór dopaminy w prążkowiu odhamowuje układ cholinergiczny i powoduje wzmożenie napięcia pozapiramidowego."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-antipsy-q4",
+      "lessonId": "leki-przeciwpsychotyczne-generacje",
+      "prompt": "Jakie badanie krwi jest bezwzględnie obligatoryjne przed włączeniem oraz w trakcie terapii klozapiną z uwagi na ryzyko zgonu?",
+      "options": [
+        {
+          "text": "Bezwzględna liczba neutrofilów (ANC - Absolute Neutrophil Count) w morfologii krwi",
+          "explanation": "Klozapina może wywołać agranulocytozę (ANC < 500/ul); spadek poniżej normy wymaga natychmiastowego odstawienia leku."
+        },
+        {
+          "text": "Stężenie hormonu wzrostu co 3 dni",
+          "explanation": "Hormon wzrostu nie jest parametrem monitorowania bezpieczeństwa klozapiny."
+        },
+        {
+          "text": "Odczyn Biernackiego (OB) raz na 10 lat",
+          "explanation": "OB nie jest wskaźnikiem zagrożenia agranulocytozą."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-antipsy-q5",
+      "lessonId": "leki-przeciwpsychotyczne-generacje",
+      "prompt": "Który lek przeciwpsychotyczny II generacji wykazuje najwyższe ryzyko wywołania objawowej hiperprolaktynemii z mlekotokiem?",
+      "options": [
+        {
+          "text": "Aripiprazol",
+          "explanation": "Aripiprazol jako częściowy agonista wręcz obniża stężenie prolaktyny."
+        },
+        {
+          "text": "Rysperydon (oraz paliperydon)",
+          "explanation": "Silna blokada D2 w naczyniach przysadkowych szlaku guzkowo-lejkowego znosi fizjologiczne hamowanie laktotrofów."
+        },
+        {
+          "text": "Kwetiapina",
+          "explanation": "Kwetiapina bardzo szybko dysocjuje z receptora D2 i nie podwyższa prolaktyny."
+        }
+      ],
+      "answer": 1
+    }
+  ],
+  "assetIds": []
+}

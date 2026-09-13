@@ -1,0 +1,177 @@
+{
+  "id": "benzodiazepiny-leki-z-tapering",
+  "moduleId": "psych-farmakologia",
+  "title": "Benzodiazepiny i leki Z: uzależnienie i protokół taperingowy Ashtona",
+  "subtitle": "Tolerancja, down-regulacja GABAA, zespół odstawienny i hiperboliczna redukcja",
+  "group": "Farmakoterapia zaburzeń lękowych i snu",
+  "minutes": 18,
+  "goals": [
+    "Zrozumiesz molekularny mechanizm tolerancji i adaptacji receptora GABAA na leki sedatywne.",
+    "Zdiagnozujesz objawy fizycznego zespołu odstawiennego po benzodiazepinach i lekach Z.",
+    "Przeprowadzisz bezpieczny protokół redukcji dawki oparty na przeliczeniu na diazepam (Protokół Ashtona)."
+  ],
+  "sections": [
+    {
+      "title": "Mechanizm działania i rozwój tolerancji receptorowej",
+      "text": "Benzodiazepiny (alprazolam, lorazepam, klonazepam) oraz niebenzodiazepinowe leki nasenne (leki Z: zolpidem, zopiklon) łączą się z podjednostką alfa receptora GABAA, nasilając prąd chlorkowy. Przewlekła stymulacja (już po 2–4 tygodniach) wywołuje uncoupling receptora (odsprzężenie), jego internalizację oraz kompensacyjny wzrost ekspresji pobudzających receptorów glutaminergicznych AMPA/NMDA."
+    },
+    {
+      "title": "Zespół odstawienny po nagłym przerwaniu BZD",
+      "text": "Nagłe odstawienie BZD u osoby uzależnionej odsłania hipereksploatowany, pozbawiony hamowania układ glutaminergiczny. Manifestuje się: skrajnym lękiem z odbicia (rebound anxiety), bezsennością, potami, drżeniem, przeczulicą zmysłową (fotofobia, nadwrażliwość na dźwięki), a w ciężkich przypadkach napadami drgawkowymi uogólnionymi toniczno-klonowymi oraz majaczeniem z omamami (stan bezpośredniego zagrożenia życia)."
+    },
+    {
+      "title": "Protokół prof. Heather Ashton (The Ashton Manual)",
+      "text": "Złotym standardem odstawiania krótko- i średniodziałających BZD (alprazolam, lorazepam) lub leków Z jest ich zamiana na równoważną dawkę długodziałającego diazepamu (t1/2 24–48h, a aktywny metabolit desmetylodiazepam nawet do 100h). Po ustabilizowaniu pacjenta na diazepamie dawkę redukuje się stopniowo (hiperbolicznie) o ok. 1–2 mg co 1–2 tygodnie, co pozwala na bezpieczną resensytyzację receptorów GABAA."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Substancja",
+      "Okres półtrwania (t1/2)",
+      "Dawka równoważna 10 mg diazepamu",
+      "Ryzyko nagłego odstawienia"
+    ],
+    "rows": [
+      [
+        "Alprazolam",
+        "6–12 godzin (krótki)",
+        "0,5 mg",
+        "Ekstremalnie wysokie (lęki napadowe, drgawki)"
+      ],
+      [
+        "Lorazepam",
+        "10–20 godzin (pośredni)",
+        "1,0 mg",
+        "Bardzo wysokie"
+      ],
+      [
+        "Klonazepam",
+        "20–50 godzin (długi)",
+        "0,5 mg",
+        "Wysokie (długotrwały zespół abstynencyjny)"
+      ],
+      [
+        "Zolpidem (lek Z)",
+        "2–3 godziny (b. krótki)",
+        "20 mg (jako ekwiwalent nasenny)",
+        "Wysokie przy nadużywaniu dawek"
+      ],
+      [
+        "Diazepam",
+        "24–48h (metabolit do 100h)",
+        "10 mg (lek referencyjny)",
+        "Płynna eliminacja, podstawa protokołu detoksykacji"
+      ]
+    ]
+  },
+  "advanced": "W odstawianiu benzodiazepin kluczowa jest zasada hiperboliczna: ostatnie miligramy diazepamu (np. redukcja z 2 mg do 0 mg) są subiektywnie najtrudniejsze dla pacjenta, ponieważ procentowa zmiana occupancy receptora GABAA przy zejściu z 2 mg do 0 jest znacznie większa niż przy redukcji z 20 mg na 18 mg.",
+  "summary": "Przewlekłe stosowanie BZD prowadzi do internalizacji GABAA i kompensacji glutaminergicznej. Bezpieczna detoksykacja wymaga zamiany na długodziałający diazepam wg Protokołu Ashtona i powolnej redukcji.",
+  "sourceIds": [
+    "ashton-manual",
+    "ptp-standardy",
+    "maudsley15"
+  ],
+  "questions": [
+    {
+      "id": "psych-ashton-q1",
+      "lessonId": "benzodiazepiny-leki-z-tapering",
+      "prompt": "Na czym polega Protokół prof. Heather Ashton (Ashton Manual) w bezpiecznym odstawianiu benzodiazepin?",
+      "options": [
+        {
+          "text": "Na zamianie wszystkich benzodiazepin na dożylną morfinę",
+          "explanation": "Morfina jest opioidem i nie leczy zespołu odstawiennego po BZD."
+        },
+        {
+          "text": "Na zamianie krótko działającej BZD na równoważną dawkę długodziałającego diazepamu i stopniowej redukcji o 1-2 mg co 1-2 tygodnie",
+          "explanation": "Długi okres półtrwania diazepamu zapewnia stałe stężenie we krwi i zapobiega gwałtownym skokom lęku odstawiennego."
+        },
+        {
+          "text": "Na natychmiastowym odstawieniu leku z dnia na dzień i podaniu dużej dawki kofeiny",
+          "explanation": "Postępowanie takie wywołałoby natychmiastowe napady drgawkowe i stan padaczkowy."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-ashton-q2",
+      "lessonId": "benzodiazepiny-leki-z-tapering",
+      "prompt": "Jaki jest ekwiwalent dawki 10 mg diazepamu dla alprazolamu wg tabeli równoważności dawek BZD?",
+      "options": [
+        {
+          "text": "10 mg alprazolamu",
+          "explanation": "Taka dawka alprazolamu odpowiadałaby 200 mg diazepamu i wywołałaby głęboką śpiączkę."
+        },
+        {
+          "text": "100 mg alprazolamu",
+          "explanation": "Jest to dawka śmiertelna."
+        },
+        {
+          "text": "0,5 mg alprazolamu",
+          "explanation": "Alprazolam jest około 20-krotnie silniejszy wagowo od diazepamu."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-ashton-q3",
+      "lessonId": "benzodiazepiny-leki-z-tapering",
+      "prompt": "Co jest najbardziej niebezpiecznym, zagrażającym życiu powikłaniem nagłego odstawienia wysokich dawek benzodiazepin?",
+      "options": [
+        {
+          "text": "Uogólnione napady drgawkowe toniczno-klonowe oraz stan padaczkowy z majaczeniem",
+          "explanation": "Wynika to z braku hamowania GABA-ergicznego i masywnej burzy glutaminianowej w OUN."
+        },
+        {
+          "text": "Nagłe pęknięcie śledziony",
+          "explanation": "BZD nie wpływają mechanicznie na tkankę śledziony."
+        },
+        {
+          "text": "Zwapnienie zastawek serca",
+          "explanation": "Zespoły odstawienne nie powodują ostrej kalcyfikacji zastawek."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-ashton-q4",
+      "lessonId": "benzodiazepiny-leki-z-tapering",
+      "prompt": "Dlaczego leki z grupy Z (zolpidem, zaleplon, zopiklon) również powodują uzależnienie i zespół odstawienny pomimo budowy niebenzodiazepinowej?",
+      "options": [
+        {
+          "text": "Zawierają w składzie alkohol etylowy",
+          "explanation": "Są to czyste chemicznie substancje stałe."
+        },
+        {
+          "text": "Wiążą się z tym samym miejscem benzodiazepinowym na podjednostce alfa-1 receptora GABAA co klasyczne benzodiazepiny",
+          "explanation": "Mają ten sam punkt uchwytu molekularnego, wywołując identyczną adaptację receptorową."
+        },
+        {
+          "text": "Są syntetycznymi pochodnymi kokainy",
+          "explanation": "Leki Z nie mają struktury tropanowej i nie blokują DAT w mechanizmie kokainy."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-ashton-q5",
+      "lessonId": "benzodiazepiny-leki-z-tapering",
+      "prompt": "Dlaczego ostatni etap odstawiania diazepamu (np. redukcja z 2 mg do 0 mg) bywa najtrudniejszy dla pacjenta?",
+      "options": [
+        {
+          "text": "Ponieważ pacjent w tym momencie traci zdolność chodzenia",
+          "explanation": "Odstawienie diazepamu nie upośledza czynności rdzenia kręgowego w ten sposób."
+        },
+        {
+          "text": "Diazepam w dawce 2 mg ulega mutacji w jad kiełbasiany",
+          "explanation": "Jest to biologiczny nonsens."
+        },
+        {
+          "text": "Ponieważ krzywa wysycenia receptora GABAA jest nieliniowa i spadek z 2 mg do 0 oznacza utratę relatywnie dużego procentu occupancy receptora",
+          "explanation": "Zasada hiperbolicznego taperingu wyjaśnia silny wzrost objawów przy odstawianiu resztkowych dawek."
+        }
+      ],
+      "answer": 2
+    }
+  ],
+  "assetIds": []
+}

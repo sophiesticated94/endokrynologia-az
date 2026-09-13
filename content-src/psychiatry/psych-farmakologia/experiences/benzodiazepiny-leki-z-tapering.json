@@ -1,0 +1,369 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "benzodiazepiny-leki-z-tapering",
+  "objectives": [
+    {
+      "id": "benzodiazepiny-leki-z-tapering-obj-1",
+      "statement": "Zrozumiesz molekularny mechanizm tolerancji i adaptacji receptora GABAA na leki sedatywne.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "benzodiazepiny-leki-z-tapering-obj-2",
+      "statement": "Zdiagnozujesz objawy fizycznego zespołu odstawiennego po benzodiazepinach i lekach Z.",
+      "kind": "safety"
+    },
+    {
+      "id": "benzodiazepiny-leki-z-tapering-obj-3",
+      "statement": "Przeprowadzisz bezpieczny protokół redukcji dawki oparty na przeliczeniu na diazepam (Protokół Ashtona).",
+      "kind": "safety"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-ashton-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "benzodiazepiny-leki-z-tapering-obj-1"
+    ],
+    "prompt": "Na czym polega Protokół prof. Heather Ashton (Ashton Manual) w bezpiecznym odstawianiu benzodiazepin?",
+    "options": [
+      "Na zamianie wszystkich benzodiazepin na dożylną morfinę",
+      "Na zamianie krótko działającej BZD na równoważną dawkę długodziałającego diazepamu i stopniowej redukcji o 1-2 mg co 1-2 tygodnie",
+      "Na natychmiastowym odstawieniu leku z dnia na dzień i podaniu dużej dawki kofeiny"
+    ],
+    "optionFeedback": [
+      "Morfina jest opioidem i nie leczy zespołu odstawiennego po BZD.",
+      "Długi okres półtrwania diazepamu zapewnia stałe stężenie we krwi i zapobiega gwałtownym skokom lęku odstawiennego.",
+      "Postępowanie takie wywołałoby natychmiastowe napady drgawkowe i stan padaczkowy."
+    ],
+    "answer": 1,
+    "explanation": "Długi okres półtrwania diazepamu zapewnia stałe stężenie we krwi i zapobiega gwałtownym skokom lęku odstawiennego.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "ashton-manual",
+      "ptp-standardy",
+      "maudsley15"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "benzodiazepiny-leki-z-tapering-block-1",
+      "title": "Mechanizm działania i rozwój tolerancji receptorowej",
+      "text": "Benzodiazepiny (alprazolam, lorazepam, klonazepam) oraz niebenzodiazepinowe leki nasenne (leki Z: zolpidem, zopiklon) łączą się z podjednostką alfa receptora GABAA, nasilając prąd chlorkowy. Przewlekła stymulacja (już po 2–4 tygodniach) wywołuje uncoupling receptora (odsprzężenie), jego internalizację oraz kompensacyjny wzrost ekspresji pobudzających receptorów glutaminergicznych AMPA/NMDA.",
+      "sourceIds": [
+        "ashton-manual",
+        "ptp-standardy",
+        "maudsley15"
+      ],
+      "checkpointId": "psych-ashton-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-ashton-manual-principles",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "benzodiazepiny-leki-z-tapering-block-2",
+      "title": "Zespół odstawienny po nagłym przerwaniu BZD",
+      "text": "Nagłe odstawienie BZD u osoby uzależnionej odsłania hipereksploatowany, pozbawiony hamowania układ glutaminergiczny. Manifestuje się: skrajnym lękiem z odbicia (rebound anxiety), bezsennością, potami, drżeniem, przeczulicą zmysłową (fotofobia, nadwrażliwość na dźwięki), a w ciężkich przypadkach napadami drgawkowymi uogólnionymi toniczno-klonowymi oraz majaczeniem z omamami (stan bezpośredniego zagrożenia życia).",
+      "sourceIds": [
+        "ashton-manual",
+        "ptp-standardy",
+        "maudsley15"
+      ],
+      "checkpointId": "psych-ashton-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "microcase-alprazolam-to-diazepam-switch",
+          "kind": "micro-case",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "benzodiazepiny-leki-z-tapering-block-3",
+      "title": "Protokół prof. Heather Ashton (The Ashton Manual)",
+      "text": "Złotym standardem odstawiania krótko- i średniodziałających BZD (alprazolam, lorazepam) lub leków Z jest ich zamiana na równoważną dawkę długodziałającego diazepamu (t1/2 24–48h, a aktywny metabolit desmetylodiazepam nawet do 100h). Po ustabilizowaniu pacjenta na diazepamie dawkę redukuje się stopniowo (hiperbolicznie) o ok. 1–2 mg co 1–2 tygodnie, co pozwala na bezpieczną resensytyzację receptorów GABAA.",
+      "sourceIds": [
+        "ashton-manual",
+        "ptp-standardy",
+        "maudsley15"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-ashton-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "benzodiazepiny-leki-z-tapering-obj-2"
+      ],
+      "prompt": "Jaki jest ekwiwalent dawki 10 mg diazepamu dla alprazolamu wg tabeli równoważności dawek BZD?",
+      "options": [
+        "10 mg alprazolamu",
+        "100 mg alprazolamu",
+        "0,5 mg alprazolamu"
+      ],
+      "optionFeedback": [
+        "Taka dawka alprazolamu odpowiadałaby 200 mg diazepamu i wywołałaby głęboką śpiączkę.",
+        "Jest to dawka śmiertelna.",
+        "Alprazolam jest około 20-krotnie silniejszy wagowo od diazepamu."
+      ],
+      "answer": 2,
+      "explanation": "Alprazolam jest około 20-krotnie silniejszy wagowo od diazepamu.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "ashton-manual",
+        "ptp-standardy",
+        "maudsley15"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-ashton-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "benzodiazepiny-leki-z-tapering-obj-3"
+      ],
+      "prompt": "Co jest najbardziej niebezpiecznym, zagrażającym życiu powikłaniem nagłego odstawienia wysokich dawek benzodiazepin?",
+      "options": [
+        "Uogólnione napady drgawkowe toniczno-klonowe oraz stan padaczkowy z majaczeniem",
+        "Nagłe pęknięcie śledziony",
+        "Zwapnienie zastawek serca"
+      ],
+      "optionFeedback": [
+        "Wynika to z braku hamowania GABA-ergicznego i masywnej burzy glutaminianowej w OUN.",
+        "BZD nie wpływają mechanicznie na tkankę śledziony.",
+        "Zespoły odstawienne nie powodują ostrej kalcyfikacji zastawek."
+      ],
+      "answer": 0,
+      "explanation": "Wynika to z braku hamowania GABA-ergicznego i masywnej burzy glutaminianowej w OUN.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "ashton-manual",
+        "ptp-standardy",
+        "maudsley15"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "benzodiazepiny-leki-z-tapering-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "benzodiazepiny-leki-z-tapering-obj-1",
+      "benzodiazepiny-leki-z-tapering-obj-2",
+      "benzodiazepiny-leki-z-tapering-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Benzodiazepiny i leki Z: uzależnienie i protokół taperingowy Ashtona”.",
+    "modelAnswer": "Przewlekłe stosowanie BZD prowadzi do internalizacji GABAA i kompensacji glutaminergicznej. Bezpieczna detoksykacja wymaga zamiany na długodziałający diazepam wg Protokołu Ashtona i powolnej redukcji.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "ashton-manual",
+      "ptp-standardy",
+      "maudsley15"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-ashton-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "benzodiazepiny-leki-z-tapering-obj-1"
+      ],
+      "prompt": "Dlaczego leki z grupy Z (zolpidem, zaleplon, zopiklon) również powodują uzależnienie i zespół odstawienny pomimo budowy niebenzodiazepinowej?",
+      "options": [
+        "Zawierają w składzie alkohol etylowy",
+        "Wiążą się z tym samym miejscem benzodiazepinowym na podjednostce alfa-1 receptora GABAA co klasyczne benzodiazepiny",
+        "Są syntetycznymi pochodnymi kokainy"
+      ],
+      "optionFeedback": [
+        "Są to czyste chemicznie substancje stałe.",
+        "Mają ten sam punkt uchwytu molekularnego, wywołując identyczną adaptację receptorową.",
+        "Leki Z nie mają struktury tropanowej i nie blokują DAT w mechanizmie kokainy."
+      ],
+      "answer": 1,
+      "explanation": "Mają ten sam punkt uchwytu molekularnego, wywołując identyczną adaptację receptorową.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "ashton-manual",
+        "ptp-standardy",
+        "maudsley15"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-ashton-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "benzodiazepiny-leki-z-tapering-obj-1"
+      ],
+      "prompt": "Dlaczego ostatni etap odstawiania diazepamu (np. redukcja z 2 mg do 0 mg) bywa najtrudniejszy dla pacjenta?",
+      "options": [
+        "Ponieważ pacjent w tym momencie traci zdolność chodzenia",
+        "Diazepam w dawce 2 mg ulega mutacji w jad kiełbasiany",
+        "Ponieważ krzywa wysycenia receptora GABAA jest nieliniowa i spadek z 2 mg do 0 oznacza utratę relatywnie dużego procentu occupancy receptora"
+      ],
+      "optionFeedback": [
+        "Odstawienie diazepamu nie upośledza czynności rdzenia kręgowego w ten sposób.",
+        "Jest to biologiczny nonsens.",
+        "Zasada hiperbolicznego taperingu wyjaśnia silny wzrost objawów przy odstawianiu resztkowych dawek."
+      ],
+      "answer": 2,
+      "explanation": "Zasada hiperbolicznego taperingu wyjaśnia silny wzrost objawów przy odstawianiu resztkowych dawek.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "ashton-manual",
+        "ptp-standardy",
+        "maudsley15"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "bzd-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "benzodiazepiny-leki-z-tapering-obj-1"
+      ],
+      "claimIds": [
+        "claim-ph-ashton-tapering"
+      ],
+      "prompt": "Pacjent od 2 lat przyjmuje alprazolam w dawce 3 mg/d. Próba nagłego odstawienia wywołała drgawki, bezsenność i nasilony lęk z odbicia. Jak zaplanować bezpieczny proces odstawiania leku wg protokołu Ashtona?",
+      "options": [
+        "Stopniowa zamiana alprazolamu na równoważną dawkę długodziałającego diazepamu, a następnie powolna redukcja dawki o 1–2 mg co 1–2 tygodnie",
+        "Natychmiastowe odstawienie i zastąpienie hydroksyzyną",
+        "Zwiększenie dawki alprazolamu do 6 mg"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-ashton-switch-diazepam",
+            "label": "Zamiana krótko działającej BZD na diazepam o długim okresie półtrwania",
+            "acceptedPhrases": [
+              "diazepam",
+              "ashton",
+              "zamiana na diazepam",
+              "długi okres półtrwania",
+              "protokół ashtona"
+            ]
+          },
+          {
+            "id": "c-slow-tapering-schedule",
+            "label": "Powolna, stopniowa redukcja dawki w celu uniknięcia drgawek i zespołu z odbicia",
+            "acceptedPhrases": [
+              "powolna redukcja",
+              "stopniowe odstawianie",
+              "tapering",
+              "co 1-2 tygodnie",
+              "uniknięcie drgawek"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Protokół Ashtona wykorzystuje diazepam o długim t1/2, co stabilizuje stężenie i umożliwia bezdrgawkowe odstawienie BZD.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "ashton-manual"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "benzodiazepiny-leki-z-tapering-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "benzodiazepiny-leki-z-tapering-obj-2"
+      ],
+      "prompt": "Wyjaśnij mechanizm molekularny lub receptorowy leżący u podstaw tematu: benzodiazepiny leki z tapering.",
+      "modelAnswer": "Kluczowe znaczenie ma zrozumienie profilu receptorowego, kaskad przekaźnictwa wewnątrzkomórkowego oraz adaptacji plastycznych w OUN.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-receptor-action",
+            "label": "Działanie na receptory / enzymy",
+            "acceptedPhrases": [
+              "receptor",
+              "enzym",
+              "mechanizm",
+              "transporter"
+            ]
+          },
+          {
+            "id": "c-clinical-effect",
+            "label": "Wpływ na funkcję OUN i objawy kliniczne",
+            "acceptedPhrases": [
+              "efekt kliniczny",
+              "adaptacja",
+              "plastyczność",
+              "neuroprzekaźnictwo"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Wyjaśnienie mechanizmu na poziomie molekularnym i klinicznym.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "benzodiazepiny-leki-z-tapering-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "benzodiazepiny-leki-z-tapering-obj-1",
+        "benzodiazepiny-leki-z-tapering-obj-3"
+      ],
+      "prompt": "Przed wdrożeniem lub modyfikacją farmakoterapii w temacie benzodiazepiny leki z tapering, jakiej kluczowej informacji brakuje w wywiadzie?",
+      "options": [
+        "Wywiadu dotyczącego leków współistniejących pod kątem interakcji enzymatycznych (CYP) i wydolności nerek/wątroby",
+        "Profilu rzadkich przeciwciał neuronalnych",
+        "Rutynowego badania rezonansu magnetycznego głowy bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Ocena interakcji lekowych i wydolności narządów eliminujących to fundamentalny warunek bezpieczeństwa farmakoterapii.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "maudsley15"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "timeline",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy AGNP 2026 TDM, CPIC PGx, Maudsley 15th ed., Kapur PET D2, Hunter criteria oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

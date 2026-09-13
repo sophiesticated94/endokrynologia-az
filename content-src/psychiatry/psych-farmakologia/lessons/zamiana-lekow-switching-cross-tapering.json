@@ -1,0 +1,171 @@
+{
+  "id": "zamiana-lekow-switching-cross-tapering",
+  "moduleId": "psych-farmakologia",
+  "title": "Strategie zamiany leków: cross-tapering i zespół FINISH",
+  "subtitle": "Przełączanie antydepresantów i neuroleptyków, okresy wypłukiwania (washout) i odstawienie",
+  "group": "Precyzyjna psychofarmakologia i metabolizm",
+  "minutes": 18,
+  "goals": [
+    "Wdrożysz odpowiednią strategię zamiany leku: bezpośrednią (direct), nakładkową (cross-tapering) lub z wypłukiwaniem (washout).",
+    "Zdiagnozujesz objawy zespołu dyskontynuacji leków przeciwdepresyjnych wg akronimu FINISH.",
+    "Zapobiegniesz zagrażającym interakcjom przy zamianie SSRI na inhibitory MAO (protokół 2- lub 5-tygodniowy)."
+  ],
+  "sections": [
+    {
+      "title": "Strategie zamiany leków psychotropowych wg wytycznych BAP",
+      "text": "British Association for Psychopharmacology (BAP) wyróżnia 3 podstawowe metody: 1) Zamiana bezpośrednia (direct switch) – odstawienie leku A i rozpoczęcie leku B następnego dnia (dopuszczalne w ramach tej samej klasy o zbliżonym profilu, np. citalopram -> sertralina); 2) Zamiana krzyżowa (cross-tapering) – stopniowa redukcja leku A przy jednoczesnym powolnym dołączaniu leku B (metoda preferowana w większości sytuacji klinicznych); 3) Zamiana z przerwą (washout) – konieczna przy przejściu na lub z inhibitorów MAO."
+    },
+    {
+      "title": "Zespół dyskontynuacji: akronim FINISH",
+      "text": "Nagłe odstawienie leków serotoninergicznych (zwłaszcza o krótkim t1/2, np. paroksetyny, wenlafaksyny) wywołuje zespół dyskontynuacji opisany akronimem FINISH: Flu-like symptoms (objawy grypopodobne), Insomnia (bezsenność), Nausea (nudności), Imbalance (zawroty głowy, ataksja), Sensory disturbances (parestezje, wyładowania prądowe w głowie tzw. \"brain zaps\"), Hyperarousal (lęk, pobudzenie). Objawy te nie są nawrotem choroby i ustępują po ponownym podaniu dawki leku."
+    },
+    {
+      "title": "Zasady bezpieczeństwa i przejście na iMAO",
+      "text": "Najbardziej krytyczną procedurą jest przejście z leku serotoninergicznego na inhibitor MAO: wymaga bezwzględnego zachowania okresu wypłukiwania trwającego minimum 2 tygodnie (dla paroksetyny, sertraliny, wenlafaksyny) oraz aż 5 tygodni dla fluoksetyny z uwagi na długi czas eliminacji norfluoksetyny. Złamanie tej zasady grozi śmiertelnym zespołem serotoninowym."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Sytuacja kliniczna",
+      "Rekomendowana strategia",
+      "Czas trwania procesu",
+      "Główne ryzyko do monitorowania"
+    ],
+    "rows": [
+      [
+        "SSRI -> inny SSRI",
+        "Zamiana bezpośrednia lub szybki cross-tapering",
+        "1–7 dni",
+        "Przejściowe nudności, lęk"
+      ],
+      [
+        "SSRI -> SNRI (np. wenlafaksyna)",
+        "Krzyżowe odstawianie (cross-tapering)",
+        "2–4 tygodnie",
+        "Zespół odstawienny FINISH"
+      ],
+      [
+        "Dowolny SSRI -> iMAO (np. tranylcypromina)",
+        "Odstawienie + bezwzględny washout (przerwa)",
+        "2 tygodnie (5 tyg. po fluoksetynie!)",
+        "Śmiertelny zespół serotoninowy"
+      ],
+      [
+        "Neuroleptyk A -> Neuroleptyk B",
+        "Powolny cross-tapering",
+        "2–4 tygodnie",
+        "Zaostrzenie objawów psychotycznych z odbicia"
+      ]
+    ]
+  },
+  "advanced": "Przy odstawianiu leków silnie cholinolitycznych (np. klozapiny, olanzapiny, paroksetyny) nagłe przerwanie wyzwala tzw. cholinergiczny zespół z odbicia (cholinergic rebound): nudności, biegunkę, zlewną potliwość, niepokój i bezsenność. Można temu zapobiec stosując powolną redukcję dawki lub krótkotrwałe podanie leku antycholinergicznego (np. hydroksyzyny lub biperydenu).",
+  "summary": "Cross-tapering jest złotym standardem bezpiecznej rotacji leków. Nagłe odstawienie SSRI wywołuje zespół FINISH. Zamiana na iMAO wymaga 2–5 tygodni ścisłego washout w celu uniknięcia toksyczności serotoninowej.",
+  "sourceIds": [
+    "bap-switching",
+    "maudsley15",
+    "horowitz-tapering"
+  ],
+  "questions": [
+    {
+      "id": "psych-switch-q1",
+      "lessonId": "zamiana-lekow-switching-cross-tapering",
+      "prompt": "Ile tygodni musi wynosić okres wypłukiwania (washout) po odstawieniu fluoksetyny przed bezpiecznym włączeniem inhibitora MAO?",
+      "options": [
+        {
+          "text": "Dokładnie 24 godziny",
+          "explanation": "Po 24 godzinach stężenie fluoksetyny i norfluoksetyny jest maksymalne, co wywoła śmiertelny zespół serotoninowy."
+        },
+        {
+          "text": "Wypłukiwanie nie jest konieczne, leki podaje się razem",
+          "explanation": "Jednoczesne podanie SSRI z iMAO jest kardynalnym, śmiertelnym błędem medycznym."
+        },
+        {
+          "text": "Co najmniej 5 tygodni",
+          "explanation": "Wynika to z bardzo długiego okresu biologicznego półtrwania aktywnego metabolitu fluoksetyny – norfluoksetyny (t1/2 do 14 dni)."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-switch-q2",
+      "lessonId": "zamiana-lekow-switching-cross-tapering",
+      "prompt": "Co oznacza akronim FINISH opisujący zespół dyskontynuacji leków przeciwdepresyjnych?",
+      "options": [
+        {
+          "text": "Flu-like symptoms, Insomnia, Nausea, Imbalance, Sensory disturbances (brain zaps), Hyperarousal",
+          "explanation": "Jest to ustrukturyzowany wzorzec objawów odstawiennych po gwałtownym przerwaniu SSRI/SNRI."
+        },
+        {
+          "text": "Gorączka, Utrata wzroku, Złamania kości, Głuchota",
+          "explanation": "Zespół dyskontynuacji nie wywołuje utraty wzroku ani złamań kości."
+        },
+        {
+          "text": "Objawy zawału serca z uniesieniem odcinka ST",
+          "explanation": "FINISH dotyczy zespołu odstawiennego w OUN, nie zawału STEMI."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-switch-q3",
+      "lessonId": "zamiana-lekow-switching-cross-tapering",
+      "prompt": "Które dwa leki przeciwdepresyjne niosą najwyższe ryzyko ciężkiego zespołu odstawiennego po nagłym pominięciu dawki z uwagi na krótki t1/2?",
+      "options": [
+        {
+          "text": "Woda destylowana i glikol",
+          "explanation": "Substancje te nie są lekami przeciwdepresyjnymi."
+        },
+        {
+          "text": "Paroksetyna oraz wenlafaksyna",
+          "explanation": "Krótki okres półtrwania powoduje gwałtowny spadek stężenia i nagłe odhamowanie receptorów."
+        },
+        {
+          "text": "Fluoksetyna oraz norfluoksetyna",
+          "explanation": "Fluoksetyna dzięki długiemu t1/2 \"sama się taperuje\" i rzadko daje objawy nagłego odstawienia."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-switch-q4",
+      "lessonId": "zamiana-lekow-switching-cross-tapering",
+      "prompt": "Na czym polega technika zamiany leków typu cross-tapering?",
+      "options": [
+        {
+          "text": "Na natychmiastowym podwojeniu dawek obu leków przez 6 miesięcy",
+          "explanation": "Postępowanie takie wywołałoby natychmiastową ciężką toksyczność wielolekową."
+        },
+        {
+          "text": "Na podawaniu leku pierwszego wyłącznie w dni parzyste, a drugiego w nieparzyste w pełnych dawkach",
+          "explanation": "Taki schemat powoduje chaos farmakokinetyczny i wahania stężeń."
+        },
+        {
+          "text": "Na stopniowym zmniejszaniu dawki leku dotychczasowego przy jednoczesnym powolnym zwiększaniu dawki nowego leku",
+          "explanation": "Zapobiega to zarówno zaostrzeniu choroby podstawowej, jak i objawom odstawiennym."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-switch-q5",
+      "lessonId": "zamiana-lekow-switching-cross-tapering",
+      "prompt": "Jakie powikłanie z odbicia (rebound) grozi pacjentowi po nagłym odstawieniu klozapiny lub olanzapiny w dużej dawce?",
+      "options": [
+        {
+          "text": "Ostre objawy cholinergiczne z odbicia (nudności, zlewna potliwość, biegunka, ciężki niepokój i bezsenność)",
+          "explanation": "Wynika to z nagłego odblokowania przewlekle hamowanych receptorów muskarynowych M1-M4."
+        },
+        {
+          "text": "Natychmiastowe wypadnięcie kości ramiennej",
+          "explanation": "Odstawienie leków nie wywołuje zwichnięć stawowych."
+        },
+        {
+          "text": "Wzrost stężenia sodu powyżej 200 mmol/l",
+          "explanation": "Nie ma bezpośredniego związku z hipernatremią."
+        }
+      ],
+      "answer": 0
+    }
+  ],
+  "assetIds": []
+}

@@ -1,10 +1,7 @@
 import type { Lesson, LessonExperienceV2 } from '../../course-types.ts';
 import { buildPsychiatryLessonExperience } from './builder.ts';
-import { getDiagnosticExperiences } from './diagnostics.ts';
-import { getAffectiveExperiences } from './affective-neurobiology.ts';
-import { getPharmacologyReceptorsExperiences } from './pharmacology-receptors.ts';
-import { getClinicalPharmacotherapyExperiences } from './clinical-pharmacotherapy.ts';
-import { getSafetyEmergenciesExperiences } from './safety-emergencies-interventions.ts';
+import { affectiveExperiences } from '../affective-content.ts';
+import { pharmacologyExperiences } from '../pharmacology-content.ts';
 import { getNeuroGeriatricExperiences } from './neuro-geriatric.ts';
 import { traumaExperiences } from '../trauma-content.ts';
 
@@ -12,11 +9,8 @@ export function buildAllPsychiatryExperiences(lessons: Lesson[]): Record<string,
   const map = new Map(lessons.map(l => [l.id, l]));
 
   const aggregated: Record<string, LessonExperienceV2> = {
-    ...getDiagnosticExperiences(map),
-    ...getAffectiveExperiences(map),
-    ...getPharmacologyReceptorsExperiences(map),
-    ...getClinicalPharmacotherapyExperiences(map),
-    ...getSafetyEmergenciesExperiences(map),
+    ...affectiveExperiences,
+    ...pharmacologyExperiences,
     ...getNeuroGeriatricExperiences(map),
     ...traumaExperiences,
   };

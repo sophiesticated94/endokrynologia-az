@@ -1,0 +1,171 @@
+{
+  "id": "przypadki-integracyjne-diagnostyka",
+  "moduleId": "psych-afektywne",
+  "title": "Kompleksowa diagnostyka psychiatryczna: przypadki integracyjne",
+  "subtitle": "Wielowymiarowa synteza MSE, osi ICD-11, badań somatycznych i planu leczenia",
+  "group": "Diagnostyka i semiotyka psychiatryczna",
+  "minutes": 20,
+  "goals": [
+    "Zintegrujesz dane z MSE, wywiadu rozwojowego, skal i badań laboratoryjnych w spójną diagnozę.",
+    "Sformułujesz wieloaspektowy plan postępowania diagnostyczno-terapeutycznego.",
+    "Zabezpieczysz pacjenta w sytuacjach niejednoznacznych klinicznie i stanach nagłych."
+  ],
+  "sections": [
+    {
+      "title": "Integracja wielowymiarowa w ujęciu biopsychospołecznym",
+      "text": "Nowoczesna diagnoza psychiatryczna nie ogranicza się do nadania kodu ICD-11. Wymaga syntezy czterech filarów: 1) Osiowej symptomatologii i jej dynamiki czasowej, 2) Biologicznego tła somatycznego (badania krwi, neuroobrazowanie, toksykologia), 3) Przedchorobowej struktury osobowości i stylu radzenia sobie ze stresem, 4) Kontekstu psychospołecznego, traum i zasobów oparcia."
+    },
+    {
+      "title": "Analiza przypadku: pacjent z objawami mieszanymi i bezsennością",
+      "text": "Pacjent 42-letni zgłasza się z powodu ciężkiej bezsenności, gonitwy myśli i lęku. W wywiadzie rodzinnym: samobójstwo wujka. W badaniu fizykalnym: tachykardia 105/min, drżenie rąk. Standardowy odruch włączenia leku przeciwdepresyjnego (SSRI) bez weryfikacji wywiadu hipomaniakalnego grozi wyzwoleniem ostrego stanu manii lub nasileniem ryzyka samobójczego. Precyzyjne MSE ujawnia wzmożony napęd psychoruchowy pod maską skarg na lęk – diagnoza: epizod mieszany w przebiegu ChAD."
+    },
+    {
+      "title": "Formułowanie planu terapeutycznego i kontraktu bezpieczeństwa",
+      "text": "Plan postępowania musi uwzględniać: doraźną stabilizację i prewencję suicydalną (zabezpieczenie środków farmakologicznych przez rodzinę), optymalny dobór farmakoterapii celowanej przyczynowo, psychoedukację pacjenta i bliskich oraz zaplanowanie kontroli w ściśle zdefiniowanym interwale (np. 48–72h w stanach niestabilnych)."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Etap diagnozy",
+      "Narzędzia kliniczne",
+      "Kluczowe pytania decyzyjne",
+      "Efekt końcowy"
+    ],
+    "rows": [
+      [
+        "1. Wykluczenie somatyczne",
+        "Lab, toksykologia, EKG, MRI",
+        "Czy objawy wynikają z toksyn, tarczycy lub guza OUN?",
+        "Czyste pole organiczne"
+      ],
+      [
+        "2. Semiotyka i MSE",
+        "Badanie bezpośrednie, skale (C-SSRS, MADRS, YMRS)",
+        "Czy to depresja jednobiegunowa, ChAD czy psychoza?",
+        "Ustalenie zespołu osiowego"
+      ],
+      [
+        "3. Kontekst rozwojowy",
+        "Wywiad rodzinny, osobowość, styl więzi",
+        "Czy współistnieje trauma, ADHD lub cechy borderline?",
+        "Profil cech osobowości"
+      ],
+      [
+        "4. Plan terapeutyczny",
+        "Farmakoterapia, psychoterapia, sieć wsparcia",
+        "Gdzie leczyć (ambulatorium vs szpital) i jaki lek I rzutu?",
+        "Bezpieczny kontrakt leczenia"
+      ]
+    ]
+  },
+  "advanced": "Zasada \"primum non nocere\" w diagnostyce psychiatrycznej nakazuje, by w przypadku jakichkolwiek wątpliwości między nawracającą depresją (MDD) a chorobą afektywną dwubiegunową (ChAD) NIE włączać monoterapii lekiem przeciwdepresyjnym. Bezpieczniejszą opcją jest rozpoczęcie od leku stabilizującego nastrój (np. kwetiapina, lamotrygina).",
+  "summary": "Kompleksowa diagnoza łączy MSE, badania somatyczne, wywiad rozwojowy i ocenę ryzyka suicydalnego. W wątpliwościach afektywnych unika się monoterapii antydepresantem, zabezpieczając pacjenta normotymicznie.",
+  "sourceIds": [
+    "icd11-cddr",
+    "canmat-isbd-bipolar",
+    "ptp-standardy"
+  ],
+  "questions": [
+    {
+      "id": "psych-integ-q1",
+      "lessonId": "przypadki-integracyjne-diagnostyka",
+      "prompt": "Dlaczego u pacjenta z ciężkim przygnębieniem, bezsennością i przyspieszonym tokiem myśli wdrożenie monoterapii SSRI niesie wysokie ryzyko?",
+      "options": [
+        {
+          "text": "Może sprowokować przejście w pełnoobjawową manię lub stan mieszany ze skrajnym ryzykiem samobójczym",
+          "explanation": "Pobudzenie napędu przy dysforii ułatwia podjęcie impulsywnej próby samobójczej."
+        },
+        {
+          "text": "Powoduje natychmiastowe zniszczenie receptorów dopaminowych w korze wzrokowej",
+          "explanation": "SSRI nie niszczą receptorów dopaminowych."
+        },
+        {
+          "text": "Jest bezwzględnie zakazane przez prawo farmaceutyczne pod karą więzienia",
+          "explanation": "Jest to błąd kliniczny, nie przestępstwo karne."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-integ-q2",
+      "lessonId": "przypadki-integracyjne-diagnostyka",
+      "prompt": "Jakie postępowanie jest najbezpieczniejsze u pacjenta z nietypowym obrazem afektywnym, gdy nie można wykluczyć ChAD?",
+      "options": [
+        {
+          "text": "Odesłanie pacjenta bez leczenia na okres 12 miesięcy",
+          "explanation": "Pozostawienie pacjenta bez opieki stwarza bezpośrednie zagrożenie zdrowia i życia."
+        },
+        {
+          "text": "Rozpoczęcie od leku o profilu stabilizującym nastrój (np. kwetiapina lub lurasidon) zamiast czystego antydepresantu",
+          "explanation": "Leki te posiadają udowodnioną skuteczność w depresji dwubiegunowej bez ryzyka indukcji manii."
+        },
+        {
+          "text": "Podanie maksymalnej dawki wenlafaksyny z klomipraminą",
+          "explanation": "Silne leki o profilu noradrenergicznym najłatwiej indukują zmianę fazy w manię."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-integ-q3",
+      "lessonId": "przypadki-integracyjne-diagnostyka",
+      "prompt": "Który element badania MSE ma kluczowe znaczenie przy różnicowaniu omamów rzekomych (pseudohalucynacji) od omamów prawdziwych?",
+      "options": [
+        {
+          "text": "Godzina występowania objawu w ciągu doby",
+          "explanation": "Pora dnia nie definiuje fenomenu pseudohalucynacji."
+        },
+        {
+          "text": "Stopień zażółcenia twardówek",
+          "explanation": "Żółtaczka świadczy o chorobie wątroby, nie różnicuje omamów."
+        },
+        {
+          "text": "Lokalizacja źródła doznań (przestrzeń wewnętrzna vs obiektywna przestrzeń zewnętrzna)",
+          "explanation": "Pseudohalucynacje lokalizowane są wewnątrz głowy i brak im cech doznania zmysłowego w przestrzeni zewnętrznej."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-integ-q4",
+      "lessonId": "przypadki-integracyjne-diagnostyka",
+      "prompt": "Co oznacza pojęcie \"kontraktu bezpieczeństwa\" w ambulatoryjnej opiece psychiatrycznej?",
+      "options": [
+        {
+          "text": "Uzgodnienie z pacjentem i rodziną planu postępowania i kontaktu w razie nagłego nasilenia myśli suicydalnych",
+          "explanation": "Plan obejmuje usunięcie niebezpiecznych przedmiotów, telefony zaufania i kontakt z izbą przyjęć."
+        },
+        {
+          "text": "Notarialne zrzeczenie się odpowiedzialności przez pacjenta na piśmie",
+          "explanation": "Kontrakt nie jest umową prawno-majątkową, lecz narzędziem relacyjnym."
+        },
+        {
+          "text": "Bezwzględne zamknięcie pacjenta w izolatce domowej przez bliskich",
+          "explanation": "Izolacja mechaniczna nie ma zastosowania w opiece domowej."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-integ-q5",
+      "lessonId": "przypadki-integracyjne-diagnostyka",
+      "prompt": "Dlaczego u osób w wieku podeszłym z nagłym pogorszeniem funkcjonowania poznawczego zawsze należy wykonać badanie ogólne moczu?",
+      "options": [
+        {
+          "text": "Izolowany bakteriomocz bez objawów ogólnych stanowi bezpośrednie wskazanie do sedacji neuroleptykiem",
+          "explanation": "Bezobjawowy bakteriomocz u seniorów nie wymaga antybiotykoterapii ani sedacji bez klinicznych i laboratoryjnych cech aktywnej infekcji."
+        },
+        {
+          "text": "Infekcja układu moczowego (ZUM) jest u seniorów najczęstszą somatyczną przyczyną ostrego zespołu majaczeniowego (delirium)",
+          "explanation": "Często przebiega bez gorączki i dyzurii, manifestując się wyłącznie zaburzeniami świadomości i pobudzeniem."
+        },
+        {
+          "text": "Białkomocz powyżej 1 g/d bezpośrednio hamuje korowe receptory NMDA",
+          "explanation": "Nefropatia białkomoczowa nie wywołuje ostrego zespołu majaczeniowego w mechanizmie bezpośredniej blokady receptorowej bez cech mocznicy."
+        }
+      ],
+      "answer": 1
+    }
+  ],
+  "assetIds": []
+}

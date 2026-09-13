@@ -1,0 +1,364 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "uklad-serotoninergiczny-receptory",
+  "objectives": [
+    {
+      "id": "uklad-serotoninergiczny-receptory-obj-1",
+      "statement": "Zróżnicujesz funkcje i lokalizację receptorów 5-HT1A, 5-HT2A, 5-HT2C, 5-HT3 i 5-HT7.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "uklad-serotoninergiczny-receptory-obj-2",
+      "statement": "Zrozumiesz, dlaczego antagonizm 5-HT2A leków atypowych chroni przed EPS i prolaktynemią.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "uklad-serotoninergiczny-receptory-obj-3",
+      "statement": "Wyjaśnisz działanie przeciwwymiotne i propoznawcze antagonizmu receptorów 5-HT3 i 5-HT7.",
+      "kind": "mechanism"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-5ht-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "uklad-serotoninergiczny-receptory-obj-1"
+    ],
+    "prompt": "Dlaczego leki przeciwpsychotyczne II generacji (SGA) o silnym antagonizmie 5-HT2A wywołują znacznie mniej objawów pozapiramidowych (EPS) niż haloperydol?",
+    "options": [
+      "Antagonizm 5-HT2A całkowicie uniemożliwia wchłanianie leku do krwi",
+      "Blokada receptorów 5-HT2A w prążkowiu odhamowuje uwalnianie dopaminy, która konkuruje z lekiem o receptory D2 w szlaku nigrostriatalnym",
+      "Leki II generacji niszczą prążkowie, więc pacjent nie ma czym drżeć"
+    ],
+    "optionFeedback": [
+      "Leki SGA wchłaniają się prawidłowo z przewodu pokarmowego.",
+      "Chroni to układ pozapiramidowy przed nadmierną blokadą transmisyjną.",
+      "Leki psychotropowe nie powodują destrukcji prążkowia."
+    ],
+    "answer": 1,
+    "explanation": "Chroni to układ pozapiramidowy przed nadmierną blokadą transmisyjną.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "stahl-essential",
+      "pet-d2-kapur",
+      "canmat-mdd-2023"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "uklad-serotoninergiczny-receptory-block-1",
+      "title": "Autoreceptory 5-HT1A a postsynaptyczne 5-HT2A",
+      "text": "Serotonina oddziałuje na co najmniej 14 podtypów receptorów. Somatodendrytyczne receptory 5-HT1A w jądrach szwu pełnią funkcję hamulca uwalniania serotoniny. Z kolei receptory postsynaptyczne 5-HT2A (sprzężone z białkiem Gq) zlokalizowane na neuronach piramidowych kory i interneuronach GABA-ergicznych hamują uwalnianie dopaminy w prążkowiu i korze czołowej.",
+      "sourceIds": [
+        "stahl-essential",
+        "pet-d2-kapur",
+        "canmat-mdd-2023"
+      ],
+      "checkpointId": "psych-5ht-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-5ht-subtypes-profile",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "uklad-serotoninergiczny-receptory-block-2",
+      "title": "Antagonizm 5-HT2A jako znak rozpoznawczy SGA",
+      "text": "Leki przeciwpsychotyczne II generacji (SGA: klozapina, olanzapina, kwetiapina) charakteryzują się wyższym powinowactwem do receptora 5-HT2A niż do D2. Zablokowanie 5-HT2A znosi hamowanie uwalniania dopaminy w prążkowiu (przez interneurony GABA), co powoduje lokalny wyrzut dopaminy konkurującej z lekiem o receptor D2. Chroni to pacjenta przed objawami pozapiramidowymi (EPS) pomimo terapeutycznej dawki leku.",
+      "sourceIds": [
+        "stahl-essential",
+        "pet-d2-kapur",
+        "canmat-mdd-2023"
+      ],
+      "checkpointId": "psych-5ht-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-monoamine-synapse",
+          "kind": "diagram",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "uklad-serotoninergiczny-receptory-block-3",
+      "title": "Receptory 5-HT2C, 5-HT3 i 5-HT7 w psychofarmakologii",
+      "text": "Blokada receptora 5-HT2C (np. przez mirtazapinę, olanzapinę czy agomelatynę) odhamowuje uwalnianie dopaminy i noradrenaliny w korze przedczołowej, co poprawia nastrój, lecz sprzyja przyrostowi masy ciała. Antagonizm 5-HT3 (wortioksetyna, mirtazapina) znosi nudności i poprawia przekaźnictwo acetylocholinowe, a antagonizm 5-HT7 reguluje rytmy okołodobowe i funkcje wykonawcze.",
+      "sourceIds": [
+        "stahl-essential",
+        "pet-d2-kapur",
+        "canmat-mdd-2023"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-5ht-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "uklad-serotoninergiczny-receptory-obj-2"
+      ],
+      "prompt": "Który podtyp receptora serotoninowego jest bezpośrednim kanałem jonowym bramkowanym ligandem (nie receptorem metabotropowym sprzężonym z białkiem G)?",
+      "options": [
+        "Receptor 5-HT1A",
+        "Receptor 5-HT2A",
+        "Receptor 5-HT3"
+      ],
+      "optionFeedback": [
+        "5-HT1A jest receptorem sprzężonym z białkiem Gi/o hamującym cyklazę adenylanową.",
+        "5-HT2A jest receptorem sprzężonym z białkiem Gq stymulującym fosfolipazę C.",
+        "Jest to pentameryczny kanał kationowy; jego blokada wywiera silny efekt przeciwwymiotny i prokognitywny."
+      ],
+      "answer": 2,
+      "explanation": "Jest to pentameryczny kanał kationowy; jego blokada wywiera silny efekt przeciwwymiotny i prokognitywny.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "stahl-essential",
+        "pet-d2-kapur",
+        "canmat-mdd-2023"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-5ht-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "uklad-serotoninergiczny-receptory-obj-3"
+      ],
+      "prompt": "Jaki efekt kliniczny wywołuje silny antagonizm receptorów 5-HT2C (np. w działaniu mirtazapiny lub olanzapiny)?",
+      "options": [
+        "Wzrost łaknienia, zwiększenie masy ciała oraz odhamowanie uwalniania DA i NA w korze przedczołowej",
+        "Natychmiastowe zatrzymanie krążenia w mechanizmie asystolii",
+        "Gwałtowny spadek masy ciała o 20 kg w ciągu tygodnia"
+      ],
+      "optionFeedback": [
+        "Receptor 5-HT2C fizjologicznie hamuje apetyt i wyrzut katecholamin korowych.",
+        "Blokada 5-HT2C nie wywołuje asystolii.",
+        "Blokada 5-HT2C promuje tycie, a nie chudnięcie."
+      ],
+      "answer": 0,
+      "explanation": "Receptor 5-HT2C fizjologicznie hamuje apetyt i wyrzut katecholamin korowych.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "stahl-essential",
+        "pet-d2-kapur",
+        "canmat-mdd-2023"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "uklad-serotoninergiczny-receptory-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "uklad-serotoninergiczny-receptory-obj-1",
+      "uklad-serotoninergiczny-receptory-obj-2",
+      "uklad-serotoninergiczny-receptory-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Układ serotoninergiczny: receptory 5-HT1A, 2A, 2C, 3 i 7”.",
+    "modelAnswer": "Profil receptorowy 5-HT decyduje o tolerancji leków. Antagonizm 5-HT2A chroni przed EPS w lekach atypowych, blokada 5-HT2C zwiększa stężenie DA/NA w korze, a antagonizm 5-HT3 eliminuje nudności.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "stahl-essential",
+      "pet-d2-kapur",
+      "canmat-mdd-2023"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-5ht-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "uklad-serotoninergiczny-receptory-obj-1"
+      ],
+      "prompt": "Który lek przeciwdepresyjny łączy blokadę SERT z bezpośrednim antagonizmem receptorów 5-HT3 i 5-HT7 oraz agonizmem 5-HT1A (profil multimodalny)?",
+      "options": [
+        "Maprotylina",
+        "Wortioksetyna",
+        "Doksepina"
+      ],
+      "optionFeedback": [
+        "Maprotylina jest czteropierścieniowym selektywnym inhibitorem NET.",
+        "Profil ten zapewnia poprawę funkcji poznawczych w depresji i niskie ryzyko dysfunkcji seksualnych.",
+        "Doksepina jest trójpierścieniowym lekiem przeciwdepresyjnym o silnym działaniu antyhistaminowym."
+      ],
+      "answer": 1,
+      "explanation": "Profil ten zapewnia poprawę funkcji poznawczych w depresji i niskie ryzyko dysfunkcji seksualnych.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "stahl-essential",
+        "pet-d2-kapur",
+        "canmat-mdd-2023"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-5ht-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "uklad-serotoninergiczny-receptory-obj-1"
+      ],
+      "prompt": "Gdzie zlokalizowane są somatodendrytyczne autoreceptory 5-HT1A wygaszające wyładowania neuronów serotoninowych?",
+      "options": [
+        "W rogach tylnych rdzenia kręgowego",
+        "W opuszce węchowej",
+        "W jądrach szwu pnia mózgu (raphe nuclei)"
+      ],
+      "optionFeedback": [
+        "Rogi tylne przewodzą czucie somatyczne i ból.",
+        "Opuszka węchowa odbiera bodźce zapachowe.",
+        "Ich desensytyzacja po 2–4 tygodniach ekspozycji na SSRI odblokowuje trwałe uwalnianie serotoniny w mózgowiu."
+      ],
+      "answer": 2,
+      "explanation": "Ich desensytyzacja po 2–4 tygodniach ekspozycji na SSRI odblokowuje trwałe uwalnianie serotoniny w mózgowiu.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "stahl-essential",
+        "pet-d2-kapur",
+        "canmat-mdd-2023"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "uklad-serotoninergiczny-receptory-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "uklad-serotoninergiczny-receptory-obj-1"
+      ],
+      "prompt": "Oceń decyzję terapeutyczną i mechanizmy bezpieczeństwa w temacie lekcji „uklad serotoninergiczny receptory”.",
+      "options": [
+        "Postępowanie zgodne z wytycznymi EBM i monitorowaniem bezpieczeństwa",
+        "Modyfikacja leczenia bez uwzględnienia farmakokinetyki i interakcji",
+        "Nagłe odstawienie leku z ryzykiem powikłań z odbicia"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-pk-rationale",
+            "label": "Uzasadnienie oparte na PK/PD i bezpieczeństwie",
+            "acceptedPhrases": [
+              "bezpieczeństwo",
+              "pk/pd",
+              "wytyczne",
+              "mechanizm"
+            ]
+          },
+          {
+            "id": "c-monitoring-rationale",
+            "label": "Monitorowanie parametrów klinicznych",
+            "acceptedPhrases": [
+              "monitoring",
+              "stężenie",
+              "interakcje"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Decyzja wymaga uwzględnienia parametrów farmakokinetycznych i profilu bezpieczeństwa.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "maudsley15",
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "uklad-serotoninergiczny-receptory-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "uklad-serotoninergiczny-receptory-obj-2"
+      ],
+      "prompt": "Wyjaśnij mechanizm molekularny lub receptorowy leżący u podstaw tematu: uklad serotoninergiczny receptory.",
+      "modelAnswer": "Kluczowe znaczenie ma zrozumienie profilu receptorowego, kaskad przekaźnictwa wewnątrzkomórkowego oraz adaptacji plastycznych w OUN.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-receptor-action",
+            "label": "Działanie na receptory / enzymy",
+            "acceptedPhrases": [
+              "receptor",
+              "enzym",
+              "mechanizm",
+              "transporter"
+            ]
+          },
+          {
+            "id": "c-clinical-effect",
+            "label": "Wpływ na funkcję OUN i objawy kliniczne",
+            "acceptedPhrases": [
+              "efekt kliniczny",
+              "adaptacja",
+              "plastyczność",
+              "neuroprzekaźnictwo"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Wyjaśnienie mechanizmu na poziomie molekularnym i klinicznym.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "uklad-serotoninergiczny-receptory-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "uklad-serotoninergiczny-receptory-obj-1",
+        "uklad-serotoninergiczny-receptory-obj-3"
+      ],
+      "prompt": "Przed wdrożeniem lub modyfikacją farmakoterapii w temacie uklad serotoninergiczny receptory, jakiej kluczowej informacji brakuje w wywiadzie?",
+      "options": [
+        "Wywiadu dotyczącego leków współistniejących pod kątem interakcji enzymatycznych (CYP) i wydolności nerek/wątroby",
+        "Profilu rzadkich przeciwciał neuronalnych",
+        "Rutynowego badania rezonansu magnetycznego głowy bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Ocena interakcji lekowych i wydolności narządów eliminujących to fundamentalny warunek bezpieczeństwa farmakoterapii.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "maudsley15"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "pathway-builder",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy AGNP 2026 TDM, CPIC PGx, Maudsley 15th ed., Kapur PET D2, Hunter criteria oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

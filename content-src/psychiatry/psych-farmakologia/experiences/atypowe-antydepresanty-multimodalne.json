@@ -1,0 +1,364 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "atypowe-antydepresanty-multimodalne",
+  "objectives": [
+    {
+      "id": "atypowe-antydepresanty-multimodalne-obj-1",
+      "statement": "Dobierzesz lek przeciwdepresyjny pod kątem fenotypu objawowego (anhedonia, bezsenność, lęk, dysfunkcje seksualne).",
+      "kind": "differentiation"
+    },
+    {
+      "id": "atypowe-antydepresanty-multimodalne-obj-2",
+      "statement": "Wyjaśnisz mechanizm NDRI bupropionu i brak negatywnego wpływu na masę ciała i sferę seksualną.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "atypowe-antydepresanty-multimodalne-obj-3",
+      "statement": "Scharakteryzujesz działanie NaSSA mirtazapiny (antagonizm alfa-2 i 5-HT2/3) oraz SARI trazodonu.",
+      "kind": "mechanism"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-atyp-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "atypowe-antydepresanty-multimodalne-obj-1"
+    ],
+    "prompt": "Który lek przeciwdepresyjny jest lekiem I rzutu u pacjenta cierpiącego na depresję z ciężką apatią, który obawia się zaburzeń erekcji i przyrostu masy ciała?",
+    "options": [
+      "Mirtazapina",
+      "Bupropion",
+      "Paroksetyna"
+    ],
+    "optionFeedback": [
+      "Mirtazapina silnie stymuluje łaknienie i prowadzi do przyrostu masy ciała.",
+      "Jako inhibitor wychwytu noradrenaliny i dopaminy nie wywołuje dysfunkcji seksualnych ani tycia.",
+      "Paroksetyna najsilniej spośród SSRI wywołuje dysfunkcje seksualne i sprzyja tyciu."
+    ],
+    "answer": 1,
+    "explanation": "Jako inhibitor wychwytu noradrenaliny i dopaminy nie wywołuje dysfunkcji seksualnych ani tycia.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "canmat-mdd-2023",
+      "stahl-essential",
+      "nice-depression"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "atypowe-antydepresanty-multimodalne-block-1",
+      "title": "Bupropion (NDRI): aktywacja dopaminergiczna bez serotoniny",
+      "text": "Bupropion hamuje wychwyt zwrotny noradrenaliny i dopaminy (NDRI). Jest lekiem z wyboru u pacjentów z dominującą anhedonią, apatią, zmęczeniem, spowolnieniem psychoruchowym oraz u osób obawiających się dysfunkcji seksualnych i przyrostu masy ciała (bupropion sprzyja redukcji wagi). Głównym przeciwwskazaniem jest padaczka oraz zaburzenia odżywiania (bulimia, jadłowstręt) z uwagi na obniżanie progu drgawkowego.",
+      "sourceIds": [
+        "canmat-mdd-2023",
+        "stahl-essential",
+        "nice-depression"
+      ],
+      "checkpointId": "psych-atyp-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-multimodal-receptor-profiles",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "atypowe-antydepresanty-multimodalne-block-2",
+      "title": "Mirtazapina (NaSSA): odhamowanie noradrenergiczne i sedacja",
+      "text": "Mirtazapina jest noradrenergicznym i specyficznie serotoninergicznym lekiem przeciwdepresyjnym (NaSSA). Działa jako antagonista presynaptycznych autoreceptorów i heteroreceptorów alfa-2 adrenergicznych, co odhamowuje wyrzut NA i 5-HT. Ponadto blokuje receptory 5-HT2A, 5-HT2C, 5-HT3 i silnie H1. Zapewnia to szybki efekt nasenny i przeciwlękowy oraz stymulację apetytu (korzystne u pacjentów wyniszczonych i z ciężką bezsennością).",
+      "sourceIds": [
+        "canmat-mdd-2023",
+        "stahl-essential",
+        "nice-depression"
+      ],
+      "checkpointId": "psych-atyp-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "microcase-bupropion-mirtazapine-choice",
+          "kind": "micro-case",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "atypowe-antydepresanty-multimodalne-block-3",
+      "title": "Trazodon (SARI) i leki multimodalne",
+      "text": "Trazodon w niskich dawkach (25–100 mg) działa jako antagonista 5-HT2A i H1 oraz inhibitor wychwytu 5-HT (SARI), będąc lekiem z wyboru w bezsenności towarzyszącej depresji bez potencjału uzależniającego. Wortioksetyna łączy blokadę SERT z wieloma celami receptorowymi, poprawiając funkcje wykonawcze i pamięć roboczą u pacjentów w każdym wieku.",
+      "sourceIds": [
+        "canmat-mdd-2023",
+        "stahl-essential",
+        "nice-depression"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-atyp-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "atypowe-antydepresanty-multimodalne-obj-2"
+      ],
+      "prompt": "Jakie schorzenia stanowią bezwzględne przeciwwskazanie do stosowania bupropionu z uwagi na obniżanie progu drgawkowego?",
+      "options": [
+        "Krótkowzroczność i łupież",
+        "Łagodne nadciśnienie tętnicze dobrze kontrolowane jednym lekiem",
+        "Padaczka oraz aktywne zaburzenia odżywiania (bulimia, anorexia nervosa)"
+      ],
+      "optionFeedback": [
+        "Schorzenia te nie mają żadnego związku z metabolizmem bupropionu.",
+        "Kontrolowane nadciśnienie wymaga jedynie monitorowania RR, nie jest bezwzględnym zakazem.",
+        "U pacjentów z zaburzeniami odżywiania ryzyko napadu drgawkowego na bupropionie jest wielokrotnie wyższe."
+      ],
+      "answer": 2,
+      "explanation": "U pacjentów z zaburzeniami odżywiania ryzyko napadu drgawkowego na bupropionie jest wielokrotnie wyższe.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "canmat-mdd-2023",
+        "stahl-essential",
+        "nice-depression"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-atyp-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "atypowe-antydepresanty-multimodalne-obj-3"
+      ],
+      "prompt": "Dlaczego mirtazapina w dawce 15 mg działa silniej nasennie niż w wyższej dawce 45 mg?",
+      "options": [
+        "W niskiej dawce dominuje wysokie powinowactwo do receptorów H1, natomiast w wyższej przeważa aktywujący wyrzut noradrenaliny przez blokadę alfa-2",
+        "W dawce 45 mg lek przestaje wchłaniać się w jelicie cienkim",
+        "W dawce 45 mg pacjent zapomina przyjąć tabletkę"
+      ],
+      "optionFeedback": [
+        "Transmisja noradrenergiczna w wyższych dawkach przeciwdziała sedacji antyhistaminowej.",
+        "Mirtazapina wchłania się liniowo w całym zakresie dawek.",
+        "Dawkowanie wyższe jest zalecane w schemacie wieczornym."
+      ],
+      "answer": 0,
+      "explanation": "Transmisja noradrenergiczna w wyższych dawkach przeciwdziała sedacji antyhistaminowej.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "canmat-mdd-2023",
+        "stahl-essential",
+        "nice-depression"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "atypowe-antydepresanty-multimodalne-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "atypowe-antydepresanty-multimodalne-obj-1",
+      "atypowe-antydepresanty-multimodalne-obj-2",
+      "atypowe-antydepresanty-multimodalne-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Atypowe i multimodalne leki przeciwdepresyjne”.",
+    "modelAnswer": "Leki atypowe pozwalają na leczenie celowane fenotypowo: bupropion aktywizuje bez dysfunkcji seksualnych, mirtazapina leczy bezsenność i anoreksję, trazodon przywraca architekturę snu, a wortioksetyna usprawnia procesy poznawcze.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "canmat-mdd-2023",
+      "stahl-essential",
+      "nice-depression"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-atyp-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "atypowe-antydepresanty-multimodalne-obj-1"
+      ],
+      "prompt": "Jakie rzadkie, lecz urologicznie groźne powikłanie może wystąpić podczas stosowania trazodonu wskutek blokady receptorów alfa-1 adrenergicznych?",
+      "options": [
+        "Natychmiastowe zrośnięcie cewki moczowej",
+        "Priapizm (bolesny, przedłużający się wzwód prącia bez pobudzenia seksualnego)",
+        "Zwapnienie gruczołu krokowego w ciągu 24 godzin"
+      ],
+      "optionFeedback": [
+        "Nie ma takiego powikłania polekowego.",
+        "Stan ten wymaga pilnej interwencji urologicznej, aby zapobiec martwicy ciał jamistych.",
+        "Trazodon nie wywołuje zwapnień stercza."
+      ],
+      "answer": 1,
+      "explanation": "Stan ten wymaga pilnej interwencji urologicznej, aby zapobiec martwicy ciał jamistych.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "canmat-mdd-2023",
+        "stahl-essential",
+        "nice-depression"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-atyp-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "atypowe-antydepresanty-multimodalne-obj-1"
+      ],
+      "prompt": "Który lek przeciwdepresyjny dzięki blokadzie 5-HT3 i 5-HT7 oraz stymulacji 5-HT1A wykazuje specyficzne działanie prokognitywne?",
+      "options": [
+        "Doksepina w małej dawce",
+        "Klomipramina",
+        "Wortioksetyna"
+      ],
+      "optionFeedback": [
+        "Doksepina działa cholinolitycznie, co może wręcz pogarszać pamięć.",
+        "Silny cholinolityk pogarszający procesy uwagi i pamięci u seniorów.",
+        "Wielokierunkowa modulacja receptorowa odhamowuje wyrzut acetylocholiny i dopaminy w hipokampie."
+      ],
+      "answer": 2,
+      "explanation": "Wielokierunkowa modulacja receptorowa odhamowuje wyrzut acetylocholiny i dopaminy w hipokampie.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "canmat-mdd-2023",
+        "stahl-essential",
+        "nice-depression"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "atypowe-antydepresanty-multimodalne-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "atypowe-antydepresanty-multimodalne-obj-1"
+      ],
+      "prompt": "Oceń decyzję terapeutyczną i mechanizmy bezpieczeństwa w temacie lekcji „atypowe antydepresanty multimodalne”.",
+      "options": [
+        "Postępowanie zgodne z wytycznymi EBM i monitorowaniem bezpieczeństwa",
+        "Modyfikacja leczenia bez uwzględnienia farmakokinetyki i interakcji",
+        "Nagłe odstawienie leku z ryzykiem powikłań z odbicia"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-pk-rationale",
+            "label": "Uzasadnienie oparte na PK/PD i bezpieczeństwie",
+            "acceptedPhrases": [
+              "bezpieczeństwo",
+              "pk/pd",
+              "wytyczne",
+              "mechanizm"
+            ]
+          },
+          {
+            "id": "c-monitoring-rationale",
+            "label": "Monitorowanie parametrów klinicznych",
+            "acceptedPhrases": [
+              "monitoring",
+              "stężenie",
+              "interakcje"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Decyzja wymaga uwzględnienia parametrów farmakokinetycznych i profilu bezpieczeństwa.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "maudsley15",
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "atypowe-antydepresanty-multimodalne-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "atypowe-antydepresanty-multimodalne-obj-2"
+      ],
+      "prompt": "Wyjaśnij mechanizm molekularny lub receptorowy leżący u podstaw tematu: atypowe antydepresanty multimodalne.",
+      "modelAnswer": "Kluczowe znaczenie ma zrozumienie profilu receptorowego, kaskad przekaźnictwa wewnątrzkomórkowego oraz adaptacji plastycznych w OUN.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-receptor-action",
+            "label": "Działanie na receptory / enzymy",
+            "acceptedPhrases": [
+              "receptor",
+              "enzym",
+              "mechanizm",
+              "transporter"
+            ]
+          },
+          {
+            "id": "c-clinical-effect",
+            "label": "Wpływ na funkcję OUN i objawy kliniczne",
+            "acceptedPhrases": [
+              "efekt kliniczny",
+              "adaptacja",
+              "plastyczność",
+              "neuroprzekaźnictwo"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Wyjaśnienie mechanizmu na poziomie molekularnym i klinicznym.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "atypowe-antydepresanty-multimodalne-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "atypowe-antydepresanty-multimodalne-obj-1",
+        "atypowe-antydepresanty-multimodalne-obj-3"
+      ],
+      "prompt": "Przed wdrożeniem lub modyfikacją farmakoterapii w temacie atypowe antydepresanty multimodalne, jakiej kluczowej informacji brakuje w wywiadzie?",
+      "options": [
+        "Wywiadu dotyczącego leków współistniejących pod kątem interakcji enzymatycznych (CYP) i wydolności nerek/wątroby",
+        "Profilu rzadkich przeciwciał neuronalnych",
+        "Rutynowego badania rezonansu magnetycznego głowy bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Ocena interakcji lekowych i wydolności narządów eliminujących to fundamentalny warunek bezpieczeństwa farmakoterapii.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "maudsley15"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "pathway-builder"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy AGNP 2026 TDM, CPIC PGx, Maudsley 15th ed., Kapur PET D2, Hunter criteria oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

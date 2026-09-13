@@ -1,0 +1,377 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "farmakokinetyka-oun-bariera",
+  "objectives": [
+    {
+      "id": "farmakokinetyka-oun-bariera-obj-1",
+      "statement": "Zrozumiesz rolę bariery krew-mózg (BBB) i pompy effluksowej P-gp w dystrybucji psychotropów.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "farmakokinetyka-oun-bariera-obj-2",
+      "statement": "Scharakteryzujesz wpływ wiązania z białkami osocza na wolną frakcję aktywną leku w OUN.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "farmakokinetyka-oun-bariera-obj-3",
+      "statement": "Ocenisz kinetykę eliminacji i czas osiągania stanu stacjonarnego (steady state).",
+      "kind": "mechanism"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-pk-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "farmakokinetyka-oun-bariera-obj-1"
+    ],
+    "prompt": "Ile okresów biologicznego półtrwania (t1/2) potrzeba, aby stężenie leku psychotropowego osiągnęło stan stacjonarny (steady state)?",
+    "options": [
+      "Co najmniej 30 okresów półtrwania",
+      "Około 4 do 5 okresów półtrwania (t1/2)",
+      "Dokładnie 1 okres półtrwania"
+    ],
+    "optionFeedback": [
+      "Po 30 okresach lek uległby całkowitej wymianie kilkukrotnie.",
+      "Wtedy szybkość eliminacji leku zrównuje się z szybkością jego podawania (ok. 94–97% stężenia docelowego).",
+      "Po 1 okresie półtrwania lek osiąga zaledwie 50% stężenia stacjonarnego."
+    ],
+    "answer": 1,
+    "explanation": "Wtedy szybkość eliminacji leku zrównuje się z szybkością jego podawania (ok. 94–97% stężenia docelowego).",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "stahl-essential",
+      "maudsley15",
+      "agnp-tdm-2026"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "farmakokinetyka-oun-bariera-block-1",
+      "title": "Bariera krew-mózg (BBB) i czynniki determinujące przenikanie",
+      "text": "Leki psychotropowe, aby wywrzeć efekt terapeutyczny, muszą przekroczyć barierę krew-mózg (blood-brain barrier, BBB), zbudowaną ze ściśle połączonych komórek śródbłonka naczyniowego (tight junctions) otoczonych przez perycyty i stopki astrocytarne. Kluczowymi determinantami penetracji są: niska masa cząsteczkowa (< 400–500 Da), wysoka lipofilność (współczynnik logP) oraz brak ładunku elektrycznego w fizjologicznym pH krwi (7,4).",
+      "sourceIds": [
+        "stahl-essential",
+        "maudsley15",
+        "agnp-tdm-2026"
+      ],
+      "checkpointId": "psych-pk-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-pgp-efflux-mechanisms",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "farmakokinetyka-oun-bariera-block-2",
+      "title": "Glikoproteina P (P-gp / ABCB1) jako strażnik OUN",
+      "text": "Aktywna pompa effluksowa glikoproteina P (kodowana przez gen ABCB1) zlokalizowana w błonie komórek śródbłonka aktywnie wypompowuje wiele leków z tkanki mózgowej z powrotem do światła naczynia. Przykładowo, rysperydon i paliperydon są silnymi substratami P-gp, podczas gdy olanzapina i klozapina penetrują swobodniej. Inhibicja P-gp (np. przez werapamil, ketokonazol) może drastycznie zwiększyć mózgowe stężenie leku bez zmiany stężenia we krwi obwodowej.",
+      "sourceIds": [
+        "stahl-essential",
+        "maudsley15",
+        "agnp-tdm-2026"
+      ],
+      "checkpointId": "psych-pk-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "microcase-p-gp-drug-interaction",
+          "kind": "micro-case",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "farmakokinetyka-oun-bariera-block-3",
+      "title": "Wiązanie z białkami, wolna frakcja i stan stacjonarny",
+      "text": "Większość psychotropów wiąże się w 90–99% z albuminami lub alfa-1-kwaśną glikoproteiną. Tylko wolna, niezwiązana frakcja leku podlega dyfuzji do płynu mózgowo-rdzeniowego i wiąże się z receptorami. Czas osiągnięcia stanu stacjonarnego wynosi 4–5 okresów półtrwania (t1/2) leku – stąd przy t1/2 wynoszącym 24 godziny stabilne stężenie w mózgu ustala się dopiero po około 5 dniach regularnego przyjmowania.",
+      "sourceIds": [
+        "stahl-essential",
+        "maudsley15",
+        "agnp-tdm-2026"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-pk-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "farmakokinetyka-oun-bariera-obj-2"
+      ],
+      "prompt": "Jaką rolę w barierze krew-mózg pełni glikoproteina P (P-gp, transporter ABCB1)?",
+      "options": [
+        "Ułatwia wychwyt glukozy i aminokwasów rozgałęzionych do neuronów",
+        "Syntetyzuje dopaminę z tyrozyny w śródbłonku",
+        "Aktywnie usuwa substraty lekowe z tkanki mózgowej z powrotem do krwiobiegu, ograniczając ich penetrację do OUN"
+      ],
+      "optionFeedback": [
+        "Transportem glukozy zajmuje się GLUT-1, nie P-gp.",
+        "P-gp nie ma aktywności hydroksylazy tyrozynowej.",
+        "Jest to zależna od ATP pompa effluksowa chroniąca mózgowie przed ksenobiotykami."
+      ],
+      "answer": 2,
+      "explanation": "Jest to zależna od ATP pompa effluksowa chroniąca mózgowie przed ksenobiotykami.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "stahl-essential",
+        "maudsley15",
+        "agnp-tdm-2026"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-pk-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "farmakokinetyka-oun-bariera-obj-3"
+      ],
+      "prompt": "Który metabolit aktywnego leku przeciwdepresyjnego wykazuje wyjątkowo długi okres półtrwania wynoszący ok. 7–14 dni?",
+      "options": [
+        "Norfluoksetyna (aktywny metabolit fluoksetyny)",
+        "Kwas walproinowy",
+        "Hydroksyzyna"
+      ],
+      "optionFeedback": [
+        "Dzięki temu fluoksetyna rzadziej wywołuje zespół odstawienny i wymaga 5-tygodniowego okresu wypłukiwania przed włączeniem MAOI.",
+        "Kwas walproinowy ma t1/2 ok. 12–16 godzin.",
+        "Hydroksyzyna ma t1/2 ok. 14–20 godzin."
+      ],
+      "answer": 0,
+      "explanation": "Dzięki temu fluoksetyna rzadziej wywołuje zespół odstawienny i wymaga 5-tygodniowego okresu wypłukiwania przed włączeniem MAOI.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "stahl-essential",
+        "maudsley15",
+        "agnp-tdm-2026"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "farmakokinetyka-oun-bariera-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "farmakokinetyka-oun-bariera-obj-1",
+      "farmakokinetyka-oun-bariera-obj-2",
+      "farmakokinetyka-oun-bariera-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Farmakokinetyka leków w OUN i bariera krew-mózg”.",
+    "modelAnswer": "Penetracja leków do mózgu zależy od lipofilności i pompy effluksowej P-gp. Działanie wywiera wyłącznie frakcja wolna, a stan stacjonarny ustala się po 4–5 okresach biologicznego półtrwania.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "stahl-essential",
+      "maudsley15",
+      "agnp-tdm-2026"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-pk-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "farmakokinetyka-oun-bariera-obj-1"
+      ],
+      "prompt": "Co dzieje się z farmakokinetyką leku silnie wiążącego się z białkami (np. kwasu walproinowego) u pacjenta z ciężką hipoalbuminemią?",
+      "options": [
+        "Okres półtrwania leku wydłuża się do 10 lat",
+        "Wzrasta stężenie wolnej, aktywnej frakcji leku we krwi, co może wywołać objawy toksyczności przy \"prawidłowym\" stężeniu całkowitym",
+        "Lek przestaje w ogóle przenikać przez barierę krew-mózg"
+      ],
+      "optionFeedback": [
+        "Klirens wątrobowy wolnej frakcji ulega raczej przyspieszeniu.",
+        "Tylko wolna frakcja przechodzi do tkanek i wywiera działanie toksyczne.",
+        "Brak białek ułatwia, a nie blokuje przenikanie wolnego leku."
+      ],
+      "answer": 1,
+      "explanation": "Tylko wolna frakcja przechodzi do tkanek i wywiera działanie toksyczne.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "stahl-essential",
+        "maudsley15",
+        "agnp-tdm-2026"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-pk-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "farmakokinetyka-oun-bariera-obj-1"
+      ],
+      "prompt": "Jaka cecha fizykochemiczna cząsteczki leku najbardziej sprzyja biernej dyfuzji przez barierę krew-mózg?",
+      "options": [
+        "Duża masa cząsteczkowa powyżej 50 000 Da i hydrofilność",
+        "Obecność trwałego dodatniego ładunku czwartorzędowego",
+        "Wysoka lipofilność przy braku ładunku jonowego w pH 7,4"
+      ],
+      "optionFeedback": [
+        "Cząsteczki hydrofilne i duże nie przekraczają nienaruszonej bariery BBB.",
+        "Trwały ładunek jonowy uniemożliwia przenikanie przez lipidy błony.",
+        "Bariera BBB jest barierą lipidową, łatwo przepuszczalną dla małych cząsteczek niepolarnych."
+      ],
+      "answer": 2,
+      "explanation": "Bariera BBB jest barierą lipidową, łatwo przepuszczalną dla małych cząsteczek niepolarnych.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "stahl-essential",
+        "maudsley15",
+        "agnp-tdm-2026"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "pk-bank-1",
+      "type": "matching",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "farmakokinetyka-oun-bariera-obj-1"
+      ],
+      "prompt": "Połącz właściwość fizykochemiczną lub mechanizm transportu leku z jego zdolnością do penetracji bariery krew-mózg (BBB).",
+      "pairs": [
+        [
+          "Wysoka lipofilność i niska masa cząsteczkowa (<400 Da)",
+          "Ułatwiona dyfuzja bierna przez śródbłonek naczyń OUN"
+        ],
+        [
+          "Substrat dla glikoproteiny P (P-gp)",
+          "Aktywny wyrzut (efflux) leku z powrotem do światła naczynia"
+        ],
+        [
+          "Wysoki stopień wiązania z albuminami (>98%)",
+          "Ograniczenie wolnej frakcji dostępnej do przejścia przez BBB"
+        ],
+        [
+          "Postać zjonizowana w fizjologicznym pH",
+          "Niski współczynnik podziału i słaba penetracja tkankowa"
+        ]
+      ],
+      "explanation": "Penetracja do OUN zależy od bilansu dyfuzji biernej oraz aktywnego wyrzutu przez transportery ABCB1 (P-gp).",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "pk-bank-2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "farmakokinetyka-oun-bariera-obj-2"
+      ],
+      "prompt": "Pacjent przyjmujący lek przeciwpsychotyczny będący substratem P-gp rozpoczyna terapię silnym inhibitorem P-gp (np. klarytromycyną). Jak zmieni się stężenie leku w OUN?",
+      "options": [
+        "Wzrośnie penetracja do mózgu i ryzyko ośrodkowych działań niepożądanych",
+        "Spadnie penetracja leku do OUN z powodu nasilenia metabolizmu",
+        "Stężenie w mózgu nie zmieni się, bo P-gp działa tylko w nerkach"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-pgp-inhibition",
+            "label": "Zahamowanie effluxu P-gp w naczyniach mózgowych",
+            "acceptedPhrases": [
+              "inhibicja p-gp",
+              "zablokowanie glikoproteiny p",
+              "zahamowanie wyrzutu",
+              "spadek effluxu"
+            ]
+          },
+          {
+            "id": "c-increased-cns-exposure",
+            "label": "Wzrost stężenia w OUN i ryzyko toksyczności",
+            "acceptedPhrases": [
+              "wzrost stężenia w mózgu",
+              "ryzyko toksyczności",
+              "nasilenie objawów",
+              "ekspozycja oun"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Inhibicja P-gp w śródbłonku BBB wyłącza pompę wyrzutową, prowadząc do gwałtownego wzrostu stężenia leku w mózgowiu.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "stahl-essential",
+        "maudsley15"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "pk-bank-3",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "farmakokinetyka-oun-bariera-obj-1",
+        "farmakokinetyka-oun-bariera-obj-3"
+      ],
+      "prompt": "Wytłumacz, dlaczego leki o bardzo dużej objętości dystrybucji (Vd > 10 l/kg) mają długi terminalny okres półtrwania mimo sprawnej eliminacji nerkowej.",
+      "modelAnswer": "Duża objętość dystrybucji oznacza, że zdecydowana większość leku wiąże się w tkankach obwodowych (zwłaszcza w tkance tłuszczowej i białkach komórkowych), a stężenie we krwi jest bardzo małe. Narządy eliminujące (wątroba, nerki) oczyszczają wyłącznie krew, więc powolne uwalnianie leku z magazynów tkankowych drastycznie wydłuża terminalny okres półtrwania.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-tissue-binding",
+            "label": "Kumulacja i silne wiązanie w tkankach obwodowych / lipidach",
+            "acceptedPhrases": [
+              "wiązanie tkankowe",
+              "tkanka tłuszczowa",
+              "kumulacja",
+              "magazyny"
+            ]
+          },
+          {
+            "id": "c-slow-redistribution",
+            "label": "Powolne uwalnianie do krążenia i ograniczony dostęp do narządów eliminacji",
+            "acceptedPhrases": [
+              "powolne uwalnianie",
+              "redystrybucja",
+              "małe stężenie we krwi",
+              "eliminacja tylko z krwi"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Duże Vd oznacza magazynowanie leku w lipidach i tkankach; eliminacja jest limitowana powolnym transferem z tkanek do krwi.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "stahl-essential"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "timeline"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy AGNP 2026 TDM, CPIC PGx, Maudsley 15th ed., Kapur PET D2, Hunter criteria oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

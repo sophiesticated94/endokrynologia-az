@@ -1,0 +1,375 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "adhd-dorosli-i-rozwojowe",
+  "objectives": [
+    {
+      "id": "adhd-dorosli-i-rozwojowe-obj-1",
+      "statement": "Rozpoznasz triadę objawów ADHD (nieuwaga, nadruchliwość, impulsywność) w fenotypie osoby dorosłej.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "adhd-dorosli-i-rozwojowe-obj-2",
+      "statement": "Zrozumiesz dysfunkcję kory przedczołowej i sieci spoczynkowej (DMN) w regulacji uwagi.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "adhd-dorosli-i-rozwojowe-obj-3",
+      "statement": "Wdrożysz rzetelną diagnostykę różnicową z ChAD, ChAJ, zaburzeniami osobowości i lękowymi.",
+      "kind": "differentiation"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-adhd-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "adhd-dorosli-i-rozwojowe-obj-1"
+    ],
+    "prompt": "Jaki jest kluczowy warunek formalny konieczny do rozpoznania ADHD u dorosłego wg DSM-5-TR i ICD-11?",
+    "options": [
+      "Obecność udokumentowanych objawów w dzieciństwie (przed 12. rokiem życia) oraz upośledzenie w co najmniej 2 sferach życia",
+      "Wystąpienie objawów po 25. roku życia po raz pierwszy",
+      "Obecność zmian ogniskowych w badaniu rezonansu magnetycznego mózgu"
+    ],
+    "optionFeedback": [
+      "ADHD jest schorzeniem neurorozwojowym; objawy nie mogą pojawić się po raz pierwszy dopiero w wieku dorosłym.",
+      "Pojawienie się takich objawów de novo u dorosłego wskazuje na inną przyczynę (np. zaburzenia afektywne, substancje).",
+      "ADHD jest diagnozą kliniczną; neuroobrazowanie nie służy do potwierdzania rozpoznania."
+    ],
+    "answer": 0,
+    "explanation": "ADHD jest schorzeniem neurorozwojowym; objawy nie mogą pojawić się po raz pierwszy dopiero w wieku dorosłym.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "nice-adhd",
+      "wfsbp-adhd",
+      "dsm5tr"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "adhd-dorosli-i-rozwojowe-block-1",
+      "title": "Ewolucja objawów ADHD w dorosłości",
+      "text": "ADHD (zespół nadpobudliwości psychoruchowej z deficytem uwagi) jest zaburzeniem neurorozwojowym trwającym przez całe życie. U dorosłych motoryczna nadruchliwość często przekształca się w wewnętrzny niepokój ruchowy i gonitwę myśli, podczas gdy na pierwszy plan wysuwają się deficyty funkcji wykonawczych: prokrastynacja, zaburzenia zarządzania czasem, zapominalstwo, dysregulacja emocjonalna oraz trudności z dokończeniem zadań.",
+      "sourceIds": [
+        "nice-adhd",
+        "wfsbp-adhd",
+        "dsm5tr"
+      ],
+      "checkpointId": "psych-adhd-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-diva-5-criteria",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        },
+        {
+          "id": "deeplink-adhd-adult",
+          "kind": "workbench-deeplink",
+          "placement": "end-of-block",
+          "presetId": "adhd-adult-preset-001"
+        }
+      ]
+    },
+    {
+      "id": "adhd-dorosli-i-rozwojowe-block-2",
+      "title": "Neurobiologia: dopamina, noradrenalina i sieć DMN",
+      "text": "W korze przedczołowej (PFC) optymalne funkcjonowanie sieci neuronalnych zależy od stężenia dopaminy (DA) działającej na receptory D1 (wzmocnienie sygnału) i noradrenaliny (NA) działającej na receptory alfa-2A (redukcja szumu tła). W ADHD niedobór tych monoamin uniemożliwia wygaszenie domyślnej sieci spoczynkowej (Default Mode Network, DMN) podczas wykonywania zadań, powodując ciągłe dekoncentrujące intruzje myśli.",
+      "sourceIds": [
+        "nice-adhd",
+        "wfsbp-adhd",
+        "dsm5tr"
+      ],
+      "checkpointId": "psych-adhd-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "microcase-executive-dysfunction",
+          "kind": "micro-case",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "adhd-dorosli-i-rozwojowe-block-3",
+      "title": "Kryteria diagnostyczne i wymóg wywiadu z dzieciństwa",
+      "text": "Zarówno DSM-5-TR, jak i ICD-11 wymagają udokumentowania obecności co najmniej części objawów przed ukończeniem 12. roku życia (często weryfikowane opiniami szkolnymi lub wywiadem rozwojowym od rodziców) oraz ich występowania w co najmniej dwóch niezależnych środowiskach (np. praca i dom), prowadzących do istotnego upośledzenia funkcjonowania.",
+      "sourceIds": [
+        "nice-adhd",
+        "wfsbp-adhd",
+        "dsm5tr"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-adhd-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "adhd-dorosli-i-rozwojowe-obj-2"
+      ],
+      "prompt": "Jak działają dopamina i noradrenalina w korze przedczołowej w celu zapewnienia optymalnej uwagi?",
+      "options": [
+        "Pobudzają wyłącznie receptory histaminowe H1 w rdzeniu przedłużonym",
+        "Dopamina stymuluje receptory D1 (wzmacniając właściwy sygnał), a noradrenalina receptory alfa-2A (wyciszając szum tła)",
+        "Całkowicie blokują aktywność neuronów kory przedczołowej wprowadzając w stan snu"
+      ],
+      "optionFeedback": [
+        "Receptory H1 biorą udział w czuwaniu, lecz to DA i NA w PFC warunkują funkcje wykonawcze.",
+        "Równowaga ta odpowiada krzywej odwróconego U (Yerkes-Dodson) – optymalne skupienie wymaga precyzyjnego poziomu obu monoamin.",
+        "Monoaminy regulują aktywność neuronalną, nie wywołują snu."
+      ],
+      "answer": 1,
+      "explanation": "Równowaga ta odpowiada krzywej odwróconego U (Yerkes-Dodson) – optymalne skupienie wymaga precyzyjnego poziomu obu monoamin.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "nice-adhd",
+        "wfsbp-adhd",
+        "dsm5tr"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-adhd-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "adhd-dorosli-i-rozwojowe-obj-3"
+      ],
+      "prompt": "Która sieć neuronalna w spoczynku odpowiada za błądzenie myślami i powinna być wygaszona podczas wykonywania zadań skupiających uwagę?",
+      "options": [
+        "Droga piramidowa skrzyżowana",
+        "Układ siatkowaty wstępujący w rdzeniu kręgowym",
+        "Sieć wzbudzenia podstawowego (Default Mode Network - DMN)"
+      ],
+      "optionFeedback": [
+        "Droga piramidowa odpowiada za ruchy dowolne mięśni.",
+        "Układ siatkowaty kontroluje ogólny stan przytomności.",
+        "W ADHD dochodzi do zaburzenia hamowania DMN przez sieć wykonawczą (Task-Positive Network)."
+      ],
+      "answer": 2,
+      "explanation": "W ADHD dochodzi do zaburzenia hamowania DMN przez sieć wykonawczą (Task-Positive Network).",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "nice-adhd",
+        "wfsbp-adhd",
+        "dsm5tr"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "adhd-dorosli-i-rozwojowe-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "adhd-dorosli-i-rozwojowe-obj-1",
+      "adhd-dorosli-i-rozwojowe-obj-2",
+      "adhd-dorosli-i-rozwojowe-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „ADHD u dorosłych i zaburzenia neurorozwojowe”.",
+    "modelAnswer": "ADHD u dorosłych manifestuje się zaburzeniami funkcji wykonawczych i labilnością nastroju wskutek hipodopaminergicznego stanu w PFC. Rozpoznanie wymaga potwierdzenia początku w dzieciństwie i manifestacji w wielu środowiskach.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "nice-adhd",
+      "wfsbp-adhd",
+      "dsm5tr"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-adhd-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "adhd-dorosli-i-rozwojowe-obj-1"
+      ],
+      "prompt": "Czym różnią się wahania nastroju w ADHD od faz afektywnych w Chorobie Afektywnej Dwubiegunowej (ChAD)?",
+      "options": [
+        "W ADHD fluktuacje nastroju trwają godziny i są reaktywne na bodźce, podczas gdy epizody ChAD trwają tygodnie lub miesiące",
+        "W ADHD wahania nastroju trwają zawsze dokładnie 6 miesięcy bez żadnej przerwy",
+        "W ChAD nastrój zmienia się wyłącznie co 5 minut w rytmie oddechowym"
+      ],
+      "optionFeedback": [
+        "Czas trwania i reaktywność na zdarzenia to kluczowe kryterium różnicowe.",
+        "Wahania w ADHD są krótkotrwałe i zmienne z godziny na godzinę.",
+        "Cykle w ChAD mają charakter fazowy i trwają znacznie dłużej."
+      ],
+      "answer": 0,
+      "explanation": "Czas trwania i reaktywność na zdarzenia to kluczowe kryterium różnicowe.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nice-adhd",
+        "wfsbp-adhd",
+        "dsm5tr"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-adhd-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "adhd-dorosli-i-rozwojowe-obj-1"
+      ],
+      "prompt": "Jakie grupy leków stanowią terapię I rzutu w farmakoterapii ADHD u osób dorosłych wg wytycznych NICE i WFSBP?",
+      "options": [
+        "Benzodiazepiny w dawkach nasennych",
+        "Psychostymulanty: metylofenidat lub pochodne amfetaminy",
+        "Neuroleptyki klasyczne o silnym działaniu sedatywnym (haloperydol)"
+      ],
+      "optionFeedback": [
+        "Benzodiazepiny upośledzają koncentrację i pamięć roboczą.",
+        "Stymulanty blokujące DAT i NET wykazują największą siłę efektu (effect size > 0.8) w redukcji objawów osiowych.",
+        "Neuroleptyki klasyczne blokują receptory D2, nasilając deficyty poznawcze w ADHD."
+      ],
+      "answer": 1,
+      "explanation": "Stymulanty blokujące DAT i NET wykazują największą siłę efektu (effect size > 0.8) w redukcji objawów osiowych.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "nice-adhd",
+        "wfsbp-adhd",
+        "dsm5tr"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "adhd-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "adhd-dorosli-i-rozwojowe-obj-1"
+      ],
+      "claimIds": [
+        "claim-af-adhd-childhood"
+      ],
+      "prompt": "30-letnia pacjentka zgłasza trudności z koncentracją i prokrastynację od 6 miesięcy po objęciu kierowniczego stanowiska. W szkole podstawowej i średniej miała doskonałe wyniki, bez trudności behawioralnych ani deficytów uwagi. Czy obraz spełnia kryteria ADHD u dorosłych?",
+      "options": [
+        "Nie, brak retrospektywnego potwierdzenia objawów przed 12. rokiem życia wyklucza rozpoznanie ADHD",
+        "Tak, wystarczy obecność objawów w wieku dorosłym przez co najmniej 6 miesięcy",
+        "Tak, jeśli zgłasza impulsywność"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-neurodevelopmental-origin",
+            "label": "Neurorozwojowy charakter i początek w dzieciństwie (<12 r.ż.)",
+            "acceptedPhrases": [
+              "początek w dzieciństwie",
+              "przed 12",
+              "neurorozwojowy",
+              "wywiad z dzieciństwa"
+            ]
+          },
+          {
+            "id": "c-alternative-etiology",
+            "label": "Prawdopodobne zaburzenie adaptacyjne lub lękowe związane ze stresem",
+            "acceptedPhrases": [
+              "zaburzenie adaptacyjne",
+              "stres",
+              "lęk",
+              "obciążenie pracą"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "ADHD jest zaburzeniem neurorozwojowym; objawy muszą występować przed 12. rokiem życia.",
+      "difficulty": "both",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "nice-adhd",
+        "dsm5tr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "adhd-dorosli-i-rozwojowe-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "adhd-dorosli-i-rozwojowe-obj-2"
+      ],
+      "prompt": "Wyjaśnij kluczowe zasady różnicowania klinicznego oraz pułapki diagnostyczne w zagadnieniu: adhd dorosli i rozwojowe.",
+      "modelAnswer": "Kluczowe jest odróżnienie pierwotnych zaburzeń psychicznych od masek somatycznych i toksycznych, uwzględnienie dynamiki czasowej oraz unikanie pochopnego rozpoznania na podstawie pojedynczego objawu.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-diff-organic",
+            "label": "Wykluczenie przyczyn somatycznych i substancji",
+            "acceptedPhrases": [
+              "przyczyny somatyczne",
+              "substancje",
+              "toksyczne",
+              "organiczne"
+            ]
+          },
+          {
+            "id": "c-diff-longitudinal",
+            "label": "Ocena przebiegu podłużnego i kryteriów czasowych",
+            "acceptedPhrases": [
+              "przebieg podłużny",
+              "kryteria czasowe",
+              "dynamika",
+              "czas trwania"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Ocena kliniczna wymaga analizy podłużnej i systematycznego wykluczenia przyczyn wtórnych.",
+      "difficulty": "both",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "icd11-cddr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "adhd-dorosli-i-rozwojowe-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "adhd-dorosli-i-rozwojowe-obj-1",
+        "adhd-dorosli-i-rozwojowe-obj-3"
+      ],
+      "prompt": "W analizie przypadku klinicznego z obszaru adhd dorosli i rozwojowe pacjent zgłasza nietypowy zestaw objawów. Jakiej informacji brakuje w pierwszej kolejności?",
+      "options": [
+        "Wywiadu toksykologicznego i badań laboratoryjnych wykluczających podłoże organiczne",
+        "Profilu genetycznego rzadkich mutacji enzymatycznych",
+        "Wyniku tomografii komputerowej bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Podstawą rzetelnej oceny psychiatrycznej jest wykluczenie czynników egzogennych, intoksykacji i zaburzeń metabolicznych.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "timeline"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., CANMAT oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "id": "receptory-dopaminowe-okno-kapura",
+  "moduleId": "psych-farmakologia",
+  "title": "Receptory D2 i D3: okno terapeutyczne Kapura (65–80%)",
+  "subtitle": "Mechanizm przeciwpsychotyczny, objawy pozapiramidowe i prolaktyna",
+  "group": "Receptorologia i układy przekaźnikowe",
+  "minutes": 18,
+  "goals": [
+    "Zrozumiesz koncepcję prążkowiowego okna terapeutycznego Kapura (65%–80% occupancy D2).",
+    "Wyjaśnisz zależność między blokadą D2 > 80% a wystąpieniem objawów pozapiramidowych (EPS) i hiperprolaktynemii.",
+    "Scharakteryzujesz rolę częściowych agonistów D2/D3 (aripiprazol, kariprazyna) w prewencji powikłań."
+  ],
+  "sections": [
+    {
+      "title": "Hipoteza dopaminowa i rola receptora D2 w szlaku mezolimbicznym",
+      "text": "Objawy wytwórcze psychozy (urojenia, omamy) wynikają z nadmiernej, niespójnej stymulacji receptorów dopaminowych D2 w szlaku mezolimbicznym (biegnącym z pola brzusznego nakrywki VTA do jądra półleżącego). Zablokowanie receptorów D2 w tym obwodzie przywraca właściwe filtrowanie bodźców i redukuje aberracyjną wagę poznawczą (aberrant salience)."
+    },
+    {
+      "title": "Przełomowa praca Shitija Kapura: okno occupancy 65–80%",
+      "text": "W badaniach neuroobrazowych PET Kapur wykazał istnienie ścisłego okna terapeutycznego blokady prążkowiowych receptorów D2: 1) Poniżej 65% occupancy – brak istotnego działania przeciwpsychotycznego; 2) Pomiędzy 65% a 80% – optymalny efekt przeciwpsychotyczny przy znikomym ryzyku powikłań ruchowych; 3) Powyżej 80% occupancy – gwałtowny, skokowy wzrost ryzyka ostrych objawów pozapiramidowych (EPS: parkinsonizm, akatyzja, dystonie) oraz hiperprolaktynemii."
+    },
+    {
+      "title": "Trzecia generacja: częściowi agoniści D2/D3",
+      "text": "Leki III generacji (aripiprazol, brekspiprazol, kariprazyna) nie są czystymi antagonistami, lecz częściowymi agonistami receptorów D2 i D3. Stabilizują one układ dopaminowy – w warunkach hiperdopaminergii działają jak antagoniści (redukując psychozę), natomiast w warunkach hipodopaminergii stymulują receptor z aktywnością wewnętrzną rzędu 25–40%, co zapobiega EPS i nie podwyższa prolaktyny, nawet przy occupancy sięgającym 90–95% w badaniu PET."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Poziom Occupancy D2 w PET",
+      "Efekt kliniczny w OUN",
+      "Ryzyko EPS",
+      "Wydzielanie prolaktyny"
+    ],
+    "rows": [
+      [
+        "< 65%",
+        "Nieskuteczny / brak kontroli urojeń i omamów",
+        "Praktycznie zerowe",
+        "Prawidłowe"
+      ],
+      [
+        "65% – 80% (Okno Kapura)",
+        "Optymalny efekt przeciwpsychotyczny",
+        "Niskie / akceptowalne",
+        "Prawidłowe lub umiarkowanie podwyższone"
+      ],
+      [
+        "> 80%",
+        "Brak dodatkowej korzyści przeciwpsychotycznej",
+        "Bardzo wysokie (skokowy wzrost EPS)",
+        "Znaczna hiperprolaktynemia (szlak guzkowo-lejkowy)"
+      ],
+      [
+        "Częściowy agonizm D2 (90%)",
+        "Skuteczność przeciwpsychotyczna bez blokady tonicznej",
+        "Bardzo niskie (z wyjątkiem akatyzacji)",
+        "Prawidłowe lub spadek prolaktyny"
+      ]
+    ]
+  },
+  "advanced": "Kariprazyna wyróżnia się unikalnym, preferencyjnym powinowactwem do receptora dopaminowego D3 (około 8–10 razy wyższym niż do D2). Receptory D3 zlokalizowane są głównie w układzie limbicznym i korze czołowej, co odpowiada za udowodnioną skuteczność kariprazyny w leczeniu pierwotnych objawów negatywnych i poznawczych w schizofrenii.",
+  "summary": "Okno terapeutyczne Kapura dla antagonistów D2 wynosi 65–80% occupancy. Przekroczenie 80% wyzwala EPS i hiperprolaktynemię. Częściowi agoniści D2/D3 osiągają wysokie occupancy bez blokady bazowej transmisji.",
+  "sourceIds": [
+    "pet-d2-kapur",
+    "wfsbp-schizophrenia",
+    "stahl-essential"
+  ],
+  "questions": [
+    {
+      "id": "psych-kapur-q1",
+      "lessonId": "receptory-dopaminowe-okno-kapura",
+      "prompt": "Jaki jest optymalny przedział blokady (occupancy) receptorów D2 w prążkowiu gwarantujący skuteczność bez wywoływania EPS wg Kapura?",
+      "options": [
+        {
+          "text": "65% do 80% occupancy D2",
+          "explanation": "W tym przedziale następuje ustąpienie psychozy przy minimalnym ryzyku objawów pozapiramidowych."
+        },
+        {
+          "text": "Mniej niż 20% occupancy D2",
+          "explanation": "Blokada < 20% nie daje żadnego mierzalnego efektu przeciwpsychotycznego."
+        },
+        {
+          "text": "Zawsze powyżej 95% occupancy D2",
+          "explanation": "Blokada > 80% u antagonistów powoduje ciężki parkinsonizm polekowy i sztywność mięśniową."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-kapur-q2",
+      "lessonId": "receptory-dopaminowe-okno-kapura",
+      "prompt": "Dlaczego częściowy agonista D2 (np. aripiprazol) nie wywołuje parkinsonizmu ani hiperprolaktynemii pomimo occupancy D2 rzędu 85–95% w PET?",
+      "options": [
+        {
+          "text": "Pobudza wydzielanie prolaktyny bezpośrednio przez przysadkę",
+          "explanation": "Aripiprazol obniża, a nie podwyższa stężenie prolaktyny."
+        },
+        {
+          "text": "Posiada wewnętrzną aktywność agonistyczną (25–30%), co zapewnia bazowe przewodnictwo w szlaku nigrostriatalnym i guzkowo-lejkowym",
+          "explanation": "Działa jak bufor: tonizuje nadmiar dopaminy, lecz nie wygasza całkowicie transmisji do zera."
+        },
+        {
+          "text": "Aripiprazol nie przenika przez barierę krew-mózg",
+          "explanation": "Aripiprazol doskonale penetruje do OUN, osiągając wysokie stężenia mózgowe."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-kapur-q3",
+      "lessonId": "receptory-dopaminowe-okno-kapura",
+      "prompt": "Który szlak dopaminowy odpowiada za wystąpienie mlekotoku i zaburzeń miesiączkowania przy blokadzie D2 > 80%?",
+      "options": [
+        {
+          "text": "Szlak nigrostriatalny",
+          "explanation": "Szlak nigrostriatalny odpowiada za kontrolę ruchową i objawy pozapiramidowe."
+        },
+        {
+          "text": "Szlak mezokortykalny",
+          "explanation": "Szlak mezokortykalny wiąże się z funkcjami poznawczymi i objawami negatywnymi."
+        },
+        {
+          "text": "Szlak guzkowo-lejkowy (tuberoinfundibular)",
+          "explanation": "Dopamina jest fizjologicznym inhibitorem wydzielania prolaktyny; blokada D2 odhamowuje laktotrofy przysadki."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-kapur-q4",
+      "lessonId": "receptory-dopaminowe-okno-kapura",
+      "prompt": "Który z nowoczesnych leków przeciwpsychotycznych III generacji cechuje się najwyższym powinowactwem do receptorów dopaminowych D3?",
+      "options": [
+        {
+          "text": "Kariprazyna",
+          "explanation": "Wysokie powinowactwo do D3 odpowiada za jej skuteczność w redukcji osiowych objawów negatywnych schizofrenii."
+        },
+        {
+          "text": "Haloperydol",
+          "explanation": "Haloperydol jest klasycznym, silnym antagonistą D2."
+        },
+        {
+          "text": "Chlorpromazyna",
+          "explanation": "Chlorpromazyna to fenotiazyna o niskiej sile działania i nieselektywnym profilu."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-kapur-q5",
+      "lessonId": "receptory-dopaminowe-okno-kapura",
+      "prompt": "Co dzieje się w szlaku mezolimbicznym podczas zaostrzenia psychozy u pacjenta ze schizofrenią?",
+      "options": [
+        {
+          "text": "Gwałtowny spadek stężenia dopaminy do zera",
+          "explanation": "Spadek dopaminy w szlaku mezolimbicznym tłumiłby psychozę, a nie ją zaostrzał."
+        },
+        {
+          "text": "Dochodzi do nadmiernego, chaotycznego wyrzutu dopaminy i hiperstymulacji receptorów D2",
+          "explanation": "Prowadzi to do nadawania nadmiernego znaczenia neutralnym bodźcom środowiskowym (aberrant salience)."
+        },
+        {
+          "text": "Całkowite obumarcie neuronów dopaminergicznych",
+          "explanation": "Schizofrenia nie jest chorobą neurodegeneracyjną z ostrą utratą ciał neuronów VTA."
+        }
+      ],
+      "answer": 1
+    }
+  ],
+  "assetIds": []
+}

@@ -1,0 +1,323 @@
+[
+  {
+    "id": "claim-af-mdd-duration",
+    "statement": "Rozpoznanie epizodu depresyjnego (DSM-5-TR / ICD-11) wymaga obecności co najmniej jednego objawu osiowego (obniżony nastrój, anhedonia) utrzymującego się przez minimum 2 tygodnie niemal codziennie.",
+    "category": "guideline_recommendation",
+    "evidenceType": "diagnostic_criteria",
+    "strength": "strong",
+    "sourceIds": [
+      "dsm5tr",
+      "icd11-cddr"
+    ],
+    "lessonIds": [
+      "depresja-fenotypy-i-kryteria"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "depresja",
+      "kryteria",
+      "czas"
+    ]
+  },
+  {
+    "id": "claim-af-mania-duration",
+    "statement": "Rozpoznanie epizodu manii wymaga co najmniej 7 dni wyraźnie wzmożonego, ekspansywnego lub drażliwego nastroju oraz wzmożonej aktywności/energii, chyba że stan pacjenta wymaga wcześniejszej hospitalizacji.",
+    "category": "guideline_recommendation",
+    "evidenceType": "diagnostic_criteria",
+    "strength": "strong",
+    "sourceIds": [
+      "dsm5tr",
+      "icd11-cddr"
+    ],
+    "lessonIds": [
+      "mania-hipomania-spektrum"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "mania",
+      "chad",
+      "czas"
+    ]
+  },
+  {
+    "id": "claim-af-hypomania-diff",
+    "statement": "Epizod hipomanii trwa co najmniej 4 kolejne dni; w odróżnieniu od manii nie powoduje znacznego upośledzenia funkcjonowania społecznego/zawodowego, nie wymaga hospitalizacji i bezwzględnie nie zawiera cech psychotycznych.",
+    "category": "guideline_recommendation",
+    "evidenceType": "diagnostic_criteria",
+    "strength": "strong",
+    "sourceIds": [
+      "dsm5tr",
+      "icd11-cddr"
+    ],
+    "lessonIds": [
+      "mania-hipomania-spektrum"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "hipomania",
+      "chad",
+      "roznicowanie"
+    ]
+  },
+  {
+    "id": "claim-af-psychosis-mania",
+    "statement": "Wystąpienie urojeń lub omamów w epizodzie wzmożonego nastroju lub napędu automatycznie klasyfikuje epizod jako manię, wykluczając rozpoznanie hipomanii.",
+    "category": "guideline_recommendation",
+    "evidenceType": "diagnostic_criteria",
+    "strength": "strong",
+    "sourceIds": [
+      "dsm5tr",
+      "icd11-cddr"
+    ],
+    "lessonIds": [
+      "mania-hipomania-spektrum",
+      "psychoza-i-szlaki-dopaminy"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "mania",
+      "psychoza",
+      "safety"
+    ]
+  },
+  {
+    "id": "claim-af-antidepressant-switch",
+    "statement": "Stosowanie leków przeciwdepresyjnych w monoterapii w chorobie afektywnej dwubiegunowej (zwłaszcza typu I) niesie wysokie ryzyko indukcji manii (switch) lub przyspieszenia cykli; wymaga jednoczesnego włączenia normotymika.",
+    "category": "guideline_recommendation",
+    "evidenceType": "treatment_safety",
+    "strength": "strong",
+    "sourceIds": [
+      "canmat-isbd-bipolar",
+      "ptp-standardy"
+    ],
+    "lessonIds": [
+      "mania-hipomania-spektrum",
+      "depresja-fenotypy-i-kryteria"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "chad",
+      "switch",
+      "safety"
+    ]
+  },
+  {
+    "id": "claim-af-schizoaffective-diff",
+    "statement": "Rozpoznanie zaburzenia schizoafektywnego wymaga występowania wyraźnych urojeń lub omamów przez co najmniej 2 tygodnie przy całkowitym braku istotnych objawów zaburzeń nastroju w toku choroby.",
+    "category": "guideline_recommendation",
+    "evidenceType": "differential_rule",
+    "strength": "strong",
+    "sourceIds": [
+      "dsm5tr",
+      "icd11-cddr"
+    ],
+    "lessonIds": [
+      "psychoza-i-szlaki-dopaminy",
+      "diagnostyka-roznicowa-algorytmy"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "schizoafektywne",
+      "roznicowanie"
+    ]
+  },
+  {
+    "id": "claim-af-pseudohallucinations",
+    "statement": "Omamy rzekome (pseudohalucynacje) są rzutowane w przestrzeń wewnętrzną (w głowie lub ciele) i pacjent zachowuje poczucie ich subiektywnego charakteru, w odróżnieniu od omamów prawdziwych rzutowanych w przestrzeń zmysłową zewnętrzną.",
+    "category": "guideline_recommendation",
+    "evidenceType": "phenomenology",
+    "strength": "expert_consensus",
+    "sourceIds": [
+      "icd11-cddr",
+      "stahl-essential"
+    ],
+    "lessonIds": [
+      "psychopatologia-objawow"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "pseudohalucynacje",
+      "mse"
+    ]
+  },
+  {
+    "id": "claim-af-insight-anosognosia",
+    "statement": "Anozognozja (całkowity brak wglądu chorobowego) w ostrej manii lub schizofrenii jest deficytem neuropsychologicznym wynikającym z dysfunkcji kory przedczołowej, a nie intencjonalnym uporem pacjenta.",
+    "category": "mechanistic",
+    "evidenceType": "neuropsychology",
+    "strength": "expert_consensus",
+    "sourceIds": [
+      "icd11-cddr",
+      "stahl-essential"
+    ],
+    "lessonIds": [
+      "wywiad-psychiatryczny-mse"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "insight",
+      "mse"
+    ]
+  },
+  {
+    "id": "claim-af-cssrs-active-intent",
+    "statement": "Obecność aktywnych myśli samobójczych z konkretnym planem i intencją działania (poziom 4 i 5 w C-SSRS) kwalifikuje pacjenta do grupy bezpośredniego, wysokiego ryzyka samobójczego i nakazuje pilne zabezpieczenie oraz hospitalizację.",
+    "category": "guideline_recommendation",
+    "evidenceType": "risk_stratification",
+    "strength": "strong",
+    "sourceIds": [
+      "cssrs-scale",
+      "ptp-standardy"
+    ],
+    "lessonIds": [
+      "ocena-ryzyka-samobojczego-agresji"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "suicidality",
+      "safety",
+      "cssrs"
+    ]
+  },
+  {
+    "id": "claim-af-panic-somatization",
+    "statement": "Gwałtowny napad paniki z objawami wegetatywnymi (tachykardia, ból w klatce piersiowej, duszność) osiąga szczyt w ciągu kilku minut i bezwzględnie wymaga wykluczenia stanów nagłych (OZW, zatorowość płucna, guz chromochłonny).",
+    "category": "guideline_recommendation",
+    "evidenceType": "differential_safety",
+    "strength": "strong",
+    "sourceIds": [
+      "wfsbp-anxiety",
+      "ptp-standardy"
+    ],
+    "lessonIds": [
+      "zaburzenia-lekowe-gad-napadowy"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "panika",
+      "somatyka",
+      "safety"
+    ]
+  },
+  {
+    "id": "claim-af-ocd-cstc",
+    "statement": "Zaburzenie obsesyjno-kompulsyjne (OCD) wiąże się z nadaktywnością pętli korowo-prążkowiowo-wzgórzowo-korowej (CSTC); skuteczne leczenie farmakologiczne wymaga stosowania dawek SSRI wyższych niż w depresji oraz dłuższego czasu oczekiwania na efekt (10–12 tygodni).",
+    "category": "guideline_recommendation",
+    "evidenceType": "pharmacotherapy_rule",
+    "strength": "strong",
+    "sourceIds": [
+      "nice-ocd",
+      "stahl-essential"
+    ],
+    "lessonIds": [
+      "ocd-i-petla-cstc"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "ocd",
+      "cstc",
+      "ssri"
+    ]
+  },
+  {
+    "id": "claim-af-adhd-childhood",
+    "statement": "Rozpoznanie ADHD u dorosłych wymaga retrospektywnego udokumentowania obecności objawów nieuwagi lub nadruchliwości przed 12. rokiem życia oraz potwierdzenia ich negatywnego wpływu na funkcjonowanie w co najmniej 2 niezależnych domenach (np. praca i dom).",
+    "category": "guideline_recommendation",
+    "evidenceType": "diagnostic_criteria",
+    "strength": "strong",
+    "sourceIds": [
+      "nice-adhd",
+      "dsm5tr"
+    ],
+    "lessonIds": [
+      "adhd-dorosli-i-rozwojowe"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "adhd",
+      "kryteria",
+      "roznicowanie"
+    ]
+  },
+  {
+    "id": "claim-af-alcohol-delirium",
+    "statement": "Majaczenie drżenne (delirium tremens) pojawia się zwykle 48–72 godziny od odstawienia alkoholu; jest stanem bezpośredniego zagrożenia życia z zaburzeniami świadomości, omamami wzrokowymi i niestabilnością autonomiczną, wymagającym leczenia benzodiazepinami (np. diazepam) w warunkach szpitalnych.",
+    "category": "guideline_recommendation",
+    "evidenceType": "emergency_management",
+    "strength": "strong",
+    "sourceIds": [
+      "who-assist",
+      "ptp-standardy"
+    ],
+    "lessonIds": [
+      "substancje-i-secondary-causes"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "delirium-tremens",
+      "alkohol",
+      "safety"
+    ]
+  },
+  {
+    "id": "claim-af-bpd-affective-instability",
+    "statement": "Niestabilność afektywna w zaburzeniu osobowości z pogranicza (BPD) ma charakter reaktywny, wyzwalany bodźcami interpersonalnymi (lęk przed odrzuceniem), z fluktuacjami nastroju trwającymi godziny, w odróżnieniu od autonomicznych, wielotygodniowych faz w ChAD.",
+    "category": "guideline_recommendation",
+    "evidenceType": "differential_rule",
+    "strength": "expert_consensus",
+    "sourceIds": [
+      "nice-bpd",
+      "dsm5tr"
+    ],
+    "lessonIds": [
+      "zaburzenia-osobowosci-wymiarowe"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "bpd",
+      "chad",
+      "roznicowanie"
+    ]
+  },
+  {
+    "id": "claim-af-organic-mimic-tsh",
+    "statement": "Przesiewowe oznaczenie TSH, elektrolitów, morfologii krwi oraz glikemii jest obligatoryjnym standardem w diagnostyce pierwszego epizodu psychotycznego lub depresyjnego w celu wykluczenia masek somatycznych.",
+    "category": "guideline_recommendation",
+    "evidenceType": "workup_standard",
+    "strength": "strong",
+    "sourceIds": [
+      "nice-depression",
+      "nice-schizophrenia"
+    ],
+    "lessonIds": [
+      "diagnostyka-roznicowa-algorytmy",
+      "przypadki-integracyjne-diagnostyka"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "tsh",
+      "organiczne",
+      "wykluczenia"
+    ]
+  },
+  {
+    "id": "claim-af-ptsd-cptsd-diff",
+    "statement": "ICD-11 wyróżnia złożone PTSD (cPTSD) jako odrębną jednostkę, która oprócz klasycznej triady PTSD (intruzje, unikanie, poczucie zagrożenia) zawiera zaburzenia samoorganizacji (DSO): dysregulację afektu, negatywny obraz siebie i trudności w relacjach.",
+    "category": "guideline_recommendation",
+    "evidenceType": "nosology",
+    "strength": "strong",
+    "sourceIds": [
+      "icd11-cddr",
+      "nice-ptsd"
+    ],
+    "lessonIds": [
+      "ptsd-trauma-stres"
+    ],
+    "reviewedAt": "2026-09-13",
+    "tags": [
+      "ptsd",
+      "cptsd",
+      "icd11"
+    ]
+  }
+]

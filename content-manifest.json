@@ -5,6 +5,12 @@
     "lessonId": "addison-choroba",
     "moduleId": "nadnercza"
   },
+  "adhd-dorosli-i-rozwojowe": {
+    "hash": "b0bfabdb12e2250ac79d2b00da215d42b09243a183f8eac840757ab2c7067283",
+    "schemaVersion": 2,
+    "lessonId": "adhd-dorosli-i-rozwojowe",
+    "moduleId": "psych-afektywne"
+  },
   "adrenalektomia": {
     "hash": "24e357d0336dd3446d631d6c4d3916d814aba9853632ef5e270c637083801270",
     "schemaVersion": 2,
@@ -22,6 +28,24 @@
     "schemaVersion": 2,
     "lessonId": "amnezja-dysocjacyjna-i-fuga",
     "moduleId": "psych-trauma-dysocjacja"
+  },
+  "atypowe-antydepresanty-multimodalne": {
+    "hash": "397ea106f955d8afe4e17dd31e9274a5c735be789283af5930b7c4ea81d0a16a",
+    "schemaVersion": 2,
+    "lessonId": "atypowe-antydepresanty-multimodalne",
+    "moduleId": "psych-farmakologia"
+  },
+  "benzodiazepiny-leki-z-tapering": {
+    "hash": "1752d65477bdcb6de0736d1f8ad94217334fa35ea9ae16a0c86dd71fa4149df9",
+    "schemaVersion": 2,
+    "lessonId": "benzodiazepiny-leki-z-tapering",
+    "moduleId": "psych-farmakologia"
+  },
+  "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna": {
+    "hash": "06d63e3dd969ff40d0414068f4689cda620e9a1a503aa93a05ecced9543c1e24",
+    "schemaVersion": 2,
+    "lessonId": "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna",
+    "moduleId": "psych-farmakologia"
   },
   "borderline-bpd-mechanizmy": {
     "hash": "7284340b7018862653db6f98fac22cba2d3bc3d1bd70926d87d9c661edd61406",
@@ -71,11 +95,23 @@
     "lessonId": "depersonalizacja-i-derealizacja",
     "moduleId": "psych-trauma-dysocjacja"
   },
+  "depresja-fenotypy-i-kryteria": {
+    "hash": "a290aa068000c0a18752689fb1f53ff60ffcf7aa070ae2b5f1a65ba98d38bb4e",
+    "schemaVersion": 2,
+    "lessonId": "depresja-fenotypy-i-kryteria",
+    "moduleId": "psych-afektywne"
+  },
   "diagnostyka": {
     "hash": "7465b81e1458b2592770e4d5b51f9ee2d5a43831caaf7704f2c3c0461cf9b388",
     "schemaVersion": 2,
     "lessonId": "diagnostyka",
     "moduleId": "tarczyca"
+  },
+  "diagnostyka-roznicowa-algorytmy": {
+    "hash": "e46030175c9c5cf3ec19fa6847ee4f3e9c50ad76821a2ec1dd002cad214055f7",
+    "schemaVersion": 2,
+    "lessonId": "diagnostyka-roznicowa-algorytmy",
+    "moduleId": "psych-afektywne"
   },
   "did-roznicowanie-bpd-i-psychoza": {
     "hash": "2e28103c383f9d54d8afbabc22c3881a57a98c11251778da6fed810b74ff1a20",
@@ -89,6 +125,24 @@
     "lessonId": "did-tozsamosc-i-rozszczepienie",
     "moduleId": "psych-trauma-dysocjacja"
   },
+  "farmakogenetyka-cyp-pgx": {
+    "hash": "68c838d9a1f7f4a7013726eabccf89cdcadd455a41c039a974a38eb1195dab31",
+    "schemaVersion": 2,
+    "lessonId": "farmakogenetyka-cyp-pgx",
+    "moduleId": "psych-farmakologia"
+  },
+  "farmakokinetyka-oun-bariera": {
+    "hash": "99cf1a2bf3628df8eb11e6f2ba62d37504e1708bee6815996f59928de6d20f60",
+    "schemaVersion": 2,
+    "lessonId": "farmakokinetyka-oun-bariera",
+    "moduleId": "psych-farmakologia"
+  },
+  "farmakoterapia-adhd-stymulanty": {
+    "hash": "afdec20cdc33b6237239ab367319210ed00f60d81e330471954b025fd71b0f8a",
+    "schemaVersion": 2,
+    "lessonId": "farmakoterapia-adhd-stymulanty",
+    "moduleId": "psych-farmakologia"
+  },
   "fhh-hiperkalcemia": {
     "hash": "67d7dcd1292abb9e22213f1e4fee26d67a277e2886bf39504858ee47a9a61eea",
     "schemaVersion": 2,
@@ -100,6 +154,12 @@
     "schemaVersion": 2,
     "lessonId": "fizjologia",
     "moduleId": "tarczyca"
+  },
+  "glutaminian-gaba-neuroplastycznosc": {
+    "hash": "982bac1ba5f256a703edab34bdcd81beba5b43c0dd8185ee61f2b7daac0a3dfe",
+    "schemaVersion": 2,
+    "lessonId": "glutaminian-gaba-neuroplastycznosc",
+    "moduleId": "psych-farmakologia"
   },
   "graves": {
     "hash": "594d0e9f05a98153681a103e5c73f0d3315152d2d9d499da72fb860cb8631cc7",
@@ -149,17 +209,59 @@
     "lessonId": "incydentaloma-nadnercza",
     "moduleId": "nadnercza"
   },
+  "interwencje-biologiczne-ect-rtms-ketamina": {
+    "hash": "d4488129a02f1ab796c37994717b8d6b679d6b71d9eb76a797153daed799dd8c",
+    "schemaVersion": 2,
+    "lessonId": "interwencje-biologiczne-ect-rtms-ketamina",
+    "moduleId": "psych-farmakologia"
+  },
+  "klasyczne-antydepresanty-ssri-snri-tlpd-maoi": {
+    "hash": "9cd5228f7174f570f480b702fbafb4d37700bc9c99bc80dce3b6c6babb259ab9",
+    "schemaVersion": 2,
+    "lessonId": "klasyczne-antydepresanty-ssri-snri-tlpd-maoi",
+    "moduleId": "psych-farmakologia"
+  },
+  "klasyfikacje-dsm5-icd11": {
+    "hash": "2f6a75196c6168464cc89b2fee8c2158d072b4f73fff4396d63bf20f67fa048e",
+    "schemaVersion": 2,
+    "lessonId": "klasyfikacje-dsm5-icd11",
+    "moduleId": "psych-afektywne"
+  },
   "leki": {
     "hash": "695eab60180bbe59f4f3d7c2397e1e501b89958a46bd098217c6b68e73d37110",
     "schemaVersion": 2,
     "lessonId": "leki",
     "moduleId": "tarczyca"
   },
+  "leki-przeciwpsychotyczne-generacje": {
+    "hash": "bccf9bb3ad8728ca15d3cccecc8a14d18357562c459d1831cef491b32b88989e",
+    "schemaVersion": 2,
+    "lessonId": "leki-przeciwpsychotyczne-generacje",
+    "moduleId": "psych-farmakologia"
+  },
+  "lekoopornosc-i-klozapina": {
+    "hash": "ed7e7c8dc7d40420b8be5a613eb36b7a8ee73dcfbe8543090909ff7480473d41",
+    "schemaVersion": 2,
+    "lessonId": "lekoopornosc-i-klozapina",
+    "moduleId": "psych-farmakologia"
+  },
+  "mania-hipomania-spektrum": {
+    "hash": "8b5e442d88721bfeeb2484d5e72a688472b97a9a2c69aaa094e2140bd5d4bae6",
+    "schemaVersion": 2,
+    "lessonId": "mania-hipomania-spektrum",
+    "moduleId": "psych-afektywne"
+  },
   "moczowka-prosta": {
     "hash": "a0936ed68213c81db436e2eb09afd3692837dccfa67d34d6ef7f5cc212295979",
     "schemaVersion": 2,
     "lessonId": "moczowka-prosta",
     "moduleId": "przysadka"
+  },
+  "monitorowanie-stezen-tdm": {
+    "hash": "223678216acc6906231202cf58b0b2d2495ecafccce2cb9dd7da6cad7dc38286",
+    "schemaVersion": 2,
+    "lessonId": "monitorowanie-stezen-tdm",
+    "moduleId": "psych-farmakologia"
   },
   "nadczynnosc": {
     "hash": "ba8f49f8dfd9dcf2f02513e0bb724b9fff01c071fb7057b07a8da3398b197e39",
@@ -215,11 +317,29 @@
     "lessonId": "niedoczynnosc-wtorna",
     "moduleId": "nadnercza"
   },
+  "normotymiki-lit-walproinian-lamotrygina": {
+    "hash": "d14e924b634d322495ef1cb81c225409fd24c8c20ed91517aff9600e3f8ca218",
+    "schemaVersion": 2,
+    "lessonId": "normotymiki-lit-walproinian-lamotrygina",
+    "moduleId": "psych-farmakologia"
+  },
   "nowotwory": {
     "hash": "a54739dc3a53840db081d1dffbdf244d28542acbad19315f899101f84492d849",
     "schemaVersion": 2,
     "lessonId": "nowotwory",
     "moduleId": "tarczyca"
+  },
+  "ocd-i-petla-cstc": {
+    "hash": "a68ddd68cd8562d1f4ec75d77f427d4ad7dfd4b0ebd83ebb7e3d097a05cd4d09",
+    "schemaVersion": 2,
+    "lessonId": "ocd-i-petla-cstc",
+    "moduleId": "psych-afektywne"
+  },
+  "ocena-ryzyka-samobojczego-agresji": {
+    "hash": "4be768e059dd5e95b7cfa0e6afe3b40b293cfab55a1736a34dc6daec791b638e",
+    "schemaVersion": 2,
+    "lessonId": "ocena-ryzyka-samobojczego-agresji",
+    "moduleId": "psych-afektywne"
   },
   "osobowosc-icd11-wymiary": {
     "hash": "fbd24337e8153ae21aaf71672b3ddb487794176b8768eb5e6f73668370743159",
@@ -232,6 +352,12 @@
     "schemaVersion": 2,
     "lessonId": "osteoporoza-metabolizm",
     "moduleId": "przytarczyce"
+  },
+  "ostre-stany-toksyczne-zespol-serotoninowy": {
+    "hash": "ecdf3ded3681512b4f2468ca3b435d03933d477a4a93ca14459555e7bd825f7f",
+    "schemaVersion": 2,
+    "lessonId": "ostre-stany-toksyczne-zespol-serotoninowy",
+    "moduleId": "psych-farmakologia"
   },
   "pamiec-traumatyczna-i-extinction": {
     "hash": "8ec5e6cfe52b86e8dc6ef903b236f3699cc8541db70d05b5fa6b5910fbbbe45f",
@@ -251,6 +377,12 @@
     "lessonId": "phpt-pierwotna",
     "moduleId": "przytarczyce"
   },
+  "profilaktyka-dzialan-niepozadanych": {
+    "hash": "819e7f79205a41a8264d5f9988198698c1598cc9ba6f2429f739ce94a1945fe1",
+    "schemaVersion": 2,
+    "lessonId": "profilaktyka-dzialan-niepozadanych",
+    "moduleId": "psych-farmakologia"
+  },
   "prolactinoma": {
     "hash": "12f822ff907bec56aced069398fb7d8126b23b093d1e8a80648ae379b7ad9c9d",
     "schemaVersion": 2,
@@ -268,6 +400,12 @@
     "schemaVersion": 2,
     "lessonId": "przelom-nadnerczowy",
     "moduleId": "nadnercza"
+  },
+  "przypadki-integracyjne-diagnostyka": {
+    "hash": "af47b18d03bce4fb0a3d7b8933e65301f0d52e9a3981f9a6510f37fe69780f0a",
+    "schemaVersion": 2,
+    "lessonId": "przypadki-integracyjne-diagnostyka",
+    "moduleId": "psych-afektywne"
   },
   "przysadka-chemia-leki": {
     "hash": "91799cb2316770a2b087749dcaf53a41120696a0a16cd485cac9b87a3f4a5e71",
@@ -353,17 +491,41 @@
     "lessonId": "przytarczyce-matematyka-kinetyka-mineralizacji",
     "moduleId": "przytarczyce"
   },
+  "psychopatologia-objawow": {
+    "hash": "5e472077341376e155e72ce47dd51caa535060460c81fd31e61f89e0feac2627",
+    "schemaVersion": 2,
+    "lessonId": "psychopatologia-objawow",
+    "moduleId": "psych-afektywne"
+  },
   "psychoterapia-traumy-fazy-i-metody": {
     "hash": "fc6bd76c3a06758fee2755233eeb82e51437af9b52c928998463e16ab03d0346",
     "schemaVersion": 2,
     "lessonId": "psychoterapia-traumy-fazy-i-metody",
     "moduleId": "psych-trauma-dysocjacja"
   },
+  "psychoza-i-szlaki-dopaminy": {
+    "hash": "3e55d3f9f316952f894eea1e39b47c89d517133ea5f2cf46c3d8dd8f7731c3c9",
+    "schemaVersion": 2,
+    "lessonId": "psychoza-i-szlaki-dopaminy",
+    "moduleId": "psych-afektywne"
+  },
   "ptsd-kryteria-i-fenomenologia": {
     "hash": "c777c635959706df7ab463242c0bba4d3b3a1ab359d210bb01bd205be2153990",
     "schemaVersion": 2,
     "lessonId": "ptsd-kryteria-i-fenomenologia",
     "moduleId": "psych-trauma-dysocjacja"
+  },
+  "ptsd-trauma-stres": {
+    "hash": "1eee10d53efb054b4e6f8b4c5a6970280d32d18b0c5972343880112e5873f2e5",
+    "schemaVersion": 2,
+    "lessonId": "ptsd-trauma-stres",
+    "moduleId": "psych-afektywne"
+  },
+  "racjonalna-polipragmazja-i-augmentacja": {
+    "hash": "53d2d8dd286f5279fcab465405de61f8861119991a31c77df0d730af7bf51df2",
+    "schemaVersion": 2,
+    "lessonId": "racjonalna-polipragmazja-i-augmentacja",
+    "moduleId": "psych-farmakologia"
   },
   "rak-nadnercza": {
     "hash": "52465c145fe66ca052390c814076727fe2c9414058a014e05e620e5e8c61a066",
@@ -376,6 +538,12 @@
     "schemaVersion": 2,
     "lessonId": "reakcja-na-stres-asr-vs-asd",
     "moduleId": "psych-trauma-dysocjacja"
+  },
+  "receptory-dopaminowe-okno-kapura": {
+    "hash": "707cb838d5b8e3b7ff9f49ed9332c769229688438862f16d88d921f893757ef0",
+    "schemaVersion": 2,
+    "lessonId": "receptory-dopaminowe-okno-kapura",
+    "moduleId": "psych-farmakologia"
   },
   "rzekoma-niedoczynnosc": {
     "hash": "c628a0e7cf13ce143fe7416cdf0a05bd3a09344aaee93623fd233625141d95d9",
@@ -395,6 +563,12 @@
     "lessonId": "siadh",
     "moduleId": "przysadka"
   },
+  "skale-kliniczne-w-psychiatrii": {
+    "hash": "b458f7e2f414fcb40752bbbcd934f6b8e2002e6a0846d859f5e8a032c6dd01bc",
+    "schemaVersion": 2,
+    "lessonId": "skale-kliniczne-w-psychiatrii",
+    "moduleId": "psych-afektywne"
+  },
   "spektrum-dysocjacji-kontinuum": {
     "hash": "e922b174ffaee6faaf12c436b392eae123e4bcbd680266dc6a6967138313fbf0",
     "schemaVersion": 2,
@@ -406,6 +580,12 @@
     "schemaVersion": 2,
     "lessonId": "stany-nagle",
     "moduleId": "tarczyca"
+  },
+  "substancje-i-secondary-causes": {
+    "hash": "6d155478d7c1bec15eb6ef95780c87fb1be5e2ed6f6c0ac834645626a38f4cf8",
+    "schemaVersion": 2,
+    "lessonId": "substancje-i-secondary-causes",
+    "moduleId": "psych-afektywne"
   },
   "tarczyca-chemia-farmakologia": {
     "hash": "898667568833e25228cc49013dbd938374286086354263c442026f5a8348e364",
@@ -437,6 +617,12 @@
     "lessonId": "tezyczka-objawy",
     "moduleId": "przytarczyce"
   },
+  "transportery-monoamin-sert-net-dat": {
+    "hash": "6245fdd5ee6cf2ed57aeaa700d81def34de7c8b5ef6396bbf241b6eed0e2c674",
+    "schemaVersion": 2,
+    "lessonId": "transportery-monoamin-sert-net-dat",
+    "moduleId": "psych-farmakologia"
+  },
   "trauma-neurobiologia-zagrozenia": {
     "hash": "17d884b33dc79f9a5d8a672e314be1d1fbb20298e34b43a8afe8238eeb98bee0",
     "schemaVersion": 2,
@@ -455,11 +641,47 @@
     "lessonId": "udar-przysadki",
     "moduleId": "przysadka"
   },
+  "uklad-serotoninergiczny-receptory": {
+    "hash": "cc328ac658e6f3343138ee1c4e3959c3e76f5cb7b49a4c070df842758bad398a",
+    "schemaVersion": 2,
+    "lessonId": "uklad-serotoninergiczny-receptory",
+    "moduleId": "psych-farmakologia"
+  },
   "wpn-zespol": {
     "hash": "beb17b8adbfcfd3a74f28f5edebe67cfa0cd6bef1aef500c89a79ea8dc01e956",
     "schemaVersion": 2,
     "lessonId": "wpn-zespol",
     "moduleId": "nadnercza"
+  },
+  "wywiad-psychiatryczny-mse": {
+    "hash": "6a49631b965521d91fcbdbc0bd8c42b9c6ce37be3eb3f8fc5a0f626b3ef12fc2",
+    "schemaVersion": 2,
+    "lessonId": "wywiad-psychiatryczny-mse",
+    "moduleId": "psych-afektywne"
+  },
+  "zaburzenia-lekowe-gad-napadowy": {
+    "hash": "aee276cf45d53895e3534956017c5eac4af05108c1855ec571555c523005ea9f",
+    "schemaVersion": 2,
+    "lessonId": "zaburzenia-lekowe-gad-napadowy",
+    "moduleId": "psych-afektywne"
+  },
+  "zaburzenia-osobowosci-wymiarowe": {
+    "hash": "e78413f66a7862f00246a4f8ae77fee4ebc1a884e88c6c2cba6b066e3a9530d8",
+    "schemaVersion": 2,
+    "lessonId": "zaburzenia-osobowosci-wymiarowe",
+    "moduleId": "psych-afektywne"
+  },
+  "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy": {
+    "hash": "b164ced18d29540993e51370a41058216ae082ef158dddadfcca345fe276fbdd",
+    "schemaVersion": 2,
+    "lessonId": "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy",
+    "moduleId": "psych-farmakologia"
+  },
+  "zamiana-lekow-switching-cross-tapering": {
+    "hash": "62bd0f3de34248d52b3d32c81c26371400de74ab41b155334b3f194ca1676f1d",
+    "schemaVersion": 2,
+    "lessonId": "zamiana-lekow-switching-cross-tapering",
+    "moduleId": "psych-farmakologia"
   },
   "zapalenia": {
     "hash": "d21d8c2b2f262c8f7ee5687a01af889ad2ba21eb4dbef2d71e00486e41d220f3",
@@ -478,5 +700,11 @@
     "schemaVersion": 2,
     "lessonId": "zespol-glodnych-kosci",
     "moduleId": "przytarczyce"
+  },
+  "zlosliwy-zespol-neuroleptyczny-nms": {
+    "hash": "8f5abdb4d4be8a458906ae7d501c35494e9e147bb3019d9d8cfd6973568513a9",
+    "schemaVersion": 2,
+    "lessonId": "zlosliwy-zespol-neuroleptyczny-nms",
+    "moduleId": "psych-farmakologia"
   }
 }

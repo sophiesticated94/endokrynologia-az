@@ -1,0 +1,395 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "receptory-dopaminowe-okno-kapura",
+  "objectives": [
+    {
+      "id": "receptory-dopaminowe-okno-kapura-obj-1",
+      "statement": "Zrozumiesz koncepcję prążkowiowego okna terapeutycznego Kapura (65%–80% occupancy D2).",
+      "kind": "mechanism"
+    },
+    {
+      "id": "receptory-dopaminowe-okno-kapura-obj-2",
+      "statement": "Wyjaśnisz zależność między blokadą D2 > 80% a wystąpieniem objawów pozapiramidowych (EPS) i hiperprolaktynemii.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "receptory-dopaminowe-okno-kapura-obj-3",
+      "statement": "Scharakteryzujesz rolę częściowych agonistów D2/D3 (aripiprazol, kariprazyna) w prewencji powikłań.",
+      "kind": "mechanism"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-kapur-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "receptory-dopaminowe-okno-kapura-obj-1"
+    ],
+    "prompt": "Jaki jest optymalny przedział blokady (occupancy) receptorów D2 w prążkowiu gwarantujący skuteczność bez wywoływania EPS wg Kapura?",
+    "options": [
+      "65% do 80% occupancy D2",
+      "Mniej niż 20% occupancy D2",
+      "Zawsze powyżej 95% occupancy D2"
+    ],
+    "optionFeedback": [
+      "W tym przedziale następuje ustąpienie psychozy przy minimalnym ryzyku objawów pozapiramidowych.",
+      "Blokada < 20% nie daje żadnego mierzalnego efektu przeciwpsychotycznego.",
+      "Blokada > 80% u antagonistów powoduje ciężki parkinsonizm polekowy i sztywność mięśniową."
+    ],
+    "answer": 0,
+    "explanation": "W tym przedziale następuje ustąpienie psychozy przy minimalnym ryzyku objawów pozapiramidowych.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "pet-d2-kapur",
+      "wfsbp-schizophrenia",
+      "stahl-essential"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "receptory-dopaminowe-okno-kapura-block-1",
+      "title": "Hipoteza dopaminowa i rola receptora D2 w szlaku mezolimbicznym",
+      "text": "Objawy wytwórcze psychozy (urojenia, omamy) wynikają z nadmiernej, niespójnej stymulacji receptorów dopaminowych D2 w szlaku mezolimbicznym (biegnącym z pola brzusznego nakrywki VTA do jądra półleżącego). Zablokowanie receptorów D2 w tym obwodzie przywraca właściwe filtrowanie bodźców i redukuje aberracyjną wagę poznawczą (aberrant salience).",
+      "sourceIds": [
+        "pet-d2-kapur",
+        "wfsbp-schizophrenia",
+        "stahl-essential"
+      ],
+      "checkpointId": "psych-kapur-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-d2-pathways",
+          "kind": "diagram",
+          "placement": "after-text"
+        },
+        {
+          "id": "deeplink-d2-evidence",
+          "kind": "workbench-deeplink",
+          "placement": "end-of-block",
+          "presetId": "d2-evidence-001"
+        }
+      ]
+    },
+    {
+      "id": "receptory-dopaminowe-okno-kapura-block-2",
+      "title": "Przełomowa praca Shitija Kapura: okno occupancy 65–80%",
+      "text": "W badaniach neuroobrazowych PET Kapur wykazał istnienie ścisłego okna terapeutycznego blokady prążkowiowych receptorów D2: 1) Poniżej 65% occupancy – brak istotnego działania przeciwpsychotycznego; 2) Pomiędzy 65% a 80% – optymalny efekt przeciwpsychotyczny przy znikomym ryzyku powikłań ruchowych; 3) Powyżej 80% occupancy – gwałtowny, skokowy wzrost ryzyka ostrych objawów pozapiramidowych (EPS: parkinsonizm, akatyzja, dystonie) oraz hiperprolaktynemii.",
+      "sourceIds": [
+        "pet-d2-kapur",
+        "wfsbp-schizophrenia",
+        "stahl-essential"
+      ],
+      "checkpointId": "psych-kapur-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "widget-d2-pet-simulator",
+          "kind": "interactive-widget",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "receptory-dopaminowe-okno-kapura-block-3",
+      "title": "Trzecia generacja: częściowi agoniści D2/D3",
+      "text": "Leki III generacji (aripiprazol, brekspiprazol, kariprazyna) nie są czystymi antagonistami, lecz częściowymi agonistami receptorów D2 i D3. Stabilizują one układ dopaminowy – w warunkach hiperdopaminergii działają jak antagoniści (redukując psychozę), natomiast w warunkach hipodopaminergii stymulują receptor z aktywnością wewnętrzną rzędu 25–40%, co zapobiega EPS i nie podwyższa prolaktyny, nawet przy occupancy sięgającym 90–95% w badaniu PET.",
+      "sourceIds": [
+        "pet-d2-kapur",
+        "wfsbp-schizophrenia",
+        "stahl-essential"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-kapur-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "receptory-dopaminowe-okno-kapura-obj-2"
+      ],
+      "prompt": "Dlaczego częściowy agonista D2 (np. aripiprazol) nie wywołuje parkinsonizmu ani hiperprolaktynemii pomimo occupancy D2 rzędu 85–95% w PET?",
+      "options": [
+        "Pobudza wydzielanie prolaktyny bezpośrednio przez przysadkę",
+        "Posiada wewnętrzną aktywność agonistyczną (25–30%), co zapewnia bazowe przewodnictwo w szlaku nigrostriatalnym i guzkowo-lejkowym",
+        "Aripiprazol nie przenika przez barierę krew-mózg"
+      ],
+      "optionFeedback": [
+        "Aripiprazol obniża, a nie podwyższa stężenie prolaktyny.",
+        "Działa jak bufor: tonizuje nadmiar dopaminy, lecz nie wygasza całkowicie transmisji do zera.",
+        "Aripiprazol doskonale penetruje do OUN, osiągając wysokie stężenia mózgowe."
+      ],
+      "answer": 1,
+      "explanation": "Działa jak bufor: tonizuje nadmiar dopaminy, lecz nie wygasza całkowicie transmisji do zera.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "pet-d2-kapur",
+        "wfsbp-schizophrenia",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-kapur-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "receptory-dopaminowe-okno-kapura-obj-3"
+      ],
+      "prompt": "Który szlak dopaminowy odpowiada za wystąpienie mlekotoku i zaburzeń miesiączkowania przy blokadzie D2 > 80%?",
+      "options": [
+        "Szlak nigrostriatalny",
+        "Szlak mezokortykalny",
+        "Szlak guzkowo-lejkowy (tuberoinfundibular)"
+      ],
+      "optionFeedback": [
+        "Szlak nigrostriatalny odpowiada za kontrolę ruchową i objawy pozapiramidowe.",
+        "Szlak mezokortykalny wiąże się z funkcjami poznawczymi i objawami negatywnymi.",
+        "Dopamina jest fizjologicznym inhibitorem wydzielania prolaktyny; blokada D2 odhamowuje laktotrofy przysadki."
+      ],
+      "answer": 2,
+      "explanation": "Dopamina jest fizjologicznym inhibitorem wydzielania prolaktyny; blokada D2 odhamowuje laktotrofy przysadki.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "pet-d2-kapur",
+        "wfsbp-schizophrenia",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "receptory-dopaminowe-okno-kapura-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "receptory-dopaminowe-okno-kapura-obj-1",
+      "receptory-dopaminowe-okno-kapura-obj-2",
+      "receptory-dopaminowe-okno-kapura-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Receptory D2 i D3: okno terapeutyczne Kapura (65–80%)”.",
+    "modelAnswer": "Okno terapeutyczne Kapura dla antagonistów D2 wynosi 65–80% occupancy. Przekroczenie 80% wyzwala EPS i hiperprolaktynemię. Częściowi agoniści D2/D3 osiągają wysokie occupancy bez blokady bazowej transmisji.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "pet-d2-kapur",
+      "wfsbp-schizophrenia",
+      "stahl-essential"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-kapur-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "receptory-dopaminowe-okno-kapura-obj-1"
+      ],
+      "prompt": "Który z nowoczesnych leków przeciwpsychotycznych III generacji cechuje się najwyższym powinowactwem do receptorów dopaminowych D3?",
+      "options": [
+        "Kariprazyna",
+        "Haloperydol",
+        "Chlorpromazyna"
+      ],
+      "optionFeedback": [
+        "Wysokie powinowactwo do D3 odpowiada za jej skuteczność w redukcji osiowych objawów negatywnych schizofrenii.",
+        "Haloperydol jest klasycznym, silnym antagonistą D2.",
+        "Chlorpromazyna to fenotiazyna o niskiej sile działania i nieselektywnym profilu."
+      ],
+      "answer": 0,
+      "explanation": "Wysokie powinowactwo do D3 odpowiada za jej skuteczność w redukcji osiowych objawów negatywnych schizofrenii.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "pet-d2-kapur",
+        "wfsbp-schizophrenia",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-kapur-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "receptory-dopaminowe-okno-kapura-obj-1"
+      ],
+      "prompt": "Co dzieje się w szlaku mezolimbicznym podczas zaostrzenia psychozy u pacjenta ze schizofrenią?",
+      "options": [
+        "Gwałtowny spadek stężenia dopaminy do zera",
+        "Dochodzi do nadmiernego, chaotycznego wyrzutu dopaminy i hiperstymulacji receptorów D2",
+        "Całkowite obumarcie neuronów dopaminergicznych"
+      ],
+      "optionFeedback": [
+        "Spadek dopaminy w szlaku mezolimbicznym tłumiłby psychozę, a nie ją zaostrzał.",
+        "Prowadzi to do nadawania nadmiernego znaczenia neutralnym bodźcom środowiskowym (aberrant salience).",
+        "Schizofrenia nie jest chorobą neurodegeneracyjną z ostrą utratą ciał neuronów VTA."
+      ],
+      "answer": 1,
+      "explanation": "Prowadzi to do nadawania nadmiernego znaczenia neutralnym bodźcom środowiskowym (aberrant salience).",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "pet-d2-kapur",
+        "wfsbp-schizophrenia",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "d2-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "receptory-dopaminowe-okno-kapura-obj-1"
+      ],
+      "claimIds": [
+        "claim-ph-kapur-window"
+      ],
+      "prompt": "Pacjent leczony haloperidolem w dawce zwiększonej z 4 mg do 10 mg/d doświadczył sztywności mięśniowej, drżenia spoczynkowego i ostrej akatyzji. W jakim przedziale prążkowiowego occupancy D2 znajduje się obecnie pacjent wg modelu Kapura?",
+      "options": [
+        "Powyżej 80% occupancy receptorów D2 w prążkowiu",
+        "W optymalnym oknie terapeutycznym 65–80% D2",
+        "Poniżej 50% occupancy D2"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-d2-threshold-80",
+            "label": "Przekroczenie progu 80% occupancy D2 w prążkowiu",
+            "acceptedPhrases": [
+              "powyżej 80%",
+              ">80%",
+              "przekroczenie 80%",
+              "wysokie occupancy"
+            ]
+          },
+          {
+            "id": "c-eps-risk-steep",
+            "label": "Gwałtowny wzrost ryzyka EPS i hiperprolaktynemii powyżej 80%",
+            "acceptedPhrases": [
+              "ryzyko eps",
+              "objawy pozapiramidowe",
+              "hiperprolaktynemia",
+              "sztywność"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Według badań PET Kapura próg skuteczności przeciwpsychotycznej to 65% occupancy D2, natomiast przekroczenie 80% gwałtownie indukuje EPS i hiperprolaktynemię.",
+      "difficulty": "both",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "pet-d2-kapur"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "d2-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "receptory-dopaminowe-okno-kapura-obj-2"
+      ],
+      "claimIds": [
+        "claim-ph-aripiprazole-partial"
+      ],
+      "prompt": "Wyjaśnij paradoks arypiprazolu: dlaczego mimo occupancy receptorów D2 sięgającego 85–95% lek ten rzadko wywołuje klasyczny parkinsonizm polekowy i nie podnosi poziomu prolaktyny?",
+      "modelAnswer": "Arypiprazol jest częściowym agonistą (partial agonist), a nie pełnym antagonistą receptora D2. Mimo bardzo wysokiego powinowactwa i occupancy (85–95%), posiada wewnętrzną aktywność agonistyczną rzędu ~25–30%. W warunkach nadmiaru dopaminy (szlak mezolimbiczny) działa jako funkcjonalny antagonista, tłumiąc psychozę, natomiast w szlaku nigrostriatalnym i guzkowo-lejkowym zapewnia stałą, bazową stymulację dopaminergiczną, chroniąc przed EPS i hiperprolaktynemią.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-partial-agonist-nature",
+            "label": "Charakter częściowego agonisty o aktywności wewnętrznej ~25-30%",
+            "acceptedPhrases": [
+              "częściowy agonista",
+              "aktywność wewnętrzna",
+              "intrinsic activity",
+              "częściowa stymulacja"
+            ]
+          },
+          {
+            "id": "c-pathway-differential",
+            "label": "Ochrona szlaku nigrostriatalnego i guzkowo-lejkowego przed całkowitą blokadą",
+            "acceptedPhrases": [
+              "nigrostriatalny",
+              "guzkowo-lejkowy",
+              "brak hiperprolaktynemii",
+              "ochrona przed eps"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Arypiprazol dzięki aktywności wewnętrznej (~30%) nie dopuszcza do całkowitego zablokowania transmisji dopaminergicznej w prążkowiu i przysadce.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "pet-d2-kapur",
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "d2-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "receptory-dopaminowe-okno-kapura-obj-1",
+        "receptory-dopaminowe-okno-kapura-obj-3"
+      ],
+      "claimIds": [
+        "claim-ph-kapur-window"
+      ],
+      "prompt": "Oceń znaczenie podanych stanów klinicznych dla interpretacji okna Kapura (65–80% D2 occupancy) u pacjenta leczonego lekiem przeciwpsychotycznym.",
+      "hypothesis": "Pacjent znajduje się w przedziale prążkowiowego occupancy D2 zapewniającym kontrolę psychozy przy niskim ryzyku objawów pozapiramidowych.",
+      "explanation": "Okno 65–80% łączy kontrolę objawów wytwórczych z bezpieczeństwem motorycznym i hormonalnym.",
+      "items": [
+        {
+          "id": "d2-ew-1",
+          "text": "Ustąpienie omamów słuchowych przy całkowitym braku sztywności i drżenia mięśniowego",
+          "expected": "supports",
+          "explanation": "Wskazuje na osiągnięcie progu 65% bez przekroczenia progu 80% occupancy."
+        },
+        {
+          "id": "d2-ew-2",
+          "text": "Pojawienie się ostrej dystonii karku i mlekotoku u młodej kobiety",
+          "expected": "opposes",
+          "explanation": "Wskazuje na przekroczenie progu 80% occupancy D2 w prążkowiu i szlaku guzkowo-lejkowym."
+        },
+        {
+          "id": "d2-ew-3",
+          "text": "Brak jakiejkolwiek poprawy w zakresie objawów wytwórczych po 4 tygodniach stosowania leku",
+          "expected": "opposes",
+          "explanation": "Może świadczyć o occupancy poniżej 65% (dawka subterapeutyczna lub niska absorpcja)."
+        }
+      ],
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "pet-d2-kapur"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "pathway-builder"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy AGNP 2026 TDM, CPIC PGx, Maudsley 15th ed., Kapur PET D2, Hunter criteria oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

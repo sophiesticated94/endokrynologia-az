@@ -1,0 +1,171 @@
+{
+  "id": "zlosliwy-zespol-neuroleptyczny-nms",
+  "moduleId": "psych-farmakologia",
+  "title": "Złośliwy Zespół Neuroleptyczny (NMS): patofizjologia i terapia",
+  "subtitle": "Ostra blokada D2, hipertermia, sztywność rury ołowianej, kinaza CPK i dantrolen",
+  "group": "Toksykologia i stany nagłe w psychiatrii",
+  "minutes": 18,
+  "goals": [
+    "Zdiagnozujesz klasyczną tetradę objawów NMS (sztywność, hipertermia, dysautonomia, zaburzenia świadomości).",
+    "Zinterpretujesz wzrost stężenia kinazy kreatynowej (CPK > 1000–10000 IU/l) i ryzyko ostrej niewydolności nerek.",
+    "Wdrożysz leczenie farmakologiczne: bromokryptynę, amantadynę oraz dantrolen w OIT."
+  ],
+  "sections": [
+    {
+      "title": "Patofizjologia ostrej blokady dopaminergicznej",
+      "text": "Złośliwy zespół neuroleptyczny (Neuroleptic Malignant Syndrome - NMS) jest zagrażającym życiu powikłaniem (śmiertelność 5–10%) wywołanym nagłą, głęboką blokadą receptorów D2 w szlaku nigrostriatalnym i podwzgórzu lub nagłym odstawieniem agonistów dopaminy (np. lewodopy w chorobie Parkinsona). Blokada podwzgórzowych receptorów D2 rozregulowuje ośrodek termoregulacji, prowadząc do złośliwej hipertermii."
+    },
+    {
+      "title": "Tetrada objawów klinicznych i markery laboratoryjne",
+      "text": "NMS manifestuje się tetradą: 1) Skrajna sztywność mięśniowa typu \"rury ołowianej\" (lead-pipe rigidity); 2) Wysoka gorączka (często > 38,5–40°C); 3) Niestabilność wegetatywna (labilne ciśnienie tętnicze, tachykardia, bladość, tachypnoe); 4) Zaburzenia świadomości (od przymglenia do śpiączki). W badaniach laboratoryjnych kluczowy jest gwałtowny wzrost kinazy kreatynowej (CPK > 1000, często > 10 000–50 000 IU/l) wskutek rabdomiolizy oraz leukocytoza (> 10 000–40 000/ul)."
+    },
+    {
+      "title": "Protokół leczenia na oddziale intensywnej terapii",
+      "text": "Podstawą jest natychmiastowe odstawienie neuroleptyku oraz intensywna terapia: agresywne nawadnianie dożylne w celu ochrony nerek przed nefropatią mioglobinuryczną (forsowana diureza), chłodzenie fizykalne. Farmakologicznie stosuje się: agonistę receptorów dopaminowych – bromokryptynę (2,5–10 mg p.o. co 8h), amantadynę oraz bezpośredni lek zwiotczający mięśnie – dantrolen (1–2,5 mg/kg i.v. w bolusie, powtarzany do maks. 10 mg/kg/d)."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Parametr",
+      "Wartość w NMS",
+      "Znaczenie patofizjologiczne",
+      "Postępowanie docelowe"
+    ],
+    "rows": [
+      [
+        "Kinaza kreatynowa (CPK)",
+        "> 1000 do > 50 000 IU/l",
+        "Masywna rabdomioliza (rozpad mięśni)",
+        "Wlewy krystaloidów, alkalizacja moczu, dializoterapia"
+      ],
+      [
+        "Temperatura ciała",
+        "> 38,5 – 41°C",
+        "Zablokowanie termoregulacji w podwzgórzu",
+        "Chłodzenie fizykalne, paracetamol (mało skuteczny)"
+      ],
+      [
+        "Napięcie mięśniowe",
+        "Sztywność rury ołowianej (lead-pipe)",
+        "Blokada D2 w prążkowiu",
+        "Dantrolen i.v., bromokryptyna, benzodiazepiny"
+      ],
+      [
+        "Morfologia krwi",
+        "Leukocytoza 10–40 tys./ul z przesunięciem w lewo",
+        "Ostra reakcja stresowa i zapalna",
+        "Wykluczenie neuroinfekcji i sepsy"
+      ]
+    ]
+  },
+  "advanced": "Dantrolen działa jako antagonista receptorów rianodynowych (RyR1) w siateczce sarkoplazmatycznej mięśni poprzecznie prążkowanych. Blokuje uwalnianie jonów wapnia (Ca2+) do cytoplazmy komórki mięśniowej, co natychmiast przerywa skurcz tężcowy mięśni, hipermetabolizm i produkcję ciepła, chroniąc pacjenta przed hiperkaliemią i śmiercią.",
+  "summary": "NMS to ostra blokada D2 z sztywnością rury ołowianej, hipertermią, skokiem CPK i leukocytozą. Terapia wymaga natychmiastowego odstawienia leków, forsowanej diurezy, dantrolenu i.v. oraz bromokryptyny w OIT.",
+  "sourceIds": [
+    "nms-consensus",
+    "maudsley15",
+    "wfsbp-schizophrenia"
+  ],
+  "questions": [
+    {
+      "id": "psych-nms-q1",
+      "lessonId": "zlosliwy-zespol-neuroleptyczny-nms",
+      "prompt": "Jaki enzym mięśniowy ulega dramatycznemu podwyższeniu w surowicy krwi w przebiegu Złośliwego Zespołu Neuroleptycznego (NMS) wskutek rabdomiolizy?",
+      "options": [
+        {
+          "text": "Kinaza kreatynowa (CPK / CK)",
+          "explanation": "Wartości przekraczają często 10 000–50 000 IU/l i korelują z ryzykiem ostrej martwicy cewek nerkowych."
+        },
+        {
+          "text": "Dehydrogenaza mleczanowa (LDH) jako jedyny marker uszkodzenia",
+          "explanation": "Choć LDH rośnie w rozpadzie tkanek, parametrem decyzyjnym o kluczowej dynamice jest kinaza kreatynowa (CK)."
+        },
+        {
+          "text": "Aminotransferaza alaninowa (ALT) bez wzrostu AST",
+          "explanation": "W uszkodzeniu mięśni szkieletowych AST dominuje nad ALT, lecz żaden z nich nie służy do monitorowania ciężkości NMS tak jak CPK."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-nms-q2",
+      "lessonId": "zlosliwy-zespol-neuroleptyczny-nms",
+      "prompt": "Jaki lek będący blokerem receptorów rianodynowych (RyR1) stosuje się w dożylnej terapii NMS w celu przerwania skurczu mięśni i hipertermii?",
+      "options": [
+        {
+          "text": "Baklofen w wysokich dawkach doustnych",
+          "explanation": "Baklofen jest agonistą receptora GABAB o powolnym początku i nie przerywa ostrej kaskady wapniowej RyR1 w OIT."
+        },
+        {
+          "text": "Dantrolen",
+          "explanation": "Hamuje uwalnianie wapnia z siateczki sarkoplazmatycznej, przerywając hipermetabolizm mięśniowy."
+        },
+        {
+          "text": "Sukcynylocholina w bolusie i.v.",
+          "explanation": "Depolaryzujące leki zwiotczające są bezwzględnie przeciwwskazane, gdyż wyzwalają masywną hiperkaliemię i grożą zatrzymaniem krążenia."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-nms-q3",
+      "lessonId": "zlosliwy-zespol-neuroleptyczny-nms",
+      "prompt": "Który agonista receptorów dopaminowych jest powszechnie stosowany w farmakoterapii NMS w celu przełamania ośrodkowego deficytu dopaminy?",
+      "options": [
+        {
+          "text": "Haloperydol w wysokiej dawce",
+          "explanation": "Haloperydol jest silnym antagonistą D2 i nasiliłby śmiertelność w NMS."
+        },
+        {
+          "text": "Nalokson dożylnie",
+          "explanation": "Nalokson jest antagonistą receptorów opioidowych."
+        },
+        {
+          "text": "Bromokryptyna (lub amantadyna)",
+          "explanation": "Stymuluje zablokowane receptory D2 w podwzgórzu i prążkowiu, normalizując termoregulację."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-nms-q4",
+      "lessonId": "zlosliwy-zespol-neuroleptyczny-nms",
+      "prompt": "Jaki charakter ma wzmożone napięcie mięśniowe w NMS w badaniu neurologicznym?",
+      "options": [
+        {
+          "text": "Plastyczna sztywność o charakterze \"rury ołowianej\" (lead-pipe rigidity) jednakowa w całym zakresie ruchu",
+          "explanation": "Świadczy o głębokiej blokadzie pozapiramidowej w szlaku nigrostriatalnym."
+        },
+        {
+          "text": "Napięcie spastyczne scyzorykowe (piramidowe) zależne od prędkości ruchu",
+          "explanation": "Sztywność w NMS jest pozapiramidowa (plastyczna), jednakowa w całym zakresie ruchu, bez fenomenu scyzoryka."
+        },
+        {
+          "text": "Hipotonia mięśniowa z zachowanym objawem koła zębatego",
+          "explanation": "Hipotonia nie występuje w NMS; sztywność obejmuje cały układ mięśniowy."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-nms-q5",
+      "lessonId": "zlosliwy-zespol-neuroleptyczny-nms",
+      "prompt": "Jakie powikłanie narządowe jest główną przyczyną zgonu u pacjentów z nieleczoną rabdomiolizą w przebiegu NMS?",
+      "options": [
+        {
+          "text": "Przetoka oskrzelowo-płucna z odmą prężną",
+          "explanation": "Powikłania płucne wynikają z aspiracji lub hipowentylacji, a nie z przetoki miąższowej."
+        },
+        {
+          "text": "Ostra martwica cewek nerkowych i niewydolność nerek wywołana zatkaniem przez mioglobinę",
+          "explanation": "Mioglobina wytrąca się w kanalikach nerkowych, co wymaga agresywnej płynoterapii i forsowanej diurezy."
+        },
+        {
+          "text": "Ostra niewydolność wątroby z encefalopatią wrotno-układową",
+          "explanation": "Choć enzymy wątrobowe mogą rosnąć z powodu hipoperfuzji, bezpośrednim zagrożeniem z rozpadu mięśni jest nefropatia mioglobinuryczna."
+        }
+      ],
+      "answer": 1
+    }
+  ],
+  "assetIds": []
+}

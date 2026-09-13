@@ -1,0 +1,364 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "glutaminian-gaba-neuroplastycznosc",
+  "objectives": [
+    {
+      "id": "glutaminian-gaba-neuroplastycznosc-obj-1",
+      "statement": "Zrozumiesz rolę równowagi między pobudzeniem (Glu) a hamowaniem (GABA) w OUN.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "glutaminian-gaba-neuroplastycznosc-obj-2",
+      "statement": "Scharakteryzujesz mechanizm szybkiego działania przeciwdepresyjnego poprzez blokadę NMDA i wyrzut BDNF.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "glutaminian-gaba-neuroplastycznosc-obj-3",
+      "statement": "Wyjaśnisz budowę receptora GABAA i allosteryczną modulację przez benzodiazepiny.",
+      "kind": "mechanism"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-glu-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "glutaminian-gaba-neuroplastycznosc-obj-1"
+    ],
+    "prompt": "Jaki jest mechanizm błyskawicznego (w ciągu kilku godzin) działania przeciwdepresyjnego subanestetycznych dawek ketaminy/esketaminy?",
+    "options": [
+      "Trwałe zablokowanie wszystkich receptorów serotoninowych w całym organizmie",
+      "Zahamowanie produkcji glukozy w hepatocytach",
+      "Blokada receptorów NMDA na interneuronach GABA-ergicznych, wyrzut glutaminianu, stymulacja receptorów AMPA i gwałtowna synteza BDNF przez szlak mTOR"
+    ],
+    "optionFeedback": [
+      "Ketamina nie blokuje receptorów 5-HT w mechanizmie osiowym.",
+      "Metabolizm wątrobowy nie jest celem przeciwdepresyjnym ketaminy.",
+      "Prowadzi to do odbudowy kolców dendrytycznych i połączeń synaptycznych w korze przedczołowej."
+    ],
+    "answer": 2,
+    "explanation": "Prowadzi to do odbudowy kolców dendrytycznych i połączeń synaptycznych w korze przedczołowej.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "krystal-ketamine",
+      "stahl-essential",
+      "canmat-mdd-2023"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "glutaminian-gaba-neuroplastycznosc-block-1",
+      "title": "Glutaminian i neurotoksyczność ekscytotoksyczna",
+      "text": "Kwas glutaminowy jest głównym przekaźnikiem pobudzającym w OUN, działającym na receptory jonotropowe (AMPA, NMDA, kainowe) i metabotropowe (mGluR). Fizjologicznie aktywacja AMPA depolaryzuje błonę, usuwając jon magnezu (Mg2+) blokujący kanał receptora NMDA i umożliwiając napływ jonów Ca2+. Przewlekły stres i nadmiar glutaminianu prowadzą do ekscytotoksyczności, zaniku kolców dendrytycznych i atrofii hipokampa.",
+      "sourceIds": [
+        "krystal-ketamine",
+        "stahl-essential",
+        "canmat-mdd-2023"
+      ],
+      "checkpointId": "psych-glu-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-bdnf-trkb",
+          "kind": "diagram",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "glutaminian-gaba-neuroplastycznosc-block-2",
+      "title": "Ketamina i przełom w neurobiologii depresji",
+      "text": "Ketamina (enancjomer S-ketamina / esketamina) podana w subanestetycznych dawkach paradoksalnie blokuje receptory NMDA na hamujących interneuronach GABA-ergicznych. Prowadzi to do rozhamowania neuronów piramidowych i gwałtownego wyrzutu glutaminianu, który stymuluje receptory AMPA. W kaskadzie wewnątrzkomórkowej aktywowany zostaje szlak mTORC1, co skutkuje masywną syntezą i uwalnianiem czynnika BDNF (Brain-Derived Neurotrophic Factor) oraz odbudową synaps w ciągu zaledwie kilku godzin.",
+      "sourceIds": [
+        "krystal-ketamine",
+        "stahl-essential",
+        "canmat-mdd-2023"
+      ],
+      "checkpointId": "psych-glu-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-nmda-ampa-synaptogenesis",
+          "kind": "evidence-panel",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "glutaminian-gaba-neuroplastycznosc-block-3",
+      "title": "Układ GABA i receptor GABAA",
+      "text": "Kwas gamma-aminomasłowy (GABA) jest głównym neuroprzekaźnikiem hamującym. Receptor GABAA to pentameryczny kanał chlorkowy (najczęściej 2alfa, 2beta, 1gamma). Przyłączenie GABA otwiera kanał, powodując napływ jonów Cl- i hiperpolaryzację błony. Leki uspokajające i przeciwlękowe (benzodiazepiny) wiążą się allosterycznie na styku podjednostek alfa i gamma, zwiększając częstość otwarcia kanału w obecności GABA.",
+      "sourceIds": [
+        "krystal-ketamine",
+        "stahl-essential",
+        "canmat-mdd-2023"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-glu-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "glutaminian-gaba-neuroplastycznosc-obj-2"
+      ],
+      "prompt": "Który jon blokuje kanał receptora NMDA w warunkach spoczynkowego potencjału błonowego komórki nerwowej?",
+      "options": [
+        "Jon magnezu (Mg2+)",
+        "Jon żelaza (Fe3+)",
+        "Jon miedzi (Cu2+)"
+      ],
+      "optionFeedback": [
+        "Dopiero depolaryzacja błony wywołana przez receptory AMPA usuwa \"korek magnezowy\", umożliwiając napływ Ca2+.",
+        "Żelazo nie pełni funkcji bramkującej kanał NMDA.",
+        "Miedź nie jest fizjologicznym blokerem kanału NMDA."
+      ],
+      "answer": 0,
+      "explanation": "Dopiero depolaryzacja błony wywołana przez receptory AMPA usuwa \"korek magnezowy\", umożliwiając napływ Ca2+.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "krystal-ketamine",
+        "stahl-essential",
+        "canmat-mdd-2023"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-glu-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "glutaminian-gaba-neuroplastycznosc-obj-3"
+      ],
+      "prompt": "W jaki sposób benzodiazepiny nasilają hamowanie neuronalne za pośrednictwem receptora GABAA?",
+      "options": [
+        "Same wiążą się w miejscu wiązania glutaminianu i go niszczą",
+        "Działają jako dodatni modulator allosteryczny (PAM), zwiększając częstotliwość otwarcia kanału chlorkowego pod wpływem GABA",
+        "Zamykają kanały potasowe w komórkach glejowych"
+      ],
+      "optionFeedback": [
+        "BZD wiążą się na styku podjednostek alfa/gamma receptora GABAA.",
+        "Napływ jonów Cl- do wnętrza komórki wywołuje hiperpolaryzację błony i spadek jej pobudliwości.",
+        "BZD nie modulują bezpośrednio kanałów potasowych gleju."
+      ],
+      "answer": 1,
+      "explanation": "Napływ jonów Cl- do wnętrza komórki wywołuje hiperpolaryzację błony i spadek jej pobudliwości.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "krystal-ketamine",
+        "stahl-essential",
+        "canmat-mdd-2023"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "glutaminian-gaba-neuroplastycznosc-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "glutaminian-gaba-neuroplastycznosc-obj-1",
+      "glutaminian-gaba-neuroplastycznosc-obj-2",
+      "glutaminian-gaba-neuroplastycznosc-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Układy glutaminergiczny i GABA-ergiczny: kaskada neuroplastyczności”.",
+    "modelAnswer": "Równowaga Glu/GABA kontroluje pobudliwość kory. Ketamina poprzez przejściowy wyrzut glutaminianu i aktywację AMPA indukuje ekspresję BDNF i naprawę synaps w ciągu godzin, a receptory GABAA warunkują hamowanie lęku.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "krystal-ketamine",
+      "stahl-essential",
+      "canmat-mdd-2023"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-glu-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "glutaminian-gaba-neuroplastycznosc-obj-1"
+      ],
+      "prompt": "Jaki czynnik troficzny i jego receptor o kluczowym znaczeniu dla neurogenezy w zakręcie zębatym hipokampa ulegają nasilonej ekspresji podczas skutecznej terapii przeciwdepresyjnej?",
+      "options": [
+        "Insulina i receptor IGF-2",
+        "Trombopoetyna i receptor Mpl",
+        "BDNF (Brain-Derived Neurotrophic Factor) i receptor TrkB"
+      ],
+      "optionFeedback": [
+        "Chociaż insulina wpływa na metabolizm mózgu, to BDNF-TrkB jest osiowym szlakiem plastyczności w depresji.",
+        "Trombopoetyna reguluje wytwarzanie płytek krwi w szpiku kostnym.",
+        "Aktywacja kaskady BDNF-TrkB stymuluje przeżycie neuronów i tworzenie nowych kolców dendrytycznych."
+      ],
+      "answer": 2,
+      "explanation": "Aktywacja kaskady BDNF-TrkB stymuluje przeżycie neuronów i tworzenie nowych kolców dendrytycznych.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "krystal-ketamine",
+        "stahl-essential",
+        "canmat-mdd-2023"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-glu-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "glutaminian-gaba-neuroplastycznosc-obj-1"
+      ],
+      "prompt": "Jaki jest skutek przewlekłej, nadmiernej aktywacji receptorów NMDA przez wysokie stężenia glutaminianu w warunkach niedokrwienia lub przewlekłego stresu?",
+      "options": [
+        "Masywny, toksyczny napływ jonów Ca2+ prowadzący do aktywacji proteaz, wolnych rodników i śmierci komórki (ekscytotoksyczność)",
+        "Wzmocnienie pamięci fotograficznej bez żadnych skutków ubocznych",
+        "Przekształcenie neuronów w komórki nowotworowe glejaka"
+      ],
+      "optionFeedback": [
+        "Ekscytotoksyczność leży u podstaw zaniku struktur hipokampa w przewlekłej nieleczonej depresji.",
+        "Nadmiar glutaminianu niszczy neurony i upośledza pamięć.",
+        "Ekscytotoksyczność prowadzi do apoptozy i nekrozy, a nie transformacji nowotworowej."
+      ],
+      "answer": 0,
+      "explanation": "Ekscytotoksyczność leży u podstaw zaniku struktur hipokampa w przewlekłej nieleczonej depresji.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "krystal-ketamine",
+        "stahl-essential",
+        "canmat-mdd-2023"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "glutaminian-gaba-neuroplastycznosc-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "glutaminian-gaba-neuroplastycznosc-obj-1"
+      ],
+      "prompt": "Oceń decyzję terapeutyczną i mechanizmy bezpieczeństwa w temacie lekcji „glutaminian gaba neuroplastycznosc”.",
+      "options": [
+        "Postępowanie zgodne z wytycznymi EBM i monitorowaniem bezpieczeństwa",
+        "Modyfikacja leczenia bez uwzględnienia farmakokinetyki i interakcji",
+        "Nagłe odstawienie leku z ryzykiem powikłań z odbicia"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-pk-rationale",
+            "label": "Uzasadnienie oparte na PK/PD i bezpieczeństwie",
+            "acceptedPhrases": [
+              "bezpieczeństwo",
+              "pk/pd",
+              "wytyczne",
+              "mechanizm"
+            ]
+          },
+          {
+            "id": "c-monitoring-rationale",
+            "label": "Monitorowanie parametrów klinicznych",
+            "acceptedPhrases": [
+              "monitoring",
+              "stężenie",
+              "interakcje"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Decyzja wymaga uwzględnienia parametrów farmakokinetycznych i profilu bezpieczeństwa.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "maudsley15",
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "glutaminian-gaba-neuroplastycznosc-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "glutaminian-gaba-neuroplastycznosc-obj-2"
+      ],
+      "prompt": "Wyjaśnij mechanizm molekularny lub receptorowy leżący u podstaw tematu: glutaminian gaba neuroplastycznosc.",
+      "modelAnswer": "Kluczowe znaczenie ma zrozumienie profilu receptorowego, kaskad przekaźnictwa wewnątrzkomórkowego oraz adaptacji plastycznych w OUN.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-receptor-action",
+            "label": "Działanie na receptory / enzymy",
+            "acceptedPhrases": [
+              "receptor",
+              "enzym",
+              "mechanizm",
+              "transporter"
+            ]
+          },
+          {
+            "id": "c-clinical-effect",
+            "label": "Wpływ na funkcję OUN i objawy kliniczne",
+            "acceptedPhrases": [
+              "efekt kliniczny",
+              "adaptacja",
+              "plastyczność",
+              "neuroprzekaźnictwo"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Wyjaśnienie mechanizmu na poziomie molekularnym i klinicznym.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "glutaminian-gaba-neuroplastycznosc-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "glutaminian-gaba-neuroplastycznosc-obj-1",
+        "glutaminian-gaba-neuroplastycznosc-obj-3"
+      ],
+      "prompt": "Przed wdrożeniem lub modyfikacją farmakoterapii w temacie glutaminian gaba neuroplastycznosc, jakiej kluczowej informacji brakuje w wywiadzie?",
+      "options": [
+        "Wywiadu dotyczącego leków współistniejących pod kątem interakcji enzymatycznych (CYP) i wydolności nerek/wątroby",
+        "Profilu rzadkich przeciwciał neuronalnych",
+        "Rutynowego badania rezonansu magnetycznego głowy bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Ocena interakcji lekowych i wydolności narządów eliminujących to fundamentalny warunek bezpieczeństwa farmakoterapii.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "maudsley15"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "pathway-builder",
+    "timeline"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy AGNP 2026 TDM, CPIC PGx, Maudsley 15th ed., Kapur PET D2, Hunter criteria oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

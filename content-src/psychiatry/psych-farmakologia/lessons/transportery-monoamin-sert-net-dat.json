@@ -1,0 +1,171 @@
+{
+  "id": "transportery-monoamin-sert-net-dat",
+  "moduleId": "psych-farmakologia",
+  "title": "Transportery monoamin: SERT, NET i DAT w badaniach PET",
+  "subtitle": "Krzywa wysycenia, hiperboliczna zależność dawka-odpowiedź i farmakodynamika",
+  "group": "Receptorologia i układy przekaźnikowe",
+  "minutes": 18,
+  "goals": [
+    "Zrozumiesz mechanizm blokady transporterów SERT, NET i DAT przez leki przeciwdepresyjne.",
+    "Zinterpretujesz krzywą wysycenia SERT w badaniach PET (obserwacja populacyjna ~80%).",
+    "Wyjaśnisz, dlaczego podwajanie dawki SSRI nie podwaja blokady transportera w OUN."
+  ],
+  "sections": [
+    {
+      "title": "Rodzina transporterów SLC6 i wychwyt zwrotny",
+      "text": "Transportery monoamin: serotoniny (SERT / SLC6A4), noradrenaliny (NET / SLC6A2) i dopaminy (DAT / SLC6A3) należą do rodziny nośników zależnych od gradientu sodowo-potasowego. Ich fizjologiczną rolą jest usuwanie neuroprzekaźnika ze szczeliny synaptycznej z powrotem do kolbki presynaptycznej, co kończy transmisję sygnału. Blokada transportera powoduje kumulację monoaminy w synapsie."
+    },
+    {
+      "title": "Przełomowe badania PET Meyera: 80% occupancy SERT",
+      "text": "Badania pozytonowej tomografii emisyjnej (PET) z użyciem ligandu [11C]DASB (Meyer i wsp.) wykazały, że minimalne dawki terapeutyczne badanych SSRI (np. cytalopram 20 mg, escitalopram 10 mg, sertralina 50 mg, paroksetyna 20 mg) wiążą się zazwyczaj z wysokim wysyceniem rzędu 75–85% transporterów SERT w prążkowiu. Obserwacja ta stanowi model populacyjny korelacji farmakologicznej z odpowiedzią, a nie indywidualny sztywny próg skuteczności."
+    },
+    {
+      "title": "Hiperboliczna krzywa wysycenia i implikacje kliniczne",
+      "text": "Krzywa wiązania leku z SERT ma charakter nieliniowy (hiperboliczny wg równania Michaela-Menten). Wzrost dawki sertraliny z 50 mg do 100 mg podnosi blokadę SERT z 80% do ok. 85%, a zwiększenie do 200 mg – do ok. 88%. Wyjaśnia to, dlaczego eskalacja dawek SSRI przynosi skromny przyrost skuteczności przeciwdepresyjnej, natomiast znacznie nasila działania niepożądane (zależne od receptorów obwodowych i innych celów)."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Lek przeciwdepresyjny",
+      "Minimalna dawka (mg)",
+      "Occupancy SERT w PET (%)",
+      "Occupancy przy dawce maks. (%)"
+    ],
+    "rows": [
+      [
+        "Escitalopram",
+        "10 mg",
+        "78–82%",
+        "86–89% (20 mg)"
+      ],
+      [
+        "Sertralina",
+        "50 mg",
+        "77–83%",
+        "87–91% (200 mg)"
+      ],
+      [
+        "Paroksetyna",
+        "20 mg",
+        "82–86%",
+        "89–93% (40 mg)"
+      ],
+      [
+        "Wenlafaksyna",
+        "75 mg (tylko SERT)",
+        "75–80%",
+        "85% SERT + ~60% NET (225–375 mg)"
+      ]
+    ]
+  },
+  "advanced": "Wenlafaksyna wykazuje zależność profilu od dawki: w dawkach <= 75–150 mg/d działa niemal wyłącznie jako selektywny inhibitor SERT. Dopiero w dawkach >= 225 mg/d dochodzi do istotnego zablokowania transportera noradrenaliny (NET), przekształcając lek w funkcjonalny SNRI.",
+  "summary": "W klasycznych badaniach PET badane SSRI przy minimalnych dawkach terapeutycznych osiągały wysokie wysycenie SERT ~80% (model populacyjny). Z powodu hiperbolicznej krzywej wiązania dalsze podwajanie dawki daje niewielki wzrost blokady, potęgując objawy niepożądane.",
+  "sourceIds": [
+    "pet-sert-meyer",
+    "stahl-essential",
+    "canmat-mdd-2023"
+  ],
+  "questions": [
+    {
+      "id": "psych-trans-q1",
+      "lessonId": "transportery-monoamin-sert-net-dat",
+      "prompt": "Jaki szacunkowy poziom wysycenia transporterów SERT obserwowano w badaniach PET Meyera przy minimalnych dawkach terapeutycznych SSRI?",
+      "options": [
+        {
+          "text": "Mniej niż 10% occupancy",
+          "explanation": "10% nie wywołuje zauważalnego podwyższenia stężenia 5-HT w synapsie ani desensytyzacji autoreceptorów."
+        },
+        {
+          "text": "Dokładnie 100% nieodwracalnej blokady",
+          "explanation": "100% blokada nie występuje i groziłaby ciężkim, ostrym zespołem serotoninowym."
+        },
+        {
+          "text": "Około 80% occupancy SERT w OUN",
+          "explanation": "W klasycznych badaniach PET minimalne dawki terapeutyczne badanych SSRI wiązały się zwykle z wysokim SERT occupancy około 80% (obserwacja populacyjna, a nie indywidualny próg skuteczności)."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-trans-q2",
+      "lessonId": "transportery-monoamin-sert-net-dat",
+      "prompt": "Dlaczego podwojenie dawki SSRI (np. sertraliny z 50 do 100 mg) zwiększa blokadę SERT jedynie o ok. 5–7%?",
+      "options": [
+        {
+          "text": "Ponieważ krzywa wiązania leku z transporterem ma kształt hiperboliczny i przy 80% wkracza w fazę plateau (nasycenia)",
+          "explanation": "Większość miejsc wiążących jest już zajęta; do dalszego wzrostu potrzebne byłyby stężenia logarytmicznie wyższe."
+        },
+        {
+          "text": "Ponieważ dochodzi do gwałtownego przyspieszenia klirensu wątrobowego przy wyższych dawkach",
+          "explanation": "Dla sertraliny farmakokinetyka w dawkach terapeutycznych jest w przybliżeniu liniowa; ograniczenie wynika z nasycenia miejsc wiążących na białku docelowym (farmakodynamika)."
+        },
+        {
+          "text": "Ponieważ wyższe stężenia leku blokują wyłącznie receptory obwodowe z pominięciem OUN",
+          "explanation": "Lek swobodnie przenika barierę krew-mózg; plateau wynika z nieliniowej krzywej wysycenia SERT w OUN."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-trans-q3",
+      "lessonId": "transportery-monoamin-sert-net-dat",
+      "prompt": "Od jakiej dawki dobowej wenlafaksyna zaczyna w istotnym stopniu klinicznym blokować transporter noradrenaliny (NET)?",
+      "options": [
+        {
+          "text": "Wenlafaksyna nigdy nie blokuje transportera NET",
+          "explanation": "Wenlafaksyna jest zarejestrowana jako SNRI i blokuje NET w odpowiednio wysokiej dawce."
+        },
+        {
+          "text": "Od dawki 225 mg/d i wyższych",
+          "explanation": "W niższych dawkach (75–150 mg) wenlafaksyna działa jak typowy SSRI."
+        },
+        {
+          "text": "Już od najmniejszej dawki 37,5 mg/d",
+          "explanation": "Przy 37,5 mg blokada NET jest pomijalna klinicznie."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-trans-q4",
+      "lessonId": "transportery-monoamin-sert-net-dat",
+      "prompt": "Który transporter odpowiada za wychwyt zwrotny dopaminy m.in. w prążkowiu i jest celem metylofenidatu oraz bupropionu?",
+      "options": [
+        {
+          "text": "GLUT-4",
+          "explanation": "GLUT-4 to transporter glukozy zależny od insuliny w mięśniach i tkance tłuszczowej."
+        },
+        {
+          "text": "SGLT-2",
+          "explanation": "SGLT-2 to kotransporter sodowo-glukozowy w kanalikach nerkowych."
+        },
+        {
+          "text": "DAT (dopamine transporter / SLC6A3)",
+          "explanation": "Blokada DAT w prążkowiu i korze przedczołowej podwyższa toniczne stężenie dopaminy."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-trans-q5",
+      "lessonId": "transportery-monoamin-sert-net-dat",
+      "prompt": "Jakie znaczenie ma selektywność escitalopramu wobec SERT w porównaniu z innymi SSRI?",
+      "options": [
+        {
+          "text": "Jest najczystszym znanym inhibitorem SERT, niemal pozbawionym powinowactwa do receptorów histaminowych, cholinergicznych czy NET",
+          "explanation": "Cechuje się czystym profilem bez działań sedatywnych czy antycholinergicznych."
+        },
+        {
+          "text": "Blokuje wyłącznie receptory beta-adrenolityczne w sercu",
+          "explanation": "Escitalopram nie jest beta-blokerem."
+        },
+        {
+          "text": "Wiąże się nieodwracalnie kowalencyjnie z DNA jądrowym",
+          "explanation": "Nie ma żadnego działania mutagennego ani alkilującego DNA."
+        }
+      ],
+      "answer": 0
+    }
+  ],
+  "assetIds": []
+}

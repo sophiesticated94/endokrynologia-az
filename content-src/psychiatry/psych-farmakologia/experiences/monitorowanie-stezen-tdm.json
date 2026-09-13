@@ -1,0 +1,374 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "monitorowanie-stezen-tdm",
+  "objectives": [
+    {
+      "id": "monitorowanie-stezen-tdm-obj-1",
+      "statement": "Zastosujesz wytyczne AGNP 2026 i zidentyfikujesz leki z poziomem rekomendacji 1 (bezwzględnie zalecany TDM).",
+      "kind": "interpretation"
+    },
+    {
+      "id": "monitorowanie-stezen-tdm-obj-2",
+      "statement": "Prawidłowo zaplanujesz pobranie krwi w stanie stacjonarnym w punkcie stężenia minimalnego (Cmin, trough level).",
+      "kind": "mechanism"
+    },
+    {
+      "id": "monitorowanie-stezen-tdm-obj-3",
+      "statement": "Zinterpretujesz stężenia poza zakresem terapeutycznym w kontekście braku compliance i polimorfizmów CYP.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-tdm-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "monitorowanie-stezen-tdm-obj-1"
+    ],
+    "prompt": "Kiedy zgodnie ze standardem AGNP 2026 należy pobrać próbkę krwi do badania TDM po wieczornej dawce leku?",
+    "options": [
+      "Rano na czczo, dokładnie 12 godzin po ostatniej dawce wieczornej (punkt stężenia korytowego Cmin), przed zażyciem kolejnej porannej dawki",
+      "W dowolnej chwili w ciągu dnia, najlepiej 30 minut po posiłku obiadowym",
+      "Wyłącznie w trakcie trwania ostrego napadu padaczkowego"
+    ],
+    "optionFeedback": [
+      "Pozwala to na porównanie wyniku z referencyjnymi tabelami stężeń stacjonarnych.",
+      "Pobranie po posiłku w fazie wchłaniania (Cmax) daje niemiarodajny, fałszywie zawyżony wynik.",
+      "Pobranie podczas drgawek nie jest standardem planowego TDM."
+    ],
+    "answer": 0,
+    "explanation": "Pozwala to na porównanie wyniku z referencyjnymi tabelami stężeń stacjonarnych.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "agnp-tdm-2026",
+      "clozapine-consensus",
+      "maudsley15"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "monitorowanie-stezen-tdm-block-1",
+      "title": "Kategorie rekomendacji TDM według konsensusu AGNP 2026",
+      "text": "Grupa Robocza ds. Neuropsychofarmakologii i Farmakopsychiatrii (AGNP) klasyfikuje leki psychotropowe pod kątem zasadności TDM na 4 poziomy: Poziom 1 (silnie zalecany – lit, klozapina, nortryptylina, haloperydol); Poziom 2 (zalecany – większość SGA, escitalopram, wenlafaksyna); Poziom 3 (przydatny w specyficznych problemach); Poziom 4 (potencjalnie przydatny). W poziomie 1 stężenie w osoczu bezpośrednio koreluje z przeżywalnością i kontrolą choroby.",
+      "sourceIds": [
+        "agnp-tdm-2026",
+        "clozapine-consensus",
+        "maudsley15"
+      ],
+      "checkpointId": "psych-tdm-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-agnp-2026-recommendation-grades",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        },
+        {
+          "id": "deeplink-tdm-preset",
+          "kind": "workbench-deeplink",
+          "placement": "end-of-block",
+          "presetId": "lithium-tdm-measured-001"
+        }
+      ]
+    },
+    {
+      "id": "monitorowanie-stezen-tdm-block-2",
+      "title": "Złote zasady pobierania próbek: stan stacjonarny i Cmin",
+      "text": "Badanie TDM jest diagnostycznie wiarygodne wyłącznie wtedy, gdy spełnione są dwa warunki: 1) Osiągnięto stan stacjonarny (steady state), czyli po upływie co najmniej 4–5 okresów biologicznego półtrwania (t1/2) leku w stałej dawce; 2) Próbkę pobiera się w punkcie stężenia korytowego (trough concentration, Cmin) – dokładnie przed kolejną dawką, typowo 12 godzin (lub 24h w dawkowaniu 1x/d) po wieczornej dawce, na czczo.",
+      "sourceIds": [
+        "agnp-tdm-2026",
+        "clozapine-consensus",
+        "maudsley15"
+      ],
+      "checkpointId": "psych-tdm-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "widget-tdm-timing-validator",
+          "kind": "interactive-widget",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "monitorowanie-stezen-tdm-block-3",
+      "title": "Wnioskowanie kliniczne i współczynnik C/D",
+      "text": "Interpretacja wyniku opiera się na tzw. współczynniku stężenia do dawki (Concentration-to-Dose ratio, C/D). Jeśli pacjent przyjmuje maksymalną dawkę sertraliny (200 mg), a stężenie w surowicy wynosi zero lub jest skrajnie niskie, wskazuje to na nieprzestrzeganie zaleceń (non-compliance) lub skrajnie szybki metabolizm (ultrarapid metabolizer). Z kolei stężenie toksyczne przy małej dawce nakazuje podejrzewać fenotyp wolnego metabolizatora (poor metabolizer).",
+      "sourceIds": [
+        "agnp-tdm-2026",
+        "clozapine-consensus",
+        "maudsley15"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-tdm-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "monitorowanie-stezen-tdm-obj-2"
+      ],
+      "prompt": "Dla których leków psychotropowych wytyczne AGNP 2026 przypisują najwyższy Poziom 1 rekomendacji TDM (bezwzględnie zalecany)?",
+      "options": [
+        "Placebo i witamina C",
+        "Lit, klozapina, haloperydol, nortryptylina",
+        "Hydroksyzyna, piracetam, melatonina"
+      ],
+      "optionFeedback": [
+        "Nie podlegają procedurze monitorowania stężenia terapeutycznego.",
+        "Dla tych leków istnieje wąskie okno terapeutyczne i ścisła korelacja między stężeniem we krwi a skutecznością i toksycznością.",
+        "Substancje te nie wymagają rutynowego TDM i mają niski poziom rekomendacji (Poziom 4)."
+      ],
+      "answer": 1,
+      "explanation": "Dla tych leków istnieje wąskie okno terapeutyczne i ścisła korelacja między stężeniem we krwi a skutecznością i toksycznością.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "agnp-tdm-2026",
+        "clozapine-consensus",
+        "maudsley15"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-tdm-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "monitorowanie-stezen-tdm-obj-3"
+      ],
+      "prompt": "Jakie minimalne stężenie klozapiny w surowicy krwi uznaje się za próg skuteczności klinicznej w schizofrenii lekoopornej?",
+      "options": [
+        "10 ng/ml",
+        "5000 ng/ml",
+        "350 ng/ml"
+      ],
+      "optionFeedback": [
+        "10 ng/ml jest stężeniem subterapeutycznym.",
+        "Stężenie 5000 ng/ml wywołałoby śmiertelne drgawki lub zapaść krążeniową.",
+        "Poniżej 350 ng/ml odsetek odpowiedzi terapeutycznej jest istotnie niższy."
+      ],
+      "answer": 2,
+      "explanation": "Poniżej 350 ng/ml odsetek odpowiedzi terapeutycznej jest istotnie niższy.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "agnp-tdm-2026",
+        "clozapine-consensus",
+        "maudsley15"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "monitorowanie-stezen-tdm-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "monitorowanie-stezen-tdm-obj-1",
+      "monitorowanie-stezen-tdm-obj-2",
+      "monitorowanie-stezen-tdm-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Monitorowanie stężeń leków we krwi (TDM) w psychiatrii wg AGNP 2026”.",
+    "modelAnswer": "TDM w psychiatrii (AGNP Poziom 1) chroni przed toksycznością litu, klozapiny i TLPD. Krew pobiera się w stanie stacjonarnym w punkcie Cmin (12h po dawce). Wskaźnik C/D obiektywizuje compliance i genetykę CYP.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "agnp-tdm-2026",
+      "clozapine-consensus",
+      "maudsley15"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-tdm-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "monitorowanie-stezen-tdm-obj-1"
+      ],
+      "prompt": "Co oznacza sytuacja, gdy pacjent przyjmujący formalnie 20 mg escitalopramu od 3 miesięcy ma stężenie leku we krwi równe 0 ng/ml w badaniu TDM?",
+      "options": [
+        "Całkowity brak adherencji terapeutycznej (pacjent nie przyjmuje przepisanego leku)",
+        "Wszystkie cząsteczki leku natychmiast wyparowały przez skórę czoła",
+        "Escitalopram nie rozpuszcza się w ludzkiej krwi"
+      ],
+      "optionFeedback": [
+        "Jest to najczęstsza przyczyna \"lekooporności\" w praktyce ambulatoryjnej.",
+        "Zjawisko parowania leków przez skórę nie występuje.",
+        "Escitalopram ulega normalnemu wchłanianiu i dystrybucji osoczowej."
+      ],
+      "answer": 0,
+      "explanation": "Jest to najczęstsza przyczyna \"lekooporności\" w praktyce ambulatoryjnej.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "agnp-tdm-2026",
+        "clozapine-consensus",
+        "maudsley15"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-tdm-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "monitorowanie-stezen-tdm-obj-1"
+      ],
+      "prompt": "Dlaczego badanie TDM jest bezcelowe, jeśli lek w nowej dawce został włączony zaledwie 24 godziny temu (przy t1/2 wynoszącym 30 godzin)?",
+      "options": [
+        "Lek w pierwszej dobie nie posiada masy cząsteczkowej",
+        "Ponieważ lek nie osiągnął jeszcze stanu stacjonarnego (potrzeba 4–5 okresów półtrwania, czyli ok. 5–6 dni)",
+        "Ponieważ krew w pierwszej dobie niszczy odczynniki laboratoryjne"
+      ],
+      "optionFeedback": [
+        "Masa cząsteczkowa leku jest stała.",
+        "Pomiar przed stanem stacjonarnym odzwierciedla jedynie stężenie wstępne i uniemożliwia ocenę dawki docelowej.",
+        "Odczynniki nie ulegają zniszczeniu."
+      ],
+      "answer": 1,
+      "explanation": "Pomiar przed stanem stacjonarnym odzwierciedla jedynie stężenie wstępne i uniemożliwia ocenę dawki docelowej.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "agnp-tdm-2026",
+        "clozapine-consensus",
+        "maudsley15"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "tdm-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "monitorowanie-stezen-tdm-obj-1"
+      ],
+      "claimIds": [
+        "claim-ph-lithium-window"
+      ],
+      "prompt": "Krew na badanie stężenia litu została pobrana od pacjenta o godzinie 14:00 (6 godzin po porannej dawce). Wynik wynosi 1,15 mmol/l. Jak należy zinterpretować ten wynik?",
+      "options": [
+        "Wynik jest niewiarygodny klinicznie: próbka pobrana w fazie dystrybucji zamiast po 12 h (trough); wymaga powtórzenia w prawidłowym reżimie czasowym",
+        "Świadczy o ciężkim zatruciu wymagającym natychmiastowej hemodializy",
+        "Oznacza doskonałą kontrolę terapeutyczną"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-tdm-12h-trough",
+            "label": "Wymóg pobierania próbki dokładnie 12 h po dawce wieczornej (stężenie minimalne - trough)",
+            "acceptedPhrases": [
+              "12 godzin",
+              "trough",
+              "stężenie minimalne",
+              "prawidłowy czas",
+              "12h po dawce"
+            ]
+          },
+          {
+            "id": "c-distribution-phase-artifact",
+            "label": "Pobranie po 6 h przypada na fazę dystrybucji i daje fałszywie wysoki wynik",
+            "acceptedPhrases": [
+              "faza dystrybucji",
+              "fałszywie zawyżone",
+              "błąd pobrania",
+              "niewiarygodny"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "TDM litu wymaga pobrania dokładnie 12h po dawce wieczornej w stanie stacjonarnym; wcześniejsze pobranie ocenia fazę dystrybucji.",
+      "difficulty": "both",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "agnp-tdm-2026"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "monitorowanie-stezen-tdm-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "monitorowanie-stezen-tdm-obj-2"
+      ],
+      "prompt": "Wyjaśnij mechanizm molekularny lub receptorowy leżący u podstaw tematu: monitorowanie stezen tdm.",
+      "modelAnswer": "Kluczowe znaczenie ma zrozumienie profilu receptorowego, kaskad przekaźnictwa wewnątrzkomórkowego oraz adaptacji plastycznych w OUN.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-receptor-action",
+            "label": "Działanie na receptory / enzymy",
+            "acceptedPhrases": [
+              "receptor",
+              "enzym",
+              "mechanizm",
+              "transporter"
+            ]
+          },
+          {
+            "id": "c-clinical-effect",
+            "label": "Wpływ na funkcję OUN i objawy kliniczne",
+            "acceptedPhrases": [
+              "efekt kliniczny",
+              "adaptacja",
+              "plastyczność",
+              "neuroprzekaźnictwo"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Wyjaśnienie mechanizmu na poziomie molekularnym i klinicznym.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "monitorowanie-stezen-tdm-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "monitorowanie-stezen-tdm-obj-1",
+        "monitorowanie-stezen-tdm-obj-3"
+      ],
+      "prompt": "Przed wdrożeniem lub modyfikacją farmakoterapii w temacie monitorowanie stezen tdm, jakiej kluczowej informacji brakuje w wywiadzie?",
+      "options": [
+        "Wywiadu dotyczącego leków współistniejących pod kątem interakcji enzymatycznych (CYP) i wydolności nerek/wątroby",
+        "Profilu rzadkich przeciwciał neuronalnych",
+        "Rutynowego badania rezonansu magnetycznego głowy bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Ocena interakcji lekowych i wydolności narządów eliminujących to fundamentalny warunek bezpieczeństwa farmakoterapii.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "maudsley15"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "timeline"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy AGNP 2026 TDM, CPIC PGx, Maudsley 15th ed., Kapur PET D2, Hunter criteria oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

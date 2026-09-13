@@ -1,0 +1,165 @@
+{
+  "id": "zaburzenia-lekowe-gad-napadowy",
+  "moduleId": "psych-afektywne",
+  "title": "Zaburzenia lękowe: lęk uogólniony (GAD) i lęk napadowy",
+  "subtitle": "Nadaktywność ciała migdałowatego, pętla lęku i farmakoterapia I rzutu",
+  "group": "Zaburzenia lękowe i adaptacyjne",
+  "minutes": 18,
+  "goals": [
+    "Zróżnicujesz napad paniki od przewlekłego lęku wolnopłynącego w GAD.",
+    "Scharakteryzujesz rolę jądra migdałowatego i kory przedczołowej w neurobiologii lęku.",
+    "Wdrożysz leczenie farmakologiczne I rzutu (SSRI/SNRI, pregabalina) bez uzależnienia od benzodiazepin."
+  ],
+  "sections": [
+    {
+      "title": "Neurobiologia lęku i obwód amygdalar",
+      "text": "Lęk uogólniony (GAD) charakteryzuje się ciągłym, nadmiernym zamartwianiem się (worry) trwającym co najmniej 6 miesięcy, połączonym z objawami napięcia wegetatywnego i mięśniowego. Neurobiologicznie wynika z osłabienia hamowania zstępującego z brzuszno-przyśrodkowej kory przedczołowej (vmPFC) na jądro środkowe ciała migdałowatego (CeA), co skutkuje toniczną hiperaktywacją pnia mózgu (locus coeruleus) i podwzgórza."
+    },
+    {
+      "title": "Lęk napadowy (Panic Disorder) a agorafobia",
+      "text": "Napad paniki to nagły wyrzut obezwładniającego przerażenia z palpitacjami, dusznością, zawrotami głowy i depersonalizacją, osiągający szczyt w ciągu 10 minut. W odróżnieniu od zawału serca czy guza chromochłonnego, lęk antycypacyjny (lęk przed kolejnym napadem) prowadzi do zachowań unikających i agorafobii."
+    },
+    {
+      "title": "Zasady leczenia I rzutu: SSRI, SNRI i pregabalina",
+      "text": "Zgodnie z wytycznymi WFSBP i NICE lekami I rzutu w GAD i lęku napadowym są SSRI (escitalopram, sertralina) oraz SNRI (wenlafaksyna). Alternatywą w GAD jest pregabalina modyfikująca podjednostkę alfa-2-delta kanałów wapniowych (VGCC). Benzodiazepiny mogą być stosowane jedynie doraźnie przez maksymalnie 2–4 tygodnie ze względu na ryzyko tachyfilaksji i uzależnienia."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Jednostka",
+      "Dominujący objaw",
+      "Ramy czasowe",
+      "Leczenie I rzutu"
+    ],
+    "rows": [
+      [
+        "GAD (lęk uogólniony)",
+        "Wolnopłynący lęk, zamartwianie, napięcie mięśni",
+        ">= 6 miesięcy",
+        "SSRI, SNRI, pregabalina, CBT"
+      ],
+      [
+        "Lęk napadowy",
+        "Nagłe ataki paniki, objawy autonomiczne, lęk przed śmiercią",
+        "Nawracające ataki + 1 mies. lęku przed nimi",
+        "SSRI (sertralina, paroksetyna), CBT"
+      ],
+      [
+        "Agorafobia",
+        "Unikanie miejsc publicznych, tłumu, transportu",
+        ">= 6 miesięcy",
+        "Ekspozycja in vivo (CBT), SSRI"
+      ]
+    ]
+  },
+  "advanced": "W pierwszych 7–14 dniach włączania SSRI u pacjentów z lękiem napadowym występuje paradoksalne nasilenie lęku wywołane pobudzeniem postsynaptycznych receptorów 5-HT2A i 5-HT2C. Standardem jest rozpoczynanie od 1/2 dawki początkowej (np. sertralina 25 mg lub escitalopram 5 mg).",
+  "summary": "Zaburzenia lękowe wynikają z dysregulacji pętli vmPFC-ciało migdałowate. Podstawą terapii są SSRI/SNRI w ostrożnej titracji oraz CBT; pregabalina stanowi niebenzodiazepinową alternatywę w GAD.",
+  "sourceIds": [
+    "wfsbp-anxiety",
+    "nice-depression",
+    "pregabalin-consensus"
+  ],
+  "questions": [
+    {
+      "id": "psych-gad-q1",
+      "lessonId": "zaburzenia-lekowe-gad-napadowy",
+      "prompt": "Dlaczego u pacjentów z lękiem napadowym zaleca się rozpoczynanie leczenia SSRI od połowy typowej dawki początkowej?",
+      "options": [
+        {
+          "text": "Aby uniknąć przejściowego nasilenia lęku (jitteriness syndrome) w pierwszych dniach terapii",
+          "explanation": "Początkowy wyrzut serotoniny pobudza receptory 5-HT2A/2C, co może sprowokować ciężki napad paniki."
+        },
+        {
+          "text": "Ponieważ pacjenci z lękiem metabolizują leki 4-krotnie wolniej niż inni",
+          "explanation": "Metabolizm wątrobowy nie zależy od rozpoznania zespołu lękowego."
+        },
+        {
+          "text": "Ponieważ SSRI w pełnej dawce natychmiastowo uszkadzają kanały wapniowe",
+          "explanation": "SSRI nie blokują destrukcyjnie kanałów wapniowych."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-gad-q2",
+      "lessonId": "zaburzenia-lekowe-gad-napadowy",
+      "prompt": "Jaki jest mechanizm przeciwlękowego działania pregabaliny w uogólnionym zaburzeniu lękowym (GAD)?",
+      "options": [
+        {
+          "text": "Selektywne blokowanie transportera serotoniny SERT w korze czołowej",
+          "explanation": "Pregabalina nie wykazuje powinowactwa do transporterów monoaminowych."
+        },
+        {
+          "text": "Wiązanie z podjednostką alfa-2-delta zależnych od napięcia kanałów wapniowych i redukcja wyrzutu glutaminianu",
+          "explanation": "Pregabalina moduluje bramkowanie jonów Ca2+, hamując presynaptyczne uwalnianie neuroprzekaźników pobudzających."
+        },
+        {
+          "text": "Bezpośrednie allosteryczne pobudzenie receptora GABAA w miejscu benzodiazepinowym",
+          "explanation": "Pregabalina nie wiąże się z receptorem benzodiazepinowym ani nie zwiększa prądu chlorkowego bezpośrednio."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-gad-q3",
+      "lessonId": "zaburzenia-lekowe-gad-napadowy",
+      "prompt": "Jaki jest dopuszczalny bezpieczny czas stosowania benzodiazepin w opanowywaniu ostrego lęku wg standardów międzynarodowych?",
+      "options": [
+        {
+          "text": "Minimum 6 miesięcy w stałej dawce dobowej",
+          "explanation": "Przewlekłe stosowanie BZD prowadzi do down-regulacji receptorów GABA-A i uzależnienia."
+        },
+        {
+          "text": "Bezterminowo, pod warunkiem regularnej kontroli stężenia we krwi",
+          "explanation": "Benzodiazepiny nie są lekami do bezterminowej monoterapii lęku."
+        },
+        {
+          "text": "Maksymalnie 2 do 4 tygodni, z równoległym wdrożeniem SSRI i psychoterapii",
+          "explanation": "Ograniczenie do 2-4 tygodni minimalizuje ryzyko tolerancji, uzależnienia psychofizycznego i zespołu z odbicia."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-gad-q4",
+      "lessonId": "zaburzenia-lekowe-gad-napadowy",
+      "prompt": "Która struktura anatomiczna stanowi główne centrum wykonawcze generujące autonomiczne i behawioralne objawy ostrej paniki?",
+      "options": [
+        {
+          "text": "Ciało migdałowate (amygdala)",
+          "explanation": "Jądro środkowe ciała migdałowatego wysyła projekcje do pnia mózgu i podwzgórza, wyzwalając reakcję walki lub ucieczki."
+        },
+        {
+          "text": "Kora potyliczna pierwszorzędowa",
+          "explanation": "Kora potyliczna odpowiada za percepcję wzrokową, nie za generowanie paniki."
+        },
+        {
+          "text": "Przedni róg rdzenia kręgowego",
+          "explanation": "Rogi przednie zawierają motoneurony obwodowe, nie inicjują lęku."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-gad-q5",
+      "lessonId": "zaburzenia-lekowe-gad-napadowy",
+      "prompt": "Kiedy zgodnie z kryteriami diagnostycznymi można rozpoznać zespół lęku uogólnionego (GAD)?",
+      "options": [
+        {
+          "text": "Wyłącznie wtedy, gdy występuje współistniejąca bezsenność z koszmarami nocnymi",
+          "explanation": "Koszmary nocne są typowe dla PTSD, a nie obligatoryjne dla GAD."
+        },
+        {
+          "text": "Gdy nadmierny, trudny do kontrolowania lęk utrzymuje się przez co najmniej 6 miesięcy przez większość dni",
+          "explanation": "Wymóg 6 miesięcy odróżnia przewlekły GAD od przejściowych adaptacyjnych reakcji na stresory życiowe."
+        },
+        {
+          "text": "Wystarczy obecność 2 napadów lękowych w ciągu ostatnich 7 dni",
+          "explanation": "Dwa napady lękowe w ciągu tygodnia sugerują lęk napadowy, nie GAD."
+        }
+      ],
+      "answer": 1
+    }
+  ],
+  "assetIds": []
+}

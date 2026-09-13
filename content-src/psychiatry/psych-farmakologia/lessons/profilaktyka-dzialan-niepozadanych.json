@@ -1,0 +1,171 @@
+{
+  "id": "profilaktyka-dzialan-niepozadanych",
+  "moduleId": "psych-farmakologia",
+  "title": "Profilaktyka i monitorowanie powikłań farmakoterapii",
+  "subtitle": "Nadzór laboratoryjny, metaboliczny, kardiologiczny i hematologiczny w praktyce",
+  "group": "Precyzyjna psychofarmakologia i metabolizm",
+  "minutes": 18,
+  "goals": [
+    "Stworzysz całościowy harmonogram badań kontrolnych dla pacjenta leczonego psychotropowo.",
+    "Rozpoznasz wczesne sygnały powikłań narządowych (leukopenia, spadek eGFR, hepatotoksyczność).",
+    "Wdrożysz postępowanie korygujące przy dyslipidemii, hiperprolaktynemii i przyroście wagi."
+  ],
+  "sections": [
+    {
+      "title": "Harmonogram badań laboratoryjnych w psychofarmakologii",
+      "text": "Wdrażanie leków psychotropowych wymaga ustrukturyzowanego planu badań wyjściowych i kontrolnych: 1) Badania wstępne: morfologia, elektrolity (Na, K, Ca), kreatynina/eGFR, mocznik, AST, ALT, GGTP, lipidogram, glukoza/HbA1c, TSH, EKG, masa ciała, BMI i obwód pasa; 2) Kontrola po 1–3 miesiącach: glukoza, masa ciała, lipidy, EKG, próby wątrobowe; 3) Monitorowanie roczne: pełny bilans metaboliczny i narządowy."
+    },
+    {
+      "title": "Specyficzny nadzór dla leków podwyższonego ryzyka",
+      "text": "Lit wymaga kontroli stężenia we krwi (początkowo co 1–2 tyg., stabilnie co 3 mies.), kreatyniny/eGFR i TSH co 6 miesięcy. Klozapina wymaga bezwzględnej kontroli morfologii (ANC) co tydzień przez 18 tygodni, następnie co 4 tygodnie. Kwas walproinowy wymaga monitorowania prób wątrobowych, płytek krwi i stężenia we krwi, a u kobiet – wykluczenia ciąży (test beta-hCG przed każdą receptą)."
+    },
+    {
+      "title": "Interwencje w powikłaniach metabolicznych i prolaktynowych",
+      "text": "W przypadku przyrostu masy ciała > 5% lub dysglikemii wywołanej przez SGA zaleca się dołączenie metforminy (udowodniona skuteczność w prewencji cukrzycy i tycia na olanzapinie/klozapinie) lub zamianę leku na obojętny metabolicznie (aripiprazol, lurasidon). W objawowej hiperprolaktynemii po rysperydonie skuteczną metodą jest dołączenie małej dawki aripiprazolu (2,5–5 mg/d), który jako częściowy agonista obniża poziom prolaktyny."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Lek psychotropowy",
+      "Badania wyjściowe obligatoryjne",
+      "Częstość kontroli TDM / Lab",
+      "Kryteria alarmowe"
+    ],
+    "rows": [
+      [
+        "Klozapina",
+        "Morfologia z rozmazem (ANC), glukoza, EKG, echo",
+        "Morfologia co tydzień przez 18 tyg., potem co 4 tyg.",
+        "ANC < 1500/ul (przerwij), troponiny w zapaleniu mięśnia sercowego"
+      ],
+      [
+        "Węglan litu",
+        "Kreatynina/eGFR, mocznik, TSH, sód, potas, EKG",
+        "TDM co 1–2 tyg. do steady-state, potem co 3 mies.; eGFR/TSH co 6 mies.",
+        "Lit > 1,2 mmol/l, spadek eGFR < 45 ml/min, moczówka prosta"
+      ],
+      [
+        "Kwas walproinowy",
+        "Morfologia (PLT), ALT, AST, test ciążowy",
+        "ALT/AST/PLT po miesiącu i co 6 mies.",
+        "Płytki < 100 tys., 3-krotny wzrost aminotransferaz"
+      ],
+      [
+        "Olanzapina / Kwetiapina",
+        "Masa ciała, obwód pasa, glukoza na czczo, lipidogram",
+        "Waga co miesiąc, glukoza i lipidy po 3 mies., potem co roku",
+        "Przyrost wagi > 5%, cukrzyca de novo, hipertrójglicerydemia"
+      ]
+    ]
+  },
+  "advanced": "W przypadku klozapiny w pierwszych 4 tygodniach terapii istnieje ryzyko ostrego zapalenia mięśnia sercowego (myocarditis, śmiertelność do 10–20%). Objawy to niewyjaśniona tachykardia spoczynkowa > 100/min, duszność, ból w klatce piersiowej, stan podgorączkowy i eozynofilia. Wymaga to natychmiastowego oznaczenia troponin sercowych i CRP oraz odstawienia klozapiny.",
+  "summary": "Ustrukturyzowany nadzór laboratoryjny chroni pacjenta przed powikłaniami. Morfologia dla klozapiny, nerki/tarczyca dla litu, a w powikłaniach metabolicznych SGA lekiem z wyboru jest wczesne wdrożenie metforminy.",
+  "sourceIds": [
+    "clozapine-consensus",
+    "maudsley15",
+    "agnp-tdm-2026"
+  ],
+  "questions": [
+    {
+      "id": "psych-prof-q1",
+      "lessonId": "profilaktyka-dzialan-niepozadanych",
+      "prompt": "Jaki lek przeciwcukrzycowy posiada najwyższy poziom dowodów naukowych w prewencji i leczeniu przyrostu masy ciała oraz insulinooporności indukowanej olanzapiną lub klozapiną?",
+      "options": [
+        {
+          "text": "Sulfonylomocznik I generacji",
+          "explanation": "Sulfonylomoczniki nasilają tycie i wywołują hipoglikemie."
+        },
+        {
+          "text": "Metformina",
+          "explanation": "Wczesne dołączenie metforminy skutecznie hamuje tycie i normalizuje glikemię u pacjentów leczonych SGA."
+        },
+        {
+          "text": "Insulina w dawkach uderzeniowych u każdego pacjenta",
+          "explanation": "Insulina u osób bez cukrzycy wywołałaby zagrażającą życiu hipoglikemię."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-prof-q2",
+      "lessonId": "profilaktyka-dzialan-niepozadanych",
+      "prompt": "Jak często należy kontrolować bezwzględną liczbę neutrofilów (ANC) u pacjenta rozpoczynającego terapię klozapiną przez pierwsze 18 tygodni?",
+      "options": [
+        {
+          "text": "Raz na 5 lat",
+          "explanation": "Po 5 latach pacjent z agranulocytozą mógłby umrzeć z powodu sepsy."
+        },
+        {
+          "text": "Trzy razy dziennie przez 10 lat",
+          "explanation": "Jest to nierealne i niepotrzebne obciążenie pacjenta."
+        },
+        {
+          "text": "Dokładnie raz w tygodniu",
+          "explanation": "Jest to rygorystyczny wymóg rejestracyjny mający na celu wykrycie agranulocytozy we wczesnym stadium."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-prof-q3",
+      "lessonId": "profilaktyka-dzialan-niepozadanych",
+      "prompt": "Młody mężczyzna leczony klozapiną od 3 tygodni zgłasza stałą tachykardię spoczynkową 115/min, duszność wysiłkową i stan podgorączkowy 37,8°C. Jakie powikłanie należy natychmiast wykluczyć?",
+      "options": [
+        {
+          "text": "Polekowe zapalenie mięśnia sercowego (clozapine-induced myocarditis)",
+          "explanation": "Wymaga pilnego oznaczenia stężenia troponiny sercowej, CRP oraz wykonania echokardiografii i odstawienia klozapiny."
+        },
+        {
+          "text": "Zwykłe przeziębienie niewymagające żadnej uwagi",
+          "explanation": "Bagatelizowanie tych objawów na klozapinie grozi zgonem w mechanizmie ostrej niewydolności serca."
+        },
+        {
+          "text": "Złamanie żeber podczas snu",
+          "explanation": "Objawy te nie wskazują na uraz klatki piersiowej."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-prof-q4",
+      "lessonId": "profilaktyka-dzialan-niepozadanych",
+      "prompt": "W jaki sposób można skutecznie obniżyć objawową hiperprolaktynemię u pacjentki leczonej rysperydonem bez konieczności odstawiania leczenia przeciwpsychotycznego?",
+      "options": [
+        {
+          "text": "Podając dożylnie chlorek potasu",
+          "explanation": "Nie ma żadnego wpływu na prolaktynę."
+        },
+        {
+          "text": "Poprzez dołączenie małej dawki aripiprazolu (2,5–5 mg/d)",
+          "explanation": "Aripiprazol jako częściowy agonista D2 pobudza laktotrofy przysadki w stopniu wystarczającym do zahamowania wydzielania prolaktyny."
+        },
+        {
+          "text": "Poprzez potrojenie dawki rysperydonu",
+          "explanation": "Zwiększenie dawki rysperydonu jeszcze bardziej podwyższy prolaktynę."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-prof-q5",
+      "lessonId": "profilaktyka-dzialan-niepozadanych",
+      "prompt": "Jakie badanie endokrynologiczne należy powtarzać co 6–12 miesięcy u każdego pacjenta przewlekle leczonego węglanem litu?",
+      "options": [
+        {
+          "text": "Dobową zbiórkę moczu na obecność testosteronu",
+          "explanation": "Testosteron nie jest parametrem monitorowania nefrotoksyczności ani tyreotoksyczności litu."
+        },
+        {
+          "text": "Biopsję szyszynki pod kontrolą USG",
+          "explanation": "Szyszynka nie podlega biopsji w monitorowaniu litu."
+        },
+        {
+          "text": "Stężenie hormonu tyreotropowego (TSH) we krwi",
+          "explanation": "Lit hamuje uwalnianie hormonów tarczycy i może prowadzić do niedoczynności tarczycy u nawet 20% pacjentów."
+        }
+      ],
+      "answer": 2
+    }
+  ],
+  "assetIds": []
+}

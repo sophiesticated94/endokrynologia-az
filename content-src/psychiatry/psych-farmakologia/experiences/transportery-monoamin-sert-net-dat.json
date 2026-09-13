@@ -1,0 +1,389 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "transportery-monoamin-sert-net-dat",
+  "objectives": [
+    {
+      "id": "transportery-monoamin-sert-net-dat-obj-1",
+      "statement": "Zrozumiesz mechanizm blokady transporterów SERT, NET i DAT przez leki przeciwdepresyjne.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "transportery-monoamin-sert-net-dat-obj-2",
+      "statement": "Zinterpretujesz krzywą wysycenia SERT w badaniach PET (obserwacja populacyjna ~80%).",
+      "kind": "interpretation"
+    },
+    {
+      "id": "transportery-monoamin-sert-net-dat-obj-3",
+      "statement": "Wyjaśnisz, dlaczego podwajanie dawki SSRI nie podwaja blokady transportera w OUN.",
+      "kind": "mechanism"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-trans-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "transportery-monoamin-sert-net-dat-obj-1"
+    ],
+    "prompt": "Jaki szacunkowy poziom wysycenia transporterów SERT obserwowano w badaniach PET Meyera przy minimalnych dawkach terapeutycznych SSRI?",
+    "options": [
+      "Mniej niż 10% occupancy",
+      "Dokładnie 100% nieodwracalnej blokady",
+      "Około 80% occupancy SERT w OUN"
+    ],
+    "optionFeedback": [
+      "10% nie wywołuje zauważalnego podwyższenia stężenia 5-HT w synapsie ani desensytyzacji autoreceptorów.",
+      "100% blokada nie występuje i groziłaby ciężkim, ostrym zespołem serotoninowym.",
+      "W klasycznych badaniach PET minimalne dawki terapeutyczne badanych SSRI wiązały się zwykle z wysokim SERT occupancy około 80% (obserwacja populacyjna, a nie indywidualny próg skuteczności)."
+    ],
+    "answer": 2,
+    "explanation": "W klasycznych badaniach PET minimalne dawki terapeutyczne badanych SSRI wiązały się zwykle z wysokim SERT occupancy około 80% (obserwacja populacyjna, a nie indywidualny próg skuteczności).",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "pet-sert-meyer",
+      "stahl-essential",
+      "canmat-mdd-2023"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "transportery-monoamin-sert-net-dat-block-1",
+      "title": "Rodzina transporterów SLC6 i wychwyt zwrotny",
+      "text": "Transportery monoamin: serotoniny (SERT / SLC6A4), noradrenaliny (NET / SLC6A2) i dopaminy (DAT / SLC6A3) należą do rodziny nośników zależnych od gradientu sodowo-potasowego. Ich fizjologiczną rolą jest usuwanie neuroprzekaźnika ze szczeliny synaptycznej z powrotem do kolbki presynaptycznej, co kończy transmisję sygnału. Blokada transportera powoduje kumulację monoaminy w synapsie.",
+      "sourceIds": [
+        "pet-sert-meyer",
+        "stahl-essential",
+        "canmat-mdd-2023"
+      ],
+      "checkpointId": "psych-trans-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-monoamine-synapse",
+          "kind": "diagram",
+          "placement": "after-text"
+        },
+        {
+          "id": "deeplink-sert-occupancy",
+          "kind": "workbench-deeplink",
+          "placement": "end-of-block",
+          "presetId": "sert-occupancy-001"
+        }
+      ]
+    },
+    {
+      "id": "transportery-monoamin-sert-net-dat-block-2",
+      "title": "Przełomowe badania PET Meyera: 80% occupancy SERT",
+      "text": "Badania pozytonowej tomografii emisyjnej (PET) z użyciem ligandu [11C]DASB (Meyer i wsp.) wykazały, że minimalne dawki terapeutyczne badanych SSRI (np. cytalopram 20 mg, escitalopram 10 mg, sertralina 50 mg, paroksetyna 20 mg) wiążą się zazwyczaj z wysokim wysyceniem rzędu 75–85% transporterów SERT w prążkowiu. Obserwacja ta stanowi model populacyjny korelacji farmakologicznej z odpowiedzią, a nie indywidualny sztywny próg skuteczności.",
+      "sourceIds": [
+        "pet-sert-meyer",
+        "stahl-essential",
+        "canmat-mdd-2023"
+      ],
+      "checkpointId": "psych-trans-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-meyer-pet-curves",
+          "kind": "evidence-panel",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "transportery-monoamin-sert-net-dat-block-3",
+      "title": "Hiperboliczna krzywa wysycenia i implikacje kliniczne",
+      "text": "Krzywa wiązania leku z SERT ma charakter nieliniowy (hiperboliczny wg równania Michaela-Menten). Wzrost dawki sertraliny z 50 mg do 100 mg podnosi blokadę SERT z 80% do ok. 85%, a zwiększenie do 200 mg – do ok. 88%. Wyjaśnia to, dlaczego eskalacja dawek SSRI przynosi skromny przyrost skuteczności przeciwdepresyjnej, natomiast znacznie nasila działania niepożądane (zależne od receptorów obwodowych i innych celów).",
+      "sourceIds": [
+        "pet-sert-meyer",
+        "stahl-essential",
+        "canmat-mdd-2023"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-trans-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "transportery-monoamin-sert-net-dat-obj-2"
+      ],
+      "prompt": "Dlaczego podwojenie dawki SSRI (np. sertraliny z 50 do 100 mg) zwiększa blokadę SERT jedynie o ok. 5–7%?",
+      "options": [
+        "Ponieważ krzywa wiązania leku z transporterem ma kształt hiperboliczny i przy 80% wkracza w fazę plateau (nasycenia)",
+        "Ponieważ dochodzi do gwałtownego przyspieszenia klirensu wątrobowego przy wyższych dawkach",
+        "Ponieważ wyższe stężenia leku blokują wyłącznie receptory obwodowe z pominięciem OUN"
+      ],
+      "optionFeedback": [
+        "Większość miejsc wiążących jest już zajęta; do dalszego wzrostu potrzebne byłyby stężenia logarytmicznie wyższe.",
+        "Dla sertraliny farmakokinetyka w dawkach terapeutycznych jest w przybliżeniu liniowa; ograniczenie wynika z nasycenia miejsc wiążących na białku docelowym (farmakodynamika).",
+        "Lek swobodnie przenika barierę krew-mózg; plateau wynika z nieliniowej krzywej wysycenia SERT w OUN."
+      ],
+      "answer": 0,
+      "explanation": "Większość miejsc wiążących jest już zajęta; do dalszego wzrostu potrzebne byłyby stężenia logarytmicznie wyższe.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "pet-sert-meyer",
+        "stahl-essential",
+        "canmat-mdd-2023"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-trans-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "transportery-monoamin-sert-net-dat-obj-3"
+      ],
+      "prompt": "Od jakiej dawki dobowej wenlafaksyna zaczyna w istotnym stopniu klinicznym blokować transporter noradrenaliny (NET)?",
+      "options": [
+        "Wenlafaksyna nigdy nie blokuje transportera NET",
+        "Od dawki 225 mg/d i wyższych",
+        "Już od najmniejszej dawki 37,5 mg/d"
+      ],
+      "optionFeedback": [
+        "Wenlafaksyna jest zarejestrowana jako SNRI i blokuje NET w odpowiednio wysokiej dawce.",
+        "W niższych dawkach (75–150 mg) wenlafaksyna działa jak typowy SSRI.",
+        "Przy 37,5 mg blokada NET jest pomijalna klinicznie."
+      ],
+      "answer": 1,
+      "explanation": "W niższych dawkach (75–150 mg) wenlafaksyna działa jak typowy SSRI.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "pet-sert-meyer",
+        "stahl-essential",
+        "canmat-mdd-2023"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "transportery-monoamin-sert-net-dat-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "transportery-monoamin-sert-net-dat-obj-1",
+      "transportery-monoamin-sert-net-dat-obj-2",
+      "transportery-monoamin-sert-net-dat-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Transportery monoamin: SERT, NET i DAT w badaniach PET”.",
+    "modelAnswer": "W klasycznych badaniach PET badane SSRI przy minimalnych dawkach terapeutycznych osiągały wysokie wysycenie SERT ~80% (model populacyjny). Z powodu hiperbolicznej krzywej wiązania dalsze podwajanie dawki daje niewielki wzrost blokady, potęgując objawy niepożądane.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "pet-sert-meyer",
+      "stahl-essential",
+      "canmat-mdd-2023"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-trans-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "transportery-monoamin-sert-net-dat-obj-1"
+      ],
+      "prompt": "Który transporter odpowiada za wychwyt zwrotny dopaminy m.in. w prążkowiu i jest celem metylofenidatu oraz bupropionu?",
+      "options": [
+        "GLUT-4",
+        "SGLT-2",
+        "DAT (dopamine transporter / SLC6A3)"
+      ],
+      "optionFeedback": [
+        "GLUT-4 to transporter glukozy zależny od insuliny w mięśniach i tkance tłuszczowej.",
+        "SGLT-2 to kotransporter sodowo-glukozowy w kanalikach nerkowych.",
+        "Blokada DAT w prążkowiu i korze przedczołowej podwyższa toniczne stężenie dopaminy."
+      ],
+      "answer": 2,
+      "explanation": "Blokada DAT w prążkowiu i korze przedczołowej podwyższa toniczne stężenie dopaminy.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "pet-sert-meyer",
+        "stahl-essential",
+        "canmat-mdd-2023"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-trans-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "transportery-monoamin-sert-net-dat-obj-1"
+      ],
+      "prompt": "Jakie znaczenie ma selektywność escitalopramu wobec SERT w porównaniu z innymi SSRI?",
+      "options": [
+        "Jest najczystszym znanym inhibitorem SERT, niemal pozbawionym powinowactwa do receptorów histaminowych, cholinergicznych czy NET",
+        "Blokuje wyłącznie receptory beta-adrenolityczne w sercu",
+        "Wiąże się nieodwracalnie kowalencyjnie z DNA jądrowym"
+      ],
+      "optionFeedback": [
+        "Cechuje się czystym profilem bez działań sedatywnych czy antycholinergicznych.",
+        "Escitalopram nie jest beta-blokerem.",
+        "Nie ma żadnego działania mutagennego ani alkilującego DNA."
+      ],
+      "answer": 0,
+      "explanation": "Cechuje się czystym profilem bez działań sedatywnych czy antycholinergicznych.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "pet-sert-meyer",
+        "stahl-essential",
+        "canmat-mdd-2023"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "transp-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "transportery-monoamin-sert-net-dat-obj-1"
+      ],
+      "claimIds": [
+        "claim-ph-sert-plateau"
+      ],
+      "prompt": "W badaniach PET Meyera oceniano stopień wysycenia transporterów serotoniny (SERT) u pacjentów przyjmujących citalopram w dawkach 20 mg oraz 40 mg. Jakie zjawisko farmakodynamiczne tłumaczy brak podwojenia skuteczności klinicznej przy podwojeniu dawki?",
+      "options": [
+        "Hiperboliczna krzywa wysycenia SERT: dawka minimalna wysyca już ~80% transporterów, a jej podwojenie zwiększa blokadę zaledwie o 5–8%",
+        "Liniowy spadek powinowactwa leku do SERT wraz ze wzrostem stężenia",
+        "Całkowity brak związku między blokadą SERT a działaniem przeciwdepresyjnym"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-hyperbolic-occupancy",
+            "label": "Hiperboliczny kształt krzywej wysycenia (plateau)",
+            "acceptedPhrases": [
+              "hiperboliczna",
+              "krzywa wysycenia",
+              "plateau",
+              "nieliniowa",
+              "wysycenie"
+            ]
+          },
+          {
+            "id": "c-sert-80-percent",
+            "label": "Wysycenie ~80% SERT już przy minimalnej dawce terapeutycznej",
+            "acceptedPhrases": [
+              "80%",
+              "około 80",
+              "minimalna dawka",
+              "drobny przyrost"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Minimalna dawka terapeutyczna SSRI wysyca ~80% SERT. Podwojenie dawki daje minimalny zysk wysycenia, ale może nasilać działania niepożądane.",
+      "difficulty": "both",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "pet-sert-meyer"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "transp-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "transportery-monoamin-sert-net-dat-obj-2"
+      ],
+      "claimIds": [
+        "claim-ph-sert-plateau"
+      ],
+      "prompt": "Dlaczego w korze przedczołowej dopamina jest wychwytywana zwrotnie głównie przez transporter noradrenaliny (NET), a nie DAT?",
+      "modelAnswer": "W korze przedczołowej gęstość transporterów dopaminy (DAT) jest znikoma. Ponieważ transporter noradrenaliny (NET) wykazuje wysokie powinowactwo do dopaminy, to właśnie NET odpowiada za eliminację dopaminy ze szczeliny synaptycznej w tym rejonie mózgu. Dlatego leki blokujące NET (np. bupropion, reboksetyna, atomoksetyna) zwiększają stężenie zarówno noradrenaliny, jak i dopaminy w korze czołowej.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-dat-scarcity-pfc",
+            "label": "Znikoma gęstość / brak DAT w korze przedczołowej",
+            "acceptedPhrases": [
+              "mało dat",
+              "brak dat",
+              "niska ekspresja dat",
+              "znikoma ilość dat"
+            ]
+          },
+          {
+            "id": "c-net-affinity-da",
+            "label": "Wysokie powinowactwo NET do dopaminy",
+            "acceptedPhrases": [
+              "net wychwytuje dopaminę",
+              "powinowactwo net do da",
+              "net transportuje dopaminę"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "W korze przedczołowej brak transporterów DAT zmusza dopaminę do korzystania z NET, co wyjaśnia pro-dopaminergiczne działanie inhibitorów NET.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "transp-bank-3",
+      "type": "matching",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "transportery-monoamin-sert-net-dat-obj-1",
+        "transportery-monoamin-sert-net-dat-obj-3"
+      ],
+      "prompt": "Dopasuj lek przeciwdepresyjny do jego dominującego profilu hamowania transporterów monoamin.",
+      "pairs": [
+        [
+          "Escitalopram",
+          "Wysoce selektywny inhibitor SERT (brak istotnego wpływu na NET i DAT)"
+        ],
+        [
+          "Reboksetyna",
+          "Selektywny inhibitor wychwytu zwrotnego noradrenaliny (NRI)"
+        ],
+        [
+          "Bupropion",
+          "Podwójny inhibitor wychwytu zwrotnego noradrenaliny i dopaminy (NDRI)"
+        ],
+        [
+          "Wenlafaksyna (duże dawki)",
+          "Podwójny inhibitor wychwytu zwrotnego serotoniny i noradrenaliny (SNRI)"
+        ]
+      ],
+      "explanation": "Profile powinowactwa do SERT, NET i DAT determinują mechanizm i fenotyp kliniczny leków przeciwdepresyjnych.",
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "stahl-essential",
+        "maudsley15"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "pathway-builder"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy AGNP 2026 TDM, CPIC PGx, Maudsley 15th ed., Kapur PET D2, Hunter criteria oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "id": "atypowe-antydepresanty-multimodalne",
+  "moduleId": "psych-farmakologia",
+  "title": "Atypowe i multimodalne leki przeciwdepresyjne",
+  "subtitle": "Bupropion, mirtazapina, trazodon i wortioksetyna w spersonalizowanym leczeniu",
+  "group": "Farmakoterapia zaburzeń afektywnych",
+  "minutes": 18,
+  "goals": [
+    "Dobierzesz lek przeciwdepresyjny pod kątem fenotypu objawowego (anhedonia, bezsenność, lęk, dysfunkcje seksualne).",
+    "Wyjaśnisz mechanizm NDRI bupropionu i brak negatywnego wpływu na masę ciała i sferę seksualną.",
+    "Scharakteryzujesz działanie NaSSA mirtazapiny (antagonizm alfa-2 i 5-HT2/3) oraz SARI trazodonu."
+  ],
+  "sections": [
+    {
+      "title": "Bupropion (NDRI): aktywacja dopaminergiczna bez serotoniny",
+      "text": "Bupropion hamuje wychwyt zwrotny noradrenaliny i dopaminy (NDRI). Jest lekiem z wyboru u pacjentów z dominującą anhedonią, apatią, zmęczeniem, spowolnieniem psychoruchowym oraz u osób obawiających się dysfunkcji seksualnych i przyrostu masy ciała (bupropion sprzyja redukcji wagi). Głównym przeciwwskazaniem jest padaczka oraz zaburzenia odżywiania (bulimia, jadłowstręt) z uwagi na obniżanie progu drgawkowego."
+    },
+    {
+      "title": "Mirtazapina (NaSSA): odhamowanie noradrenergiczne i sedacja",
+      "text": "Mirtazapina jest noradrenergicznym i specyficznie serotoninergicznym lekiem przeciwdepresyjnym (NaSSA). Działa jako antagonista presynaptycznych autoreceptorów i heteroreceptorów alfa-2 adrenergicznych, co odhamowuje wyrzut NA i 5-HT. Ponadto blokuje receptory 5-HT2A, 5-HT2C, 5-HT3 i silnie H1. Zapewnia to szybki efekt nasenny i przeciwlękowy oraz stymulację apetytu (korzystne u pacjentów wyniszczonych i z ciężką bezsennością)."
+    },
+    {
+      "title": "Trazodon (SARI) i leki multimodalne",
+      "text": "Trazodon w niskich dawkach (25–100 mg) działa jako antagonista 5-HT2A i H1 oraz inhibitor wychwytu 5-HT (SARI), będąc lekiem z wyboru w bezsenności towarzyszącej depresji bez potencjału uzależniającego. Wortioksetyna łączy blokadę SERT z wieloma celami receptorowymi, poprawiając funkcje wykonawcze i pamięć roboczą u pacjentów w każdym wieku."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Lek",
+      "Mechanizm receptorowy",
+      "Wpływ na wagę / libido",
+      "Główne wskazanie fenotypowe"
+    ],
+    "rows": [
+      [
+        "Bupropion",
+        "Hamowanie DAT i NET (NDRI)",
+        "Neutralny lub spadek wagi / brak dysfunkcji seksualnych",
+        "Apatia, anhedonia, rzucanie palenia, zmęczenie"
+      ],
+      [
+        "Mirtazapina",
+        "Antagonizm alfa-2, 5-HT2A, 5-HT2C, 5-HT3, H1 (NaSSA)",
+        "Silny przyrost masy ciała / brak dysfunkcji seksualnych",
+        "Ciężka bezsenność, brak apetytu, depresja lękowa"
+      ],
+      [
+        "Trazodon",
+        "Antagonizm 5-HT2A, 5-HT2C, alfa-1, H1 + słaby SERT (SARI)",
+        "Neutralny / rzadko priapizm",
+        "Depresja ze skrajną bezsennością, architektonika snu"
+      ],
+      [
+        "Wortioksetyna",
+        "Hamowanie SERT + agonizm 5-HT1A + antagonizm 5-HT3/7",
+        "Neutralny / minimalny wpływ na libido",
+        "Depresja z dominującymi deficytami poznawczymi"
+      ]
+    ]
+  },
+  "advanced": "W przypadku mirtazapiny w dawkach niskich (7,5–15 mg) dominuje działanie antyhistaminowe H1 (silna sedacja i senność). W dawkach wyższych (30–45 mg) nasila się toniczna transmisja noradrenergiczna przez blokadę alfa-2, co może paradoksalnie zmniejszać sedację poranną na korzyść działania aktywizującego.",
+  "summary": "Leki atypowe pozwalają na leczenie celowane fenotypowo: bupropion aktywizuje bez dysfunkcji seksualnych, mirtazapina leczy bezsenność i anoreksję, trazodon przywraca architekturę snu, a wortioksetyna usprawnia procesy poznawcze.",
+  "sourceIds": [
+    "canmat-mdd-2023",
+    "stahl-essential",
+    "nice-depression"
+  ],
+  "questions": [
+    {
+      "id": "psych-atyp-q1",
+      "lessonId": "atypowe-antydepresanty-multimodalne",
+      "prompt": "Który lek przeciwdepresyjny jest lekiem I rzutu u pacjenta cierpiącego na depresję z ciężką apatią, który obawia się zaburzeń erekcji i przyrostu masy ciała?",
+      "options": [
+        {
+          "text": "Mirtazapina",
+          "explanation": "Mirtazapina silnie stymuluje łaknienie i prowadzi do przyrostu masy ciała."
+        },
+        {
+          "text": "Bupropion",
+          "explanation": "Jako inhibitor wychwytu noradrenaliny i dopaminy nie wywołuje dysfunkcji seksualnych ani tycia."
+        },
+        {
+          "text": "Paroksetyna",
+          "explanation": "Paroksetyna najsilniej spośród SSRI wywołuje dysfunkcje seksualne i sprzyja tyciu."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-atyp-q2",
+      "lessonId": "atypowe-antydepresanty-multimodalne",
+      "prompt": "Jakie schorzenia stanowią bezwzględne przeciwwskazanie do stosowania bupropionu z uwagi na obniżanie progu drgawkowego?",
+      "options": [
+        {
+          "text": "Krótkowzroczność i łupież",
+          "explanation": "Schorzenia te nie mają żadnego związku z metabolizmem bupropionu."
+        },
+        {
+          "text": "Łagodne nadciśnienie tętnicze dobrze kontrolowane jednym lekiem",
+          "explanation": "Kontrolowane nadciśnienie wymaga jedynie monitorowania RR, nie jest bezwzględnym zakazem."
+        },
+        {
+          "text": "Padaczka oraz aktywne zaburzenia odżywiania (bulimia, anorexia nervosa)",
+          "explanation": "U pacjentów z zaburzeniami odżywiania ryzyko napadu drgawkowego na bupropionie jest wielokrotnie wyższe."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-atyp-q3",
+      "lessonId": "atypowe-antydepresanty-multimodalne",
+      "prompt": "Dlaczego mirtazapina w dawce 15 mg działa silniej nasennie niż w wyższej dawce 45 mg?",
+      "options": [
+        {
+          "text": "W niskiej dawce dominuje wysokie powinowactwo do receptorów H1, natomiast w wyższej przeważa aktywujący wyrzut noradrenaliny przez blokadę alfa-2",
+          "explanation": "Transmisja noradrenergiczna w wyższych dawkach przeciwdziała sedacji antyhistaminowej."
+        },
+        {
+          "text": "W dawce 45 mg lek przestaje wchłaniać się w jelicie cienkim",
+          "explanation": "Mirtazapina wchłania się liniowo w całym zakresie dawek."
+        },
+        {
+          "text": "W dawce 45 mg pacjent zapomina przyjąć tabletkę",
+          "explanation": "Dawkowanie wyższe jest zalecane w schemacie wieczornym."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-atyp-q4",
+      "lessonId": "atypowe-antydepresanty-multimodalne",
+      "prompt": "Jakie rzadkie, lecz urologicznie groźne powikłanie może wystąpić podczas stosowania trazodonu wskutek blokady receptorów alfa-1 adrenergicznych?",
+      "options": [
+        {
+          "text": "Natychmiastowe zrośnięcie cewki moczowej",
+          "explanation": "Nie ma takiego powikłania polekowego."
+        },
+        {
+          "text": "Priapizm (bolesny, przedłużający się wzwód prącia bez pobudzenia seksualnego)",
+          "explanation": "Stan ten wymaga pilnej interwencji urologicznej, aby zapobiec martwicy ciał jamistych."
+        },
+        {
+          "text": "Zwapnienie gruczołu krokowego w ciągu 24 godzin",
+          "explanation": "Trazodon nie wywołuje zwapnień stercza."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-atyp-q5",
+      "lessonId": "atypowe-antydepresanty-multimodalne",
+      "prompt": "Który lek przeciwdepresyjny dzięki blokadzie 5-HT3 i 5-HT7 oraz stymulacji 5-HT1A wykazuje specyficzne działanie prokognitywne?",
+      "options": [
+        {
+          "text": "Doksepina w małej dawce",
+          "explanation": "Doksepina działa cholinolitycznie, co może wręcz pogarszać pamięć."
+        },
+        {
+          "text": "Klomipramina",
+          "explanation": "Silny cholinolityk pogarszający procesy uwagi i pamięci u seniorów."
+        },
+        {
+          "text": "Wortioksetyna",
+          "explanation": "Wielokierunkowa modulacja receptorowa odhamowuje wyrzut acetylocholiny i dopaminy w hipokampie."
+        }
+      ],
+      "answer": 2
+    }
+  ],
+  "assetIds": []
+}

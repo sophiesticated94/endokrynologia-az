@@ -1,0 +1,376 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "ocd-i-petla-cstc",
+  "objectives": [
+    {
+      "id": "ocd-i-petla-cstc-obj-1",
+      "statement": "Zrozumiesz rolę pętli korowo-prążkowiowo-wzgórzowo-korowej (CSTC) w patogenezie natręctw.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "ocd-i-petla-cstc-obj-2",
+      "statement": "Rozróżnisz myśli intruzywne (obsesje) od czynności zabezpieczających (kompulsji).",
+      "kind": "safety"
+    },
+    {
+      "id": "ocd-i-petla-cstc-obj-3",
+      "statement": "Wdrożysz protokół farmakoterapii OCD oparty na maksymalnych dawkach SSRI i psychoterapii ERP.",
+      "kind": "mechanism"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-ocd-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "ocd-i-petla-cstc-obj-1"
+    ],
+    "prompt": "Czym różni się dawkowanie SSRI w OCD od typowego dawkowania w epizodzie depresyjnym (MDD)?",
+    "options": [
+      "W OCD SSRI podaje się wyłącznie dożylnie w warunkach szpitalnych",
+      "W OCD stosuje się maksymalne lub ponadstandardowe dawki, a czas do oceny odpowiedzi wynosi 8–12 tygodni",
+      "W OCD stosuje się wyłącznie mikrodawki przez 7 dni"
+    ],
+    "optionFeedback": [
+      "SSRI w OCD stosuje się standardowo drogą doustną ambulatoryjnie.",
+      "Desensytyzacja receptorów w pętli CSTC wymaga wyższego stopnia wysycenia SERT i dłuższego czasu niż w depresji.",
+      "Mikrodawki nie wywierają żadnego mierzalnego efektu w obwodach CSTC w OCD."
+    ],
+    "answer": 1,
+    "explanation": "Desensytyzacja receptorów w pętli CSTC wymaga wyższego stopnia wysycenia SERT i dłuższego czasu niż w depresji.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "nice-ocd",
+      "wfsbp-anxiety",
+      "maudsley15"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "ocd-i-petla-cstc-block-1",
+      "title": "Neuroanatomia pętli CSTC i brak hamowania wzgórzowego",
+      "text": "W zaburzeniu obsesyjno-kompulsyjnym (OCD) dochodzi do dysfunkcji pętli korowo-prążkowiowo-wzgórzowo-korowej (cortico-striato-thalamo-cortical, CSTC), obejmującej korę oczodołowo-czołową (OFC), przedni zakręt obręczy (ACC) oraz jądro ogoniaste. Uszkodzenie wewnętrznego filtra prążkowiowego powoduje, że wzgórze stale przesyła do kory sygnały o błędzie lub zagrożeniu, co pacjent odczuwa jako natrętną, intruzywną myśl (obsesję).",
+      "sourceIds": [
+        "nice-ocd",
+        "wfsbp-anxiety",
+        "maudsley15"
+      ],
+      "checkpointId": "psych-ocd-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-cstc-loop",
+          "kind": "diagram",
+          "placement": "after-text"
+        },
+        {
+          "id": "deeplink-ocd-cstc",
+          "kind": "workbench-deeplink",
+          "placement": "end-of-block",
+          "presetId": "ocd-cstc-preset-001"
+        }
+      ]
+    },
+    {
+      "id": "ocd-i-petla-cstc-block-2",
+      "title": "Obsesje a kompulsje w ujęciu behawioralnym",
+      "text": "Obsesje to nawracające, uporczywe myśli, impulsy lub wyobrażenia (np. skażenie, symetria, agresja), które wywołują silny lęk. Kompulsje to powtarzające się zachowania (mycie rąk, sprawdzanie zamków) lub akty psychiczne mające na celu neutralizację lęku. Wykonanie kompulsji przynosi chwilową ulgę, co poprzez mechanizm wzmocnienia negatywnego utrwala pętlę objawu.",
+      "sourceIds": [
+        "nice-ocd",
+        "wfsbp-anxiety",
+        "maudsley15"
+      ],
+      "checkpointId": "psych-ocd-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-y-bocs-dimensions",
+          "kind": "evidence-panel",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "ocd-i-petla-cstc-block-3",
+      "title": "Farmakoterapia OCD: konieczność wysokich dawek i długiego czasu",
+      "text": "Leczenie farmakologiczne OCD wymaga znacznie wyższych dawek SSRI niż leczenie depresji (np. sertralina 200 mg/d, fluoksetyna 60–80 mg/d, escitalopram 20–30 mg/d). Czas oczekiwania na pełną odpowiedź wynosi 10–12 tygodni (nie 2–4). Złotym standardem psychoterapii jest terapia ekspozycji z powstrzymaniem reakcji (ERP).",
+      "sourceIds": [
+        "nice-ocd",
+        "wfsbp-anxiety",
+        "maudsley15"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-ocd-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "ocd-i-petla-cstc-obj-2"
+      ],
+      "prompt": "Jaki obwód neuronalny wykazuje udowodnioną neuroobrazowo nadaktywność u pacjentów z OCD?",
+      "options": [
+        "Droga siatkowo-rdzeniowa boczna",
+        "Pęczek łukowaty lewej półkuli",
+        "Pętla korowo-prążkowiowo-wzgórzowo-korowa (CSTC)"
+      ],
+      "optionFeedback": [
+        "Droga siatkowo-rdzeniowa kontroluje napięcie mięśniowe, nie generuje myśli intruzywnych.",
+        "Pęczek łukowaty łączy ośrodki mowy Broki i Wernickego.",
+        "Nadaktywność OFC i jądra ogoniastego generuje nieustanne poczucie błędu i przymus wykonania czynności."
+      ],
+      "answer": 2,
+      "explanation": "Nadaktywność OFC i jądra ogoniastego generuje nieustanne poczucie błędu i przymus wykonania czynności.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "nice-ocd",
+        "wfsbp-anxiety",
+        "maudsley15"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-ocd-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "ocd-i-petla-cstc-obj-3"
+      ],
+      "prompt": "Jaka metoda psychoterapii poznawczo-behawioralnej jest złotym standardem o najwyższej skuteczności w OCD?",
+      "options": [
+        "Ekspozycja z powstrzymaniem reakcji (ERP - Exposure and Response Prevention)",
+        "Klasyczna psychoanaliza bez zadań domowych",
+        "Hipnoterapia regresyjna"
+      ],
+      "optionFeedback": [
+        "Narażenie na bodziec wyzwalający bez wykonania kompulsji prowadzi do habituacji i wygaszenia lęku.",
+        "Brak aktywnej ekspozycji behawioralnej nie przerywa pętli kompulsyjnej w OCD.",
+        "Hipnoterapia nie posiada dowodów klasy I w randomizowanych badaniach w OCD."
+      ],
+      "answer": 0,
+      "explanation": "Narażenie na bodziec wyzwalający bez wykonania kompulsji prowadzi do habituacji i wygaszenia lęku.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "nice-ocd",
+        "wfsbp-anxiety",
+        "maudsley15"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "ocd-i-petla-cstc-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "ocd-i-petla-cstc-obj-1",
+      "ocd-i-petla-cstc-obj-2",
+      "ocd-i-petla-cstc-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Zaburzenia obsesyjno-kompulsyjne (OCD) i pętla CSTC”.",
+    "modelAnswer": "OCD to organiczna dysfunkcja pętli CSTC. Sukces terapeutyczny wymaga wysokich dawek SSRI stosowanych przez minimum 10–12 tygodni w połączeniu z psychoterapią ERP oraz ewentualną augmentacją aripiprazolem.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "nice-ocd",
+      "wfsbp-anxiety",
+      "maudsley15"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-ocd-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "ocd-i-petla-cstc-obj-1"
+      ],
+      "prompt": "Jaki lek z grupy TLPD o silnym komponencie serotoninergicznym jest zarejestrowany i wysoce skuteczny w OCD?",
+      "options": [
+        "Maprotylina",
+        "Klomipramina",
+        "Amitryptylina"
+      ],
+      "optionFeedback": [
+        "Maprotylina jest selektywnym inhibitorem wychwytu noradrenaliny bez wpływu na 5-HT.",
+        "Klomipramina jest najsilniejszym inhibitorem wychwytu zwrotnego serotoniny wśród TLPD i wykazuje dużą siłę w OCD.",
+        "Amitryptylina działa silnie sedatywnie i przeciwbólowo, lecz ustępuje klomipraminie w OCD."
+      ],
+      "answer": 1,
+      "explanation": "Klomipramina jest najsilniejszym inhibitorem wychwytu zwrotnego serotoniny wśród TLPD i wykazuje dużą siłę w OCD.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nice-ocd",
+        "wfsbp-anxiety",
+        "maudsley15"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-ocd-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "ocd-i-petla-cstc-obj-1"
+      ],
+      "prompt": "Który lek jest rekomendowany w I kolejności do augmentacji SSRI w przypadku lekoopornego OCD wg wytycznych NICE?",
+      "options": [
+        "Diazepam w dawce 40 mg/d",
+        "Metylotransferaza w iniekcjach domięśniowych",
+        "Aripiprazol lub rysperydon w małej dawce"
+      ],
+      "optionFeedback": [
+        "Benzodiazepiny nie wykazują skuteczności przeciwobsesyjnej i nie przerywają natręctw.",
+        "Nie jest to substancja stosowana w farmakoterapii psychiatrycznej.",
+        "Częściowy agonizm D2 aripiprazolu lub mała dawka rysperydonu moduluje przekaźnictwo dopaminowe w prążkowiu."
+      ],
+      "answer": 2,
+      "explanation": "Częściowy agonizm D2 aripiprazolu lub mała dawka rysperydonu moduluje przekaźnictwo dopaminowe w prążkowiu.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "nice-ocd",
+        "wfsbp-anxiety",
+        "maudsley15"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "ocd-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "ocd-i-petla-cstc-obj-1"
+      ],
+      "claimIds": [
+        "claim-af-ocd-cstc"
+      ],
+      "prompt": "Pacjent z ciężkim zaburzeniem obsesyjno-kompulsyjnym (natrętne myśli o skażeniu i przymus mycia rąk przez 4 h dziennie) po 4 tygodniach stosowania sertraliny w dawce 50 mg zgłasza brak poprawy. Jakie postępowanie jest zgodne z EBM?",
+      "options": [
+        "Zwiększenie dawki sertraliny w kierunku maksymalnych dawek w OCD (do 200 mg/d) i wydłużenie próby do 10–12 tygodni",
+        "Natychmiastowe odstawienie sertraliny jako nieskutecznej i włączenie benzodiazepin",
+        "Rozpoznanie schizofrenii i włączenie haloperidolu"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-ocd-dose-duration",
+            "label": "Wyższe dawki SSRI i dłuższy czas oczekiwania (10-12 tyg.) w OCD",
+            "acceptedPhrases": [
+              "wyższe dawki",
+              "maksymalna dawka",
+              "10-12 tygodni",
+              "dłuższy czas",
+              "czas oczekiwania"
+            ]
+          },
+          {
+            "id": "c-cstc-circuit",
+            "label": "Neurobiologia pętli CSTC wymagająca głębokiej adaptacji receptorowej",
+            "acceptedPhrases": [
+              "cstc",
+              "adaptacja",
+              "pętla korowo-prążkowiowa",
+              "serotonina"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Leczenie OCD wymaga dawek SSRI wyższych niż w depresji oraz dłuższego czasu oczekiwania na efekt (10–12 tygodni).",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nice-ocd",
+        "stahl-essential"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "ocd-i-petla-cstc-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "ocd-i-petla-cstc-obj-2"
+      ],
+      "prompt": "Wyjaśnij kluczowe zasady różnicowania klinicznego oraz pułapki diagnostyczne w zagadnieniu: ocd i petla cstc.",
+      "modelAnswer": "Kluczowe jest odróżnienie pierwotnych zaburzeń psychicznych od masek somatycznych i toksycznych, uwzględnienie dynamiki czasowej oraz unikanie pochopnego rozpoznania na podstawie pojedynczego objawu.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-diff-organic",
+            "label": "Wykluczenie przyczyn somatycznych i substancji",
+            "acceptedPhrases": [
+              "przyczyny somatyczne",
+              "substancje",
+              "toksyczne",
+              "organiczne"
+            ]
+          },
+          {
+            "id": "c-diff-longitudinal",
+            "label": "Ocena przebiegu podłużnego i kryteriów czasowych",
+            "acceptedPhrases": [
+              "przebieg podłużny",
+              "kryteria czasowe",
+              "dynamika",
+              "czas trwania"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Ocena kliniczna wymaga analizy podłużnej i systematycznego wykluczenia przyczyn wtórnych.",
+      "difficulty": "both",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "icd11-cddr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "ocd-i-petla-cstc-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "ocd-i-petla-cstc-obj-1",
+        "ocd-i-petla-cstc-obj-3"
+      ],
+      "prompt": "W analizie przypadku klinicznego z obszaru ocd i petla cstc pacjent zgłasza nietypowy zestaw objawów. Jakiej informacji brakuje w pierwszej kolejności?",
+      "options": [
+        "Wywiadu toksykologicznego i badań laboratoryjnych wykluczających podłoże organiczne",
+        "Profilu genetycznego rzadkich mutacji enzymatycznych",
+        "Wyniku tomografii komputerowej bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Podstawą rzetelnej oceny psychiatrycznej jest wykluczenie czynników egzogennych, intoksykacji i zaburzeń metabolicznych.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "pathway-builder",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., CANMAT oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

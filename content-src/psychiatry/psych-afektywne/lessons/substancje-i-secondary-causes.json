@@ -1,0 +1,165 @@
+{
+  "id": "substancje-i-secondary-causes",
+  "moduleId": "psych-afektywne",
+  "title": "Substancje psychoaktywne i maski somatopsychiatryczne",
+  "subtitle": "Zatrucia, zespoły abstynencyjne, toksykologia i zaburzenia wywołane substancjami",
+  "group": "Zaburzenia organiczne i substancje",
+  "minutes": 18,
+  "goals": [
+    "Zróżnicujesz pierwotne zaburzenia psychotyczne i afektywne od wywołanych substancjami psychoaktywnymi.",
+    "Rozpoznasz zagrażające życiu zespoły odstawienne (alkoholowy zespół majaczeniowy, opioidy, BZD).",
+    "Wdrożysz protokół badań przesiewowych (WHO ASSIST, toksykologia moczu) i detoksykacji."
+  ],
+  "sections": [
+    {
+      "title": "Diagnostyka toksykologiczna i maski substancyjne",
+      "text": "Nadużywanie substancji psychoaktywnych może imitować niemal każdy stan psychiatryczny: intoksykacja stymulantami (kokaina, amfetamina, syntetyczne katynony) wywołuje paranoiczne psychozy i manię; kanabinoidy wyzwalają derealizację i zaostrzenia psychotyczne; z kolei odstawienie alkoholu lub benzodiazepin prowadzi do lęku napadowego i majaczenia (delirium tremens). Toksykologia moczu i stężenie alkoholu w wydychanym powietrzu są obligatoryjne przy każdej ostrej hospitalizacji."
+    },
+    {
+      "title": "Alkoholowy zespół majaczeniowy (Delirium Tremens - DT)",
+      "text": "Delirium tremens rozwija się typowo w 48–72 godziny po nagłym zaprzestaniu lub ograniczeniu picia u osoby uzależnionej. Cechuje się przymgleniem świadomości, dezorientacją allopsychiczną, iluzjami i omamami wzrokowymi (np. mikropsje, zooopsje), drżeniem grubofalistym, zlewającymi potami, tachykardią i gorączką. Śmiertelność w nieleczonym DT sięga 5–15% wskutek zapaści sercowo-naczyniowej lub hipertermii."
+    },
+    {
+      "title": "Zasady leczenia stanów odstawiennych: protokół CIWA-Ar",
+      "text": "W alkoholowym zespole abstynencyjnym (AWA) złotym standardem są długodziałające benzodiazepiny (diazepam, chlordiazepoksyd) dawkowane wg skali nasilenia objawów CIWA-Ar. U pacjentów z niewydolnością wątroby stosuje się leki nielorazepamowane lub lorazepam/oksazepam (metabolizowane drogą glukuronidacji bez udziału CYP450). Obowiązkowa jest wysoka podaż tiaminy (wit. B1 i.v./i.m.) przed glukozą w celu prewencji zespołu Wernickego-Korsakowa."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Substancja",
+      "Obraz intoksykacji ostrej",
+      "Obraz zespołu odstawiennego",
+      "Leczenie farmakologiczne"
+    ],
+    "rows": [
+      [
+        "Alkohol etylowy",
+        "Odhamowanie, ataksja, bełkotliwa mowa, śpiączka",
+        "Drżenie, poty, tachykardia, napady drgawkowe, majaczenie",
+        "Diazepam / lorazepam, witamina B1 (tiamina)"
+      ],
+      [
+        "Opioidy",
+        "Miosis (szpilkowate źrenice), depresja oddechowa, sedacja",
+        "Mydriasis (rozszerzone źrenice), łzawienie, piloerekcja, biegunka",
+        "Nalokson (odtrutka), buprenorfina / metadon"
+      ],
+      [
+        "Stymulanty (amfetamina)",
+        "Mydriasis, pobudzenie, tachykardia, paranoja, hipertermia",
+        "Ciężka dysforia, hipersomnia, anhedonia, ryzyko suicydalne",
+        "Leki przeciwpsychotyczne II gen., benzodiazepiny objawowo"
+      ]
+    ]
+  },
+  "advanced": "W przypadku podejrzenia encefalopatii Wernickego (triada: ataksja, splątanie, oftalmoplegia/oczopląs) podanie dożylne glukozy przed tiaminą zużywa resztkowe zapasy pirofosforanu tiaminy w komórkach i może wywołać nieodwracalne uszkodzenie ciał suteczkowatych i wzgórza (zespół Korsakowa). Tiaminę należy zawsze podać PRZED roztworami węglowodanów.",
+  "summary": "Substancje psychoaktywne maskują i indukują psychozy oraz afektywne dekompensacje. Ostre zespoły odstawienne wymagają BZD wg CIWA-Ar i wczesnej profilaktyki encefalopatii tiaminą przed wlewem glukozy.",
+  "sourceIds": [
+    "who-assist",
+    "icd11-cddr",
+    "ptp-standardy"
+  ],
+  "questions": [
+    {
+      "id": "psych-subst-q1",
+      "lessonId": "substancje-i-secondary-causes",
+      "prompt": "Dlaczego u pacjenta z podejrzeniem alkoholowego zespołu abstynencyjnego i hipoglikemii tiaminę należy podać PRZED roztworem glukozy?",
+      "options": [
+        {
+          "text": "Glukoza powoduje natychmiastową neutralizację chemiczną cząsteczki tiaminy we krwi",
+          "explanation": "Glukoza nie wchodzi w bezpośrednią reakcję chemiczną niszczącą tiaminę."
+        },
+        {
+          "text": "Tiamina w połączeniu z glukozą wywołuje ciężki obrzęk płuc",
+          "explanation": "Nie ma takiego mechanizmu patofizjologicznego."
+        },
+        {
+          "text": "Podanie glukozy bez tiaminy gwałtownie zużywa zapasy witaminy B1 i może wywołać nieodwracalną encefalopatię Wernickego",
+          "explanation": "Tiamina jest niezbędnym koenzymem dehydrogenazy pirogronianowej w cyklu Krebsa komórek nerwowych."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-subst-q2",
+      "lessonId": "substancje-i-secondary-causes",
+      "prompt": "Które benzodiazepiny są lekami z wyboru w alkoholowym zespole odstawiennym u pacjenta z zaawansowaną marskością wątroby?",
+      "options": [
+        {
+          "text": "Lorazepam lub oksazepam (sprzęgane przez glukuronidację z pominięciem enzymów mikrosomalnych CYP450)",
+          "explanation": "Leki te nie ulegają utlenianiu wątrobowemu i nie kumulują się niebezpiecznie w niewydolności wątroby."
+        },
+        {
+          "text": "Diazepam w maksymalnych dawkach dobowych",
+          "explanation": "Diazepam ulega oksydacji przez CYP i ma bardzo długi czas półtrwania metabolitów, grożąc śpiączką wątrobową."
+        },
+        {
+          "text": "Klonazepam w połączeniu z midazolamem doustnym",
+          "explanation": "Nie są to leki rekomendowane w dysfunkcji hepatocytów."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-subst-q3",
+      "lessonId": "substancje-i-secondary-causes",
+      "prompt": "Jaki objaw w badaniu fizykalnym jednoznacznie odróżnia ostre przedawkowanie opioidów od intoksykacji kokainą?",
+      "options": [
+        {
+          "text": "Występowanie drżenia zamiarowego w kokainie",
+          "explanation": "Drżenie zamiarowe wskazuje na uszkodzenie móżdżku."
+        },
+        {
+          "text": "Wąskie, szpilkowate źrenice (miosis) i spowolnienie oddechów w opioidach vs rozszerzone źrenice (mydriasis) i tachykardia w kokainie",
+          "explanation": "Wąskie źrenice i depresja oddechowa to kluczowe cechy osiowe toksydromu opioidowego."
+        },
+        {
+          "text": "Podwyższenie temperatury ciała powyżej 42 stopni wyłącznie w opioidach",
+          "explanation": "Hipertermia jest typowa dla stymulantów i zespołu serotoninowego, nie dla czystych opioidów."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-subst-q4",
+      "lessonId": "substancje-i-secondary-causes",
+      "prompt": "W jakim przedziale czasowym po zaprzestaniu picia alkoholu rozwija się typowo pełnoobjawowe majaczenie drżenne (Delirium Tremens)?",
+      "options": [
+        {
+          "text": "W ciągu pierwszych 15 minut od ostatniego kieliszka",
+          "explanation": "W ciągu 15 minut stężenie alkoholu rośnie, a nie spada."
+        },
+        {
+          "text": "Dopiero po 6 miesiącach całkowitej abstynencji",
+          "explanation": "Po 6 miesiącach ryzyko ostrego delirium tremens nie występuje."
+        },
+        {
+          "text": "48 do 72 godzin od ostatniej dawki alkoholu",
+          "explanation": "DT rozwija się w 2–3 dobie po przerwaniu ciągu, wyprzedzane przez niepowikłane objawy abstynencyjne."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-subst-q5",
+      "lessonId": "substancje-i-secondary-causes",
+      "prompt": "Która skala kliniczna jest międzynarodowym standardem do monitorowania nasilenia alkoholowego zespołu abstynencyjnego i dawkowania BZD?",
+      "options": [
+        {
+          "text": "Skala CIWA-Ar (Clinical Institute Withdrawal Assessment for Alcohol)",
+          "explanation": "Punktacja CIWA-Ar warunkuje dawkę doraźną benzodiazepiny w protokole objawowym (symptom-triggered)."
+        },
+        {
+          "text": "Skala PANSS dla schizofrenii",
+          "explanation": "PANSS służy do oceny objawów wytwórczych i ubytkowych schizofrenii."
+        },
+        {
+          "text": "Skala Glasgow Coma Scale w urazach głowy",
+          "explanation": "GCS ocenia poziom przytomności, nie specyficzne objawy abstynencyjne."
+        }
+      ],
+      "answer": 0
+    }
+  ],
+  "assetIds": []
+}

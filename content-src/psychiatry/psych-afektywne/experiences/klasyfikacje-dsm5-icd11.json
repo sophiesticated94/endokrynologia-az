@@ -1,0 +1,383 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "klasyfikacje-dsm5-icd11",
+  "objectives": [
+    {
+      "id": "klasyfikacje-dsm5-icd11-obj-1",
+      "statement": "Porównasz filozofię diagnostyczną DSM-5-TR (kryteria twarde) z ICD-11 CDDR (elastyczność kliniczna).",
+      "kind": "differentiation"
+    },
+    {
+      "id": "klasyfikacje-dsm5-icd11-obj-2",
+      "statement": "Wskażesz główne różnice w kategoryzacji zaburzeń osobowości, PTSD i żałoby powikłanej.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "klasyfikacje-dsm5-icd11-obj-3",
+      "statement": "Zastosujesz operacyjne progi czasowe i kryteria wykluczenia w codziennej praktyce.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-class-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "klasyfikacje-dsm5-icd11-obj-1"
+    ],
+    "prompt": "Jak klasyfikacja ICD-11 CDDR rewolucyjnie zmieniła diagnozowanie zaburzeń osobowości w porównaniu z DSM-5-TR?",
+    "options": [
+      "Zabroniła diagnozowania zaburzeń osobowości u osób dorosłych",
+      "Zastąpiła 10 tradycyjnych kategorii oceną stopnia ciężkości (łagodne/umiarkowane/ciężkie) oraz domenami cechowymi",
+      "Wprowadziła 40 nowych odrębnych podtypów osobowości"
+    ],
+    "optionFeedback": [
+      "Zaburzenia osobowości pozostają ważną jednostką diagnostyczną.",
+      "ICD-11 zrezygnowało z arbitralnych podziałów na rzecz modelu wymiarowego, zachowując jedynie specyfikator cech Borderline.",
+      "Wręcz przeciwnie — zmniejszyła fragmentację kategoryczną."
+    ],
+    "answer": 1,
+    "explanation": "ICD-11 zrezygnowało z arbitralnych podziałów na rzecz modelu wymiarowego, zachowując jedynie specyfikator cech Borderline.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "icd11-cddr",
+      "dsm5tr",
+      "ptp-standardy"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "klasyfikacje-dsm5-icd11-block-1",
+      "title": "Filozofia DSM-5-TR vs ICD-11 CDDR (2024)",
+      "text": "DSM-5-TR (APA 2022) opiera się na sztywnych kryteriach operacyjnych (algorytmy typu „co najmniej X z Y objawów przez Z czasu”), stworzonych głównie dla standaryzacji badań klinicznych. Z kolei ICD-11 CDDR (WHO 2024 — Clinical Descriptions and Diagnostic Requirements) stawia na globalną użyteczność kliniczną (clinical utility), zmniejsza arbitralną liczbę progów objawowych i kładzie nacisk na wymiarowe nasilenie oraz wpływ na funkcjonowanie w różnych kręgach kulturowych.",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "ptp-standardy"
+      ],
+      "checkpointId": "psych-class-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-dsm-icd-comparison",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "klasyfikacje-dsm5-icd11-block-2",
+      "title": "Kluczowe różnice nozologiczne",
+      "text": "Najważniejsze rozbieżności obejmują: 1) Zaburzenia osobowości: ICD-11 całkowicie zrezygnowało z tradycyjnych kategorii (paranoidalna, histrioniczna, schizoidalna) na rzecz oceny stopnia ciężkości (łagodne, umiarkowane, ciężkie) oraz 5 domen cechowych; zachowano jedynie wyróżnik Borderline pattern. DSM-5 zachował 10 tradycyjnych kategorii w 3 wiązkach (A, B, C); 2) Trauma: ICD-11 wprowadziło odrębną jednostkę — Złożone PTSD (Complex PTSD — CPTSD), obejmującą dysregulację afektu, negatywny obraz siebie i trudności w relacjach; 3) Żałoba: ICD-11 definiuje Prolonged Grief Disorder po 6 miesiącach, a DSM-5-TR po 12 miesiącach.",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "ptp-standardy"
+      ],
+      "checkpointId": "psych-class-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "microcase-boundary-disorder",
+          "kind": "micro-case",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "klasyfikacje-dsm5-icd11-block-3",
+      "title": "Hierarchia diagnostyczna i wykluczenia",
+      "text": "W obu systemach obowiązują uniwersalne zasady wykluczenia: 1) Objawy nie mogą wynikać z bezpośredniego działania fizjologicznego substancji (leku, narkotyku) ani toksyny; 2) Objawy nie mogą być bezpośrednim skutkiem innego stanu somatycznego lub neurologicznego; 3) Diagnoza wyższego rzędu unieważnia diagnozę niższego rzędu (np. objawy psychotyczne występujące wyłącznie w epizodzie manii nie uprawniają do diagnozy schizofrenii).",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "ptp-standardy"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-class-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "klasyfikacje-dsm5-icd11-obj-2"
+      ],
+      "prompt": "Jaka odrębna jednostka związana z ciężką, powtarzalną traumą istnieje w ICD-11, a nie została wyodrębniona jako osobna choroba w DSM-5-TR?",
+      "options": [
+        "Schizofrenia paranoidalna o późnym początku",
+        "Proste zaburzenie lękowe",
+        "Złożony zespół stresu pourazowego (Complex PTSD — CPTSD)"
+      ],
+      "optionFeedback": [
+        "Schizofrenia paranoidalna została wycofana z obu klasyfikacji.",
+        "Zaburzenia lękowe istnieją w obu systemach.",
+        "CPTSD w ICD-11 obejmuje klasyczną triadę PTSD plus zaburzenia regulacji afektu, poczucie bezwartościowości i trudności relacyjne."
+      ],
+      "answer": 2,
+      "explanation": "CPTSD w ICD-11 obejmuje klasyczną triadę PTSD plus zaburzenia regulacji afektu, poczucie bezwartościowości i trudności relacyjne.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "ptp-standardy"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-class-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "klasyfikacje-dsm5-icd11-obj-3"
+      ],
+      "prompt": "Jaki jest minimalny próg czasowy trwania żałoby powikłanej (Prolonged Grief Disorder) wymagany w ICD-11 CDDR?",
+      "options": [
+        "Co najmniej 6 miesięcy od śmierci bliskiej osoby",
+        "Wystarczą 2 dni po pogrzebie",
+        "Dokładnie 10 lat ciągłego płaczu"
+      ],
+      "optionFeedback": [
+        "W ICD-11 próg wynosi 6 miesięcy, podczas gdy DSM-5-TR wymaga 12 miesięcy u osób dorosłych.",
+        "Reakcja w pierwszych dniach jest fizjologiczną żałobą, nie zaburzeniem psychicznym.",
+        "10 lat to stanowczo zbyt długi próg, uniemożliwiający pomoc terapeutyczną."
+      ],
+      "answer": 0,
+      "explanation": "W ICD-11 próg wynosi 6 miesięcy, podczas gdy DSM-5-TR wymaga 12 miesięcy u osób dorosłych.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "ptp-standardy"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "klasyfikacje-dsm5-icd11-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "klasyfikacje-dsm5-icd11-obj-1",
+      "klasyfikacje-dsm5-icd11-obj-2",
+      "klasyfikacje-dsm5-icd11-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Klasyfikacje diagnostyczne: DSM-5-TR vs ICD-11 CDDR”.",
+    "modelAnswer": "ICD-11 stawia na elastyczność kliniczną i podejście wymiarowe (np. w zaburzeniach osobowości i CPTSD), podczas gdy DSM-5-TR utrzymuje sztywne algorytmy kryterialne.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "icd11-cddr",
+      "dsm5tr",
+      "ptp-standardy"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-class-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "klasyfikacje-dsm5-icd11-obj-1"
+      ],
+      "prompt": "Co jest podstawową zasadą wykluczenia obowiązującą w obu systemach klasyfikacyjnych?",
+      "options": [
+        "Brak możliwości współwystępowania więcej niż jednego rozpoznania",
+        "Wykluczenie bezpośredniego wpływu substancji psychoaktywnych lub ogólnego stanu somatycznego na objawy",
+        "Konieczność wykonania biopsji mózgu przed wdrożeniem leków"
+      ],
+      "optionFeedback": [
+        "Współchorobowość (komorbidność) jest powszechna i dopuszczalna.",
+        "Przed postawieniem diagnozy pierwotnej należy upewnić się, że objawy nie są wtórne do zatrucia lub choroby ciała.",
+        "Biopsja mózgu nie jest elementem rutynowej diagnostyki psychiatrycznej."
+      ],
+      "answer": 1,
+      "explanation": "Przed postawieniem diagnozy pierwotnej należy upewnić się, że objawy nie są wtórne do zatrucia lub choroby ciała.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "ptp-standardy"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-class-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "klasyfikacje-dsm5-icd11-obj-1"
+      ],
+      "prompt": "Czym charakteryzuje się podejście Research Domain Criteria (RDoC) w psychiatrii naukowej?",
+      "options": [
+        "Zaleca diagnozowanie chorób wyłącznie na podstawie astrologii",
+        "Wycofuje wszystkie leki przeciwdepresyjne z rynku",
+        "Bada wymiary neurobiologiczne (obwody, geny, przetwarzanie nagrody) niezależnie od granic jednostek nozologicznych"
+      ],
+      "optionFeedback": [
+        "RDoC to ściśle biologiczny projekt neuropsychologiczny NIMH.",
+        "RDoC służy lepszemu zrozumieniu patomechanizmów i celowanemu rozwojowi leków.",
+        "RDoC bada fundamentalne mechanizmy psychiczne w poprzek tradycyjnych rozpoznań DSM i ICD."
+      ],
+      "answer": 2,
+      "explanation": "RDoC bada fundamentalne mechanizmy psychiczne w poprzek tradycyjnych rozpoznań DSM i ICD.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr",
+        "ptp-standardy"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "class-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "klasyfikacje-dsm5-icd11-obj-1"
+      ],
+      "claimIds": [
+        "claim-af-ptsd-cptsd-diff"
+      ],
+      "prompt": "Pacjentka po wieloletniej traumie relacyjnej prezentuje objawy PTSD oraz utrwalony negatywny obraz siebie („jestem bezwartościowa”), przewlekłą pustkę emocjonalną i trudności w bliskich relacjach. Jakie rozpoznanie postawisz w systemie ICD-11?",
+      "options": [
+        "Złożone zaburzenie po stresie traumatycznym (cPTSD)",
+        "Klasyczne PTSD bez zaburzeń samoorganizacji",
+        "Wyłącznie zaburzenie osobowości borderline"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-cptsd-dso",
+            "label": "Triada PTSD + domeny zaburzeń samoorganizacji (DSO)",
+            "acceptedPhrases": [
+              "dso",
+              "zaburzenia samoorganizacji",
+              "cptsd",
+              "afekt",
+              "relacje",
+              "obraz siebie"
+            ]
+          },
+          {
+            "id": "c-icd11-differentiation",
+            "label": "ICD-11 jako klasyfikacja wyróżniająca cPTSD od PTSD",
+            "acceptedPhrases": [
+              "icd-11",
+              "icd11",
+              "odrębna jednostka",
+              "kryteria cddr"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "ICD-11 formalnie definiuje cPTSD jako triadę PTSD oraz triadę DSO (dysregulacja afektu, negatywna tożsamość, deficyty relacyjne).",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "icd11-cddr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "class-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "klasyfikacje-dsm5-icd11-obj-2"
+      ],
+      "claimIds": [
+        "claim-af-mdd-duration"
+      ],
+      "prompt": "Wyjaśnij, czym różni się podejście kategorialne (DSM-5-TR) od podejścia wymiarowego w ocenie zaburzeń psychicznych na przykładzie zaburzeń osobowości.",
+      "modelAnswer": "Podejście kategorialne zakłada obecność odrębnych, ostro odgraniczonych jednostek chorobowych na podstawie spełnienia minimalnej liczby objawów z listy. Podejście wymiarowe (przyjęte w ICD-11 i sekcji III DSM-5) ocenia stopień nasilenia dysfunkcji funkcjonowania osobowości oraz natężenie cech wzdłuż kontinuum cech patologicznych.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-categorical-cutoff",
+            "label": "Model kategorialny: progi objawowe i sztywne jednostki",
+            "acceptedPhrases": [
+              "kategorialny",
+              "próg",
+              "jednostki",
+              "tak lub nie",
+              "liczba objawów"
+            ]
+          },
+          {
+            "id": "c-dimensional-continuum",
+            "label": "Model wymiarowy: kontinuum nasilenia cech i dysfunkcji",
+            "acceptedPhrases": [
+              "wymiarowy",
+              "kontinuum",
+              "stopień nasilenia",
+              "cechy",
+              "spektrum"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Model kategorialny binarnie przypisuje diagnozę, model wymiarowy określa stopień nasilenia zaburzeń funkcjonowania.",
+      "difficulty": "both",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "class-bank-3",
+      "type": "multi_select",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "klasyfikacje-dsm5-icd11-obj-1",
+        "klasyfikacje-dsm5-icd11-obj-3"
+      ],
+      "claimIds": [
+        "claim-af-mdd-duration"
+      ],
+      "prompt": "Zaznacz wszystkie cechy, które różnią klasyfikację ICD-11 od DSM-5-TR w obszarze diagnostyki afektywnej i traumy.",
+      "options": [
+        "Wprowadzenie cPTSD jako odrębnego rozpoznania w ICD-11 (brak w DSM-5-TR)",
+        "Całkowite usunięcie pojęcia schizofrenii z ICD-11",
+        "Wymiarowy model ciężkości zaburzeń osobowości w ICD-11",
+        "Wymóg trwania depresji przez minimum 6 miesięcy w ICD-11"
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "explanation": "ICD-11 wprowadziło formalne rozpoznanie cPTSD oraz wymiarowy model osobowości. Schizofrenia pozostaje w ICD-11, a kryterium czasu depresji wynosi 2 tygodnie.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "pathway-builder",
+    "timeline"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., CANMAT oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "id": "lekoopornosc-i-klozapina",
+  "moduleId": "psych-farmakologia",
+  "title": "Lekooporność w schizofrenii (TRS) i algorytm włączania klozapiny",
+  "subtitle": "Kryteria TRRIP, schemat titracji klozapiny, powikłania jelitowe i monitorowanie",
+  "group": "Precyzyjna psychofarmakologia i metabolizm",
+  "minutes": 18,
+  "goals": [
+    "Zdefiniujesz schizofrenię lekooporną (TRS) wg kryteriów konsensusu TRRIP.",
+    "Wdrożysz bezpieczną titrację klozapiny od 12,5 mg/d i osiągniesz stężenie docelowe 350–600 ng/ml.",
+    "Zapobiegniesz zagrażającej życiu hipomotoryce przewodu pokarmowego (clozapine-induced gastrointestinal hypomotility)."
+  ],
+  "sections": [
+    {
+      "title": "Kryteria lekooporności wg konsensusu TRRIP",
+      "text": "Zgodnie z międzynarodowym konsensusem TRRIP (Treatment Response and Resistance in Psychosis) schizofrenię lekooporną (TRS) rozpoznaje się, gdy u pacjenta nie uzyskano zadowalającej poprawy (redukcja PANSS < 20% lub brak remisji) po co najmniej dwóch kolejnych próbach terapeutycznych różnymi lekami przeciwpsychotycznymi w odpowiedniej dawce (ekwiwalent >= 600 mg chlorpromazyny/d) przez co najmniej 6 tygodni każda, przy potwierdzonej dobrej adherencji (np. badaniem TDM)."
+    },
+    {
+      "title": "Klozapina w schizofrenii lekoopornej (TRS)",
+      "text": "Klozapina jest jedynym lekiem o udowodnionej przewadze w TRS. Ze względu na ryzyko ostrej hipotensji ortostatycznej i zapaści naczyniowej wdrażanie rozpoczyna się od mikrodawki 12,5 mg lub 25 mg na noc, zwiększając dawkę powoli o 25–50 mg co 1–2 dni do dawki docelowej 300–450 mg/d. Stężenie terapeutyczne w surowicy krwi powinno wynosić 350–600 ng/ml."
+    },
+    {
+      "title": "Zaparcia i atonia jelit: cichy zabójca na klozapinie",
+      "text": "Choć agranulocytoza budzi największy lęk, to ciężka hipomotoryka przewodu pokarmowego (atonia, niedrożność porażenna jelit) jest przyczyną większej liczby zgonów na klozapinie niż powikłania hematologiczne. Silna blokada receptorów M1–M4 i 5-HT3 paraliżuje perystaltykę. Profilaktyka wymaga rutynowego monitorowania wypróżnień i wczesnego wdrażania leków osmotycznych (makrogole/PEG) od pierwszych dni leczenia."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Etap leczenia klozapiną",
+      "Dawka dobowej titracji",
+      "Zadania monitorujące",
+      "Możliwe powikłania"
+    ],
+    "rows": [
+      [
+        "Dzień 1–2",
+        "12,5 – 25 mg na noc",
+        "Pomiar ciśnienia (hipotensja ortostatyczna), tętno",
+        "Zapaść naczyniowa, zawroty głowy"
+      ],
+      [
+        "Dzień 3–14",
+        "Stopniowo do 100–200 mg/d",
+        "Morfologia z rozmazem (ANC) co tydzień",
+        "Sedacja, ślinotok nocny"
+      ],
+      [
+        "Tydzień 3–4",
+        "200 – 400 mg/d (do steady-state)",
+        "Badanie troponin, CRP (zapalenie m. sercowego)",
+        "Gorączka, tachykardia spoczynkowa"
+      ],
+      [
+        "Podtrzymanie",
+        "Indywidualna wg TDM (350–600 ng/ml)",
+        "ANC co 4 tyg. po 18 tyg., nadzór perystaltyki jelit",
+        "Zaparcia, niedrożność, przyrost wagi"
+      ]
+    ]
+  },
+  "advanced": "Ślinotok nocny (sialorrhea) dotyczy do 50–80% pacjentów leczonych klozapiną. Wynika z paradoksalnego agonizmu receptorów muskarynowych M4 połączonego z osłabieniem odruchu połykania podczas snu. Skutecznym leczeniem miejscowym jest podanie podjęzykowe kropli z bromku ipratropium lub atropiny (1–2 krople pod język przed snem), co hamuje wydzielanie śliny bez ogólnoustrojowych działań niepożądanych.",
+  "summary": "Klozapina jest lekiem I wyboru w lekooporności (TRS) po nieskuteczności 2 neuroleptyków. Wymaga wolnej titracji, nadzoru hematologicznego (ANC) oraz aktywnej prewencji śmiertelnej atonii jelit makrogolami.",
+  "sourceIds": [
+    "clozapine-consensus",
+    "wfsbp-schizophrenia",
+    "nice-schizophrenia"
+  ],
+  "questions": [
+    {
+      "id": "psych-cloz-q1",
+      "lessonId": "lekoopornosc-i-klozapina",
+      "prompt": "Kiedy zgodnie z konsensusem TRRIP należy podjąć decyzję o włączeniu klozapiny w schizofrenii?",
+      "options": [
+        {
+          "text": "Po braku adekwatnej odpowiedzi na co najmniej 2 różne leki przeciwpsychotyczne stosowane w odpowiedniej dawce przez min. 6 tygodni każdy",
+          "explanation": "Odwlekanie wdrożenia klozapiny o lata drastycznie pogarsza szanse na remisję poznawczą i społeczną."
+        },
+        {
+          "text": "Wyłącznie po wyczerpaniu wszystkich neuroleptyków atypowych w politerapii trwającej minimum 5 lat",
+          "explanation": "Zgodnie z TRRIP wystarczą 2 nieudane próby terapeutyczne (min. 6 tygodni każda); zwlekanie z wdrożeniem klozapiny utrwala lekooporność."
+        },
+        {
+          "text": "Jako lek I rzutu w pierwszym dniu pierwszego epizodu psychozy u każdego chorego",
+          "explanation": "Klozapina nie jest lekiem pierwszego rzutu w niepowikłanym pierwszym epizodzie z uwagi na profil bezpieczeństwa i wymogi TDM."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-cloz-q2",
+      "lessonId": "lekoopornosc-i-klozapina",
+      "prompt": "Które powikłanie klozapiny statystycznie odpowiada za większą liczbę zgonów pacjentów niż agranulocytoza?",
+      "options": [
+        {
+          "text": "Ostre zatrzymanie moczu bez cech infekcji pęcherza",
+          "explanation": "Choć działanie antycholinergiczne może utrudniać mikcję, zagrażającym życiu powikłaniem hipomotorycznym o najwyższej śmiertelności jest niedrożność i martwica jelit."
+        },
+        {
+          "text": "Porażenna niedrożność jelit wywołana ciężką hipomotoryką przewodu pokarmowego (clozapine-induced gastrointestinal hypomotility)",
+          "explanation": "Silne działanie antycholinergiczne i serotoninergiczne prowadzi do zalegania mas kałowych, martwicy jelita i sepsy."
+        },
+        {
+          "text": "Ciężki parkinsonizm polekowy z wczesnymi dyskinezami późnymi",
+          "explanation": "Klozapina charakteryzuje się minimalnym powinowactwem do prążkowiowych receptorów D2 i niemal nie wywołuje EPS ani dyskinez późnych."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-cloz-q3",
+      "lessonId": "lekoopornosc-i-klozapina",
+      "prompt": "Jaki zakres stężenia klozapiny we krwi w badaniu TDM uznaje się za optymalny w leczeniu schizofrenii lekoopornej?",
+      "options": [
+        {
+          "text": "50 do 150 ng/ml",
+          "explanation": "Stężenia poniżej 200–350 ng/ml są z reguły subterapeutyczne w schizofrenii lekoopornej i korelują z brakiem remisji wg AGNP."
+        },
+        {
+          "text": "1200 do 2000 ng/ml",
+          "explanation": "Stężenia powyżej 1000 ng/ml wiążą się z gwałtownym skokiem toksyczności, głębokiej sedacji, mioklonii i napadów drgawkowych."
+        },
+        {
+          "text": "350 do 600 ng/ml",
+          "explanation": "Poniżej 350 ng/ml brak skuteczności w TRS, a powyżej 1000 ng/ml drastycznie rośnie ryzyko drgawek padaczkowych."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-cloz-q4",
+      "lessonId": "lekoopornosc-i-klozapina",
+      "prompt": "W jaki sposób leczy się uciążliwy ślinotok nocny (sialorrhea) u pacjenta leczonego klozapiną?",
+      "options": [
+        {
+          "text": "Miejscowym podaniem podjęzykowym kropli z lekiem antycholinergicznym (np. bromek ipratropium lub atropina pod język na noc)",
+          "explanation": "Miejscowe zablokowanie receptorów w śliniankach ogranicza wydzielanie śliny bez nasilania zaparć ogólnoustrojowych."
+        },
+        {
+          "text": "Eskalacją dawki klozapiny o 100 mg przed snem",
+          "explanation": "Zwiększenie dawki nasili pobudzenie receptorów muskarynowych i pogłębi hipersaliwację oraz sedację."
+        },
+        {
+          "text": "Doustnym podaniem chlorpromazyny o silnym działaniu sedatywnym",
+          "explanation": "Dodanie kolejnego leku przeciwpsychotycznego p.o. zwiększa ogólne obciążenie antycholinergiczne i ryzyko zaparć bez kontroli ślinianek."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-cloz-q5",
+      "lessonId": "lekoopornosc-i-klozapina",
+      "prompt": "Od jakiej dawki początkowej należy bezwzględnie rozpoczynać terapię klozapiną, aby zapobiec ostrej zapaści naczyniowej i ciężkiej hipotensji ortostatycznej?",
+      "options": [
+        {
+          "text": "300 mg w pojedynczej dawce wieczornej",
+          "explanation": "Dawka 300 mg jest dawką docelową osiąganą po 2–3 tygodniach ostrożnej titracji, nie dawką startową."
+        },
+        {
+          "text": "12,5 mg do 25 mg podane na noc",
+          "explanation": "Klozapina silnie blokuje receptory alfa-1 adrenergiczne; zbyt szybka titracja grozi utratą przytomności i wstrząsem."
+        },
+        {
+          "text": "100 mg 2 razy na dobę od pierwszego dnia",
+          "explanation": "Rozpoczęcie od 200 mg/d wiąże się ze skrajnym ryzykiem ostrej zapaści naczyniowej, tachykardii odruchowej i drgawek."
+        }
+      ],
+      "answer": 1
+    }
+  ],
+  "assetIds": []
+}

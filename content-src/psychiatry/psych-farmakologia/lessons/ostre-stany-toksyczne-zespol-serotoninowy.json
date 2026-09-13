@@ -1,0 +1,171 @@
+{
+  "id": "ostre-stany-toksyczne-zespol-serotoninowy",
+  "moduleId": "psych-farmakologia",
+  "title": "Zespół serotoninowy: mechanizm, kryteria Huntera i ratownictwo",
+  "subtitle": "Nadmierna stymulacja 5-HT2A/1A, klonus, sztywność i leczenie wspomagające cyproheptadyną",
+  "group": "Toksykologia i stany nagłe w psychiatrii",
+  "minutes": 18,
+  "goals": [
+    "Zastosujesz kryteria decyzyjne Huntera (Hunter Serotonin Toxicity Criteria) o najwyższej czułości i swoistości.",
+    "Zidentyfikujesz klonus (spontaniczny, wywołany, oczny) jako osiowy objaw decyzyjny.",
+    "Wdrożysz leczenie ratunkowe: chłodzenie, benzodiazepiny oraz wspomagającego antagonistę 5-HT2A – cyproheptadynę."
+  ],
+  "sections": [
+    {
+      "title": "Patofizjologia burzy serotoninowej",
+      "text": "Zespół serotoninowy (serotonin toxicity / syndrome) jest potencjalnie śmiertelnym powikłaniem wynikającym z masywnej nadstymulacji ośrodkowych i obwodowych receptorów serotoninowych (przede wszystkim 5-HT2A i 5-HT1A). Do zespołu dochodzi przede wszystkim po połączeniu co najmniej dwóch leków zwiększających stężenie serotoniny w odmiennych mechanizmach (np. SSRI + iMAO, SSRI + tramadol, linezolid, dekstrometorfan, tryptany, lit), rzadziej po ciężkim przedawkowaniu pojedynczego leku serotoninergicznego."
+    },
+    {
+      "title": "Kryteria Decyzyjne Huntera (Dunkley 2003)",
+      "text": "Zastąpiły one przestarzałe kryteria Sternbacha. U pacjenta przyjmującego lek serotoninergiczny zespół rozpoznaje się, gdy występuje co najmniej jeden z warunków: 1) Klonus spontaniczny; 2) Klonus indukowany ORAZ pobudzenie lub obfite pocenie się; 3) Klonus oczny ORAZ pobudzenie lub obfite pocenie się; 4) Drżenie mięśniowe ORAZ hiperrefleksja (wygórowanie odruchów ścięgnistych); 5) Wzmożone napięcie mięśniowe ORAZ temperatura > 38°C ORAZ klonus (oczny lub indukowany)."
+    },
+    {
+      "title": "Postępowanie ratunkowe i swoista farmakoterapia",
+      "text": "Pierwszym krokiem jest natychmiastowe odstawienie wszystkich leków serotoninergicznych. W opanowaniu pobudzenia i drżeń lekiem I wyboru są benzodiazepiny i.v. (np. diazepam, lorazepam). W przypadkach umiarkowanych i ciężkich stosuje się antagonistę receptorów 5-HT2A – cyproheptadynę (początkowo 12 mg p.o./zgłębnik, następnie 2 mg co 2 godziny) jako terapię wspomagającą. Ciężka hipertermia (> 39–40°C) wymaga intubacji, sedacji i miorelaksacji (nigdy sukcynylocholiną)."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Objaw kliniczny",
+      "Występowanie w zespole serotoninowym",
+      "Występowanie w NMS",
+      "Różnicowanie"
+    ],
+    "rows": [
+      [
+        "Odruchy ścięgniste (odruchy głębokie)",
+        "Hiperrefleksja, klonus (kluczowy w kryteriach Huntera)",
+        "Osłabione lub prawidłowe",
+        "Klonus w obecności leku 5-HT silnie przemawia za zespołem serotoninowym"
+      ],
+      [
+        "Napięcie mięśniowe",
+        "Zwiększone, głównie kończyny dolne",
+        "Uogólniona sztywność \"rury ołowianej\"",
+        "Sztywność rury ołowianej typowa dla NMS"
+      ],
+      [
+        "Perystaltyka jelit",
+        "Wzmożona (biegunka, przelewanie)",
+        "Osłabiona lub porażenna",
+        "Biegunka towarzyszy serotoninie"
+      ],
+      [
+        "Dynamika początku",
+        "Gwałtowna (w ciągu godzin od dawki)",
+        "Stopniowa (rozwój w ciągu kilku dni)",
+        "Szybki początek sprzyja toksyczności 5-HT"
+      ]
+    ]
+  },
+  "advanced": "Linezolid (popularny antybiotyk przeciwko szczepom MRSA i VRE) jest odwracalnym, nieselektywnym inhibitorem monoaminooksydazy (MAO). Podanie linezolidu pacjentowi przyjmującemu SSRI lub SNRI wywołuje gwałtowny, zagrażający życiu zespół serotoninowy. Przed podaniem linezolidu konieczna jest natychmiastowa weryfikacja leków psychotropowych.",
+  "summary": "Zespół serotoninowy diagnozuje się wg kryteriów Huntera (klonus + hiperrefleksja + poty). Leczenie obejmuje odstawienie leków, benzodiazepiny i cyproheptadynę. Linezolid jest silnym iMAO i nie wolno go łączyć z SSRI.",
+  "sourceIds": [
+    "hunter-criteria",
+    "maudsley15",
+    "stahl-essential"
+  ],
+  "questions": [
+    {
+      "id": "psych-hunt-q1",
+      "lessonId": "ostre-stany-toksyczne-zespol-serotoninowy",
+      "prompt": "Jaki objaw neurologiczny posiada najwyższą czułość i swoistość i stanowi fundament kryteriów decyzyjnych Huntera w zespole serotoninowym?",
+      "options": [
+        {
+          "text": "Izolowane symetryczne osłabienie czucia wibracji w dystalnych częściach kończyn",
+          "explanation": "Polineuropatia obwodowa nie wchodzi w skład kryteriów Huntera ani toksydromu serotoninowego."
+        },
+        {
+          "text": "Zwiotczenie mięśni żwaczy i obustronne opadanie powiek",
+          "explanation": "W zespole serotoninowym dochodzi do wzmożenia napięcia mięśniowego i klonusu, a nie objawów miastenicznych."
+        },
+        {
+          "text": "Klonus (spontaniczny, indukowany lub oczny)",
+          "explanation": "Klonus w połączeniu z hiperrefleksją i pobudzeniem/potami pozwala na pewne postawienie rozpoznania."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-hunt-q2",
+      "lessonId": "ostre-stany-toksyczne-zespol-serotoninowy",
+      "prompt": "Jaki lek będący antagonistą receptorów 5-HT2A stosuje się doustnie jako farmakoterapię wspomagającą w umiarkowanym i ciężkim zespole serotoninowym?",
+      "options": [
+        {
+          "text": "Cyproheptadyna",
+          "explanation": "Działa jako antagonista 5-HT2A i stanowi wsparcie objawowe obok intensywnego chłodzenia i sedacji benzodiazepinami."
+        },
+        {
+          "text": "Haloperydol w iniekcji",
+          "explanation": "Neuroleptyki typowe są przeciwwskazane, gdyż utrudniają termoregulację i mogą wywołać NMS."
+        },
+        {
+          "text": "Propranolol w dawce dożylnej",
+          "explanation": "Beta-blokery mogą wywołać zapaść hipotensyjną i maskować tachykardię."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-hunt-q3",
+      "lessonId": "ostre-stany-toksyczne-zespol-serotoninowy",
+      "prompt": "Który popularny antybiotyk szpitalny o działaniu przeciwko bakteriom Gram-dodatnim (MRSA) jest silnym inhibitorem MAO i może wywołać zgon po podaniu z SSRI?",
+      "options": [
+        {
+          "text": "Azytromycyna",
+          "explanation": "Azytromycyna może wydłużać QTc, lecz nie hamuje enzymu MAO."
+        },
+        {
+          "text": "Linezolid",
+          "explanation": "Linezolid posiada aktywność inhibitora monoaminooksydazy; jednoczesne podanie z SSRI jest kardynalnym błędem."
+        },
+        {
+          "text": "Amoksycylina z kwasem klawulanowym",
+          "explanation": "Penicyliny nie wchodzą w tę interakcję farmakodynamiczną."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-hunt-q4",
+      "lessonId": "ostre-stany-toksyczne-zespol-serotoninowy",
+      "prompt": "Czym różni się badanie odruchów ścięgnistych w zespole serotoninowym od złośliwego zespołu neuroleptycznego (NMS)?",
+      "options": [
+        {
+          "text": "W zespole serotoninowym odruchy są całkowicie zniesione wskutek blokady złącza nerwowo-mięśniowego",
+          "explanation": "W zespole serotoninowym typowa jest hiperrefleksja i klonus, a nie arefleksja."
+        },
+        {
+          "text": "W NMS występuje klonus rzepkowy i oczny",
+          "explanation": "Klonus jest cechą zespołu serotoninowego, nie NMS."
+        },
+        {
+          "text": "W zespole serotoninowym występuje uderzające wygórowanie odruchów (hiperrefleksja) i klonus, a w NMS odruchy są prawidłowe lub stłumione",
+          "explanation": "Jest to kluczowa cecha semiotyczna różnicująca te dwa stany nagłe."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-hunt-q5",
+      "lessonId": "ostre-stany-toksyczne-zespol-serotoninowy",
+      "prompt": "Jaki lek przeciwbólowy dostępny bez recepty lub na receptę wykazuje silne hamowanie wychwytu serotoniny i bywa przyczyną zespołu serotoninowego po dołączeniu do SSRI?",
+      "options": [
+        {
+          "text": "Tramadol (oraz dekstrometorfan w syropach przeciwkaszlowych)",
+          "explanation": "Tramadol blokuje SERT i może wywołać toksyczność połączony z antydepresantami."
+        },
+        {
+          "text": "Paracetamol",
+          "explanation": "Paracetamol nie wpływa bezpośrednio na transporter SERT w OUN."
+        },
+        {
+          "text": "Ibuprofen",
+          "explanation": "NLPZ nie hamują wychwytu zwrotnego serotoniny."
+        }
+      ],
+      "answer": 0
+    }
+  ],
+  "assetIds": []
+}

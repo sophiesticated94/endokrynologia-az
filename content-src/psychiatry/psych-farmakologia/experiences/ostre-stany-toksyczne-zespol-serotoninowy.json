@@ -1,0 +1,411 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "ostre-stany-toksyczne-zespol-serotoninowy",
+  "objectives": [
+    {
+      "id": "ostre-stany-toksyczne-zespol-serotoninowy-obj-1",
+      "statement": "Zastosujesz kryteria decyzyjne Huntera (Hunter Serotonin Toxicity Criteria) o najwyższej czułości i swoistości.",
+      "kind": "decision"
+    },
+    {
+      "id": "ostre-stany-toksyczne-zespol-serotoninowy-obj-2",
+      "statement": "Zidentyfikujesz klonus (spontaniczny, wywołany, oczny) jako osiowy objaw decyzyjny.",
+      "kind": "decision"
+    },
+    {
+      "id": "ostre-stany-toksyczne-zespol-serotoninowy-obj-3",
+      "statement": "Wdrożysz leczenie ratunkowe: chłodzenie, benzodiazepiny oraz wspomagającego antagonistę 5-HT2A – cyproheptadynę.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-hunt-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "ostre-stany-toksyczne-zespol-serotoninowy-obj-1"
+    ],
+    "prompt": "Jaki objaw neurologiczny posiada najwyższą czułość i swoistość i stanowi fundament kryteriów decyzyjnych Huntera w zespole serotoninowym?",
+    "options": [
+      "Izolowane symetryczne osłabienie czucia wibracji w dystalnych częściach kończyn",
+      "Zwiotczenie mięśni żwaczy i obustronne opadanie powiek",
+      "Klonus (spontaniczny, indukowany lub oczny)"
+    ],
+    "optionFeedback": [
+      "Polineuropatia obwodowa nie wchodzi w skład kryteriów Huntera ani toksydromu serotoninowego.",
+      "W zespole serotoninowym dochodzi do wzmożenia napięcia mięśniowego i klonusu, a nie objawów miastenicznych.",
+      "Klonus w połączeniu z hiperrefleksją i pobudzeniem/potami pozwala na pewne postawienie rozpoznania."
+    ],
+    "answer": 2,
+    "explanation": "Klonus w połączeniu z hiperrefleksją i pobudzeniem/potami pozwala na pewne postawienie rozpoznania.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "hunter-criteria",
+      "maudsley15",
+      "stahl-essential"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "ostre-stany-toksyczne-zespol-serotoninowy-block-1",
+      "title": "Patofizjologia burzy serotoninowej",
+      "text": "Zespół serotoninowy (serotonin toxicity / syndrome) jest potencjalnie śmiertelnym powikłaniem wynikającym z masywnej nadstymulacji ośrodkowych i obwodowych receptorów serotoninowych (przede wszystkim 5-HT2A i 5-HT1A). Do zespołu dochodzi przede wszystkim po połączeniu co najmniej dwóch leków zwiększających stężenie serotoniny w odmiennych mechanizmach (np. SSRI + iMAO, SSRI + tramadol, linezolid, dekstrometorfan, tryptany, lit), rzadziej po ciężkim przedawkowaniu pojedynczego leku serotoninergicznego.",
+      "sourceIds": [
+        "hunter-criteria",
+        "maudsley15",
+        "stahl-essential"
+      ],
+      "checkpointId": "psych-hunt-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-serotonin-nms-hunter",
+          "kind": "diagram",
+          "placement": "after-text"
+        },
+        {
+          "id": "deeplink-serotonin-hunter",
+          "kind": "workbench-deeplink",
+          "placement": "end-of-block",
+          "presetId": "serotonin-hunter-001"
+        }
+      ]
+    },
+    {
+      "id": "ostre-stany-toksyczne-zespol-serotoninowy-block-2",
+      "title": "Kryteria Decyzyjne Huntera (Dunkley 2003)",
+      "text": "Zastąpiły one przestarzałe kryteria Sternbacha. U pacjenta przyjmującego lek serotoninergiczny zespół rozpoznaje się, gdy występuje co najmniej jeden z warunków: 1) Klonus spontaniczny; 2) Klonus indukowany ORAZ pobudzenie lub obfite pocenie się; 3) Klonus oczny ORAZ pobudzenie lub obfite pocenie się; 4) Drżenie mięśniowe ORAZ hiperrefleksja (wygórowanie odruchów ścięgnistych); 5) Wzmożone napięcie mięśniowe ORAZ temperatura > 38°C ORAZ klonus (oczny lub indukowany).",
+      "sourceIds": [
+        "hunter-criteria",
+        "maudsley15",
+        "stahl-essential"
+      ],
+      "checkpointId": "psych-hunt-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "widget-hunter-criteria-evaluator",
+          "kind": "interactive-widget",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "ostre-stany-toksyczne-zespol-serotoninowy-block-3",
+      "title": "Postępowanie ratunkowe i swoista farmakoterapia",
+      "text": "Pierwszym krokiem jest natychmiastowe odstawienie wszystkich leków serotoninergicznych. W opanowaniu pobudzenia i drżeń lekiem I wyboru są benzodiazepiny i.v. (np. diazepam, lorazepam). W przypadkach umiarkowanych i ciężkich stosuje się antagonistę receptorów 5-HT2A – cyproheptadynę (początkowo 12 mg p.o./zgłębnik, następnie 2 mg co 2 godziny) jako terapię wspomagającą. Ciężka hipertermia (> 39–40°C) wymaga intubacji, sedacji i miorelaksacji (nigdy sukcynylocholiną).",
+      "sourceIds": [
+        "hunter-criteria",
+        "maudsley15",
+        "stahl-essential"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-hunt-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "ostre-stany-toksyczne-zespol-serotoninowy-obj-2"
+      ],
+      "prompt": "Jaki lek będący antagonistą receptorów 5-HT2A stosuje się doustnie jako farmakoterapię wspomagającą w umiarkowanym i ciężkim zespole serotoninowym?",
+      "options": [
+        "Cyproheptadyna",
+        "Haloperydol w iniekcji",
+        "Propranolol w dawce dożylnej"
+      ],
+      "optionFeedback": [
+        "Działa jako antagonista 5-HT2A i stanowi wsparcie objawowe obok intensywnego chłodzenia i sedacji benzodiazepinami.",
+        "Neuroleptyki typowe są przeciwwskazane, gdyż utrudniają termoregulację i mogą wywołać NMS.",
+        "Beta-blokery mogą wywołać zapaść hipotensyjną i maskować tachykardię."
+      ],
+      "answer": 0,
+      "explanation": "Działa jako antagonista 5-HT2A i stanowi wsparcie objawowe obok intensywnego chłodzenia i sedacji benzodiazepinami.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "hunter-criteria",
+        "maudsley15",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-hunt-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "ostre-stany-toksyczne-zespol-serotoninowy-obj-3"
+      ],
+      "prompt": "Który popularny antybiotyk szpitalny o działaniu przeciwko bakteriom Gram-dodatnim (MRSA) jest silnym inhibitorem MAO i może wywołać zgon po podaniu z SSRI?",
+      "options": [
+        "Azytromycyna",
+        "Linezolid",
+        "Amoksycylina z kwasem klawulanowym"
+      ],
+      "optionFeedback": [
+        "Azytromycyna może wydłużać QTc, lecz nie hamuje enzymu MAO.",
+        "Linezolid posiada aktywność inhibitora monoaminooksydazy; jednoczesne podanie z SSRI jest kardynalnym błędem.",
+        "Penicyliny nie wchodzą w tę interakcję farmakodynamiczną."
+      ],
+      "answer": 1,
+      "explanation": "Linezolid posiada aktywność inhibitora monoaminooksydazy; jednoczesne podanie z SSRI jest kardynalnym błędem.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "hunter-criteria",
+        "maudsley15",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "ostre-stany-toksyczne-zespol-serotoninowy-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "ostre-stany-toksyczne-zespol-serotoninowy-obj-1",
+      "ostre-stany-toksyczne-zespol-serotoninowy-obj-2",
+      "ostre-stany-toksyczne-zespol-serotoninowy-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Zespół serotoninowy: mechanizm, kryteria Huntera i ratownictwo”.",
+    "modelAnswer": "Zespół serotoninowy diagnozuje się wg kryteriów Huntera (klonus + hiperrefleksja + poty). Leczenie obejmuje odstawienie leków, benzodiazepiny i cyproheptadynę. Linezolid jest silnym iMAO i nie wolno go łączyć z SSRI.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "hunter-criteria",
+      "maudsley15",
+      "stahl-essential"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-hunt-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "ostre-stany-toksyczne-zespol-serotoninowy-obj-1"
+      ],
+      "prompt": "Czym różni się badanie odruchów ścięgnistych w zespole serotoninowym od złośliwego zespołu neuroleptycznego (NMS)?",
+      "options": [
+        "W zespole serotoninowym odruchy są całkowicie zniesione wskutek blokady złącza nerwowo-mięśniowego",
+        "W NMS występuje klonus rzepkowy i oczny",
+        "W zespole serotoninowym występuje uderzające wygórowanie odruchów (hiperrefleksja) i klonus, a w NMS odruchy są prawidłowe lub stłumione"
+      ],
+      "optionFeedback": [
+        "W zespole serotoninowym typowa jest hiperrefleksja i klonus, a nie arefleksja.",
+        "Klonus jest cechą zespołu serotoninowego, nie NMS.",
+        "Jest to kluczowa cecha semiotyczna różnicująca te dwa stany nagłe."
+      ],
+      "answer": 2,
+      "explanation": "Jest to kluczowa cecha semiotyczna różnicująca te dwa stany nagłe.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "hunter-criteria",
+        "maudsley15",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-hunt-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "ostre-stany-toksyczne-zespol-serotoninowy-obj-1"
+      ],
+      "prompt": "Jaki lek przeciwbólowy dostępny bez recepty lub na receptę wykazuje silne hamowanie wychwytu serotoniny i bywa przyczyną zespołu serotoninowego po dołączeniu do SSRI?",
+      "options": [
+        "Tramadol (oraz dekstrometorfan w syropach przeciwkaszlowych)",
+        "Paracetamol",
+        "Ibuprofen"
+      ],
+      "optionFeedback": [
+        "Tramadol blokuje SERT i może wywołać toksyczność połączony z antydepresantami.",
+        "Paracetamol nie wpływa bezpośrednio na transporter SERT w OUN.",
+        "NLPZ nie hamują wychwytu zwrotnego serotoniny."
+      ],
+      "answer": 0,
+      "explanation": "Tramadol blokuje SERT i może wywołać toksyczność połączony z antydepresantami.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "hunter-criteria",
+        "maudsley15",
+        "stahl-essential"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "ss-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "ostre-stany-toksyczne-zespol-serotoninowy-obj-1"
+      ],
+      "claimIds": [
+        "claim-ph-hunter-clonus",
+        "claim-ph-serotonin-syndrome-tx"
+      ],
+      "prompt": "Pacjent przyjmujący sertralinę w dawce 100 mg przyjął tramadol z powodu bólu zęba. Po 6 godzinach wystąpiło pobudzenie, zlewne poty, hipertermia 38,8°C, wygórowane odruchy ścięgniste oraz spontaniczny klonus stóp i oczu. Jaki stan kliniczny rozpoznasz i jaki jest krok natychmiastowy?",
+      "options": [
+        "Ostry zespół serotoninowy wg kryteriów Huntera; natychmiastowe odstawienie leków, chłodzenie i sedacja benzodiazepinami (np. diazepam)",
+        "Złośliwy zespół neuroleptyczny; podanie haloperidolu domięśniowo",
+        "Przełom tarczycowy; podanie kwasu acetylosalicylowego"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-hunter-clonus-rule",
+            "label": "Klonus w kryteriach Huntera jako cecha rozstrzygająca",
+            "acceptedPhrases": [
+              "klonus",
+              "hunter",
+              "kryteria huntera",
+              "hiperrefleksja",
+              "zespół serotoninowy"
+            ]
+          },
+          {
+            "id": "c-immediate-cooling-bzd",
+            "label": "Odstawienie leków proserotoninergicznych, chłodzenie i benzodiazepiny",
+            "acceptedPhrases": [
+              "odstawienie leków",
+              "benzodiazepiny",
+              "diazepam",
+              "chłodzenie fizykalne"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-fga-administration",
+            "patterns": [
+              "podanie haloperidolu",
+              "neuroleptyk w zespole serotoninowym"
+            ],
+            "severity": "critical",
+            "feedback": "BŁĄD KRYTYCZNY: Podanie haloperidolu nasila hipertermię i może wywołać dodatkowo NMS."
+          },
+          {
+            "id": "err-asa-use",
+            "patterns": [
+              "aspiryna",
+              "kwas acetylosalicylowy"
+            ],
+            "severity": "critical",
+            "feedback": "BŁĄD KRYTYCZNY: Leki przeciwgorączkowe nie działają w hipertermii obwodowej i są nieskuteczne."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Klonus w połączeniu z lekiem proserotoninergicznym spełnia kryteria Huntera. Podstawą jest odstawienie leków, sedacja BZD i chłodzenie.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "hunter-criteria",
+        "maudsley15"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "ss-bank-2",
+      "type": "ordering",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "ostre-stany-toksyczne-zespol-serotoninowy-obj-2"
+      ],
+      "claimIds": [
+        "claim-ph-serotonin-syndrome-tx"
+      ],
+      "prompt": "Ułóż we właściwej kolejności etapy postępowania ratunkowego u pacjenta z ciężkim zespołem serotoninowym i hipertermią > 39,5°C.",
+      "items": [
+        "Natychmiastowe wstrzymanie wszystkich leków serotoninergicznych",
+        "Zabezpieczenie drożności dróg oddechowych, tlenoterapia i sedacja dożylna benzodiazepinami",
+        "Agresywne chłodzenie fizykalne (okłady lodowe, chłodne płyny i.v.)",
+        "Rozważenie intubacji ze zwiotczeniem mięśniowym oraz podania cyproheptadyny"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "explanation": "Priorytetem jest odcięcie źródła toksyczności, kontrola pobudzenia i drgawek benzodiazepinami, chłodzenie i w razie potrzeby intubacja.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "hunter-criteria",
+        "maudsley15"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "ss-bank-3",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "ostre-stany-toksyczne-zespol-serotoninowy-obj-1",
+        "ostre-stany-toksyczne-zespol-serotoninowy-obj-3"
+      ],
+      "claimIds": [
+        "claim-ph-hunter-clonus"
+      ],
+      "prompt": "Dlaczego w zespole serotoninowym konwencjonalne leki przeciwgorączkowe (paracetamol, NLPZ) są nieskuteczne w obniżaniu temperatury ciała?",
+      "modelAnswer": "Hipertermia w zespole serotoninowym nie wynika z przestawienia punktu nastawczego termoregulacji w podwzgórzu (jak w gorączce infekcyjnej mediowanej przez pirogeny i prostaglandyny), lecz z masywnej, obwodowej produkcji ciepła wywołanej ciągłym skurczem mięśni, klonusem i drżeniem. Paracetamol i NLPZ hamują syntezę prostaglandyn w podwzgórzu, co nie ma wpływu na obwodową generację ciepła mięśniowego. Jedynym skutecznym leczeniem jest zahamowanie skurczów mięśni (benzodiazepiny, zwiotczenie) i chłodzenie fizykalne.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-muscle-thermogenesis",
+            "label": "Obwodowa generacja ciepła przez skurcze mięśni i klonus",
+            "acceptedPhrases": [
+              "skurcze mięśni",
+              "generacja mięśniowa",
+              "klonus",
+              "drżenie",
+              "obwodowa produkcja ciepła"
+            ]
+          },
+          {
+            "id": "c-hypothalamic-setpoint",
+            "label": "Brak przestawienia punktu nastawczego podwzgórza (brak roli pirogenów/prostaglandyn)",
+            "acceptedPhrases": [
+              "punkt nastawczy",
+              "podwzgórze",
+              "prostaglandyny",
+              "pirogeny",
+              "brak gorączki podwzgórzowej"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Hipertermia w zespole serotoninowym to hipertermia obwodowa mięśniowa, niewrażliwa na leki przeciwgorączkowe.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "hunter-criteria"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "pathway-builder"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy AGNP 2026 TDM, CPIC PGx, Maudsley 15th ed., Kapur PET D2, Hunter criteria oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

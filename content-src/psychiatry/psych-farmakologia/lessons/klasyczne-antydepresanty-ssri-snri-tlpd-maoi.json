@@ -1,0 +1,171 @@
+{
+  "id": "klasyczne-antydepresanty-ssri-snri-tlpd-maoi",
+  "moduleId": "psych-farmakologia",
+  "title": "Klasyczne leki przeciwdepresyjne: SSRI, SNRI, TLPD i iMAO",
+  "subtitle": "Porównanie klas terapeutycznych, profile toksyczności i ryzyko kardiologiczne",
+  "group": "Farmakoterapia zaburzeń afektywnych",
+  "minutes": 18,
+  "goals": [
+    "Porównasz mechanizmy, skuteczność i tolerancję SSRI, SNRI, TLPD oraz inhibitorów MAO.",
+    "Rozpoznasz specyficzne powikłania kardiologiczne i antycholinergiczne trójpierścieniowych leków (TLPD).",
+    "Wdrożysz zasady diety ubogotyraminowej i bezpiecznego stosowania inhibitorów monoaminooksydazy."
+  ],
+  "sections": [
+    {
+      "title": "SSRI i SNRI jako fundament leczenia I rzutu",
+      "text": "Inhibitory wychwytu zwrotnego serotoniny (SSRI: sertralina, escitalopram, citalopram, fluoksetyna, paroksetyna) oraz serotoniny i noradrenaliny (SNRI: wenlafaksyna, duloksetyna) są lekami I rzutu ze względu na wysoki wskaźnik bezpieczeństwa w przedawkowaniu i korzystny profil tolerancji. Działania niepożądane (nudności, dysfunkcje seksualne, bezsenność) wynikają głównie z pobudzenia obwodowych receptorów 5-HT2 i 5-HT3."
+    },
+    {
+      "title": "Trójpierścieniowe leki przeciwdepresyjne (TLPD): wysoka skuteczność, wąskie okno",
+      "text": "TLPD (klomipramina, amitryptylina, nortryptylina) silnie blokują SERT i NET, lecz wykazują też silny antagonizm receptorów muskarynowych M1 (suchość w ustach, zaparcia, majaczenie), histaminowych H1 (sedacja, tycie) oraz adrenergicznych alfa-1 (hipotensja ortostatyczna). Ponadto blokują sercowe kanały sodowe (Nav1.5), co w przedawkowaniu prowadzi do poszerzenia QRS, komorowych zaburzeń rytmu i zgonu."
+    },
+    {
+      "title": "Inhibitory monoaminooksydazy (iMAO) i reakcja tyraminowa",
+      "text": "iMAO nieodwracalne (np. fenelzyna, tranylcypromina) hamują enzym MAO-A i MAO-B, blokując rozkład monoamin. Spożycie pokarmów bogatych w tyraminę (dojrzałe sery, wino, wędzone ryby) wywołuje przełom nadciśnieniowy (\"cheese effect\"), gdyż niewybiórczo zablokowana MAO w jelitach i wątrobie nie neutralizuje tyraminy, co skutkuje masowym wyrzutem noradrenaliny. Odwracalny inhibitor MAO-A (moklobemid) jest pod tym względem znacznie bezpieczniejszy."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Klasa leków",
+      "Mechanizm wiodący",
+      "Główne działania niepożądane",
+      "Toksyczność w przedawkowaniu"
+    ],
+    "rows": [
+      [
+        "SSRI",
+        "Selektywna blokada SERT",
+        "Nudności, dysfunkcje seksualne, lęk początkowy",
+        "Bardzo niska (bezpieczne)"
+      ],
+      [
+        "SNRI",
+        "Blokada SERT + NET",
+        "Nadciśnienie tętnicze, potliwość, tachykardia",
+        "Niska do umiarkowanej"
+      ],
+      [
+        "TLPD",
+        "Blokada SERT, NET, M1, H1, alfa-1",
+        "Zaparcia, sedacja, hipotensja, suchość śluzówek",
+        "Skrajnie wysoka (blokada Nav1.5 -> arytmie komorowe)"
+      ],
+      [
+        "iMAO klasyczne",
+        "Nieodwracalne hamowanie MAO-A i B",
+        "Przełom nadciśnieniowy (tyramina), bezsenność",
+        "Wysoka (stany zagrażające życiu)"
+      ]
+    ]
+  },
+  "advanced": "W przypadku ciężkiego zatrucia TLPD z poszerzeniem zespołu QRS > 100–120 ms w EKG lekiem z wyboru znoszącym kardiotoksyczność jest dożylny wlew 8,4% wodorowęglanu sodu (NaHCO3). Alkalizacja osocza (pH 7,45–7,55) oraz wysokie stężenie sodu odwracają blokadę kanałów sodowych Nav1.5.",
+  "summary": "SSRI i SNRI wyparły TLPD z I rzutu z uwagi na bezpieczeństwo kardiologiczne. TLPD grożą śmiertelnymi arytmiami przez blokadę kanałów sodowych (odtrutka: NaHCO3), a klasyczne iMAO wymagają ścisłej diety ubogotyraminowej.",
+  "sourceIds": [
+    "canmat-mdd-2023",
+    "nice-depression",
+    "tyramine-pressor"
+  ],
+  "questions": [
+    {
+      "id": "psych-clas-q1",
+      "lessonId": "klasyczne-antydepresanty-ssri-snri-tlpd-maoi",
+      "prompt": "Jaka jest odtrutka z wyboru w ciężkim zatruciu TLPD z poszerzeniem zespołu QRS > 120 ms w zapisie EKG?",
+      "options": [
+        {
+          "text": "Dożylny roztwór wodorowęglanu sodu (NaHCO3)",
+          "explanation": "Alkalizacja krwi i ładunek jonów sodu wypierają cząsteczki TLPD z sercowych kanałów sodowych Nav1.5."
+        },
+        {
+          "text": "Dożylna digoksyna w bolusie",
+          "explanation": "Digoksyna nasiliłaby kardiotoksyczność i ryzyko zgonu."
+        },
+        {
+          "text": "Podanie dużej dawki potasu w szybkim wlewie",
+          "explanation": "Szybki wlew potasu grozi natychmiastowym asystolią serca."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-clas-q2",
+      "lessonId": "klasyczne-antydepresanty-ssri-snri-tlpd-maoi",
+      "prompt": "Dlaczego pacjenci przyjmujący nieodwracalne inhibitory MAO (np. tranylcyprominę) muszą bezwzględnie przestrzegać diety ubogiej w dojrzałe sery i wina?",
+      "options": [
+        {
+          "text": "Wino powoduje natychmiastowe unieczynnienie leku w żołądku",
+          "explanation": "Chodzi o śmiertelną interakcję naczyniową, a nie brak wchłaniania leku."
+        },
+        {
+          "text": "Zawierają one tyraminę, która z powodu braku jelitowej MAO przedostaje się do krążenia i wywołuje zagrażający życiu przełom nadciśnieniowy",
+          "explanation": "Zjawisko to określa się tradycyjnie mianem reakcji serowej (cheese reaction)."
+        },
+        {
+          "text": "Sery wchodzą w bezpośrednią reakcję chemiczną niszczącą nerki",
+          "explanation": "Tyramina nie niszczy nerek bezpośrednio, lecz indukuje gwałtowny wyrzut noradrenaliny."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-clas-q3",
+      "lessonId": "klasyczne-antydepresanty-ssri-snri-tlpd-maoi",
+      "prompt": "Który z SSRI wykazuje najsilniejsze właściwości sedatywne i cholinolityczne wskutek powinowactwa do receptorów muskarynowych?",
+      "options": [
+        {
+          "text": "Escitalopram",
+          "explanation": "Escitalopram jest niemal pozbawiony powinowactwa do receptorów muskarynowych."
+        },
+        {
+          "text": "Sertralina",
+          "explanation": "Sertralina wykazuje słabe hamowanie DAT, bez istotnego wpływu cholinolitycznego."
+        },
+        {
+          "text": "Paroksetyna",
+          "explanation": "Paroksetyna posiada słabe działanie antycholinergiczne, co może sprzyjać sedacji, zaparciom i przyrostowi wagi."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-clas-q4",
+      "lessonId": "klasyczne-antydepresanty-ssri-snri-tlpd-maoi",
+      "prompt": "Jaki parametr hemodynamiczny wymaga regularnego monitorowania u pacjentów leczonych wysokimi dawkami SNRI (np. wenlafaksyną >= 225 mg/d)?",
+      "options": [
+        {
+          "text": "Ciśnienie tętnicze krwi i tętno",
+          "explanation": "Wzrost stężenia noradrenaliny w synapsach obwodowych może prowadzić do utrwalonego nadciśnienia tętniczego."
+        },
+        {
+          "text": "Pojemność życiowa płuc w spirometrii",
+          "explanation": "SNRI nie wpływają negatywnie na parametry spirometryczne płuc."
+        },
+        {
+          "text": "Czas krwawienia metodą Duke’a",
+          "explanation": "Mimo wpływu 5-HT na płytki, to kontrola ciśnienia tętniczego jest kluczowa dla bezpieczeństwa kardiologicznego SNRI."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-clas-q5",
+      "lessonId": "klasyczne-antydepresanty-ssri-snri-tlpd-maoi",
+      "prompt": "Który lek jest odwracalnym selektywnym inhibitorem monoaminooksydazy typu A (RIMA), niewymagającym tak rygorystycznej diety ubogotyraminowej?",
+      "options": [
+        {
+          "text": "Fenelzyna",
+          "explanation": "Fenelzyna jest klasycznym, nieodwracalnym i nieselektywnym inhibitorem MAO."
+        },
+        {
+          "text": "Moklobemid",
+          "explanation": "Moklobemid może zostać wyparty z enzymu przez wysokie stężenia tyraminy, co drastycznie obniża ryzyko przełomu."
+        },
+        {
+          "text": "Klomipramina",
+          "explanation": "Klomipramina jest trójpierścieniowym lekiem przeciwdepresyjnym."
+        }
+      ],
+      "answer": 1
+    }
+  ],
+  "assetIds": []
+}

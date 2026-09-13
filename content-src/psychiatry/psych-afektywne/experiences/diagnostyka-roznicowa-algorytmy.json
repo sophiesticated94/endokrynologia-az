@@ -1,0 +1,365 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "diagnostyka-roznicowa-algorytmy",
+  "objectives": [
+    {
+      "id": "diagnostyka-roznicowa-algorytmy-obj-1",
+      "statement": "Wykluczysz najczęstsze somatyczne imitacje depresji, lęku, manii i psychozy.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "diagnostyka-roznicowa-algorytmy-obj-2",
+      "statement": "Rozpoznasz autoimmunologiczne zapalenie mózgu (np. anty-NMDAR) jako przyczynę ostrej psychozy.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "diagnostyka-roznicowa-algorytmy-obj-3",
+      "statement": "Wdrożysz ustrukturyzowany panel badań laboratoryjnych i neuroobrazowych w pierwszym epizodzie.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-diff-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "diagnostyka-roznicowa-algorytmy-obj-1"
+    ],
+    "prompt": "Młoda kobieta (22 lata) bez wywiadu psychiatrycznego rozwija ostrą psychozę z omamami, po czym dołączają dyskinezy ustno-twarzowe i niestabilność ciśnienia. Jakie schorzenie należy pilnie wykluczyć?",
+    "options": [
+      "Typową schizofrenię paranoidalną bez konieczności dalszych badań",
+      "Prostą reakcję adaptacyjną na stres",
+      "Autoimmunologiczne zapalenie mózgu z przeciwciałami przeciw receptorom NMDA (anty-NMDAR)"
+    ],
+    "optionFeedback": [
+      "Schizofrenia nie wywołuje ostrych dyskinez orofacjalnych i niestabilności wegetatywnej u osoby nieleczonej neuroleptykami.",
+      "Obraz kliniczny wskazuje na ciężkie, zagrażające życiu zapalenie mózgu.",
+      "Typowo towarzyszy mu potworniak jajnika i wymaga natychmiastowej immunoterapii oraz onkologicznego USG miednicy mniejszej."
+    ],
+    "answer": 2,
+    "explanation": "Typowo towarzyszy mu potworniak jajnika i wymaga natychmiastowej immunoterapii oraz onkologicznego USG miednicy mniejszej.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "icd11-cddr",
+      "ptp-standardy",
+      "wfsbp-schizophrenia"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "diagnostyka-roznicowa-algorytmy-block-1",
+      "title": "Endokrynne maski zaburzeń psychicznych",
+      "text": "Zaburzenia osi hormonalnych bezpośrednio modulują neuroprzekaźnictwo. Ciężka niedoczynność tarczycy manifestuje się lekooporną depresją, apatią, a w skrajnych przypadkach majaczeniem (\"myxedema madness\"). Nadczynność tarczycy oraz guz chromochłonny (pheochromocytoma) imitują lęk napadowy i pobudzenie. Z kolei zespół Cushinga wywołuje depresję z labilnością emocjonalną, a choroba Addisona – zespół asteniczno-depresyjny z hipotensją.",
+      "sourceIds": [
+        "icd11-cddr",
+        "ptp-standardy",
+        "wfsbp-schizophrenia"
+      ],
+      "checkpointId": "psych-diff-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-psychosis-differential",
+          "kind": "diagram",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "diagnostyka-roznicowa-algorytmy-block-2",
+      "title": "Neurologiczne maski i autoimmunologiczne zapalenie mózgu",
+      "text": "Nowo powstała psychoza u osoby młodej bez wywiadu psychiatrycznego wymaga wykluczenia autoimmunologicznego zapalenia mózgu z przeciwciałami przeciw receptorom NMDA (anty-NMDAR). Choroba zaczyna się od objawów grypopodobnych, po których następuje gwałtowna psychoza, dyskinezy ustno-twarzowe, niestabilność wegetatywna, katatonia i napady padaczkowe. U młodych kobiet w 50% przypadków wiąże się z potworniakiem jajnika.",
+      "sourceIds": [
+        "icd11-cddr",
+        "ptp-standardy",
+        "wfsbp-schizophrenia"
+      ],
+      "checkpointId": "psych-diff-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-organic-red-flags",
+          "kind": "evidence-panel",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "diagnostyka-roznicowa-algorytmy-block-3",
+      "title": "Minimalny panel diagnostyczny w pierwszym epizodzie (FEP)",
+      "text": "U każdego pacjenta z pierwszym epizodem psychotycznym (First Episode Psychosis - FEP) lub afektywnym konieczne są: morfologia, elektrolity (Na, K, Ca), mocznik, kreatynina, próby wątrobowe, TSH, fT4, witamina B12, kwas foliowy, glukoza, CRP, badanie ogólne moczu, toksykologia moczu oraz neuroobrazowanie mózgu (MRI lub CT) w celu wykluczenia guzów i krwiaków.",
+      "sourceIds": [
+        "icd11-cddr",
+        "ptp-standardy",
+        "wfsbp-schizophrenia"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-diff-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "diagnostyka-roznicowa-algorytmy-obj-2"
+      ],
+      "prompt": "Które badanie laboratoryjne jest obligatoryjne przed rozpoznaniem lekoopornej depresji u pacjenta ze spowolnieniem psychoruchowym i suchą skórą?",
+      "options": [
+        "Stężenie TSH oraz wolnych hormonów tarczycy (fT3, fT4)",
+        "Stężenie amylazy w ślinie",
+        "Test troponinowy co 2 godziny przez dobę"
+      ],
+      "optionFeedback": [
+        "Ciężka niedoczynność tarczycy może doskonale imitować lekooporną depresję lub otępienie.",
+        "Amylaza ślinowa nie ma znaczenia w diagnostyce różnicowej depresji.",
+        "Troponiny oceniają martwicę mięśnia sercowego w zawale serca."
+      ],
+      "answer": 0,
+      "explanation": "Ciężka niedoczynność tarczycy może doskonale imitować lekooporną depresję lub otępienie.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "icd11-cddr",
+        "ptp-standardy",
+        "wfsbp-schizophrenia"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-diff-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "diagnostyka-roznicowa-algorytmy-obj-3"
+      ],
+      "prompt": "Który parametr kliniczny stanowi tzw. czerwoną flagę (red flag) silnie sugerującą organiczne podłoże psychozy?",
+      "options": [
+        "Obecność urojeń ksobnych i odsłonięcia",
+        "Pojawienie się pierwszego w życiu epizodu psychotycznego po 45.–50. roku życia",
+        "Wystąpienie objawów w wieku 20 lat po przewlekłym stresie"
+      ],
+      "optionFeedback": [
+        "Urojenia te są typowe dla schizofrenii.",
+        "Pierwotna schizofrenia rozwija się typowo w wieku 18–30 lat; późny początek sugeruje guzy, udary lub otępienie.",
+        "Jest to typowy wiek zachorowania na schizofrenię."
+      ],
+      "answer": 1,
+      "explanation": "Pierwotna schizofrenia rozwija się typowo w wieku 18–30 lat; późny początek sugeruje guzy, udary lub otępienie.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "icd11-cddr",
+        "ptp-standardy",
+        "wfsbp-schizophrenia"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "diagnostyka-roznicowa-algorytmy-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "diagnostyka-roznicowa-algorytmy-obj-1",
+      "diagnostyka-roznicowa-algorytmy-obj-2",
+      "diagnostyka-roznicowa-algorytmy-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Algorytmy diagnostyki różnicowej: imitacje somatyczne i neurologiczne”.",
+    "modelAnswer": "Diagnostyka różnicowa w pierwszym epizodzie wymaga wykluczenia tła organicznego. Panel badań laboratoryjnych, toksykologia i neuroobrazowanie chronią przed przeoczeniem guzów OUN, dysfunkcji tarczycy czy zapalenia anty-NMDAR.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "icd11-cddr",
+      "ptp-standardy",
+      "wfsbp-schizophrenia"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-diff-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "diagnostyka-roznicowa-algorytmy-obj-1"
+      ],
+      "prompt": "Guz chromochłonny nadnerczy (pheochromocytoma) najczęściej błędnie diagnozowany jest w gabinecie psychiatrycznym jako:",
+      "options": [
+        "Choroba Alzheimera o wczesnym początku",
+        "Jadłowstręt psychiczny (anorexia nervosa)",
+        "Zaburzenie lękowe z napadami paniki (Panic Disorder)"
+      ],
+      "optionFeedback": [
+        "Guz chromochłonny nie wywołuje pierwotnego deficytu pamięci autobiograficznej.",
+        "Brak zaburzenia obrazu własnego ciała wyklucza jadłowstręt.",
+        "Rzuty wydzielania katecholamin powodują nagły lęk, palpitacje, bladość i skoki ciśnienia tętniczego."
+      ],
+      "answer": 2,
+      "explanation": "Rzuty wydzielania katecholamin powodują nagły lęk, palpitacje, bladość i skoki ciśnienia tętniczego.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "ptp-standardy",
+        "wfsbp-schizophrenia"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-diff-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "diagnostyka-roznicowa-algorytmy-obj-1"
+      ],
+      "prompt": "Co wchodzi w skład minimalnego standardu laboratoryjnego pierwszego epizodu psychotycznego (FEP)?",
+      "options": [
+        "Morfologia, elektrolity, TSH, próby wątrobowe, nerkowe, glukoza, witamina B12, toksykologia moczu i badanie neuroobrazowe (MRI/CT)",
+        "Wyłącznie badanie grupy krwi i Rh",
+        "Pobranie wycinka ze skóry przedramienia"
+      ],
+      "optionFeedback": [
+        "Pakiet ten pozwala wykluczyć metaboliczne, toksyczne i anatomiczne przyczyny psychozy.",
+        "Grupa krwi nie wnosi żadnych informacji o etiologii psychozy.",
+        "Biopsja skóry nie ma zastosowania w diagnostyce pierwszego epizodu psychozy."
+      ],
+      "answer": 0,
+      "explanation": "Pakiet ten pozwala wykluczyć metaboliczne, toksyczne i anatomiczne przyczyny psychozy.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "icd11-cddr",
+        "ptp-standardy",
+        "wfsbp-schizophrenia"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "diagnostyka-roznicowa-algorytmy-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "diagnostyka-roznicowa-algorytmy-obj-1"
+      ],
+      "prompt": "Zastosuj kryteria diagnostyczne i standardy postępowania klinicznego w przypadku pacjenta z tematu: diagnostyka roznicowa algorytmy.",
+      "options": [
+        "Wdrożenie standaryzowanego postępowania klinicznego opartego na wytycznych EBM",
+        "Postępowanie wyczekujące bez diagnostyki różnicowej",
+        "Natychmiastowe włączenie polipragmazji bez oceny wskazań"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-clinical-rationale-1",
+            "label": "Uzasadnienie oparte na kryteriach i bezpieczeństwie",
+            "acceptedPhrases": [
+              "bezpieczeństwo",
+              "kryteria",
+              "wytyczne",
+              "diagnostyka"
+            ]
+          },
+          {
+            "id": "c-clinical-rationale-2",
+            "label": "Ocena różnicowa i czynniki modyfikujące",
+            "acceptedPhrases": [
+              "różnicowanie",
+              "czynniki ryzyka",
+              "przebieg"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Postępowanie wymaga standaryzowanej oceny klinicznej, wykluczenia przyczyn wtórnych i przestrzegania wytycznych.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "diagnostyka-roznicowa-algorytmy-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "diagnostyka-roznicowa-algorytmy-obj-2"
+      ],
+      "prompt": "Wyjaśnij kluczowe zasady różnicowania klinicznego oraz pułapki diagnostyczne w zagadnieniu: diagnostyka roznicowa algorytmy.",
+      "modelAnswer": "Kluczowe jest odróżnienie pierwotnych zaburzeń psychicznych od masek somatycznych i toksycznych, uwzględnienie dynamiki czasowej oraz unikanie pochopnego rozpoznania na podstawie pojedynczego objawu.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-diff-organic",
+            "label": "Wykluczenie przyczyn somatycznych i substancji",
+            "acceptedPhrases": [
+              "przyczyny somatyczne",
+              "substancje",
+              "toksyczne",
+              "organiczne"
+            ]
+          },
+          {
+            "id": "c-diff-longitudinal",
+            "label": "Ocena przebiegu podłużnego i kryteriów czasowych",
+            "acceptedPhrases": [
+              "przebieg podłużny",
+              "kryteria czasowe",
+              "dynamika",
+              "czas trwania"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Ocena kliniczna wymaga analizy podłużnej i systematycznego wykluczenia przyczyn wtórnych.",
+      "difficulty": "both",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "icd11-cddr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "diagnostyka-roznicowa-algorytmy-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "diagnostyka-roznicowa-algorytmy-obj-1",
+        "diagnostyka-roznicowa-algorytmy-obj-3"
+      ],
+      "prompt": "W analizie przypadku klinicznego z obszaru diagnostyka roznicowa algorytmy pacjent zgłasza nietypowy zestaw objawów. Jakiej informacji brakuje w pierwszej kolejności?",
+      "options": [
+        "Wywiadu toksykologicznego i badań laboratoryjnych wykluczających podłoże organiczne",
+        "Profilu genetycznego rzadkich mutacji enzymatycznych",
+        "Wyniku tomografii komputerowej bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Podstawą rzetelnej oceny psychiatrycznej jest wykluczenie czynników egzogennych, intoksykacji i zaburzeń metabolicznych.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "pathway-builder",
+    "timeline"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., CANMAT oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

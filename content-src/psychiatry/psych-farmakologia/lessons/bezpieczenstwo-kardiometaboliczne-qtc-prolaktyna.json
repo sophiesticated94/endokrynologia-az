@@ -1,0 +1,177 @@
+{
+  "id": "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna",
+  "moduleId": "psych-farmakologia",
+  "title": "Bezpieczeństwo kardiometaboliczne: QTc, hERG i prolaktyna",
+  "subtitle": "Blokada kanałów hERG, Torsade de Pointes, formuła Fridericia i rejestr CredibleMeds",
+  "group": "Toksykologia i stany nagłe w psychiatrii",
+  "minutes": 18,
+  "goals": [
+    "Obliczysz skorygowany odstęp QTc za pomocą bezpieczniejszej formuły Fridericia (QTcF) zamiast Bazetta.",
+    "Zidentyfikujesz leki psychotropowe o udowodnionym ryzyku wywoływania Torsade de Pointes wg CredibleMeds.",
+    "Wdrożysz postępowanie profilaktyczne i modyfikację leczenia przy wydłużeniu QTc > 500 ms."
+  ],
+  "sections": [
+    {
+      "title": "Elektrofizjologia: blokada kanałów hERG i arytmia TdP",
+      "text": "Wydłużenie odstępu QT w zapisie EKG odzwierciedla opóźnioną repolaryzację komór serca. Wiele leków psychotropowych (zwłaszcza citalopram, escitalopram, haloperydol i.v., sertindol, amisulpryd) blokuje bramkowane napięciem kanały potasowe hERG (IKr). Przekroczenie krytycznego progu stwarza ryzyko wystąpienia wczesnych depolaryzacji następczych (EAD) i wyzwolenia wielokształtnego częstoskurczu komorowego Torsade de Pointes (TdP), przechodzącego w migotanie komór."
+    },
+    {
+      "title": "Korekcja częstotliwości: Formuła Fridericia vs Bazetta",
+      "text": "Klasyczna formuła Bazetta (QTc = QT / sqrt(RR)) wykazuje dramatyczny błąd nadkorekcji przy tachykardii (> 80–100/min), prowadząc do fałszywych rozpoznań zespołu długiego QT. Wytyczne kardiologiczne i psychiatryczne jednoznacznie zalecają stosowanie formuły Fridericia (QTcF = QT / cbrt(RR) – pierwiastek sześcienny), która zachowuje liniowość w pełnym zakresie rytmu serca."
+    },
+    {
+      "title": "Progi alarmowe i algorytm postępowania",
+      "text": "Prawidłowy QTc wynosi < 450 ms u mężczyzn i < 460 ms u kobiet. Wartości graniczne to 450–500 ms (wymagają czujności i kontroli elektrolitów: K+ > 4,0 mmol/l, Mg2+ > 0,8 mmol/l). Wartość bezwzględna QTc > 500 ms lub wydłużenie QTc o > 60 ms względem badania wyjściowego stanowi stan bezpośredniego zagrożenia arytmią i bezwzględne wskazanie do redukcji dawki lub odstawienia leku."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Lek psychotropowy",
+      "Kategoria CredibleMeds",
+      "Maksymalna dawka bezpieczna",
+      "Ryzyko arytmii TdP"
+    ],
+    "rows": [
+      [
+        "Citalopram",
+        "Known Risk (udowodnione ryzyko TdP)",
+        "Maks. 40 mg/d (20 mg u seniorów)",
+        "Wysokie (zależne od dawki)"
+      ],
+      [
+        "Escitalopram",
+        "Known Risk",
+        "Maks. 20 mg/d (10 mg u seniorów)",
+        "Umiarkowane"
+      ],
+      [
+        "Haloperydol (zwłaszcza i.v.)",
+        "Known Risk",
+        "Unikać iniekcji i.v. bez stałego EKG",
+        "Ekstremalnie wysokie w podaniu dożylnym"
+      ],
+      [
+        "Amisulpryd / Sertindol",
+        "Known Risk",
+        "Wymaga EKG przed każdą eskalacją",
+        "Wysokie"
+      ],
+      [
+        "Sertralina / Aripiprazol",
+        "Conditional / Low Risk",
+        "Standardowe dawkowanie",
+        "Bardzo niskie / najbezpieczniejsze kardiologicznie"
+      ]
+    ]
+  },
+  "advanced": "W przypadku wystąpienia napadu Torsade de Pointes z zachowanym tętnem lekiem I wyboru znoszącym arytmię jest dożylny siarczan magnezu (MgSO4) w dawce 2 g i.v. podany w bolusie w ciągu 1–2 minut, niezależnie od wyjściowego stężenia magnezu we krwi.",
+  "summary": "Blokada kanałów potasowych hERG grozi śmiertelnym częstoskurczem TdP. Rekomendowaną metodą kalkulacji jest wzór Fridericia (QTcF). QTc > 500 ms nakazuje natychmiastową weryfikację i redukcję lub odstawienie leku; lekiem I rzutu w napadzie TdP jest MgSO4 i.v.",
+  "sourceIds": [
+    "crediblemeds-qt",
+    "maudsley15",
+    "canmat-mdd-2023"
+  ],
+  "questions": [
+    {
+      "id": "psych-card-q1",
+      "lessonId": "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna",
+      "prompt": "Dlaczego w monitorowaniu bezpieczeństwa leków psychotropowych zaleca się stosowanie wzoru Fridericia (QTcF) zamiast klasycznego wzoru Bazetta?",
+      "options": [
+        {
+          "text": "Wzór Bazetta niedoszacowuje QTc przy częstoskurczu, maskując groźne zaburzenia repolaryzacji",
+          "explanation": "Główną wadą Bazetta przy tachykardii jest przeszacowanie (nadrozpoznawalność długiego QT), a nie niedoszacowanie."
+        },
+        {
+          "text": "Formuła Bazetta drastycznie zawyża wartość QTc przy tachykardii (częstość akcji serca > 80–90/min), generując fałszywe alarmy",
+          "explanation": "Formuła Fridericia oparta na pierwiastku sześciennym zapewnia precyzyjną ocenę repolaryzacji niezależnie od tętna."
+        },
+        {
+          "text": "Wzór Bazetta jest zalecany wyłącznie u pacjentów ze stymulatorem komorowym i blokiem lewej odnogi",
+          "explanation": "W obecności poszerzonego QRS stosuje się formuły dedykowane (np. Bogossa), a Bazett nadmiernie zależy od częstości rytmu."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-card-q2",
+      "lessonId": "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna",
+      "prompt": "Jaki bezwzględny czas trwania odstępu QTc w zapisie EKG uznaje się za krytyczny próg alarmowy wymagający pilnej redukcji lub odstawienia leku?",
+      "options": [
+        {
+          "text": "QTc powyżej 440 ms u mężczyzn i 450 ms u kobiet",
+          "explanation": "Wartości te stanowią górną granicę normy, lecz nie są bezwzględnym progiem pilnego odstawienia."
+        },
+        {
+          "text": "QTc powyżej 600 ms wyłącznie w obecności bloku prawej odnogi pęczka Hisa",
+          "explanation": "Próg 500 ms jest krytycznym punktem odcięcia dla ryzyka TdP u każdego chorego bez względu na morfologię QRS."
+        },
+        {
+          "text": "QTc powyżej 500 ms (lub przyrost o > 60 ms względem badania wyjściowego)",
+          "explanation": "Powyżej 500 ms gwałtownie rośnie ryzyko wystąpienia wielokształtnego częstoskurczu komorowego Torsade de Pointes."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-card-q3",
+      "lessonId": "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna",
+      "prompt": "Jaki lek podaje się dożylnie w pierwszej kolejności u pacjenta z napadem częstoskurczu komorowego Torsade de Pointes z zachowanym tętnem?",
+      "options": [
+        {
+          "text": "Siarczan magnezu (MgSO4) 2 g dożylnie w bolusie",
+          "explanation": "Magnez stabilizuje błonę miocytów i blokuje wczesne depolaryzacje następcze EAD."
+        },
+        {
+          "text": "Amiodaron 300 mg we wlewie dożylnym",
+          "explanation": "Amiodaron sam w sobie wydłuża repolaryzację komór i jest przeciwwskazany w TdP polekowym."
+        },
+        {
+          "text": "Lidokaina 1 mg/kg m.c. w bolusie przed podaniem magnezu",
+          "explanation": "Lidokaina jest lekiem drugiego rzutu; postępowaniem pierwszego wyboru pozostaje natychmiastowy siarczan magnezu."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-card-q4",
+      "lessonId": "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna",
+      "prompt": "Które dwa leki przeciwdepresyjne z grupy SSRI cechują się najniższym ryzykiem wydłużenia odstępu QTc i są preferowane u pacjentów ze schorzeniami kardiologicznymi?",
+      "options": [
+        {
+          "text": "Klomipramina i amitryptylina",
+          "explanation": "TLPD silnie wydłużają repolaryzację i blokują kanały sodowe."
+        },
+        {
+          "text": "Sertralina oraz paroksetyna",
+          "explanation": "Badania SADHART potwierdziły pełne bezpieczeństwo kardiologiczne sertraliny nawet po zawale serca."
+        },
+        {
+          "text": "Citalopram w dawce 60 mg i escitalopram w dawce 40 mg",
+          "explanation": "Dawki te są przekroczeniem limitów bezpieczeństwa FDA/EMA z uwagi na ryzyko arytmii."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-card-q5",
+      "lessonId": "bezpieczenstwo-kardiometaboliczne-qtc-prolaktyna",
+      "prompt": "Jaki kanał jonowy w kardiomiocytach jest bezpośrednio blokowany przez leki wydłużające odstęp repolaryzacji komór (QTc)?",
+      "options": [
+        {
+          "text": "Kanał chlorowy cystic fibrosis CFTR",
+          "explanation": "CFTR odpowiada za mukowiscydozę w nabłonkach, nie za repolaryzację serca."
+        },
+        {
+          "text": "Akwaporyna 2 w nerkach",
+          "explanation": "Akwaporyna transportuje wodę w cewkach zbiorczych nerek."
+        },
+        {
+          "text": "Kanał potasowy hERG (IKr - szybki prąd potasowy odkomorowy)",
+          "explanation": "Blokada IKr uniemożliwia sprawny wypływ potasu z komórki, wydłużając czas trwania potencjału czynnościowego."
+        }
+      ],
+      "answer": 2
+    }
+  ],
+  "assetIds": []
+}

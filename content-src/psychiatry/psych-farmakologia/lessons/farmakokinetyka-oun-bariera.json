@@ -1,0 +1,165 @@
+{
+  "id": "farmakokinetyka-oun-bariera",
+  "moduleId": "psych-farmakologia",
+  "title": "Farmakokinetyka leków w OUN i bariera krew-mózg",
+  "subtitle": "Lipofilność, glikoproteina P (P-gp), wolna frakcja i penetracja do mózgowia",
+  "group": "Farmakokinetyka i farmakodynamika OUN",
+  "minutes": 18,
+  "goals": [
+    "Zrozumiesz rolę bariery krew-mózg (BBB) i pompy effluksowej P-gp w dystrybucji psychotropów.",
+    "Scharakteryzujesz wpływ wiązania z białkami osocza na wolną frakcję aktywną leku w OUN.",
+    "Ocenisz kinetykę eliminacji i czas osiągania stanu stacjonarnego (steady state)."
+  ],
+  "sections": [
+    {
+      "title": "Bariera krew-mózg (BBB) i czynniki determinujące przenikanie",
+      "text": "Leki psychotropowe, aby wywrzeć efekt terapeutyczny, muszą przekroczyć barierę krew-mózg (blood-brain barrier, BBB), zbudowaną ze ściśle połączonych komórek śródbłonka naczyniowego (tight junctions) otoczonych przez perycyty i stopki astrocytarne. Kluczowymi determinantami penetracji są: niska masa cząsteczkowa (< 400–500 Da), wysoka lipofilność (współczynnik logP) oraz brak ładunku elektrycznego w fizjologicznym pH krwi (7,4)."
+    },
+    {
+      "title": "Glikoproteina P (P-gp / ABCB1) jako strażnik OUN",
+      "text": "Aktywna pompa effluksowa glikoproteina P (kodowana przez gen ABCB1) zlokalizowana w błonie komórek śródbłonka aktywnie wypompowuje wiele leków z tkanki mózgowej z powrotem do światła naczynia. Przykładowo, rysperydon i paliperydon są silnymi substratami P-gp, podczas gdy olanzapina i klozapina penetrują swobodniej. Inhibicja P-gp (np. przez werapamil, ketokonazol) może drastycznie zwiększyć mózgowe stężenie leku bez zmiany stężenia we krwi obwodowej."
+    },
+    {
+      "title": "Wiązanie z białkami, wolna frakcja i stan stacjonarny",
+      "text": "Większość psychotropów wiąże się w 90–99% z albuminami lub alfa-1-kwaśną glikoproteiną. Tylko wolna, niezwiązana frakcja leku podlega dyfuzji do płynu mózgowo-rdzeniowego i wiąże się z receptorami. Czas osiągnięcia stanu stacjonarnego wynosi 4–5 okresów półtrwania (t1/2) leku – stąd przy t1/2 wynoszącym 24 godziny stabilne stężenie w mózgu ustala się dopiero po około 5 dniach regularnego przyjmowania."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Parametr farmakokinetyczny",
+      "Znaczenie dla działania w OUN",
+      "Przykład kliniczny",
+      "Wpływ na dawkowanie"
+    ],
+    "rows": [
+      [
+        "Substrat P-gp (ABCB1)",
+        "Aktywne usuwanie leku z mózgu przez barierę BBB",
+        "Rysperydon, paliperydon",
+        "Możliwa rozbieżność między stężeniem w osoczu a efektem w OUN"
+      ],
+      [
+        "Wysokie wiązanie z białkami (> 95%)",
+        "Tylko wolna frakcja wywiera efekt i ulega metabolizmowi",
+        "Diazepam, kwas walproinowy",
+        "W hipoalbuminemii rośnie wolna frakcja i toksyczność"
+      ],
+      [
+        "Długi okres półtrwania (t1/2)",
+        "Czas do steady-state wynosi 4–5 okresów półtrwania",
+        "Fluoksetyna (oraz norfluoksetyna: t1/2 ~7 dni)",
+        "Pełna stabilizacja stężenia wymaga nawet 4–5 tygodni"
+      ]
+    ]
+  },
+  "advanced": "W ostrych stanach zapalnych OUN (np. zapalenie opon, udar mózgu) lub w przebiegu przewlekłego stresu i depresji dochodzi do rozszczelnienia tight junctions w BBB (\"leaky brain\"), co zwiększa przepuszczalność dla neurotoksyn, cytokin prozapalnych i leków o gorszym profilu penetracji.",
+  "summary": "Penetracja leków do mózgu zależy od lipofilności i pompy effluksowej P-gp. Działanie wywiera wyłącznie frakcja wolna, a stan stacjonarny ustala się po 4–5 okresach biologicznego półtrwania.",
+  "sourceIds": [
+    "stahl-essential",
+    "maudsley15",
+    "agnp-tdm-2026"
+  ],
+  "questions": [
+    {
+      "id": "psych-pk-q1",
+      "lessonId": "farmakokinetyka-oun-bariera",
+      "prompt": "Ile okresów biologicznego półtrwania (t1/2) potrzeba, aby stężenie leku psychotropowego osiągnęło stan stacjonarny (steady state)?",
+      "options": [
+        {
+          "text": "Co najmniej 30 okresów półtrwania",
+          "explanation": "Po 30 okresach lek uległby całkowitej wymianie kilkukrotnie."
+        },
+        {
+          "text": "Około 4 do 5 okresów półtrwania (t1/2)",
+          "explanation": "Wtedy szybkość eliminacji leku zrównuje się z szybkością jego podawania (ok. 94–97% stężenia docelowego)."
+        },
+        {
+          "text": "Dokładnie 1 okres półtrwania",
+          "explanation": "Po 1 okresie półtrwania lek osiąga zaledwie 50% stężenia stacjonarnego."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-pk-q2",
+      "lessonId": "farmakokinetyka-oun-bariera",
+      "prompt": "Jaką rolę w barierze krew-mózg pełni glikoproteina P (P-gp, transporter ABCB1)?",
+      "options": [
+        {
+          "text": "Ułatwia wychwyt glukozy i aminokwasów rozgałęzionych do neuronów",
+          "explanation": "Transportem glukozy zajmuje się GLUT-1, nie P-gp."
+        },
+        {
+          "text": "Syntetyzuje dopaminę z tyrozyny w śródbłonku",
+          "explanation": "P-gp nie ma aktywności hydroksylazy tyrozynowej."
+        },
+        {
+          "text": "Aktywnie usuwa substraty lekowe z tkanki mózgowej z powrotem do krwiobiegu, ograniczając ich penetrację do OUN",
+          "explanation": "Jest to zależna od ATP pompa effluksowa chroniąca mózgowie przed ksenobiotykami."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-pk-q3",
+      "lessonId": "farmakokinetyka-oun-bariera",
+      "prompt": "Który metabolit aktywnego leku przeciwdepresyjnego wykazuje wyjątkowo długi okres półtrwania wynoszący ok. 7–14 dni?",
+      "options": [
+        {
+          "text": "Norfluoksetyna (aktywny metabolit fluoksetyny)",
+          "explanation": "Dzięki temu fluoksetyna rzadziej wywołuje zespół odstawienny i wymaga 5-tygodniowego okresu wypłukiwania przed włączeniem MAOI."
+        },
+        {
+          "text": "Kwas walproinowy",
+          "explanation": "Kwas walproinowy ma t1/2 ok. 12–16 godzin."
+        },
+        {
+          "text": "Hydroksyzyna",
+          "explanation": "Hydroksyzyna ma t1/2 ok. 14–20 godzin."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-pk-q4",
+      "lessonId": "farmakokinetyka-oun-bariera",
+      "prompt": "Co dzieje się z farmakokinetyką leku silnie wiążącego się z białkami (np. kwasu walproinowego) u pacjenta z ciężką hipoalbuminemią?",
+      "options": [
+        {
+          "text": "Okres półtrwania leku wydłuża się do 10 lat",
+          "explanation": "Klirens wątrobowy wolnej frakcji ulega raczej przyspieszeniu."
+        },
+        {
+          "text": "Wzrasta stężenie wolnej, aktywnej frakcji leku we krwi, co może wywołać objawy toksyczności przy \"prawidłowym\" stężeniu całkowitym",
+          "explanation": "Tylko wolna frakcja przechodzi do tkanek i wywiera działanie toksyczne."
+        },
+        {
+          "text": "Lek przestaje w ogóle przenikać przez barierę krew-mózg",
+          "explanation": "Brak białek ułatwia, a nie blokuje przenikanie wolnego leku."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-pk-q5",
+      "lessonId": "farmakokinetyka-oun-bariera",
+      "prompt": "Jaka cecha fizykochemiczna cząsteczki leku najbardziej sprzyja biernej dyfuzji przez barierę krew-mózg?",
+      "options": [
+        {
+          "text": "Duża masa cząsteczkowa powyżej 50 000 Da i hydrofilność",
+          "explanation": "Cząsteczki hydrofilne i duże nie przekraczają nienaruszonej bariery BBB."
+        },
+        {
+          "text": "Obecność trwałego dodatniego ładunku czwartorzędowego",
+          "explanation": "Trwały ładunek jonowy uniemożliwia przenikanie przez lipidy błony."
+        },
+        {
+          "text": "Wysoka lipofilność przy braku ładunku jonowego w pH 7,4",
+          "explanation": "Bariera BBB jest barierą lipidową, łatwo przepuszczalną dla małych cząsteczek niepolarnych."
+        }
+      ],
+      "answer": 2
+    }
+  ],
+  "assetIds": []
+}

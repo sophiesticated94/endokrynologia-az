@@ -1,0 +1,381 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "ocena-ryzyka-samobojczego-agresji",
+  "objectives": [
+    {
+      "id": "ocena-ryzyka-samobojczego-agresji-obj-1",
+      "statement": "Przeprowadzisz ustrukturyzowaną ocenę intencji samobójczych za pomocą skali C-SSRS.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "ocena-ryzyka-samobojczego-agresji-obj-2",
+      "statement": "Zróżnicujesz pasywne myśli rezygnacyjne od aktywnego zamiaru z planem i dostępem do środków.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "ocena-ryzyka-samobojczego-agresji-obj-3",
+      "statement": "Zastosujesz zasady deeskalacji słownej oraz bezpieczną farmakoterapię ostrego pobudzenia.",
+      "kind": "safety"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-suic-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "ocena-ryzyka-samobojczego-agresji-obj-1"
+    ],
+    "prompt": "Które dwa leki posiadają najwyższy poziom dowodów naukowych na specyficzne, bezpośrednie działanie antysuicydalne?",
+    "options": [
+      "Haloperydol w zastrzykach depot i propranolol",
+      "Lit oraz klozapina",
+      "Hydroksyzyna oraz piracetam"
+    ],
+    "optionFeedback": [
+      "Neuroleptyki typowe nie posiadają rejestracji w prewencji suicydalnej.",
+      "Oba leki redukują wskaźnik dokonanych samobójstw niezależnie od innych leków.",
+      "Leki te nie wykazują żadnego wpływu na redukcję śmiertelności samobójczej."
+    ],
+    "answer": 1,
+    "explanation": "Oba leki redukują wskaźnik dokonanych samobójstw niezależnie od innych leków.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "cssrs-scale",
+      "ptp-standardy",
+      "maudsley15"
+    ],
+    "assessmentLevel": "recognition"
+  },
+  "blocks": [
+    {
+      "id": "ocena-ryzyka-samobojczego-agresji-block-1",
+      "title": "Skala C-SSRS i gradacja myśli samobójczych",
+      "text": "Columbia-Suicide Severity Rating Scale (C-SSRS) jest szeroko walidowanym narzędziem ustrukturyzowanego wywiadu klinicznego w ocenie nasilenia myśli i zachowań samobójczych. Narzędzie standaryzuje komunikację kliniczną, choć nie zastępuje całościowej oceny ryzyka ani nie wylicza indywidualnego prawdopodobieństwa samobójstwa. Rozróżnia 5 poziomów nasilenia myśli: 1) Pasywne życzenie śmierci (\"chciałbym zasnąć i nie obudzić się\"), 2) Aktywne nieswoiste myśli samobójcze, 3) Aktywne myśli z metodą (bez planu), 4) Myśli z intencją bez konkretnego planu, 5) Myśli samobójcze z konkretnym planem i zamiarem. Poziomy 4 i 5 oznaczają bezpośrednie zagrożenie życia i bezwzględne wskazanie do natychmiastowej interwencji i zabezpieczenia pacjenta.",
+      "sourceIds": [
+        "cssrs-scale",
+        "ptp-standardy",
+        "maudsley15"
+      ],
+      "checkpointId": "psych-suic-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-cssrs-stratification",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "ocena-ryzyka-samobojczego-agresji-block-2",
+      "title": "Statyczne i modyfikowalne czynniki ryzyka",
+      "text": "Najsilniejszym pojedynczym czynnikiem ryzyka dokonanego samobójstwa jest wcześniejsza próba samobójcza w wywiadzie. Czynniki statyczne obejmują: płeć męską, starszy wiek, samotność, obciążenie genetyczne. Czynniki modyfikowalne (cel natychmiastowej interwencji) to: ciężka bezsenność, pobudzenie psychoruchowe, anhedonia, ból somatyczny, dostęp do broni/leków oraz brak oparcia społecznego.",
+      "sourceIds": [
+        "cssrs-scale",
+        "ptp-standardy",
+        "maudsley15"
+      ],
+      "checkpointId": "psych-suic-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "microcase-acute-agitation-deescalation",
+          "kind": "micro-case",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "ocena-ryzyka-samobojczego-agresji-block-3",
+      "title": "Postępowanie w ostrym pobudzeniu: deeskalacja i farmakologia",
+      "text": "W ostrym pobudzeniu i agresji pierwszym krokiem jest deeskalacja werbalna (spokojny ton, zachowanie dystansu fizycznego, otwarta przestrzeń). W przypadku nieskuteczności lekiem I wyboru jest szybko działający atypowy neuroleptyk i/lub benzodiazepina (np. olanzapina i.m./p.o. lub lorazepam i.m./p.o.). Nigdy nie należy łączyć olanzapiny i.m. z benzodiazepiną i.m. w odstępie mniejszym niż 2 godziny z uwagi na ryzyko zapaści oddechowo-krążeniowej.",
+      "sourceIds": [
+        "cssrs-scale",
+        "ptp-standardy",
+        "maudsley15"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-suic-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "ocena-ryzyka-samobojczego-agresji-obj-2"
+      ],
+      "prompt": "Dlaczego jednoczesne podanie olanzapiny w iniekcji domięśniowej (i.m.) z benzodiazepiną i.m. jest bezwzględnie przeciwwskazane?",
+      "options": [
+        "Powoduje natychmiastowe uszkodzenie trzustki z martwicą krwotoczną",
+        "Olanzapina powoduje natychmiastowe wytrącenie kryształów benzodiazepiny w mięśniu",
+        "Grozi zapaścią naczyniową, ciężką hipotensją i śmiertelną depresją ośrodka oddechowego"
+      ],
+      "optionFeedback": [
+        "Mieszanina nie wywołuje ostrego martwiczego zapalenia trzustki.",
+        "Chodzi o synergizm farmakodynamiczny depresji krążeniowo-oddechowej w OUN.",
+        "Wymagany jest co najmniej 2-godzinny odstęp między iniekcjami domięśniowymi tych dwóch leków."
+      ],
+      "answer": 2,
+      "explanation": "Wymagany jest co najmniej 2-godzinny odstęp między iniekcjami domięśniowymi tych dwóch leków.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "cssrs-scale",
+        "ptp-standardy",
+        "maudsley15"
+      ],
+      "assessmentLevel": "recognition"
+    },
+    {
+      "id": "psych-suic-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "ocena-ryzyka-samobojczego-agresji-obj-3"
+      ],
+      "prompt": "Jaki pojedynczy czynnik w wywiadzie pacjenta jest najsilniejszym statystycznym predyktorem dokonanego samobójstwa w przyszłości?",
+      "options": [
+        "Przebyta próba samobójcza w przeszłości",
+        "Przebyta ospa wietrzna w wieku przedszkolnym",
+        "Posiadanie prawa jazdy kategorii B"
+      ],
+      "optionFeedback": [
+        "Osoby po próbie samobójczej mają 30–40-krotnie wyższe ryzyko zgonu w wyniku kolejnej próby niż populacja ogólna.",
+        "Przebyte infekcje wirusowe wieku dziecięcego nie korelują z ryzykiem samobójczym.",
+        "Nie ma żadnego związku ze wskaźnikami suicydalnymi."
+      ],
+      "answer": 0,
+      "explanation": "Osoby po próbie samobójczej mają 30–40-krotnie wyższe ryzyko zgonu w wyniku kolejnej próby niż populacja ogólna.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "cssrs-scale",
+        "ptp-standardy",
+        "maudsley15"
+      ],
+      "assessmentLevel": "application"
+    }
+  ],
+  "teachBack": {
+    "id": "ocena-ryzyka-samobojczego-agresji-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "ocena-ryzyka-samobojczego-agresji-obj-1",
+      "ocena-ryzyka-samobojczego-agresji-obj-2",
+      "ocena-ryzyka-samobojczego-agresji-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Ocena ryzyka samobójczego (C-SSRS) i postępowanie w ostrym pobudzeniu”.",
+    "modelAnswer": "Skala C-SSRS ustrukturyzowuje wywiad suicydologiczny, ułatwiając gradację nasilenia myśli samobójczych. W ostrym pobudzeniu kluczowa jest deeskalacja werbalna; farmakoterapia wymaga ostrożności przed jednoczesnym podaniem olanzapiny i.m. z benzodiazepinami.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "cssrs-scale",
+      "ptp-standardy",
+      "maudsley15"
+    ],
+    "assessmentLevel": "generation"
+  },
+  "exitTicket": [
+    {
+      "id": "psych-suic-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "ocena-ryzyka-samobojczego-agresji-obj-1"
+      ],
+      "prompt": "Pacjent w C-SSRS odpowiada: \"Mam przygotowane tabletki w szufladzie i zamierzam je połknąć dziś wieczorem, gdy rodzina zaśnie\". Jaki to poziom C-SSRS i jakie jest postępowanie?",
+      "options": [
+        "Poziom 2 – zalecenie wykonania badania EEG w trybie ambulatoryjnym",
+        "Poziom 5 (konkretny plan i zamiar) – stan bezpośredniego zagrożenia życia wymagający natychmiastowej hospitalizacji",
+        "Poziom 1 – wystarczy zalecenie ciepłej herbaty i kontroli za miesiąc"
+      ],
+      "optionFeedback": [
+        "EEG nie ma zastosowania w natychmiastowym zabezpieczeniu pacjenta suicydalnego.",
+        "Wymaga stałego nadzoru personelu i zabezpieczenia pacjenta przed opuszczeniem gabinetu.",
+        "Jest to rażący błąd w sztuce lekarskiej bagatelizujący śmiertelne zagrożenie."
+      ],
+      "answer": 1,
+      "explanation": "Wymaga stałego nadzoru personelu i zabezpieczenia pacjenta przed opuszczeniem gabinetu.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "cssrs-scale",
+        "ptp-standardy",
+        "maudsley15"
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
+    },
+    {
+      "id": "psych-suic-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "ocena-ryzyka-samobojczego-agresji-obj-1"
+      ],
+      "prompt": "Jaka jest podstawowa zasada deeskalacji werbalnej w kontakcie z pacjentem silnie pobudzonym i agresywnym?",
+      "options": [
+        "Podchodzenie na odległość kilku centymetrów i głośne krzyczenie na pacjenta",
+        "Natychmiastowe zamknięcie drzwi na klucz i zgaszenie światła w gabinecie",
+        "Zachowanie bezpiecznego dystansu, spokojny i pewny ton głosu oraz pozostawienie otwartej drogi ewakuacji"
+      ],
+      "optionFeedback": [
+        "Prowokuje natychmiastowy atak fizyczny ze strony pobudzonego pacjenta.",
+        "Zwiększa paranoję i lęk u pacjenta, dramatycznie potęgując agresję.",
+        "Zapewnia to bezpieczeństwo zarówno lekarza, jak i pacjenta, zapobiegając poczuciu osaczenia."
+      ],
+      "answer": 2,
+      "explanation": "Zapewnia to bezpieczeństwo zarówno lekarza, jak i pacjenta, zapobiegając poczuciu osaczenia.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "cssrs-scale",
+        "ptp-standardy",
+        "maudsley15"
+      ],
+      "assessmentLevel": "generation",
+      "transfer": true
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "suicide-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "ocena-ryzyka-samobojczego-agresji-obj-1"
+      ],
+      "claimIds": [
+        "claim-af-cssrs-active-intent"
+      ],
+      "prompt": "Pacjent w badaniu C-SSRS potwierdza aktywne myśli samobójcze, przygotował zapas leków nasennych i napisał list pożegnalny do rodziny, deklarując zamiar zażycia ich dzisiaj w nocy. Jakie działanie jest bezwzględnym priorytetem?",
+      "options": [
+        "Pilne zabezpieczenie pacjenta, nieodstępowanie na krok i skierowanie na hospitalizację psychiatryczną",
+        "Wypisanie recepty na SSRI i wyznaczenie wizyty kontrolnej za 2 tygodnie",
+        "Polecenie podpisania „kontraktu na niepopełnienie samobójstwa” i odesłanie do domu"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-imminent-risk",
+            "label": "Bezpośrednie zagrożenie życia (aktywne myśli z planem i intencją)",
+            "acceptedPhrases": [
+              "bezpośrednie zagrożenie",
+              "wysokie ryzyko",
+              "plan i intencja",
+              "c-ssrs poziom 5"
+            ]
+          },
+          {
+            "id": "c-hospitalization-safety",
+            "label": "Natychmiastowe zabezpieczenie i hospitalizacja",
+            "acceptedPhrases": [
+              "hospitalizacja",
+              "zabezpieczenie",
+              "nadzór",
+              "nieodstępowanie"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-contract-discharge",
+            "patterns": [
+              "odesłanie do domu",
+              "kontrakt na niepopełnienie",
+              "kontrola za 2 tygodnie"
+            ],
+            "severity": "critical",
+            "feedback": "BŁĄD KRYTYCZNY: Pacjent z planem i intencją wymaga natychmiastowej hospitalizacji; kontrakt nie chroni przed samobójstwem."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "C-SSRS poziom 5 (plan i intencja) oznacza bezpośrednie zagrożenie życia wymagające natychmiastowej hospitalizacji.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "cssrs-scale",
+        "ptp-standardy"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "ocena-ryzyka-samobojczego-agresji-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "ocena-ryzyka-samobojczego-agresji-obj-2"
+      ],
+      "prompt": "Wyjaśnij kluczowe zasady różnicowania klinicznego oraz pułapki diagnostyczne w zagadnieniu: ocena ryzyka samobojczego agresji.",
+      "modelAnswer": "Kluczowe jest odróżnienie pierwotnych zaburzeń psychicznych od masek somatycznych i toksycznych, uwzględnienie dynamiki czasowej oraz unikanie pochopnego rozpoznania na podstawie pojedynczego objawu.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-diff-organic",
+            "label": "Wykluczenie przyczyn somatycznych i substancji",
+            "acceptedPhrases": [
+              "przyczyny somatyczne",
+              "substancje",
+              "toksyczne",
+              "organiczne"
+            ]
+          },
+          {
+            "id": "c-diff-longitudinal",
+            "label": "Ocena przebiegu podłużnego i kryteriów czasowych",
+            "acceptedPhrases": [
+              "przebieg podłużny",
+              "kryteria czasowe",
+              "dynamika",
+              "czas trwania"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Ocena kliniczna wymaga analizy podłużnej i systematycznego wykluczenia przyczyn wtórnych.",
+      "difficulty": "both",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "icd11-cddr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "ocena-ryzyka-samobojczego-agresji-bank-3",
+      "type": "missing_information",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "ocena-ryzyka-samobojczego-agresji-obj-1",
+        "ocena-ryzyka-samobojczego-agresji-obj-3"
+      ],
+      "prompt": "W analizie przypadku klinicznego z obszaru ocena ryzyka samobojczego agresji pacjent zgłasza nietypowy zestaw objawów. Jakiej informacji brakuje w pierwszej kolejności?",
+      "options": [
+        "Wywiadu toksykologicznego i badań laboratoryjnych wykluczających podłoże organiczne",
+        "Profilu genetycznego rzadkich mutacji enzymatycznych",
+        "Wyniku tomografii komputerowej bez wskazań ogniskowych"
+      ],
+      "answer": 0,
+      "explanation": "Podstawą rzetelnej oceny psychiatrycznej jest wykluczenie czynników egzogennych, intoksykacji i zaburzeń metabolicznych.",
+      "difficulty": "student",
+      "reasoning": "decision",
+      "sourceIds": [
+        "icd11-cddr",
+        "dsm5tr"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "pathway-builder",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., CANMAT oraz pełny profil assessmentBank z transfer coverage."
+  }
+}

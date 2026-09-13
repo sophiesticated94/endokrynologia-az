@@ -1,0 +1,165 @@
+{
+  "id": "wywiad-psychiatryczny-mse",
+  "moduleId": "psych-afektywne",
+  "title": "Wywiad psychiatryczny i badanie stanu psychicznego (MSE)",
+  "subtitle": "Struktura badania, domeny MSE, ocena napędu, afektu i krytycyzmu",
+  "group": "Fundamenty i diagnostyka ogólna",
+  "minutes": 16,
+  "goals": [
+    "Przeprowadzisz ustrukturyzowane badanie stanu psychicznego (Mental Status Examination — MSE).",
+    "Zróżnicujesz afekt dostosowany, spłaszczony, blady, niedostosowany i labilny.",
+    "Ocenisz krytycyzm chorobowy (wgląd / insight) oraz poczucie chorobowości."
+  ],
+  "sections": [
+    {
+      "title": "Domeny badania stanu psychicznego (MSE)",
+      "text": "Badanie stanu psychicznego (MSE) jest psychiatrycznym odpowiednikiem badania fizykalnego. Obejmuje standaryzowaną ocenę: 1) Wyglądu ogólnego i zachowania (higiena, kontakt wzrokowy, ubiór, mimika, współpraca); 2) Aktywności psychoruchowej i napędu (spowolnienie, osłupienie, pobudzenie, akatyzja, tiki, manieryzmy); 3) Mowy (tempo, głośność, modulacja, latencja odpowiedzi, ciągłość); 4) Nastroju (deklarowany przez pacjenta stan emocjonalny) i afektu (obserwowalny wyraz emocjonalny); 5) Toku i treści myślenia; 6) Spostrzegania; 7) Funkcji poznawczych (orientacja, uwaga, pamięć); 8) Krytycyzmu i oceny rzeczywistości."
+    },
+    {
+      "title": "Ocena afektu: wymiary i psychopatologia",
+      "text": "Afekt opisuje się w czterech wymiarach: modulacji (odpowiedź na bodźce), zakresu (szeroki vs wąski), adekwatności (zgodność z wypowiadaną treścią) oraz stabilności. Wyróżniamy: afekt spłaszczony (znaczne zubożenie ekspresji mimicznej i modulacji głosu, typowy dla objawów negatywnych), afekt blady/tępy (utrata zdolności głębszego przeżywania), afekt labilny (nagłe, nieadekwatne fluktuacje od śmiechu do płaczu) oraz afekt niedostosowany / paratymię (dysonans między treścią wypowiedzi a wyrazem emocjonalnym, np. uśmiech przy relacji o tragedii)."
+    },
+    {
+      "title": "Krytycyzm chorobowy (Insight) i sojusz terapeutyczny",
+      "text": "Krytycyzm ocenia się stopniowo: od pełnego braku poczucia choroby (anozognozja — przekonanie o pełnym zdrowiu mimo skrajnych objawów psychotycznych, częste w schizofrenii i manii), przez krytycyzm częściowy (uznawanie problemów nerwowych lub somatycznych bez wglądu w naturę psychiczną), po pełny wgląd (rozumienie etiologii, konieczności leczenia i przestrzegania zaleceń). Ocena wglądu jest kluczowa dla decyzji o leczeniu ambulatoryjnym vs hospitalizacji."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Domena MSE",
+      "Cechy prawidłowe",
+      "Odchylenia psychopatologiczne",
+      "Przykłady kliniczne"
+    ],
+    "rows": [
+      [
+        "Afekt",
+        "Żywy, modulowany, dostosowany",
+        "Spłaszczony, blady, labilny, niedostosowany",
+        "Spłaszczenie w schizofrenii deficytowej, labilność w naczyniopochodnych OUN"
+      ],
+      [
+        "Tok myślenia",
+        "Płynny, ukierunkowany na cel",
+        "Przyspieszony, spowolniony, rozkojarzony, otamowany",
+        "Gonitwa myśli w manii, otamowania w schizofrenii"
+      ],
+      [
+        "Krytycyzm (Insight)",
+        "Pełny, gotowość do leczenia",
+        "Brak (anozognozja), częściowy intelektualny",
+        "Brak krytycyzmu w ostrym epizodzie manii z urojeniami wielkościowymi"
+      ]
+    ]
+  },
+  "advanced": "W formalnym zapisie MSE rozróżnia się „nastrój” (mood — klimat emocjonalny, subiektywny stan raportowany przez pacjenta, np. „czuję pustkę”) od „afektu” (affect — pogoda emocjonalna, obiektywna manifestacja obserwowana przez badacza w danym momencie). Rozbieżność między nastrojem a afektem jest cenną wskazówką diagnostyczną.",
+  "summary": "MSE standaryzuje ocenę wyglądu, napędu, mowy, nastroju, afektu, myślenia, percepcji i wglądu. Kluczowe jest odróżnienie afektu spłaszczonego od labilnego i ocena krytycyzmu chorobowego.",
+  "sourceIds": [
+    "icd11-cddr",
+    "dsm5tr",
+    "stahl-essential"
+  ],
+  "questions": [
+    {
+      "id": "psych-mse-q1",
+      "lessonId": "wywiad-psychiatryczny-mse",
+      "prompt": "Jaka jest fundamentalna różnica między nastrojem (mood) a afektem (affect) w badaniu psychiatrycznym?",
+      "options": [
+        {
+          "text": "Nastrój to subiektywny, utrwalony stan emocjonalny deklarowany przez pacjenta, a afekt to obiektywny wyraz obserwowany przez badacza",
+          "explanation": "Nastrój porównuje się do klimatu, a afekt do chwilowej pogody obserwowalnej w mimice i mowie."
+        },
+        {
+          "text": "Nastrój dotyczy wyłącznie chorób psychotycznych, a afekt zaburzeń nerwicowych",
+          "explanation": "Obie domeny ocenia się u każdego pacjenta."
+        },
+        {
+          "text": "Afekt ocenia się wyłącznie testami laboratoryjnymi z krwi",
+          "explanation": "Afekt jest elementem oceny klinicznej MSE."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-mse-q2",
+      "lessonId": "wywiad-psychiatryczny-mse",
+      "prompt": "Co oznacza pojęcie paratymii (afektu niedostosowanego)?",
+      "options": [
+        {
+          "text": "Błyskawiczne przechodzenie od wściekłości do euforii w ciągu sekundy",
+          "explanation": "To cecha labilności emocjonalnej."
+        },
+        {
+          "text": "Niezgodność między wyrazem emocjonalnym a treścią przeżyć lub wypowiedzi",
+          "explanation": "Klasycznym przykładem jest wesołkowaty uśmiech podczas opowiadania o śmierci bliskiej osoby."
+        },
+        {
+          "text": "Całkowity brak jakichkolwiek emocji i zastyganie",
+          "explanation": "To opis stuporu lub skrajnego spłaszczenia afektu."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-mse-q3",
+      "lessonId": "wywiad-psychiatryczny-mse",
+      "prompt": "Czym charakteryzuje się anozognozja w przebiegu ostrej psychozy lub manii?",
+      "options": [
+        {
+          "text": "Przekonaniem pacjenta, że jest chory na nieuleczalną chorobę somatyczną",
+          "explanation": "To cecha urojeń hipochondrycznych."
+        },
+        {
+          "text": "Symulowaniem objawów w celu uzyskania korzyści materialnej",
+          "explanation": "To symulacja (malingering)."
+        },
+        {
+          "text": "Całkowitym brakiem poczucia choroby i nieświadomością istnienia objawów psychotycznych",
+          "explanation": "Anozognozja wynika z neurobiologicznego zaburzenia wglądu, nie ze złośliwości pacjenta."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-mse-q4",
+      "lessonId": "wywiad-psychiatryczny-mse",
+      "prompt": "Które z poniższych zachowań świadczy o otamowaniu (blocking) toku myślenia?",
+      "options": [
+        {
+          "text": "Nagłe, nieprzewidywalne przerwanie wątku wypowiedzi w pół słowa z poczuciem pustki w głowie",
+          "explanation": "Otamowanie to nagłe zatrzymanie toku myślenia, po którym pacjent często nie pamięta, o czym mówił."
+        },
+        {
+          "text": "Wypowiadanie słów z ogromną prędkością i rymowanie",
+          "explanation": "To gonitwa myśli (flight of ideas)."
+        },
+        {
+          "text": "Ciągłe powtarzanie tego samego słowa zadanego przez lekarza",
+          "explanation": "To echolalia lub perseweracja."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-mse-q5",
+      "lessonId": "wywiad-psychiatryczny-mse",
+      "prompt": "Jaki element wywiadu psychiatrycznego ma kluczowe znaczenie prognostyczne przy podejrzeniu choroby afektywnej dwubiegunowej?",
+      "options": [
+        {
+          "text": "Wyłącznie ocena uzębienia pacjenta",
+          "explanation": "Nie determinuje podtypu choroby afektywnej."
+        },
+        {
+          "text": "Dokładny wywiad rodzinny w kierunku ChAD, samobójstw i epizodów hipomanii po lekach",
+          "explanation": "Obciążenie genetyczne ChAD sięga 70-80% heritability, a wcześniejsza hipomania po SSRI silnie wspiera diagnozę spektrum bipolarnego."
+        },
+        {
+          "text": "Grupa krwi pacjenta i poziom cholesterolu całkowitego",
+          "explanation": "Nie mają wartości diagnostycznej w różnicowaniu ChAD."
+        }
+      ],
+      "answer": 1
+    }
+  ],
+  "assetIds": []
+}

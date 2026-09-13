@@ -1,0 +1,165 @@
+{
+  "id": "adhd-dorosli-i-rozwojowe",
+  "moduleId": "psych-afektywne",
+  "title": "ADHD u dorosłych i zaburzenia neurorozwojowe",
+  "subtitle": "Dopamina i noradrenalina w korze przedczołowej, sieć DMN i diagnostyka",
+  "group": "Zaburzenia neurorozwojowe",
+  "minutes": 18,
+  "goals": [
+    "Rozpoznasz triadę objawów ADHD (nieuwaga, nadruchliwość, impulsywność) w fenotypie osoby dorosłej.",
+    "Zrozumiesz dysfunkcję kory przedczołowej i sieci spoczynkowej (DMN) w regulacji uwagi.",
+    "Wdrożysz rzetelną diagnostykę różnicową z ChAD, ChAJ, zaburzeniami osobowości i lękowymi."
+  ],
+  "sections": [
+    {
+      "title": "Ewolucja objawów ADHD w dorosłości",
+      "text": "ADHD (zespół nadpobudliwości psychoruchowej z deficytem uwagi) jest zaburzeniem neurorozwojowym trwającym przez całe życie. U dorosłych motoryczna nadruchliwość często przekształca się w wewnętrzny niepokój ruchowy i gonitwę myśli, podczas gdy na pierwszy plan wysuwają się deficyty funkcji wykonawczych: prokrastynacja, zaburzenia zarządzania czasem, zapominalstwo, dysregulacja emocjonalna oraz trudności z dokończeniem zadań."
+    },
+    {
+      "title": "Neurobiologia: dopamina, noradrenalina i sieć DMN",
+      "text": "W korze przedczołowej (PFC) optymalne funkcjonowanie sieci neuronalnych zależy od stężenia dopaminy (DA) działającej na receptory D1 (wzmocnienie sygnału) i noradrenaliny (NA) działającej na receptory alfa-2A (redukcja szumu tła). W ADHD niedobór tych monoamin uniemożliwia wygaszenie domyślnej sieci spoczynkowej (Default Mode Network, DMN) podczas wykonywania zadań, powodując ciągłe dekoncentrujące intruzje myśli."
+    },
+    {
+      "title": "Kryteria diagnostyczne i wymóg wywiadu z dzieciństwa",
+      "text": "Zarówno DSM-5-TR, jak i ICD-11 wymagają udokumentowania obecności co najmniej części objawów przed ukończeniem 12. roku życia (często weryfikowane opiniami szkolnymi lub wywiadem rozwojowym od rodziców) oraz ich występowania w co najmniej dwóch niezależnych środowiskach (np. praca i dom), prowadzących do istotnego upośledzenia funkcjonowania."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Domeny objawowe",
+      "Objaw u dzieci",
+      "Manifestacja u dorosłych",
+      "Podłoże neurobiologiczne"
+    ],
+    "rows": [
+      [
+        "Nieuwaga",
+        "Błędy z nieuwagi, gubienie przyborów, \"bujanie w obłokach\"",
+        "Chroniczne spóźnienia, trudności z planowaniem, porzucanie projektów",
+        "Niedobór DA/NA w grzbietowo-bocznej korze przedczołowej (dlPFC)"
+      ],
+      [
+        "Nadruchliwość",
+        "Bieganie po klasie, niemożność usiedzenia w ławce",
+        "Wewnętrzny niepokój, wiercenie się na krześle, natłok myśli",
+        "Dysfunkcja obwodów jądra półleżącego i prążkowia"
+      ],
+      [
+        "Impulsywność",
+        "Wyrywanie się do odpowiedzi, przerywanie innym",
+        "Podejmowanie impulsywnych decyzji finansowych, przerywanie rozmówcom",
+        "Niedobór hamowania korowego w korze oczodołowo-czołowej (OFC)"
+      ]
+    ]
+  },
+  "advanced": "Kluczową pułapką diagnostyczną jest mylenie labilności afektywnej w ADHD z epizodami w ChAD lub zaburzeniem osobowości borderline. W ADHD wahania nastroju trwają godziny (a nie dni czy tygodnie jak w ChAD) i niemal zawsze są reaktywne na bodźce zewnętrzne (dysforia wywołana odrzuceniem – rejection sensitive dysphoria).",
+  "summary": "ADHD u dorosłych manifestuje się zaburzeniami funkcji wykonawczych i labilnością nastroju wskutek hipodopaminergicznego stanu w PFC. Rozpoznanie wymaga potwierdzenia początku w dzieciństwie i manifestacji w wielu środowiskach.",
+  "sourceIds": [
+    "nice-adhd",
+    "wfsbp-adhd",
+    "dsm5tr"
+  ],
+  "questions": [
+    {
+      "id": "psych-adhd-q1",
+      "lessonId": "adhd-dorosli-i-rozwojowe",
+      "prompt": "Jaki jest kluczowy warunek formalny konieczny do rozpoznania ADHD u dorosłego wg DSM-5-TR i ICD-11?",
+      "options": [
+        {
+          "text": "Obecność udokumentowanych objawów w dzieciństwie (przed 12. rokiem życia) oraz upośledzenie w co najmniej 2 sferach życia",
+          "explanation": "ADHD jest schorzeniem neurorozwojowym; objawy nie mogą pojawić się po raz pierwszy dopiero w wieku dorosłym."
+        },
+        {
+          "text": "Wystąpienie objawów po 25. roku życia po raz pierwszy",
+          "explanation": "Pojawienie się takich objawów de novo u dorosłego wskazuje na inną przyczynę (np. zaburzenia afektywne, substancje)."
+        },
+        {
+          "text": "Obecność zmian ogniskowych w badaniu rezonansu magnetycznego mózgu",
+          "explanation": "ADHD jest diagnozą kliniczną; neuroobrazowanie nie służy do potwierdzania rozpoznania."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-adhd-q2",
+      "lessonId": "adhd-dorosli-i-rozwojowe",
+      "prompt": "Jak działają dopamina i noradrenalina w korze przedczołowej w celu zapewnienia optymalnej uwagi?",
+      "options": [
+        {
+          "text": "Pobudzają wyłącznie receptory histaminowe H1 w rdzeniu przedłużonym",
+          "explanation": "Receptory H1 biorą udział w czuwaniu, lecz to DA i NA w PFC warunkują funkcje wykonawcze."
+        },
+        {
+          "text": "Dopamina stymuluje receptory D1 (wzmacniając właściwy sygnał), a noradrenalina receptory alfa-2A (wyciszając szum tła)",
+          "explanation": "Równowaga ta odpowiada krzywej odwróconego U (Yerkes-Dodson) – optymalne skupienie wymaga precyzyjnego poziomu obu monoamin."
+        },
+        {
+          "text": "Całkowicie blokują aktywność neuronów kory przedczołowej wprowadzając w stan snu",
+          "explanation": "Monoaminy regulują aktywność neuronalną, nie wywołują snu."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-adhd-q3",
+      "lessonId": "adhd-dorosli-i-rozwojowe",
+      "prompt": "Która sieć neuronalna w spoczynku odpowiada za błądzenie myślami i powinna być wygaszona podczas wykonywania zadań skupiających uwagę?",
+      "options": [
+        {
+          "text": "Droga piramidowa skrzyżowana",
+          "explanation": "Droga piramidowa odpowiada za ruchy dowolne mięśni."
+        },
+        {
+          "text": "Układ siatkowaty wstępujący w rdzeniu kręgowym",
+          "explanation": "Układ siatkowaty kontroluje ogólny stan przytomności."
+        },
+        {
+          "text": "Sieć wzbudzenia podstawowego (Default Mode Network - DMN)",
+          "explanation": "W ADHD dochodzi do zaburzenia hamowania DMN przez sieć wykonawczą (Task-Positive Network)."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-adhd-q4",
+      "lessonId": "adhd-dorosli-i-rozwojowe",
+      "prompt": "Czym różnią się wahania nastroju w ADHD od faz afektywnych w Chorobie Afektywnej Dwubiegunowej (ChAD)?",
+      "options": [
+        {
+          "text": "W ADHD fluktuacje nastroju trwają godziny i są reaktywne na bodźce, podczas gdy epizody ChAD trwają tygodnie lub miesiące",
+          "explanation": "Czas trwania i reaktywność na zdarzenia to kluczowe kryterium różnicowe."
+        },
+        {
+          "text": "W ADHD wahania nastroju trwają zawsze dokładnie 6 miesięcy bez żadnej przerwy",
+          "explanation": "Wahania w ADHD są krótkotrwałe i zmienne z godziny na godzinę."
+        },
+        {
+          "text": "W ChAD nastrój zmienia się wyłącznie co 5 minut w rytmie oddechowym",
+          "explanation": "Cykle w ChAD mają charakter fazowy i trwają znacznie dłużej."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-adhd-q5",
+      "lessonId": "adhd-dorosli-i-rozwojowe",
+      "prompt": "Jakie grupy leków stanowią terapię I rzutu w farmakoterapii ADHD u osób dorosłych wg wytycznych NICE i WFSBP?",
+      "options": [
+        {
+          "text": "Benzodiazepiny w dawkach nasennych",
+          "explanation": "Benzodiazepiny upośledzają koncentrację i pamięć roboczą."
+        },
+        {
+          "text": "Psychostymulanty: metylofenidat lub pochodne amfetaminy",
+          "explanation": "Stymulanty blokujące DAT i NET wykazują największą siłę efektu (effect size > 0.8) w redukcji objawów osiowych."
+        },
+        {
+          "text": "Neuroleptyki klasyczne o silnym działaniu sedatywnym (haloperydol)",
+          "explanation": "Neuroleptyki klasyczne blokują receptory D2, nasilając deficyty poznawcze w ADHD."
+        }
+      ],
+      "answer": 1
+    }
+  ],
+  "assetIds": []
+}

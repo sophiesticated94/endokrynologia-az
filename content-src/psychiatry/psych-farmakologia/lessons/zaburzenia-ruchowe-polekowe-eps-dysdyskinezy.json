@@ -1,0 +1,171 @@
+{
+  "id": "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy",
+  "moduleId": "psych-farmakologia",
+  "title": "Polekowe zaburzenia ruchowe: parkinsonizm, akatyzja i dyskinezy TD",
+  "subtitle": "Nierównowaga DA/ACh w prążkowiu, skala BARS/AIMS, leki antycholinergiczne i VMAT2",
+  "group": "Toksykologia i stany nagłe w psychiatrii",
+  "minutes": 18,
+  "goals": [
+    "Zróżnicujesz ostre dystonie, parkinsonizm polekowy, akatyzję oraz późne dyskinezy (TD).",
+    "Zastosujesz natychmiastowe leczenie ostrej dystonii (biperyden / prometazyna i.m./i.v.).",
+    "Wdrożysz nowoczesne leczenie późnych dyskinez za pomocą inhibitorów VMAT2 (deutetrabenazyna, walbenazyna)."
+  ],
+  "sections": [
+    {
+      "title": "Spektrum pozapiramidowych powikłań ruchowych",
+      "text": "Objawy pozapiramidowe (EPS) wynikają z blokady receptorów D2 w szlaku nigrostriatalnym. Ostre dystonie pojawiają się w pierwszych godzinach do dni (bolesne skurcze mięśni szyi, kręcz karku, napady spojrzeniowe). Zespół parkinsonowski (drżenie spoczynkowe, bradykinezja, sztywność) rozwija się po tygodniach wskutek braku hamowania neuronów cholinergicznych. Akatyzja to subiektywne, męczące poczucie przymusu poruszania kończynami."
+    },
+    {
+      "title": "Leczenie stanów ostrych: przełamanie przewagi cholinergicznej",
+      "text": "W ostrej dystonii natychmiastową ulgę przynosi dożylne lub domięśniowe podanie leku antycholinergicznego (biperyden 2,5–5 mg i.m./i.v. lub prometazyna), co przywraca równowagę dopaminowo-cholinergiczną w prążkowiu. W akatyzji lekami I wyboru są lipofilne beta-adrenolityki (propranolol 20–80 mg/d) lub doraźnie benzodiazepiny."
+    },
+    {
+      "title": "Późne dyskinezy (Tardive Dyskinesia - TD) i inhibitory VMAT2",
+      "text": "TD to mimowolne, powtarzające się ruchy pląsawicze lub atetotyczne twarzy, języka (\"zespół żucia gumy\") lub kończyn, rozwijające się po miesiącach lub latach terapii wskutek nadwrażliwości odnerwieniowej i up-regulacji receptorów D2. Leki cholinolityczne są w TD bezwzględnie przeciwwskazane, gdyż nasilają objawy! Rewolucją w terapii TD są inhibitory pęcherzykowego transportera monoamin 2 (VMAT2: deutetrabenazyna, walbenazyna)."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Zaburzenie ruchowe",
+      "Czas wystąpienia od włączenia",
+      "Główny objaw kliniczny",
+      "Postępowanie z wyboru"
+    ],
+    "rows": [
+      [
+        "Ostra dystonia",
+        "Godziny do dni (1–5 dni)",
+        "Bolesny kręcz karku, napad wejrzeniowy, opistotonus",
+        "Biperyden i.m./i.v., prometazyna"
+      ],
+      [
+        "Akatyzja",
+        "Dni do tygodni",
+        "Wewnętrzny niepokój, przymus przebierania nogami",
+        "Propranolol, redukcja dawki, zamiana na lek o niskim D2"
+      ],
+      [
+        "Parkinsonizm polekowy",
+        "Tygodnie do miesięcy",
+        "Sztywność koła zębatego, drżenie spoczynkowe 4-6 Hz, hipomimia",
+        "Redukcja dawki, biperyden p.o., zamiana na SGA/aripiprazol"
+      ],
+      [
+        "Późne dyskinezy (TD)",
+        "Miesiące do lat",
+        "Ruchy mimowolne języka, warg, tułowia (choreoatetoza)",
+        "Inhibitor VMAT2, zamiana na klozapinę, STOP cholinolitykom!"
+      ]
+    ]
+  },
+  "advanced": "Dlaczego leki cholinolityczne (biperyden, triheksyfenidyl) pogarszają późne dyskinezy (TD)? W TD występuje patologiczna nadwrażliwość postsynaptycznych receptorów dopaminowych. Zahamowanie przekaźnictwa acetylocholinowego usuwa resztkowy hamulec dopaminy w prążkowiu, co skutkuje drastycznym nasileniem mimowolnych ruchów pląsawiczych.",
+  "summary": "Ostre dystonie leczy się biperydenem i.m., akatyzję propranololem, a parkinsonizm redukcją D2. W późnych dyskinezach cholinolityki są szkodliwe; przełomem są inhibitory VMAT2 lub zmiana na klozapinę.",
+  "sourceIds": [
+    "wfsbp-schizophrenia",
+    "maudsley15",
+    "stahl-essential"
+  ],
+  "questions": [
+    {
+      "id": "psych-eps-q1",
+      "lessonId": "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy",
+      "prompt": "Młody mężczyzna po 24 godzinach od podania haloperydolu doznaje nagłego bolesnego skrętu szyi w bok i przymusowego patrzenia ku górze. Jaki lek należy podać natychmiast w iniekcji?",
+      "options": [
+        {
+          "text": "Doustną witaminę C w proszku",
+          "explanation": "Witamina C nie znosi ostrej dystonii krtaniowo-szyjnej."
+        },
+        {
+          "text": "Kolejną podwójną dawkę haloperydolu i.m.",
+          "explanation": "Zwiększenie dawki neuroleptyku doprowadziłoby do skrajnego skurczu krtani i uduszenia."
+        },
+        {
+          "text": "Biperyden (2,5–5 mg i.m. lub powolny wlew i.v.)",
+          "explanation": "Lek przeciwcholinergiczny natychmiast przywraca zachwianą równowagę dopaminowo-acetylocholinową w prążkowiu."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-eps-q2",
+      "lessonId": "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy",
+      "prompt": "Jaka grupa leków stanowi leczenie I rzutu w uciążliwej akatyzji polekowej wg wytycznych międzynarodowych?",
+      "options": [
+        {
+          "text": "Lipofilne beta-adrenolityki (np. propranolol 20–80 mg/d)",
+          "explanation": "Propranolol przenika do OUN i wygasza hiperaktywność noradrenergiczną w pniu mózgu i rdzeniu kręgowym."
+        },
+        {
+          "text": "Glikokortykosteroidy w megadawkach",
+          "explanation": "Steroidy nie mają zastosowania w leczeniu akatyzacji."
+        },
+        {
+          "text": "Preparaty żelaza dożylnie",
+          "explanation": "Żelazo stosuje się w idiopatycznym zespole niespokojnych nóg (RLS), nie w polekowej akatyzji bez anemii."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-eps-q3",
+      "lessonId": "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy",
+      "prompt": "Dlaczego stosowanie leków cholinolitycznych (np. biperydenu) jest bezwzględnie PRZECIWWSKAZANE w późnych dyskinezach (Tardive Dyskinesia - TD)?",
+      "options": [
+        {
+          "text": "Wywołuje nieodwracalną utratę słuchu",
+          "explanation": "Biperyden nie jest lekiem ototoksycznym."
+        },
+        {
+          "text": "Zablokowanie receptorów muskarynowych odhamowuje nadwrażliwe receptory dopaminowe w prążkowiu, drastycznie nasilając ruchy mimowolne",
+          "explanation": "Cholinolityki pomagają w ostrym parkinsonizmie, lecz utrwalają i pogarszają późne dyskinezy."
+        },
+        {
+          "text": "Powoduje natychmiastową perforację jelita grubego",
+          "explanation": "Biperyden może powodować atonię jelit, lecz w TD kluczowy jest mechanizm receptorowy w mózgu."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-eps-q4",
+      "lessonId": "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy",
+      "prompt": "Jaki nowoczesny cel molekularny reprezentują leki zarejestrowane specjalnie do leczenia późnych dyskinez (walbenazyna, deutetrabenazyna)?",
+      "options": [
+        {
+          "text": "Hamowanie pompy protonowej w żołądku",
+          "explanation": "IPPs leczą chorobę wrzodową, nie dyskinezy."
+        },
+        {
+          "text": "Stymulacja receptorów insuliny w mięśniach",
+          "explanation": "Insulina nie reguluje mimowolnych ruchów języka."
+        },
+        {
+          "text": "Hamowanie pęcherzykowego transportera monoamin 2 (VMAT2)",
+          "explanation": "Zmniejsza to pakowanie dopaminy do pęcherzyków presynaptycznych i ogranicza jej wyrzut do szczeliny synaptycznej."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-eps-q5",
+      "lessonId": "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy",
+      "prompt": "Który lek przeciwpsychotyczny cechuje się najniższym ryzykiem wywołania późnych dyskinez (TD) i jest lekiem z wyboru, gdy TD już wystąpią?",
+      "options": [
+        {
+          "text": "Klozapina",
+          "explanation": "Klozapina nie tylko nie indukuje późnych dyskinez, lecz wykazuje właściwości tłumiące istniejące ruchy mimowolne."
+        },
+        {
+          "text": "Haloperydol w zastrzykach o przedłużonym uwalnianiu",
+          "explanation": "Jest to lek o najwyższym znanym ryzyku wywołania i zaostrzenia TD."
+        },
+        {
+          "text": "Zuklopentyksol",
+          "explanation": "Klasyczny neuroleptyk FGA o wysokim profilu ryzyka dyskinez."
+        }
+      ],
+      "answer": 0
+    }
+  ],
+  "assetIds": []
+}
