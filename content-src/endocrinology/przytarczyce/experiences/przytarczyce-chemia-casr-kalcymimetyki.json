@@ -39,6 +39,9 @@
       "casr_hill",
       "fhh_consensus",
       "kdigo_ckd_mbd"
+    ],
+    "claimIds": [
+      "claim-pt-cinacalcet-mechanism"
     ]
   },
   "blocks": [
@@ -152,7 +155,8 @@
       "casr_hill",
       "fhh_consensus",
       "kdigo_ckd_mbd"
-    ]
+    ],
+    "assessmentLevel": "generation"
   },
   "exitTicket": [
     {
@@ -181,7 +185,9 @@
         "casr_hill",
         "fhh_consensus",
         "kdigo_ckd_mbd"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     },
     {
       "id": "przytarczyce-chemia-casr-kalcymimetyki-q5-exit-v2",
@@ -209,7 +215,9 @@
         "casr_hill",
         "fhh_consensus",
         "kdigo_ckd_mbd"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     }
   ],
   "widgetIds": [
@@ -220,5 +228,145 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "przytarczyce-chemia-casr-kalcymimetyki-bank-1",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "przytarczyce-chemia-casr-kalcymimetyki-obj-1",
+        "przytarczyce-chemia-casr-kalcymimetyki-obj-2"
+      ],
+      "claimIds": [
+        "claim-pt-cinacalcet-mechanism"
+      ],
+      "prompt": "Przeanalizuj chemiczne i molekularne podstawy działania kalcymimetyków na receptor CaSR u pacjenta dializowanego z ciężką wtórną nadczynnością przytarczyc. Wyjaśnij: 1) architekturę domenową receptora CaSR (domena Venus Flytrap – VFT, domena bogata w cysteinę – CRD oraz domena 7-transbłonowa – 7TM) oraz koordynację jonów Ca2+ w kieszeni ortosterycznej; 2) mechanizm, w jakim drobnocząsteczkowy cynakalcet wiążący się w domenie 7TM moduluje allosterycznie receptor (PAM); 3) wewnątrzkomórkową kaskadę sygnałową białek G (Gq/11, fosfolipaza C, IP3, DAG) i unikalny 'paradoks wydzielniczy' komórek przytarczyc (hamowanie egzocytozy PTH przez wzrost cytozolowego wapnia).",
+      "modelAnswer": "Receptor CaSR należy do klasy C GPCR i występuje jako konstytutywny homodimer. Każdy monomer składa się z olbrzymiej domeny zewnątrzzwrotnej Venus Flytrap (VFT), domeny bogatej w cysteinę (CRD) przekazującej sygnał konformacyjny oraz domeny 7 helis transbłonowych (7TM). Kieszeń ortosteryczna w szczelinie VFT koordynuje jony Ca2+ za pośrednictwem ujemnie naładowanych grup karboksylowych reszt kwasu asparaginowego i glutaminowego; związanie wapnia wymusza zamknięcie domeny VFT (stan aktywny). Cynakalcet nie konkuruje z wapniem o kieszeń VFT: jest allosterycznym modulatorem dodatnim (PAM), który wnika w hydrofobową kieszeń wewnątrz pęczka 7TM, stabilizując aktywną konformację receptora i drastycznie obniżając stężenie Ca2+ niezbędne do jego aktywacji. Pobudzony receptor sprzęga się z białkami Gq/11 oraz Gi/o. Aktywacja Gq/11 stymuluje fosfolipazę C-beta (PLC), która rozszczepia PIP2 do IP3 i DAG. IP3 indukuje wyrzut jonów wapnia z retikulum endoplazmatycznego, a podjednostka Gi hamuje cyklazę adenylową, obniżając cAMP. W komórkach przytarczyc występuje unikalny 'paradoks wydzielniczy': w odróżnieniu od komórek beta trzustki czy neuronów, wzrost cytozolowego wapnia i spadek cAMP HAMUJĄ fuzję pęcherzyków z PTH z błoną komórkową oraz hamują transkrypcję genu PTH, wywołując gwałtowny spadek sekrecji parathormonu.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "przytarczyce-chemia-casr-kalcymimetyki-bank-1-dim-domains",
+            "label": "Architektura domenowa CaSR i koordynacja Ca2+ w domenie VFT",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-vft-7tm-domains",
+                "label": "Domena Venus Flytrap (VFT), reszty karboksylowe Asp/Glu, domena 7TM",
+                "acceptedPhrases": [
+                  "Venus Flytrap",
+                  "VFT",
+                  "domena 7TM",
+                  "reszty karboksylowe",
+                  "asparaginian",
+                  "glutaminian",
+                  "homodimer"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "przytarczyce-chemia-casr-kalcymimetyki-bank-1-dim-pam-mechanism",
+            "label": "Mechanizm allosteryczny cynakalcetu (PAM w 7TM)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-pam-allosteric-cinacalcet",
+                "label": "Cynakalcet jako PAM wiążący się w domenie 7TM",
+                "acceptedPhrases": [
+                  "PAM",
+                  "dodatni modulator allosteryczny",
+                  "domena 7TM",
+                  "kieszeń hydrofobowa",
+                  "brak konkurencji z Ca2+"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "przytarczyce-chemia-casr-kalcymimetyki-bank-1-dim-signaling-paradox",
+            "label": "Szlaki Gq/11, PLC, IP3/DAG i paradoks hamowania egzocytozy PTH",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-gq-plc-secretory-paradox",
+                "label": "Gq/11, PLC, IP3, wzrost cytozolowego Ca2+ hamujący egzocytozę PTH",
+                "acceptedPhrases": [
+                  "Gq/11",
+                  "fosfolipaza C",
+                  "PLC",
+                  "IP3",
+                  "paradoks wydzielniczy",
+                  "hamowanie egzocytozy",
+                  "spadek cAMP"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-pth-exocytosis-stimulation-misconception",
+            "patterns": [
+              "wzrost wapnia cytozolowego stymuluje wydzielanie PTH w przytarczycach",
+              "cynakalcet pobudza wydzielanie PTH"
+            ],
+            "severity": "critical",
+            "feedback": "W przytarczycach zachodzi paradoks wydzielniczy: wzrost cytozolowego wapnia hamuje (a nie stymuluje) egzocytozę PTH."
+          }
+        ]
+      },
+      "explanation": "CaSR to dimer z domeną VFT (wiążącą Ca2+) i domeną 7TM (gdzie wiąże się cynakalcet jako PAM); aktywacja szlaku Gq/11–PLC wywołuje paradoksalne zahamowanie egzocytozy PTH.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "casr_hill",
+        "kdigo_ckd_mbd"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "przytarczyce-chemia-casr-kalcymimetyki-bank-2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przytarczyce-chemia-casr-kalcymimetyki-obj-1",
+        "przytarczyce-chemia-casr-kalcymimetyki-obj-2"
+      ],
+      "claimIds": [
+        "claim-pt-cinacalcet-mechanism"
+      ],
+      "prompt": "Czym różni się mechanizm wiązania peptydowego kalcymimetyku etelkalcetydu od drobnocząsteczkowego cynakalcetu?",
+      "options": [
+        "Etelkalcetyd tworzy kowalencyjny mostek dwusiarczkowy z resztą Cys482 w domenie zewnątrzzwrotnej receptora CaSR, podczas gdy cynakalcet wiąże się niekowalencyjnie w kieszeni hydrofobowej wewnątrz domeny 7-transbłonowej (7TM).",
+        "Etelkalcetyd blokuje wchłanianie cynku w enterocytach, a cynakalcet działa w cewkach nerkowych.",
+        "Cynakalcet jest przeciwciałem monoklonalnym IgG1, a etelkalcetyd związkiem steroidowym."
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-etelcalcetide-cys482-disulfide",
+            "label": "Etelkalcetyd: mostek dwusiarczkowy z Cys482 vs cynakalcet w 7TM",
+            "acceptedPhrases": [
+              "etelkalcetyd",
+              "Cys482",
+              "mostek dwusiarczkowy",
+              "domena 7TM",
+              "cynakalcet"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Etelkalcetyd to D-oktapeptyd tworzący wiązanie dwusiarczkowe z resztą Cys482 domeny zewnątrzzwrotnej CaSR; cynakalcet wiąże się hydrofobowo w pęczku 7TM.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "casr_hill",
+        "kdigo_ckd_mbd"
+      ],
+      "transfer": true
+    }
+  ]
 }

@@ -3,212 +3,299 @@
   "lessonId": "nadnercza-matematyka-hemodynamika",
   "objectives": [
     {
-      "id": "nadnercza-matematyka-hemodynamika-obj-1",
-      "statement": "Wyprowadzisz i zinterpretujesz wskaźnik aldosteronowo-reninowy (ARR) w diagnostyce hiperaldosteronizmu pierwotnego.",
+      "id": "adn-hemo-obj-1",
+      "statement": "Wyprowadzisz i zinterpretujesz parametry hemodynamiczne (MAP, SVR, CO) we wstrząsie naczynioplegicznym w przełomie nadnerczowym.",
       "kind": "mechanism"
     },
     {
-      "id": "nadnercza-matematyka-hemodynamika-obj-2",
-      "statement": "Zanalizujesz krzywe stężenie-odpowiedź receptorów adrenergicznych (kompetycyjna vs niekompetycyjna blokada w pheochromocytoma).",
-      "kind": "interpretation"
+      "id": "adn-hemo-obj-2",
+      "statement": "Przeliczysz i ocenisz dynamikę ciśnienia tętniczego i oporu obwodowego podczas wlewu katecholamin u pacjenta z pheochromocytoma po niepełnej alfa-blokadzie.",
+      "kind": "safety"
     }
   ],
   "diagnostic": {
     "id": "nadnercza-matematyka-hemodynamika-q1-diagnostic-v2",
     "type": "single_choice",
+    "assessmentLevel": "recognition",
     "objectiveIds": [
-      "nadnercza-matematyka-hemodynamika-obj-1"
+      "adn-hemo-obj-1"
     ],
-    "prompt": "Dlaczego do wiarygodnej interpretacji podwyższonego wskaźnika ARR (>30) konieczne jest jednoczesne wykazanie stężenia aldosteronu (PAC) > 10–15 ng/dl?",
+    "prompt": "Zgodnie z prawem Darcy'ego dla układu krążenia: MAP - CVP = CO * SVR. Jakie zmiany parametrów hemodynamicznych definiują wstrząs w przełomie nadnerczowym?",
     "options": [
-      "Ponieważ przy bardzo niskiej reninie (mianownik bliski zeru) iloraz może być sztucznie zawyżony przy śladowym aldosteronie",
-      "Ponieważ aldosteron w stężeniu poniżej 15 ng/dl staje się gazem",
-      "Ponieważ renina rozkłada probówkę laboratoryjną"
+      "Głęboki spadek systemowego oporu naczyniowego (SVR) połączony ze spadkiem powrotu żylnego i rzutu serca (CO) z powodu hipowolemii",
+      "Izolowany wzrost oporu naczyniowego SVR powyżej 2500 dyn*s/cm5",
+      "Wzrost ciśnienia tętniczego MAP przy bradykardii"
     ],
     "optionFeedback": [
-      "Zapobiega to fałszywie dodatnim rozpoznaniom u pacjentów z niskoreninowym nadciśnieniem samoistnym.",
-      "Aldosteron jest hormonem steroidowym rozpuszczalnym w lipidach.",
-      "Renina to enzym proteolityczny działający w osoczu na angiotensynogen."
+      "Brak kortyzolu znosi tonus naczyniowy (spadek SVR), a brak aldosteronu wywołuje ucieczkę sodu i wody (spadek CO).",
+      "Wysoki SVR cechuje wstrząs kardiogenny lub przełom w pheochromocytoma.",
+      "W przełomie nadnerczowym ciśnienie MAP gwałtownie spada."
     ],
     "answer": 0,
-    "explanation": "Zapobiega to fałszywie dodatnim rozpoznaniom u pacjentów z niskoreninowym nadciśnieniem samoistnym.",
-    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "explanation": "W przełomie nadnerczowym występuje komponent wazoplegiczny (spadek SVR z braku efektu permisyjnego kortyzolu) oraz hipowolemiczny (spadek CO z utraty sodu i wody).",
     "difficulty": "student",
     "reasoning": "mechanism",
     "sourceIds": [
-      "endo_pa",
-      "endo_pheo",
-      "cah_kinetics"
+      "adrenal_crisis"
     ]
   },
   "blocks": [
     {
-      "id": "nadnercza-matematyka-hemodynamika-block-1",
-      "title": "Dynamika pętli sprzężenia zwrotnego RAA i wskaźnik ARR",
-      "text": "W warunkach fizjologicznych wydzielanie aldosteronu przez warstwę kłębkowatą jest ściśle sprzężone z aktywnością reniny osoczowej (PRA) lub stężeniem reniny (DRC): spadek ciśnienia ⟶ wzrost reniny ⟶ wzrost angiotensyny II ⟶ wzrost aldosteronu ⟶ retencja sodu ⟶ hamowanie reniny. W zespole Conna (autonomia gruczolaka) aldosteron pozostaje wysoki mimo całkowitej supresji reniny. Wskaźnik aldosteronowo-reninowy ARR = PAC / PRA (lub PAC / DRC) pozwala wykryć tę utratę kontroli.",
+      "id": "adn-hemo-b1",
+      "title": "Równanie hemodynamiczne MAP i SVR",
+      "text": "Średnie ciśnienie tętnicze wynosi w przybliżeniu: MAP = DP + 1/3(SP - DP) = CO * SVR / 80. Wstrząs w przełomie nadnerczowym cechuje się zapaścią obu składowych: SVR spada z powodu braku ekspresji receptorów alfa-1 i odhamowania syntazy tlenku azotu (iNOS), a rzut serca (CO) spada z powodu hipowolemii (niedobór aldosteronu).",
       "sourceIds": [
-        "endo_pa",
-        "endo_pheo",
-        "cah_kinetics"
+        "adrenal_crisis"
       ],
-      "checkpointId": "nadnercza-matematyka-hemodynamika-q2-checkpoint-1-v2",
-      "inlineEnhancements": []
+      "checkpointId": "nadnercza-matematyka-hemodynamika-q2-checkpoint-1-v2"
     },
     {
-      "id": "nadnercza-matematyka-hemodynamika-block-2",
-      "title": "Matematyczne punkty odcięcia ARR i warunki standaryzacji",
-      "text": "Wartość odcięcia ARR zależy od jednostek laboratoryjnych: przy stężeniu aldosteronu (PAC) w ng/dl i aktywności reniny (PRA) w ng/ml/h punkt odcięcia wynosi zazwyczaj ARR > 30 (przy PAC > 10–15 ng/dl). Przy reninie oznaczanej jako DRC w mIU/L, próg wynosi ARR > 3,7. Ze względu na mianownik dążący do zera (DRC < 2 mIU/L), wynik może być fałszywie dodatni, dlatego niezbędne jest równoczesne spełnienie kryterium podwyższonego stężenia samego aldosteronu.",
+      "id": "adn-hemo-b2",
+      "title": "Hemodynamika pheochromocytoma: Równanie Poiseuille’a",
+      "text": "Opór naczyniowy zależy od czwartej potęgi promienia naczynia (R ~ 1/r^4). Masywny wyrzut noradrenaliny aktywuje receptory alfa-1, zmniejszając promień tętniczek o połowę, co zwiększa opór naczyniowy SVR aż 16-krotnie! Jeśli w tym stanie zablokuje się receptory beta-2 beta-blokerem, zniesiona zostaje jedyna kompensacja naczyniorozszerzająca, wywołując skok MAP > 180 mmHg.",
       "sourceIds": [
-        "endo_pa",
-        "endo_pheo",
-        "cah_kinetics"
+        "endo_pheo"
       ],
-      "checkpointId": "nadnercza-matematyka-hemodynamika-q3-checkpoint-2-v2",
-      "inlineEnhancements": []
+      "checkpointId": "nadnercza-matematyka-hemodynamika-q3-checkpoint-2-v2"
     },
     {
-      "id": "nadnercza-matematyka-hemodynamika-block-3",
-      "title": "Farmakodynamika blokady receptorów alfa: Fenoksybenzamina vs Doksazosyna",
-      "text": "W pheochromocytoma napływ noradrenaliny wysyca receptory alfa-1 naczyniowe wg równania Hilla: E = (Emax * [C]^n) / (EC50^n + [C]^n). Doksazosyna jest antagonistą kompetycyjnym (odwracalnym) — przesuwa krzywą w prawo, co oznacza, że nagły masywny wyrzut katecholamin podczas operacji może przełamać blokadę. Fenoksybenzamina jest antagonistą niekompetycyjnym (alkilującym) — tworzy nieodwracalne wiązanie kowalencyjne z receptorem alfa, obniżając Emax, co zapewnia absolutną ochronę przed przełomem.",
+      "id": "adn-hemo-b3",
+      "title": "Resuscytacja płynowa a powrót żylny (VR)",
+      "text": "Wyprowadzenie chorego z wstrząsu nadnerczowego wymaga równoczesnego podania hydrokortyzonu (odbudowa SVR) oraz wlewu 0,9% NaCl (wzrost średniego ciśnienia napełniania układu krążenia MSFP i powrotu żylnego VR, co podnosi rzut serca CO).",
       "sourceIds": [
-        "endo_pa",
-        "endo_pheo",
-        "cah_kinetics"
-      ],
-      "inlineEnhancements": []
+        "adrenal_crisis"
+      ]
     }
   ],
   "activities": [
     {
       "id": "nadnercza-matematyka-hemodynamika-q2-checkpoint-1-v2",
-      "type": "single_choice",
+      "type": "numeric",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "nadnercza-matematyka-hemodynamika-obj-2"
+        "adn-hemo-obj-1"
       ],
-      "prompt": "Dlaczego w przygotowaniu do operacji guza chromochłonnego (pheo) bezwzględnie ZAKAZANE jest wdrożenie beta-blokera przed pełną blokadą alfa?",
-      "options": [
-        "Prowadzi do nieposkromionej stymulacji receptorów alfa (unopposed alpha) i zagrażającego życiu skoku ciśnienia",
-        "Bo beta-bloker natychmiast rozpuszcza guz nadnercza",
-        "Bo beta-blokery zmieniają grupę krwi pacjenta"
-      ],
-      "optionFeedback": [
-        "Zablokowanie rozkurczających receptorów beta-2 pozostawia naczynia pod wyłącznym wpływem skurczowym alfa-1.",
-        "Leki adrenolityczne nie wykazują działania onkolitycznego na guzy chromochłonne.",
-        "Leki kardiologiczne nie wpływają na antygeny grupowe układu AB0."
-      ],
+      "prompt": "Pacjent we wstrząsie nadnerczowym ma ciśnienie skurczowe SP = 70 mmHg i rozkurczowe DP = 40 mmHg. Oblicz średnie ciśnienie tętnicze (MAP) ze wzoru: MAP = DP + 1/3*(SP - DP). Wpisz zaokrągloną liczbę całkowitą (w mmHg).",
       "answer": 0,
-      "explanation": "Zablokowanie rozkurczających receptorów beta-2 pozostawia naczynia pod wyłącznym wpływem skurczowym alfa-1.",
-      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
-      "difficulty": "student",
+      "explanation": "MAP = 40 + 1/3*(70 - 40) = 40 + 10 = 50 mmHg. Wartość poniżej 65 mmHg oznacza niewystarczającą perfuzję narządową.",
+      "difficulty": "doctor",
       "reasoning": "mechanism",
       "sourceIds": [
-        "endo_pa",
-        "endo_pheo",
-        "cah_kinetics"
-      ]
+        "adrenal_crisis"
+      ],
+      "claimIds": [
+        "claim-adn-adrenal-crisis-emergency"
+      ],
+      "transfer": true,
+      "tolerance": 2,
+      "unit": "mmHg"
     },
     {
       "id": "nadnercza-matematyka-hemodynamika-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "nadnercza-matematyka-hemodynamika-obj-1"
+        "adn-hemo-obj-2"
       ],
-      "prompt": "Na czym polega przewaga niekompetycyjnego antagonisty receptorów alfa (fenoksybenzaminy) nad antagonistą kompetycyjnym (doksazosyną)?",
+      "prompt": "Dlaczego u pacjenta z pheochromocytoma podanie labetalolu o stosunku blokady alfa-do-beta wynoszącym 1:7 może doprowadzić do załamania hemodynamicznego?",
       "options": [
-        "Wiąże się kowalencyjnie z receptorem, więc nawet masywny wyrzut katecholamin podczas resekcji nie przełamie blokady",
-        "Działa wyłącznie przez 15 sekund i natychmiast znika",
-        "Można ją popijać wyłącznie sokiem grejpfrutowym"
-      ],
-      "optionFeedback": [
-        "Zmniejsza Emax odpowiedzi presyjnej, uniemożliwiając skurcz naczynia.",
-        "Fenoksybenzamina działa długo ze względu na konieczność syntezy nowych receptorów de novo.",
-        "Sposób popijania nie jest mechanizmem przewagi farmakodynamicznej."
+        "Przewaga blokady receptorów beta (1:7) znosi naczyniorozszerzający wpływ receptorów beta-2 i zwalnia akcję serca, pozostawiając praktycznie nieosłonięte receptory alfa-1, co wywołuje skrajny wzrost oporu naczyniowego SVR",
+        "Labetalol bezpośrednio stymuluje wydzielanie aldosteronu z nerek",
+        "Labetalol wywołuje natychmiastowe rozszerzenie aorty z jej pęknięciem"
       ],
       "answer": 0,
-      "explanation": "Zmniejsza Emax odpowiedzi presyjnej, uniemożliwiając skurcz naczynia.",
-      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-alpha-beta-ratio-mismatch",
+            "label": "Niedostateczna blokada alfa w stosunku do beta (przewaga beta-blokady 1:7)",
+            "acceptedPhrases": [
+              "przewaga beta",
+              "niewystarczająca blokada alfa",
+              "unopposed alpha",
+              "wzrost SVR",
+              "skurcz naczyń"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Labetalol doustny ma stosunek blokady alfa:beta wynoszący ok. 1:7. Taka dysproporcja blokuje efekt beta-2, nie zapewniając wystarczającej osłony receptorów alfa-1.",
       "difficulty": "doctor",
-      "reasoning": "interpretation",
+      "reasoning": "safety",
       "sourceIds": [
-        "endo_pa",
-        "endo_pheo",
-        "cah_kinetics"
+        "endo_pheo"
+      ],
+      "claimIds": [
+        "claim-adn-pheo-alpha-before-beta"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Labetalol doustny ma stosunek blokady alfa:beta wynoszący ok. 1:7. Taka dysproporcja blokuje efekt beta-2, nie zapewniając wystarczającej osłony receptorów alfa-1.",
+        "Nieprawidłowo: Labetalol bezpośrednio stymuluje wydzielanie aldosteronu z nerek... Labetalol doustny ma stosunek blokady alfa:beta wynoszący ok. 1:7. Taka dysproporcja blokuje efekt beta-2, nie zapewniając wystarczającej osłony receptorów alfa-1.",
+        "Nieprawidłowo: Labetalol wywołuje natychmiastowe rozszerzenie aorty z jej pęknięciem... Labetalol doustny ma stosunek blokady alfa:beta wynoszący ok. 1:7. Taka dysproporcja blokuje efekt beta-2, nie zapewniając wystarczającej osłony receptorów alfa-1."
       ]
     }
   ],
   "teachBack": {
     "id": "nadnercza-matematyka-hemodynamika-teach-back-v2",
     "type": "recall",
+    "assessmentLevel": "generation",
     "objectiveIds": [
-      "nadnercza-matematyka-hemodynamika-obj-1",
-      "nadnercza-matematyka-hemodynamika-obj-2"
+      "adn-hemo-obj-1",
+      "adn-hemo-obj-2"
     ],
-    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Matematyka osi RAA, wskaźnik ARR i krzywe wysycenia receptorów”.",
-    "modelAnswer": "Wskaźnik ARR ujawnia autonomię aldosteronu wygaszającą reninę, a niekompetycyjna blokada alfa fenoksybenzaminą chroni przed przełomem hemodynamicznym w pheo.",
-    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "prompt": "Wyjaśnij na gruncie równania MAP = CO * SVR, dlaczego wstrząs w przełomie nadnerczowym wymaga jednoczesnego podania płynów i hydrokortyzonu.",
+    "modelAnswer": "Sama płynoterapia podnosi rzut serca CO, ale przy zwiotczałych naczyniach (niski SVR z braku kortyzolu) krew ulega redystrybucji i MAP nie rośnie. Z kolei hydrokortyzon przywraca gęstość receptorów alfa-1 i SVR, ale bez uzupełnienia objętości łożyska (CO) nie zapewni rzutu serca. Dopiero połączenie 0,9% NaCl (wzrost CO) i hydrokortyzonu (wzrost SVR) normalizuje MAP.",
+    "explanation": "Model hemodynamiczny uzasadnia skojarzenie krystaloidów z hydrokortyzonem w resuscytacji wstrząsu.",
     "difficulty": "both",
     "reasoning": "mechanism",
     "sourceIds": [
-      "endo_pa",
-      "endo_pheo",
-      "cah_kinetics"
+      "adrenal_crisis"
     ]
   },
   "exitTicket": [
     {
       "id": "nadnercza-matematyka-hemodynamika-q4-exit-v2",
       "type": "missing_information",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "nadnercza-matematyka-hemodynamika-obj-2"
+        "adn-hemo-obj-1"
       ],
-      "prompt": "Jaki lek hipotensyjny fałszywie drastycznie podwyższa stężenie reniny i może uniemożliwić interpretację wskaźnika ARR (dając wynik fałszywie ujemny)?",
+      "prompt": "Jaki parametr hemodynamiczny w inwazyjnym monitorowaniu krążenia (np. cewnikiem Swana-Ganza lub systemem PiCCO) najszybciej wzrasta po podaniu bolusa 100 mg hydrokortyzonu u chorego we wstrząsie nadnerczowym?",
       "options": [
-        "Inhibitory konwertazy angiotensyny (ACE-I) oraz sartany (ARB)",
-        "Czysta witamina C w małej dawce",
-        "Insulina podana do posiłku"
+        "Wskaźnik systemowego oporu naczyniowego (SVRI) w odpowiedzi na przywrócenie reaktywności na aminy presyjne",
+        "Stężenie mleczanów w krwi tętniczej",
+        "Opór naczyniowy w krążeniu płucnym (PVRI) bez zmian krążenia systemowego"
       ],
       "optionFeedback": [
-        "Znoszą hamowanie reniny przez angiotensynę II, wywołując gwałtowny skok reniny w osoczu.",
-        "Kwas askorbinowy nie zaburza bezpośrednio pętli sprzężenia osi RAA.",
-        "Insulina nie jest inhibitorem osi renina-angiotensyna."
+        "Hydrokortyzon przywraca napięcie tętniczek obwodowych, gwałtownie podnosząc SVRI.",
+        "Mleczany spadają w miarę poprawy perfuzji tkankowej.",
+        "Efekt dotyczy przede wszystkim krążenia systemowego."
       ],
       "answer": 0,
-      "explanation": "Znoszą hamowanie reniny przez angiotensynę II, wywołując gwałtowny skok reniny w osoczu.",
-      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
-      "difficulty": "both",
-      "reasoning": "decision",
+      "explanation": "Efekt permisyjny hydrokortyzonu powoduje skurcz rozszerzonych tętniczek i bezpośredni wzrost oporu obwodowego (SVRI).",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
       "sourceIds": [
-        "endo_pa",
-        "endo_pheo",
-        "cah_kinetics"
-      ]
+        "adrenal_crisis"
+      ],
+      "transfer": true
     },
     {
       "id": "nadnercza-matematyka-hemodynamika-q5-exit-v2",
-      "type": "missing_information",
+      "type": "single_choice",
+      "assessmentLevel": "recognition",
       "objectiveIds": [
-        "nadnercza-matematyka-hemodynamika-obj-1"
+        "adn-hemo-obj-2"
       ],
-      "prompt": "Jaki wpływ na interpretację wskaźnika ARR ma hipokaliemia u pacjenta z podejrzeniem zespołu Conna?",
+      "prompt": "Dlaczego w przełomie w pheochromocytoma często występuje odruchowa bradykardia pomimo potężnego stężenia katecholamin?",
       "options": [
-        "Hipokaliemia hamuje wydzielanie aldosteronu i może dać wynik fałszywie ujemny",
-        "Hipokaliemia nie ma żadnego wpływu na steroidogenezę",
-        "Zawsze daje wynik fałszywie dodatni ponad 1000"
-      ],
-      "optionFeedback": [
-        "Dlatego przed oznaczeniem ARR stężenie potasu w surowicy musi być bezwzględnie wyrównane.",
-        "Jon potasu jest bezpośrednim fizjologicznym secretagogiem aldosteronu w warstwie kłębkowatej.",
-        "Hipokaliemia obniża stężenie aldosteronu, a nie podwyższa."
+        "Skrajny wzrost ciśnienia skurczowego pobudza baroreceptory zatoki szyjnej i łuku aorty, wyzwalając odruchowy wzrost napięcia nerwu błędnego (odruch baroreceptorowy)",
+        "Katecholaminy bezpośrednio blokują węzeł zatokowo-przedsionkowy",
+        "Guz wydziela acetylocholinę do krążenia wieńcowego"
       ],
       "answer": 0,
-      "explanation": "Dlatego przed oznaczeniem ARR stężenie potasu w surowicy musi być bezwzględnie wyrównane.",
-      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
-      "difficulty": "both",
-      "reasoning": "safety",
+      "explanation": "Gwałtowny skok oporu naczyniowego i ciśnienia aktywuje baroreceptory naczyniowe, co może wywołać silny odruch wagalny i bradykardię z odruchu baroreceptorowego.",
+      "difficulty": "student",
+      "reasoning": "decision",
       "sourceIds": [
-        "endo_pa",
-        "endo_pheo",
-        "cah_kinetics"
+        "endo_pheo"
+      ],
+      "optionFeedback": [
+        "Prawidłowo: Gwałtowny skok oporu naczyniowego i ciśnienia aktywuje baroreceptory naczyniowe, co może wywołać silny odruch wagalny i bradykardię z odruchu baroreceptorowego.",
+        "Nieprawidłowo: Katecholaminy bezpośrednio blokują węzeł zatokowo-przedsionkowy... Gwałtowny skok oporu naczyniowego i ciśnienia aktywuje baroreceptory naczyniowe, co może wywołać silny odruch wagalny i bradykardię z odruchu baroreceptorowego.",
+        "Nieprawidłowo: Guz wydziela acetylocholinę do krążenia wieńcowego... Gwałtowny skok oporu naczyniowego i ciśnienia aktywuje baroreceptory naczyniowe, co może wywołać silny odruch wagalny i bradykardię z odruchu baroreceptorowego."
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "nadnercza-matematyka-hemodynamika-bank-1-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "adn-hemo-obj-1",
+        "adn-hemo-obj-2"
+      ],
+      "prompt": "Posługując się prawem Poiseuille'a (opór naczyniowy R proporcjonalny do 1/r^4), wytłumacz, dlaczego niezrównoważona stymulacja receptorów alfa-1 po omyłkowym podaniu beta-adrenolityku u pacjenta z guzem chromochłonnym prowadzi do nagłego obrzęku płuc i dekompensacji lewokomorowej.",
+      "modelAnswer": "Zgodnie z prawem Poiseuille'a opór naczyniowy jest odwrotnie proporcjonalny do czwartej potęgi promienia naczynia (R ~ 1/r^4). Podanie beta-adrenolityku blokuje receptory beta-2, które w warunkach wyrzutu adrenaliny rozszerzają naczynia mięśni szkieletowych, przeciwważąc działanie naczynioskurczowe. Pozostawienie samej stymulacji alfa-1 wywołuje uogólniony skurcz tętniczek oporowych i redukcję ich promienia o 30–50%, co skutkuje nawet kilkunastokrotnym wzrostem systemowego oporu naczyniowego (SVR). Tak potężny skok obciążenia następczego (afterload) przekracza wydolność skurczową lewej komory, prowadząc do ostrego wzrostu ciśnienia późnorozkurczowego w lewej komorze, ciśnienia zaklinowania w kapilarach płucnych (PCWP > 25 mmHg) i nagłego kardiogennego obrzęku płuc.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-poiseuille-fourth-power-radius",
+            "label": "Zależność oporu od czwartej potęgi promienia (1/r^4) i skurcz tętniczek",
+            "acceptedPhrases": [
+              "czwarta potęga",
+              "1/r^4",
+              "promień naczynia",
+              "skurcz tętniczek",
+              "gwałtowny wzrost oporu"
+            ]
+          },
+          {
+            "id": "c-afterload-mismatch-pulmonary-edema",
+            "label": "Przeciążenie następcze (afterload) lewej komory i obrzęk płuc",
+            "acceptedPhrases": [
+              "obciążenie następcze",
+              "afterload",
+              "niewydolność lewokomorowa",
+              "obrzęk płuc",
+              "PCWP"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Prawo Poiseuille'a wyjaśnia niszczycielskie skutki skurczu naczyniowego: niewielka redukcja promienia tętniczek dramatycznie zwiększa obciążenie następcze, wywołując ostry obrzęk płuc.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "endo_pheo"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "nadnercza-matematyka-hemodynamika-bank-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "adn-hemo-obj-1"
+      ],
+      "prompt": "Dlaczego w przełomie nadnerczowym podanie samej dopaminy w dawkach presyjnych bez uprzedniego wdrożenia płynoterapii nie przywraca perfuzji nerkowej?",
+      "options": [
+        "Dopamina w warunkach głębokiej hipowolemii wywołuje dalszy skurcz naczyń obwodowych bez zwiększenia powrotu żylnego (preload), co przy braku wypełnienia łożyska pogłębia niedokrwienie rdzenia nerki",
+        "Dopamina ulega natychmiastowej neutralizacji przez kortyzol",
+        "Dopamina działa wyłącznie na naczynia krążenia wieńcowego"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-hypovolemia-vasopressor-failure",
+            "label": "Nieskuteczność wazopresorów bez wstępnego wypełnienia łożyska krystaloidami",
+            "acceptedPhrases": [
+              "hipowolemia",
+              "wypełnienie łożyska",
+              "brak preload",
+              "skurcz naczyniowy",
+              "niedokrwienie nerki"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Stosowanie amin presyjnych u pacjenta hipowolemicznego bez wyrównania płynów nasila niedokrwienie narządowe (w tym nerek) i prowadzi do ostrej martwicy cewek nerkowych.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "adrenal_crisis"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Stosowanie amin presyjnych u pacjenta hipowolemicznego bez wyrównania płynów nasila niedokrwienie narządowe (w tym nerek) i prowadzi do ostrej martwicy cewek nerkowych.",
+        "Nieprawidłowo: Dopamina ulega natychmiastowej neutralizacji przez kortyzol... Stosowanie amin presyjnych u pacjenta hipowolemicznego bez wyrównania płynów nasila niedokrwienie narządowe (w tym nerek) i prowadzi do ostrej martwicy cewek nerkowych.",
+        "Nieprawidłowo: Dopamina działa wyłącznie na naczynia krążenia wieńcowego... Stosowanie amin presyjnych u pacjenta hipowolemicznego bez wyrównania płynów nasila niedokrwienie narządowe (w tym nerek) i prowadzi do ostrej martwicy cewek nerkowych."
       ]
     }
   ],
@@ -219,6 +306,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+    "scope": "Pełna modernizacja V2: parametry hemodynamiczne MAP/SVR/CO, równanie Poiseuille'a, unopposed alpha-stimulation i obrzęk płuc."
   }
 }

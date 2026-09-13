@@ -43,6 +43,9 @@
     "sourceIds": [
       "hungry_bone",
       "eses_parathyroid"
+    ],
+    "claimIds": [
+      "claim-pt-hungry-bone-predictors"
     ]
   },
   "blocks": [
@@ -158,7 +161,8 @@
     "sourceIds": [
       "hungry_bone",
       "eses_parathyroid"
-    ]
+    ],
+    "assessmentLevel": "generation"
   },
   "exitTicket": [
     {
@@ -186,7 +190,9 @@
       "sourceIds": [
         "hungry_bone",
         "eses_parathyroid"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     },
     {
       "id": "zespol-glodnych-kosci-q5-exit-v2",
@@ -213,7 +219,9 @@
       "sourceIds": [
         "hungry_bone",
         "eses_parathyroid"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     }
   ],
   "widgetIds": [
@@ -228,5 +236,143 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "zespol-glodnych-kosci-bank-1",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "zespol-glodnych-kosci-obj-1",
+        "zespol-glodnych-kosci-obj-2",
+        "zespol-glodnych-kosci-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-hungry-bone-predictors",
+        "claim-pt-hypocalcemia-magnesium-block"
+      ],
+      "prompt": "Przeanalizuj powikłanie u 66-letniego mężczyzny w 3. dobie po usunięciu 35 mm gruczolaka przytarczycy z powodu ciężkiego PHPT. Wyjściowe parametry przedoperacyjne: Ca 3,35 mmol/l, iPTH 640 pg/ml (10x GGN), ALP 480 U/l. W 3. dobie po zabiegu: Ca całkowity 1,68 mmol/l, fosforany 0,50 mmol/l (norma 0,81–1,45 mmol/l), magnez 0,48 mmol/l, iPTH pooperacyjny 32 pg/ml. Pacjent ma drętwienie ust, silne kurcze łydek i objaw Chvostka. Wyjaśnij: 1) dlaczego obecność hipofosfatemii bezwzględnie wyklucza pooperacyjną niedoczynność przytarczyc i potwierdza zespół głodnych kości (HBS); 2) jakie czynniki przedoperacyjne predysponowały pacjenta do HBS; 3) przedstaw kompleksowy protokół infuzji wapnia, magnezu i kalcytriolu.",
+      "modelAnswer": "U pacjenta występuje ciężki pooperacyjny zespół głodnych kości (Hungry Bone Syndrome, HBS). Kluczowym biochemicznym markerem różnicującym HBS od jatrogennej pooperacyjnej niedoczynności przytarczyc jest stężenie fosforanów: w niedoczynności przytarczyc brak PTH znosi fosfaturię, prowadząc do hiperfosfatemii. Z kolei w HBS remineralizujący się, 'zgłodniały' kościec wychwytuje masowo zarówno jony wapnia, jak i fosforany oraz magnez, dając triadę: hipokalcemia + głęboka hipofosfatemia + hipomagnezemia (pooperacyjny iPTH 32 pg/ml jest w normie, co dowodzi zachowania funkcji pozostałych przytarczyc). Czynniki ryzyka HBS u tego chorego: podeszły wiek (66 lat), bardzo wysoki przedoperacyjny PTH (>5x GGN), znacznie podwyższona aktywność ALP (480 U/l odzwierciedlająca zaawansowany obrót kostny), duża masa guza (35 mm) oraz ciężka wyjściowa hiperkalcemia (>3,0 mmol/l). Protokół ratunkowy: 1) natychmiast 10–20 ml 10% glukonianu wapnia i.v. w 100 ml 5% glukozy w ciągu 10–20 min; 2) ciągły wlew dożylny glukonianu wapnia (np. 10 ampułek w 1000 ml 5% glukozy w tempie 50–100 ml/h pod kontrolą EKG i kalcemii co 4–6 h); 3) natychmiastowa suplementacja siarczanu magnezu i.v. (1–2 g MgSO4 w powolnym wlewie), ponieważ hipomagnezemia uniemożliwia normalizację kalcemii; 4) wysokie dawki aktywnej witaminy D (kalcytriol 1–2 µg/dobę p.o.) oraz doustny węglan wapnia (4–8 g/dobę w dawkach podzielonych z posiłkiem).",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "zespol-glodnych-kosci-bank-1-dim-differential-triad",
+            "label": "Różnicowanie HBS z hipoparatyreozą (hipofosfatemia vs hiperfosfatemia)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-hbs-hypophosphatemia-triad",
+                "label": "Hipofosfatemia w HBS wyklucza niedoczynność przytarczyc",
+                "acceptedPhrases": [
+                  "hipofosfatemia",
+                  "wychwyt fosforanów przez kość",
+                  "wykluczenie niedoczynności",
+                  "w niedoczynności hiperfosfatemia",
+                  "triada elektrolitowa"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "zespol-glodnych-kosci-bank-1-dim-risk-predictors",
+            "label": "Identyfikacja predyktorów HBS (ALP, PTH, wielkość guza, kalcemia)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-hbs-preop-predictors",
+                "label": "Wysoki ALP (>300), wysoki PTH (>5x GGN), duży gruczolak",
+                "acceptedPhrases": [
+                  "ALP > 300",
+                  "obrót kostny",
+                  "PTH > 5x GGN",
+                  "wielkość gruczolaka",
+                  "wiek pacjenta"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "zespol-glodnych-kosci-bank-1-dim-resuscitation-protocol",
+            "label": "Protokół intensywnej suplementacji (Ca i.v., Mg i.v., kalcytriol p.o.)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-hbs-treatment-protocol",
+                "label": "Glukonian wapnia wlew, siarczan magnezu, wysokie dawki kalcytriolu",
+                "acceptedPhrases": [
+                  "glukonian wapnia ciągły wlew",
+                  "siarczan magnezu",
+                  "suplementacja magnezu",
+                  "kalcytriol 1–2 µg",
+                  "węglan wapnia"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-hbs-magnesium-omission",
+            "patterns": [
+              "pominąć magnez",
+              "leczyć wyłącznie wapniem bez podania magnezu"
+            ],
+            "severity": "critical",
+            "feedback": "Pominięcie suplementacji magnezu przy współistniejącej hipomagnezemii prowadzi do oporności na leczenie hipokalcemii i zagrażających arytmii."
+          }
+        ]
+      },
+      "explanation": "W HBS remineralizacja kości pochłania wapń, fosfor i magnez (hipofosfatemia różnicuje HBS z hipoparatyreozą); silnymi predyktorami są ALP >300 U/l i PTH >5x GGN, a leczenie wymaga Ca, Mg i kalcytriolu.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "hungry_bone",
+        "qtc_bone"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "zespol-glodnych-kosci-bank-2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "zespol-glodnych-kosci-obj-1",
+        "zespol-glodnych-kosci-obj-2",
+        "zespol-glodnych-kosci-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-hungry-bone-predictors"
+      ],
+      "prompt": "Dlaczego aktywność frakcji kostnej fosfatazy alkalicznej (ALP) powyżej 300 U/l przed operacją paratyroidektomii stanowi najczulszy predyktor pooperacyjnego zespołu głodnych kości?",
+      "options": [
+        "Fosfataza alkaliczna odzwierciedla nasilenie obrotu kostnego i masę hiperaktywnych osteoblastów, które po nagłym usunięciu hamującego wpływu resorpcyjnego PTH gwałtownie wychwytują wapń i fosforany z surowicy w celu mineralizacji nieusieciowanego osteoidu.",
+        "Ponieważ ALP jest hormonem syntetyzowanym w komórkach głównych gruczolaka przytarczyc.",
+        "ALP powoduje bezpośrednie wiązanie parathormonu w surowicy i jego natychmiastową inaktywację."
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-alp-osteoblast-turnover",
+            "label": "ALP jako marker obrotu kostnego i aktywności osteoblastów",
+            "acceptedPhrases": [
+              "obrót kostny",
+              "aktywność osteoblastów",
+              "mineralizacja osteoidu",
+              "wychwyt wapnia",
+              "przedoperacyjny ALP"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Wysokie stężenie ALP dowodzi ciężkiej osteodystrofii i obecności rozległego, zdemineralizowanego zrębu kostnego, który po nagłym spadku PTH działa jak 'gąbka' pochłaniająca wapń i fosforany.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "hungry_bone"
+      ],
+      "transfer": true
+    }
+  ]
 }

@@ -43,6 +43,9 @@
     "sourceIds": [
       "asbmr_calcium",
       "ese_hypopara"
+    ],
+    "claimIds": [
+      "claim-pt-hypocalcemia-magnesium-block"
     ]
   },
   "blocks": [
@@ -151,7 +154,8 @@
     "sourceIds": [
       "asbmr_calcium",
       "ese_hypopara"
-    ]
+    ],
+    "assessmentLevel": "generation"
   },
   "exitTicket": [
     {
@@ -179,7 +183,9 @@
       "sourceIds": [
         "asbmr_calcium",
         "ese_hypopara"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     },
     {
       "id": "rzekoma-niedoczynnosc-q5-exit-v2",
@@ -206,7 +212,9 @@
       "sourceIds": [
         "asbmr_calcium",
         "ese_hypopara"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     }
   ],
   "widgetIds": [
@@ -217,5 +225,143 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "rzekoma-niedoczynnosc-bank-1",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "rzekoma-niedoczynnosc-obj-1",
+        "rzekoma-niedoczynnosc-obj-2",
+        "rzekoma-niedoczynnosc-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-hypocalcemia-magnesium-block"
+      ],
+      "prompt": "Przeanalizuj przypadek 17-letniego chłopca skierowanego z powodu drżenia mięśniowego, tężyczki i trudności szkolnych. W badaniu fizykalnym: niski wzrost (<3. centyla), otyłość, zaokrąglona twarz, wyraźne skrócenie IV i V kości śródręcza (brachydaktylia). Wyniki: wapń całkowity 1,76 mmol/l, fosforany 2,15 mmol/l, stężenie iPTH 380 pg/ml (znacznie podwyższone), TSH 7,4 mIU/l, fT4 10,2 pmol/l (obniżone). Wyjaśnij: 1) mechanizm molekularny zespołu (oporność na PTH i TSH z powodu defektu genu GNAS); 2) wpływ imprintingu genomowego (pochodzenie matczyne vs ojcowskie mutacji w PHP-1a vs PPHP); 3) optymalny plan leczenia.",
+      "modelAnswer": "U pacjenta występuje rzekoma niedoczynność przytarczyc typu 1a (PHP-1a) ze współistniejącym fenotypem wrodzonej osteodystrofii Albrighta (AHO). Mechanizm molekularny polega na heterozygotycznej inaktywującej mutacji genu GNAS kodującego podjednostkę alfa heterotrimerycznego białka Gs (Gs-alfa). Ponieważ receptor PTH1R oraz receptor TSH sygnalizują poprzez białko Gs i cyklazę adenylową, defekt ten prowadzi do braku generacji cAMP i wielohormonalnej oporności (wysoki PTH przy hipokalcemii i hiperfosfatemii oraz wysokie TSH przy niskim fT4). Wpływ imprintingu: w cewce proksymalnej nerki i w tarczycy ekspresja Gs-alfa zachodzi selektywnie wyłącznie z allelu matczynego (allel ojcowski jest wyciszony). Odziedziczenie mutacji od matki skutkuje pełnym zespołem PHP-1a (AHO + oporność hormonalna). Gdyby tę samą mutację przekazał ojciec, syn rozwinąłby rzekomą rzekomą niedoczynność przytarczyc (PPHP) – fenotyp AHO bez jakichkolwiek zaburzeń hormonalnych. Leczenie obejmuje: aktywny metabolit witaminy D (kalcytriol 0,5–1,5 µg/dobę), węglan wapnia oraz substytucję lewotyroksyną.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "rzekoma-niedoczynnosc-bank-1-dim-gnas-mechanism",
+            "label": "Molekularny mechanizm defektu Gs-alfa i oporność na PTH/TSH",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-gnas-gs-alpha-defect",
+                "label": "Mutacja genu GNAS, upośledzenie podjednostki Gs-alfa i cAMP",
+                "acceptedPhrases": [
+                  "GNAS",
+                  "Gs-alfa",
+                  "podjednostka alfa białka Gs",
+                  "oporność na PTH",
+                  "oporność na TSH",
+                  "brak cAMP"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "rzekoma-niedoczynnosc-bank-1-dim-imprinting",
+            "label": "Imprinting genomowy: matczyny (PHP-1a) vs ojcowski (PPHP)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-genomic-imprinting-aho",
+                "label": "Dziedziczenie matczyne daje PHP-1a, ojcowskie daje PPHP",
+                "acceptedPhrases": [
+                  "imprinting genomowy",
+                  "allel matczyny",
+                  "allel ojcowski",
+                  "PPHP",
+                  "PHP-1a",
+                  "wyciszenie allelu"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "rzekoma-niedoczynnosc-bank-1-dim-treatment",
+            "label": "Leczenie zaburzeń elektrolitowych i substytucja",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-php-management-calcitriol-lt4",
+                "label": "Kalcytriol, suplementacja wapnia i lewotyroksyna",
+                "acceptedPhrases": [
+                  "kalcytriol",
+                  "węglan wapnia",
+                  "lewotyroksyna",
+                  "L-tyroksyna"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-php-exogenous-pth-misconception",
+            "patterns": [
+              "podać rekombinowany PTH",
+              "leczyć teryparatydem"
+            ],
+            "severity": "critical",
+            "feedback": "W rzekomej niedoczynności przytarczyc występuje receptorowa oporność na PTH, stąd podawanie egzogennego PTH jest całkowicie nieskuteczne."
+          }
+        ]
+      },
+      "explanation": "PHP-1a wynika z matczynej mutacji GNAS prowadzącej do utraty funkcji Gs-alfa w tkankach podlegających imprintingowi (nerki, tarczyca), powodując AHO i oporność na PTH i TSH.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "asbmr_calcium",
+        "ese_hypopara"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "rzekoma-niedoczynnosc-bank-2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "rzekoma-niedoczynnosc-obj-1",
+        "rzekoma-niedoczynnosc-obj-2",
+        "rzekoma-niedoczynnosc-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-hypocalcemia-magnesium-block"
+      ],
+      "prompt": "Jakie zestawienie wyników laboratoryjnych jednoznacznie różnicuje rzekomą niedoczynność przytarczyc (PHP) od pierwotnej niedoczynności przytarczyc?",
+      "options": [
+        "W obu stanach występuje hipokalcemia i hiperfosfatemia, lecz w PHP stężenie iPTH jest znacznie podwyższone (oporność receptora), podczas gdy w pierwotnej niedoczynności przytarczyc iPTH jest nieoznaczalne lub nieadekwatnie niskie.",
+        "W PHP stężenie wapnia jest zawsze podwyższone, a w pierwotnej niedoczynności obniżone.",
+        "W pierwotnej niedoczynności przytarczyc stężenie fosforanów w surowicy jest skrajnie niskie z powodu fosfaturii."
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-php-vs-hypopara-diff",
+            "label": "Wysokie iPTH w PHP vs niskie/nieoznaczalne w pierwotnej niedoczynności",
+            "acceptedPhrases": [
+              "wysoki PTH",
+              "podwyższony iPTH",
+              "niskie stężenie PTH",
+              "oporność na parathormon",
+              "hiperfosfatemia"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Zarówno w hipoparatyreozie, jak i w PHP występuje hipokalcemia z hiperfosfatemią, ale kluczowym markerem różnicującym jest iPTH: bardzo wysokie w PHP (oporność) i niskie w hipoparatyreozie (brak hormonu).",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "asbmr_calcium"
+      ],
+      "transfer": true
+    }
+  ]
 }

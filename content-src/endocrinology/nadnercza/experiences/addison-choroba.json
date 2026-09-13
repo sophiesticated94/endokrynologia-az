@@ -3,36 +3,41 @@
   "lessonId": "addison-choroba",
   "objectives": [
     {
-      "id": "addison-choroba-obj-1",
-      "statement": "Rozpoznasz triadę kliniczno-laboratoryjną choroby Addisona: osłabienie, melanodermia, hipotensja, hiponatremia z hiperkaliemią.",
+      "id": "addison-obj-1",
+      "statement": "Wyjaśnisz patogenezę melanodermii (brak ujemnego sprzężenia na POMC/ACTH) oraz zaburzeń wodno-elektrolitowych z niedoboru aldosteronu.",
       "kind": "mechanism"
     },
     {
-      "id": "addison-choroba-obj-2",
-      "statement": "Zrozumiesz zasady substytucji dwuhormonalnej (hydrokortyzon + fludrokortyzon) oraz edukację pacjenta (zasada podwajania dawek w chorobie).",
-      "kind": "interpretation"
+      "id": "addison-obj-2",
+      "statement": "Wdrożysz reguły postępowania w sytuacjach stresowych ('sick day rules' — podwajanie/potrajanie dawek hydrokortyzonu) w celu prewencji przełomu.",
+      "kind": "safety"
+    },
+    {
+      "id": "addison-obj-3",
+      "statement": "Dobierzesz i zmodyfikujesz schemat dwuhormonalnej substytucji (hydrokortyzon w dawkach podzielonych + fludrokortyzon rano) na podstawie parametrów klinicznych i elektrolitów.",
+      "kind": "decision"
     }
   ],
   "diagnostic": {
     "id": "addison-choroba-q1-diagnostic-v2",
     "type": "single_choice",
+    "assessmentLevel": "recognition",
     "objectiveIds": [
-      "addison-choroba-obj-1"
+      "addison-obj-1"
     ],
-    "prompt": "Dlaczego u pacjentów z chorobą Addisona rozwija się hiperpigmentacja skóry (melanodermia)?",
+    "prompt": "Dlaczego u chorych z pierwotną niedoczynnością kory nadnerczy (chorobą Addisona) rozwija się charakterystyczna hiperpigmentacja skóry i błon śluzowych (melanodermia)?",
     "options": [
-      "Brak ujemnego sprzężenia zwrotnego kortyzolu wywołuje nadmierne wydzielanie ACTH i POMC, które aktywują receptory MC1R w melanocytach",
-      "Brak aldosteronu powoduje odkładanie się żelaza w naskórku",
-      "W chorobie Addisona dochodzi do rozpadu erytrocytów i żółtaczki"
+      "Brak ujemnego sprzężenia zwrotnego kortyzolu prowadzi do masywnego wydzielania POMC i ACTH, które pobudzają receptory melanokortynowe MC1R w melanocytach",
+      "Brak aldosteronu powoduje odkładanie się żelaza i hemosyderyny w warstwie podstawnej naskórka",
+      "Niedobór kortyzolu wywołuje hemolizę erytrocytów i żółtaczkę pozawątrobową"
     ],
     "optionFeedback": [
-      "Peptydy te mają powinowactwo do receptorów melanocytowych, stymulując produkcję barwnika.",
-      "To mechanizm hemochromatozy, a nie choroby Addisona.",
-      "Przebarwienie nie wynika z bilirubiny ani hemolizy."
+      "Proopiomelanokortyna (POMC) i ACTH zawierają sekwencję alfa-MSH, stymulując melanogenezę poprzez receptor MC1R.",
+      "To mechanizm hemochromatozy, niemający związku z chorobą Addisona.",
+      "Choroba Addisona nie wywołuje hemolizy ani żółtaczki."
     ],
     "answer": 0,
-    "explanation": "Peptydy te mają powinowactwo do receptorów melanocytowych, stymulując produkcję barwnika.",
-    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "explanation": "Utrata kortyzolu znosi ujemne sprzężenie na przysadkę, co skutkuje nadprodukcją POMC i ACTH; peptydy te wiążą się z receptorem MC1R w melanocytach, indukując hiperpigmentację.",
     "difficulty": "student",
     "reasoning": "mechanism",
     "sourceIds": [
@@ -42,164 +47,340 @@
   },
   "blocks": [
     {
-      "id": "addison-choroba-block-1",
-      "title": "Etiologia: Od gruźlicy do autoimmunologii",
-      "text": "Pierwotna niedoczynność kory nadnerczy (choroba Addisona) rozwija się, gdy zniszczeniu ulegnie ponad 90% miąższu kory obu nadnerczy. Historycznie dominowała gruźlica, obecnie w krajach rozwiniętych ponad 80–90% przypadków to autoimmunologiczne zapalenie kory nadnerczy (autoimmune adrenalitis). Cechuje się obecnością autoprzeciwciał przeciwko 21-hydroksylazie (anty-21-OH). Może występować w ramach autoimmunologicznych zespołów wielogruczołowych: APS-1 (mutacja AIRE: Addison, kandydoza, hipoparatiroidyzm) lub APS-2 (zespół Schmidta: Addison, autoimmunologiczna choroba tarczycy i/lub cukrzyca typu 1).",
+      "id": "addison-b1",
+      "title": "Autoimmunologiczne zapalenie kory i triada objawów",
+      "text": "W krajach rozwiniętych >80% przypadków choroby Addisona stanowi autoimmunologiczne zapalenie kory nadnerczy z obecnością przeciwciał przeciwko 21-hydroksylazie (anty-21-OH). Objawy kliniczne ujawniają się dopiero po zniszczeniu >90% miąższu kory obu nadnerczy: przewlekłe zmęczenie, utrata masy ciała, hipotensja ortostatyczna, salt craving (chęć jedzenia soli) oraz melanodermia.",
       "sourceIds": [
-        "endo_pai",
-        "pte_nadnercza"
+        "endo_pai"
       ],
-      "checkpointId": "addison-choroba-q2-checkpoint-1-v2",
-      "inlineEnhancements": []
+      "checkpointId": "addison-choroba-q2-checkpoint-1-v2"
     },
     {
-      "id": "addison-choroba-block-2",
-      "title": "Obraz kliniczny i tajemnica melanodermii",
-      "text": "Objawy narastają podstępnie przez miesiące: przewlekłe zmęczenie, osłabienie mięśniowe, chudnięcie, jadłowstręt, hipotensja ortostatyczna oraz charakterystyczne pragnienie soli (salt craving — „chęć zjedzenia ogórka kiszonego lub wypicia wody z solą”). KLUCZOWY OBJAW PATOFIZJOLOGICZNY: Ciemnienie skóry i błon śluzowych (melanodermia / hiperpigmentacja). Brak kortyzolu znosi ujemne sprzężenie zwrotne, prowadząc do gigantycznego wyrzutu przysadkowego ACTH oraz jego prekursora POMC (proopiomelanokortyny). ACTH i peptydy MSH pobudzają receptory melanokortynowe 1 (MC1R) w melanocytach. Przebarwienia pojawiają się w miejscach narażonych na słońce, w zgięciach dłoniowych, na otoczkach brodawek, bliźnach powstałych po początku choroby oraz na błonie śluzowej policzków!",
+      "id": "addison-b2",
+      "title": "Zaburzenia elektrolitowe: utrata aldosteronu",
+      "text": "Zniszczenie strefy kłębuszkowej powoduje bezwzględny niedobór aldosteronu. Skutkuje to upośledzeniem reabsorpcji sodu w cewce dalszej i brakiem wydalania potasu oraz jonów wodorowych: powstaje hiponatremia, hiperkaliemia i kwasica nieoddechowa z hipowolemią.",
       "sourceIds": [
-        "endo_pai",
-        "pte_nadnercza"
+        "endo_pai"
       ],
-      "checkpointId": "addison-choroba-q3-checkpoint-2-v2",
-      "inlineEnhancements": []
+      "checkpointId": "addison-choroba-q3-checkpoint-2-v2"
     },
     {
-      "id": "addison-choroba-block-3",
-      "title": "Zaburzenia elektrolitowe i leczenie substytucyjne",
-      "text": "W chorobie Addisona zniszczona jest cała kora, w tym strefa kłębuszkowa. Niedobór aldosteronu prowadzi do utraty sodu i wody przez nerki oraz zatrzymywania potasu i jonów wodorowych: powstaje hiponatremia, hiperkaliemia i kwasica metaboliczna. LECZENIE SUBSTYTUCYJNE wymaga uzupełnienia obu hormonów: 1) Hydrokortyzon (15–25 mg/dobę w 2–3 dawkach podzielonych, np. 15 mg rano i 5–10 mg popołudniu, imitując rytm dobowy); 2) Fludrokortyzon (0,05–0,2 mg rano raz dziennie) w celu wyrównania gospodarki sodowo-potasowej i ciśnienia. Każdy chory musi nosić kartę medyczną („Paszport Addisona”) i umieć podwoić dawkę hydrokortyzonu w infekcji z gorączką!",
+      "id": "addison-b3",
+      "title": "Substytucja dwuhormonalna i Sick Day Rules",
+      "text": "Leczenie polega na dożywotnim uzupełnianiu obu brakujących hormonów: 1) Hydrokortyzon (15–25 mg/dobę w 2–3 dawkach, z najwyższą dawką rano, naśladując rytm dobowy); 2) Fludrokortyzon (0,05–0,2 mg rano). Kluczowa edukacja: zasada sick day rules — w infekcji z gorączką >38°C chory musi podwoić dawkę hydrokortyzonu, a przy wymiotach zgłosić się na SOR po wlew parenteralny.",
       "sourceIds": [
         "endo_pai",
-        "pte_nadnercza"
-      ],
-      "inlineEnhancements": []
+        "adrenal_crisis"
+      ]
     }
   ],
   "activities": [
     {
       "id": "addison-choroba-q2-checkpoint-1-v2",
-      "type": "single_choice",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "addison-choroba-obj-2"
+        "addison-obj-2"
       ],
-      "prompt": "Jaki zestaw zaburzeń elektrolitowych jest najbardziej charakterystyczny dla pierwotnej niedoczynności kory nadnerczy?",
+      "prompt": "Pacjent z chorobą Addisona zgłasza ostrą infekcję dróg oddechowych z gorączką 38,8°C. Przyjmuje na stałe hydrokortyzon 20 mg/d (15 mg rano + 5 mg o 14:00) oraz fludrokortyzon 0,1 mg rano. Jakie instrukcje należy mu przekazać?",
       "options": [
-        "Hiponatremia z towarzyszącą hiperkaliemią",
-        "Hipernatremia z ciężką hipokaliemią",
-        "Izolowana hiperkalcemia z hipofosfatemią"
-      ],
-      "optionFeedback": [
-        "Wynika to bezpośrednio ze współistniejącego braku aldosteronu.",
-        "Taki obraz cechuje nadmiar aldosteronu (zespół Conna), a nie jego brak.",
-        "To zaburzenie charakterystyczne dla nadczynności przytarczyc."
+        "Podwoić dawkę hydrokortyzonu do 40 mg/d (np. 20 mg rano, 10 mg o 13:00, 10 mg o 18:00) na czas trwania gorączki; nie zmieniać dawki fludrokortyzonu; w razie wymiotów natychmiast wezwać pogotowie",
+        "Całkowicie odstawić hydrokortyzon na czas infekcji, aby nie tłumić układu odpornościowego",
+        "Zwiększyć dawkę fludrokortyzonu 5-krotnie i odstawić hydrokortyzon"
       ],
       "answer": 0,
-      "explanation": "Wynika to bezpośrednio ze współistniejącego braku aldosteronu.",
-      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
-      "difficulty": "student",
-      "reasoning": "mechanism",
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-double-hydrocortisone",
+            "label": "Podwojenie dawki hydrokortyzonu w infekcji z gorączką",
+            "acceptedPhrases": [
+              "podwojenie",
+              "zwiększenie dawki",
+              "sick day rules",
+              "40 mg",
+              "podwoić"
+            ]
+          },
+          {
+            "id": "c-parenteral-safety-net",
+            "label": "Gotowość do podania pozajelitowego w razie wymiotów/biegunki",
+            "acceptedPhrases": [
+              "wymioty",
+              "SOR",
+              "dożylnie",
+              "domięśniowo",
+              "pogotowie",
+              "przełom"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-stop-steroid",
+            "patterns": [
+              "odstawić hydrokortyzon",
+              "zmniejszyć dawkę"
+            ],
+            "severity": "critical",
+            "feedback": "Odstawienie lub zmniejszenie dawki glikokortykosteroidu w ostrej infekcji prowadzi bezpośrednio do śmiertelnego przełomu nadnerczowego."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Zasada \"sick day rules\" wymaga podwojenia lub potrojenia dawki doustnego hydrokortyzonu w stanach podwyższonego zapotrzebowania (gorączka, uraz). Odstawienie leku grozi zgonem.",
+      "difficulty": "both",
+      "reasoning": "safety",
       "sourceIds": [
         "endo_pai",
-        "pte_nadnercza"
+        "adrenal_crisis"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Zasada \"sick day rules\" wymaga podwojenia lub potrojenia dawki doustnego hydrokortyzonu w stanach podwyższonego zapotrzebowania (gorączka, uraz). Odstawienie leku grozi zgonem.",
+        "Nieprawidłowo: Całkowicie odstawić hydrokortyzon na czas infekcji, aby nie tłumić układu odporn... Zasada \"sick day rules\" wymaga podwojenia lub potrojenia dawki doustnego hydrokortyzonu w stanach podwyższonego zapotrzebowania (gorączka, uraz). Odstawienie leku grozi zgonem.",
+        "Nieprawidłowo: Zwiększyć dawkę fludrokortyzonu 5-krotnie i odstawić hydrokortyzon... Zasada \"sick day rules\" wymaga podwojenia lub potrojenia dawki doustnego hydrokortyzonu w stanach podwyższonego zapotrzebowania (gorączka, uraz). Odstawienie leku grozi zgonem."
       ]
     },
     {
       "id": "addison-choroba-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "lab",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "addison-choroba-obj-1"
+        "addison-obj-3"
       ],
-      "prompt": "Jakie leczenie substytucyjne należy wdrożyć u pacjenta ze świeżo rozpoznaną chorobą Addisona?",
+      "prompt": "38-letni mężczyzna z chorobą Addisona leczony hydrokortyzonem 20 mg/d i fludrokortyzonem 0,05 mg/d zgłasza zawroty głowy przy pionizacji i apetyt na sól. Ciśnienie na stojąco: 88/54 mmHg. Wyniki: Na+ = 131 mmol/l, K+ = 5,4 mmol/l, aktywność reniny w osoczu (PRA) znacznie podwyższona. Jaka modyfikacja leczenia jest wskazana?",
       "options": [
-        "Substytucję dwuosiową: hydrokortyzon doustnie w 2–3 dawkach oraz fludrokortyzon rano",
-        "Wyłącznie sam deksametazon raz na tydzień",
-        "Same wlewy dożylne potasu"
-      ],
-      "optionFeedback": [
-        "Uzupełnia to brak zarówno glikokortykosteroidów, jak i mineralokortykosteroidów.",
-        "Deksametazon nie ma działania mineralokortykosteroidowego i nie odtwarza rytmu dobowego.",
-        "Podanie potasu pacjentowi z hiperkaliemią grozi zatrzymaniem krążenia!"
+        "Zwiększenie dawki fludrokortyzonu do 0,1 mg/dobę w celu wyrównania gospodarki sodowej i ciśnienia ortostatycznego",
+        "Zastąpienie hydrokortyzonu deksametazonem bez zmiany fludrokortyzonu",
+        "Wdrożenie leku moczopędnego z grupy tiazydów w celu obniżenia potasu"
       ],
       "answer": 0,
-      "explanation": "Uzupełnia to brak zarówno glikokortykosteroidów, jak i mineralokortykosteroidów.",
-      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "explanation": "Hipotensja ortostatyczna, hiponatremia, hiperkaliemia i wysoka renina to klasyczne objawy niedostatecznej substytucji mineralokortykoidowej. Należy zwiększyć dawkę fludrokortyzonu.",
       "difficulty": "doctor",
-      "reasoning": "interpretation",
+      "reasoning": "decision",
       "sourceIds": [
-        "endo_pai",
-        "pte_nadnercza"
+        "endo_pai"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Hipotensja ortostatyczna, hiponatremia, hiperkaliemia i wysoka renina to klasyczne objawy niedostatecznej substytucji mineralokortykoidowej. Należy zwiększyć dawkę fludrokortyzonu.",
+        "Nieprawidłowo: Zastąpienie hydrokortyzonu deksametazonem bez zmiany fludrokortyzonu... Hipotensja ortostatyczna, hiponatremia, hiperkaliemia i wysoka renina to klasyczne objawy niedostatecznej substytucji mineralokortykoidowej. Należy zwiększyć dawkę fludrokortyzonu.",
+        "Nieprawidłowo: Wdrożenie leku moczopędnego z grupy tiazydów w celu obniżenia potasu... Hipotensja ortostatyczna, hiponatremia, hiperkaliemia i wysoka renina to klasyczne objawy niedostatecznej substytucji mineralokortykoidowej. Należy zwiększyć dawkę fludrokortyzonu."
       ]
     }
   ],
   "teachBack": {
     "id": "addison-choroba-teach-back-v2",
     "type": "recall",
+    "assessmentLevel": "generation",
     "objectiveIds": [
-      "addison-choroba-obj-1",
-      "addison-choroba-obj-2"
+      "addison-obj-1",
+      "addison-obj-2"
     ],
-    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Gdy kora zanika”.",
-    "modelAnswer": "Choroba Addisona to pierwotne zniszczenie kory z niedoborem kortyzolu i aldosteronu. Melanodermia, hiponatremia i hiperkaliemia odróżniają ją od niedoczynności wtórnej. Leczenie opiera się na hydrokortyzonie i fludrokortyzonie, a znajomość reguł zwiększania dawek chroni przed śmiertelnym przełomem.",
-    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "prompt": "Wyjaśnij powiązanie między brakiem ujemnego sprzężenia zwrotnego a melanodermią oraz wymień najważniejsze zasady edukacji pacjenta z chorobą Addisona zapobiegające zgonowi.",
+    "modelAnswer": "Brak kortyzolu stymuluje przysadkę do wyrzutu POMC i ACTH, które pobudzają MC1R w melanocytach wywołując melanodermię. W edukacji najważniejsze są: noszenie karty medycznej/bransoletki, zasada podwajania hydrokortyzonu w gorączce (sick day rules) oraz zestaw ratunkowy do wstrzyknięć w razie wymiotów.",
+    "explanation": "Prewencja przełomu nadnerczowego poprzez edukację chorego i jego rodziny jest najważniejszym celem długoterminowej opieki.",
     "difficulty": "both",
-    "reasoning": "mechanism",
+    "reasoning": "safety",
     "sourceIds": [
       "endo_pai",
-      "pte_nadnercza"
+      "adrenal_crisis"
     ]
   },
   "exitTicket": [
     {
       "id": "addison-choroba-q4-exit-v2",
       "type": "missing_information",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "addison-choroba-obj-2"
+        "addison-obj-3"
       ],
-      "prompt": "Co powinien zrobić stabilny pacjent z chorobą Addisona w przypadku wystąpienia infekcji z gorączką >38,5°C?",
+      "prompt": "Który parametr biochemiczny stanowi najlepszy wskaźnik adekwatności dawkowania fludrokortyzonu u pacjenta z pierwotną niewydolnością kory nadnerczy?",
       "options": [
-        "Podwoić lub potroić dobową dawkę doustnego hydrokortyzonu na czas trwania gorączki",
-        "Natychmiast całkowicie odstawić hydrokortyzon",
-        "Zmniejszyć dawkę o połowę i ograniczyć picie płynów"
+        "Stężenie potasu w surowicy, ciśnienie tętnicze w pozycji stojącej oraz aktywność reniny w osoczu (PRA)",
+        "Dobowe wydalanie wolnego kortyzolu w moczu (UFC)",
+        "Stężenie TSH w surowicy"
       ],
       "optionFeedback": [
-        "To kluczowa zasada „sick day rules”, zapobiegająca rozwojowi ostrego przełomu nadnerczowego.",
-        "Odstawienie leku w infekcji prowadzi wprost do śmiertelnego przełomu nadnerczowego.",
-        "Ograniczenie płynów i redukcja dawki nasiliłyby odwodnienie i hipotensję."
+        "Normalizacja potasu, brak hipotonii ortostatycznej i utrzymanie reniny w górnej granicy normy świadczą o właściwym wyrównaniu mineralokortykoidowym.",
+        "UFC nie służy do monitorowania fludrokortyzonu.",
+        "TSH ocenia tarczycę, nie gospodarkę mineralokortykoidową."
       ],
       "answer": 0,
-      "explanation": "To kluczowa zasada „sick day rules”, zapobiegająca rozwojowi ostrego przełomu nadnerczowego.",
-      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
-      "difficulty": "both",
-      "reasoning": "decision",
+      "explanation": "Dawkę fludrokortyzonu modyfikuje się w oparciu o ciśnienie tętnicze (zwłaszcza ortostatyczne), stężenie elektrolitów (Na, K) oraz stężenie/aktywność reniny w osoczu.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
       "sourceIds": [
-        "endo_pai",
-        "pte_nadnercza"
-      ]
+        "endo_pai"
+      ],
+      "transfer": true
     },
     {
       "id": "addison-choroba-q5-exit-v2",
-      "type": "missing_information",
+      "type": "single_choice",
+      "assessmentLevel": "recognition",
       "objectiveIds": [
-        "addison-choroba-obj-1"
+        "addison-obj-1"
       ],
-      "prompt": "Które autoprzeciwciała stanowią marker autoimmunologicznego zapalenia kory nadnerczy?",
+      "prompt": "Które przeciwciała wykazują najwyższą czułość w potwierdzaniu autoimmunologicznej etiologii choroby Addisona?",
       "options": [
         "Przeciwciała przeciwko 21-hydroksylazie (anty-21-OH)",
-        "Przeciwciała przeciwko peroksydazie tarczycowej (anty-TPO)",
-        "Przeciwciała przeciwko receptorowi TSH (TRAb)"
+        "Przeciwciała przeciwko tyreoglobulinie (anty-Tg)",
+        "Przeciwciała przeciwjądrowe (ANA)"
       ],
       "optionFeedback": [
-        "Są obecne u ponad 85–90% chorych z autoimmunologiczną chorobą Addisona.",
-        "Anty-TPO to marker choroby Hashimoto.",
-        "TRAb to marker choroby Gravesa-Basedowa."
+        "Anty-21-OH występują u > 85% chorych z autoimmunologicznym zapaleniem nadnerczy.",
+        "Anty-Tg są markerem chorób tarczycy.",
+        "ANA nie są swoiste dla kory nadnerczy."
       ],
       "answer": 0,
-      "explanation": "Są obecne u ponad 85–90% chorych z autoimmunologiczną chorobą Addisona.",
-      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
-      "difficulty": "both",
+      "explanation": "Przeciwciała przeciwko 21-hydroksylazie stanowią główny marker autoimmunologicznego uszkodzenia kory nadnerczy.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "endo_pai"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "addison-choroba-bank-1-v2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "addison-obj-2",
+        "addison-obj-3"
+      ],
+      "claimIds": [
+        "claim-adn-cortisol-morning-thresholds",
+        "claim-adn-adrenal-crisis-emergency"
+      ],
+      "prompt": "29-letnia pacjentka z chorobą Addisona od 3 lat (na hydrokortyzonie 20 mg/d i fludrokortyzonie 0,1 mg/d) zgłasza się do lekarza przed planowaną ekstrakcją zatrzymanego zęba mądrości w znieczuleniu miejscowym. Ponadto skarży się na nasilone nudności od rana. Zaplanuj modyfikację dawkowania hydrokortyzonu w dniu zabiegu oraz instrukcję postępowania na wypadek nasilenia nudności lub wymiotów.",
+      "modelAnswer": "Ekstrakcja zęba w znieczuleniu miejscowym stanowi umiarkowany stres zabiegowy: w dniu zabiegu pacjentka powinna przyjąć podwojoną dawkę hydrokortyzonu (40 mg/dobę w dawkach podzielonych, np. dodatkowe 20 mg na 1 godzinę przed procedurą). Ponieważ pacjentka zgłasza już nudności, istnieje krytyczne ryzyko wymiotów i upośledzenia wchłaniania leku doustnego, co grozi przełomem nadnerczowym. W przypadku wystąpienia choćby jednorazowych wymiotów pacjentka nie może polegać na tabletkach: musi natychmiast otrzymać hydrokortyzon parenteralnie (100 mg i.m./i.v. z zestawu ratunkowego lub zgłosić się na SOR) oraz wlew 0,9% NaCl.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "addison-bank-1-dim-dx",
+            "label": "Wymiar diagnostyczny i patofizjologiczny",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-stress-dose-surgery",
+                "label": "Podwojenie dawki hydrokortyzonu w dniu zabiegu stomatologicznego",
+                "acceptedPhrases": [
+                  "podwojenie",
+                  "dodatkowa dawka",
+                  "stres zabiegowy",
+                  "40 mg",
+                  "przed zabiegiem"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "addison-bank-1-dim-tx",
+            "label": "Wymiar decyzyjny i bezpieczeństwo kliniczne",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-parenteral-switch-nausea",
+                "label": "Wskazanie na konieczność podania i.m./i.v. w razie wymiotów",
+                "acceptedPhrases": [
+                  "parenteralnie",
+                  "domięśniowo",
+                  "dożylnie",
+                  "zestaw ratunkowy",
+                  "SOR",
+                  "100 mg"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-skip-dose-fasting",
+            "patterns": [
+              "pominąć dawkę na czczo",
+              "odstawić hydrokortyzon przed znieczuleniem"
+            ],
+            "severity": "critical",
+            "feedback": "Pominięcie dawki hydrokortyzonu przed zabiegiem chirurgicznym grozi natychmiastowym przełomem nadnerczowym i zapaścią naczyniową."
+          }
+        ]
+      },
+      "explanation": "Stres chirurgiczny wymaga zwiększenia podaży glikokortykosteroidów. Wystąpienie wymiotów uniemożliwia wchłanianie p.o. i wymaga drogi pozajelitowej.",
+      "difficulty": "doctor",
       "reasoning": "safety",
       "sourceIds": [
         "endo_pai",
-        "pte_nadnercza"
+        "adrenal_crisis"
+      ],
+      "transfer": true,
+      "caseSnapshot": {
+        "patientAge": 29,
+        "baselineMeds": "hydrokortyzon 20 mg/d, fludrokortyzon 0,1 mg/d",
+        "plannedProcedure": "ekstrakcja zęba mądrości w znieczuleniu miejscowym",
+        "symptoms": "nudności od rana"
+      },
+      "engineBinding": {
+        "engine": "adrenal-workbench",
+        "presetId": "adrenal-hpa-synacthen"
+      }
+    },
+    {
+      "id": "addison-choroba-bank-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "addison-obj-1",
+        "addison-obj-3"
+      ],
+      "claimIds": [
+        "claim-adn-cortisol-morning-thresholds"
+      ],
+      "prompt": "Dlaczego w leczeniu choroby Addisona jako substytucję glikokortykosteroidową stosuje się w pierwszej kolejności hydrokortyzon w dawkach podzielonych, a unika się długodziałającego deksametazonu?",
+      "options": [
+        "Hydrokortyzon ma krótki okres półtrwania pozwalający odtworzyć fizjologiczny rytm dobowy stężenia kortyzolu oraz wywiera częściowy efekt mineralokortykoidowy, podczas gdy deksametazon całkowicie pozbawiony jest działania na receptor MR i nadmiernie hamuje oś HPA",
+        "Ponieważ deksametazon nie przenika przez barierę krew-mózg",
+        "Ponieważ hydrokortyzon nie wymaga metabolizmu wątrobowego"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-circadian-rhythm",
+            "label": "Odtworzenie rytmu dobowego i unikanie przedawkowania nocnego",
+            "acceptedPhrases": [
+              "rytm dobowy",
+              "krótki okres półtrwania",
+              "fizjologiczny"
+            ]
+          },
+          {
+            "id": "c-mineralocorticoid-balance",
+            "label": "Aktywność mineralokortykoidowa hydrokortyzonu vs brak u deksametazonu",
+            "acceptedPhrases": [
+              "mineralokortykoidowy",
+              "MR",
+              "deksametazon bez MR"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Hydrokortyzon pozwala na imitację fizjologicznego profilu dobowego oraz wspomaga działanie fludrokortyzonu na receptory mineralokortykoidowe.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "endo_pai"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Hydrokortyzon pozwala na imitację fizjologicznego profilu dobowego oraz wspomaga działanie fludrokortyzonu na receptory mineralokortykoidowe.",
+        "Nieprawidłowo: Ponieważ deksametazon nie przenika przez barierę krew-mózg... Hydrokortyzon pozwala na imitację fizjologicznego profilu dobowego oraz wspomaga działanie fludrokortyzonu na receptory mineralokortykoidowe.",
+        "Nieprawidłowo: Ponieważ hydrokortyzon nie wymaga metabolizmu wątrobowego... Hydrokortyzon pozwala na imitację fizjologicznego profilu dobowego oraz wspomaga działanie fludrokortyzonu na receptory mineralokortykoidowe."
       ]
     }
   ],
@@ -215,6 +396,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+    "scope": "Pełna modernizacja V2: edukacja pacjenta, sick day rules, substytucja dwuhormonalna i prewencja przełomu."
   }
 }

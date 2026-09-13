@@ -3,224 +3,366 @@
   "lessonId": "incydentaloma-nadnercza",
   "objectives": [
     {
-      "id": "incydentaloma-nadnercza-obj-1",
-      "statement": "Zrozumiesz definicję incydentaloma nadnercza oraz zasady postępowania wg zaktualizowanych wytycznych ESE/ENSAT 2023.",
-      "kind": "mechanism"
+      "id": "incyd-obj-1",
+      "statement": "Zinterpretujesz parametry densytometryczne w CT (natywne HU <=10 vs >10, washout bezwzględny >60%) w różnicowaniu gruczolaka od zmian złośliwych.",
+      "kind": "interpretation"
     },
     {
-      "id": "incydentaloma-nadnercza-obj-2",
-      "statement": "Opanujesz ocenę radiologiczną: gęstość natywną w jednostkach Hounsfielda (<10 HU) oraz kalkulację bezwzględnego i względnego washoutu.",
-      "kind": "interpretation"
+      "id": "incyd-obj-2",
+      "statement": "Wdrożysz obligatoryjny panel hormonalny (1 mg DST u każdego; metanefryny przy HU>10; ARR przy NT) wg wytycznych ESE/ENSAT 2023.",
+      "kind": "decision"
+    },
+    {
+      "id": "incyd-obj-3",
+      "statement": "Rozpoznasz autonomiczną sekrecję kortyzolu (MACS: DST >1,8 µg/dl) i zapobiegniesz pooperacyjnej ostrej niedoczynności nadnerczy.",
+      "kind": "safety"
     }
   ],
   "diagnostic": {
     "id": "incydentaloma-nadnercza-q1-diagnostic-v2",
     "type": "single_choice",
+    "assessmentLevel": "recognition",
     "objectiveIds": [
-      "incydentaloma-nadnercza-obj-1"
+      "incyd-obj-1"
     ],
-    "prompt": "Jaka wartość gęstości natywnej w tomografii komputerowej bez kontrastu (TK) pozwala uznać incydentaloma nadnercza za łagodnego gruczolaka bez konieczności dalszych badań obrazowych?",
+    "prompt": "Jaka gęstość natywna (bez kontrastu) w badaniu tomografii komputerowej z wysoką swoistością (ok. 96–100%) potwierdza łagodnego gruczolaka bogatolipoidowego kory nadnercza?",
     "options": [
-      "Gęstość natywna równa lub mniejsza niż 10 jednostek Hounsfielda (<=10 HU)",
-      "Gęstość równa dokładnie 100 HU",
-      "Gęstość ujemna poniżej minus 200 HU"
+      "Gęstość natywna <= 10 jednostek Hounsfielda (HU)",
+      "Gęstość natywna w przedziale 25–40 HU",
+      "Gęstość natywna > 50 HU z nieregularnymi zwapnieniami"
     ],
     "optionFeedback": [
-      "Wartość ta świadczy o wysokiej zawartości lipidów wewnątrzkomórkowych, co cechuje łagodne gruczolaki.",
-      "Gęstość 100 HU odpowiada zwapnieniom lub kościom, a nie gruczolakowi bogatemu w tłuszcz.",
-      "Gęstość <-100 HU cechuje tkankę płucną lub powietrze."
+      "Wartość <= 10 HU wynika z wysokiej zawartości lipidów wewnątrzkomórkowych w łagodnych gruczolakach kory nadnerczy.",
+      "Wartości 25–40 HU wymagają oceny wskaźnika wymywania kontrastu (washout) w celu wykluczenia raka lub przerzutu.",
+      "Gęstość > 50 HU ze zwapnieniami stwarza wysokie podejrzenie zmiany złośliwej (ACC)."
     ],
     "answer": 0,
-    "explanation": "Wartość ta świadczy o wysokiej zawartości lipidów wewnątrzkomórkowych, co cechuje łagodne gruczolaki.",
-    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "explanation": "Wytyczne ESE/ENSAT 2023 wskazują, że gęstość natywna w TK <= 10 HU pozwala jednoznacznie rozpoznać łagodnego gruczolaka bogatolipoidowego.",
     "difficulty": "student",
-    "reasoning": "mechanism",
+    "reasoning": "interpretation",
     "sourceIds": [
-      "ese_incidentaloma",
-      "pte_nadnercza",
-      "pte_macs"
+      "ese_incidentaloma"
+    ],
+    "claimIds": [
+      "claim-adn-incidentaloma-hu-10"
     ]
   },
   "blocks": [
     {
-      "id": "incydentaloma-nadnercza-block-1",
-      "title": "Czym jest incydentaloma nadnercza?",
-      "text": "Incydentaloma nadnercza to bezobjawowa, przypadkowo wykryta zmiana ogniskowa o średnicy >=1 cm w badaniu obrazowym brzucha (USG, TK, MRI) wykonanym z innych wskazań niż podejrzenie choroby nadnerczy. Występuje u ok. 3–4% dorosłych w średnim wieku i nawet u 10% osób po 70. roku życia. Przed lekarzem stoją dwa fundamentalne pytania: 1) Czy zmiana jest złośliwa (rak kory nadnerczy ACC, przerzut z innego narządu)?; 2) Czy zmiana jest czynna hormonalnie (hiperkortyzolemia MACS, guz chromochłonny, zespół Conna)?",
+      "id": "incyd-b1",
+      "title": "Fenotypowanie radiologiczne wg ESE/ENSAT 2023",
+      "text": "Natywna tomografia komputerowa jest badaniem z wyboru. Cechy łagodnego gruczolaka: średnica < 4 cm, jednorodna struktura, gładkie obrysy oraz gęstość natywna <= 10 HU. Jeśli zmiana ma > 10 HU, konieczne jest wykonanie dedykowanego protokołu nadnerczowego z oceną wymywania (washout bezwzględny > 60% lub względny > 40% po 15 min wskazuje na gruczolaka ubogolipoidowego).",
+      "sourceIds": [
+        "ese_incidentaloma"
+      ],
+      "checkpointId": "incydentaloma-nadnercza-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "incyd-b2",
+      "title": "Obligatoryjny panel hormonalny",
+      "text": "Każdy incydentaloma nadnercza wymaga oceny hormonalnej: 1) Test nocnego hamowania 1 mg deksametazonu (1 mg DST) — OBLIGATORYJNY U KAŻDEGO CHOREGO w celu wykluczenia MACS; 2) Wolne metanefryny — obligatoryjne przy gęstości > 10 HU lub cechach klinicznych PPGL; 3) ARR — u pacjentów z nadciśnieniem tętniczym lub hipokaliemią.",
       "sourceIds": [
         "ese_incidentaloma",
-        "pte_nadnercza",
         "pte_macs"
       ],
-      "checkpointId": "incydentaloma-nadnercza-q2-checkpoint-1-v2",
-      "inlineEnhancements": [
-        {
-          "id": "enh-adn-inc-macs",
-          "kind": "workbench-deeplink",
-          "placement": "after-text",
-          "presetId": "adrenal-incidentaloma-macs"
-        }
+      "checkpointId": "incydentaloma-nadnercza-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "incyd-b3",
+      "title": "MACS: Autonomiczna sekrecja kortyzolu i ryzyko pooperacyjne",
+      "text": "Kortyzol po 1 mg DST > 1,8 µg/dl definiuje autonomiczną sekrecję kortyzolu (MACS). Nawet przy braku typowych objawów cushingoidalnych pacjenci mają zwiększone ryzyko chorób sercowo-naczyniowych i złamań. KLUCZOWE BEZPIECZEŃSTWO: usunięcie guza wydzielającego kortyzol grozi pooperacyjnym przełomem nadnerczowym z powodu supresji drugiego nadnercza!",
+      "sourceIds": [
+        "pte_macs",
+        "ese_incidentaloma"
       ]
-    },
-    {
-      "id": "incydentaloma-nadnercza-block-2",
-      "title": "Ocena radiologiczna w TK: Złota reguła 10 jednostek Hounsfielda",
-      "text": "Badaniem z wyboru do oceny incydentaloma jest dedykowana tomografia komputerowa nadnerczy (CT). KLUCZOWE KRYTERIUM: Gęstość natywna (bez podania kontrastu) mierzona w jednostkach Hounsfielda (HU): 1) Gęstość natywna <=10 HU: Zmiana jest łagodnym, bogatym w lipidy gruczolakiem kory nadnercza (lipid-rich adenoma)! Czułość wynosi 71%, a swoistość dla łagodności sięga niemal 100%. Zmiana taka nie wymaga dalszej diagnostyki obrazowej ani kontrolnych tomografii! 2) Gęstość natywna >10 HU: Zmiana jest uboga w lipidy (lipid-poor) — może to być łagodny gruczolak, ale także guz chromochłonny, przerzut nowotworowy lub rak kory nadnerczy (ACC). Wymaga wykonania protokołu wielofazowego z oceną wymywania kontrastu (washout) po 15 minutach.",
-      "sourceIds": [
-        "ese_incidentaloma",
-        "pte_nadnercza",
-        "pte_macs"
-      ],
-      "checkpointId": "incydentaloma-nadnercza-q3-checkpoint-2-v2",
-      "inlineEnhancements": []
-    },
-    {
-      "id": "incydentaloma-nadnercza-block-3",
-      "title": "Kalkulacja washoutu i panel hormonalny wg wytycznych ESE 2023",
-      "text": "W TK wielofazowej mierzy się gęstość natywną (N), w fazie wrotnej po 60–70 s (E) oraz opóźnionej po 15 min (D): Bezwzględny wskaźnik wymywania APW = (E - D) / (E - N) * 100%. Wartość APW >=60% potwierdza łagodnego gruczolaka. Względny wskaźnik RPW = (E - D) / E * 100% (odcięcie >=40%). PANEL HORMONALNY u każdego pacjenta z incydentaloma: 1) Nocny test hamowania 1 mg deksametazonu (wykluczenie MACS); 2) Wolne metanefryny w osoczu (wykluczenie „cichego” feo); 3) Wskaźnik ARR (wyłącznie u chorych z nadciśnieniem tętniczym lub hipokaliemią). Biopsja nadnerczy jest przeciwwskazana, chyba że podejrzewa się przerzut u chorego z rozsianym nowotworem po wykluczeniu feochromocytoma!",
-      "sourceIds": [
-        "ese_incidentaloma",
-        "pte_nadnercza",
-        "pte_macs"
-      ],
-      "inlineEnhancements": []
     }
   ],
   "activities": [
     {
       "id": "incydentaloma-nadnercza-q2-checkpoint-1-v2",
-      "type": "single_choice",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "incydentaloma-nadnercza-obj-2"
+        "incyd-obj-1"
       ],
-      "prompt": "Jaki zestaw badań hormonalnych należy obligatoryjnie wykonać u KAŻDEGO pacjenta z przypadkowo wykrytym guzem nadnercza?",
+      "prompt": "W TK jamy brzusznej wykonanej z powodu kolki nerkowej u 55-latka wykryto przypadkowy guz prawego nadnercza 32 mm o gęstości natywnej 24 HU. Badanie z kontrastem wykazało bezwzględny wskaźnik wymywania (absolute washout) wynoszący 72% po 15 minutach. Jaka jest diagnoza radiologiczna?",
       "options": [
-        "Nocny test hamowania 1 mg deksametazonu oraz wolne metanefryny w osoczu (a u chorych z nadciśnieniem także wskaźnik ARR)",
-        "Wyłącznie badanie ogólne moczu paskiem testowym",
-        "Doustny test tolerancji glukozy z hormonem wzrostu"
-      ],
-      "optionFeedback": [
-        "Pozwala to wykryć autonomiczną sekrecję kortyzolu (MACS), guza chromochłonnego oraz zespół Conna.",
-        "Badanie ogólne moczu nie diagnozuje czynności wydzielniczej kory i rdzenia nadnerczy.",
-        "Test ten służy do diagnostyki akromegalii w przysadce, a nie incydentaloma nadnercza."
+        "Gruczolak ubogolipoidowy kory nadnercza (washout bezwzględny > 60% potwierdza szybkie wypłukiwanie typowe dla gruczolaków)",
+        "Rak kory nadnerczy (ACC), ponieważ gęstość natywna wynosi powyżej 10 HU",
+        "Torbiel prosta nadnercza"
       ],
       "answer": 0,
-      "explanation": "Pozwala to wykryć autonomiczną sekrecję kortyzolu (MACS), guza chromochłonnego oraz zespół Conna.",
-      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
-      "difficulty": "student",
-      "reasoning": "mechanism",
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-lipid-poor-adenoma-washout",
+            "label": "Gruczolak ubogolipoidowy na podstawie washout > 60%",
+            "acceptedPhrases": [
+              "ubogolipoidowy",
+              "washout > 60%",
+              "wypłukiwanie",
+              "gruczolak"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Gruczolaki ubogolipoidowe mają gęstość natywną > 10 HU, lecz charakteryzują się szybkim wypłukiwaniem kontrastu (bezwzględny washout > 60%).",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
       "sourceIds": [
-        "ese_incidentaloma",
-        "pte_nadnercza",
-        "pte_macs"
+        "ese_incidentaloma"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Gruczolaki ubogolipoidowe mają gęstość natywną > 10 HU, lecz charakteryzują się szybkim wypłukiwaniem kontrastu (bezwzględny washout > 60%).",
+        "Nieprawidłowo: Rak kory nadnerczy (ACC), ponieważ gęstość natywna wynosi powyżej 10 HU... Gruczolaki ubogolipoidowe mają gęstość natywną > 10 HU, lecz charakteryzują się szybkim wypłukiwaniem kontrastu (bezwzględny washout > 60%).",
+        "Nieprawidłowo: Torbiel prosta nadnercza... Gruczolaki ubogolipoidowe mają gęstość natywną > 10 HU, lecz charakteryzują się szybkim wypłukiwaniem kontrastu (bezwzględny washout > 60%)."
       ]
     },
     {
       "id": "incydentaloma-nadnercza-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "lab",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "incydentaloma-nadnercza-obj-1"
+        "incyd-obj-2",
+        "incyd-obj-3"
       ],
-      "prompt": "Dlaczego biopsja aspiracyjna cienkoigłowa (BACC) jest rutynowo PRZECIWWSKAZANA w diagnostyce incydentaloma nadnerczy?",
+      "prompt": "U 60-letniej pacjentki z incydentaloma lewego nadnercza 26 mm (8 HU) i nowo rozpoznaną cukrzycą wykonano test 1 mg DST. Wynik porannego kortyzolu wynosi 3,4 µg/dl. Jak należy zinterpretować ten wynik?",
       "options": [
-        "Nie potrafi odróżnić łagodnego gruczolaka od raka kory nadnerczy (ACC), a nakłucie feochromocytoma grozi śmiertelnym przełomem",
-        "Igła biopsyjna nie może przebić powięzi Geroty",
-        "W nadnerczu nie ma komórek jądrzastych"
-      ],
-      "optionFeedback": [
-        "Dodatkowo niesie ryzyko rozsiewu komórek raka wzdłuż kanału wkłucia.",
-        "Powięź Geroty jest łatwo osiągalna pod kontrolą USG lub TK.",
-        "Nadnercze składa się z gęstego utkania komórkowego."
+        "Możliwa autonomiczna sekrecja kortyzolu (possible MACS: wynik w przedziale 1,8–5,0 µg/dl), wymagająca oceny powikłań metabolicznych i osłony hydrokortyzonem przy ewentualnej operacji",
+        "Prawidłowe hamowanie wykluczające jakąkolwiek czynność hormonalną guza",
+        "Ciężki rak kory nadnerczy wymagający natychmiastowej chemioterapii"
       ],
       "answer": 0,
-      "explanation": "Dodatkowo niesie ryzyko rozsiewu komórek raka wzdłuż kanału wkłucia.",
-      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "explanation": "Wynik kortyzolu po 1 mg DST w przedziale 1,8–5,0 µg/dl definiuje autonomiczną sekrecję kortyzolu (MACS) wg wytycznych ESE/ENSAT 2023.",
       "difficulty": "doctor",
-      "reasoning": "interpretation",
+      "reasoning": "decision",
       "sourceIds": [
         "ese_incidentaloma",
-        "pte_nadnercza",
         "pte_macs"
+      ],
+      "claimIds": [
+        "claim-adn-macs-dst-thresholds"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Wynik kortyzolu po 1 mg DST w przedziale 1,8–5,0 µg/dl definiuje autonomiczną sekrecję kortyzolu (MACS) wg wytycznych ESE/ENSAT 2023.",
+        "Nieprawidłowo: Prawidłowe hamowanie wykluczające jakąkolwiek czynność hormonalną guza... Wynik kortyzolu po 1 mg DST w przedziale 1,8–5,0 µg/dl definiuje autonomiczną sekrecję kortyzolu (MACS) wg wytycznych ESE/ENSAT 2023.",
+        "Nieprawidłowo: Ciężki rak kory nadnerczy wymagający natychmiastowej chemioterapii... Wynik kortyzolu po 1 mg DST w przedziale 1,8–5,0 µg/dl definiuje autonomiczną sekrecję kortyzolu (MACS) wg wytycznych ESE/ENSAT 2023."
       ]
     }
   ],
   "teachBack": {
     "id": "incydentaloma-nadnercza-teach-back-v2",
     "type": "recall",
+    "assessmentLevel": "generation",
     "objectiveIds": [
-      "incydentaloma-nadnercza-obj-1",
-      "incydentaloma-nadnercza-obj-2"
+      "incyd-obj-1",
+      "incyd-obj-2"
     ],
-    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Niespodzianka w tomografii”.",
-    "modelAnswer": "Incydentaloma nadnercza wymaga natychmiastowej oceny gęstości natywnej w TK: wynik <=10 HU potwierdza łagodnego gruczolaka. Obowiązuje panel hormonalny (1 mg DEX, metanefryny, a przy nadciśnieniu ARR). Zmiany >4 cm o niejednorodnej strukturze i słabym wash-oucie wymagają pilnej oceny w kierunku raka nadnerczy.",
-    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "prompt": "Wyjaśnij algorytm oceny guza incydentaloma nadnercza: kryteria radiologiczne (HU, washout) oraz obligatoryjny panel badań hormonalnych.",
+    "modelAnswer": "Radiologia: TK natywne <=10 HU potwierdza gruczolaka bogatolipoidowego; przy >10 HU ocenia się washout (bezwzględny >60% = gruczolak ubogolipoidowy). Panel hormonalny: test 1 mg DST jest obligatoryjny u każdego (MACS przy >1,8 µg/dl); metanefryny przy HU>10 lub cechach pheo; ARR przy nadciśnieniu lub hipokaliemii.",
+    "explanation": "Wytyczne ESE/ENSAT 2023 standaryzują diagnostykę incydentaloma, chroniąc przed zbędnymi operacjami i przeoczeniem guzów czynnych hormonalnie.",
     "difficulty": "both",
-    "reasoning": "mechanism",
+    "reasoning": "decision",
     "sourceIds": [
-      "ese_incidentaloma",
-      "pte_nadnercza",
-      "pte_macs"
+      "ese_incidentaloma"
     ]
   },
   "exitTicket": [
     {
       "id": "incydentaloma-nadnercza-q4-exit-v2",
       "type": "missing_information",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "incydentaloma-nadnercza-obj-2"
+        "incyd-obj-3"
       ],
-      "prompt": "Jaka wartość bezwzględnego współczynnika wymywania kontrastu (APW) w tomografii z opóźnioną fazą po 15 min przemawia za łagodnym charakterem zmiany?",
+      "prompt": "Dlaczego u pacjenta zakwalifikowanego do operacji z powodu guza nadnercza z potwierdzonym MACS (kortyzol po DST 3,8 µg/dl) należy zastosować okołooperacyjną osłonę hydrokortyzonem?",
       "options": [
-        "Wartość APW równa co najmniej 60% (>=60%)",
-        "Wartość APW poniżej 10%",
-        "Wartość APW dokładnie 0%"
+        "Autonomiczna sekrecja kortyzolu tłumi przysadkowy ACTH, co wywołuje subkliniczną atrofię drugiego nadnercza i grozi ostrym przełomem po wycięciu guza",
+        "Hydrokortyzon zapobiega powstawaniu bliznowców w ranie pooperacyjnej",
+        "Glikokortykosteroidy natychmiast obniżają poziom cukru we krwi"
       ],
       "optionFeedback": [
-        "Szybkie oddawanie kontrastu jest typową cechą unaczynienia łagodnych gruczolaków.",
-        "Słabe wymywanie (<60%) cechuje nowotwory złośliwe i przerzuty.",
-        "Brak wymywania wskazuje na tkankę podejrzaną onkologicznie."
+        "Nawet subkliniczna autonomia kortyzolowa w MACS może wywołać niewydolność drugiego nadnercza po operacji.",
+        "Hydrokortyzon nie zapobiega bliznowcom.",
+        "Glikokortykosteroidy podwyższają, a nie obniżają glikemię."
       ],
       "answer": 0,
-      "explanation": "Szybkie oddawanie kontrastu jest typową cechą unaczynienia łagodnych gruczolaków.",
-      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
-      "difficulty": "both",
-      "reasoning": "decision",
+      "explanation": "Nawet przy łagodnej autonomii (MACS) oś HPA może być stłumiona. Po usunięciu guza drugie nadnercze nie podejmuje od razu czynności, co grozi przełomem.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
       "sourceIds": [
-        "ese_incidentaloma",
-        "pte_nadnercza",
-        "pte_macs"
-      ]
+        "pte_macs",
+        "adrenal_surgery"
+      ],
+      "transfer": true
     },
     {
       "id": "incydentaloma-nadnercza-q5-exit-v2",
-      "type": "missing_information",
+      "type": "single_choice",
+      "assessmentLevel": "recognition",
       "objectiveIds": [
-        "incydentaloma-nadnercza-obj-1"
+        "incyd-obj-1"
       ],
-      "prompt": "U 60-latka wykryto w TK guz lewego nadnercza 2,2 cm o gęstości natywnej 4 HU. W teście 1 mg DEX kortyzol wynosi 1,2 µg/dl, metanefryny w normie. Jakie jest zalecenie wg wytycznych ESE 2023?",
+      "prompt": "Czy w rutynowej diagnostyce przypadkowo wykrytego guza nadnercza o cechach łagodnego gruczolaka zaleca się wykonanie biopsji cienkoigłowej (BACC)?",
       "options": [
-        "Nie wymaga dalszych kontrolnych badań obrazowych ani powtarzania tomografii komputerowej",
-        "Pilna operacja obustronnego wycięcia nadnerczy w ciągu 24 godzin",
-        "Wykonanie biopsji gruboigłowej z obu stron"
+        "Nie, BACC nadnerczy jest przeciwwskazana w rutynowej diagnostyce łagodnych zmian i stwarza ryzyko powikłań (krwawienie, rozsiew, przełom w pheo)",
+        "Tak, BACC jest badaniem pierwszego rzutu u każdego chorego przed badaniami hormonalnymi",
+        "Tak, biopsja jest konieczna do odróżnienia strefy pasmowatej od kłębuszkowej"
       ],
       "optionFeedback": [
-        "Guz jest jednoznacznie łagodny i nieczynny hormonalnie; nie wymaga radioterapii ani operacji.",
-        "Wycięcie łagodnego, bezobjawowego gruczolaka o wymiarach 2 cm jest błędem.",
-        "Biopsja jest przeciwwskazana w łagodnym incydentaloma."
+        "Biopsję wykonuje się niemal wyłącznie przy podejrzeniu przerzutu u pacjenta z chorobą nowotworową, po uprzednim bezwzględnym wykluczeniu pheochromocytoma.",
+        "Biopsja przed wykluczeniem guza chromochłonnego grozi zgonem z powodu przełomu nadciśnieniowego.",
+        "Histopatologia z BACC nie rozstrzyga strefowości kory."
       ],
       "answer": 0,
-      "explanation": "Guz jest jednoznacznie łagodny i nieczynny hormonalnie; nie wymaga radioterapii ani operacji.",
-      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
-      "difficulty": "both",
-      "reasoning": "safety",
+      "explanation": "Wytyczne ESE/ENSAT jednoznacznie odradzają biopsję nadnercza w rutynowej diagnostyce incydentaloma ze względu na niską wartość diagnostyczną i ryzyko powikłań.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "ese_incidentaloma"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "incydentaloma-nadnercza-bank-1-v2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "incyd-obj-1",
+        "incyd-obj-2",
+        "incyd-obj-3"
+      ],
+      "claimIds": [
+        "claim-adn-incidentaloma-hu-10",
+        "claim-adn-macs-dst-thresholds"
+      ],
+      "prompt": "63-letni mężczyzna z nadciśnieniem tętniczym i osteoporozą przebył TK klatki piersiowej, w której przypadkowo uwidoczniono guz lewego nadnercza o średnicy 34 mm i gęstości natywnej 7 HU. Wyniki: 1 mg DST: kortyzol = 2,8 µg/dl; metanefryny w normie; ARR w normie. Zinterpretuj obraz radiologiczny, postaw rozpoznanie czynnościowe i zaplanuj postępowanie terapeutyczne oraz środki bezpieczeństwa w razie operacji.",
+      "modelAnswer": "Interpretacja radiologiczna: gęstość natywna 7 HU (<= 10 HU) przy jednorodnej strukturze i średnicy < 4 cm jednoznacznie potwierdza łagodnego gruczolaka bogatolipoidowego kory nadnercza wg wytycznych ESE/ENSAT 2023. Rozpoznanie czynnościowe: kortyzol po 1 mg DST wynosi 2,8 µg/dl (przedział 1,8–5,0 µg/dl), co definiuje autonomiczną sekrecję kortyzolu (MACS / autonomic cortisol secretion). Postępowanie: z uwagi na obecność powikłań potencjalnie związanych z nadmiarem kortyzolu (nadciśnienie, osteoporoza), zespół wielodyscyplinarny powinien rozważyć laparoskopową lewostronną adrenalektomię lub ścisłe leczenie zachowawcze chorób współistniejących. W razie kwalifikacji do adrenalektomii: bezwzględnie konieczna jest okołooperacyjna osłona hydrokortyzonem (i.v. w dniu operacji i doustnie po operacji) z uwagi na supresję osi HPA i ryzyko pooperacyjnej ostrej niewydolności nadnerczy.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "incyd-bank-1-dim-dx",
+            "label": "Wymiar diagnostyczny i patofizjologiczny",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-lipid-rich-adenoma-interpretation",
+                "label": "Pewne rozpoznanie gruczolaka bogatolipoidowego na podstawie HU <= 10",
+                "acceptedPhrases": [
+                  "gruczolak bogatolipoidowy",
+                  "<= 10 HU",
+                  "łagodny gruczolak",
+                  "7 HU"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "incyd-bank-1-dim-tx",
+            "label": "Wymiar decyzyjny i bezpieczeństwo kliniczne",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-macs-identification-safety",
+                "label": "Rozpoznanie MACS (DST 1.8-5.0) oraz wymóg osłony hydrokortyzonem przy operacji",
+                "acceptedPhrases": [
+                  "MACS",
+                  "autonomiczna sekrecja kortyzolu",
+                  "2,8 µg/dl",
+                  "osłona hydrokortyzonem",
+                  "niewydolność pooperacyjna"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-malignancy-suspected",
+            "patterns": [
+              "podejrzenie raka",
+              "pilna biopsja",
+              "zmiana złośliwa"
+            ],
+            "severity": "critical",
+            "feedback": "Gęstość 7 HU wyklucza złośliwość z niemal 100% swoistością; podejrzenie raka i biopsja są błędami."
+          }
+        ]
+      },
+      "explanation": "Natywne TK <= 10 HU dowodzi łagodnego gruczolaka. Wynik DST 2,8 µg/dl to MACS, który wymaga profilaktyki pooperacyjnej niewydolności kory nadnerczy.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
       "sourceIds": [
         "ese_incidentaloma",
-        "pte_nadnercza",
         "pte_macs"
+      ],
+      "transfer": true,
+      "caseSnapshot": {
+        "patientAge": 63,
+        "tumorSizeMm": 34,
+        "unenhancedHu": 7,
+        "postDstCortisolUgDl": 2.8,
+        "comorbidities": "nadciśnienie, osteoporoza"
+      },
+      "engineBinding": {
+        "engine": "adrenal-workbench",
+        "presetId": "adrenal-incidentaloma-macs"
+      }
+    },
+    {
+      "id": "incydentaloma-nadnercza-bank-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "incyd-obj-2"
+      ],
+      "claimIds": [
+        "claim-adn-incidentaloma-hu-10"
+      ],
+      "prompt": "U 48-letniego pacjenta z incydentaloma prawego nadnercza 22 mm o gęstości natywnej 3 HU i prawidłowym ciśnieniu tętniczym lekarz pominął oznaczenie wolnych metanefryn w osoczu. Czy to postępowanie jest zgodne z wytycznymi ESE/ENSAT 2023?",
+      "options": [
+        "Tak, wytyczne ESE/ENSAT 2023 dopuszczają odstąpienie od rutynowego oznaczania metanefryn, jeśli guz jest bezobjawowy, ma gęstość natywną <= 10 HU i pacjent jest normotensyjny (pheochromocytoma niemal nigdy nie ma gęstości <= 10 HU)",
+        "Nie, metanefryny muszą być oznaczane u każdego człowieka z jakąkolwiek zmianą w nadnerczu bez wyjątku",
+        "Nie, ponieważ guzy o gęstości 3 HU to w 90% złośliwe guzy chromochłonne"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-hu10-pheo-exemption",
+            "label": "Pominięcie metanefryn przy HU <= 10 u osób normotensyjnych bezobjawowych",
+            "acceptedPhrases": [
+              "nie jest konieczne",
+              "pominięcie metanefryn",
+              "<= 10 HU",
+              "ESE 2023",
+              "pheo nie ma lipidów"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Guz chromochłonny jest bogatokomórkowy i niemal nigdy nie wykazuje gęstości <= 10 HU. Wytyczne ESE 2023 dopuszczają rezygnację z metanefryn przy HU <= 10 u osób bez objawów i nadciśnienia.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "ese_incidentaloma"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Guz chromochłonny jest bogatokomórkowy i niemal nigdy nie wykazuje gęstości <= 10 HU. Wytyczne ESE 2023 dopuszczają rezygnację z metanefryn przy HU <= 10 u osób bez objawów i nadciśnienia.",
+        "Nieprawidłowo: Nie, metanefryny muszą być oznaczane u każdego człowieka z jakąkolwiek zmianą w ... Guz chromochłonny jest bogatokomórkowy i niemal nigdy nie wykazuje gęstości <= 10 HU. Wytyczne ESE 2023 dopuszczają rezygnację z metanefryn przy HU <= 10 u osób bez objawów i nadciśnienia.",
+        "Nieprawidłowo: Nie, ponieważ guzy o gęstości 3 HU to w 90% złośliwe guzy chromochłonne... Guz chromochłonny jest bogatokomórkowy i niemal nigdy nie wykazuje gęstości <= 10 HU. Wytyczne ESE 2023 dopuszczają rezygnację z metanefryn przy HU <= 10 u osób bez objawów i nadciśnienia."
       ]
     }
   ],
   "widgetIds": [
-    "adrenal-workbench"
+    "adrenal-workbench",
+    "lab-workbench"
   ],
   "widgetConfig": {
     "adrenal-workbench": {
@@ -230,6 +372,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+    "scope": "Pełna modernizacja V2: wytyczne ESE/ENSAT 2023, progi HU, protokół wymywania, MACS i bezpieczeństwo osi HPA."
   }
 }

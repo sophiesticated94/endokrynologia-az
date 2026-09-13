@@ -3,212 +3,384 @@
   "lessonId": "cushing-nadnerczowy",
   "objectives": [
     {
-      "id": "cushing-nadnerczowy-obj-1",
-      "statement": "Rozpoznasz postać zespołu Cushinga niezależną od ACTH (autonomiczny gruczolak kory nadnercza vs subkliniczna hiperkortyzolemia MACS).",
-      "kind": "mechanism"
+      "id": "cushing-obj-1",
+      "statement": "Przeprowadzisz dwuetapową diagnostykę hiperkortyzolemii: potwierdzenie autonomii (1 mg DST, UFC, ślina) i różnicowanie ACTH-zależnego od niezależnego.",
+      "kind": "differentiation"
     },
     {
-      "id": "cushing-nadnerczowy-obj-2",
-      "statement": "Zrozumiesz zjawisko atrofii przeciwległego nadnercza i bezwzględną konieczność okołooperacyjnej osłony hydrokortyzonem.",
-      "kind": "interpretation"
+      "id": "cushing-obj-2",
+      "statement": "Dobierzesz farmakoterapię hamującą steroidogenezę (ketokonazol, osilodrostat, metyrapon) w ramach przygotowania do adrenalektomii.",
+      "kind": "decision"
+    },
+    {
+      "id": "cushing-obj-3",
+      "statement": "Wdrożysz pooperacyjną osłonę hydrokortyzonem z uwagi na supresję drugiego nadnercza i ryzyko ostrego przełomu po usunięciu guza wydzielającego kortyzol.",
+      "kind": "safety"
     }
   ],
   "diagnostic": {
     "id": "cushing-nadnerczowy-q1-diagnostic-v2",
     "type": "single_choice",
+    "assessmentLevel": "recognition",
     "objectiveIds": [
-      "cushing-nadnerczowy-obj-1"
+      "cushing-obj-1"
     ],
-    "prompt": "Jakie stężenie ACTH w osoczu stwierdza się u chorego z jawnym zespołem Cushinga wywołanym pojedynczym autonomicznym gruczolakiem kory nadnercza?",
+    "prompt": "Jaki profil hormonalny (kortyzol po 1 mg DST oraz stężenie ACTH rano) jednoznacznie wskazuje na nadnerczowy (niezależny od ACTH) zespół Cushinga?",
     "options": [
-      "Stłumione, poniżej dolnej granicy wykrywalności (zwykle <2–5 pg/ml)",
-      "Wybitnie podwyższone (>200 pg/ml)",
-      "Dokładnie w środku zakresu normy bez wahań"
+      "Kortyzol po 1 mg DST > 1,8 µg/dl (brak hamowania) oraz stężenie ACTH < 5 pg/ml (stłumione)",
+      "Kortyzol po 1 mg DST < 1,8 µg/dl oraz podwyższone ACTH > 50 pg/ml",
+      "Kortyzol po 1 mg DST > 1,8 µg/dl oraz ACTH > 100 pg/ml"
     ],
     "optionFeedback": [
-      "Autonomiczny nadmiar kortyzolu blokuje przysadkę na drodze ujemnego sprzężenia zwrotnego.",
-      "Tak wysokie ACTH występuje w ektopowym zespole Cushinga lub w chorobie Addisona.",
-      "Prawidłowe ACTH wyklucza autonomiczną postać nadnerczową."
+      "Brak hamowania kortyzolu przy stłumionym ACTH dowodzi autonomicznej produkcji kortyzolu w nadnerczu i ujemnego sprzężenia na przysadkę.",
+      "Kortyzol < 1,8 µg/dl wyklucza hiperkortyzolemię.",
+      "Wysokie ACTH przy braku hamowania kortyzolu cechuje postacie ACTH-zależne (choroba Cushinga lub ektopowy ACTH)."
     ],
     "answer": 0,
-    "explanation": "Autonomiczny nadmiar kortyzolu blokuje przysadkę na drodze ujemnego sprzężenia zwrotnego.",
-    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "explanation": "W zespole Cushinga pochodzenia nadnerczowego autonomiczny guz kory produkuje kortyzol, co całkowicie hamuje wydzielanie ACTH przez przysadkę (< 5 pg/ml).",
     "difficulty": "student",
-    "reasoning": "mechanism",
+    "reasoning": "differentiation",
     "sourceIds": [
-      "pte_nadnercza",
       "pte_macs",
       "ese_incidentaloma"
+    ],
+    "claimIds": [
+      "claim-adn-cushing-initial-screening"
     ]
   },
   "blocks": [
     {
-      "id": "cushing-nadnerczowy-block-1",
-      "title": "Zespół Cushinga ACTH-niezależny: Mechanizm autonomii",
-      "text": "Około 20–30% endogennych przypadków zespołu Cushinga ma charakter ACTH-niezależny, wynikający z pierwotnej patologii kory nadnerczy: w 60% jest to pojedynczy łagodny gruczolak kory nadnercza (adrenocortical adenoma), w 30–35% złośliwy rak kory nadnerczy (ACC), a rzadziej obustronny makro- lub mikroguzkowy rozrost kory (PMAH, PPNAD). Komórki guza autonomicznie, bez jakiejkolwiek kontroli przysadki, syntetyzują kortyzol. Nadmiar krążącego kortyzolu hamuje przysadkowe ACTH do wartości skrajnie niskich lub nieoznaczalnych (ACTH <2–5 pg/ml).",
+      "id": "cushing-b1",
+      "title": "Screening I rzutu: Potwierdzenie hiperkortyzolemii",
+      "text": "Diagnostyka zespołu Cushinga wymaga w I etapie potwierdzenia hiperkortyzolemii za pomocą co najmniej 2 różnych testów przesiewowych: 1) Test nocnego hamowania 1 mg deksametazonu (1 mg DST: norma < 1,8 µg/dl); 2) Wolny kortyzol w dobowej zbiórce moczu (UFC); 3) Kortyzol w ślinie o godz. 23:00 (ocena utraty rytmu dobowego).",
       "sourceIds": [
-        "pte_nadnercza",
         "pte_macs",
         "ese_incidentaloma"
       ],
-      "checkpointId": "cushing-nadnerczowy-q2-checkpoint-1-v2",
-      "inlineEnhancements": []
+      "checkpointId": "cushing-nadnerczowy-q2-checkpoint-1-v2"
     },
     {
-      "id": "cushing-nadnerczowy-block-2",
-      "title": "Łagodna autonomiczna sekrecja kortyzolu (MACS)",
-      "text": "Wielu chorych z przypadkowo wykrytym gruczolakiem nadnercza (incydentaloma) nie wykazuje pełnoobjawowego fenotypu Cushinga (brak purpurowych rozstępów czy miopatii), lecz ma biochemiczne cechy autonomii. Stan ten określano dawniej jako „podkliniczny zespół Cushinga”, a obecnie wg wytycznych ESE/PTE jako łagodną autonomiczną sekrecję kortyzolu (Mild Autonomous Cortisol Secretion — MACS). Kryterium: stężenie kortyzolu w surowicy po nocnym teście 1 mg deksametazonu wynosi >1,8 µg/dl (>50 nmol/l) przy braku cech jawnego hiperkortyzolizmu. MACS prowadzi do powikłań metabolicznych: opornego nadciśnienia, cukrzycy typu 2, dyslipidemii i osteoporozy z patologicznymi złamaniami trzonów kręgowych.",
+      "id": "cushing-b2",
+      "title": "Różnicowanie: ACTH zależny vs niezależny",
+      "text": "Gdy hiperkortyzolemia jest potwierdzona, kluczowy jest poranny pomiar ACTH. Stężenie ACTH < 5 pg/ml (lub < 1,1 pmol/l) potwierdza postać nadnerczową (gruczolak, rak ACC, rozrost makroguzkowy PBMAH). Wskazana jest wówczas tomografia komputerowa nadnerczy, a nie rezonans przysadki!",
       "sourceIds": [
-        "pte_nadnercza",
-        "pte_macs",
         "ese_incidentaloma"
       ],
-      "checkpointId": "cushing-nadnerczowy-q3-checkpoint-2-v2",
-      "inlineEnhancements": []
+      "checkpointId": "cushing-nadnerczowy-q3-checkpoint-2-v2"
     },
     {
-      "id": "cushing-nadnerczowy-block-3",
-      "title": "Atrofia drugiego nadnercza i śmiertelna pułapka pooperacyjna",
-      "text": "KRYTYCZNA ZASADA BEZPIECZEŃSTWA: Przewlekłe stłumienie ACTH przez autonomiczny guz kortyzolowy prowadzi do głębokiej atrofii zdrowego miąższu kory nadnercza po stronie guza oraz CAŁKOWITEJ ATROFII kory przeciwległego, zdrowego nadnercza! W chwili gdy chirurg wytnie guz (adrenalektomia), pacjent w ciągu kilku godzin traci jedyne źródło kortyzolu w organizmie. Jeśli nie otrzyma dożylnie osłony hydrokortyzonem, natychmiast rozwinie ostry, śmiertelny przełom nadnerczowy! U każdego chorego operowanego z powodu guzów wydzielających kortyzol (nawet z MACS) należy wdrożyć profilaktykę hydrokortyzonem śród- i pooperacyjnie aż do pełnej regeneracji drugiego nadnercza (co może trwać od 6 do 24 miesięcy).",
+      "id": "cushing-b3",
+      "title": "Pooperacyjna supresja drugiego nadnercza i osłona GKS",
+      "text": "Autonomiczny guz produkujący kortyzol przez miesiące lub lata tłumił oś HPA, co prowadzi do głębokiej atrofii zdrowej kory w drugim nadnerczu. Po wycięciu guza pacjent staje się natychmiast całkowicie pozbawiony kortyzolu! Wymaga obowiązkowej okołooperacyjnej osłony hydrokortyzonem, która musi być kontynuowana przez wiele miesięcy do czasu regeneracji osi.",
       "sourceIds": [
-        "pte_nadnercza",
-        "pte_macs",
-        "ese_incidentaloma"
-      ],
-      "inlineEnhancements": []
+        "adrenal_surgery",
+        "endo_pai"
+      ]
     }
   ],
   "activities": [
     {
       "id": "cushing-nadnerczowy-q2-checkpoint-1-v2",
-      "type": "single_choice",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "cushing-nadnerczowy-obj-2"
+        "cushing-obj-3"
       ],
-      "prompt": "Dlaczego po usunięciu autonomicznego gruczolaka kory nadnercza pacjent musi natychmiast otrzymać hydrokortyzon?",
+      "prompt": "46-letnia kobieta została zakwalifikowana do jednostronnej laparoskopowej adrenalektomii z powodu gruczolaka lewego nadnercza 35 mm z jawnym zespołem Cushinga (kortyzol po DST = 14 µg/dl, ACTH < 5 pg/ml). Jakie postępowanie anestezjologiczno-endokrynologiczne jest bezwzględnie konieczne w dobie operacji?",
       "options": [
-        "Przeciwległe zdrowe nadnercze uległo głębokiej atrofii z powodu przewlekłego braku ACTH, co grozi ostrym przełomem nadnerczowym",
-        "Hydrokortyzon zapobiega nawrotowi nowotworu w ranie",
-        "Aby natychmiast obniżyć ciśnienie tętnicze"
-      ],
-      "optionFeedback": [
-        "Bez osłony sterydowej chory nie posiada własnej produkcji kortyzolu.",
-        "Hydrokortyzon jest hormonem zastępczym, a nie lekiem przeciwnowotworowym.",
-        "Hydrokortyzon podtrzymuje ciśnienie, nie służy do jego obniżania."
+        "Śródoperacyjne i pooperacyjne podanie hydrokortyzonu i.v. (np. 50–100 mg), ponieważ przeciwległe nadnercze jest w stanie głębokiej atrofii i po usunięciu guza rozwinie się ostry przełom nadnerczowy",
+        "Całkowite unikanie sterydów po operacji, aby przyspieszyć spadek masy ciała",
+        "Podanie wysokich dawek ketokonazolu bezpośrednio po wybudzeniu ze znieczulenia"
       ],
       "answer": 0,
-      "explanation": "Bez osłony sterydowej chory nie posiada własnej produkcji kortyzolu.",
-      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
-      "difficulty": "student",
-      "reasoning": "mechanism",
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-contralateral-adrenal-atrophy",
+            "label": "Atrofia drugiego nadnercza z powodu przewlekłej supresji ACTH",
+            "acceptedPhrases": [
+              "atrofia drugiego nadnercza",
+              "supresja osi",
+              "przeciwległe nadnercze",
+              "zanik kory"
+            ]
+          },
+          {
+            "id": "c-postop-hydrocortisone-cover",
+            "label": "Okołooperacyjna osłona hydrokortyzonem w celu uniknięcia przełomu",
+            "acceptedPhrases": [
+              "osłona hydrokortyzonem",
+              "prewencja przełomu",
+              "podanie hydrokortyzonu",
+              "substytucja pooperacyjna"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-withhold-steroids",
+            "patterns": [
+              "unikanie sterydów",
+              "nie podawać hydrokortyzonu"
+            ],
+            "severity": "critical",
+            "feedback": "Brak osłony hydrokortyzonem po usunięciu guza produkującego kortyzol skutkuje zgonem w ostrej niedoczynności nadnerczy."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Usunięcie guza wydzielającego kortyzol natychmiast obnaża atrofię drugiego nadnercza. Brak osłony hydrokortyzonem wywoła zagrażający życiu przełom.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
       "sourceIds": [
-        "pte_nadnercza",
-        "pte_macs",
-        "ese_incidentaloma"
+        "adrenal_surgery",
+        "endo_pai"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Usunięcie guza wydzielającego kortyzol natychmiast obnaża atrofię drugiego nadnercza. Brak osłony hydrokortyzonem wywoła zagrażający życiu przełom.",
+        "Nieprawidłowo: Całkowite unikanie sterydów po operacji, aby przyspieszyć spadek masy ciała... Usunięcie guza wydzielającego kortyzol natychmiast obnaża atrofię drugiego nadnercza. Brak osłony hydrokortyzonem wywoła zagrażający życiu przełom.",
+        "Nieprawidłowo: Podanie wysokich dawek ketokonazolu bezpośrednio po wybudzeniu ze znieczulenia... Usunięcie guza wydzielającego kortyzol natychmiast obnaża atrofię drugiego nadnercza. Brak osłony hydrokortyzonem wywoła zagrażający życiu przełom."
       ]
     },
     {
       "id": "cushing-nadnerczowy-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "lab",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "cushing-nadnerczowy-obj-1"
+        "cushing-obj-2"
       ],
-      "prompt": "Jakie kryterium w nocnym teście hamowania 1 mg deksametazonu definiuje łagodną autonomiczną sekrecję kortyzolu (MACS) w incydentaloma nadnerczy?",
+      "prompt": "U pacjenta z ciężkim zespołem Cushinga (powikłanym niekontrolowanym nadciśnieniem 190/110 mmHg, hipokaliemią 2,9 mmol/l i ostrą miopatią) planowana jest operacja za 4 tygodnie. Jaki lek hamujący steroidogenezę nadnerczową należy wdrożyć w ramach przygotowania?",
       "options": [
-        "Kortyzol w surowicy rano >1,8 µg/dl (>50 nmol/l) przy braku jawnych cech fenotypowych zespołu Cushinga",
-        "Kortyzol spadający poniżej 0,5 µg/dl",
-        "Wzrost stężenia glukozy powyżej 300 mg/dl"
-      ],
-      "optionFeedback": [
-        "Wskazuje to na utratę pełnej fizjologicznej supresji osi HPA.",
-        "Spadek <1,8 µg/dl oznacza w pełni prawidłowe hamowanie.",
-        "Test deksametazonu ocenia stężenie kortyzolu, a nie glukozy."
+        "Inhibitor steroidogenezy (np. ketokonazol, metyrapon lub osilodrostat) z monitorowaniem stężenia kortyzolu i enzymów wątrobowych",
+        "Spironolakton w monoterapii w małej dawce bez wpływu na kortyzol",
+        "Glikokortykosteroid o przedłużonym uwalnianiu"
       ],
       "answer": 0,
-      "explanation": "Wskazuje to na utratę pełnej fizjologicznej supresji osi HPA.",
-      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "explanation": "W ciężkim zespole Cushinga przed operacją konieczne jest zablokowanie syntezy kortyzolu za pomocą inhibitorów enzymatycznych (ketokonazol blokuje CYP17/CYP11A1, metyrapon CYP11B1, osilodrostat CYP11B1).",
       "difficulty": "doctor",
-      "reasoning": "interpretation",
+      "reasoning": "decision",
       "sourceIds": [
-        "pte_nadnercza",
         "pte_macs",
         "ese_incidentaloma"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: W ciężkim zespole Cushinga przed operacją konieczne jest zablokowanie syntezy kortyzolu za pomocą inhibitorów enzymatycznych (ketokonazol blokuje CYP17/CYP11A1, metyrapon CYP11B1, osilodrostat CYP11B1).",
+        "Nieprawidłowo: Spironolakton w monoterapii w małej dawce bez wpływu na kortyzol... W ciężkim zespole Cushinga przed operacją konieczne jest zablokowanie syntezy kortyzolu za pomocą inhibitorów enzymatycznych (ketokonazol blokuje CYP17/CYP11A1, metyrapon CYP11B1, osilodrostat CYP11B1).",
+        "Nieprawidłowo: Glikokortykosteroid o przedłużonym uwalnianiu... W ciężkim zespole Cushinga przed operacją konieczne jest zablokowanie syntezy kortyzolu za pomocą inhibitorów enzymatycznych (ketokonazol blokuje CYP17/CYP11A1, metyrapon CYP11B1, osilodrostat CYP11B1)."
       ]
     }
   ],
   "teachBack": {
     "id": "cushing-nadnerczowy-teach-back-v2",
     "type": "recall",
+    "assessmentLevel": "generation",
     "objectiveIds": [
-      "cushing-nadnerczowy-obj-1",
-      "cushing-nadnerczowy-obj-2"
+      "cushing-obj-1",
+      "cushing-obj-3"
     ],
-    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Gdy nadnercze działa na własną rękę”.",
-    "modelAnswer": "Nadnerczowy zespół Cushinga cechuje się autonomiczną produkcją kortyzolu i stłumionym ACTH. Postać subkliniczna (MACS) niesie ryzyko powikłań sercowo-naczyniowych i kostnych. Usunięcie autonomicznego guza wymaga bezwzględnej osłony hydrokortyzonem z powodu atrofii drugiego nadnercza.",
-    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "prompt": "Wyjaśnij dwuetapowy algorytm diagnostyki zespołu Cushinga oraz dlaczego pacjent po udanej adrenalektomii wymaga substytucji hydrokortyzonem.",
+    "modelAnswer": "Krok 1: Potwierdzenie hiperkortyzolemii (1 mg DST, UFC, ślina). Krok 2: Oznaczenie ACTH (stłumione <5 pg/ml wskazuje na przyczynę nadnerczową). Po operacji usunięcia guza chory wymaga hydrokortyzonu, ponieważ zdrowe drugie nadnercze jest w stanie głębokiej atrofii z powodu wielomiesięcznej supresji ACTH.",
+    "explanation": "Dwuetapowa diagnostyka chroni przed błędnym obrazowaniem, a osłona pooperacyjna zapobiega ostremu przełomowi nadnerczowemu.",
     "difficulty": "both",
-    "reasoning": "mechanism",
+    "reasoning": "differentiation",
     "sourceIds": [
-      "pte_nadnercza",
       "pte_macs",
-      "ese_incidentaloma"
+      "adrenal_surgery"
     ]
   },
   "exitTicket": [
     {
       "id": "cushing-nadnerczowy-q4-exit-v2",
       "type": "missing_information",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "cushing-nadnerczowy-obj-2"
+        "cushing-obj-1"
       ],
-      "prompt": "Jakie powikłania ogólnoustrojowe najczęściej towarzyszą chorym z łagodną autonomiczną sekrecją kortyzolu (MACS)?",
+      "prompt": "U 38-letniego pacjenta z otyłością brzuszną, czerwonymi rozstępami i nadciśnieniem kortyzol w teście 1 mg DST wyniósł 6,4 µg/dl. Jaki jest kolejny logiczny krok diagnostyczny?",
       "options": [
-        "Oporne nadciśnienie tętnicze, cukrzyca typu 2 oraz osteoporoza ze złamaniami trzonów kręgów",
-        "Bielactwo nabyte i zapalenie tarczycy",
-        "Niedociśnienie ortostatyczne i biegunki"
+        "Potwierdzenie autonomii drugim testem (UFC lub kortyzol w ślinie o północy), a następnie oznaczenie porannego ACTH",
+        "Natychmiastowe skierowanie na obustronną adrenalektomię bez innych badań",
+        "Wykonanie biopsji cienkoigłowej nadnerczy"
       ],
       "optionFeedback": [
-        "Przewlekła subkliniczna ekspozycja na kortyzol niszczy metabolizm i strukturę kości.",
-        "To cechy chorób autoimmunologicznych, a nie hiperkortyzolemii.",
-        "Niedociśnienie cechuje niedobór kortyzolu, a nie jego autonomiczny nadmiar."
+        "Wytyczne wymagają potwierdzenia hiperkortyzolemii, a następnie pomiaru ACTH w celu określenia zależności od przysadki.",
+        "Operacja bez lokalizacji i identyfikacji źródła ACTH jest niedopuszczalna.",
+        "Biopsja nadnerczy w zespole Cushinga jest przeciwwskazana."
       ],
       "answer": 0,
-      "explanation": "Przewlekła subkliniczna ekspozycja na kortyzol niszczy metabolizm i strukturę kości.",
-      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
-      "difficulty": "both",
-      "reasoning": "decision",
+      "explanation": "Po dodatnim teście przesiewowym należy potwierdzić rozpoznanie i oznaczyć ACTH, aby ustalić, czy proces jest ACTH-zależny czy niezależny.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
       "sourceIds": [
-        "pte_nadnercza",
         "pte_macs",
         "ese_incidentaloma"
-      ]
+      ],
+      "claimIds": [
+        "claim-adn-cushing-initial-screening"
+      ],
+      "transfer": true
     },
     {
       "id": "cushing-nadnerczowy-q5-exit-v2",
-      "type": "missing_information",
+      "type": "single_choice",
+      "assessmentLevel": "recognition",
       "objectiveIds": [
-        "cushing-nadnerczowy-obj-1"
+        "cushing-obj-1"
       ],
-      "prompt": "Jak długo po operacji usunięcia gruczolaka wydzielającego kortyzol może trwać regeneracja osi HPA i przeciwległego nadnercza?",
+      "prompt": "Jakie stężenie ACTH rano uznaje się za kryterium supresji przysadkowej w zespole Cushinga niezależnym od ACTH?",
       "options": [
-        "Od kilku miesięcy do nawet 1–2 lat",
-        "Dokładnie 24 godziny",
-        "Oś HPA po operacji nigdy się nie regeneruje"
+        "ACTH < 5 pg/ml (< 1,1 pmol/l)",
+        "ACTH w przedziale 20–40 pg/ml",
+        "ACTH > 100 pg/ml"
       ],
       "optionFeedback": [
-        "W tym okresie pacjent wymaga stopniowo redukowanej substytucji hydrokortyzonem.",
-        "Atrofia kory nie cofa się w ciągu jednej doby.",
-        "W zdecydowanej większości przypadków funkcja zdrowego nadnercza ostatecznie powraca."
+        "Wartość poniżej 5 pg/ml wskazuje na autonomiczne, niezależne od przysadki wydzielanie kortyzolu.",
+        "Wartość 20–40 pg/ml to norma lub łagodna stymulacja.",
+        "Wartość > 100 pg/ml wskazuje na ektopowy zespół Cushinga lub chorobę Cushinga."
       ],
       "answer": 0,
-      "explanation": "W tym okresie pacjent wymaga stopniowo redukowanej substytucji hydrokortyzonem.",
-      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
-      "difficulty": "both",
-      "reasoning": "safety",
+      "explanation": "Stężenie ACTH < 5 pg/ml świadczy o całkowitym zahamowaniu przysadki przez autonomiczny nadmiar kortyzolu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
       "sourceIds": [
-        "pte_nadnercza",
+        "ese_incidentaloma"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "cushing-nadnerczowy-bank-1-v2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "cushing-obj-1",
+        "cushing-obj-3",
+        "cushing-obj-2"
+      ],
+      "claimIds": [
+        "claim-adn-cushing-initial-screening",
+        "claim-adn-macs-dst-thresholds"
+      ],
+      "prompt": "50-letnia pacjentka z cukrzycą typu 2 i osteoporozą ma wykryty w TK guz lewego nadnercza 28 mm (gęstość natywna 4 HU). Wyniki: kortyzol po 1 mg DST = 4,2 µg/dl; wolny kortyzol w moczu (UFC) = 1,2x GGN; ACTH poranny = 3,2 pg/ml; DHEA-S stłumiony poniżej normy. Zinterpretuj profil hormonalny, postaw rozpoznanie i opisz postępowanie okołooperacyjne w razie kwalifikacji do adrenalektomii.",
+      "modelAnswer": "Profil hormonalny: brak hamowania kortyzolu po 1 mg DST (4,2 > 1,8 µg/dl), łagodnie podwyższony UFC, stłumiony ACTH (< 5 pg/ml) oraz stłumiony DHEA-S. Obraz odpowiada autonomicznej sekrecji kortyzolu (MACS / subklinicznemu zespołowi Cushinga) w przebiegu gruczolaka bogatolipoidowego kory lewego nadnercza (4 HU <= 10 HU). Ponieważ pacjentka ma powikłania metaboliczne (cukrzyca, osteoporoza), kwalifikuje się do lewostronnej adrenalektomii laparoskopowej. Postępowanie okołooperacyjne: ze względu na supresję osi HPA i stłumienie ACTH, prawe nadnercze jest atroficzne. Pacjentka bezwzględnie wymaga okołooperacyjnej osłony hydrokortyzonem (np. 50–100 mg i.v. w dobie operacji) oraz kontynuacji substytucji doustnej po zabiegu ze stopniowym odstawianiem po regeneracji osi.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "cushing-bank-1-dim-dx",
+            "label": "Wymiar diagnostyczny i patofizjologiczny",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-macs-interpretation",
+                "label": "Rozpoznanie autonomicznej sekrecji kortyzolu (MACS / postać nadnerczowa)",
+                "acceptedPhrases": [
+                  "MACS",
+                  "autonomiczna sekrecja",
+                  "postać nadnerczowa",
+                  "gruczolak",
+                  "subkliniczny Cushing"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "cushing-bank-1-dim-tx",
+            "label": "Wymiar decyzyjny i bezpieczeństwo kliniczne",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-contralateral-insufficiency-plan",
+                "label": "Plan osłony hydrokortyzonem z uwagi na atrofię drugiego nadnercza",
+                "acceptedPhrases": [
+                  "osłona hydrokortyzonem",
+                  "atrofia prawego nadnercza",
+                  "niedoczynność pooperacyjna",
+                  "substytucja"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-pituitary-mri-needed",
+            "patterns": [
+              "konieczny rezonans przysadki",
+              "choroba Cushinga przysadkowa"
+            ],
+            "severity": "critical",
+            "feedback": "Stłumione ACTH wyklucza przyczynę przysadkową; zlecanie MRI przysadki jest błędem."
+          }
+        ]
+      },
+      "explanation": "MACS z cechami supresji ACTH i DHEA-S niesie wysokie ryzyko pooperacyjnej ostrej niewydolności kory nadnerczy, wymagając profilaktycznej substytucji hydrokortyzonem.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "ese_incidentaloma",
+        "pte_macs"
+      ],
+      "transfer": true,
+      "caseSnapshot": {
+        "patientAge": 50,
+        "postDstCortisolUgDl": 4.2,
+        "acthPgMl": 3.2,
+        "dheaSUgDl": 15,
+        "ctHu": 4,
+        "tumorSizeMm": 28,
+        "comorbidities": "cukrzyca typu 2, osteoporoza"
+      },
+      "engineBinding": {
+        "engine": "adrenal-workbench",
+        "presetId": "adrenal-incidentaloma-macs"
+      }
+    },
+    {
+      "id": "cushing-nadnerczowy-bank-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "cushing-obj-1"
+      ],
+      "claimIds": [
+        "claim-adn-cushing-initial-screening"
+      ],
+      "prompt": "Dlaczego pomiar stężenia siarczanu dehydroepiandrosteronu (DHEA-S) w surowicy jest cennym markerem pomocniczym w różnicowaniu zespołu Cushinga nadnerczowego od przysadkowego?",
+      "options": [
+        "W zespole nadnerczowym autonomiczny nadmiar kortyzolu tłumi przysadkowy ACTH, co prowadzi do atrofii strefy siatkowatej i głębokiego spadku DHEA-S; w chorobie Cushinga ACTH stymuluje wydzielanie DHEA-S",
+        "Ponieważ DHEA-S jest produkowany wyłącznie przez komórki somatototropowe przysadki",
+        "Ponieważ DHEA-S uniemożliwia wchłanianie glikokortykosteroidów w jelicie"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-dheas-suppression-acth",
+            "label": "Supresja DHEA-S w wyniku braku ACTH",
+            "acceptedPhrases": [
+              "DHEA-S stłumiony",
+              "brak ACTH",
+              "strefa siatkowata",
+              "podwyższony w chorobie Cushinga"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Wytwarzanie DHEA-S w strefie siatkowatej zależy ściśle od ACTH. Stłumienie ACTH w autonomicznych guzach nadnercza powoduje obniżenie DHEA-S poniżej normy dla wieku.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
         "pte_macs",
         "ese_incidentaloma"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Wytwarzanie DHEA-S w strefie siatkowatej zależy ściśle od ACTH. Stłumienie ACTH w autonomicznych guzach nadnercza powoduje obniżenie DHEA-S poniżej normy dla wieku.",
+        "Nieprawidłowo: Ponieważ DHEA-S jest produkowany wyłącznie przez komórki somatototropowe przysad... Wytwarzanie DHEA-S w strefie siatkowatej zależy ściśle od ACTH. Stłumienie ACTH w autonomicznych guzach nadnercza powoduje obniżenie DHEA-S poniżej normy dla wieku.",
+        "Nieprawidłowo: Ponieważ DHEA-S uniemożliwia wchłanianie glikokortykosteroidów w jelicie... Wytwarzanie DHEA-S w strefie siatkowatej zależy ściśle od ACTH. Stłumienie ACTH w autonomicznych guzach nadnercza powoduje obniżenie DHEA-S poniżej normy dla wieku."
       ]
     }
   ],
@@ -219,6 +391,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+    "scope": "Pełna modernizacja V2: dwuetapowa diagnostyka, MACS, ACTH <5 pg/ml, pooperacyjna atrofia osi HPA."
   }
 }

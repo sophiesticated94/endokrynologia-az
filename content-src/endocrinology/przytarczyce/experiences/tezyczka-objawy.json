@@ -43,6 +43,9 @@
     "sourceIds": [
       "asbmr_calcium",
       "ese_hypopara"
+    ],
+    "claimIds": [
+      "claim-pt-hypocalcemia-magnesium-block"
     ]
   },
   "blocks": [
@@ -158,7 +161,8 @@
     "sourceIds": [
       "asbmr_calcium",
       "ese_hypopara"
-    ]
+    ],
+    "assessmentLevel": "generation"
   },
   "exitTicket": [
     {
@@ -186,7 +190,9 @@
       "sourceIds": [
         "asbmr_calcium",
         "ese_hypopara"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     },
     {
       "id": "tezyczka-objawy-q5-exit-v2",
@@ -213,7 +219,9 @@
       "sourceIds": [
         "asbmr_calcium",
         "ese_hypopara"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     }
   ],
   "widgetIds": [
@@ -228,5 +236,141 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "tezyczka-objawy-bank-1",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "tezyczka-objawy-obj-1",
+        "tezyczka-objawy-obj-2",
+        "tezyczka-objawy-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-hypopara-target-ca-2025",
+        "claim-pt-hypocalcemia-magnesium-block"
+      ],
+      "prompt": "Na SOR zgłasza się 24-letnia kobieta z atakiem paniki, drętwieniem rąk i skurczem mięśni dłoni układających się w pozycję 'ręki położnika'. W badaniu gazometrycznym: pH 7,58, pCO2 22 mmHg, HCO3- 21 mmol/l. Wapń całkowity wynosi 2,28 mmol/l (norma), natomiast wapń zjonizowany wynosi 0,92 mmol/l (znacznie obniżony). Wyjaśnij: 1) elektrofizjologiczny mechanizm powstawania objawów tężyczkowych w hiperwentylacji (wpływ zasadowicy na wiązanie wapnia z albuminami oraz bramkowanie kanałów sodowych Nav); 2) różnicę między tężyczką jawną a utajoną (objawy Chvostka, Trousseau, próba tężyczkowa EMG); 3) natychmiastowe postępowanie ratunkowe.",
+      "modelAnswer": "U pacjentki występuje tężyczka oddechowa wywołana ostrą zasadowicą oddechową w przebiegu hiperwentylacji. Mechanizm biochemiczny: wzrost pH surowicy powoduje dysocjację jonów wodorowych od reszt karboksylowych albuminy, co uwalnia ujemne ładunki białka i gwałtownie zwiększa jego powinowactwo do jonów wapnia. Dochodzi do masywnego wiązania wolnego wapnia przez albuminę, co skutkuje nagłym spadkiem stężenia wapnia zjonizowanego (do 0,92 mmol/l) przy całkowicie prawidłowym wapniu całkowitym. Elektrofizjologicznie hipokalcemia zjonizowana znosi ekranowanie ładunków ujemnych na zewnętrznej powierzchni kanałów sodowych bramkowanych napięciem (Nav1.4 w mięśniach i nerwach obwodowych), co obniża próg pobudliwości i wywołuje spontaniczne, powtarzalne wyładowania (skurcz mięśni, parestezje). Ręka położnika to objaw tężyczki jawnej; tężyczka utajona ujawnia się dopiero w testach prowokacyjnych: objaw Chvostka (uderzenie w nerw twarzowy), objaw Trousseau (niedokrwienie ramienia mankietem ciśnieniomierza przez 3 min) lub dublety/triplety w EMG próby tężyczkowej. Postępowanie ratunkowe: uspokojenie pacjentki, opanowanie hiperwentylacji (oddychanie do worka papierowego lub przez maskę z rezerwuarem w celu podniesienia pCO2 i normalizacji pH), bez konieczności dożylnego podawania soli wapnia, jeśli objawy ustępują po wyrównaniu gazometrycznym.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "tezyczka-objawy-bank-1-dim-alkalosis-mechanism",
+            "label": "Mechanizm zasadowicy oddechowej i spadek wapnia zjonizowanego",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-alkalosis-albumin-binding",
+                "label": "Zasadowica nasila wiązanie Ca z albuminami, obniżając Ca zjonizowany",
+                "acceptedPhrases": [
+                  "zasadowica oddechowa",
+                  "wiązanie wapnia z albuminą",
+                  "spadek wapnia zjonizowanego",
+                  "ekranowanie ładunków",
+                  "kanały sodowe Nav"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "tezyczka-objawy-bank-1-dim-clinical-signs",
+            "label": "Różnicowanie tężyczki jawnej i utajonej (Trousseau, Chvostek, EMG)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-tetany-signs-differentiation",
+                "label": "Objaw Trousseau, Chvostka i próba tężyczkowa EMG",
+                "acceptedPhrases": [
+                  "objaw Trousseau",
+                  "objaw Chvostka",
+                  "ręka położnika",
+                  "tężyczka utajona",
+                  "próba tężyczkowa"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "tezyczka-objawy-bank-1-dim-rescue",
+            "label": "Postępowanie ratunkowe (opanowanie hiperwentylacji)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-hyperventilation-rescue",
+                "label": "Oddychanie do worka / normalizacja pCO2",
+                "acceptedPhrases": [
+                  "oddychanie do worka",
+                  "normalizacja pCO2",
+                  "uspokojenie",
+                  "brak konieczności Ca i.v."
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-hyperventilation-calcium-bolus-push",
+            "patterns": [
+              "podać natychmiast 5 ampułek chlorku wapnia w bolusie"
+            ],
+            "severity": "critical",
+            "feedback": "W łagodnej tężyczce hiperwentylacyjnej kluczowa jest redukcja zasadowicy; forsowanie dożylnego wapnia bez opanowania hiperwentylacji stwarza niepotrzebne ryzyko powikłań naczyniowych."
+          }
+        ]
+      },
+      "explanation": "W hiperwentylacji alkaloza oddechowa nasila wiązanie wapnia z albuminami, powodując ostry spadek Ca2+ zjonizowanego i hiperekscytację kanałów Nav; leczeniem pierwszego rzutu jest normalizacja pCO2.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "asbmr_calcium",
+        "ese_hypopara"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "tezyczka-objawy-bank-2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "tezyczka-objawy-obj-1",
+        "tezyczka-objawy-obj-2",
+        "tezyczka-objawy-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-hypopara-target-ca-2025"
+      ],
+      "prompt": "Dlaczego objaw Trousseau (skurcz mięśni dłoni po zaciśnięciu mankietu ciśnieniomierza powyżej ciśnienia skurczowego na 3 minuty) uważa się za znacznie bardziej swoisty dla hipokalcemii niż objaw Chvostka?",
+      "options": [
+        "Objaw Chvostka występuje fizjologicznie u 10–25% zdrowych osób z prawidłową kalcemią, podczas gdy objaw Trousseau cechuje swoistość bliska 99% w wykrywaniu tężyczki utajonej.",
+        "Objaw Chvostka wymaga całkowitego znieczulenia ogólnego pacjenta.",
+        "Objaw Trousseau bada odruchy ze ścięgna Achillesa, które nie podlegają kontroli korowej."
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-trousseau-specificity",
+            "label": "Objaw Chvostka fałszywie dodatni u 10-25% zdrowych, Trousseau wysoka swoistość",
+            "acceptedPhrases": [
+              "swoistość",
+              "Chvostek u zdrowych",
+              "10–25%",
+              "Trousseau swoisty",
+              "fałszywie dodatni"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Objaw Chvostka występuje u do 25% zdrowych osób bez zaburzeń elektrolitowych. Objaw Trousseau jest wysoce czuły i ma swoistość ~99% dla hipokalcemii i tężyczki utajonej.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "asbmr_calcium"
+      ],
+      "transfer": true
+    }
+  ]
 }

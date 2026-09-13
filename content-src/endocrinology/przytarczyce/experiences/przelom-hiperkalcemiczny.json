@@ -43,6 +43,9 @@
     "sourceIds": [
       "endo_hypercalcemia",
       "asbmr_calcium"
+    ],
+    "claimIds": [
+      "claim-pt-severe-hypercalcemia-saline-first"
     ]
   },
   "blocks": [
@@ -151,7 +154,8 @@
     "sourceIds": [
       "endo_hypercalcemia",
       "asbmr_calcium"
-    ]
+    ],
+    "assessmentLevel": "generation"
   },
   "exitTicket": [
     {
@@ -179,7 +183,9 @@
       "sourceIds": [
         "endo_hypercalcemia",
         "asbmr_calcium"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     },
     {
       "id": "przelom-hiperkalcemiczny-q5-exit-v2",
@@ -206,7 +212,9 @@
       "sourceIds": [
         "endo_hypercalcemia",
         "asbmr_calcium"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     }
   ],
   "widgetIds": [
@@ -217,5 +225,141 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "przelom-hiperkalcemiczny-bank-1",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "przelom-hiperkalcemiczny-obj-1",
+        "przelom-hiperkalcemiczny-obj-2",
+        "przelom-hiperkalcemiczny-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-severe-hypercalcemia-saline-first"
+      ],
+      "prompt": "Na SOR trafia 64-letni mężczyzna w stanie stuporu, z ciężkim odwodnieniem, tachykardią 115/min i ciśnieniem tętniczym 85/50 mmHg. W badaniach laboratoryjnych: wapń całkowity 3,92 mmol/l (skorygowany 4,05 mmol/l), mocznik 26 mmol/l, kreatynina 240 µmol/l, potas 3,4 mmol/l, w EKG QTc 325 ms. Zaplanuj natychmiastowe postępowanie ratunkowe w pierwszych 24 godzinach. Wyjaśnij: 1) dlaczego masywna płynoterapia 0,9% NaCl musi bezwzględnie poprzedzać jakiekolwiek inne leki; 2) dlaczego furosemid jest na tym etapie bezwzględnie przeciwwskazany; 3) jak dobrać terapię farmakologiczną (kalcytonina jako pomost vs zoledronian vs denosumab) z uwzględnieniem ostrej niewydolności nerek.",
+      "modelAnswer": "U pacjenta występuje przełom hiperkalcemiczny z ostrą przednerkową niewydolnością nerek i wstrząsem hipowolemicznym. Pierwszym i najważniejszym krokiem ratunkowym jest natychmiastowa energiczna rehydratacja izotonicznym 0,9% NaCl (1000 ml w 1. godzinie, następnie 200–300 ml/h pod kontrolą diurezy i parametrów krążenia). Płynoterapia odbudowuje objętość łożyska naczyniowego, przywraca filtrację kłębuszkową i wymusza natriurezę, pociągając za sobą wydalanie wapnia. Furosemid jest bezwzględnie przeciwwskazany przed pełnym nawodnieniem, ponieważ nasiliłby hipowolemię, pogłębił ostrą niewydolność nerek i paradoksalnie zwiększył cewkową reabsorpcję wapnia. W farmakoterapii: kalcytonina łososiowa (4–8 j.m./kg m.c. s.c./i.m. co 6–12 h) działa natychmiast (w ciągu 2–4 h), ale wykazuje tachyfilaksję po 24–48 h, stanowiąc doskonały pomost. Ponieważ pacjent ma ostrą niewydolność nerek (kreatynina 240 µmol/l), kwas zoledronowy w pełnej dawce stwarza ryzyko martwicy cewek; lekiem z wyboru hamującym osteolizę u chorych z niewydolnością nerek jest denosumab (120 mg s.c.) lub zoledronian w zredukowanej dawce dopiero po pełnej rehydratacji i poprawie diurezy. W razie braku diurezy i narastania przewodnienia wskazana jest hemodializa z niskowapniowym dializatem.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "przelom-hiperkalcemiczny-bank-1-dim-saline-priority",
+            "label": "Priorytet masywnej płynoterapii 0,9% NaCl i zakaz wczesnego furosemidu",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-saline-resuscitation-first",
+                "label": "0,9% NaCl 200-300 ml/h po bolusie, furosemid przeciwwskazany",
+                "acceptedPhrases": [
+                  "0,9% NaCl",
+                  "nawodnienie dożylne",
+                  "płynoterapia",
+                  "furosemid przeciwwskazany",
+                  "hipowolemia",
+                  "przywrócenie GFR"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "przelom-hiperkalcemiczny-bank-1-dim-bridging",
+            "label": "Kalcytonina jako terapia pomostowa (szybki początek, tachyfilaksja)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-calcitonin-bridging-tachyphylaxis",
+                "label": "Kalcytonina działa w 2-4h, tachyfilaksja po 48h",
+                "acceptedPhrases": [
+                  "kalcytonina",
+                  "tachyfilaksja",
+                  "początek działania po 2–4 h",
+                  "leczenie pomostowe"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "przelom-hiperkalcemiczny-bank-1-dim-antiresorptive-renal",
+            "label": "Dobór leczenia antyresorpcyjnego (denosumab vs zoledronian) i dializoterapia",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-denosumab-dialysis-indication",
+                "label": "Denosumab przy niewydolności nerek, hemodializa w rezerwie",
+                "acceptedPhrases": [
+                  "denosumab",
+                  "niewydolność nerek",
+                  "kwas zoledronowy",
+                  "hemodializa",
+                  "niskowapniowy płyn dializacyjny"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-early-furosemide-shock",
+            "patterns": [
+              "podać furosemid w bolusie przed nawodnieniem",
+              "forsować diurezę od razu furosemidem"
+            ],
+            "severity": "critical",
+            "feedback": "Podanie furosemidu u skrajnie odwodnionego pacjenta z przełomem hiperkalcemicznym prowadzi do wstrząsu hipowolemicznego i zatrzymania krążenia."
+          }
+        ]
+      },
+      "explanation": "W przełomie hiperkalcemicznym priorytetem jest intensywne nawodnienie 0,9% NaCl (furosemid dopiero po euwolemii); kalcytonina działa szybko pomostowo, a denosumab lub zoledronian zapewniają trwałe obniżenie kalcemii.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "endo_hypercalcemia"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "przelom-hiperkalcemiczny-bank-2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przelom-hiperkalcemiczny-obj-1",
+        "przelom-hiperkalcemiczny-obj-2",
+        "przelom-hiperkalcemiczny-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-severe-hypercalcemia-saline-first"
+      ],
+      "prompt": "Dlaczego kwas zoledronowy podany dożylnie w przełomie hiperkalcemicznym NIE może stanowić jedynego leku doraźnego w pierwszych godzinach terapii?",
+      "options": [
+        "Początek działania hipokalcemizującego bisfosfonianów pojawia się dopiero po 48–72 godzinach (maksymalny po 4–7 dniach), dlatego w fazie ostrej konieczne jest agresywne nawodnienie 0,9% NaCl i pomostowe podanie kalcytoniny.",
+        "Ponieważ bisfosfoniany w pierwszych 24 godzinach paradoksalnie podnoszą stężenie wapnia o 1 mmol/l.",
+        "Kwas zoledronowy działa wyłącznie wtedy, gdy jest podawany jednocześnie z doustnymi solami wapnia."
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-bisphosphonate-delayed-onset",
+            "label": "Opóźniony początek działania bisfosfonianów (48-72h) wymaga leczenia pomostowego",
+            "acceptedPhrases": [
+              "48–72 godzin",
+              "opóźniony początek",
+              "kalcytonina",
+              "nawodnienie",
+              "hamowanie osteoklastów wymaga czasu"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Bisfosfoniany hamują resorpcję osteoklastyczną ze znacznym opóźnieniem (spadek Ca zaczyna się po 2–3 dobach), stąd natychmiastowe obniżenie kalcemii zależy wyłącznie od hydratacji i kalcytoniny.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "endo_hypercalcemia"
+      ],
+      "transfer": true
+    }
+  ]
 }

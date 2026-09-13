@@ -3,212 +3,362 @@
   "lessonId": "przelom-nadnerczowy",
   "objectives": [
     {
-      "id": "przelom-nadnerczowy-obj-1",
-      "statement": "Rozpoznasz objawy alarmowe ostrego przełomu nadnerczowego: wstrząs oporny na katecholaminy, silne bóle brzucha, hiponatremia, hiperkaliemia, hipoglikemia.",
+      "id": "przelom-obj-1",
+      "statement": "Rozpoznasz wstrząs w przebiegu przełomu nadnerczowego i wdrożysz natychmiastowe leczenie ratunkowe (hydrokortyzon 100 mg i.v. + 0,9% NaCl) bez opóźnień diagnostycznych.",
+      "kind": "safety"
+    },
+    {
+      "id": "przelom-obj-2",
+      "statement": "Wyjaśnisz mechanizm niewydolności hemodynamicznej opornej na aminy presyjne wynikający z braku efektu permisyjnego kortyzolu na receptory adrenergiczne.",
       "kind": "mechanism"
     },
     {
-      "id": "przelom-nadnerczowy-obj-2",
-      "statement": "Wdrożysz natychmiastowy protokół ratunkowy: dożylny bolus 100 mg hydrokortyzonu i intensywne nawadnianie 0,9% NaCl bez czekania na wyniki badań!",
-      "kind": "interpretation"
+      "id": "przelom-obj-3",
+      "statement": "Zaplanujesz stabilizację hemodynamiczną, dobowe dawkowanie hydrokortyzonu w pompie (200 mg/24h) oraz monitorowanie glikemii i elektrolitów w OIT/oddziale ratunkowym.",
+      "kind": "decision"
     }
   ],
   "diagnostic": {
     "id": "przelom-nadnerczowy-q1-diagnostic-v2",
     "type": "single_choice",
+    "assessmentLevel": "recognition",
     "objectiveIds": [
-      "przelom-nadnerczowy-obj-1"
+      "przelom-obj-1"
     ],
-    "prompt": "Jaki lek i w jakiej dawce należy podać natychmiast w bolusie dożylnym choremu z podejrzeniem ostrego przełomu nadnerczowego?",
+    "prompt": "Jaki jest priorytet postępowania lekarskiego przy podejrzeniu ostrego przełomu nadnerczowego u pacjenta we wstrząsie hipotensyjnym?",
     "options": [
-      "Hydrokortyzon w dawce 100 mg i.v.",
-      "Furosemid 80 mg dożylnie",
-      "Insulinę krótko działającą w bolusie"
+      "Natychmiastowe podanie 100 mg hydrokortyzonu i.v. oraz intensywny wlew 0,9% NaCl, bez oczekiwania na wyniki badań laboratoryjnych",
+      "Wykonanie tomografii komputerowej jamy brzusznej w celu poszukiwania krwotoku do nadnerczy przed podaniem leków",
+      "Podanie wyłącznie amin katecholowych (noradrenaliny) bez sterydów"
     ],
     "optionFeedback": [
-      "Jest to lek pierwszego rzutu ratujący życie, podawany natychmiast bez czekania na wyniki laboratoryjne.",
-      "Lek moczopędny pogłębiłby wstrząs hipowolemiczny i doprowadził do zatrzymania krążenia.",
-      "Insulina pogłębiłaby hipoglikemię, wywołując śpiączkę hipoglikemiczną i drgawki."
+      "Każda minuta opóźnienia w podaniu hydrokortyzonu zwiększa ryzyko zgonu w mechanizmie wstrząsu naczynioplegicznego.",
+      "Diagnostyka obrazowa w fazie niestabilności hemodynamicznej jest błędem sztuki.",
+      "W przełomie nadnerczowym naczynia są niewrażliwe na aminy z powodu braku kortyzolu (brak efektu permisyjnego)."
     ],
     "answer": 0,
-    "explanation": "Jest to lek pierwszego rzutu ratujący życie, podawany natychmiast bez czekania na wyniki laboratoryjne.",
-    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
-    "difficulty": "student",
-    "reasoning": "mechanism",
+    "explanation": "Wytyczne Endocrine Society nakazują natychmiastowe podanie 100 mg hydrokortyzonu i.v. oraz 0,9% NaCl bez czekania na wyniki badań u każdego pacjenta z podejrzeniem przełomu.",
+    "difficulty": "both",
+    "reasoning": "safety",
     "sourceIds": [
       "adrenal_crisis",
-      "endo_pai",
-      "pte_nadnercza"
+      "endo_pai"
+    ],
+    "claimIds": [
+      "claim-adn-adrenal-crisis-emergency"
     ]
   },
   "blocks": [
     {
-      "id": "przelom-nadnerczowy-block-1",
-      "title": "Mechanizm: Dlaczego dochodzi do ostrej zapaści?",
-      "text": "Ostry przełom nadnerczowy (Adrenal Crisis — AC) to stan bezpośredniego zagrożenia życia wynikający z ostrego, bezwzględnego niedoboru glikokortykosteroidów. Kortyzol wywodzi swoje działanie naczyniowe permisywnie: warunkuje wrażliwość receptorów adrenergicznych na krążące katecholaminy. W jego braku mięśniówka naczyń krwionośnych wiotczeje, dochodzi do uogólnionego rozszerzenia naczyń (vasoplegia), załamania oporu obwodowego i wstrząsu hemodynamicznego opornego na płyny i katecholaminy! Czynniki wyzwalające: ostra infekcja przewodu pokarmowego (wymioty uniemożliwiają wchłonięcie tabletki), zakażenie z gorączką, uraz, zabieg chirurgiczny lub nagłe przerwanie leczenia.",
+      "id": "przelom-b1",
+      "title": "Brak efektu permisyjnego i zapaść naczyniowa",
+      "text": "Kortyzol wywiera krytyczny efekt permisyjny na receptory adrenergiczne alfa-1 w mięśniówce gładkiej tętniczek. W warunkach niedoboru kortyzolu dochodzi do internalizacji receptorów i utraty ich wrażliwości na endogenną i egzogenną noradrenalinę. Wstrząs w przełomie nadnerczowym cechuje się głębokim spadkiem oporu naczyniowego (SVR) opornym na katecholaminy, dopóki nie zostanie podany hydrokortyzon!",
       "sourceIds": [
-        "adrenal_crisis",
-        "endo_pai",
-        "pte_nadnercza"
+        "adrenal_crisis"
       ],
-      "checkpointId": "przelom-nadnerczowy-q2-checkpoint-1-v2",
-      "inlineEnhancements": []
+      "checkpointId": "przelom-nadnerczowy-q2-checkpoint-1-v2"
     },
     {
-      "id": "przelom-nadnerczowy-block-2",
-      "title": "Triada kliniczna imitująca „ostry brzuch”",
-      "text": "Obraz kliniczny przełomu bywa podstępny: 1) Ciężka hipotensja (skurczowe RR <80–90 mmHg) ze skłonnością do zapaści krążeniowej; 2) Gwałtowne osłabienie, senność, splątanie lub śpiączka; 3) Zespół rzekomego ostrego brzucha (pseudoperitonitis): silne, kurczowe bóle brzucha z nudnościami, wymiotami i obroną mięśniową. Wielu chorych z nierozpoznanym Addisonem w przełomie trafia na stół operacyjny z podejrzeniem perforacji wyrostka lub niedrożności! W badaniach laboratoryjnych: hiponatremia, ciężka hiperkaliemia (w pierwotnej niedoczynności), hipoglikemia (grożąca drgawkami, szczególnie u dzieci i osób szczupłych) oraz kwasica metaboliczna.",
+      "id": "przelom-b2",
+      "title": "Protokół leczenia ratunkowego: 100 mg bolus",
+      "text": "Standard postępowania w przełomie nadnerczowym: 1) Natychmiastowy bolus hydrokortyzonu 100 mg i.v.; 2) Wlew 1000 ml 0,9% NaCl w ciągu pierwszej godziny, następnie kolejne 2–3 litry w ciągu doby; 3) Ciągły wlew hydrokortyzonu 200 mg/24h w pompie (lub 50 mg i.v. co 6 godzin); 4) Dodatek glukozy w razie hipoglikemii. Fludrokortyzon nie jest potrzebny w ostrej fazie, gdyż hydrokortyzon w dawce >50 mg/d w pełni wysyca receptory mineralokortykoidowe.",
       "sourceIds": [
         "adrenal_crisis",
-        "endo_pai",
-        "pte_nadnercza"
+        "endo_pai"
       ],
-      "checkpointId": "przelom-nadnerczowy-q3-checkpoint-2-v2",
-      "inlineEnhancements": []
+      "checkpointId": "przelom-nadnerczowy-q3-checkpoint-2-v2"
     },
     {
-      "id": "przelom-nadnerczowy-block-3",
-      "title": "Złoty protokół ratunkowy: Czas to życie",
-      "text": "ŻELAZNA ZASADA RATOWNICZA: Przy podejrzeniu przełomu nadnerczowego leczenie należy rozpocząć NATYCHMIAST — zwłoka w oczekiwaniu na wyniki laboratoryjne stwarza bezpośrednie ryzyko zgonu! PROTOKÓŁ RATUNKOWY: 1) Hydrokortyzon: natychmiast 100 mg w bolusie dożylnym (i.v.), a następnie 200 mg na dobę (w ciągłym wlewie i.v. lub 50 mg co 6 godzin i.v./i.m.); 2) Płynoterapia: szybki wlew 1000 ml 0,9% NaCl w ciągu 1. godziny, a łącznie 3–4 litry soli w ciągu pierwszych 24 godzin; 3) Wyrównanie hipoglikemii: dodanie 5% lub 10% glukozy do wlewów; 4) Fludrokortyzon w ostrej fazie jest ZBĘDNY, ponieważ hydrokortyzon w dawce >50–100 mg/dobę całkowicie wysyca receptory mineralokortykosteroidowe!",
+      "id": "przelom-b3",
+      "title": "Maska brzuszna przełomu (pseudoperitonitis)",
+      "text": "Przełom nadnerczowy często przebiega z silnymi bólami brzucha, wymiotami, obroną mięśniową i gorączką, imitując ostry brzuch chirurgiczny (pseudoperitonitis). Wykonanie niepotrzebnej laparotomii u pacjenta bez osłony steroidowej kończy się zgonem na stole operacyjnym.",
       "sourceIds": [
-        "adrenal_crisis",
-        "endo_pai",
-        "pte_nadnercza"
-      ],
-      "inlineEnhancements": []
+        "adrenal_crisis"
+      ]
     }
   ],
   "activities": [
     {
       "id": "przelom-nadnerczowy-q2-checkpoint-1-v2",
-      "type": "single_choice",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "przelom-nadnerczowy-obj-2"
+        "przelom-obj-2"
       ],
-      "prompt": "Dlaczego w ostrej fazie leczenia przełomu nadnerczowego nie ma potrzeby podawania fludrokortyzonu?",
+      "prompt": "Pacjent we wstrząsie septycznym nie reaguje wzrostem ciśnienia na rosnące dawki noradrenaliny (0,6 µg/kg/min). Dlaczego włączenie hydrokortyzonu (200 mg/dobę) przywraca reaktywność naczyń?",
       "options": [
-        "Hydrokortyzon w dawkach powyżej 50–100 mg/dobę w pełni nasyca receptory mineralokortykosteroidowe (MR)",
-        "Fludrokortyzon rozkłada się w soli fizjologicznej",
-        "Mineralokortykosteroidy w przełomie są trucizną dla nerek"
-      ],
-      "optionFeedback": [
-        "Wykazuje wówczas maksymalne działanie zatrzymujące sód i wydalające potas.",
-        "Fludrokortyzon nie ulega rozkładowi, jest lekiem doustnym.",
-        "Fludrokortyzon nie jest nefrotoksyczny, po prostu jest zastąpiony przez dużą dawkę hydrokortyzonu."
+        "Kortyzol wywiera efekt permisyjny: przywraca gęstość i wrażliwość receptorów alfa-1-adrenergicznych na katecholaminy oraz hamuje syntazę tlenku azotu (iNOS)",
+        "Hydrokortyzon działa jako bezpośredni agonista receptorów beta-2 w oskrzelach",
+        "Hydrokortyzon natychmiast krystalizuje w świetle naczyń, mechanicznie zwężając ich średnicę"
       ],
       "answer": 0,
-      "explanation": "Wykazuje wówczas maksymalne działanie zatrzymujące sód i wydalające potas.",
-      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
-      "difficulty": "student",
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-permissive-effect",
+            "label": "Efekt permisyjny na receptory adrenergiczne alfa-1",
+            "acceptedPhrases": [
+              "efekt permisyjny",
+              "receptory alfa",
+              "wrażliwość na katecholaminy",
+              "tonus naczyniowy"
+            ]
+          },
+          {
+            "id": "c-inos-inhibition",
+            "label": "Supresja mediatorów wazodylatacji (iNOS / tlenek azotu)",
+            "acceptedPhrases": [
+              "iNOS",
+              "tlenek azotu",
+              "wazodylatacja",
+              "zmniejszenie rozszerzenia naczyń"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Kortyzol przywraca sprzężenie receptorów alfa-adrenergicznych z białkiem Gq oraz hamuje indukowalną syntazę NO, przywracając napięcie naczyń krwionośnych.",
+      "difficulty": "doctor",
       "reasoning": "mechanism",
       "sourceIds": [
-        "adrenal_crisis",
-        "endo_pai",
-        "pte_nadnercza"
+        "adrenal_crisis"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Kortyzol przywraca sprzężenie receptorów alfa-adrenergicznych z białkiem Gq oraz hamuje indukowalną syntazę NO, przywracając napięcie naczyń krwionośnych.",
+        "Nieprawidłowo: Hydrokortyzon działa jako bezpośredni agonista receptorów beta-2 w oskrzelach... Kortyzol przywraca sprzężenie receptorów alfa-adrenergicznych z białkiem Gq oraz hamuje indukowalną syntazę NO, przywracając napięcie naczyń krwionośnych.",
+        "Nieprawidłowo: Hydrokortyzon natychmiast krystalizuje w świetle naczyń, mechanicznie zwężając i... Kortyzol przywraca sprzężenie receptorów alfa-adrenergicznych z białkiem Gq oraz hamuje indukowalną syntazę NO, przywracając napięcie naczyń krwionośnych."
       ]
     },
     {
       "id": "przelom-nadnerczowy-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "numeric",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "przelom-nadnerczowy-obj-1"
+        "przelom-obj-3"
       ],
-      "prompt": "Z jakim stanem chirurgicznym najczęściej bywa mylony ostry przełom nadnerczowy z powodu objawów brzusznych?",
-      "options": [
-        "Z ostrym brzuchem (np. zapaleniem otrzewnej, perforacją wrzodu)",
-        "Z kamicą ślinianki przyusznej",
-        "Ze złamaniem kości podudzia"
-      ],
-      "optionFeedback": [
-        "Ciężkie kurczowe bóle brzucha i wymioty mogą imitować chirurgiczną katastrofę brzuszną.",
-        "Kamica ślinianki nie wywołuje wstrząsu ani bólów brzucha.",
-        "Objawy przełomu dotyczą układu krążenia i jamy brzusznej."
-      ],
+      "prompt": "Jaka jest zalecana dobowa dawka hydrokortyzonu podawana we wlewie ciągłym (lub dawkach podzielonych co 6h) w pierwszej dobie leczenia przełomu nadnerczowego po początkowym bolusie 100 mg i.v.? Podaj wartość w miligramach (mg).",
       "answer": 0,
-      "explanation": "Ciężkie kurczowe bóle brzucha i wymioty mogą imitować chirurgiczną katastrofę brzuszną.",
-      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "explanation": "Standardowa dawka podtrzymująca hydrokortyzonu w przełomie nadnerczowym wynosi 200 mg na 24 godziny (ciągły wlew w pompie lub 50 mg co 6 godzin i.v.).",
       "difficulty": "doctor",
-      "reasoning": "interpretation",
+      "reasoning": "decision",
       "sourceIds": [
         "adrenal_crisis",
-        "endo_pai",
-        "pte_nadnercza"
-      ]
+        "endo_pai"
+      ],
+      "claimIds": [
+        "claim-adn-adrenal-crisis-emergency"
+      ],
+      "transfer": true,
+      "tolerance": 0,
+      "unit": "mg"
     }
   ],
   "teachBack": {
     "id": "przelom-nadnerczowy-teach-back-v2",
     "type": "recall",
+    "assessmentLevel": "generation",
     "objectiveIds": [
-      "przelom-nadnerczowy-obj-1",
-      "przelom-nadnerczowy-obj-2"
+      "przelom-obj-1",
+      "przelom-obj-2"
     ],
-    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Gdy ciśnienie spada do zera”.",
-    "modelAnswer": "Przełom nadnerczowy to ostry stan zagrożenia życia przebiegający ze wstrząsem naczyniowym, bólami brzucha i zaburzeniami elektrolitowymi. Ratunek polega na natychmiastowym podaniu 100 mg hydrokortyzonu i.v. oraz intensywnej płynoterapii 0,9% NaCl przed oczekiwaniem na wyniki badań.",
-    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "prompt": "Wytłumacz, dlaczego wstrząs w przełomie nadnerczowym jest oporny na katecholaminy i jak wygląda natychmiastowy protokół ratunkowy.",
+    "modelAnswer": "Niedobór kortyzolu znosi efekt permisyjny na receptory alfa-1, powodując wstrząs naczynioplegiczny z głębokim spadkiem oporu (SVR) niewrażliwy na noradrenalinę. Protokół: natychmiast hydrokortyzon 100 mg i.v. bolus, 1000 ml 0,9% NaCl w 1. godzinie, a następnie hydrokortyzon 200 mg/24h w pompie i glukoza w razie hipoglikemii.",
+    "explanation": "Szybkie rozpoznanie przełomu i wdrożenie hydrokortyzonu przed badaniami to kardynalna zasada medycyny stanów nagłych.",
     "difficulty": "both",
-    "reasoning": "mechanism",
+    "reasoning": "safety",
     "sourceIds": [
-      "adrenal_crisis",
-      "endo_pai",
-      "pte_nadnercza"
+      "adrenal_crisis"
     ]
   },
   "exitTicket": [
     {
       "id": "przelom-nadnerczowy-q4-exit-v2",
       "type": "missing_information",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "przelom-nadnerczowy-obj-2"
+        "przelom-obj-3"
       ],
-      "prompt": "Jaki płyn infuzyjny stanowi podstawę resuscytacji płynowej w pierwszej dobie przełomu nadnerczowego?",
+      "prompt": "Czy w ostrej fazie leczenia przełomu nadnerczowego u pacjenta z chorobą Addisona należy wdrożyć fludrokortyzon doustnie?",
       "options": [
-        "0,9% roztwór chlorku sodu (NaCl) w objętości 3–4 litrów na dobę",
-        "Czysta woda destylowana w szybkim wlewie i.v.",
-        "Roztwór 20% mannitolu"
+        "Nie, ponieważ dawki hydrokortyzonu powyżej 50 mg/dobę wywierają maksymalny efekt mineralokortykoidowy, a fludrokortyzon nie występuje w formie dożylnej",
+        "Tak, bez fludrokortyzonu nie dojdzie do wyrównania ciśnienia tętniczego",
+        "Tak, należy podać fludrokortyzon we wlewie dożylnym w dawce 10 mg"
       ],
       "optionFeedback": [
-        "Uzupełnia utracony sód i odtwarza objętość wewnątrznaczyniową.",
-        "Wlew czystej wody wywołałby natychmiastową hemolizę erytrocytów i zgon.",
-        "Mannitol jako diuretyk osmotyczny nasiliłby odwodnienie chorego."
+        "Hydrokortyzon w dawce 200 mg/dobę całkowicie wysyca nerkowe receptory MR. Fludrokortyzon włącza się dopiero po redukcji hydrokortyzonu < 50 mg/d.",
+        "Hydrokortyzon w dawkach ratunkowych w pełni chroni gospodarkę sodową.",
+        "Fludrokortyzon nie istnieje w formie dożylnej."
       ],
       "answer": 0,
-      "explanation": "Uzupełnia utracony sód i odtwarza objętość wewnątrznaczyniową.",
-      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
-      "difficulty": "both",
-      "reasoning": "decision",
+      "explanation": "Hydrokortyzon w dawce 100–200 mg/d w pełni aktywuje receptory mineralokortykoidowe, czyniąc podawanie fludrokortyzonu zbędnym w fazie ostrej.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
       "sourceIds": [
         "adrenal_crisis",
-        "endo_pai",
-        "pte_nadnercza"
-      ]
+        "endo_pai"
+      ],
+      "transfer": true
     },
     {
       "id": "przelom-nadnerczowy-q5-exit-v2",
-      "type": "missing_information",
+      "type": "single_choice",
+      "assessmentLevel": "recognition",
       "objectiveIds": [
-        "przelom-nadnerczowy-obj-1"
+        "przelom-obj-1"
       ],
-      "prompt": "Jaki steryd można zastosować u chorego we wstrząsie, jeśli planujemy równoczesne wykonanie testu z Synacthenem, bez fałszowania oznaczenia kortyzolu?",
+      "prompt": "Zespół Waterhouse-Friderichsena to ostry, piorunujący przełom nadnerczowy wywołany obustronnym wylewem krwi do nadnerczy w przebiegu posocznicy. Jaki patogen bakteryjny jest jego najczęstszą przyczyną?",
       "options": [
-        "Deksametazon (np. 4 mg i.v.)",
-        "Hydrokortyzon w megadawkach",
-        "Fludrokortyzon domięśniowo"
+        "Neisseria meningitidis (meningokoki)",
+        "Escherichia coli",
+        "Mycobacterium tuberculosis"
       ],
       "optionFeedback": [
-        "Deksametazon nie jest wykrywany w standardowych testach immunoenzymatycznych mierzących kortyzol.",
-        "Hydrokortyzon to bioidentyczny kortyzol i podwyższy jego stężenie we krwi do wartości tysięcznych.",
-        "Fludrokortyzon nie jest lekiem z wyboru w ostrej resuscytacji glikokortykosteroidowej."
+        "Posocznica meningokokowa jest klasyczną przyczyną piorunującej martwicy krwotocznej nadnerczy.",
+        "E. coli rzadko wywołuje zespół Waterhouse-Friderichsena.",
+        "Gruźlica wywołuje przewlekłe niszczenie kory, a nie ostry wylew krwotoczny."
       ],
       "answer": 0,
-      "explanation": "Deksametazon nie jest wykrywany w standardowych testach immunoenzymatycznych mierzących kortyzol.",
-      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
-      "difficulty": "both",
+      "explanation": "Zespół Waterhouse-Friderichsena to martwica krwotoczna nadnerczy najczęściej wywoływana przez posocznicę meningokokową (Neisseria meningitidis).",
+      "difficulty": "student",
+      "reasoning": "safety",
+      "sourceIds": [
+        "adrenal_crisis"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "przelom-nadnerczowy-bank-1-v2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "przelom-obj-1",
+        "przelom-obj-3"
+      ],
+      "claimIds": [
+        "claim-adn-adrenal-crisis-emergency"
+      ],
+      "prompt": "32-letnia kobieta z chorobą Addisona zostaje przywieziona na SOR w stanie ciężkim: podsypiająca, blada, spocona, ciśnienie tętnicze 70/40 mmHg, tętno 128/min, glikemia 48 mg/dl, brzuch bolesny ze słabą obroną mięśniową. Rodzina podaje, że od 2 dni miała biegunkę rotawirusową i nie przyjmowała leków. Młodszy lekarz dyżurny zleca pilne USG jamy brzusznej i konsultację chirurgiczną w kierunku zapalenia wyrostka robaczkowego. Oceń postępowanie i przedstaw natychmiastowy plan ratunkowy.",
+      "modelAnswer": "Postępowanie młodszego lekarza stwarza bezpośrednie zagrożenie zgonu pacjentki. Objawy brzuszne są klasyczną \"maską brzuszną\" przełomu nadnerczowego (pseudoperitonitis) wywołaną wymiotami i odstawieniem hydrokortyzonu. Odwlekanie leczenia na diagnostykę chirurgiczną jest kardynalnym błędem. Natychmiastowy plan ratunkowy: 1) Natychmiastowe podanie bolusa 100 mg hydrokortyzonu i.v.; 2) Szybki wlew 1000 ml 0,9% NaCl z 10% glukozą w ciągu pierwszej godziny (leczenie hipowolemii i hipoglikemii 48 mg/dl); 3) Kontynuacja wlewu hydrokortyzonu 200 mg/24h w pompie infuzyjnej; 4) Monitorowanie ciśnienia, glikemii i elektrolitów na sali reanimacyjnej.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "przelom-bank-1-dim-dx",
+            "label": "Wymiar diagnostyczny i patofizjologiczny",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-recognize-pseudoperitonitis",
+                "label": "Rozpoznanie maski brzusznej (pseudoperitonitis) i zakaz zbędnej diagnostyki",
+                "acceptedPhrases": [
+                  "pseudoperitonitis",
+                  "maska brzuszna",
+                  "przełom nadnerczowy",
+                  "odroczyć chirurgię",
+                  "błąd zwłoki"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "przelom-bank-1-dim-tx",
+            "label": "Wymiar decyzyjny i bezpieczeństwo kliniczne",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-immediate-resuscitation-protocol",
+                "label": "Wdrożenie hydrokortyzonu 100 mg i.v. oraz płynoterapii NaCl z glukozą",
+                "acceptedPhrases": [
+                  "hydrokortyzon 100 mg",
+                  "0,9% NaCl",
+                  "glukoza",
+                  "200 mg/24h",
+                  "bolus dożylny"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-laparotomy-first",
+            "patterns": [
+              "najpierw USG i chirurgia",
+              "operacja wyrostka",
+              "odroczyć hydrokortyzon"
+            ],
+            "severity": "critical",
+            "feedback": "Skierowanie nieprzygotowanego pacjenta w przełomie nadnerczowym na stół operacyjny kończy się zgonem w znieczuleniu ogólnym."
+          }
+        ]
+      },
+      "explanation": "Przełom nadnerczowy manifestuje się bólami brzucha i wstrząsem. Zwłoka w podaniu hydrokortyzonu i.v. jest bezpośrednią przyczyną zgonu.",
+      "difficulty": "doctor",
       "reasoning": "safety",
       "sourceIds": [
         "adrenal_crisis",
-        "endo_pai",
-        "pte_nadnercza"
+        "endo_pai"
+      ],
+      "transfer": true,
+      "caseSnapshot": {
+        "patientAge": 32,
+        "systolicBp": 70,
+        "diastolicBp": 40,
+        "heartRateBpm": 128,
+        "glucoseMgDl": 48,
+        "symptoms": "wymioty, biegunka, ból brzucha, obrona mięśniowa"
+      },
+      "engineBinding": {
+        "engine": "adrenal-workbench",
+        "presetId": "adrenal-hpa-synacthen"
+      }
+    },
+    {
+      "id": "przelom-nadnerczowy-bank-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przelom-obj-2",
+        "przelom-obj-3"
+      ],
+      "claimIds": [
+        "claim-adn-adrenal-crisis-emergency"
+      ],
+      "prompt": "Dlaczego w przełomie nadnerczowym wlew samej noradrenaliny bez wcześniejszego podania glikokortykosteroidu jest w znacznej mierze nieskuteczny w podnoszeniu ciśnienia tętniczego?",
+      "options": [
+        "Ponieważ kortyzol warunkuje gęstość i wrażliwość receptorów alfa-1-adrenergicznych na katecholaminy (efekt permisyjny); bez kortyzolu naczynia pozostają zwiotczałe",
+        "Ponieważ noradrenalina wchodzi w reakcję chemiczną z potasem i natychmiast ulega wytrąceniu w surowicy",
+        "Ponieważ aminy presyjne działają wyłącznie w obecności wysokich stężeń insuliny"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-permissive-effect-vasculature",
+            "label": "Brak efektu permisyjnego kortyzolu na opór naczyniowy",
+            "acceptedPhrases": [
+              "efekt permisyjny",
+              "receptory alfa-1",
+              "naczynia zwiotczałe",
+              "spadek SVR",
+              "brak wrażliwości"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Niedobór kortyzolu powoduje oporność naczyniową na katecholaminy. Podanie hydrokortyzonu przywraca tonus naczyniowy i wrażliwość na noradrenalinę.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "adrenal_crisis"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Niedobór kortyzolu powoduje oporność naczyniową na katecholaminy. Podanie hydrokortyzonu przywraca tonus naczyniowy i wrażliwość na noradrenalinę.",
+        "Nieprawidłowo: Ponieważ noradrenalina wchodzi w reakcję chemiczną z potasem i natychmiast ulega... Niedobór kortyzolu powoduje oporność naczyniową na katecholaminy. Podanie hydrokortyzonu przywraca tonus naczyniowy i wrażliwość na noradrenalinę.",
+        "Nieprawidłowo: Ponieważ aminy presyjne działają wyłącznie w obecności wysokich stężeń insuliny... Niedobór kortyzolu powoduje oporność naczyniową na katecholaminy. Podanie hydrokortyzonu przywraca tonus naczyniowy i wrażliwość na noradrenalinę."
       ]
     }
   ],
@@ -219,6 +369,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+    "scope": "Pełna modernizacja V2: postępowanie ratunkowe, efekt permisyjny, 100 mg bolus, maska brzuszna."
   }
 }

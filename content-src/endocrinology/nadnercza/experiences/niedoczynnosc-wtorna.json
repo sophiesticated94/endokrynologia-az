@@ -3,203 +3,383 @@
   "lessonId": "niedoczynnosc-wtorna",
   "objectives": [
     {
-      "id": "niedoczynnosc-wtorna-obj-1",
-      "statement": "Zrozumiesz patofizjologiczne różnice między pierwotną a wtórną niedoczynnością kory nadnerczy.",
-      "kind": "mechanism"
+      "id": "adn-wtorna-obj-1",
+      "statement": "Różnicujesz pierwotną i wtórną niedoczynność kory nadnerczy na podstawie pigmentacji skóry, stężenia ACTH oraz gospodarki mineralokortykoidowej (brak hiperkaliemii).",
+      "kind": "differentiation"
     },
     {
-      "id": "niedoczynnosc-wtorna-obj-2",
-      "statement": "Opanujesz zasady bezpiecznego odstawiania przewlekłej sterydoterapii i rozpoznawania jatrogennej supresji osi HPA.",
+      "id": "adn-wtorna-obj-2",
+      "statement": "Zapobiegniesz jatrogennej niewydolności kory nadnerczy poprzez prawidłowy schemat powolnego odstawiania przewlekłej glikokortykoterapii.",
+      "kind": "safety"
+    },
+    {
+      "id": "adn-wtorna-obj-3",
+      "statement": "Zinterpretujesz wyniki osi HPA u pacjenta po operacji neurochirurgicznej przysadki z uwzględnieniem opóźnienia atrofii kory nadnerczy.",
       "kind": "interpretation"
     }
   ],
   "diagnostic": {
     "id": "niedoczynnosc-wtorna-q1-diagnostic-v2",
     "type": "single_choice",
+    "assessmentLevel": "recognition",
     "objectiveIds": [
-      "niedoczynnosc-wtorna-obj-1"
+      "adn-wtorna-obj-1"
     ],
-    "prompt": "Dlaczego u pacjenta z wtórną (przysadkową) niedoczynnością kory nadnerczy stężenie potasu w surowicy zazwyczaj pozostaje prawidłowe?",
+    "prompt": "Która z poniższych cech kliniczno-laboratoryjnych pozwala jednoznacznie odróżnić wtórną (przysadkową) od pierwotnej niedoczynności kory nadnerczy (choroby Addisona)?",
     "options": [
-      "Strefa kłębuszkowa syntetyzuje aldosteron pod kontrolą układu RAA, niezależnie od przysadkowego ACTH",
-      "W chorobach przysadki nerki tracą zdolność wydalania potasu",
-      "Potas u tych chorych odkłada się w kościach"
+      "Blada skóra („alabastrowa”) z brakiem melanodermii oraz prawidłowe stężenie potasu (brak hiperkaliemii)",
+      "Obecność ciężkiej hiperkaliemii powyżej 6,5 mmol/l",
+      "Ciemne przebarwienia zgięć dłoniowych i błon śluzowych jamy ustnej"
     ],
     "optionFeedback": [
-      "Zachowana produkcja aldosteronu zapewnia prawidłowe wydalanie potasu przez nerki.",
-      "Nerki zachowują prawidłową funkcję cewkową pod wpływem aldosteronu.",
-      "Potas jest głównym kationem wewnątrzkomórkowym, kości nie magazynują go w ten sposób."
+      "W niedoczynności wtórnej ACTH jest niskie (brak stymulacji MC1R), a oś RAA funkcjonuje prawidłowo (brak niedoboru aldosteronu).",
+      "Hiperkaliemia cechuje chorobę Addisona, a nie niedoczynność wtórną.",
+      "Melanodermia występuje wyłącznie w pierwotnej niedoczynności przy wysokim ACTH."
     ],
     "answer": 0,
-    "explanation": "Zachowana produkcja aldosteronu zapewnia prawidłowe wydalanie potasu przez nerki.",
-    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "explanation": "We wtórnej AI brak jest nadmiaru POMC/ACTH (skóra jest blada) oraz zachowane jest wydzielanie aldosteronu kontrolowane przez układ RAA (brak hiperkaliemii).",
     "difficulty": "student",
-    "reasoning": "mechanism",
+    "reasoning": "differentiation",
     "sourceIds": [
-      "endo_pai",
-      "pte_nadnercza"
+      "endo_pai"
     ]
   },
   "blocks": [
     {
-      "id": "niedoczynnosc-wtorna-block-1",
-      "title": "Mechanizm: Oś bez dyrygenta i „blady Addison”",
-      "text": "Wtórna niedoczynność kory nadnerczy wynika z niedoboru przysadkowego ACTH (guzy siodła, operacje przysadki, apopleksja, urazy głowy), a trzeciorzędowa z niedoboru podwzgórzowego CRH. Ponieważ stężenie ACTH i POMC jest niskie lub nieoznaczalne, melanocyty nie są stymulowane — pacjenci NIE MAJĄ przebarwień skóry. Wręcz przeciwnie: ich powłoki są alabastrowo blade z powodu niedokrwistości i braku stymulacji barwnikowej, stąd tradycyjne określenie „blady Addison” (pale Addison).",
+      "id": "adn-wtorna-b1",
+      "title": "Dlaczego nie dochodzi do hiperkaliemii?",
+      "text": "W niedoczynności wtórnej uszkodzenie dotyczy przysadki (niedobór ACTH). Kora nadnerczy traci stymulację strefy pasmowatej i siatkowatej, co prowadzi do niedoboru kortyzolu i DHEA. Jednak strefa kłębuszkowa produkująca aldosteron jest regulowana przede wszystkim przez układ renina-angiotensyna (RAA) oraz stężenie potasu, a nie przez ACTH. Z tego powodu chorzy nie tracą aldosteronu i nie rozwijają hiperkaliemii.",
       "sourceIds": [
-        "endo_pai",
-        "pte_nadnercza"
+        "endo_pai"
       ],
-      "checkpointId": "niedoczynnosc-wtorna-q2-checkpoint-1-v2",
-      "inlineEnhancements": []
+      "checkpointId": "niedoczynnosc-wtorna-q2-checkpoint-1-v2"
     },
     {
-      "id": "niedoczynnosc-wtorna-block-2",
-      "title": "Dlaczego nie ma hiperkaliemii? Zachowana strefa kłębuszkowa",
-      "text": "Fundamentalna różnica biochemiczna: W niedoczynności wtórnej uszkodzona jest wyłącznie stymulacja stref pasmowatej i siatkowatej (zanik ZF i ZR). Strefa kłębuszkowa (ZG) pozostaje anatomicznie i czynnościowo zachowana, ponieważ jej głównym regulatorem jest układ RAA i stężenie potasu, a nie ACTH! W efekcie synteza aldosteronu jest prawidłowa: pacjent z wtórną niedoczynnością kory nadnerczy NIE MA hiperkaliemii ani znacznej utraty sodu przez nerki, i w związku z tym NIE WYMAGA leczenia fludrokortyzonem!",
-      "sourceIds": [
-        "endo_pai",
-        "pte_nadnercza"
-      ],
-      "checkpointId": "niedoczynnosc-wtorna-q3-checkpoint-2-v2",
-      "inlineEnhancements": []
-    },
-    {
-      "id": "niedoczynnosc-wtorna-block-3",
+      "id": "adn-wtorna-b2",
       "title": "Jatrogenna supresja osi HPA po sterydoterapii",
-      "text": "Najczęstszą przyczyną wtórnej niedoczynności nadnerczy w populacji ogólnej jest jatrogenna supresja osi HPA wywołana przewlekłym stosowaniem egzogennych glikokortykosteroidów (prednizon, metyloprednizolon, deksametazon, a nawet sterydy wziewne, dostawowe czy maści w dużych dawkach). Przyjmowanie sterydów w dawce odpowiadającej >5 mg prednizonu/dobę przez ponad 3–4 tygodnie blokuje podwzgórze i przysadkę, prowadząc do atrofii kory nadnerczy. Nagłe odstawienie leku lub brak zwiększenia dawki w stresie infekcyjnym grozi wystąpieniem ostrego przełomu nadnerczowego! Regeneracja osi po długiej sterydoterapii może trwać od kilku miesięcy do roku.",
+      "text": "Najczęstszą przyczyną wtórnej niedoczynności kory nadnerczy jest przewlekłe stosowanie egzogennych GKS (np. prednizon w dawce >= 5 mg/d przez > 3–4 tygodnie). Długotrwała ujemna pętla zwrotna wywołuje supresję podwzgórza (CRH) i przysadki (ACTH) oraz wtórną atrofię kory nadnerczy. Nagłe odstawienie leku grozi ostrym przełomem nadnerczowym!",
       "sourceIds": [
-        "endo_pai",
-        "pte_nadnercza"
+        "endo_pai"
       ],
-      "inlineEnhancements": []
+      "checkpointId": "niedoczynnosc-wtorna-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "adn-wtorna-b3",
+      "title": "Brak konieczności fludrokortyzonu",
+      "text": "W odróżnieniu od choroby Addisona, leczenie wtórnej niedoczynności nadnerczy wymaga wyłącznie substytucji glikokortykosteroidowej (hydrokortyzon w dawkach 15–20 mg/dobę). Stosowanie fludrokortyzonu nie jest wskazane, ponieważ wydzielanie endogennego aldosteronu jest zachowane.",
+      "sourceIds": [
+        "endo_pai"
+      ]
     }
   ],
   "activities": [
     {
       "id": "niedoczynnosc-wtorna-q2-checkpoint-1-v2",
-      "type": "single_choice",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "niedoczynnosc-wtorna-obj-2"
+        "adn-wtorna-obj-2"
       ],
-      "prompt": "Czym różni się wygląd powłok skórnych w chorobie Addisona od wtórnej niedoczynności nadnerczy?",
+      "prompt": "58-letni pacjent leczony prednizonem w dawce 20 mg/dobę od 6 miesięcy z powodu polimialgii reumatycznej uzyskał remisję bólową. Lekarz rozważa zakończenie sterydoterapii. Jakie postępowanie jest bezpieczne?",
       "options": [
-        "W chorobie Addisona występuje uogólniona hiperpigmentacja (melanodermia), a we wtórnej skóra jest blada",
-        "W obu jednostkach skóra jest jednakowo sino-brunatna",
-        "We wtórnej niedoczynności skóra staje się intensywnie pomarańczowa"
-      ],
-      "optionFeedback": [
-        "Różnica wynika ze skrajnie wysokiego stężenia ACTH/POMC w Addisonie i niskiego we wtórnej niedoczynności.",
-        "Niskie ACTH we wtórnej niedoczynności nie stymuluje melanogenezy.",
-        "Pomarańczowe zabarwienie daje karotenodermia, a nie brak ACTH."
+        "Powolna, stopniowa redukcja dawki prednizonu (o 1–2,5 mg co 1–2 tygodnie), a po zejściu do 5 mg/d rozważenie oceny porannego kortyzolu przed całkowitym odstawieniem",
+        "Natychmiastowe przerwanie przyjmowania prednizonu z dnia na dzień",
+        "Zamiana prednizonu na pojedynczą dawkę fludrokortyzonu bez redukcji"
       ],
       "answer": 0,
-      "explanation": "Różnica wynika ze skrajnie wysokiego stężenia ACTH/POMC w Addisonie i niskiego we wtórnej niedoczynności.",
-      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
-      "difficulty": "student",
-      "reasoning": "mechanism",
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-gradual-taper",
+            "label": "Stopniowa redukcja dawki (tapering) w celu regeneracji osi HPA",
+            "acceptedPhrases": [
+              "stopniowa redukcja",
+              "powolne odstawianie",
+              "tapering",
+              "regeneracja osi"
+            ]
+          },
+          {
+            "id": "c-adrenal-crisis-risk",
+            "label": "Świadomość ryzyka przełomu przy nagłym odstawieniu",
+            "acceptedPhrases": [
+              "przełom",
+              "ostra niedoczynność",
+              "atrofia kory"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-abrupt-stop",
+            "patterns": [
+              "natychmiast odstawić",
+              "z dnia na dzień"
+            ],
+            "severity": "critical",
+            "feedback": "Nagłe odstawienie GKS po 6 miesiącach terapii wywoła ostry przełom nadnerczowy."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Przewlekła glikokortykoterapia hamuje oś HPA i wywołuje atrofię kory nadnerczy. Bezpieczne odstawianie wymaga powolnej redukcji dawki przez tygodnie lub miesiące.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
       "sourceIds": [
-        "endo_pai",
-        "pte_nadnercza"
+        "endo_pai"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Przewlekła glikokortykoterapia hamuje oś HPA i wywołuje atrofię kory nadnerczy. Bezpieczne odstawianie wymaga powolnej redukcji dawki przez tygodnie lub miesiące.",
+        "Nieprawidłowo: Natychmiastowe przerwanie przyjmowania prednizonu z dnia na dzień... Przewlekła glikokortykoterapia hamuje oś HPA i wywołuje atrofię kory nadnerczy. Bezpieczne odstawianie wymaga powolnej redukcji dawki przez tygodnie lub miesiące.",
+        "Nieprawidłowo: Zamiana prednizonu na pojedynczą dawkę fludrokortyzonu bez redukcji... Przewlekła glikokortykoterapia hamuje oś HPA i wywołuje atrofię kory nadnerczy. Bezpieczne odstawianie wymaga powolnej redukcji dawki przez tygodnie lub miesiące."
       ]
     },
     {
       "id": "niedoczynnosc-wtorna-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "lab",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "niedoczynnosc-wtorna-obj-1"
+        "adn-wtorna-obj-1",
+        "adn-wtorna-obj-3"
       ],
-      "prompt": "Jaki jest najczęstszy powód wtórnej niewydolności kory nadnerczy w praktyce lekarza POZ i internisty?",
+      "prompt": "U 45-letniej kobiety z panhipopituitaryzmem po resekcji makrogruczolaka przysadki oceniono elektrolity: Na+ = 136 mmol/l, K+ = 4,2 mmol/l. Dlaczego stężenie potasu u tej pacjentki pozostaje w normie pomimo ciężkiego niedoboru kortyzolu?",
       "options": [
-        "Jatrogenna supresja osi HPA po przewlekłym stosowaniu syntetycznych glikokortykosteroidów",
-        "Udar krwotoczny podwzgórza",
-        "Wrodzona mutacja receptora ACTH"
-      ],
-      "optionFeedback": [
-        "Stosowanie sterydów doustnych lub pozajelitowych hamuje wydzielanie CRH i ACTH.",
-        "Jest to rzadkie powikłanie naczyniowe w porównaniu z powszechną sterydoterapią.",
-        "Wrodzone mutacje są kazuistyką pediatryczną."
+        "Ponieważ wydzielanie aldosteronu ze strefy kłębuszkowej jest kontrolowane przez układ RAA, a nie przez przysadkowy ACTH",
+        "Ponieważ kortyzol przysadkowy wybiórczo zatrzymuje potas w surowicy",
+        "Ponieważ w niedoczynności wtórnej nerki przestają filtrować potas"
       ],
       "answer": 0,
-      "explanation": "Stosowanie sterydów doustnych lub pozajelitowych hamuje wydzielanie CRH i ACTH.",
-      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
-      "difficulty": "doctor",
-      "reasoning": "interpretation",
+      "explanation": "Strefa kłębuszkowa nadnerczy wydziela aldosteron pod wpływem angiotensyny II i stężenia potasu. Niedobór ACTH nie pozbawia pacjenta mineralokortykoidów.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
       "sourceIds": [
-        "endo_pai",
-        "pte_nadnercza"
+        "endo_pai"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Strefa kłębuszkowa nadnerczy wydziela aldosteron pod wpływem angiotensyny II i stężenia potasu. Niedobór ACTH nie pozbawia pacjenta mineralokortykoidów.",
+        "Nieprawidłowo: Ponieważ kortyzol przysadkowy wybiórczo zatrzymuje potas w surowicy... Strefa kłębuszkowa nadnerczy wydziela aldosteron pod wpływem angiotensyny II i stężenia potasu. Niedobór ACTH nie pozbawia pacjenta mineralokortykoidów.",
+        "Nieprawidłowo: Ponieważ w niedoczynności wtórnej nerki przestają filtrować potas... Strefa kłębuszkowa nadnerczy wydziela aldosteron pod wpływem angiotensyny II i stężenia potasu. Niedobór ACTH nie pozbawia pacjenta mineralokortykoidów."
       ]
     }
   ],
   "teachBack": {
     "id": "niedoczynnosc-wtorna-teach-back-v2",
     "type": "recall",
+    "assessmentLevel": "generation",
     "objectiveIds": [
-      "niedoczynnosc-wtorna-obj-1",
-      "niedoczynnosc-wtorna-obj-2"
+      "adn-wtorna-obj-1",
+      "adn-wtorna-obj-2"
     ],
-    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Uśpione nadnercza”.",
-    "modelAnswer": "Wtórna niedoczynność nadnerczy cechuje się niskim ACTH, bladą skórą i prawidłowym potasem dzięki zachowanej czynności strefy kłębuszkowej. Wymaga leczenia wyłącznie hydrokortyzonem. Najczęstszą przyczyną jest jatrogenna supresja po sterydach, wymagająca stopniowej redukcji dawki.",
-    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "prompt": "Wyjaśnij różnice w fenotypie klinicznym i leczeniu substytucyjnym między pierwotną a wtórną niedoczynnością kory nadnerczy.",
+    "modelAnswer": "Pierwotna: wysokie ACTH, melanodermia, brak aldosteronu, hiponatremia z hiperkaliemią, konieczny hydrokortyzon + fludrokortyzon. Wtórna: niskie ACTH, blada skóra, zachowany aldosteron (układ RAA), brak hiperkaliemii, wystarcza sam hydrokortyzon.",
+    "explanation": "Zrozumienie odrębności osi ACTH-kortyzol od osi RAA-aldosteron decyduje o celowanym i bezpiecznym leczeniu substytucyjnym.",
     "difficulty": "both",
-    "reasoning": "mechanism",
+    "reasoning": "differentiation",
     "sourceIds": [
-      "endo_pai",
-      "pte_nadnercza"
+      "endo_pai"
     ]
   },
   "exitTicket": [
     {
       "id": "niedoczynnosc-wtorna-q4-exit-v2",
       "type": "missing_information",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "niedoczynnosc-wtorna-obj-2"
+        "adn-wtorna-obj-1"
       ],
-      "prompt": "Czy chory z izolowaną wtórną niedoczynnością kory nadnerczy wymaga przewlekłego przyjmowania fludrokortyzonu?",
+      "prompt": "Czy pacjent ze stwierdzoną wtórną niedoczynnością kory nadnerczy w przebiegu guza przysadki wymaga włączenia fludrokortyzonu?",
       "options": [
-        "Nie, wymaga wyłącznie substytucji hydrokortyzonem, gdyż strefa kłębuszkowa produkuje aldosteron",
-        "Tak, zawsze w dawce 1 mg/dobę",
-        "Tak, ale wyłącznie w okresie letnim"
+        "Nie, we wtórnej niedoczynności czynność strefy kłębuszkowej (aldosteron) jest zachowana pod kontrolą układu RAA",
+        "Tak, każdy pacjent z niedoczynnością nadnerczy bezwzględnie wymaga fludrokortyzonu",
+        "Tak, ale wyłącznie w dawce trzykrotnie wyższej niż w chorobie Addisona"
       ],
       "optionFeedback": [
-        "Dodanie fludrokortyzonu u chorego z prawidłowym RAA groziłoby obrzękami i nadciśnieniem tętniczym.",
-        "Dawka 1 mg jest dawką toksyczną; we wtórnej niedoczynności lek ten w ogóle nie jest wskazany.",
-        "Sezonowość nie warunkuje wskazań do leczenia mineralokortykosteroidami."
+        "W niedoczynności wtórnej nie ma niedoboru mineralokortykoidów, więc fludrokortyzon wywołałby nadciśnienie i obrzęki.",
+        "Fludrokortyzon jest lekiem z wyboru w pierwotnej AI, a nie we wtórnej.",
+        "Zwiększona dawka fludrokortyzonu stwarza zagrożenie retencji sodu i hipokaliemii."
       ],
       "answer": 0,
-      "explanation": "Dodanie fludrokortyzonu u chorego z prawidłowym RAA groziłoby obrzękami i nadciśnieniem tętniczym.",
-      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
-      "difficulty": "both",
+      "explanation": "We wtórnej niewydolności kory nadnerczy zachowane jest wydzielanie aldosteronu pod kontrolą RAA, dlatego fludrokortyzon nie jest potrzebny.",
+      "difficulty": "doctor",
       "reasoning": "decision",
       "sourceIds": [
-        "endo_pai",
-        "pte_nadnercza"
-      ]
+        "endo_pai"
+      ],
+      "transfer": true
     },
     {
       "id": "niedoczynnosc-wtorna-q5-exit-v2",
-      "type": "missing_information",
+      "type": "single_choice",
+      "assessmentLevel": "recognition",
       "objectiveIds": [
-        "niedoczynnosc-wtorna-obj-1"
+        "adn-wtorna-obj-3"
       ],
-      "prompt": "Po jakim czasie stosowania prednizonu w dawce >=5–7,5 mg/dobę należy podejrzewać wystąpienie supresji osi HPA?",
+      "prompt": "Jaki wynik testu stymulacji Synacthenem 250 µg w 1. tygodniu po usunięciu przysadki może wprowadzić w błąd klinicystę?",
       "options": [
-        "Po ponad 3–4 tygodniach ciągłego leczenia",
-        "Dopiero po 10 latach nieprzerwanej terapii",
-        "Po podaniu pojedynczej tabletki jednorazowo"
+        "Prawidłowy szczyt kortyzolu > 18 µg/dl z powodu braku uprzedniej atrofii kory nadnerczy",
+        "Natychmiastowy spadek stężenia kortyzolu do zera",
+        "Skrajny wzrost stężenia aldosteronu powyżej 500 ng/dl"
       ],
       "optionFeedback": [
-        "Taki okres wystarcza do wywołania czynnościowej atrofii kory i wymaga stopniowego odstawiania leku.",
-        "Supresja rozwija się w ciągu tygodni, a nie dziesięcioleci.",
-        "Jednorazowa dawka sterydu nie wywołuje utrwalonej atrofii nadnerczy."
+        "To kluczowa pułapka: kora nie zdążyła zaniknąć i odpowiada na egzogenny Synacthen pomimo braku endogennego ACTH.",
+        "Synacthen pobudza komórki, nie obniża kortyzolu do zera.",
+        "Aldosteron nie osiąga takich stężeń po teście Synacthen."
       ],
       "answer": 0,
-      "explanation": "Taki okres wystarcza do wywołania czynnościowej atrofii kory i wymaga stopniowego odstawiania leku.",
-      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
-      "difficulty": "both",
+      "explanation": "We wczesnym okresie po uszkodzeniu przysadki kora nadnerczy jeszcze nie uległa atrofii, co może dać fałszywie ujemny wynik testu Synacthen.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "endo_pai"
+      ],
+      "claimIds": [
+        "claim-adn-synacthen-recent-secondary"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "niedoczynnosc-wtorna-bank-1-v2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "adn-wtorna-obj-1",
+        "adn-wtorna-obj-2"
+      ],
+      "claimIds": [
+        "claim-adn-cortisol-morning-thresholds",
+        "claim-adn-synacthen-recent-secondary"
+      ],
+      "prompt": "64-letni pacjent leczony deksametazonem z powodu obrzęku mózgu przez 2 miesiące nagle odstawił lek 3 dni temu. Trafił na SOR z hipotensją (80/50 mmHg), nudnościami i splątaniem. W badaniach: Na+ = 130 mmol/l, K+ = 4,0 mmol/l, glukoza = 62 mg/dl, brak hiperpigmentacji. Zinterpretuj mechanizm wstrząsu, wyjaśnij prawidłowe stężenie potasu i zaplanuj natychmiastowe leczenie ratunkowe.",
+      "modelAnswer": "Pacjent rozwinął ostry przełom nadnerczowy w przebiegu jatrogennej wtórnej niedoczynności kory nadnerczy wywołanej nagłym odstawieniem deksametazonu. Długotrwała terapia zablokowała oś podwzgórze-przysadka i doprowadziła do atrofii strefy pasmowatej nadnerczy. Stężenie potasu jest prawidłowe (4,0 mmol/l), ponieważ strefa kłębuszkowa produkująca aldosteron zależy od układu RAA i zachowała czynność. Natychmiastowe leczenie: 1) Hydrokortyzon i.v. natychmiast (bolus 100 mg, a następnie 200 mg/24h we wlewie ciągłym lub 50 mg co 6h); 2) Szybka resuscytacja płynowa: wlew 0,9% NaCl z dodatkiem 5% lub 10% glukozy w celu wyrównania hipowolemii i hipoglikemii; 3) Zakaz podawania fludrokortyzonu w fazie ostrej (niepotrzebny i nie ma postaci i.v.).",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "adn-wtorna-bank-1-dim-dx",
+            "label": "Wymiar diagnostyczny i patofizjologiczny",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-iatrogenic-hpa-suppression",
+                "label": "Jatrogenna wtórna niedoczynność kory nadnerczy i przełom po odstawieniu",
+                "acceptedPhrases": [
+                  "wtórna niedoczynność",
+                  "jatrogenna",
+                  "nagłe odstawienie",
+                  "supresja osi",
+                  "atrofia"
+                ]
+              },
+              {
+                "id": "c-potassium-raa-preservation",
+                "label": "Zachowana funkcja osi RAA wyjaśniająca normokaliemię",
+                "acceptedPhrases": [
+                  "RAA",
+                  "aldosteron zachowany",
+                  "brak hiperkaliemii",
+                  "strefa kłębuszkowa"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "adn-wtorna-bank-1-dim-tx",
+            "label": "Wymiar decyzyjny i bezpieczeństwo kliniczne",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-immediate-hydrocortisone-saline",
+                "label": "Natychmiastowe podanie hydrokortyzonu 100 mg i.v. i płynoterapii z glukozą",
+                "acceptedPhrases": [
+                  "hydrokortyzon 100 mg",
+                  "0,9% NaCl",
+                  "glukoza",
+                  "dożylnie"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-wait-for-acth",
+            "patterns": [
+              "czekać na wyniki ACTH",
+              "wykonać najpierw Synacthen"
+            ],
+            "severity": "critical",
+            "feedback": "Odwlekanie podania hydrokortyzonu w stanie wstrząsu grozi zgonem pacjenta."
+          }
+        ]
+      },
+      "explanation": "Nagłe odstawienie GKS po 2 miesiącach terapii wywołuje ostry przełom wtórny. Brak hiperkaliemii wynika z niezależności osi aldosteronowej od ACTH.",
+      "difficulty": "doctor",
       "reasoning": "safety",
       "sourceIds": [
         "endo_pai",
-        "pte_nadnercza"
+        "adrenal_crisis"
+      ],
+      "transfer": true,
+      "caseSnapshot": {
+        "patientAge": 64,
+        "systolicBp": 80,
+        "diastolicBp": 50,
+        "serumPotassiumMmolL": 4,
+        "serumSodiumMmolL": 130,
+        "glucoseMgDl": 62,
+        "history": "nagłe odstawienie deksametazonu po 2 miesiącach"
+      },
+      "engineBinding": {
+        "engine": "adrenal-workbench",
+        "presetId": "adrenal-hpa-synacthen"
+      }
+    },
+    {
+      "id": "niedoczynnosc-wtorna-bank-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "adn-wtorna-obj-1"
+      ],
+      "claimIds": [
+        "claim-adn-cortisol-morning-thresholds"
+      ],
+      "prompt": "Dlaczego hiponatremia może wystąpić we wtórnej niedoczynności kory nadnerczy pomimo prawidłowego wydzielania aldosteronu?",
+      "options": [
+        "Niedobór kortyzolu znosi toniczne hamowanie wydzielania wazopresyny (ADH) w podwzgórzu, co prowadzi do retencji czystej wody (hiponatremii z rozcieńczenia imitującej SIADH)",
+        "Ponieważ kora nadnerczy w niedoczynności wtórnej zaczyna aktywnie wydalać sód przez skórę",
+        "Ponieważ brak kortyzolu niszczy receptory sodowe w kłębuszkach nerkowych"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-adh-disinhibition",
+            "label": "Odhamowanie wydzielania wazopresyny (ADH) przez brak kortyzolu",
+            "acceptedPhrases": [
+              "ADH",
+              "wazopresyna",
+              "hiponatremia z rozcieńczenia",
+              "brak hamowania",
+              "SIADH"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Fizjologicznie kortyzol hamuje wydzielanie wazopresyny (ADH). Przy braku kortyzolu dochodzi do nadmiernego uwalniania ADH i hiponatremii hiperwolemicznej/eutroficznej z rozcieńczenia.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "endo_pai"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Fizjologicznie kortyzol hamuje wydzielanie wazopresyny (ADH). Przy braku kortyzolu dochodzi do nadmiernego uwalniania ADH i hiponatremii hiperwolemicznej/eutroficznej z rozcieńczenia.",
+        "Nieprawidłowo: Ponieważ kora nadnerczy w niedoczynności wtórnej zaczyna aktywnie wydalać sód pr... Fizjologicznie kortyzol hamuje wydzielanie wazopresyny (ADH). Przy braku kortyzolu dochodzi do nadmiernego uwalniania ADH i hiponatremii hiperwolemicznej/eutroficznej z rozcieńczenia.",
+        "Nieprawidłowo: Ponieważ brak kortyzolu niszczy receptory sodowe w kłębuszkach nerkowych... Fizjologicznie kortyzol hamuje wydzielanie wazopresyny (ADH). Przy braku kortyzolu dochodzi do nadmiernego uwalniania ADH i hiponatremii hiperwolemicznej/eutroficznej z rozcieńczenia."
       ]
     }
   ],
@@ -210,6 +390,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+    "scope": "Pełna modernizacja V2: różnicowanie pierwotna vs wtórna AI, RAA vs ACTH, bezpieczne odstawianie GKS."
   }
 }

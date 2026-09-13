@@ -43,6 +43,9 @@
     "sourceIds": [
       "asbmr_calcium",
       "ese_phpt"
+    ],
+    "claimIds": [
+      "claim-pt-payne-formula"
     ]
   },
   "blocks": [
@@ -151,7 +154,8 @@
     "sourceIds": [
       "asbmr_calcium",
       "ese_phpt"
-    ]
+    ],
+    "assessmentLevel": "generation"
   },
   "exitTicket": [
     {
@@ -179,7 +183,9 @@
       "sourceIds": [
         "asbmr_calcium",
         "ese_phpt"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     },
     {
       "id": "przytarczyce-fizjologia-q5-exit-v2",
@@ -206,7 +212,9 @@
       "sourceIds": [
         "asbmr_calcium",
         "ese_phpt"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     }
   ],
   "widgetIds": [
@@ -216,5 +224,142 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "przytarczyce-fizjologia-bank-1",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "przytarczyce-fizjologia-obj-1",
+        "przytarczyce-fizjologia-obj-2",
+        "przytarczyce-fizjologia-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-payne-formula"
+      ],
+      "prompt": "Przeanalizuj fizjologiczną odpowiedź osi CaSR–PTH–FGF23 u 35-letniego pacjenta z ostrym spadkiem stężenia wapnia zjonizowanego w surowicy krwi wywołanym masywną transfuzją krwi cytrynianowej. Wyjaśnij: 1) mechanizm detekcji hipokalcemii przez receptor CaSR w komórkach głównych przytarczyc; 2) skoordynowaną odpowiedź nerek i kości na gwałtowny wyrzut PTH; 3) wzajemne oddziaływanie między PTH a osią FGF23–Klotho w regulacji fosforemii.",
+      "modelAnswer": "Spadek stężenia zjonizowanego wapnia (związanego przez cytrynian) znosi toniczne pobudzenie receptora CaSR na komórkach głównych przytarczyc. Odhamowuje to szlak cyklazy adenylowej i obniża wewnątrzkomórkowy wapń, co w ciągu minut wyzwala masywną egzocytozę preformowanego PTH. W nerkach PTH natychmiast stymuluje reabsorpcję Ca w ramieniu wstępującym pętli Henlego i cewce dalszej oraz hamuje kotransporter sodowo-fosforanowy NPT2a w cewce bliższej, wywołując fosfaturię chroniącą przed precypitacją soli Ca-P. Równolegle PTH indukuje nerkową 1-alfa-hydroksylazę (CYP27B1), zwiększając syntezę kalcytriolu. W kościach PTH stymuluje osteoblasty do ekspresji RANKL, nasilając osteolizę. Narastająca w odpowiedzi na kalcytriol i fosforany sekrecja FGF23 przez osteocyty działa jako fizjologiczna przeciwwaga: stymuluje fosfaturię przez kompleks FGFR1-Klotho i hamuje CYP27B1, zapobiegając hiperfosfatemii i ektopowej kalcyfikacji.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "przytarczyce-fizjologia-bank-1-dim-casr",
+            "label": "Odhamowanie receptora CaSR i wyrzut PTH",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-casr-disinhibition",
+                "label": "Odhamowanie receptora CaSR i egzocytoza PTH",
+                "acceptedPhrases": [
+                  "odhamowanie CaSR",
+                  "zniesienie hamowania",
+                  "wyrzut PTH",
+                  "egzocytoza PTH",
+                  "spadek wapnia zjonizowanego"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "przytarczyce-fizjologia-bank-1-dim-targets",
+            "label": "Działanie narządowe: nerka, kość, jelito",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-renal-bone-actions",
+                "label": "Fosfaturia (NPT2a), reabsorpcja Ca i aktywacja CYP27B1",
+                "acceptedPhrases": [
+                  "fosfaturia",
+                  "hamowanie NPT2a",
+                  "wchłanianie wapnia",
+                  "CYP27B1",
+                  "1-alfa-hydroksylaza",
+                  "RANKL"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "przytarczyce-fizjologia-bank-1-dim-fgf23",
+            "label": "Oś FGF23-Klotho jako pętla ujemnego sprzężenia",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-fgf23-feedback",
+                "label": "Działanie fosfaturyczne FGF23 i hamowanie CYP27B1",
+                "acceptedPhrases": [
+                  "FGF23",
+                  "Klotho",
+                  "hamowanie CYP27B1",
+                  "przeciwwaga",
+                  "ektopowe zwapnienia"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-citrate-calcium-misunderstanding",
+            "patterns": [
+              "cytrynian podwyższa stężenie wapnia zjonizowanego"
+            ],
+            "severity": "critical",
+            "feedback": "Cytrynian zawarty w konserwantach krwi chelatuje wolny wapń, wywołując ostrą hipokalcemię zjonizowaną."
+          }
+        ]
+      },
+      "explanation": "Hipokalcemia zjonizowana odhamowuje receptor CaSR, wyzwalając wyrzut PTH, który podnosi kalcemię poprzez nerki, kość i kalcytriol, a oś FGF23 stanowi bezpiecznik fosfatanemiczny.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "asbmr_calcium",
+        "ese_phpt"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "przytarczyce-fizjologia-bank-2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przytarczyce-fizjologia-obj-1",
+        "przytarczyce-fizjologia-obj-2",
+        "przytarczyce-fizjologia-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-payne-formula"
+      ],
+      "prompt": "U pacjenta z sepsą i stężeniem albuminy 20 g/l stężenie wapnia całkowitego wynosi 1,90 mmol/l. Korzystając z fizjologicznej relacji wiązania wapnia przez albuminy (wzór Payne'a: Ca_skorygowany = Ca_całkowity + 0,02 * (40 - albumina)), oceń rzeczywisty stan homeostazy wapniowej oraz wskaż błąd interpretacyjny.",
+      "options": [
+        "Skorygowane stężenie wapnia wynosi 2,30 mmol/l (normokalcemia); rozpoznanie hipokalcemii na podstawie samego wapnia całkowitego byłoby błędem rzekomej hipokalcemii wynikającej z hipoalbuminemii.",
+        "Pacjent ma ciężką zagrażającą życiu hipokalcemię wymagającą natychmiastowego bolusa 10% chlorku wapnia i.v.",
+        "Hipoalbuminemia nie wpływa na frakcję wapnia zjonizowanego, a stężenie skorygowane wynosi 1,50 mmol/l."
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-payne-correction-normocalcemia",
+            "label": "Prawidłowa kalkulacja wzorem Payne'a wykazująca normokalcemię",
+            "acceptedPhrases": [
+              "2,30",
+              "normokalcemia",
+              "wzór Payne",
+              "rzekoma hipokalcemia",
+              "hipoalbuminemia"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Ca_skorygowany = 1,90 + 0,02 * (40 - 20) = 1,90 + 0,40 = 2,30 mmol/l. Pacjent ma prawidłową kalcemię; podanie wapnia i.v. byłoby błędem jatrogennym.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "asbmr_calcium"
+      ],
+      "transfer": true
+    }
+  ]
 }

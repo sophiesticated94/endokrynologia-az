@@ -3,215 +3,381 @@
   "lessonId": "pheochromocytoma",
   "objectives": [
     {
-      "id": "pheochromocytoma-obj-1",
-      "statement": "Rozpoznasz triadę objawów guza chromochłonnego: napadowy ból głowy, zlewne poty i kołatanie serca ze skokami ciśnienia.",
-      "kind": "mechanism"
+      "id": "pheo-obj-1",
+      "statement": "Wdrożysz bezwzględną zasadę sekwencyjnej blokady receptorowej: alfa-1-bloker (doksazosyna/fenoksybenzamina) przed podaniem beta-adrenolityku, zapobiegając przełomowi nadciśnieniowemu.",
+      "kind": "safety"
     },
     {
-      "id": "pheochromocytoma-obj-2",
-      "statement": "Zapamiętasz ratującą życie zasadę farmakoterapii: blokada alfa-adrenergiczna ZAWSZE musi poprzedzać włączenie beta-blokera!",
+      "id": "pheo-obj-2",
+      "statement": "Zinterpretujesz stężenia wolnych metanefryn w osoczu i moczu z uwzględnieniem czynników zakłócających (leki trójpierścieniowe, lewodopa, paracetamol).",
       "kind": "interpretation"
+    },
+    {
+      "id": "pheo-obj-3",
+      "statement": "Zaplanujesz przygotowanie przedoperacyjne (blokada alfa, nawodnienie i dieta bogatosolna na 10–14 dni) oraz monitoring hemodynamiczny podczas intubacji i manipulacji guzem.",
+      "kind": "decision"
     }
   ],
   "diagnostic": {
     "id": "pheochromocytoma-q1-diagnostic-v2",
     "type": "single_choice",
+    "assessmentLevel": "recognition",
     "objectiveIds": [
-      "pheochromocytoma-obj-1"
+      "pheo-obj-1"
     ],
-    "prompt": "Dlaczego podanie beta-blokera jako pierwszego leku u pacjenta z guzem chromochłonnym jest kardynalnym błędem w sztuce lekarskiej?",
+    "prompt": "Jaki jest krytyczny mechanizm powikłania w sytuacji, gdy u pacjenta z nierozpoznanym guzem chromochłonnym (pheochromocytoma) i tachykardią zostanie omyłkowo włączony sam beta-adrenolityk (np. propranolol)?",
     "options": [
-      "Blokada receptorów naczyniowych beta-2 pozostawia nieprzeciwstawioną stymulację receptorów alfa-1, wywołując gwałtowny skurcz naczyń i przełom nadciśnieniowy",
-      "Beta-bloker natychmiast rozpuszcza torebkę guza i wywołuje krwawienie",
-      "Beta-bloker przekształca adrenalinę w truciznę wątrobową"
+      "Zablokowanie naczyniorozszerzających receptorów beta-2 przy nieosłoniętej stymulacji receptorów alfa-1 przez krążące katecholaminy wywołuje skrajny skurcz naczyń i zagrażający życiu przełom nadciśnieniowy",
+      "Beta-adrenolityk natychmiast wywołuje hipoglikemię i śpiączkę metaboliczną",
+      "Lek beta-adrenolityczny wchodzi w chemiczną reakcję z torebką guza i powoduje jej pęknięcie"
     ],
     "optionFeedback": [
-      "Powoduje to nagłą zapaść lewokomorową, obrzęk płuc lub udar mózgu.",
-      "Beta-adrenolityki nie wykazują działania cytolitycznego na tkankę guza.",
-      "Katecholaminy są fizjologicznymi aminami, a nie toksynami wątrobowymi."
+      "To klasyczne zjawisko \"unopposed alpha-stimulation\" (niezrównoważona stymulacja alfa), prowadzące do ostrego obrzęku płuc, udaru mózgu lub zawału serca.",
+      "Choć beta-blokery mogą maskować objawy hipoglikemii, głównym zagrożeniem jest przełom nadciśnieniowy.",
+      "Mechanizm pęknięcia torebki pod wpływem beta-blokera jest fikcją biologiczną."
     ],
     "answer": 0,
-    "explanation": "Powoduje to nagłą zapaść lewokomorową, obrzęk płuc lub udar mózgu.",
-    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
-    "difficulty": "student",
-    "reasoning": "mechanism",
+    "explanation": "Podanie beta-blokera bez uprzedniej blokady alfa blokuje rozszerzające naczynia receptory beta-2, pozostawiając nieograniczony skurcz naczyń przez receptory alfa-1 (\"unopposed alpha-stimulation\").",
+    "difficulty": "both",
+    "reasoning": "safety",
     "sourceIds": [
-      "endo_pheo",
-      "pte_nadnercza"
+      "endo_pheo"
+    ],
+    "claimIds": [
+      "claim-adn-pheo-alpha-before-beta"
     ]
   },
   "blocks": [
     {
-      "id": "pheochromocytoma-block-1",
-      "title": "Czym jest guz chromochłonny i reguła 10%?",
-      "text": "Guz chromochłonny (Pheochromocytoma — PCC) to rzadki nowotwór neuroendokrynny wywodzący się z komórek chromafinowych rdzenia nadnerczy produkujący katecholaminy. Guzy o identycznej strukturze zlokalizowane w zwojach współczulnych poza nadnerczami nazywamy paraganglioma (PGL). Dawniej obowiązywała „reguła 10%” (10% obustronne, 10% pozanadnerczowe, 10% złośliwe, 10% rodzinne). Dziś wiemy, że aż 35–40% guzów chromochłonnych ma podłoże genetyczne! Główne zespoły uwarunkowane genetycznie: MEN2A/MEN2B (mutacja RET), choroba von Hippla-Lindaua (VHL), nerwiakowłókniakowatość typu 1 (NF1) oraz mutacje genów dehydrogenazy bursztynianowej (SDHA, SDHB, SDHC, SDHD — SDHB wiąże się z wysokim ryzykiem złośliwości!).",
+      "id": "pheo-b1",
+      "title": "Screening I rzutu: Wolne metanefryny",
+      "text": "Złotym standardem screeningu guza chromochłonnego (PPGL) jest pomiar wolnych metanefryn w osoczu lub frakcjonowanych metanefryn w dobowej zbiórce moczu (DZM). Cechują się czułością > 97%, ponieważ metanefryny powstają w sposób ciągły wewnątrz guza przez enzym COMT, niezależnie od epizodycznego wyrzutu samych katecholamin.",
+      "sourceIds": [
+        "endo_pheo"
+      ],
+      "checkpointId": "pheochromocytoma-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "pheo-b2",
+      "title": "Złota zasada bezpieczeństwa: Alfa przed beta",
+      "text": "Kardynalna zasada farmakoterapii pheochromocytoma: NIGDY NIE PODAWAJ BETA-BLOKERA PRZED PEŁNĄ BLOKADĄ ALFA! Zablokowanie receptorów beta-2 eliminuje naczyniorozszerzający komponent obwodowy, co przy masywnym pobudzeniu receptorów alfa-1 przez noradrenalinę prowadzi do gwałtownego wzrostu oporu naczyniowego (SVR) i załamania lewej komory.",
+      "sourceIds": [
+        "endo_pheo"
+      ],
+      "checkpointId": "pheochromocytoma-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "pheo-b3",
+      "title": "Przygotowanie przedoperacyjne i resuscytacja objętościowa",
+      "text": "Przygotowanie do adrenalektomii trwa 10–14 dni: 1) Blokada receptorów alfa (doksazosyna miareczkowana do 8–16 mg/d lub nieselektywna fenoksybenzamina); 2) Nawodnienie i dieta bogatosolna w celu odbudowy skurczonego łożyska naczyniowego; 3) Dołączenie beta-blokera dopiero po 2–3 dniach skutecznej alfa-blokady w razie przetrwałej tachykardii.",
       "sourceIds": [
         "endo_pheo",
-        "pte_nadnercza"
-      ],
-      "checkpointId": "pheochromocytoma-q2-checkpoint-1-v2",
-      "inlineEnhancements": [
-        {
-          "id": "enh-adn-pheo-safety",
-          "kind": "workbench-deeplink",
-          "placement": "after-text",
-          "presetId": "adrenal-pheo-safety"
-        }
+        "adrenal_surgery"
       ]
-    },
-    {
-      "id": "pheochromocytoma-block-2",
-      "title": "Obraz kliniczny: Klasyczna triada i napadowość",
-      "text": "Objawy wynikają z gwałtownego wyrzutu katecholamin: 1) Bóle głowy (nagłe, pulsujące); 2) Zlewne poty (zwłaszcza w górnej połowie ciała); 3) Palpitacje serca / tachykardia. Ta triada u chorego z napadowym lub utrwalonym nadciśnieniem tętniczym ma swoistość >90%! Towarzyszy jej bladość skóry (silny skurcz naczyń obwodowych pod wpływem receptorów alfa-1), drżenie rąk, lęk napadowy (uczucie zbliżającej się śmierci) oraz hipotensja ortostatyczna (z powodu przewlekłego obkurczenia łożyska naczyniowego i odruchowej hipowolemii). Czynniki wyzwalające wyrzut: ucisk brzucha, mikcja (w feo pęcherza), stres, znieczulenie ogólne, niektóre leki (metoklopramid, trójpierścieniowe leki przeciwdepresyjne, beta-blokery!).",
-      "sourceIds": [
-        "endo_pheo",
-        "pte_nadnercza"
-      ],
-      "checkpointId": "pheochromocytoma-q3-checkpoint-2-v2",
-      "inlineEnhancements": []
-    },
-    {
-      "id": "pheochromocytoma-block-3",
-      "title": "Żelazna reguła hemodynamiczna: ALFA przed BETA!",
-      "text": "ZASADA RATUJĄCA ŻYCIE: U chorego z guzem chromochłonnym NIGDY NIE WOLNO podać beta-blokera (np. propranololu, metoprololu) przed pełnym zablokowaniem receptorów alfa-adrenergicznych! Dlaczego? Beta-blokery blokują receptory beta-2 w naczyniach krwionośnych (które odpowiadają za fizjologiczne rozszerzanie naczyń). Pozostawia to krążące olbrzymie stężenia katecholamin z niczym nieprzeciwstawionym działaniem na receptory alfa-1 (nieprzeciwstawiony skurcz naczyniowy — unopposed alpha-stimulation)! Skutkiem jest natychmiastowy, katastrofalny skok ciśnienia tętniczego (np. do 280/160 mmHg), ostra niewydolność lewokomorowa, obrzęk płuc, udar krwotoczny mózgu i zgon pacjenta na stole! Prawidłowa sekwencja: najpierw nieselektywny alfa-bloker (fenoksybenzamina) lub selektywny (doksazosyna) przez 10–14 dni, a beta-bloker dołącza się dopiero po kilku dniach, jeśli utrzymuje się tachykardia.",
-      "sourceIds": [
-        "endo_pheo",
-        "pte_nadnercza"
-      ],
-      "inlineEnhancements": []
     }
   ],
   "activities": [
     {
       "id": "pheochromocytoma-q2-checkpoint-1-v2",
-      "type": "single_choice",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "pheochromocytoma-obj-2"
+        "pheo-obj-1"
       ],
-      "prompt": "Jaki lek należy wdrożyć jako pierwszy w ramach farmakologicznego przygotowania do operacji feochromocytoma?",
+      "prompt": "U pacjenta z guzem nadnercza 40 mm, napadowym nadciśnieniem (210/120 mmHg), zlewnymi potami i tachykardią (125/min) lekarz dyżurny zlecił natychmiastowe podanie 10 mg metoprololu i.v. w celu zwolnienia akcji serca. Jak oceniasz to zlecenie?",
       "options": [
-        "Lek blokujący receptory alfa-adrenergiczne (np. fenoksybenzaminę lub doksazosynę)",
-        "Czysty beta-adrenolityk (propranolol)",
-        "Wysokie dawki furosemidu w celu odwodnienia pacjenta"
-      ],
-      "optionFeedback": [
-        "Zapewnia to rozszerzenie łożyska naczyniowego i bezpieczną kontrolę ciśnienia tętniczego.",
-        "Podanie beta-blokera jako pierwszego jest bezwzględnie przeciwwskazane.",
-        "Odwodnienie nasiliłoby hipowolemię i doprowadziło do wstrząsu."
+        "Zlecenie jest bezwzględnie błędne i zagraża życiu pacjenta; najpierw należy podać lek blokujący receptory alfa-1 (np. doksazosynę), a beta-bloker można rozważyć dopiero po skutecznej alfa-blokadzie",
+        "Zlecenie jest prawidłowe, ponieważ tachykardia jest najgroźniejszym objawem guza chromochłonnego",
+        "Zlecenie jest prawidłowe, o ile równolegle poda się furosemid"
       ],
       "answer": 0,
-      "explanation": "Zapewnia to rozszerzenie łożyska naczyniowego i bezpieczną kontrolę ciśnienia tętniczego.",
-      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
-      "difficulty": "student",
-      "reasoning": "mechanism",
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-alpha-before-beta-rule",
+            "label": "Bezwzględny wymóg blokady alfa przed beta-blokerem",
+            "acceptedPhrases": [
+              "alfa przed beta",
+              "unopposed alpha",
+              "doksazosyna",
+              "przełom nadciśnieniowy",
+              "błąd zlecenia"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-approve-beta-blocker",
+            "patterns": [
+              "zlecenie prawidłowe",
+              "podać metoprolol"
+            ],
+            "severity": "critical",
+            "feedback": "Podanie metoprololu bez alfa-blokady wywoła krytyczny skurcz naczyń, obrzęk płuc lub udar mózgu."
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Monoterapia beta-adrenolitykiem w guzie chromochłonnym prowadzi do niezrównoważonej stymulacji receptorów alfa-1, skrajnego skurczu tętnic i przełomu nadciśnieniowego.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
       "sourceIds": [
-        "endo_pheo",
-        "pte_nadnercza"
+        "endo_pheo"
+      ],
+      "claimIds": [
+        "claim-adn-pheo-alpha-before-beta"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Monoterapia beta-adrenolitykiem w guzie chromochłonnym prowadzi do niezrównoważonej stymulacji receptorów alfa-1, skrajnego skurczu tętnic i przełomu nadciśnieniowego.",
+        "Nieprawidłowo: Zlecenie jest prawidłowe, ponieważ tachykardia jest najgroźniejszym objawem guza... Monoterapia beta-adrenolitykiem w guzie chromochłonnym prowadzi do niezrównoważonej stymulacji receptorów alfa-1, skrajnego skurczu tętnic i przełomu nadciśnieniowego.",
+        "Nieprawidłowo: Zlecenie jest prawidłowe, o ile równolegle poda się furosemid... Monoterapia beta-adrenolitykiem w guzie chromochłonnym prowadzi do niezrównoważonej stymulacji receptorów alfa-1, skrajnego skurczu tętnic i przełomu nadciśnieniowego."
       ]
     },
     {
       "id": "pheochromocytoma-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "lab",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "pheochromocytoma-obj-1"
+        "pheo-obj-2"
       ],
-      "prompt": "Jaka jest klasyczna triada objawów napadowych sugerująca obecność guza chromochłonnego?",
+      "prompt": "U pacjenta diagnozowanego w kierunku pheochromocytoma stężenie wolnej normetanefryny w osoczu wynosi 4,5-krotność górnej granicy normy (GGN). Pacjent przyjmuje amitryptylinę (TLPD) oraz paracetamol. Jaka jest interpretacja tego wyniku?",
       "options": [
-        "Ból głowy, zlewne poty i kołatanie serca (tachykardia)",
-        "Kaszel, krwioplucie i duszność wdechowa",
-        "Biegunka tłuszczowa, świąd skóry i żółtaczka"
-      ],
-      "optionFeedback": [
-        "Obecność tej triady u chorego z nadciśnieniem wykazuje ponad 90% swoistości dla feochromocytoma.",
-        "To objawy ze strony układu oddechowego, a nie guza rdzenia nadnerczy.",
-        "To objawy cholestazy i chorób dróg żółciowych."
+        "Wzrost metanefryn > 3–4x GGN z bardzo wysokim prawdopodobieństwem wskazuje na PPGL, jednak TLPD mogą hamować wychwyt zwrotny noradrenaliny i umiarkowanie zawyżać wynik; należy zweryfikować lek i wykonać badania obrazowe",
+        "Wynik jest całkowitym artefaktem wywołanym paracetamolem i wyklucza guza",
+        "Normetanefryna powyżej normy występuje wyłącznie w pierwotnym hiperaldosteronizmie"
       ],
       "answer": 0,
-      "explanation": "Obecność tej triady u chorego z nadciśnieniem wykazuje ponad 90% swoistości dla feochromocytoma.",
-      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "explanation": "Wzrost stężenia metanefryn > 3–4x GGN rzadko wynika z samych interferencji lekowych i silnie przemawia za guzem chromochłonnym, choć TLPD należy odstawić w razie wartości granicznych.",
       "difficulty": "doctor",
       "reasoning": "interpretation",
       "sourceIds": [
-        "endo_pheo",
-        "pte_nadnercza"
+        "endo_pheo"
+      ],
+      "claimIds": [
+        "claim-adn-pheo-metanephrines-screen"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Wzrost stężenia metanefryn > 3–4x GGN rzadko wynika z samych interferencji lekowych i silnie przemawia za guzem chromochłonnym, choć TLPD należy odstawić w razie wartości granicznych.",
+        "Nieprawidłowo: Wynik jest całkowitym artefaktem wywołanym paracetamolem i wyklucza guza... Wzrost stężenia metanefryn > 3–4x GGN rzadko wynika z samych interferencji lekowych i silnie przemawia za guzem chromochłonnym, choć TLPD należy odstawić w razie wartości granicznych.",
+        "Nieprawidłowo: Normetanefryna powyżej normy występuje wyłącznie w pierwotnym hiperaldosteronizm... Wzrost stężenia metanefryn > 3–4x GGN rzadko wynika z samych interferencji lekowych i silnie przemawia za guzem chromochłonnym, choć TLPD należy odstawić w razie wartości granicznych."
       ]
     }
   ],
   "teachBack": {
     "id": "pheochromocytoma-teach-back-v2",
     "type": "recall",
+    "assessmentLevel": "generation",
     "objectiveIds": [
-      "pheochromocytoma-obj-1",
-      "pheochromocytoma-obj-2"
+      "pheo-obj-1",
+      "pheo-obj-3"
     ],
-    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Bomba katecholaminowa”.",
-    "modelAnswer": "Guz chromochłonny to nowotwór rdzenia produkujący katecholaminy, w 40% uwarunkowany genetycznie. Wolne metanefryny w osoczu stanowią badanie z wyboru. Przygotowanie do operacji bezwzględnie wymaga wdrożenia blokady receptorów alfa-adrenergicznych na 10–14 dni PRZED ewentualnym włączeniem beta-blokera, aby uniknąć śmiertelnego przełomu nadciśnieniowego.",
-    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "prompt": "Przedstaw protokół 10–14-dniowego przygotowania chorego z pheochromocytoma do operacji oraz wyjaśnij cel resuscytacji płynowej.",
+    "modelAnswer": "Protokół przygotowania: 1) Blokada alfa-1 (doksazosyna od małych dawek do 8–16 mg/d lub fenoksybenzamina) przez 10–14 dni; 2) Po 2–3 dniach skutecznej blokady alfa dołączenie beta-blokera na tachykardię; 3) Nawodnienie i dieta bogatosolna w celu rozszerzenia skurczonego przewlekle łożyska naczyniowego, co chroni przed gwałtowną zapaścią naczyniową po zaklipsowaniu żyły guza.",
+    "explanation": "Przygotowanie przedoperacyjne chroni chorego zarówno przed przełomem nadciśnieniowym podczas intubacji, jak i przed wstrząsem po wycięciu guza.",
     "difficulty": "both",
-    "reasoning": "mechanism",
+    "reasoning": "safety",
     "sourceIds": [
       "endo_pheo",
-      "pte_nadnercza"
+      "adrenal_surgery"
     ]
   },
   "exitTicket": [
     {
       "id": "pheochromocytoma-q4-exit-v2",
       "type": "missing_information",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "pheochromocytoma-obj-2"
+        "pheo-obj-3"
       ],
-      "prompt": "Jaki odsetek guzów chromochłonnych i paraganglioma rozwija się w związku z mutacją germinalną (uwarunkowanie genetyczne)?",
+      "prompt": "Dlaczego po zaklipsowaniu naczyń guza chromochłonnego podczas adrenalektomii u pacjenta może dojść do gwałtownego, zagrażającego życiu spadku ciśnienia tętniczego (hipotensji pooperacyjnej)?",
       "options": [
-        "Aż około 35–40% wszystkich przypadków",
-        "Dokładnie 0% (wyłącznie mutacje nabyte środowiskowo)",
-        "Mniej niż 0,1%"
+        "Nagłe odcięcie źródła katecholamin ujawnia przewlekłą hipowolemię i utratę napięcia naczyniowego, szczególnie przy niedostatecznym nawodnieniu przedoperacyjnym",
+        "Dochodzi do natychmiastowego zablokowania układu krzepnięcia w naczyniach mózgowych",
+        "Glikokortykosteroidy natychmiast ulegają rozkładowi w nerkach"
       ],
       "optionFeedback": [
-        "Dlatego współczesne wytyczne zalecają zaoferowanie poradnictwa i testów genetycznych każdemu choremu z feo/PGL.",
-        "Feochromocytoma to jeden z najsilniej uwarunkowanych genetycznie nowotworów u ludzi.",
-        "Dawny pogląd o rzadkości mutacji rodzinnych został całkowicie zrewidowany."
+        "Przewlekły skurcz naczyń zmniejsza objętość krwi krążącej; po wycięciu guza naczynia się rozszerzają, a bez agresywnego nawodnienia dochodzi do zapaści.",
+        "Układ krzepnięcia nie odpowiada za nagłą hipotensję po odcięciu guza.",
+        "To mechanizm katecholaminowy, a nie glikokortykosteroidowy."
       ],
       "answer": 0,
-      "explanation": "Dlatego współczesne wytyczne zalecają zaoferowanie poradnictwa i testów genetycznych każdemu choremu z feo/PGL.",
-      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
-      "difficulty": "both",
+      "explanation": "Po usunięciu guza następuje natychmiastowy spadek stężenia katecholamin; przy skurczonym łożysku naczyniowym brak płynoterapii wywołuje ciężki wstrząs hipowolemiczny.",
+      "difficulty": "doctor",
       "reasoning": "decision",
       "sourceIds": [
         "endo_pheo",
-        "pte_nadnercza"
-      ]
+        "adrenal_surgery"
+      ],
+      "transfer": true
     },
     {
       "id": "pheochromocytoma-q5-exit-v2",
-      "type": "missing_information",
+      "type": "single_choice",
+      "assessmentLevel": "recognition",
       "objectiveIds": [
-        "pheochromocytoma-obj-1"
+        "pheo-obj-2"
       ],
-      "prompt": "Dlaczego w ostatnich dobach przed operacją guza chromochłonnego zaleca się intensywne nawadnianie 0,9% NaCl i dietę bogatosolną?",
+      "prompt": "Dlaczego oznaczanie wolnych metanefryn w osoczu cechuje się wyższą czułością diagnostyczną niż oznaczanie natywnych katecholamin (adrenaliny i noradrenaliny)?",
       "options": [
-        "W celu odtworzenia objętości krwi krążącej (wolemii) i zapobieżenia zapaści naczyniowej po wycięciu guza",
-        "Sól kuchenna neutralizuje komórki nowotworowe w krwioobiegu",
-        "Aby celowo wywołać obrzęki obwodowe"
+        "Metanefryny powstają wewnątrz komórek guza w sposób ciągły przez enzym COMT, podczas gdy katecholaminy są wyrzucane do krążenia napadowo",
+        "Katecholaminy nie są filtrowane przez nerki",
+        "Metanefryny są produkowane wyłącznie w wątrobie"
       ],
       "optionFeedback": [
-        "Po usunięciu guza spada poziom katecholamin i bez nawodnienia dochodzi do ciężkiej hipotensji.",
-        "Chlorek sodu nie wykazuje działania onkolitycznego.",
-        "Obrzęki są niepożądane; celem jest ewolemia łożyska naczyniowego."
+        "Ciągła wewnątrzkomórkowa metylacja katecholamin przez COMT w guzie zapewnia stałe wysokie stężenie metanefryn we krwi.",
+        "Katecholaminy są filtrowane i metabolizowane w nerkach.",
+        "Metanefryny powstają bezpośrednio w tkance guza chromochłonnego."
       ],
       "answer": 0,
-      "explanation": "Po usunięciu guza spada poziom katecholamin i bez nawodnienia dochodzi do ciężkiej hipotensji.",
-      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
-      "difficulty": "both",
+      "explanation": "Guz chromochłonny stale metabolizuje katecholaminy do metanefryn za pośrednictwem wewnątrzkomórkowego COMT, co eliminuje problem napadowości wydzielania.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "endo_pheo"
+      ],
+      "claimIds": [
+        "claim-adn-pheo-metanephrines-screen"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "pheochromocytoma-bank-1-v2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "pheo-obj-1",
+        "pheo-obj-3"
+      ],
+      "claimIds": [
+        "claim-adn-pheo-alpha-before-beta"
+      ],
+      "prompt": "41-letnia kobieta z nowo wykrytym guzem prawego nadnercza 52 mm została przyjęta na oddział z napadem paniki, bólem głowy, zlewistymi potami, ciśnieniem 230/130 mmHg i tachykardią 130/min. Lekarz izby przyjęć chce natychmiast zlecić wlew labetalolu lub propranololu w celu opanowania tachykardii i ciśnienia. Oceń tę decyzję pod kątem bezpieczeństwa klinicznego, wskaż ryzyko i zaplanuj prawidłowe leczenie doraźne oraz przygotowanie przedoperacyjne.",
+      "modelAnswer": "Decyzja o wdrożeniu beta-blokera (w tym nieselektywnego propranololu czy labetalolu o niewystarczającym komponencie alfa) jest krytycznym błędem sztuki. W guzie chromochłonnym zablokowanie receptorów beta-2 eliminuje naczyniorozszerzający wpływ adrenaliny, co przy masywnej aktywacji receptorów alfa-1 przez noradrenalinę prowadzi do zjawiska \"unopposed alpha-stimulation\", paradoksalnego skoku ciśnienia tętniczego, ostrej niewydolności lewokomorowej, obrzęku płuc lub krwotoku śródmózgowego. Prawidłowe postępowanie: 1) Doraźnie: podanie selektywnego alfa-1-adrenolityku (np. doksazosyny doustnie lub urapidylu/fentolaminy i.v. w warunkach OIT/sali R); 2) Przygotowanie przedoperacyjne przez 10–14 dni: miareczkowanie doksazosyny (do 8–16 mg/d), intensywna podaż płynów i sodu (dieta bogatosolna, wlewy 0,9% NaCl); 3) Beta-bloker (np. metoprolol, propranolol) można włączyć DOPIERO po 2–3 dniach pełnej i skutecznej blokady alfa, jeśli utrzymuje się tachykardia.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "pheo-bank-1-dim-dx",
+            "label": "Wymiar diagnostyczny i patofizjologiczny",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-unopposed-alpha-danger",
+                "label": "Zagrożenie unopposed alpha-stimulation i zakaz beta-blokera jako pierwszego leku",
+                "acceptedPhrases": [
+                  "unopposed alpha",
+                  "niezrównoważona stymulacja alfa",
+                  "przełom nadciśnieniowy",
+                  "zakaz beta-blokera",
+                  "błąd sztuki"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "pheo-bank-1-dim-tx",
+            "label": "Wymiar decyzyjny i bezpieczeństwo kliniczne",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-alpha-blocker-first-protocol",
+                "label": "Zastosowanie alfa-blokera (doksazosyna/urapidyl) i nawodnienia przed beta-blokerem",
+                "acceptedPhrases": [
+                  "doksazosyna",
+                  "urapidyl",
+                  "fentolamina",
+                  "blokada alfa",
+                  "nawodnienie",
+                  "beta-bloker dopiero po"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-allow-early-beta-block",
+            "patterns": [
+              "podać propranolol",
+              "labetalol jako lek pierwszego rzutu",
+              "opanować najpierw tachykardię"
+            ],
+            "severity": "critical",
+            "feedback": "Wczesne podanie beta-blokera bez alfa-blokady bezpośrednio indukuje śmiertelny przełom nadciśnieniowy."
+          }
+        ]
+      },
+      "explanation": "Monoterapia beta-adrenolitykiem w PPGL grozi śmiercią w mechanizmie przełomu naczyniowego. Blokada alfa-1 i nawodnienie muszą bezwzględnie poprzedzać blokadę beta.",
+      "difficulty": "doctor",
       "reasoning": "safety",
       "sourceIds": [
-        "endo_pheo",
-        "pte_nadnercza"
+        "endo_pheo"
+      ],
+      "transfer": true,
+      "caseSnapshot": {
+        "patientAge": 41,
+        "systolicBp": 230,
+        "diastolicBp": 130,
+        "heartRateBpm": 130,
+        "tumorSizeMm": 52,
+        "symptoms": "ból głowy, zlewne poty, napadowe skoki ciśnienia"
+      },
+      "engineBinding": {
+        "engine": "adrenal-workbench",
+        "presetId": "adrenal-pheo-safety"
+      }
+    },
+    {
+      "id": "pheochromocytoma-bank-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "pheo-obj-2"
+      ],
+      "claimIds": [
+        "claim-adn-pheo-metanephrines-screen"
+      ],
+      "prompt": "Dlaczego dobowe wydalanie kwasu wanilinomigdałowego (VMA) w moczu nie jest już obecnie rekomendowane jako badanie pierwszego rzutu w diagnostyce pheochromocytoma?",
+      "options": [
+        "VMA jest końcowym produktem metabolizmu wątrobowego o niskiej czułości diagnostycznej (ok. 60–70%), przez co u co trzeciego chorego daje wynik fałszywie ujemny w porównaniu z wolnymi metanefrynami (> 97%)",
+        "Ponieważ kwas wanilinomigdałowy występuje wyłącznie u pacjentów z cukrzycą",
+        "Ponieważ VMA ulega rozkładowi pod wpływem światła w probówce w ciągu 3 sekund"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-vma-low-sensitivity",
+            "label": "Niska czułość VMA i wyższość metanefryn",
+            "acceptedPhrases": [
+              "niska czułość",
+              "metanefryny czulsze",
+              "fałszywie ujemny",
+              "końcowy metabolit"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "VMA cechuje się czułością rzędu zaledwie 60–70%. Złotym standardem są wolne metanefryny w osoczu lub frakcjonowane w DZM o czułości > 97%.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "endo_pheo"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: VMA cechuje się czułością rzędu zaledwie 60–70%. Złotym standardem są wolne metanefryny w osoczu lub frakcjonowane w DZM o czułości > 97%.",
+        "Nieprawidłowo: Ponieważ kwas wanilinomigdałowy występuje wyłącznie u pacjentów z cukrzycą... VMA cechuje się czułością rzędu zaledwie 60–70%. Złotym standardem są wolne metanefryny w osoczu lub frakcjonowane w DZM o czułości > 97%.",
+        "Nieprawidłowo: Ponieważ VMA ulega rozkładowi pod wpływem światła w probówce w ciągu 3 sekund... VMA cechuje się czułością rzędu zaledwie 60–70%. Złotym standardem są wolne metanefryny w osoczu lub frakcjonowane w DZM o czułości > 97%."
       ]
     }
   ],
   "widgetIds": [
-    "adrenal-workbench"
+    "adrenal-workbench",
+    "lab-workbench"
   ],
   "widgetConfig": {
     "adrenal-workbench": {
@@ -221,6 +387,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+    "scope": "Pełna modernizacja V2: reguła alfa przed beta, unopposed alpha-stimulation, wolne metanefryny i hipotensja pooperacyjna."
   }
 }

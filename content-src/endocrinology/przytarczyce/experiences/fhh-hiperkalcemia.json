@@ -43,6 +43,9 @@
     "sourceIds": [
       "fhh_consensus",
       "ese_phpt"
+    ],
+    "claimIds": [
+      "claim-pt-fhh-cccr-probabilistic"
     ]
   },
   "blocks": [
@@ -158,7 +161,8 @@
     "sourceIds": [
       "fhh_consensus",
       "ese_phpt"
-    ]
+    ],
+    "assessmentLevel": "generation"
   },
   "exitTicket": [
     {
@@ -186,7 +190,9 @@
       "sourceIds": [
         "fhh_consensus",
         "ese_phpt"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     },
     {
       "id": "fhh-hiperkalcemia-q5-exit-v2",
@@ -213,7 +219,9 @@
       "sourceIds": [
         "fhh_consensus",
         "ese_phpt"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     }
   ],
   "widgetIds": [
@@ -228,5 +236,147 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "fhh-hiperkalcemia-bank-1",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "fhh-hiperkalcemia-obj-1",
+        "fhh-hiperkalcemia-obj-2",
+        "fhh-hiperkalcemia-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-fhh-cccr-probabilistic",
+        "claim-pt-fhh-parathyroidectomy-ineffective",
+        "claim-pt-cccr-overlap-zone"
+      ],
+      "prompt": "Przeanalizuj przypadek 32-letniego bezobjawowego mężczyzny skierowanego przez chirurga na paratyroidektomię po tym, jak w USG szyi opisano 'podejrzenie 9 mm powiększonej przytarczycy lewej dolnej'. Wyniki badań: wapń całkowity 2,76 mmol/l, fosforany 0,92 mmol/l, iPTH 58 pg/ml (norma 15–65 pg/ml), 25(OH)D 34 ng/ml, dobowa zbiórka moczu na wapń: wydalanie 1,6 mmol/24h (obniżone), CCCR = 0,006. W wywiadzie rodzinnym matka i brat pacjenta mają stwierdzaną łagodną hiperkalcemię od wielu lat bez powikłań. Przedstaw konsekwencje wykonania paratyroidektomii u tego pacjenta, zinterpretuj wskaźnik CCCR i określ właściwe postępowanie kliniczne.",
+      "modelAnswer": "Wskaźnik CCCR wynosi 0,006 (< 0,010), co w połączeniu z rodzinnym występowaniem łagodnej hiperkalcemii i brakiem powikłań narządowych silnie wskazuje na rodzinną hiperkalcemię hipokalciuryczną (FHH typ 1 wywołaną heterozygotyczną mutacją inaktywującą receptora CASR). Wykonanie paratyroidektomii u tego chorego jest bezwzględnym błędem w sztuce klinicznej. Paratyroidektomia (nawet subtotalna) jest w FHH całkowicie nieskuteczna, nie prowadzi do trwałego wyleczenia hiperkalcemii, a rodzi ryzyko powikłań chirurgicznych oraz jatrogennej niedoczynności przytarczyc. Zmiana opisana w USG to najczęściej fałszywie dodatni wynik (np. węzeł chłonny lub guzek tarczycy). Właściwe postępowanie polega na natychmiastowym odwołaniu zabiegu operacyjnego, wykonaniu badania genetycznego genu CASR (oraz GNA11, AP2S1) w celu formalnego potwierdzenia mutacji, edukacji pacjenta i rodziny o łagodnym charakterze schorzenia oraz zaniechaniu jakiegokolwiek leczenia farmakologicznego i inwazyjnego.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "fhh-hiperkalcemia-bank-1-dim-diagnosis",
+            "label": "Rozpoznanie FHH na podstawie CCCR < 0,010 i wywiadu rodzinnego",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-fhh-diagnosis-cccr",
+                "label": "Wskaźnik CCCR < 0,010 i rodzinny charakter hiperkalcemii",
+                "acceptedPhrases": [
+                  "CCCR < 0,010",
+                  "FHH",
+                  "rodzinna hiperkalcemia hipokalciuryczna",
+                  "mutacja CASR",
+                  "0,006"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "fhh-hiperkalcemia-bank-1-dim-contraindication",
+            "label": "Bezwzględne przeciwwskazanie do paratyroidektomii",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-surgery-contraindicated-fhh",
+                "label": "Nieskuteczność i szkodliwość paratyroidektomii w FHH",
+                "acceptedPhrases": [
+                  "paratyroidektomia nieskuteczna",
+                  "przeciwwskazanie do operacji",
+                  "odwołanie zabiegu",
+                  "błąd w sztuce",
+                  "brak normalizacji kalcemii"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "fhh-hiperkalcemia-bank-1-dim-management",
+            "label": "Postępowanie: genetyka i edukacja rodziny",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-fhh-proper-management",
+                "label": "Badanie genetyczne CASR i postępowanie wyczekujące/edukacja",
+                "acceptedPhrases": [
+                  "badanie genetyczne",
+                  "sekwencjonowanie CASR",
+                  "edukacja pacjenta",
+                  "brak leczenia farmakologicznego",
+                  "poradnictwo genetyczne"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-fhh-surgery-approval",
+            "patterns": [
+              "wykonać paratyroidektomię",
+              "zoperować zmianę z USG",
+              "pobrać biopsję przytarczycy"
+            ],
+            "severity": "critical",
+            "feedback": "Kwalifikacja do operacji lub biopsji przytarczycy u pacjenta z FHH (CCCR < 0,010) jest rażącym błędem postępowania."
+          }
+        ]
+      },
+      "explanation": "W FHH paratyroidektomia jest całkowicie nieskuteczna i przeciwwskazana; jedynym właściwym postępowaniem jest potwierdzenie genetyczne i edukacja rodziny.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "fhh_consensus",
+        "ese_phpt"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "fhh-hiperkalcemia-bank-2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "fhh-hiperkalcemia-obj-1",
+        "fhh-hiperkalcemia-obj-2",
+        "fhh-hiperkalcemia-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-fhh-cccr-probabilistic",
+        "claim-pt-fhh-parathyroidectomy-ineffective"
+      ],
+      "prompt": "Dlaczego mutacja inaktywująca receptora CaSR prowadzi w FHH do jednoczesnego występowania hiperkalcemii we krwi i hipokalciurii w moczu?",
+      "options": [
+        "Defekt CaSR występuje zarówno w komórkach przytarczyc (podwyższenie set-pointu hamowania PTH), jak i w komórkach ramienia wstępującego pętli Henlego (zwiększona reabsorpcja Ca i Mg mimo hiperkalcemii).",
+        "Ponieważ mutacja CaSR bezpośrednio zamyka kłębuszkowe pory filtracyjne dla jonów dwuwartościowych.",
+        "Jest to wynik nadmiernego gromadzenia kalcytoniny w cewkach zbiorczych nerek."
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-casr-dual-tissue-expression",
+            "label": "Ekspresja CaSR w przytarczycach i pętli Henlego wyjaśnia fenotyp",
+            "acceptedPhrases": [
+              "pętla Henlego",
+              "ramię wstępujące",
+              "reabsorpcja wapnia",
+              "set-point",
+              "podwójna lokalizacja"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "CaSR reguluje wydzielanie PTH w przytarczycach oraz reabsorpcję Ca/Mg w grubym ramieniu wstępującym pętli Henlego; inaktywacja receptora wywołuje defekt w obu tych narządach.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "fhh_consensus",
+        "casr_hill"
+      ],
+      "transfer": true
+    }
+  ]
 }

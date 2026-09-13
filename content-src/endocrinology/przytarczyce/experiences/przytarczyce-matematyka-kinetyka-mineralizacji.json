@@ -39,6 +39,9 @@
       "qtc_bone",
       "fhh_consensus",
       "ese_hypopara"
+    ],
+    "claimIds": [
+      "claim-pt-cccr-overlap-zone"
     ]
   },
   "blocks": [
@@ -152,7 +155,8 @@
       "qtc_bone",
       "fhh_consensus",
       "ese_hypopara"
-    ]
+    ],
+    "assessmentLevel": "generation"
   },
   "exitTicket": [
     {
@@ -181,7 +185,9 @@
         "qtc_bone",
         "fhh_consensus",
         "ese_hypopara"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     },
     {
       "id": "przytarczyce-matematyka-kinetyka-mineralizacji-q5-exit-v2",
@@ -209,7 +215,9 @@
         "qtc_bone",
         "fhh_consensus",
         "ese_hypopara"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     }
   ],
   "widgetIds": [
@@ -220,5 +228,125 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "przytarczyce-matematyka-kinetyka-mineralizacji-bank-1",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "przytarczyce-matematyka-kinetyka-mineralizacji-obj-1",
+        "przytarczyce-matematyka-kinetyka-mineralizacji-obj-2"
+      ],
+      "claimIds": [
+        "claim-pt-cccr-overlap-zone",
+        "claim-pt-payne-formula",
+        "claim-pt-hungry-bone-predictors"
+      ],
+      "prompt": "Przeanalizuj przypadek 50-letniego mężczyzny diagnozowanego z powodu hiperkalcemii. Wyniki: wapń całkowity 2,75 mmol/l, albumina 42 g/l, stężenie iPTH 80 pg/ml, 25(OH)D 15 ng/ml (niedobór). W 24-godzinnej zbiórce moczu: wskaźnik CCCR wynosi 0,013. W EKG stwierdzono skrócenie odstępu QTc (formuła Bazetta: 340 ms przy HR 95/min). Wyjaśnij: 1) dlaczego CCCR 0,013 znajduje się w strefie nakładania (overlap zone: 0,010–0,020) i jak niedobór witaminy D zakłóca ten wynik; 2) dlaczego przy tachykardii (HR 95/min) formuła Fridericii jest dokładniejsza niż formuła Bazetta; 3) zaplanuj kolejne kroki diagnostyczne przed podjęciem jakichkolwiek decyzji chirurgicznych.",
+      "modelAnswer": "Wskaźnik klirensu wapniowo-kreatyninowego wynosi 0,013, co plasuje pacjenta w tzw. strefie nakładania (overlap zone: 0,010–0,020), w której znajduje się ok. 20% chorych z FHH i ok. 10% chorych z PHPT. Istotnym czynnikiem zakłócającym jest ciężki niedobór witaminy D (25(OH)D 15 ng/ml). Niedobór witaminy D nasila nerkową reabsorpcję wapnia i może sztucznie obniżyć wskaźnik CCCR u pacjenta z rzeczywistą pierwotną nadczynnością przytarczyc poniżej 0,020 lub nawet poniżej 0,010, naśladując FHH. W ocenie EKG: hiperkalcemia przyspiesza inaktywację kanałów wapniowych i skraca fazę 2 potencjału czynnościowego (skrócenie QTc). Jednak przy częstotliwości rytmu 95/min klasyczna formuła Bazetta (dzielenie przez pierwiastek kwadratowy z RR) wykazuje błąd nieliniowości i nadmiernie przeszacowuje długość QTc; formuła Fridericii (dzielenie przez pierwiastek sześcienny z RR) lepiej eliminuje wpływ tachykardii. Postępowanie wymaga: 1) ostrożnej suplementacji cholekalcyferolu pod kontrolą kalcemii w celu podniesienia 25(OH)D do >30 ng/ml; 2) powtórzenia dobowej zbiórki moczu na Ca i kreatyninę oraz rekalkulacji CCCR; 3) wykonania sekwencjonowania genu CASR. Do czasu wykluczenia FHH pacjent nie może być kwalifikowany do operacji.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "przytarczyce-matematyka-kinetyka-mineralizacji-bank-1-dim-overlap-confounder",
+            "label": "Interpretacja strefy nakładania CCCR (0,010–0,020) i wpływ niedoboru witaminy D",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-cccr-overlap-vitd-effect",
+                "label": "Strefa nakładania 0,010-0,020, zaniżenie kalciurii przez niedobór 25(OH)D",
+                "acceptedPhrases": [
+                  "strefa nakładania",
+                  "overlap zone",
+                  "0,010–0,020",
+                  "niedobór witaminy D",
+                  "zaniżenie CCCR",
+                  "reabsorpcja wapnia"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "przytarczyce-matematyka-kinetyka-mineralizacji-bank-1-dim-qtc-formulas",
+            "label": "Elektrokardiografia: skrócenie QTc w hiperkalcemii i formuła Fridericii vs Bazetta",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-qtc-fridericia-advantage",
+                "label": "Skrócenie fazy 2, tachykardia, przewaga formuły Fridericii",
+                "acceptedPhrases": [
+                  "skrócenie QTc",
+                  "formuła Fridericii",
+                  "formuła Bazetta",
+                  "tachykardia",
+                  "faza 2 potencjału"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "przytarczyce-matematyka-kinetyka-mineralizacji-bank-1-dim-plan",
+            "label": "Kolejne kroki: replecja witaminy D i badanie genetyczne CASR",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-repletion-genetic-test-plan",
+                "label": "Suplementacja D3, ponowny CCCR, test genetyczny CASR przed operacją",
+                "acceptedPhrases": [
+                  "suplementacja witaminy D",
+                  "badanie genetyczne CASR",
+                  "wstrzymanie paratyroidektomii",
+                  "powtórzenie zbiórki moczu"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-surgery-without-fhh-exclusion",
+            "patterns": [
+              "skierować natychmiast na operację",
+              "zakwalifikować do paratyroidektomii bez badań genetycznych"
+            ],
+            "severity": "critical",
+            "feedback": "Kwalifikacja do operacji przy CCCR w strefie nakładania i niedoborze witaminy D bez wykluczenia FHH grozi nieskutecznym zabiegiem."
+          }
+        ]
+      },
+      "explanation": "CCCR 0,010–0,020 wymaga wyrównania witaminy D i badania genu CASR przed ewentualną operacją; w EKG hiperkalcemia skraca QTc, a formuła Fridericii jest dokładniejsza przy tachykardii.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "fhh_consensus",
+        "ese_phpt",
+        "qtc_bone"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "przytarczyce-matematyka-kinetyka-mineralizacji-bank-2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przytarczyce-matematyka-kinetyka-mineralizacji-obj-1",
+        "przytarczyce-matematyka-kinetyka-mineralizacji-obj-2"
+      ],
+      "claimIds": [
+        "claim-pt-cccr-overlap-zone"
+      ],
+      "prompt": "U 45-letniej kobiety z bezobjawową hiperkalcemią pobrano próbki surowicy i moczu dobowego: stężenie wapnia w surowicy (S_Ca) = 2,80 mmol/l, stężenie kreatyniny w surowicy (S_Cr) = 80 µmol/l (0,080 mmol/l), stężenie wapnia w moczu (U_Ca) = 3,50 mmol/l, stężenie kreatyniny w moczu (U_Cr) = 10,0 mmol/l. Oblicz wskaźnik CCCR wg wzoru: CCCR = (U_Ca * S_Cr) / (S_Ca * U_Cr). Podaj wynik z dokładnością do trzech miejsc po przecinku (np. 0.010).",
+      "answer": 0.01,
+      "tolerance": 0.001,
+      "unit": "wskaźnik",
+      "explanation": "CCCR = (U_Ca * S_Cr) / (S_Ca * U_Cr) = (3,50 * 0,080) / (2,80 * 10,0) = 0,28 / 28,0 = 0,010.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "fhh_consensus",
+        "ese_phpt"
+      ],
+      "transfer": true
+    }
+  ]
 }

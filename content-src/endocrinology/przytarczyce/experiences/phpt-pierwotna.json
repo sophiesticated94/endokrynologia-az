@@ -43,6 +43,9 @@
     "sourceIds": [
       "ese_phpt",
       "eses_parathyroid"
+    ],
+    "claimIds": [
+      "claim-pt-phpt-surgical-criteria-2022"
     ]
   },
   "blocks": [
@@ -151,7 +154,8 @@
     "sourceIds": [
       "ese_phpt",
       "eses_parathyroid"
-    ]
+    ],
+    "assessmentLevel": "generation"
   },
   "exitTicket": [
     {
@@ -179,7 +183,9 @@
       "sourceIds": [
         "ese_phpt",
         "eses_parathyroid"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     },
     {
       "id": "phpt-pierwotna-q5-exit-v2",
@@ -206,7 +212,9 @@
       "sourceIds": [
         "ese_phpt",
         "eses_parathyroid"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     }
   ],
   "widgetIds": [
@@ -217,5 +225,140 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "phpt-pierwotna-bank-1",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "phpt-pierwotna-obj-1",
+        "phpt-pierwotna-obj-2",
+        "phpt-pierwotna-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-phpt-surgical-criteria-2022"
+      ],
+      "prompt": "Przeanalizuj wskazania do paratyroidektomii u 46-letniej kobiety z bezobjawową pierwotną nadczynnością przytarczyc: stężenie wapnia całkowitego wynosi 2,78 mmol/l (GGN 2,55 mmol/l), stężenie iPTH 95 pg/ml, eGFR 74 ml/min/1,73m2, w badaniu DXA wskaźnik T-score wynosi -2,6 w szyjce kości udowej i -1,8 w kręgosłupie L1-L4. W USG jamy brzusznej brak cech kamicy nerkowej. Czy pacjentka spełnia kryteria kwalifikacji do operacji wg wytycznych 5th International Workshop 2022? Odpowiedź szczegółowo uzasadnij, wymieniając kryteria wieku, gęstości mineralnej kości oraz kryteria biochemiczne.",
+      "modelAnswer": "Pacjentka bezwzględnie spełnia kryteria kwalifikacji do paratyroidektomii w bezobjawowym PHPT wg wytycznych 5th International Workshop (2022) i to z co najmniej dwóch niezależnych wskazań: 1) Kryterium wieku: ma 46 lat (< 50. roku życia); samo to kryterium jest samodzielnym wskazaniem do leczenia operacyjnego z uwagi na wysokie prawdopodobieństwo progresji powikłań w ciągu życia; 2) Kryterium gęstości mineralnej kości: T-score w szyjce kości udowej wynosi -2,6 SD (kryterium to T-score <= -2,5 SD w którejkolwiek z trzech kluczowych lokalizacji: kręgosłup, szyjka kości udowej, całkowite biodro lub 1/3 dystalna kości promieniowej). Kryterium kalcemii (> 0,25 mmol/l / > 1,0 mg/dl powyżej GGN) nie zostało formalnie przekroczone (2,78 - 2,55 = 0,23 mmol/l), jednak obecność kryterium wieku i osteoporozy densytometrycznej jednoznacznie decyduje o kwalifikacji do zabiegu.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "phpt-pierwotna-bank-1-dim-age",
+            "label": "Kryterium wieku (< 50 lat)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-age-under-50",
+                "label": "Wiek poniżej 50 lat jako samodzielne kryterium operacji",
+                "acceptedPhrases": [
+                  "wiek < 50",
+                  "poniżej 50 roku życia",
+                  "młody wiek",
+                  "46 lat"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "phpt-pierwotna-bank-1-dim-bmd",
+            "label": "Kryterium gęstości mineralnej kości (T-score <= -2.5)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-t-score-osteoporosis",
+                "label": "T-score -2,6 w szyjce kości udowej spełnia kryterium osteoporozy",
+                "acceptedPhrases": [
+                  "T-score <= -2,5",
+                  "-2,6",
+                  "szyjka kości udowej",
+                  "osteoporoza densytometryczna"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "phpt-pierwotna-bank-1-dim-guidelines",
+            "label": "Kompleksowa znajomość wytycznych 5th International Workshop 2022",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-workshop-criteria",
+                "label": "Pozostałe kryteria: Ca >0,25 mmol/l pow. GGN, eGFR <60, kamica/nefrokalcynoza",
+                "acceptedPhrases": [
+                  "5th International Workshop",
+                  "0,25 mmol/l powyżej GGN",
+                  "eGFR < 60",
+                  "dobowe wydalanie wapnia",
+                  "złamanie kręgu"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-phpt-conservative-misjudgment",
+            "patterns": [
+              "odstąpić od operacji",
+              "nie kwalifikuje się do zabiegu"
+            ],
+            "severity": "critical",
+            "feedback": "Zdyskwalifikowanie z leczenia operacyjnego pacjentki < 50 r.ż. z osteoporozą w DXA jest poważnym błędem sztuki wg międzynarodowych wytycznych."
+          }
+        ]
+      },
+      "explanation": "Wskazaniami do paratyroidektomii w bezobjawowym PHPT są: wiek <50 lat, T-score <= -2,5, Ca >0,25 mmol/l pow. GGN, eGFR <60 ml/min, kalciuria >250/300 mg/d lub kamica/nefrokalcynoza.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "ese_phpt",
+        "eses_parathyroid"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "phpt-pierwotna-bank-2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "phpt-pierwotna-obj-1",
+        "phpt-pierwotna-obj-2",
+        "phpt-pierwotna-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-phpt-surgical-criteria-2022"
+      ],
+      "prompt": "W trakcie celowanej paratyroidektomii (MIP) z powodu pojedynczego gruczolaka przytarczycy chirurg stosuje śródoperacyjne monitorowanie stężenia PTH (ioPTH). Jakie kryterium biochemiczne (kryterium z Miami) potwierdza doszczętność usunięcia nadczynnej tkanki przytarczycowej?",
+      "options": [
+        "Spadek stężenia ioPTH o co najmniej 50% w stosunku do najwyższej wartości wyjściowej w pomiarze po 10 minutach od usunięcia gruczołu.",
+        "Całkowity spadek stężenia ioPTH do zera w 1. minucie po nacięciu torebki guza.",
+        "Wzrost stężenia wapnia zjonizowanego o 0,5 mmol/l w ciągu 5 minut od resekcji."
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-miami-criterion",
+            "label": "Kryterium z Miami: spadek ioPTH >= 50% w 10 minut",
+            "acceptedPhrases": [
+              "kryterium z Miami",
+              "spadek o 50%",
+              "10 minut",
+              "okres półtrwania PTH"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Z uwagi na krótki okres półtrwania natywnego PTH (3–5 minut), spadek ioPTH o >= 50% po 10 minutach od usunięcia gruczolaka (kryterium z Miami) z 98% czułością przewiduje wyleczenie.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "eses_parathyroid",
+        "ese_phpt"
+      ],
+      "transfer": true
+    }
+  ]
 }

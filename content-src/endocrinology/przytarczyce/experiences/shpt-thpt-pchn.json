@@ -43,6 +43,9 @@
     "sourceIds": [
       "kdigo_ckd_mbd",
       "asbmr_calcium"
+    ],
+    "claimIds": [
+      "claim-pt-ckd-mbd-pth-target"
     ]
   },
   "blocks": [
@@ -151,7 +154,8 @@
     "sourceIds": [
       "kdigo_ckd_mbd",
       "asbmr_calcium"
-    ]
+    ],
+    "assessmentLevel": "generation"
   },
   "exitTicket": [
     {
@@ -179,7 +183,9 @@
       "sourceIds": [
         "kdigo_ckd_mbd",
         "asbmr_calcium"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     },
     {
       "id": "shpt-thpt-pchn-q5-exit-v2",
@@ -206,7 +212,9 @@
       "sourceIds": [
         "kdigo_ckd_mbd",
         "asbmr_calcium"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     }
   ],
   "widgetIds": [
@@ -217,5 +225,144 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "shpt-thpt-pchn-bank-1",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "shpt-thpt-pchn-obj-1",
+        "shpt-thpt-pchn-obj-2",
+        "shpt-thpt-pchn-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-ckd-mbd-pth-target"
+      ],
+      "prompt": "Przeanalizuj przypadek 58-letniego pacjenta z przewlekłą chorobą nerek w stadium G5D leczonego powtarzanymi hemodializami od 4 lat. Aktualne wyniki: iPTH 720 pg/ml (norma laboratoryjna 15–65 pg/ml; GGN = 65 pg/ml), wapń całkowity 2,58 mmol/l, fosforany 2,25 mmol/l (norma 0,81–1,45 mmol/l), iloczyn Ca x P = 5,80 mmol2/l2. Pacjent przyjmuje węglan wapnia 3 x 1,5 g do posiłków. Wyjaśnij: 1) jakie są docelowe wartości iPTH w stadium G5D wg wytycznych KDIGO i dlaczego całkowite 'zbijanie' PTH do normy osób ze zdrowymi nerkami jest błędem; 2) dlaczego kontynuowanie węglanu wapnia stwarza śmiertelne zagrożenie sercowo-naczyniowe; 3) zaproponuj optymalną modyfikację leczenia (chelatory bezwapniowe, kalcymimetyk, parikalcytol).",
+      "modelAnswer": "Zgodnie z wytycznymi KDIGO (CKD-MBD) docelowe stężenie iPTH u pacjentów w stadium G5D wynosi od 2- do 9-krotności górnej granicy normy testu (dla GGN 65 pg/ml jest to ok. 130–585 pg/ml). W PChN występuje obwodowa oporność na PTH (toksyny mocznicowe, spadek receptorów PTH1R w kościach); dążenie do pełnej normalizacji PTH (<65 pg/ml) drastycznie hamuje obrót kostny i prowadzi do adynamicznej choroby kości (ABD) ze skrajną łamliwością i brakiem buforowania wapnia. U tego pacjenta iPTH wynosi 720 pg/ml (>11x GGN) i towarzyszy mu hiperfosfatemia (2,25 mmol/l) oraz podwyższony iloczyn Ca x P (>4,4 mmol2/l2). Podawanie węglanu wapnia w tych warunkach prowadzi do lawinowego odkładania się fosforanów wapnia w tętnicach wieńcowych, zastawkach serca i skórze (kalcyfilaksja, zawał, udar). Węglan wapnia należy natychmiast odstawić i zamienić na niewapniowy lek wiążący fosforany (sewelamer lub węglan lantanu). Aby obniżyć iPTH bez ryzyka hiperkalcemii, lekiem z wyboru jest kalcymimetyk (cynakalcet doustnie lub etelkalcetyd i.v.), który uwrażliwia CaSR i obniża zarówno PTH, jak i stężenie wapnia.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "shpt-thpt-pchn-bank-1-dim-kdigo-targets",
+            "label": "Cele iPTH wg KDIGO (2–9x GGN) i adynamiczna choroba kości",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-kdigo-pth-targets-abd",
+                "label": "Przedział 2-9x GGN, ryzyko adynamicznej choroby kości",
+                "acceptedPhrases": [
+                  "KDIGO",
+                  "2–9",
+                  "górna granica normy",
+                  "adynamiczna choroba kości",
+                  "oporność na PTH"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "shpt-thpt-pchn-bank-1-dim-vascular-calcification",
+            "label": "Ryzyko zwapnień naczyniowych i kalcyfilaksji przy solach wapnia",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-calcium-phosphate-product-risk",
+                "label": "Iloczyn Ca x P, zwapnienia naczyniowe, konieczność odstawienia węglanu Ca",
+                "acceptedPhrases": [
+                  "iloczyn Ca x P",
+                  "zwapnienia naczyniowe",
+                  "kalcyfilaksja",
+                  "odstawienie węglanu wapnia",
+                  "zastawki serca"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "shpt-thpt-pchn-bank-1-dim-pharmacotherapy",
+            "label": "Modyfikacja leczenia: sewelamer i kalcymimetyk",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-sevelamer-cinacalcet-choice",
+                "label": "Niewapniowe chelatory (sewelamer) i kalcymimetyki (cynakalcet)",
+                "acceptedPhrases": [
+                  "sewelamer",
+                  "węglan lantanu",
+                  "cynakalcet",
+                  "etelkalcetyd",
+                  "kalcymimetyk",
+                  "uwrażliwienie CaSR"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-ckd-calcium-load-increase",
+            "patterns": [
+              "zwiększyć dawkę węglanu wapnia",
+              "podać kalcytriol w wysokich dawkach mimo hiperkalcemii"
+            ],
+            "severity": "critical",
+            "feedback": "Podawanie soli wapnia lub kalcytriolu u dializowanego chorego z hiperfosfatemią i hiperkalcemią drastycznie przyspiesza zwapnienia sercowo-naczyniowe i zwiększa śmiertelność."
+          }
+        ]
+      },
+      "explanation": "Zgodnie z KDIGO docelowy iPTH w G5D to 2–9x GGN; przy hiperfosfatemii i podwyższonym Ca należy zamienić sole wapnia na sewelamer i włączyć cynakalcet.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "kdigo_ckd_mbd",
+        "casr_hill"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "shpt-thpt-pchn-bank-2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "shpt-thpt-pchn-obj-1",
+        "shpt-thpt-pchn-obj-2",
+        "shpt-thpt-pchn-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-ckd-mbd-pth-target"
+      ],
+      "prompt": "U pacjenta po udanym przeszczepieniu nerki z prawidłową czynnością graftu (eGFR 65 ml/min) utrzymuje się hiperkalcemia 2,85 mmol/l, hipofosfatemia oraz stężenie iPTH 280 pg/ml. Jaki jest patomechanizm tego zaburzenia (trzeciorzędowa nadczynność przytarczyc – THPT)?",
+      "options": [
+        "Wieloletnia stymulacja w okresie dializ doprowadziła do autonomicznego rozrostu guzkowego komórek przytarczyc z drastyczną redukcją ekspresji receptorów CaSR i VDR, co po przywróceniu funkcji nerek skutkuje przetrwałym, autonomicznym wydzielaniem PTH i hiperkalcemią.",
+        "Jest to ostre odrzucanie przeszczepu nerki wywołane przez limfocyty cytotoksyczne naciekające cewki nerkowe.",
+        "Zaburzenie wynika z niedoboru witaminy D wywołanego lekami immunosupresyjnymi."
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-thpt-nodular-autonomy",
+            "label": "Autonomiczny rozrost guzkowy przytarczyc i spadek CaSR/VDR",
+            "acceptedPhrases": [
+              "trzeciorzędowa nadczynność",
+              "THPT",
+              "autonomiczny rozrost",
+              "spadek CaSR",
+              "spadek VDR",
+              "przeszczepienie nerki"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "THPT to stan autonomizacji przytarczyc (rozrost guzkowy monoklonalny z utratą CaSR i VDR), w którym wydzielanie PTH nie ulega zahamowaniu mimo prawidłowej czynności przeszczepu i podwyższonego wapnia.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "kdigo_ckd_mbd"
+      ],
+      "transfer": true
+    }
+  ]
 }

@@ -3,215 +3,383 @@
   "lessonId": "zespol-conna",
   "objectives": [
     {
-      "id": "zespol-conna-obj-1",
-      "statement": "Zrozumiesz patofizjologię pierwotnego hiperaldosteronizmu (PA): zespół Conna (gruczolak APA) vs obustronny przerost (BAH).",
-      "kind": "mechanism"
+      "id": "conna-obj-1",
+      "statement": "Prawidłowo przygotujesz pacjenta do oznaczenia ARR (odstawienie leków interferujących, wyrównanie hipokaliemii) i zinterpretujesz wynik wskaźnika.",
+      "kind": "interpretation"
     },
     {
-      "id": "zespol-conna-obj-2",
-      "statement": "Opanujesz algorytm diagnostyczny: wskaźnik ARR $\\to$ testy konfirmacyjne $\\to$ cewnikowanie żył nadnerczowych (AVS) w celu kwalifikacji do adrenalektomii vs spironolaktonu.",
-      "kind": "interpretation"
+      "id": "conna-obj-2",
+      "statement": "Zakwalifikujesz chorego do adrenalektomii jednostronnej lub farmakoterapii MRA z uwzględnieniem AVS, wieku (<35 vs >35 lat) i fenotypu CT.",
+      "kind": "decision"
+    },
+    {
+      "id": "conna-obj-3",
+      "statement": "Zidentyfikujesz wyjątek konfirmacyjny ES 2025 (spontaniczna hipokaliemia, renina stłumiona, PAC >= 20 ng/dl) chroniący przed zbędnym opóźnieniem operacji.",
+      "kind": "safety"
     }
   ],
   "diagnostic": {
     "id": "zespol-conna-q1-diagnostic-v2",
     "type": "single_choice",
+    "assessmentLevel": "recognition",
     "objectiveIds": [
-      "zespol-conna-obj-1"
+      "conna-obj-1"
     ],
-    "prompt": "Czy prawidłowe stężenie potasu w surowicy krwi wyklucza u pacjenta pierwotny hiperaldosteronizm (zespół Conna)?",
+    "prompt": "Która grupa leków hipotensyjnych wywiera najsilniejszy wpływ zakłócający na wskaźnik aldosteronowo-reninowy (ARR) i musi zostać bezwzględnie odstawiona na co najmniej 4–6 tygodni przed badaniem?",
     "options": [
-      "Nie, ponad 60–70% pacjentów z PA ma stężenie potasu w granicach normy (postać normokaliemiczna)",
-      "Tak, brak hipokaliemii w 100% wyklucza chorobę",
-      "Prawidłowy potas występuje wyłącznie u dzieci"
+      "Antagoniści receptora mineralokortykoidowego (spironolakton, eplerenon)",
+      "Dihydropirydynowe blokery kanału wapniowego (np. amlodypina)",
+      "Alfa-1-adrenolityki (np. doksazosyna)"
     ],
     "optionFeedback": [
-      "Hipokaliemia występuje głównie w ciężkich lub zaawansowanych postaciach choroby.",
-      "To niebezpieczny błąd diagnostyczny prowadzący do pomijania większości chorych.",
-      "Postać normokaliemiczna dominuje we wszystkich grupach wiekowych dorosłych."
+      "MRA blokują receptor aldosteronowy, co wywołuje gwałtowny, odruchowy wyrzut reniny i fałszywie ujemny wynik ARR.",
+      "Amlodypina ma minimalny wpływ i może być stosowana jako leczenie pomostowe.",
+      "Doksazosyna jest lekiem bezpiecznym w przygotowaniu do ARR."
     ],
     "answer": 0,
-    "explanation": "Hipokaliemia występuje głównie w ciężkich lub zaawansowanych postaciach choroby.",
-    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "explanation": "Spironolakton i eplerenon bezpośrednio odblokowują wydzielanie reniny z aparatu przykłębuszkowego, co fałszywie zaniża ARR; wymagają odstawienia na 4–6 tygodni.",
     "difficulty": "student",
-    "reasoning": "mechanism",
+    "reasoning": "interpretation",
     "sourceIds": [
-      "endo_pa",
-      "pte_nadnercza"
+      "endo_pa"
+    ],
+    "claimIds": [
+      "claim-adn-pa-arr-medications",
+      "claim-adn-pa-screening-2025"
     ]
   },
   "blocks": [
     {
-      "id": "zespol-conna-block-1",
-      "title": "Epidemiologia i obalenie mitu o hipokaliemii",
-      "text": "Pierwotny hiperaldosteronizm (Primary Aldosteronism — PA) to najczęstsza przyczyna wtórnego nadciśnienia tętniczego, odpowiadająca za 5–10% wszystkich chorych na nadciśnienie i aż 20% chorych z nadciśnieniem opornym! KLUCZOWY MIT KLINICZNY: Przez dekady sądzono, że warunkiem rozpoznania jest hipokaliemia. Dziś wiemy, że ponad 60–70% chorych z PA ma stężenie potasu W GRANICACH NORMY (tzw. normokaliemiczny hiperaldosteronizm)! Dlatego prawidłowy potas NIE wyklucza zespołu Conna. Wskazania do badań przesiewowych: nadciśnienie oporne na 3 leki, nadciśnienie z hipokaliemią (spontaniczną lub po małych dawkach diuretyków), nadciśnienie z incydentaloma nadnercza, nadciśnienie u osób <35. r.ż. oraz udar mózgu w młodym wieku.",
+      "id": "conna-b1",
+      "title": "Screening ARR i interferencje lekowe",
+      "text": "Wskaźnik aldosteronowo-reninowy (ARR) jest podstawowym narzędziem przesiewowym w pierwotnym hiperaldosteronizmie (PA). Warunki wiarygodności: 1) Prawidłowe stężenie potasu (hipokaliemia bezpośrednio hamuje aldosteron dając fałszywie ujemny ARR); 2) Odstawienie MRA na 4–6 tyg.; 3) Odstawienie beta-blokerów na 2 tyg. (beta-blokery tłumią reninę dając fałszywie dodatni ARR). Lekami bezpiecznymi są werapamil SR i doksazosyna.",
+      "sourceIds": [
+        "endo_pa"
+      ],
+      "checkpointId": "zespol-conna-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "conna-b2",
+      "title": "Wyjątek konfirmacyjny ES 2025",
+      "text": "Zgodnie z wytycznymi Endocrine Society 2025: u pacjenta ze spontaniczną hipokaliemią, stłumionym stężeniem reniny oraz stężeniem aldosteronu w osoczu (PAC) >= 20 ng/dl (>= 550 pmol/l) testy konfirmacyjne (np. obciążenie 0,9% NaCl, test z kaptoprilem) są ZBĘDNE. Rozpoznanie PA jest pewne i należy przejść bezpośrednio do diagnostyki różnicowej formy jedno- i obustronnej.",
+      "sourceIds": [
+        "endo_pa"
+      ],
+      "checkpointId": "zespol-conna-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "conna-b3",
+      "title": "Lateralizacja: AVS vs TK i kryteria wiekowe",
+      "text": "TK nadnerczy ma ograniczoną wartość w rozstrzyganiu lateralizacji u pacjentów > 35 r.ż., ponieważ często wykrywa nieme, nieczynne incydentaloma. Złotym standardem przed adrenalektomią jest cewnikowanie żył nadnerczowych (AVS). Wyjątek: chory < 35 lat ze spontaniczną hipokaliemią, wysokim PAC i ewidentnym solitarym gruczolakiem w TK może być operowany bez AVS.",
       "sourceIds": [
         "endo_pa",
         "pte_nadnercza"
-      ],
-      "checkpointId": "zespol-conna-q2-checkpoint-1-v2",
-      "inlineEnhancements": [
-        {
-          "id": "enh-adn-pa-arr",
-          "kind": "workbench-deeplink",
-          "placement": "after-text",
-          "presetId": "adrenal-pa-arr-interference"
-        }
       ]
-    },
-    {
-      "id": "zespol-conna-block-2",
-      "title": "Etap 1 i 2: Przesiewowy wskaźnik ARR i testy potwierdzenia",
-      "text": "Przesiew opiera się na wskaźniku aldosteronowo-reninowym (ARR). W PA stwierdza się autonomicznie wysokie lub nieadekwatne stężenie aldosteronu przy stłumionym stężeniu reniny (DRC <5 mIU/l) lub aktywności reninowej osocza (ARO). Przy podwyższonym ARR kolejnym krokiem (poza chorymi z ciężką spontaniczną hipokaliemią i aldosteronem >20 ng/dl) jest test konfirmacyjny: test dożylnego obciążenia 0,9% NaCl (wlew 2 litrów soli w 4 h; u zdrowego człowieka sól hamuje aldosteron <5 ng/dl, w PA brak supresji >10 ng/dl) lub doustny test z fludrokortyzonem.",
-      "sourceIds": [
-        "endo_pa",
-        "pte_nadnercza"
-      ],
-      "checkpointId": "zespol-conna-q3-checkpoint-2-v2",
-      "inlineEnhancements": []
-    },
-    {
-      "id": "zespol-conna-block-3",
-      "title": "Etap 3: Cewnikowanie żył nadnerczowych (AVS) i terapia",
-      "text": "Dwie główne przyczyny PA to: 1) Jednostronny gruczolak produkujący aldosteron (APA — klasyczny zespół Conna, ok. 35%), wyleczalny operacyjnie; 2) Obustronny idiopatyczny przerost kory nadnerczy (BAH, ok. 60%), leczony wyłącznie zachowawczo. Ponieważ tomografia komputerowa (TK) myli się w aż 40% przypadków (wykrywa niewydzielające incydentaloma po jednej stronie, podczas gdy mikrogruczolak APA ukrywa się po drugiej!), złotym standardem różnicowania przed operacją jest obustronne cewnikowanie żył nadnerczowych (Adrenal Vein Sampling — AVS). W APA wykonuje się laparoskopową adrenalektomię, a w BAH stosuje antagonistę aldosteronu: spironolakton (25–100 mg/d) lub eplerenon.",
-      "sourceIds": [
-        "endo_pa",
-        "pte_nadnercza"
-      ],
-      "inlineEnhancements": []
     }
   ],
   "activities": [
     {
       "id": "zespol-conna-q2-checkpoint-1-v2",
-      "type": "single_choice",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "zespol-conna-obj-2"
+        "conna-obj-3"
       ],
-      "prompt": "Dlaczego badanie tomografii komputerowej (TK) nadnerczy nie jest wystarczające do podjęcia decyzji o adrenalektomii w PA?",
+      "prompt": "52-letni pacjent z opornym NT ma stężenie aldosteronu (PAC) = 28 ng/dl, reninę (DRC) < 2 mIU/l (stłumioną) oraz spontaniczną hipokaliemię 2,9 mmol/l bez leków moczopędnych. Czy pacjent ten wymaga przeprowadzenia testu obciążenia solą fizjologiczną w celu konfirmacji PA?",
       "options": [
-        "W TK często uwidacznia się nieczynny gruczolak (incydentaloma), podczas gdy właściwy mikrogruczolak leży w drugim nadnerczu",
-        "TK nie potrafi odróżnić nadnercza od wątroby",
-        "Promieniowanie rentgenowskie niszczy receptory aldosteronowe"
-      ],
-      "optionFeedback": [
-        "TK nie ocenia czynności hormonalnej; może dojść do wycięcia zdrowego narządu i pozostawienia źródła choroby.",
-        "Rozdzielczość nowoczesnej tomografii bez problemu identyfikuje narządy zaotrzewnowe.",
-        "Promieniowanie diagnostyczne nie wpływa na biochemię receptorową w tkankach."
+        "Nie, wg wytycznych ES 2025 przy spontanicznej hipokaliemii, stłumionej reninie i PAC >= 20 ng/dl testy konfirmacyjne są zbędne, a PA jest potwierdzony",
+        "Tak, u każdego chorego bez wyjątku przed operacją konieczny jest test obciążenia solą",
+        "Nie, ponieważ stężenie aldosteronu 28 ng/dl wyklucza pierwotny hiperaldosteronizm"
       ],
       "answer": 0,
-      "explanation": "TK nie ocenia czynności hormonalnej; może dojść do wycięcia zdrowego narządu i pozostawienia źródła choroby.",
-      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
-      "difficulty": "student",
-      "reasoning": "mechanism",
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-confirmatory-exemption",
+            "label": "Zasada pominięcia testów konfirmacyjnych przy spontanicznej hipokaliemii i PAC >= 20 ng/dl",
+            "acceptedPhrases": [
+              "wyjątek konfirmacyjny",
+              "spontaniczna hipokaliemia",
+              "PAC >= 20",
+              "testy zbędne",
+              "ES 2025"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-force-saline-load",
+            "patterns": [
+              "test obciążenia solą jest obowiązkowy",
+              "wymaga konfirmacji solą"
+            ],
+            "severity": "critical",
+            "feedback": "Wykonywanie testu obciążenia 2 litrami soli u pacjenta z ciężkim opornym NT stwarza zbędne ryzyko przełomu nadciśnieniowego i obrzęku płuc."
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Kombinacja spontanicznej hipokaliemii, stłumionej reniny i PAC >= 20 ng/dl ma 100% swoistość dla PA. Wykonywanie testu solnego jest zbędne i niebezpieczne.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
       "sourceIds": [
-        "endo_pa",
-        "pte_nadnercza"
+        "endo_pa"
+      ],
+      "claimIds": [
+        "claim-adn-pa-confirmatory-exemption"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Kombinacja spontanicznej hipokaliemii, stłumionej reniny i PAC >= 20 ng/dl ma 100% swoistość dla PA. Wykonywanie testu solnego jest zbędne i niebezpieczne.",
+        "Nieprawidłowo: Tak, u każdego chorego bez wyjątku przed operacją konieczny jest test obciążenia... Kombinacja spontanicznej hipokaliemii, stłumionej reniny i PAC >= 20 ng/dl ma 100% swoistość dla PA. Wykonywanie testu solnego jest zbędne i niebezpieczne.",
+        "Nieprawidłowo: Nie, ponieważ stężenie aldosteronu 28 ng/dl wyklucza pierwotny hiperaldosteroniz... Kombinacja spontanicznej hipokaliemii, stłumionej reniny i PAC >= 20 ng/dl ma 100% swoistość dla PA. Wykonywanie testu solnego jest zbędne i niebezpieczne."
       ]
     },
     {
       "id": "zespol-conna-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "lab",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "zespol-conna-obj-1"
+        "conna-obj-1"
       ],
-      "prompt": "Jaka procedura jest uznawana za złoty standard w różnicowaniu jednostronnego gruczolaka (APA) od obustronnego przerostu nadnerczy (BAH)?",
+      "prompt": "Pacjent z nadciśnieniem przyjmuje bisoprolol 5 mg/d. Wykonano screening ARR: aldosteron = 14 ng/dl, renina (PRA) = 0,2 ng/ml/h, co daje wyliczony ARR = 70 (norma < 20–30). Jak należy zinterpretować ten wynik?",
       "options": [
-        "Obustronne cewnikowanie żył nadnerczowych (Adrenal Vein Sampling — AVS)",
-        "Biopsja aspiracyjna cienkoigłowa nadnerczy (BACC)",
-        "Scyntygrafia kości całego ciała"
-      ],
-      "optionFeedback": [
-        "Pozwala na bezpośrednie porównanie gradientu stężeń aldosteronu po obu stronach.",
-        "Biopsja jest przeciwwskazana w guzach nadnerczy ze względu na ryzyko powikłań i brak różnicowania histologycznego.",
-        "Scyntygrafia kośćca służy do oceny przerzutów kostnych, a nie hiperaldosteronizmu."
+        "Wynik może być fałszywie dodatni, ponieważ beta-adrenolityki bezpośrednio tłumią wydzielanie reniny; badanie należy powtórzyć po odstawieniu beta-blokera na 2 tygodnie",
+        "Wynik jest w 100% pewny i definitywnie potwierdza gruczolaka Conna",
+        "Wynik jest fałszywie ujemny, ponieważ beta-bloker stymuluje aldosteron"
       ],
       "answer": 0,
-      "explanation": "Pozwala na bezpośrednie porównanie gradientu stężeń aldosteronu po obu stronach.",
-      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "explanation": "Beta-adrenolityki hamują układ współczulny i wydzielanie reniny z plamki gęstej, powodując skrajnie niską reninę w mianowniku i fałszywie wysoki ARR.",
       "difficulty": "doctor",
       "reasoning": "interpretation",
       "sourceIds": [
-        "endo_pa",
-        "pte_nadnercza"
+        "endo_pa"
+      ],
+      "claimIds": [
+        "claim-adn-pa-arr-medications"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Beta-adrenolityki hamują układ współczulny i wydzielanie reniny z plamki gęstej, powodując skrajnie niską reninę w mianowniku i fałszywie wysoki ARR.",
+        "Nieprawidłowo: Wynik jest w 100% pewny i definitywnie potwierdza gruczolaka Conna... Beta-adrenolityki hamują układ współczulny i wydzielanie reniny z plamki gęstej, powodując skrajnie niską reninę w mianowniku i fałszywie wysoki ARR.",
+        "Nieprawidłowo: Wynik jest fałszywie ujemny, ponieważ beta-bloker stymuluje aldosteron... Beta-adrenolityki hamują układ współczulny i wydzielanie reniny z plamki gęstej, powodując skrajnie niską reninę w mianowniku i fałszywie wysoki ARR."
       ]
     }
   ],
   "teachBack": {
     "id": "zespol-conna-teach-back-v2",
     "type": "recall",
+    "assessmentLevel": "generation",
     "objectiveIds": [
-      "zespol-conna-obj-1",
-      "zespol-conna-obj-2"
+      "conna-obj-1",
+      "conna-obj-2"
     ],
-    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Złodziej potasu i sprawca nadciśnienia”.",
-    "modelAnswer": "Pierwotny hiperaldosteronizm to częsta przyczyna nadciśnienia tętniczego, w większości przypadków z prawidłowym potasem. Po podwyższonym wskaźniku ARR i teście z solą, cewnikowanie AVS decyduje o kwalifikacji do wyleczenia operacyjnego (adrenalektomia w APA) vs przewlekłej farmakoterapii spironolaktonem (w BAH).",
-    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "prompt": "Podsumuj algorytm postępowania w pierwotnym hiperaldosteronizmie: od przygotowania do screeningu, przez konfirmację, aż po kwalifikację do AVS i leczenia.",
+    "modelAnswer": "Screening: ARR po odstawieniu MRA na 4-6 tyg., beta-blokerów na 2 tyg. i wyrównaniu K+. Konfirmacja: test solny, chyba że spontaniczna hipokaliemia + PAC >= 20 ng/dl + stłumiona renina (wtedy od razu PA). Kwalifikacja do operacji: AVS u osób >35 r.ż. celem oceny lateralizacji. Gruczolak jednostronny -> adrenalektomia; obustronny rozrost -> MRA (spironolakton/eplerenon).",
+    "explanation": "Kompletny algorytm ES 2025 łączy przygotowanie farmakologiczne z precyzyjną kwalifikacją do leczenia zabiegowego vs farmakologicznego.",
     "difficulty": "both",
-    "reasoning": "mechanism",
+    "reasoning": "decision",
     "sourceIds": [
-      "endo_pa",
-      "pte_nadnercza"
+      "endo_pa"
     ]
   },
   "exitTicket": [
     {
       "id": "zespol-conna-q4-exit-v2",
       "type": "missing_information",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "zespol-conna-obj-2"
+        "conna-obj-2"
       ],
-      "prompt": "Jaki lek stanowi podstawę farmakoterapii u chorego z obustronnym przerostem nadnerczy (BAH)?",
+      "prompt": "Dlaczego tomografia komputerowa nadnerczy ma ograniczoną wartość (błąd do 40%) w decydowaniu o jednostronnej adrenalektomii u pacjentów powyżej 35 roku życia?",
       "options": [
-        "Antagonista receptora mineralokortykoidowego (spironolakton lub eplerenon)",
-        "Syntetyczny hormon wzrostu (hGH)",
-        "Duże dawki lewotyroksyny (LT4)"
+        "Ponieważ u osób starszych często współistnieją nieczynne incydentaloma w jednym nadnerczu, podczas gdy aldosteron produkowany jest przez mikrogruczolak w drugim lub obustronnie",
+        "Ponieważ TK nie pozwala odróżnić nadnercza od trzustki",
+        "Ponieważ promieniowanie jonizujące niszczy receptory mineralokortykoidowe"
       ],
       "optionFeedback": [
-        "Blokuje obwodowe działanie nadmiaru aldosteronu w nerkach i naczyniach krwionośnych.",
-        "Hormon wzrostu nie ma zastosowania w leczeniu nadciśnienia w zespole Conna.",
-        "Lewotyroksyna to hormon tarczycy i nie leczy hiperaldosteronizmu."
+        "Nieczynne gruczolaki (incydentaloma) występują u nawet 10% populacji starszej, wprowadzając w błąd chirurgów.",
+        "TK doskonale obrazuje anatomię przestrzeni zaotrzewnowej.",
+        "Promieniowanie TK nie wpływa na biochemię receptorów."
       ],
       "answer": 0,
-      "explanation": "Blokuje obwodowe działanie nadmiaru aldosteronu w nerkach i naczyniach krwionośnych.",
-      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
-      "difficulty": "both",
+      "explanation": "Koincydencja nieczynnego incydentaloma z obustronnym rozrostem lub mikrogruczolakiem w drugim gruczole sprawia, że TK bez AVS prowadzi do usunięcia niewłaściwego nadnercza u nawet 40% chorych.",
+      "difficulty": "doctor",
       "reasoning": "decision",
       "sourceIds": [
-        "endo_pa",
-        "pte_nadnercza"
-      ]
+        "endo_pa"
+      ],
+      "claimIds": [
+        "claim-adn-pa-ct-not-lateralization"
+      ],
+      "transfer": true
     },
     {
       "id": "zespol-conna-q5-exit-v2",
-      "type": "missing_information",
+      "type": "single_choice",
+      "assessmentLevel": "recognition",
       "objectiveIds": [
-        "zespol-conna-obj-1"
+        "conna-obj-1"
       ],
-      "prompt": "Czym charakteryzuje się wskaźnik ARR u pacjenta z pierwotnym hiperaldosteronizmem?",
+      "prompt": "U których chorych z nadciśnieniem tętniczym wytyczne Endocrine Society 2025 zalecają obligatoryjny screening w kierunku pierwotnego hiperaldosteronizmu?",
       "options": [
-        "Podwyższonym stężeniem aldosteronu przy jednoczesnym stłumieniu reniny (wysoki iloraz ARR)",
-        "Bardzo wysokim stężeniem reniny i zerowym aldosteronem",
-        "Całkowitym brakiem obu hormonów we krwi"
+        "U pacjentów z opornym nadciśnieniem, hipokaliemią (również potiazydową), incydentaloma nadnercza lub udarem mózgu w młodym wieku (< 40 lat) w rodzinie",
+        "Wyłącznie u kobiet w ciąży z cukrzycą ciążową",
+        "U każdego chorego z prawidłowym ciśnieniem tętniczym"
       ],
       "optionFeedback": [
-        "Autonomiczny nadmiar aldosteronu hamuje wydzielanie reniny drogą ujemnego sprzężenia zwrotnego.",
-        "Taki profil cechuje chorobę Addisona, a nie pierwotny hiperaldosteronizm.",
-        "W PA aldosteron jest produkowany w nadmiarze."
+        "To kluczowe populacje docelowe wg wytycznych ES 2025 o wysokiej prewalencji PA (nawet 20% w opornym NT).",
+        "Ciąża nie jest głównym wskazaniem do screeningu PA.",
+        "U osób normotensyjnych nie wykonuje się rutynowego screeningu PA."
       ],
       "answer": 0,
-      "explanation": "Autonomiczny nadmiar aldosteronu hamuje wydzielanie reniny drogą ujemnego sprzężenia zwrotnego.",
-      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
-      "difficulty": "both",
-      "reasoning": "safety",
+      "explanation": "Wytyczne ES 2025 zalecają szeroki screening PA w opornym NT, hipokaliemii samoistnej lub indukowanej lekami, incydentaloma oraz przy rodzinnym wywiadzie wczesnych incydentów sercowo-naczyniowych.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
       "sourceIds": [
-        "endo_pa",
-        "pte_nadnercza"
+        "endo_pa"
+      ],
+      "claimIds": [
+        "claim-adn-pa-screening-2025"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "zespol-conna-bank-1-v2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "conna-obj-2",
+        "conna-obj-3"
+      ],
+      "claimIds": [
+        "claim-adn-pa-confirmatory-exemption",
+        "claim-adn-pa-ct-not-lateralization",
+        "claim-adn-avs-age-criteria"
+      ],
+      "prompt": "47-letni mężczyzna z opornym nadciśnieniem tętniczym leczonym 4 lekami ma spontaniczne stężenie potasu 2,8 mmol/l, PAC = 34 ng/dl oraz stłumioną reninę (DRC = 1,2 mIU/l). W tomografii komputerowej stwierdzono guz lewego nadnercza o średnicy 15 mm o łagodnych cechach (6 HU) oraz prawidłowe prawe nadnercze. Chirurg proponuje natychmiastową lewostronną adrenalektomię bez dalszych badań. Czy zgadzasz się z tą propozycją? Uzasadnij odpowiedź w oparciu o wytyczne ES 2025.",
+      "modelAnswer": "Nie zgadzam się z propozycją natychmiastowej operacji bez AVS. Choć pacjent spełnia kryteria pewnego rozpoznania PA bez konieczności testów konfirmacyjnych (spontaniczna hipokaliemia 2,8 mmol/l, stłumiona renina i PAC 34 >= 20 ng/dl wg wytycznych ES 2025), to z uwagi na wiek pacjenta (47 lat, czyli > 35 lat) obraz TK NIE rozstrzyga o lateralizacji wydzielania aldosteronu. W wieku > 35 lat istnieje wysokie prawdopodobieństwo (nawet 30–40%), że guz 15 mm jest nieczynnym incydentaloma, podczas gdy aldosteron jest wydzielany obustronnie (rozrost plamisty) lub przez mikrogruczolak w prawym nadnerczu. Standardem przedoperacyjnym u tego chorego jest cewnikowanie żył nadnerczowych (AVS). Dopiero potwierdzenie lateralizacji w AVS uzasadnia lewostronną adrenalektomię; brak lateralizacji kwalifikuje pacjenta do farmakoterapii antagonistą receptora mineralokortykoidowego (spironolakton/eplerenon).",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "conna-bank-1-dim-dx",
+            "label": "Wymiar diagnostyczny i patofizjologiczny",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-confirm-pa-without-tests",
+                "label": "Uznanie PA za potwierdzone bez testów konfirmacyjnych (PAC 34, K+ 2,8)",
+                "acceptedPhrases": [
+                  "wyjątek konfirmacyjny",
+                  "PA potwierdzone",
+                  "PAC >= 20",
+                  "spontaniczna hipokaliemia"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "conna-bank-1-dim-tx",
+            "label": "Wymiar decyzyjny i bezpieczeństwo kliniczne",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-require-avs-due-to-age",
+                "label": "Wymóg wykonania AVS przed operacją z powodu wieku > 35 lat i zawodności TK",
+                "acceptedPhrases": [
+                  "AVS konieczne",
+                  "wiek > 35 lat",
+                  "TK zawodne",
+                  "nieczynne incydentaloma",
+                  "ryzyko błędu TK"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-agree-to-immediate-surgery",
+            "patterns": [
+              "zgadzam się z chirurgiem",
+              "operować od razu bez AVS"
+            ],
+            "severity": "critical",
+            "feedback": "Operacja na podstawie samego TK u 47-latka grozi niepotrzebnym usunięciem nadnercza u chorego z obustronnym rozrostem."
+          }
+        ]
+      },
+      "explanation": "U pacjentów > 35 lat TK często uwidacznia nieme gruczolaki. Kwalifikacja do adrenalektomii wymaga bezwzględnego potwierdzenia lateralizacji w AVS.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "endo_pa"
+      ],
+      "transfer": true,
+      "caseSnapshot": {
+        "patientAge": 47,
+        "systolicBp": 175,
+        "diastolicBp": 110,
+        "serumPotassiumMmolL": 2.8,
+        "aldosteroneNgDl": 34,
+        "reninDrcMIuL": 1.2,
+        "ctFindings": "guz lewego nadnercza 15 mm, 6 HU"
+      },
+      "engineBinding": {
+        "engine": "adrenal-workbench",
+        "presetId": "adrenal-pa-arr-interference"
+      }
+    },
+    {
+      "id": "zespol-conna-bank-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "conna-obj-1"
+      ],
+      "claimIds": [
+        "claim-adn-pa-arr-medications"
+      ],
+      "prompt": "Dlaczego u pacjenta przygotowywanego do diagnostyki przesiewowej pierwotnego hiperaldosteronizmu (ARR) należy bezwzględnie wyrównać hipokaliemię przed pobraniem krwi?",
+      "options": [
+        "Hipokaliemia bezpośrednio hamuje biosyntezę i wydzielanie aldosteronu w komórkach strefy kłębuszkowej, co może sztucznie zaniżyć stężenie aldosteronu i dać fałszywie ujemny wynik ARR",
+        "Hipokaliemia niszczy cząsteczki reniny w probówce laboratoryjnej",
+        "Hipokaliemia uniemożliwia odwirowanie osocza"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-hypokalemia-suppresses-aldo",
+            "label": "Hamowanie wydzielania aldosteronu przez hipokaliemię",
+            "acceptedPhrases": [
+              "hamuje aldosteron",
+              "fałszywie ujemny",
+              "strefa kłębuszkowa",
+              "potas stymuluje aldosteron"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Fizjologicznie potas jest silnym stymulatorem wydzielania aldosteronu. Przy hipokaliemii produkcja aldosteronu spada, co może zafałszować screening ARR.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "endo_pa"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Fizjologicznie potas jest silnym stymulatorem wydzielania aldosteronu. Przy hipokaliemii produkcja aldosteronu spada, co może zafałszować screening ARR.",
+        "Nieprawidłowo: Hipokaliemia niszczy cząsteczki reniny w probówce laboratoryjnej... Fizjologicznie potas jest silnym stymulatorem wydzielania aldosteronu. Przy hipokaliemii produkcja aldosteronu spada, co może zafałszować screening ARR.",
+        "Nieprawidłowo: Hipokaliemia uniemożliwia odwirowanie osocza... Fizjologicznie potas jest silnym stymulatorem wydzielania aldosteronu. Przy hipokaliemii produkcja aldosteronu spada, co może zafałszować screening ARR."
       ]
     }
   ],
   "widgetIds": [
-    "adrenal-workbench"
+    "adrenal-workbench",
+    "lab-workbench"
   ],
   "widgetConfig": {
     "adrenal-workbench": {
@@ -221,6 +389,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+    "scope": "Pełna modernizacja V2: wytyczne ES 2025, wyjątek konfirmacyjny PAC >=20, interferencje lekowe, AVS vs TK."
   }
 }

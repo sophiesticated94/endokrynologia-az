@@ -43,6 +43,9 @@
     "sourceIds": [
       "endo_hypercalcemia",
       "asbmr_calcium"
+    ],
+    "claimIds": [
+      "claim-pt-severe-hypercalcemia-saline-first"
     ]
   },
   "blocks": [
@@ -151,7 +154,8 @@
     "sourceIds": [
       "endo_hypercalcemia",
       "asbmr_calcium"
-    ]
+    ],
+    "assessmentLevel": "generation"
   },
   "exitTicket": [
     {
@@ -179,7 +183,9 @@
       "sourceIds": [
         "endo_hypercalcemia",
         "asbmr_calcium"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     },
     {
       "id": "hiperkalcemia-nowotwory-q5-exit-v2",
@@ -206,7 +212,9 @@
       "sourceIds": [
         "endo_hypercalcemia",
         "asbmr_calcium"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     }
   ],
   "widgetIds": [
@@ -217,5 +225,142 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "hiperkalcemia-nowotwory-bank-1",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "hiperkalcemia-nowotwory-obj-1",
+        "hiperkalcemia-nowotwory-obj-2",
+        "hiperkalcemia-nowotwory-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-severe-hypercalcemia-saline-first"
+      ],
+      "prompt": "Porównaj 3 główne patomechanizmy hiperkalcemii w chorobach nowotworowych: 1) humoralną hiperkalcemię nowotworową (HHM za pośrednictwem PTHrP); 2) miejscową osteolizę nowotworową; 3) ektopową produkcję 1,25(OH)2D przez chłoniaki. Dla każdego mechanizmu podaj typowy profil laboratoryjny (stężenie iPTH, fosforanów, ALP, PTHrP, kalcytriolu) oraz wskaż lek celowany (bisfosfoniany/denosumab vs glikokortykosteroidy).",
+      "modelAnswer": "Wszystkie postacie hiperkalcemii nowotworowej cechuje stłumienie endogennego intact PTH (<10 pg/ml). 1) Humoralna hiperkalcemia nowotworowa (HHM, ok. 80% przypadków: rak płaskonabłonkowy płuca, głowy/szyi, nerki): wydzielanie PTHrP aktywuje receptor PTH1R, dając hiperkalcemię, hipofosfatemię (fosfaturia), wysoki PTHrP, prawidłowy/niski kalcytriol; leczeniem z wyboru jest kwas zoledronowy lub denosumab. 2) Miejscowa osteoliza nowotworowa (ok. 20%: szpiczak mnogi, rak piersi z przerzutami do kości): komórki nowotworowe wydzielają cytokiny (IL-6, RANKL, MIP-1a) niszczące kość; fosforany są prawidłowe lub podwyższone (masywna osteoliza bez nerkowej fosfaturii), PTHrP prawidłowy, ALP w szpiczaku prawidłowy (brak odczynu osteoblastycznego); leczenie: bisfosfoniany i.v., denosumab oraz chemio-/immunoterapia. 3) Produkcja 1,25(OH)2D (ok. 1%: chłoniaki Hodgkina i nie-Hodgkina): makrofagi nowotworowe wykazują ektopową nadekspresję enzymu CYP27B1; kalcytriol jest podwyższony przy stłumionym PTH i prawidłowym PTHrP, a fosforany są prawidłowe/podwyższone (jelitowy wychwyt); lekiem celowanym pierwszego wyboru są glikokortykosteroidy (np. prednizon 20–40 mg/d), które bezpośrednio hamują transkrypcję i aktywność CYP27B1 w makrofagach.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "hiperkalcemia-nowotwory-bank-1-dim-hhm",
+            "label": "Humoralna hiperkalcemia (PTHrP, hipofosfatemia, stłumiony PTH)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-hhm-pthrp-profile",
+                "label": "Sekrecja PTHrP, aktywacja PTH1R, hipofosfatemia i stłumiony PTH",
+                "acceptedPhrases": [
+                  "PTHrP",
+                  "humoralna hiperkalcemia",
+                  "rak płaskonabłonkowy",
+                  "hipofosfatemia",
+                  "stłumiony PTH"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "hiperkalcemia-nowotwory-bank-1-dim-osteolysis",
+            "label": "Miejscowa osteoliza (szpiczak, przerzuty, prawidłowe/wysokie Pi)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-local-osteolysis-myeloma",
+                "label": "Szpiczak, cytokiny osteolityczne, brak fosfaturii, ALP w normie",
+                "acceptedPhrases": [
+                  "miejscowa osteoliza",
+                  "szpiczak mnogi",
+                  "RANKL",
+                  "prawidłowe lub wysokie fosforany",
+                  "ALP w normie"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "hiperkalcemia-nowotwory-bank-1-dim-lymphoma-steroids",
+            "label": "Wytwarzanie 1,25(OH)2D w chłoniakach i celowana rola sterydów",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-lymphoma-calcitriol-steroids",
+                "label": "CYP27B1 w chłoniakach, wysoki kalcytriol, sterydy hamujące enzym",
+                "acceptedPhrases": [
+                  "chłoniak",
+                  "CYP27B1",
+                  "1,25(OH)2D",
+                  "kalcytriol",
+                  "glikokortykosteroidy",
+                  "prednizon"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-hcm-high-pth-confusion",
+            "patterns": [
+              "PTH jest podwyższony w hiperkalcemii nowotworowej"
+            ],
+            "severity": "critical",
+            "feedback": "W hiperkalcemii nowotworowej endogenny intact PTH jest zawsze stłumiony (<10 pg/ml); podwyższony PTH wskazuje na współistniejące PHPT."
+          }
+        ]
+      },
+      "explanation": "Hiperkalcemia nowotworowa cechuje się stłumionym PTH i dzieli się na HHM (PTHrP), osteolizę miejscową (szpiczak/przerzuty) oraz zależną od kalcytriolu (chłoniaki, reagujące na sterydy).",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "endo_hypercalcemia",
+        "ese_phpt"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "hiperkalcemia-nowotwory-bank-2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "hiperkalcemia-nowotwory-obj-1",
+        "hiperkalcemia-nowotwory-obj-2",
+        "hiperkalcemia-nowotwory-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-severe-hypercalcemia-saline-first"
+      ],
+      "prompt": "Dlaczego u chorego z hiperkalcemią w przebiegu szpiczaka mnogiego aktywność fosfatazy alkalicznej (ALP) w surowicy jest z reguły prawidłowa, w odróżnieniu od przerzutów osteoblastycznych raka prostaty lub ciężkiego PHPT?",
+      "options": [
+        "Komórki szpiczaka wydzielają czynniki (np. DKK-1, sFRP-2) silnie hamujące różnicowanie osteoblastów, co skutkuje czysto osteolitycznym uszkodzeniem kości bez towarzyszącej aktywności kościotwórczej odzwierciedlanej przez ALP.",
+        "Ponieważ fosfataza alkaliczna jest niszczona w krążeniu przez przeciwciała monoklonalne IgG.",
+        "Jest to wynik całkowitej niewydolności enzymatycznej wątroby w przebiegu amyloidozy."
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-myeloma-dkk1-osteoblast-suppression",
+            "label": "Hamowanie osteoblastów przez DKK-1 wyjaśnia prawidłowe stężenie ALP w szpiczaku",
+            "acceptedPhrases": [
+              "zahamowanie osteoblastów",
+              "DKK-1",
+              "czysta osteoliza",
+              "brak komponentu kościotwórczego",
+              "prawidłowe ALP"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Szpiczak mnogi wywołuje osteolizę przy jednoczesnej głębokiej supresji osteoblastów (mediowanej przez DKK-1), dlatego frakcja kostna ALP nie wzrasta, a ogniska są 'czysto lityczne'.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "endo_hypercalcemia"
+      ],
+      "transfer": true
+    }
+  ]
 }

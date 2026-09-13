@@ -19,6 +19,8 @@ const REPO_ROOT = process.cwd();
 export const CANONICAL_MIGRATED_MODULES = [
   'tarczyca',
   'przysadka',
+  'nadnercza',
+  'przytarczyce',
   'psych-afektywne',
   'psych-farmakologia',
   'psych-organiczne',

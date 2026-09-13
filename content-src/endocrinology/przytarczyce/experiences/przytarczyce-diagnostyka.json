@@ -44,6 +44,9 @@
       "ese_phpt",
       "fhh_consensus",
       "asbmr_calcium"
+    ],
+    "claimIds": [
+      "claim-pt-payne-formula"
     ]
   },
   "blocks": [
@@ -158,7 +161,8 @@
       "ese_phpt",
       "fhh_consensus",
       "asbmr_calcium"
-    ]
+    ],
+    "assessmentLevel": "generation"
   },
   "exitTicket": [
     {
@@ -187,7 +191,9 @@
         "ese_phpt",
         "fhh_consensus",
         "asbmr_calcium"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     },
     {
       "id": "przytarczyce-diagnostyka-q5-exit-v2",
@@ -215,7 +221,9 @@
         "ese_phpt",
         "fhh_consensus",
         "asbmr_calcium"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     }
   ],
   "widgetIds": [
@@ -225,5 +233,145 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "przytarczyce-diagnostyka-bank-1",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "przytarczyce-diagnostyka-obj-1",
+        "przytarczyce-diagnostyka-obj-2",
+        "przytarczyce-diagnostyka-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-payne-formula",
+        "claim-pt-cccr-overlap-zone"
+      ],
+      "prompt": "Przedstaw algorytm diagnostyczny u 48-letniej kobiety, u której w badaniach okresowych stwierdzono wapń całkowity 2,72 mmol/l (skorygowany 2,75 mmol/l), fosforany 0,74 mmol/l oraz stężenie iPTH 82 pg/ml (norma 15–65 pg/ml). Wyjaśnij: 1) dlaczego stężenie PTH 'w normie' lub umiarkowanie podwyższone przy hiperkalcemii jest zjawiskiem patologicznym (brak fizjologicznego stłumienia); 2) jakie badania biochemiczne należy wykonać w kolejnym kroku, ze szczególnym uwzględnieniem wskaźnika CCCR; 3) jakie są pułapki interpretacyjne w tzw. strefie nakładania (overlap zone: 0,010–0,020).",
+      "modelAnswer": "W warunkach prawidłowej homeostazy hiperkalcemia zjonizowana powinna całkowicie stłumić wydzielanie PTH (zwykle < 10–15 pg/ml) poprzez pobudzenie receptora CaSR. Wartość iPTH 82 pg/ml (lub nawet 'prawidłowe' 45 pg/ml) przy hiperkalcemii świadczy o braku hamowania zwrotnego i dowodzi procesu PTH-zależnego (hiperparatyreozy). Kolejnym kluczowym krokiem jest różnicowanie między pierwotną nadczynnością przytarczyc (PHPT) a rodzinną hiperkalcemią hipokalciuryczną (FHH). W tym celu należy oznaczyć stężenie 25(OH)D, kreatyniny w surowicy oraz wykonać 24-godzinną zbiórkę moczu na wapń i kreatyninę w celu wyliczenia wskaźnika klirensu wapniowo-kreatyninowego: CCCR = (U_Ca * S_Cr) / (S_Ca * U_Cr). Wskaźnik CCCR < 0,010 silnie sugeruje FHH, a > 0,020 PHPT. Przedział 0,010–0,020 to strefa nakładania (overlap zone), w której znajduje się ok. 20% chorych z FHH i ok. 10% chorych z PHPT; w tej sytuacji niezbędne jest wyrównanie ewentualnego niedoboru witaminy D i badanie genetyczne genu CASR przed podjęciem decyzji o operacji.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "przytarczyce-diagnostyka-bank-1-dim-unsuppressed-pth",
+            "label": "Koncepcja braku fizjologicznego stłumienia PTH w hiperkalcemii",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-inappropriate-pth",
+                "label": "Niestłumiony parathormon jako dowód hiperparatyreozy",
+                "acceptedPhrases": [
+                  "brak stłumienia",
+                  "niestłumiony PTH",
+                  "nieadekwatnie wysoki",
+                  "PTH-zależna hiperkalcemia",
+                  "patologiczny brak supresji"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "przytarczyce-diagnostyka-bank-1-dim-cccr",
+            "label": "Kalkulacja i progi decyzyjne wskaźnika CCCR",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-cccr-calculation-thresholds",
+                "label": "CCCR: progi <0,010 (FHH) vs >0,020 (PHPT)",
+                "acceptedPhrases": [
+                  "CCCR",
+                  "klirens wapniowo-kreatyninowy",
+                  "0,010",
+                  "0,020",
+                  "dobowa zbiórka moczu",
+                  "frakcyjne wydalanie wapnia"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "przytarczyce-diagnostyka-bank-1-dim-overlap",
+            "label": "Postępowanie w strefie nakładania (0,010–0,020)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-overlap-zone-handling",
+                "label": "Strefa nakładania, rola witaminy D i test genetyczny CASR",
+                "acceptedPhrases": [
+                  "strefa nakładania",
+                  "overlap zone",
+                  "niedobór witaminy D",
+                  "badanie genetyczne CASR",
+                  "wstrzymanie operacji"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-phpt-surgery-without-cccr",
+            "patterns": [
+              "od razu skierować na operację",
+              "wykonać scyntygrafię MIBI bez badania moczu"
+            ],
+            "severity": "critical",
+            "feedback": "Kwalifikacja do operacji przytarczyc bez uprzedniego wykluczenia FHH wskaźnikiem CCCR grozi nieskuteczną i niepotrzebną paratyroidektomią."
+          }
+        ]
+      },
+      "explanation": "Rozpoznanie PHPT wymaga wykazania niestłumionego PTH oraz wykluczenia FHH za pomocą wskaźnika CCCR z dobowej zbiórki moczu.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "ese_phpt",
+        "fhh_consensus"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "przytarczyce-diagnostyka-bank-2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przytarczyce-diagnostyka-obj-1",
+        "przytarczyce-diagnostyka-obj-2",
+        "przytarczyce-diagnostyka-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-payne-formula",
+        "claim-pt-cccr-overlap-zone"
+      ],
+      "prompt": "Dlaczego scyntygrafia przytarczyc 99mTc-MIBI lub USG szyi NIE powinny być wykonywane w celu 'potwierdzenia rozpoznania' pierwotnej nadczynności przytarczyc, lecz dopiero po ustaleniu rozpoznania biochemicznego?",
+      "options": [
+        "Rozpoznanie PHPT jest wyłącznie biochemiczne (hiperkalcemia + niestłumiony PTH + wykluczenie FHH); badania obrazowe służą wyłącznie lokalizacji powiększonego gruczołu przed planowaną celowaną operacją, a ich fałszywie dodatnie wyniki (np. guzek tarczycy) mogą prowadzić do błędnych operacji u osób z FHH.",
+        "Badania obrazowe nie wykazują gruczolaków o wymiarach poniżej 5 cm.",
+        "Scyntygrafia MIBI trwale niszczy komórki przytarczyc, uniemożliwiając ocenę histopatologiczną."
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-imaging-localization-only",
+            "label": "Obrazowanie służy wyłącznie lokalizacji przedoperacyjnej, nie rozpoznaniu",
+            "acceptedPhrases": [
+              "rozpoznanie biochemiczne",
+              "lokalizacja przedoperacyjna",
+              "nie służy do potwierdzenia",
+              "błąd u chorych z FHH",
+              "fałszywie dodatnie"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Zgodnie z wytycznymi 5th International Workshop 2022 badania obrazowe mają na celu lokalizację przedoperacyjną u chorego już zakwalifikowanego do zabiegu, a nie ustalanie rozpoznania.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "ese_phpt"
+      ],
+      "transfer": true
+    }
+  ]
 }

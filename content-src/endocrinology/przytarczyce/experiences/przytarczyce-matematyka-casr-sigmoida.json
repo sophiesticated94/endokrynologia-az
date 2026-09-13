@@ -39,6 +39,9 @@
       "casr_hill",
       "fhh_consensus",
       "qtc_bone"
+    ],
+    "claimIds": [
+      "claim-pt-cinacalcet-mechanism"
     ]
   },
   "blocks": [
@@ -152,7 +155,8 @@
       "casr_hill",
       "fhh_consensus",
       "qtc_bone"
-    ]
+    ],
+    "assessmentLevel": "generation"
   },
   "exitTicket": [
     {
@@ -181,7 +185,9 @@
         "casr_hill",
         "fhh_consensus",
         "qtc_bone"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     },
     {
       "id": "przytarczyce-matematyka-casr-sigmoida-q5-exit-v2",
@@ -209,7 +215,9 @@
         "casr_hill",
         "fhh_consensus",
         "qtc_bone"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     }
   ],
   "widgetIds": [
@@ -220,5 +228,122 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "przytarczyce-matematyka-casr-sigmoida-bank-1",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "przytarczyce-matematyka-casr-sigmoida-obj-1",
+        "przytarczyce-matematyka-casr-sigmoida-obj-2"
+      ],
+      "claimIds": [
+        "claim-pt-cinacalcet-mechanism"
+      ],
+      "prompt": "Przeanalizuj zachowanie sigmoidalnej krzywej stężenie Ca2+ – wydzielanie PTH u dwóch chorych: Pacjenta A z mutacją inaktywującą receptora CaSR (rodzinna hiperkalcemia hipokalciuryczna, FHH) oraz Pacjenta B z wtórną nadczynnością przytarczyc leczonego cynakalcetem (dodatnim modulatorem allosterycznym CaSR). Wyjaśnij: 1) kierunek przesunięcia punktu nastawczego (set-point / EC50) w modelu matematycznym Hilla u obu pacjentów; 2) biofizyczne znaczenie współczynnika kooperatywności Hilla (H ~ 3,5–4,0) dla fizjologicznej kontroli kalcemii; 3) konsekwencje terapeutyczne włączania cynakalcetu u chorych z hiperkalcemią.",
+      "modelAnswer": "Zależność wydzielania PTH od stężenia Ca2+ opisuje 4-parametrowe równanie Hilla. Punkt nastawczy (set-point / EC50) to stężenie wapnia zjonizowanego, przy którym supresja PTH wynosi 50%. U Pacjenta A (FHH) mutacja inaktywująca CASR zmniejsza czułość receptora na zewnątrzkomórkowy wapń, co powoduje przesunięcie krzywej w prawo (rightward shift) i wzrost EC50 (z fizjologicznych ~1,22 mmol/l do np. 1,35 mmol/l). Przytarczyce postrzegają prawidłową kalcemię jako hipokalcemię i hamują wydzielanie PTH dopiero przy podwyższonych stężeniach Ca2+. U Pacjenta B cynakalcet jako allosteryczny modulator (PAM) wiąże się w domenie 7TM, wywołując rearanżację konformacyjną zwiększającą powinowactwo jonów Ca2+ do receptora; skutkuje to przesunięciem krzywej w lewo (leftward shift) i obniżeniem EC50, co pozwala na supresję PTH przy niższych stężeniach wapnia. Współczynnik Hilla (H ~ 3,5–4,0) odzwierciedla silną dodatnią kooperatywność wiązania wapnia przez homodimer CaSR. Dzięki temu w wąskim fizjologicznym oknie kalcemii zjonizowanej (1,15–1,30 mmol/l) krzywa ma niezwykle stromy przebieg (działanie zbliżone do przełącznika ultrasensitive), co umożliwia błyskawiczną korektę nawet minimalnych wahań kalcemii. Włączenie cynakalcetu pozwala na obniżenie PTH bez wprowadzania dodatkowego ładunku wapniowego i bez ryzyka kalcyfikacji naczyniowej.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "przytarczyce-matematyka-casr-sigmoida-bank-1-dim-shifts",
+            "label": "Przesunięcie w prawo (FHH / wzrost EC50) vs przesunięcie w lewo (cynakalcet / spadek EC50)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-curve-shifts-ec50",
+                "label": "FHH przesuwa w prawo (wzrost EC50), cynakalcet w lewo (spadek EC50)",
+                "acceptedPhrases": [
+                  "przesunięcie w prawo",
+                  "wzrost EC50",
+                  "set-point",
+                  "przesunięcie w lewo",
+                  "spadek EC50",
+                  "cynakalcet",
+                  "FHH"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "przytarczyce-matematyka-casr-sigmoida-bank-1-dim-cooperativity",
+            "label": "Współczynnik Hilla H ~ 3,5–4,0 i kooperatywność homodimeru CaSR",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-hill-cooperativity-switch",
+                "label": "Współczynnik Hilla, dodatnia kooperatywność, stromość krzywej",
+                "acceptedPhrases": [
+                  "współczynnik Hilla",
+                  "kooperatywność",
+                  "homodimer",
+                  "stromość krzywej",
+                  "wąski zakres fizjologiczny"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "przytarczyce-matematyka-casr-sigmoida-bank-1-dim-clinical-impact",
+            "label": "Konsekwencje terapeutyczne allosterycznej modulacji CaSR",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-cinacalcet-therapeutic-advantage",
+                "label": "Obniżenie PTH bez obciążenia wapniowego",
+                "acceptedPhrases": [
+                  "brak ładunku wapniowego",
+                  "supresja PTH",
+                  "ochrona naczyń",
+                  "allosteryczna modulacja"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-curve-direction-inversion",
+            "patterns": [
+              "FHH przesuwa krzywą w lewo",
+              "cynakalcet przesuwa krzywą w prawo"
+            ],
+            "severity": "critical",
+            "feedback": "Odwrócenie kierunku przesunięcia krzywej: inaktywacja receptora (FHH) zawsze przesuwa krzywą w prawo (wzrost EC50), a kalcymimetyk w lewo (spadek EC50)."
+          }
+        ]
+      },
+      "explanation": "Inaktywacja CaSR w FHH przesuwa krzywą Hilla w prawo (wyższy set-point), a cynakalcet w lewo (niższy set-point); stromy współczynnik Hilla (~3,8) zapewnia wysoką czułość regulacji.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "casr_hill",
+        "kdigo_ckd_mbd"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "przytarczyce-matematyka-casr-sigmoida-bank-2",
+      "type": "numeric",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przytarczyce-matematyka-casr-sigmoida-obj-1",
+        "przytarczyce-matematyka-casr-sigmoida-obj-2"
+      ],
+      "claimIds": [
+        "claim-pt-cinacalcet-mechanism"
+      ],
+      "prompt": "W 4-parametrowym modelu Hilla supresja wydzielania PTH opisana jest równaniem: PTH(Ca) = PTH_min + (PTH_max - PTH_min) / (1 + (Ca / EC50)^H). Punkt nastawczy (set-point / EC50) definiuje stężenie zjonizowanego wapnia, przy którym wydzielanie PTH osiąga dokładnie 50% rezerwy wydzielniczej. Jaki procent (%) zakresu dynamicznego wydzielania PTH [(PTH(Ca) - PTH_min) / (PTH_max - PTH_min) * 100%] pozostaje aktywny, gdy stężenie Ca2+ jest dokładnie równe EC50? Wpisz liczbę całkowitą (np. 50).",
+      "answer": 50,
+      "tolerance": 0,
+      "unit": "%",
+      "explanation": "Gdy Ca = EC50, wyrażenie (Ca / EC50)^H wynosi 1^H = 1. Mianownik wynosi 1 + 1 = 2. Stąd (PTH - PTH_min) / (PTH_max - PTH_min) = 1/2 = 50%.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "casr_hill"
+      ],
+      "transfer": true
+    }
+  ]
 }

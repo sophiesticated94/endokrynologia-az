@@ -173,10 +173,12 @@ test('Assessment Semantic QA: Golden Regression Tests for psych-organiczne', () 
   assert.ok(!capExp.activities[0].options[capExp.activities[0].answer].includes('Bogactwo finansowe'), 'Wealth/education must NOT be marked correct');
 });
 
-test('Assessment Semantic QA: 100% Pass Across All 6 Migrated Modules', () => {
+test('Assessment Semantic QA: 100% Pass Across All 8 Migrated Modules', () => {
   const migratedPaths = [
     'content-src/endocrinology/tarczyca',
     'content-src/endocrinology/przysadka',
+    'content-src/endocrinology/nadnercza',
+    'content-src/endocrinology/przytarczyce',
     'content-src/psychiatry/psych-afektywne',
     'content-src/psychiatry/psych-farmakologia',
     'content-src/psychiatry/psych-organiczne',

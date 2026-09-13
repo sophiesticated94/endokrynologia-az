@@ -39,6 +39,9 @@
       "qtc_bone",
       "endo_hypercalcemia",
       "pte_osteoporoza"
+    ],
+    "claimIds": [
+      "claim-pt-cyp27b1-stimulation"
     ]
   },
   "blocks": [
@@ -152,7 +155,8 @@
       "qtc_bone",
       "endo_hypercalcemia",
       "pte_osteoporoza"
-    ]
+    ],
+    "assessmentLevel": "generation"
   },
   "exitTicket": [
     {
@@ -181,7 +185,9 @@
         "qtc_bone",
         "endo_hypercalcemia",
         "pte_osteoporoza"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     },
     {
       "id": "przytarczyce-chemia-witd-bisfosfoniany-q5-exit-v2",
@@ -209,7 +215,9 @@
         "qtc_bone",
         "endo_hypercalcemia",
         "pte_osteoporoza"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     }
   ],
   "widgetIds": [
@@ -220,5 +228,147 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "przytarczyce-chemia-witd-bisfosfoniany-bank-1",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "przytarczyce-chemia-witd-bisfosfoniany-obj-1",
+        "przytarczyce-chemia-witd-bisfosfoniany-obj-2"
+      ],
+      "claimIds": [
+        "claim-pt-cyp27b1-stimulation",
+        "claim-pt-vitd-confounder-cccr"
+      ],
+      "prompt": "Przeanalizuj molekularny mechanizm działania aminobisfosfonianów (np. kwas zoledronowy, alendronian) w metabolizmie kostnym. Wyjaśnij: 1) rolę chemiczną mostka fosfor-węgiel-fosfor (P-C-P) oraz bocznych łańcuchów R1 i R2 w selektywnym powinowactwie do hydroksyapatytu kości; 2) wewnątrzkomórkowy punkt uchwytu w osteoklaście (inhibicja syntazy pirofosforanu farnezylu – FPPS w szlaku mewalonianowym) oraz konsekwencje braku prenylacji małych białek G (Rho, Rac, Rab); 3) patogenezę rzadkich powikłań długotrwałej terapii: martwicy kości szczęki (ONJ) oraz atypowych złamań kości udowej (AFF).",
+      "modelAnswer": "Mostek P-C-P (fosfor-węgiel-fosfor) stanowi izoster syntetycznego pirofosforanu odporny na enzymatyczną degradację fosfatazami alkalicznymi i kwaśnymi. Dwie grupy fosfonianowe chelatują jony Ca2+ w sieci hydroksyapatytu kości. Grupa hydroksylowa (-OH) w pozycji R1 tworzy dodatkowe wiązanie koordynacyjne (tzw. 'trójząb' wiążący wapń), a łańcuch boczny R2 zawierający atom azotu (np. pierścień imidazolowy w zoledronianie) decyduje o tysiąckrotnie wyższej sile hamowania enzymu niż u bisfosfonianów I generacji. Podczas resorpcji kości osteoklast pobiera bisfosfonian drogą endocytozy. W cytozolu lek wybiórczo hamuje syntazę pirofosforanu farnezylu (FPPS) w szlaku mewalonianowym, blokując powstawanie FPP i GGPP. Uniemożliwia to lipidową prenylację (prenylację geranylogeranylową) małych białek G (Rho, Rac, Cdc42, Rab), co powoduje załamanie cytoszkieletu aktynowego, utratę rąbka szczoteczkowego (ruffled border) i indukuje apoptozę osteoklasta. Powikłania długotrwałego leczenia: 1) Atypowe złamania kości udowej (AFF) wynikają z 'przemrożenia kości' (nadmiernej supresji obrotu kostnego) – kość traci zdolność do ciągłej naprawy mikrouszkodzeń zmęczeniowych, co w miejscu najwyższego naprężenia (boczna kora trzonu kości udowej) prowadzi do pęknięć zmęczeniowych; 2) Martwica kości szczęki (ONJ) rozwija się z powodu zahamowania obrotu kostnego i angiogenezy w kościach żuchwy/szczęki, gdzie po inwazyjnych zabiegach stomatologicznych (ekstrakcje) mikrourazy nie ulegają gojeniu i dochodzi do kolonizacji bakteryjnej.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "przytarczyce-chemia-witd-bisfosfoniany-bank-1-dim-pcp-structure",
+            "label": "Struktura mostka P-C-P i wiązanie hydroksyapatytu kości",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-pcp-bridge-hydroxyapatite",
+                "label": "Mostek P-C-P, odporność na fosfatazy, chelatacja wapnia",
+                "acceptedPhrases": [
+                  "mostek P-C-P",
+                  "fosfor-węgiel-fosfor",
+                  "hydroksyapatyt",
+                  "chelatacja wapnia",
+                  "łańcuch R1",
+                  "łańcuch R2"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "przytarczyce-chemia-witd-bisfosfoniany-bank-1-dim-fpps-prenylation",
+            "label": "Inhibicja FPPS i zaburzenie prenylacji białek G (Rho, Rac, Rab)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-fpps-prenylation-osteoclast-apoptosis",
+                "label": "Inhibicja FPPS w szlaku mewalonianu, brak prenylacji, apoptoza",
+                "acceptedPhrases": [
+                  "FPPS",
+                  "syntaza pirofosforanu farnezylu",
+                  "szlak mewalonianowy",
+                  "prenylacja",
+                  "Rho",
+                  "Rac",
+                  "Rab",
+                  "apoptoza osteoklasta"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "przytarczyce-chemia-witd-bisfosfoniany-bank-1-dim-complications-pathogenesis",
+            "label": "Patogeneza powikłań: ONJ i atypowe złamania kości udowej (AFF)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-onj-aff-pathogenesis",
+                "label": "Supresja obrotu kostnego, mikrouszkodzenia zmęczeniowe, brak gojenia",
+                "acceptedPhrases": [
+                  "ONJ",
+                  "martwica kości żuchwy",
+                  "AFF",
+                  "atypowe złamanie kości udowej",
+                  "supresja obrotu kostnego",
+                  "mikrouszkodzenia"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-simple-vs-amino-bisphosphonate-confusion",
+            "patterns": [
+              "wbudowują się do cząsteczki ATP tworząc toksyczne analogi"
+            ],
+            "severity": "critical",
+            "feedback": "Wbudowywanie do analogów ATP jest cechą prostych bisfosfonianów I generacji (etidronat, klodronat); aminobisfosfoniany hamują syntazę FPPS."
+          }
+        ]
+      },
+      "explanation": "Aminobisfosfoniany wiążą się z hydroksyapatytem przez mostek P-C-P i hamują syntazę FPPS w osteoklaście, blokując prenylację białek Rho/Rac/Rab; długotrwała supresja remodelingu grozi ONJ i AFF.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "pte_osteoporoza",
+        "asbmr_calcium"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "przytarczyce-chemia-witd-bisfosfoniany-bank-2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "przytarczyce-chemia-witd-bisfosfoniany-obj-1",
+        "przytarczyce-chemia-witd-bisfosfoniany-obj-2"
+      ],
+      "claimIds": [
+        "claim-pt-cyp27b1-stimulation",
+        "claim-pt-vitd-confounder-cccr"
+      ],
+      "prompt": "Dlaczego stężenie 25(OH)D (kalcydi种lu) w surowicy krwi jest powszechnie uznawanym markerem ustrojowych zasobów witaminy D, podczas gdy oznaczanie 1,25(OH)2D (kalcytriolu) NIE nadaje się do oceny niedoboru witaminy D w populacji ogólnej?",
+      "options": [
+        "25(OH)D ma długi okres półtrwania (2–3 tygodnie), krąży w wysokich stężeniach nanomolowych i odzwierciedla podaż substratu z wątroby; natomiast 1,25(OH)2D ma krótki okres półtrwania (4–6 godzin), a w łagodnym lub umiarkowanym niedoborze witaminy D kompensacyjny wyrzut PTH silnie stymuluje enzym CYP27B1, utrzymując kalcytriol w granicach normy lub wręcz powyżej normy.",
+        "Ponieważ enzym 25-hydroksylaza wątrobowa ulega zablokowaniu w ciągu kilku minut od ekspozycji na słońce.",
+        "1,25(OH)2D nie występuje w krwiobiegu, lecz wyłącznie wewnątrz macierzy kostnej."
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-calcidiol-vs-calcitriol-marker",
+            "label": "25(OH)D jako stabilny marker rezerw vs kalcytriol kompensowany przez PTH",
+            "acceptedPhrases": [
+              "25(OH)D",
+              "okres półtrwania",
+              "kompensacyjny wyrzut PTH",
+              "CYP27B1",
+              "kalcytriol w normie mimo niedoboru"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "W niedoborze witaminy D wtórna nadczynność przytarczyc maksymalizuje aktywność nerkowego CYP27B1, co utrzymuje prawidłowe stężenie 1,25(OH)2D kosztem wyczerpywania zapasów 25(OH)D.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "asbmr_calcium",
+        "ese_hypopara"
+      ],
+      "transfer": true
+    }
+  ]
 }

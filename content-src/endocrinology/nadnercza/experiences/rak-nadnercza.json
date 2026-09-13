@@ -3,203 +3,395 @@
   "lessonId": "rak-nadnercza",
   "objectives": [
     {
-      "id": "rak-nadnercza-obj-1",
-      "statement": "Poznasz cechy kliniczne i radiologiczne raka kory nadnerczy (Adrenocortical Carcinoma — ACC).",
-      "kind": "mechanism"
+      "id": "acc-obj-1",
+      "statement": "Zróżnicujesz łagodnego gruczolaka od podejrzenia raka kory nadnerczy (ACC) na podstawie cech radiologicznych (wielkość >4–6 cm, HU >20, niejednorodność) i profilu steroidowego (DHEA-S, prekursory).",
+      "kind": "differentiation"
     },
     {
-      "id": "rak-nadnercza-obj-2",
-      "statement": "Zrozumiesz kryteria histopatologiczne skali Weissa oraz zasady terapii adjuwantowej mitotanem i leczenia skojarzonego.",
-      "kind": "interpretation"
+      "id": "acc-obj-2",
+      "statement": "Wybierzesz strategię leczenia operacyjnego (otwarta laparotomia onkologiczna z limfadenektomią vs laparoskopia) i kwalifikację do terapii adjuwantowej mitotanem.",
+      "kind": "decision"
+    },
+    {
+      "id": "acc-obj-3",
+      "statement": "Wdrożysz substytucję glikokortykosteroidową w dawkach podwyższonych u pacjentów leczonych mitotanem z uwagi na silną indukcję enzymatyczną CYP3A4 i wzrost stężenia CBG.",
+      "kind": "safety"
     }
   ],
   "diagnostic": {
     "id": "rak-nadnercza-q1-diagnostic-v2",
     "type": "single_choice",
+    "assessmentLevel": "recognition",
     "objectiveIds": [
-      "rak-nadnercza-obj-1"
+      "acc-obj-1"
     ],
-    "prompt": "Jaki obraz kliniczny i hormonalny u kobiety w średnim wieku silnie nasuwa podejrzenie raka kory nadnerczy (ACC)?",
+    "prompt": "Który zestaw cech w tomografii komputerowej z najwyższym prawdopodobieństwem nasuwa podejrzenie raka kory nadnerczy (ACC)?",
     "options": [
-      "Gwałtownie narastający zespół Cushinga ze współistniejącą wirylizacją (hirsutyzm, łysienie androgenowe, nadmiar DHEA-S)",
-      "Stopniowe rozjaśnienie powłok skórnych bez zmian masy ciała",
-      "Niskie stężenie wszystkich steroidów z hiperkaliemią"
+      "Guz o średnicy > 5 cm, gęstości natywnej > 25 HU, niejednorodnej strukturze z ogniskami martwicy i opóźnionym wypłukiwaniem kontrastu",
+      "Jednorodny guzek 18 mm o gładkich zarysach i gęstości natywnej 4 HU",
+      "Torbielowata zmiana z cienką torebką i gęstością płynową 0 HU"
     ],
     "optionFeedback": [
-      "Mieszana sekrecja kortyzolu i androgenów jest wysoce charakterystyczna dla raka nadnercza.",
-      "Brak objawów nie cechuje agresywnego raka kory.",
-      "Taki obraz cechuje chorobę Addisona, a nie nowotwór wydzielający hormony."
+      "ACC charakteryzuje się dużymi rozmiarami, wysoką gęstością (brak lipidów), ogniskami martwicy i wolnym wypłukiwaniem kontrastu.",
+      "To klasyczny łagodny gruczolak bogatolipoidowy.",
+      "To łagodna torbiel prosta nadnercza."
     ],
     "answer": 0,
-    "explanation": "Mieszana sekrecja kortyzolu i androgenów jest wysoce charakterystyczna dla raka nadnercza.",
-    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "explanation": "Guz o średnicy > 4–6 cm, gęstości natywnej > 20–25 HU, niejednorodnej strukturze i wolnym wypłukiwaniu stanowi wysoce podejrzany obraz ACC wg wytycznych ESE/ENSAT.",
     "difficulty": "student",
-    "reasoning": "mechanism",
+    "reasoning": "differentiation",
     "sourceIds": [
-      "ese_acc",
-      "pte_nadnercza"
+      "ese_acc"
+    ],
+    "claimIds": [
+      "claim-adn-acc-size-threshold"
     ]
   },
   "blocks": [
     {
-      "id": "rak-nadnercza-block-1",
-      "title": "Epidemiologia, obraz kliniczny i zespół wielohormonalny",
-      "text": "Rak kory nadnerczy (Adrenocortical Carcinoma — ACC) to rzadki, lecz niezwykle agresywny nowotwór złośliwy (zapadalność 0,5–2 przypadków na milion na rok). Wykazuje dwa szczyty zachorowań: wczesne dzieciństwo (<5. r.ż.) oraz 4.–5. dekada życia. Około 60% guzów jest czynnych hormonalnie: najbardziej charakterystyczna jest mieszana hipersekrecja — jednoczesny zespół Cushinga oraz wirylizacja u kobiet (nadmiar kortyzolu + DHEA-S/testosteron) lub feminizacja u mężczyzn (nadmiar estrogenów). Szybko narastający zespół Cushinga z hirsutyzmem i łysieniem androgenowym u kobiety w średnim wieku jest klasycznym objawem alarmowym ACC!",
+      "id": "acc-b1",
+      "title": "Cechy złośliwości i fenotyp steroidowy",
+      "text": "Rak kory nadnerczy (ACC) to rzadki, agresywny nowotwór. W diagnostyce obrazowej kluczowa jest wielkość (>4–6 cm) oraz gęstość natywna >20 HU z martwicą. W profilu hormonalnym typowa jest ko-sekrecja: nadmiar kortyzolu z jednoczesnym wyrzutem androgenów (znacznie podwyższony DHEA-S, testosteron) lub prekursorów steroidogenezy (17-OHP, 11-deoksykortyzol).",
       "sourceIds": [
-        "ese_acc",
-        "pte_nadnercza"
+        "ese_acc"
       ],
-      "checkpointId": "rak-nadnercza-q2-checkpoint-1-v2",
-      "inlineEnhancements": []
+      "checkpointId": "rak-nadnercza-q2-checkpoint-1-v2"
     },
     {
-      "id": "rak-nadnercza-block-2",
-      "title": "Diagnostyka obrazowa i skala histopatologiczna Weissa",
-      "text": "W badaniach obrazowych (TK/MRI) raki kory nadnerczy to zazwyczaj duże guzy (>4–6 cm, nierzadko >10–15 cm), o niejednorodnej strukturze (heterogenne), z obszarami martwicy, krwotoków i nieregularnymi zwapnieniami, wykazujące gęstość natywną >20–30 HU i powolny wash-out (<60%). Często naciekają torebkę, żyłę nerkową i żyłę główną dolną. ZŁOTY STANDARD HISTOPATOLOGICZNY: Skala Weissa oparta na 9 cechach mikroskopowych (m.in. wysoki indeks mitotyczny >5 figur podziału na 50 pól widzenia, atypowe figury podziału, martwica, naciekanie torebki i naczyń). Obecność co najmniej >=3 kryteriów Weissa jednoznacznie definiuje nowotwór złośliwy!",
+      "id": "acc-b2",
+      "title": "Radykalna chirurgia onkologiczna (R0)",
+      "text": "Jedyną szansą na wyleczenie ACC jest doszczętna resekcja chirurgiczna R0. Przy guzach podejrzanych o złośliwość (> 6 cm, naciekanie torebki) standardem postępowania jest otwarta laparotomia z limfadenektomią zaotrzewnową, a nie laparoskopia, która wiąże się z ryzykiem pęknięcia torebki i rozsiewu otrzewnowego.",
       "sourceIds": [
         "ese_acc",
-        "pte_nadnercza"
+        "adrenal_surgery"
       ],
-      "checkpointId": "rak-nadnercza-q3-checkpoint-2-v2",
-      "inlineEnhancements": []
+      "checkpointId": "rak-nadnercza-q3-checkpoint-2-v2"
     },
     {
-      "id": "rak-nadnercza-block-3",
-      "title": "Leczenie: Radykalna chirurgia i farmakoterapia mitotanem",
-      "text": "Jedyną szansą na całkowite wyleczenie ACC jest doszczętna resekcja chirurgiczna R0 (otwarta adrenalektomia z usunięciem regionalnych węzłów chłonnych i sąsiednich tkanek). Chirurgii laparoskopowej unika się w guzach podejrzanych o ACC z powodu ryzyka pęknięcia torebki i rozsiewu otrzewnowego. Po operacji standardem adjuwantowym (zwłaszcza przy Ki-67 >10%) jest MITOTAN (o,p'-DDD) — chemioterapeutyk o selektywnym działaniu adrenolitycznym, niszczący mitochondria kory nadnerczy. Mitotan wymaga monitorowania stężenia we krwi (okno terapeutyczne 14–20 mg/l) oraz OBOWIĄZKOWEJ substytucji hydrokortyzonem w podwójnych dawkach (mitotan silnie indukuje enzym CYP3A4, przyspieszając rozkład hydrokortyzonu!). W chorobie zaawansowanej stosuje się schemat EDP-M (etopozyd, doksorubicyna, cisplatyna + mitotan).",
+      "id": "acc-b3",
+      "title": "Mitotan: adrenolityk i pułapka CYP3A4 / CBG",
+      "text": "Mitotan (o,p'-DDD) wybiórczo niszczy mitochondria komórek kory nadnerczy i hamuje steroidogenezę. Skutki uboczne: 1) Silna indukcja CYP3A4 przyspiesza metabolizm leków; 2) Drastyczny wzrost stężenia CBG zafałszowuje pomiar kortyzolu całkowitego; 3) Pacjenci wymagają PODWYŻSZONYCH dawek hydrokortyzonu (nawet 40–60 mg/d) w celu uniknięcia przełomu nadnerczowego!",
       "sourceIds": [
-        "ese_acc",
-        "pte_nadnercza"
-      ],
-      "inlineEnhancements": []
+        "ese_acc"
+      ]
     }
   ],
   "activities": [
     {
       "id": "rak-nadnercza-q2-checkpoint-1-v2",
-      "type": "single_choice",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "rak-nadnercza-obj-2"
+        "acc-obj-3"
       ],
-      "prompt": "Ile kryteriów w mikroskopowej skali Weissa definiuje złośliwy charakter nowotworu kory nadnerczy (ACC)?",
+      "prompt": "Pacjent po resekcji R0 raka kory nadnerczy otrzymuje terapię adjuwantową mitotanem. Zgłasza narastające osłabienie, jadłowstręt i hipotensję pomimo przyjmowania standardowej dawki hydrokortyzonu 20 mg/dobę. Dlaczego pacjent rozwija objawy niedoczynności nadnerczy i jak należy zmodyfikować leczenie?",
       "options": [
-        "Obecność co najmniej 3 kryteriów (>=3 z 9)",
-        "Wszystkie 9 kryteriów musi być obecnych",
-        "Żadne kryterium, o raku decyduje wyłącznie średnica powyżej 1 cm"
-      ],
-      "optionFeedback": [
-        "Jest to powszechnie akceptowany w patomorfologii punkt odcięcia potwierdzający złośliwość.",
-        "Obecność 9 kryteriów cechuje skrajnie zaawansowane postacie; do rozpoznania raka wystarczą 3.",
-        "Wymiary guza są istotne klinicznie, lecz definicja złośliwości jest histopatologiczna."
+        "Mitotan jest silnym induktorem enzymu CYP3A4, co drastycznie przyspiesza wątrobowy metabolizm hydrokortyzonu; ponadto zwiększa stężenie CBG. Pacjent wymaga natychmiastowego zwiększenia dawki hydrokortyzonu do 40–60 mg/dobę (często 2–3x wyższej niż standardowa)",
+        "Należy odstawić hydrokortyzon, ponieważ mitotan sam przekształca się w kortyzol",
+        "Objawy wynikają z przedawkowania hydrokortyzonu i dawkę należy zmniejszyć do 5 mg/d"
       ],
       "answer": 0,
-      "explanation": "Jest to powszechnie akceptowany w patomorfologii punkt odcięcia potwierdzający złośliwość.",
-      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
-      "difficulty": "student",
-      "reasoning": "mechanism",
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-cyp3a4-mitotane-clearance",
+            "label": "Indukcja CYP3A4 przez mitotan przyspieszająca klirens hydrokortyzonu",
+            "acceptedPhrases": [
+              "CYP3A4",
+              "przyspieszony metabolizm",
+              "klirens",
+              "indukcja enzymatyczna"
+            ]
+          },
+          {
+            "id": "c-higher-steroid-dose",
+            "label": "Wymóg wyższych dawek hydrokortyzonu (podwojenie/potrojenie)",
+            "acceptedPhrases": [
+              "zwiększenie dawki",
+              "wyższa dawka",
+              "40-60 mg",
+              "podwojenie hydrokortyzonu"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-decrease-steroid",
+            "patterns": [
+              "odstawić hydrokortyzon",
+              "zmniejszyć dawkę"
+            ],
+            "severity": "critical",
+            "feedback": "Zmniejszenie dawki hydrokortyzonu u chorego leczonego mitotanem wywoła śmiertelny przełom nadnerczowy."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Mitotan indukuje enzymy mikrosomalne wątroby (CYP3A4), skracając okres półtrwania hydrokortyzonu. Chorzy wymagają 2–3-krotnie wyższych dawek substytucyjnych.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
       "sourceIds": [
-        "ese_acc",
-        "pte_nadnercza"
+        "ese_acc"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Mitotan indukuje enzymy mikrosomalne wątroby (CYP3A4), skracając okres półtrwania hydrokortyzonu. Chorzy wymagają 2–3-krotnie wyższych dawek substytucyjnych.",
+        "Nieprawidłowo: Należy odstawić hydrokortyzon, ponieważ mitotan sam przekształca się w kortyzol... Mitotan indukuje enzymy mikrosomalne wątroby (CYP3A4), skracając okres półtrwania hydrokortyzonu. Chorzy wymagają 2–3-krotnie wyższych dawek substytucyjnych.",
+        "Nieprawidłowo: Objawy wynikają z przedawkowania hydrokortyzonu i dawkę należy zmniejszyć do 5 m... Mitotan indukuje enzymy mikrosomalne wątroby (CYP3A4), skracając okres półtrwania hydrokortyzonu. Chorzy wymagają 2–3-krotnie wyższych dawek substytucyjnych."
       ]
     },
     {
       "id": "rak-nadnercza-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "rak-nadnercza-obj-1"
+        "acc-obj-2"
       ],
-      "prompt": "Jaki lek o selektywnym działaniu adrenolitycznym stanowi standard terapii uzupełniającej u chorych na raka kory nadnerczy?",
+      "prompt": "U 44-letniej kobiety stwierdzono guz lewego nadnercza o średnicy 75 mm z niejednorodną martwicą i podejrzeniem naciekania torebki w TK. Jaki dostęp operacyjny jest rekomendowany przez wytyczne ESE/ENSAT?",
       "options": [
-        "Mitotan (o,p'-DDD)",
-        "Spironolakton",
-        "Metformina"
-      ],
-      "optionFeedback": [
-        "Mitotan wybiórczo uszkadza mitochondria komórek kory nadnerczy i hamuje syntezę steroidów.",
-        "Spironolakton blokuje receptor aldosteronowy, nie niszczy komórek nowotworowych.",
-        "Metformina to doustny lek przeciwcukrzycowy, bez działania adrenolitycznego."
+        "Otwarta laparotomia z limfadenektomią zaotrzewnową, zapewniająca radykalność onkologiczną (R0) i minimalizująca ryzyko pęknięcia torebki guza",
+        "Laparoskopia z morcelacją guza wewnątrz jamy brzusznej",
+        "Embolizacja tętnicza bez leczenia operacyjnego"
       ],
       "answer": 0,
-      "explanation": "Mitotan wybiórczo uszkadza mitochondria komórek kory nadnerczy i hamuje syntezę steroidów.",
-      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-open-adrenalectomy-r0",
+            "label": "Otwarta laparotomia z limfadenektomią dla radykalności R0",
+            "acceptedPhrases": [
+              "otwarta",
+              "laparotomia",
+              "R0",
+              "limfadenektomia",
+              "torebka"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Przy guzach > 6 cm podejrzanych o ACC dostęp laparoskopowy wiąże się ze znacznym ryzykiem pęknięcia torebki i nawrotu miejscowego; standardem jest otwarta operacja onkologiczna.",
       "difficulty": "doctor",
-      "reasoning": "interpretation",
+      "reasoning": "decision",
       "sourceIds": [
         "ese_acc",
-        "pte_nadnercza"
+        "adrenal_surgery"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Przy guzach > 6 cm podejrzanych o ACC dostęp laparoskopowy wiąże się ze znacznym ryzykiem pęknięcia torebki i nawrotu miejscowego; standardem jest otwarta operacja onkologiczna.",
+        "Nieprawidłowo: Laparoskopia z morcelacją guza wewnątrz jamy brzusznej... Przy guzach > 6 cm podejrzanych o ACC dostęp laparoskopowy wiąże się ze znacznym ryzykiem pęknięcia torebki i nawrotu miejscowego; standardem jest otwarta operacja onkologiczna.",
+        "Nieprawidłowo: Embolizacja tętnicza bez leczenia operacyjnego... Przy guzach > 6 cm podejrzanych o ACC dostęp laparoskopowy wiąże się ze znacznym ryzykiem pęknięcia torebki i nawrotu miejscowego; standardem jest otwarta operacja onkologiczna."
       ]
     }
   ],
   "teachBack": {
     "id": "rak-nadnercza-teach-back-v2",
     "type": "recall",
+    "assessmentLevel": "generation",
     "objectiveIds": [
-      "rak-nadnercza-obj-1",
-      "rak-nadnercza-obj-2"
+      "acc-obj-1",
+      "acc-obj-3"
     ],
-    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Złowrogi cień w przestrzeni zaotrzewnowej”.",
-    "modelAnswer": "Rak kory nadnerczy (ACC) to wysoce złośliwy nowotwór objawiający się zespołem Cushinga z wirylizacją i dużą masą w TK. O rozpoznaniu decyduje skala Weissa (>=3 kryteria). Leczeniem z wyboru jest otwarta operacja R0 oraz terapia mitotanem wymagająca specjalistycznego nadzoru stężeń i substytucji sterydowej.",
-    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "prompt": "Wyjaśnij cechy odróżniające ACC od gruczolaka w TK oraz omów zasady substytucji hydrokortyzonem u pacjenta przyjmującego mitotan.",
+    "modelAnswer": "ACC: duży guz (>4-6 cm), gęstość natywna >20 HU, martwica, powolny washout, ko-sekrecja kortyzolu i androgenów (wysoki DHEA-S). Przy leczeniu mitotanem dochodzi do silnej indukcji CYP3A4, co przyspiesza rozkład hydrokortyzonu — pacjent wymaga podwyższonych dawek (40–60 mg/d) hydrokortyzonu, aby uniknąć przełomu.",
+    "explanation": "Rozpoznanie fenotypu złośliwości decyduje o technice operacyjnej, a znajomość farmakokinetyki mitotanu chroni przed zgonem z niedoczynności kory nadnerczy.",
     "difficulty": "both",
-    "reasoning": "mechanism",
+    "reasoning": "safety",
     "sourceIds": [
-      "ese_acc",
-      "pte_nadnercza"
+      "ese_acc"
     ]
   },
   "exitTicket": [
     {
       "id": "rak-nadnercza-q4-exit-v2",
       "type": "missing_information",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "rak-nadnercza-obj-2"
+        "acc-obj-1"
       ],
-      "prompt": "Dlaczego u pacjenta przyjmującego mitotan dawka substytucyjna hydrokortyzonu musi być istotnie wyższa niż u standardowego chorego z niedoczynnością kory?",
+      "prompt": "U 35-letniej kobiety z nagle narastającym hirsutyzmem, łysieniem androgenowym i cechami zespołu Cushinga stwierdzono guz nadnercza 8 cm. Który marker hormonalny w surowicy silnie wspiera podejrzenie raka kory nadnerczy w odróżnieniu od łagodnego gruczolaka?",
       "options": [
-        "Mitotan silnie indukuje wątrobowy enzym CYP3A4, co drastycznie przyspiesza obwodowy metabolizm i rozkład hydrokortyzonu",
-        "Mitotan bezpośrednio wiąże hydrokortyzon w żołądku w nierozpuszczalny kamień",
-        "Mitotan regeneruje przysadkowe ACTH"
+        "Skrajnie podwyższone stężenie siarczanu dehydroepiandrosteronu (DHEA-S) oraz prekursorów steroidogenezy (17-OHP, 11-deoksykortyzol)",
+        "Całkowicie stłumiony poziom testosteronu",
+        "Izolowany wzrost stężenia parathormonu"
       ],
       "optionFeedback": [
-        "Wymaga to zwiększenia dawki sterydu nawet 2–3-krotnie, aby zapobiec przełomowi nadnerczowemu.",
-        "Leki te nie reagują chemicznie w świetle przewodu pokarmowego.",
-        "Mitotan nie regeneruje osi przysadkowej."
+        "W ACC częsta jest ko-sekrecja androgenów i prekursorów steroidogenezy z powodu niedojrzałości enzymatycznej komórek raka.",
+        "W wirylizującym ACC testosteron jest podwyższony, a nie obniżony.",
+        "PTH dotyczy przytarczyc, nie kory nadnerczy."
       ],
       "answer": 0,
-      "explanation": "Wymaga to zwiększenia dawki sterydu nawet 2–3-krotnie, aby zapobiec przełomowi nadnerczowemu.",
-      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
-      "difficulty": "both",
-      "reasoning": "decision",
+      "explanation": "Jednoczesne wydzielanie kortyzolu i androgenów (bardzo wysoki DHEA-S) oraz prekursorów jest charakterystyczne dla raka kory nadnerczy.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
       "sourceIds": [
-        "ese_acc",
-        "pte_nadnercza"
-      ]
+        "ese_acc"
+      ],
+      "claimIds": [
+        "claim-adn-acc-size-threshold"
+      ],
+      "transfer": true
     },
     {
       "id": "rak-nadnercza-q5-exit-v2",
-      "type": "missing_information",
+      "type": "single_choice",
+      "assessmentLevel": "recognition",
       "objectiveIds": [
-        "rak-nadnercza-obj-1"
+        "acc-obj-1"
       ],
-      "prompt": "Jaki dostęp operacyjny jest zalecany przez wytyczne ESE/ENSAT w przypadku guzów nadnercza o cechach podejrzenia raka kory nadnerczy (ACC)?",
+      "prompt": "Jaki system oceny histopatologicznej stanowi złoty standard potwierdzenia złośliwości raka kory nadnerczy w preparacie pooperacyjnym?",
       "options": [
-        "Zabieg klasyczny otwarty z regionalną limfadenektomią (otwarta adrenalektomia)",
-        "Zabieg laparoskopowy przez pojedyncze nacięcie 5 mm",
-        "Przezcewnikowa termoablacja mikrofalowa"
+        "Skala Weissa (kryteria Weissa: obecność >= 3 z 9 cech definiuje ACC)",
+        "Skala Gleasona",
+        "Skala Blooma-Richardsona"
       ],
       "optionFeedback": [
-        "Zapobiega to pęknięciu torebki guza i miejscowemu rozsiewowi komórek nowotworowych w jamie otrzewnej.",
-        "W guzach złośliwych laparoskopia wiąże się ze zwiększonym ryzykiem wznowy miejscowej.",
-        "Ablacja termiczna nie zapewnia radykalności onkologicznej R0."
+        "Skala Weissa ocenia m.in. figury podziału, atypowe mitozy, martwicę, naciekanie torebki i naczyń żylnych.",
+        "Skala Gleasona dotyczy raka stercza.",
+        "Skala Blooma-Richardsona dotyczy raka piersi."
       ],
       "answer": 0,
-      "explanation": "Zapobiega to pęknięciu torebki guza i miejscowemu rozsiewowi komórek nowotworowych w jamie otrzewnej.",
-      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
-      "difficulty": "both",
-      "reasoning": "safety",
+      "explanation": "Skala Weissa jest podstawowym kryterium histopatologicznym różnicującym gruczolaka od raka kory nadnerczy.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "ese_acc"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "rak-nadnercza-bank-1-v2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "acc-obj-1",
+        "acc-obj-2",
+        "acc-obj-3"
+      ],
+      "claimIds": [
+        "claim-adn-acc-size-threshold"
+      ],
+      "prompt": "39-letnia kobieta zgłasza się z szybko narastającym owłosieniem typu męskiego na twarzy i klatce piersiowej, brakiem miesiączki oraz osłabieniem mięśniowym od 3 miesięcy. W TK: niejednorodna masa prawego nadnercza o wymiarach 82 x 65 mm, gęstość natywna 34 HU, ogniska centralnej martwicy i opóźnione wypłukiwanie kontrastu. Badania hormonalne: kortyzol po 1 mg DST = 18 µg/dl (brak hamowania), ACTH < 5 pg/ml, DHEA-S = 1200 µg/dl (norma do 340), testosteron całkowity = 3,8 ng/ml (norma do 0,6). Zaplanuj postępowanie diagnostyczne, wybierz dostęp chirurgiczny i omów zasady farmakoterapii pooperacyjnej.",
+      "modelAnswer": "Obraz kliniczny (szybka wirylizacja + hiperkortyzolemia) w połączeniu z dużym guzem (>8 cm) o wysokiej gęstości (34 HU) i martwicy jednoznacznie wskazuje na wysoce prawdopodobnego raka kory nadnerczy (ACC) z ko-sekrecją kortyzolu i androgenów. Postępowanie: 1) Wykonanie TK klatki piersiowej i miednicy w celu oceny stagingu (przerzuty płucne/wątrobowe); 2) Wybór chirurgiczny: otwarta laparotomia z limfadenektomią zaotrzewnową (bezwzględny zakaz laparoskopii ze względu na wielkość >6 cm i ryzyko pęknięcia torebki i rozsiewu); 3) Postępowanie około- i pooperacyjne: podanie hydrokortyzonu i.v. w okresie okołooperacyjnym z uwagi na atroficzne lewe nadnercze; 4) Kwalifikacja do leczenia adjuwantowego mitotanem; przy włączeniu mitotanu konieczne jest zastosowanie podwyższonych dawek hydrokortyzonu (40–60 mg/d) z powodu silnej indukcji CYP3A4.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "acc-bank-1-dim-dx",
+            "label": "Wymiar diagnostyczny i patofizjologiczny",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-acc-diagnosis-open-surgery",
+                "label": "Rozpoznanie podejrzenia ACC i wybór otwartej laparotomii (zakaz laparoskopii)",
+                "acceptedPhrases": [
+                  "ACC",
+                  "rak kory nadnerczy",
+                  "otwarta laparotomia",
+                  "zakaz laparoskopii",
+                  "laparotomia onkologiczna",
+                  "R0"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "acc-bank-1-dim-tx",
+            "label": "Wymiar decyzyjny i bezpieczeństwo kliniczne",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-mitotane-steroid-adjustment",
+                "label": "Kwalifikacja do mitotanu i zwiększenie dawki hydrokortyzonu przez indukcję CYP3A4",
+                "acceptedPhrases": [
+                  "mitotan",
+                  "CYP3A4",
+                  "zwiększenie dawki hydrokortyzonu",
+                  "podwyższone dawki GKS"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-recommend-laparoscopy",
+            "patterns": [
+              "wybrać laparoskopię",
+              "laparoskopowe usunięcie guza 8 cm"
+            ],
+            "severity": "critical",
+            "feedback": "Laparoskopia przy guzie 8 cm o cechach ACC grozi pęknięciem torebki nowotworu i nieuleczalnym rozsiewem w jamie otrzewnej."
+          }
+        ]
+      },
+      "explanation": "Guz > 8 cm z martwicą i ko-sekrecją androgenów to podejrzenie ACC. Wymaga otwartej laparotomii onkologicznej i adjuwantowego mitotanu ze zwiększonymi dawkami hydrokortyzonu.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
       "sourceIds": [
         "ese_acc",
-        "pte_nadnercza"
+        "adrenal_surgery"
+      ],
+      "transfer": true,
+      "caseSnapshot": {
+        "patientAge": 39,
+        "tumorSizeMm": 82,
+        "unenhancedHu": 34,
+        "postDstCortisolUgDl": 18,
+        "acthPgMl": 4,
+        "dheaSUgDl": 1200,
+        "testosteroneNgMl": 3.8,
+        "symptoms": "hirsutyzm, wirylizacja, miopatia"
+      },
+      "engineBinding": {
+        "engine": "adrenal-workbench",
+        "presetId": "adrenal-workbench"
+      }
+    },
+    {
+      "id": "rak-nadnercza-bank-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "acc-obj-1"
+      ],
+      "claimIds": [
+        "claim-adn-acc-size-threshold"
+      ],
+      "prompt": "Dlaczego pomiar całkowitego kortyzolu w surowicy u pacjenta leczonego mitotanem z powodu ACC nie nadaje się do oceny adekwatności substytucji glikokortykosteroidowej?",
+      "options": [
+        "Mitotan stymuluje wątrobową produkcję CBG, co powoduje sztuczne zawyżenie stężenia kortyzolu całkowitego pomimo głębokiego niedoboru frakcji wolnej",
+        "Ponieważ mitotan niszczy cząsteczki kortyzolu w probówce laboratoryjnej",
+        "Ponieważ mitotan całkowicie blokuje wydalanie kortyzolu przez nerki"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-mitotane-cbg-elevation",
+            "label": "Wzrost stężenia CBG wywołany przez mitotan",
+            "acceptedPhrases": [
+              "CBG",
+              "transkortyna",
+              "zawyżenie całkowitego",
+              "wolny kortyzol"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Mitotan podwyższa stężenie globuliny wiążącej kortyzol (CBG). W efekcie stężenie kortyzolu całkowitego może być wysokie, podczas gdy pacjent ma zagrażający życiu niedobór wolnego kortyzolu.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "ese_acc"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Mitotan podwyższa stężenie globuliny wiążącej kortyzol (CBG). W efekcie stężenie kortyzolu całkowitego może być wysokie, podczas gdy pacjent ma zagrażający życiu niedobór wolnego kortyzolu.",
+        "Nieprawidłowo: Ponieważ mitotan niszczy cząsteczki kortyzolu w probówce laboratoryjnej... Mitotan podwyższa stężenie globuliny wiążącej kortyzol (CBG). W efekcie stężenie kortyzolu całkowitego może być wysokie, podczas gdy pacjent ma zagrażający życiu niedobór wolnego kortyzolu.",
+        "Nieprawidłowo: Ponieważ mitotan całkowicie blokuje wydalanie kortyzolu przez nerki... Mitotan podwyższa stężenie globuliny wiążącej kortyzol (CBG). W efekcie stężenie kortyzolu całkowitego może być wysokie, podczas gdy pacjent ma zagrażający życiu niedobór wolnego kortyzolu."
       ]
     }
   ],
@@ -210,6 +402,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+    "scope": "Pełna modernizacja V2: cechy złośliwości ACC, ko-sekrecja androgenów, otwarta chirurgia R0, mitotan i interakcje z CYP3A4/CBG."
   }
 }

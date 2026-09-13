@@ -3,212 +3,327 @@
   "lessonId": "nadnercza-chemia-steroidogeneza",
   "objectives": [
     {
-      "id": "nadnercza-chemia-steroidogeneza-obj-1",
-      "statement": "Scharakteryzujesz stereochemię szkieletu steranu (konformacja krzesełkowa, podstawniki alfa pod płaszczyzną i beta nad płaszczyzną).",
+      "id": "adn-chem-ster-obj-1",
+      "statement": "Opiszesz strukturę chemiczną pierścienia steranu, stereospecyficzność hydroksylacji oraz rolę donorów elektronów (adrenodoksyna/NADPH) w cyklu monooksygenazy P450.",
       "kind": "mechanism"
     },
     {
-      "id": "nadnercza-chemia-steroidogeneza-obj-2",
-      "statement": "Poznasz etapy aktywacji tlenu cząsteczkowego w cyklu katalitycznym cytochromów P450 steroidogenezy.",
-      "kind": "interpretation"
+      "id": "adn-chem-ster-obj-2",
+      "statement": "Rozpoznasz na poziomie chemicznym różnice strukturalne między kortyzolem, aldosteronem i dehydroepiandrosteronem (DHEA) oraz ich prekursorami.",
+      "kind": "differentiation"
     }
   ],
   "diagnostic": {
     "id": "nadnercza-chemia-steroidogeneza-q1-diagnostic-v2",
     "type": "single_choice",
+    "assessmentLevel": "recognition",
     "objectiveIds": [
-      "nadnercza-chemia-steroidogeneza-obj-1"
+      "adn-chem-ster-obj-1"
     ],
-    "prompt": "Ile atomów węgla liczy podstawowy szkielet steroidowy cholesterolu (prekursora steroidogenezy)?",
+    "prompt": "Jaki szkielet węglowodorowy stanowi uniwersalny rdzeń strukturalny wszystkich hormonów steroidowych kory nadnerczy?",
     "options": [
-      "27 atomów węgla (C27)",
-      "Dokładnie 6 atomów węgla",
-      "Ponad 1000 atomów węgla"
+      "Cyklopentanoperhydrofenantren (steran: 3 pierścienie sześcioczłonowe A, B, C i 1 pięcioczłonowy D)",
+      "Pierścień purynowy skondensowany z tiazolowym",
+      "Podwójny pierścień indolowy z łańcuchem polietylenowym"
     ],
     "optionFeedback": [
-      "Podczas syntezy pregnenolonu zostaje skrócony do C21 przez odcięcie 6-węglowego łańcucha kapronowego.",
-      "Sześć atomów węgla zawiera glukoza; cholesterol ma 27 atomów węgla.",
-      "Polimery mają tysiące węgli; cholesterol to mała cząsteczka lipidowa."
+      "Szkielet steranu składa się z 17 atomów węgla tworzących układ czterech skondensowanych pierścieni oznaczanych literami A, B, C i D.",
+      "To struktura nukleotydów, nie steroidów.",
+      "Indol występuje w tryptofanie i serotoninie."
     ],
     "answer": 0,
-    "explanation": "Podczas syntezy pregnenolonu zostaje skrócony do C21 przez odcięcie 6-węglowego łańcucha kapronowego.",
-    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "explanation": "Wszystkie hormony steroidowe wywodzą się z cholesterolu opartego na szkielecie cyklopentanoperhydrofenantrenu (steranu).",
     "difficulty": "student",
     "reasoning": "mechanism",
     "sourceIds": [
-      "sterane_chem",
-      "cah_kinetics",
-      "cah_guideline"
+      "sterane_chem"
     ]
   },
   "blocks": [
     {
-      "id": "nadnercza-chemia-steroidogeneza-block-1",
-      "title": "Układ cyklopentanoperhydrofenantrenu (Jądro Steranu)",
-      "text": "Wszystkie hormony steroidowe kory nadnerczy wywodzą się z czteropierścieniowego szkieletu steranu: trzech pierścieni sześcioczłonowych (A, B, C w układzie fenantrenu) i jednego pięcioczłonowego (D, cyklopentan). Węgiel C-10 i C-13 posiadają grupy metylowe (C-19 i C-18) zorientowane w pozycji beta (powyżej płaszczyzny cząsteczki). Wiązania skierowane w dół określa się jako alfa (trans względem grup metylowych), a skierowane w górę jako beta (cis). Ta sztywna stereochemia decyduje o rozpoznaniu przez jądrowe receptory MR i GR.",
+      "id": "adn-chem-ster-b1",
+      "title": "Architektura steranu i numeracja atomów węgla",
+      "text": "Szkielet steroidowy liczy 17 atomów węgla w pierścieniach A–D oraz atomy węgla grup metylowych: C18 (przy pierścieniu D) i C19 (przy pierścieniu A/B). Kluczowe modyfikacje chemiczne: 1) Grupa ketonowa przy C3 i podwójne wiązanie delta-4-3-keto w pierścieniu A (niezbędne dla aktywności gliko- i mineralokortykoidowej); 2) Hydroksylacje przy C11, C17 i C21.",
       "sourceIds": [
-        "sterane_chem",
-        "cah_kinetics",
-        "cah_guideline"
+        "sterane_chem"
       ],
-      "checkpointId": "nadnercza-chemia-steroidogeneza-q2-checkpoint-1-v2",
-      "inlineEnhancements": []
+      "checkpointId": "nadnercza-chemia-steroidogeneza-q2-checkpoint-1-v2"
     },
     {
-      "id": "nadnercza-chemia-steroidogeneza-block-2",
-      "title": "Cytochromy P450 jako monooksygenazy hemo-żelazowe",
-      "text": "Głównymi enzymami steroidogenezy są cytochromy P450 (CYP11A1, CYP17A1, CYP21A2, CYP11B1, CYP11B2). Reakcja hydroksylacji wymaga aktywacji tlenu cząsteczkowego: RH + O2 + NADPH + H+ ⟶ ROH + H2O + NADP+. Kluczowym elementem katalitycznym jest hem zawierający atom żelaza skoordynowany przez resztę tiolanową cysteiny (tzw. proksymalny ligand tiolanowy).",
+      "id": "adn-chem-ster-b2",
+      "title": "Mechanizm monooksygenaz P450 i transfer elektronów",
+      "text": "Enzymy steroidogenezy kory nadnerczy należą do enzymów cytochromu P450. W mitochondriach (CYP11A1, CYP11B1, CYP11B2) transfer elektronów z NADPH zachodzi przez reduktazę adrenodoksyny i żelazowo-siarkowe białko adrenodoksynę. W siateczce śródplazmatycznej (CYP17A1, CYP21A2) elektrony przekazuje reduktaza P450 (POR). W reakcji jeden atom tlenu cząsteczkowego O2 trafia do steroidu, a drugi tworzy H2O.",
       "sourceIds": [
-        "sterane_chem",
-        "cah_kinetics",
-        "cah_guideline"
+        "sterane_chem"
       ],
-      "checkpointId": "nadnercza-chemia-steroidogeneza-q3-checkpoint-2-v2",
-      "inlineEnhancements": []
+      "checkpointId": "nadnercza-chemia-steroidogeneza-q3-checkpoint-2-v2"
     },
     {
-      "id": "nadnercza-chemia-steroidogeneza-block-3",
-      "title": "Cykl transferu elektronów i reaktywny kompleks ferrylu",
-      "text": "W mitochondriach elektrony z NADPH są przekazywane przez reduktazę adrenodoksyny (FAD) i adrenodoksynę [2Fe-2S] do cytochromu (CYP11A1, CYP11B1, CYP11B2). W siateczce śródplazmatycznej (CYP17A1, CYP21A2) donorem jest reduktaza P450 (POR). Kolejne etapy: redukcja Fe(III) do Fe(II), wiązanie O2, wprowadzenie drugiego elektronu i rozszczepienie O-O z utworzeniem kationorodnika ferrylu [Fe(IV)=O]+•, który abstrahuje atom wodoru z substratu i wstawia grupę hydroksylową z zachowaniem stereochemii.",
+      "id": "adn-chem-ster-b3",
+      "title": "Różnice strukturalne: Kortyzol vs Aldosteron vs DHEA",
+      "text": "Kortyzol posiada 21 atomów węgla z grupami hydroksylowymi przy C11-beta, C17-alfa i C21. Aldosteron (również C21) nie posiada grupy 17-alfa-OH, ale ma unikalną grupę aldehydową przy C18, która tworzy mostek hemiacetalowy z 11-beta-OH. DHEA to steroid C19 pozbawiony łańcucha bocznego przy C17, z grupą ketonową przy C17 i hydroksylową przy C3.",
       "sourceIds": [
-        "sterane_chem",
-        "cah_kinetics",
-        "cah_guideline"
-      ],
-      "inlineEnhancements": []
+        "sterane_chem"
+      ]
     }
   ],
   "activities": [
     {
       "id": "nadnercza-chemia-steroidogeneza-q2-checkpoint-1-v2",
-      "type": "single_choice",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "nadnercza-chemia-steroidogeneza-obj-2"
+        "adn-chem-ster-obj-2"
       ],
-      "prompt": "Co oznacza oznaczenie podstawnika jako „alfa” (α) w nomenklaturze chemicznej steroidów?",
+      "prompt": "Jaka pojedyncza modyfikacja chemiczna w strukturze cząsteczki odróżnia hydrokortyzon (kortyzol) od 11-deoksykortyzolu?",
       "options": [
-        "Wiązanie jest skierowane pod płaszczyznę pierścienia (trans do kątowych grup metylowych)",
-        "Cząsteczka emituje promieniowanie alfa z rozpadu promieniotwórczego",
-        "Cząsteczka rozpuszcza się wyłącznie w alkoholu etylowym"
-      ],
-      "optionFeedback": [
-        "Przykładowo grupa 17α-OH w kortyzolu leży poniżej płaszczyzny pierścienia D.",
-        "Termin alfa w chemii steroidów określa wyłącznie konfigurację przestrzenną.",
-        "Rozpuszczalność nie ma związku z prefiksem alfa w stereochemii."
+        "Obecność grupy hydroksylowej (-OH) w konfiguracji beta przy atomie węgla C11 w pierścieniu C, wprowadzana przez enzym CYP11B1",
+        "Obecność grupy aldehydowej przy węglu C18",
+        "Usunięcie grupy ketonowej przy atomie węgla C3"
       ],
       "answer": 0,
-      "explanation": "Przykładowo grupa 17α-OH w kortyzolu leży poniżej płaszczyzny pierścienia D.",
-      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
-      "difficulty": "student",
-      "reasoning": "mechanism",
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-c11-beta-hydroxylation",
+            "label": "11-beta-hydroksylacja przez CYP11B1",
+            "acceptedPhrases": [
+              "C11",
+              "11-beta",
+              "grupa hydroksylowa",
+              "CYP11B1",
+              "11-deoksykortyzol"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Enzym CYP11B1 (11-beta-hydroksylaza) wprowadza grupę -OH przy C11, przekształcając 11-deoksykortyzol w aktywny biologicznie kortyzol.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
       "sourceIds": [
-        "sterane_chem",
-        "cah_kinetics",
-        "cah_guideline"
+        "sterane_chem"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Enzym CYP11B1 (11-beta-hydroksylaza) wprowadza grupę -OH przy C11, przekształcając 11-deoksykortyzol w aktywny biologicznie kortyzol.",
+        "Nieprawidłowo: Obecność grupy aldehydowej przy węglu C18... Enzym CYP11B1 (11-beta-hydroksylaza) wprowadza grupę -OH przy C11, przekształcając 11-deoksykortyzol w aktywny biologicznie kortyzol.",
+        "Nieprawidłowo: Usunięcie grupy ketonowej przy atomie węgla C3... Enzym CYP11B1 (11-beta-hydroksylaza) wprowadza grupę -OH przy C11, przekształcając 11-deoksykortyzol w aktywny biologicznie kortyzol."
       ]
     },
     {
       "id": "nadnercza-chemia-steroidogeneza-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "nadnercza-chemia-steroidogeneza-obj-1"
+        "adn-chem-ster-obj-1"
       ],
-      "prompt": "Jaki aminokwas w łańcuchu peptydowym cytochromów P450 stanowi proksymalny ligand koordynujący jon żelaza w hemie?",
+      "prompt": "Dlaczego mutacje genu oksydoreduktazy cytochromu P450 (POR) wywołują złożony defekt steroidogenezy obejmujący jednoczesne cechy niedoboru 21-hydroksylazy (CYP21A2) i 17-alfa-hydroksylazy (CYP17A1)?",
       "options": [
-        "Reszta cysteiny (wiązanie tiolanowe Fe-S)",
-        "Kwas glutaminowy",
-        "Czysta cząsteczka wody"
-      ],
-      "optionFeedback": [
-        "Nadaje enzymom P450 charakterystyczne maksimum absorpcji spektrofotometrycznej przy 450 nm w kompleksie z CO.",
-        "Kwas glutaminowy nie tworzy wiązania tiolanowego z żelazem porfirykowym.",
-        "Woda może być dystalnym ligandem wymiennym, ale nie ligandem proksymalnym."
+        "Białko POR jest wspólnym donorem elektronów z NADPH dla obu mikrosomalnych enzymów P450 w siateczce śródplazmatycznej; jego defekt uniemożliwia redukcję żelaza hemowego w obu cytochromach",
+        "Ponieważ gen POR bezpośrednio koduje pierścień steranu",
+        "Białko POR niszczy receptory ACTH na powierzchni błony komórkowej"
       ],
       "answer": 0,
-      "explanation": "Nadaje enzymom P450 charakterystyczne maksimum absorpcji spektrofotometrycznej przy 450 nm w kompleksie z CO.",
-      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-por-electron-transfer",
+            "label": "Rola POR jako wspólnego donora elektronów dla mikrosomalnych P450",
+            "acceptedPhrases": [
+              "POR",
+              "donor elektronów",
+              "NADPH",
+              "mikrosomalne",
+              "CYP21A2 i CYP17A1"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Oksydoreduktaza P450 (POR) przenosi elektrony z NADPH na wszystkie mikrosomalne enzymy steroidogenezy w retikulum endoplazmatycznym (CYP17A1, CYP21A2, CYP19A1).",
       "difficulty": "doctor",
-      "reasoning": "interpretation",
+      "reasoning": "mechanism",
       "sourceIds": [
-        "sterane_chem",
-        "cah_kinetics",
-        "cah_guideline"
+        "sterane_chem"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Oksydoreduktaza P450 (POR) przenosi elektrony z NADPH na wszystkie mikrosomalne enzymy steroidogenezy w retikulum endoplazmatycznym (CYP17A1, CYP21A2, CYP19A1).",
+        "Nieprawidłowo: Ponieważ gen POR bezpośrednio koduje pierścień steranu... Oksydoreduktaza P450 (POR) przenosi elektrony z NADPH na wszystkie mikrosomalne enzymy steroidogenezy w retikulum endoplazmatycznym (CYP17A1, CYP21A2, CYP19A1).",
+        "Nieprawidłowo: Białko POR niszczy receptory ACTH na powierzchni błony komórkowej... Oksydoreduktaza P450 (POR) przenosi elektrony z NADPH na wszystkie mikrosomalne enzymy steroidogenezy w retikulum endoplazmatycznym (CYP17A1, CYP21A2, CYP19A1)."
       ]
     }
   ],
   "teachBack": {
     "id": "nadnercza-chemia-steroidogeneza-teach-back-v2",
     "type": "recall",
+    "assessmentLevel": "generation",
     "objectiveIds": [
-      "nadnercza-chemia-steroidogeneza-obj-1",
-      "nadnercza-chemia-steroidogeneza-obj-2"
+      "adn-chem-ster-obj-1",
+      "adn-chem-ster-obj-2"
     ],
-    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Stereochemia jądra steranu i cykl katalityczny cytochromów P450”.",
-    "modelAnswer": "Stereochemia steroidów kory nadnerczy opiera się na sztywnym szkielecie steranu i stereospecyficznych hydroksylacjach katalizowanych przez ferryl hemu cytochromów P450.",
-    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "prompt": "Wyjaśnij strukturę chemiczną aldosteronu w roztworze wodnym (mostek hemiacetalowy) oraz rolę adrenodoksyny w mitochondrialnych hydroksylacjach kory nadnerczy.",
+    "modelAnswer": "Aldosteron posiada grupę aldehydową przy węglu C18, która w roztworach wodnych reaguje spontanicznie z grupą 11-beta-OH tworząc stabilny 11,18-hemiacetal. W mitochondriach enzymy P450 (CYP11A1, CYP11B1, CYP11B2) otrzymują elektrony z NADPH za pośrednictwem żelazowo-siarkowego białka adrenodoksyny (Adx) i jej flawoproteinowej reduktazy (AdR).",
+    "explanation": "Chemiczna specyfika mostka hemiacetalowego warunkuje unikalne powinowactwo aldosteronu do receptora mineralokortykoidowego MR.",
     "difficulty": "both",
     "reasoning": "mechanism",
     "sourceIds": [
-      "sterane_chem",
-      "cah_kinetics",
-      "cah_guideline"
+      "sterane_chem"
     ]
   },
   "exitTicket": [
     {
       "id": "nadnercza-chemia-steroidogeneza-q4-exit-v2",
       "type": "missing_information",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "nadnercza-chemia-steroidogeneza-obj-2"
+        "adn-chem-ster-obj-2"
       ],
-      "prompt": "Który enzym odpowiada za ochronę receptora mineralokortykoidowego (MR) przed niekontrolowaną aktywacją przez kortyzol w nerkach?",
+      "prompt": "Ile atomów węgla posiada cząsteczka dehydroepiandrosteronu (DHEA) w porównaniu z cząsteczką cholesterolu i kortyzolu?",
       "options": [
-        "Dehydrogenaza 11β-hydroksysteroidowa typu 2 (11β-HSD2)",
-        "Oksydaza monoaminowa (MAO)",
-        "Lipaza trzustkowa"
+        "DHEA posiada 19 atomów węgla (steroid C19), podczas gdy kortyzol ma 21 (C21), a cholesterol 27 (C27)",
+        "Wszystkie steroidy posiadają dokładnie 17 atomów węgla",
+        "DHEA posiada 30 atomów węgla"
       ],
       "optionFeedback": [
-        "Przekształca aktywny kortyzol w nieaktywny kortyzon poprzez utlenienie grupy 11β-OH do 11-keto.",
-        "MAO uczestniczy w rozkładzie amin katecholowych, a nie steroidów.",
-        "Lipaza trawi tłuszcze w świetle przewodu pokarmowego."
+        "Odcięcie łańcucha bocznego przez liazę 17,20 przekształca steroidy C21 w androgeny C19.",
+        "17 atomów węgla to sam rdzeń steranu bez grup bocznych.",
+        "30 atomów węgla ma skwalen, prekursor cholesterolu."
       ],
       "answer": 0,
-      "explanation": "Przekształca aktywny kortyzol w nieaktywny kortyzon poprzez utlenienie grupy 11β-OH do 11-keto.",
-      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
-      "difficulty": "both",
+      "explanation": "Cholesterol to C27, glikokortykosteroidy i mineralokortykosteroidy to C21, a androgeny nadnerczowe (DHEA, androstendion) to steroidy C19.",
+      "difficulty": "student",
       "reasoning": "decision",
       "sourceIds": [
-        "sterane_chem",
-        "cah_kinetics",
-        "cah_guideline"
-      ]
+        "sterane_chem"
+      ],
+      "transfer": true
     },
     {
       "id": "nadnercza-chemia-steroidogeneza-q5-exit-v2",
-      "type": "missing_information",
+      "type": "single_choice",
+      "assessmentLevel": "recognition",
       "objectiveIds": [
-        "nadnercza-chemia-steroidogeneza-obj-1"
+        "adn-chem-ster-obj-1"
       ],
-      "prompt": "Dlaczego w warstwie kłębkowatej (zona glomerulosa) kory nadnerczy nie powstaje kortyzol ani androgeny?",
+      "prompt": "Jaki enzym mitochondrialny katalizuje pierwszy i ograniczający szybkość etap całej steroidogenezy: odcięcie łańcucha bocznego cholesterolu do pregnenolonu?",
       "options": [
-        "Z powodu braku ekspresji enzymu CYP17A1 (17α-hydroksylazy)",
-        "Ponieważ nie dociera tam krew tętnicza",
-        "Ponieważ komórki tej warstwy nie mają mitochondriów"
+        "CYP11A1 (desmolaza cholesterolowa / enzym odszczepiający łańcuch boczny P450scc)",
+        "CYP21A2 (21-hydroksylaza)",
+        "CYP19A1 (aromataza)"
       ],
       "optionFeedback": [
-        "Szlak steroidogenezy jest tam zablokowany na poziomie progesteronu i kierowany do aldosteronu.",
-        "Warstwa kłębkowata leży bezpośrednio pod torebką i jest bogato unaczyniona.",
-        "Mitochondria są niezbędne do wczesnych i późnych etapów syntezy aldosteronu."
+        "P450scc (CYP11A1) zlokalizowany na wewnętrznej błonie mitochondrialnej przekształca cholesterol C27 w pregnenolon C21.",
+        "CYP21A2 działa w siateczce śródplazmatycznej na późniejszym etapie.",
+        "Aromataza syntetyzuje estrogeny."
       ],
       "answer": 0,
-      "explanation": "Szlak steroidogenezy jest tam zablokowany na poziomie progesteronu i kierowany do aldosteronu.",
-      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
-      "difficulty": "both",
-      "reasoning": "safety",
+      "explanation": "Enzym CYP11A1 (P450scc) odpowiada za przekształcenie cholesterolu w pregnenolon, będąc kluczowym enzymem podlegającym stymulacji przez ACTH.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "sterane_chem"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "nadnercza-chemia-steroidogeneza-bank-1-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "adn-chem-ster-obj-1",
+        "adn-chem-ster-obj-2"
+      ],
+      "prompt": "Dlaczego kortyzol i aldosteron wykazują zbliżone powinowactwo do receptora mineralokortykoidowego (MR), ale w komórkach cewki dalszej nerki tylko aldosteron wywiera działanie fizjologiczne? Wyjaśnij rolę enzymu 11-beta-HSD2 na poziomie biochemicznym.",
+      "modelAnswer": "Receptor mineralokortykoidowy (MR) posiada ewolucyjnie niemal identyczne powinowactwo do kortyzolu i aldosteronu. Ponieważ stężenie kortyzolu w osoczu jest 100–1000 razy wyższe niż aldosteronu, receptor MR byłby stale zablokowany przez kortyzol. W komórkach docelowych cewki nerkowej obecny jest enzym 11-beta-dehydrogenaza hydroksysteroidowa typu 2 (11-beta-HSD2). Enzym ten utlenia grupę hydroksylową przy węglu C11 kortyzolu do grupy ketonowej (=O), przekształcając aktywny kortyzol w nieaktywny kortyzon, który nie ma powinowactwa do receptora MR. Aldosteron jest chroniony przed działaniem tego enzymu, ponieważ jego grupa 11-beta-OH jest zablokowana w mostku hemiacetalowym z grupą aldehydową C18.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-mr-affinity-equality",
+            "label": "Identyczne powinowactwo MR do kortyzolu i aldosteronu oraz nadmiar kortyzolu",
+            "acceptedPhrases": [
+              "równe powinowactwo",
+              "kortyzol ma wysokie stężenie",
+              "100-1000 razy wyższe"
+            ]
+          },
+          {
+            "id": "c-11beta-hsd2-oxidation",
+            "label": "Utlenianie kortyzolu do nieaktywnego kortyzonu przez 11-beta-HSD2",
+            "acceptedPhrases": [
+              "11-beta-HSD2",
+              "utlenianie do kortyzonu",
+              "kortyzon nieaktywny",
+              "ochrona receptora"
+            ]
+          },
+          {
+            "id": "c-aldosterone-hemiacetal-protection",
+            "label": "Ochrona aldosteronu przez mostek hemiacetalowy C11-C18",
+            "acceptedPhrases": [
+              "mostek hemiacetalowy",
+              "grupa aldehydowa C18",
+              "odporny na 11-beta-HSD2"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Enzym 11-beta-HSD2 chroni receptor MR przed zalaniem przez kortyzol, przekształcając go w kortyzon. Aldosteron jest chroniony przez strukturę hemiacetalową.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "sterane_chem"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "nadnercza-chemia-steroidogeneza-bank-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "adn-chem-ster-obj-2"
+      ],
+      "claimIds": [
+        "claim-adn-cah-17ohp-thresholds"
+      ],
+      "prompt": "U noworodka z podejrzeniem rzadkiej postaci WPN stwierdzono nadciśnienie tętnicze, hipokaliemię oraz brak wirylizacji (żeńskie narządy u kariotypu 46,XY). Jaki blok enzymatyczny kory nadnerczy wyjaśnia ten specyficzny fenotyp chemiczny?",
+      "options": [
+        "Niedobór 17-alfa-hydroksylazy (CYP17A1), który uniemożliwia syntezę kortyzolu i androgenów, kierując cały strumień steroidogenezy w szlak 11-deoksykortykosteronu (DOC) o silnym działaniu mineralokortykoidowym",
+        "Niedobór 21-hydroksylazy (CYP21A2)",
+        "Niedobór syntazy aldosteronu (CYP11B2)"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-cyp17a1-deficiency-doc",
+            "label": "Niedobór CYP17A1 i akumulacja 11-deoksykortykosteronu (DOC)",
+            "acceptedPhrases": [
+              "CYP17A1",
+              "17-alfa-hydroksylaza",
+              "akumulacja DOC",
+              "11-deoksykortykosteron",
+              "brak androgenów"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Blok CYP17A1 uniemożliwia syntezę androgenów (brak maskulinizacji u 46,XY) i kortyzolu, powodując nadprodukcję mineralokortykoidu DOC wywołującego nadciśnienie i hipokaliemię.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
       "sourceIds": [
         "sterane_chem",
-        "cah_kinetics",
         "cah_guideline"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Blok CYP17A1 uniemożliwia syntezę androgenów (brak maskulinizacji u 46,XY) i kortyzolu, powodując nadprodukcję mineralokortykoidu DOC wywołującego nadciśnienie i hipokaliemię.",
+        "Nieprawidłowo: Niedobór 21-hydroksylazy (CYP21A2)... Blok CYP17A1 uniemożliwia syntezę androgenów (brak maskulinizacji u 46,XY) i kortyzolu, powodując nadprodukcję mineralokortykoidu DOC wywołującego nadciśnienie i hipokaliemię.",
+        "Nieprawidłowo: Niedobór syntazy aldosteronu (CYP11B2)... Blok CYP17A1 uniemożliwia syntezę androgenów (brak maskulinizacji u 46,XY) i kortyzolu, powodując nadprodukcję mineralokortykoidu DOC wywołującego nadciśnienie i hipokaliemię."
       ]
     }
   ],
@@ -219,6 +334,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+    "scope": "Pełna modernizacja V2: pierścień steranu, cykl P450 i adrenodoksyna, hemiacetal aldosteronu, 11-beta-HSD2."
   }
 }

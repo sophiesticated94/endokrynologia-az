@@ -3,237 +3,387 @@
   "lessonId": "nadnercza-diagnostyka",
   "objectives": [
     {
-      "id": "nadnercza-diagnostyka-obj-1",
-      "statement": "Opanujesz zasady oceny osi HPA: rytm dobowy kortyzolu, interpretację testu stymulacji Synacthenem (250 µg vs 1 µg).",
-      "kind": "mechanism"
+      "id": "adn-diag-obj-1",
+      "statement": "Zinterpretujesz poranne stężenie kortyzolu z uwzględnieniem progów wykluczenia (<3 vs >18 µg/dl) oraz czynników modyfikujących CBG (estrogeny).",
+      "kind": "interpretation"
     },
     {
-      "id": "nadnercza-diagnostyka-obj-2",
-      "statement": "Zrozumiesz oznaczanie układu RAA (wskaźnik ARR) oraz wolnych metanefryn w osoczu bez błędów przedanalitycznych.",
-      "kind": "interpretation"
+      "id": "adn-diag-obj-2",
+      "statement": "Rozróżnisz wskazania i pułapki testu stymulacji tetrakozaktydem (Synacthen) w pierwotnej vs wczesnej wtórnej niedoczynności kory nadnerczy.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "adn-diag-obj-3",
+      "statement": "Wdrożysz odpowiedni test pierwszego rzutu (1 mg DST, UFC, ślina) w zależności od fenotypu klinicznego i podejrzenia zaburzeń osi HPA.",
+      "kind": "decision"
     }
   ],
   "diagnostic": {
     "id": "nadnercza-diagnostyka-q1-diagnostic-v2",
     "type": "single_choice",
+    "assessmentLevel": "recognition",
     "objectiveIds": [
-      "nadnercza-diagnostyka-obj-1"
+      "adn-diag-obj-1"
     ],
-    "prompt": "Jakie stężenie kortyzolu w surowicy po podaniu 250 µg Synacthenu wyklucza pierwotną niedoczynność kory nadnerczy?",
+    "prompt": "Która z poniższych wartości porannego kortyzolu (godz. 8:00) w teście immunoenzymatycznym z wysokim prawdopodobieństwem potwierdza jawną niedoczynność kory nadnerczy?",
     "options": [
-      "Osiągnięcie stężenia co najmniej 18 µg/dl (500 nmol/l) w 30. lub 60. minucie (w LC-MS/MS próg wynosi 14–15 µg/dl)",
-      "Wzrost o dokładnie 2 µg/dl w stosunku do wartości wyjściowej",
-      "Stężenie powyżej 100 µg/dl"
+      "Kortyzol < 3 µg/dl (< 83 nmol/l)",
+      "Kortyzol w przedziale 10–14 µg/dl",
+      "Kortyzol > 18 µg/dl (> 500 nmol/l)"
     ],
     "optionFeedback": [
-      "Jest to klasyczne kryterium w testach immunochemicznych; nowoczesne metody LC-MS/MS stosują niższe odcięcie 14–15 µg/dl (400–412 nmol/l).",
-      "Sam przyrost bez osiągnięcia bezwzględnego progu 18 µg/dl nie wyklucza niedoczynności.",
-      "Wartość 100 µg/dl jest fizjologicznie niespotykana w standardowym teście."
+      "Stężenie < 3 µg/dl o godz. 8:00 silnie wskazuje na niewydolność kory nadnerczy i wymaga natychmiastowego zabezpieczenia pacjenta.",
+      "Wartości 3–18 µg/dl stanowią strefę niejednoznaczną (szarą) wymagającą testu stymulacji Synacthenem.",
+      "Wartość > 18 µg/dl z wysokim prawdopodobieństwem wyklucza niedoczynność kory nadnerczy."
     ],
     "answer": 0,
-    "explanation": "Jest to klasyczne kryterium w testach immunochemicznych; nowoczesne metody LC-MS/MS stosują niższe odcięcie 14–15 µg/dl (400–412 nmol/l).",
-    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "explanation": "Zgodnie z wytycznymi Endocrine Society poranny kortyzol < 3 µg/dl silnie przemawia za niedoczynnością kory nadnerczy, podczas gdy > 18 µg/dl ją wyklucza.",
     "difficulty": "student",
-    "reasoning": "mechanism",
+    "reasoning": "interpretation",
     "sourceIds": [
-      "pte_nadnercza",
-      "endo_pai",
-      "endo_pa",
-      "endo_pheo"
+      "endo_pai"
+    ],
+    "claimIds": [
+      "claim-adn-cortisol-morning-thresholds"
     ]
   },
   "blocks": [
     {
-      "id": "nadnercza-diagnostyka-block-1",
-      "title": "Ocena wydolności osi HPA i pułapki laboratoryjne",
-      "text": "Kortyzol wykazuje wyraźny rytm dobowy ze szczytem ok. 6:00–8:00 rano (prawidłowo 10–20 µg/dl lub 280–550 nmol/l) i nadirem o północy (<1,8 µg/dl lub <50 nmol/l). Pojedyncze poranne stężenie kortyzolu ma ograniczoną wartość: stężenie <3 µg/dl (<80 nmol/l) silnie sugeruje niedoczynność kory, a >15–18 µg/dl (>450 nmol/l) praktycznie ją wyklucza. Wartości pośrednie (3–15 µg/dl) bezwzględnie wymagają wykonania testu dynamicznego! Ponad 90% kortyzolu krąży związane z białkiem wiążącym kortykosteroidy (CBG / transkortyna). Estrogeny (doustna antykoncepcja hormonalna) zwiększają CBG, dając fałszywie wysoki kortyzol całkowity — antykoncepcję należy odstawić na 6 tygodni przed badaniem.",
+      "id": "adn-diag-b1",
+      "title": "Poranny kortyzol i pułapka białka CBG",
+      "text": "Około 90% kortyzolu w surowicy krąży w połączeniu z globuliną wiążącą kortykosteroidy (CBG). Doustna terapia estrogenowa (antykoncepcja, HTZ) stymuluje syntezę CBG w wątrobie, sztucznie podwajając stężenie kortyzolu całkowitego. U kobiet przyjmujących estrogeny oznaczenie kortyzolu całkowitego jest niewiarygodne i wymaga odstawienia leków na 6 tygodni lub pomiaru wolnego kortyzolu.",
       "sourceIds": [
-        "pte_nadnercza",
-        "endo_pai",
-        "endo_pa",
-        "endo_pheo"
+        "endo_pai"
       ],
-      "checkpointId": "nadnercza-diagnostyka-q2-checkpoint-1-v2",
-      "inlineEnhancements": [
-        {
-          "id": "enh-adn-diag-hpa",
-          "kind": "workbench-deeplink",
-          "placement": "after-text",
-          "presetId": "adrenal-hpa-synacthen"
-        }
+      "checkpointId": "nadnercza-diagnostyka-q2-checkpoint-1-v2"
+    },
+    {
+      "id": "adn-diag-b2",
+      "title": "Test stymulacji tetrakozaktydem (Synacthen 250 µg)",
+      "text": "Podanie 250 µg syntetycznego ACTH1-24 z oceną kortyzolu po 30 i 60 minutach jest złotym standardem oceny rezerwy nadnerczowej. Prawidłowa odpowiedź to szczyt >= 18 µg/dl (>= 500 nmol/l w teście immunoenzymatycznym lub >= 14,5 µg/dl w LC-MS/MS). Pułapka kliniczna: we wczesnej wtórnej niedoczynności nadnerczy (<4 tyg. od uszkodzenia przysadki) kora nie zdążyła ulec atrofii i może odpowiedzieć prawidłowo na Synacthen!",
+      "sourceIds": [
+        "endo_pai"
+      ],
+      "checkpointId": "nadnercza-diagnostyka-q3-checkpoint-2-v2"
+    },
+    {
+      "id": "adn-diag-b3",
+      "title": "Testy przesiewowe w hiperkortyzolemii",
+      "text": "Wstępna diagnostyka zespołu Cushinga obejmuje test nocnego hamowania 1 mg deksametazonu (1 mg DST; norma: kortyzol rano < 1,8 µg/dl), dobowe wydalanie wolnego kortyzolu w moczu (UFC) lub kortyzol w ślinie o północy. Każdy z tych testów ma swoje ograniczenia (np. interakcje z CYP3A4 przy deksametazonie).",
+      "sourceIds": [
+        "pte_macs",
+        "ese_incidentaloma"
       ]
-    },
-    {
-      "id": "nadnercza-diagnostyka-block-2",
-      "title": "Złoty standard: Test stymulacji z syntetycznym ACTH (Synacthen)",
-      "text": "Standardowy test z Synacthenem (tetracosactide) polega na dożylnym lub domięśniowym podaniu 250 µg syntetycznego ACTH 1-24 z pomiarem kortyzolu w 0, 30 i 60 minucie. Prawidłowa odpowiedź: w klasycznych testach immunochemicznych stężenie kortyzolu po stymulacji osiąga co najmniej >=18 µg/dl (500 nmol/l). W nowoczesnych testach chromatografii cieczowej ze spektrometrią mas (LC-MS/MS) oraz testach z monoklonalnymi przeciwciałami II generacji próg odcięcia wynosi 14–15 µg/dl (ok. 400–412 nmol/l) z uwagi na wyższą swoistość i brak reakcji krzyżowych. Brak wymaganego wzrostu potwierdza niedostateczną rezerwę kortyzolową (niedoczynność kory nadnerczy ogółem). Sam test nie rozstrzyga jednak, czy przyczyna jest pierwotna (PAI), czy wtórna/trzeciorzędowa (długotrwały brak endogennego ACTH prowadzi do zaniku warstwy pasmowatej i braku reakcji na krótki bodziec). Do rozpoznania PAI niezbędne jest jednoczesne oznaczenie porannego ACTH: stężenie ACTH >2× powyżej górnej granicy normy przy niskim kortyzolu potwierdza PAI wg wytycznych Endocrine Society; dodatkowo ocenia się układ renina-aldosteron. Uwaga kliniczna: w świeżej wtórnej niedoczynności nadnerczy (np. po operacji przysadki przed 4–6 tygodniami) kora nadnerczy nie zdążyła jeszcze zaniknąć i może przejściowo odpowiedzieć na dawkę 250 µg Synacthenu! W tych przypadkach stosuje się test z małą dawką (1 µg) lub test hipoglikemii poinsulinowej (ITT).",
-      "sourceIds": [
-        "pte_nadnercza",
-        "endo_pai",
-        "endo_pa",
-        "endo_pheo"
-      ],
-      "checkpointId": "nadnercza-diagnostyka-q3-checkpoint-2-v2",
-      "inlineEnhancements": []
-    },
-    {
-      "id": "nadnercza-diagnostyka-block-3",
-      "title": "Przesiew w kierunku Conna (ARR 2025) i Pheochromocytoma",
-      "text": "W diagnostyce pierwotnego hiperaldosteronizmu przesiewem z wyboru jest wskaźnik aldosteronowo-reninowy (ARR = stężenie aldosteronu / aktywność reninowa osocza ARO lub stężenie reniny DRC) oznaczany rano po pionizacji i po wyrównaniu hipokaliemii. Zgodnie z wytycznymi Endocrine Society (2025) stosuje się trzy zrównoważone strategie przygotowania: 1) no-withdrawal: przesiew bez odstawiania leków, gdy ryzyko ciężkiego nadciśnienia lub hipokaliemii jest wysokie (wysoki aldosteron przy stłumionej reninie silnie sugeruje PA); 2) minimal withdrawal: odstawienie antagonistów receptora mineralokortykoidowego (spironolakton, eplerenon) oraz leków oszczędzających potas (na 4–6 tyg.) i zamiana na leki neutralne dla RAA (werapamil SR, doksazosyna, hydralazyna); 3) ideal full withdrawal: pełne odstawienie leków wpływających na RAA (w tym ACEI, ARB, beta-blokerów), jeśli jest bezpieczne i potrzebne przy wynikach niejednoznacznych. Z kolei w diagnostyce guza chromochłonnego testem z wyboru jest pomiar wolnych metanefryn w osoczu (metanefryna i normetanefryna) pobieranych na leżąco po 20–30 minutach odpoczynku w kaniuli założonej wcześniej.",
-      "sourceIds": [
-        "pte_nadnercza",
-        "endo_pai",
-        "endo_pa",
-        "endo_pheo"
-      ],
-      "inlineEnhancements": []
     }
   ],
   "activities": [
     {
       "id": "nadnercza-diagnostyka-q2-checkpoint-1-v2",
-      "type": "single_choice",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "nadnercza-diagnostyka-obj-2"
+        "adn-diag-obj-1"
       ],
-      "prompt": "Kiedy pojedyncze poranne oznaczenie stężenia kortyzolu we krwi pozwala bezpiecznie wykluczyć niedoczynność kory nadnerczy bez testów dynamicznych?",
+      "prompt": "26-letnia kobieta stosująca złożoną antykoncepcję doustną zgłasza przewlekłe zmęczenie. Jej poranny kortyzol całkowity wynosi 19,2 µg/dl (norma 5–25 µg/dl). Czy ten wynik definitywnie wyklucza niedoczynność kory nadnerczy?",
       "options": [
-        "Gdy stężenie wynosi >15–18 µg/dl (>450–500 nmol/l) u osoby nieprzyjmującej estrogenów",
-        "Zawsze przy stężeniu powyżej 4 µg/dl",
-        "Nigdy, u każdego pacjenta trzeba wykonać cewnikowanie żył"
-      ],
-      "optionFeedback": [
-        "Wysoki poranny kortyzol świadczy o zachowanej czynności (w LC-MS/MS próg wykluczenia bywa obniżony do >14 µg/dl).",
-        "Wartości 3–15 µg/dl znajdują się w strefie niepewności i wymagają stymulacji Synacthenem.",
-        "Cewnikowanie wykonuje się w diagnostyce Conna i Cushinga, a nie niedoczynności."
+        "Nie, ponieważ estrogeny indukują wątrobową syntezę CBG, sztucznie zawyżając stężenie kortyzolu całkowitego przy potencjalnie obniżonym kortyzolu wolnym",
+        "Tak, stężenie powyżej 18 µg/dl w każdych warunkach wyklucza niedoczynność kory nadnerczy",
+        "Nie, kortyzol całkowity u kobiet zależy wyłącznie od stężenia hormonu wzrostu"
       ],
       "answer": 0,
-      "explanation": "Wysoki poranny kortyzol świadczy o zachowanej czynności (w LC-MS/MS próg wykluczenia bywa obniżony do >14 µg/dl).",
-      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
-      "difficulty": "student",
-      "reasoning": "mechanism",
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-cbg-elevation",
+            "label": "Indukcja CBG przez estrogeny doustne",
+            "acceptedPhrases": [
+              "CBG",
+              "transkortyna",
+              "estrogeny",
+              "białko wiążące",
+              "zawyżenie"
+            ]
+          },
+          {
+            "id": "c-free-cortisol-discrepancy",
+            "label": "Rozbieżność między kortyzolem całkowitym a wolnym",
+            "acceptedPhrases": [
+              "kortyzol wolny",
+              "całkowity",
+              "frakcja wolna"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Estrogeny podawane doustnie zwiększają syntezę CBG w wątrobie. W efekcie całkowity kortyzol może wynosić 19 µg/dl, podczas gdy aktywny biologicznie wolny kortyzol jest skrajnie niski.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
       "sourceIds": [
-        "pte_nadnercza",
-        "endo_pai",
-        "endo_pa",
-        "endo_pheo"
+        "endo_pai"
+      ],
+      "claimIds": [
+        "claim-adn-cbg-estrogens"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Estrogeny podawane doustnie zwiększają syntezę CBG w wątrobie. W efekcie całkowity kortyzol może wynosić 19 µg/dl, podczas gdy aktywny biologicznie wolny kortyzol jest skrajnie niski.",
+        "Nieprawidłowo: Tak, stężenie powyżej 18 µg/dl w każdych warunkach wyklucza niedoczynność kory n... Estrogeny podawane doustnie zwiększają syntezę CBG w wątrobie. W efekcie całkowity kortyzol może wynosić 19 µg/dl, podczas gdy aktywny biologicznie wolny kortyzol jest skrajnie niski.",
+        "Nieprawidłowo: Nie, kortyzol całkowity u kobiet zależy wyłącznie od stężenia hormonu wzrostu... Estrogeny podawane doustnie zwiększają syntezę CBG w wątrobie. W efekcie całkowity kortyzol może wynosić 19 µg/dl, podczas gdy aktywny biologicznie wolny kortyzol jest skrajnie niski."
       ]
     },
     {
       "id": "nadnercza-diagnostyka-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "lab",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "nadnercza-diagnostyka-obj-1"
+        "adn-diag-obj-2"
       ],
-      "prompt": "Dlaczego doustna antykoncepcja estrogenowa może zafałszować wynik całkowitego kortyzolu w surowicy?",
+      "prompt": "Pacjent 2 tygodnie po operacji makrogruczolaka przysadki z uszkodzeniem szypuły zgłasza osłabienie i hipotensję. Wykonano test z Synacthenem 250 µg: wyrzut kortyzolu w 60. minucie wyniósł 19,8 µg/dl (> 18 µg/dl). Jak należy zinterpretować ten wynik?",
       "options": [
-        "Estrogeny stymulują wątrobową syntezę CBG (transkortyny), podwyższając stężenie kortyzolu związanego z białkiem",
-        "Estrogeny niszczą komórki kory nadnerczy",
-        "Tabletki antykoncepcyjne zawierają syntetyczny kortyzol"
-      ],
-      "optionFeedback": [
-        "Prowadzi to do fałszywie wysokich wyników kortyzolu całkowitego przy prawidłowej frakcji wolnej.",
-        "Estrogeny nie niszczą kory nadnerczy.",
-        "Antykoncepcja hormonalna zawiera progestageny i etynyloestradiol, a nie kortyzol."
+        "Wynik może być fałszywie ujemny, ponieważ kora nadnerczy nie uległa jeszcze atrofii po niedawnym uszkodzeniu przysadki (< 4 tygodnie temu)",
+        "Wynik definitywnie wyklucza niedoczynność przysadki i pozwala na bezpieczne odstawienie hydrokortyzonu",
+        "Wynik świadczy o obecności autonomicznego gruczolaka kory nadnerczy"
       ],
       "answer": 0,
-      "explanation": "Prowadzi to do fałszywie wysokich wyników kortyzolu całkowitego przy prawidłowej frakcji wolnej.",
-      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "explanation": "W świeżej wtórnej niedoczynności nadnerczy (<4 tyg.) kora nadnerczy zachowuje przejściową zdolność do odpowiedzi na wysokie dawki egzogennego ACTH (Synacthen 250 µg). Test może być fałszywie prawidłowy.",
       "difficulty": "doctor",
-      "reasoning": "interpretation",
+      "reasoning": "mechanism",
       "sourceIds": [
-        "pte_nadnercza",
-        "endo_pai",
-        "endo_pa",
-        "endo_pheo"
+        "endo_pai"
+      ],
+      "claimIds": [
+        "claim-adn-synacthen-recent-secondary"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: W świeżej wtórnej niedoczynności nadnerczy (<4 tyg.) kora nadnerczy zachowuje przejściową zdolność do odpowiedzi na wysokie dawki egzogennego ACTH (Synacthen 250 µg). Test może być fałszywie prawidłowy.",
+        "Nieprawidłowo: Wynik definitywnie wyklucza niedoczynność przysadki i pozwala na bezpieczne odst... W świeżej wtórnej niedoczynności nadnerczy (<4 tyg.) kora nadnerczy zachowuje przejściową zdolność do odpowiedzi na wysokie dawki egzogennego ACTH (Synacthen 250 µg). Test może być fałszywie prawidłowy.",
+        "Nieprawidłowo: Wynik świadczy o obecności autonomicznego gruczolaka kory nadnerczy... W świeżej wtórnej niedoczynności nadnerczy (<4 tyg.) kora nadnerczy zachowuje przejściową zdolność do odpowiedzi na wysokie dawki egzogennego ACTH (Synacthen 250 µg). Test może być fałszywie prawidłowy."
       ]
     }
   ],
   "teachBack": {
     "id": "nadnercza-diagnostyka-teach-back-v2",
     "type": "recall",
+    "assessmentLevel": "generation",
     "objectiveIds": [
-      "nadnercza-diagnostyka-obj-1",
-      "nadnercza-diagnostyka-obj-2"
+      "adn-diag-obj-1",
+      "adn-diag-obj-3"
     ],
-    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Odszyfruj korę i rdzeń”.",
-    "modelAnswer": "Diagnostyka kory i rdzenia opiera się na dynamicznych testach i rygorze przedanalitycznym: test 250 µg Synacthenu definiuje rezerwę kory (odcięcie 18 µg/dl, w LC-MS/MS 14–15 µg/dl; PAI wymaga ACTH >2× GGN), wskaźnik ARR wymaga wyrównania potasu i przemyślanej strategii leków (Endocrine Society 2025), a wolne metanefryny wykazują najwyższą czułość w wykrywaniu feochromocytoma.",
-    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "prompt": "Przedstaw algorytm postępowania przy podejrzeniu niedoczynności kory nadnerczy w zależności od porannego stężenia kortyzolu oraz wskaż czynniki zakłócające.",
+    "modelAnswer": "Poranny kortyzol: <3 µg/dl potwierdza AI; >18 µg/dl wyklucza AI; 3–18 µg/dl wymaga testu Synacthen 250 µg (szczyt >=18 µg/dl wyklucza, z wyjątkiem świeżej wtórnej AI <4 tyg.). Czynnik zakłócający to estrogeny zwiększające CBG.",
+    "explanation": "Interpretacja progu 3 i 18 µg/dl oraz znajomość wpływu CBG stanowi fundament diagnostyki endokrynologicznej.",
     "difficulty": "both",
-    "reasoning": "mechanism",
+    "reasoning": "interpretation",
     "sourceIds": [
-      "pte_nadnercza",
-      "endo_pai",
-      "endo_pa",
-      "endo_pheo"
+      "endo_pai"
     ]
   },
   "exitTicket": [
     {
       "id": "nadnercza-diagnostyka-q4-exit-v2",
       "type": "missing_information",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "nadnercza-diagnostyka-obj-2"
+        "adn-diag-obj-3"
       ],
-      "prompt": "Jaki lek moczopędny należy bezwzględnie odstawić na co najmniej 4–6 tygodni przed oznaczeniem wskaźnika ARR?",
+      "prompt": "Który z poniższych testów przesiewowych I rzutu w zespole Cushinga jest najbardziej podatny na fałszywie dodatnie wyniki u pacjentów przyjmujących leki indukujące enzymy CYP3A4 (np. karbamazepinę, ryfampicynę)?",
       "options": [
-        "Spironolakton (oraz eplerenon)",
-        "Doksazosynę",
-        "Werapamil o przedłużonym uwalnianiu"
+        "Nocny test hamowania 1 mg deksametazonu (1 mg DST)",
+        "Dobowe wydalanie wolnego kortyzolu w moczu (UFC)",
+        "Późnowieczorny kortyzol w ślinie"
       ],
       "optionFeedback": [
-        "Antagoniści aldosteronu drastycznie podwyższają reninę i fałszują wskaźnik ARR.",
-        "Doksazosyna (alfa-bloker) jest lekiem z wyboru, który nie zaburza istotnie wskaźnika ARR.",
-        "Werapamil to dopuszczalny bloker kanałów wapniowych w okresie przygotowania do ARR."
+        "Induktory CYP3A4 przyspieszają metabolizm deksametazonu, obniżając jego stężenie we krwi i uniemożliwiając supresję kortyzolu (fałszywie dodatni DST).",
+        "UFC mierzy natywny kortyzol w moczu, niezależnie od CYP3A4.",
+        "Kortyzol w ślinie ocenia rytm dobowy i nie zależy od klirensu deksametazonu."
       ],
       "answer": 0,
-      "explanation": "Antagoniści aldosteronu drastycznie podwyższają reninę i fałszują wskaźnik ARR.",
-      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
-      "difficulty": "both",
+      "explanation": "Deksametazon jest metabolizowany przez CYP3A4. Indukcja tego enzymu powoduje zbyt szybki klirens leku i brak supresji osi (fałszywy wynik dodatni).",
+      "difficulty": "doctor",
       "reasoning": "decision",
       "sourceIds": [
-        "pte_nadnercza",
-        "endo_pai",
-        "endo_pa",
-        "endo_pheo"
-      ]
+        "pte_macs",
+        "ese_incidentaloma"
+      ],
+      "claimIds": [
+        "claim-adn-cushing-initial-screening"
+      ],
+      "transfer": true
     },
     {
       "id": "nadnercza-diagnostyka-q5-exit-v2",
-      "type": "missing_information",
+      "type": "single_choice",
+      "assessmentLevel": "recognition",
       "objectiveIds": [
-        "nadnercza-diagnostyka-obj-1"
+        "adn-diag-obj-1"
       ],
-      "prompt": "W jakiej pozycji powinien spocząć pacjent przed pobraniem krwi na wolne metanefryny w osoczu w celu minimalizacji wyników fałszywie dodatnich?",
+      "prompt": "Jaki jest punkt odcięcia stężenia kortyzolu rano po teście 1 mg DST wykluczający autonomiczną sekrecję kortyzolu u osoby z incydentaloma nadnercza?",
       "options": [
-        "W pozycji leżącej przez 20–30 minut w cichym pomieszczeniu",
-        "W trakcie intensywnego marszu na bieżni",
-        "W pozycji stojącej na baczność przez 2 godziny"
+        "Kortyzol < 1,8 µg/dl (< 50 nmol/l)",
+        "Kortyzol < 5,0 µg/dl",
+        "Kortyzol < 10,0 µg/dl"
       ],
       "optionFeedback": [
-        "Pionizacja i stres wkłucia podnoszą napięcie współczulne i fałszują wynik; pozycja leżąca daje najwyższą swoistość.",
-        "Wysiłek fizyczny dramatycznie wyrzuca katecholaminy i metanefryny.",
-        "Pionizacja jest wymagana w badaniu reniny, a nie wolnych metanefryn."
+        "Wartość < 1,8 µg/dl wyklucza autonomiczną sekrecję kortyzolu z czułością > 95%.",
+        "Wartość 1,8–5,0 µg/dl definiuje możliwą autonomiczną sekrecję kortyzolu (possible MACS).",
+        "Wartość 10 µg/dl to zdecydowanie za wysoki próg."
       ],
       "answer": 0,
-      "explanation": "Pionizacja i stres wkłucia podnoszą napięcie współczulne i fałszują wynik; pozycja leżąca daje najwyższą swoistość.",
-      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
-      "difficulty": "both",
-      "reasoning": "safety",
+      "explanation": "Stężenie kortyzolu poniżej 1,8 µg/dl w teście 1 mg DST wyklucza autonomiczną sekrecję (MACS) wg wytycznych ESE/ENSAT 2023.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
       "sourceIds": [
-        "pte_nadnercza",
-        "endo_pai",
-        "endo_pa",
-        "endo_pheo"
+        "ese_incidentaloma",
+        "pte_macs"
+      ],
+      "claimIds": [
+        "claim-adn-macs-dst-thresholds"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "nadnercza-diagnostyka-bank-1-v2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "adn-diag-obj-1",
+        "adn-diag-obj-2"
+      ],
+      "claimIds": [
+        "claim-adn-cortisol-morning-thresholds",
+        "claim-adn-synacthen-recent-secondary",
+        "claim-adn-cbg-estrogens"
+      ],
+      "prompt": "34-letnia pacjentka leczona doustnym etynyloestradiolem zgłasza osłabienie, zawroty głowy i zasłabnięcia. Lekarz POZ oznaczył poranny kortyzol całkowity (wynik 11,5 µg/dl) i uznał, że wyklucza to niedoczynność kory nadnerczy, ponieważ norma wynosi 5–25 µg/dl. Oceń postępowanie diagnostyczne, wyjaśnij błąd interpretacyjny i zaplanuj prawidłową diagnostykę.",
+      "modelAnswer": "Postępowanie lekarza POZ było błędne. Etynyloestradiol silnie stymuluje wątrobową produkcję CBG, co powoduje sztuczne podwojenie stężenia kortyzolu całkowitego. U pacjentki stosującej estrogeny stężenie 11,5 µg/dl odpowiada w rzeczywistości stężeniu rzędu 5–6 µg/dl bez estrogenów, co mieści się w strefie niejednoznacznej (3–18 µg/dl), a frakcja wolnego kortyzolu może być patologicznie niska. Prawidłowe postępowanie: 1) Oznaczenie kortyzolu wolnego (w ślinie lub moczu) bądź odstawienie doustnej antykoncepcji na 6 tygodni; 2) Po odstawieniu lub przy utrzymujących się objawach wykonanie testu stymulacji Synacthenem 250 µg z oceną wyrzutu kortyzolu po 30 i 60 minutach.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "adn-diag-bank-1-dim-dx",
+            "label": "Wymiar diagnostyczny i patofizjologiczny",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-cbg-artifact",
+                "label": "Wyjaśnienie zafałszowania kortyzolu całkowitego przez CBG pod wpływem estrogenów",
+                "acceptedPhrases": [
+                  "CBG",
+                  "transkortyna",
+                  "estrogeny",
+                  "fałszywie podwyższony",
+                  "zwiększona synteza"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "adn-diag-bank-1-dim-tx",
+            "label": "Wymiar decyzyjny i bezpieczeństwo kliniczne",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-correct-testing-plan",
+                "label": "Zaplanowanie oceny frakcji wolnej lub testu Synacthen po odstawieniu estrogenów",
+                "acceptedPhrases": [
+                  "wolny kortyzol",
+                  "Synacthen",
+                  "odstawienie na 6 tygodni",
+                  "kortyzol w ślinie"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-agree-with-gp",
+            "patterns": [
+              "lekarz POZ miał rację",
+              "wynik 11,5 wyklucza niedoczynność"
+            ],
+            "severity": "critical",
+            "feedback": "Zaakceptowanie wyniku całkowitego kortyzolu u pacjentki na estrogenach grozi przeoczeniem zagrażającej życiu niedoczynności nadnerczy."
+          }
+        ]
+      },
+      "explanation": "Estrogeny podwajają CBG, dlatego stężenia całkowitego kortyzolu u tych kobiet nie wolno interpretować za pomocą standardowych progów odcięcia.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "endo_pai"
+      ],
+      "transfer": true,
+      "caseSnapshot": {
+        "patientAge": 34,
+        "medications": [
+          "etynyloestradiol + drospirenon"
+        ],
+        "morningCortisolUgDl": 11.5,
+        "bloodPressure": "95/60 mmHg",
+        "symptoms": "osłabienie, zawroty głowy"
+      },
+      "engineBinding": {
+        "engine": "adrenal-workbench",
+        "presetId": "adrenal-hpa-synacthen"
+      }
+    },
+    {
+      "id": "nadnercza-diagnostyka-bank-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "adn-diag-obj-2"
+      ],
+      "claimIds": [
+        "claim-adn-synacthen-recent-secondary"
+      ],
+      "prompt": "Dlaczego u pacjenta 10 dni po operacji usunięcia gruczolaka przysadki mózgowej test ze standardową dawką Synacthenu (250 µg) nie jest wiarygodny do wykluczenia wtórnej niedoczynności nadnerczy?",
+      "options": [
+        "Kora nadnerczy potrzebuje 4–6 tygodni braku endogennego ACTH, aby ulec atrofii; w okresie wczesnym podanie 250 µg Synacthenu wywołuje przejściowy prawidłowy wyrzut kortyzolu pomimo braku stymulacji przysadkowej",
+        "Ponieważ podanie Synacthenu natychmiast indukuje nieodwracalny krwotok do przysadki",
+        "Ponieważ Synacthen działa wyłącznie na receptory mineralokortykoidowe w cewkach nerkowych"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-delayed-adrenal-atrophy",
+            "label": "Opóźniona atrofia kory nadnerczy po ustaniu wydzielania ACTH",
+            "acceptedPhrases": [
+              "atrofia",
+              "brak atrofii",
+              "4 tygodnie",
+              "opóźnienie",
+              "rezerwa nadnerczowa"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Atrofia kory nadnerczy z braku ACTH wymaga czasu (zwykle > 4 tygodni). Wcześniej podanie suprafizjologicznej dawki 250 µg pobudza jeszcze sprawną korę, dając wynik fałszywie prawidłowy.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "endo_pai"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Atrofia kory nadnerczy z braku ACTH wymaga czasu (zwykle > 4 tygodni). Wcześniej podanie suprafizjologicznej dawki 250 µg pobudza jeszcze sprawną korę, dając wynik fałszywie prawidłowy.",
+        "Nieprawidłowo: Ponieważ podanie Synacthenu natychmiast indukuje nieodwracalny krwotok do przysa... Atrofia kory nadnerczy z braku ACTH wymaga czasu (zwykle > 4 tygodni). Wcześniej podanie suprafizjologicznej dawki 250 µg pobudza jeszcze sprawną korę, dając wynik fałszywie prawidłowy.",
+        "Nieprawidłowo: Ponieważ Synacthen działa wyłącznie na receptory mineralokortykoidowe w cewkach ... Atrofia kory nadnerczy z braku ACTH wymaga czasu (zwykle > 4 tygodni). Wcześniej podanie suprafizjologicznej dawki 250 µg pobudza jeszcze sprawną korę, dając wynik fałszywie prawidłowy."
       ]
     }
   ],
   "widgetIds": [
-    "adrenal-workbench"
+    "adrenal-workbench",
+    "lab-workbench"
   ],
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+    "scope": "Pełna modernizacja V2: progi odcięcia kortyzolu, białko CBG, test Synacthenu i pułapki wczesnej wtórnej AI."
   }
 }

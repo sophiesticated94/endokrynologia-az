@@ -3,203 +3,376 @@
   "lessonId": "wpn-zespol",
   "objectives": [
     {
-      "id": "wpn-zespol-obj-1",
-      "statement": "Zrozumiesz patomechanizm wrodzonego przerostu nadnerczy (WPN) spowodowanego niedoborem 21-hydroksylazy (CYP21A2).",
+      "id": "wpn-obj-1",
+      "statement": "Wyjaśnisz blok enzymatyczny 21-hydroksylazy, ucieczkę substratów w szlak androgenowy oraz brak ujemnego sprzężenia ACTH stymulujący hiperplazję kory.",
       "kind": "mechanism"
     },
     {
-      "id": "wpn-zespol-obj-2",
-      "statement": "Rozróżnisz postać klasyczną z utratą soli od postaci prostej wirylizującej oraz opanujesz diagnostykę postaci nieklasycznej (NC-CAH).",
+      "id": "wpn-obj-2",
+      "statement": "Rozpoznasz zagrażający życiu przełom solny u noworodka z klasycznym WPN (hiponatremia, hiperkaliemia, kwasica, odwodnienie) i wdrożysz natychmiastowe leczenie.",
+      "kind": "safety"
+    },
+    {
+      "id": "wpn-obj-3",
+      "statement": "Zinterpretujesz stężenia porannego i stymulowanego 17-OHP w diagnostyce nieklasycznego WPN (NC-CAH) z uwzględnieniem progów 200 i 1000 ng/dl.",
       "kind": "interpretation"
     }
   ],
   "diagnostic": {
     "id": "wpn-zespol-q1-diagnostic-v2",
     "type": "single_choice",
+    "assessmentLevel": "recognition",
     "objectiveIds": [
-      "wpn-zespol-obj-1"
+      "wpn-obj-1"
     ],
-    "prompt": "Jaki metabolit steroidowy ulega masywnej akumulacji we krwi w najczęstszej postaci wrodzonego przerostu nadnerczy (WPN)?",
+    "prompt": "Który defekt enzymatyczny odpowiada za ponad 90–95% wszystkich przypadków wrodzonego przerostu nadnerczy (WPN / CAH)?",
     "options": [
-      "17-hydroksyprogesteron (17-OHP)",
-      "Estriol",
-      "Katecholaminy"
+      "Niedobór 21-hydroksylazy steroidowej (CYP21A2)",
+      "Niedobór 17-alfa-hydroksylazy (CYP17A1)",
+      "Niedobór dehydrogenazy 11-beta-hydroksysteroidowej typu 2 (11-beta-HSD2)"
     ],
     "optionFeedback": [
-      "Brak enzymu 21-hydroksylazy blokuje dalszą konwersję 17-OHP, powodując jego gromadzenie.",
-      "Estriol jest estrogenem syntetyzowanym w łożysku podczas ciąży.",
-      "Katecholaminy powstają w rdzeniu nadnerczy z tyrozyny, nie biorą udziału w sterydogenezie kory."
+      "Niedobór 21-hydroksylazy blokuje przekształcanie 17-OHP w 11-deoksykortyzol oraz progesteronu w 11-deoksykortykosteron, przesuwając syntezę w szlak androgenów.",
+      "Niedobór CYP17A1 jest rzadką postacią WPN prowadzącą do hipogonadyzmu i nadciśnienia.",
+      "Defekt 11-beta-HSD2 to zespół pozornego nadmiaru mineralokortykoidów (SAME), a nie WPN."
     ],
     "answer": 0,
-    "explanation": "Brak enzymu 21-hydroksylazy blokuje dalszą konwersję 17-OHP, powodując jego gromadzenie.",
-    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "explanation": "Zdecydowana większość (>90%) przypadków WPN wynika z mutacji genu CYP21A2 kodującego 21-hydroksylazę steroidową.",
     "difficulty": "student",
     "reasoning": "mechanism",
     "sourceIds": [
-      "cah_guideline",
-      "pte_nadnercza"
+      "cah_guideline"
+    ],
+    "claimIds": [
+      "claim-adn-cah-17ohp-thresholds"
     ]
   },
   "blocks": [
     {
-      "id": "wpn-zespol-block-1",
-      "title": "Blok enzymatyczny i ucieczka substratów",
-      "text": "Wrodzony przerost nadnerczy (Congenital Adrenal Hyperplasia — CAH / WPN) to grupa chorób uwarunkowanych autosomalnie recesywnie, w których defekt enzymatyczny uniemożliwia prawidłową syntezę kortyzolu. W ponad 90–95% przypadków przyczyną jest mutacja genu CYP21A2 kodującego 21-hydroksylazę. Enzym ten odpowiada za przekształcanie progesteronu w 11-deoksykortykosteron (szlak aldosteronu) oraz 17-OH-progesteronu w 11-deoksykortyzol (szlak kortyzolu). Brak kortyzolu znosi ujemne sprzężenie zwrotne: przysadka masowo wydziela ACTH, co powoduje przerost (hyperplasia) kory nadnerczy. Zgromadzone powyżej bloku prekursory (głównie 17-OHP) zostają przesunięte do jedynego drożnego szlaku — syntezy silnych androgenów nadnerczowych (androstendionu i testosteronu)!",
+      "id": "wpn-b1",
+      "title": "Patomechanizm: Zablokowanie syntezy kortyzolu",
+      "text": "Niedobór 21-hydroksylazy uniemożliwia syntezę kortyzolu i aldosteronu. Brak kortyzolu znosi ujemne sprzężenie zwrotne na przysadkę, wywołując masywny wyrzut ACTH. ACTH stale pobudza korę nadnerczy do hiperplazji (przerostu), a nagromadzone prekursory (głównie 17-hydroksyprogesteron — 17-OHP) są kierowane w niezablokowany szlak syntezy androgenów (androstendionu i testosteronu).",
       "sourceIds": [
-        "cah_guideline",
-        "pte_nadnercza"
+        "cah_guideline"
       ],
-      "checkpointId": "wpn-zespol-q2-checkpoint-1-v2",
-      "inlineEnhancements": []
+      "checkpointId": "wpn-zespol-q2-checkpoint-1-v2"
     },
     {
-      "id": "wpn-zespol-block-2",
-      "title": "Postać klasyczna: Z utratą soli vs prosta wirylizująca",
-      "text": "W zależności od resztkowej aktywności 21-hydroksylazy wyróżnia się postacie: 1) Klasyczna z utratą soli (salt-wasting — SW, aktywność enzymu 0%): całkowity brak kortyzolu i aldosteronu. U noworodków płci żeńskiej (46,XX) w chwili urodzenia występuje obojnactwo narządów płciowych zewnętrznych (wirylizacja: powiększenie łechtaczki, zrośnięcie warg sromowych). U noworodków płci męskiej (46,XY) narządy są prawidłowe, lecz w 2.–3. tygodniu życia dochodzi do załamania stanu: przełom z utratą soli (wymioty, hiponatremia, ciężka hiperkaliemia, wstrząs hipowolemiczny, zgon bez leczenia). 2) Klasyczna prosta wirylizująca (simple virilizing — SV, aktywność 1–2%): zachowana minimalna synteza aldosteronu (brak utraty soli), lecz występuje wirylizacja u dziewczynek oraz przedwczesne fałszywe dojrzewanie u chłopców.",
+      "id": "wpn-b2",
+      "title": "Postać klasyczna z utratą soli: Przełom noworodkowy",
+      "text": "W postaci klasycznej z utratą soli (salt-wasting CAH) z powodu całkowitego braku aldosteronu u noworodka w 2.–3. tygodniu życia dochodzi do zapaści: hiponatremii, ciężkiej hiperkaliemii, kwasicy, odwodnienia i wstrząsu. U dziewczynek występuje wirylizacja narządów płciowych (obojnacze narządy płciowe wg skali Pradera), natomiast u chłopców narządy płciowe są prawidłowe, co grozi przeoczeniem wady!",
       "sourceIds": [
-        "cah_guideline",
-        "pte_nadnercza"
+        "cah_guideline"
       ],
-      "checkpointId": "wpn-zespol-q3-checkpoint-2-v2",
-      "inlineEnhancements": []
+      "checkpointId": "wpn-zespol-q3-checkpoint-2-v2"
     },
     {
-      "id": "wpn-zespol-block-3",
-      "title": "Postać nieklasyczna (NC-CAH) u dorosłych",
-      "text": "Nieklasyczny WPN (Non-Classic CAH — NC-CAH, aktywność enzymu 20–50%) jest jedną z najczęstszych chorób jednogenowych (częstość 1:200–1:1000). U noworodków nie ma wad narządów płciowych. Objawy ujawniają się w okresie pokwitania lub u młodych kobiet i doskonale imitują zespół policystycznych jajników (PCOS): oporny trądzik, łysienie androgenowe, hirsutyzm, zaburzenia owulacji i niepłodność. ROZPOZNANIE: Podstawowym testem przesiewowym jest poranne stężenie 17-hydroksyprogesteronu (17-OHP) w fazie folikularnej: stężenie <2 ng/ml w teście immunologicznym (lub <1,5 ng/ml w LC-MS/MS) czyni NC-CAH mało prawdopodobnym. Wartości w szarej strefie (2–10 ng/ml) budzą podejrzenie i wymagają testu stymulacji 250 µg Synacthenu: wyrzut 17-OHP >10 ng/ml (>30 nmol/l, a w LC-MS/MS >8–10 ng/ml) jednoznacznie potwierdza rozpoznanie.",
+      "id": "wpn-b3",
+      "title": "Postać nieklasyczna (NC-CAH) i progi 17-OHP",
+      "text": "W postaci nieklasycznej (NC-CAH) aktywność enzymu wynosi 20–50%. Nie ma przełomu solnego, a objawy ujawniają się w okresie dojrzewania lub dorosłości (hirsutyzm, trądzik, zaburzenia owulacji). Kryteria diagnostyczne porannego 17-OHP (godz. 8:00): < 200 ng/dl wyklucza NC-CAH; > 1000 ng/dl potwierdza rozpoznanie; 200–1000 ng/dl wymaga testu z Synacthenem (szczyt > 1000 ng/dl potwierdza).",
       "sourceIds": [
-        "cah_guideline",
-        "pte_nadnercza"
-      ],
-      "inlineEnhancements": []
+        "cah_guideline"
+      ]
     }
   ],
   "activities": [
     {
       "id": "wpn-zespol-q2-checkpoint-1-v2",
-      "type": "single_choice",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "wpn-zespol-obj-2"
+        "wpn-obj-2"
       ],
-      "prompt": "Dlaczego u noworodka z klasyczną postacią WPN z utratą soli dochodzi w 2.–3. tygodniu życia do zapaści krążeniowej?",
+      "prompt": "U 16-dniowego noworodka płci męskiej z prawidłowo ukształtowanymi zewnętrznymi narządami płciowymi wystąpiły nasilone chlustające wymioty, apatia, ubytek masy ciała i wstrząs. W badaniach: Na+ = 118 mmol/l, K+ = 7,6 mmol/l, glikemia 44 mg/dl. Jakie rozpoznanie i leczenie należy natychmiast wdrożyć?",
       "options": [
-        "Całkowity brak aldosteronu prowadzi do masywnej nerkowej utraty sodu, hiponatremii, hiperkaliemii i wstrząsu hipowolemicznego",
-        "Nadmiar kortyzolu niszczy naczynia krwionośne",
-        "Dochodzi do zamknięcia przewodu Botalla"
-      ],
-      "optionFeedback": [
-        "Niedobór mineralokortykosteroidów uniemożliwia zatrzymywanie soli w cewkach zbiorczych.",
-        "W WPN występuje ciężki niedobór kortyzolu, a nie nadmiar.",
-        "Przewód tętniczy nie ma związku z blokiem 21-hydroksylazy."
+        "Ostry przełom solny w przebiegu klasycznego WPN z utratą soli; natychmiastowy wlew 0,9% NaCl z glukozą oraz hydrokortyzon i.v.",
+        "Wrodzone przerostowe zwężenie odźwiernika; natychmiastowa pilna operacja chirurgiczna",
+        "Zatrucie pokarmowe; doustne nawadnianie herbatą"
       ],
       "answer": 0,
-      "explanation": "Niedobór mineralokortykosteroidów uniemożliwia zatrzymywanie soli w cewkach zbiorczych.",
-      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
-      "difficulty": "student",
-      "reasoning": "mechanism",
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-salt-wasting-cah",
+            "label": "Klasyczny WPN z utratą soli (hiponatremia z hiperkaliemią w 2-3 tyg. życia)",
+            "acceptedPhrases": [
+              "WPN",
+              "utrata soli",
+              "przełom solny",
+              "21-hydroksylaza",
+              "CAH"
+            ]
+          },
+          {
+            "id": "c-hyperkalemia-vs-pyloric-stenosis",
+            "label": "Różnicowanie ze zwężeniem odźwiernika (w zwężeniu odźwiernika jest hipokaliemia i zasadowica!)",
+            "acceptedPhrases": [
+              "hiperkaliemia",
+              "zwężenie odźwiernika ma hipokaliemię",
+              "kwasica",
+              "nie operować"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-pyloric-surgery",
+            "patterns": [
+              "operacja odźwiernika",
+              "przerostowe zwężenie odźwiernika"
+            ],
+            "severity": "critical",
+            "feedback": "Pomyłka z przerostowym zwężeniem odźwiernika (w którym występuje zasadowica hipochloremiczna i hipokaliemia) i operacja bez sterydów grozi zgonem niemowlęcia."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Zwężenie odźwiernika wywołuje zasadowicę hipokaliemiczną, podczas gdy przełom w WPN daje kwasicę i ciężką hiperkaliemię (7,6 mmol/l) z hiponatremią z powodu braku aldosteronu.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
       "sourceIds": [
-        "cah_guideline",
-        "pte_nadnercza"
+        "cah_guideline"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Zwężenie odźwiernika wywołuje zasadowicę hipokaliemiczną, podczas gdy przełom w WPN daje kwasicę i ciężką hiperkaliemię (7,6 mmol/l) z hiponatremią z powodu braku aldosteronu.",
+        "Nieprawidłowo: Wrodzone przerostowe zwężenie odźwiernika; natychmiastowa pilna operacja chirurg... Zwężenie odźwiernika wywołuje zasadowicę hipokaliemiczną, podczas gdy przełom w WPN daje kwasicę i ciężką hiperkaliemię (7,6 mmol/l) z hiponatremią z powodu braku aldosteronu.",
+        "Nieprawidłowo: Zatrucie pokarmowe; doustne nawadnianie herbatą... Zwężenie odźwiernika wywołuje zasadowicę hipokaliemiczną, podczas gdy przełom w WPN daje kwasicę i ciężką hiperkaliemię (7,6 mmol/l) z hiponatremią z powodu braku aldosteronu."
       ]
     },
     {
       "id": "wpn-zespol-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "lab",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "wpn-zespol-obj-1"
+        "wpn-obj-3"
       ],
-      "prompt": "Z jakim powszechnym zaburzeniem endokrynologicznym u młodych kobiet najczęściej bywa mylona nieklasyczna postać WPN (NC-CAH)?",
+      "prompt": "22-letnia kobieta diagnozowana z powodu hirsutyzmu i nieregularnych miesiączek miała oznaczony poranny 17-OHP w fazie folikularnej o godz. 8:00. Wynik: 450 ng/dl (13,6 nmol/l). Jak należy zinterpretować ten wynik wg wytycznych Endocrine Society?",
       "options": [
-        "Zespołem policystycznych jajników (PCOS)",
-        "Chorobą Hashimoto z eutyreozą",
-        "Cukrzycą ciążową"
-      ],
-      "optionFeedback": [
-        "Oba stany objawiają się hiperandrogenizmem, trądzikiem, hirsutyzmem i rzadkim miesiączkowaniem.",
-        "Hashimoto dotyczy tarczycy i nie wywołuje bezpośrednio wirylizacji.",
-        "Cukrzyca to zaburzenie gospodarki węglowodanowej bez hirsutyzmu."
+        "Wynik mieści się w strefie niejednoznacznej (200–1000 ng/dl) i wymaga wykonania testu stymulacji Synacthenem 250 µg w celu potwierdzenia lub wykluczenia NC-CAH",
+        "Wynik definitywnie wyklucza nieklasyczny WPN (norma do 500 ng/dl)",
+        "Wynik jest w 100% jednoznaczny i pacjentka wymaga natychmiastowej chemioterapii"
       ],
       "answer": 0,
-      "explanation": "Oba stany objawiają się hiperandrogenizmem, trądzikiem, hirsutyzmem i rzadkim miesiączkowaniem.",
-      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "explanation": "Wartość 17-OHP < 200 ng/dl wyklucza NC-CAH, > 1000 ng/dl potwierdza. Wartości w przedziale 200–1000 ng/dl wymagają testu stymulacji Synacthenem.",
       "difficulty": "doctor",
       "reasoning": "interpretation",
       "sourceIds": [
-        "cah_guideline",
-        "pte_nadnercza"
+        "cah_guideline"
+      ],
+      "claimIds": [
+        "claim-adn-cah-17ohp-thresholds"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Wartość 17-OHP < 200 ng/dl wyklucza NC-CAH, > 1000 ng/dl potwierdza. Wartości w przedziale 200–1000 ng/dl wymagają testu stymulacji Synacthenem.",
+        "Nieprawidłowo: Wynik definitywnie wyklucza nieklasyczny WPN (norma do 500 ng/dl)... Wartość 17-OHP < 200 ng/dl wyklucza NC-CAH, > 1000 ng/dl potwierdza. Wartości w przedziale 200–1000 ng/dl wymagają testu stymulacji Synacthenem.",
+        "Nieprawidłowo: Wynik jest w 100% jednoznaczny i pacjentka wymaga natychmiastowej chemioterapii... Wartość 17-OHP < 200 ng/dl wyklucza NC-CAH, > 1000 ng/dl potwierdza. Wartości w przedziale 200–1000 ng/dl wymagają testu stymulacji Synacthenem."
       ]
     }
   ],
   "teachBack": {
     "id": "wpn-zespol-teach-back-v2",
     "type": "recall",
+    "assessmentLevel": "generation",
     "objectiveIds": [
-      "wpn-zespol-obj-1",
-      "wpn-zespol-obj-2"
+      "wpn-obj-1",
+      "wpn-obj-2"
     ],
-    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Pułapka 21-hydroksylazy”.",
-    "modelAnswer": "Niedobór 21-hydroksylazy (CYP21A2) blokuje produkcję kortyzolu i aldosteronu, przekierowując metabolity do szlaku androgenów. Postać z utratą soli grozi zgonem w okresie noworodkowym, a postać nieklasyczna (NC-CAH) jest częstą przyczyną hirsutyzmu i niepłodności diagnozowaną testem 17-OHP.",
-    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "prompt": "Wyjaśnij mechanizm przesunięcia szlaków steroidogenezy w niedoborze 21-hydroksylazy oraz pułapkę różnicowania przełomu solnego ze zwężeniem odźwiernika u noworodka.",
+    "modelAnswer": "Blok 21-hydroksylazy uniemożliwia syntezę kortyzolu i aldosteronu; brak ujemnego sprzężenia ACTH nasila hiperplazję kory i kieruje nagromadzony 17-OHP w szlak androgenów. U noworodka przełom solny daje hiponatremię z hiperkaliemią i kwasicą — odróżnia go to od zwężenia odźwiernika, które cechuje zasadowica i hipokaliemia.",
+    "explanation": "Rozpoznanie zaburzeń elektrolitowych w WPN ratuje życie noworodków płci męskiej, u których brak jest zewnętrznych cech wirylizacji.",
     "difficulty": "both",
-    "reasoning": "mechanism",
+    "reasoning": "safety",
     "sourceIds": [
-      "cah_guideline",
-      "pte_nadnercza"
+      "cah_guideline"
     ]
   },
   "exitTicket": [
     {
       "id": "wpn-zespol-q4-exit-v2",
       "type": "missing_information",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "wpn-zespol-obj-2"
+        "wpn-obj-3"
       ],
-      "prompt": "Jaki wynik stężenia 17-OHP w teście stymulacji 250 µg Synacthenu definitywnie potwierdza rozpoznanie nieklasycznego WPN?",
+      "prompt": "Jaki szczytowy poziom 17-OHP po 60 minutach w teście stymulacji Synacthenem 250 µg potwierdza rozpoznanie nieklasycznego WPN (NC-CAH)?",
       "options": [
-        "Stężenie 17-OHP w 60. minucie testu przekraczające 10 ng/ml (30 nmol/l)",
-        "Spadek stężenia 17-OHP do zera",
-        "Dokładnie 0,5 ng/ml"
+        "Stężenie 17-OHP > 1000 ng/dl (> 30 nmol/l)",
+        "Stężenie 17-OHP w przedziale 100–200 ng/dl",
+        "Stężenie 17-OHP poniżej 50 ng/dl"
       ],
       "optionFeedback": [
-        "Jest to międzynarodowy złoty standard diagnostyczny wg wytycznych Endocrine Society.",
-        "Stymulacja ACTH wyrzuca nagromadzony substrat powyżej bloku, powodując jego skokowy wzrost.",
-        "Wartość 0,5 ng/ml jest wartością w pełni prawidłową."
+        "Wyrzut 17-OHP powyżej 1000 ng/dl w teście stymulacji stanowi kryterium potwierdzenia NC-CAH.",
+        "Wartość 100–200 ng/dl to norma po stymulacji.",
+        "Spadek stężenia nie występuje po Synacthenie."
       ],
       "answer": 0,
-      "explanation": "Jest to międzynarodowy złoty standard diagnostyczny wg wytycznych Endocrine Society.",
-      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
-      "difficulty": "both",
+      "explanation": "Stężenie 17-OHP po stymulacji Synacthenem przekraczające 1000 ng/dl jest patognomoniczne dla niedoboru 21-hydroksylazy.",
+      "difficulty": "doctor",
       "reasoning": "decision",
       "sourceIds": [
-        "cah_guideline",
-        "pte_nadnercza"
-      ]
+        "cah_guideline"
+      ],
+      "claimIds": [
+        "claim-adn-cah-17ohp-thresholds"
+      ],
+      "transfer": true
     },
     {
       "id": "wpn-zespol-q5-exit-v2",
-      "type": "missing_information",
+      "type": "single_choice",
+      "assessmentLevel": "recognition",
       "objectiveIds": [
-        "wpn-zespol-obj-1"
+        "wpn-obj-1"
       ],
-      "prompt": "Co jest głównym celem terapeutycznym podawania hydrokortyzonu u chorych z wrodzonym przerostem nadnerczy?",
+      "prompt": "Dlaczego noworodki płci żeńskiej (46,XX) z klasycznym WPN rodzą się z wirylizacją zewnętrznych narządów płciowych, ale z prawidłowymi jajnikami i macicą?",
       "options": [
-        "Uzupełnienie niedoboru kortyzolu oraz stłumienie przysadkowego ACTH, co hamuje nadprodukcję androgenów",
-        "Pobudzenie kory nadnerczy do szybszego podziału komórkowego",
-        "Całkowita eliminacja aldosteronu z organizmu"
+        "Nadmiar androgenów nadnerczowych wirylizuje zewnętrzne narządy płciowe, lecz brak jądrowego czynnika MIF/AMH pozwala na prawidłowy rozwój przewodów Müllera (macicy i jajowodów)",
+        "Jajniki produkują testosteron bezpośrednio do krążenia pępowinowego",
+        "Wirylizacja wynika z mutacji receptora estrogenowego alfa"
       ],
       "optionFeedback": [
-        "Hydrokortyzon na zasadzie ujemnego sprzężenia zwrotnego wyłącza stymulację ACTH.",
-        "Kora jest już patologicznie przerosła z powodu nadmiaru ACTH.",
-        "Aldosteron jest niezbędny do życia i wymaga dodatkowej substytucji w postaciach z utratą soli."
+        "Jajniki nie wydzielają AMH/MIF, więc narządy płciowe wewnętrzne (pochwa, macica) rozwijają się prawidłowo u dziewczynek z WPN.",
+        "To nadnercza, a nie jajniki, produkują nadmiar androgenów w WPN.",
+        "Receptory estrogenowe nie biorą udziału w tym mechanizmie."
       ],
       "answer": 0,
-      "explanation": "Hydrokortyzon na zasadzie ujemnego sprzężenia zwrotnego wyłącza stymulację ACTH.",
-      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
-      "difficulty": "both",
-      "reasoning": "safety",
+      "explanation": "Płód żeński 46,XX nie posiada komórek Sertolego produkujących hormon antymüllerowski (AMH), dlatego narządy wewnętrzne rozwijają się prawidłowo pomimo wirylizacji narządów zewnętrznych.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
       "sourceIds": [
-        "cah_guideline",
-        "pte_nadnercza"
+        "cah_guideline"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "wpn-zespol-bank-1-v2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "wpn-obj-2",
+        "wpn-obj-3"
+      ],
+      "claimIds": [
+        "claim-adn-cah-17ohp-thresholds"
+      ],
+      "prompt": "24-letnia kobieta diagnozowana w poradni ginekologiczno-endokrynologicznej z powodu hirsutyzmu w skali Ferrimana-Gallweya (14 pkt), trądziku opornego na leczenie dermatologiczne i oligomenorrhoea. Podejrzewano zespół policystycznych jajników (PCOS). Poranne stężenie 17-OHP w 4. dniu cyklu wyniosło 680 ng/dl. Zinterpretuj ten wynik, zaproponuj badanie rozstrzygające i wskaż różnice w leczeniu NC-CAH vs PCOS.",
+      "modelAnswer": "Poranne stężenie 17-OHP 680 ng/dl mieści się w strefie niejednoznacznej (200–1000 ng/dl). Nie pozwala na rozpoznanie PCOS, dopóki nie zostanie wykluczony nieklasyczny WPN (NC-CAH), który występuje u 2–5% kobiet z fenotypem przypominającym PCOS. Badanie rozstrzygające: test stymulacji Synacthenem 250 µg z oceną 17-OHP w 60. minucie (szczyt > 1000 ng/dl / > 30 nmol/l potwierdza NC-CAH). Różnica w leczeniu: w PCOS podstawą są doustne antykoncepcyjne, metformina i antyandrogeny; w objawowym NC-CAH (szczególnie przy planach ciążowych lub braku owulacji) lekiem z wyboru są małe dawki glikokortykosteroidów (np. hydrokortyzon 15–20 mg/d lub deksametazon 0,25–0,5 mg na noc), które hamują przysadkowy ACTH i znoszą nadmierną produkcję androgenów nadnerczowych.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "wpn-bank-1-dim-dx",
+            "label": "Wymiar diagnostyczny i patofizjologiczny",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-cah-overlap-synacthen-test",
+                "label": "Interpretacja strefy 200-1000 ng/dl i wymóg testu Synacthen",
+                "acceptedPhrases": [
+                  "strefa niejednoznaczna",
+                  "test Synacthen",
+                  "szczyt > 1000",
+                  "wykluczyć NC-CAH przed PCOS"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "wpn-bank-1-dim-tx",
+            "label": "Wymiar decyzyjny i bezpieczeństwo kliniczne",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-gks-treatment-mechanism",
+                "label": "Różnica leczenia: małe dawki GKS hamujące ACTH w NC-CAH",
+                "acceptedPhrases": [
+                  "glikokortykosteroidy",
+                  "hydrokortyzon",
+                  "deksametazon na noc",
+                  "supresja ACTH",
+                  "hamowanie nadnerczy"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-diagnose-pcos-immediately",
+            "patterns": [
+              "rozpoznać PCOS bez dalszych badań",
+              "17-OHP 680 to typowy PCOS"
+            ],
+            "severity": "critical",
+            "feedback": "Stężenie 17-OHP 680 ng/dl bez testu z Synacthenem nie pozwala rozpoznać PCOS; przeoczenie NC-CAH skutkuje nieskuteczną terapią."
+          }
+        ]
+      },
+      "explanation": "Stężenie 17-OHP 200–1000 ng/dl wymaga testu z Synacthenem. NC-CAH odpowiada na supresję osi ACTH małymi dawkami GKS.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "cah_guideline"
+      ],
+      "transfer": true,
+      "caseSnapshot": {
+        "patientAge": 24,
+        "ferrimanGallweyScore": 14,
+        "symptoms": "hirsutyzm, trądzik, rzadkie miesiączki",
+        "morning17OhpNgDl": 680,
+        "presumptiveDiagnosis": "PCOS"
+      },
+      "engineBinding": {
+        "engine": "adrenal-workbench",
+        "presetId": "adrenal-workbench"
+      }
+    },
+    {
+      "id": "wpn-zespol-bank-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "wpn-obj-1",
+        "wpn-obj-3"
+      ],
+      "claimIds": [
+        "claim-adn-cah-17ohp-thresholds"
+      ],
+      "prompt": "Dlaczego w nieklasycznym WPN (NC-CAH) nie dochodzi do zagrażającej życiu hiponatremii i hiperkaliemii, pomimo że podłożem jest ten sam defekt genu CYP21A2 co w postaci klasycznej z utratą soli?",
+      "options": [
+        "Zachowana resztkowa aktywność enzymu (ok. 20–50%) wystarcza do wytworzenia fizjologicznych ilości aldosteronu chroniących przed utratą sodu, podczas gdy w postaci z utratą soli aktywność wynosi 0%",
+        "Ponieważ w NC-CAH aldosteron jest produkowany w przysadce mózgowej",
+        "Ponieważ u pacjentów z NC-CAH nerki nie potrzebują aldosteronu do oszczędzania sodu"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-residual-enzyme-activity",
+            "label": "Resztkowa aktywność 21-hydroksylazy (20-50%) wystarczająca dla mineralokortykoidów",
+            "acceptedPhrases": [
+              "resztkowa aktywność",
+              "20-50%",
+              "wystarcza dla aldosteronu",
+              "brak utraty soli"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Wystarczy ok. 1–2% aktywności 21-hydroksylazy, aby zapobiec utracie soli, a w NC-CAH aktywność ta wynosi 20–50%. Niedobór dotyczy głównie rezerwy kortyzolu pod wpływem stresu.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "cah_guideline"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Wystarczy ok. 1–2% aktywności 21-hydroksylazy, aby zapobiec utracie soli, a w NC-CAH aktywność ta wynosi 20–50%. Niedobór dotyczy głównie rezerwy kortyzolu pod wpływem stresu.",
+        "Nieprawidłowo: Ponieważ w NC-CAH aldosteron jest produkowany w przysadce mózgowej... Wystarczy ok. 1–2% aktywności 21-hydroksylazy, aby zapobiec utracie soli, a w NC-CAH aktywność ta wynosi 20–50%. Niedobór dotyczy głównie rezerwy kortyzolu pod wpływem stresu.",
+        "Nieprawidłowo: Ponieważ u pacjentów z NC-CAH nerki nie potrzebują aldosteronu do oszczędzania s... Wystarczy ok. 1–2% aktywności 21-hydroksylazy, aby zapobiec utracie soli, a w NC-CAH aktywność ta wynosi 20–50%. Niedobór dotyczy głównie rezerwy kortyzolu pod wpływem stresu."
       ]
     }
   ],
@@ -210,6 +383,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+    "scope": "Pełna modernizacja V2: blok CYP21A2, progi 17-OHP 200/1000 ng/dl, przełom solny vs zwężenie odźwiernika, NC-CAH vs PCOS."
   }
 }

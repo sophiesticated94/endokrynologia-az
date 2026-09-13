@@ -3,212 +3,307 @@
   "lessonId": "nadnercza-matematyka-kinetyka-enzymow",
   "objectives": [
     {
-      "id": "nadnercza-matematyka-kinetyka-enzymow-obj-1",
-      "statement": "Zastosujesz równanie Michaelisa-Menten do wyjaśnienia korelacji genotyp-fenotyp w deficycie 21-hydroksylazy.",
+      "id": "adn-kin-obj-1",
+      "statement": "Zastosujesz równanie Michaelisa-Menten (v = Vmax [S] / (Km + [S])) do opisu akumulacji metabolitów pośrednich w blokach enzymatycznych steroidogenezy.",
       "kind": "mechanism"
     },
     {
-      "id": "nadnercza-matematyka-kinetyka-enzymow-obj-2",
-      "statement": "Wyprowadzisz matematyczny model bocznikowania zablokowanego substratu do syntezy androgenów.",
+      "id": "adn-kin-obj-2",
+      "statement": "Przeanalizujesz kinetykę kompetycyjnego hamowania 11-beta-hydroksylazy i liazy 17,20 przez inhibitory farmakologiczne (metyrapon, ketokonazol, osilodrostat).",
       "kind": "interpretation"
     }
   ],
   "diagnostic": {
     "id": "nadnercza-matematyka-kinetyka-enzymow-q1-diagnostic-v2",
     "type": "single_choice",
+    "assessmentLevel": "recognition",
     "objectiveIds": [
-      "nadnercza-matematyka-kinetyka-enzymow-obj-1"
+      "adn-kin-obj-1"
     ],
-    "prompt": "Jaka resztkowa aktywność enzymatyczna (Vmax) 21-hydroksylazy (CYP21A2) cechuje postać klasyczną WPN z utratą soli?",
+    "prompt": "W modelu kinetycznym Michaelisa-Menten dla 21-hydroksylazy steroidowej (CYP21A2), co oznacza stała Michaelisa Km?",
     "options": [
-      "Mniej niż 1% aktywności prawidłowej",
-      "Około 85–90% aktywności",
-      "Dokładnie 50% u każdego pacjenta"
+      "Stężenie substratu (np. 17-OHP), przy którym szybkość reakcji enzymatycznej osiąga połowę szybkości maksymalnej (1/2 Vmax)",
+      "Maksymalną teoretyczną szybkość biosyntezy kortyzolu przy nieskończonym stężeniu enzymu",
+      "Stężenie inhibitora zmniejszające aktywność enzymu o 100%"
     ],
     "optionFeedback": [
-      "Całkowity brak produkcji aldosteronu i kortyzolu prowadzi do zagrażającego życiu przełomu solnego.",
-      "Taki poziom enzymu nie wywołuje objawów klinicznych ani utraty soli.",
-      "50% aktywności cechuje bezobjawowych heterozygotycznych nosicieli mutacji."
+      "Km odzwierciedla powinowactwo enzymu do substratu; im niższe Km, tym wyższe powinowactwo.",
+      "To definicja Vmax, a nie Km.",
+      "To przybliżona koncepcja IC100, nie Km."
     ],
     "answer": 0,
-    "explanation": "Całkowity brak produkcji aldosteronu i kortyzolu prowadzi do zagrażającego życiu przełomu solnego.",
-    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "explanation": "Stała Km to stężenie substratu, przy którym szybkość reakcji enzymatycznej wynosi dokładnie połowę Vmax (v = Vmax/2).",
     "difficulty": "student",
     "reasoning": "mechanism",
     "sourceIds": [
-      "cah_kinetics",
-      "sterane_chem",
-      "cah_guideline"
+      "cah_kinetics"
     ]
   },
   "blocks": [
     {
-      "id": "nadnercza-matematyka-kinetyka-enzymow-block-1",
-      "title": "Kinetyka Michaelisa-Menten w deficycie 21-hydroksylazy (CYP21A2)",
-      "text": "Wrodzony przerost nadnerczy (WPN / CAH) jest spowodowany w >95% mutacjami genu CYP21A2. Szybkość reakcji hydroksylacji węgla C-21 opisuje równanie Michaelisa-Menten: V = (Vmax * [S]) / (Km + [S]). Aktywność resztkowa enzymu (proporcjonalna do Vmax) determinuje postać kliniczną choroby: <1% Vmax odpowiada postaci klasycznej z utratą soli (brak aldosteronu i kortyzolu), 1–5% Vmax odpowiada postaci klasycznej prostej wirylizującej, natomiast 20–50% Vmax charakteryzuje postać nieklasyczną (NC-CAH).",
+      "id": "adn-kin-b1",
+      "title": "Równanie Michaelisa-Menten w steroidogenezie",
+      "text": "Szybkość reakcji hydroksylacji steroidów przez cytochromy P450 opisuje równanie: v = (Vmax * [S]) / (Km + [S]). W warunkach fizjologicznych stężenia prekursorów są znacznie niższe od Km ([S] << Km), co oznacza kinetykę I rzędu: szybkość syntezy rośnie liniowo wraz z podażą substratu. W blokach enzymatycznych dochodzi do nasycenia szlaku i ucieczki substratów w boczne gałęzie.",
       "sourceIds": [
-        "cah_kinetics",
-        "sterane_chem",
-        "cah_guideline"
+        "cah_kinetics"
       ],
-      "checkpointId": "nadnercza-matematyka-kinetyka-enzymow-q2-checkpoint-1-v2",
-      "inlineEnhancements": []
+      "checkpointId": "nadnercza-matematyka-kinetyka-enzymow-q2-checkpoint-1-v2"
     },
     {
-      "id": "nadnercza-matematyka-kinetyka-enzymow-block-2",
-      "title": "Akumulacja substratu 17-OHP i amplifikacja w pętli ACTH",
-      "text": "Spadek syntezy kortyzolu znosi ujemne sprzężenie zwrotne na poziomie podwzgórza i przysadki, wywołując masywny wyrzut ACTH. ACTH stymuluje wychwyt cholesterolu i steroidogenezę we wczesnych etapach (białko StAR i CYP11A1), dostarczając substratów przed blokiem enzymatycznym. W rezultacie substrat 17-hydroksyprogesteron (17-OHP) kumuluje się do stężeń przekraczających normę nawet 50–100-krotnie (>30–100 ng/ml).",
+      "id": "adn-kin-b2",
+      "title": "Kinetyka hamowania kompetycyjnego: Metyrapon i osilodrostat",
+      "text": "Inhibitory 11-beta-hydroksylazy (CYP11B1), takie jak metyrapon i osilodrostat, działają jako odwracalne inhibitory kompetycyjne. Konkurują one z 11-deoksykortyzolem o miejsce aktywne enzymu: zwiększają pozorną wartość Km (Km_app = Km * (1 + [I]/Ki)) bez zmiany Vmax. Prowadzi to do kumulacji 11-deoksykortyzolu i spadku kortyzolu.",
       "sourceIds": [
         "cah_kinetics",
-        "sterane_chem",
-        "cah_guideline"
+        "pte_macs"
       ],
-      "checkpointId": "nadnercza-matematyka-kinetyka-enzymow-q3-checkpoint-2-v2",
-      "inlineEnhancements": []
+      "checkpointId": "nadnercza-matematyka-kinetyka-enzymow-q3-checkpoint-2-v2"
     },
     {
-      "id": "nadnercza-matematyka-kinetyka-enzymow-block-3",
-      "title": "Bocznik androgenowy i test stymulacji Synacthenem",
-      "text": "Nadmiar 17-OHP nie może przejść w 11-deoksykortyzol, zostaje więc skierowany do alternatywnego szlaku metabolizowanego przez enzym CYP17A1 (o aktywności 17,20-liazy). Prowadzi to do lawinowego wytwarzania androstendionu i testosteronu. W diagnostyce postaci nieklasycznej stosuje się test stymulacji 250 µg syntetycznego ACTH (Synacthen) z pomiarem 17-OHP w 0 i 60 minucie: wyrzut >10 ng/ml (>30 nmol/l w teście immunologicznym lub >8–10 ng/ml w LC-MS/MS) potwierdza rozpoznanie.",
+      "id": "adn-kin-b3",
+      "title": "Efekt progu aktywności enzymatycznej w WPN",
+      "text": "Korelacja genotyp-fenotyp w WPN wykazuje nieliniowość: spadek aktywności 21-hydroksylazy do 1–2% Vmax wystarcza do zachowania syntezy aldosteronu i ochrony przed przełomem solnym (postać prosta wirylizująca). Dopiero całkowity spadek aktywności enzymu do 0% wywołuje postać klasyczną z utratą soli.",
       "sourceIds": [
         "cah_kinetics",
-        "sterane_chem",
         "cah_guideline"
-      ],
-      "inlineEnhancements": []
+      ]
     }
   ],
   "activities": [
     {
       "id": "nadnercza-matematyka-kinetyka-enzymow-q2-checkpoint-1-v2",
-      "type": "single_choice",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "nadnercza-matematyka-kinetyka-enzymow-obj-2"
+        "adn-kin-obj-2"
       ],
-      "prompt": "Który metabolit steroidowy kumuluje się w sposób najbardziej spektakularny w deficycie 21-hydroksylazy i służy jako główny biomarker diagnostyczny?",
+      "prompt": "U pacjenta z zespołem Cushinga włączono metyrapon (inhibitor kompetycyjny CYP11B1). Jak zmienią się parametry kinetyczne przemiany 11-deoksykortyzolu w kortyzol na wykresie Lineweavera-Burka?",
       "options": [
-        "17α-Hydroksyprogesteron (17-OHP)",
-        "Czysty aldosteron",
-        "Tyreoglobulina"
-      ],
-      "optionFeedback": [
-        "Jest bezpośrednim substratem leżącym tuż przed zablokowanym enzymem CYP21A2.",
-        "Stężenie aldosteronu w klasycznym bloku enzymatycznym jest bliskie zeru.",
-        "Tyreoglobulina jest białkiem tarczycy, a nie metabolitem kory nadnerczy."
+        "Pozorna wartość Km wzrośnie (prosta przecina oś 1/[S] bliżej zera), natomiast Vmax pozostaje niezmienione (wspólny punkt przecięcia osi 1/v)",
+        "Zarówno Vmax, jak i Km ulegną podwojeniu",
+        "Vmax spadnie o 90%, a Km pozostanie niezmienne (hamowanie niekompetycyjne)"
       ],
       "answer": 0,
-      "explanation": "Jest bezpośrednim substratem leżącym tuż przed zablokowanym enzymem CYP21A2.",
-      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
-      "difficulty": "student",
-      "reasoning": "mechanism",
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-competitive-inhibition-kinetics",
+            "label": "Wzrost pozornego Km przy niezmienionym Vmax w hamowaniu kompetycyjnym",
+            "acceptedPhrases": [
+              "wzrost Km",
+              "niezmienione Vmax",
+              "kompetycyjne",
+              "Lineweaver-Burk"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Inhibitor kompetycyjny konkuruje o miejsce aktywne, co zwiększa pozorne stężenie substratu potrzebne do 1/2 Vmax (wzrost Km) bez wpływu na maksymalną wydajność enzymu (Vmax niezmienione).",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
       "sourceIds": [
-        "cah_kinetics",
-        "sterane_chem",
-        "cah_guideline"
+        "cah_kinetics"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Inhibitor kompetycyjny konkuruje o miejsce aktywne, co zwiększa pozorne stężenie substratu potrzebne do 1/2 Vmax (wzrost Km) bez wpływu na maksymalną wydajność enzymu (Vmax niezmienione).",
+        "Nieprawidłowo: Zarówno Vmax, jak i Km ulegną podwojeniu... Inhibitor kompetycyjny konkuruje o miejsce aktywne, co zwiększa pozorne stężenie substratu potrzebne do 1/2 Vmax (wzrost Km) bez wpływu na maksymalną wydajność enzymu (Vmax niezmienione).",
+        "Nieprawidłowo: Vmax spadnie o 90%, a Km pozostanie niezmienne (hamowanie niekompetycyjne)... Inhibitor kompetycyjny konkuruje o miejsce aktywne, co zwiększa pozorne stężenie substratu potrzebne do 1/2 Vmax (wzrost Km) bez wpływu na maksymalną wydajność enzymu (Vmax niezmienione)."
       ]
     },
     {
       "id": "nadnercza-matematyka-kinetyka-enzymow-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "numeric",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "nadnercza-matematyka-kinetyka-enzymow-obj-1"
+        "adn-kin-obj-1"
       ],
-      "prompt": "Jaka wartość stężenia 17-OHP w 60. minucie testu stymulacji 250 µg Synacthenem stanowi kryterium potwierdzenia nieklasycznego WPN (NC-CAH)?",
-      "options": [
-        "Powyżej 10 ng/ml (zwykle >30 nmol/L)",
-        "Poniżej 0,001 ng/ml",
-        "Dokładnie 500 µg/dl"
-      ],
-      "optionFeedback": [
-        "Jest to powszechnie akceptowany punkt odcięcia różnicujący NC-CAH od zespołu policystycznych jajników (PCOS).",
-        "Wartości zerowe wykluczają obecność enzymu lub stymulacji.",
-        "To nierealistycznie wysoka wartość przekraczająca zakresy biologiczne."
-      ],
+      "prompt": "Jeżeli stała Michaelisa Km dla enzymu CYP21A2 wynosi 2,0 µmol/l, a stężenie substratu [S] w warunkach nasilonej stymulacji ACTH wynosi 6,0 µmol/l, jaki odsetek szybkości maksymalnej Vmax (w %) osiąga reakcja? Oblicz z równania v = Vmax * [S] / (Km + [S]). Wpisz liczbę całkowitą (np. 75).",
       "answer": 0,
-      "explanation": "Jest to powszechnie akceptowany punkt odcięcia różnicujący NC-CAH od zespołu policystycznych jajników (PCOS).",
-      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "explanation": "v/Vmax = [S] / (Km + [S]) = 6,0 / (2,0 + 6,0) = 6,0 / 8,0 = 0,75, czyli 75% Vmax.",
       "difficulty": "doctor",
-      "reasoning": "interpretation",
+      "reasoning": "mechanism",
       "sourceIds": [
-        "cah_kinetics",
-        "sterane_chem",
-        "cah_guideline"
-      ]
+        "cah_kinetics"
+      ],
+      "transfer": true,
+      "tolerance": 0,
+      "unit": "%"
     }
   ],
   "teachBack": {
     "id": "nadnercza-matematyka-kinetyka-enzymow-teach-back-v2",
     "type": "recall",
+    "assessmentLevel": "generation",
     "objectiveIds": [
-      "nadnercza-matematyka-kinetyka-enzymow-obj-1",
-      "nadnercza-matematyka-kinetyka-enzymow-obj-2"
+      "adn-kin-obj-1",
+      "adn-kin-obj-2"
     ],
-    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Kinetyka Michaelisa-Menten w blokach enzymatycznych WPN”.",
-    "modelAnswer": "Aktywność enzymatyczna CYP21A2 w kinetyce Michaelisa-Menten bezpośrednio wyznacza stopień akumulacji 17-OHP i intensywność bocznikowania do androgenów.",
-    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "prompt": "Wyjaśnij matematyczny mechanizm ucieczki substratów w szlak androgenowy w WPN przy nasyceniu lub bloku 21-hydroksylazy.",
+    "modelAnswer": "Gdy enzym CYP21A2 jest zablokowany lub nasycony (v osiąga Vmax), nagromadzony 17-OHP nie może ulec konwersji w 11-deoksykortyzol. Zgodnie z prawem działania mas nadmiar substratu stymuluje alternatywny enzym — liazę 17,20 (CYP17A1) o wyższej wartości Km, co przesuwa strumień metaboliczny w stronę syntezy DHEA i androstendionu.",
+    "explanation": "Matematyczne modelowanie kinetyki wyjaśnia fenotyp wirylizacji w bloku 21-hydroksylazy.",
     "difficulty": "both",
     "reasoning": "mechanism",
     "sourceIds": [
-      "cah_kinetics",
-      "sterane_chem",
-      "cah_guideline"
+      "cah_kinetics"
     ]
   },
   "exitTicket": [
     {
       "id": "nadnercza-matematyka-kinetyka-enzymow-q4-exit-v2",
       "type": "missing_information",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "nadnercza-matematyka-kinetyka-enzymow-obj-2"
+        "adn-kin-obj-1"
       ],
-      "prompt": "Dlaczego w deficycie 21-hydroksylazy dochodzi do gwałtownego rozrostu kory nadnerczy (hiperplazji)?",
+      "prompt": "Dlaczego u pacjenta z nieklasycznym WPN (aktywność enzymu ok. 30% Vmax) w spoczynku nie obserwuje się hipokortyzolemii, a ujawnia się ona dopiero w teście stymulacji Synacthenem?",
       "options": [
-        "Brak ujemnego sprzężenia zwrotnego przez kortyzol powoduje nieskrępowany wyrzut ACTH przez przysadkę",
-        "Ponieważ komórki nadnerczy ulegają zakażeniu wirusowemu",
-        "Z powodu bezpośredniego działania aldosteronu na DNA"
+        "W spoczynku podwyższone wydzielanie ACTH kompensuje obniżone Vmax poprzez podwyższenie stężenia substratów; podczas maksymalnej stymulacji rezerwa enzymatyczna ulega wyczerpaniu (efekt pułapu Vmax)",
+        "W spoczynku kortyzol jest syntezowany przez keratynocyty skóry",
+        "Synacthen bezpośrednio hamuje transkrypcję genu CYP21A2"
       ],
       "optionFeedback": [
-        "ACTH działa troficznie i stymuluje przerost komórek kory nadnerczy.",
-        "Przerost w WPN ma podłoże neuroendokrynne, nie infekcyjne.",
-        "W klasycznym WPN aldosteronu brakuje."
+        "Zwiększenie stężenia prekursorów pozwala osiągnąć fizjologiczną szybkość syntezy kortyzolu przy obniżonym Vmax.",
+        "Keratynocyty nie wytwarzają kortyzolu do krążenia.",
+        "Synacthen pobudza, nie hamuje steroidogenezę."
       ],
       "answer": 0,
-      "explanation": "ACTH działa troficznie i stymuluje przerost komórek kory nadnerczy.",
-      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
-      "difficulty": "both",
+      "explanation": "Mechanizm kompensacyjny polega na zwiększeniu stężenia substratu przez ACTH, co nasyca enzym. W stresie brak rezerwy Vmax uniemożliwia dalszy wzrost syntezy.",
+      "difficulty": "doctor",
       "reasoning": "decision",
       "sourceIds": [
         "cah_kinetics",
-        "sterane_chem",
         "cah_guideline"
-      ]
+      ],
+      "claimIds": [
+        "claim-adn-cah-17ohp-thresholds"
+      ],
+      "transfer": true
     },
     {
       "id": "nadnercza-matematyka-kinetyka-enzymow-q5-exit-v2",
-      "type": "missing_information",
+      "type": "single_choice",
+      "assessmentLevel": "recognition",
       "objectiveIds": [
-        "nadnercza-matematyka-kinetyka-enzymow-obj-1"
+        "adn-kin-obj-2"
       ],
-      "prompt": "Czym jest tzw. alternatywny szlak tylnych drzwi (backdoor pathway) w steroidogenezie nadnerczowej?",
+      "prompt": "Jaki enzym steroidogenezy jest docelowym punktem uchwytu dla leku osilodrostat stosowanego w zespole Cushinga?",
       "options": [
-        "Szlakiem syntezy silnego androgenu dihydrotestosteronu (DHT) z pominięciem androstendionu i testosteronu",
-        "Drogą ucieczki kortyzolu przez przewód pokarmowy",
-        "Mechanizmem produkcji adrenaliny w korze nadnerczy"
+        "11-beta-hydroksylaza steroidowa (CYP11B1)",
+        "21-hydroksylaza steroidowa (CYP21A2)",
+        "Aromataza (CYP19A1)"
       ],
       "optionFeedback": [
-        "Wykorzystuje redukcję 17-OHP przez 5α-reduktazę i wyjaśnia wirylizację płodu żeńskiego.",
-        "Szlak dotyczy enzymatycznej biosyntezy wewnątrzkomórkowej, nie wydalania.",
-        "Adrenalina powstaje w rdzeniu, nie w szlaku steroidogenezy."
+        "Osilodrostat jest silnym i wybiórczym inhibitorem CYP11B1 hamującym końcowy etap syntezy kortyzolu.",
+        "Hamowanie 21-hydroksylazy wywołałoby WPN, nie jest celem w zespole Cushinga.",
+        "Aromataza przekształca androgeny w estrogeny."
       ],
       "answer": 0,
-      "explanation": "Wykorzystuje redukcję 17-OHP przez 5α-reduktazę i wyjaśnia wirylizację płodu żeńskiego.",
-      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
-      "difficulty": "both",
-      "reasoning": "safety",
+      "explanation": "Osilodrostat hamuje 11-beta-hydroksylazę (CYP11B1), zapobiegając przekształceniu 11-deoksykortyzolu w kortyzol.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
       "sourceIds": [
         "cah_kinetics",
-        "sterane_chem",
-        "cah_guideline"
+        "pte_macs"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "nadnercza-matematyka-kinetyka-enzymow-bank-1-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "adn-kin-obj-1",
+        "adn-kin-obj-2"
+      ],
+      "prompt": "Wyjaśnij, w jaki sposób podanie metyraponu w teście diagnostycznym osi HPA prowadzi do wzrostu wydzielania ACTH i akumulacji 11-deoksykortyzolu w osoczu, opierając się na koncepcji hamowania kompetycyjnego i pętli ujemnego sprzężenia zwrotnego.",
+      "modelAnswer": "Metyrapon działa jako kompetycyjny inhibitor 11-beta-hydroksylazy (CYP11B1), konkurując o enzym z 11-deoksykortyzolem i zwiększając pozorne Km. Skutkuje to zablokowaniem przekształcania 11-deoksykortyzolu w kortyzol i ostrym spadkiem stężenia kortyzolu w surowicy. Spadek kortyzolu znosi toniczne ujemne sprzężenie zwrotne na podwzgórze i przysadkę, wyzwalając wyrzut ACTH. Wysoki poziom ACTH intensywnie stymuluje wczesne etapy steroidogenezy, co przy zablokowanym etapie 11-beta-hydroksylacji prowadzi do masywnej akumulacji 11-deoksykortyzolu (związku S) w osoczu, stanowiąc dowód sprawnej rezerwy przysadkowej.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-competitive-cyp11b1-block",
+            "label": "Kompetycyjne zablokowanie CYP11B1 i spadek kortyzolu",
+            "acceptedPhrases": [
+              "kompetycyjne",
+              "hamowanie CYP11B1",
+              "spadek kortyzolu",
+              "blok 11-beta-hydroksylazy"
+            ]
+          },
+          {
+            "id": "c-hpa-negative-feedback-release",
+            "label": "Zniesienie ujemnego sprzężenia zwrotnego i wyrzut ACTH",
+            "acceptedPhrases": [
+              "zniesienie ujemnego sprzężenia",
+              "wyrzut ACTH",
+              "stymulacja przysadki"
+            ]
+          },
+          {
+            "id": "c-11-deoxycortisol-accumulation",
+            "label": "Akumulacja 11-deoksykortyzolu (związku S)",
+            "acceptedPhrases": [
+              "akumulacja 11-deoksykortyzolu",
+              "związek S",
+              "wzrost stężenia prekursora"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Test z metyraponem opiera się na kompetycyjnym zablokowaniu syntezy kortyzolu i ocenie, czy przysadka odpowiada fizjologicznym wyrzutem ACTH kumulującym prekursor.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "cah_kinetics",
+        "endo_pai"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "nadnercza-matematyka-kinetyka-enzymow-bank-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "adn-kin-obj-2"
+      ],
+      "prompt": "Dlaczego ketokonazol stosowany w leczeniu hiperkortyzolemii hamuje nie tylko syntezę kortyzolu, ale również powoduje spadek stężenia testosteronu i impotencję/ginekomastię u mężczyzn?",
+      "options": [
+        "Ketokonazol hamuje nieselektywnie enzymy cytochromu P450 zależne od hemu, w tym liazę 17,20 (CYP17A1) niezbędną do syntezy androgenów w nadnerczach i jądrach",
+        "Ketokonazol niszczy receptory androgenowe w mięśniach",
+        "Ketokonazol bezpośrednio przekształca testosteron w progesteron"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-ketoconazole-cyp17-inhibition",
+            "label": "Nieselektywne hamowanie CYP17A1 (17-alfa-hydroksylazy i liazy 17,20)",
+            "acceptedPhrases": [
+              "CYP17",
+              "liaza 17,20",
+              "synteza testosteronu",
+              "nieselektywny",
+              "hamowanie androgenów"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Ketokonazol jest pochodną imidazolową hamującą enzymy hemowe P450: CYP11A1, CYP11B1 oraz CYP17A1, co blokuje syntezę androgenów jądrowych i nadnerczowych.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "cah_kinetics",
+        "pte_macs"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Ketokonazol jest pochodną imidazolową hamującą enzymy hemowe P450: CYP11A1, CYP11B1 oraz CYP17A1, co blokuje syntezę androgenów jądrowych i nadnerczowych.",
+        "Nieprawidłowo: Ketokonazol niszczy receptory androgenowe w mięśniach... Ketokonazol jest pochodną imidazolową hamującą enzymy hemowe P450: CYP11A1, CYP11B1 oraz CYP17A1, co blokuje syntezę androgenów jądrowych i nadnerczowych.",
+        "Nieprawidłowo: Ketokonazol bezpośrednio przekształca testosteron w progesteron... Ketokonazol jest pochodną imidazolową hamującą enzymy hemowe P450: CYP11A1, CYP11B1 oraz CYP17A1, co blokuje syntezę androgenów jądrowych i nadnerczowych."
       ]
     }
   ],
@@ -219,6 +314,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+    "scope": "Pełna modernizacja V2: model Michaelisa-Menten, hamowanie kompetycyjne CYP11B1, metyrapon, osilodrostat, ketokonazol."
   }
 }

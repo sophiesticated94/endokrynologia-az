@@ -3,212 +3,326 @@
   "lessonId": "nadnercza-chemia-katecholaminy",
   "objectives": [
     {
-      "id": "nadnercza-chemia-katecholaminy-obj-1",
-      "statement": "Przeanalizujesz kolejne etapy biochemiczne biosyntezy amin katecholowych z L-tyrozyny.",
+      "id": "adn-chem-kat-obj-1",
+      "statement": "Przedstawisz szlak biosyntezy katecholamin i rolę kortyzolu w indukcji N-metylotransferazy fenyloetanoloaminy (PNMT) w rdzeniu nadnerczy.",
       "kind": "mechanism"
     },
     {
-      "id": "nadnercza-chemia-katecholaminy-obj-2",
-      "statement": "Zrozumiesz molekularne szlaki inaktywacji przez enzymy COMT i MAO w kontekście diagnostyki guza chromochłonnego.",
+      "id": "adn-chem-kat-obj-2",
+      "statement": "Wyjaśnisz drogi katabolizmu katecholamin przez COMT i MAO oraz diagnostyczne uzasadnienie pomiaru wolnych metanefryn zamiast natywnych amin.",
       "kind": "interpretation"
     }
   ],
   "diagnostic": {
     "id": "nadnercza-chemia-katecholaminy-q1-diagnostic-v2",
     "type": "single_choice",
+    "assessmentLevel": "recognition",
     "objectiveIds": [
-      "nadnercza-chemia-katecholaminy-obj-1"
+      "adn-chem-kat-obj-1"
     ],
-    "prompt": "Jaki enzym katalizuje pierwszy i ograniczający szybkość (rate-limiting) etap biosyntezy katecholamin z tyrozyny?",
+    "prompt": "Który aminokwas stanowi wyjściowy substrat w szlaku biosyntezy katecholamin w rdzeniu nadnerczy i neuronach współczulnych?",
     "options": [
-      "Hydroksylaza tyrozynowa (TH)",
-      "Katecholo-O-metylotransferaza (COMT)",
-      "Pompa protonowa żołądka"
+      "L-tyrozyna (pochodząca z diety lub hydroksylacji L-fenyloalaniny)",
+      "L-tryptofan",
+      "L-histydyna"
     ],
     "optionFeedback": [
-      "Wymaga tetrahydrobiopteryny (BH4), tlenu i jonów żelaza do wytworzenia L-DOPA.",
-      "COMT jest enzymem degradacji i unieczynniania, nie syntezy.",
-      "Pompa protonowa transportuje jony H+ w żołądku."
+      "Tyrozyna jest przekształcana przez hydroksylazę tyrozynową w L-DOPA, która jest prekursorem dopaminy, noradrenaliny i adrenaliny.",
+      "Tryptofan jest prekursorem serotoniny i melatoniny.",
+      "Histydyna jest prekursorem histaminy."
     ],
     "answer": 0,
-    "explanation": "Wymaga tetrahydrobiopteryny (BH4), tlenu i jonów żelaza do wytworzenia L-DOPA.",
-    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "explanation": "Biosynteza katecholamin rozpoczyna się od L-tyrozyny, która ulega hydroksylacji do L-DOPA przez hydroksylazę tyrozynową (etap limitujący szybkość).",
     "difficulty": "student",
     "reasoning": "mechanism",
     "sourceIds": [
-      "endo_pheo",
-      "sterane_chem",
-      "pte_nadnercza"
+      "endo_pheo"
     ]
   },
   "blocks": [
     {
-      "id": "nadnercza-chemia-katecholaminy-block-1",
-      "title": "Szlak biosyntezy katecholamin: Od tyrozyny do adrenaliny",
-      "text": "Biosynteza w komórkach chromochłonnych rdzenia nadnerczy i neuronach współczulnych przebiega w 4 krokach: 1) L-tyrozyna ⟶ L-DOPA (hydroksylaza tyrozynowa TH — etap limitujący szybkość całego szlaku, zależny od tetrahydrobiopteryny BH4, Fe2+ i tlenu); 2) L-DOPA ⟶ Dopamina (dekarboksylaza aromatycznych L-aminokwasów AADC, kofaktor fosforan pirydoksalu PLP/wit. B6); 3) Dopamina ⟶ Noradrenalina (beta-hydroksylaza dopaminowa DBH wewnątrz pęcherzyków chromafinowych, kofaktor miedź i askorbinian); 4) Noradrenalina ⟶ Adrenalina (N-metylotransferaza fenyloetanoloaminowa PNMT w cytosolu, donor grupy metylowej S-adenozylo-L-metionina SAMe).",
+      "id": "adn-chem-kat-b1",
+      "title": "Szlak biosyntezy i rola enzymu PNMT",
+      "text": "Szlak syntezy katecholamin: L-tyrozyna -> L-DOPA -> dopamina -> noradrenalina -> adrenalina. Ostatni etap (N-metylacja noradrenaliny do adrenaliny) katalizuje enzym N-metylotransferaza fenyloetanoloaminy (PNMT). Enzym ten występuje niemal wyłącznie w rdzeniu nadnerczy, a jego ekspresja jest bezpośrednio indukowana przez bardzo wysokie stężenia kortyzolu dopływającego z kory przez układ wrotny nadnerczy!",
       "sourceIds": [
-        "endo_pheo",
-        "sterane_chem",
-        "pte_nadnercza"
+        "endo_pheo"
       ],
-      "checkpointId": "nadnercza-chemia-katecholaminy-q2-checkpoint-1-v2",
-      "inlineEnhancements": []
+      "checkpointId": "nadnercza-chemia-katecholaminy-q2-checkpoint-1-v2"
     },
     {
-      "id": "nadnercza-chemia-katecholaminy-block-2",
-      "title": "Rola kortyzolu w indukcji enzymu PNMT w rdzeniu nadnercza",
-      "text": "Ekspresja genu PNMT jest silnie indukowana przez glukokortykoidy. Rdzeń nadnercza jest anatomicznie skąpany w krwi żylnej spływającej bezpośrednio z kory nadnerczy przez wrotny układ naczyniowy nadnerczy, co zapewnia stężenie kortyzolu 100-krotnie wyższe niż we krwi obwodowej. Dzięki temu komórki rdzenia posiadają wysoką ekspresję PNMT i wydzielają głównie adrenalinę (ok. 80%), podczas gdy zwoje współczulne pozbawione sąsiedztwa kory syntetyzują niemal wyłącznie noradrenalinę.",
+      "id": "adn-chem-kat-b2",
+      "title": "Katabolizm: Enzymy COMT i MAO",
+      "text": "Metabolizm katecholamin zachodzi dwoma szlakami: 1) O-metylacja przez katecholo-O-metylotransferazę (COMT) do metanefryn (metanefryny z adrenaliny, normetanefryny z noradrenaliny); 2) Oksydacyjna deaminacja przez monoaminooksydazę (MAO). W guzie chromochłonnym wewnątrzkomórkowy COMT przekształca aminy w metanefryny w sposób ciągły.",
       "sourceIds": [
-        "endo_pheo",
-        "sterane_chem",
-        "pte_nadnercza"
+        "endo_pheo"
       ],
-      "checkpointId": "nadnercza-chemia-katecholaminy-q3-checkpoint-2-v2",
-      "inlineEnhancements": []
+      "checkpointId": "nadnercza-chemia-katecholaminy-q3-checkpoint-2-v2"
     },
     {
-      "id": "nadnercza-chemia-katecholaminy-block-3",
-      "title": "Katabolizm: COMT, MAO i diagnostyka metanefryn",
-      "text": "Katecholaminy są unieczynniane przez dwa główne enzymy: katecholo-O-metylotransferazę (COMT, zależną od magnezu i SAMe, obecną obficie w komórkach guza pheochromocytoma) oraz monoaminooksydazę (MAO-A i MAO-B). COMT metyluje grupę 3-OH pierścienia katecholowego: noradrenalina przekształca się w normetanefrynę, a adrenalina w metanefrynę. W guzich chromochłonnych metanefryny powstają wewnątrzkomórkowo w sposób ciągły z puli niestabilnych pęcherzyków, co czyni wolne metanefryny w osoczu najczulszym markerem guza.",
+      "id": "adn-chem-kat-b3",
+      "title": "Dlaczego metanefryny, a nie katecholaminy?",
+      "text": "Katecholaminy mają okres półtrwania we krwi rzędu zaledwie 1–2 minut i są uwalniane z guza napadowo. Metanefryny mają dłuższy okres półtrwania i powstają stale wewnątrz tkanki guza. Dlatego pomiar wolnych metanefryn w osoczu cechuje się czułością > 97%, eliminując wyniki fałszywie ujemne w okresach bezobjawowych.",
       "sourceIds": [
-        "endo_pheo",
-        "sterane_chem",
-        "pte_nadnercza"
-      ],
-      "inlineEnhancements": []
+        "endo_pheo"
+      ]
     }
   ],
   "activities": [
     {
       "id": "nadnercza-chemia-katecholaminy-q2-checkpoint-1-v2",
-      "type": "single_choice",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "nadnercza-chemia-katecholaminy-obj-2"
+        "adn-chem-kat-obj-1"
       ],
-      "prompt": "Dlaczego rdzeń nadnerczy wytwarza głównie adrenalinę, podczas gdy zwoje współczulne wytwarzają prawie wyłącznie noradrenalinę?",
+      "prompt": "Dlaczego pozanadnerczowe guzy chromochłonne (paraganglioma / przyzwojaki układu współczulnego) wydzielają niemal wyłącznie noradrenalinę, a rzadko wytwarzają adrenalinę?",
       "options": [
-        "Ekspresja enzymu PNMT w rdzeniu jest silnie indukowana przez wysokie stężenia kortyzolu z krążenia wrotnego kory",
-        "W zwojach współczulnych nie ma atomów azotu",
-        "Adrenalina jest zakazana w układzie nerwowym przez barierę krew-mózg"
-      ],
-      "optionFeedback": [
-        "Krew omywająca rdzeń ma stężenie kortyzolu 100 razy wyższe niż krew obwodowa.",
-        "Zarówno noradrenalina jak i adrenalina zawierają azot aminowy.",
-        "Neurony adrenergiczne OUN wykorzystują enzym PNMT, ale w zwojach obwodowych go brak."
+        "Komórki pozanadnerczowe nie mają kontaktu z wysokim stężeniem kortyzolu z naczyń wrotnych kory nadnerczy, co uniemożliwia indukcję enzymu PNMT (N-metylotransferazy)",
+        "W tkankach pozanadnerczowych nie występuje hydroksylaza tyrozynowa",
+        "Przyzwojaki natychmiast rozkładają adrenalinę do kwasu moczowego"
       ],
       "answer": 0,
-      "explanation": "Krew omywająca rdzeń ma stężenie kortyzolu 100 razy wyższe niż krew obwodowa.",
-      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
-      "difficulty": "student",
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-pnmt-cortisol-induction",
+            "label": "Indukcja PNMT przez kortyzol z kory nadnerczy",
+            "acceptedPhrases": [
+              "PNMT",
+              "kortyzol",
+              "brak stymulacji",
+              "pozanadnerczowe",
+              "naczynia wrotne",
+              "tylko noradrenalina"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Enzym PNMT przekształcający noradrenalinę w adrenalinę wymaga do ekspresji mikromolowych stężeń kortyzolu, które występują wyłącznie w rdzeniu nadnercza dzięki układowi wrotnemu kory.",
+      "difficulty": "doctor",
       "reasoning": "mechanism",
       "sourceIds": [
-        "endo_pheo",
-        "sterane_chem",
-        "pte_nadnercza"
+        "endo_pheo"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Enzym PNMT przekształcający noradrenalinę w adrenalinę wymaga do ekspresji mikromolowych stężeń kortyzolu, które występują wyłącznie w rdzeniu nadnercza dzięki układowi wrotnemu kory.",
+        "Nieprawidłowo: W tkankach pozanadnerczowych nie występuje hydroksylaza tyrozynowa... Enzym PNMT przekształcający noradrenalinę w adrenalinę wymaga do ekspresji mikromolowych stężeń kortyzolu, które występują wyłącznie w rdzeniu nadnercza dzięki układowi wrotnemu kory.",
+        "Nieprawidłowo: Przyzwojaki natychmiast rozkładają adrenalinę do kwasu moczowego... Enzym PNMT przekształcający noradrenalinę w adrenalinę wymaga do ekspresji mikromolowych stężeń kortyzolu, które występują wyłącznie w rdzeniu nadnercza dzięki układowi wrotnemu kory."
       ]
     },
     {
       "id": "nadnercza-chemia-katecholaminy-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "nadnercza-chemia-katecholaminy-obj-1"
+        "adn-chem-kat-obj-2"
       ],
-      "prompt": "Dlaczego pomiar wolnych metanefryn w osoczu cechuje się wyższą czułością w wykrywaniu pheochromocytoma niż pomiar samej noradrenaliny?",
+      "prompt": "Dlaczego u pacjenta leczonego lewodopą (L-DOPA) z powodu choroby Parkinsona oznaczenie stężenia dopaminy i metoksytyraminy w osoczu jest fałszywie zawyżone?",
       "options": [
-        "Metanefryny powstają wewnątrz guza w sposób ciągły z powodu ekspresji COMT, a katecholaminy są wydzielane napadowo",
-        "Ponieważ metanefryny świecą w ciemności pod lampą UV",
-        "Ponieważ noradrenalina nie przechodzi do moczu"
-      ],
-      "optionFeedback": [
-        "Pomiędzy napadami stężenie katecholamin może być prawidłowe, podczas gdy metanefryny są stale podwyższone.",
-        "Oznaczenia laboratoryjne wykorzystują tandemową spektrometrię mas (LC-MS/MS).",
-        "Noradrenalina przechodzi do moczu, lecz w zmiennych ilościach."
+        "Egzogenna L-DOPA jest bezpośrednim substratem dla dekarboksylazy aromatycznych L-aminokwasów (AADC) i ulega masywnej obwodowej dekarboksylacji do dopaminy, a następnie metylacji przez COMT do 3-metoksytyraminy",
+        "Lewodopa stymuluje rozrost komórek chromochłonnych w rdzeniu nadnerczy",
+        "L-DOPA niszczy enzym MAO w nerkach"
       ],
       "answer": 0,
-      "explanation": "Pomiędzy napadami stężenie katecholamin może być prawidłowe, podczas gdy metanefryny są stale podwyższone.",
-      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-ldopa-metabolism-dopamine",
+            "label": "Metabolizm lewodopy do dopaminy i 3-metoksytyraminy przez AADC i COMT",
+            "acceptedPhrases": [
+              "lewodopa",
+              "L-DOPA",
+              "dopamina",
+              "3-metoksytyramina",
+              "fałszywie dodatni",
+              "AADC"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Lewodopa ulega dekarboksylacji do dopaminy, a ta przez COMT do metoksytyraminy. U pacjentów stosujących L-DOPA pomiar tych metabolitów daje fałszywie dodatnie wyniki PPGL.",
       "difficulty": "doctor",
       "reasoning": "interpretation",
       "sourceIds": [
-        "endo_pheo",
-        "sterane_chem",
-        "pte_nadnercza"
+        "endo_pheo"
+      ],
+      "claimIds": [
+        "claim-adn-pheo-metanephrines-screen"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Lewodopa ulega dekarboksylacji do dopaminy, a ta przez COMT do metoksytyraminy. U pacjentów stosujących L-DOPA pomiar tych metabolitów daje fałszywie dodatnie wyniki PPGL.",
+        "Nieprawidłowo: Lewodopa stymuluje rozrost komórek chromochłonnych w rdzeniu nadnerczy... Lewodopa ulega dekarboksylacji do dopaminy, a ta przez COMT do metoksytyraminy. U pacjentów stosujących L-DOPA pomiar tych metabolitów daje fałszywie dodatnie wyniki PPGL.",
+        "Nieprawidłowo: L-DOPA niszczy enzym MAO w nerkach... Lewodopa ulega dekarboksylacji do dopaminy, a ta przez COMT do metoksytyraminy. U pacjentów stosujących L-DOPA pomiar tych metabolitów daje fałszywie dodatnie wyniki PPGL."
       ]
     }
   ],
   "teachBack": {
     "id": "nadnercza-chemia-katecholaminy-teach-back-v2",
     "type": "recall",
+    "assessmentLevel": "generation",
     "objectiveIds": [
-      "nadnercza-chemia-katecholaminy-obj-1",
-      "nadnercza-chemia-katecholaminy-obj-2"
+      "adn-chem-kat-obj-1",
+      "adn-chem-kat-obj-2"
     ],
-    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Szlak biosyntezy i katabolizmu katecholamin: COMT, MAO i metanefryny”.",
-    "modelAnswer": "Biosynteza katecholamin wymaga kaskady 4 enzymów z kluczową rolą indukcji PNMT przez kortyzol, a ich O-metylacja przez COMT generuje diagnostyczne metanefryny.",
-    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "prompt": "Wyjaśnij powiązanie między korą a rdzeniem nadnerczy w regulacji enzymu PNMT oraz uzasadnij wyższość diagnostyczną wolnych metanefryn nad natywnymi katecholaminami.",
+    "modelAnswer": "Kortyzol wytwarzany w korze nadnerczy dopływa naczyniami wrotnymi do rdzenia w stężeniach 100x wyższych niż we krwi obwodowej, indukując enzym PNMT metylujący noradrenalinę do adrenaliny. Metanefryny powstają w guzie stale przez wewnątrzkomórkowy COMT i mają dłuższy t1/2, podczas gdy katecholaminy są wyrzucane napadowo i mają t1/2 1–2 min — stąd czułość metanefryn >97%.",
+    "explanation": "Biochemia regulacji enzymatycznej i kinetyka katabolizmu są podstawą współczesnej diagnostyki laboratoryjnej pheochromocytoma.",
     "difficulty": "both",
     "reasoning": "mechanism",
     "sourceIds": [
-      "endo_pheo",
-      "sterane_chem",
-      "pte_nadnercza"
+      "endo_pheo"
     ]
   },
   "exitTicket": [
     {
       "id": "nadnercza-chemia-katecholaminy-q4-exit-v2",
       "type": "missing_information",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "nadnercza-chemia-katecholaminy-obj-2"
+        "adn-chem-kat-obj-2"
       ],
-      "prompt": "Co jest uniwersalnym donorem grupy metylowej w reakcji przekształcenia noradrenaliny w adrenalinę przez enzym PNMT?",
+      "prompt": "Jaki jest główny końcowy produkt katabolizmu noradrenaliny i adrenaliny wydalany z moczem, powstający przy współudziale obu enzymów: COMT i MAO?",
       "options": [
-        "S-Adenozylo-L-metionina (SAMe)",
-        "Glukozo-6-fosforan",
-        "Kwas solny"
+        "Kwas wanilinomigdałowy (VMA / kwas 4-hydroksy-3-metoksymigdałowy)",
+        "Kwas homowanilinowy (HVA — produkt dopaminy)",
+        "Kwas 5-hydroksyindolooctowy (5-HIAA)"
       ],
       "optionFeedback": [
-        "Oddaje grupę metylową na atom azotu z utworzeniem S-adenozylohomocysteiny.",
-        "Jest intermediatem glikolizy, nie donorem grup metylowych.",
-        "HCl nie bierze udziału w reakcjach metylacji enzymatycznej."
+        "VMA jest wspólnym końcowym metabolitem adrenaliny i noradrenaliny.",
+        "HVA jest produktem rozkładu dopaminy.",
+        "5-HIAA to metabolit serotoniny w rakowiaku."
       ],
       "answer": 0,
-      "explanation": "Oddaje grupę metylową na atom azotu z utworzeniem S-adenozylohomocysteiny.",
-      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
-      "difficulty": "both",
+      "explanation": "Kwas wanilinomigdałowy (VMA) jest końcowym produktem metabolizmu noradrenaliny i adrenaliny po sekwencyjnym działaniu MAO i COMT.",
+      "difficulty": "student",
       "reasoning": "decision",
       "sourceIds": [
-        "endo_pheo",
-        "sterane_chem",
-        "pte_nadnercza"
-      ]
+        "endo_pheo"
+      ],
+      "transfer": true
     },
     {
       "id": "nadnercza-chemia-katecholaminy-q5-exit-v2",
-      "type": "missing_information",
+      "type": "single_choice",
+      "assessmentLevel": "recognition",
       "objectiveIds": [
-        "nadnercza-chemia-katecholaminy-obj-1"
+        "adn-chem-kat-obj-1"
       ],
-      "prompt": "Jaki jon metalu jest niezbędnym kofaktorem w centrum aktywnym enzymu COMT (katecholo-O-metylotransferazy)?",
+      "prompt": "Jaki kofaktor witaminowy jest niezbędny dla działania dekarboksylazy aromatycznych L-aminokwasów (AADC) przekształcającej L-DOPA w dopaminę?",
       "options": [
-        "Jon magnezu (Mg2+)",
-        "Czyste złoto (Au3+)",
-        "Rtęć metaliczna"
+        "Fosforan pirydoksalu (PLP / aktywna witamina B6)",
+        "Tiamina (witamina B1)",
+        "Kwas askorbinowy (witamina C)"
       ],
       "optionFeedback": [
-        "Koordynuje obie grupy hydroksylowe pierścienia katecholowego, umożliwiając deprotonację i atak na grupę metylową SAMe.",
-        "Metale szlachetne nie są fizjologicznymi kofaktorami enzymatycznymi człowieka.",
-        "Rtęć jest toksyną blokującą grupy tiolowe, nie kofaktorem."
+        "PLP jest kofaktorem większości dekarboksylaz aminokwasowych, w tym AADC.",
+        "Tiamina uczestniczy w dekarboksylacji oksydacyjnej ketokwasów.",
+        "Witamina C jest kofaktorem beta-hydroksylazy dopaminowej, nie AADC."
       ],
       "answer": 0,
-      "explanation": "Koordynuje obie grupy hydroksylowe pierścienia katecholowego, umożliwiając deprotonację i atak na grupę metylową SAMe.",
-      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
-      "difficulty": "both",
-      "reasoning": "safety",
+      "explanation": "Fosforan pirydoksalu (witamina B6) jest obligatoryjnym kofaktorem dekarboksylacji L-DOPA do dopaminy.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
       "sourceIds": [
-        "endo_pheo",
-        "sterane_chem",
-        "pte_nadnercza"
+        "endo_pheo"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "nadnercza-chemia-katecholaminy-bank-1-v2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "adn-chem-kat-obj-1",
+        "adn-chem-kat-obj-2"
+      ],
+      "prompt": "Wyjaśnij, dlaczego profil wydzielania katecholamin w guzie chromochłonnym powiązanym z mutacją genu VHL (zespół von Hippla-Lindaua) cechuje się dominacją noradrenaliny (fenotyp noradrenergiczny), podczas gdy w guzie w zespole MEN2 (mutacja protoonkogenu RET) dominuje adrenalina (fenotyp adrenergiczny).",
+      "modelAnswer": "Różnica fenotypowa wynika z poziomu ekspresji enzymu PNMT (N-metylotransferazy fenyloetanoloaminy). W guzach związanych z mutacją RET (MEN2) zachowana jest wysoka ekspresja PNMT, co pozwala na sprawną metylację noradrenaliny do adrenaliny (fenotyp adrenergiczny z dominacją metanefryny). W guzach związanych z mutacją VHL (szlak pseudohipoksji z akumulacją HIF-1alfa/HIF-2alfa) dochodzi do epigenetycznego wyciszenia i supresji transkrypcji genu PNMT. W efekcie guz nie posiada aktywnego PNMT i zatrzymuje szlak syntezy na etapie noradrenaliny, co skutkuje izolowanym wyrzutem noradrenaliny i dominacją normetanefryny w badaniach laboratoryjnych.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-pnmt-ret-expression",
+            "label": "Wysoka ekspresja PNMT w guzach MEN2/RET dająca fenotyp adrenergiczny",
+            "acceptedPhrases": [
+              "MEN2",
+              "RET",
+              "wysoka ekspresja PNMT",
+              "adrenalina",
+              "metanefryna"
+            ]
+          },
+          {
+            "id": "c-pnmt-vhl-suppression",
+            "label": "Wyciszenie PNMT w guzach VHL/pseudohipoksji dające fenotyp noradrenergiczny",
+            "acceptedPhrases": [
+              "VHL",
+              "brak PNMT",
+              "supresja PNMT",
+              "noradrenalina",
+              "normetanefryna",
+              "pseudohipoksja"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Guzy VHL przez szlak HIF wyciszają PNMT, wydzielając noradrenalinę. Guzy MEN2 zachowują ekspresję PNMT, wydzielając adrenalinę.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "endo_pheo"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "nadnercza-chemia-katecholaminy-bank-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "adn-chem-kat-obj-2"
+      ],
+      "claimIds": [
+        "claim-adn-pheo-metanephrines-screen"
+      ],
+      "prompt": "Dlaczego pobranie krwi na wolne metanefryny w osoczu zaleca się wykonywać w pozycji leżącej po 20–30 minutach odpoczynku z uprzednio założoną kaniulą dożylną?",
+      "options": [
+        "Pozycja stojąca lub stres związany z bezpośrednim nakłuciem żyły aktywuje układ współczulny, co powoduje fizjologiczny wyrzut noradrenaliny i może dać fałszywie dodatni wynik normetanefryny",
+        "Ponieważ w pozycji stojącej metanefryny opadają do kończyn dolnych pod wpływem grawitacji",
+        "Ponieważ enzym COMT jest aktywny wyłącznie w pozycji horyzontalnej"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-supine-rest-sympathetic-avoidance",
+            "label": "Uniknięcie aktywacji współczulnej i ortostatycznego wyrzutu noradrenaliny",
+            "acceptedPhrases": [
+              "pozycja leżąca",
+              "aktywacja współczulna",
+              "stres nakłucia",
+              "fałszywie dodatni",
+              "ortostaza"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Stres nakłucia i pozycja stojąca pobudzają układ współczulny, podnosząc normetanefrynę. Spoczynek w pozycji leżącej maksymalizuje swoistość badania.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "endo_pheo"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Stres nakłucia i pozycja stojąca pobudzają układ współczulny, podnosząc normetanefrynę. Spoczynek w pozycji leżącej maksymalizuje swoistość badania.",
+        "Nieprawidłowo: Ponieważ w pozycji stojącej metanefryny opadają do kończyn dolnych pod wpływem g... Stres nakłucia i pozycja stojąca pobudzają układ współczulny, podnosząc normetanefrynę. Spoczynek w pozycji leżącej maksymalizuje swoistość badania.",
+        "Nieprawidłowo: Ponieważ enzym COMT jest aktywny wyłącznie w pozycji horyzontalnej... Stres nakłucia i pozycja stojąca pobudzają układ współczulny, podnosząc normetanefrynę. Spoczynek w pozycji leżącej maksymalizuje swoistość badania."
       ]
     }
   ],
@@ -219,6 +333,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+    "scope": "Pełna modernizacja V2: biosynteza katecholamin, indukcja PNMT przez kortyzol, katabolizm COMT/MAO, fenotypy VHL vs MEN2."
   }
 }

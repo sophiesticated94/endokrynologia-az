@@ -4,16 +4,9 @@
     "statement": "Wytyczne Endocrine Society 2025 zalecają szeroki screening pierwotnego hiperaldosteronizmu u chorych z nadciśnieniem i hipokaliemią (również potiazydową), opornym NT, incydentaloma oraz wczesnym udarem w rodzinie.",
     "category": "guideline_recommendation",
     "strength": "strong",
-    "sourceIds": [
-      "endo_pa"
-    ],
-    "lessonIds": [
-      "zespol-conna"
-    ],
-    "tags": [
-      "primary-aldosteronism",
-      "screening"
-    ],
+    "sourceIds": ["endo_pa"],
+    "lessonIds": ["zespol-conna"],
+    "tags": ["primary-aldosteronism", "screening"],
     "reviewedAt": "2026-09-13",
     "evidenceType": "GUIDELINE_THRESHOLD"
   },
@@ -22,36 +15,43 @@
     "statement": "U pacjenta ze spontaniczną hipokaliemią, stłumioną reniną i stężeniem aldosteronu >= 20 ng/dl (550 pmol/l) testy konfirmacyjne uznaje się za zbędne, a prawdopodobieństwo PA za skrajnie wysokie (wg wytycznych ES 2025).",
     "category": "guideline_recommendation",
     "strength": "strong",
-    "sourceIds": [
-      "endo_pa"
-    ],
-    "lessonIds": [
-      "zespol-conna"
-    ],
-    "tags": [
-      "primary-aldosteronism",
-      "confirmatory-test"
-    ],
+    "sourceIds": ["endo_pa"],
+    "lessonIds": ["zespol-conna"],
+    "tags": ["primary-aldosteronism", "confirmatory-test"],
     "reviewedAt": "2026-09-13",
     "value": 20,
     "unit": "ng/dl",
     "evidenceType": "GUIDELINE_THRESHOLD"
   },
   {
+    "id": "claim-adn-pa-arr-medications",
+    "statement": "Przed oznaczeniem wskaźnika aldosteronowo-reninowego (ARR) należy bezwzględnie odstawić antagonistów receptora mineralokortykoidowego (spironolakton, eplerenon) na 4–6 tygodni; beta-blokery mogą fałszywie zawyżać ARR przez supresję reniny.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": ["endo_pa"],
+    "lessonIds": ["zespol-conna"],
+    "tags": ["arr", "interferences", "mra", "beta-blockers"],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "GUIDELINE_THRESHOLD"
+  },
+  {
+    "id": "claim-adn-pa-ct-not-lateralization",
+    "statement": "Tomografia komputerowa nadnerczy ma ograniczoną dokładność w różnicowaniu jedno- i obustronnego PA (błąd do 40%); u pacjentów kwalifikowanych do adrenalektomii w wieku > 35 lat złotym standardem lateralizacji pozostaje cewnikowanie żył nadnerczowych (AVS).",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": ["endo_pa"],
+    "lessonIds": ["zespol-conna", "adrenalektomia"],
+    "tags": ["avs", "lateralization", "ct", "surgery"],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "GUIDELINE_THRESHOLD"
+  },
+  {
     "id": "claim-adn-avs-anatomy",
     "statement": "Prawa żyła nadnerczowa uchodzi bezpośrednio do żyły głównej dolnej i ma długość kilku milimetrów, co czyni jej cewnikowanie (AVS) technicznie znacznie trudniejszym niż lewej.",
     "category": "mechanistic",
-    "sourceIds": [
-      "pte_nadnercza",
-      "endo_pa"
-    ],
-    "lessonIds": [
-      "nadnercza-anatomia"
-    ],
-    "tags": [
-      "avs",
-      "anatomy"
-    ],
+    "sourceIds": ["pte_nadnercza", "endo_pa"],
+    "lessonIds": ["nadnercza-anatomia"],
+    "tags": ["avs", "anatomy"],
     "reviewedAt": "2026-09-13"
   },
   {
@@ -59,16 +59,9 @@
     "statement": "U młodych chorych (< 35 lat) z ciężkim PA, hipokaliemią i jednoznacznym solitarym gruczolakiem w CT można pominąć AVS przed adrenalektomią.",
     "category": "guideline_recommendation",
     "strength": "conditional",
-    "sourceIds": [
-      "endo_pa"
-    ],
-    "lessonIds": [
-      "zespol-conna"
-    ],
-    "tags": [
-      "avs",
-      "surgery"
-    ],
+    "sourceIds": ["endo_pa"],
+    "lessonIds": ["zespol-conna", "adrenalektomia"],
+    "tags": ["avs", "surgery"],
     "reviewedAt": "2026-09-13"
   },
   {
@@ -76,35 +69,31 @@
     "statement": "Przed podaniem beta-adrenolityku w guzie chromochłonnym konieczna jest uprzednia skuteczna blokada receptorów alfa-1, aby zapobiec przełomowi nadciśnieniowemu.",
     "category": "guideline_recommendation",
     "strength": "strong",
-    "sourceIds": [
-      "endo_pheo"
-    ],
-    "lessonIds": [
-      "pheochromocytoma"
-    ],
-    "tags": [
-      "pheo",
-      "safety",
-      "pharmacotherapy"
-    ],
+    "sourceIds": ["endo_pheo"],
+    "lessonIds": ["pheochromocytoma"],
+    "tags": ["pheo", "safety", "pharmacotherapy"],
     "reviewedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-adn-pheo-metanephrines-screen",
+    "statement": "Oznaczenie wolnych metanefryn w osoczu lub frakcjonowanych metanefryn w dobowej zbiórce moczu (DZM) cechuje się czułością > 97% i stanowi badanie pierwszego rzutu w diagnostyce guza chromochłonnego.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": ["endo_pheo"],
+    "lessonIds": ["pheochromocytoma", "nadnercza-chemia-katecholaminy"],
+    "tags": ["metanephrines", "pheo", "screening"],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "GUIDELINE_THRESHOLD"
   },
   {
     "id": "claim-adn-incidentaloma-hu-10",
     "statement": "Natywna gęstość w CT <= 10 HU wykazuje wysoką swoistość (ok. 96–100%) dla łagodnego gruczolaka bogatolipoidowego w badaniach walidacyjnych.",
     "category": "measured",
-    "sourceIds": [
-      "ese_incidentaloma"
-    ],
-    "lessonIds": [
-      "incydentaloma-nadnercza"
-    ],
+    "sourceIds": ["ese_incidentaloma"],
+    "lessonIds": ["incydentaloma-nadnercza"],
     "value": 10,
     "unit": "HU",
-    "tags": [
-      "incidentaloma",
-      "imaging"
-    ],
+    "tags": ["incidentaloma", "imaging"],
     "reviewedAt": "2026-09-13"
   },
   {
@@ -112,52 +101,84 @@
     "statement": "Kortyzol po teście 1 mg DST > 1.8 µg/dl definiuje możliwą autonomiczną sekrecję (possible MACS), a > 5.0 µg/dl potwierdza autonomiczną sekrecję kortyzolu (MACS).",
     "category": "guideline_recommendation",
     "strength": "strong",
-    "sourceIds": [
-      "ese_incidentaloma",
-      "pte_macs"
-    ],
-    "lessonIds": [
-      "incydentaloma-nadnercza"
-    ],
+    "sourceIds": ["ese_incidentaloma", "pte_macs"],
+    "lessonIds": ["incydentaloma-nadnercza", "cushing-nadnerczowy"],
     "value": 1.8,
     "unit": "µg/dl",
-    "tags": [
-      "macs",
-      "dst"
-    ],
+    "tags": ["macs", "dst"],
     "reviewedAt": "2026-09-13"
   },
   {
     "id": "claim-adn-synacthen-recent-secondary",
     "statement": "W świeżej wtórnej niedoczynności nadnerczy (<4 tyg. od uszkodzenia przysadki) test stymulacji Synacthenem 250 µg może być fałszywie ujemny, gdyż kora nie uległa jeszcze atrofii.",
     "category": "observational_association",
-    "sourceIds": [
-      "endo_pai"
-    ],
-    "lessonIds": [
-      "nadnercza-diagnostyka"
-    ],
-    "tags": [
-      "synacthen",
-      "secondary-ai",
-      "pituitary"
-    ],
+    "sourceIds": ["endo_pai"],
+    "lessonIds": ["nadnercza-diagnostyka", "niedoczynnosc-wtorna"],
+    "tags": ["synacthen", "secondary-ai", "pituitary"],
     "reviewedAt": "2026-09-13"
   },
   {
     "id": "claim-adn-cbg-estrogens",
     "statement": "Estrogeny doustne zwiększają syntezę wątrobową CBG, sztucznie podwajając stężenie kortyzolu całkowitego przy prawidłowym wolnym kortyzolu.",
     "category": "mechanistic",
-    "sourceIds": [
-      "endo_pai"
-    ],
-    "lessonIds": [
-      "nadnercza-diagnostyka"
-    ],
-    "tags": [
-      "cbg",
-      "estrogens"
-    ],
+    "sourceIds": ["endo_pai"],
+    "lessonIds": ["nadnercza-diagnostyka"],
+    "tags": ["cbg", "estrogens"],
     "reviewedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-adn-adrenal-crisis-emergency",
+    "statement": "Hydrokortyzon i.v. (100 mg bolus, następnie 200 mg/24h w ciągłym wlewie lub 50 mg co 6h) i 0,9% NaCl należy podać natychmiast przy podejrzeniu przełomu nadnerczowego, bez oczekiwania na wyniki badań laboratoryjnych ani test stymulacji.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": ["adrenal_crisis", "endo_pai"],
+    "lessonIds": ["przelom-nadnerczowy", "addison-choroba"],
+    "tags": ["adrenal-crisis", "emergency", "hydrocortisone"],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "GUIDELINE_THRESHOLD"
+  },
+  {
+    "id": "claim-adn-cortisol-morning-thresholds",
+    "statement": "Poranne stężenie kortyzolu (godz. 8:00) < 3 µg/dl (< 83 nmol/l) silnie wskazuje na niedoczynność kory nadnerczy, podczas gdy stężenie > 18 µg/dl (> 500 nmol/l) w większości przypadków ją wyklucza; wartości pośrednie wymagają testu z Synacthenem.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": ["endo_pai"],
+    "lessonIds": ["nadnercza-diagnostyka", "addison-choroba"],
+    "tags": ["cortisol", "morning-thresholds", "adrenal-insufficiency"],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "GUIDELINE_THRESHOLD"
+  },
+  {
+    "id": "claim-adn-cah-17ohp-thresholds",
+    "statement": "Poranne stężenie 17-hydroksyprogesteronu (17-OHP) < 200 ng/dl (6 nmol/l) wyklucza nieklasyczny WPN (NC-CAH), stężenie > 1000 ng/dl potwierdza rozpoznanie, a wartości w przedziale 200–1000 ng/dl wymagają wykonania testu stymulacji Synacthenem.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": ["cah_guideline"],
+    "lessonIds": ["wpn-zespol", "nadnercza-chemia-steroidogeneza"],
+    "tags": ["cah", "17-ohp", "synacthen"],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "GUIDELINE_THRESHOLD"
+  },
+  {
+    "id": "claim-adn-cushing-initial-screening",
+    "statement": "Wstępna diagnostyka hiperkortyzolemii wymaga wykonania co najmniej jednego z trzech testów I rzutu: testu nocnego hamowania 1 mg deksametazonu (1 mg DST), wolnego kortyzolu w DZM (UFC) lub kortyzolu w ślinie o północy.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": ["pte_macs", "ese_incidentaloma"],
+    "lessonIds": ["cushing-nadnerczowy", "incydentaloma-nadnercza"],
+    "tags": ["cushing", "screening", "dst", "ufc"],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "GUIDELINE_THRESHOLD"
+  },
+  {
+    "id": "claim-adn-acc-size-threshold",
+    "statement": "Guz nadnercza o średnicy > 4–6 cm, niejednorodnej strukturze, gęstości natywnej w CT > 20 HU i opóźnionym wypłukiwaniu kontrastu stwarza wysokie ryzyko raka kory nadnerczy (ACC) i wymaga pilnej oceny onkologicznej.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": ["ese_acc"],
+    "lessonIds": ["rak-nadnercza", "incydentaloma-nadnercza"],
+    "tags": ["acc", "imaging", "malignancy"],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "GUIDELINE_THRESHOLD"
   }
 ]

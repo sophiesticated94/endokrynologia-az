@@ -43,6 +43,9 @@
     "sourceIds": [
       "ese_hypopara",
       "asbmr_calcium"
+    ],
+    "claimIds": [
+      "claim-pt-hypopara-target-ca-2025"
     ]
   },
   "blocks": [
@@ -151,7 +154,8 @@
     "sourceIds": [
       "ese_hypopara",
       "asbmr_calcium"
-    ]
+    ],
+    "assessmentLevel": "generation"
   },
   "exitTicket": [
     {
@@ -179,7 +183,9 @@
       "sourceIds": [
         "ese_hypopara",
         "asbmr_calcium"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     },
     {
       "id": "hipokalcemia-niedoczynnosc-q5-exit-v2",
@@ -206,7 +212,9 @@
       "sourceIds": [
         "ese_hypopara",
         "asbmr_calcium"
-      ]
+      ],
+      "assessmentLevel": "application",
+      "transfer": true
     }
   ],
   "widgetIds": [
@@ -217,5 +225,145 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "hipokalcemia-niedoczynnosc-bank-1",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "hipokalcemia-niedoczynnosc-obj-1",
+        "hipokalcemia-niedoczynnosc-obj-2",
+        "hipokalcemia-niedoczynnosc-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-hypopara-target-ca-2025",
+        "claim-pt-cyp27b1-stimulation",
+        "claim-pt-hypocalcemia-magnesium-block"
+      ],
+      "prompt": "Przeanalizuj leczenie przewlekłej pooperacyjnej niedoczynności przytarczyc u 42-letniej kobiety po całkowitej tyreoidektomii. Aktualne wyniki: wapń całkowity 2,05 mmol/l (bez objawów tężyczkowych), fosforany 1,52 mmol/l, dobowa kalciuria 8,2 mmol/24h (norma 2,5–7,5 mmol/24h). Chora przyjmuje węglan wapnia 3 x 1000 mg oraz kalcytriol 0,5 µg/dobę. Wyjaśnij: 1) jakie są cele docelowe kalcemii wg zaktualizowanych wytycznych ESE 2025 i dlaczego dążenie do pełnej normokalcemii (>2,20 mmol/l) jest niebezpieczne; 2) dlaczego zwykły cholekalcyferol jest nieskuteczny w monoterapii; 3) jak zapobiec nefrokalcynozie i kamicy nerkowej w tej sytuacji klinicznej.",
+      "modelAnswer": "Zgodnie ze zaktualizowanymi wytycznymi European Society of Endocrinology (ESE 2025), celem leczenia przewlekłej niedoczynności przytarczyc jest utrzymywanie stężenia wapnia w surowicy w dolnej granicy normy (2,00–2,15 mmol/l) lub nieznacznie poniżej, pod warunkiem całkowitego braku objawów tężyczkowych. W niedoczynności przytarczyc brak PTH znosi cewkową reabsorpcję wapnia w nerkach. Dążenie do pełnej normokalcemii (>2,25 mmol/l) drastycznie zwiększa ładunek przefiltrowanego wapnia i wywołuje ciężką hiperkalciurię (>7,5 mmol/24h), co prowadzi do nefrokalcynozy, kamicy nerkowej i przewlekłej niewydolności nerek. Zwykły cholekalcyferol jest nieskuteczny w monoterapii, ponieważ brak PTH oznacza brak stymulacji 1-alfa-hydroksylazy (CYP27B1) w nerkach — konieczne jest podawanie aktywnych analogów (kalcytriol lub alfakalcydol). U tej pacjentki występuje już hiperkalciuria (8,2 mmol/24h). Postępowanie polega na redukcji dawki doustnego wapnia, optymalizacji kalcytriolu, diecie ubogofosforanowej i ubogosodowej oraz ewentualnym dołączeniu diuretyku tiazydowego (np. hydrochlorotiazyd 25–50 mg/d), który nasila wchłanianie zwrotne wapnia w cewce dalszej nerek.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "hipokalcemia-niedoczynnosc-bank-1-dim-targets",
+            "label": "Cele terapeutyczne kalcemii wg ESE 2025 i ryzyko hiperkalciurii",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-ese-2025-targets",
+                "label": "Utrzymywanie Ca w dolnej granicy normy (2,00–2,15 mmol/l)",
+                "acceptedPhrases": [
+                  "ESE 2025",
+                  "dolna granica normy",
+                  "2,00–2,15",
+                  "hiperkalciuria",
+                  "nefrokalcynoza",
+                  "kamica nerkowa"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "hipokalcemia-niedoczynnosc-bank-1-dim-calcitriol",
+            "label": "Konieczność stosowania aktywnej witaminy D (brak stymulacji CYP27B1)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-cyp27b1-stimulation-lack",
+                "label": "Brak stymulacji CYP27B1 wymaga kalcytriolu/alfakalcydolu",
+                "acceptedPhrases": [
+                  "CYP27B1",
+                  "1-alfa-hydroksylaza",
+                  "kalcytriol",
+                  "alfakalcydol",
+                  "brak stymulacji",
+                  "aktywny metabolit"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "hipokalcemia-niedoczynnosc-bank-1-dim-hypercalciuria-management",
+            "label": "Zapobieganie powikłaniom nerkowym (tiazydy, redukcja Ca)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-thiazide-calciuria-prevention",
+                "label": "Tiazydy w redukcji hiperkalciurii i nefrokalcynozy",
+                "acceptedPhrases": [
+                  "diuretyk tiazydowy",
+                  "hydrochlorotiazyd",
+                  "redukcja wapnia",
+                  "kontrola dobowej kalciurii"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-hypercalcemia-target-push",
+            "patterns": [
+              "zwiększyć dawkę wapnia aby osiągnąć 2,40 mmol/l",
+              "forsować wapń do górnej granicy normy"
+            ],
+            "severity": "critical",
+            "feedback": "Forsowanie kalcemii do środka lub górnej granicy normy w hipoparatyreozie wywołuje masywną hiperkalciurię i nieodwracalne uszkodzenie nerek."
+          }
+        ]
+      },
+      "explanation": "Wytyczne ESE 2025 zalecają utrzymywanie wapnia w dolnej granicy normy (2,00–2,15 mmol/l) w celu uniknięcia hiperkalciurii i nefrokalcynozy, stosując aktywne analogi witaminy D i tiazydy.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "ese_hypopara",
+        "asbmr_calcium"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "hipokalcemia-niedoczynnosc-bank-2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "hipokalcemia-niedoczynnosc-obj-1",
+        "hipokalcemia-niedoczynnosc-obj-2",
+        "hipokalcemia-niedoczynnosc-obj-3"
+      ],
+      "claimIds": [
+        "claim-pt-hypocalcemia-magnesium-block"
+      ],
+      "prompt": "U 55-letniego chorego z chorobą alkoholową przyjętego z ciężką hipokalcemią (wapń skorygowany 1,65 mmol/l) i tężyczką dożylny wlew glukonianu wapnia przyniósł jedynie chwilowy efekt, a kalcemia po kilku godzinach ponownie spadła. Stężenie iPTH wynosi 8 pg/ml (paradoksalnie niskie). Jakie badanie elektrolitowe jest kluczowe dla trwałego wyrównania hipokalcemii?",
+      "options": [
+        "Oznaczenie stężenia magnezu w surowicy; ciężka hipomagnezemia (<0,5 mmol/l) blokuje uwalnianie PTH z przytarczyc oraz indukuje oporność tkanek na PTH, a hipokalcemia ustąpi dopiero po suplementacji magnezu.",
+        "Oznaczenie stężenia chlorków w celu wykluczenia kwasicy hiperchloremicznej.",
+        "Oznaczenie stężenia sodu w celu wyliczenia luki anionowej."
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-magnesium-block-hypocalcemia",
+            "label": "Ciężka hipomagnezemia blokuje wydzielanie PTH i indukuje oporność",
+            "acceptedPhrases": [
+              "magnez",
+              "hipomagnezemia",
+              "blok wydzielania PTH",
+              "oporność na PTH",
+              "suplementacja magnezu"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Ciężka hipomagnezemia hamuje uwalnianie PTH oraz wywołuje oporność receptorową na PTH. Wyrównanie hipomagnezemii jest warunkiem koniecznym skutecznego leczenia hipokalcemii.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "asbmr_calcium"
+      ],
+      "transfer": true
+    }
+  ]
 }

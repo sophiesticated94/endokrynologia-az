@@ -3,212 +3,398 @@
   "lessonId": "nadnercza-anatomia",
   "objectives": [
     {
-      "id": "nadnercza-anatomia-obj-1",
-      "statement": "Poznasz trójwarstwową budowę kory nadnerczy (ZG, ZF, ZR) oraz neuroendokrynny charakter rdzenia.",
+      "id": "adn-anat-obj-1",
+      "statement": "Opiszesz trójźródłowe unaczynienie tętnicze nadnerczy oraz asymetrię drenażu żylnego i jej implikacje dla cewnikowania żył nadnerczowych (AVS).",
       "kind": "mechanism"
     },
     {
-      "id": "nadnercza-anatomia-obj-2",
-      "statement": "Zrozumiesz kluczowe szlaki sterydogenezy od cholesterolu do aldosteronu, kortyzolu i DHEA-S oraz asymetrię spływu żylnego.",
-      "kind": "interpretation"
+      "id": "adn-anat-obj-2",
+      "statement": "Zidentyfikujesz anatomiczne zagrożenia krwotoczne i powikłania techniczne podczas preparowania prawej żyły nadnerczowej i adrenalektomii.",
+      "kind": "safety"
+    },
+    {
+      "id": "adn-anat-obj-3",
+      "statement": "Ocenisz kryteria poprawności kaniulacji żył nadnerczowych na podstawie wskaźnika selektywności kortyzolu (żyła/IVC).",
+      "kind": "decision"
     }
   ],
   "diagnostic": {
     "id": "nadnercza-anatomia-q1-diagnostic-v2",
     "type": "single_choice",
+    "assessmentLevel": "recognition",
     "objectiveIds": [
-      "nadnercza-anatomia-obj-1"
+      "adn-anat-obj-1"
     ],
-    "prompt": "Gdzie uchodzi prawa żyła nadnerczowa u człowieka?",
+    "prompt": "Gdzie bezpośrednio uchodzi prawa żyła nadnerczowa, co stanowi anatomiczną podstawę trudności w jej cewnikowaniu (AVS)?",
     "options": [
-      "Bezpośrednio do żyły głównej dolnej (VCI)",
-      "Do prawej żyły nerkowej",
-      "Do żyły wrotnej wątroby"
+      "Do tylno-bocznego obwodu żyły głównej dolnej (IVC) jako naczynie o długości zaledwie 2–5 mm",
+      "Do prawej żyły nerkowej, tworząc wspólny pień z żyłą przeponową",
+      "Do żyły wrotnej na wysokości więzadła wątrobowo-dwunastniczego"
     ],
     "optionFeedback": [
-      "Prawa żyła nadnerczowa jest krótka i uchodzi wprost do przednio-bocznej ściany żyły głównej dolnej.",
-      "Do żyły nerkowej uchodzi lewa żyła nadnerczowa, a nie prawa.",
-      "Nadnercza nie drenują krwi do układu wrotnego wątroby."
+      "Prawa żyła nadnerczowa uchodzi bezpośrednio do IVC, jest niezwykle krótka i uchodzi pod ostrym kątem.",
+      "To lewa żyła nadnerczowa uchodzi do żyły nerkowej (wspólnie z żyłą przeponową dolną).",
+      "Spływ żylny z nadnerczy nie łączy się bezpośrednio z układem wrotnym."
     ],
     "answer": 0,
-    "explanation": "Prawa żyła nadnerczowa jest krótka i uchodzi wprost do przednio-bocznej ściany żyły głównej dolnej.",
-    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "explanation": "Prawa żyła nadnerczowa jest naczyniem o długości zaledwie kilku milimetrów, uchodzącym bezpośrednio do ściany żyły głównej dolnej (IVC).",
     "difficulty": "student",
     "reasoning": "mechanism",
     "sourceIds": [
       "pte_nadnercza",
       "endo_pa"
+    ],
+    "claimIds": [
+      "claim-adn-avs-anatomy"
     ]
   },
   "blocks": [
     {
-      "id": "nadnercza-anatomia-block-1",
-      "title": "Anatomia, położenie i asymetria naczyniowa",
-      "text": "Nadnercza to parzyste narządy położone zaotrzewnowo na górnych biegunach nerek, otoczone powięzią nerkową (Geroty) i tkanką tłuszczową. Prawe nadnercze ma kształt piramidalny, lewe półksiężycowaty. Unaczynienie tętnicze pochodzi z trzech źródeł (tętnice nadnerczowe górna, środkowa i dolna). Krytyczna różnica anatomiczna dotyczy spływu żylnego: prawa żyła nadnerczowa jest bardzo krótka (zaledwie kilka milimetrów) i uchodzi bezpośrednio do żyły głównej dolnej (VCI), podczas gdy lewa żyła nadnerczowa jest znacznie dłuższa i uchodzi do lewej żyły nerkowej. Ta asymetria ma fundamentalne znaczenie techniczne podczas cewnikowania żył nadnerczowych (AVS) oraz w chirurgii laparoskopowej.",
+      "id": "adn-anat-b1",
+      "title": "Trójźródłowe unaczynienie tętnicze",
+      "text": "Nadnercza otrzymują zaopatrzenie z trzech głównych tętnic: górnej (od t. przeponowej dolnej), środkowej (bezpośrednio od aorty brzusznej) oraz dolnej (od t. nerkowej). Ta bogata sieć tworzy splot torebkowy, który przechodzi w naczynia włosowate kory zaopatrujące komórki wydzielnicze steroidów, a następnie spływa do rdzenia.",
       "sourceIds": [
-        "pte_nadnercza",
-        "endo_pa"
+        "pte_nadnercza"
       ],
-      "checkpointId": "nadnercza-anatomia-q2-checkpoint-1-v2",
-      "inlineEnhancements": []
+      "checkpointId": "nadnercza-anatomia-q2-checkpoint-1-v2"
     },
     {
-      "id": "nadnercza-anatomia-block-2",
-      "title": "Kora nadnerczy: Trzy strefy i ich wyspecjalizowane produkty",
-      "text": "Kora stanowi ok. 80–90% masy narządu i dzieli się na trzy strefy (od zewnątrz do wewnątrz): 1) Strefa kłębuszkowa (zona glomerulosa — ZG, ok. 15%): syntetyzuje mineralokortykosteroidy, głównie aldosteron, regulowany przez układ RAA i stężenie potasu (niezależnie od ACTH!); 2) Strefa pasmowata (zona fasciculata — ZF, ok. 75%): syntetyzuje glikokortykosteroidy, przede wszystkim kortyzol, pod ścisłą kontrolą przysadkowego ACTH; 3) Strefa siatkowata (zona reticularis — ZR, ok. 10%): wytwarza androgeny nadnerczowe (DHEA, DHEA-S, androstendion), stymulowana przez ACTH. Złota mnemotechnika: GFR — Salt, Sugar, Sex (sól, cukier, seks).",
+      "id": "adn-anat-b2",
+      "title": "Asymetria drenażu żylnego i wyzwania AVS",
+      "text": "Odpływ żylny wykazuje dramatyczną asymetrię: prawa żyła nadnerczowa jest krótka (2–5 mm) i uchodzi bezpośrednio do IVC. Lewa żyła nadnerczowa jest znacznie dłuższa (2–4 cm), łączy się z lewą żyłą przeponową dolną i uchodzi do lewej żyły nerkowej. Ta asymetria sprawia, że kaniulacja prawej żyły podczas AVS jest obarczona znacznie wyższym odsetkiem niepowodzeń technicznych.",
       "sourceIds": [
-        "pte_nadnercza",
-        "endo_pa"
+        "endo_pa",
+        "pte_nadnercza"
       ],
-      "checkpointId": "nadnercza-anatomia-q3-checkpoint-2-v2",
-      "inlineEnhancements": []
+      "checkpointId": "nadnercza-anatomia-q3-checkpoint-2-v2"
     },
     {
-      "id": "nadnercza-anatomia-block-3",
-      "title": "Rdzeń nadnerczy i kaskada katecholamin",
-      "text": "Rdzeń nadnerczy wywodzi się ektodermalnie z grzebienia nerwowego i stanowi zmodyfikowany zwój współczulny. Komórki chromafinowe (feochromocyty) są unerwione przez przedzwojowe cholinergiczne włókna współczulne. Syntetyzują one katecholaminy: tyrozyna $\\to$ DOPA $\\to$ dopamina $\\to$ noradrenalina $\\to$ adrenalina. Kluczowy fakt: enzym PNMT (N-metylotransferaza fenyloetanoloaminy), który przekształca noradrenalinę w adrenalinę, jest indukowany przez wysokie stężenia kortyzolu spływającego naczyniami wrotnymi z kory do rdzenia. Dlatego w rdzeniu nadnercza powstaje głównie adrenalina (ok. 80%), w odróżnieniu od zwojów współczulnych.",
+      "id": "adn-anat-b3",
+      "title": "Topografia chirurgiczna i pole widzenia",
+      "text": "Prawe nadnercze przylega bezpośrednio do wątroby i tylnej ściany IVC. Lewe nadnercze sąsiaduje z ogonem trzustki, śledzioną i tylną ścianą żołądka. Chirurgiczne odpreparowanie prawej żyły stwarza wysokie ryzyko naddarcia IVC, wymagającego natychmiastowej hemostazy uciskowej.",
       "sourceIds": [
-        "pte_nadnercza",
-        "endo_pa"
-      ],
-      "inlineEnhancements": []
+        "adrenal_surgery"
+      ]
     }
   ],
   "activities": [
     {
       "id": "nadnercza-anatomia-q2-checkpoint-1-v2",
-      "type": "single_choice",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "nadnercza-anatomia-obj-2"
+        "adn-anat-obj-2"
       ],
-      "prompt": "Który czynnik stanowi główny fizjologiczny regulator wydzielania aldosteronu przez strefę kłębuszkową?",
+      "prompt": "W trakcie prawostronnej adrenalektomii laparoskopowej nastąpiło naddarcie ujścia prawej żyły nadnerczowej przy samej żyle głównej dolnej. Jaki manewr hemostatyczny jest priorytetowy?",
       "options": [
-        "Układ renina-angiotensyna-aldosteron (Angiotensyna II) oraz stężenie potasu",
-        "Wydzielany z przysadki hormon ACTH",
-        "Stężenie insuliny we krwi"
-      ],
-      "optionFeedback": [
-        "Strefa kłębuszkowa odpowiada na spadek perfuzji nerek i hiperkaliemię, pozostając w dużej mierze niezależna od ACTH.",
-        "ACTH ma jedynie przejściowy, tonizujący wpływ na ZG; głównym regulatorem jest RAA.",
-        "Insulina nie reguluje bezpośrednio syntezy aldosteronu w strefie kłębuszkowej."
+        "Bezpośredni kontrolowany ucisk hemostatyczny tamponem/gazikiem, obniżenie ciśnienia odmy do wartości bezpiecznych i przygotowanie do natychmiastowej konwersji do laparotomii",
+        "Ślepe założenie kilku klipsów tytanowych w strumień krwi w nadziei na uchwycenie naczynia",
+        "Zwiększenie ciśnienia insuflacji do 30 mmHg i kontynuacja preparowania tkanek"
       ],
       "answer": 0,
-      "explanation": "Strefa kłębuszkowa odpowiada na spadek perfuzji nerek i hiperkaliemię, pozostając w dużej mierze niezależna od ACTH.",
-      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
-      "difficulty": "student",
-      "reasoning": "mechanism",
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-direct-pressure",
+            "label": "Bezpośredni ucisk hemostatyczny gazikiem",
+            "acceptedPhrases": [
+              "ucisk",
+              "tamponada",
+              "kompresja",
+              "opanowanie pola"
+            ]
+          },
+          {
+            "id": "c-conversion-ivc",
+            "label": "Przygotowanie do konwersji i zaopatrzenie ściany IVC",
+            "acceptedPhrases": [
+              "konwersja",
+              "laparotomia",
+              "IVC",
+              "żyła główna dolna",
+              "naddarcie"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-blind-clip",
+            "patterns": [
+              "ślepe klipsowanie",
+              "klipsy w strumień",
+              "zwiększenie odmy"
+            ],
+            "severity": "critical",
+            "feedback": "Ślepe klipsowanie grozi zamknięciem światła lub nieodwracalnym rozerwaniem żyły głównej dolnej."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Krótka prawa żyła nadnerczowa stwarza wysokie ryzyko uszkodzenia ściany IVC. Ślepe zakładanie klipsów jest kardynalnym błędem; standardem jest bezpośredni ucisk i konwersja.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
       "sourceIds": [
-        "pte_nadnercza",
-        "endo_pa"
+        "adrenal_surgery"
+      ],
+      "claimIds": [
+        "claim-adn-avs-anatomy"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Krótka prawa żyła nadnerczowa stwarza wysokie ryzyko uszkodzenia ściany IVC. Ślepe zakładanie klipsów jest kardynalnym błędem; standardem jest bezpośredni ucisk i konwersja.",
+        "Nieprawidłowo: Ślepe założenie kilku klipsów tytanowych w strumień krwi w nadziei na uchwycenie... Krótka prawa żyła nadnerczowa stwarza wysokie ryzyko uszkodzenia ściany IVC. Ślepe zakładanie klipsów jest kardynalnym błędem; standardem jest bezpośredni ucisk i konwersja.",
+        "Nieprawidłowo: Zwiększenie ciśnienia insuflacji do 30 mmHg i kontynuacja preparowania tkanek... Krótka prawa żyła nadnerczowa stwarza wysokie ryzyko uszkodzenia ściany IVC. Ślepe zakładanie klipsów jest kardynalnym błędem; standardem jest bezpośredni ucisk i konwersja."
       ]
     },
     {
       "id": "nadnercza-anatomia-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "lab",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "nadnercza-anatomia-obj-1"
+        "adn-anat-obj-3"
       ],
-      "prompt": "Dlaczego w rdzeniu nadnerczy powstaje głównie adrenalina, podczas gdy zwoje współczulne wydzielają niemal wyłącznie noradrenalinę?",
+      "prompt": "Ocena cewnikowania żył nadnerczowych (AVS) bez stymulacji ACTH: stężenie kortyzolu w IVC wynosi 10 µg/dl. W lewej żyle nadnerczowej: kortyzol 78 µg/dl, w prawej: 16 µg/dl. Jaka jest interpretacja techniczna badania?",
       "options": [
-        "Kortyzol spływający z kory indukuje enzym PNMT przekształcający noradrenalinę w adrenalinę",
-        "Rdzeń nadnerczy nie posiada enzymu hydroksylazy dopaminowej",
-        "W rdzeniu nie ma receptorów dla acetylocholiny"
-      ],
-      "optionFeedback": [
-        "Wysokie lokalne stężenie glikokortykosteroidów aktywuje ekspresję N-metylotransferazy fenyloetanoloaminy.",
-        "Enzym ten jest obecny i niezbędny do wytwarzania noradrenaliny.",
-        "Komórki chromafinowe posiadają receptory nikotynowe i muskarynowe dla ACh."
+        "Kaniulacja lewej żyły jest selektywna (indeks 7,8 >= 2,0), natomiast prawej jest nieselektywna (indeks 1,6 < 2,0), co unieważnia ocenę lateralizacji",
+        "Obie żyły zostały poprawnie scałkowane, ponieważ stężenie w prawej żyle przewyższa IVC",
+        "Badanie jest w pełni diagnostyczne i wskazuje na jednostronne wydzielanie z lewego nadnercza"
       ],
       "answer": 0,
-      "explanation": "Wysokie lokalne stężenie glikokortykosteroidów aktywuje ekspresję N-metylotransferazy fenyloetanoloaminy.",
-      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "explanation": "Indeks selektywności w protokole bez ACTH musi wynosić co najmniej 2,0 (stosunek kortyzolu w żyle nadnerczowej do IVC). Wartość 16/10 = 1,6 oznacza pobranie krwi z IVC, a nie z prawej żyły nadnerczowej.",
       "difficulty": "doctor",
-      "reasoning": "interpretation",
+      "reasoning": "decision",
       "sourceIds": [
-        "pte_nadnercza",
-        "endo_pa"
+        "endo_pa",
+        "pte_nadnercza"
+      ],
+      "claimIds": [
+        "claim-adn-avs-anatomy"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Indeks selektywności w protokole bez ACTH musi wynosić co najmniej 2,0 (stosunek kortyzolu w żyle nadnerczowej do IVC). Wartość 16/10 = 1,6 oznacza pobranie krwi z IVC, a nie z prawej żyły nadnerczowej.",
+        "Nieprawidłowo: Obie żyły zostały poprawnie scałkowane, ponieważ stężenie w prawej żyle przewyżs... Indeks selektywności w protokole bez ACTH musi wynosić co najmniej 2,0 (stosunek kortyzolu w żyle nadnerczowej do IVC). Wartość 16/10 = 1,6 oznacza pobranie krwi z IVC, a nie z prawej żyły nadnerczowej.",
+        "Nieprawidłowo: Badanie jest w pełni diagnostyczne i wskazuje na jednostronne wydzielanie z lewe... Indeks selektywności w protokole bez ACTH musi wynosić co najmniej 2,0 (stosunek kortyzolu w żyle nadnerczowej do IVC). Wartość 16/10 = 1,6 oznacza pobranie krwi z IVC, a nie z prawej żyły nadnerczowej."
       ]
     }
   ],
   "teachBack": {
     "id": "nadnercza-anatomia-teach-back-v2",
     "type": "recall",
+    "assessmentLevel": "generation",
     "objectiveIds": [
-      "nadnercza-anatomia-obj-1",
-      "nadnercza-anatomia-obj-2"
+      "adn-anat-obj-1",
+      "adn-anat-obj-2"
     ],
-    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Fabryka hormonów stresu”.",
-    "modelAnswer": "Nadnercza to podwójny narząd: steroidowa kora (ZG: aldosteron, ZF: kortyzol, ZR: androgeny) oraz neuroendokrynny rdzeń (adrenalina). Znajomość asymetrii żylnej i kaskady sterydogenezy jest warunkiem zrozumienia diagnostyki AVS i bloków enzymatycznych.",
-    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "prompt": "Podsumuj anatomię spływu żylnego nadnerczy i wskaż, dlaczego znajomość ujścia prawej żyły chroni przed jatrogennym krwotokiem i błędną kwalifikacją do operacji.",
+    "modelAnswer": "Prawa żyła nadnerczowa uchodzi bezpośrednio do IVC na długości 2–5 mm pod ostrym kątem. Jej preparowanie grozi rozdarciem żyły głównej dolnej, a przy AVS często dochodzi do pobrania krwi z IVC, dając fałszywie niski wskaźnik selektywności. Lewa żyła uchodzi do lewej żyły nerkowej razem z żyłą przeponową dolną.",
+    "explanation": "Zrozumienie asymetrii żylnej jest fundamentem diagnostyki PA (AVS) oraz chirurgii małoinwazyjnej nadnerczy.",
     "difficulty": "both",
     "reasoning": "mechanism",
     "sourceIds": [
-      "pte_nadnercza",
-      "endo_pa"
+      "endo_pa",
+      "adrenal_surgery"
     ]
   },
   "exitTicket": [
     {
       "id": "nadnercza-anatomia-q4-exit-v2",
       "type": "missing_information",
+      "assessmentLevel": "application",
       "objectiveIds": [
-        "nadnercza-anatomia-obj-2"
+        "adn-anat-obj-3"
       ],
-      "prompt": "Jaki hormon jest głównym produktem strefy pasmowatej (zona fasciculata) kory nadnerczy?",
+      "prompt": "U 31-letniego pacjenta z ciężkim pierwotnym hiperaldosteronizmem (K+ = 2,8 mmol/l, PAC = 45 ng/dl) w TK uwidoczniono solitary guz 16 mm w lewym nadnerczu przy prawidłowym prawym nadnerczu. Czy pacjent bezwzględnie wymaga AVS przed adrenalektomią?",
       "options": [
-        "Kortyzol",
-        "Aldosteron",
-        "DHEA-S"
+        "Nie, wg wytycznych ES 2025 u pacjenta < 35 lat z ciężkim PA, hipokaliemią i typowym solitarym gruczolakiem w TK można bezpiecznie pominąć AVS",
+        "Tak, AVS jest bezwzględnie wymagane u każdego chorego bez względu na wiek i obraz TK",
+        "Nie, u żadnego pacjenta z hipokaliemią nie wykonuje się AVS"
       ],
       "optionFeedback": [
-        "Kortyzol stanowi główny glikokortykosteroid syntetyzowany pod wpływem ACTH w strefie pasmowatej.",
-        "Aldosteron jest wytwarzany w strefie kłębuszkowej (ZG).",
-        "Siarczan dehydroepiandrosteronu to główny produkt strefy siatkowatej (ZR)."
+        "U młodych chorych (< 35 lat) ryzyko koincydencji niemego gruczolaka jest skrajnie niskie (< 1%), więc AVS nie jest konieczne.",
+        "Wytyczne ES 2025 wprowadziły celowany wyjątek od AVS dla grupy chorych < 35 r.ż.",
+        "Właśnie w hipokaliemii PA jest najbardziej prawdopodobny."
       ],
       "answer": 0,
-      "explanation": "Kortyzol stanowi główny glikokortykosteroid syntetyzowany pod wpływem ACTH w strefie pasmowatej.",
-      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
-      "difficulty": "both",
-      "reasoning": "decision",
+      "explanation": "Wytyczne Endocrine Society 2025 jednoznacznie wskazują, że u chorych poniżej 35 roku życia z ciężkim PA i solitarym gruczolakiem w TK można pominąć AVS przed adrenalektomią.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
       "sourceIds": [
-        "pte_nadnercza",
         "endo_pa"
-      ]
+      ],
+      "claimIds": [
+        "claim-adn-avs-age-criteria"
+      ],
+      "transfer": true
     },
     {
       "id": "nadnercza-anatomia-q5-exit-v2",
-      "type": "missing_information",
+      "type": "single_choice",
+      "assessmentLevel": "recognition",
       "objectiveIds": [
-        "nadnercza-anatomia-obj-1"
+        "adn-anat-obj-1"
       ],
-      "prompt": "Jakie białko transportowe odpowiada za pierwszy, ograniczający etap sterydogenezy (transport cholesterolu do wnętrza mitochondrium)?",
+      "prompt": "Z jakiego naczynia odchodzi tętnica nadnerczowa dolna (arteria suprarenalis inferior)?",
       "options": [
-        "Białko StAR (Steroidogenic Acute Regulatory protein)",
-        "Transkortyna (CBG)",
-        "Albumina surowicy"
+        "Tętnica nerkowa (arteria renalis)",
+        "Tętnica przeponowa dolna",
+        "Pień trzewny"
       ],
       "optionFeedback": [
-        "Umożliwia transfer cholesterolu przez błony mitochondrialne do enzymu CYP11A1.",
-        "Transkortyna transportuje kortyzol w osoczu, a nie cholesterol w komórce.",
-        "Albumina jest białkiem nośnikowym we krwi obwodowej."
+        "Tętnica nadnerczowa dolna jest gałęzią tętnicy nerkowej.",
+        "Tętnica przeponowa dolna oddaje tętnicę nadnerczową górną.",
+        "Pień trzewny nie zaopatruje bezpośrednio nadnercza."
       ],
       "answer": 0,
-      "explanation": "Umożliwia transfer cholesterolu przez błony mitochondrialne do enzymu CYP11A1.",
-      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
-      "difficulty": "both",
-      "reasoning": "safety",
+      "explanation": "Tętnica nadnerczowa dolna odchodzi bezpośrednio od tętnicy nerkowej.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "pte_nadnercza"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "nadnercza-anatomia-bank-1-v2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "adn-anat-obj-2",
+        "adn-anat-obj-3"
+      ],
+      "claimIds": [
+        "claim-adn-avs-anatomy",
+        "claim-adn-avs-age-criteria"
+      ],
+      "prompt": "52-letnia kobieta z opornym nadciśnieniem i hipokaliemią (K+ 3,0 mmol/l) przebyła AVS. W TK: obustronne pogrubienie nadnerczy bez ewidentnego guza. Wyniki AVS (protokół bez ACTH): IVC kortyzol 12 µg/dl; prawa żyła: kortyzol 16 µg/dl, aldosteron 30 ng/dl; lewa żyła: kortyzol 98 µg/dl, aldosteron 380 ng/dl. Radiolog sugeruje jednostronną adrenalektomię lewostronną. Oceń poprawność tej rekomendacji i wskaż dalsze postępowanie.",
+      "modelAnswer": "Rekomendacja adrenalektomii jest błędna i stwarza ryzyko jatrogennej pomyłki chirurgicznej. Wskaźnik selektywności dla prawej żyły wynosi 16/12 = 1,33, co jest poniżej wymaganego progu 2,0 i dowodzi nieselektywnej kaniulacji prawej żyły (pobrano krew z żyły głównej dolnej). Nie ma dowodu na supresję wydzielania w prawym nadnerczu ani na rzeczywistą lateralizację w lewym. Należy zdyskwalifikować pacjentkę z natychmiastowej operacji, powtórzyć AVS w ośrodku referencyjnym (najlepiej ze stymulacją bolusem lub wlewem ACTH) lub wdrożyć terapię celowaną spironolaktonem/eplerenonem.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "adn-anat-bank-1-dim-dx",
+            "label": "Wymiar diagnostyczny i patofizjologiczny",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-unselective-right",
+                "label": "Identyfikacja nieselektywnego cewnikowania prawej żyły (<2.0)",
+                "acceptedPhrases": [
+                  "nieselektywne",
+                  "indeks 1,33",
+                  "mniej niż 2",
+                  "pobranie z IVC",
+                  "brak selektywności"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "adn-anat-bank-1-dim-tx",
+            "label": "Wymiar decyzyjny i bezpieczeństwo kliniczne",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-reject-left-adrenalectomy",
+                "label": "Odrzucenie adrenalektomii i wdrożenie leczenia farmakologicznego lub powtórki AVS",
+                "acceptedPhrases": [
+                  "nie operować",
+                  "błąd operacji",
+                  "powtórzyć AVS",
+                  "leczenie farmakologiczne",
+                  "spironolakton"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-agree-surgery",
+            "patterns": [
+              "zgodzić się na operację",
+              "adrenalektomia lewostronna jest wskazana"
+            ],
+            "severity": "critical",
+            "feedback": "Kwalifikacja do operacji przy nieselektywnej prawej żyle grozi wycięciem zdrowego nadnercza."
+          }
+        ]
+      },
+      "explanation": "Brak selektywności kaniulacji prawej żyły nadnerczowej unieważnia całe badanie AVS. Kwalifikacja do operacji na tej podstawie jest błędem.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "endo_pa",
+        "adrenal_surgery"
+      ],
+      "transfer": true,
+      "caseSnapshot": {
+        "patientAge": 52,
+        "serumPotassiumMmolL": 3,
+        "systolicBp": 170,
+        "diastolicBp": 105,
+        "ctFindings": "obustronne pogrubienie nadnerczy"
+      },
+      "engineBinding": {
+        "engine": "adrenal-workbench",
+        "presetId": "adrenal-pa-arr-interference"
+      }
+    },
+    {
+      "id": "nadnercza-anatomia-bank-2-v2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "adn-anat-obj-1",
+        "adn-anat-obj-3"
+      ],
+      "claimIds": [
+        "claim-adn-avs-anatomy"
+      ],
+      "prompt": "Dlaczego stężenie aldosteronu i kortyzolu w lewej żyle nadnerczowej ulega fizjologicznemu rozcieńczeniu w porównaniu z bezpośrednim wypływem z miąższu gruczołu?",
+      "options": [
+        "Z powodu domieszki krwi z lewej żyły przeponowej dolnej, która uchodzi do lewej żyły nadnerczowej przed jej połączeniem z żyłą nerkową",
+        "Z powodu obecności zastawek żylnych blokujących przepływ hormonów steroidowych",
+        "Z powodu wybiórczego wychwytu kortyzolu przez komórki śródbłonka lewej żyły nerkowej"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-phrenic-tributary",
+            "label": "Dopływ żyły przeponowej dolnej",
+            "acceptedPhrases": [
+              "przeponowa dolna",
+              "rozcieńczenie",
+              "żyła nerkowa",
+              "wspólny pień"
+            ]
+          }
+        ],
+        "minRequired": 1
+      },
+      "explanation": "Lewa żyła nadnerczowa przed ujściem do lewej żyły nerkowej odbiera krew z lewej żyły przeponowej dolnej, co powoduje fizjologiczne rozcieńczenie próbki.",
+      "difficulty": "doctor",
+      "reasoning": "mechanism",
       "sourceIds": [
         "pte_nadnercza",
         "endo_pa"
+      ],
+      "transfer": true,
+      "optionFeedback": [
+        "Prawidłowo: Lewa żyła nadnerczowa przed ujściem do lewej żyły nerkowej odbiera krew z lewej żyły przeponowej dolnej, co powoduje fizjologiczne rozcieńczenie próbki.",
+        "Nieprawidłowo: Z powodu obecności zastawek żylnych blokujących przepływ hormonów steroidowych... Lewa żyła nadnerczowa przed ujściem do lewej żyły nerkowej odbiera krew z lewej żyły przeponowej dolnej, co powoduje fizjologiczne rozcieńczenie próbki.",
+        "Nieprawidłowo: Z powodu wybiórczego wychwytu kortyzolu przez komórki śródbłonka lewej żyły nerk... Lewa żyła nadnerczowa przed ujściem do lewej żyły nerkowej odbiera krew z lewej żyły przeponowej dolnej, co powoduje fizjologiczne rozcieńczenie próbki."
       ]
     }
   ],
   "widgetIds": [
-    "adrenal-workbench"
+    "adrenal-workbench",
+    "lab-workbench"
   ],
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+    "scope": "Pełna modernizacja V2: cele safety/decision, zero cartoon distractors, AVS i chirurgia naczyniowa."
   }
 }
