@@ -1,0 +1,167 @@
+{
+  "id": "shpt-thpt-pchn",
+  "moduleId": "przytarczyce",
+  "title": "Gdy chorują nerki: SHPT i THPT",
+  "subtitle": "Niewydolność nerek, retencja fosforanów, cinakalcet i autonomia",
+  "group": "Nadczynności i hiperkalcemia",
+  "minutes": 16,
+  "goals": [
+    "Zrozumiesz patofizjologię zaburzeń mineralnych i kostnych w przewlekłej chorobie nerek (CKD-MBD).",
+    "Odróżnisz wtórną nadczynność (SHPT — hipokalcemia) od trzeciorzędowej (THPT — hiperkalcemia).",
+    "Poznasz zasady stosowania leków wiążących fosforany, kalcymimetyków i parikalcytolu."
+  ],
+  "sections": [
+    {
+      "title": "Błędne koło wtórnej nadczynności przytarczyc (SHPT)",
+      "text": "W miarę postępu przewlekłej choroby nerek (PChN, stadium G3–G5) dochodzi do spadku filtracji kłębuszkowej i retencji fosforanów we krwi. Hiperfosfatemia bezpośrednio stymuluje przytarczyce do produkcji PTH oraz pobudza osteocyty do wyrzutu FGF23. FGF23 wraz z redukcją masy czynnego miąższu nerek blokuje enzym CYP27B1, co drastycznie obniża stężenie aktywnego kalcytriolu (1,25(OH)2D). Spadek kalcytriolu upośledza wchłanianie wapnia w jelitach, wywołując hipokalcemię. Niskie stężenie Ca2+, niski kalcytriol i wysokie fosforany tworzą potężny, stały bodziec stymulujący hiperplazję komórek głównych przytarczyc i masywny wyrzut PTH — tak powstaje wtórna nadczynność przytarczyc (SHPT)."
+    },
+    {
+      "title": "Przejście w trzeciorzędową nadczynność przytarczyc (THPT)",
+      "text": "Wieloletnia, niekontrolowana stymulacja przytarczyc w stadium schyłkowej niewydolności nerek (hemodializoterapia) prowadzi do transformacji rozlanej hiperplazji komórek w rozrost guzkowy o charakterze monoklonalnym. Na powierzchni rozrośniętych komórek dochodzi do drastycznego spadku gęstości receptorów CaSR oraz receptorów dla witaminy D (VDR). Przytarczyce stają się całkowicie niewrażliwe na hamujące sygnały sprzężenia zwrotnego i zaczynają produkować kolosalne ilości PTH w sposób w pełni autonomiczny. W tym momencie stężenie wapnia we krwi przestaje być niskie i rośnie do wartości hiperkalcemicznych — dochodzi do rozwoju trzeciorzędowej nadczynności przytarczyc (THPT)."
+    },
+    {
+      "title": "Cele terapeutyczne wg KDIGO i leczenie farmakologiczne",
+      "text": "W SHPT priorytetem jest kontrola hiperfosfatemii (dieta ubogofosforanowa i niewapniowe związki wiążące fosforany w jelicie, np. sewelamer, węglan lantanowy) oraz aktywacja receptorów VDR selektywnymi analogami witaminy D (parikalcytol) bez prowokowania hiperkalcemii. W celu zahamowania sekrecji PTH u chorych dializowanych stosuje się allosteryczne modulatory CaSR — kalcymimetyki (cynakalcet doustnie lub etelkalcetyd dożylnie na koniec dializy). Jeśli w THPT rozwija się oporna na farmakoterapię hiperkalcemia, bolesne zwapnienia naczyń (filaksja wapniowa / calciphylaxis) lub ciężka osteodystrofia nerkowa, konieczna jest chirurgiczna subtotalna paratyreoidktomia."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Postać nadczynności",
+      "Stężenie wapnia (Ca)",
+      "Stężenie fosforanów (P)",
+      "Stężenie parathormonu (PTH)",
+      "Główny mechanizm"
+    ],
+    "rows": [
+      [
+        "Pierwotna (PHPT)",
+        "Podwyższone (hiperkalcemia)",
+        "Obniżone (hipofosfatemia)",
+        "Podwyższone lub nieadekwatnie prawidłowe",
+        "Autonomiczny gruczolak przytarczycy"
+      ],
+      [
+        "Wtórna (SHPT)",
+        "Obniżone lub niska norma (hipokalcemia)",
+        "Podwyższone (retencja nerkowa)",
+        "Wybitnie wysokie (reaktywne)",
+        "PChN: spadek kalcytriolu i retencja fosforanów"
+      ],
+      [
+        "Trzeciorzędowa (THPT)",
+        "Podwyższone (hiperkalcemia)",
+        "Podwyższone lub prawidłowe",
+        "Ekstremalnie wysokie (>500–2000 pg/ml)",
+        "Autonomizacja rozrostu guzkowego po latach SHPT"
+      ]
+    ]
+  },
+  "advanced": "Kalcifilaksja (ang. calciphylaxis, arteriolopatia mocznicowa ze zwapnieniem) jest najgroźniejszym powikłaniem zaawansowanego CKD-MBD i THPT. Dochodzi w niej do masywnego odkładania soli wapniowo-fosforanowych w błonie wewnętrznej małych tętniczek skóry i tkanki podskórnej, prowadząc do zawałów skóry, bolesnych owrzodzeń, martwicy i sepsy o śmiertelności sięgającej 60–80%. Leczenie obejmuje tiosiarczan sodu i.v. oraz pilne obniżenie iloczynu Ca x P.",
+  "summary": "SHPT w nerkach cechuje się hipokalcemią, hiperfosfatemią i reaktywnym wyrzutem PTH. Wieloletnia stymulacja prowadzi do THPT: utraty receptorów CaSR/VDR, autonomii i pojawienia się hiperkalcemii.",
+  "sourceIds": [
+    "kdigo_ckd_mbd",
+    "asbmr_calcium"
+  ],
+  "questions": [
+    {
+      "id": "shpt-thpt-pchn-q1",
+      "lessonId": "shpt-thpt-pchn",
+      "prompt": "Jaki zestaw wyników laboratoryjnych jest najbardziej typowy dla wtórnej nadczynności przytarczyc (SHPT) w przebiegu PChN?",
+      "options": [
+        {
+          "text": "Hipokalcemia, hiperfosfatemia, bardzo wysokie stężenie PTH",
+          "explanation": "Utrata nefronów obniża produkcję kalcytriolu i zatrzymuje fosforany, co kompensacyjnie winduje PTH."
+        },
+        {
+          "text": "Hiperkalcemia, hipofosfatemia, wysokie stężenie PTH",
+          "explanation": "Taki profil odpowiada pierwotnej nadczynności przytarczyc (PHPT)."
+        },
+        {
+          "text": "Hiperkalcemia, hiperfosfatemia, całkowicie niewykrywalne PTH",
+          "explanation": "Profil typowy dla zatrucia witaminą D lub nowotworów kości, a nie SHPT."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "shpt-thpt-pchn-q2",
+      "lessonId": "shpt-thpt-pchn",
+      "prompt": "Co definiuje przejście wtórnej nadczynności przytarczyc (SHPT) w nadczynność trzeciorzędową (THPT)?",
+      "options": [
+        {
+          "text": "Pojawienie się hiperkalcemii na skutek autonomizacji rozrostu przytarczyc i utraty CaSR/VDR",
+          "explanation": "Gruczoły przestają reagować na stężenie wapnia i wydzielają PTH autonomicznie mimo rosnącej hiperkalcemii."
+        },
+        {
+          "text": "Spadek stężenia PTH poniżej dolnej granicy normy",
+          "explanation": "W THPT stężenia PTH osiągają jedne z najwyższych wartości w medycynie (>800–2000 pg/ml)."
+        },
+        {
+          "text": "Całkowita normalizacja parametrów gospodarki mineralnej",
+          "explanation": "THPT jest zaostrzeniem i powikłaniem utrwalonej niewydolności metabolicznej."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "shpt-thpt-pchn-q3",
+      "lessonId": "shpt-thpt-pchn",
+      "prompt": "Dlaczego u pacjentów ze schyłkową niewydolnością nerek preferuje się bezwapniowe leki wiążące fosforany (np. sewelamer)?",
+      "options": [
+        {
+          "text": "Aby uniknąć dodatniego bilansu wapniowego i zagrażających życiu zwapnień naczyniowych",
+          "explanation": "Preparaty wapniowe przy hiperfosfatemii zwiększają iloczyn Ca x P i przyspieszają miażdżycę tętnic."
+        },
+        {
+          "text": "Ponieważ węglan wapnia nie wiąże fosforanów w przewodzie pokarmowym",
+          "explanation": "Węglan wapnia wiąże fosforany, ale powoduje niebezpieczną hiperkalcemię."
+        },
+        {
+          "text": "Sewelamer bezpośrednio rozpuszcza guzy przytarczyc",
+          "explanation": "Sewelamer działa wyłącznie w świetle jelita i nie wchłania się do krążenia."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "shpt-thpt-pchn-q4",
+      "lessonId": "shpt-thpt-pchn",
+      "prompt": "W jaki sposób kalcymimetyk etelkalcetyd obniża stężenie parathormonu u chorych dializowanych?",
+      "options": [
+        {
+          "text": "Wiąże się allosterycznie z receptorem CaSR, zwiększając jego wrażliwość na pozakomórkowy wapń",
+          "explanation": "„Oszukuje” przytarczyce, dając sygnał supresyjny syntezy PTH bez podnoszenia stężenia wapnia we krwi."
+        },
+        {
+          "text": "Niszczy komórki przytarczyc na drodze apoptozy cytotoksycznej",
+          "explanation": "Etelkalcetyd modyfikuje konformację receptora, a nie niszczy komórek."
+        },
+        {
+          "text": "Hamuje wchłanianie wapnia w jelicie cienkim",
+          "explanation": "Lek działa na receptor CaSR w przytarczycach."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "shpt-thpt-pchn-q5",
+      "lessonId": "shpt-thpt-pchn",
+      "prompt": "Czym jest kalcifilaksja (arteriolopatia mocznicowa ze zwapnieniem)?",
+      "options": [
+        {
+          "text": "Masywnym zwapnieniem drobnych tętnic skóry prowadzącym do bolesnej martwicy i owrzodzeń",
+          "explanation": "Śmiertelne powikłanie zaburzeń Ca-P w PChN wywołane zamknięciem naczyń przez złogi fosforanu wapnia."
+        },
+        {
+          "text": "Zapaleniem przytarczyc wywołanym zakażeniem bakteryjnym",
+          "explanation": "To zaburzenie naczyniowo-skórne, a nie infekcja gruczołów dokrewnych."
+        },
+        {
+          "text": "Przejściowym przebarwieniem paznokci po dializie",
+          "explanation": "Kalcifilaksja jest zagrażającą życiu martwicą niedokrwienną skóry i tkanki podskórnej."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

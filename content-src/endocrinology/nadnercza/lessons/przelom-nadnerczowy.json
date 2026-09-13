@@ -1,0 +1,164 @@
+{
+  "id": "przelom-nadnerczowy",
+  "moduleId": "nadnercza",
+  "title": "Gdy ciśnienie spada do zera",
+  "subtitle": "Ostry przełom nadnerczowy, wstrząs hipowolemiczny i natychmiastowy protokół ratunkowy",
+  "group": "Stany nagłe i chirurgia",
+  "minutes": 18,
+  "goals": [
+    "Rozpoznasz objawy alarmowe ostrego przełomu nadnerczowego: wstrząs oporny na katecholaminy, silne bóle brzucha, hiponatremia, hiperkaliemia, hipoglikemia.",
+    "Wdrożysz natychmiastowy protokół ratunkowy: dożylny bolus 100 mg hydrokortyzonu i intensywne nawadnianie 0,9% NaCl bez czekania na wyniki badań!"
+  ],
+  "sections": [
+    {
+      "title": "Mechanizm: Dlaczego dochodzi do ostrej zapaści?",
+      "text": "Ostry przełom nadnerczowy (Adrenal Crisis — AC) to stan bezpośredniego zagrożenia życia wynikający z ostrego, bezwzględnego niedoboru glikokortykosteroidów. Kortyzol wywodzi swoje działanie naczyniowe permisywnie: warunkuje wrażliwość receptorów adrenergicznych na krążące katecholaminy. W jego braku mięśniówka naczyń krwionośnych wiotczeje, dochodzi do uogólnionego rozszerzenia naczyń (vasoplegia), załamania oporu obwodowego i wstrząsu hemodynamicznego opornego na płyny i katecholaminy! Czynniki wyzwalające: ostra infekcja przewodu pokarmowego (wymioty uniemożliwiają wchłonięcie tabletki), zakażenie z gorączką, uraz, zabieg chirurgiczny lub nagłe przerwanie leczenia."
+    },
+    {
+      "title": "Triada kliniczna imitująca „ostry brzuch”",
+      "text": "Obraz kliniczny przełomu bywa podstępny: 1) Ciężka hipotensja (skurczowe RR <80–90 mmHg) ze skłonnością do zapaści krążeniowej; 2) Gwałtowne osłabienie, senność, splątanie lub śpiączka; 3) Zespół rzekomego ostrego brzucha (pseudoperitonitis): silne, kurczowe bóle brzucha z nudnościami, wymiotami i obroną mięśniową. Wielu chorych z nierozpoznanym Addisonem w przełomie trafia na stół operacyjny z podejrzeniem perforacji wyrostka lub niedrożności! W badaniach laboratoryjnych: hiponatremia, ciężka hiperkaliemia (w pierwotnej niedoczynności), hipoglikemia (grożąca drgawkami, szczególnie u dzieci i osób szczupłych) oraz kwasica metaboliczna."
+    },
+    {
+      "title": "Złoty protokół ratunkowy: Czas to życie",
+      "text": "ŻELAZNA ZASADA RATOWNICZA: Przy podejrzeniu przełomu nadnerczowego leczenie należy rozpocząć NATYCHMIAST — zwłoka w oczekiwaniu na wyniki laboratoryjne stwarza bezpośrednie ryzyko zgonu! PROTOKÓŁ RATUNKOWY: 1) Hydrokortyzon: natychmiast 100 mg w bolusie dożylnym (i.v.), a następnie 200 mg na dobę (w ciągłym wlewie i.v. lub 50 mg co 6 godzin i.v./i.m.); 2) Płynoterapia: szybki wlew 1000 ml 0,9% NaCl w ciągu 1. godziny, a łącznie 3–4 litry soli w ciągu pierwszych 24 godzin; 3) Wyrównanie hipoglikemii: dodanie 5% lub 10% glukozy do wlewów; 4) Fludrokortyzon w ostrej fazie jest ZBĘDNY, ponieważ hydrokortyzon w dawce >50–100 mg/dobę całkowicie wysyca receptory mineralokortykosteroidowe!"
+    }
+  ],
+  "table": {
+    "headers": [
+      "Krok resuscytacji",
+      "Dawka / Preparat",
+      "Cel kliniczny i zasada bezpieczeństwa"
+    ],
+    "rows": [
+      [
+        "Bolus sterydowy (Stat!)",
+        "100 mg Hydrokortyzonu i.v. (natychmiast)",
+        "Przywrócenie napięcia naczyniowego i permisyjnego działania katecholamin"
+      ],
+      [
+        "Podtrzymanie sterydowe",
+        "200 mg Hydrokortyzonu / 24h (wlew ciągły lub 50 mg co 6h)",
+        "Zapewnienie stałego poziomu osoczowego przez pierwszą dobę"
+      ],
+      [
+        "Resuscytacja płynowa",
+        "0,9% NaCl (1 l w 1. godzinie, łącznie 3–4 l / 24h)",
+        "Wyrównanie hipowolemii i hiponatremii; ochrona przed wstrząsem"
+      ],
+      [
+        "Wyrównanie hipoglikemii",
+        "Wlew 5% lub 10% glukozy i.v.",
+        "Ochrona mózgowia przed encefalopatią hipoglikemiczną"
+      ]
+    ]
+  },
+  "advanced": "Co zrobić, jeśli pacjent w stanie wstrząsu nie ma wcześniej ustalonego rozpoznania niedoczynności nadnerczy, a chcemy potwierdzić diagnozę? Pobierz jedną probówkę krwi na skrzep (oznaczenie kortyzolu i ACTH) i BEZ CZEKANIA na wynik podaj 100 mg hydrokortyzonu! Jeśli to niemożliwe, alternatywnie można podać dożylnie 4 mg deksametazonu — deksametazon nie interferuje z przeciwciałami w testach immunoenzymatycznych oznaczających endogenny kortyzol, co pozwala na jednoczesne wykonanie testu stymulacji z Synacthenem.",
+  "summary": "Przełom nadnerczowy to ostry stan zagrożenia życia przebiegający ze wstrząsem naczyniowym, bólami brzucha i zaburzeniami elektrolitowymi. Ratunek polega na natychmiastowym podaniu 100 mg hydrokortyzonu i.v. oraz intensywnej płynoterapii 0,9% NaCl przed oczekiwaniem na wyniki badań.",
+  "sourceIds": [
+    "adrenal_crisis",
+    "endo_pai",
+    "pte_nadnercza"
+  ],
+  "questions": [
+    {
+      "id": "przelom-nadnerczowy-q1",
+      "lessonId": "przelom-nadnerczowy",
+      "prompt": "Jaki lek i w jakiej dawce należy podać natychmiast w bolusie dożylnym choremu z podejrzeniem ostrego przełomu nadnerczowego?",
+      "options": [
+        {
+          "text": "Hydrokortyzon w dawce 100 mg i.v.",
+          "explanation": "Jest to lek pierwszego rzutu ratujący życie, podawany natychmiast bez czekania na wyniki laboratoryjne."
+        },
+        {
+          "text": "Furosemid 80 mg dożylnie",
+          "explanation": "Lek moczopędny pogłębiłby wstrząs hipowolemiczny i doprowadził do zatrzymania krążenia."
+        },
+        {
+          "text": "Insulinę krótko działającą w bolusie",
+          "explanation": "Insulina pogłębiłaby hipoglikemię, wywołując śpiączkę hipoglikemiczną i drgawki."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przelom-nadnerczowy-q2",
+      "lessonId": "przelom-nadnerczowy",
+      "prompt": "Dlaczego w ostrej fazie leczenia przełomu nadnerczowego nie ma potrzeby podawania fludrokortyzonu?",
+      "options": [
+        {
+          "text": "Hydrokortyzon w dawkach powyżej 50–100 mg/dobę w pełni nasyca receptory mineralokortykosteroidowe (MR)",
+          "explanation": "Wykazuje wówczas maksymalne działanie zatrzymujące sód i wydalające potas."
+        },
+        {
+          "text": "Fludrokortyzon rozkłada się w soli fizjologicznej",
+          "explanation": "Fludrokortyzon nie ulega rozkładowi, jest lekiem doustnym."
+        },
+        {
+          "text": "Mineralokortykosteroidy w przełomie są trucizną dla nerek",
+          "explanation": "Fludrokortyzon nie jest nefrotoksyczny, po prostu jest zastąpiony przez dużą dawkę hydrokortyzonu."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przelom-nadnerczowy-q3",
+      "lessonId": "przelom-nadnerczowy",
+      "prompt": "Z jakim stanem chirurgicznym najczęściej bywa mylony ostry przełom nadnerczowy z powodu objawów brzusznych?",
+      "options": [
+        {
+          "text": "Z ostrym brzuchem (np. zapaleniem otrzewnej, perforacją wrzodu)",
+          "explanation": "Ciężkie kurczowe bóle brzucha i wymioty mogą imitować chirurgiczną katastrofę brzuszną."
+        },
+        {
+          "text": "Z kamicą ślinianki przyusznej",
+          "explanation": "Kamica ślinianki nie wywołuje wstrząsu ani bólów brzucha."
+        },
+        {
+          "text": "Ze złamaniem kości podudzia",
+          "explanation": "Objawy przełomu dotyczą układu krążenia i jamy brzusznej."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przelom-nadnerczowy-q4",
+      "lessonId": "przelom-nadnerczowy",
+      "prompt": "Jaki płyn infuzyjny stanowi podstawę resuscytacji płynowej w pierwszej dobie przełomu nadnerczowego?",
+      "options": [
+        {
+          "text": "0,9% roztwór chlorku sodu (NaCl) w objętości 3–4 litrów na dobę",
+          "explanation": "Uzupełnia utracony sód i odtwarza objętość wewnątrznaczyniową."
+        },
+        {
+          "text": "Czysta woda destylowana w szybkim wlewie i.v.",
+          "explanation": "Wlew czystej wody wywołałby natychmiastową hemolizę erytrocytów i zgon."
+        },
+        {
+          "text": "Roztwór 20% mannitolu",
+          "explanation": "Mannitol jako diuretyk osmotyczny nasiliłby odwodnienie chorego."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przelom-nadnerczowy-q5",
+      "lessonId": "przelom-nadnerczowy",
+      "prompt": "Jaki steryd można zastosować u chorego we wstrząsie, jeśli planujemy równoczesne wykonanie testu z Synacthenem, bez fałszowania oznaczenia kortyzolu?",
+      "options": [
+        {
+          "text": "Deksametazon (np. 4 mg i.v.)",
+          "explanation": "Deksametazon nie jest wykrywany w standardowych testach immunoenzymatycznych mierzących kortyzol."
+        },
+        {
+          "text": "Hydrokortyzon w megadawkach",
+          "explanation": "Hydrokortyzon to bioidentyczny kortyzol i podwyższy jego stężenie we krwi do wartości tysięcznych."
+        },
+        {
+          "text": "Fludrokortyzon domięśniowo",
+          "explanation": "Fludrokortyzon nie jest lekiem z wyboru w ostrej resuscytacji glikokortykosteroidowej."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

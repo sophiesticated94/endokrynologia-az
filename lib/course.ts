@@ -9,16 +9,10 @@ import { type ModuleId, type Lesson, type DraftLesson, type Source, q } from './
 import { pituitarySources } from './course-pituitary-sources.ts';
 import { draftPituitaryPart1 } from './course-pituitary-1.ts';
 import { draftPituitaryPart2 } from './course-pituitary-2.ts';
-import { adrenalSources } from './course-adrenal-sources.ts';
-import { draftAdrenalPart1 } from './course-adrenal-1.ts';
-import { draftAdrenalPart2 } from './course-adrenal-2.ts';
-import { parathyroidSources } from './course-parathyroid-sources.ts';
-import { draftParathyroidPart1 } from './course-parathyroid-1.ts';
-import { draftParathyroidPart2 } from './course-parathyroid-2.ts';
+import { adrenalSources, adrenalLessons } from './endocrinology/nadnercza-content.ts';
+import { parathyroidSources, parathyroidLessons } from './endocrinology/przytarczyce-content.ts';
 import { thyroidMathChemSources, draftThyroidMathChem } from './course-thyroid-math-chem.ts';
 import { pituitaryMathChemSources, draftPituitaryMathChem } from './course-pituitary-math-chem.ts';
-import { adrenalMathChemSources, draftAdrenalMathChem } from './course-adrenal-math-chem.ts';
-import { parathyroidMathChemSources, draftParathyroidMathChem } from './course-parathyroid-math-chem.ts';
 import { diabetesSources } from './course-diabetes-sources.ts';
 import { draftDiabetesPart1 } from './course-diabetes-1.ts';
 import { draftDiabetesPart2 } from './course-diabetes-2.ts';
@@ -73,9 +67,7 @@ export const sources: Record<string, Source> = {
   ...pituitarySources,
   ...pituitaryMathChemSources,
   ...adrenalSources,
-  ...adrenalMathChemSources,
   ...parathyroidSources,
-  ...parathyroidMathChemSources,
   ...diabetesSources,
   ...gonadsSources,
   ...nenSources,
@@ -208,18 +200,15 @@ q('Dlaczego w ciężkiej niedoczynności ocenia się oś nadnerczową?',['Może 
 q('Czy należy czekać na pełny panel wyników przy niestabilności i podejrzeniu przełomu?',['Nie, rozpocząć pilną ocenę i zabezpieczenie równolegle z badaniami','Zwłoka może być niebezpieczna.'],['Tak, zawsze do kompletnej dokumentacji','Nie można odkładać stabilizacji.'],['Zrezygnować z badań całkowicie','Badania są potrzebne, ale prowadzi się je równolegle.'])]},
 ];
 
-const allDrafts: DraftLesson[] = [
+const draftsBefore: DraftLesson[] = [
   ...draft.map(l => ({ ...l, moduleId: 'tarczyca' as ModuleId })),
   ...draftThyroidMathChem,
   ...draftPituitaryPart1,
   ...draftPituitaryPart2,
   ...draftPituitaryMathChem,
-  ...draftAdrenalPart1,
-  ...draftAdrenalPart2,
-  ...draftAdrenalMathChem,
-  ...draftParathyroidPart1.map(l => ({ ...l, moduleId: 'przytarczyce' as ModuleId })),
-  ...draftParathyroidPart2.map(l => ({ ...l, moduleId: 'przytarczyce' as ModuleId })),
-  ...draftParathyroidMathChem,
+];
+
+const draftsAfter: DraftLesson[] = [
   ...draftDiabetesPart1.map(l => ({ ...l, moduleId: 'cukrzyca' as ModuleId })),
   ...draftDiabetesPart2.map(l => ({ ...l, moduleId: 'cukrzyca' as ModuleId })),
   ...draftDiabetesMathChem.map(l => ({ ...l, moduleId: 'cukrzyca' as ModuleId })),
@@ -244,7 +233,7 @@ const allDrafts: DraftLesson[] = [
   ...draftPregnancyMathChem.map(l => ({ ...l, moduleId: 'ciaza' as ModuleId })),
 ];
 
-export const lessons: Lesson[] = allDrafts.map((l, li) => {
+function mapDraftToLesson(l: DraftLesson, li: number): Lesson {
   const subtitle = l.subtitle || l.title;
   const minutes = l.minutes || (l.readTime ? parseInt(l.readTime, 10) : 12);
   const sections = l.sections.map(s => ({
@@ -271,7 +260,14 @@ export const lessons: Lesson[] = allDrafts.map((l, li) => {
       return { id, lessonId: l.id, prompt: item.prompt, options: rotated, answer };
     }),
   };
-});
+}
+
+export const lessons: Lesson[] = [
+  ...draftsBefore.map((l, li) => mapDraftToLesson(l, li)),
+  ...adrenalLessons,
+  ...parathyroidLessons,
+  ...draftsAfter.map((l, li) => mapDraftToLesson(l, draftsBefore.length + adrenalLessons.length + parathyroidLessons.length + li)),
+];
 
 export const questions = lessons.flatMap(l => l.questions);
 export const lessonExperiences = buildPilotExperiences(lessons);

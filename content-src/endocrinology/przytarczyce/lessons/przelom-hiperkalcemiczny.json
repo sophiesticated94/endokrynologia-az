@@ -1,0 +1,175 @@
+{
+  "id": "przelom-hiperkalcemiczny",
+  "moduleId": "przytarczyce",
+  "title": "Wapniowa burza: przełom",
+  "subtitle": "Wapń >14 mg/dl, wstrząs, bisfosfoniany i protokół ratunkowy",
+  "group": "Kości, chirurgia i stany nagłe",
+  "minutes": 18,
+  "goals": [
+    "Zdiagnozujesz przełom hiperkalcemiczny (Ca >3,5 mmol/l / >14 mg/dl) jako stan bezpośredniego zagrożenia życia.",
+    "Opanujesz kolejność interwencji ratunkowych (masywna płynoterapia 0,9% NaCl PRZED diuretykiem!).",
+    "Poznasz wskazania do kwasu zoledronowego, kalcytoniny, denosumabu i hemodializy."
+  ],
+  "sections": [
+    {
+      "title": "Definicja i manifestacja kliniczna przełomu hiperkalcemicznego",
+      "text": "Przełom hiperkalcemiczny to stan bezpośredniego zagrożenia życia, w którym stężenie wapnia całkowitego w surowicy przekracza 3,5 mmol/l (14,0 mg/dl), a wapnia zjonizowanego >1,8–2,0 mmol/l. Najczęstszą przyczyną są zaawansowane nowotwory złośliwe z wydzielaniem PTHrP lub osteolizą (HCM) oraz powikłana pierwotna nadczynność przytarczyc (PHPT). Klinicznie dominuje głębokie odwodnienie (nawet 4–6 litrów deficytu płynowego!), ostre uszkodzenie nerek (AKI), nudności, uporczywe wymioty, zaparcia, bolesne zapalenie trzustki, zaburzenia świadomości od senności przez majaczenie aż do śpiączki oraz groźne komorowe zaburzenia rytmu serca z nagłym zgonem sercowym."
+    },
+    {
+      "title": "Krok 1: Masywne nawadnianie 0,9% NaCl — fundament ratunku",
+      "text": "Pierwszym i najważniejszym krokiem postępowania jest natychmiastowa rehydratacja izotonicznym roztworem 0,9% NaCl. Podaje się 2000–4000 ml soli fizjologicznej w ciągu pierwszych 24 godzin (początkowo 200–500 ml/h pod kontrolą diurezy i osłuchowej oceny płuc). Sól fizjologiczna nie tylko uzupełnia objętość wewnątrznaczyniową i przywraca perfuzję nerek, ale bezpośrednio nasila wydalanie wapnia z moczem: sód i wapń konkurują o ten sam mechanizm reabsorpcji w ramieniu wstępującym pętli Henlego. Kardynalny błąd: podanie furosemidu u odwodnionego pacjenta pogłębia wstrząs hipowolemiczny i nasila hiperkalcemię! Furosemid można rozważyć WYŁĄCZNIE po pełnym nawodnieniu u chorych z objawami przewodnienia lub niewydolnością serca."
+    },
+    {
+      "title": "Krok 2 i 3: Leki antyresorpcyjne (bisfosfoniany, kalcytonina, denosumab)",
+      "text": "Równolegle z nawadnianiem wdraża się leczenie farmakologiczne hamujące osteoklastyczną resorpcję kości: 1. Dożylne bisfosfoniany o wysokiej sile działania: kwas zoledronowy (4 mg we wlewie i.v. trwającym min. 15–30 minut) lub pamidronian (60–90 mg w 2–4 h wlewie). Ich pełny efekt ujawnia się dopiero po 48–72 godzinach, lecz utrzymuje się przez 2–4 tygodnie. 2. Kalcytonina łososiowa (4–8 j.m./kg m.c. s.c. lub i.m. co 6–12 h): działa natychmiast (w ciągu 2–4 godzin), lecz jej efekt wygasa po 48 godzinach z powodu zjawiska tachyfilaksji (internalizacji receptorów). Kalcytonina stanowi idealny „pomost” do czasu zadziałania kwasu zoledronowego. U chorych z ciężką niewydolnością nerek (GFR <30), gdzie bisfosfoniany są nefrotoksyczne, lekiem z wyboru jest denosumab (przeciwciało anty-RANKL 120 mg s.c.). W skrajnych przypadkach z niewydolnością nerek i obrzękiem płuc ratunkiem jest pilna hemodializa bezwapniowa."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Lek / Interwencja",
+      "Czas do początku działania",
+      "Czas trwania efektu",
+      "Główna uwaga kliniczna"
+    ],
+    "rows": [
+      [
+        "Wlew 0,9% NaCl (2–4 litry/dobę)",
+        "Natychmiastowy (godziny)",
+        "Podczas trwania wlewu",
+        "Podstawa terapii; rozcieńcza Ca i nasila kalciurię sodową"
+      ],
+      [
+        "Kalcytonina (4–8 j.m./kg s.c./i.m.)",
+        "Bardzo szybki (2–4 godziny)",
+        "Krótki (24–48 godzin — tachyfilaksja)",
+        "Szybki pomost do czasu zadziałania bisfosfonianu"
+      ],
+      [
+        "Kwas zoledronowy (4 mg i.v.)",
+        "Opóźniony (48–72 godziny)",
+        "Długi (2–4 tygodnie)",
+        "Złoty standard; wymaga redukcji dawki lub ostrożności w AKI"
+      ],
+      [
+        "Denosumab (120 mg s.c.)",
+        "Umiarkowany (2–4 dni)",
+        "Długi (kilka tygodni)",
+        "Opcja z wyboru w ciężkiej niewydolności nerek i oporności na bisfosfoniany"
+      ],
+      [
+        "Hemodializa z płynem bezwapniowym",
+        "Natychmiastowy (w trakcie zabiegu)",
+        "Do czasu zakończenia dializy",
+        "Wskazana w przełomie z oligurią, GFR <15 lub obrzękiem płuc"
+      ]
+    ]
+  },
+  "advanced": "Glikokortykosteroidy (hydrokortyzon 100 mg i.v. co 8 h lub prednizon 40–60 mg/d p.o.) są wysoce skuteczne w hiperkalcemii wywołanej nadmiarem witaminy D, chorobami ziarniniakowymi (sarkoidoza) oraz w szpiczaku mnogim i chłoniakach. Hamują one ekspresję enzymu 1alfa-hydroksylazy w makrofagach oraz zmniejszają jelitowe wchłanianie wapnia. Nie wykazują natomiast istotnej skuteczności w klasycznej pierwotnej nadczynności przytarczyc ani w hiperkalcemii zależnej od PTHrP.",
+  "summary": "Przełom hiperkalcemiczny (>14 mg/dl) to stan zagrożenia życia. Leczenie: 1. Agresywne nawodnienie 0,9% NaCl (2–4 l/d) — NIGDY furosemid przed nawodnieniem! 2. Kalcytonina na start (działa w 2 h) + kwas zoledronowy i.v. (działa po 48 h). W niewydolności nerek denosumab lub dializa.",
+  "sourceIds": [
+    "endo_hypercalcemia",
+    "asbmr_calcium"
+  ],
+  "questions": [
+    {
+      "id": "przelom-hiperkalcemiczny-q1",
+      "lessonId": "przelom-hiperkalcemiczny",
+      "prompt": "Jaki jest PIERWSZY, najważniejszy krok w postępowaniu ratunkowym u odwodnionego pacjenta z przełomem hiperkalcemicznym (Ca 15,2 mg/dl)?",
+      "options": [
+        {
+          "text": "Intensywny wlew dożylny izotonicznego roztworu 0,9% NaCl (2000–4000 ml/24h)",
+          "explanation": "Rehydratacja uzupełnia krytyczny deficyt płynowy, przywraca filtrację nerkową i nasila wydalanie wapnia z moczem."
+        },
+        {
+          "text": "Natychmiastowe podanie 80 mg furosemidu dożylnie",
+          "explanation": "Podanie diuretyku pętlowego u odwodnionego chorego pogłębia hipowolemię, wywołuje wstrząs i nasila hiperkalcemię!"
+        },
+        {
+          "text": "Podanie doustne 2 litrów wody mineralnej bogatej w wapń",
+          "explanation": "Wapń drogą przewodu pokarmowego jest w hiperkalcemii bezwzględnie przeciwwskazany."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przelom-hiperkalcemiczny-q2",
+      "lessonId": "przelom-hiperkalcemiczny",
+      "prompt": "Dlaczego kalcytoninę łączy się z kwasem zoledronowym w leczeniu ostrej hiperkalcemii?",
+      "options": [
+        {
+          "text": "Kalcytonina obniża wapń w ciągu 2–4 godzin (pomost), podczas gdy kwas zoledronowy działa silnie i trwale, lecz dopiero po 48–72 godzinach",
+          "explanation": "Kombinacja ta zapewnia natychmiastowe bezpieczeństwo chorego w pierwszej dobie oraz trwałą kontrolę w kolejnych tygodniach."
+        },
+        {
+          "text": "Kwas zoledronowy neutralizuje toksyczność kalcytoniny na wątrobę",
+          "explanation": "Leki te nie neutralizują nawzajem toksyczności; działają synergistycznie na osteoklasty."
+        },
+        {
+          "text": "Kalcytonina jest wchłaniana wyłącznie w obecności bisfosfonianów",
+          "explanation": "Kalcytonina podawana jest podskórnie lub domięśniowo i działa niezależnie od bisfosfonianów."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przelom-hiperkalcemiczny-q3",
+      "lessonId": "przelom-hiperkalcemiczny",
+      "prompt": "Który lek antyresorpcyjny jest preferowany w hiperkalcemii nowotworowej u pacjenta ze schyłkową niewydolnością nerek (eGFR 18 ml/min/1,73 m2)?",
+      "options": [
+        {
+          "text": "Denosumab (przeciwciało monoklonalne anty-RANKL)",
+          "explanation": "Denosumab nie jest wydalany przez nerki i nie wykazuje nefrotoksyczności w przeciwieństwie do bisfosfonianów."
+        },
+        {
+          "text": "Wysokie dawki kwasu zoledronowego we wlewie 5-minutowym",
+          "explanation": "Kwas zoledronowy w ciężkiej niewydolności nerek może doprowadzić do ostrej martwicy cewek nerkowych."
+        },
+        {
+          "text": "Alendronian doustny w dawce 70 mg raz na dobę",
+          "explanation": "Doustne bisfosfoniany nie nadają się do leczenia stanów nagłych i są przeciwwskazane przy GFR <35."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przelom-hiperkalcemiczny-q4",
+      "lessonId": "przelom-hiperkalcemiczny",
+      "prompt": "W jakich przyczynach hiperkalcemii glikokortykosteroidy (np. prednizon, hydrokortyzon) wykazują najwyższą skuteczność terapeutyczną?",
+      "options": [
+        {
+          "text": "W chorobach ziarniniakowych (sarkoidoza), zatruciu witaminą D oraz chłoniakach",
+          "explanation": "Sterydy hamują pozanerkową ekspresję 1alfa-hydroksylazy w makrofagach i zmniejszają wchłanianie wapnia w jelicie."
+        },
+        {
+          "text": "W typowym autonomicznym pojedynczym gruczolaku przytarczyc",
+          "explanation": "W pierwotnej nadczynności przytarczyc sterydy nie obniżają wydzielania PTH ani stężenia wapnia."
+        },
+        {
+          "text": "W rzekomej niedoczynności przytarczyc",
+          "explanation": "W PHP występuje hipokalcemia, a nie hiperkalcemia."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przelom-hiperkalcemiczny-q5",
+      "lessonId": "przelom-hiperkalcemiczny",
+      "prompt": "Kiedy u pacjenta z przełomem hiperkalcemicznym bezwzględnie wskazane jest pilne wdrożenie hemodializy z płynem bezwapniowym?",
+      "options": [
+        {
+          "text": "W przypadku ciężkiej hiperkalcemii powikłanej bezmoczem, ostrym przewodnieniem lub niewydolnością serca",
+          "explanation": "Gdy nerki nie są w stanie wydalić podawanych płynów, hemodializa jest jedyną metodą eliminacji wapnia z ustroju."
+        },
+        {
+          "text": "U każdego pacjenta z wapniem powyżej 11,0 mg/dl",
+          "explanation": "Łagodną i umiarkowaną hiperkalcemię leczy się bezpiecznie nawodnieniem i bisfosfonianami."
+        },
+        {
+          "text": "Wyłącznie przed planowaną operacją tarczycy",
+          "explanation": "Hemodializa jest procedurą ratunkową w OIT/stacji dializ, a nie standardowym przygotowaniem chirurgicznym."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

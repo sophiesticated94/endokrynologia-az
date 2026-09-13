@@ -1,0 +1,227 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "fhh-hiperkalcemia",
+  "objectives": [
+    {
+      "id": "fhh-hiperkalcemia-obj-1",
+      "statement": "Zrozumiesz patomechanizm łagodnej rodzinnej hiperkalcemii hipokalciurycznej (FHH).",
+      "kind": "mechanism"
+    },
+    {
+      "id": "fhh-hiperkalcemia-obj-2",
+      "statement": "Nauczysz się odróżniać FHH od PHPT za pomocą wskaźnika CCCR i wywiadu rodzinnego.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "fhh-hiperkalcemia-obj-3",
+      "statement": "Zapobiegniesz jatrogennej, nieskutecznej operacji usunięcia przytarczyc.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "fhh-hiperkalcemia-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "fhh-hiperkalcemia-obj-1"
+    ],
+    "prompt": "Dlaczego u chorego z FHH paratyreoidktomia jest zabiegiem przeciwwskazanym?",
+    "options": [
+      "Choroba jest łagodna, a wycięcie przytarczyc nie likwiduje defektu receptora CaSR w nerkach",
+      "Ponieważ u chorych z FHH przytarczyce nie występują anatomicznie",
+      "Operacja natychmiast wywołuje złośliwego raka przytarczyc"
+    ],
+    "optionFeedback": [
+      "Zmutowany receptor w cewkach nerkowych nadal nadmiernie zatrzymuje wapń, a chory ryzykuje jatrogenne powikłania operacji.",
+      "Przytarczyce występują prawidłowo, posiadają jedynie zmutowany sensor CaSR.",
+      "FHH nie transformuje w nowotwór złośliwy."
+    ],
+    "answer": 0,
+    "explanation": "Zmutowany receptor w cewkach nerkowych nadal nadmiernie zatrzymuje wapń, a chory ryzykuje jatrogenne powikłania operacji.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "fhh_consensus",
+      "ese_phpt"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "fhh-hiperkalcemia-block-1",
+      "title": "Czym jest FHH i jak mutacja przestawia „termostat wapniowy”?",
+      "text": "Łagodna rodzinna hiperkalcemia hipokalciuryczna (FHH — Familial Hypocalciuric Hypercalcemia, typ 1 związany z mutacją genu CASR na chromosomie 3q21) jest chorobą dziedziczoną autosomalnie dominująco z blisko 100% penetracją. Inaktywująca mutacja jednej kopii receptora CaSR powoduje, że receptor traci prawidłową wrażliwość na jony wapnia. Przytarczyce interpretują prawidłowe stężenie wapnia jako głęboką hipokalcemię i nie wygaszają wydzielania PTH. „Termostat wapniowy” ustroju zostaje trwale przestawiony na wyższy poziom: pacjent ma umiarkowaną hiperkalcemię, a stężenie parathormonu jest nieadekwatnie prawidłowe lub nieznacznie podwyższone.",
+      "sourceIds": [
+        "fhh_consensus",
+        "ese_phpt"
+      ],
+      "checkpointId": "fhh-hiperkalcemia-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "enh-pt-fhh-cccr",
+          "kind": "workbench-deeplink",
+          "placement": "after-text",
+          "presetId": "parathyroid-phpt-fhh-cccr"
+        }
+      ]
+    },
+    {
+      "id": "fhh-hiperkalcemia-block-2",
+      "title": "Nerkowy mechanizm hipokalciurii",
+      "text": "Receptor CaSR występuje gęsto w ramieniu wstępującym pętli Henlego. Defekt receptora w nerkach powoduje zniesienie fizjologicznego hamowania reabsorpcji wapnia. W efekcie nerkowe wchłanianie zwrotne wapnia i magnezu jest skrajnie wzmożone, co prowadzi do paradoksalnie niskiego wydalania wapnia z moczem pomimo hiperkalcemii we krwi. Dobowe wydalanie wapnia w moczu wynosi zazwyczaj <100 mg/24h (<2,5 mmol/24h), a wskaźnik klirensu wapniowo-kreatyninowego (CCCR) spada poniżej 0,01 u ponad 80–85% pacjentów.",
+      "sourceIds": [
+        "fhh_consensus",
+        "ese_phpt"
+      ],
+      "checkpointId": "fhh-hiperkalcemia-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "fhh-hiperkalcemia-block-3",
+      "title": "Kardynalny błąd medyczny: niepotrzebna paratyreoidktomia",
+      "text": "FHH ma przebieg całkowicie łagodny i bezobjawowy: chorzy nie rozwijają kamicy nerkowej, nefrokalcynozy, ubytku masy kostnej ani powikłań sercowo-naczyniowych, a ich oczekiwana długość życia jest całkowicie prawidłowa. Paratyreoidktomia subtotalna lub totalna u chorego z FHH jest błędem w sztuce — nie normalizuje stężenia wapnia, ponieważ zmutowane pozostają komórki w nerkach, a może doprowadzić do jatrogennej, trwałej hipokalcemii pooperacyjnej. Potwierdzenie mutacji CASR lub identyfikacja hiperkalcemii u krewnych I stopnia (zwłaszcza u dzieci) definitywnie kończy diagnostykę i chroni pacjenta przed skalpelem chirurga.",
+      "sourceIds": [
+        "fhh_consensus",
+        "ese_phpt"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "fhh-hiperkalcemia-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "fhh-hiperkalcemia-obj-2"
+      ],
+      "prompt": "Który wynik badania laboratoryjnego najsilniej przemawia za FHH, a przeciwko PHPT?",
+      "options": [
+        "Wskaźnik klirensu wapniowo-kreatyninowego (CCCR) < 0,01",
+        "Stężenie wapnia całkowitego wynoszące 10,8 mg/dl",
+        "Stężenie PTH w górnej granicy normy"
+      ],
+      "optionFeedback": [
+        "Wskaźnik CCCR <0,01 odzwierciedla nerkową hipokalciurię charakterystyczną dla mutacji CaSR.",
+        "Lekka hiperkalcemia występuje zarówno w PHPT, jak i w FHH.",
+        "Nieadekwatnie prawidłowe PTH jest typowe dla obu tych jednostek chorobowych."
+      ],
+      "answer": 0,
+      "explanation": "Wskaźnik CCCR <0,01 odzwierciedla nerkową hipokalciurię charakterystyczną dla mutacji CaSR.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "fhh_consensus",
+        "ese_phpt"
+      ]
+    },
+    {
+      "id": "fhh-hiperkalcemia-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "fhh-hiperkalcemia-obj-3"
+      ],
+      "prompt": "W jaki sposób dziedziczy się klasyczna postać FHH typu 1?",
+      "options": [
+        "Autosomalnie dominująco z bardzo wysoką penetracją",
+        "Autosomalnie recesywnie wyłącznie w linii męskiej",
+        "Sprzężona z chromosomem X w sposób dominujący"
+      ],
+      "optionFeedback": [
+        "Pojedyncza kopia zmutowanego genu CASR wystarcza do ujawnienia się fenotypu hiperkalcemii.",
+        "Choroba dziedziczy się dominująco i występuje z jednakową częstością u obu płci.",
+        "Gen CASR zlokalizowany jest na chromosomie 3 (autosoma)."
+      ],
+      "answer": 0,
+      "explanation": "Pojedyncza kopia zmutowanego genu CASR wystarcza do ujawnienia się fenotypu hiperkalcemii.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "fhh_consensus",
+        "ese_phpt"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "fhh-hiperkalcemia-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "fhh-hiperkalcemia-obj-1",
+      "fhh-hiperkalcemia-obj-2",
+      "fhh-hiperkalcemia-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Pułapka fałszywej nadczynności: FHH”.",
+    "modelAnswer": "FHH to genetyczne przestawienie termostatu wapniowego (mutacja CaSR). Charakteryzuje się wskaźnikiem CCCR <0,01 i brakiem powikłań. Nie wymaga leczenia ani operacji — operacja jest bezwzględnym błędem!",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "fhh_consensus",
+      "ese_phpt"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "fhh-hiperkalcemia-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "fhh-hiperkalcemia-obj-1"
+      ],
+      "prompt": "U 32-letniego mężczyzny bez objawów wykryto Ca 10,7 mg/dl, PTH 68 pg/ml i CCCR 0,007. Jakie postępowanie jest optymalne?",
+      "options": [
+        "Oznaczenie stężenia wapnia u rodziców/dzieci oraz badanie genetyczne genu CASR",
+        "Pilne skierowanie na scyntygrafię MIBI i operację wycięcia 4 przytarczyc",
+        "Rozpoczęcie intensywnej chemioterapii przeciwnowotworowej"
+      ],
+      "optionFeedback": [
+        "Potwierdzenie hiperkalcemii u bezobjawowych krewnych i znalezienie mutacji potwierdza rozpoznanie i zapobiega operacji.",
+        "Operacja u pacjenta z FHH jest błędem w sztuce lekarskiej.",
+        "FHH jest łagodną anomalią biochemiczną, a nie nowotworem."
+      ],
+      "answer": 0,
+      "explanation": "Potwierdzenie hiperkalcemii u bezobjawowych krewnych i znalezienie mutacji potwierdza rozpoznanie i zapobiega operacji.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "fhh_consensus",
+        "ese_phpt"
+      ]
+    },
+    {
+      "id": "fhh-hiperkalcemia-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "fhh-hiperkalcemia-obj-1"
+      ],
+      "prompt": "Co dzieje się, gdy noworodek odziedziczy mutację inaktywującą CaSR homozygotycznie od obojga rodziców z FHH?",
+      "options": [
+        "Rozwija się zagrażająca życiu noworodkowa ciężka nadczynność przytarczyc (NSHPT)",
+        "Dziecko rodzi się całkowicie zdrowe bez żadnych zmian biochemicznych",
+        "Dochodzi do wrodzonej agenezji nerek"
+      ],
+      "optionFeedback": [
+        "Brak jakiejkolwiek sprawnej kopii CaSR prowadzi do skrajnej hiperkalcemii, odwapnienia kości i konieczności ratunkowej paratyreoidktomii.",
+        "Stan homozygotyczny jest stanem bezpośredniego zagrożenia życia noworodka.",
+        "CaSR reguluje transport jonów, ale nie odpowiada za organogenezę nerek."
+      ],
+      "answer": 0,
+      "explanation": "Brak jakiejkolwiek sprawnej kopii CaSR prowadzi do skrajnej hiperkalcemii, odwapnienia kości i konieczności ratunkowej paratyreoidktomii.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "fhh_consensus",
+        "ese_phpt"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "parathyroid-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

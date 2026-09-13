@@ -1,0 +1,167 @@
+{
+  "id": "rzekoma-niedoczynnosc",
+  "moduleId": "przytarczyce",
+  "title": "Oporność na hormon: PHP",
+  "subtitle": "Zespół Albrighta, gen GNAS, imprinting i fenotyp AHO",
+  "group": "Niedoczynności i tężyczka",
+  "minutes": 15,
+  "goals": [
+    "Zrozumiesz molekularny mechanizm oporności na PTH w rzekomej niedoczynności przytarczyc (PHP).",
+    "Nauczysz się rozpoznawać cechy wrodzonej osteodystrofii Albrighta (fenotyp AHO).",
+    "Poznasz zjawisko imprintingu genomowego genu GNAS (PHP-1a vs PPHP)."
+  ],
+  "sections": [
+    {
+      "title": "Gdy parathormonu jest dużo, ale tkanki go nie słyszą",
+      "text": "Rzekoma niedoczynność przytarczyc (PHP — Pseudohypoparathyroidism) to rzadka choroba genetyczna, w której pomimo wysokiego stężenia endogennego PTH w surowicy u pacjenta rozwija się obraz biochemiczny niedoczynności przytarczyc: hipokalcemia oraz hiperfosfatemia. Przyczyną jest obwodowa oporność tkanek docelowych (przede wszystkim cewek nerkowych) na działanie parathormonu, wywołana mutacją w genie GNAS (chromosom 20q13.3), kodującym podjednostkę alfa stymulującego białka G (Gs-alfa). Dochodzi do zablokowania szlaku cyklazy adenylowej i braku generowania cAMP po związaniu PTH z receptorem PTHR1."
+    },
+    {
+      "title": "Fenotyp wrodzonej osteodystrofii Albrighta (AHO)",
+      "text": "W klasycznej postaci (PHP typ 1a) oporności hormonalnej towarzyszy charakterystyczny zespół wad dysmorficznych znany jako wrodzona osteodystrofia Albrighta (AHO — Albright Hereditary Osteodystrophy). Obejmuje on: niskorosłość, zaokrągloną twarz („księżyc w pełni”), otyłość centralną od wczesnego dzieciństwa, niepełnosprawność intelektualną o różnym nasileniu, podskórne zwapnienia lub kostnienia ektopowe oraz patognomoniczną brachydaktylię (skrócenie IV i V kości śródręcza i śródstopia, co przy zaciśnięciu dłoni w pięść objawia się dołkami w miejscu kostek — objaw Archibalda)."
+    },
+    {
+      "title": "Fascynujące zjawisko imprintingu genomowego (piętnowania rodzicielskiego)",
+      "text": "Ekspresja genu GNAS w nerkach, przysadce i tarczycy podlega zjawisku imprintingu matczynego — aktywna transkrypcyjnie jest wyłącznie kopia odziedziczona po matce (kopia ojcowska jest fizjologicznie wyciszona). Jeśli mutację inaktywującą GNAS przekaże MATKA, u dziecka rozwija się pełny obraz PHP-1a: fenotyp AHO ORAZ wielohormonalna oporność receptorowa (hipokalcemia z wysokim PTH, oporność na TSH imitująca wrodzoną niedoczynność tarczycy oraz oporność na GHRH i gonadotropiny). Jeśli tę samą mutację przekaże OJCIEC, u dziecka rozwija się rzekoma rzekoma niedoczynność przytarczyc (PPHP — Pseudopseudohypoparathyroidism): występuje fenotyp AHO, lecz gospodarka wapniowo-fosforanowa i stężenie PTH są całkowicie prawidłowe!"
+    }
+  ],
+  "table": {
+    "headers": [
+      "Jednostka chorobowa",
+      "Pochodzenie mutacji GNAS",
+      "Fenotyp AHO",
+      "Gospodarka Ca-P / PTH",
+      "Oporność na inne hormony (TSH, GHRH)"
+    ],
+    "rows": [
+      [
+        "PHP typ 1a",
+        "Odziedziczona od MATKI",
+        "Obecny (brachydaktylia, niska sylwetka)",
+        "Hipokalcemia, hiperfosfatemia, wysoki PTH",
+        "Obecna (oporność na TSH, LH/FSH, GHRH)"
+      ],
+      [
+        "Rzekoma rzekoma (PPHP)",
+        "Odziedziczona od OJCA",
+        "Obecny (brachydaktylia, niska sylwetka)",
+        "PRAWIDŁOWA (wapń, fosfor i PTH w normie)",
+        "Brak oporności"
+      ],
+      [
+        "PHP typ 1b",
+        "Defekt metylacji imprintingowej matczynej",
+        "Nieobecny (prawidłowy wygląd)",
+        "Hipokalcemia, hiperfosfatemia, wysoki PTH",
+        "Wybiórcza oporność nerkowa na PTH (czasem TSH)"
+      ]
+    ]
+  },
+  "advanced": "W różnicowaniu typów PHP historycznie stosowano test Ellswortha-Howarda: po dożylnym podaniu syntetycznego PTH 1-34 bada się wydalanie cAMP z moczem. U chorych z prawidłową wrażliwością lub hipoparatyreozą następuje 10–20-krotny wzrost nerkowego cAMP. W PHP-1a i PHP-1b odpowiedź cAMP jest całkowicie zablokowana. W PHP typ 2 odpowiedź cAMP w moczu jest prawidłowa, lecz brak fosfaturii (defekt leży poniżej generowania cAMP).",
+  "summary": "PHP to oporność na PTH (hipokalcemia + wysoki PTH) wywołana mutacją genu GNAS. Przy dziedziczeniu matczynym daje fenotyp AHO i oporność wielohormonalną (PHP-1a). Przy dziedziczeniu ojcowskim daje sam fenotyp AHO bez zaburzeń Ca-P (PPHP).",
+  "sourceIds": [
+    "asbmr_calcium",
+    "ese_hypopara"
+  ],
+  "questions": [
+    {
+      "id": "rzekoma-niedoczynnosc-q1",
+      "lessonId": "rzekoma-niedoczynnosc",
+      "prompt": "Jaki profil biochemiczny w surowicy pozwala odróżnić rzekomą niedoczynność przytarczyc (PHP) od klasycznej pooperacyjnej niedoczynności przytarczyc?",
+      "options": [
+        {
+          "text": "W PHP stężenie PTH jest znacznie podwyższone, a w niedoczynności pooperacyjnej jest niskie lub niewykrywalne",
+          "explanation": "W PHP przytarczyce pracują na najwyższych obrotach, ale nerkowy receptor nie odpowiada na sygnał parathormonu."
+        },
+        {
+          "text": "W PHP stężenie wapnia wynosi powyżej 14 mg/dl",
+          "explanation": "W obu jednostkach występuje hipokalcemia i hiperfosfatemia."
+        },
+        {
+          "text": "W PHP fosforany są skrajnie obniżone z powodu masywnej fosfaturii",
+          "explanation": "Z powodu braku odpowiedzi na PTH cewki nerkowe nie wydalają fosforanów, co daje hiperfosfatemię."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "rzekoma-niedoczynnosc-q2",
+      "lessonId": "rzekoma-niedoczynnosc",
+      "prompt": "Na czym polega objaw Archibalda w fenotypie wrodzonej osteodystrofii Albrighta (AHO)?",
+      "options": [
+        {
+          "text": "Obecność dołków zamiast wyniosłości kostek przy zaciśnięciu dłoni w pięść na skutek skrócenia IV i V kości śródręcza",
+          "explanation": "Brachydaktylia IV i V promienia dłoni jest klasyczną cechą dysmorficzną zespołu AHO."
+        },
+        {
+          "text": "Gwałtowne zgięcie dłoni po uciśnięciu mankietem ciśnieniomierza",
+          "explanation": "To opis objawu Trousseau w tężyczce, a nie wady kośćca w AHO."
+        },
+        {
+          "text": "Brak czucia w opuszkach palców rąk",
+          "explanation": "Objaw Archibalda dotyczy anatomii układu kostnego dłoni."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "rzekoma-niedoczynnosc-q3",
+      "lessonId": "rzekoma-niedoczynnosc",
+      "prompt": "Dlaczego u pacjenta z rzekomą rzekomą niedoczynnością przytarczyc (PPHP) stężenie wapnia i parathormonu jest całkowicie prawidłowe pomimo obecności cech AHO?",
+      "options": [
+        {
+          "text": "Mutacja genu GNAS została odziedziczona po ojcu, a w nerkach aktywna jest wyłącznie kopia matczyna",
+          "explanation": "Zjawisko imprintingu genomowego sprawia, że ojcowska kopia GNAS w cewkach nerkowych jest wyciszona, więc jej mutacja nie zaburza nerkowej odpowiedzi na PTH."
+        },
+        {
+          "text": "Pacjent wytworzył przeciwciała neutralizujące mutację genetyczną",
+          "explanation": "Przeciwciała nie korygują mutacji wewnątrzkomórkowego białka Gs-alfa."
+        },
+        {
+          "text": "Przytarczyce wytwarzają inny, zastępczy hormon regulujący wapń",
+          "explanation": "Homeostaza wapniowa zależy od PTH, a sprawna matczyna kopia genu w nerce wystarcza do zachowania eukalcemii."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "rzekoma-niedoczynnosc-q4",
+      "lessonId": "rzekoma-niedoczynnosc",
+      "prompt": "Który z poniższych hormonów wykazuje oporność receptorową w zespole PHP typ 1a oprócz parathormonu?",
+      "options": [
+        {
+          "text": "TSH (tyreotropina) oraz GHRH",
+          "explanation": "Receptor dla TSH i GHRH również wykorzystuje podjednostkę Gs-alfa podlegającą matczynemu imprintingowi w przysadce i tarczycy."
+        },
+        {
+          "text": "Insulina",
+          "explanation": "Receptor insulinowy jest kinazą tyrozynową i nie wykorzystuje białka Gs-alfa."
+        },
+        {
+          "text": "Kortyzol",
+          "explanation": "Kortyzol działa przez wewnątrzkomórkowy receptor jądrowy (GR), niezależnie od białek G."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "rzekoma-niedoczynnosc-q5",
+      "lessonId": "rzekoma-niedoczynnosc",
+      "prompt": "Jakie jest leczenie z wyboru zaburzeń gospodarki wapniowo-fosforanowej w PHP?",
+      "options": [
+        {
+          "text": "Aktywne metabolity witaminy D (alfakalcydol/kalcytriol) oraz preparaty wapnia",
+          "explanation": "Leczenie jest identyczne jak w hipoparatyreozie — omija uszkodzony receptor nerkowy poprzez nasilenie jelitowego wchłaniania wapnia."
+        },
+        {
+          "text": "Podawanie bardzo wysokich dawek rekombinowanego parathormonu (rhPTH)",
+          "explanation": "Podanie PTH jest nieskuteczne, ponieważ komórki docelowe wykazują oporność na ten hormon."
+        },
+        {
+          "text": "Chirurgiczne przeszczepienie allogenicznych przytarczyc",
+          "explanation": "Własne przytarczyce pacjenta są w pełni sprawne i produkują nadmiar PTH."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "id": "przytarczyce-matematyka-kinetyka-mineralizacji",
+  "moduleId": "przytarczyce",
+  "title": "Wzór CCCR/FeCa, kinetyka mineralizacji i formuły QTc",
+  "subtitle": "Wskaźnik klirensu wapniowo-kreatyninowego, zespół głodnych kości i EKG",
+  "group": "Matematyka i modele",
+  "minutes": 21,
+  "goals": [
+    "Wyprowadzisz i obliczysz wskaźnik klirensu wapniowo-kreatyninowego (CCCR / FeCa) w różnicowaniu PHPT vs FHH.",
+    "Zastosujesz formuły korygujące odstęp QT (Bazett i Fridericia) w hipokalcemii i hiperkalcemii."
+  ],
+  "sections": [
+    {
+      "title": "Wyprowadzenie wskaźnika CCCR (frakcyjnego wydalania wapnia)",
+      "text": "Wskaźnik klirensu wapniowo-kreatyninowego (Calcium-to-Creatinine Clearance Ratio, CCCR) reprezentuje stosunek klirensu nerkowego wapnia (Cl_Ca) do klirensu kreatyniny (Cl_Cr): CCCR = Cl_Ca / Cl_Cr = (U_Ca * V / S_Ca) / (U_Cr * V / S_Cr). Objętość moczu V ulega skróceniu: CCCR = (U_Ca * S_Cr) / (S_Ca * U_Cr). Obie pary stężeń muszą być w tych samych jednostkach (mg/dL lub mmol/L). Wartość CCCR < 0,01 z prawdopodobieństwem >90% wskazuje na FHH, a CCCR > 0,02 na PHPT."
+    },
+    {
+      "title": "Kinetyka mineralizacji w zespole głodnych kości (Hungry Bone Syndrome)",
+      "text": "Po usunięciu gruczolaka przytarczyc u pacjentów z ciężką osteitis fibrosa cystica i wysoką wyjściową fosfatazą alkaliczną (ALP > 3–4x normy) dochodzi do gwałtownego odwrócenia kierunku przepływu jonów: osteoklastoza ustępuje, a osteoblasty masowo syntetyzują kryształy hydroksyapatytu Ca10(PO4)6(OH)2. Spadek stężenia wapnia w czasie opisuje kinetyka wykładnicza: Ca(t) = Ca_target + (Ca_0 - Ca_target) * exp(-k * t), gdzie stała k zależy liniowo od wyjściowego stężenia kostnej frakcji ALP."
+    },
+    {
+      "title": "Matematyka elektrokardiograficzna: Wzory Bazetta i Fridericia",
+      "text": "Hipokalcemia wydłuża fazę 2 (plateau) potencjału czynnościowego kardiomiocytów (napływ Ca2+ przez kanały typu L), powodując wydłużenie odcinka ST i odstępu QT w EKG. Ponieważ czas repolaryzacji zależy od tętna (odstępu RR), stosuje się formuły korygujące: Bazetta QTc = QT / sqrt(RR) oraz Fridericia QTc = QT / cbrt(RR) (RR podane w sekundach). Wartość QTc > 450 ms u mężczyzn i > 460 ms u kobiet zwiastuje wysokie ryzyko polimorficznego częstoskurczu komorowego (Torsade de Pointes)."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Wskaźnik / Wzór",
+      "Formuła matematyczna",
+      "Interpretacja kliniczna"
+    ],
+    "rows": [
+      [
+        "Wskaźnik CCCR (FeCa)",
+        "(U_Ca · S_Cr) / (S_Ca · U_Cr)",
+        "<0,01 = FHH (nie operuj!); >0,02 = PHPT (wskazana paratyreoidektomia)"
+      ],
+      [
+        "Formuła Bazetta",
+        "QTc = QT / √(RR)",
+        "Powszechnie stosowana, lecz nadmiernie wydłuża QTc przy tachykardii (>100 bpm)"
+      ],
+      [
+        "Formuła Fridericia",
+        "QTc = QT / ∛(RR)",
+        "Bardziej precyzyjna przy tachykardii i bradykardii; standard w badaniach klinicznych"
+      ],
+      [
+        "Iloczyn Ca x P",
+        "Wapń [mg/dl] · Fosforany [mg/dl]",
+        ">55 mg²/dl² = ryzyko zwapnień pozaszkieletowych i kalcyfilaksji w SHPT"
+      ]
+    ]
+  },
+  "advanced": "W odróżnieniu od niedoczynności przytarczyc (gdzie w surowicy spada wapń, ale fosforany rosną z powodu braku fosfaturii PTH), w zespole głodnych kości (HBS) dochodzi do jednoczesnego głębokiego spadku wapnia, fosforanów i magnezu. Wynika to ze stechiometrii krystalizacji hydroksyapatytu w macierzy kostnej, który wiąże fosforany w stosunku molowym Ca:P równym 1,67 (10:6).",
+  "summary": "Wskaźnik CCCR < 0,01 bezwzględnie odróżnia FHH od PHPT, a wydłużenie fazy 2 potencjału komorowego w hipokalcemii manifestuje się wydłużeniem QTc wg wzorów Bazetta i Fridericia.",
+  "sourceIds": [
+    "qtc_bone",
+    "fhh_consensus",
+    "ese_hypopara"
+  ],
+  "questions": [
+    {
+      "id": "przytarczyce-matematyka-kinetyka-mineralizacji-q1",
+      "lessonId": "przytarczyce-matematyka-kinetyka-mineralizacji",
+      "prompt": "Jaka wartość wskaźnika klirensu wapniowo-kreatyninowego (CCCR) silnie przemawia za rodzinną hiperkalcemią hipokalciuryczną (FHH) i chroni chorego przed niepotrzebną operacją?",
+      "options": [
+        {
+          "text": "Poniżej 0,01 (CCCR < 0,01)",
+          "explanation": "Świadczy o nadmiernym nerkowym wchłanianiu zwrotnym wapnia z powodu defektu receptora CaSR."
+        },
+        {
+          "text": "Powyżej 0,02",
+          "explanation": "CCCR > 0,02 jest typowy dla pierwotnej nadczynności przytarczyc (PHPT)."
+        },
+        {
+          "text": "Dokładnie 100,0",
+          "explanation": "CCCR jest ułamkiem filtracji i nie przyjmuje takich wartości."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przytarczyce-matematyka-kinetyka-mineralizacji-q2",
+      "lessonId": "przytarczyce-matematyka-kinetyka-mineralizacji",
+      "prompt": "Dlaczego wzór Fridericia (QTc = QT / ∛RR) jest uważany za dokładniejszy od wzoru Bazetta przy tachykardii?",
+      "options": [
+        {
+          "text": "Wzór Bazetta przeszacowuje odstęp QTc przy częstości akcji serca powyżej 80–90/min",
+          "explanation": "Pierwiastek trzeciego stopnia łagodniej koryguje krótkie odstępy RR, unikając fałszywych alarmów."
+        },
+        {
+          "text": "Wzór Fridericia nie wymaga znajomości odstępu RR",
+          "explanation": "Oba wzory wymagają zmierzenia czasu cyklu serca RR w sekundach."
+        },
+        {
+          "text": "Wzór Fridericia bada stężenie potasu zamiast EKG",
+          "explanation": "Formuła dotyczy wyłącznie zapisu elektrokardiograficznego."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przytarczyce-matematyka-kinetyka-mineralizacji-q3",
+      "lessonId": "przytarczyce-matematyka-kinetyka-mineralizacji",
+      "prompt": "Jaki specyficzny profil biochemiczny odróżnia zespół głodnych kości (HBS) od pooperacyjnej hipoparatyreozy?",
+      "options": [
+        {
+          "text": "W HBS zarówno wapń, jak i fosforany drastycznie spadają, podczas gdy w hipoparatyreozie fosforany rosną",
+          "explanation": "Wynika to z masowej jednoczesnej budowy hydroksyapatytu wiążącego Ca i P w kościach."
+        },
+        {
+          "text": "W HBS wapń rośnie do 20 mg/dl",
+          "explanation": "W HBS dochodzi do ciężkiej hipokalcemii wymagającej wlewów wapnia."
+        },
+        {
+          "text": "W hipoparatyreozie fosfataza zasadowa wynosi 0",
+          "explanation": "ALP odzwierciedla aktywność kościotworzenia, nie zeruje się natychmiast."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przytarczyce-matematyka-kinetyka-mineralizacji-q4",
+      "lessonId": "przytarczyce-matematyka-kinetyka-mineralizacji",
+      "prompt": "Jaki jest stechiometryczny stosunek molowy jonów wapnia do fosforu (Ca:P) w kryształach hydroksyapatytu kości Ca10(PO4)6(OH)2?",
+      "options": [
+        {
+          "text": "10 do 6 (czyli 1,67)",
+          "explanation": "Na każde 10 jonów wapnia szkielet wbudowuje 6 jonów ortofosforanowych."
+        },
+        {
+          "text": "1 do 1",
+          "explanation": "Taki stosunek cechuje fosforan dwuwapniowy, nie dojrzały hydroksyapatyt."
+        },
+        {
+          "text": "100 do 1",
+          "explanation": "Kość jest bogatym rezerwuarem zarówno wapnia, jak i fosforu."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przytarczyce-matematyka-kinetyka-mineralizacji-q5",
+      "lessonId": "przytarczyce-matematyka-kinetyka-mineralizacji",
+      "prompt": "Przekroczenie jakiej wartości iloczynu wapniowo-fosforanowego (Ca x P w mg²/dl²) stwarza krytyczne ryzyko kalcyfilaksji i zwapnień naczyniowych?",
+      "options": [
+        {
+          "text": "Powyżej 55 mg²/dl²",
+          "explanation": "Przy tej wartości przekroczony zostaje iloczyn rozpuszczalności soli wapniowych w osoczu."
+        },
+        {
+          "text": "Poniżej 5 mg²/dl²",
+          "explanation": "Niski iloczyn chroni przed zwapnieniami, ale sprzyja osteomalacji."
+        },
+        {
+          "text": "Dokładnie 1000 mg²/dl²",
+          "explanation": "Tak skrajne stężenia nie występują w żywym ustroju."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

@@ -25,6 +25,7 @@ const ActivityBaseSchema = z.object({
   reasoning: ObjectiveKindSchema,
   hint: z.string().optional(),
   sourceIds: z.array(z.string()),
+  claimIds: z.array(z.string()).optional(),
   optionFeedback: z.array(z.string()).optional(),
 });
 
@@ -84,6 +85,7 @@ export const LessonBlockV2Schema = z.object({
   title: z.string(),
   text: z.string(),
   sourceIds: z.array(z.string()),
+  claimIds: z.array(z.string()).optional(),
   checkpointId: z.string().optional(),
   inlineEnhancements: z.array(InlineEnhancementRefSchema).optional(),
 });
@@ -101,11 +103,9 @@ export const LessonExperienceV2Schema = z.object({
     })
   ),
   exitTicket: z.array(LearningActivitySchema),
-  widgetIds: z.array(
-    z.enum(['axis-map', 'lab-workbench', 'timeline', 'pathway-builder'])
-  ),
+  widgetIds: z.array(z.string()),
   review: z.object({
-    status: z.literal('source-checked'),
+    status: z.enum(['source-checked', 'needs-review', 'draft']),
     checkedAt: z.string(),
     scope: z.string(),
   }),
@@ -191,3 +191,33 @@ export const LessonRevisionDocumentSchema = z.object({
 });
 
 export type LessonRevisionDocument = z.infer<typeof LessonRevisionDocumentSchema>;
+
+export const EvidenceClaimSchema = z.object({
+  id: z.string().min(1),
+  statement: z.string().min(1),
+  category: z.enum([
+    'guideline_recommendation',
+    'measured',
+    'derived',
+    'observational_association',
+    'mechanistic',
+    'modelled',
+    'extrapolated',
+    'educational_simplification',
+  ]),
+  strength: z
+    .enum(['strong', 'conditional', 'expert_consensus', 'in_vitro_model', 'observational'])
+    .optional(),
+  sourceIds: z.array(z.string().min(1)),
+  lessonIds: z.array(z.string().min(1)).optional(),
+  tags: z.array(z.string()).optional(),
+  reviewedAt: z.string().optional(),
+  value: z.union([z.number(), z.string()]).optional(),
+  unit: z.string().optional(),
+  comparator: z.string().optional(),
+  population: z.string().optional(),
+  assayContext: z.string().optional(),
+  evidenceType: z.string().optional(),
+});
+
+export type EvidenceClaim = z.infer<typeof EvidenceClaimSchema>;

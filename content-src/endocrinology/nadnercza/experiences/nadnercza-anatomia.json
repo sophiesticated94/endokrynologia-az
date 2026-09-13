@@ -1,0 +1,214 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "nadnercza-anatomia",
+  "objectives": [
+    {
+      "id": "nadnercza-anatomia-obj-1",
+      "statement": "Poznasz trójwarstwową budowę kory nadnerczy (ZG, ZF, ZR) oraz neuroendokrynny charakter rdzenia.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "nadnercza-anatomia-obj-2",
+      "statement": "Zrozumiesz kluczowe szlaki sterydogenezy od cholesterolu do aldosteronu, kortyzolu i DHEA-S oraz asymetrię spływu żylnego.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "nadnercza-anatomia-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "nadnercza-anatomia-obj-1"
+    ],
+    "prompt": "Gdzie uchodzi prawa żyła nadnerczowa u człowieka?",
+    "options": [
+      "Bezpośrednio do żyły głównej dolnej (VCI)",
+      "Do prawej żyły nerkowej",
+      "Do żyły wrotnej wątroby"
+    ],
+    "optionFeedback": [
+      "Prawa żyła nadnerczowa jest krótka i uchodzi wprost do przednio-bocznej ściany żyły głównej dolnej.",
+      "Do żyły nerkowej uchodzi lewa żyła nadnerczowa, a nie prawa.",
+      "Nadnercza nie drenują krwi do układu wrotnego wątroby."
+    ],
+    "answer": 0,
+    "explanation": "Prawa żyła nadnerczowa jest krótka i uchodzi wprost do przednio-bocznej ściany żyły głównej dolnej.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "pte_nadnercza",
+      "endo_pa"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "nadnercza-anatomia-block-1",
+      "title": "Anatomia, położenie i asymetria naczyniowa",
+      "text": "Nadnercza to parzyste narządy położone zaotrzewnowo na górnych biegunach nerek, otoczone powięzią nerkową (Geroty) i tkanką tłuszczową. Prawe nadnercze ma kształt piramidalny, lewe półksiężycowaty. Unaczynienie tętnicze pochodzi z trzech źródeł (tętnice nadnerczowe górna, środkowa i dolna). Krytyczna różnica anatomiczna dotyczy spływu żylnego: prawa żyła nadnerczowa jest bardzo krótka (zaledwie kilka milimetrów) i uchodzi bezpośrednio do żyły głównej dolnej (VCI), podczas gdy lewa żyła nadnerczowa jest znacznie dłuższa i uchodzi do lewej żyły nerkowej. Ta asymetria ma fundamentalne znaczenie techniczne podczas cewnikowania żył nadnerczowych (AVS) oraz w chirurgii laparoskopowej.",
+      "sourceIds": [
+        "pte_nadnercza",
+        "endo_pa"
+      ],
+      "checkpointId": "nadnercza-anatomia-q2-checkpoint-1-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "nadnercza-anatomia-block-2",
+      "title": "Kora nadnerczy: Trzy strefy i ich wyspecjalizowane produkty",
+      "text": "Kora stanowi ok. 80–90% masy narządu i dzieli się na trzy strefy (od zewnątrz do wewnątrz): 1) Strefa kłębuszkowa (zona glomerulosa — ZG, ok. 15%): syntetyzuje mineralokortykosteroidy, głównie aldosteron, regulowany przez układ RAA i stężenie potasu (niezależnie od ACTH!); 2) Strefa pasmowata (zona fasciculata — ZF, ok. 75%): syntetyzuje glikokortykosteroidy, przede wszystkim kortyzol, pod ścisłą kontrolą przysadkowego ACTH; 3) Strefa siatkowata (zona reticularis — ZR, ok. 10%): wytwarza androgeny nadnerczowe (DHEA, DHEA-S, androstendion), stymulowana przez ACTH. Złota mnemotechnika: GFR — Salt, Sugar, Sex (sól, cukier, seks).",
+      "sourceIds": [
+        "pte_nadnercza",
+        "endo_pa"
+      ],
+      "checkpointId": "nadnercza-anatomia-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "nadnercza-anatomia-block-3",
+      "title": "Rdzeń nadnerczy i kaskada katecholamin",
+      "text": "Rdzeń nadnerczy wywodzi się ektodermalnie z grzebienia nerwowego i stanowi zmodyfikowany zwój współczulny. Komórki chromafinowe (feochromocyty) są unerwione przez przedzwojowe cholinergiczne włókna współczulne. Syntetyzują one katecholaminy: tyrozyna $\\to$ DOPA $\\to$ dopamina $\\to$ noradrenalina $\\to$ adrenalina. Kluczowy fakt: enzym PNMT (N-metylotransferaza fenyloetanoloaminy), który przekształca noradrenalinę w adrenalinę, jest indukowany przez wysokie stężenia kortyzolu spływającego naczyniami wrotnymi z kory do rdzenia. Dlatego w rdzeniu nadnercza powstaje głównie adrenalina (ok. 80%), w odróżnieniu od zwojów współczulnych.",
+      "sourceIds": [
+        "pte_nadnercza",
+        "endo_pa"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "nadnercza-anatomia-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "nadnercza-anatomia-obj-2"
+      ],
+      "prompt": "Który czynnik stanowi główny fizjologiczny regulator wydzielania aldosteronu przez strefę kłębuszkową?",
+      "options": [
+        "Układ renina-angiotensyna-aldosteron (Angiotensyna II) oraz stężenie potasu",
+        "Wydzielany z przysadki hormon ACTH",
+        "Stężenie insuliny we krwi"
+      ],
+      "optionFeedback": [
+        "Strefa kłębuszkowa odpowiada na spadek perfuzji nerek i hiperkaliemię, pozostając w dużej mierze niezależna od ACTH.",
+        "ACTH ma jedynie przejściowy, tonizujący wpływ na ZG; głównym regulatorem jest RAA.",
+        "Insulina nie reguluje bezpośrednio syntezy aldosteronu w strefie kłębuszkowej."
+      ],
+      "answer": 0,
+      "explanation": "Strefa kłębuszkowa odpowiada na spadek perfuzji nerek i hiperkaliemię, pozostając w dużej mierze niezależna od ACTH.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "pte_nadnercza",
+        "endo_pa"
+      ]
+    },
+    {
+      "id": "nadnercza-anatomia-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "nadnercza-anatomia-obj-1"
+      ],
+      "prompt": "Dlaczego w rdzeniu nadnerczy powstaje głównie adrenalina, podczas gdy zwoje współczulne wydzielają niemal wyłącznie noradrenalinę?",
+      "options": [
+        "Kortyzol spływający z kory indukuje enzym PNMT przekształcający noradrenalinę w adrenalinę",
+        "Rdzeń nadnerczy nie posiada enzymu hydroksylazy dopaminowej",
+        "W rdzeniu nie ma receptorów dla acetylocholiny"
+      ],
+      "optionFeedback": [
+        "Wysokie lokalne stężenie glikokortykosteroidów aktywuje ekspresję N-metylotransferazy fenyloetanoloaminy.",
+        "Enzym ten jest obecny i niezbędny do wytwarzania noradrenaliny.",
+        "Komórki chromafinowe posiadają receptory nikotynowe i muskarynowe dla ACh."
+      ],
+      "answer": 0,
+      "explanation": "Wysokie lokalne stężenie glikokortykosteroidów aktywuje ekspresję N-metylotransferazy fenyloetanoloaminy.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "pte_nadnercza",
+        "endo_pa"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "nadnercza-anatomia-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "nadnercza-anatomia-obj-1",
+      "nadnercza-anatomia-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Fabryka hormonów stresu”.",
+    "modelAnswer": "Nadnercza to podwójny narząd: steroidowa kora (ZG: aldosteron, ZF: kortyzol, ZR: androgeny) oraz neuroendokrynny rdzeń (adrenalina). Znajomość asymetrii żylnej i kaskady sterydogenezy jest warunkiem zrozumienia diagnostyki AVS i bloków enzymatycznych.",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "pte_nadnercza",
+      "endo_pa"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "nadnercza-anatomia-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "nadnercza-anatomia-obj-2"
+      ],
+      "prompt": "Jaki hormon jest głównym produktem strefy pasmowatej (zona fasciculata) kory nadnerczy?",
+      "options": [
+        "Kortyzol",
+        "Aldosteron",
+        "DHEA-S"
+      ],
+      "optionFeedback": [
+        "Kortyzol stanowi główny glikokortykosteroid syntetyzowany pod wpływem ACTH w strefie pasmowatej.",
+        "Aldosteron jest wytwarzany w strefie kłębuszkowej (ZG).",
+        "Siarczan dehydroepiandrosteronu to główny produkt strefy siatkowatej (ZR)."
+      ],
+      "answer": 0,
+      "explanation": "Kortyzol stanowi główny glikokortykosteroid syntetyzowany pod wpływem ACTH w strefie pasmowatej.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "pte_nadnercza",
+        "endo_pa"
+      ]
+    },
+    {
+      "id": "nadnercza-anatomia-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "nadnercza-anatomia-obj-1"
+      ],
+      "prompt": "Jakie białko transportowe odpowiada za pierwszy, ograniczający etap sterydogenezy (transport cholesterolu do wnętrza mitochondrium)?",
+      "options": [
+        "Białko StAR (Steroidogenic Acute Regulatory protein)",
+        "Transkortyna (CBG)",
+        "Albumina surowicy"
+      ],
+      "optionFeedback": [
+        "Umożliwia transfer cholesterolu przez błony mitochondrialne do enzymu CYP11A1.",
+        "Transkortyna transportuje kortyzol w osoczu, a nie cholesterol w komórce.",
+        "Albumina jest białkiem nośnikowym we krwi obwodowej."
+      ],
+      "answer": 0,
+      "explanation": "Umożliwia transfer cholesterolu przez błony mitochondrialne do enzymu CYP11A1.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "pte_nadnercza",
+        "endo_pa"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "adrenal-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

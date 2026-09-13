@@ -1,16 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { adrenalSources } from '../lib/course-adrenal-sources.ts';
+import { adrenalSources, adrenalMathChemSources } from '../lib/endocrinology/nadnercza-content.ts';
+import { parathyroidSources, parathyroidMathChemSources } from '../lib/endocrinology/przytarczyce-content.ts';
 import { diabetesSources } from '../lib/course-diabetes-sources.ts';
 import { gonadsSources } from '../lib/course-gonads-sources.ts';
 import { nenSources } from '../lib/course-nen-sources.ts';
 import { otyloscSources } from '../lib/course-otylosc-sources.ts';
-import { parathyroidSources } from '../lib/course-parathyroid-sources.ts';
 import { pituitarySources } from '../lib/course-pituitary-sources.ts';
-
-import { adrenalMathChemSources } from '../lib/course-adrenal-math-chem.ts';
-import { parathyroidMathChemSources } from '../lib/course-parathyroid-math-chem.ts';
 import { pituitaryMathChemSources } from '../lib/course-pituitary-math-chem.ts';
 import { thyroidMathChemSources } from '../lib/course-thyroid-math-chem.ts';
 

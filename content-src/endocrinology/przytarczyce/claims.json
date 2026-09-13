@@ -1,0 +1,112 @@
+[
+  {
+    "id": "claim-pt-payne-formula",
+    "statement": "Wzór Payne’a w jednostkach SI: Ca_skorygowany = Ca_całkowity + 0,02 * (40 - albumina [g/l]).",
+    "category": "derived",
+    "sourceIds": [
+      "asbmr_calcium"
+    ],
+    "lessonIds": [
+      "przytarczyce-diagnostyka"
+    ],
+    "tags": [
+      "calcium",
+      "payne",
+      "formula"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "DERIVED"
+  },
+  {
+    "id": "claim-pt-cccr-overlap-zone",
+    "statement": "Wskaźnik CCCR w przedziale 0,010–0,020 stanowi strefę nakładania (overlap zone), w której znajduje się ok. 20% chorych z FHH i ok. 10% chorych z PHPT.",
+    "category": "measured",
+    "sourceIds": [
+      "fhh_consensus",
+      "ese_phpt"
+    ],
+    "lessonIds": [
+      "fhh-hiperkalcemia"
+    ],
+    "tags": [
+      "cccr",
+      "fhh",
+      "phpt"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "GUIDELINE_THRESHOLD"
+  },
+  {
+    "id": "claim-pt-vitd-confounder-cccr",
+    "statement": "Niedobór witaminy D (<20 ng/ml) zmniejsza nerkowe wydalanie wapnia i może sztucznie zaniżyć wskaźnik CCCR poniżej 0,010 u pacjenta z PHPT.",
+    "category": "observational_association",
+    "sourceIds": [
+      "fhh_consensus",
+      "ese_phpt"
+    ],
+    "lessonIds": [
+      "fhh-hiperkalcemia"
+    ],
+    "tags": [
+      "vitamind",
+      "cccr",
+      "confounder"
+    ],
+    "reviewedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-pt-hypopara-target-ca-2025",
+    "statement": "Wytyczne ESE 2025 zalecają utrzymywanie stężenia wapnia w surowicy w dolnej granicy normy (2,00–2,15 mmol/l) lub nieznacznie poniżej bez objawów tężyczkowych, aby uniknąć hiperkalciurii i nefrokalcynozy.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "ese_hypopara"
+    ],
+    "lessonIds": [
+      "tezyczka-objawy",
+      "niedoczynnosc-przytarczyc"
+    ],
+    "tags": [
+      "hypoparathyroidism",
+      "targets",
+      "ese-2025"
+    ],
+    "reviewedAt": "2026-09-13",
+    "value": 2,
+    "unit": "mmol/l",
+    "evidenceType": "GUIDELINE_THRESHOLD"
+  },
+  {
+    "id": "claim-pt-hungry-bone-predictors",
+    "statement": "Wyjściowo wysoki PTH (> 5x GGN), znacznie podwyższony ALP (> 300 U/l) i wyjściowy wapń > 3,0 mmol/l stanowią najsilniejsze predyktory pooperacyjnego zespołu głodnych kości.",
+    "category": "measured",
+    "sourceIds": [
+      "hungry_bone"
+    ],
+    "lessonIds": [
+      "zespol-glodnych-kosci"
+    ],
+    "tags": [
+      "hungry-bone",
+      "surgery",
+      "predictors"
+    ],
+    "reviewedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-pt-cyp27b1-stimulation",
+    "statement": "Niedobór PTH w niedoczynności przytarczyc nie oznacza braku enzymu CYP27B1, lecz brak jego fizjologicznej stymulacji; z tego względu konieczne jest podawanie aktywnych metabolitów witaminy D.",
+    "category": "mechanistic",
+    "sourceIds": [
+      "ese_hypopara"
+    ],
+    "lessonIds": [
+      "niedoczynnosc-przytarczyc"
+    ],
+    "tags": [
+      "cyp27b1",
+      "calcitriol"
+    ],
+    "reviewedAt": "2026-09-13"
+  }
+]

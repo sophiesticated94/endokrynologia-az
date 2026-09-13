@@ -1,0 +1,220 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "przytarczyce-fizjologia",
+  "objectives": [
+    {
+      "id": "przytarczyce-fizjologia-obj-1",
+      "statement": "Zrozumiesz rolę receptora wapniowego (CaSR) w regulacji wydzielania PTH.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "przytarczyce-fizjologia-obj-2",
+      "statement": "Połączysz sprzężenie zwrotne między nerką, kością, jelitem a przytarczycami.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "przytarczyce-fizjologia-obj-3",
+      "statement": "Poznasz fizjologiczną oś kalcytriol–FGF23–fosforany.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "przytarczyce-fizjologia-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "przytarczyce-fizjologia-obj-1"
+    ],
+    "prompt": "Jaki jest bezpośredni efekt aktywacji receptora CaSR przez wysokie stężenie jonów Ca2+ w przytarczycach?",
+    "options": [
+      "Zahamowanie wydzielania parathormonu (PTH)",
+      "Wzmożone uwalnianie parathormonu (PTH)",
+      "Wzrost syntezy kalcytoniny w przytarczycach"
+    ],
+    "optionFeedback": [
+      "Pobudzenie CaSR wywołuje wewnątrzkomórkowy sygnał supresyjny syntezy i egzocytozy PTH.",
+      "Pobudzenie receptora wapniowego blokuje, a nie stymuluje wydzielanie PTH.",
+      "Kalcytonina powstaje w komórkach C tarczycy, a nie w przytarczycach."
+    ],
+    "answer": 0,
+    "explanation": "Pobudzenie CaSR wywołuje wewnątrzkomórkowy sygnał supresyjny syntezy i egzocytozy PTH.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "asbmr_calcium",
+      "ese_phpt"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "przytarczyce-fizjologia-block-1",
+      "title": "Cztery małe gruczoły o krytycznym znaczeniu",
+      "text": "Przytarczyce, najczęściej w liczbie czterech, leżą na tylnej powierzchni tarczycy. Ich główną funkcją jest utrzymywanie stężenia zjonizowanego wapnia w surowicy w niezwykle wąskim, homeostatycznym zakresie fizjologicznym (1,15–1,32 mmol/l). Głównym sensorem kontrolującym tę funkcję jest receptor wapniowy (CaSR — Calcium-Sensing Receptor), sprzężony z białkiem Gq/Gi. Wzrost zewnątrzkomórkowego stężenia jonów wapnia pobudza CaSR, co w odróżnieniu od większości komórek wywołuje w komórkach głównych przytarczyc sygnał hamujący wydzielanie parathormonu (PTH). I odwrotnie: nawet minimalny spadek stężenia Ca2+ odblokowuje CaSR, powodując natychmiastowy wyrzut zmagazynowanego PTH do krążenia.",
+      "sourceIds": [
+        "asbmr_calcium",
+        "ese_phpt"
+      ],
+      "checkpointId": "przytarczyce-fizjologia-q2-checkpoint-1-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "przytarczyce-fizjologia-block-2",
+      "title": "Trzy narządy docelowe parathormonu",
+      "text": "PTH działa na receptor PTHR1 w nerkach i kościach, a pośrednio na jelito cienkie. W nerkach PTH stymuluje wchłanianie zwrotne wapnia w ramieniu wstępującym pętli Henlego i cewce dalszej, hamuje kotransporter sodowo-fosforanowy NPT2a w cewce bliższej (wywołując silną fosfaturię) oraz aktywuje enzym 1alfa-hydroksylazę (CYP27B1). Aktywny metabolit witaminy D — 1,25(OH)2D (kalcytriol) — wzmaga z kolei jelitowe wchłanianie zarówno wapnia, jak i fosforanów. W kościach PTH pobudza osteoblasty do ekspresji liganda RANKL, co stymuluje osteoklastogenezę i osteolizę, uwalniając jony wapnia i fosforanów do krwiobiegu.",
+      "sourceIds": [
+        "asbmr_calcium",
+        "ese_phpt"
+      ],
+      "checkpointId": "przytarczyce-fizjologia-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "przytarczyce-fizjologia-block-3",
+      "title": "FGF23 i oś fosforanowa: przeciwwaga dla witaminy D",
+      "text": "Czynnik wzrostu fibroblastów 23 (FGF23), wydzielany przez osteocyty pod wpływem hiperfosfatemii i kalcytriolu, stanowi kluczowy hormon fosfaturyczny. Działa na kompleks receptora FGFR1 z koreceptorem Klotho w cewce bliższej nerki, nasilając wydalanie fosforanów z moczem oraz hamując enzym CYP27B1 (zmniejszając syntezę kalcytriolu). W ten sposób układ tworzy precyzyjną pętlę podwójnego sprzężenia zwrotnego: zapobiega powstawaniu nierozpuszczalnych złogów fosforanu wapnia (Ca x P) w tkankach miękkich i naczyniach krwionośnych.",
+      "sourceIds": [
+        "asbmr_calcium",
+        "ese_phpt"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "przytarczyce-fizjologia-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "przytarczyce-fizjologia-obj-2"
+      ],
+      "prompt": "Jaki jest główny wpływ parathormonu (PTH) na gospodarkę fosforanową w nerkach?",
+      "options": [
+        "Hamowanie kotransportera NPT2a i nasilenie fosfaturii",
+        "Wzrost cewkowej reabsorpcji fosforanów do krwi",
+        "Brak wpływu na wydalanie fosforanów z moczem"
+      ],
+      "optionFeedback": [
+        "PTH obniża próg nerkowy dla fosforanów w cewce bliższej, prowadząc do hipofosfatemii.",
+        "PTH hamuje wchłanianie zwrotne fosforanów w cewce bliższej.",
+        "Fosfaturia jest jednym z najważniejszych i najsilniejszych działań nerkowych PTH."
+      ],
+      "answer": 0,
+      "explanation": "PTH obniża próg nerkowy dla fosforanów w cewce bliższej, prowadząc do hipofosfatemii.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "asbmr_calcium",
+        "ese_phpt"
+      ]
+    },
+    {
+      "id": "przytarczyce-fizjologia-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "przytarczyce-fizjologia-obj-3"
+      ],
+      "prompt": "Który enzym jest bezpośrednio aktywowany w nerkach przez PTH w procesie bioaktywacji witaminy D?",
+      "options": [
+        "1alfa-hydroksylaza (CYP27B1)",
+        "24-hydroksylaza (CYP24A1)",
+        "25-hydroksylaza wątrobowa (CYP2R1)"
+      ],
+      "optionFeedback": [
+        "PTH silnie indukuje 1alfa-hydroksylazę w cewkach bliższych, przekształcając 25(OH)D w aktywny 1,25(OH)2D.",
+        "CYP24A1 jest enzymem inaktywującym, indukowanym przez FGF23 i nadmiar kalcytriolu.",
+        "Hydroksylacja w pozycji 25 zachodzi w hepatocytach niezależnie od parathormonu."
+      ],
+      "answer": 0,
+      "explanation": "PTH silnie indukuje 1alfa-hydroksylazę w cewkach bliższych, przekształcając 25(OH)D w aktywny 1,25(OH)2D.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "asbmr_calcium",
+        "ese_phpt"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "przytarczyce-fizjologia-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "przytarczyce-fizjologia-obj-1",
+      "przytarczyce-fizjologia-obj-2",
+      "przytarczyce-fizjologia-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Dyrygenci wapnia i fosforu”.",
+    "modelAnswer": "Homeostaza wapniowa zależy od ujemnego sprzężenia CaSR–PTH. PTH podwyższa stężenie wapnia (nerki, kości) i obniża stężenie fosforanów (fosfaturia), a witamina D zwiększa wchłanianie obu jonów w jelicie.",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "asbmr_calcium",
+      "ese_phpt"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "przytarczyce-fizjologia-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "przytarczyce-fizjologia-obj-1"
+      ],
+      "prompt": "Jaka jest kluczowa funkcja biologiczna czynnika FGF23?",
+      "options": [
+        "Zwiększanie wydalania fosforanów z moczem i hamowanie syntezy kalcytriolu",
+        "Pobudzanie wydzielania parathormonu przez przytarczyce",
+        "Zwiększanie jelitowego wchłaniania fosforanów"
+      ],
+      "optionFeedback": [
+        "FGF23 chroni ustrój przed retencją fosforanów i ektopowymi zwapnieniami tkanek.",
+        "FGF23 nie stymuluje przytarczyc; hamuje natomiast produkcję kalcytriolu.",
+        "FGF23 zmniejsza pulę fosforanów w ustroju poprzez nasilanie ich utraty z moczem."
+      ],
+      "answer": 0,
+      "explanation": "FGF23 chroni ustrój przed retencją fosforanów i ektopowymi zwapnieniami tkanek.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "asbmr_calcium",
+        "ese_phpt"
+      ]
+    },
+    {
+      "id": "przytarczyce-fizjologia-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "przytarczyce-fizjologia-obj-1"
+      ],
+      "prompt": "Dlaczego ciężka hiperkalcemia prowadzi do wielomoczu (poliurii) i odwodnienia?",
+      "options": [
+        "Wapń aktywuje CaSR w pętli Henlego, hamując NKCC2 i działając jak furosemid",
+        "Hiperkalcemia stymuluje nadmierne wydzielanie wazopresyny (AVP)",
+        "Wapń bezpośrednio niszczy kłębuszki nerkowe w ciągu kilku minut"
+      ],
+      "optionFeedback": [
+        "Zahamowanie kotransportera NKCC2 znosi gradient rdzeniowy nerek i blokuje zagęszczanie moczu.",
+        "Hiperkalcemia wywołuje moczówkę nerkopochodną, a nie centralną nadprodukcję AVP.",
+        "Odwodnienie wynika z zaburzenia transportu cewkowego w pętli Henlego, a nie natychmiastowej martwicy kłębuszków."
+      ],
+      "answer": 0,
+      "explanation": "Zahamowanie kotransportera NKCC2 znosi gradient rdzeniowy nerek i blokuje zagęszczanie moczu.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "asbmr_calcium",
+        "ese_phpt"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "parathyroid-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "id": "fhh-hiperkalcemia",
+  "moduleId": "przytarczyce",
+  "title": "Pułapka fałszywej nadczynności: FHH",
+  "subtitle": "Mutacja CaSR, hipokalciuria i błędy jatrogenne",
+  "group": "Nadczynności i hiperkalcemia",
+  "minutes": 14,
+  "goals": [
+    "Zrozumiesz patomechanizm łagodnej rodzinnej hiperkalcemii hipokalciurycznej (FHH).",
+    "Nauczysz się odróżniać FHH od PHPT za pomocą wskaźnika CCCR i wywiadu rodzinnego.",
+    "Zapobiegniesz jatrogennej, nieskutecznej operacji usunięcia przytarczyc."
+  ],
+  "sections": [
+    {
+      "title": "Czym jest FHH i jak mutacja przestawia „termostat wapniowy”?",
+      "text": "Łagodna rodzinna hiperkalcemia hipokalciuryczna (FHH — Familial Hypocalciuric Hypercalcemia, typ 1 związany z mutacją genu CASR na chromosomie 3q21) jest chorobą dziedziczoną autosomalnie dominująco z blisko 100% penetracją. Inaktywująca mutacja jednej kopii receptora CaSR powoduje, że receptor traci prawidłową wrażliwość na jony wapnia. Przytarczyce interpretują prawidłowe stężenie wapnia jako głęboką hipokalcemię i nie wygaszają wydzielania PTH. „Termostat wapniowy” ustroju zostaje trwale przestawiony na wyższy poziom: pacjent ma umiarkowaną hiperkalcemię, a stężenie parathormonu jest nieadekwatnie prawidłowe lub nieznacznie podwyższone."
+    },
+    {
+      "title": "Nerkowy mechanizm hipokalciurii",
+      "text": "Receptor CaSR występuje gęsto w ramieniu wstępującym pętli Henlego. Defekt receptora w nerkach powoduje zniesienie fizjologicznego hamowania reabsorpcji wapnia. W efekcie nerkowe wchłanianie zwrotne wapnia i magnezu jest skrajnie wzmożone, co prowadzi do paradoksalnie niskiego wydalania wapnia z moczem pomimo hiperkalcemii we krwi. Dobowe wydalanie wapnia w moczu wynosi zazwyczaj <100 mg/24h (<2,5 mmol/24h), a wskaźnik klirensu wapniowo-kreatyninowego (CCCR) spada poniżej 0,01 u ponad 80–85% pacjentów."
+    },
+    {
+      "title": "Kardynalny błąd medyczny: niepotrzebna paratyreoidktomia",
+      "text": "FHH ma przebieg całkowicie łagodny i bezobjawowy: chorzy nie rozwijają kamicy nerkowej, nefrokalcynozy, ubytku masy kostnej ani powikłań sercowo-naczyniowych, a ich oczekiwana długość życia jest całkowicie prawidłowa. Paratyreoidktomia subtotalna lub totalna u chorego z FHH jest błędem w sztuce — nie normalizuje stężenia wapnia, ponieważ zmutowane pozostają komórki w nerkach, a może doprowadzić do jatrogennej, trwałej hipokalcemii pooperacyjnej. Potwierdzenie mutacji CASR lub identyfikacja hiperkalcemii u krewnych I stopnia (zwłaszcza u dzieci) definitywnie kończy diagnostykę i chroni pacjenta przed skalpelem chirurga."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Cecha kliniczna / laboratoryjna",
+      "Pierwotna nadczynność (PHPT)",
+      "Rodzinna hiperkalcemia hipokalciuryczna (FHH)"
+    ],
+    "rows": [
+      [
+        "Wydalanie wapnia w DZM",
+        "Podwyższone (>250–300 mg/24h)",
+        "Bardzo niskie (<100 mg/24h)"
+      ],
+      [
+        "Wskaźnik CCCR (FeCa)",
+        "> 0,02 (u 90% pacjentów)",
+        "< 0,01 (u 85% pacjentów)"
+      ],
+      [
+        "Wywiad rodzinny",
+        "Zwykle negatywny (poza MEN1/MEN2A)",
+        "Hiperkalcemia u krewnych I stopnia od dzieciństwa"
+      ],
+      [
+        "Powikłania narządowe (nerki, kości)",
+        "Częste (kamica, osteoporoza, złamania)",
+        "Brak — całkowicie łagodny fenotyp"
+      ],
+      [
+        "Skutek paratyreoidktomii",
+        "Trwałe wyleczenie (95–98%)",
+        "Brak efektu / jatrogenna niedoczynność (przeciwwskazana!)"
+      ]
+    ]
+  },
+  "advanced": "Gdy oboje rodziców przekaże zmutowany allel CASR, u noworodka rozwija się ciężka noworodkowa pierwotna nadczynność przytarczyc (NSHPT — Neonatal Severe Hyperparathyroidism). Cechuje się ona zagrażającą życiu hiperkalcemią (>18–20 mg/dl), hipotonicznym wiotkim dzieckiem, złamaniami kości i niewydolnością oddechową; w NSHPT ratunkiem jest natychmiastowa totalna paratyreoidktomia w pierwszych dniach życia lub wlewy bisfosfonianów.",
+  "summary": "FHH to genetyczne przestawienie termostatu wapniowego (mutacja CaSR). Charakteryzuje się wskaźnikiem CCCR <0,01 i brakiem powikłań. Nie wymaga leczenia ani operacji — operacja jest bezwzględnym błędem!",
+  "sourceIds": [
+    "fhh_consensus",
+    "ese_phpt"
+  ],
+  "questions": [
+    {
+      "id": "fhh-hiperkalcemia-q1",
+      "lessonId": "fhh-hiperkalcemia",
+      "prompt": "Dlaczego u chorego z FHH paratyreoidktomia jest zabiegiem przeciwwskazanym?",
+      "options": [
+        {
+          "text": "Choroba jest łagodna, a wycięcie przytarczyc nie likwiduje defektu receptora CaSR w nerkach",
+          "explanation": "Zmutowany receptor w cewkach nerkowych nadal nadmiernie zatrzymuje wapń, a chory ryzykuje jatrogenne powikłania operacji."
+        },
+        {
+          "text": "Ponieważ u chorych z FHH przytarczyce nie występują anatomicznie",
+          "explanation": "Przytarczyce występują prawidłowo, posiadają jedynie zmutowany sensor CaSR."
+        },
+        {
+          "text": "Operacja natychmiast wywołuje złośliwego raka przytarczyc",
+          "explanation": "FHH nie transformuje w nowotwór złośliwy."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "fhh-hiperkalcemia-q2",
+      "lessonId": "fhh-hiperkalcemia",
+      "prompt": "Który wynik badania laboratoryjnego najsilniej przemawia za FHH, a przeciwko PHPT?",
+      "options": [
+        {
+          "text": "Wskaźnik klirensu wapniowo-kreatyninowego (CCCR) < 0,01",
+          "explanation": "Wskaźnik CCCR <0,01 odzwierciedla nerkową hipokalciurię charakterystyczną dla mutacji CaSR."
+        },
+        {
+          "text": "Stężenie wapnia całkowitego wynoszące 10,8 mg/dl",
+          "explanation": "Lekka hiperkalcemia występuje zarówno w PHPT, jak i w FHH."
+        },
+        {
+          "text": "Stężenie PTH w górnej granicy normy",
+          "explanation": "Nieadekwatnie prawidłowe PTH jest typowe dla obu tych jednostek chorobowych."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "fhh-hiperkalcemia-q3",
+      "lessonId": "fhh-hiperkalcemia",
+      "prompt": "W jaki sposób dziedziczy się klasyczna postać FHH typu 1?",
+      "options": [
+        {
+          "text": "Autosomalnie dominująco z bardzo wysoką penetracją",
+          "explanation": "Pojedyncza kopia zmutowanego genu CASR wystarcza do ujawnienia się fenotypu hiperkalcemii."
+        },
+        {
+          "text": "Autosomalnie recesywnie wyłącznie w linii męskiej",
+          "explanation": "Choroba dziedziczy się dominująco i występuje z jednakową częstością u obu płci."
+        },
+        {
+          "text": "Sprzężona z chromosomem X w sposób dominujący",
+          "explanation": "Gen CASR zlokalizowany jest na chromosomie 3 (autosoma)."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "fhh-hiperkalcemia-q4",
+      "lessonId": "fhh-hiperkalcemia",
+      "prompt": "U 32-letniego mężczyzny bez objawów wykryto Ca 10,7 mg/dl, PTH 68 pg/ml i CCCR 0,007. Jakie postępowanie jest optymalne?",
+      "options": [
+        {
+          "text": "Oznaczenie stężenia wapnia u rodziców/dzieci oraz badanie genetyczne genu CASR",
+          "explanation": "Potwierdzenie hiperkalcemii u bezobjawowych krewnych i znalezienie mutacji potwierdza rozpoznanie i zapobiega operacji."
+        },
+        {
+          "text": "Pilne skierowanie na scyntygrafię MIBI i operację wycięcia 4 przytarczyc",
+          "explanation": "Operacja u pacjenta z FHH jest błędem w sztuce lekarskiej."
+        },
+        {
+          "text": "Rozpoczęcie intensywnej chemioterapii przeciwnowotworowej",
+          "explanation": "FHH jest łagodną anomalią biochemiczną, a nie nowotworem."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "fhh-hiperkalcemia-q5",
+      "lessonId": "fhh-hiperkalcemia",
+      "prompt": "Co dzieje się, gdy noworodek odziedziczy mutację inaktywującą CaSR homozygotycznie od obojga rodziców z FHH?",
+      "options": [
+        {
+          "text": "Rozwija się zagrażająca życiu noworodkowa ciężka nadczynność przytarczyc (NSHPT)",
+          "explanation": "Brak jakiejkolwiek sprawnej kopii CaSR prowadzi do skrajnej hiperkalcemii, odwapnienia kości i konieczności ratunkowej paratyreoidktomii."
+        },
+        {
+          "text": "Dziecko rodzi się całkowicie zdrowe bez żadnych zmian biochemicznych",
+          "explanation": "Stan homozygotyczny jest stanem bezpośredniego zagrożenia życia noworodka."
+        },
+        {
+          "text": "Dochodzi do wrodzonej agenezji nerek",
+          "explanation": "CaSR reguluje transport jonów, ale nie odpowiada za organogenezę nerek."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

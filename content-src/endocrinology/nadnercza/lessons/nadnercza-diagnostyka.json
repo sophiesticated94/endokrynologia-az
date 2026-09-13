@@ -1,0 +1,165 @@
+{
+  "id": "nadnercza-diagnostyka",
+  "moduleId": "nadnercza",
+  "title": "Odszyfruj korę i rdzeń",
+  "subtitle": "Rytm kortyzolu, test z Synacthenem, wskaźnik ARR i wolne metanefryny",
+  "group": "Fundamenty",
+  "minutes": 17,
+  "goals": [
+    "Opanujesz zasady oceny osi HPA: rytm dobowy kortyzolu, interpretację testu stymulacji Synacthenem (250 µg vs 1 µg).",
+    "Zrozumiesz oznaczanie układu RAA (wskaźnik ARR) oraz wolnych metanefryn w osoczu bez błędów przedanalitycznych."
+  ],
+  "sections": [
+    {
+      "title": "Ocena wydolności osi HPA i pułapki laboratoryjne",
+      "text": "Kortyzol wykazuje wyraźny rytm dobowy ze szczytem ok. 6:00–8:00 rano (prawidłowo 10–20 µg/dl lub 280–550 nmol/l) i nadirem o północy (<1,8 µg/dl lub <50 nmol/l). Pojedyncze poranne stężenie kortyzolu ma ograniczoną wartość: stężenie <3 µg/dl (<80 nmol/l) silnie sugeruje niedoczynność kory, a >15–18 µg/dl (>450 nmol/l) praktycznie ją wyklucza. Wartości pośrednie (3–15 µg/dl) bezwzględnie wymagają wykonania testu dynamicznego! Ponad 90% kortyzolu krąży związane z białkiem wiążącym kortykosteroidy (CBG / transkortyna). Estrogeny (doustna antykoncepcja hormonalna) zwiększają CBG, dając fałszywie wysoki kortyzol całkowity — antykoncepcję należy odstawić na 6 tygodni przed badaniem."
+    },
+    {
+      "title": "Złoty standard: Test stymulacji z syntetycznym ACTH (Synacthen)",
+      "text": "Standardowy test z Synacthenem (tetracosactide) polega na dożylnym lub domięśniowym podaniu 250 µg syntetycznego ACTH 1-24 z pomiarem kortyzolu w 0, 30 i 60 minucie. Prawidłowa odpowiedź: w klasycznych testach immunochemicznych stężenie kortyzolu po stymulacji osiąga co najmniej >=18 µg/dl (500 nmol/l). W nowoczesnych testach chromatografii cieczowej ze spektrometrią mas (LC-MS/MS) oraz testach z monoklonalnymi przeciwciałami II generacji próg odcięcia wynosi 14–15 µg/dl (ok. 400–412 nmol/l) z uwagi na wyższą swoistość i brak reakcji krzyżowych. Brak wymaganego wzrostu potwierdza niedostateczną rezerwę kortyzolową (niedoczynność kory nadnerczy ogółem). Sam test nie rozstrzyga jednak, czy przyczyna jest pierwotna (PAI), czy wtórna/trzeciorzędowa (długotrwały brak endogennego ACTH prowadzi do zaniku warstwy pasmowatej i braku reakcji na krótki bodziec). Do rozpoznania PAI niezbędne jest jednoczesne oznaczenie porannego ACTH: stężenie ACTH >2× powyżej górnej granicy normy przy niskim kortyzolu potwierdza PAI wg wytycznych Endocrine Society; dodatkowo ocenia się układ renina-aldosteron. Uwaga kliniczna: w świeżej wtórnej niedoczynności nadnerczy (np. po operacji przysadki przed 4–6 tygodniami) kora nadnerczy nie zdążyła jeszcze zaniknąć i może przejściowo odpowiedzieć na dawkę 250 µg Synacthenu! W tych przypadkach stosuje się test z małą dawką (1 µg) lub test hipoglikemii poinsulinowej (ITT)."
+    },
+    {
+      "title": "Przesiew w kierunku Conna (ARR 2025) i Pheochromocytoma",
+      "text": "W diagnostyce pierwotnego hiperaldosteronizmu przesiewem z wyboru jest wskaźnik aldosteronowo-reninowy (ARR = stężenie aldosteronu / aktywność reninowa osocza ARO lub stężenie reniny DRC) oznaczany rano po pionizacji i po wyrównaniu hipokaliemii. Zgodnie z wytycznymi Endocrine Society (2025) stosuje się trzy zrównoważone strategie przygotowania: 1) no-withdrawal: przesiew bez odstawiania leków, gdy ryzyko ciężkiego nadciśnienia lub hipokaliemii jest wysokie (wysoki aldosteron przy stłumionej reninie silnie sugeruje PA); 2) minimal withdrawal: odstawienie antagonistów receptora mineralokortykoidowego (spironolakton, eplerenon) oraz leków oszczędzających potas (na 4–6 tyg.) i zamiana na leki neutralne dla RAA (werapamil SR, doksazosyna, hydralazyna); 3) ideal full withdrawal: pełne odstawienie leków wpływających na RAA (w tym ACEI, ARB, beta-blokerów), jeśli jest bezpieczne i potrzebne przy wynikach niejednoznacznych. Z kolei w diagnostyce guza chromochłonnego testem z wyboru jest pomiar wolnych metanefryn w osoczu (metanefryna i normetanefryna) pobieranych na leżąco po 20–30 minutach odpoczynku w kaniuli założonej wcześniej."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Badanie laboratoryjne",
+      "Wartość referencyjna / Odcięcie",
+      "Interpretacja kliniczna"
+    ],
+    "rows": [
+      [
+        "Poranny kortyzol (8:00)",
+        "<3 µg/dl: niedoczynność; >15–18 µg/dl: norma",
+        "Stężenia pośrednie (3–15 µg/dl) wymagają testu Synacthenu"
+      ],
+      [
+        "Test z Synacthenem 250 µg",
+        "Szczyt kortyzolu >=18 µg/dl (500 nmol/l; w LC-MS/MS >=14–15 µg/dl)",
+        "Poniżej progu = niewydolność kory; do potwierdzenia PAI konieczne ACTH >2× GGN"
+      ],
+      [
+        "Wskaźnik ARR (Aldo/Renina)",
+        "ARR podwyższony (wg Endocrine Society 2025: no-withdrawal, minimal lub full)",
+        "Sugeruje pierwotny hiperaldosteronizm; wymaga testu potwierdzenia"
+      ],
+      [
+        "Wolne metanefryny w osoczu",
+        "W granicach normy laboratoryjnej",
+        "Wysoka czułość (97–99%); 3-krotny wzrost niemal przesądza o feo"
+      ]
+    ]
+  },
+  "advanced": "Dlaczego wolne metanefryny w osoczu są lepsze niż katecholaminy? Katecholaminy (adrenalina, noradrenalina) są wydzielane przez guz epizodycznie i mają okres półtrwania zaledwie 1–2 minut. Natomiast komórki guza chromochłonnego stale, w sposób ciągły metabolizują katecholaminy wewnątrzkomórkowo za pomocą enzymu COMT (katecholo-O-metylotransferazy) do metanefryny i normetanefryny, które stale dyfundują do krwioobiegu niezależnie od napadów wyrzutu katecholamin.",
+  "summary": "Diagnostyka kory i rdzenia opiera się na dynamicznych testach i rygorze przedanalitycznym: test 250 µg Synacthenu definiuje rezerwę kory (odcięcie 18 µg/dl, w LC-MS/MS 14–15 µg/dl; PAI wymaga ACTH >2× GGN), wskaźnik ARR wymaga wyrównania potasu i przemyślanej strategii leków (Endocrine Society 2025), a wolne metanefryny wykazują najwyższą czułość w wykrywaniu feochromocytoma.",
+  "sourceIds": [
+    "pte_nadnercza",
+    "endo_pai",
+    "endo_pa",
+    "endo_pheo"
+  ],
+  "questions": [
+    {
+      "id": "nadnercza-diagnostyka-q1",
+      "lessonId": "nadnercza-diagnostyka",
+      "prompt": "Jakie stężenie kortyzolu w surowicy po podaniu 250 µg Synacthenu wyklucza pierwotną niedoczynność kory nadnerczy?",
+      "options": [
+        {
+          "text": "Osiągnięcie stężenia co najmniej 18 µg/dl (500 nmol/l) w 30. lub 60. minucie (w LC-MS/MS próg wynosi 14–15 µg/dl)",
+          "explanation": "Jest to klasyczne kryterium w testach immunochemicznych; nowoczesne metody LC-MS/MS stosują niższe odcięcie 14–15 µg/dl (400–412 nmol/l)."
+        },
+        {
+          "text": "Wzrost o dokładnie 2 µg/dl w stosunku do wartości wyjściowej",
+          "explanation": "Sam przyrost bez osiągnięcia bezwzględnego progu 18 µg/dl nie wyklucza niedoczynności."
+        },
+        {
+          "text": "Stężenie powyżej 100 µg/dl",
+          "explanation": "Wartość 100 µg/dl jest fizjologicznie niespotykana w standardowym teście."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "nadnercza-diagnostyka-q2",
+      "lessonId": "nadnercza-diagnostyka",
+      "prompt": "Kiedy pojedyncze poranne oznaczenie stężenia kortyzolu we krwi pozwala bezpiecznie wykluczyć niedoczynność kory nadnerczy bez testów dynamicznych?",
+      "options": [
+        {
+          "text": "Gdy stężenie wynosi >15–18 µg/dl (>450–500 nmol/l) u osoby nieprzyjmującej estrogenów",
+          "explanation": "Wysoki poranny kortyzol świadczy o zachowanej czynności (w LC-MS/MS próg wykluczenia bywa obniżony do >14 µg/dl)."
+        },
+        {
+          "text": "Zawsze przy stężeniu powyżej 4 µg/dl",
+          "explanation": "Wartości 3–15 µg/dl znajdują się w strefie niepewności i wymagają stymulacji Synacthenem."
+        },
+        {
+          "text": "Nigdy, u każdego pacjenta trzeba wykonać cewnikowanie żył",
+          "explanation": "Cewnikowanie wykonuje się w diagnostyce Conna i Cushinga, a nie niedoczynności."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "nadnercza-diagnostyka-q3",
+      "lessonId": "nadnercza-diagnostyka",
+      "prompt": "Dlaczego doustna antykoncepcja estrogenowa może zafałszować wynik całkowitego kortyzolu w surowicy?",
+      "options": [
+        {
+          "text": "Estrogeny stymulują wątrobową syntezę CBG (transkortyny), podwyższając stężenie kortyzolu związanego z białkiem",
+          "explanation": "Prowadzi to do fałszywie wysokich wyników kortyzolu całkowitego przy prawidłowej frakcji wolnej."
+        },
+        {
+          "text": "Estrogeny niszczą komórki kory nadnerczy",
+          "explanation": "Estrogeny nie niszczą kory nadnerczy."
+        },
+        {
+          "text": "Tabletki antykoncepcyjne zawierają syntetyczny kortyzol",
+          "explanation": "Antykoncepcja hormonalna zawiera progestageny i etynyloestradiol, a nie kortyzol."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "nadnercza-diagnostyka-q4",
+      "lessonId": "nadnercza-diagnostyka",
+      "prompt": "Jaki lek moczopędny należy bezwzględnie odstawić na co najmniej 4–6 tygodni przed oznaczeniem wskaźnika ARR?",
+      "options": [
+        {
+          "text": "Spironolakton (oraz eplerenon)",
+          "explanation": "Antagoniści aldosteronu drastycznie podwyższają reninę i fałszują wskaźnik ARR."
+        },
+        {
+          "text": "Doksazosynę",
+          "explanation": "Doksazosyna (alfa-bloker) jest lekiem z wyboru, który nie zaburza istotnie wskaźnika ARR."
+        },
+        {
+          "text": "Werapamil o przedłużonym uwalnianiu",
+          "explanation": "Werapamil to dopuszczalny bloker kanałów wapniowych w okresie przygotowania do ARR."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "nadnercza-diagnostyka-q5",
+      "lessonId": "nadnercza-diagnostyka",
+      "prompt": "W jakiej pozycji powinien spocząć pacjent przed pobraniem krwi na wolne metanefryny w osoczu w celu minimalizacji wyników fałszywie dodatnich?",
+      "options": [
+        {
+          "text": "W pozycji leżącej przez 20–30 minut w cichym pomieszczeniu",
+          "explanation": "Pionizacja i stres wkłucia podnoszą napięcie współczulne i fałszują wynik; pozycja leżąca daje najwyższą swoistość."
+        },
+        {
+          "text": "W trakcie intensywnego marszu na bieżni",
+          "explanation": "Wysiłek fizyczny dramatycznie wyrzuca katecholaminy i metanefryny."
+        },
+        {
+          "text": "W pozycji stojącej na baczność przez 2 godziny",
+          "explanation": "Pionizacja jest wymagana w badaniu reniny, a nie wolnych metanefryn."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

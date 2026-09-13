@@ -1,6 +1,13 @@
 export interface EndocrineWidgetPreset {
   id: string;
-  widgetType: 'axis-map' | 'lab-workbench' | 'timeline' | 'pathway-builder';
+  widgetType:
+    | 'axis-map'
+    | 'lab-workbench'
+    | 'timeline'
+    | 'pathway-builder'
+    | 'adrenal-workbench'
+    | 'parathyroid-workbench'
+    | string;
   schemaVersion: number;
   moduleId: string;
   lessonId?: string;
@@ -76,5 +83,131 @@ export const ENDOCRINE_PRESETS: Record<string, EndocrineWidgetPreset> = {
       currentStep: 0,
     },
     evidenceIds: ['central', 'nodules'],
+  },
+  'adrenal-pa-arr-interference': {
+    id: 'adrenal-pa-arr-interference',
+    widgetType: 'adrenal-workbench',
+    schemaVersion: 1,
+    moduleId: 'nadnercza',
+    lessonId: 'zespol-conna',
+    title: 'Ocena wskaźnika ARR i interferencji lekowych (ES 2025)',
+    initialState: {
+      focusSection: 'primary_aldosteronism',
+      visibleControls: ['aldosterone', 'renin', 'potassium', 'medications'],
+      initialPA: {
+        aldosteroneNgDl: 24,
+        reninValue: 0.4,
+        potassiumMmolL: 3.4,
+        medications: ['acei_arb'],
+        spontaneousHypokalemia: true,
+      },
+    },
+    evidenceIds: ['endo_pa'],
+  },
+  'adrenal-hpa-synacthen': {
+    id: 'adrenal-hpa-synacthen',
+    widgetType: 'adrenal-workbench',
+    schemaVersion: 1,
+    moduleId: 'nadnercza',
+    lessonId: 'addison-choroba',
+    title: 'Test stymulacji Synacthenem i pułapka wczesnej wtórnej AI',
+    initialState: {
+      focusSection: 'hpa_cortisol',
+      initialCortisol: {
+        morningCortisolUgDl: 6.2,
+        synacthenPeakUgDl: 15.0,
+        recentPituitaryEventWeeks: 2,
+      },
+    },
+    evidenceIds: ['endo_pai'],
+  },
+  'adrenal-pheo-safety': {
+    id: 'adrenal-pheo-safety',
+    widgetType: 'adrenal-workbench',
+    schemaVersion: 1,
+    moduleId: 'nadnercza',
+    lessonId: 'pheochromocytoma',
+    title: 'Protokół bezpieczeństwa PPGL: alfa-blokada przed beta-blokerem',
+    initialState: {
+      focusSection: 'pheochromocytoma',
+      initialPheo: {
+        normetanephrineFraction: 4.5,
+        betaBlockerInitiated: true,
+        alphaBlockerInitiated: false,
+      },
+    },
+    evidenceIds: ['endo_pheo'],
+  },
+  'adrenal-incidentaloma-macs': {
+    id: 'adrenal-incidentaloma-macs',
+    widgetType: 'adrenal-workbench',
+    schemaVersion: 1,
+    moduleId: 'nadnercza',
+    lessonId: 'incydentaloma-nadnercza',
+    title: 'Fenotypowanie obrazowe i hormonalne incydentaloma (ESE/ENSAT 2023)',
+    initialState: {
+      focusSection: 'incidentaloma',
+      initialIncidentaloma: {
+        sizeMm: 26,
+        unenhancedHu: 6,
+        postDstCortisolUgDl: 2.2,
+      },
+    },
+    evidenceIds: ['ese_incidentaloma', 'pte_macs'],
+  },
+  'parathyroid-phpt-fhh-cccr': {
+    id: 'parathyroid-phpt-fhh-cccr',
+    widgetType: 'parathyroid-workbench',
+    schemaVersion: 1,
+    moduleId: 'przytarczyce',
+    lessonId: 'fhh-hiperkalcemia',
+    title: 'Kalkulator CCCR, strefa nakładania i czynniki zakłócające',
+    initialState: {
+      focusSection: 'hypercalcemia_cccr',
+      initialCCCR: {
+        serumCalciumMmolL: 2.75,
+        serumCreatinineUmolL: 75,
+        urineCalcium24hMmolL: 2.1,
+        urineCreatinine24hMmolL: 9.8,
+        vitaminD25OhNgMl: 14,
+      },
+    },
+    evidenceIds: ['fhh_consensus', 'ese_phpt'],
+  },
+  'parathyroid-hypopara-management': {
+    id: 'parathyroid-hypopara-management',
+    widgetType: 'parathyroid-workbench',
+    schemaVersion: 1,
+    moduleId: 'przytarczyce',
+    lessonId: 'tezyczka-objawy',
+    title: 'Leczenie przewlekłej niedoczynności przytarczyc (ESE 2025)',
+    initialState: {
+      focusSection: 'hypoparathyroidism',
+      initialHypopara: {
+        serumCalciumMmolL: 2.05,
+        serumPhosphateMmolL: 1.6,
+        calcitriolMicrogDay: 0.5,
+        calciumElementalMgDay: 1000,
+      },
+    },
+    evidenceIds: ['ese_hypopara'],
+  },
+  'parathyroid-hungry-bone': {
+    id: 'parathyroid-hungry-bone',
+    widgetType: 'parathyroid-workbench',
+    schemaVersion: 1,
+    moduleId: 'przytarczyce',
+    lessonId: 'zespol-glodnych-kosci',
+    title: 'Ocena ryzyka zespołu głodnych kości po paratyreoidotomii',
+    initialState: {
+      focusSection: 'hungry_bone',
+      initialHungryBone: {
+        preopCalciumMmolL: 3.2,
+        preopPthPgMl: 540,
+        alkalinePhosphataseUPerL: 320,
+        patientAge: 62,
+      },
+    },
+    evidenceIds: ['hungry_bone', 'ese_phpt'],
   },
 };

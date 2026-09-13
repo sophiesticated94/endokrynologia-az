@@ -1,0 +1,224 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "przelom-nadnerczowy",
+  "objectives": [
+    {
+      "id": "przelom-nadnerczowy-obj-1",
+      "statement": "Rozpoznasz objawy alarmowe ostrego przełomu nadnerczowego: wstrząs oporny na katecholaminy, silne bóle brzucha, hiponatremia, hiperkaliemia, hipoglikemia.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "przelom-nadnerczowy-obj-2",
+      "statement": "Wdrożysz natychmiastowy protokół ratunkowy: dożylny bolus 100 mg hydrokortyzonu i intensywne nawadnianie 0,9% NaCl bez czekania na wyniki badań!",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "przelom-nadnerczowy-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "przelom-nadnerczowy-obj-1"
+    ],
+    "prompt": "Jaki lek i w jakiej dawce należy podać natychmiast w bolusie dożylnym choremu z podejrzeniem ostrego przełomu nadnerczowego?",
+    "options": [
+      "Hydrokortyzon w dawce 100 mg i.v.",
+      "Furosemid 80 mg dożylnie",
+      "Insulinę krótko działającą w bolusie"
+    ],
+    "optionFeedback": [
+      "Jest to lek pierwszego rzutu ratujący życie, podawany natychmiast bez czekania na wyniki laboratoryjne.",
+      "Lek moczopędny pogłębiłby wstrząs hipowolemiczny i doprowadził do zatrzymania krążenia.",
+      "Insulina pogłębiłaby hipoglikemię, wywołując śpiączkę hipoglikemiczną i drgawki."
+    ],
+    "answer": 0,
+    "explanation": "Jest to lek pierwszego rzutu ratujący życie, podawany natychmiast bez czekania na wyniki laboratoryjne.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "adrenal_crisis",
+      "endo_pai",
+      "pte_nadnercza"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "przelom-nadnerczowy-block-1",
+      "title": "Mechanizm: Dlaczego dochodzi do ostrej zapaści?",
+      "text": "Ostry przełom nadnerczowy (Adrenal Crisis — AC) to stan bezpośredniego zagrożenia życia wynikający z ostrego, bezwzględnego niedoboru glikokortykosteroidów. Kortyzol wywodzi swoje działanie naczyniowe permisywnie: warunkuje wrażliwość receptorów adrenergicznych na krążące katecholaminy. W jego braku mięśniówka naczyń krwionośnych wiotczeje, dochodzi do uogólnionego rozszerzenia naczyń (vasoplegia), załamania oporu obwodowego i wstrząsu hemodynamicznego opornego na płyny i katecholaminy! Czynniki wyzwalające: ostra infekcja przewodu pokarmowego (wymioty uniemożliwiają wchłonięcie tabletki), zakażenie z gorączką, uraz, zabieg chirurgiczny lub nagłe przerwanie leczenia.",
+      "sourceIds": [
+        "adrenal_crisis",
+        "endo_pai",
+        "pte_nadnercza"
+      ],
+      "checkpointId": "przelom-nadnerczowy-q2-checkpoint-1-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "przelom-nadnerczowy-block-2",
+      "title": "Triada kliniczna imitująca „ostry brzuch”",
+      "text": "Obraz kliniczny przełomu bywa podstępny: 1) Ciężka hipotensja (skurczowe RR <80–90 mmHg) ze skłonnością do zapaści krążeniowej; 2) Gwałtowne osłabienie, senność, splątanie lub śpiączka; 3) Zespół rzekomego ostrego brzucha (pseudoperitonitis): silne, kurczowe bóle brzucha z nudnościami, wymiotami i obroną mięśniową. Wielu chorych z nierozpoznanym Addisonem w przełomie trafia na stół operacyjny z podejrzeniem perforacji wyrostka lub niedrożności! W badaniach laboratoryjnych: hiponatremia, ciężka hiperkaliemia (w pierwotnej niedoczynności), hipoglikemia (grożąca drgawkami, szczególnie u dzieci i osób szczupłych) oraz kwasica metaboliczna.",
+      "sourceIds": [
+        "adrenal_crisis",
+        "endo_pai",
+        "pte_nadnercza"
+      ],
+      "checkpointId": "przelom-nadnerczowy-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "przelom-nadnerczowy-block-3",
+      "title": "Złoty protokół ratunkowy: Czas to życie",
+      "text": "ŻELAZNA ZASADA RATOWNICZA: Przy podejrzeniu przełomu nadnerczowego leczenie należy rozpocząć NATYCHMIAST — zwłoka w oczekiwaniu na wyniki laboratoryjne stwarza bezpośrednie ryzyko zgonu! PROTOKÓŁ RATUNKOWY: 1) Hydrokortyzon: natychmiast 100 mg w bolusie dożylnym (i.v.), a następnie 200 mg na dobę (w ciągłym wlewie i.v. lub 50 mg co 6 godzin i.v./i.m.); 2) Płynoterapia: szybki wlew 1000 ml 0,9% NaCl w ciągu 1. godziny, a łącznie 3–4 litry soli w ciągu pierwszych 24 godzin; 3) Wyrównanie hipoglikemii: dodanie 5% lub 10% glukozy do wlewów; 4) Fludrokortyzon w ostrej fazie jest ZBĘDNY, ponieważ hydrokortyzon w dawce >50–100 mg/dobę całkowicie wysyca receptory mineralokortykosteroidowe!",
+      "sourceIds": [
+        "adrenal_crisis",
+        "endo_pai",
+        "pte_nadnercza"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "przelom-nadnerczowy-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "przelom-nadnerczowy-obj-2"
+      ],
+      "prompt": "Dlaczego w ostrej fazie leczenia przełomu nadnerczowego nie ma potrzeby podawania fludrokortyzonu?",
+      "options": [
+        "Hydrokortyzon w dawkach powyżej 50–100 mg/dobę w pełni nasyca receptory mineralokortykosteroidowe (MR)",
+        "Fludrokortyzon rozkłada się w soli fizjologicznej",
+        "Mineralokortykosteroidy w przełomie są trucizną dla nerek"
+      ],
+      "optionFeedback": [
+        "Wykazuje wówczas maksymalne działanie zatrzymujące sód i wydalające potas.",
+        "Fludrokortyzon nie ulega rozkładowi, jest lekiem doustnym.",
+        "Fludrokortyzon nie jest nefrotoksyczny, po prostu jest zastąpiony przez dużą dawkę hydrokortyzonu."
+      ],
+      "answer": 0,
+      "explanation": "Wykazuje wówczas maksymalne działanie zatrzymujące sód i wydalające potas.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "adrenal_crisis",
+        "endo_pai",
+        "pte_nadnercza"
+      ]
+    },
+    {
+      "id": "przelom-nadnerczowy-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "przelom-nadnerczowy-obj-1"
+      ],
+      "prompt": "Z jakim stanem chirurgicznym najczęściej bywa mylony ostry przełom nadnerczowy z powodu objawów brzusznych?",
+      "options": [
+        "Z ostrym brzuchem (np. zapaleniem otrzewnej, perforacją wrzodu)",
+        "Z kamicą ślinianki przyusznej",
+        "Ze złamaniem kości podudzia"
+      ],
+      "optionFeedback": [
+        "Ciężkie kurczowe bóle brzucha i wymioty mogą imitować chirurgiczną katastrofę brzuszną.",
+        "Kamica ślinianki nie wywołuje wstrząsu ani bólów brzucha.",
+        "Objawy przełomu dotyczą układu krążenia i jamy brzusznej."
+      ],
+      "answer": 0,
+      "explanation": "Ciężkie kurczowe bóle brzucha i wymioty mogą imitować chirurgiczną katastrofę brzuszną.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "adrenal_crisis",
+        "endo_pai",
+        "pte_nadnercza"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "przelom-nadnerczowy-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "przelom-nadnerczowy-obj-1",
+      "przelom-nadnerczowy-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Gdy ciśnienie spada do zera”.",
+    "modelAnswer": "Przełom nadnerczowy to ostry stan zagrożenia życia przebiegający ze wstrząsem naczyniowym, bólami brzucha i zaburzeniami elektrolitowymi. Ratunek polega na natychmiastowym podaniu 100 mg hydrokortyzonu i.v. oraz intensywnej płynoterapii 0,9% NaCl przed oczekiwaniem na wyniki badań.",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "adrenal_crisis",
+      "endo_pai",
+      "pte_nadnercza"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "przelom-nadnerczowy-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "przelom-nadnerczowy-obj-2"
+      ],
+      "prompt": "Jaki płyn infuzyjny stanowi podstawę resuscytacji płynowej w pierwszej dobie przełomu nadnerczowego?",
+      "options": [
+        "0,9% roztwór chlorku sodu (NaCl) w objętości 3–4 litrów na dobę",
+        "Czysta woda destylowana w szybkim wlewie i.v.",
+        "Roztwór 20% mannitolu"
+      ],
+      "optionFeedback": [
+        "Uzupełnia utracony sód i odtwarza objętość wewnątrznaczyniową.",
+        "Wlew czystej wody wywołałby natychmiastową hemolizę erytrocytów i zgon.",
+        "Mannitol jako diuretyk osmotyczny nasiliłby odwodnienie chorego."
+      ],
+      "answer": 0,
+      "explanation": "Uzupełnia utracony sód i odtwarza objętość wewnątrznaczyniową.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "adrenal_crisis",
+        "endo_pai",
+        "pte_nadnercza"
+      ]
+    },
+    {
+      "id": "przelom-nadnerczowy-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "przelom-nadnerczowy-obj-1"
+      ],
+      "prompt": "Jaki steryd można zastosować u chorego we wstrząsie, jeśli planujemy równoczesne wykonanie testu z Synacthenem, bez fałszowania oznaczenia kortyzolu?",
+      "options": [
+        "Deksametazon (np. 4 mg i.v.)",
+        "Hydrokortyzon w megadawkach",
+        "Fludrokortyzon domięśniowo"
+      ],
+      "optionFeedback": [
+        "Deksametazon nie jest wykrywany w standardowych testach immunoenzymatycznych mierzących kortyzol.",
+        "Hydrokortyzon to bioidentyczny kortyzol i podwyższy jego stężenie we krwi do wartości tysięcznych.",
+        "Fludrokortyzon nie jest lekiem z wyboru w ostrej resuscytacji glikokortykosteroidowej."
+      ],
+      "answer": 0,
+      "explanation": "Deksametazon nie jest wykrywany w standardowych testach immunoenzymatycznych mierzących kortyzol.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "adrenal_crisis",
+        "endo_pai",
+        "pte_nadnercza"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "adrenal-workbench",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

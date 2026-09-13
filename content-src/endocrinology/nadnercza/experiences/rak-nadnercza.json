@@ -1,0 +1,215 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "rak-nadnercza",
+  "objectives": [
+    {
+      "id": "rak-nadnercza-obj-1",
+      "statement": "Poznasz cechy kliniczne i radiologiczne raka kory nadnerczy (Adrenocortical Carcinoma — ACC).",
+      "kind": "mechanism"
+    },
+    {
+      "id": "rak-nadnercza-obj-2",
+      "statement": "Zrozumiesz kryteria histopatologiczne skali Weissa oraz zasady terapii adjuwantowej mitotanem i leczenia skojarzonego.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "rak-nadnercza-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "rak-nadnercza-obj-1"
+    ],
+    "prompt": "Jaki obraz kliniczny i hormonalny u kobiety w średnim wieku silnie nasuwa podejrzenie raka kory nadnerczy (ACC)?",
+    "options": [
+      "Gwałtownie narastający zespół Cushinga ze współistniejącą wirylizacją (hirsutyzm, łysienie androgenowe, nadmiar DHEA-S)",
+      "Stopniowe rozjaśnienie powłok skórnych bez zmian masy ciała",
+      "Niskie stężenie wszystkich steroidów z hiperkaliemią"
+    ],
+    "optionFeedback": [
+      "Mieszana sekrecja kortyzolu i androgenów jest wysoce charakterystyczna dla raka nadnercza.",
+      "Brak objawów nie cechuje agresywnego raka kory.",
+      "Taki obraz cechuje chorobę Addisona, a nie nowotwór wydzielający hormony."
+    ],
+    "answer": 0,
+    "explanation": "Mieszana sekrecja kortyzolu i androgenów jest wysoce charakterystyczna dla raka nadnercza.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "ese_acc",
+      "pte_nadnercza"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "rak-nadnercza-block-1",
+      "title": "Epidemiologia, obraz kliniczny i zespół wielohormonalny",
+      "text": "Rak kory nadnerczy (Adrenocortical Carcinoma — ACC) to rzadki, lecz niezwykle agresywny nowotwór złośliwy (zapadalność 0,5–2 przypadków na milion na rok). Wykazuje dwa szczyty zachorowań: wczesne dzieciństwo (<5. r.ż.) oraz 4.–5. dekada życia. Około 60% guzów jest czynnych hormonalnie: najbardziej charakterystyczna jest mieszana hipersekrecja — jednoczesny zespół Cushinga oraz wirylizacja u kobiet (nadmiar kortyzolu + DHEA-S/testosteron) lub feminizacja u mężczyzn (nadmiar estrogenów). Szybko narastający zespół Cushinga z hirsutyzmem i łysieniem androgenowym u kobiety w średnim wieku jest klasycznym objawem alarmowym ACC!",
+      "sourceIds": [
+        "ese_acc",
+        "pte_nadnercza"
+      ],
+      "checkpointId": "rak-nadnercza-q2-checkpoint-1-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "rak-nadnercza-block-2",
+      "title": "Diagnostyka obrazowa i skala histopatologiczna Weissa",
+      "text": "W badaniach obrazowych (TK/MRI) raki kory nadnerczy to zazwyczaj duże guzy (>4–6 cm, nierzadko >10–15 cm), o niejednorodnej strukturze (heterogenne), z obszarami martwicy, krwotoków i nieregularnymi zwapnieniami, wykazujące gęstość natywną >20–30 HU i powolny wash-out (<60%). Często naciekają torebkę, żyłę nerkową i żyłę główną dolną. ZŁOTY STANDARD HISTOPATOLOGICZNY: Skala Weissa oparta na 9 cechach mikroskopowych (m.in. wysoki indeks mitotyczny >5 figur podziału na 50 pól widzenia, atypowe figury podziału, martwica, naciekanie torebki i naczyń). Obecność co najmniej >=3 kryteriów Weissa jednoznacznie definiuje nowotwór złośliwy!",
+      "sourceIds": [
+        "ese_acc",
+        "pte_nadnercza"
+      ],
+      "checkpointId": "rak-nadnercza-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "rak-nadnercza-block-3",
+      "title": "Leczenie: Radykalna chirurgia i farmakoterapia mitotanem",
+      "text": "Jedyną szansą na całkowite wyleczenie ACC jest doszczętna resekcja chirurgiczna R0 (otwarta adrenalektomia z usunięciem regionalnych węzłów chłonnych i sąsiednich tkanek). Chirurgii laparoskopowej unika się w guzach podejrzanych o ACC z powodu ryzyka pęknięcia torebki i rozsiewu otrzewnowego. Po operacji standardem adjuwantowym (zwłaszcza przy Ki-67 >10%) jest MITOTAN (o,p'-DDD) — chemioterapeutyk o selektywnym działaniu adrenolitycznym, niszczący mitochondria kory nadnerczy. Mitotan wymaga monitorowania stężenia we krwi (okno terapeutyczne 14–20 mg/l) oraz OBOWIĄZKOWEJ substytucji hydrokortyzonem w podwójnych dawkach (mitotan silnie indukuje enzym CYP3A4, przyspieszając rozkład hydrokortyzonu!). W chorobie zaawansowanej stosuje się schemat EDP-M (etopozyd, doksorubicyna, cisplatyna + mitotan).",
+      "sourceIds": [
+        "ese_acc",
+        "pte_nadnercza"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "rak-nadnercza-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "rak-nadnercza-obj-2"
+      ],
+      "prompt": "Ile kryteriów w mikroskopowej skali Weissa definiuje złośliwy charakter nowotworu kory nadnerczy (ACC)?",
+      "options": [
+        "Obecność co najmniej 3 kryteriów (>=3 z 9)",
+        "Wszystkie 9 kryteriów musi być obecnych",
+        "Żadne kryterium, o raku decyduje wyłącznie średnica powyżej 1 cm"
+      ],
+      "optionFeedback": [
+        "Jest to powszechnie akceptowany w patomorfologii punkt odcięcia potwierdzający złośliwość.",
+        "Obecność 9 kryteriów cechuje skrajnie zaawansowane postacie; do rozpoznania raka wystarczą 3.",
+        "Wymiary guza są istotne klinicznie, lecz definicja złośliwości jest histopatologiczna."
+      ],
+      "answer": 0,
+      "explanation": "Jest to powszechnie akceptowany w patomorfologii punkt odcięcia potwierdzający złośliwość.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "ese_acc",
+        "pte_nadnercza"
+      ]
+    },
+    {
+      "id": "rak-nadnercza-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "rak-nadnercza-obj-1"
+      ],
+      "prompt": "Jaki lek o selektywnym działaniu adrenolitycznym stanowi standard terapii uzupełniającej u chorych na raka kory nadnerczy?",
+      "options": [
+        "Mitotan (o,p'-DDD)",
+        "Spironolakton",
+        "Metformina"
+      ],
+      "optionFeedback": [
+        "Mitotan wybiórczo uszkadza mitochondria komórek kory nadnerczy i hamuje syntezę steroidów.",
+        "Spironolakton blokuje receptor aldosteronowy, nie niszczy komórek nowotworowych.",
+        "Metformina to doustny lek przeciwcukrzycowy, bez działania adrenolitycznego."
+      ],
+      "answer": 0,
+      "explanation": "Mitotan wybiórczo uszkadza mitochondria komórek kory nadnerczy i hamuje syntezę steroidów.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "ese_acc",
+        "pte_nadnercza"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "rak-nadnercza-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "rak-nadnercza-obj-1",
+      "rak-nadnercza-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Złowrogi cień w przestrzeni zaotrzewnowej”.",
+    "modelAnswer": "Rak kory nadnerczy (ACC) to wysoce złośliwy nowotwór objawiający się zespołem Cushinga z wirylizacją i dużą masą w TK. O rozpoznaniu decyduje skala Weissa (>=3 kryteria). Leczeniem z wyboru jest otwarta operacja R0 oraz terapia mitotanem wymagająca specjalistycznego nadzoru stężeń i substytucji sterydowej.",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "ese_acc",
+      "pte_nadnercza"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "rak-nadnercza-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "rak-nadnercza-obj-2"
+      ],
+      "prompt": "Dlaczego u pacjenta przyjmującego mitotan dawka substytucyjna hydrokortyzonu musi być istotnie wyższa niż u standardowego chorego z niedoczynnością kory?",
+      "options": [
+        "Mitotan silnie indukuje wątrobowy enzym CYP3A4, co drastycznie przyspiesza obwodowy metabolizm i rozkład hydrokortyzonu",
+        "Mitotan bezpośrednio wiąże hydrokortyzon w żołądku w nierozpuszczalny kamień",
+        "Mitotan regeneruje przysadkowe ACTH"
+      ],
+      "optionFeedback": [
+        "Wymaga to zwiększenia dawki sterydu nawet 2–3-krotnie, aby zapobiec przełomowi nadnerczowemu.",
+        "Leki te nie reagują chemicznie w świetle przewodu pokarmowego.",
+        "Mitotan nie regeneruje osi przysadkowej."
+      ],
+      "answer": 0,
+      "explanation": "Wymaga to zwiększenia dawki sterydu nawet 2–3-krotnie, aby zapobiec przełomowi nadnerczowemu.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "ese_acc",
+        "pte_nadnercza"
+      ]
+    },
+    {
+      "id": "rak-nadnercza-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "rak-nadnercza-obj-1"
+      ],
+      "prompt": "Jaki dostęp operacyjny jest zalecany przez wytyczne ESE/ENSAT w przypadku guzów nadnercza o cechach podejrzenia raka kory nadnerczy (ACC)?",
+      "options": [
+        "Zabieg klasyczny otwarty z regionalną limfadenektomią (otwarta adrenalektomia)",
+        "Zabieg laparoskopowy przez pojedyncze nacięcie 5 mm",
+        "Przezcewnikowa termoablacja mikrofalowa"
+      ],
+      "optionFeedback": [
+        "Zapobiega to pęknięciu torebki guza i miejscowemu rozsiewowi komórek nowotworowych w jamie otrzewnej.",
+        "W guzach złośliwych laparoskopia wiąże się ze zwiększonym ryzykiem wznowy miejscowej.",
+        "Ablacja termiczna nie zapewnia radykalności onkologicznej R0."
+      ],
+      "answer": 0,
+      "explanation": "Zapobiega to pęknięciu torebki guza i miejscowemu rozsiewowi komórek nowotworowych w jamie otrzewnej.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "ese_acc",
+        "pte_nadnercza"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "adrenal-workbench",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

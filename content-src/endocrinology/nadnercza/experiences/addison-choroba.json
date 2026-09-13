@@ -1,0 +1,215 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "addison-choroba",
+  "objectives": [
+    {
+      "id": "addison-choroba-obj-1",
+      "statement": "Rozpoznasz triadę kliniczno-laboratoryjną choroby Addisona: osłabienie, melanodermia, hipotensja, hiponatremia z hiperkaliemią.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "addison-choroba-obj-2",
+      "statement": "Zrozumiesz zasady substytucji dwuhormonalnej (hydrokortyzon + fludrokortyzon) oraz edukację pacjenta (zasada podwajania dawek w chorobie).",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "addison-choroba-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "addison-choroba-obj-1"
+    ],
+    "prompt": "Dlaczego u pacjentów z chorobą Addisona rozwija się hiperpigmentacja skóry (melanodermia)?",
+    "options": [
+      "Brak ujemnego sprzężenia zwrotnego kortyzolu wywołuje nadmierne wydzielanie ACTH i POMC, które aktywują receptory MC1R w melanocytach",
+      "Brak aldosteronu powoduje odkładanie się żelaza w naskórku",
+      "W chorobie Addisona dochodzi do rozpadu erytrocytów i żółtaczki"
+    ],
+    "optionFeedback": [
+      "Peptydy te mają powinowactwo do receptorów melanocytowych, stymulując produkcję barwnika.",
+      "To mechanizm hemochromatozy, a nie choroby Addisona.",
+      "Przebarwienie nie wynika z bilirubiny ani hemolizy."
+    ],
+    "answer": 0,
+    "explanation": "Peptydy te mają powinowactwo do receptorów melanocytowych, stymulując produkcję barwnika.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "endo_pai",
+      "pte_nadnercza"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "addison-choroba-block-1",
+      "title": "Etiologia: Od gruźlicy do autoimmunologii",
+      "text": "Pierwotna niedoczynność kory nadnerczy (choroba Addisona) rozwija się, gdy zniszczeniu ulegnie ponad 90% miąższu kory obu nadnerczy. Historycznie dominowała gruźlica, obecnie w krajach rozwiniętych ponad 80–90% przypadków to autoimmunologiczne zapalenie kory nadnerczy (autoimmune adrenalitis). Cechuje się obecnością autoprzeciwciał przeciwko 21-hydroksylazie (anty-21-OH). Może występować w ramach autoimmunologicznych zespołów wielogruczołowych: APS-1 (mutacja AIRE: Addison, kandydoza, hipoparatiroidyzm) lub APS-2 (zespół Schmidta: Addison, autoimmunologiczna choroba tarczycy i/lub cukrzyca typu 1).",
+      "sourceIds": [
+        "endo_pai",
+        "pte_nadnercza"
+      ],
+      "checkpointId": "addison-choroba-q2-checkpoint-1-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "addison-choroba-block-2",
+      "title": "Obraz kliniczny i tajemnica melanodermii",
+      "text": "Objawy narastają podstępnie przez miesiące: przewlekłe zmęczenie, osłabienie mięśniowe, chudnięcie, jadłowstręt, hipotensja ortostatyczna oraz charakterystyczne pragnienie soli (salt craving — „chęć zjedzenia ogórka kiszonego lub wypicia wody z solą”). KLUCZOWY OBJAW PATOFIZJOLOGICZNY: Ciemnienie skóry i błon śluzowych (melanodermia / hiperpigmentacja). Brak kortyzolu znosi ujemne sprzężenie zwrotne, prowadząc do gigantycznego wyrzutu przysadkowego ACTH oraz jego prekursora POMC (proopiomelanokortyny). ACTH i peptydy MSH pobudzają receptory melanokortynowe 1 (MC1R) w melanocytach. Przebarwienia pojawiają się w miejscach narażonych na słońce, w zgięciach dłoniowych, na otoczkach brodawek, bliźnach powstałych po początku choroby oraz na błonie śluzowej policzków!",
+      "sourceIds": [
+        "endo_pai",
+        "pte_nadnercza"
+      ],
+      "checkpointId": "addison-choroba-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "addison-choroba-block-3",
+      "title": "Zaburzenia elektrolitowe i leczenie substytucyjne",
+      "text": "W chorobie Addisona zniszczona jest cała kora, w tym strefa kłębuszkowa. Niedobór aldosteronu prowadzi do utraty sodu i wody przez nerki oraz zatrzymywania potasu i jonów wodorowych: powstaje hiponatremia, hiperkaliemia i kwasica metaboliczna. LECZENIE SUBSTYTUCYJNE wymaga uzupełnienia obu hormonów: 1) Hydrokortyzon (15–25 mg/dobę w 2–3 dawkach podzielonych, np. 15 mg rano i 5–10 mg popołudniu, imitując rytm dobowy); 2) Fludrokortyzon (0,05–0,2 mg rano raz dziennie) w celu wyrównania gospodarki sodowo-potasowej i ciśnienia. Każdy chory musi nosić kartę medyczną („Paszport Addisona”) i umieć podwoić dawkę hydrokortyzonu w infekcji z gorączką!",
+      "sourceIds": [
+        "endo_pai",
+        "pte_nadnercza"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "addison-choroba-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "addison-choroba-obj-2"
+      ],
+      "prompt": "Jaki zestaw zaburzeń elektrolitowych jest najbardziej charakterystyczny dla pierwotnej niedoczynności kory nadnerczy?",
+      "options": [
+        "Hiponatremia z towarzyszącą hiperkaliemią",
+        "Hipernatremia z ciężką hipokaliemią",
+        "Izolowana hiperkalcemia z hipofosfatemią"
+      ],
+      "optionFeedback": [
+        "Wynika to bezpośrednio ze współistniejącego braku aldosteronu.",
+        "Taki obraz cechuje nadmiar aldosteronu (zespół Conna), a nie jego brak.",
+        "To zaburzenie charakterystyczne dla nadczynności przytarczyc."
+      ],
+      "answer": 0,
+      "explanation": "Wynika to bezpośrednio ze współistniejącego braku aldosteronu.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "endo_pai",
+        "pte_nadnercza"
+      ]
+    },
+    {
+      "id": "addison-choroba-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "addison-choroba-obj-1"
+      ],
+      "prompt": "Jakie leczenie substytucyjne należy wdrożyć u pacjenta ze świeżo rozpoznaną chorobą Addisona?",
+      "options": [
+        "Substytucję dwuosiową: hydrokortyzon doustnie w 2–3 dawkach oraz fludrokortyzon rano",
+        "Wyłącznie sam deksametazon raz na tydzień",
+        "Same wlewy dożylne potasu"
+      ],
+      "optionFeedback": [
+        "Uzupełnia to brak zarówno glikokortykosteroidów, jak i mineralokortykosteroidów.",
+        "Deksametazon nie ma działania mineralokortykosteroidowego i nie odtwarza rytmu dobowego.",
+        "Podanie potasu pacjentowi z hiperkaliemią grozi zatrzymaniem krążenia!"
+      ],
+      "answer": 0,
+      "explanation": "Uzupełnia to brak zarówno glikokortykosteroidów, jak i mineralokortykosteroidów.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "endo_pai",
+        "pte_nadnercza"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "addison-choroba-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "addison-choroba-obj-1",
+      "addison-choroba-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Gdy kora zanika”.",
+    "modelAnswer": "Choroba Addisona to pierwotne zniszczenie kory z niedoborem kortyzolu i aldosteronu. Melanodermia, hiponatremia i hiperkaliemia odróżniają ją od niedoczynności wtórnej. Leczenie opiera się na hydrokortyzonie i fludrokortyzonie, a znajomość reguł zwiększania dawek chroni przed śmiertelnym przełomem.",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "endo_pai",
+      "pte_nadnercza"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "addison-choroba-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "addison-choroba-obj-2"
+      ],
+      "prompt": "Co powinien zrobić stabilny pacjent z chorobą Addisona w przypadku wystąpienia infekcji z gorączką >38,5°C?",
+      "options": [
+        "Podwoić lub potroić dobową dawkę doustnego hydrokortyzonu na czas trwania gorączki",
+        "Natychmiast całkowicie odstawić hydrokortyzon",
+        "Zmniejszyć dawkę o połowę i ograniczyć picie płynów"
+      ],
+      "optionFeedback": [
+        "To kluczowa zasada „sick day rules”, zapobiegająca rozwojowi ostrego przełomu nadnerczowego.",
+        "Odstawienie leku w infekcji prowadzi wprost do śmiertelnego przełomu nadnerczowego.",
+        "Ograniczenie płynów i redukcja dawki nasiliłyby odwodnienie i hipotensję."
+      ],
+      "answer": 0,
+      "explanation": "To kluczowa zasada „sick day rules”, zapobiegająca rozwojowi ostrego przełomu nadnerczowego.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "endo_pai",
+        "pte_nadnercza"
+      ]
+    },
+    {
+      "id": "addison-choroba-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "addison-choroba-obj-1"
+      ],
+      "prompt": "Które autoprzeciwciała stanowią marker autoimmunologicznego zapalenia kory nadnerczy?",
+      "options": [
+        "Przeciwciała przeciwko 21-hydroksylazie (anty-21-OH)",
+        "Przeciwciała przeciwko peroksydazie tarczycowej (anty-TPO)",
+        "Przeciwciała przeciwko receptorowi TSH (TRAb)"
+      ],
+      "optionFeedback": [
+        "Są obecne u ponad 85–90% chorych z autoimmunologiczną chorobą Addisona.",
+        "Anty-TPO to marker choroby Hashimoto.",
+        "TRAb to marker choroby Gravesa-Basedowa."
+      ],
+      "answer": 0,
+      "explanation": "Są obecne u ponad 85–90% chorych z autoimmunologiczną chorobą Addisona.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "endo_pai",
+        "pte_nadnercza"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "adrenal-workbench",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "przytarczyce-matematyka-kinetyka-mineralizacji",
+  "objectives": [
+    {
+      "id": "przytarczyce-matematyka-kinetyka-mineralizacji-obj-1",
+      "statement": "Wyprowadzisz i obliczysz wskaźnik klirensu wapniowo-kreatyninowego (CCCR / FeCa) w różnicowaniu PHPT vs FHH.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "przytarczyce-matematyka-kinetyka-mineralizacji-obj-2",
+      "statement": "Zastosujesz formuły korygujące odstęp QT (Bazett i Fridericia) w hipokalcemii i hiperkalcemii.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "przytarczyce-matematyka-kinetyka-mineralizacji-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "przytarczyce-matematyka-kinetyka-mineralizacji-obj-1"
+    ],
+    "prompt": "Jaka wartość wskaźnika klirensu wapniowo-kreatyninowego (CCCR) silnie przemawia za rodzinną hiperkalcemią hipokalciuryczną (FHH) i chroni chorego przed niepotrzebną operacją?",
+    "options": [
+      "Poniżej 0,01 (CCCR < 0,01)",
+      "Powyżej 0,02",
+      "Dokładnie 100,0"
+    ],
+    "optionFeedback": [
+      "Świadczy o nadmiernym nerkowym wchłanianiu zwrotnym wapnia z powodu defektu receptora CaSR.",
+      "CCCR > 0,02 jest typowy dla pierwotnej nadczynności przytarczyc (PHPT).",
+      "CCCR jest ułamkiem filtracji i nie przyjmuje takich wartości."
+    ],
+    "answer": 0,
+    "explanation": "Świadczy o nadmiernym nerkowym wchłanianiu zwrotnym wapnia z powodu defektu receptora CaSR.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "qtc_bone",
+      "fhh_consensus",
+      "ese_hypopara"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "przytarczyce-matematyka-kinetyka-mineralizacji-block-1",
+      "title": "Wyprowadzenie wskaźnika CCCR (frakcyjnego wydalania wapnia)",
+      "text": "Wskaźnik klirensu wapniowo-kreatyninowego (Calcium-to-Creatinine Clearance Ratio, CCCR) reprezentuje stosunek klirensu nerkowego wapnia (Cl_Ca) do klirensu kreatyniny (Cl_Cr): CCCR = Cl_Ca / Cl_Cr = (U_Ca * V / S_Ca) / (U_Cr * V / S_Cr). Objętość moczu V ulega skróceniu: CCCR = (U_Ca * S_Cr) / (S_Ca * U_Cr). Obie pary stężeń muszą być w tych samych jednostkach (mg/dL lub mmol/L). Wartość CCCR < 0,01 z prawdopodobieństwem >90% wskazuje na FHH, a CCCR > 0,02 na PHPT.",
+      "sourceIds": [
+        "qtc_bone",
+        "fhh_consensus",
+        "ese_hypopara"
+      ],
+      "checkpointId": "przytarczyce-matematyka-kinetyka-mineralizacji-q2-checkpoint-1-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "przytarczyce-matematyka-kinetyka-mineralizacji-block-2",
+      "title": "Kinetyka mineralizacji w zespole głodnych kości (Hungry Bone Syndrome)",
+      "text": "Po usunięciu gruczolaka przytarczyc u pacjentów z ciężką osteitis fibrosa cystica i wysoką wyjściową fosfatazą alkaliczną (ALP > 3–4x normy) dochodzi do gwałtownego odwrócenia kierunku przepływu jonów: osteoklastoza ustępuje, a osteoblasty masowo syntetyzują kryształy hydroksyapatytu Ca10(PO4)6(OH)2. Spadek stężenia wapnia w czasie opisuje kinetyka wykładnicza: Ca(t) = Ca_target + (Ca_0 - Ca_target) * exp(-k * t), gdzie stała k zależy liniowo od wyjściowego stężenia kostnej frakcji ALP.",
+      "sourceIds": [
+        "qtc_bone",
+        "fhh_consensus",
+        "ese_hypopara"
+      ],
+      "checkpointId": "przytarczyce-matematyka-kinetyka-mineralizacji-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "przytarczyce-matematyka-kinetyka-mineralizacji-block-3",
+      "title": "Matematyka elektrokardiograficzna: Wzory Bazetta i Fridericia",
+      "text": "Hipokalcemia wydłuża fazę 2 (plateau) potencjału czynnościowego kardiomiocytów (napływ Ca2+ przez kanały typu L), powodując wydłużenie odcinka ST i odstępu QT w EKG. Ponieważ czas repolaryzacji zależy od tętna (odstępu RR), stosuje się formuły korygujące: Bazetta QTc = QT / sqrt(RR) oraz Fridericia QTc = QT / cbrt(RR) (RR podane w sekundach). Wartość QTc > 450 ms u mężczyzn i > 460 ms u kobiet zwiastuje wysokie ryzyko polimorficznego częstoskurczu komorowego (Torsade de Pointes).",
+      "sourceIds": [
+        "qtc_bone",
+        "fhh_consensus",
+        "ese_hypopara"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "przytarczyce-matematyka-kinetyka-mineralizacji-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "przytarczyce-matematyka-kinetyka-mineralizacji-obj-2"
+      ],
+      "prompt": "Dlaczego wzór Fridericia (QTc = QT / ∛RR) jest uważany za dokładniejszy od wzoru Bazetta przy tachykardii?",
+      "options": [
+        "Wzór Bazetta przeszacowuje odstęp QTc przy częstości akcji serca powyżej 80–90/min",
+        "Wzór Fridericia nie wymaga znajomości odstępu RR",
+        "Wzór Fridericia bada stężenie potasu zamiast EKG"
+      ],
+      "optionFeedback": [
+        "Pierwiastek trzeciego stopnia łagodniej koryguje krótkie odstępy RR, unikając fałszywych alarmów.",
+        "Oba wzory wymagają zmierzenia czasu cyklu serca RR w sekundach.",
+        "Formuła dotyczy wyłącznie zapisu elektrokardiograficznego."
+      ],
+      "answer": 0,
+      "explanation": "Pierwiastek trzeciego stopnia łagodniej koryguje krótkie odstępy RR, unikając fałszywych alarmów.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "qtc_bone",
+        "fhh_consensus",
+        "ese_hypopara"
+      ]
+    },
+    {
+      "id": "przytarczyce-matematyka-kinetyka-mineralizacji-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "przytarczyce-matematyka-kinetyka-mineralizacji-obj-1"
+      ],
+      "prompt": "Jaki specyficzny profil biochemiczny odróżnia zespół głodnych kości (HBS) od pooperacyjnej hipoparatyreozy?",
+      "options": [
+        "W HBS zarówno wapń, jak i fosforany drastycznie spadają, podczas gdy w hipoparatyreozie fosforany rosną",
+        "W HBS wapń rośnie do 20 mg/dl",
+        "W hipoparatyreozie fosfataza zasadowa wynosi 0"
+      ],
+      "optionFeedback": [
+        "Wynika to z masowej jednoczesnej budowy hydroksyapatytu wiążącego Ca i P w kościach.",
+        "W HBS dochodzi do ciężkiej hipokalcemii wymagającej wlewów wapnia.",
+        "ALP odzwierciedla aktywność kościotworzenia, nie zeruje się natychmiast."
+      ],
+      "answer": 0,
+      "explanation": "Wynika to z masowej jednoczesnej budowy hydroksyapatytu wiążącego Ca i P w kościach.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "qtc_bone",
+        "fhh_consensus",
+        "ese_hypopara"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "przytarczyce-matematyka-kinetyka-mineralizacji-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "przytarczyce-matematyka-kinetyka-mineralizacji-obj-1",
+      "przytarczyce-matematyka-kinetyka-mineralizacji-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Wzór CCCR/FeCa, kinetyka mineralizacji i formuły QTc”.",
+    "modelAnswer": "Wskaźnik CCCR < 0,01 bezwzględnie odróżnia FHH od PHPT, a wydłużenie fazy 2 potencjału komorowego w hipokalcemii manifestuje się wydłużeniem QTc wg wzorów Bazetta i Fridericia.",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "qtc_bone",
+      "fhh_consensus",
+      "ese_hypopara"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "przytarczyce-matematyka-kinetyka-mineralizacji-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "przytarczyce-matematyka-kinetyka-mineralizacji-obj-2"
+      ],
+      "prompt": "Jaki jest stechiometryczny stosunek molowy jonów wapnia do fosforu (Ca:P) w kryształach hydroksyapatytu kości Ca10(PO4)6(OH)2?",
+      "options": [
+        "10 do 6 (czyli 1,67)",
+        "1 do 1",
+        "100 do 1"
+      ],
+      "optionFeedback": [
+        "Na każde 10 jonów wapnia szkielet wbudowuje 6 jonów ortofosforanowych.",
+        "Taki stosunek cechuje fosforan dwuwapniowy, nie dojrzały hydroksyapatyt.",
+        "Kość jest bogatym rezerwuarem zarówno wapnia, jak i fosforu."
+      ],
+      "answer": 0,
+      "explanation": "Na każde 10 jonów wapnia szkielet wbudowuje 6 jonów ortofosforanowych.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "qtc_bone",
+        "fhh_consensus",
+        "ese_hypopara"
+      ]
+    },
+    {
+      "id": "przytarczyce-matematyka-kinetyka-mineralizacji-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "przytarczyce-matematyka-kinetyka-mineralizacji-obj-1"
+      ],
+      "prompt": "Przekroczenie jakiej wartości iloczynu wapniowo-fosforanowego (Ca x P w mg²/dl²) stwarza krytyczne ryzyko kalcyfilaksji i zwapnień naczyniowych?",
+      "options": [
+        "Powyżej 55 mg²/dl²",
+        "Poniżej 5 mg²/dl²",
+        "Dokładnie 1000 mg²/dl²"
+      ],
+      "optionFeedback": [
+        "Przy tej wartości przekroczony zostaje iloczyn rozpuszczalności soli wapniowych w osoczu.",
+        "Niski iloczyn chroni przed zwapnieniami, ale sprzyja osteomalacji.",
+        "Tak skrajne stężenia nie występują w żywym ustroju."
+      ],
+      "answer": 0,
+      "explanation": "Przy tej wartości przekroczony zostaje iloczyn rozpuszczalności soli wapniowych w osoczu.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "qtc_bone",
+        "fhh_consensus",
+        "ese_hypopara"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "parathyroid-workbench",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

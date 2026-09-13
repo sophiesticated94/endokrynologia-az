@@ -1,0 +1,227 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "tezyczka-objawy",
+  "objectives": [
+    {
+      "id": "tezyczka-objawy-obj-1",
+      "statement": "Rozpoznasz kliniczne objawy tężyczki jawnej (skurcz mięśni, ręka położnika, skurcz krtani).",
+      "kind": "mechanism"
+    },
+    {
+      "id": "tezyczka-objawy-obj-2",
+      "statement": "Nauczysz się badać objaw Chvostka i objaw Trousseau w tężyczce utajonej.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "tezyczka-objawy-obj-3",
+      "statement": "Połączysz hipokalcemię ze zmianami w EKG (wydłużenie odstępu ST i QTc).",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "tezyczka-objawy-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "tezyczka-objawy-obj-1"
+    ],
+    "prompt": "W jaki sposób spadek stężenia wapnia zjonizowanego w surowicy wywołuje skurcze mięśniowe w tężyczce?",
+    "options": [
+      "Obniża próg pobudliwości neuronów i włókien mięśniowych przez odblokowanie kanałów sodowych (NaV)",
+      "Całkowicie blokuje przewodnictwo nerwowe w synapsach",
+      "Bezpośrednio niszczy receptory nikotynowe w płytce motorycznej"
+    ],
+    "optionFeedback": [
+      "Brak zewnątrzkomórkowego wapnia ułatwia depolaryzację błony komórkowej i generowanie spontanicznych potencjałów.",
+      "Blokada synaptyczna dałaby wiotkie porażenie mięśni, a nie skurcze tężyczkowe.",
+      "Wapń nie niszczy receptorów; modyfikuje jedynie potencjał progowy komórki."
+    ],
+    "answer": 0,
+    "explanation": "Brak zewnątrzkomórkowego wapnia ułatwia depolaryzację błony komórkowej i generowanie spontanicznych potencjałów.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "asbmr_calcium",
+      "ese_hypopara"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "tezyczka-objawy-block-1",
+      "title": "Fizjologiczny mechanizm nadpobudliwości nerwowo-mięśniowej",
+      "text": "Wapń zjonizowany stabilizuje potencjał spoczynkowy błon komórkowych komórek nerwowych i mięśniowych poprzez blokowanie bramkowanych napięciem kanałów sodowych (NaV). Gdy stężenie Ca2+ w płynie pozakomórkowym spada, dochodzi do obniżenia progu pobudliwości neuronów — kanały sodowe otwierają się przy znacznie mniejszej depolaryzacji. Prowadzi to do spontanicznych, powtarzających się wyładowań salw potencjałów czynnościowych we włóknach nerwowych obwodowych, co klinicznie manifestuje się jako tężyczka (tetania): parestezje wokół ust i dystalnych części kończyn, drżenia mięśniowe oraz bolesne skurcze toniczno-kloniczne.",
+      "sourceIds": [
+        "asbmr_calcium",
+        "ese_hypopara"
+      ],
+      "checkpointId": "tezyczka-objawy-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "enh-pt-tez-hypo",
+          "kind": "workbench-deeplink",
+          "placement": "after-text",
+          "presetId": "parathyroid-hypopara-management"
+        }
+      ]
+    },
+    {
+      "id": "tezyczka-objawy-block-2",
+      "title": "Napad tężyczki jawnej: od ręki położnika do skurczu krtani",
+      "text": "Napad tężyczki jawnej rozpoczyna się zazwyczaj mrowieniem warg, języka i opuszek palców, po czym dołączają się symetryczne, silne skurcze mięśni. W obrębie kończyn górnych pojawia się charakterystyczna „ręka położnika” (zgięcie w stawach śródręczno-paliczkowych przy wyprostowanych stawach międzypaliczkowych i przywiedzionym kciuku). W kończynach dolnych dochodzi do skurczu końsko-szpotawe (\"skurcz pedałowy\"). Najgroźniejszym powikłaniem bezpośrednio zagrażającym uduszeniem jest skurcz głośni i mięśni krtani (laryngospasmus), manifestujący się świstem krtaniowym (stridor), wymagający natychmiastowej intubacji lub konikotomii.",
+      "sourceIds": [
+        "asbmr_calcium",
+        "ese_hypopara"
+      ],
+      "checkpointId": "tezyczka-objawy-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "tezyczka-objawy-block-3",
+      "title": "Tężyczka utajona: objawy Chvostka, Trousseau i próba EMG",
+      "text": "Gdy hipokalcemia jest łagodna lub rozwija się powoli, tężyczka przebiega w postaci utajonej. W badaniu fizykalnym poszukuje się: 1. Objawu Chvostka — uderzenie młoteczkiem perkusyjnym w pień nerwu twarzowego (2 cm do przodu od płatka ucha) wywołuje gwałtowny skurcz mięśni mimicznych twarzy (kącika ust, skrzydła nosa lub powieki; uwaga: występuje u 10–15% zdrowych osób). 2. Objawu Trousseau — uciśnięcie ramienia mankietem ciśnieniomierza powyżej ciśnienia skurczowego przez 3 minuty wywołuje niedokrwienie i wyzwala skurcz mięśni w postaci „ręki położnika” (objaw wysoce swoisty!). Złotym standardem potwierdzenia tężyczki utajonej jest próba tężyczkowa w elektromiografii (EMG), wykazująca typowe wieloiglicowe wyładowania dubletów i trypletów.",
+      "sourceIds": [
+        "asbmr_calcium",
+        "ese_hypopara"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "tezyczka-objawy-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "tezyczka-objawy-obj-2"
+      ],
+      "prompt": "W jaki sposób prawidłowo bada się objaw Trousseau?",
+      "options": [
+        "Uciśnięcie ramienia mankietem ciśnieniomierza powyżej ciśnienia skurczowego przez 3 minuty w poszukiwaniu „ręki położnika”",
+        "Uderzenie młoteczkiem perkusyjnym w mięsień czworogłowy uda",
+        "Ucisk obu tętnic szyjnych jednocześnie przez 60 sekund"
+      ],
+      "optionFeedback": [
+        "Niedokrwienie pnia nerwowego na ramieniu przy hipokalcemii wyzwala patognomoniczny skurcz zginaczy nadgarstka.",
+        "To badanie odruchu kolanowego, a nie objawu Trousseau.",
+        "Taki manewr jest skrajnie niebezpieczny i może wywołać udar mózgu lub zatrzymanie krążenia!"
+      ],
+      "answer": 0,
+      "explanation": "Niedokrwienie pnia nerwowego na ramieniu przy hipokalcemii wyzwala patognomoniczny skurcz zginaczy nadgarstka.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "asbmr_calcium",
+        "ese_hypopara"
+      ]
+    },
+    {
+      "id": "tezyczka-objawy-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "tezyczka-objawy-obj-3"
+      ],
+      "prompt": "Jaka zmiana w elektrokardiogramie (EKG) jest najbardziej charakterystyczna dla ostrej hipokalcemii?",
+      "options": [
+        "Wydłużenie odcinka ST i odstępu QTc",
+        "Skrócenie odstępu QTc poniżej 350 ms",
+        "Uniesienie odcinka ST w kształcie fali Osborna"
+      ],
+      "optionFeedback": [
+        "Niedobór wapnia wydłuża fazę plateau (fazę 2) potencjału czynnościowego kardiomiocytów komorowych.",
+        "Skrócenie QTc jest typowe dla hiperkalcemii, a nie hipokalcemii.",
+        "Fala Osborna występuje w głębokiej hipotermii."
+      ],
+      "answer": 0,
+      "explanation": "Niedobór wapnia wydłuża fazę plateau (fazę 2) potencjału czynnościowego kardiomiocytów komorowych.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "asbmr_calcium",
+        "ese_hypopara"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "tezyczka-objawy-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "tezyczka-objawy-obj-1",
+      "tezyczka-objawy-obj-2",
+      "tezyczka-objawy-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Gdy mięśnie tracą kontrolę: tężyczka”.",
+    "modelAnswer": "Hipokalcemia zwiększa pobudliwość nerwowo-mięśniową. W badaniu szukaj objawu Trousseau (mankiet ciśnieniomierza) i Chvostka. W EKG hipokalcemia wydłuża odstęp ST/QTc. Zawsze kontroluj i wyrównuj magnez!",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "asbmr_calcium",
+      "ese_hypopara"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "tezyczka-objawy-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "tezyczka-objawy-obj-1"
+      ],
+      "prompt": "Dlaczego u chorego z tężyczką i współistniejącą hipomagnezemią wlewy samego wapnia nie przynoszą poprawy klinicznej?",
+      "options": [
+        "Niedobór magnezu blokuje wydzielanie PTH oraz wywołuje obwodową oporność tkanek na parathormon",
+        "Magnez jest niezbędny do filtrowania moczu w kłębuszkach nerkowych",
+        "Wapń w obecności hipomagnezemii natychmiast zamienia się w kryształy szczawianu"
+      ],
+      "optionFeedback": [
+        "Magnez jest kofaktorem adenylanocyklazy i szlaków sygnalizacyjnych PTH; bez Mg wyrównanie Ca jest niemożliwe.",
+        "Filtracja kłębuszkowa nie zależy bezpośrednio od stężenia magnezu.",
+        "Hipomagnezemia nie wywołuje natychmiastowej krystalizacji wapnia w naczyniach."
+      ],
+      "answer": 0,
+      "explanation": "Magnez jest kofaktorem adenylanocyklazy i szlaków sygnalizacyjnych PTH; bez Mg wyrównanie Ca jest niemożliwe.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "asbmr_calcium",
+        "ese_hypopara"
+      ]
+    },
+    {
+      "id": "tezyczka-objawy-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "tezyczka-objawy-obj-1"
+      ],
+      "prompt": "Który objaw napadu tężyczki stanowi bezpośrednie zagrożenie uduszeniem i zgonem pacjenta?",
+      "options": [
+        "Skurcz głośni i mięśni krtani (laryngospasmus)",
+        "Mrowienie wokół ust (paresthesia circumoralis)",
+        "Skurcz mięśni stopy w zgięciu podeszwowym"
+      ],
+      "optionFeedback": [
+        "Skurcz krtani zamyka drogi oddechowe i wymaga natychmiastowej interwencji udrożnienia dróg oddechowych oraz wlewu 10% glukonianu wapnia i.v.",
+        "Paresthesie są objawem zwiastunowym, ale nie zagrażają bezpośrednio asfiksją.",
+        "Skurcz stopy jest bolesny, lecz nie upośledza wentylacji płuc."
+      ],
+      "answer": 0,
+      "explanation": "Skurcz krtani zamyka drogi oddechowe i wymaga natychmiastowej interwencji udrożnienia dróg oddechowych oraz wlewu 10% glukonianu wapnia i.v.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "asbmr_calcium",
+        "ese_hypopara"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "parathyroid-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

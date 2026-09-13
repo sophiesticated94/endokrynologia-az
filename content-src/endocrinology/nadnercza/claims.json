@@ -1,0 +1,163 @@
+[
+  {
+    "id": "claim-adn-pa-screening-2025",
+    "statement": "Wytyczne Endocrine Society 2025 zalecają szeroki screening pierwotnego hiperaldosteronizmu u chorych z nadciśnieniem i hipokaliemią (również potiazydową), opornym NT, incydentaloma oraz wczesnym udarem w rodzinie.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "endo_pa"
+    ],
+    "lessonIds": [
+      "zespol-conna"
+    ],
+    "tags": [
+      "primary-aldosteronism",
+      "screening"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "GUIDELINE_THRESHOLD"
+  },
+  {
+    "id": "claim-adn-pa-confirmatory-exemption",
+    "statement": "U pacjenta ze spontaniczną hipokaliemią, stłumioną reniną i stężeniem aldosteronu >= 20 ng/dl (550 pmol/l) testy konfirmacyjne są zbędne, a rozpoznanie PA jest pewne.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "endo_pa"
+    ],
+    "lessonIds": [
+      "zespol-conna"
+    ],
+    "tags": [
+      "primary-aldosteronism",
+      "confirmatory-test"
+    ],
+    "reviewedAt": "2026-09-13",
+    "value": 20,
+    "unit": "ng/dl",
+    "evidenceType": "GUIDELINE_THRESHOLD"
+  },
+  {
+    "id": "claim-adn-avs-anatomy",
+    "statement": "Prawa żyła nadnerczowa uchodzi bezpośrednio do żyły głównej dolnej i ma długość kilku milimetrów, co czyni jej cewnikowanie (AVS) technicznie znacznie trudniejszym niż lewej.",
+    "category": "mechanistic",
+    "sourceIds": [
+      "pte_nadnercza",
+      "endo_pa"
+    ],
+    "lessonIds": [
+      "nadnercza-anatomia"
+    ],
+    "tags": [
+      "avs",
+      "anatomy"
+    ],
+    "reviewedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-adn-avs-age-criteria",
+    "statement": "U młodych chorych (< 35 lat) z ciężkim PA, hipokaliemią i jednoznacznym solitarym gruczolakiem w CT można pominąć AVS przed adrenalektomią.",
+    "category": "guideline_recommendation",
+    "strength": "conditional",
+    "sourceIds": [
+      "endo_pa"
+    ],
+    "lessonIds": [
+      "zespol-conna"
+    ],
+    "tags": [
+      "avs",
+      "surgery"
+    ],
+    "reviewedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-adn-pheo-alpha-before-beta",
+    "statement": "Przed podaniem beta-adrenolityku w guzie chromochłonnym konieczna jest uprzednia skuteczna blokada receptorów alfa-1, aby zapobiec przełomowi nadciśnieniowemu.",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "endo_pheo"
+    ],
+    "lessonIds": [
+      "pheochromocytoma"
+    ],
+    "tags": [
+      "pheo",
+      "safety",
+      "pharmacotherapy"
+    ],
+    "reviewedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-adn-incidentaloma-hu-10",
+    "statement": "Natywna gęstość w CT <= 10 HU wykazuje blisko 100% swoistość dla łagodnego gruczolaka bogatolipoidowego.",
+    "category": "measured",
+    "sourceIds": [
+      "ese_incidentaloma"
+    ],
+    "lessonIds": [
+      "incydentaloma-nadnercza"
+    ],
+    "value": 10,
+    "unit": "HU",
+    "tags": [
+      "incidentaloma",
+      "imaging"
+    ],
+    "reviewedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-adn-macs-dst-thresholds",
+    "statement": "Kortyzol po teście 1 mg DST > 1.8 µg/dl definiuje możliwą autonomiczną sekrecję (possible MACS), a > 5.0 µg/dl potwierdza autonomiczną sekrecję kortyzolu (MACS).",
+    "category": "guideline_recommendation",
+    "strength": "strong",
+    "sourceIds": [
+      "ese_incidentaloma",
+      "pte_macs"
+    ],
+    "lessonIds": [
+      "incydentaloma-nadnercza"
+    ],
+    "value": 1.8,
+    "unit": "µg/dl",
+    "tags": [
+      "macs",
+      "dst"
+    ],
+    "reviewedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-adn-synacthen-recent-secondary",
+    "statement": "W świeżej wtórnej niedoczynności nadnerczy (<4 tyg. od uszkodzenia przysadki) test stymulacji Synacthenem 250 µg może być fałszywie ujemny, gdyż kora nie uległa jeszcze atrofii.",
+    "category": "observational_association",
+    "sourceIds": [
+      "endo_pai"
+    ],
+    "lessonIds": [
+      "nadnercza-diagnostyka"
+    ],
+    "tags": [
+      "synacthen",
+      "secondary-ai",
+      "pituitary"
+    ],
+    "reviewedAt": "2026-09-13"
+  },
+  {
+    "id": "claim-adn-cbg-estrogens",
+    "statement": "Estrogeny doustne zwiększają syntezę wątrobową CBG, sztucznie podwajając stężenie kortyzolu całkowitego przy prawidłowym wolnym kortyzolu.",
+    "category": "mechanistic",
+    "sourceIds": [
+      "endo_pai"
+    ],
+    "lessonIds": [
+      "nadnercza-diagnostyka"
+    ],
+    "tags": [
+      "cbg",
+      "estrogens"
+    ],
+    "reviewedAt": "2026-09-13"
+  }
+]

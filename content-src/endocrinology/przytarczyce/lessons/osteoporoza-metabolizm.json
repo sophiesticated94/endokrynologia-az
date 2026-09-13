@@ -1,0 +1,175 @@
+{
+  "id": "osteoporoza-metabolizm",
+  "moduleId": "przytarczyce",
+  "title": "Cicha degradacja kośćca: osteoporoza",
+  "subtitle": "DXA, kalkulator FRAX, bisfosfoniany, denosumab i leki anaboliczne",
+  "group": "Kości, chirurgia i stany nagłe",
+  "minutes": 18,
+  "goals": [
+    "Zinterpretujesz badanie densytometryczne DXA (wskaźnik T-score vs Z-score wg WHO).",
+    "Nauczysz się szacować 10-letnie ryzyko złamania osteoporotycznego za pomocą kalkulatora FRAX.",
+    "Dobierzesz terapię: leki antyresorpcyjne (bisfosfoniany, denosumab) vs leki kościotwórcze (teryparatyd, romosozumab)."
+  ],
+  "sections": [
+    {
+      "title": "Definicja osteoporozy i kryteria densytometryczne DXA",
+      "text": "Osteoporoza jest układową chorobą szkieletu charakteryzującą się niską masą kostną, zaburzoną mikroarchitekturą tkanki kostnej i w konsekwencji zwiększoną podatnością na złamania niskoenergetyczne (złamania pod wpływem siły odpowiadającej upadkowi z własnej wysokości). Złotym standardem diagnostycznym jest dwuwiązkowa absorpcjometria rentgenowska (DXA) odcinka lędźwiowego kręgosłupa (L1–L4) oraz bliższego końca kości udowej (szyjka kości udowej i całkowity wskaźnik Total Hip). Wg kryteriów WHO u kobiet po menopauzie i mężczyzn >=50. r.ż. wynik określa się wskaźnikiem T-score (odchylenie standardowe od szczytowej masy kostnej młodych dorosłych): norma >= -1,0; osteopenia od -1,1 do -2,4; osteoporoza <= -2,5 SD."
+    },
+    {
+      "title": "Kalkulator FRAX i bezwzględne wskazania do leczenia",
+      "text": "Pamiętaj: wystąpienie złamania niskoenergetycznego kręgu lub szyjki kości udowej pozwala na rozpoznanie osteoporozy klinicznej NIEZALEŻNIE od wyniku densytometrii DXA! W ocenie bezwzględnego 10-letniego ryzyka poważnego złamania osteoporotycznego (MOF — Major Osteoporotic Fracture) stosuje się algorytm FRAX, uwzględniający wiek, płeć, BMI, przebyte złamania własne i u rodziców, palenie tytoniu, reumatoidalne zapalenie stawów, sterydoterapię i spożycie alkoholu. W Polsce próg interwencji terapeutycznej wynosi 10% dla MOF (ryzyko wysokie) lub obecność przebytego złamania kręgowego/biodrowego."
+    },
+    {
+      "title": "Arsenał terapeutyczny: od antyresorpcji do anabolizmu kości",
+      "text": "Leczenie rozpoczyna się od suplementacji witaminy D (zwykle 2000 j.m./d cholekalcyferolu z celem 25(OH)D 30–50 ng/ml) oraz zapewnienia dobowej podaży wapnia w diecie (1000–1200 mg/d). Farmakoterapia dzieli się na dwie grupy: 1. Leki antyresorpcyjne (hamujące osteoklasty): bisfosfoniany doustne (alendronian 70 mg raz w tygodniu, ryzedronian 35 mg raz w tygodniu) lub dożylne (kwas zoledronowy 5 mg i.v. raz w roku) oraz przeciwciało monoklonalne anty-RANKL (denosumab 60 mg s.c. co 6 miesięcy — uwaga: nagłe odstawienie denosumabu wywołuje efekt z odbicia i kaskadę złamań kręgów!). 2. Leki anaboliczne (stymulujące kościotworzenie przez osteoblasty): teryparatyd (rekombinowany PTH 1-34 podawany podskórnie w pulsach raz na dobę przez 24 miesiące) oraz romosozumab (przeciwciało anty-sklerostynie, o unikalnym podwójnym działaniu kościotwórczym i antyresorpcyjnym) — dedykowane dla chorych z bardzo wysokim ryzykiem złamań."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Grupa leków",
+      "Przedstawiciele",
+      "Mechanizm działania",
+      "Wskazania i ograniczenia"
+    ],
+    "rows": [
+      [
+        "Bisfosfoniany doustne",
+        "Alendronian, Ryzedronian",
+        "Wbudowują się w hydroksyapatyt, indukują apoptozę osteoklastów",
+        "I rzut; wymaga popijania wodą na czczo; p/wskazany przy GFR <35"
+      ],
+      [
+        "Bisfosfoniany dożylne",
+        "Kwas zoledronowy (5 mg raz/rok)",
+        "Potężna blokada osteoklastów z pominięciem p. pokarmowego",
+        "Złoty standard po złamaniu biodra; kontrola nerek przed wlewem"
+      ],
+      [
+        "Anty-RANKL",
+        "Denosumab (60 mg co 6 mies. s.c.)",
+        "Blokuje wiązanie RANKL z receptorem RANK na osteoklastach",
+        "Bezpieczny w niewydolności nerek; NIE WOLNO odstawiać bez leku pomostowego!"
+      ],
+      [
+        "Analogi PTH (anaboliczne)",
+        "Teryparatyd (20 µg/d s.c.)",
+        "Pulsacyjna stymulacja osteoblastów (kościotworzenie)",
+        "Ciężka osteoporoza z licznymi złamaniami; max czas terapii 24 miesiące"
+      ],
+      [
+        "Anty-sklerostyna",
+        "Romosozumab",
+        "Znosi hamowanie szlaku Wnt/beta-katenina (anabolizm + antyresorpcja)",
+        "Bardzo wysokie ryzyko złamań; ostrożnie przy incydentach sercowo-naczyniowych"
+      ]
+    ]
+  },
+  "advanced": "Martwica kości szczęki związana z lekami (MRONJ) oraz atypowe złamania podkrętarzowe kości udowej (AFF) są rzadkimi powikłaniami wieloletniej (>3–5 lat) terapii antyresorpcyjnej silnymi bisfosfonianami. W celu minimalizacji tego ryzyka u chorych z umiarkowanym ryzykiem złamań po 3–5 latach stosuje się „wakacje lekowe” (drug holiday) trwające 1–3 lata, podczas których bisfosfonian nadal powoli uwalnia się ze zmineralizowanej macierzy kostnej.",
+  "summary": "Osteoporoza to T-score <= -2,5 SD lub przebyte złamanie niskoenergetyczne. Podstawą leczenia są bisfosfoniany i denosumab (antyresorpcja), a w ciężkich postaciach teryparatyd i romosozumab (anabolizm). Zapewnij podaż Ca i witaminy D!",
+  "sourceIds": [
+    "pte_osteoporoza",
+    "osteoporosis_iof"
+  ],
+  "questions": [
+    {
+      "id": "osteoporoza-metabolizm-q1",
+      "lessonId": "osteoporoza-metabolizm",
+      "prompt": "Jak wg kryteriów WHO definiuje się osteoporozę w densytometrii rentgenowskiej (DXA)?",
+      "options": [
+        {
+          "text": "Wskaźnik T-score <= -2,5 odchylenia standardowego (SD)",
+          "explanation": "Wartość T-score od -1,0 do -2,5 oznacza osteopenię, a <= -2,5 potwierdza osteoporozę."
+        },
+        {
+          "text": "Wskaźnik T-score od -1,0 do -2,0 SD",
+          "explanation": "To przedział osteopenii, a nie osteoporozy."
+        },
+        {
+          "text": "Wskaźnik Z-score przekraczający +2,0 SD",
+          "explanation": "Z-score porównuje gęstość z rówieśnikami i służy do oceny dzieci i młodych mężczyzn."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "osteoporoza-metabolizm-q2",
+      "lessonId": "osteoporoza-metabolizm",
+      "prompt": "68-letnia kobieta doznała kompresyjnego złamania trzonu kręgu L2 po podniesieniu siatki z zakupami. W DXA jej T-score wynosi -1,9. Jakie jest rozpoznanie?",
+      "options": [
+        {
+          "text": "Kliniczna osteoporoza powikłana złamaniem niskoenergetycznym",
+          "explanation": "Przebycie złamania niskoenergetycznego głównej lokalizacji upoważnia do rozpoznania osteoporozy bez względu na wynik T-score."
+        },
+        {
+          "text": "Jedynie łagodna osteopenia niekwalifikująca się do leczenia",
+          "explanation": "Kwalifikacja oparta wyłącznie na liczbie T-score z pominięciem faktu złamania jest kardynalnym błędem."
+        },
+        {
+          "text": "Fizjologiczny stan związany z wiekiem niewymagający interwencji",
+          "explanation": "Złamanie kręgu jest stanem patologicznym drastycznie zwiększającym ryzyko kolejnych złamań."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "osteoporoza-metabolizm-q3",
+      "lessonId": "osteoporoza-metabolizm",
+      "prompt": "Co grozi pacjentowi w przypadku nagłego zaprzestania przyjmowania denosumabu po 3 latach leczenia?",
+      "options": [
+        {
+          "text": "Gwałtowny wzrost obrotu kostnego z odbicia i kaskada mnogich złamań kompresyjnych kręgów",
+          "explanation": "Denosumab nie odkłada się w kościach; po wygaśnięciu przeciwciała następuje gwałtowny wyrzut osteoklastów."
+        },
+        {
+          "text": "Trwałe zablokowanie wydzielania parathormonu",
+          "explanation": "Odstawienie leku odblokowuje, a nie hamuje układ kostny."
+        },
+        {
+          "text": "Natychmiastowe stwardnienie kości (osteopetroza)",
+          "explanation": "Odwrócenie działania leku wywołuje nagłą osteolizę, a nie stwardnienie kości."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "osteoporoza-metabolizm-q4",
+      "lessonId": "osteoporoza-metabolizm",
+      "prompt": "Jaki lek przeciwosteoporotyczny działa w mechanizmie ANABOLICZNYM (pobudzającym kościotworzenie przez osteoblasty)?",
+      "options": [
+        {
+          "text": "Teryparatyd (rekombinowany PTH 1-34)",
+          "explanation": "Pulsacyjne codzienne podawanie teryparatydu aktywuje osteoblasty do tworzenia nowej macierzy kostnej."
+        },
+        {
+          "text": "Kwas zoledronowy",
+          "explanation": "Kwas zoledronowy jest lekiem antyresorpcyjnym hamującym niszczenie kości."
+        },
+        {
+          "text": "Alendronian sodu",
+          "explanation": "Alendronian jest bisfosfonianem o działaniu antyresorpcyjnym."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "osteoporoza-metabolizm-q5",
+      "lessonId": "osteoporoza-metabolizm",
+      "prompt": "Jakie są zasady prawidłowego przyjmowania doustnych bisfosfonianów (np. alendronianu)?",
+      "options": [
+        {
+          "text": "Rano na czczo, popijając pełną szklanką zwykłej wody, z zachowaniem pozycji stojącej lub siedzącej przez min. 30 minut",
+          "explanation": "Zapobiega to podrażnieniu i owrzodzeniom przełyku oraz maksymalizuje słabą biodostępność leku (<1%)."
+        },
+        {
+          "text": "Wieczorem tuż przed snem, bezpośrednio po obfitym posiłku bogatym w nabiał",
+          "explanation": "Wapń z posiłku całkowicie zneutralizowałby wchłanianie bisfosfonianu, a pozycja leżąca zniszczyłaby przełyk."
+        },
+        {
+          "text": "Rozpuszczając tabletkę w gorącym soku pomarańczowym lub kawie",
+          "explanation": "Bisfosfoniany wolno popijać wyłącznie niegazowaną, przegotowaną lub mineralną wodą niskozmineralizowaną."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

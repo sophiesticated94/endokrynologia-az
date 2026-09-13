@@ -1,0 +1,221 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "przelom-hiperkalcemiczny",
+  "objectives": [
+    {
+      "id": "przelom-hiperkalcemiczny-obj-1",
+      "statement": "Zdiagnozujesz przełom hiperkalcemiczny (Ca >3,5 mmol/l / >14 mg/dl) jako stan bezpośredniego zagrożenia życia.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "przelom-hiperkalcemiczny-obj-2",
+      "statement": "Opanujesz kolejność interwencji ratunkowych (masywna płynoterapia 0,9% NaCl PRZED diuretykiem!).",
+      "kind": "interpretation"
+    },
+    {
+      "id": "przelom-hiperkalcemiczny-obj-3",
+      "statement": "Poznasz wskazania do kwasu zoledronowego, kalcytoniny, denosumabu i hemodializy.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "przelom-hiperkalcemiczny-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "przelom-hiperkalcemiczny-obj-1"
+    ],
+    "prompt": "Jaki jest PIERWSZY, najważniejszy krok w postępowaniu ratunkowym u odwodnionego pacjenta z przełomem hiperkalcemicznym (Ca 15,2 mg/dl)?",
+    "options": [
+      "Intensywny wlew dożylny izotonicznego roztworu 0,9% NaCl (2000–4000 ml/24h)",
+      "Natychmiastowe podanie 80 mg furosemidu dożylnie",
+      "Podanie doustne 2 litrów wody mineralnej bogatej w wapń"
+    ],
+    "optionFeedback": [
+      "Rehydratacja uzupełnia krytyczny deficyt płynowy, przywraca filtrację nerkową i nasila wydalanie wapnia z moczem.",
+      "Podanie diuretyku pętlowego u odwodnionego chorego pogłębia hipowolemię, wywołuje wstrząs i nasila hiperkalcemię!",
+      "Wapń drogą przewodu pokarmowego jest w hiperkalcemii bezwzględnie przeciwwskazany."
+    ],
+    "answer": 0,
+    "explanation": "Rehydratacja uzupełnia krytyczny deficyt płynowy, przywraca filtrację nerkową i nasila wydalanie wapnia z moczem.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "endo_hypercalcemia",
+      "asbmr_calcium"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "przelom-hiperkalcemiczny-block-1",
+      "title": "Definicja i manifestacja kliniczna przełomu hiperkalcemicznego",
+      "text": "Przełom hiperkalcemiczny to stan bezpośredniego zagrożenia życia, w którym stężenie wapnia całkowitego w surowicy przekracza 3,5 mmol/l (14,0 mg/dl), a wapnia zjonizowanego >1,8–2,0 mmol/l. Najczęstszą przyczyną są zaawansowane nowotwory złośliwe z wydzielaniem PTHrP lub osteolizą (HCM) oraz powikłana pierwotna nadczynność przytarczyc (PHPT). Klinicznie dominuje głębokie odwodnienie (nawet 4–6 litrów deficytu płynowego!), ostre uszkodzenie nerek (AKI), nudności, uporczywe wymioty, zaparcia, bolesne zapalenie trzustki, zaburzenia świadomości od senności przez majaczenie aż do śpiączki oraz groźne komorowe zaburzenia rytmu serca z nagłym zgonem sercowym.",
+      "sourceIds": [
+        "endo_hypercalcemia",
+        "asbmr_calcium"
+      ],
+      "checkpointId": "przelom-hiperkalcemiczny-q2-checkpoint-1-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "przelom-hiperkalcemiczny-block-2",
+      "title": "Krok 1: Masywne nawadnianie 0,9% NaCl — fundament ratunku",
+      "text": "Pierwszym i najważniejszym krokiem postępowania jest natychmiastowa rehydratacja izotonicznym roztworem 0,9% NaCl. Podaje się 2000–4000 ml soli fizjologicznej w ciągu pierwszych 24 godzin (początkowo 200–500 ml/h pod kontrolą diurezy i osłuchowej oceny płuc). Sól fizjologiczna nie tylko uzupełnia objętość wewnątrznaczyniową i przywraca perfuzję nerek, ale bezpośrednio nasila wydalanie wapnia z moczem: sód i wapń konkurują o ten sam mechanizm reabsorpcji w ramieniu wstępującym pętli Henlego. Kardynalny błąd: podanie furosemidu u odwodnionego pacjenta pogłębia wstrząs hipowolemiczny i nasila hiperkalcemię! Furosemid można rozważyć WYŁĄCZNIE po pełnym nawodnieniu u chorych z objawami przewodnienia lub niewydolnością serca.",
+      "sourceIds": [
+        "endo_hypercalcemia",
+        "asbmr_calcium"
+      ],
+      "checkpointId": "przelom-hiperkalcemiczny-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "przelom-hiperkalcemiczny-block-3",
+      "title": "Krok 2 i 3: Leki antyresorpcyjne (bisfosfoniany, kalcytonina, denosumab)",
+      "text": "Równolegle z nawadnianiem wdraża się leczenie farmakologiczne hamujące osteoklastyczną resorpcję kości: 1. Dożylne bisfosfoniany o wysokiej sile działania: kwas zoledronowy (4 mg we wlewie i.v. trwającym min. 15–30 minut) lub pamidronian (60–90 mg w 2–4 h wlewie). Ich pełny efekt ujawnia się dopiero po 48–72 godzinach, lecz utrzymuje się przez 2–4 tygodnie. 2. Kalcytonina łososiowa (4–8 j.m./kg m.c. s.c. lub i.m. co 6–12 h): działa natychmiast (w ciągu 2–4 godzin), lecz jej efekt wygasa po 48 godzinach z powodu zjawiska tachyfilaksji (internalizacji receptorów). Kalcytonina stanowi idealny „pomost” do czasu zadziałania kwasu zoledronowego. U chorych z ciężką niewydolnością nerek (GFR <30), gdzie bisfosfoniany są nefrotoksyczne, lekiem z wyboru jest denosumab (przeciwciało anty-RANKL 120 mg s.c.). W skrajnych przypadkach z niewydolnością nerek i obrzękiem płuc ratunkiem jest pilna hemodializa bezwapniowa.",
+      "sourceIds": [
+        "endo_hypercalcemia",
+        "asbmr_calcium"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "przelom-hiperkalcemiczny-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "przelom-hiperkalcemiczny-obj-2"
+      ],
+      "prompt": "Dlaczego kalcytoninę łączy się z kwasem zoledronowym w leczeniu ostrej hiperkalcemii?",
+      "options": [
+        "Kalcytonina obniża wapń w ciągu 2–4 godzin (pomost), podczas gdy kwas zoledronowy działa silnie i trwale, lecz dopiero po 48–72 godzinach",
+        "Kwas zoledronowy neutralizuje toksyczność kalcytoniny na wątrobę",
+        "Kalcytonina jest wchłaniana wyłącznie w obecności bisfosfonianów"
+      ],
+      "optionFeedback": [
+        "Kombinacja ta zapewnia natychmiastowe bezpieczeństwo chorego w pierwszej dobie oraz trwałą kontrolę w kolejnych tygodniach.",
+        "Leki te nie neutralizują nawzajem toksyczności; działają synergistycznie na osteoklasty.",
+        "Kalcytonina podawana jest podskórnie lub domięśniowo i działa niezależnie od bisfosfonianów."
+      ],
+      "answer": 0,
+      "explanation": "Kombinacja ta zapewnia natychmiastowe bezpieczeństwo chorego w pierwszej dobie oraz trwałą kontrolę w kolejnych tygodniach.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "endo_hypercalcemia",
+        "asbmr_calcium"
+      ]
+    },
+    {
+      "id": "przelom-hiperkalcemiczny-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "przelom-hiperkalcemiczny-obj-3"
+      ],
+      "prompt": "Który lek antyresorpcyjny jest preferowany w hiperkalcemii nowotworowej u pacjenta ze schyłkową niewydolnością nerek (eGFR 18 ml/min/1,73 m2)?",
+      "options": [
+        "Denosumab (przeciwciało monoklonalne anty-RANKL)",
+        "Wysokie dawki kwasu zoledronowego we wlewie 5-minutowym",
+        "Alendronian doustny w dawce 70 mg raz na dobę"
+      ],
+      "optionFeedback": [
+        "Denosumab nie jest wydalany przez nerki i nie wykazuje nefrotoksyczności w przeciwieństwie do bisfosfonianów.",
+        "Kwas zoledronowy w ciężkiej niewydolności nerek może doprowadzić do ostrej martwicy cewek nerkowych.",
+        "Doustne bisfosfoniany nie nadają się do leczenia stanów nagłych i są przeciwwskazane przy GFR <35."
+      ],
+      "answer": 0,
+      "explanation": "Denosumab nie jest wydalany przez nerki i nie wykazuje nefrotoksyczności w przeciwieństwie do bisfosfonianów.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "endo_hypercalcemia",
+        "asbmr_calcium"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "przelom-hiperkalcemiczny-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "przelom-hiperkalcemiczny-obj-1",
+      "przelom-hiperkalcemiczny-obj-2",
+      "przelom-hiperkalcemiczny-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Wapniowa burza: przełom”.",
+    "modelAnswer": "Przełom hiperkalcemiczny (>14 mg/dl) to stan zagrożenia życia. Leczenie: 1. Agresywne nawodnienie 0,9% NaCl (2–4 l/d) — NIGDY furosemid przed nawodnieniem! 2. Kalcytonina na start (działa w 2 h) + kwas zoledronowy i.v. (działa po 48 h). W niewydolności nerek denosumab lub dializa.",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "endo_hypercalcemia",
+      "asbmr_calcium"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "przelom-hiperkalcemiczny-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "przelom-hiperkalcemiczny-obj-1"
+      ],
+      "prompt": "W jakich przyczynach hiperkalcemii glikokortykosteroidy (np. prednizon, hydrokortyzon) wykazują najwyższą skuteczność terapeutyczną?",
+      "options": [
+        "W chorobach ziarniniakowych (sarkoidoza), zatruciu witaminą D oraz chłoniakach",
+        "W typowym autonomicznym pojedynczym gruczolaku przytarczyc",
+        "W rzekomej niedoczynności przytarczyc"
+      ],
+      "optionFeedback": [
+        "Sterydy hamują pozanerkową ekspresję 1alfa-hydroksylazy w makrofagach i zmniejszają wchłanianie wapnia w jelicie.",
+        "W pierwotnej nadczynności przytarczyc sterydy nie obniżają wydzielania PTH ani stężenia wapnia.",
+        "W PHP występuje hipokalcemia, a nie hiperkalcemia."
+      ],
+      "answer": 0,
+      "explanation": "Sterydy hamują pozanerkową ekspresję 1alfa-hydroksylazy w makrofagach i zmniejszają wchłanianie wapnia w jelicie.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "endo_hypercalcemia",
+        "asbmr_calcium"
+      ]
+    },
+    {
+      "id": "przelom-hiperkalcemiczny-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "przelom-hiperkalcemiczny-obj-1"
+      ],
+      "prompt": "Kiedy u pacjenta z przełomem hiperkalcemicznym bezwzględnie wskazane jest pilne wdrożenie hemodializy z płynem bezwapniowym?",
+      "options": [
+        "W przypadku ciężkiej hiperkalcemii powikłanej bezmoczem, ostrym przewodnieniem lub niewydolnością serca",
+        "U każdego pacjenta z wapniem powyżej 11,0 mg/dl",
+        "Wyłącznie przed planowaną operacją tarczycy"
+      ],
+      "optionFeedback": [
+        "Gdy nerki nie są w stanie wydalić podawanych płynów, hemodializa jest jedyną metodą eliminacji wapnia z ustroju.",
+        "Łagodną i umiarkowaną hiperkalcemię leczy się bezpiecznie nawodnieniem i bisfosfonianami.",
+        "Hemodializa jest procedurą ratunkową w OIT/stacji dializ, a nie standardowym przygotowaniem chirurgicznym."
+      ],
+      "answer": 0,
+      "explanation": "Gdy nerki nie są w stanie wydalić podawanych płynów, hemodializa jest jedyną metodą eliminacji wapnia z ustroju.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "endo_hypercalcemia",
+        "asbmr_calcium"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "parathyroid-workbench",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

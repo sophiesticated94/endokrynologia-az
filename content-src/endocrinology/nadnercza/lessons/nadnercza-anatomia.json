@@ -1,0 +1,168 @@
+{
+  "id": "nadnercza-anatomia",
+  "moduleId": "nadnercza",
+  "title": "Fabryka hormonów stresu",
+  "subtitle": "Anatomia, warstwy kory, rdzeń i szlaki sterydogenezy",
+  "group": "Fundamenty",
+  "minutes": 15,
+  "goals": [
+    "Poznasz trójwarstwową budowę kory nadnerczy (ZG, ZF, ZR) oraz neuroendokrynny charakter rdzenia.",
+    "Zrozumiesz kluczowe szlaki sterydogenezy od cholesterolu do aldosteronu, kortyzolu i DHEA-S oraz asymetrię spływu żylnego."
+  ],
+  "sections": [
+    {
+      "title": "Anatomia, położenie i asymetria naczyniowa",
+      "text": "Nadnercza to parzyste narządy położone zaotrzewnowo na górnych biegunach nerek, otoczone powięzią nerkową (Geroty) i tkanką tłuszczową. Prawe nadnercze ma kształt piramidalny, lewe półksiężycowaty. Unaczynienie tętnicze pochodzi z trzech źródeł (tętnice nadnerczowe górna, środkowa i dolna). Krytyczna różnica anatomiczna dotyczy spływu żylnego: prawa żyła nadnerczowa jest bardzo krótka (zaledwie kilka milimetrów) i uchodzi bezpośrednio do żyły głównej dolnej (VCI), podczas gdy lewa żyła nadnerczowa jest znacznie dłuższa i uchodzi do lewej żyły nerkowej. Ta asymetria ma fundamentalne znaczenie techniczne podczas cewnikowania żył nadnerczowych (AVS) oraz w chirurgii laparoskopowej."
+    },
+    {
+      "title": "Kora nadnerczy: Trzy strefy i ich wyspecjalizowane produkty",
+      "text": "Kora stanowi ok. 80–90% masy narządu i dzieli się na trzy strefy (od zewnątrz do wewnątrz): 1) Strefa kłębuszkowa (zona glomerulosa — ZG, ok. 15%): syntetyzuje mineralokortykosteroidy, głównie aldosteron, regulowany przez układ RAA i stężenie potasu (niezależnie od ACTH!); 2) Strefa pasmowata (zona fasciculata — ZF, ok. 75%): syntetyzuje glikokortykosteroidy, przede wszystkim kortyzol, pod ścisłą kontrolą przysadkowego ACTH; 3) Strefa siatkowata (zona reticularis — ZR, ok. 10%): wytwarza androgeny nadnerczowe (DHEA, DHEA-S, androstendion), stymulowana przez ACTH. Złota mnemotechnika: GFR — Salt, Sugar, Sex (sól, cukier, seks)."
+    },
+    {
+      "title": "Rdzeń nadnerczy i kaskada katecholamin",
+      "text": "Rdzeń nadnerczy wywodzi się ektodermalnie z grzebienia nerwowego i stanowi zmodyfikowany zwój współczulny. Komórki chromafinowe (feochromocyty) są unerwione przez przedzwojowe cholinergiczne włókna współczulne. Syntetyzują one katecholaminy: tyrozyna $\\to$ DOPA $\\to$ dopamina $\\to$ noradrenalina $\\to$ adrenalina. Kluczowy fakt: enzym PNMT (N-metylotransferaza fenyloetanoloaminy), który przekształca noradrenalinę w adrenalinę, jest indukowany przez wysokie stężenia kortyzolu spływającego naczyniami wrotnymi z kory do rdzenia. Dlatego w rdzeniu nadnercza powstaje głównie adrenalina (ok. 80%), w odróżnieniu od zwojów współczulnych."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Strefa / Część",
+      "Główny hormon",
+      "Mechanizm regulacji",
+      "Rola kliniczna"
+    ],
+    "rows": [
+      [
+        "Strefa kłębuszkowa (ZG)",
+        "Aldosteron",
+        "Układ RAA (angiotensyna II) i potas K+",
+        "Resorpcja sodu, wydalanie potasu, regulacja wolemii i RR"
+      ],
+      [
+        "Strefa pasmowata (ZF)",
+        "Kortyzol",
+        "Oś podwzgórze-przysadka (CRH $\\to$ ACTH)",
+        "Glukogeneza, lipoliza, modulacja odporności, adaptacja do stresu"
+      ],
+      [
+        "Strefa siatkowata (ZR)",
+        "DHEA, DHEA-S",
+        "ACTH (oraz czynniki obwodowe)",
+        "Prekursory obwodowych androgenów i estrogenów"
+      ],
+      [
+        "Rdzeń nadnerczy",
+        "Adrenalina (80%), Noradrenalina (20%)",
+        "Układ współczulny (acetylocholina)",
+        "Reakcja „walki lub ucieczki”, skurcz naczyń, glikogenoliza"
+      ]
+    ]
+  },
+  "advanced": "Wszystkie hormony steroidowe powstają z cholesterolu. Pierwszym i ograniczającym szybkość etapem jest transport cholesterolu z zewnętrznej do wewnętrznej błony mitochondrialnej przez białko StAR (Steroidogenic Acute Regulatory protein), a następnie odszczepienie łańcucha bocznego przez enzym CYP11A1 (P450scc) do pregnenolonu. Mutacje białka StAR prowadzą do wrodzonej lipoidowej hiperplazji nadnerczy (ciężki brak wszystkich steroidów). Syntaza aldosteronu (CYP11B2) występuje wyłącznie w strefie kłębuszkowej, co uniemożliwia produkcję aldosteronu w pozostałych strefach.",
+  "summary": "Nadnercza to podwójny narząd: steroidowa kora (ZG: aldosteron, ZF: kortyzol, ZR: androgeny) oraz neuroendokrynny rdzeń (adrenalina). Znajomość asymetrii żylnej i kaskady sterydogenezy jest warunkiem zrozumienia diagnostyki AVS i bloków enzymatycznych.",
+  "sourceIds": [
+    "pte_nadnercza",
+    "endo_pa"
+  ],
+  "questions": [
+    {
+      "id": "nadnercza-anatomia-q1",
+      "lessonId": "nadnercza-anatomia",
+      "prompt": "Gdzie uchodzi prawa żyła nadnerczowa u człowieka?",
+      "options": [
+        {
+          "text": "Bezpośrednio do żyły głównej dolnej (VCI)",
+          "explanation": "Prawa żyła nadnerczowa jest krótka i uchodzi wprost do przednio-bocznej ściany żyły głównej dolnej."
+        },
+        {
+          "text": "Do prawej żyły nerkowej",
+          "explanation": "Do żyły nerkowej uchodzi lewa żyła nadnerczowa, a nie prawa."
+        },
+        {
+          "text": "Do żyły wrotnej wątroby",
+          "explanation": "Nadnercza nie drenują krwi do układu wrotnego wątroby."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "nadnercza-anatomia-q2",
+      "lessonId": "nadnercza-anatomia",
+      "prompt": "Który czynnik stanowi główny fizjologiczny regulator wydzielania aldosteronu przez strefę kłębuszkową?",
+      "options": [
+        {
+          "text": "Układ renina-angiotensyna-aldosteron (Angiotensyna II) oraz stężenie potasu",
+          "explanation": "Strefa kłębuszkowa odpowiada na spadek perfuzji nerek i hiperkaliemię, pozostając w dużej mierze niezależna od ACTH."
+        },
+        {
+          "text": "Wydzielany z przysadki hormon ACTH",
+          "explanation": "ACTH ma jedynie przejściowy, tonizujący wpływ na ZG; głównym regulatorem jest RAA."
+        },
+        {
+          "text": "Stężenie insuliny we krwi",
+          "explanation": "Insulina nie reguluje bezpośrednio syntezy aldosteronu w strefie kłębuszkowej."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "nadnercza-anatomia-q3",
+      "lessonId": "nadnercza-anatomia",
+      "prompt": "Dlaczego w rdzeniu nadnerczy powstaje głównie adrenalina, podczas gdy zwoje współczulne wydzielają niemal wyłącznie noradrenalinę?",
+      "options": [
+        {
+          "text": "Kortyzol spływający z kory indukuje enzym PNMT przekształcający noradrenalinę w adrenalinę",
+          "explanation": "Wysokie lokalne stężenie glikokortykosteroidów aktywuje ekspresję N-metylotransferazy fenyloetanoloaminy."
+        },
+        {
+          "text": "Rdzeń nadnerczy nie posiada enzymu hydroksylazy dopaminowej",
+          "explanation": "Enzym ten jest obecny i niezbędny do wytwarzania noradrenaliny."
+        },
+        {
+          "text": "W rdzeniu nie ma receptorów dla acetylocholiny",
+          "explanation": "Komórki chromafinowe posiadają receptory nikotynowe i muskarynowe dla ACh."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "nadnercza-anatomia-q4",
+      "lessonId": "nadnercza-anatomia",
+      "prompt": "Jaki hormon jest głównym produktem strefy pasmowatej (zona fasciculata) kory nadnerczy?",
+      "options": [
+        {
+          "text": "Kortyzol",
+          "explanation": "Kortyzol stanowi główny glikokortykosteroid syntetyzowany pod wpływem ACTH w strefie pasmowatej."
+        },
+        {
+          "text": "Aldosteron",
+          "explanation": "Aldosteron jest wytwarzany w strefie kłębuszkowej (ZG)."
+        },
+        {
+          "text": "DHEA-S",
+          "explanation": "Siarczan dehydroepiandrosteronu to główny produkt strefy siatkowatej (ZR)."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "nadnercza-anatomia-q5",
+      "lessonId": "nadnercza-anatomia",
+      "prompt": "Jakie białko transportowe odpowiada za pierwszy, ograniczający etap sterydogenezy (transport cholesterolu do wnętrza mitochondrium)?",
+      "options": [
+        {
+          "text": "Białko StAR (Steroidogenic Acute Regulatory protein)",
+          "explanation": "Umożliwia transfer cholesterolu przez błony mitochondrialne do enzymu CYP11A1."
+        },
+        {
+          "text": "Transkortyna (CBG)",
+          "explanation": "Transkortyna transportuje kortyzol w osoczu, a nie cholesterol w komórce."
+        },
+        {
+          "text": "Albumina surowicy",
+          "explanation": "Albumina jest białkiem nośnikowym we krwi obwodowej."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

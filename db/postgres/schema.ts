@@ -70,6 +70,11 @@ export const lessonRevisions = pgTable(
     contentHash: varchar('content_hash', { length: 64 }).notNull(),
     document: jsonb('document').notNull(),
     status: revisionStatusEnum('status').default('published').notNull(),
+    sourceCommitSha: varchar('source_commit_sha', { length: 64 }),
+    publishedAt: timestamp('published_at', { withTimezone: true }),
+    changeSummary: text('change_summary'),
+    reviewedAt: timestamp('reviewed_at', { withTimezone: true }),
+    reviewedBy: varchar('reviewed_by', { length: 128 }),
     createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
   },
   (table) => [
@@ -139,6 +144,8 @@ export const evidenceClaims = pgTable('evidence_claims', {
   statement: text('statement').notNull(),
   quote: text('quote'),
   confidence: varchar('confidence', { length: 32 }),
+  category: varchar('category', { length: 64 }),
+  strength: varchar('strength', { length: 64 }),
   metadata: jsonb('metadata').default({}).notNull(),
   createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
 });

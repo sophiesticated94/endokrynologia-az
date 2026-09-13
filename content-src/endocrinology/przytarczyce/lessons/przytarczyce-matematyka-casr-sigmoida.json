@@ -1,0 +1,164 @@
+{
+  "id": "przytarczyce-matematyka-casr-sigmoida",
+  "moduleId": "przytarczyce",
+  "title": "Równanie Hilla dla receptora CaSR i kinetyka supresji PTH",
+  "subtitle": "Sigmoidalna krzywa supresji, kooperatywność nH i przesunięcia set-pointu",
+  "group": "Matematyka i modele",
+  "minutes": 20,
+  "goals": [
+    "Wyprowadzisz 4-parametrowe równanie Hilla opisujące supresję PTH przez stężenie jonów Ca2+.",
+    "Obliczysz przesunięcie punktu nastawczego (set-point / EC50) w mutacjach FHH oraz pod wpływem kalcymimetyków."
+  ],
+  "sections": [
+    {
+      "title": "Niezwykle stroma sigmoida: kooperatywność receptora CaSR",
+      "text": "Zależność między stężeniem wapnia zjonizowanego [Ca2+] a uwalnianiem parathormonu (PTH) nie jest krzywą hiperboliczną, lecz bardzo stromą sigmoidą o współczynniku kooperatywności Hilla nH = 3,5–4,0. Oznacza to potężną allosteryczną kooperatywność homodimeru receptora CaSR — wiązanie pierwszego jonu wapnia dramatycznie ułatwia wiązanie kolejnych jonów w domenie zewnątrzkamórkowej."
+    },
+    {
+      "title": "4-parametrowy model matematyczny supresji PTH",
+      "text": "Krzywą supresji opisuje wzór: PTH([Ca2+]) = PTH_min + (PTH_max - PTH_min) / (1 + ([Ca2+] / EC50)^nH). Wartość EC50 (stężenie wapnia zjonizowanego dające 50% supresji sekrecji) określa się jako set-point przytarczyc. U zdrowych wynosi około 1,20–1,22 mmol/L. PTH_min to wydzielanie niesuprymowalne (ok. 5–10% sekrecji maksymalnej). Bardzo wąski zakres fizjologiczny wapnia (1,15–1,32 mmol/L) pokrywa się dokładnie z najbardziej stromym odcinkiem krzywej."
+    },
+    {
+      "title": "Przesunięcia set-pointu w patologii i farmakoterapii",
+      "text": "W rodzinnej hiperkalcemii hipokalciurycznej (FHH — inaktywująca mutacja genu CASR) krzywa przesuwa się w prawo (EC50 wzrasta do 1,35–1,45 mmol/L): przytarczyce odbierają hiperkalcemię jako stan prawidłowy. Z kolei kalcymimetyki (cynakalcet — allosteryczny aktywator CaSR) przesuwają krzywą w lewo (EC50 spada do 1,10–1,15 mmol/L), wymuszając supresję PTH przy niższym stężeniu wapnia. W gruczolaku przytarczyc wzrasta PTH_min i masa tkanki."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Stan kliniczny",
+      "Wartość Set-Point (EC50)",
+      "Kształt krzywej supresji PTH"
+    ],
+    "rows": [
+      [
+        "Fizjologia (eukalcemia)",
+        "1,20–1,22 mmol/L",
+        "Stroma sigmoida (nH ~3,8); pełna supresja przy Ca2+ > 1,30 mmol/L"
+      ],
+      [
+        "FHH (mutacja inaktywująca)",
+        "1,35–1,45 mmol/L (w prawo)",
+        "Przesunięcie w prawo; wydzielanie PTH trwa mimo hiperkalcemii"
+      ],
+      [
+        "Kalcymimetyk (cynakalcet)",
+        "1,10–1,15 mmol/L (w lewo)",
+        "Przesunięcie w lewo; głęboka supresja PTH nawet przy normokalcemii"
+      ],
+      [
+        "Autonomiczny gruczolak PHPT",
+        "Utrata supresji / ↑ PTH_min",
+        "Wypłaszczenie krzywej, wysokie PTH_min niezależne od stężenia Ca2+"
+      ]
+    ]
+  },
+  "advanced": "W receptorze CaSR sygnał hamujący wydzielanie PTH przekazywany jest przez białko Gq/11 (aktywacja fosfolipazy Cbeta ⟶ IP3 i DAG ⟶ napływ Ca2+ z siateczki) oraz białko Gi (hamowanie cyklazy adenylanowej). W odróżnieniu od większości komórek wydzielniczych (gdzie wzrost Ca2+ stymuluje egzocytozę), w komórkach głównych przytarczyc wysoki wewnątrzkomórkowy wapń paradoksalnie blokuje fuzję pęcherzyków z PTH.",
+  "summary": "Receptor CaSR charakteryzuje się wysoką kooperatywnością Hilla (nH ~3,8), a jego set-point (EC50 ~1,21 mmol/L) przesuwa się w prawo w mutacjach FHH i w lewo pod wpływem cynakalcetu.",
+  "sourceIds": [
+    "casr_hill",
+    "fhh_consensus",
+    "qtc_bone"
+  ],
+  "questions": [
+    {
+      "id": "przytarczyce-matematyka-casr-sigmoida-q1",
+      "lessonId": "przytarczyce-matematyka-casr-sigmoida",
+      "prompt": "Jaki współczynnik kooperatywności Hilla (nH) charakteryzuje krzywą supresji PTH przez wapń zjonizowany na receptorze CaSR?",
+      "options": [
+        {
+          "text": "Około 3,5 do 4,0 (bardzo wysoka kooperatywność allosteryczna)",
+          "explanation": "Powoduje, że drobna zmiana stężenia wapnia o 0,05 mmol/L drastycznie zmienia sekrecję PTH."
+        },
+        {
+          "text": "Dokładnie 0 (brak jakiejkolwiek zależności)",
+          "explanation": "Gdyby nH wynosił 0, stężenie wapnia nie wpływałoby na PTH."
+        },
+        {
+          "text": "Wartość ujemna -50",
+          "explanation": "Współczynnik Hilla opisujący wiązanie liganda przyjmuje wartości dodatnie."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przytarczyce-matematyka-casr-sigmoida-q2",
+      "lessonId": "przytarczyce-matematyka-casr-sigmoida",
+      "prompt": "Czym jest punkt nastawczy przytarczyc (set-point / EC50)?",
+      "options": [
+        {
+          "text": "Stężeniem wapnia zjonizowanego, przy którym sekrecja PTH wynosi 50% wartości maksymalnej",
+          "explanation": "Fizjologicznie wynosi około 1,20–1,22 mmol/L i wyznacza ośrodek regulacji homeostazy."
+        },
+        {
+          "text": "Maksymalną dawką dożylną glukonianu wapnia",
+          "explanation": "Set-point to parametr biofizyczny receptora, nie dawka leku."
+        },
+        {
+          "text": "Wskaźnikiem grubości torebki gruczołu w USG",
+          "explanation": "Set-point dotyczy affinities receptora CaSR, a nie anatomii makroskopowej."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przytarczyce-matematyka-casr-sigmoida-q3",
+      "lessonId": "przytarczyce-matematyka-casr-sigmoida",
+      "prompt": "Jak zmienia się krzywa supresji PTH u pacjenta z rodzinną hiperkalcemią hipokalciuryczną (FHH)?",
+      "options": [
+        {
+          "text": "Przesuwa się w prawo (set-point EC50 wzrasta do 1,35–1,45 mmol/L)",
+          "explanation": "Przytarczyce wymagają wyższego stężenia wapnia, aby zahamować wydzielanie PTH."
+        },
+        {
+          "text": "Przesuwa się w lewo i znika",
+          "explanation": "Krzywa przesuwa się w prawo, a nie w lewo."
+        },
+        {
+          "text": "Staje się idealnym kołem na wykresie",
+          "explanation": "Krzywe Hilla zachowują kształt sigmoidalny."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przytarczyce-matematyka-casr-sigmoida-q4",
+      "lessonId": "przytarczyce-matematyka-casr-sigmoida",
+      "prompt": "W jaki sposób kalcymimetyk cynakalcet wpływa na parametry równania Hilla receptora CaSR?",
+      "options": [
+        {
+          "text": "Działa jako pozytywny modulator allosteryczny (PAM), przesuwając krzywą w lewo i obniżając EC50",
+          "explanation": "Zwiększa wrażliwość receptora na zewnątrzkomórkowy wapń, tłumiąc PTH."
+        },
+        {
+          "text": "Blokuje receptory CaSR i podnosi PTH do 1000 pg/ml",
+          "explanation": "Cynakalcet aktywuje receptor, hamując wydzielanie PTH."
+        },
+        {
+          "text": "Odcina wiązania peptydowe parathormonu w żołądku",
+          "explanation": "Cynakalcet działa na receptor błonowy w przytarczycach."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przytarczyce-matematyka-casr-sigmoida-q5",
+      "lessonId": "przytarczyce-matematyka-casr-sigmoida",
+      "prompt": "Co jest unikalnego w sygnalizacji wewnątrzkomórkowej w komórkach głównych przytarczyc w porównaniu z innymi komórkami dokrewnymi?",
+      "options": [
+        {
+          "text": "Wzrost stężenia wewnątrzkomórkowego wapnia (Ca2+) hamuje uwalnianie PTH, zamiast je stymulować",
+          "explanation": "Jest to tzw. paradoks przytarczycowy regulowany przez szlaki Gq i Gi."
+        },
+        {
+          "text": "Komórki przytarczyc nie posiadają błony komórkowej",
+          "explanation": "Wszystkie komórki ludzkie posiadają dwuwarstwową błonę lipidową."
+        },
+        {
+          "text": "Wapń zamienia się w nich w fosforan żelaza",
+          "explanation": "Pierwiastki nie ulegają fuzji jądrowej w tkankach biologicznych."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

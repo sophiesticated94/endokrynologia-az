@@ -1,0 +1,215 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "niedoczynnosc-wtorna",
+  "objectives": [
+    {
+      "id": "niedoczynnosc-wtorna-obj-1",
+      "statement": "Zrozumiesz patofizjologiczne różnice między pierwotną a wtórną niedoczynnością kory nadnerczy.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "niedoczynnosc-wtorna-obj-2",
+      "statement": "Opanujesz zasady bezpiecznego odstawiania przewlekłej sterydoterapii i rozpoznawania jatrogennej supresji osi HPA.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "niedoczynnosc-wtorna-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "niedoczynnosc-wtorna-obj-1"
+    ],
+    "prompt": "Dlaczego u pacjenta z wtórną (przysadkową) niedoczynnością kory nadnerczy stężenie potasu w surowicy zazwyczaj pozostaje prawidłowe?",
+    "options": [
+      "Strefa kłębuszkowa syntetyzuje aldosteron pod kontrolą układu RAA, niezależnie od przysadkowego ACTH",
+      "W chorobach przysadki nerki tracą zdolność wydalania potasu",
+      "Potas u tych chorych odkłada się w kościach"
+    ],
+    "optionFeedback": [
+      "Zachowana produkcja aldosteronu zapewnia prawidłowe wydalanie potasu przez nerki.",
+      "Nerki zachowują prawidłową funkcję cewkową pod wpływem aldosteronu.",
+      "Potas jest głównym kationem wewnątrzkomórkowym, kości nie magazynują go w ten sposób."
+    ],
+    "answer": 0,
+    "explanation": "Zachowana produkcja aldosteronu zapewnia prawidłowe wydalanie potasu przez nerki.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "endo_pai",
+      "pte_nadnercza"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "niedoczynnosc-wtorna-block-1",
+      "title": "Mechanizm: Oś bez dyrygenta i „blady Addison”",
+      "text": "Wtórna niedoczynność kory nadnerczy wynika z niedoboru przysadkowego ACTH (guzy siodła, operacje przysadki, apopleksja, urazy głowy), a trzeciorzędowa z niedoboru podwzgórzowego CRH. Ponieważ stężenie ACTH i POMC jest niskie lub nieoznaczalne, melanocyty nie są stymulowane — pacjenci NIE MAJĄ przebarwień skóry. Wręcz przeciwnie: ich powłoki są alabastrowo blade z powodu niedokrwistości i braku stymulacji barwnikowej, stąd tradycyjne określenie „blady Addison” (pale Addison).",
+      "sourceIds": [
+        "endo_pai",
+        "pte_nadnercza"
+      ],
+      "checkpointId": "niedoczynnosc-wtorna-q2-checkpoint-1-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "niedoczynnosc-wtorna-block-2",
+      "title": "Dlaczego nie ma hiperkaliemii? Zachowana strefa kłębuszkowa",
+      "text": "Fundamentalna różnica biochemiczna: W niedoczynności wtórnej uszkodzona jest wyłącznie stymulacja stref pasmowatej i siatkowatej (zanik ZF i ZR). Strefa kłębuszkowa (ZG) pozostaje anatomicznie i czynnościowo zachowana, ponieważ jej głównym regulatorem jest układ RAA i stężenie potasu, a nie ACTH! W efekcie synteza aldosteronu jest prawidłowa: pacjent z wtórną niedoczynnością kory nadnerczy NIE MA hiperkaliemii ani znacznej utraty sodu przez nerki, i w związku z tym NIE WYMAGA leczenia fludrokortyzonem!",
+      "sourceIds": [
+        "endo_pai",
+        "pte_nadnercza"
+      ],
+      "checkpointId": "niedoczynnosc-wtorna-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "niedoczynnosc-wtorna-block-3",
+      "title": "Jatrogenna supresja osi HPA po sterydoterapii",
+      "text": "Najczęstszą przyczyną wtórnej niedoczynności nadnerczy w populacji ogólnej jest jatrogenna supresja osi HPA wywołana przewlekłym stosowaniem egzogennych glikokortykosteroidów (prednizon, metyloprednizolon, deksametazon, a nawet sterydy wziewne, dostawowe czy maści w dużych dawkach). Przyjmowanie sterydów w dawce odpowiadającej >5 mg prednizonu/dobę przez ponad 3–4 tygodnie blokuje podwzgórze i przysadkę, prowadząc do atrofii kory nadnerczy. Nagłe odstawienie leku lub brak zwiększenia dawki w stresie infekcyjnym grozi wystąpieniem ostrego przełomu nadnerczowego! Regeneracja osi po długiej sterydoterapii może trwać od kilku miesięcy do roku.",
+      "sourceIds": [
+        "endo_pai",
+        "pte_nadnercza"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "niedoczynnosc-wtorna-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "niedoczynnosc-wtorna-obj-2"
+      ],
+      "prompt": "Czym różni się wygląd powłok skórnych w chorobie Addisona od wtórnej niedoczynności nadnerczy?",
+      "options": [
+        "W chorobie Addisona występuje uogólniona hiperpigmentacja (melanodermia), a we wtórnej skóra jest blada",
+        "W obu jednostkach skóra jest jednakowo sino-brunatna",
+        "We wtórnej niedoczynności skóra staje się intensywnie pomarańczowa"
+      ],
+      "optionFeedback": [
+        "Różnica wynika ze skrajnie wysokiego stężenia ACTH/POMC w Addisonie i niskiego we wtórnej niedoczynności.",
+        "Niskie ACTH we wtórnej niedoczynności nie stymuluje melanogenezy.",
+        "Pomarańczowe zabarwienie daje karotenodermia, a nie brak ACTH."
+      ],
+      "answer": 0,
+      "explanation": "Różnica wynika ze skrajnie wysokiego stężenia ACTH/POMC w Addisonie i niskiego we wtórnej niedoczynności.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "endo_pai",
+        "pte_nadnercza"
+      ]
+    },
+    {
+      "id": "niedoczynnosc-wtorna-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "niedoczynnosc-wtorna-obj-1"
+      ],
+      "prompt": "Jaki jest najczęstszy powód wtórnej niewydolności kory nadnerczy w praktyce lekarza POZ i internisty?",
+      "options": [
+        "Jatrogenna supresja osi HPA po przewlekłym stosowaniu syntetycznych glikokortykosteroidów",
+        "Udar krwotoczny podwzgórza",
+        "Wrodzona mutacja receptora ACTH"
+      ],
+      "optionFeedback": [
+        "Stosowanie sterydów doustnych lub pozajelitowych hamuje wydzielanie CRH i ACTH.",
+        "Jest to rzadkie powikłanie naczyniowe w porównaniu z powszechną sterydoterapią.",
+        "Wrodzone mutacje są kazuistyką pediatryczną."
+      ],
+      "answer": 0,
+      "explanation": "Stosowanie sterydów doustnych lub pozajelitowych hamuje wydzielanie CRH i ACTH.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "endo_pai",
+        "pte_nadnercza"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "niedoczynnosc-wtorna-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "niedoczynnosc-wtorna-obj-1",
+      "niedoczynnosc-wtorna-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Uśpione nadnercza”.",
+    "modelAnswer": "Wtórna niedoczynność nadnerczy cechuje się niskim ACTH, bladą skórą i prawidłowym potasem dzięki zachowanej czynności strefy kłębuszkowej. Wymaga leczenia wyłącznie hydrokortyzonem. Najczęstszą przyczyną jest jatrogenna supresja po sterydach, wymagająca stopniowej redukcji dawki.",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "endo_pai",
+      "pte_nadnercza"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "niedoczynnosc-wtorna-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "niedoczynnosc-wtorna-obj-2"
+      ],
+      "prompt": "Czy chory z izolowaną wtórną niedoczynnością kory nadnerczy wymaga przewlekłego przyjmowania fludrokortyzonu?",
+      "options": [
+        "Nie, wymaga wyłącznie substytucji hydrokortyzonem, gdyż strefa kłębuszkowa produkuje aldosteron",
+        "Tak, zawsze w dawce 1 mg/dobę",
+        "Tak, ale wyłącznie w okresie letnim"
+      ],
+      "optionFeedback": [
+        "Dodanie fludrokortyzonu u chorego z prawidłowym RAA groziłoby obrzękami i nadciśnieniem tętniczym.",
+        "Dawka 1 mg jest dawką toksyczną; we wtórnej niedoczynności lek ten w ogóle nie jest wskazany.",
+        "Sezonowość nie warunkuje wskazań do leczenia mineralokortykosteroidami."
+      ],
+      "answer": 0,
+      "explanation": "Dodanie fludrokortyzonu u chorego z prawidłowym RAA groziłoby obrzękami i nadciśnieniem tętniczym.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "endo_pai",
+        "pte_nadnercza"
+      ]
+    },
+    {
+      "id": "niedoczynnosc-wtorna-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "niedoczynnosc-wtorna-obj-1"
+      ],
+      "prompt": "Po jakim czasie stosowania prednizonu w dawce >=5–7,5 mg/dobę należy podejrzewać wystąpienie supresji osi HPA?",
+      "options": [
+        "Po ponad 3–4 tygodniach ciągłego leczenia",
+        "Dopiero po 10 latach nieprzerwanej terapii",
+        "Po podaniu pojedynczej tabletki jednorazowo"
+      ],
+      "optionFeedback": [
+        "Taki okres wystarcza do wywołania czynnościowej atrofii kory i wymaga stopniowego odstawiania leku.",
+        "Supresja rozwija się w ciągu tygodni, a nie dziesięcioleci.",
+        "Jednorazowa dawka sterydu nie wywołuje utrwalonej atrofii nadnerczy."
+      ],
+      "answer": 0,
+      "explanation": "Taki okres wystarcza do wywołania czynnościowej atrofii kory i wymaga stopniowego odstawiania leku.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "endo_pai",
+        "pte_nadnercza"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "adrenal-workbench",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

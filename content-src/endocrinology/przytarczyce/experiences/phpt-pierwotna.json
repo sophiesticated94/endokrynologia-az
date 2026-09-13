@@ -1,0 +1,221 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "phpt-pierwotna",
+  "objectives": [
+    {
+      "id": "phpt-pierwotna-obj-1",
+      "statement": "Zróżnicujesz pojedynczy gruczolak przytarczyc od hiperplazji wielogruczołowej (MEN1/MEN2A).",
+      "kind": "mechanism"
+    },
+    {
+      "id": "phpt-pierwotna-obj-2",
+      "statement": "Poznasz pełne kryteria kwalifikacji do paratyreoidktomii w bezobjawowej PHPT.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "phpt-pierwotna-obj-3",
+      "statement": "Opanujesz lokalizację przedoperacyjną (USG, scyntygrafia MIBI, 18F-FCHoline PET/CT).",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "phpt-pierwotna-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "phpt-pierwotna-obj-1"
+    ],
+    "prompt": "58-letnia kobieta bez objawów ma Ca 10,6 mg/dl (norma do 10,2), PTH 85 pg/ml (norma do 65), T-score kręgosłupa -2,8, eGFR 75 ml/min. Czy pacjentka spełnia kryteria paratyreoidktomii?",
+    "options": [
+      "Tak, ze względu na T-score < -2,5 w densytometrii",
+      "Nie, ponieważ stężenie wapnia przekracza normę o mniej niż 1 mg/dl",
+      "Nie, operuje się wyłącznie pacjentów z jawną kolką nerkową"
+    ],
+    "optionFeedback": [
+      "Osteoporoza (T-score < -2,5) jest jednym z bezwzględnych kryteriów kwalifikacji do operacji w PHPT.",
+      "Wystarczy spełnienie co najmniej JEDNEGO z kryteriów, aby zakwalifikować do leczenia operacyjnego.",
+      "Większość współczesnych operacji przytarczyc przeprowadza się w bezobjawowej PHPT wg kryteriów konsensusu."
+    ],
+    "answer": 0,
+    "explanation": "Osteoporoza (T-score < -2,5) jest jednym z bezwzględnych kryteriów kwalifikacji do operacji w PHPT.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "ese_phpt",
+      "eses_parathyroid"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "phpt-pierwotna-block-1",
+      "title": "Etiologia i spektrum kliniczne PHPT",
+      "text": "Pierwotna nadczynność przytarczyc (PHPT) jest trzecią co do częstości endokrynopatią, występującą najczęściej u kobiet po menopauzie. W 85% przypadków odpowiada za nią pojedynczy łagodny gruczolak przytarczycy, w 10–15% rozrost wielogruczołowy (często w zespołach uwarunkowanych genetycznie: MEN1, MEN2A, CDC73/zespół HPT-JT), a w <1% rak przytarczycy. Klasyczna manifestacja opisana triadą „kamienie, kości, bóle brzucha i zaburzenia psychiczne” (stones, bones, abdominal groans, and psychic moans) w krajach rozwiniętych występuje rzadko — dominują postacie bezobjawowe wykrywane przypadkowo podczas rutynowych badań biochemicznych krwi.",
+      "sourceIds": [
+        "ese_phpt",
+        "eses_parathyroid"
+      ],
+      "checkpointId": "phpt-pierwotna-q2-checkpoint-1-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "phpt-pierwotna-block-2",
+      "title": "Kryteria kwalifikacji do paratyreoidktomii wg wytycznych międzynarodowych",
+      "text": "Chirurgiczne usunięcie zmienionej przytarczycy (paratyreoidktomia) jest jedyną metodą trwałego wyleczenia PHPT. U chorych z jawnymi objawami (kamica nerkowa, złamanie niskoenergetyczne) operacja jest bezwzględnie wskazana. U chorych bezobjawowych operację zaleca się przy spełnieniu co najmniej JEDNEGO z następujących kryteriów konsensusu ESE/Endocrine Society: wiek < 50 lat; stężenie wapnia w surowicy > 1,0 mg/dl (0,25 mmol/l) powyżej górnej granicy normy; obniżenie gęstości mineralnej kości (T-score < -2,5 w odcinku lędźwiowym, szyjce kości udowej lub 1/3 dystalnej kości promieniowej); eGFR < 60 ml/min/1,73 m2; hiperkalciuria dobowego moczu > 250 mg/24h (u kobiet) lub > 300 mg/24h (u mężczyzn) ze współistniejącym ryzykiem kamicy; obecność bezobjawowej kamicy lub nefrokalcynozy w badaniach obrazowych USG/TK.",
+      "sourceIds": [
+        "ese_phpt",
+        "eses_parathyroid"
+      ],
+      "checkpointId": "phpt-pierwotna-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "phpt-pierwotna-block-3",
+      "title": "Diagnostyka lokalizacyjna i chirurgia małoinwazyjna (MIP)",
+      "text": "Diagnostyka obrazowa (USG szyi wysokiej rozdzielczości oraz scyntygrafia 99mTc-MIBI ze spektrometrią SPECT/CT) służy WYŁĄCZNIE planowaniu zabiegu operacyjnego, a nie ustalaniu rozpoznania! Gdy oba badania jednoznacznie wskazują ten sam gruczolak, chirurg może wykonać celowaną paratyreoidktomię małoinwazyjną (MIP — Minimally Invasive Parathyroidectomy). Standardem bezpieczeństwa jest śródoperacyjne monitorowanie stężenia PTH (ioPTH wg kryteriów z Miami): spadek stężenia PTH o >50% w 10 minut po wycięciu zmiany w stosunku do wartości wyjściowej potwierdza usunięcie autonomicznej tkanki i radykalność zabiegu.",
+      "sourceIds": [
+        "ese_phpt",
+        "eses_parathyroid"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "phpt-pierwotna-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "phpt-pierwotna-obj-2"
+      ],
+      "prompt": "Na czym polega kryterium z Miami w śródoperacyjnym monitorowaniu stężenia parathormonu (ioPTH)?",
+      "options": [
+        "Spadek stężenia PTH o >50% w 10 minut po usunięciu gruczolaka względem wartości wyjściowej",
+        "Spadek stężenia PTH do wartości absolutnie niewykrywalnych (0 pg/ml)",
+        "Osiągnięcie stężenia wapnia <8,0 mg/dl przed zszyciem rany operacyjnej"
+      ],
+      "optionFeedback": [
+        "Krótki okres półtrwania PTH (3–5 minut) pozwala potwierdzić radykalność zabiegu jeszcze na sali operacyjnej.",
+        "Wartości nie spadają do zera, ponieważ zdrowe pozostałe przytarczyce zachowują podstawową czynność.",
+        "Wapń w surowicy zmienia się znacznie wolniej niż parathormon i nie służy do kontroli śródoperacyjnej."
+      ],
+      "answer": 0,
+      "explanation": "Krótki okres półtrwania PTH (3–5 minut) pozwala potwierdzić radykalność zabiegu jeszcze na sali operacyjnej.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "ese_phpt",
+        "eses_parathyroid"
+      ]
+    },
+    {
+      "id": "phpt-pierwotna-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "phpt-pierwotna-obj-3"
+      ],
+      "prompt": "Które badanie densytometryczne (DXA) jest najbardziej czułe w wykrywaniu ubytku masy kostnej w PHPT?",
+      "options": [
+        "Densytometria 1/3 dalszej części kości promieniowej (kość korowa)",
+        "Densytometria wyłącznie kręgów lędźwiowych L1–L4",
+        "Densytometria kości piętowej metodą ultradźwiękową"
+      ],
+      "optionFeedback": [
+        "Ciągły nadmiar PTH w pierwszej kolejności degraduje kość korową, której największy odsetek znajduje się w przedramieniu.",
+        "Kość beleczkowa kręgosłupa jest względnie oszczędzana i może fałszywie maskować zaawansowany ubytek kostny.",
+        "Badanie ultrasonograficzne kości piętowej nie ma wartości diagnostycznej w wytycznych PHPT."
+      ],
+      "answer": 0,
+      "explanation": "Ciągły nadmiar PTH w pierwszej kolejności degraduje kość korową, której największy odsetek znajduje się w przedramieniu.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "ese_phpt",
+        "eses_parathyroid"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "phpt-pierwotna-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "phpt-pierwotna-obj-1",
+      "phpt-pierwotna-obj-2",
+      "phpt-pierwotna-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Autonomia przytarczyc: PHPT”.",
+    "modelAnswer": "Pojedynczy gruczolak odpowiada za 85% przypadków PHPT. Kryteria operacyjne kwalifikują pacjentów przed 50. r.ż., ze spadkiem T-score <-2,5 (w tym promień 33%), eGFR <60 lub wapniem >1 mg/dl ponad normę. Spadek ioPTH o >50% w 10. minucie potwierdza wyleczenie.",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "ese_phpt",
+      "eses_parathyroid"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "phpt-pierwotna-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "phpt-pierwotna-obj-1"
+      ],
+      "prompt": "Jaki lek należy rozważyć u chorego z jawną hiperkalcemią w przebiegu PHPT, u którego istnieją bezwzględne przeciwwskazania kardiologiczne do operacji?",
+      "options": [
+        "Cynakalcet (kalcymimetyk)",
+        "Teryparatyd (rekombinowany PTH 1-34)",
+        "Hydrochlorotiazyd"
+      ],
+      "optionFeedback": [
+        "Cynakalcet uwrażliwia receptor CaSR na wapń, hamując wydzielanie PTH i obniżając stężenie wapnia we krwi bez konieczności operacji.",
+        "Teryparatyd to analog parathormonu — jego podanie w nadczynności przytarczyc doprowadziłoby do zagrażającego życiu przełomu!",
+        "Tiazydy zmniejszają wydalanie wapnia z moczem i nasilają hiperkalcemię, są więc bezwzględnie przeciwwskazane."
+      ],
+      "answer": 0,
+      "explanation": "Cynakalcet uwrażliwia receptor CaSR na wapń, hamując wydzielanie PTH i obniżając stężenie wapnia we krwi bez konieczności operacji.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "ese_phpt",
+        "eses_parathyroid"
+      ]
+    },
+    {
+      "id": "phpt-pierwotna-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "phpt-pierwotna-obj-1"
+      ],
+      "prompt": "Kiedy należy wykonać scyntygrafię MIBI lub USG szyi u pacjenta z podejrzeniem PHPT?",
+      "options": [
+        "Dopiero po biochemicznym potwierdzeniu PHPT, na etapie kwalifikacji do techniki operacyjnej",
+        "Jako badanie pierwszego rzutu przed oznaczeniem stężenia wapnia i PTH",
+        "Wyłącznie wtedy, gdy stężenie wapnia wynosi powyżej 15 mg/dl"
+      ],
+      "optionFeedback": [
+        "Badania obrazowe służą lokalizacji przedoperacyjnej u chirurga, a nie ustalaniu rozpoznania choroby.",
+        "Obrazowanie przed potwierdzeniem biochemicznym prowadzi do fałszywych rozpoznań guzków tarczycy jako przytarczyc.",
+        "Lokalizację wykonuje się u każdego pacjenta kwalifikowanego do planowej paratyreoidktomii."
+      ],
+      "answer": 0,
+      "explanation": "Badania obrazowe służą lokalizacji przedoperacyjnej u chirurga, a nie ustalaniu rozpoznania choroby.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "ese_phpt",
+        "eses_parathyroid"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "parathyroid-workbench",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

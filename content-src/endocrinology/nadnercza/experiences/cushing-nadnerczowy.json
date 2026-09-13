@@ -1,0 +1,224 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "cushing-nadnerczowy",
+  "objectives": [
+    {
+      "id": "cushing-nadnerczowy-obj-1",
+      "statement": "Rozpoznasz postać zespołu Cushinga niezależną od ACTH (autonomiczny gruczolak kory nadnercza vs subkliniczna hiperkortyzolemia MACS).",
+      "kind": "mechanism"
+    },
+    {
+      "id": "cushing-nadnerczowy-obj-2",
+      "statement": "Zrozumiesz zjawisko atrofii przeciwległego nadnercza i bezwzględną konieczność okołooperacyjnej osłony hydrokortyzonem.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "cushing-nadnerczowy-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "cushing-nadnerczowy-obj-1"
+    ],
+    "prompt": "Jakie stężenie ACTH w osoczu stwierdza się u chorego z jawnym zespołem Cushinga wywołanym pojedynczym autonomicznym gruczolakiem kory nadnercza?",
+    "options": [
+      "Stłumione, poniżej dolnej granicy wykrywalności (zwykle <2–5 pg/ml)",
+      "Wybitnie podwyższone (>200 pg/ml)",
+      "Dokładnie w środku zakresu normy bez wahań"
+    ],
+    "optionFeedback": [
+      "Autonomiczny nadmiar kortyzolu blokuje przysadkę na drodze ujemnego sprzężenia zwrotnego.",
+      "Tak wysokie ACTH występuje w ektopowym zespole Cushinga lub w chorobie Addisona.",
+      "Prawidłowe ACTH wyklucza autonomiczną postać nadnerczową."
+    ],
+    "answer": 0,
+    "explanation": "Autonomiczny nadmiar kortyzolu blokuje przysadkę na drodze ujemnego sprzężenia zwrotnego.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "pte_nadnercza",
+      "pte_macs",
+      "ese_incidentaloma"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "cushing-nadnerczowy-block-1",
+      "title": "Zespół Cushinga ACTH-niezależny: Mechanizm autonomii",
+      "text": "Około 20–30% endogennych przypadków zespołu Cushinga ma charakter ACTH-niezależny, wynikający z pierwotnej patologii kory nadnerczy: w 60% jest to pojedynczy łagodny gruczolak kory nadnercza (adrenocortical adenoma), w 30–35% złośliwy rak kory nadnerczy (ACC), a rzadziej obustronny makro- lub mikroguzkowy rozrost kory (PMAH, PPNAD). Komórki guza autonomicznie, bez jakiejkolwiek kontroli przysadki, syntetyzują kortyzol. Nadmiar krążącego kortyzolu hamuje przysadkowe ACTH do wartości skrajnie niskich lub nieoznaczalnych (ACTH <2–5 pg/ml).",
+      "sourceIds": [
+        "pte_nadnercza",
+        "pte_macs",
+        "ese_incidentaloma"
+      ],
+      "checkpointId": "cushing-nadnerczowy-q2-checkpoint-1-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "cushing-nadnerczowy-block-2",
+      "title": "Łagodna autonomiczna sekrecja kortyzolu (MACS)",
+      "text": "Wielu chorych z przypadkowo wykrytym gruczolakiem nadnercza (incydentaloma) nie wykazuje pełnoobjawowego fenotypu Cushinga (brak purpurowych rozstępów czy miopatii), lecz ma biochemiczne cechy autonomii. Stan ten określano dawniej jako „podkliniczny zespół Cushinga”, a obecnie wg wytycznych ESE/PTE jako łagodną autonomiczną sekrecję kortyzolu (Mild Autonomous Cortisol Secretion — MACS). Kryterium: stężenie kortyzolu w surowicy po nocnym teście 1 mg deksametazonu wynosi >1,8 µg/dl (>50 nmol/l) przy braku cech jawnego hiperkortyzolizmu. MACS prowadzi do powikłań metabolicznych: opornego nadciśnienia, cukrzycy typu 2, dyslipidemii i osteoporozy z patologicznymi złamaniami trzonów kręgowych.",
+      "sourceIds": [
+        "pte_nadnercza",
+        "pte_macs",
+        "ese_incidentaloma"
+      ],
+      "checkpointId": "cushing-nadnerczowy-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "cushing-nadnerczowy-block-3",
+      "title": "Atrofia drugiego nadnercza i śmiertelna pułapka pooperacyjna",
+      "text": "KRYTYCZNA ZASADA BEZPIECZEŃSTWA: Przewlekłe stłumienie ACTH przez autonomiczny guz kortyzolowy prowadzi do głębokiej atrofii zdrowego miąższu kory nadnercza po stronie guza oraz CAŁKOWITEJ ATROFII kory przeciwległego, zdrowego nadnercza! W chwili gdy chirurg wytnie guz (adrenalektomia), pacjent w ciągu kilku godzin traci jedyne źródło kortyzolu w organizmie. Jeśli nie otrzyma dożylnie osłony hydrokortyzonem, natychmiast rozwinie ostry, śmiertelny przełom nadnerczowy! U każdego chorego operowanego z powodu guzów wydzielających kortyzol (nawet z MACS) należy wdrożyć profilaktykę hydrokortyzonem śród- i pooperacyjnie aż do pełnej regeneracji drugiego nadnercza (co może trwać od 6 do 24 miesięcy).",
+      "sourceIds": [
+        "pte_nadnercza",
+        "pte_macs",
+        "ese_incidentaloma"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "cushing-nadnerczowy-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "cushing-nadnerczowy-obj-2"
+      ],
+      "prompt": "Dlaczego po usunięciu autonomicznego gruczolaka kory nadnercza pacjent musi natychmiast otrzymać hydrokortyzon?",
+      "options": [
+        "Przeciwległe zdrowe nadnercze uległo głębokiej atrofii z powodu przewlekłego braku ACTH, co grozi ostrym przełomem nadnerczowym",
+        "Hydrokortyzon zapobiega nawrotowi nowotworu w ranie",
+        "Aby natychmiast obniżyć ciśnienie tętnicze"
+      ],
+      "optionFeedback": [
+        "Bez osłony sterydowej chory nie posiada własnej produkcji kortyzolu.",
+        "Hydrokortyzon jest hormonem zastępczym, a nie lekiem przeciwnowotworowym.",
+        "Hydrokortyzon podtrzymuje ciśnienie, nie służy do jego obniżania."
+      ],
+      "answer": 0,
+      "explanation": "Bez osłony sterydowej chory nie posiada własnej produkcji kortyzolu.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "pte_nadnercza",
+        "pte_macs",
+        "ese_incidentaloma"
+      ]
+    },
+    {
+      "id": "cushing-nadnerczowy-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "cushing-nadnerczowy-obj-1"
+      ],
+      "prompt": "Jakie kryterium w nocnym teście hamowania 1 mg deksametazonu definiuje łagodną autonomiczną sekrecję kortyzolu (MACS) w incydentaloma nadnerczy?",
+      "options": [
+        "Kortyzol w surowicy rano >1,8 µg/dl (>50 nmol/l) przy braku jawnych cech fenotypowych zespołu Cushinga",
+        "Kortyzol spadający poniżej 0,5 µg/dl",
+        "Wzrost stężenia glukozy powyżej 300 mg/dl"
+      ],
+      "optionFeedback": [
+        "Wskazuje to na utratę pełnej fizjologicznej supresji osi HPA.",
+        "Spadek <1,8 µg/dl oznacza w pełni prawidłowe hamowanie.",
+        "Test deksametazonu ocenia stężenie kortyzolu, a nie glukozy."
+      ],
+      "answer": 0,
+      "explanation": "Wskazuje to na utratę pełnej fizjologicznej supresji osi HPA.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "pte_nadnercza",
+        "pte_macs",
+        "ese_incidentaloma"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "cushing-nadnerczowy-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "cushing-nadnerczowy-obj-1",
+      "cushing-nadnerczowy-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Gdy nadnercze działa na własną rękę”.",
+    "modelAnswer": "Nadnerczowy zespół Cushinga cechuje się autonomiczną produkcją kortyzolu i stłumionym ACTH. Postać subkliniczna (MACS) niesie ryzyko powikłań sercowo-naczyniowych i kostnych. Usunięcie autonomicznego guza wymaga bezwzględnej osłony hydrokortyzonem z powodu atrofii drugiego nadnercza.",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "pte_nadnercza",
+      "pte_macs",
+      "ese_incidentaloma"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "cushing-nadnerczowy-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "cushing-nadnerczowy-obj-2"
+      ],
+      "prompt": "Jakie powikłania ogólnoustrojowe najczęściej towarzyszą chorym z łagodną autonomiczną sekrecją kortyzolu (MACS)?",
+      "options": [
+        "Oporne nadciśnienie tętnicze, cukrzyca typu 2 oraz osteoporoza ze złamaniami trzonów kręgów",
+        "Bielactwo nabyte i zapalenie tarczycy",
+        "Niedociśnienie ortostatyczne i biegunki"
+      ],
+      "optionFeedback": [
+        "Przewlekła subkliniczna ekspozycja na kortyzol niszczy metabolizm i strukturę kości.",
+        "To cechy chorób autoimmunologicznych, a nie hiperkortyzolemii.",
+        "Niedociśnienie cechuje niedobór kortyzolu, a nie jego autonomiczny nadmiar."
+      ],
+      "answer": 0,
+      "explanation": "Przewlekła subkliniczna ekspozycja na kortyzol niszczy metabolizm i strukturę kości.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "pte_nadnercza",
+        "pte_macs",
+        "ese_incidentaloma"
+      ]
+    },
+    {
+      "id": "cushing-nadnerczowy-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "cushing-nadnerczowy-obj-1"
+      ],
+      "prompt": "Jak długo po operacji usunięcia gruczolaka wydzielającego kortyzol może trwać regeneracja osi HPA i przeciwległego nadnercza?",
+      "options": [
+        "Od kilku miesięcy do nawet 1–2 lat",
+        "Dokładnie 24 godziny",
+        "Oś HPA po operacji nigdy się nie regeneruje"
+      ],
+      "optionFeedback": [
+        "W tym okresie pacjent wymaga stopniowo redukowanej substytucji hydrokortyzonem.",
+        "Atrofia kory nie cofa się w ciągu jednej doby.",
+        "W zdecydowanej większości przypadków funkcja zdrowego nadnercza ostatecznie powraca."
+      ],
+      "answer": 0,
+      "explanation": "W tym okresie pacjent wymaga stopniowo redukowanej substytucji hydrokortyzonem.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "pte_nadnercza",
+        "pte_macs",
+        "ese_incidentaloma"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "adrenal-workbench",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

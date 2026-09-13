@@ -1,0 +1,164 @@
+{
+  "id": "przytarczyce-chemia-witd-bisfosfoniany",
+  "moduleId": "przytarczyce",
+  "title": "Fotoliza 7-dehydrocholesterolu, hydroksylacja witaminy D i mostki P-C-P",
+  "subtitle": "Seko-steroidy, 1α-hydroksylaza (CYP27B1) i inhibicja FPPS przez bisfosfoniany",
+  "group": "Chemia i biochemia",
+  "minutes": 21,
+  "goals": [
+    "Wyjaśnisz fotochemiczny etap powstawania cholekalcyferolu pod wpływem UVB (290–315 nm) i dwuetapową hydroksylację enzymatyczną.",
+    "Zanalizujesz mechanizm działania aminobisfosfonianów: chelatacja mostka P-C-P w kości i inhibicja syntazy FPPS osteoklastów."
+  ],
+  "sections": [
+    {
+      "title": "Fotochemia witaminy D: Rozszczepienie pierścienia B pod wpływem UVB",
+      "text": "Prekursorem witaminy D3 w warstwie kolczystej i podstawnej naskórka jest 7-dehydrocholesterol (pochodna cholesterolu z podwójnym wiązaniem w pozycji C-7 i C-8). Promieniowanie ultrafioletowe UVB (długość fali 290–315 nm) powoduje elektrocamiczne otwarcie pierścienia B pomiędzy atomami C-9 i C-10. Powstaje termodynamicznie niestabilna prewitamina D3, która ulega powolnej (24–48 h) izomeryzacji termicznej do cholekalcyferolu. Ponieważ pierścień B jest otwarty, witamina D jest seko-steroidem."
+    },
+    {
+      "title": "Kaskada hydroksylacji: CYP2R1 (wątroba) i CYP27B1 (nerki)",
+      "text": "Cholekalcyferol jest biologicznie nieaktywny. W hepatocytach enzym mikrosomalny CYP2R1 przeprowadza 25-hydroksylację, tworząc kalcydiol (25(OH)D3 — główną formę magazynową o t1/2 ≈ 2–3 tygodnie). W proksymalnych kanalikach nerek mitochondrialny cytochrom CYP27B1 (1alfa-hydroksylaza) dołącza grupę OH przy C-1, tworząc aktywny hormon kalcytriol (1,25(OH)2D3). Ekspresja CYP27B1 jest silnie stymulowana przez parathormon (PTH) i hipofosfatemię, a hamowana przez FGF23 i hiperkalcemię."
+    },
+    {
+      "title": "Chemia bisfosfonianów: Nielabilny mostek P-C-P i inhibicja FPPS",
+      "text": "Naturalny pirofosforan posiada mostek P-O-P, który ulega natychmiastowej hydrolizie przez fosfatazy zasadowe. Leki z grupy bisfosfonianów zawierają mostek P-C-P oporny na enzymatyczną degradację. Dwie grupy fosfonianowe chelatują jony Ca2+, nadając lekowi ogromne powinowactwo do kryształów hydroksyapatytu w kości. Nowoczesne aminobisfosfoniany (zoledronian, alendronian) posiadają łańcuch boczny R2 z atomem azotu, który jest silnym inhibitorem syntazy difosforanu farnezylu (FPPS) w szlaku mewalonianu osteoklastów, co blokuje prenylację białek Rho/Rac i wywołuje apoptozę osteoklastów."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Związek chemiczny",
+      "Kluczowa cecha strukturalna",
+      "Rola farmakologiczna / biologiczna"
+    ],
+    "rows": [
+      [
+        "Cholekalcyferol (D3)",
+        "Seko-steroid z otwartym pierścieniem B (C9-C10)",
+        "Powstaje w skórze po naświetleniu UVB lub dostarczany w diecie"
+      ],
+      [
+        "Kalcydiol (25(OH)D3)",
+        "25-hydroksylacja przez wątrobowy CYP2R1",
+        "Główna krążąca forma witaminy D; miara zaopatrzenia ustroju (norma >30 ng/ml)"
+      ],
+      [
+        "Kalcytriol (1,25(OH)2D3)",
+        "1α,25-dihydroksylacja przez nerkowy CYP27B1",
+        "Aktywny ligand receptora jądrowego VDR; zwiększa wchłanianie Ca i P w jelicie"
+      ],
+      [
+        "Kwas zoledronowy",
+        "Mostek P-C-P + pierścień imidazolowy z azotem",
+        "Najsilniejszy bisfosfonian i.v.; blokuje FPPS, leczy przełom hiperkalcemiczny"
+      ]
+    ]
+  },
+  "advanced": "Inhibicja syntazy FPPS przez aminobisfosfoniany uniemożliwia biosyntezę geranylogeranylo-difosforanu (GGPP) niezbędnego do izoprenylacji małych białek G (Rho, Rac, Cdc42). Pozbawione kotwicy lipidowej białka sygnałowe nie mogą przycumować do wewnętrznej powierzchni błony komórkowej osteoklasta, co skutkuje załamaniem rąbka szczoteczkowego (ruffled border), utratą zdolności do sekrecji kwasu solnego i apoptozą komórki kościogubnej.",
+  "summary": "Witamina D jest seko-steroidem wymagającym fotolizy UVB i dwóch hydroksylacji (CYP2R1 i CYP27B1), a bisfosfoniany kotwiczą się mostkiem P-C-P w kości i hamują enzym FPPS w osteoklastach.",
+  "sourceIds": [
+    "qtc_bone",
+    "endo_hypercalcemia",
+    "pte_osteoporoza"
+  ],
+  "questions": [
+    {
+      "id": "przytarczyce-chemia-witd-bisfosfoniany-q1",
+      "lessonId": "przytarczyce-chemia-witd-bisfosfoniany",
+      "prompt": "Dlaczego witamina D3 jest określana w chemii organicznej mianem „seko-steroidu”?",
+      "options": [
+        {
+          "text": "Ponieważ promieniowanie UVB rozrywa wiązanie węgiel-węgiel w pierścieniu B szkieletu steroidowego",
+          "explanation": "Przedrostek „seko-” oznacza związek steroidowy z otwartym jednym z pierścieni."
+        },
+        {
+          "text": "Ponieważ jest wydalana w całości w ciągu jednej sekundy",
+          "explanation": "Czas półtrwania metabolitów wynosi od godzin (kalcytriol) do tygodni (kalcydiol)."
+        },
+        {
+          "text": "Ponieważ zawiera wyłącznie atomy selenu i kobaltu",
+          "explanation": "Witamina D składa się z węgla, wodoru i tlenu."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przytarczyce-chemia-witd-bisfosfoniany-q2",
+      "lessonId": "przytarczyce-chemia-witd-bisfosfoniany",
+      "prompt": "Który metabolit witaminy D oznacza się we krwi obwodowej jako standardowy laboratoryjny wskaźnik zaopatrzenia organizmu?",
+      "options": [
+        {
+          "text": "25-Hydroksywitaminę D (Kalcydiol / 25(OH)D)",
+          "explanation": "Ma długi czas półtrwania (2–3 tygodnie) i odzwierciedla łączną syntezę skórną i podaż dietetyczną."
+        },
+        {
+          "text": "Aktywny 1,25(OH)2D (Kalcytriol)",
+          "explanation": "Kalcytriol ma krótki t1/2 (4–6 h) i w hipowitaminozie może być paradoksalnie podwyższony przez wysoki PTH."
+        },
+        {
+          "text": "Czysty cholesterol naskórkowy",
+          "explanation": "Cholesterol jest powszechnym lipidem błonowym, nie miarą witaminy D."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przytarczyce-chemia-witd-bisfosfoniany-q3",
+      "lessonId": "przytarczyce-chemia-witd-bisfosfoniany",
+      "prompt": "Czym pod względem chemicznym różni się mostek w cząsteczce bisfosfonianów (P-C-P) od naturalnego pirofosforanu (P-O-P)?",
+      "options": [
+        {
+          "text": "Atom węgla zamiast tlenu czyni wiązanie P-C-P całkowicie opornym na enzymatyczną hydrolizę fosfatazami",
+          "explanation": "Umożliwia to wieloletnie przetrwanie leku w macierzy mineralnej kości."
+        },
+        {
+          "text": "Wiązanie P-C-P eksploduje w kontakcie z wodą",
+          "explanation": "Bisfosfoniany są stabilnymi solami rozpuszczalnymi w roztworach wodnych."
+        },
+        {
+          "text": "Bisfosfoniany nie posiadają w ogóle atomów fosforu",
+          "explanation": "Zawierają dwie reszty fosfonianowe skoordynowane przy centralnym węglu."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przytarczyce-chemia-witd-bisfosfoniany-q4",
+      "lessonId": "przytarczyce-chemia-witd-bisfosfoniany",
+      "prompt": "Jaki kluczowy enzym szlaku mewalonianowego jest hamowany przez azotowe bisfosfoniany (np. kwas zoledronowy)?",
+      "options": [
+        {
+          "text": "Syntaza difosforanu farnezylu (FPPS)",
+          "explanation": "Blokuje to prenylację małych białek G (Rho, Rac) i prowadzi do apoptozy osteoklastów."
+        },
+        {
+          "text": "Cyklaza adenylowa",
+          "explanation": "Cyklaza syntetyzuje cAMP, nie uczestniczy w szlaku mewalonianowym."
+        },
+        {
+          "text": "Pepsyna żołądkowa",
+          "explanation": "Pepsyna trawi białka w żołądku."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przytarczyce-chemia-witd-bisfosfoniany-q5",
+      "lessonId": "przytarczyce-chemia-witd-bisfosfoniany",
+      "prompt": "Główny bodziec stymulujący nerkowy enzym CYP27B1 (1α-hydroksylazę) do produkcji aktywnego kalcytriolu to:",
+      "options": [
+        {
+          "text": "Wysokie stężenie parathormonu (PTH) oraz hipofosfatemia",
+          "explanation": "PTH aktywuje transkrypcję genu CYP27B1 w odpowiedzi na hipokalcemię."
+        },
+        {
+          "text": "Hiperkalcemia i wysoki poziom FGF23",
+          "explanation": "FGF23 i nadmiar wapnia silnie hamują ekspresję CYP27B1, chroniąc przed zatruciem."
+        },
+        {
+          "text": "Wypicie 5 litrów czystej wody",
+          "explanation": "Podaż wody nie jest specyficznym hormonalnym regulatorem 1α-hydroksylazy."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

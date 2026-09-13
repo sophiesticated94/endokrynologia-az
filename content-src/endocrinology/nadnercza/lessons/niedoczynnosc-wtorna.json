@@ -1,0 +1,163 @@
+{
+  "id": "niedoczynnosc-wtorna",
+  "moduleId": "nadnercza",
+  "title": "Uśpione nadnercza",
+  "subtitle": "Niedoczynność wtórna, supresja posteroidowa i pojęcie „bladego Addisona”",
+  "group": "Niedoczynność kory i WPN",
+  "minutes": 16,
+  "goals": [
+    "Zrozumiesz patofizjologiczne różnice między pierwotną a wtórną niedoczynnością kory nadnerczy.",
+    "Opanujesz zasady bezpiecznego odstawiania przewlekłej sterydoterapii i rozpoznawania jatrogennej supresji osi HPA."
+  ],
+  "sections": [
+    {
+      "title": "Mechanizm: Oś bez dyrygenta i „blady Addison”",
+      "text": "Wtórna niedoczynność kory nadnerczy wynika z niedoboru przysadkowego ACTH (guzy siodła, operacje przysadki, apopleksja, urazy głowy), a trzeciorzędowa z niedoboru podwzgórzowego CRH. Ponieważ stężenie ACTH i POMC jest niskie lub nieoznaczalne, melanocyty nie są stymulowane — pacjenci NIE MAJĄ przebarwień skóry. Wręcz przeciwnie: ich powłoki są alabastrowo blade z powodu niedokrwistości i braku stymulacji barwnikowej, stąd tradycyjne określenie „blady Addison” (pale Addison)."
+    },
+    {
+      "title": "Dlaczego nie ma hiperkaliemii? Zachowana strefa kłębuszkowa",
+      "text": "Fundamentalna różnica biochemiczna: W niedoczynności wtórnej uszkodzona jest wyłącznie stymulacja stref pasmowatej i siatkowatej (zanik ZF i ZR). Strefa kłębuszkowa (ZG) pozostaje anatomicznie i czynnościowo zachowana, ponieważ jej głównym regulatorem jest układ RAA i stężenie potasu, a nie ACTH! W efekcie synteza aldosteronu jest prawidłowa: pacjent z wtórną niedoczynnością kory nadnerczy NIE MA hiperkaliemii ani znacznej utraty sodu przez nerki, i w związku z tym NIE WYMAGA leczenia fludrokortyzonem!"
+    },
+    {
+      "title": "Jatrogenna supresja osi HPA po sterydoterapii",
+      "text": "Najczęstszą przyczyną wtórnej niedoczynności nadnerczy w populacji ogólnej jest jatrogenna supresja osi HPA wywołana przewlekłym stosowaniem egzogennych glikokortykosteroidów (prednizon, metyloprednizolon, deksametazon, a nawet sterydy wziewne, dostawowe czy maści w dużych dawkach). Przyjmowanie sterydów w dawce odpowiadającej >5 mg prednizonu/dobę przez ponad 3–4 tygodnie blokuje podwzgórze i przysadkę, prowadząc do atrofii kory nadnerczy. Nagłe odstawienie leku lub brak zwiększenia dawki w stresie infekcyjnym grozi wystąpieniem ostrego przełomu nadnerczowego! Regeneracja osi po długiej sterydoterapii może trwać od kilku miesięcy do roku."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Parametr / Cecha",
+      "Pierwotna niedoczynność (Addison)",
+      "Wtórna niedoczynność nadnerczy"
+    ],
+    "rows": [
+      [
+        "Stężenie ACTH w osoczu",
+        "Znacznie podwyższone (>100–1000 pg/ml)",
+        "Niskie lub nieadekwatnie w normie (<10–20 pg/ml)"
+      ],
+      [
+        "Pigmentacja skóry",
+        "Melanodermia (ciemna skóra, zgięcia dłoni, błony śluzowe)",
+        "Brak przebarwień („blady Addison”)"
+      ],
+      [
+        "Gospodarka potasowa (K+)",
+        "Częsta hiperkaliemia (brak aldosteronu)",
+        "Potas w normie (sprawny układ RAA)"
+      ],
+      [
+        "Substytucja fludrokortyzonem",
+        "Bezwzględnie konieczna (0,05–0,1 mg/d)",
+        "Zbędna (strefa kłębuszkowa funkcjonuje prawidłowo)"
+      ]
+    ]
+  },
+  "advanced": "Jak bezpiecznie odstawiać przewlekłą sterydoterapię? Najpierw stopniowo redukuje się dawkę do ekwiwalentu fizjologicznego (ok. 4–5 mg prednizonu lub 15–20 mg hydrokortyzonu rano). Następnie pacjenta przestawia się na krótko działający hydrokortyzon (15 mg rano). Ocenę powrotu sprawności osi HPA przeprowadza się, oznaczając poranny kortyzol przed przyjęciem porannej dawki leku: gdy kortyzol rano przekroczy >10 µg/dl, a w teście z Synacthenem osiągnie >=18 µg/dl (lub >=14–15 µg/dl w metodach LC-MS/MS), sterydoterapię można definitywnie zakończyć.",
+  "summary": "Wtórna niedoczynność nadnerczy cechuje się niskim ACTH, bladą skórą i prawidłowym potasem dzięki zachowanej czynności strefy kłębuszkowej. Wymaga leczenia wyłącznie hydrokortyzonem. Najczęstszą przyczyną jest jatrogenna supresja po sterydach, wymagająca stopniowej redukcji dawki.",
+  "sourceIds": [
+    "endo_pai",
+    "pte_nadnercza"
+  ],
+  "questions": [
+    {
+      "id": "niedoczynnosc-wtorna-q1",
+      "lessonId": "niedoczynnosc-wtorna",
+      "prompt": "Dlaczego u pacjenta z wtórną (przysadkową) niedoczynnością kory nadnerczy stężenie potasu w surowicy zazwyczaj pozostaje prawidłowe?",
+      "options": [
+        {
+          "text": "Strefa kłębuszkowa syntetyzuje aldosteron pod kontrolą układu RAA, niezależnie od przysadkowego ACTH",
+          "explanation": "Zachowana produkcja aldosteronu zapewnia prawidłowe wydalanie potasu przez nerki."
+        },
+        {
+          "text": "W chorobach przysadki nerki tracą zdolność wydalania potasu",
+          "explanation": "Nerki zachowują prawidłową funkcję cewkową pod wpływem aldosteronu."
+        },
+        {
+          "text": "Potas u tych chorych odkłada się w kościach",
+          "explanation": "Potas jest głównym kationem wewnątrzkomórkowym, kości nie magazynują go w ten sposób."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "niedoczynnosc-wtorna-q2",
+      "lessonId": "niedoczynnosc-wtorna",
+      "prompt": "Czym różni się wygląd powłok skórnych w chorobie Addisona od wtórnej niedoczynności nadnerczy?",
+      "options": [
+        {
+          "text": "W chorobie Addisona występuje uogólniona hiperpigmentacja (melanodermia), a we wtórnej skóra jest blada",
+          "explanation": "Różnica wynika ze skrajnie wysokiego stężenia ACTH/POMC w Addisonie i niskiego we wtórnej niedoczynności."
+        },
+        {
+          "text": "W obu jednostkach skóra jest jednakowo sino-brunatna",
+          "explanation": "Niskie ACTH we wtórnej niedoczynności nie stymuluje melanogenezy."
+        },
+        {
+          "text": "We wtórnej niedoczynności skóra staje się intensywnie pomarańczowa",
+          "explanation": "Pomarańczowe zabarwienie daje karotenodermia, a nie brak ACTH."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "niedoczynnosc-wtorna-q3",
+      "lessonId": "niedoczynnosc-wtorna",
+      "prompt": "Jaki jest najczęstszy powód wtórnej niewydolności kory nadnerczy w praktyce lekarza POZ i internisty?",
+      "options": [
+        {
+          "text": "Jatrogenna supresja osi HPA po przewlekłym stosowaniu syntetycznych glikokortykosteroidów",
+          "explanation": "Stosowanie sterydów doustnych lub pozajelitowych hamuje wydzielanie CRH i ACTH."
+        },
+        {
+          "text": "Udar krwotoczny podwzgórza",
+          "explanation": "Jest to rzadkie powikłanie naczyniowe w porównaniu z powszechną sterydoterapią."
+        },
+        {
+          "text": "Wrodzona mutacja receptora ACTH",
+          "explanation": "Wrodzone mutacje są kazuistyką pediatryczną."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "niedoczynnosc-wtorna-q4",
+      "lessonId": "niedoczynnosc-wtorna",
+      "prompt": "Czy chory z izolowaną wtórną niedoczynnością kory nadnerczy wymaga przewlekłego przyjmowania fludrokortyzonu?",
+      "options": [
+        {
+          "text": "Nie, wymaga wyłącznie substytucji hydrokortyzonem, gdyż strefa kłębuszkowa produkuje aldosteron",
+          "explanation": "Dodanie fludrokortyzonu u chorego z prawidłowym RAA groziłoby obrzękami i nadciśnieniem tętniczym."
+        },
+        {
+          "text": "Tak, zawsze w dawce 1 mg/dobę",
+          "explanation": "Dawka 1 mg jest dawką toksyczną; we wtórnej niedoczynności lek ten w ogóle nie jest wskazany."
+        },
+        {
+          "text": "Tak, ale wyłącznie w okresie letnim",
+          "explanation": "Sezonowość nie warunkuje wskazań do leczenia mineralokortykosteroidami."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "niedoczynnosc-wtorna-q5",
+      "lessonId": "niedoczynnosc-wtorna",
+      "prompt": "Po jakim czasie stosowania prednizonu w dawce >=5–7,5 mg/dobę należy podejrzewać wystąpienie supresji osi HPA?",
+      "options": [
+        {
+          "text": "Po ponad 3–4 tygodniach ciągłego leczenia",
+          "explanation": "Taki okres wystarcza do wywołania czynnościowej atrofii kory i wymaga stopniowego odstawiania leku."
+        },
+        {
+          "text": "Dopiero po 10 latach nieprzerwanej terapii",
+          "explanation": "Supresja rozwija się w ciągu tygodni, a nie dziesięcioleci."
+        },
+        {
+          "text": "Po podaniu pojedynczej tabletki jednorazowo",
+          "explanation": "Jednorazowa dawka sterydu nie wywołuje utrwalonej atrofii nadnerczy."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

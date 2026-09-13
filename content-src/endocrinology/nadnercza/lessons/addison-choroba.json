@@ -1,0 +1,163 @@
+{
+  "id": "addison-choroba",
+  "moduleId": "nadnercza",
+  "title": "Gdy kora zanika",
+  "subtitle": "Choroba Addisona, melanodermia, elektrolity i leczenie hydrokortyzonem",
+  "group": "Niedoczynność kory i WPN",
+  "minutes": 18,
+  "goals": [
+    "Rozpoznasz triadę kliniczno-laboratoryjną choroby Addisona: osłabienie, melanodermia, hipotensja, hiponatremia z hiperkaliemią.",
+    "Zrozumiesz zasady substytucji dwuhormonalnej (hydrokortyzon + fludrokortyzon) oraz edukację pacjenta (zasada podwajania dawek w chorobie)."
+  ],
+  "sections": [
+    {
+      "title": "Etiologia: Od gruźlicy do autoimmunologii",
+      "text": "Pierwotna niedoczynność kory nadnerczy (choroba Addisona) rozwija się, gdy zniszczeniu ulegnie ponad 90% miąższu kory obu nadnerczy. Historycznie dominowała gruźlica, obecnie w krajach rozwiniętych ponad 80–90% przypadków to autoimmunologiczne zapalenie kory nadnerczy (autoimmune adrenalitis). Cechuje się obecnością autoprzeciwciał przeciwko 21-hydroksylazie (anty-21-OH). Może występować w ramach autoimmunologicznych zespołów wielogruczołowych: APS-1 (mutacja AIRE: Addison, kandydoza, hipoparatiroidyzm) lub APS-2 (zespół Schmidta: Addison, autoimmunologiczna choroba tarczycy i/lub cukrzyca typu 1)."
+    },
+    {
+      "title": "Obraz kliniczny i tajemnica melanodermii",
+      "text": "Objawy narastają podstępnie przez miesiące: przewlekłe zmęczenie, osłabienie mięśniowe, chudnięcie, jadłowstręt, hipotensja ortostatyczna oraz charakterystyczne pragnienie soli (salt craving — „chęć zjedzenia ogórka kiszonego lub wypicia wody z solą”). KLUCZOWY OBJAW PATOFIZJOLOGICZNY: Ciemnienie skóry i błon śluzowych (melanodermia / hiperpigmentacja). Brak kortyzolu znosi ujemne sprzężenie zwrotne, prowadząc do gigantycznego wyrzutu przysadkowego ACTH oraz jego prekursora POMC (proopiomelanokortyny). ACTH i peptydy MSH pobudzają receptory melanokortynowe 1 (MC1R) w melanocytach. Przebarwienia pojawiają się w miejscach narażonych na słońce, w zgięciach dłoniowych, na otoczkach brodawek, bliźnach powstałych po początku choroby oraz na błonie śluzowej policzków!"
+    },
+    {
+      "title": "Zaburzenia elektrolitowe i leczenie substytucyjne",
+      "text": "W chorobie Addisona zniszczona jest cała kora, w tym strefa kłębuszkowa. Niedobór aldosteronu prowadzi do utraty sodu i wody przez nerki oraz zatrzymywania potasu i jonów wodorowych: powstaje hiponatremia, hiperkaliemia i kwasica metaboliczna. LECZENIE SUBSTYTUCYJNE wymaga uzupełnienia obu hormonów: 1) Hydrokortyzon (15–25 mg/dobę w 2–3 dawkach podzielonych, np. 15 mg rano i 5–10 mg popołudniu, imitując rytm dobowy); 2) Fludrokortyzon (0,05–0,2 mg rano raz dziennie) w celu wyrównania gospodarki sodowo-potasowej i ciśnienia. Każdy chory musi nosić kartę medyczną („Paszport Addisona”) i umieć podwoić dawkę hydrokortyzonu w infekcji z gorączką!"
+    }
+  ],
+  "table": {
+    "headers": [
+      "Cecha kliniczna / Laboratoryjna",
+      "Mechanizm patofizjologiczny",
+      "Postępowanie"
+    ],
+    "rows": [
+      [
+        "Melanodermia (ciemna skóra)",
+        "Nadmiar ACTH/POMC stymuluje receptory MC1R na melanocytach",
+        "Ustępuje stopniowo po wdrożeniu substytucji hydrokortyzonem"
+      ],
+      [
+        "Hiperkaliemia (K+ >5,0–5,5 mmol/l)",
+        "Brak aldosteronu upośledza wydalanie potasu w cewkach zbiorczych",
+        "Substytucja fludrokortyzonem (0,05–0,1 mg/d)"
+      ],
+      [
+        "Hipotensja ortostatyczna",
+        "Utrata sodu i wody oraz brak działania permisywnego kortyzolu na naczynia",
+        "Fludrokortyzon + hydrokortyzon + odpowiednia podaż soli"
+      ],
+      [
+        "Gorączka >38°C / infekcja",
+        "Zwiększone zapotrzebowanie obwodowe na glikokortykosteroidy",
+        "NATYCHMIAST podwoić lub potroić dawkę doustną hydrokortyzonu"
+      ]
+    ]
+  },
+  "advanced": "W chorobie Addisona dochodzi również do zniszczenia strefy siatkowatej i całkowitego braku nadnerczowych androgenów (DHEA i DHEA-S). U mężczyzn nie daje to objawów z powodu produkcji testosteronu przez jądra. U kobiet jednak nadnercza są głównym źródłem androgenów — ich brak prowadzi do utraty owłosienia łonowego i pachowego, spadku libido oraz obniżenia nastroju i energii życiowej. W takich przypadkach wytyczne Endocrine Society dopuszczają włączenie substytucji DHEA (25–50 mg/dobę u kobiet).",
+  "summary": "Choroba Addisona to pierwotne zniszczenie kory z niedoborem kortyzolu i aldosteronu. Melanodermia, hiponatremia i hiperkaliemia odróżniają ją od niedoczynności wtórnej. Leczenie opiera się na hydrokortyzonie i fludrokortyzonie, a znajomość reguł zwiększania dawek chroni przed śmiertelnym przełomem.",
+  "sourceIds": [
+    "endo_pai",
+    "pte_nadnercza"
+  ],
+  "questions": [
+    {
+      "id": "addison-choroba-q1",
+      "lessonId": "addison-choroba",
+      "prompt": "Dlaczego u pacjentów z chorobą Addisona rozwija się hiperpigmentacja skóry (melanodermia)?",
+      "options": [
+        {
+          "text": "Brak ujemnego sprzężenia zwrotnego kortyzolu wywołuje nadmierne wydzielanie ACTH i POMC, które aktywują receptory MC1R w melanocytach",
+          "explanation": "Peptydy te mają powinowactwo do receptorów melanocytowych, stymulując produkcję barwnika."
+        },
+        {
+          "text": "Brak aldosteronu powoduje odkładanie się żelaza w naskórku",
+          "explanation": "To mechanizm hemochromatozy, a nie choroby Addisona."
+        },
+        {
+          "text": "W chorobie Addisona dochodzi do rozpadu erytrocytów i żółtaczki",
+          "explanation": "Przebarwienie nie wynika z bilirubiny ani hemolizy."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "addison-choroba-q2",
+      "lessonId": "addison-choroba",
+      "prompt": "Jaki zestaw zaburzeń elektrolitowych jest najbardziej charakterystyczny dla pierwotnej niedoczynności kory nadnerczy?",
+      "options": [
+        {
+          "text": "Hiponatremia z towarzyszącą hiperkaliemią",
+          "explanation": "Wynika to bezpośrednio ze współistniejącego braku aldosteronu."
+        },
+        {
+          "text": "Hipernatremia z ciężką hipokaliemią",
+          "explanation": "Taki obraz cechuje nadmiar aldosteronu (zespół Conna), a nie jego brak."
+        },
+        {
+          "text": "Izolowana hiperkalcemia z hipofosfatemią",
+          "explanation": "To zaburzenie charakterystyczne dla nadczynności przytarczyc."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "addison-choroba-q3",
+      "lessonId": "addison-choroba",
+      "prompt": "Jakie leczenie substytucyjne należy wdrożyć u pacjenta ze świeżo rozpoznaną chorobą Addisona?",
+      "options": [
+        {
+          "text": "Substytucję dwuosiową: hydrokortyzon doustnie w 2–3 dawkach oraz fludrokortyzon rano",
+          "explanation": "Uzupełnia to brak zarówno glikokortykosteroidów, jak i mineralokortykosteroidów."
+        },
+        {
+          "text": "Wyłącznie sam deksametazon raz na tydzień",
+          "explanation": "Deksametazon nie ma działania mineralokortykosteroidowego i nie odtwarza rytmu dobowego."
+        },
+        {
+          "text": "Same wlewy dożylne potasu",
+          "explanation": "Podanie potasu pacjentowi z hiperkaliemią grozi zatrzymaniem krążenia!"
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "addison-choroba-q4",
+      "lessonId": "addison-choroba",
+      "prompt": "Co powinien zrobić stabilny pacjent z chorobą Addisona w przypadku wystąpienia infekcji z gorączką >38,5°C?",
+      "options": [
+        {
+          "text": "Podwoić lub potroić dobową dawkę doustnego hydrokortyzonu na czas trwania gorączki",
+          "explanation": "To kluczowa zasada „sick day rules”, zapobiegająca rozwojowi ostrego przełomu nadnerczowego."
+        },
+        {
+          "text": "Natychmiast całkowicie odstawić hydrokortyzon",
+          "explanation": "Odstawienie leku w infekcji prowadzi wprost do śmiertelnego przełomu nadnerczowego."
+        },
+        {
+          "text": "Zmniejszyć dawkę o połowę i ograniczyć picie płynów",
+          "explanation": "Ograniczenie płynów i redukcja dawki nasiliłyby odwodnienie i hipotensję."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "addison-choroba-q5",
+      "lessonId": "addison-choroba",
+      "prompt": "Które autoprzeciwciała stanowią marker autoimmunologicznego zapalenia kory nadnerczy?",
+      "options": [
+        {
+          "text": "Przeciwciała przeciwko 21-hydroksylazie (anty-21-OH)",
+          "explanation": "Są obecne u ponad 85–90% chorych z autoimmunologiczną chorobą Addisona."
+        },
+        {
+          "text": "Przeciwciała przeciwko peroksydazie tarczycowej (anty-TPO)",
+          "explanation": "Anty-TPO to marker choroby Hashimoto."
+        },
+        {
+          "text": "Przeciwciała przeciwko receptorowi TSH (TRAb)",
+          "explanation": "TRAb to marker choroby Gravesa-Basedowa."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

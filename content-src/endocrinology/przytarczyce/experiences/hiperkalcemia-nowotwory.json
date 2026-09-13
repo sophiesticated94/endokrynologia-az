@@ -1,0 +1,221 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "hiperkalcemia-nowotwory",
+  "objectives": [
+    {
+      "id": "hiperkalcemia-nowotwory-obj-1",
+      "statement": "Zróżnicujesz hiperkalcemię zależną od PTH od hiperkalcemii nowotworowej niezależnej od PTH.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "hiperkalcemia-nowotwory-obj-2",
+      "statement": "Poznasz 3 główne mechanizmy hiperkalcemii w onkologii (PTHrP, osteoliza, 1,25(OH)2D).",
+      "kind": "interpretation"
+    },
+    {
+      "id": "hiperkalcemia-nowotwory-obj-3",
+      "statement": "Zrozumiesz znaczenie stłumienia endogennego PTH w diagnostyce różnicowej.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "hiperkalcemia-nowotwory-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "hiperkalcemia-nowotwory-obj-1"
+    ],
+    "prompt": "U 64-letniego palacza tytoniu z guzowatą zmianą w płucu stwierdzono Ca 13,8 mg/dl, fosforany 2,0 mg/dl i iPTH 4 pg/ml (norma 15–65). Jaki jest najbardziej prawdopodobny mechanizm hiperkalcemii?",
+    "options": [
+      "Wydzielanie peptydu PTHrP przez raka płaskonabłonkowego płuca",
+      "Współistniejący gruczolak przytarczycy (PHPT)",
+      "Jatrogenne zatrucie hydrochlorotiazydem"
+    ],
+    "optionFeedback": [
+      "PTHrP aktywuje receptory PTHR1, dając hiperkalcemię z fosfaturią, przy fizjologicznym stłumieniu endogennego PTH przez CaSR.",
+      "W gruczolaku przytarczycy stężenie iPTH byłoby podwyższone lub nieadekwatnie wysokie, a nie stłumione do 4 pg/ml.",
+      "Tiazydy rzadko dają wapń >12 mg/dl i nie tłumaczą obrazu radiologicznego guza płuca."
+    ],
+    "answer": 0,
+    "explanation": "PTHrP aktywuje receptory PTHR1, dając hiperkalcemię z fosfaturią, przy fizjologicznym stłumieniu endogennego PTH przez CaSR.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "endo_hypercalcemia",
+      "asbmr_calcium"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hiperkalcemia-nowotwory-block-1",
+      "title": "Najczęstsza przyczyna hiperkalcemii u pacjentów hospitalizowanych",
+      "text": "O ile w lecznictwie otwartym 90% przypadków hiperkalcemii stanowi łagodna pierwotna nadczynność przytarczyc (PHPT), o tyle u chorych hospitalizowanych dominującą przyczyną jest hiperkalcemia w chorobie nowotworowej (HCM — Hypercalcemia of Malignancy). HCM rozwija się u 20–30% chorych na nowotwory złośliwe, pojawia się nagle, ma gwałtowny przebieg z ciężkimi objawami neurologicznymi i sercowymi oraz stanowi zwiastun zaawansowanego stadium choroby o niekorzystnym rokowaniu (mediana przeżycia rzędu kilku miesięcy).",
+      "sourceIds": [
+        "endo_hypercalcemia",
+        "asbmr_calcium"
+      ],
+      "checkpointId": "hiperkalcemia-nowotwory-q2-checkpoint-1-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "hiperkalcemia-nowotwory-block-2",
+      "title": "Trzy odmienne mechanizmy onkologiczne",
+      "text": "Wyróżnia się trzy odrębne patomechanizmy HCM: 1. Humoralna hiperkalcemia nowotworowa (HHM, ok. 80% przypadków) — wywołana wydzielaniem peptydu parathormonopodobnego (PTHrP) przez guzy lite bez przerzutów do kości (rak płaskonabłonkowy płuca, głowy i szyi, przełyku, rak nerki, pęcherza moczowego). PTHrP wiąże się z receptorem PTHR1, naśladując PTH. 2. Miejscowa osteoliza (ok. 20%) — cytokiny (IL-1, IL-6, TNF-alfa, RANKL) wydzielane przez komórki szpiczaka mnogiego lub przerzuty raka piersi bezpośrednio aktywują osteoklasty do niszczenia kości. 3. Nadprodukcja kalcytriolu (ok. 1%) — pozanerkowa aktywność enzymu 1alfa-hydroksylazy w komórkach chłoniaków Hodgkina i nie-Hodgkina oraz w ziarniniakach (sarkoidoza).",
+      "sourceIds": [
+        "endo_hypercalcemia",
+        "asbmr_calcium"
+      ],
+      "checkpointId": "hiperkalcemia-nowotwory-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "hiperkalcemia-nowotwory-block-3",
+      "title": "Wzorzec laboratoryjny: stłumienie parathormonu",
+      "text": "Kluczem różnicującym HCM od pierwotnej nadczynności przytarczyc jest stężenie intaktnego parathormonu (iPTH). W hiperkalcemii nowotworowej zdrowe przytarczyce reagują prawidłowo na wysokie stężenie Ca2+ — receptor CaSR jest silnie pobudzony, a wydzielanie endogennego PTH zostaje całkowicie stłumione do wartości skrajnie niskich lub wręcz niewykrywalnych (iPTH < 5–10 pg/ml). Zestawienie: wysoki wapń + stłumiony PTH jednoznacznie wyklucza pierwotną nadczynność przytarczyc i nakazuje natychmiastowe poszukiwanie nowotworu lub chorób ziarniniakowych.",
+      "sourceIds": [
+        "endo_hypercalcemia",
+        "asbmr_calcium"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "hiperkalcemia-nowotwory-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "hiperkalcemia-nowotwory-obj-2"
+      ],
+      "prompt": "Jaka jest kluczowa różnica laboratoryjna między hiperkalcemią w PHPT a hiperkalcemią nowotworową (HCM)?",
+      "options": [
+        "W HCM stężenie endogennego iPTH jest stłumione, a w PHPT jest podwyższone lub nieadekwatnie prawidłowe",
+        "W PHPT stężenie wapnia zawsze przekracza 15 mg/dl, a w HCM wynosi do 11 mg/dl",
+        "W HCM stężenie fosforanów we krwi zawsze wynosi powyżej 8 mg/dl"
+      ],
+      "optionFeedback": [
+        "Zdrowe przytarczyce w HCM hamują wydzielanie PTH w odpowiedzi na hiperkalcemię.",
+        "Wprost przeciwnie: ciężkie hiperkalcemie >14 mg/dl są znacznie częstsze w chorobach nowotworowych.",
+        "Przy sekrecji PTHrP fosforany są niskie z powodu indukowanej fosfaturii."
+      ],
+      "answer": 0,
+      "explanation": "Zdrowe przytarczyce w HCM hamują wydzielanie PTH w odpowiedzi na hiperkalcemię.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "endo_hypercalcemia",
+        "asbmr_calcium"
+      ]
+    },
+    {
+      "id": "hiperkalcemia-nowotwory-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "hiperkalcemia-nowotwory-obj-3"
+      ],
+      "prompt": "Który nowotwór układu krwiotwórczego powoduje hiperkalcemię w mechanizmie pozanerkowej 1alfa-hydroksylacji i nadmiaru kalcytriolu?",
+      "options": [
+        "Chłoniak Hodgkina i chłoniaki nieziarnicze",
+        "Przewlekła białaczka szpikowa (CML)",
+        "Czerwienica prawdziwa"
+      ],
+      "optionFeedback": [
+        "Makrofagi i komórki chłoniaka zawierają aktywny enzym CYP27B1 syntetyzujący kalcytriol w sposób niekontrolowany.",
+        "CML rzadko manifestuje się pierwotną hiperkalcemią kalcytriolozależną.",
+        "Czerwienica wiąże się z nadkrwistością, a nie zaburzeniami syntezy witaminy D."
+      ],
+      "answer": 0,
+      "explanation": "Makrofagi i komórki chłoniaka zawierają aktywny enzym CYP27B1 syntetyzujący kalcytriol w sposób niekontrolowany.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "endo_hypercalcemia",
+        "asbmr_calcium"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "hiperkalcemia-nowotwory-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "hiperkalcemia-nowotwory-obj-1",
+      "hiperkalcemia-nowotwory-obj-2",
+      "hiperkalcemia-nowotwory-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Złośliwa hiperkalcemia”.",
+    "modelAnswer": "Hiperkalcemia nowotworowa jest stanem nagłym niezależnym od PTH (endogenny iPTH jest stłumiony <10 pg/ml). Odpowiada za nią najczęściej ektopowy peptyd PTHrP (raki płaskonabłonkowe), miejscowa osteoliza (szpiczak) lub kalcytriol (chłoniaki).",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "endo_hypercalcemia",
+      "asbmr_calcium"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "hiperkalcemia-nowotwory-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "hiperkalcemia-nowotwory-obj-1"
+      ],
+      "prompt": "Dlaczego standardowy test laboratoryjny na parathormon (iPTH) nie wykrywa peptydu PTHrP?",
+      "options": [
+        "PTHrP ma odmienną sekwencję aminokwasową poza krótkim fragmentem N-końcowym",
+        "PTHrP natychmiast ulega degradacji w probówce w ciągu 1 sekundy",
+        "PTHrP krąży wyłącznie wewnątrz erytrocytów"
+      ],
+      "optionFeedback": [
+        "Przeciwciała w dwumiejscowych testach iPTH są skierowane na inne epitopy cząsteczki parathormonu.",
+        "PTHrP można oznaczyć dedykowanym, specjalistycznym testem radioimmunologicznym.",
+        "PTHrP jest hormonem peptydowym rozpuszczonym w osoczu."
+      ],
+      "answer": 0,
+      "explanation": "Przeciwciała w dwumiejscowych testach iPTH są skierowane na inne epitopy cząsteczki parathormonu.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "endo_hypercalcemia",
+        "asbmr_calcium"
+      ]
+    },
+    {
+      "id": "hiperkalcemia-nowotwory-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "hiperkalcemia-nowotwory-obj-1"
+      ],
+      "prompt": "Jakie jest rokowanie u chorego z nowotworem litym, u którego doszło do rozwoju hiperkalcemii nowotworowej (HCM)?",
+      "options": [
+        "Poważne i niekorzystne; mediana przeżycia wynosi zwykle kilka miesięcy",
+        "Doskonałe; hiperkalcemia oznacza samoistną martwicę i wyleczenie nowotworu",
+        "Nie ma żadnego związku ze stanem zaawansowania choroby nowotworowej"
+      ],
+      "optionFeedback": [
+        "Pojawienie się HCM świadczy o zaawansowaniu procesu rozrostowego i dużej masie guza.",
+        "Hiperkalcemia jest stanem zagrożenia życia, a nie objawem zdrowienia.",
+        "HCM jest jednym z najważniejszych negatywnych czynników rokowniczych w onkologii."
+      ],
+      "answer": 0,
+      "explanation": "Pojawienie się HCM świadczy o zaawansowaniu procesu rozrostowego i dużej masie guza.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "endo_hypercalcemia",
+        "asbmr_calcium"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "parathyroid-workbench",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

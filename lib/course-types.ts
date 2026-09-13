@@ -35,6 +35,7 @@ type ActivityBase = {
   hint?: string;
   sourceIds: string[];
   optionFeedback?: string[];
+  claimIds?: string[];
 };
 
 export type PracticeAnswerType = 'choice_index' | 'choice_indexes' | 'ordered_indexes' | 'matching_map' | 'numeric_value' | 'self_assessment';
@@ -62,6 +63,7 @@ export type LessonBlockV2 = {
   sourceIds: string[];
   checkpointId?: string;
   inlineEnhancements?: InlineEnhancementRef[];
+  claimIds?: string[];
 };
 
 export type LessonExperienceV2 = {
@@ -73,8 +75,16 @@ export type LessonExperienceV2 = {
   activities: LearningActivity[];
   teachBack: LearningActivity & { type: 'recall' };
   exitTicket: LearningActivity[];
-  widgetIds: Array<'axis-map' | 'lab-workbench' | 'timeline' | 'pathway-builder'>;
-  review: { status: 'source-checked'; checkedAt: string; scope: string };
+  widgetIds: Array<
+    | 'axis-map'
+    | 'lab-workbench'
+    | 'timeline'
+    | 'pathway-builder'
+    | 'adrenal-workbench'
+    | 'parathyroid-workbench'
+    | string
+  >;
+  review: { status: 'source-checked' | 'needs-review' | 'draft'; checkedAt: string; scope: string };
 };
 
 export type Option = { text: string; explanation: string };

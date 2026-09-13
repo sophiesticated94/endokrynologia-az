@@ -1,0 +1,164 @@
+{
+  "id": "incydentaloma-nadnercza",
+  "moduleId": "nadnercza",
+  "title": "Niespodzianka w tomografii",
+  "subtitle": "Incydentaloma, gęstość natywna w TK (<10 HU), washout i algorytm ESE 2023",
+  "group": "Nadczynności i guz chromochłonny",
+  "minutes": 17,
+  "goals": [
+    "Zrozumiesz definicję incydentaloma nadnercza oraz zasady postępowania wg zaktualizowanych wytycznych ESE/ENSAT 2023.",
+    "Opanujesz ocenę radiologiczną: gęstość natywną w jednostkach Hounsfielda (<10 HU) oraz kalkulację bezwzględnego i względnego washoutu."
+  ],
+  "sections": [
+    {
+      "title": "Czym jest incydentaloma nadnercza?",
+      "text": "Incydentaloma nadnercza to bezobjawowa, przypadkowo wykryta zmiana ogniskowa o średnicy >=1 cm w badaniu obrazowym brzucha (USG, TK, MRI) wykonanym z innych wskazań niż podejrzenie choroby nadnerczy. Występuje u ok. 3–4% dorosłych w średnim wieku i nawet u 10% osób po 70. roku życia. Przed lekarzem stoją dwa fundamentalne pytania: 1) Czy zmiana jest złośliwa (rak kory nadnerczy ACC, przerzut z innego narządu)?; 2) Czy zmiana jest czynna hormonalnie (hiperkortyzolemia MACS, guz chromochłonny, zespół Conna)?"
+    },
+    {
+      "title": "Ocena radiologiczna w TK: Złota reguła 10 jednostek Hounsfielda",
+      "text": "Badaniem z wyboru do oceny incydentaloma jest dedykowana tomografia komputerowa nadnerczy (CT). KLUCZOWE KRYTERIUM: Gęstość natywna (bez podania kontrastu) mierzona w jednostkach Hounsfielda (HU): 1) Gęstość natywna <=10 HU: Zmiana jest łagodnym, bogatym w lipidy gruczolakiem kory nadnercza (lipid-rich adenoma)! Czułość wynosi 71%, a swoistość dla łagodności sięga niemal 100%. Zmiana taka nie wymaga dalszej diagnostyki obrazowej ani kontrolnych tomografii! 2) Gęstość natywna >10 HU: Zmiana jest uboga w lipidy (lipid-poor) — może to być łagodny gruczolak, ale także guz chromochłonny, przerzut nowotworowy lub rak kory nadnerczy (ACC). Wymaga wykonania protokołu wielofazowego z oceną wymywania kontrastu (washout) po 15 minutach."
+    },
+    {
+      "title": "Kalkulacja washoutu i panel hormonalny wg wytycznych ESE 2023",
+      "text": "W TK wielofazowej mierzy się gęstość natywną (N), w fazie wrotnej po 60–70 s (E) oraz opóźnionej po 15 min (D): Bezwzględny wskaźnik wymywania APW = (E - D) / (E - N) * 100%. Wartość APW >=60% potwierdza łagodnego gruczolaka. Względny wskaźnik RPW = (E - D) / E * 100% (odcięcie >=40%). PANEL HORMONALNY u każdego pacjenta z incydentaloma: 1) Nocny test hamowania 1 mg deksametazonu (wykluczenie MACS); 2) Wolne metanefryny w osoczu (wykluczenie „cichego” feo); 3) Wskaźnik ARR (wyłącznie u chorych z nadciśnieniem tętniczym lub hipokaliemią). Biopsja nadnerczy jest przeciwwskazana, chyba że podejrzewa się przerzut u chorego z rozsianym nowotworem po wykluczeniu feochromocytoma!"
+    }
+  ],
+  "table": {
+    "headers": [
+      "Cecha w badaniu TK",
+      "Zmiana łagodna (Gruczolak)",
+      "Podejrzenie złośliwości (ACC / Przerzut)"
+    ],
+    "rows": [
+      [
+        "Gęstość natywna (bez kontrastu)",
+        "<=10 jednostek Hounsfielda (HU)",
+        ">10 HU (często 20–40 HU lub więcej)"
+      ],
+      [
+        "Bezwzględny washout (APW po 15 min)",
+        ">=60% (szybkie wypłukiwanie kontrastu)",
+        "<60% (opóźnione wypłukiwanie, przetrwałe wzmocnienie)"
+      ],
+      [
+        "Wymiary zmiany",
+        "Zazwyczaj mała (<3–4 cm)",
+        "Często duża (>4–6 cm); nieregularne obrysy, martwica"
+      ],
+      [
+        "Postępowanie wg ESE 2023",
+        "Brak dalszych badań obrazowych przy <=10 HU i braku hipersekrecji",
+        "Konsultacja konsylium wielodyscyplinarnego, adrenalektomia"
+      ]
+    ]
+  },
+  "advanced": "Dlaczego wytyczne ESE 2023 zrezygnowały z powtarzania badań TK po roku u chorych z jednoznacznie łagodnym obrazem (<=10 HU)? Ponieważ wielotysięczne prospektywne rejestry wykazały, że ryzyko transformacji złośliwej małego gruczolaka o gęstości <=10 HU wynosi niemal 0%, podczas gdy powtarzanie badań tomograficznych naraża pacjentów na niepotrzebne promieniowanie jonizujące i indukuje lęk onkologiczny. Ponowną ocenę hormonalną (test 1 mg DEX) zleca się tylko wtedy, gdy pojawią się nowe objawy kliniczne (nowo wykryte nadciśnienie, cukrzyca).",
+  "summary": "Incydentaloma nadnercza wymaga natychmiastowej oceny gęstości natywnej w TK: wynik <=10 HU potwierdza łagodnego gruczolaka. Obowiązuje panel hormonalny (1 mg DEX, metanefryny, a przy nadciśnieniu ARR). Zmiany >4 cm o niejednorodnej strukturze i słabym wash-oucie wymagają pilnej oceny w kierunku raka nadnerczy.",
+  "sourceIds": [
+    "ese_incidentaloma",
+    "pte_nadnercza",
+    "pte_macs"
+  ],
+  "questions": [
+    {
+      "id": "incydentaloma-nadnercza-q1",
+      "lessonId": "incydentaloma-nadnercza",
+      "prompt": "Jaka wartość gęstości natywnej w tomografii komputerowej bez kontrastu (TK) pozwala uznać incydentaloma nadnercza za łagodnego gruczolaka bez konieczności dalszych badań obrazowych?",
+      "options": [
+        {
+          "text": "Gęstość natywna równa lub mniejsza niż 10 jednostek Hounsfielda (<=10 HU)",
+          "explanation": "Wartość ta świadczy o wysokiej zawartości lipidów wewnątrzkomórkowych, co cechuje łagodne gruczolaki."
+        },
+        {
+          "text": "Gęstość równa dokładnie 100 HU",
+          "explanation": "Gęstość 100 HU odpowiada zwapnieniom lub kościom, a nie gruczolakowi bogatemu w tłuszcz."
+        },
+        {
+          "text": "Gęstość ujemna poniżej minus 200 HU",
+          "explanation": "Gęstość <-100 HU cechuje tkankę płucną lub powietrze."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "incydentaloma-nadnercza-q2",
+      "lessonId": "incydentaloma-nadnercza",
+      "prompt": "Jaki zestaw badań hormonalnych należy obligatoryjnie wykonać u KAŻDEGO pacjenta z przypadkowo wykrytym guzem nadnercza?",
+      "options": [
+        {
+          "text": "Nocny test hamowania 1 mg deksametazonu oraz wolne metanefryny w osoczu (a u chorych z nadciśnieniem także wskaźnik ARR)",
+          "explanation": "Pozwala to wykryć autonomiczną sekrecję kortyzolu (MACS), guza chromochłonnego oraz zespół Conna."
+        },
+        {
+          "text": "Wyłącznie badanie ogólne moczu paskiem testowym",
+          "explanation": "Badanie ogólne moczu nie diagnozuje czynności wydzielniczej kory i rdzenia nadnerczy."
+        },
+        {
+          "text": "Doustny test tolerancji glukozy z hormonem wzrostu",
+          "explanation": "Test ten służy do diagnostyki akromegalii w przysadce, a nie incydentaloma nadnercza."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "incydentaloma-nadnercza-q3",
+      "lessonId": "incydentaloma-nadnercza",
+      "prompt": "Dlaczego biopsja aspiracyjna cienkoigłowa (BACC) jest rutynowo PRZECIWWSKAZANA w diagnostyce incydentaloma nadnerczy?",
+      "options": [
+        {
+          "text": "Nie potrafi odróżnić łagodnego gruczolaka od raka kory nadnerczy (ACC), a nakłucie feochromocytoma grozi śmiertelnym przełomem",
+          "explanation": "Dodatkowo niesie ryzyko rozsiewu komórek raka wzdłuż kanału wkłucia."
+        },
+        {
+          "text": "Igła biopsyjna nie może przebić powięzi Geroty",
+          "explanation": "Powięź Geroty jest łatwo osiągalna pod kontrolą USG lub TK."
+        },
+        {
+          "text": "W nadnerczu nie ma komórek jądrzastych",
+          "explanation": "Nadnercze składa się z gęstego utkania komórkowego."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "incydentaloma-nadnercza-q4",
+      "lessonId": "incydentaloma-nadnercza",
+      "prompt": "Jaka wartość bezwzględnego współczynnika wymywania kontrastu (APW) w tomografii z opóźnioną fazą po 15 min przemawia za łagodnym charakterem zmiany?",
+      "options": [
+        {
+          "text": "Wartość APW równa co najmniej 60% (>=60%)",
+          "explanation": "Szybkie oddawanie kontrastu jest typową cechą unaczynienia łagodnych gruczolaków."
+        },
+        {
+          "text": "Wartość APW poniżej 10%",
+          "explanation": "Słabe wymywanie (<60%) cechuje nowotwory złośliwe i przerzuty."
+        },
+        {
+          "text": "Wartość APW dokładnie 0%",
+          "explanation": "Brak wymywania wskazuje na tkankę podejrzaną onkologicznie."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "incydentaloma-nadnercza-q5",
+      "lessonId": "incydentaloma-nadnercza",
+      "prompt": "U 60-latka wykryto w TK guz lewego nadnercza 2,2 cm o gęstości natywnej 4 HU. W teście 1 mg DEX kortyzol wynosi 1,2 µg/dl, metanefryny w normie. Jakie jest zalecenie wg wytycznych ESE 2023?",
+      "options": [
+        {
+          "text": "Nie wymaga dalszych kontrolnych badań obrazowych ani powtarzania tomografii komputerowej",
+          "explanation": "Guz jest jednoznacznie łagodny i nieczynny hormonalnie; nie wymaga radioterapii ani operacji."
+        },
+        {
+          "text": "Pilna operacja obustronnego wycięcia nadnerczy w ciągu 24 godzin",
+          "explanation": "Wycięcie łagodnego, bezobjawowego gruczolaka o wymiarach 2 cm jest błędem."
+        },
+        {
+          "text": "Wykonanie biopsji gruboigłowej z obu stron",
+          "explanation": "Biopsja jest przeciwwskazana w łagodnym incydentaloma."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

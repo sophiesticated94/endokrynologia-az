@@ -1,0 +1,227 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "zespol-glodnych-kosci",
+  "objectives": [
+    {
+      "id": "zespol-glodnych-kosci-obj-1",
+      "statement": "Zrozumiesz patogenezę zespołu głodnych kości (Hungry Bone Syndrome — HBS).",
+      "kind": "mechanism"
+    },
+    {
+      "id": "zespol-glodnych-kosci-obj-2",
+      "statement": "Zidentyfikujesz pacjentów wysokiego ryzyka HBS przed paratyreoidktomią (ALP, wielkość gruczolaka).",
+      "kind": "interpretation"
+    },
+    {
+      "id": "zespol-glodnych-kosci-obj-3",
+      "statement": "Opanujesz protokół intensywnej suplementacji wapnia, magnezu i kalcytriolu po zabiegu.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "zespol-glodnych-kosci-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "zespol-glodnych-kosci-obj-1"
+    ],
+    "prompt": "Który parametr laboratoryjny oznaczony przed operacją przytarczyc jest najsilniejszym wskaźnikiem ryzyka wystąpienia zespołu głodnych kości (HBS)?",
+    "options": [
+      "Wybitnie podwyższona aktywność fosfatazy zasadowej (ALP)",
+      "Stężenie cholesterolu całkowitego w osoczu",
+      "Stężenie hormonu tyreotropowego (TSH)"
+    ],
+    "optionFeedback": [
+      "Wysoka ALP odzwierciedla nasiloną osteoblastozę i masywny obrót kostny gotowy do natychmiastowego wychwytu wapnia po zabiegu.",
+      "Profil lipidowy nie ma związku z dynamiką mineralizacji kośćca.",
+      "TSH ocenia oś tarczycową, a nie intensywność obrotu kostnego przytarczyc."
+    ],
+    "answer": 0,
+    "explanation": "Wysoka ALP odzwierciedla nasiloną osteoblastozę i masywny obrót kostny gotowy do natychmiastowego wychwytu wapnia po zabiegu.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "hungry_bone",
+      "eses_parathyroid"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "zespol-glodnych-kosci-block-1",
+      "title": "Czym jest zespół głodnych kości (HBS)?",
+      "text": "Zespół głodnych kości (HBS — Hungry Bone Syndrome) to powikłanie paratyreoidktomii, charakteryzujące się gwałtownym, głębokim i przedłużającym się (trwającym tygodnie, a nawet miesiące) spadkiem stężenia wapnia zjonizowanego i całkowitego w surowicy (często <1,8–2,0 mmol/l), któremu towarzyszy głęboka hipofosfatemia oraz hipomagnezemia. Występuje u 15–30% operowanych z powodu zaawansowanej pierwotnej nadczynności przytarczyc oraz u ponad 50–80% chorych operowanych z powodu trzeciorzędowej nadczynności przytarczyc w schyłkowej niewydolności nerek.",
+      "sourceIds": [
+        "hungry_bone",
+        "eses_parathyroid"
+      ],
+      "checkpointId": "zespol-glodnych-kosci-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "enh-pt-hbs-risk",
+          "kind": "workbench-deeplink",
+          "placement": "after-text",
+          "presetId": "parathyroid-hungry-bone"
+        }
+      ]
+    },
+    {
+      "id": "zespol-glodnych-kosci-block-2",
+      "title": "Patomechanizm: nagłe załamanie osteolizy przy szalejącej osteoblastozie",
+      "text": "Przed operacją przewlekle wysokie stężenie PTH utrzymywało kości w stanie ekstremalnego obrotu metabolicznego z dominacją osteolizy osteoklastycznej. Wycięcie autonomicznego gruczolaka powoduje nagły, spektakularny spadek stężenia PTH we krwi w ciągu kilkunastu minut. W tym momencie osteoklasty natychmiast zaprzestają niszczenia kości, natomiast liczne, nadaktywne osteoblasty kontynuują proces formowania nowej macierzy kostnej. Kość staje się dosłownie „głodna” minerałów: zaczyna zachłannie, masowo wychwytywać krążący w surowicy wapń, fosfor i magnez w celu mineralizacji nieutwardzonego osteoidu, drenując krew z tych jonów.",
+      "sourceIds": [
+        "hungry_bone",
+        "eses_parathyroid"
+      ],
+      "checkpointId": "zespol-glodnych-kosci-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "zespol-glodnych-kosci-block-3",
+      "title": "Czynniki ryzyka i protokół leczenia ratunkowego",
+      "text": "Do głównych czynników ryzyka HBS należą: bardzo wysoka wyjściowa aktywność fosfatazy zasadowej (ALP > 3–4x ponad normę — wskaźnik masywnego obrotu kostnego), duży rozmiar i masa wyciętego gruczolaka, zaawansowane zmiany kostne w RTG (osteitis fibrosa cystica, guzy brunatne, podokostnowa resorpcja paliczków) oraz wiek podeszły i współistniejący niedobór witaminy D. Leczenie HBS wymaga ciągłego wlewu dożylnego glukonianu wapnia (10–20 ampułek 10% w 1000 ml 5% glukozy lub 0,9% NaCl pod kontrolą kaniuli centralnej), bardzo wysokich dawek kalcytriolu (1–4 µg/d) lub alfakalcydolu oraz doustnego wapnia (nawet 4–8 g czystego Ca elementarnego/dobę) i preparatów magnezu.",
+      "sourceIds": [
+        "hungry_bone",
+        "eses_parathyroid"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "zespol-glodnych-kosci-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "zespol-glodnych-kosci-obj-2"
+      ],
+      "prompt": "Jakie stężenie fosforanów w surowicy odróżnia zespół głodnych kości (HBS) od trwałej pooperacyjnej niedoczynności przytarczyc?",
+      "options": [
+        "W HBS fosforany są bardzo niskie (hipofosfatemia), a w niedoczynności przytarczyc wysokie (hiperfosfatemia)",
+        "W HBS fosforany przekraczają 10 mg/dl",
+        "W obu jednostkach stężenie fosforanów jest zawsze identyczne i prawidłowe"
+      ],
+      "optionFeedback": [
+        "Głodna kość wbudowuje fosforany w hydroksyapatyt, podczas gdy w niedoczynności brak PTH zatrzymuje fosfor w nerkach.",
+        "W HBS fosforany często spadają poniżej 1,5 mg/dl.",
+        "Stężenie fosforanów jest kardynalnym parametrem różnicującym te dwa stany."
+      ],
+      "answer": 0,
+      "explanation": "Głodna kość wbudowuje fosforany w hydroksyapatyt, podczas gdy w niedoczynności brak PTH zatrzymuje fosfor w nerkach.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "hungry_bone",
+        "eses_parathyroid"
+      ]
+    },
+    {
+      "id": "zespol-glodnych-kosci-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "zespol-glodnych-kosci-obj-3"
+      ],
+      "prompt": "Dlaczego po wycięciu gruczolaka przytarczycy dochodzi do nagłego załamania stężenia wapnia w surowicy?",
+      "options": [
+        "Okres półtrwania PTH wynosi 3–5 minut, co natychmiast wyłącza osteolizę, podczas gdy osteoblasty masowo chłoną wapń",
+        "Gruczolak podczas usuwania wylewa do krwi toksyny niszczące wapń",
+        "Nerkowe kłębuszki natychmiast zaczynają wydalać 100% wapnia z organizmu"
+      ],
+      "optionFeedback": [
+        "Nagła dysproporcja między zahamowanym kościogubieniem a trwającym kościotworzeniem drenuje krew z jonów Ca2+.",
+        "Mechanizm jest czysto fizjologiczny i wynika z kinetyki przebudowy tkanki kostnej.",
+        "W nerkach bez PTH spada próg cewkowy, ale głównym rezerwuarem pochłaniającym wapń jest kość."
+      ],
+      "answer": 0,
+      "explanation": "Nagła dysproporcja między zahamowanym kościogubieniem a trwającym kościotworzeniem drenuje krew z jonów Ca2+.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "hungry_bone",
+        "eses_parathyroid"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "zespol-glodnych-kosci-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "zespol-glodnych-kosci-obj-1",
+      "zespol-glodnych-kosci-obj-2",
+      "zespol-glodnych-kosci-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Po operacji przytarczyc: HBS”.",
+    "modelAnswer": "Zespół głodnych kości (HBS) to głęboka hipokalcemia i hipofosfatemia po paratyreoidktomii z powodu gwałtownej remineralizacji kości. Głównym predyktorem jest wysoka ALP. Leczenie wymaga wlewów wapnia, magnezu i wysokich dawek kalcytriolu.",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "hungry_bone",
+      "eses_parathyroid"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "zespol-glodnych-kosci-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "zespol-glodnych-kosci-obj-1"
+      ],
+      "prompt": "Jakie leczenie należy zastosować w ostrym zespole głodnych kości?",
+      "options": [
+        "Ciągły wlew dożylny glukonianu wapnia, wysokie dawki kalcytriolu i doustny węglan wapnia oraz magnez",
+        "Dożylne podanie kwasu zoledronowego",
+        "Ograniczenie płynów i dieta ubogowapniowa"
+      ],
+      "optionFeedback": [
+        "Tylko agresywna podaż wapnia w połączeniu z aktywną witaminą D jest w stanie nasycić nienasycony kościec.",
+        "Podanie leku antyresorpcyjnego pogłębiłoby hipokalcemię i zablokowało fizjologiczną odbudowę kości!",
+        "Restrykcja wapnia w zespole głodnych kości doprowadziłaby do śmiertelnej tężyczki i zatrzymania akcji serca."
+      ],
+      "answer": 0,
+      "explanation": "Tylko agresywna podaż wapnia w połączeniu z aktywną witaminą D jest w stanie nasycić nienasycony kościec.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "hungry_bone",
+        "eses_parathyroid"
+      ]
+    },
+    {
+      "id": "zespol-glodnych-kosci-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "zespol-glodnych-kosci-obj-1"
+      ],
+      "prompt": "Jak długo po operacji może utrzymywać się stan zwiększonego zapotrzebowania na wapń w ciężkim HBS?",
+      "options": [
+        "Od kilku tygodni do nawet kilku miesięcy po zabiegu",
+        "Dokładnie przez pierwsze 15 minut po wybudzeniu ze znieczulenia",
+        "Maksymalnie do 6 godzin od nacięcia skóry"
+      ],
+      "optionFeedback": [
+        "Tyle czasu zajmuje pełna remineralizacja uogólnionych ubytków osteopenicznych w całym szkielecie.",
+        "W 15. minucie proces dopiero się rozpoczyna; szczyt hipokalcemii przypada na 2.–4. dobę po operacji.",
+        "HBS jest procesem przewlekłym wymagającym wielotygodniowej opieki ambulatoryjnej."
+      ],
+      "answer": 0,
+      "explanation": "Tyle czasu zajmuje pełna remineralizacja uogólnionych ubytków osteopenicznych w całym szkielecie.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "hungry_bone",
+        "eses_parathyroid"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "parathyroid-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

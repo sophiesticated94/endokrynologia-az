@@ -1,0 +1,162 @@
+{
+  "id": "wpn-zespol",
+  "moduleId": "nadnercza",
+  "title": "Pułapka 21-hydroksylazy",
+  "subtitle": "Wrodzony przerost nadnerczy (WPN), 17-OH-progesteron i ucieczka w szlak androgenowy",
+  "group": "Niedoczynność kory i WPN",
+  "minutes": 18,
+  "goals": [
+    "Zrozumiesz patomechanizm wrodzonego przerostu nadnerczy (WPN) spowodowanego niedoborem 21-hydroksylazy (CYP21A2).",
+    "Rozróżnisz postać klasyczną z utratą soli od postaci prostej wirylizującej oraz opanujesz diagnostykę postaci nieklasycznej (NC-CAH)."
+  ],
+  "sections": [
+    {
+      "title": "Blok enzymatyczny i ucieczka substratów",
+      "text": "Wrodzony przerost nadnerczy (Congenital Adrenal Hyperplasia — CAH / WPN) to grupa chorób uwarunkowanych autosomalnie recesywnie, w których defekt enzymatyczny uniemożliwia prawidłową syntezę kortyzolu. W ponad 90–95% przypadków przyczyną jest mutacja genu CYP21A2 kodującego 21-hydroksylazę. Enzym ten odpowiada za przekształcanie progesteronu w 11-deoksykortykosteron (szlak aldosteronu) oraz 17-OH-progesteronu w 11-deoksykortyzol (szlak kortyzolu). Brak kortyzolu znosi ujemne sprzężenie zwrotne: przysadka masowo wydziela ACTH, co powoduje przerost (hyperplasia) kory nadnerczy. Zgromadzone powyżej bloku prekursory (głównie 17-OHP) zostają przesunięte do jedynego drożnego szlaku — syntezy silnych androgenów nadnerczowych (androstendionu i testosteronu)!"
+    },
+    {
+      "title": "Postać klasyczna: Z utratą soli vs prosta wirylizująca",
+      "text": "W zależności od resztkowej aktywności 21-hydroksylazy wyróżnia się postacie: 1) Klasyczna z utratą soli (salt-wasting — SW, aktywność enzymu 0%): całkowity brak kortyzolu i aldosteronu. U noworodków płci żeńskiej (46,XX) w chwili urodzenia występuje obojnactwo narządów płciowych zewnętrznych (wirylizacja: powiększenie łechtaczki, zrośnięcie warg sromowych). U noworodków płci męskiej (46,XY) narządy są prawidłowe, lecz w 2.–3. tygodniu życia dochodzi do załamania stanu: przełom z utratą soli (wymioty, hiponatremia, ciężka hiperkaliemia, wstrząs hipowolemiczny, zgon bez leczenia). 2) Klasyczna prosta wirylizująca (simple virilizing — SV, aktywność 1–2%): zachowana minimalna synteza aldosteronu (brak utraty soli), lecz występuje wirylizacja u dziewczynek oraz przedwczesne fałszywe dojrzewanie u chłopców."
+    },
+    {
+      "title": "Postać nieklasyczna (NC-CAH) u dorosłych",
+      "text": "Nieklasyczny WPN (Non-Classic CAH — NC-CAH, aktywność enzymu 20–50%) jest jedną z najczęstszych chorób jednogenowych (częstość 1:200–1:1000). U noworodków nie ma wad narządów płciowych. Objawy ujawniają się w okresie pokwitania lub u młodych kobiet i doskonale imitują zespół policystycznych jajników (PCOS): oporny trądzik, łysienie androgenowe, hirsutyzm, zaburzenia owulacji i niepłodność. ROZPOZNANIE: Podstawowym testem przesiewowym jest poranne stężenie 17-hydroksyprogesteronu (17-OHP) w fazie folikularnej: stężenie <2 ng/ml w teście immunologicznym (lub <1,5 ng/ml w LC-MS/MS) czyni NC-CAH mało prawdopodobnym. Wartości w szarej strefie (2–10 ng/ml) budzą podejrzenie i wymagają testu stymulacji 250 µg Synacthenu: wyrzut 17-OHP >10 ng/ml (>30 nmol/l, a w LC-MS/MS >8–10 ng/ml) jednoznacznie potwierdza rozpoznanie."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Postać WPN",
+      "Aktywność 21-OH",
+      "Objawy u noworodka / dziecka",
+      "Obraz u dorosłych / Leczenie"
+    ],
+    "rows": [
+      [
+        "Klasyczna z utratą soli",
+        "0%",
+        "Wirylizacja narządów (46,XX); przełom solny w 2. tyg. (hiponatremia, hiperkaliemia)",
+        "Substytucja hydrokortyzonem + fludrokortyzonem przez całe życie"
+      ],
+      [
+        "Klasyczna prosta wirylizująca",
+        "1–2%",
+        "Wirylizacja (46,XX), rzekome przedwczesne dojrzewanie, szybki zrost nasad kości",
+        "Hydrokortyzon (hamowanie ACTH i nadmiaru androgenów)"
+      ],
+      [
+        "Nieklasyczna (NC-CAH)",
+        "20–50%",
+        "Brak objawów u noworodka; prawidłowe narządy płciowe",
+        "Hirsutyzm, trądzik, niepłodność (imituje PCOS); małe dawki hydrokortyzonu"
+      ]
+    ]
+  },
+  "advanced": "Dlaczego dzieci z klasycznym WPN bez leczenia osiągają niski ostateczny wzrost dorosły? Nadmiar androgenów w dzieciństwie przyspiesza tempo wzrastania (dziecko jest przejściowo wyższe od rówieśników), lecz jednocześnie powoduje przedwczesne kostnienie i zamykanie chrząstek nasadowych kości długich. Celem leczenia hydrokortyzonem w WPN jest nie tylko substytucja brakującego kortyzolu, ale przede wszystkim stłumienie nadmiernego wydzielania ACTH, co hamuje toksyczną nadprodukcję androgenów nadnerczowych.",
+  "summary": "Niedobór 21-hydroksylazy (CYP21A2) blokuje produkcję kortyzolu i aldosteronu, przekierowując metabolity do szlaku androgenów. Postać z utratą soli grozi zgonem w okresie noworodkowym, a postać nieklasyczna (NC-CAH) jest częstą przyczyną hirsutyzmu i niepłodności diagnozowaną testem 17-OHP.",
+  "sourceIds": [
+    "cah_guideline",
+    "pte_nadnercza"
+  ],
+  "questions": [
+    {
+      "id": "wpn-zespol-q1",
+      "lessonId": "wpn-zespol",
+      "prompt": "Jaki metabolit steroidowy ulega masywnej akumulacji we krwi w najczęstszej postaci wrodzonego przerostu nadnerczy (WPN)?",
+      "options": [
+        {
+          "text": "17-hydroksyprogesteron (17-OHP)",
+          "explanation": "Brak enzymu 21-hydroksylazy blokuje dalszą konwersję 17-OHP, powodując jego gromadzenie."
+        },
+        {
+          "text": "Estriol",
+          "explanation": "Estriol jest estrogenem syntetyzowanym w łożysku podczas ciąży."
+        },
+        {
+          "text": "Katecholaminy",
+          "explanation": "Katecholaminy powstają w rdzeniu nadnerczy z tyrozyny, nie biorą udziału w sterydogenezie kory."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "wpn-zespol-q2",
+      "lessonId": "wpn-zespol",
+      "prompt": "Dlaczego u noworodka z klasyczną postacią WPN z utratą soli dochodzi w 2.–3. tygodniu życia do zapaści krążeniowej?",
+      "options": [
+        {
+          "text": "Całkowity brak aldosteronu prowadzi do masywnej nerkowej utraty sodu, hiponatremii, hiperkaliemii i wstrząsu hipowolemicznego",
+          "explanation": "Niedobór mineralokortykosteroidów uniemożliwia zatrzymywanie soli w cewkach zbiorczych."
+        },
+        {
+          "text": "Nadmiar kortyzolu niszczy naczynia krwionośne",
+          "explanation": "W WPN występuje ciężki niedobór kortyzolu, a nie nadmiar."
+        },
+        {
+          "text": "Dochodzi do zamknięcia przewodu Botalla",
+          "explanation": "Przewód tętniczy nie ma związku z blokiem 21-hydroksylazy."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "wpn-zespol-q3",
+      "lessonId": "wpn-zespol",
+      "prompt": "Z jakim powszechnym zaburzeniem endokrynologicznym u młodych kobiet najczęściej bywa mylona nieklasyczna postać WPN (NC-CAH)?",
+      "options": [
+        {
+          "text": "Zespołem policystycznych jajników (PCOS)",
+          "explanation": "Oba stany objawiają się hiperandrogenizmem, trądzikiem, hirsutyzmem i rzadkim miesiączkowaniem."
+        },
+        {
+          "text": "Chorobą Hashimoto z eutyreozą",
+          "explanation": "Hashimoto dotyczy tarczycy i nie wywołuje bezpośrednio wirylizacji."
+        },
+        {
+          "text": "Cukrzycą ciążową",
+          "explanation": "Cukrzyca to zaburzenie gospodarki węglowodanowej bez hirsutyzmu."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "wpn-zespol-q4",
+      "lessonId": "wpn-zespol",
+      "prompt": "Jaki wynik stężenia 17-OHP w teście stymulacji 250 µg Synacthenu definitywnie potwierdza rozpoznanie nieklasycznego WPN?",
+      "options": [
+        {
+          "text": "Stężenie 17-OHP w 60. minucie testu przekraczające 10 ng/ml (30 nmol/l)",
+          "explanation": "Jest to międzynarodowy złoty standard diagnostyczny wg wytycznych Endocrine Society."
+        },
+        {
+          "text": "Spadek stężenia 17-OHP do zera",
+          "explanation": "Stymulacja ACTH wyrzuca nagromadzony substrat powyżej bloku, powodując jego skokowy wzrost."
+        },
+        {
+          "text": "Dokładnie 0,5 ng/ml",
+          "explanation": "Wartość 0,5 ng/ml jest wartością w pełni prawidłową."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "wpn-zespol-q5",
+      "lessonId": "wpn-zespol",
+      "prompt": "Co jest głównym celem terapeutycznym podawania hydrokortyzonu u chorych z wrodzonym przerostem nadnerczy?",
+      "options": [
+        {
+          "text": "Uzupełnienie niedoboru kortyzolu oraz stłumienie przysadkowego ACTH, co hamuje nadprodukcję androgenów",
+          "explanation": "Hydrokortyzon na zasadzie ujemnego sprzężenia zwrotnego wyłącza stymulację ACTH."
+        },
+        {
+          "text": "Pobudzenie kory nadnerczy do szybszego podziału komórkowego",
+          "explanation": "Kora jest już patologicznie przerosła z powodu nadmiaru ACTH."
+        },
+        {
+          "text": "Całkowita eliminacja aldosteronu z organizmu",
+          "explanation": "Aldosteron jest niezbędny do życia i wymaga dodatkowej substytucji w postaciach z utratą soli."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

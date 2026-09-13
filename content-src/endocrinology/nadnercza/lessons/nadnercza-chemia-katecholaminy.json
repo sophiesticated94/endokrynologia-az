@@ -1,0 +1,164 @@
+{
+  "id": "nadnercza-chemia-katecholaminy",
+  "moduleId": "nadnercza",
+  "title": "Szlak biosyntezy i katabolizmu katecholamin: COMT, MAO i metanefryny",
+  "subtitle": "Hydroksylaza tyrozynowa, n-metylacja PNMT i o-metylacja metanefryn",
+  "group": "Chemia i biochemia",
+  "minutes": 19,
+  "goals": [
+    "Przeanalizujesz kolejne etapy biochemiczne biosyntezy amin katecholowych z L-tyrozyny.",
+    "Zrozumiesz molekularne szlaki inaktywacji przez enzymy COMT i MAO w kontekście diagnostyki guza chromochłonnego."
+  ],
+  "sections": [
+    {
+      "title": "Szlak biosyntezy katecholamin: Od tyrozyny do adrenaliny",
+      "text": "Biosynteza w komórkach chromochłonnych rdzenia nadnerczy i neuronach współczulnych przebiega w 4 krokach: 1) L-tyrozyna ⟶ L-DOPA (hydroksylaza tyrozynowa TH — etap limitujący szybkość całego szlaku, zależny od tetrahydrobiopteryny BH4, Fe2+ i tlenu); 2) L-DOPA ⟶ Dopamina (dekarboksylaza aromatycznych L-aminokwasów AADC, kofaktor fosforan pirydoksalu PLP/wit. B6); 3) Dopamina ⟶ Noradrenalina (beta-hydroksylaza dopaminowa DBH wewnątrz pęcherzyków chromafinowych, kofaktor miedź i askorbinian); 4) Noradrenalina ⟶ Adrenalina (N-metylotransferaza fenyloetanoloaminowa PNMT w cytosolu, donor grupy metylowej S-adenozylo-L-metionina SAMe)."
+    },
+    {
+      "title": "Rola kortyzolu w indukcji enzymu PNMT w rdzeniu nadnercza",
+      "text": "Ekspresja genu PNMT jest silnie indukowana przez glukokortykoidy. Rdzeń nadnercza jest anatomicznie skąpany w krwi żylnej spływającej bezpośrednio z kory nadnerczy przez wrotny układ naczyniowy nadnerczy, co zapewnia stężenie kortyzolu 100-krotnie wyższe niż we krwi obwodowej. Dzięki temu komórki rdzenia posiadają wysoką ekspresję PNMT i wydzielają głównie adrenalinę (ok. 80%), podczas gdy zwoje współczulne pozbawione sąsiedztwa kory syntetyzują niemal wyłącznie noradrenalinę."
+    },
+    {
+      "title": "Katabolizm: COMT, MAO i diagnostyka metanefryn",
+      "text": "Katecholaminy są unieczynniane przez dwa główne enzymy: katecholo-O-metylotransferazę (COMT, zależną od magnezu i SAMe, obecną obficie w komórkach guza pheochromocytoma) oraz monoaminooksydazę (MAO-A i MAO-B). COMT metyluje grupę 3-OH pierścienia katecholowego: noradrenalina przekształca się w normetanefrynę, a adrenalina w metanefrynę. W guzich chromochłonnych metanefryny powstają wewnątrzkomórkowo w sposób ciągły z puli niestabilnych pęcherzyków, co czyni wolne metanefryny w osoczu najczulszym markerem guza."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Prekursor",
+      "Enzym i kofaktory",
+      "Produkt i znaczenie kliniczne"
+    ],
+    "rows": [
+      [
+        "L-Tyrozyna",
+        "Hydroksylaza tyrozynowa (TH) + BH4, O2",
+        "L-DOPA; etap ograniczający tempo syntezy (rate-limiting)"
+      ],
+      [
+        "Dopamina",
+        "Dopamine β-hydroxylase (DBH) + wit. C, Cu2+",
+        "Noradrenalina wewnątrz ziarnistości chromafinowych"
+      ],
+      [
+        "Noradrenalina",
+        "PNMT + SAMe (indukowana przez wysoki kortyzol)",
+        "Adrenalina; swoista dla rdzenia nadnercza, rzadziej pozanadnerczowych paraganglioma"
+      ],
+      [
+        "Normetanefryna / Metanefryna",
+        "COMT (O-metylacja grupy 3-OH)",
+        "Kluczowe markery diagnostyczne guza chromochłonnego w osoczu i moczu"
+      ]
+    ]
+  },
+  "advanced": "Głównym końcowym metabolitem wydalanym w moczu jest kwas 4-hydroksy-3-metoksymigdałowy (kwas wanilinomigdałowy, VMA), powstający po połączonym działaniu enzymów COMT i MAO z udziałem dehydrogenazy aldehydowej. Oznaczanie VMA w dobowej zbiórce moczu cechuje się jednak niższą czułością niż pomiar wolnych metanefryn, ponieważ metanefryny odzwierciedlają metabolizm wewnątrzguzowy, niezależny od napadowego uwalniania.",
+  "summary": "Biosynteza katecholamin wymaga kaskady 4 enzymów z kluczową rolą indukcji PNMT przez kortyzol, a ich O-metylacja przez COMT generuje diagnostyczne metanefryny.",
+  "sourceIds": [
+    "endo_pheo",
+    "sterane_chem",
+    "pte_nadnercza"
+  ],
+  "questions": [
+    {
+      "id": "nadnercza-chemia-katecholaminy-q1",
+      "lessonId": "nadnercza-chemia-katecholaminy",
+      "prompt": "Jaki enzym katalizuje pierwszy i ograniczający szybkość (rate-limiting) etap biosyntezy katecholamin z tyrozyny?",
+      "options": [
+        {
+          "text": "Hydroksylaza tyrozynowa (TH)",
+          "explanation": "Wymaga tetrahydrobiopteryny (BH4), tlenu i jonów żelaza do wytworzenia L-DOPA."
+        },
+        {
+          "text": "Katecholo-O-metylotransferaza (COMT)",
+          "explanation": "COMT jest enzymem degradacji i unieczynniania, nie syntezy."
+        },
+        {
+          "text": "Pompa protonowa żołądka",
+          "explanation": "Pompa protonowa transportuje jony H+ w żołądku."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "nadnercza-chemia-katecholaminy-q2",
+      "lessonId": "nadnercza-chemia-katecholaminy",
+      "prompt": "Dlaczego rdzeń nadnerczy wytwarza głównie adrenalinę, podczas gdy zwoje współczulne wytwarzają prawie wyłącznie noradrenalinę?",
+      "options": [
+        {
+          "text": "Ekspresja enzymu PNMT w rdzeniu jest silnie indukowana przez wysokie stężenia kortyzolu z krążenia wrotnego kory",
+          "explanation": "Krew omywająca rdzeń ma stężenie kortyzolu 100 razy wyższe niż krew obwodowa."
+        },
+        {
+          "text": "W zwojach współczulnych nie ma atomów azotu",
+          "explanation": "Zarówno noradrenalina jak i adrenalina zawierają azot aminowy."
+        },
+        {
+          "text": "Adrenalina jest zakazana w układzie nerwowym przez barierę krew-mózg",
+          "explanation": "Neurony adrenergiczne OUN wykorzystują enzym PNMT, ale w zwojach obwodowych go brak."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "nadnercza-chemia-katecholaminy-q3",
+      "lessonId": "nadnercza-chemia-katecholaminy",
+      "prompt": "Dlaczego pomiar wolnych metanefryn w osoczu cechuje się wyższą czułością w wykrywaniu pheochromocytoma niż pomiar samej noradrenaliny?",
+      "options": [
+        {
+          "text": "Metanefryny powstają wewnątrz guza w sposób ciągły z powodu ekspresji COMT, a katecholaminy są wydzielane napadowo",
+          "explanation": "Pomiędzy napadami stężenie katecholamin może być prawidłowe, podczas gdy metanefryny są stale podwyższone."
+        },
+        {
+          "text": "Ponieważ metanefryny świecą w ciemności pod lampą UV",
+          "explanation": "Oznaczenia laboratoryjne wykorzystują tandemową spektrometrię mas (LC-MS/MS)."
+        },
+        {
+          "text": "Ponieważ noradrenalina nie przechodzi do moczu",
+          "explanation": "Noradrenalina przechodzi do moczu, lecz w zmiennych ilościach."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "nadnercza-chemia-katecholaminy-q4",
+      "lessonId": "nadnercza-chemia-katecholaminy",
+      "prompt": "Co jest uniwersalnym donorem grupy metylowej w reakcji przekształcenia noradrenaliny w adrenalinę przez enzym PNMT?",
+      "options": [
+        {
+          "text": "S-Adenozylo-L-metionina (SAMe)",
+          "explanation": "Oddaje grupę metylową na atom azotu z utworzeniem S-adenozylohomocysteiny."
+        },
+        {
+          "text": "Glukozo-6-fosforan",
+          "explanation": "Jest intermediatem glikolizy, nie donorem grup metylowych."
+        },
+        {
+          "text": "Kwas solny",
+          "explanation": "HCl nie bierze udziału w reakcjach metylacji enzymatycznej."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "nadnercza-chemia-katecholaminy-q5",
+      "lessonId": "nadnercza-chemia-katecholaminy",
+      "prompt": "Jaki jon metalu jest niezbędnym kofaktorem w centrum aktywnym enzymu COMT (katecholo-O-metylotransferazy)?",
+      "options": [
+        {
+          "text": "Jon magnezu (Mg2+)",
+          "explanation": "Koordynuje obie grupy hydroksylowe pierścienia katecholowego, umożliwiając deprotonację i atak na grupę metylową SAMe."
+        },
+        {
+          "text": "Czyste złoto (Au3+)",
+          "explanation": "Metale szlachetne nie są fizjologicznymi kofaktorami enzymatycznymi człowieka."
+        },
+        {
+          "text": "Rtęć metaliczna",
+          "explanation": "Rtęć jest toksyną blokującą grupy tiolowe, nie kofaktorem."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "id": "przytarczyce-diagnostyka",
+  "moduleId": "przytarczyce",
+  "title": "Wapń, fosfor i pułapki laboratoryjne",
+  "subtitle": "Wapń skorygowany, Ca zjonizowany, CCCR i fosfaturia",
+  "group": "Fundamenty",
+  "minutes": 16,
+  "goals": [
+    "Nauczysz się poprawnie korygować stężenie wapnia o stężenie albuminy (wzór Payne’a).",
+    "Poznasz wskazania do oznaczania wapnia zjonizowanego i unikania błędów przedanalitycznych.",
+    "Opanujesz wyliczanie wskaźnika CCCR (FeCa) w różnicowaniu PHPT i FHH."
+  ],
+  "sections": [
+    {
+      "title": "Trzy frakcje wapnia we krwi i rola albuminy",
+      "text": "Wapń całkowity w surowicy (norma: 2,15–2,55 mmol/l / 8,6–10,2 mg/dl) występuje w trzech postaciach: biologicznie czynny wapń zjonizowany (ok. 50%), wapń związany z białkami osocza, głównie albuminą (ok. 40%) oraz wapń w kompleksach z cytrynianami, fosforanami i wodorowęglanami (ok. 10%). W stanach hipoalbuminemii (np. marskość wątroby, zespół nerczycowy, niedożywienie) stężenie wapnia całkowitego jest fałszywie niskie pomimo prawidłowej frakcji zjonizowanej. Z tego powodu w codziennej praktyce klinicznej niezbędne jest obliczanie wapnia skorygowanego wg wzoru Payne’a: Ca_skorygowany (mg/dl) = Ca_zmierzony (mg/dl) + 0,8 * [4,0 - Albumina (g/dl)]."
+    },
+    {
+      "title": "Wapń zjonizowany: złoty standard i błędy przedanalityczne",
+      "text": "Bezpośredni pomiar wapnia zjonizowanego (Ca2+) za pomocą elektrody jonoselektywnej (norma: 1,15–1,32 mmol/l) eliminuje błędy wynikające z dysproteinemii, jednak jest wybitnie czuły na równowagę kwasowo-zasadową. Zasadowica (alkaloza) zwiększa ujemny ładunek albuminy, co nasila wiązanie wapnia i powoduje nagły spadek wapnia zjonizowanego — stąd hiperwentylacja psychogenna może wyzwolić ostry atak tężyczki przy prawidłowym wapniu całkowitym. Kwasica z kolei osłabia wiązanie wapnia z białkami. Krew na wapń zjonizowany należy pobierać w warunkach beztlenowych (strzykawka heparynizowana) i bez przedłużonego ucisku stazy żylnej."
+    },
+    {
+      "title": "Wskaźnik klirensu wapniowo-kreatyninowego (CCCR)",
+      "text": "W diagnostyce różnicowej hiperkalcemii z nieadekwatnie prawidłowym lub podwyższonym PTH kluczowym parametrem jest wskaźnik klirensu wapniowo-kreatyninowego (CCCR — Calcium-to-Creatinine Clearance Ratio, FeCa). Oblicza się go ze wzoru: CCCR = [Ca_mocz * Kreatynina_surowica] / [Ca_surowica * Kreatynina_mocz] (wszystkie stężenia w mmol/l). Wartość CCCR < 0,01 jednoznacznie wskazuje na łagodną rodzinną hiperkalcemię hipokalciuryczną (FHH), w której operacja przytarczyc jest bezwzględnie przeciwwskazana. Wartość CCCR > 0,02 jest typowa dla pierwotnej nadczynności przytarczyc (PHPT), a zakres 0,01–0,02 stanowi strefę szarą wymagającą badań genetycznych CaSR."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Parametr laboratoryjny",
+      "Wartości referencyjne",
+      "Interpretacja w PHPT",
+      "Interpretacja w FHH"
+    ],
+    "rows": [
+      [
+        "Wapń całkowity skorygowany",
+        "8,6–10,2 mg/dl (2,15–2,55 mmol/l)",
+        "Podwyższony (>10,2 mg/dl)",
+        "Podwyższony lub górna granica normy"
+      ],
+      [
+        "Wapń zjonizowany (Ca2+)",
+        "1,15–1,32 mmol/l",
+        "Podwyższony",
+        "Podwyższony"
+      ],
+      [
+        "Parathormon nienaruszony (iPTH)",
+        "15–65 pg/ml (1,6–6,9 pmol/l)",
+        "Podwyższony lub nieadekwatnie prawidłowy",
+        "Nieadekwatnie prawidłowy lub lekko podwyższony"
+      ],
+      [
+        "Fosforany nieorganiczne",
+        "2,5–4,5 mg/dl (0,81–1,45 mmol/l)",
+        "Obniżone (<2,5 mg/dl) lub niska norma",
+        "Prawidłowe"
+      ],
+      [
+        "Wskaźnik CCCR (FeCa)",
+        "Fizjologicznie 0,01–0,02",
+        "> 0,02 (hiperkalciuria)",
+        "< 0,01 (skrajna hipokalciuria nerkowa)"
+      ]
+    ]
+  },
+  "advanced": "Wskaźnik cewkowego wchłaniania zwrotnego fosforanów (TmP/GFR) pozwala obiektywnie potwierdzić nadmiar PTH lub FGF23 w organizmie. Obniżony TmP/GFR świadczy o nerkowej ucieczce fosforanów. Pamiętaj także o interferencji biotyny: bardzo wysokie dawki biotyny (>5–10 mg/d) mogą zafałszować oznaczenia iPTH metodami immunoenzymatycznymi opartymi na kompleksie streptawidyna-biotyna, dając fałszywie niskie lub fałszywie wysokie wyniki.",
+  "summary": "W diagnostyce przytarczyc zawsze koryguj wapń o albuminę lub oznaczaj wapń zjonizowany. Wskaźnik CCCR <0,01 ratuje pacjenta z FHH przed niepotrzebną, nieskuteczną operacją wycięcia przytarczyc.",
+  "sourceIds": [
+    "ese_phpt",
+    "fhh_consensus",
+    "asbmr_calcium"
+  ],
+  "questions": [
+    {
+      "id": "przytarczyce-diagnostyka-q1",
+      "lessonId": "przytarczyce-diagnostyka",
+      "prompt": "Pacjent ma stężenie wapnia całkowitego 8,0 mg/dl (norma 8,6–10,2) i stężenie albuminy 2,5 g/dl (norma 4,0). Ile wynosi stężenie wapnia skorygowanego?",
+      "options": [
+        {
+          "text": "9,2 mg/dl (normokalcemia)",
+          "explanation": "Zgodnie ze wzorem Payne’a: 8,0 + 0,8 * (4,0 - 2,5) = 8,0 + 1,2 = 9,2 mg/dl."
+        },
+        {
+          "text": "8,0 mg/dl (rzeczywista hipokalcemia)",
+          "explanation": "Pominięcie korekty o albuminę prowadzi do fałszywego rozpoznania hipokalcemii."
+        },
+        {
+          "text": "6,8 mg/dl (ciężka hipokalcemia)",
+          "explanation": "Odjęcie zamiast dodania korekty jest częstym błędem rachunkowym; stężenie wapnia zjonizowanego jest prawidłowe."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przytarczyce-diagnostyka-q2",
+      "lessonId": "przytarczyce-diagnostyka",
+      "prompt": "W jaki sposób ostra alkaloza oddechowa wywołana hiperwentylacją wpływa na wapń zjonizowany?",
+      "options": [
+        {
+          "text": "Obniża wapń zjonizowany poprzez zwiększenie powinowactwa albuminy do Ca2+",
+          "explanation": "Wzrost pH uwalnia jony H+ z albuminy, odsłaniając ujemne ładunki wiążące wapń zjonizowany."
+        },
+        {
+          "text": "Podwyższa wapń zjonizowany z powodu rozpadu kompleksów fosforanowych",
+          "explanation": "Alkaloza zawsze obniża frakcję zjonizowaną, co może sprowokować napad tężyczki."
+        },
+        {
+          "text": "Nie wpływa w żaden sposób na frakcję zjonizowaną wapnia",
+          "explanation": "Równowaga kwasowo-zasadowa jest jednym z najważniejszych regulatorów stężenia Ca2+."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przytarczyce-diagnostyka-q3",
+      "lessonId": "przytarczyce-diagnostyka",
+      "prompt": "Wskaźnik CCCR wynosi u pacjenta z hiperkalcemią 0,006 (<0,01). Jakie jest najbardziej prawdopodobne rozpoznanie?",
+      "options": [
+        {
+          "text": "Łagodna rodzinna hiperkalcemia hipokalciuryczna (FHH)",
+          "explanation": "Wskaźnik CCCR <0,01 odzwierciedla nadmierne wchłanianie zwrotne wapnia w nerkach na skutek mutacji CaSR."
+        },
+        {
+          "text": "Pierwotna nadczynność przytarczyc spowodowana pojedynczym gruczolakiem",
+          "explanation": "W typowej PHPT wskaźnik CCCR wynosi >0,02 z powodu hiperkalciurii."
+        },
+        {
+          "text": "Przełom hiperkalcemiczny w przebiegu raka przytarczyc",
+          "explanation": "W raku przytarczyc dochodzi do masywnej hiperkalciurii z CCCR przekraczającym 0,03–0,05."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przytarczyce-diagnostyka-q4",
+      "lessonId": "przytarczyce-diagnostyka",
+      "prompt": "Który parametr moczowy jest niezbędny do obliczenia wskaźnika CCCR (FeCa)?",
+      "options": [
+        {
+          "text": "Stężenie wapnia i kreatyniny w tej samej próbce moczu oraz w surowicy",
+          "explanation": "CCCR zestawia klirens nerkowy wapnia z klirensem nerkowym kreatyniny."
+        },
+        {
+          "text": "Wyłącznie dobowe wydalanie kwasu moczowego",
+          "explanation": "Kwas moczowy nie wchodzi w skład równania frakcjonowanego wydalania wapnia."
+        },
+        {
+          "text": "Stężenie parathormonu w dobowej zbiórce moczu",
+          "explanation": "Parathormon oznacza się w osoczu/surowicy, a nie w moczu."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przytarczyce-diagnostyka-q5",
+      "lessonId": "przytarczyce-diagnostyka",
+      "prompt": "Dlaczego u pacjenta z podejrzeniem zaburzeń osi przytarczycowej zaleca się odstawienie biotyny przed pobraniem krwi?",
+      "options": [
+        {
+          "text": "Biotyna w dawkach suplementacyjnych interferuje z testami immunochemicznymi iPTH",
+          "explanation": "Interferencja z układem biotyna-streptawidyna może zafałszować wynik stężenia parathormonu."
+        },
+        {
+          "text": "Biotyna trwale uszkadza komórki główne przytarczyc",
+          "explanation": "Biotyna jest witaminą i nie wykazuje działania cytotoksycznego na przytarczyce."
+        },
+        {
+          "text": "Biotyna chelatuje wapń we krwi, uniemożliwiając pomiar",
+          "explanation": "Biotyna nie tworzy nierozpuszczalnych soli z wapniem w surowicy."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

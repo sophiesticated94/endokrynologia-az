@@ -1,0 +1,215 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "wpn-zespol",
+  "objectives": [
+    {
+      "id": "wpn-zespol-obj-1",
+      "statement": "Zrozumiesz patomechanizm wrodzonego przerostu nadnerczy (WPN) spowodowanego niedoborem 21-hydroksylazy (CYP21A2).",
+      "kind": "mechanism"
+    },
+    {
+      "id": "wpn-zespol-obj-2",
+      "statement": "Rozróżnisz postać klasyczną z utratą soli od postaci prostej wirylizującej oraz opanujesz diagnostykę postaci nieklasycznej (NC-CAH).",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "wpn-zespol-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "wpn-zespol-obj-1"
+    ],
+    "prompt": "Jaki metabolit steroidowy ulega masywnej akumulacji we krwi w najczęstszej postaci wrodzonego przerostu nadnerczy (WPN)?",
+    "options": [
+      "17-hydroksyprogesteron (17-OHP)",
+      "Estriol",
+      "Katecholaminy"
+    ],
+    "optionFeedback": [
+      "Brak enzymu 21-hydroksylazy blokuje dalszą konwersję 17-OHP, powodując jego gromadzenie.",
+      "Estriol jest estrogenem syntetyzowanym w łożysku podczas ciąży.",
+      "Katecholaminy powstają w rdzeniu nadnerczy z tyrozyny, nie biorą udziału w sterydogenezie kory."
+    ],
+    "answer": 0,
+    "explanation": "Brak enzymu 21-hydroksylazy blokuje dalszą konwersję 17-OHP, powodując jego gromadzenie.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "cah_guideline",
+      "pte_nadnercza"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "wpn-zespol-block-1",
+      "title": "Blok enzymatyczny i ucieczka substratów",
+      "text": "Wrodzony przerost nadnerczy (Congenital Adrenal Hyperplasia — CAH / WPN) to grupa chorób uwarunkowanych autosomalnie recesywnie, w których defekt enzymatyczny uniemożliwia prawidłową syntezę kortyzolu. W ponad 90–95% przypadków przyczyną jest mutacja genu CYP21A2 kodującego 21-hydroksylazę. Enzym ten odpowiada za przekształcanie progesteronu w 11-deoksykortykosteron (szlak aldosteronu) oraz 17-OH-progesteronu w 11-deoksykortyzol (szlak kortyzolu). Brak kortyzolu znosi ujemne sprzężenie zwrotne: przysadka masowo wydziela ACTH, co powoduje przerost (hyperplasia) kory nadnerczy. Zgromadzone powyżej bloku prekursory (głównie 17-OHP) zostają przesunięte do jedynego drożnego szlaku — syntezy silnych androgenów nadnerczowych (androstendionu i testosteronu)!",
+      "sourceIds": [
+        "cah_guideline",
+        "pte_nadnercza"
+      ],
+      "checkpointId": "wpn-zespol-q2-checkpoint-1-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "wpn-zespol-block-2",
+      "title": "Postać klasyczna: Z utratą soli vs prosta wirylizująca",
+      "text": "W zależności od resztkowej aktywności 21-hydroksylazy wyróżnia się postacie: 1) Klasyczna z utratą soli (salt-wasting — SW, aktywność enzymu 0%): całkowity brak kortyzolu i aldosteronu. U noworodków płci żeńskiej (46,XX) w chwili urodzenia występuje obojnactwo narządów płciowych zewnętrznych (wirylizacja: powiększenie łechtaczki, zrośnięcie warg sromowych). U noworodków płci męskiej (46,XY) narządy są prawidłowe, lecz w 2.–3. tygodniu życia dochodzi do załamania stanu: przełom z utratą soli (wymioty, hiponatremia, ciężka hiperkaliemia, wstrząs hipowolemiczny, zgon bez leczenia). 2) Klasyczna prosta wirylizująca (simple virilizing — SV, aktywność 1–2%): zachowana minimalna synteza aldosteronu (brak utraty soli), lecz występuje wirylizacja u dziewczynek oraz przedwczesne fałszywe dojrzewanie u chłopców.",
+      "sourceIds": [
+        "cah_guideline",
+        "pte_nadnercza"
+      ],
+      "checkpointId": "wpn-zespol-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "wpn-zespol-block-3",
+      "title": "Postać nieklasyczna (NC-CAH) u dorosłych",
+      "text": "Nieklasyczny WPN (Non-Classic CAH — NC-CAH, aktywność enzymu 20–50%) jest jedną z najczęstszych chorób jednogenowych (częstość 1:200–1:1000). U noworodków nie ma wad narządów płciowych. Objawy ujawniają się w okresie pokwitania lub u młodych kobiet i doskonale imitują zespół policystycznych jajników (PCOS): oporny trądzik, łysienie androgenowe, hirsutyzm, zaburzenia owulacji i niepłodność. ROZPOZNANIE: Podstawowym testem przesiewowym jest poranne stężenie 17-hydroksyprogesteronu (17-OHP) w fazie folikularnej: stężenie <2 ng/ml w teście immunologicznym (lub <1,5 ng/ml w LC-MS/MS) czyni NC-CAH mało prawdopodobnym. Wartości w szarej strefie (2–10 ng/ml) budzą podejrzenie i wymagają testu stymulacji 250 µg Synacthenu: wyrzut 17-OHP >10 ng/ml (>30 nmol/l, a w LC-MS/MS >8–10 ng/ml) jednoznacznie potwierdza rozpoznanie.",
+      "sourceIds": [
+        "cah_guideline",
+        "pte_nadnercza"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "wpn-zespol-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "wpn-zespol-obj-2"
+      ],
+      "prompt": "Dlaczego u noworodka z klasyczną postacią WPN z utratą soli dochodzi w 2.–3. tygodniu życia do zapaści krążeniowej?",
+      "options": [
+        "Całkowity brak aldosteronu prowadzi do masywnej nerkowej utraty sodu, hiponatremii, hiperkaliemii i wstrząsu hipowolemicznego",
+        "Nadmiar kortyzolu niszczy naczynia krwionośne",
+        "Dochodzi do zamknięcia przewodu Botalla"
+      ],
+      "optionFeedback": [
+        "Niedobór mineralokortykosteroidów uniemożliwia zatrzymywanie soli w cewkach zbiorczych.",
+        "W WPN występuje ciężki niedobór kortyzolu, a nie nadmiar.",
+        "Przewód tętniczy nie ma związku z blokiem 21-hydroksylazy."
+      ],
+      "answer": 0,
+      "explanation": "Niedobór mineralokortykosteroidów uniemożliwia zatrzymywanie soli w cewkach zbiorczych.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "cah_guideline",
+        "pte_nadnercza"
+      ]
+    },
+    {
+      "id": "wpn-zespol-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "wpn-zespol-obj-1"
+      ],
+      "prompt": "Z jakim powszechnym zaburzeniem endokrynologicznym u młodych kobiet najczęściej bywa mylona nieklasyczna postać WPN (NC-CAH)?",
+      "options": [
+        "Zespołem policystycznych jajników (PCOS)",
+        "Chorobą Hashimoto z eutyreozą",
+        "Cukrzycą ciążową"
+      ],
+      "optionFeedback": [
+        "Oba stany objawiają się hiperandrogenizmem, trądzikiem, hirsutyzmem i rzadkim miesiączkowaniem.",
+        "Hashimoto dotyczy tarczycy i nie wywołuje bezpośrednio wirylizacji.",
+        "Cukrzyca to zaburzenie gospodarki węglowodanowej bez hirsutyzmu."
+      ],
+      "answer": 0,
+      "explanation": "Oba stany objawiają się hiperandrogenizmem, trądzikiem, hirsutyzmem i rzadkim miesiączkowaniem.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "cah_guideline",
+        "pte_nadnercza"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "wpn-zespol-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "wpn-zespol-obj-1",
+      "wpn-zespol-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Pułapka 21-hydroksylazy”.",
+    "modelAnswer": "Niedobór 21-hydroksylazy (CYP21A2) blokuje produkcję kortyzolu i aldosteronu, przekierowując metabolity do szlaku androgenów. Postać z utratą soli grozi zgonem w okresie noworodkowym, a postać nieklasyczna (NC-CAH) jest częstą przyczyną hirsutyzmu i niepłodności diagnozowaną testem 17-OHP.",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "cah_guideline",
+      "pte_nadnercza"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "wpn-zespol-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "wpn-zespol-obj-2"
+      ],
+      "prompt": "Jaki wynik stężenia 17-OHP w teście stymulacji 250 µg Synacthenu definitywnie potwierdza rozpoznanie nieklasycznego WPN?",
+      "options": [
+        "Stężenie 17-OHP w 60. minucie testu przekraczające 10 ng/ml (30 nmol/l)",
+        "Spadek stężenia 17-OHP do zera",
+        "Dokładnie 0,5 ng/ml"
+      ],
+      "optionFeedback": [
+        "Jest to międzynarodowy złoty standard diagnostyczny wg wytycznych Endocrine Society.",
+        "Stymulacja ACTH wyrzuca nagromadzony substrat powyżej bloku, powodując jego skokowy wzrost.",
+        "Wartość 0,5 ng/ml jest wartością w pełni prawidłową."
+      ],
+      "answer": 0,
+      "explanation": "Jest to międzynarodowy złoty standard diagnostyczny wg wytycznych Endocrine Society.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "cah_guideline",
+        "pte_nadnercza"
+      ]
+    },
+    {
+      "id": "wpn-zespol-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "wpn-zespol-obj-1"
+      ],
+      "prompt": "Co jest głównym celem terapeutycznym podawania hydrokortyzonu u chorych z wrodzonym przerostem nadnerczy?",
+      "options": [
+        "Uzupełnienie niedoboru kortyzolu oraz stłumienie przysadkowego ACTH, co hamuje nadprodukcję androgenów",
+        "Pobudzenie kory nadnerczy do szybszego podziału komórkowego",
+        "Całkowita eliminacja aldosteronu z organizmu"
+      ],
+      "optionFeedback": [
+        "Hydrokortyzon na zasadzie ujemnego sprzężenia zwrotnego wyłącza stymulację ACTH.",
+        "Kora jest już patologicznie przerosła z powodu nadmiaru ACTH.",
+        "Aldosteron jest niezbędny do życia i wymaga dodatkowej substytucji w postaciach z utratą soli."
+      ],
+      "answer": 0,
+      "explanation": "Hydrokortyzon na zasadzie ujemnego sprzężenia zwrotnego wyłącza stymulację ACTH.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "cah_guideline",
+        "pte_nadnercza"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "adrenal-workbench",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

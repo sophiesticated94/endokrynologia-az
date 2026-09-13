@@ -11,12 +11,14 @@ import {
 export { PSYCHIATRY_LESSON_ACTIVITY_REGISTRY };
 
 type RecordPractice = (activity: LearningActivity, correct: boolean, confidence?: Confidence, scored?: boolean, meta?: PracticeRecordMeta) => Promise<boolean>;
-const labels = {
+const labels: Record<string, readonly [string, any]> = {
   'axis-map': ['Mapa osi', Activity],
   'lab-workbench': ['Panel wyników', Beaker],
   timeline: ['Oś czasu', TrendingUp],
   'pathway-builder': ['Ścieżka decyzji', GitBranch],
-} as const;
+  'adrenal-workbench': ['Pracownia nadnerczy', Activity],
+  'parathyroid-workbench': ['Pracownia przytarczyc', Beaker],
+};
 
 type ActivityBaseInput = {
   id: string;
@@ -27,12 +29,7 @@ type ActivityBaseInput = {
   hint: string;
 };
 
-type WidgetProvider = {
-  'axis-map': (base: ActivityBaseInput) => LearningActivity;
-  'lab-workbench': (base: ActivityBaseInput) => LearningActivity;
-  timeline: (base: ActivityBaseInput) => LearningActivity;
-  'pathway-builder': (base: ActivityBaseInput) => LearningActivity;
-};
+type WidgetProvider = Record<string, (base: ActivityBaseInput) => LearningActivity>;
 
 const DIABETES_PROVIDERS: WidgetProvider = {
   'axis-map': base => ({
@@ -102,6 +99,22 @@ const ENDO_GENERAL_PROVIDERS: WidgetProvider = {
     correctOrder: [0, 1, 2, 3],
     explanation: 'Niespójność wymaga najpierw kontroli warunków badania i interferencji, zanim uruchomi się diagnostykę rzadkich chorób.',
   }),
+  'adrenal-workbench': base => ({
+    ...base,
+    type: 'single_choice',
+    prompt: 'Jakie jest pierwsze i najważniejsze postępowanie farmakologiczne przed zabiegiem wycięcia guza chromochłonnego?',
+    options: ['Skuteczna blokada receptorów alfa-adrenergicznych przed podaniem beta-blokera', 'Natychmiastowe podanie kardioselektywnego beta-blokera', 'Podanie wysokich dawek fludrokortyzonu'],
+    answer: 0,
+    explanation: 'Blokada alfa-adrenolitykiem przed beta-blokerem jest krytycznym wymogiem bezpieczeństwa hemodynamicznego w pheochromocytoma.',
+  }),
+  'parathyroid-workbench': base => ({
+    ...base,
+    type: 'single_choice',
+    prompt: 'Kiedy wskaźnik CCCR nie pozwala na pewne odróżnienie pierwotnej nadczynności przytarczyc od FHH?',
+    options: ['Gdy mieści się w strefie nakładania 0,010–0,020 lub współistnieje niedobór witaminy D', 'Gdy wynosi dokładnie 0,005', 'Gdy wapń całkowity przekracza 3,5 mmol/l'],
+    answer: 0,
+    explanation: 'Strefa 0,010–0,020 oraz niedobór witaminy D i tiazydy uniemożliwiają jednoznaczne rozstrzygnięcie bez normalizacji 25(OH)D i ew. badań genetycznych genu CASR.',
+  }),
 };
 
 function getWidgetProvider(moduleId: ModuleId, lessonId?: string): WidgetProvider {
@@ -150,7 +163,10 @@ export function LearningWidgets({experience,moduleId,onRecord}:{experience:Lesso
   return <section className="widget-lab">
     <div className="widget-lab-heading"><div><span className="eyebrow">PRACOWNIA W LEKCJI</span><h2>Najpierw przewidź, potem odsłoń mechanizm</h2></div><span className="model-warning">Model edukacyjny · nie diagnozuje</span></div>
     <div className="widget-tabs" role="tablist" aria-label="Narzędzia tej lekcji">
-      {experience.widgetIds.map(id => {const [label,Icon]=labels[id];return <button key={id} role="tab" aria-selected={active===id} className={active===id?'active':''} onClick={()=>setActive(id)}><Icon size={16}/>{label}</button>})}
+      {experience.widgetIds.map(id => {
+        const [label, Icon] = labels[id] || ['Pracownia', Activity];
+        return <button key={id} role="tab" aria-selected={active===id} className={active===id?'active':''} onClick={()=>setActive(id)}><Icon size={16}/>{label}</button>;
+      })}
     </div>
     <PracticeActivityCard key={widgetActivity.id} activity={widgetActivity} onRecord={onRecord}/>
   </section>;

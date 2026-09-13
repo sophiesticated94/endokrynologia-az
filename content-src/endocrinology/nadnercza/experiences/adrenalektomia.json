@@ -1,0 +1,224 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "adrenalektomia",
+  "objectives": [
+    {
+      "id": "adrenalektomia-obj-1",
+      "statement": "Poznasz techniki operacyjne: laparoskopową adrenalektomię przezotrzewnową (TLA) vs zaotrzewnową (PRA) oraz wskazania do operacji otwartej.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "adrenalektomia-obj-2",
+      "statement": "Opanujesz zasady okołooperacyjnego nadzoru hemodynamicznego i substytucyjnego po wycięciu guzów wydzielających hormony.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "adrenalektomia-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "adrenalektomia-obj-1"
+    ],
+    "prompt": "Jaka technika chirurgiczna stanowi złoty standard leczenia łagodnych, hormonalnie czynnych guzów nadnercza o średnicy poniżej 6 cm?",
+    "options": [
+      "Minimalnie inwazyjna laparoskopowa adrenalektomia (przezotrzewnowa TLA lub zaotrzewnowa PRA)",
+      "Rozległa torakolaparotomia z resekcją dolnych żeber",
+      "Wyłuszczenie guza łyżeczką kostną przez nakłucie lędźwiowe"
+    ],
+    "optionFeedback": [
+      "Zapewnia małą utratę krwi, niski ból pooperacyjny i szybki powrót chorego do sprawności.",
+      "Dostęp ten rezerwuje się dla olbrzymich guzów złośliwych naciekających sąsiednie narządy.",
+      "Taka metoda nie istnieje w urologii i chirurgii endokrynologicznej."
+    ],
+    "answer": 0,
+    "explanation": "Zapewnia małą utratę krwi, niski ból pooperacyjny i szybki powrót chorego do sprawności.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "adrenal_surgery",
+      "endo_pheo",
+      "pte_nadnercza"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "adrenalektomia-block-1",
+      "title": "Współczesna chirurgia nadnerczy: TLA vs PRA",
+      "text": "Złotym standardem w usuwaniu łagodnych guzów kory i rdzenia nadnerczy o średnicy <6 cm jest chirurgia małoinwazyjna. Dwie główne techniki: 1) Przezotrzewnowa adrenalektomia laparoskopowa (Transperitoneal Laparoscopic Adrenalectomy — TLA): chory ułożony na boku (kąt 45–60°); technika zapewnia doskonały, szeroki wgląd anatomiczny i dużą przestrzeń operacyjną, co jest zaletą w większych guzach (4–6 cm); 2) Tylna zaotrzewnowa adrenalektomia retroperitoneoskopowa (Posterior Retroperitoneoscopic Adrenalectomy — PRA): chory ułożony na brzuchu zgięty w stawach biodrowych; dostęp bezpośrednio przez przestrzeń zaotrzewnową pod 12. żebrem omija jamę otrzewną! Zaletą PRA jest brak manipulacji na jelitach, brak zrostów po wcześniejszych operacjach brzusznych oraz mniejszy ból pooperacyjny.",
+      "sourceIds": [
+        "adrenal_surgery",
+        "endo_pheo",
+        "pte_nadnercza"
+      ],
+      "checkpointId": "adrenalektomia-q2-checkpoint-1-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "adrenalektomia-block-2",
+      "title": "Śródoperacyjne pułapki naczyniowe i hemodynamiczne",
+      "text": "Chirurgia nadnerczy wymaga niezwykłej precyzji ze względu na bliskość wielkich pni naczyniowych: 1) Prawe nadnercze: leży za wątrobą i bezpośrednio przylega do żyły głównej dolnej (VCI). Krótka prawa żyła nadnerczowa uchodzi wprost do VCI — jej przypadkowe naderwanie prowadzi do dramatycznego, zagrażającego życiu krwawienia żylnego; 2) Lewe nadnercze: leży za ogonem trzustki i naczyniami śledzionowymi. Lewa żyła nadnerczowa uchodzi do lewej żyły nerkowej, często łącząc się z żyłą przeponową dolną. W guzach chromochłonnych kluczowe jest delikatne preparowanie guza bez uciskania (touch-free technique): każdy ucisk guza powoduje masywny wyrzut katecholamin i skok RR >250 mmHg, a po podwiązaniu żyły głównej guza dochodzi do gwałtownego załamania ciśnienia!",
+      "sourceIds": [
+        "adrenal_surgery",
+        "endo_pheo",
+        "pte_nadnercza"
+      ],
+      "checkpointId": "adrenalektomia-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "adrenalektomia-block-3",
+      "title": "Nadzór pooperacyjny: Zapaść hemodynamiczna vs substytucja sterydowa",
+      "text": "Opieka pooperacyjna różni się diametralnie w zależności od typu usuniętego guza: 1) Po wycięciu feochromocytoma: z powodu nagłego zniknięcia katecholamin i rozszerzenia naczyń głównym zagrożeniem jest ciężka hipotensja — chory wymaga agresywnego podawania krystaloidów i monitorowania glikemii (ryzyko hipoglikemii z odbicia po odblokowaniu wydzielania insuliny!); 2) Po wycięciu gruczolaka wydzielającego kortyzol (Cushing/MACS): z powodu atrofii drugiego nadnercza pacjent musi otrzymać dożylny wlew hydrokortyzonu (100 mg/dobę) w trakcie operacji i w 1. dobie, a następnie przejść na doustną substytucję; 3) Po wycięciu gruczolaka Conna (APA): natychmiast odstawia się spironolakton i suplementy potasu, monitorując potas (ryzyko przejściowej hiperkaliemii z powodu uśpienia drugiego nadnercza).",
+      "sourceIds": [
+        "adrenal_surgery",
+        "endo_pheo",
+        "pte_nadnercza"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "adrenalektomia-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "adrenalektomia-obj-2"
+      ],
+      "prompt": "Dlaczego uszkodzenie prawej żyły nadnerczowej podczas operacji jest szczególnie niebezpieczne?",
+      "options": [
+        "Prawa żyła nadnerczowa jest bardzo krótka i uchodzi bezpośrednio do żyły głównej dolnej (VCI), co grozi masywnym krwotokiem",
+        "Prawa żyła nadnerczowa zawiera kwas solny",
+        "Przez prawą żyłę nadnerczową przepływa cała żółć z wątroby"
+      ],
+      "optionFeedback": [
+        "Jej naderwanie wymaga natychmiastowego zaopatrzenia ściany VCI zagrażając zgonem z wykrwawienia.",
+        "Żyły krążenia trzewnego prowadzą krew, a nie soki żołądkowe.",
+        "Drogi żółciowe nie mają łączności z naczyniami nadnerczowymi."
+      ],
+      "answer": 0,
+      "explanation": "Jej naderwanie wymaga natychmiastowego zaopatrzenia ściany VCI zagrażając zgonem z wykrwawienia.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "adrenal_surgery",
+        "endo_pheo",
+        "pte_nadnercza"
+      ]
+    },
+    {
+      "id": "adrenalektomia-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "adrenalektomia-obj-1"
+      ],
+      "prompt": "Jakie powikłanie metaboliczne może wystąpić w pierwszych godzinach po pomyślnym usunięciu guza chromochłonnego?",
+      "options": [
+        "Hipoglikemia z odbicia, spowodowana odblokowaniem wydzielania insuliny po nagłym spadku katecholamin",
+        "Kwasica ketonowa z hiperglikemią >500 mg/dl",
+        "Masywna hiperglikemia oporna na insulinoterapię"
+      ],
+      "optionFeedback": [
+        "Katecholaminy stale hamowały komórki beta trzustki; ich zniknięcie wywołuje wyrzut insuliny.",
+        "Po operacji feo glikemia gwałtownie spada, a nie rośnie.",
+        "Należy monitorować chorego pod kątem hipoglikemii i podawać wlewy glukozy."
+      ],
+      "answer": 0,
+      "explanation": "Katecholaminy stale hamowały komórki beta trzustki; ich zniknięcie wywołuje wyrzut insuliny.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "adrenal_surgery",
+        "endo_pheo",
+        "pte_nadnercza"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "adrenalektomia-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "adrenalektomia-obj-1",
+      "adrenalektomia-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „W rękach chirurga”.",
+    "modelAnswer": "Chirurgia nadnerczy wykorzystuje techniki laparoskopowe (TLA, PRA) dla guzów łagodnych i dostęp otwarty dla raka ACC. Nadzór anestezjologiczny i pooperacyjny wymaga ścisłej wiedzy o profilu hormonalnym guza: zabezpieczenia płynowego po feo, osłony hydrokortyzonem w Cushinga i kontroli potasu w zespole Conna.",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "adrenal_surgery",
+      "endo_pheo",
+      "pte_nadnercza"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "adrenalektomia-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "adrenalektomia-obj-2"
+      ],
+      "prompt": "Kiedy stosuje się operację oszczędzającą korę nadnercza (cortical-sparing adrenalectomy)?",
+      "options": [
+        "W obustronnych guzach chromochłonnych w zespołach genetycznych (MEN2, VHL) w celu uniknięcia przewlekłej choroby Addisona",
+        "W każdym przypadku zaawansowanego raka kory nadnerczy ACC",
+        "U wszystkich chorych z otyłością olbrzymią bez guza"
+      ],
+      "optionFeedback": [
+        "Pozostawienie 15–30% unaczynionego miąższu kory zapewnia wystarczającą produkcję kortyzolu.",
+        "W raku ACC zabieg musi być radykalny R0 z marginesem onkologicznym, a nie oszczędzający.",
+        "Brak guza nie stanowi wskazania do resekcji miąższu nadnerczy."
+      ],
+      "answer": 0,
+      "explanation": "Pozostawienie 15–30% unaczynionego miąższu kory zapewnia wystarczającą produkcję kortyzolu.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "adrenal_surgery",
+        "endo_pheo",
+        "pte_nadnercza"
+      ]
+    },
+    {
+      "id": "adrenalektomia-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "adrenalektomia-obj-1"
+      ],
+      "prompt": "Jakie postępowanie farmakologiczne należy wdrożyć bezpośrednio po wycięciu jednostronnego gruczolaka Conna (APA)?",
+      "options": [
+        "Natychmiast odstawić suplementację potasu i spironolakton oraz kontrolować stężenie potasu w surowicy",
+        "Podwoić dawkę spironolaktonu na kolejne 6 miesięcy",
+        "Podać 100 mg fludrokortyzonu dożylnie"
+      ],
+      "optionFeedback": [
+        "Po usunięciu źródła hiperaldosteronizmu dalsze podawanie spironolaktonu groziłoby ciężką hiperkaliemią.",
+        "Zwiększenie dawki po usunięciu guza jest poważnym błędem medycznym.",
+        "Fludrokortyzon w takiej dawce nie istnieje i byłby toksyczny."
+      ],
+      "answer": 0,
+      "explanation": "Po usunięciu źródła hiperaldosteronizmu dalsze podawanie spironolaktonu groziłoby ciężką hiperkaliemią.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "adrenal_surgery",
+        "endo_pheo",
+        "pte_nadnercza"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "adrenal-workbench",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

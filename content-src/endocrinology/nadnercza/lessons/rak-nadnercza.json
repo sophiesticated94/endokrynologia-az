@@ -1,0 +1,163 @@
+{
+  "id": "rak-nadnercza",
+  "moduleId": "nadnercza",
+  "title": "Złowrogi cień w przestrzeni zaotrzewnowej",
+  "subtitle": "Rak kory nadnerczy (ACC), kryteria Weissa, ocena resekcyjności i leczenie mitotanem",
+  "group": "Stany nagłe i chirurgia",
+  "minutes": 17,
+  "goals": [
+    "Poznasz cechy kliniczne i radiologiczne raka kory nadnerczy (Adrenocortical Carcinoma — ACC).",
+    "Zrozumiesz kryteria histopatologiczne skali Weissa oraz zasady terapii adjuwantowej mitotanem i leczenia skojarzonego."
+  ],
+  "sections": [
+    {
+      "title": "Epidemiologia, obraz kliniczny i zespół wielohormonalny",
+      "text": "Rak kory nadnerczy (Adrenocortical Carcinoma — ACC) to rzadki, lecz niezwykle agresywny nowotwór złośliwy (zapadalność 0,5–2 przypadków na milion na rok). Wykazuje dwa szczyty zachorowań: wczesne dzieciństwo (<5. r.ż.) oraz 4.–5. dekada życia. Około 60% guzów jest czynnych hormonalnie: najbardziej charakterystyczna jest mieszana hipersekrecja — jednoczesny zespół Cushinga oraz wirylizacja u kobiet (nadmiar kortyzolu + DHEA-S/testosteron) lub feminizacja u mężczyzn (nadmiar estrogenów). Szybko narastający zespół Cushinga z hirsutyzmem i łysieniem androgenowym u kobiety w średnim wieku jest klasycznym objawem alarmowym ACC!"
+    },
+    {
+      "title": "Diagnostyka obrazowa i skala histopatologiczna Weissa",
+      "text": "W badaniach obrazowych (TK/MRI) raki kory nadnerczy to zazwyczaj duże guzy (>4–6 cm, nierzadko >10–15 cm), o niejednorodnej strukturze (heterogenne), z obszarami martwicy, krwotoków i nieregularnymi zwapnieniami, wykazujące gęstość natywną >20–30 HU i powolny wash-out (<60%). Często naciekają torebkę, żyłę nerkową i żyłę główną dolną. ZŁOTY STANDARD HISTOPATOLOGICZNY: Skala Weissa oparta na 9 cechach mikroskopowych (m.in. wysoki indeks mitotyczny >5 figur podziału na 50 pól widzenia, atypowe figury podziału, martwica, naciekanie torebki i naczyń). Obecność co najmniej >=3 kryteriów Weissa jednoznacznie definiuje nowotwór złośliwy!"
+    },
+    {
+      "title": "Leczenie: Radykalna chirurgia i farmakoterapia mitotanem",
+      "text": "Jedyną szansą na całkowite wyleczenie ACC jest doszczętna resekcja chirurgiczna R0 (otwarta adrenalektomia z usunięciem regionalnych węzłów chłonnych i sąsiednich tkanek). Chirurgii laparoskopowej unika się w guzach podejrzanych o ACC z powodu ryzyka pęknięcia torebki i rozsiewu otrzewnowego. Po operacji standardem adjuwantowym (zwłaszcza przy Ki-67 >10%) jest MITOTAN (o,p'-DDD) — chemioterapeutyk o selektywnym działaniu adrenolitycznym, niszczący mitochondria kory nadnerczy. Mitotan wymaga monitorowania stężenia we krwi (okno terapeutyczne 14–20 mg/l) oraz OBOWIĄZKOWEJ substytucji hydrokortyzonem w podwójnych dawkach (mitotan silnie indukuje enzym CYP3A4, przyspieszając rozkład hydrokortyzonu!). W chorobie zaawansowanej stosuje się schemat EDP-M (etopozyd, doksorubicyna, cisplatyna + mitotan)."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Etap leczenia / Narzędzie",
+      "Opis postępowania",
+      "Kluczowe uwagi kliniczne"
+    ],
+    "rows": [
+      [
+        "Chirurgia radykalna (R0)",
+        "Otwarta adrenalektomia z limfadenektomią",
+        "Podstawa wyleczenia; unikać laparoskopii przy podejrzeniu ACC z torebką"
+      ],
+      [
+        "Skala Weissa",
+        "9 cech histopatologicznych (atypia, martwica, mitozy)",
+        "Wynik >=3 kryteriów potwierdza rozpoznanie raka kory nadnerczy"
+      ],
+      [
+        "Mitotan (adjuwant)",
+        "Lek adrenolityczny niszczący korę nadnerczy",
+        "Okno terapeutyczne 14–20 mg/l; wymaga wysokich dawek hydrokortyzonu"
+      ],
+      [
+        "Chemioterapia EDP-M",
+        "Etopozyd + Doksorubicyna + Cisplatyna + Mitotan",
+        "Standard pierwszego rzutu w chorobie zaawansowanej / przerzutowej"
+      ]
+    ]
+  },
+  "advanced": "Dlaczego chory leczony mitotanem wymaga znacznie wyższych dawek hydrokortyzonu niż w klasycznej chorobie Addisona? Mitotan działa dwukierunkowo: 1) Niszczy zdrową i nowotworową korę nadnerczy, wywołując pełną niedoczynność; 2) Jest potężnym induktorem enzymów mikrosomalnych wątroby (zwłaszcza izoenzymu cytochromu CYP3A4), przez co podawany doustnie hydrokortyzon ulega błyskawicznej inaktywacji; 3) Zwiększa stężenie białka CBG we krwi. Dlatego dawka dobowa hydrokortyzonu u chorych na mitotanie wynosi często 40–60 mg/dobę (zamiast standardowych 20 mg), a dawkę monitoruje się stanem klinicznym i poziomem wolnego kortyzolu.",
+  "summary": "Rak kory nadnerczy (ACC) to wysoce złośliwy nowotwór objawiający się zespołem Cushinga z wirylizacją i dużą masą w TK. O rozpoznaniu decyduje skala Weissa (>=3 kryteria). Leczeniem z wyboru jest otwarta operacja R0 oraz terapia mitotanem wymagająca specjalistycznego nadzoru stężeń i substytucji sterydowej.",
+  "sourceIds": [
+    "ese_acc",
+    "pte_nadnercza"
+  ],
+  "questions": [
+    {
+      "id": "rak-nadnercza-q1",
+      "lessonId": "rak-nadnercza",
+      "prompt": "Jaki obraz kliniczny i hormonalny u kobiety w średnim wieku silnie nasuwa podejrzenie raka kory nadnerczy (ACC)?",
+      "options": [
+        {
+          "text": "Gwałtownie narastający zespół Cushinga ze współistniejącą wirylizacją (hirsutyzm, łysienie androgenowe, nadmiar DHEA-S)",
+          "explanation": "Mieszana sekrecja kortyzolu i androgenów jest wysoce charakterystyczna dla raka nadnercza."
+        },
+        {
+          "text": "Stopniowe rozjaśnienie powłok skórnych bez zmian masy ciała",
+          "explanation": "Brak objawów nie cechuje agresywnego raka kory."
+        },
+        {
+          "text": "Niskie stężenie wszystkich steroidów z hiperkaliemią",
+          "explanation": "Taki obraz cechuje chorobę Addisona, a nie nowotwór wydzielający hormony."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "rak-nadnercza-q2",
+      "lessonId": "rak-nadnercza",
+      "prompt": "Ile kryteriów w mikroskopowej skali Weissa definiuje złośliwy charakter nowotworu kory nadnerczy (ACC)?",
+      "options": [
+        {
+          "text": "Obecność co najmniej 3 kryteriów (>=3 z 9)",
+          "explanation": "Jest to powszechnie akceptowany w patomorfologii punkt odcięcia potwierdzający złośliwość."
+        },
+        {
+          "text": "Wszystkie 9 kryteriów musi być obecnych",
+          "explanation": "Obecność 9 kryteriów cechuje skrajnie zaawansowane postacie; do rozpoznania raka wystarczą 3."
+        },
+        {
+          "text": "Żadne kryterium, o raku decyduje wyłącznie średnica powyżej 1 cm",
+          "explanation": "Wymiary guza są istotne klinicznie, lecz definicja złośliwości jest histopatologiczna."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "rak-nadnercza-q3",
+      "lessonId": "rak-nadnercza",
+      "prompt": "Jaki lek o selektywnym działaniu adrenolitycznym stanowi standard terapii uzupełniającej u chorych na raka kory nadnerczy?",
+      "options": [
+        {
+          "text": "Mitotan (o,p'-DDD)",
+          "explanation": "Mitotan wybiórczo uszkadza mitochondria komórek kory nadnerczy i hamuje syntezę steroidów."
+        },
+        {
+          "text": "Spironolakton",
+          "explanation": "Spironolakton blokuje receptor aldosteronowy, nie niszczy komórek nowotworowych."
+        },
+        {
+          "text": "Metformina",
+          "explanation": "Metformina to doustny lek przeciwcukrzycowy, bez działania adrenolitycznego."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "rak-nadnercza-q4",
+      "lessonId": "rak-nadnercza",
+      "prompt": "Dlaczego u pacjenta przyjmującego mitotan dawka substytucyjna hydrokortyzonu musi być istotnie wyższa niż u standardowego chorego z niedoczynnością kory?",
+      "options": [
+        {
+          "text": "Mitotan silnie indukuje wątrobowy enzym CYP3A4, co drastycznie przyspiesza obwodowy metabolizm i rozkład hydrokortyzonu",
+          "explanation": "Wymaga to zwiększenia dawki sterydu nawet 2–3-krotnie, aby zapobiec przełomowi nadnerczowemu."
+        },
+        {
+          "text": "Mitotan bezpośrednio wiąże hydrokortyzon w żołądku w nierozpuszczalny kamień",
+          "explanation": "Leki te nie reagują chemicznie w świetle przewodu pokarmowego."
+        },
+        {
+          "text": "Mitotan regeneruje przysadkowe ACTH",
+          "explanation": "Mitotan nie regeneruje osi przysadkowej."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "rak-nadnercza-q5",
+      "lessonId": "rak-nadnercza",
+      "prompt": "Jaki dostęp operacyjny jest zalecany przez wytyczne ESE/ENSAT w przypadku guzów nadnercza o cechach podejrzenia raka kory nadnerczy (ACC)?",
+      "options": [
+        {
+          "text": "Zabieg klasyczny otwarty z regionalną limfadenektomią (otwarta adrenalektomia)",
+          "explanation": "Zapobiega to pęknięciu torebki guza i miejscowemu rozsiewowi komórek nowotworowych w jamie otrzewnej."
+        },
+        {
+          "text": "Zabieg laparoskopowy przez pojedyncze nacięcie 5 mm",
+          "explanation": "W guzach złośliwych laparoskopia wiąże się ze zwiększonym ryzykiem wznowy miejscowej."
+        },
+        {
+          "text": "Przezcewnikowa termoablacja mikrofalowa",
+          "explanation": "Ablacja termiczna nie zapewnia radykalności onkologicznej R0."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

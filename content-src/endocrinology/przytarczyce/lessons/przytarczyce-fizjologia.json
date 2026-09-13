@@ -1,0 +1,169 @@
+{
+  "id": "przytarczyce-fizjologia",
+  "moduleId": "przytarczyce",
+  "title": "Dyrygenci wapnia i fosforu",
+  "subtitle": "Oś PTH, receptor CaSR, witamina D i FGF23",
+  "group": "Fundamenty",
+  "minutes": 14,
+  "goals": [
+    "Zrozumiesz rolę receptora wapniowego (CaSR) w regulacji wydzielania PTH.",
+    "Połączysz sprzężenie zwrotne między nerką, kością, jelitem a przytarczycami.",
+    "Poznasz fizjologiczną oś kalcytriol–FGF23–fosforany."
+  ],
+  "sections": [
+    {
+      "title": "Cztery małe gruczoły o krytycznym znaczeniu",
+      "text": "Przytarczyce, najczęściej w liczbie czterech, leżą na tylnej powierzchni tarczycy. Ich główną funkcją jest utrzymywanie stężenia zjonizowanego wapnia w surowicy w niezwykle wąskim, homeostatycznym zakresie fizjologicznym (1,15–1,32 mmol/l). Głównym sensorem kontrolującym tę funkcję jest receptor wapniowy (CaSR — Calcium-Sensing Receptor), sprzężony z białkiem Gq/Gi. Wzrost zewnątrzkomórkowego stężenia jonów wapnia pobudza CaSR, co w odróżnieniu od większości komórek wywołuje w komórkach głównych przytarczyc sygnał hamujący wydzielanie parathormonu (PTH). I odwrotnie: nawet minimalny spadek stężenia Ca2+ odblokowuje CaSR, powodując natychmiastowy wyrzut zmagazynowanego PTH do krążenia."
+    },
+    {
+      "title": "Trzy narządy docelowe parathormonu",
+      "text": "PTH działa na receptor PTHR1 w nerkach i kościach, a pośrednio na jelito cienkie. W nerkach PTH stymuluje wchłanianie zwrotne wapnia w ramieniu wstępującym pętli Henlego i cewce dalszej, hamuje kotransporter sodowo-fosforanowy NPT2a w cewce bliższej (wywołując silną fosfaturię) oraz aktywuje enzym 1alfa-hydroksylazę (CYP27B1). Aktywny metabolit witaminy D — 1,25(OH)2D (kalcytriol) — wzmaga z kolei jelitowe wchłanianie zarówno wapnia, jak i fosforanów. W kościach PTH pobudza osteoblasty do ekspresji liganda RANKL, co stymuluje osteoklastogenezę i osteolizę, uwalniając jony wapnia i fosforanów do krwiobiegu."
+    },
+    {
+      "title": "FGF23 i oś fosforanowa: przeciwwaga dla witaminy D",
+      "text": "Czynnik wzrostu fibroblastów 23 (FGF23), wydzielany przez osteocyty pod wpływem hiperfosfatemii i kalcytriolu, stanowi kluczowy hormon fosfaturyczny. Działa na kompleks receptora FGFR1 z koreceptorem Klotho w cewce bliższej nerki, nasilając wydalanie fosforanów z moczem oraz hamując enzym CYP27B1 (zmniejszając syntezę kalcytriolu). W ten sposób układ tworzy precyzyjną pętlę podwójnego sprzężenia zwrotnego: zapobiega powstawaniu nierozpuszczalnych złogów fosforanu wapnia (Ca x P) w tkankach miękkich i naczyniach krwionośnych."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Hormon / Czynnik",
+      "Główne miejsce syntezy",
+      "Wpływ na stężenie Ca",
+      "Wpływ na stężenie fosforanów (P)"
+    ],
+    "rows": [
+      [
+        "Parathormon (PTH)",
+        "Komórki główne przytarczyc",
+        "Podwyższa (reabsorpcja nerkowa + kościogubienie)",
+        "Obniża (masywna fosfaturia nerkowa)"
+      ],
+      [
+        "Kalcytriol (1,25(OH)2D)",
+        "Cewka bliższa nerki (CYP27B1)",
+        "Podwyższa (wchłanianie jelitowe i nerkowe)",
+        "Podwyższa (wchłanianie jelitowe)"
+      ],
+      [
+        "FGF23 (z koreceptorem Klotho)",
+        "Osteocyty tkanki kostnej",
+        "Neutralny / nieznacznie obniża",
+        "Silnie obniża (zmniejsza NPT2a w nerkach)"
+      ],
+      [
+        "Kalcytonina",
+        "Komórki C (parapęcherzykowe) tarczycy",
+        "Nieznacznie obniża (hamuje osteoklasty)",
+        "Obniża (zwiększa wydalanie z moczem)"
+      ]
+    ]
+  },
+  "advanced": "Receptor CaSR występuje nie tylko w przytarczycach, ale także w komórkach grubego ramienia wstępującego pętli Henlego (TAL), gdzie wysokie stężenie zewnątrzkomórkowego wapnia hamuje transporter NKCC2 i kanał potasowy ROMK. W ten sposób hiperkalcemia działa jak endogenny diuretyk pętlowy (furosemidopodobny), prowadząc do upośledzenia zagęszczania moczu, poliurii i odwodnienia hipowolemicznego u chorych z ciężką nadczynnością przytarczyc.",
+  "summary": "Homeostaza wapniowa zależy od ujemnego sprzężenia CaSR–PTH. PTH podwyższa stężenie wapnia (nerki, kości) i obniża stężenie fosforanów (fosfaturia), a witamina D zwiększa wchłanianie obu jonów w jelicie.",
+  "sourceIds": [
+    "asbmr_calcium",
+    "ese_phpt"
+  ],
+  "questions": [
+    {
+      "id": "przytarczyce-fizjologia-q1",
+      "lessonId": "przytarczyce-fizjologia",
+      "prompt": "Jaki jest bezpośredni efekt aktywacji receptora CaSR przez wysokie stężenie jonów Ca2+ w przytarczycach?",
+      "options": [
+        {
+          "text": "Zahamowanie wydzielania parathormonu (PTH)",
+          "explanation": "Pobudzenie CaSR wywołuje wewnątrzkomórkowy sygnał supresyjny syntezy i egzocytozy PTH."
+        },
+        {
+          "text": "Wzmożone uwalnianie parathormonu (PTH)",
+          "explanation": "Pobudzenie receptora wapniowego blokuje, a nie stymuluje wydzielanie PTH."
+        },
+        {
+          "text": "Wzrost syntezy kalcytoniny w przytarczycach",
+          "explanation": "Kalcytonina powstaje w komórkach C tarczycy, a nie w przytarczycach."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przytarczyce-fizjologia-q2",
+      "lessonId": "przytarczyce-fizjologia",
+      "prompt": "Jaki jest główny wpływ parathormonu (PTH) na gospodarkę fosforanową w nerkach?",
+      "options": [
+        {
+          "text": "Hamowanie kotransportera NPT2a i nasilenie fosfaturii",
+          "explanation": "PTH obniża próg nerkowy dla fosforanów w cewce bliższej, prowadząc do hipofosfatemii."
+        },
+        {
+          "text": "Wzrost cewkowej reabsorpcji fosforanów do krwi",
+          "explanation": "PTH hamuje wchłanianie zwrotne fosforanów w cewce bliższej."
+        },
+        {
+          "text": "Brak wpływu na wydalanie fosforanów z moczem",
+          "explanation": "Fosfaturia jest jednym z najważniejszych i najsilniejszych działań nerkowych PTH."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przytarczyce-fizjologia-q3",
+      "lessonId": "przytarczyce-fizjologia",
+      "prompt": "Który enzym jest bezpośrednio aktywowany w nerkach przez PTH w procesie bioaktywacji witaminy D?",
+      "options": [
+        {
+          "text": "1alfa-hydroksylaza (CYP27B1)",
+          "explanation": "PTH silnie indukuje 1alfa-hydroksylazę w cewkach bliższych, przekształcając 25(OH)D w aktywny 1,25(OH)2D."
+        },
+        {
+          "text": "24-hydroksylaza (CYP24A1)",
+          "explanation": "CYP24A1 jest enzymem inaktywującym, indukowanym przez FGF23 i nadmiar kalcytriolu."
+        },
+        {
+          "text": "25-hydroksylaza wątrobowa (CYP2R1)",
+          "explanation": "Hydroksylacja w pozycji 25 zachodzi w hepatocytach niezależnie od parathormonu."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przytarczyce-fizjologia-q4",
+      "lessonId": "przytarczyce-fizjologia",
+      "prompt": "Jaka jest kluczowa funkcja biologiczna czynnika FGF23?",
+      "options": [
+        {
+          "text": "Zwiększanie wydalania fosforanów z moczem i hamowanie syntezy kalcytriolu",
+          "explanation": "FGF23 chroni ustrój przed retencją fosforanów i ektopowymi zwapnieniami tkanek."
+        },
+        {
+          "text": "Pobudzanie wydzielania parathormonu przez przytarczyce",
+          "explanation": "FGF23 nie stymuluje przytarczyc; hamuje natomiast produkcję kalcytriolu."
+        },
+        {
+          "text": "Zwiększanie jelitowego wchłaniania fosforanów",
+          "explanation": "FGF23 zmniejsza pulę fosforanów w ustroju poprzez nasilanie ich utraty z moczem."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "przytarczyce-fizjologia-q5",
+      "lessonId": "przytarczyce-fizjologia",
+      "prompt": "Dlaczego ciężka hiperkalcemia prowadzi do wielomoczu (poliurii) i odwodnienia?",
+      "options": [
+        {
+          "text": "Wapń aktywuje CaSR w pętli Henlego, hamując NKCC2 i działając jak furosemid",
+          "explanation": "Zahamowanie kotransportera NKCC2 znosi gradient rdzeniowy nerek i blokuje zagęszczanie moczu."
+        },
+        {
+          "text": "Hiperkalcemia stymuluje nadmierne wydzielanie wazopresyny (AVP)",
+          "explanation": "Hiperkalcemia wywołuje moczówkę nerkopochodną, a nie centralną nadprodukcję AVP."
+        },
+        {
+          "text": "Wapń bezpośrednio niszczy kłębuszki nerkowe w ciągu kilku minut",
+          "explanation": "Odwodnienie wynika z zaburzenia transportu cewkowego w pętli Henlego, a nie natychmiastowej martwicy kłębuszków."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

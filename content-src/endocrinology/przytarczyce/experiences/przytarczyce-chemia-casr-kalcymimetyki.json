@@ -1,0 +1,224 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "przytarczyce-chemia-casr-kalcymimetyki",
+  "objectives": [
+    {
+      "id": "przytarczyce-chemia-casr-kalcymimetyki-obj-1",
+      "statement": "Zanalizujesz strukturę trójwymiarową domeny Venus Flytrap (VFT) receptora CaSR i koordynację jonów Ca2+ przez reszty karboksylowe.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "przytarczyce-chemia-casr-kalcymimetyki-obj-2",
+      "statement": "Scharakteryzujesz wiązanie allosteryczne kalcymimetyków (cynakalcet) w domenie 7TM i modyfikację konformacji receptora.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "przytarczyce-chemia-casr-kalcymimetyki-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "przytarczyce-chemia-casr-kalcymimetyki-obj-1"
+    ],
+    "prompt": "Do której klasy receptorów sprzężonych z białkami G (GPCR) należy receptor wykrywający wapń (CaSR)?",
+    "options": [
+      "Do klasy C GPCR (charakteryzującej się olbrzymią domeną zewnątrzkamórkową Venus Flytrap)",
+      "Do receptorów związanych z kinazą tyrozynową jak receptor insuliny",
+      "Do wewnątrzjądrowych receptorów hormonów steroidowych"
+    ],
+    "optionFeedback": [
+      "Wspólnie z receptorami glutaminianowymi mGluR i receptorem GABA-B.",
+      "CaSR jest 7-transbłonowym receptorem GPCR, nie kinazą receptorową.",
+      "CaSR znajduje się w błonie komórkowej tyreocytów i komórek głównych."
+    ],
+    "answer": 0,
+    "explanation": "Wspólnie z receptorami glutaminianowymi mGluR i receptorem GABA-B.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "casr_hill",
+      "fhh_consensus",
+      "kdigo_ckd_mbd"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "przytarczyce-chemia-casr-kalcymimetyki-block-1",
+      "title": "Architektura receptora CaSR: Klasa C GPCR i domena VFT",
+      "text": "Receptor wykrywający wapń (CaSR) należy do klasy C receptorów sprzężonych z białkami G (obok receptorów mGluR i GABA-B). Działa jako konstytutywny homodimer połączony mostkami dwusiarczkowymi. Posiada ogromną domenę zewnątrzkamórkową (ECD, ~600 aminokwasów) przypominającą pułapkę na muchy (Venus Flytrap, VFT), połączoną bogatym w cysteinę łącznikiem (CRD) z 7-helikalną domeną transbłonową (7TM).",
+      "sourceIds": [
+        "casr_hill",
+        "fhh_consensus",
+        "kdigo_ckd_mbd"
+      ],
+      "checkpointId": "przytarczyce-chemia-casr-kalcymimetyki-q2-checkpoint-1-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "przytarczyce-chemia-casr-kalcymimetyki-block-2",
+      "title": "Koordynacja jonów Ca2+ w kieszeni Venus Flytrap",
+      "text": "W każdej podjednostce VFT zidentyfikowano do 4–5 niskopowinowatych miejsc wiązania wapnia (Kd w zakresie milimolowym 1–3 mM, idealnie dopasowanym do stężeń w płynie pozakomórkowym). Jony Ca2+ są koordynowane heksagonalnie przez ujemnie naładowane grupy karboksylowe łańcuchów bocznych kwasu asparaginowego (Asp) i kwasu glutaminowego (Glu) oraz atomy tlenu szkieletu peptydowego. Wiązanie wapnia indukuje zamknięcie płatów VFT i skręcenie dimeru o około 30°.",
+      "sourceIds": [
+        "casr_hill",
+        "fhh_consensus",
+        "kdigo_ckd_mbd"
+      ],
+      "checkpointId": "przytarczyce-chemia-casr-kalcymimetyki-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "przytarczyce-chemia-casr-kalcymimetyki-block-3",
+      "title": "Allosteryczne wiązanie cynakalcetu w kieszeni 7TM",
+      "text": "Kalcymimetyki pierwszej (cynakalcet) i nowszej generacji to pochodne fenyloalkiloamin. Nie wiążą się one w miejscu ortosterycznym domeny VFT, lecz w hydrofobowej kieszeni allosterycznej wewnątrz pęczka 7 transbłonowych helis (7TM), stabilizowanej przez reszty Glu837 i Phe832. Cynakalcet obniża barierę energetyczną przejścia receptora w stan aktywny, wzmacniając przekazywanie sygnału przez białka Gq/11 i Gi nawet przy niskich stężeniach Ca2+.",
+      "sourceIds": [
+        "casr_hill",
+        "fhh_consensus",
+        "kdigo_ckd_mbd"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "przytarczyce-chemia-casr-kalcymimetyki-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "przytarczyce-chemia-casr-kalcymimetyki-obj-2"
+      ],
+      "prompt": "Jakie reszty aminokwasowe w szczelinie domeny VFT bezpośrednio koordynują dodatnio naładowane jony Ca2+?",
+      "options": [
+        "Ujemnie naładowane łańcuchy karboksylowe asparaginianu (Asp) i glutaminianu (Glu)",
+        "Czyste cząsteczki cholesterolu",
+        "Nienaładowane atomy helu"
+      ],
+      "optionFeedback": [
+        "Tworzą klastry elektrostatyczne koordynujące jony wapnia wiązaniami jonowo-dipolowymi.",
+        "Lipidy tworzą dwuwarstwę błonową, nie koordynują wapnia w VFT.",
+        "Hel jest gazem szlachetnym nieobecnym w białkach."
+      ],
+      "answer": 0,
+      "explanation": "Tworzą klastry elektrostatyczne koordynujące jony wapnia wiązaniami jonowo-dipolowymi.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "casr_hill",
+        "fhh_consensus",
+        "kdigo_ckd_mbd"
+      ]
+    },
+    {
+      "id": "przytarczyce-chemia-casr-kalcymimetyki-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "przytarczyce-chemia-casr-kalcymimetyki-obj-1"
+      ],
+      "prompt": "W którym miejscu receptora CaSR wiąże się allosteryczny lek cynakalcet?",
+      "options": [
+        "W hydrofobowej kieszeni wewnątrz transbłonowej domeny 7TM",
+        "W jądrowym DNA komórki głównej",
+        "Bezpośrednio do cząsteczki krążącego parathormonu"
+      ],
+      "optionFeedback": [
+        "Nie konkuruje o miejsce wiązania wapnia w domenie VFT (jest modulatorem allosterycznym PAM).",
+        "Cynakalcet jest małą cząsteczką działającą na receptor błonowy.",
+        "Lek moduluje receptor w przytarczycy, nie wiąże wolnego PTH w osoczu."
+      ],
+      "answer": 0,
+      "explanation": "Nie konkuruje o miejsce wiązania wapnia w domenie VFT (jest modulatorem allosterycznym PAM).",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "casr_hill",
+        "fhh_consensus",
+        "kdigo_ckd_mbd"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "przytarczyce-chemia-casr-kalcymimetyki-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "przytarczyce-chemia-casr-kalcymimetyki-obj-1",
+      "przytarczyce-chemia-casr-kalcymimetyki-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Domena Venus Flytrap CaSR i allosteryczne wiązanie kalcymimetyków”.",
+    "modelAnswer": "CaSR wykrywa jony Ca2+ poprzez koordynację karboksylową w domenie Venus Flytrap, a cynakalcet allosterycznie wzmacnia ten sygnał w obrębie helis 7TM.",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "casr_hill",
+      "fhh_consensus",
+      "kdigo_ckd_mbd"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "przytarczyce-chemia-casr-kalcymimetyki-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "przytarczyce-chemia-casr-kalcymimetyki-obj-2"
+      ],
+      "prompt": "Czym pod względem chemicznym różni się nowszy kalcymimetyk etelkalcetyd od cynakalcetu?",
+      "options": [
+        "Jest syntetycznym D-heptapeptydem tworzącym mostek disiarczkowy z Cys482 domeny ECD",
+        "Jest gazem wziewnym stosowanym w anestezji",
+        "Zawiera 4 atomy radioaktywnego jodu-131"
+      ],
+      "optionFeedback": [
+        "Podaje się go dożylnie na koniec sesji hemodializy u chorych z wtórną nadczynnością.",
+        "Etelkalcetyd jest roztworem peptydowym do wstrzykiwań i.v.",
+        "Nie jest lekiem radiofarmaceutycznym."
+      ],
+      "answer": 0,
+      "explanation": "Podaje się go dożylnie na koniec sesji hemodializy u chorych z wtórną nadczynnością.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "casr_hill",
+        "fhh_consensus",
+        "kdigo_ckd_mbd"
+      ]
+    },
+    {
+      "id": "przytarczyce-chemia-casr-kalcymimetyki-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "przytarczyce-chemia-casr-kalcymimetyki-obj-1"
+      ],
+      "prompt": "Jakie białko G jest głównym przekaźnikiem hamowania sekrecji PTH po aktywacji receptora CaSR?",
+      "options": [
+        "Białko Gq/11 aktywujące fosfolipazę Cβ (PLCβ) oraz białko Gi hamujące cyklazę adenylanową",
+        "Białko Gs stymulujące produkcję cAMP",
+        "Białko troponina C"
+      ],
+      "optionFeedback": [
+        "Prowadzi do wzrostu wewnątrzkomórkowego IP3 i Ca2+, co paradoksalnie hamuje egzocytozę PTH.",
+        "Pobudzenie Gs zwiększałoby wydzielanie PTH, co jest przeciwne do działania CaSR.",
+        "Troponina reguluje skurcz filamentów mięśniowych, nie jest białkiem G."
+      ],
+      "answer": 0,
+      "explanation": "Prowadzi do wzrostu wewnątrzkomórkowego IP3 i Ca2+, co paradoksalnie hamuje egzocytozę PTH.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "casr_hill",
+        "fhh_consensus",
+        "kdigo_ckd_mbd"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "parathyroid-workbench",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

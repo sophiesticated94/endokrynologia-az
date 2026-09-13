@@ -1,0 +1,221 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "hipokalcemia-niedoczynnosc",
+  "objectives": [
+    {
+      "id": "hipokalcemia-niedoczynnosc-obj-1",
+      "statement": "Poznasz najczęstsze przyczyny nabytej i wrodzonej niedoczynności przytarczyc.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "hipokalcemia-niedoczynnosc-obj-2",
+      "statement": "Opanujesz zasady bezpiecznej substytucji aktywnej witaminy D i soli wapnia.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "hipokalcemia-niedoczynnosc-obj-3",
+      "statement": "Zrozumiesz ryzyko hiperkalciurii i nefrokalcynozy przy braku nerkowego działania PTH.",
+      "kind": "decision"
+    }
+  ],
+  "diagnostic": {
+    "id": "hipokalcemia-niedoczynnosc-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "hipokalcemia-niedoczynnosc-obj-1"
+    ],
+    "prompt": "Jaki jest cel terapeutyczny stężenia wapnia całkowitego w surowicy u dorosłego pacjenta z przewlekłą niedoczynnością przytarczyc wg wytycznych ESE?",
+    "options": [
+      "Dolna granica normy lub tuż poniżej: 8,0–8,5 mg/dl (2,0–2,15 mmol/l)",
+      "Środek lub górna granica normy: 9,8–10,5 mg/dl",
+      "Głęboka hipokalcemia <7,0 mg/dl z obecnością objawów tężyczkowych"
+    ],
+    "optionFeedback": [
+      "Taki zakres zapobiega objawom tężyczki, jednocześnie minimalizując ryzyko hiperkalciurii i nefrokalcynozy.",
+      "Dążenie do wysokiego wapnia przy braku PTH wywołuje masywną hiperkalciurię i uszkodzenie nerek.",
+      "Objawowa tężyczka zagraża skurczem krtani i zaburzeniami rytmu serca, jest więc niedopuszczalna."
+    ],
+    "answer": 0,
+    "explanation": "Taki zakres zapobiega objawom tężyczki, jednocześnie minimalizując ryzyko hiperkalciurii i nefrokalcynozy.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "ese_hypopara",
+      "asbmr_calcium"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "hipokalcemia-niedoczynnosc-block-1",
+      "title": "Etiologia: chirurgia szyi na pierwszym miejscu",
+      "text": "Niedoczynność przytarczyc (hipoparatyreoza) charakteryzuje się niedoborem lub brakiem parathormonu (iPTH < 10–15 pg/ml) przy współistniejącej hipokalcemii i hiperfosfatemii. Ponad 75% wszystkich przypadków u dorosłych to niedoczynność pooperacyjna, będąca powikłaniem całkowitej tyreoidektomii (z powodu wola guzkowego lub raka tarczycy) lub powtórnych operacji w obrębie szyi. Dochodzi wówczas do niezamierzonego wycięcia, podwiązania naczyń zaopatrujących lub niedokrwienia przytarczyc. Rzadsze przyczyny obejmują podłoże autoimmunologiczne (izolowane lub w zespole autoimmunologicznej poliendokrynopatii typu 1 — APS-1 z mutacją genu AIRE), hemochromatozę (odkładanie żelaza) oraz chorobę Wilsona.",
+      "sourceIds": [
+        "ese_hypopara",
+        "asbmr_calcium"
+      ],
+      "checkpointId": "hipokalcemia-niedoczynnosc-q2-checkpoint-1-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "hipokalcemia-niedoczynnosc-block-2",
+      "title": "Paradoks braku PTH w nerkach: pułapka nefrokalcynozy",
+      "text": "W warunkach fizjologicznych PTH stymuluje wchłanianie zwrotne wapnia w cewkach dalszych nerek. Gdy brakuje parathormonu, nerkowy próg wydalania wapnia drastycznie spada. Jeżeli w trakcie leczenia substytucyjnego podamy zbyt duże dawki wapnia i aktywnej witaminy D, dążąc do „idealnego” stężenia wapnia w surowicy w środku normy, w nerkach dojdzie do masywnej hiperkalciurii. Rezultatem jest powstawanie obustronnej nefrokalcynozy, kamicy nerkowej i postępującej niewydolności nerek. Z tego powodu wytyczne ESE zalecają cel terapeutyczny stężenia wapnia w surowicy w dolnej granicy normy lub tuż poniżej (8,0–8,5 mg/dl / 2,0–2,15 mmol/l), przy braku objawów tężyczkowych.",
+      "sourceIds": [
+        "ese_hypopara",
+        "asbmr_calcium"
+      ],
+      "checkpointId": "hipokalcemia-niedoczynnosc-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "hipokalcemia-niedoczynnosc-block-3",
+      "title": "Standard leczenia przewlekłego wg wytycznych ESE",
+      "text": "Ponieważ w niedoczynności przytarczyc brakuje enzymu 1alfa-hydroksylazy (zależnego od PTH), zwykły cholekalcyferol (witamina D3) jest nieskuteczny w monoterapii. Leczeniem z wyboru są aktywne metabolity lub analogi witaminy D: alfakalcydol (1alfa-OH-D3) w dawce 0,5–3,0 µg/d lub kalcytriol (1,25(OH)2D3) w dawce 0,25–1,5 µg/d, podawane łącznie z doustnym węglanem wapnia (1000–2000 mg Ca elementarnego na dobę w dawkach podzielonych w trakcie posiłków). Konieczne jest okresowe monitorowanie dobowego wydalania wapnia w moczu (DZM) z celem <4 mg/kg m.c./dobę (<300 mg/d u mężczyzn, <250 mg/d u kobiet); przy hiperkalciurii dołącza się diuretyk tiazydowy (np. hydrochlorotiazyd 25–50 mg/d), który nasila cewkowe wchłanianie wapnia.",
+      "sourceIds": [
+        "ese_hypopara",
+        "asbmr_calcium"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "hipokalcemia-niedoczynnosc-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "hipokalcemia-niedoczynnosc-obj-2"
+      ],
+      "prompt": "Dlaczego w niedoczynności przytarczyc zwykły cholekalcyferol (witamina D3) w monoterapii nie pozwala wyrównać hipokalcemii?",
+      "options": [
+        "Brak parathormonu uniemożliwia nerkową 1alfa-hydroksylację do aktywnego kalcytriolu",
+        "Ponieważ cholekalcyferol jest niszczony przez komórki tarczycy",
+        "Cholekalcyferol obniża stężenie wapnia w przewodzie pokarmowym"
+      ],
+      "optionFeedback": [
+        "PTH jest bezpośrednim induktorem enzymu CYP27B1 w cewkach nerkowych; bez niego witamina D nie ulega aktywacji.",
+        "Cholekalcyferol nie ma związku z destrukcją w tarczycy; problemem jest brak enzymatycznej hydroksylacji.",
+        "Witamina D zawsze promuje wchłanianie wapnia, o ile zostanie przekształcona do aktywnej formy."
+      ],
+      "answer": 0,
+      "explanation": "PTH jest bezpośrednim induktorem enzymu CYP27B1 w cewkach nerkowych; bez niego witamina D nie ulega aktywacji.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "ese_hypopara",
+        "asbmr_calcium"
+      ]
+    },
+    {
+      "id": "hipokalcemia-niedoczynnosc-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "hipokalcemia-niedoczynnosc-obj-3"
+      ],
+      "prompt": "Jakie badanie moczu jest obligatoryjne w monitorowaniu bezpieczeństwa leczenia hipoparatyreozy?",
+      "options": [
+        "Dobowa zbiórka moczu na wydalanie wapnia (DZM Ca)",
+        "Oznaczenie stężenia glukozy w porannej próbce moczu",
+        "Czystość mikrobiologiczna osadu moczu"
+      ],
+      "optionFeedback": [
+        "Monitorowanie kalciurii chroni miąższ nerkowy przed nieodwracalną nefrokalcynozą.",
+        "Glukozuria nie odzwierciedla gospodarki mineralnej.",
+        "Posiew moczu wykrywa infekcje, ale nie ocenia nerkowej ucieczki wapnia."
+      ],
+      "answer": 0,
+      "explanation": "Monitorowanie kalciurii chroni miąższ nerkowy przed nieodwracalną nefrokalcynozą.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "ese_hypopara",
+        "asbmr_calcium"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "hipokalcemia-niedoczynnosc-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "hipokalcemia-niedoczynnosc-obj-1",
+      "hipokalcemia-niedoczynnosc-obj-2",
+      "hipokalcemia-niedoczynnosc-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Gdy gaśnie parathormon”.",
+    "modelAnswer": "Niedoczynność przytarczyc (najczęściej pooperacyjna) wymaga leczenia aktywną witaminą D (alfakalcydol/kalcytriol) i węglanem wapnia. Celem jest dolna granica normy wapnia (8,0–8,5 mg/dl), by chronić nerki przed hiperkalciurią i nefrokalcynozą.",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "ese_hypopara",
+      "asbmr_calcium"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "hipokalcemia-niedoczynnosc-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "hipokalcemia-niedoczynnosc-obj-1"
+      ],
+      "prompt": "Który lek moczopędny można zastosować u chorego z niedoczynnością przytarczyc w celu zmniejszenia hiperkalciurii?",
+      "options": [
+        "Hydrochlorotiazyd (diuretyk tiazydowy)",
+        "Furosemid (diuretyk pętlowy)",
+        "Spironolakton (antagonista aldosteronu)"
+      ],
+      "optionFeedback": [
+        "Tiazydy zwiększają wchłanianie zwrotne wapnia w cewce dalszej, zmniejszając kalciurię i podnosząc stężenie Ca w surowicy.",
+        "Furosemid nasila wydalanie wapnia z moczem (kalciurię) i pogłębiłby hipokalcemię!",
+        "Spironolakton oszczędza potas, ale nie wywiera bezpośredniego wpływu na cewkowe wchłanianie wapnia."
+      ],
+      "answer": 0,
+      "explanation": "Tiazydy zwiększają wchłanianie zwrotne wapnia w cewce dalszej, zmniejszając kalciurię i podnosząc stężenie Ca w surowicy.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "ese_hypopara",
+        "asbmr_calcium"
+      ]
+    },
+    {
+      "id": "hipokalcemia-niedoczynnosc-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "hipokalcemia-niedoczynnosc-obj-1"
+      ],
+      "prompt": "Co wchodzi w skład klasycznej triady zespołu autoimmunologicznej poliendokrynopatii typu 1 (APS-1 / APECED)?",
+      "options": [
+        "Przewlekła kandydoza śluzówkowo-skórna, niedoczynność przytarczyc i choroba Addisona",
+        "Choroba Hashimoto, cukrzyca typu 1 i bielactwo",
+        "Guz chromochłonny, rak rdzeniasty tarczycy i gruczolak przytarczyc"
+      ],
+      "optionFeedback": [
+        "APS-1 jest uwarunkowany mutacją genu AIRE i manifestuje się tymi trzema schorzeniami od dzieciństwa.",
+        "To składowe zespołu APS-2 (zespołu Schmidta), a nie APS-1.",
+        "To zespół MEN2A, uwarunkowany mutacją protoonkogenu RET."
+      ],
+      "answer": 0,
+      "explanation": "APS-1 jest uwarunkowany mutacją genu AIRE i manifestuje się tymi trzema schorzeniami od dzieciństwa.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "ese_hypopara",
+        "asbmr_calcium"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "parathyroid-workbench",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

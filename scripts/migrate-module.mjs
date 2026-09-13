@@ -10,6 +10,7 @@ import {
   lessons,
   lessonRevisions,
   contentSources,
+  evidenceClaims,
   widgetPresets,
 } from '../db/postgres/schema.ts';
 import { LessonRevisionDocumentSchema } from '../lib/content/schemas/lesson-revision.ts';
@@ -283,6 +284,35 @@ export async function migrateModule(options = {}) {
             });
         }
       }
+
+      if (moduleSource.claims) {
+        for (const claim of Object.values(moduleSource.claims)) {
+          const srcId = claim.sourceIds?.[0] || claim.sourceId;
+          if (srcId) {
+            const vals = {
+              id: claim.id,
+              sourceId: srcId,
+              statement: claim.statement,
+              quote: claim.quote,
+              confidence: claim.confidence,
+              category: claim.category,
+              strength: claim.strength,
+              metadata: {
+                tags: claim.tags,
+                lessonIds: claim.lessonIds,
+                value: claim.value,
+                unit: claim.unit,
+                evidenceType: claim.evidenceType,
+                reviewedAt: claim.reviewedAt,
+              },
+            };
+            await db.insert(evidenceClaims).values(vals).onConflictDoUpdate({
+              target: evidenceClaims.id,
+              set: vals,
+            });
+          }
+        }
+      }
     }
 
     let insertedRevisions = 0;
@@ -366,28 +396,6 @@ export async function migrateModule(options = {}) {
 
       // 4. Transactional upsert and publishing
       await db.transaction(async (tx) => {
-        await tx
-          .insert(lessons)
-          .values({
-            id: lesson.id,
-            moduleId: moduleId,
-            title: lesson.title,
-            subtitle: lesson.subtitle || lesson.title,
-            sortOrder: i + 1,
-            minutes: lesson.minutes,
-            updatedAt: new Date(),
-          })
-          .onConflictDoUpdate({
-            target: lessons.id,
-            set: {
-              title: lesson.title,
-              subtitle: lesson.subtitle || lesson.title,
-              sortOrder: i + 1,
-              minutes: lesson.minutes,
-              updatedAt: new Date(),
-            },
-          });
-
         const existingRev = await tx
           .select()
           .from(lessonRevisions)

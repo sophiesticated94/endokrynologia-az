@@ -6,6 +6,8 @@ import type {
   ObjectiveKind,
   Question,
 } from './course-types.ts';
+import { adrenalExperiences } from './endocrinology/nadnercza-content.ts';
+import { parathyroidExperiences } from './endocrinology/przytarczyce-content.ts';
 
 function classifyObjective(statement: string): ObjectiveKind {
   const value = statement.toLocaleLowerCase('pl');
@@ -51,8 +53,17 @@ function widgetIds(lesson: Lesson): LessonExperienceV2['widgetIds'] {
 }
 
 export function buildPilotExperiences(lessons: Lesson[]): Record<string, LessonExperienceV2> {
+  const overrides: Record<string, LessonExperienceV2> = {
+    ...adrenalExperiences,
+    ...parathyroidExperiences,
+  };
+
   return Object.fromEntries(
     lessons.map(lesson => {
+      if (overrides[lesson.id]) {
+        return [lesson.id, overrides[lesson.id]];
+      }
+
       const objectives: LearningObjective[] = lesson.goals.slice(0, 4).map((statement, index) => ({
         id: `${lesson.id}-objective-${index + 1}`,
         statement,
@@ -94,9 +105,9 @@ export function buildPilotExperiences(lessons: Lesson[]): Record<string, LessonE
         exitTicket,
         widgetIds: widgetIds(lesson),
         review: {
-          status: 'source-checked',
+          status: 'needs-review',
           checkedAt: '2026-09-12',
-          scope: 'Struktura dydaktyczna v2 i zgodność twierdzeń z przypisanym zestawem źródeł; bez formalnej recenzji klinicznej.',
+          scope: 'Wygenerowana struktura robocza v2 (fallback); wymaga autorskiego audytu klinicznego.',
         },
       };
       return [lesson.id, experience];

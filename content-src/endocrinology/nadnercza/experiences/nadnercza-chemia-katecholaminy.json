@@ -1,0 +1,224 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "nadnercza-chemia-katecholaminy",
+  "objectives": [
+    {
+      "id": "nadnercza-chemia-katecholaminy-obj-1",
+      "statement": "Przeanalizujesz kolejne etapy biochemiczne biosyntezy amin katecholowych z L-tyrozyny.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "nadnercza-chemia-katecholaminy-obj-2",
+      "statement": "Zrozumiesz molekularne szlaki inaktywacji przez enzymy COMT i MAO w kontekście diagnostyki guza chromochłonnego.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "nadnercza-chemia-katecholaminy-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "nadnercza-chemia-katecholaminy-obj-1"
+    ],
+    "prompt": "Jaki enzym katalizuje pierwszy i ograniczający szybkość (rate-limiting) etap biosyntezy katecholamin z tyrozyny?",
+    "options": [
+      "Hydroksylaza tyrozynowa (TH)",
+      "Katecholo-O-metylotransferaza (COMT)",
+      "Pompa protonowa żołądka"
+    ],
+    "optionFeedback": [
+      "Wymaga tetrahydrobiopteryny (BH4), tlenu i jonów żelaza do wytworzenia L-DOPA.",
+      "COMT jest enzymem degradacji i unieczynniania, nie syntezy.",
+      "Pompa protonowa transportuje jony H+ w żołądku."
+    ],
+    "answer": 0,
+    "explanation": "Wymaga tetrahydrobiopteryny (BH4), tlenu i jonów żelaza do wytworzenia L-DOPA.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "endo_pheo",
+      "sterane_chem",
+      "pte_nadnercza"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "nadnercza-chemia-katecholaminy-block-1",
+      "title": "Szlak biosyntezy katecholamin: Od tyrozyny do adrenaliny",
+      "text": "Biosynteza w komórkach chromochłonnych rdzenia nadnerczy i neuronach współczulnych przebiega w 4 krokach: 1) L-tyrozyna ⟶ L-DOPA (hydroksylaza tyrozynowa TH — etap limitujący szybkość całego szlaku, zależny od tetrahydrobiopteryny BH4, Fe2+ i tlenu); 2) L-DOPA ⟶ Dopamina (dekarboksylaza aromatycznych L-aminokwasów AADC, kofaktor fosforan pirydoksalu PLP/wit. B6); 3) Dopamina ⟶ Noradrenalina (beta-hydroksylaza dopaminowa DBH wewnątrz pęcherzyków chromafinowych, kofaktor miedź i askorbinian); 4) Noradrenalina ⟶ Adrenalina (N-metylotransferaza fenyloetanoloaminowa PNMT w cytosolu, donor grupy metylowej S-adenozylo-L-metionina SAMe).",
+      "sourceIds": [
+        "endo_pheo",
+        "sterane_chem",
+        "pte_nadnercza"
+      ],
+      "checkpointId": "nadnercza-chemia-katecholaminy-q2-checkpoint-1-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "nadnercza-chemia-katecholaminy-block-2",
+      "title": "Rola kortyzolu w indukcji enzymu PNMT w rdzeniu nadnercza",
+      "text": "Ekspresja genu PNMT jest silnie indukowana przez glukokortykoidy. Rdzeń nadnercza jest anatomicznie skąpany w krwi żylnej spływającej bezpośrednio z kory nadnerczy przez wrotny układ naczyniowy nadnerczy, co zapewnia stężenie kortyzolu 100-krotnie wyższe niż we krwi obwodowej. Dzięki temu komórki rdzenia posiadają wysoką ekspresję PNMT i wydzielają głównie adrenalinę (ok. 80%), podczas gdy zwoje współczulne pozbawione sąsiedztwa kory syntetyzują niemal wyłącznie noradrenalinę.",
+      "sourceIds": [
+        "endo_pheo",
+        "sterane_chem",
+        "pte_nadnercza"
+      ],
+      "checkpointId": "nadnercza-chemia-katecholaminy-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "nadnercza-chemia-katecholaminy-block-3",
+      "title": "Katabolizm: COMT, MAO i diagnostyka metanefryn",
+      "text": "Katecholaminy są unieczynniane przez dwa główne enzymy: katecholo-O-metylotransferazę (COMT, zależną od magnezu i SAMe, obecną obficie w komórkach guza pheochromocytoma) oraz monoaminooksydazę (MAO-A i MAO-B). COMT metyluje grupę 3-OH pierścienia katecholowego: noradrenalina przekształca się w normetanefrynę, a adrenalina w metanefrynę. W guzich chromochłonnych metanefryny powstają wewnątrzkomórkowo w sposób ciągły z puli niestabilnych pęcherzyków, co czyni wolne metanefryny w osoczu najczulszym markerem guza.",
+      "sourceIds": [
+        "endo_pheo",
+        "sterane_chem",
+        "pte_nadnercza"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "nadnercza-chemia-katecholaminy-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "nadnercza-chemia-katecholaminy-obj-2"
+      ],
+      "prompt": "Dlaczego rdzeń nadnerczy wytwarza głównie adrenalinę, podczas gdy zwoje współczulne wytwarzają prawie wyłącznie noradrenalinę?",
+      "options": [
+        "Ekspresja enzymu PNMT w rdzeniu jest silnie indukowana przez wysokie stężenia kortyzolu z krążenia wrotnego kory",
+        "W zwojach współczulnych nie ma atomów azotu",
+        "Adrenalina jest zakazana w układzie nerwowym przez barierę krew-mózg"
+      ],
+      "optionFeedback": [
+        "Krew omywająca rdzeń ma stężenie kortyzolu 100 razy wyższe niż krew obwodowa.",
+        "Zarówno noradrenalina jak i adrenalina zawierają azot aminowy.",
+        "Neurony adrenergiczne OUN wykorzystują enzym PNMT, ale w zwojach obwodowych go brak."
+      ],
+      "answer": 0,
+      "explanation": "Krew omywająca rdzeń ma stężenie kortyzolu 100 razy wyższe niż krew obwodowa.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "endo_pheo",
+        "sterane_chem",
+        "pte_nadnercza"
+      ]
+    },
+    {
+      "id": "nadnercza-chemia-katecholaminy-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "nadnercza-chemia-katecholaminy-obj-1"
+      ],
+      "prompt": "Dlaczego pomiar wolnych metanefryn w osoczu cechuje się wyższą czułością w wykrywaniu pheochromocytoma niż pomiar samej noradrenaliny?",
+      "options": [
+        "Metanefryny powstają wewnątrz guza w sposób ciągły z powodu ekspresji COMT, a katecholaminy są wydzielane napadowo",
+        "Ponieważ metanefryny świecą w ciemności pod lampą UV",
+        "Ponieważ noradrenalina nie przechodzi do moczu"
+      ],
+      "optionFeedback": [
+        "Pomiędzy napadami stężenie katecholamin może być prawidłowe, podczas gdy metanefryny są stale podwyższone.",
+        "Oznaczenia laboratoryjne wykorzystują tandemową spektrometrię mas (LC-MS/MS).",
+        "Noradrenalina przechodzi do moczu, lecz w zmiennych ilościach."
+      ],
+      "answer": 0,
+      "explanation": "Pomiędzy napadami stężenie katecholamin może być prawidłowe, podczas gdy metanefryny są stale podwyższone.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "endo_pheo",
+        "sterane_chem",
+        "pte_nadnercza"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "nadnercza-chemia-katecholaminy-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "nadnercza-chemia-katecholaminy-obj-1",
+      "nadnercza-chemia-katecholaminy-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Szlak biosyntezy i katabolizmu katecholamin: COMT, MAO i metanefryny”.",
+    "modelAnswer": "Biosynteza katecholamin wymaga kaskady 4 enzymów z kluczową rolą indukcji PNMT przez kortyzol, a ich O-metylacja przez COMT generuje diagnostyczne metanefryny.",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "endo_pheo",
+      "sterane_chem",
+      "pte_nadnercza"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "nadnercza-chemia-katecholaminy-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "nadnercza-chemia-katecholaminy-obj-2"
+      ],
+      "prompt": "Co jest uniwersalnym donorem grupy metylowej w reakcji przekształcenia noradrenaliny w adrenalinę przez enzym PNMT?",
+      "options": [
+        "S-Adenozylo-L-metionina (SAMe)",
+        "Glukozo-6-fosforan",
+        "Kwas solny"
+      ],
+      "optionFeedback": [
+        "Oddaje grupę metylową na atom azotu z utworzeniem S-adenozylohomocysteiny.",
+        "Jest intermediatem glikolizy, nie donorem grup metylowych.",
+        "HCl nie bierze udziału w reakcjach metylacji enzymatycznej."
+      ],
+      "answer": 0,
+      "explanation": "Oddaje grupę metylową na atom azotu z utworzeniem S-adenozylohomocysteiny.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "endo_pheo",
+        "sterane_chem",
+        "pte_nadnercza"
+      ]
+    },
+    {
+      "id": "nadnercza-chemia-katecholaminy-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "nadnercza-chemia-katecholaminy-obj-1"
+      ],
+      "prompt": "Jaki jon metalu jest niezbędnym kofaktorem w centrum aktywnym enzymu COMT (katecholo-O-metylotransferazy)?",
+      "options": [
+        "Jon magnezu (Mg2+)",
+        "Czyste złoto (Au3+)",
+        "Rtęć metaliczna"
+      ],
+      "optionFeedback": [
+        "Koordynuje obie grupy hydroksylowe pierścienia katecholowego, umożliwiając deprotonację i atak na grupę metylową SAMe.",
+        "Metale szlachetne nie są fizjologicznymi kofaktorami enzymatycznymi człowieka.",
+        "Rtęć jest toksyną blokującą grupy tiolowe, nie kofaktorem."
+      ],
+      "answer": 0,
+      "explanation": "Koordynuje obie grupy hydroksylowe pierścienia katecholowego, umożliwiając deprotonację i atak na grupę metylową SAMe.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "endo_pheo",
+        "sterane_chem",
+        "pte_nadnercza"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "adrenal-workbench",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

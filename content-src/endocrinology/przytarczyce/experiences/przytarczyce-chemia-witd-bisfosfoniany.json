@@ -1,0 +1,224 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "przytarczyce-chemia-witd-bisfosfoniany",
+  "objectives": [
+    {
+      "id": "przytarczyce-chemia-witd-bisfosfoniany-obj-1",
+      "statement": "Wyjaśnisz fotochemiczny etap powstawania cholekalcyferolu pod wpływem UVB (290–315 nm) i dwuetapową hydroksylację enzymatyczną.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "przytarczyce-chemia-witd-bisfosfoniany-obj-2",
+      "statement": "Zanalizujesz mechanizm działania aminobisfosfonianów: chelatacja mostka P-C-P w kości i inhibicja syntazy FPPS osteoklastów.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "przytarczyce-chemia-witd-bisfosfoniany-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "przytarczyce-chemia-witd-bisfosfoniany-obj-1"
+    ],
+    "prompt": "Dlaczego witamina D3 jest określana w chemii organicznej mianem „seko-steroidu”?",
+    "options": [
+      "Ponieważ promieniowanie UVB rozrywa wiązanie węgiel-węgiel w pierścieniu B szkieletu steroidowego",
+      "Ponieważ jest wydalana w całości w ciągu jednej sekundy",
+      "Ponieważ zawiera wyłącznie atomy selenu i kobaltu"
+    ],
+    "optionFeedback": [
+      "Przedrostek „seko-” oznacza związek steroidowy z otwartym jednym z pierścieni.",
+      "Czas półtrwania metabolitów wynosi od godzin (kalcytriol) do tygodni (kalcydiol).",
+      "Witamina D składa się z węgla, wodoru i tlenu."
+    ],
+    "answer": 0,
+    "explanation": "Przedrostek „seko-” oznacza związek steroidowy z otwartym jednym z pierścieni.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "qtc_bone",
+      "endo_hypercalcemia",
+      "pte_osteoporoza"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "przytarczyce-chemia-witd-bisfosfoniany-block-1",
+      "title": "Fotochemia witaminy D: Rozszczepienie pierścienia B pod wpływem UVB",
+      "text": "Prekursorem witaminy D3 w warstwie kolczystej i podstawnej naskórka jest 7-dehydrocholesterol (pochodna cholesterolu z podwójnym wiązaniem w pozycji C-7 i C-8). Promieniowanie ultrafioletowe UVB (długość fali 290–315 nm) powoduje elektrocamiczne otwarcie pierścienia B pomiędzy atomami C-9 i C-10. Powstaje termodynamicznie niestabilna prewitamina D3, która ulega powolnej (24–48 h) izomeryzacji termicznej do cholekalcyferolu. Ponieważ pierścień B jest otwarty, witamina D jest seko-steroidem.",
+      "sourceIds": [
+        "qtc_bone",
+        "endo_hypercalcemia",
+        "pte_osteoporoza"
+      ],
+      "checkpointId": "przytarczyce-chemia-witd-bisfosfoniany-q2-checkpoint-1-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "przytarczyce-chemia-witd-bisfosfoniany-block-2",
+      "title": "Kaskada hydroksylacji: CYP2R1 (wątroba) i CYP27B1 (nerki)",
+      "text": "Cholekalcyferol jest biologicznie nieaktywny. W hepatocytach enzym mikrosomalny CYP2R1 przeprowadza 25-hydroksylację, tworząc kalcydiol (25(OH)D3 — główną formę magazynową o t1/2 ≈ 2–3 tygodnie). W proksymalnych kanalikach nerek mitochondrialny cytochrom CYP27B1 (1alfa-hydroksylaza) dołącza grupę OH przy C-1, tworząc aktywny hormon kalcytriol (1,25(OH)2D3). Ekspresja CYP27B1 jest silnie stymulowana przez parathormon (PTH) i hipofosfatemię, a hamowana przez FGF23 i hiperkalcemię.",
+      "sourceIds": [
+        "qtc_bone",
+        "endo_hypercalcemia",
+        "pte_osteoporoza"
+      ],
+      "checkpointId": "przytarczyce-chemia-witd-bisfosfoniany-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "przytarczyce-chemia-witd-bisfosfoniany-block-3",
+      "title": "Chemia bisfosfonianów: Nielabilny mostek P-C-P i inhibicja FPPS",
+      "text": "Naturalny pirofosforan posiada mostek P-O-P, który ulega natychmiastowej hydrolizie przez fosfatazy zasadowe. Leki z grupy bisfosfonianów zawierają mostek P-C-P oporny na enzymatyczną degradację. Dwie grupy fosfonianowe chelatują jony Ca2+, nadając lekowi ogromne powinowactwo do kryształów hydroksyapatytu w kości. Nowoczesne aminobisfosfoniany (zoledronian, alendronian) posiadają łańcuch boczny R2 z atomem azotu, który jest silnym inhibitorem syntazy difosforanu farnezylu (FPPS) w szlaku mewalonianu osteoklastów, co blokuje prenylację białek Rho/Rac i wywołuje apoptozę osteoklastów.",
+      "sourceIds": [
+        "qtc_bone",
+        "endo_hypercalcemia",
+        "pte_osteoporoza"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "przytarczyce-chemia-witd-bisfosfoniany-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "przytarczyce-chemia-witd-bisfosfoniany-obj-2"
+      ],
+      "prompt": "Który metabolit witaminy D oznacza się we krwi obwodowej jako standardowy laboratoryjny wskaźnik zaopatrzenia organizmu?",
+      "options": [
+        "25-Hydroksywitaminę D (Kalcydiol / 25(OH)D)",
+        "Aktywny 1,25(OH)2D (Kalcytriol)",
+        "Czysty cholesterol naskórkowy"
+      ],
+      "optionFeedback": [
+        "Ma długi czas półtrwania (2–3 tygodnie) i odzwierciedla łączną syntezę skórną i podaż dietetyczną.",
+        "Kalcytriol ma krótki t1/2 (4–6 h) i w hipowitaminozie może być paradoksalnie podwyższony przez wysoki PTH.",
+        "Cholesterol jest powszechnym lipidem błonowym, nie miarą witaminy D."
+      ],
+      "answer": 0,
+      "explanation": "Ma długi czas półtrwania (2–3 tygodnie) i odzwierciedla łączną syntezę skórną i podaż dietetyczną.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "qtc_bone",
+        "endo_hypercalcemia",
+        "pte_osteoporoza"
+      ]
+    },
+    {
+      "id": "przytarczyce-chemia-witd-bisfosfoniany-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "przytarczyce-chemia-witd-bisfosfoniany-obj-1"
+      ],
+      "prompt": "Czym pod względem chemicznym różni się mostek w cząsteczce bisfosfonianów (P-C-P) od naturalnego pirofosforanu (P-O-P)?",
+      "options": [
+        "Atom węgla zamiast tlenu czyni wiązanie P-C-P całkowicie opornym na enzymatyczną hydrolizę fosfatazami",
+        "Wiązanie P-C-P eksploduje w kontakcie z wodą",
+        "Bisfosfoniany nie posiadają w ogóle atomów fosforu"
+      ],
+      "optionFeedback": [
+        "Umożliwia to wieloletnie przetrwanie leku w macierzy mineralnej kości.",
+        "Bisfosfoniany są stabilnymi solami rozpuszczalnymi w roztworach wodnych.",
+        "Zawierają dwie reszty fosfonianowe skoordynowane przy centralnym węglu."
+      ],
+      "answer": 0,
+      "explanation": "Umożliwia to wieloletnie przetrwanie leku w macierzy mineralnej kości.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "qtc_bone",
+        "endo_hypercalcemia",
+        "pte_osteoporoza"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "przytarczyce-chemia-witd-bisfosfoniany-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "przytarczyce-chemia-witd-bisfosfoniany-obj-1",
+      "przytarczyce-chemia-witd-bisfosfoniany-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Fotoliza 7-dehydrocholesterolu, hydroksylacja witaminy D i mostki P-C-P”.",
+    "modelAnswer": "Witamina D jest seko-steroidem wymagającym fotolizy UVB i dwóch hydroksylacji (CYP2R1 i CYP27B1), a bisfosfoniany kotwiczą się mostkiem P-C-P w kości i hamują enzym FPPS w osteoklastach.",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "qtc_bone",
+      "endo_hypercalcemia",
+      "pte_osteoporoza"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "przytarczyce-chemia-witd-bisfosfoniany-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "przytarczyce-chemia-witd-bisfosfoniany-obj-2"
+      ],
+      "prompt": "Jaki kluczowy enzym szlaku mewalonianowego jest hamowany przez azotowe bisfosfoniany (np. kwas zoledronowy)?",
+      "options": [
+        "Syntaza difosforanu farnezylu (FPPS)",
+        "Cyklaza adenylowa",
+        "Pepsyna żołądkowa"
+      ],
+      "optionFeedback": [
+        "Blokuje to prenylację małych białek G (Rho, Rac) i prowadzi do apoptozy osteoklastów.",
+        "Cyklaza syntetyzuje cAMP, nie uczestniczy w szlaku mewalonianowym.",
+        "Pepsyna trawi białka w żołądku."
+      ],
+      "answer": 0,
+      "explanation": "Blokuje to prenylację małych białek G (Rho, Rac) i prowadzi do apoptozy osteoklastów.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "qtc_bone",
+        "endo_hypercalcemia",
+        "pte_osteoporoza"
+      ]
+    },
+    {
+      "id": "przytarczyce-chemia-witd-bisfosfoniany-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "przytarczyce-chemia-witd-bisfosfoniany-obj-1"
+      ],
+      "prompt": "Główny bodziec stymulujący nerkowy enzym CYP27B1 (1α-hydroksylazę) do produkcji aktywnego kalcytriolu to:",
+      "options": [
+        "Wysokie stężenie parathormonu (PTH) oraz hipofosfatemia",
+        "Hiperkalcemia i wysoki poziom FGF23",
+        "Wypicie 5 litrów czystej wody"
+      ],
+      "optionFeedback": [
+        "PTH aktywuje transkrypcję genu CYP27B1 w odpowiedzi na hipokalcemię.",
+        "FGF23 i nadmiar wapnia silnie hamują ekspresję CYP27B1, chroniąc przed zatruciem.",
+        "Podaż wody nie jest specyficznym hormonalnym regulatorem 1α-hydroksylazy."
+      ],
+      "answer": 0,
+      "explanation": "PTH aktywuje transkrypcję genu CYP27B1 w odpowiedzi na hipokalcemię.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "qtc_bone",
+        "endo_hypercalcemia",
+        "pte_osteoporoza"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "parathyroid-workbench",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "nadnercza-matematyka-hemodynamika",
+  "objectives": [
+    {
+      "id": "nadnercza-matematyka-hemodynamika-obj-1",
+      "statement": "Wyprowadzisz i zinterpretujesz wskaźnik aldosteronowo-reninowy (ARR) w diagnostyce hiperaldosteronizmu pierwotnego.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "nadnercza-matematyka-hemodynamika-obj-2",
+      "statement": "Zanalizujesz krzywe stężenie-odpowiedź receptorów adrenergicznych (kompetycyjna vs niekompetycyjna blokada w pheochromocytoma).",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "nadnercza-matematyka-hemodynamika-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "nadnercza-matematyka-hemodynamika-obj-1"
+    ],
+    "prompt": "Dlaczego do wiarygodnej interpretacji podwyższonego wskaźnika ARR (>30) konieczne jest jednoczesne wykazanie stężenia aldosteronu (PAC) > 10–15 ng/dl?",
+    "options": [
+      "Ponieważ przy bardzo niskiej reninie (mianownik bliski zeru) iloraz może być sztucznie zawyżony przy śladowym aldosteronie",
+      "Ponieważ aldosteron w stężeniu poniżej 15 ng/dl staje się gazem",
+      "Ponieważ renina rozkłada probówkę laboratoryjną"
+    ],
+    "optionFeedback": [
+      "Zapobiega to fałszywie dodatnim rozpoznaniom u pacjentów z niskoreninowym nadciśnieniem samoistnym.",
+      "Aldosteron jest hormonem steroidowym rozpuszczalnym w lipidach.",
+      "Renina to enzym proteolityczny działający w osoczu na angiotensynogen."
+    ],
+    "answer": 0,
+    "explanation": "Zapobiega to fałszywie dodatnim rozpoznaniom u pacjentów z niskoreninowym nadciśnieniem samoistnym.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "endo_pa",
+      "endo_pheo",
+      "cah_kinetics"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "nadnercza-matematyka-hemodynamika-block-1",
+      "title": "Dynamika pętli sprzężenia zwrotnego RAA i wskaźnik ARR",
+      "text": "W warunkach fizjologicznych wydzielanie aldosteronu przez warstwę kłębkowatą jest ściśle sprzężone z aktywnością reniny osoczowej (PRA) lub stężeniem reniny (DRC): spadek ciśnienia ⟶ wzrost reniny ⟶ wzrost angiotensyny II ⟶ wzrost aldosteronu ⟶ retencja sodu ⟶ hamowanie reniny. W zespole Conna (autonomia gruczolaka) aldosteron pozostaje wysoki mimo całkowitej supresji reniny. Wskaźnik aldosteronowo-reninowy ARR = PAC / PRA (lub PAC / DRC) pozwala wykryć tę utratę kontroli.",
+      "sourceIds": [
+        "endo_pa",
+        "endo_pheo",
+        "cah_kinetics"
+      ],
+      "checkpointId": "nadnercza-matematyka-hemodynamika-q2-checkpoint-1-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "nadnercza-matematyka-hemodynamika-block-2",
+      "title": "Matematyczne punkty odcięcia ARR i warunki standaryzacji",
+      "text": "Wartość odcięcia ARR zależy od jednostek laboratoryjnych: przy stężeniu aldosteronu (PAC) w ng/dl i aktywności reniny (PRA) w ng/ml/h punkt odcięcia wynosi zazwyczaj ARR > 30 (przy PAC > 10–15 ng/dl). Przy reninie oznaczanej jako DRC w mIU/L, próg wynosi ARR > 3,7. Ze względu na mianownik dążący do zera (DRC < 2 mIU/L), wynik może być fałszywie dodatni, dlatego niezbędne jest równoczesne spełnienie kryterium podwyższonego stężenia samego aldosteronu.",
+      "sourceIds": [
+        "endo_pa",
+        "endo_pheo",
+        "cah_kinetics"
+      ],
+      "checkpointId": "nadnercza-matematyka-hemodynamika-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "nadnercza-matematyka-hemodynamika-block-3",
+      "title": "Farmakodynamika blokady receptorów alfa: Fenoksybenzamina vs Doksazosyna",
+      "text": "W pheochromocytoma napływ noradrenaliny wysyca receptory alfa-1 naczyniowe wg równania Hilla: E = (Emax * [C]^n) / (EC50^n + [C]^n). Doksazosyna jest antagonistą kompetycyjnym (odwracalnym) — przesuwa krzywą w prawo, co oznacza, że nagły masywny wyrzut katecholamin podczas operacji może przełamać blokadę. Fenoksybenzamina jest antagonistą niekompetycyjnym (alkilującym) — tworzy nieodwracalne wiązanie kowalencyjne z receptorem alfa, obniżając Emax, co zapewnia absolutną ochronę przed przełomem.",
+      "sourceIds": [
+        "endo_pa",
+        "endo_pheo",
+        "cah_kinetics"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "nadnercza-matematyka-hemodynamika-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "nadnercza-matematyka-hemodynamika-obj-2"
+      ],
+      "prompt": "Dlaczego w przygotowaniu do operacji guza chromochłonnego (pheo) bezwzględnie ZAKAZANE jest wdrożenie beta-blokera przed pełną blokadą alfa?",
+      "options": [
+        "Prowadzi do nieposkromionej stymulacji receptorów alfa (unopposed alpha) i zagrażającego życiu skoku ciśnienia",
+        "Bo beta-bloker natychmiast rozpuszcza guz nadnercza",
+        "Bo beta-blokery zmieniają grupę krwi pacjenta"
+      ],
+      "optionFeedback": [
+        "Zablokowanie rozkurczających receptorów beta-2 pozostawia naczynia pod wyłącznym wpływem skurczowym alfa-1.",
+        "Leki adrenolityczne nie wykazują działania onkolitycznego na guzy chromochłonne.",
+        "Leki kardiologiczne nie wpływają na antygeny grupowe układu AB0."
+      ],
+      "answer": 0,
+      "explanation": "Zablokowanie rozkurczających receptorów beta-2 pozostawia naczynia pod wyłącznym wpływem skurczowym alfa-1.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "endo_pa",
+        "endo_pheo",
+        "cah_kinetics"
+      ]
+    },
+    {
+      "id": "nadnercza-matematyka-hemodynamika-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "nadnercza-matematyka-hemodynamika-obj-1"
+      ],
+      "prompt": "Na czym polega przewaga niekompetycyjnego antagonisty receptorów alfa (fenoksybenzaminy) nad antagonistą kompetycyjnym (doksazosyną)?",
+      "options": [
+        "Wiąże się kowalencyjnie z receptorem, więc nawet masywny wyrzut katecholamin podczas resekcji nie przełamie blokady",
+        "Działa wyłącznie przez 15 sekund i natychmiast znika",
+        "Można ją popijać wyłącznie sokiem grejpfrutowym"
+      ],
+      "optionFeedback": [
+        "Zmniejsza Emax odpowiedzi presyjnej, uniemożliwiając skurcz naczynia.",
+        "Fenoksybenzamina działa długo ze względu na konieczność syntezy nowych receptorów de novo.",
+        "Sposób popijania nie jest mechanizmem przewagi farmakodynamicznej."
+      ],
+      "answer": 0,
+      "explanation": "Zmniejsza Emax odpowiedzi presyjnej, uniemożliwiając skurcz naczynia.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "endo_pa",
+        "endo_pheo",
+        "cah_kinetics"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "nadnercza-matematyka-hemodynamika-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "nadnercza-matematyka-hemodynamika-obj-1",
+      "nadnercza-matematyka-hemodynamika-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Matematyka osi RAA, wskaźnik ARR i krzywe wysycenia receptorów”.",
+    "modelAnswer": "Wskaźnik ARR ujawnia autonomię aldosteronu wygaszającą reninę, a niekompetycyjna blokada alfa fenoksybenzaminą chroni przed przełomem hemodynamicznym w pheo.",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "endo_pa",
+      "endo_pheo",
+      "cah_kinetics"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "nadnercza-matematyka-hemodynamika-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "nadnercza-matematyka-hemodynamika-obj-2"
+      ],
+      "prompt": "Jaki lek hipotensyjny fałszywie drastycznie podwyższa stężenie reniny i może uniemożliwić interpretację wskaźnika ARR (dając wynik fałszywie ujemny)?",
+      "options": [
+        "Inhibitory konwertazy angiotensyny (ACE-I) oraz sartany (ARB)",
+        "Czysta witamina C w małej dawce",
+        "Insulina podana do posiłku"
+      ],
+      "optionFeedback": [
+        "Znoszą hamowanie reniny przez angiotensynę II, wywołując gwałtowny skok reniny w osoczu.",
+        "Kwas askorbinowy nie zaburza bezpośrednio pętli sprzężenia osi RAA.",
+        "Insulina nie jest inhibitorem osi renina-angiotensyna."
+      ],
+      "answer": 0,
+      "explanation": "Znoszą hamowanie reniny przez angiotensynę II, wywołując gwałtowny skok reniny w osoczu.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "endo_pa",
+        "endo_pheo",
+        "cah_kinetics"
+      ]
+    },
+    {
+      "id": "nadnercza-matematyka-hemodynamika-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "nadnercza-matematyka-hemodynamika-obj-1"
+      ],
+      "prompt": "Jaki wpływ na interpretację wskaźnika ARR ma hipokaliemia u pacjenta z podejrzeniem zespołu Conna?",
+      "options": [
+        "Hipokaliemia hamuje wydzielanie aldosteronu i może dać wynik fałszywie ujemny",
+        "Hipokaliemia nie ma żadnego wpływu na steroidogenezę",
+        "Zawsze daje wynik fałszywie dodatni ponad 1000"
+      ],
+      "optionFeedback": [
+        "Dlatego przed oznaczeniem ARR stężenie potasu w surowicy musi być bezwzględnie wyrównane.",
+        "Jon potasu jest bezpośrednim fizjologicznym secretagogiem aldosteronu w warstwie kłębkowatej.",
+        "Hipokaliemia obniża stężenie aldosteronu, a nie podwyższa."
+      ],
+      "answer": 0,
+      "explanation": "Dlatego przed oznaczeniem ARR stężenie potasu w surowicy musi być bezwzględnie wyrównane.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "endo_pa",
+        "endo_pheo",
+        "cah_kinetics"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "adrenal-workbench",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

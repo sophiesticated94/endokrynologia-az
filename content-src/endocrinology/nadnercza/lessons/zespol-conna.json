@@ -1,0 +1,162 @@
+{
+  "id": "zespol-conna",
+  "moduleId": "nadnercza",
+  "title": "Złodziej potasu i sprawca nadciśnienia",
+  "subtitle": "Pierwotny hiperaldosteronizm (PA), wskaźnik ARR, testy konfirmacyjne i cewnikowanie AVS",
+  "group": "Nadczynności i guz chromochłonny",
+  "minutes": 18,
+  "goals": [
+    "Zrozumiesz patofizjologię pierwotnego hiperaldosteronizmu (PA): zespół Conna (gruczolak APA) vs obustronny przerost (BAH).",
+    "Opanujesz algorytm diagnostyczny: wskaźnik ARR $\\to$ testy konfirmacyjne $\\to$ cewnikowanie żył nadnerczowych (AVS) w celu kwalifikacji do adrenalektomii vs spironolaktonu."
+  ],
+  "sections": [
+    {
+      "title": "Epidemiologia i obalenie mitu o hipokaliemii",
+      "text": "Pierwotny hiperaldosteronizm (Primary Aldosteronism — PA) to najczęstsza przyczyna wtórnego nadciśnienia tętniczego, odpowiadająca za 5–10% wszystkich chorych na nadciśnienie i aż 20% chorych z nadciśnieniem opornym! KLUCZOWY MIT KLINICZNY: Przez dekady sądzono, że warunkiem rozpoznania jest hipokaliemia. Dziś wiemy, że ponad 60–70% chorych z PA ma stężenie potasu W GRANICACH NORMY (tzw. normokaliemiczny hiperaldosteronizm)! Dlatego prawidłowy potas NIE wyklucza zespołu Conna. Wskazania do badań przesiewowych: nadciśnienie oporne na 3 leki, nadciśnienie z hipokaliemią (spontaniczną lub po małych dawkach diuretyków), nadciśnienie z incydentaloma nadnercza, nadciśnienie u osób <35. r.ż. oraz udar mózgu w młodym wieku."
+    },
+    {
+      "title": "Etap 1 i 2: Przesiewowy wskaźnik ARR i testy potwierdzenia",
+      "text": "Przesiew opiera się na wskaźniku aldosteronowo-reninowym (ARR). W PA stwierdza się autonomicznie wysokie lub nieadekwatne stężenie aldosteronu przy stłumionym stężeniu reniny (DRC <5 mIU/l) lub aktywności reninowej osocza (ARO). Przy podwyższonym ARR kolejnym krokiem (poza chorymi z ciężką spontaniczną hipokaliemią i aldosteronem >20 ng/dl) jest test konfirmacyjny: test dożylnego obciążenia 0,9% NaCl (wlew 2 litrów soli w 4 h; u zdrowego człowieka sól hamuje aldosteron <5 ng/dl, w PA brak supresji >10 ng/dl) lub doustny test z fludrokortyzonem."
+    },
+    {
+      "title": "Etap 3: Cewnikowanie żył nadnerczowych (AVS) i terapia",
+      "text": "Dwie główne przyczyny PA to: 1) Jednostronny gruczolak produkujący aldosteron (APA — klasyczny zespół Conna, ok. 35%), wyleczalny operacyjnie; 2) Obustronny idiopatyczny przerost kory nadnerczy (BAH, ok. 60%), leczony wyłącznie zachowawczo. Ponieważ tomografia komputerowa (TK) myli się w aż 40% przypadków (wykrywa niewydzielające incydentaloma po jednej stronie, podczas gdy mikrogruczolak APA ukrywa się po drugiej!), złotym standardem różnicowania przed operacją jest obustronne cewnikowanie żył nadnerczowych (Adrenal Vein Sampling — AVS). W APA wykonuje się laparoskopową adrenalektomię, a w BAH stosuje antagonistę aldosteronu: spironolakton (25–100 mg/d) lub eplerenon."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Postać PA",
+      "Częstość",
+      "Wynik cewnikowania AVS",
+      "Leczenie z wyboru"
+    ],
+    "rows": [
+      [
+        "Jednostronny gruczolak (APA / Conn)",
+        "Ok. 35%",
+        "Lateralizacja wydzielania aldosteronu (gradient strona chora/zdrowa >4:1)",
+        "Laparoskopowa adrenalektomia jednostronna (wyleczenie)"
+      ],
+      [
+        "Obustronny przerost kory (BAH)",
+        "Ok. 60%",
+        "Brak lateralizacji (symetryczne wydzielanie z obu nadnerczy, wskaźnik <2:1)",
+        "Farmakoterapia: antagonista aldosteronu (spironolakton / eplerenon)"
+      ],
+      [
+        "Rzadki rak kory nadnerczy",
+        "<1%",
+        "Masa >4–6 cm w TK, wysoka gęstość, niejednorodna struktura",
+        "Pilna otwarta adrenalektomia onkologiczna"
+      ]
+    ]
+  },
+  "advanced": "Jak ocenia się poprawność cewnikowania AVS? Ponieważ żyły nadnerczowe są drobne (zwłaszcza prawa uchodząca do VCI), kaniula może wypaść do żyły głównej. Aby to zweryfikować, w każdej próbce oznacza się kortyzol: wskaźnik selektywności (kortyzol w żyle nadnerczowej / kortyzol w żyle obwodowej) musi wynosić co najmniej >2:1 (bez stymulacji ACTH) lub >3–5:1 (przy ciągłym wlewie Synacthenu). Dopiero po potwierdzeniu selektywności oblicza się wskaźnik lateralizacji (stosunek aldo/kortyzol po stronie dominującej do aldo/kortyzol po stronie niedominującej >4:1).",
+  "summary": "Pierwotny hiperaldosteronizm to częsta przyczyna nadciśnienia tętniczego, w większości przypadków z prawidłowym potasem. Po podwyższonym wskaźniku ARR i teście z solą, cewnikowanie AVS decyduje o kwalifikacji do wyleczenia operacyjnego (adrenalektomia w APA) vs przewlekłej farmakoterapii spironolaktonem (w BAH).",
+  "sourceIds": [
+    "endo_pa",
+    "pte_nadnercza"
+  ],
+  "questions": [
+    {
+      "id": "zespol-conna-q1",
+      "lessonId": "zespol-conna",
+      "prompt": "Czy prawidłowe stężenie potasu w surowicy krwi wyklucza u pacjenta pierwotny hiperaldosteronizm (zespół Conna)?",
+      "options": [
+        {
+          "text": "Nie, ponad 60–70% pacjentów z PA ma stężenie potasu w granicach normy (postać normokaliemiczna)",
+          "explanation": "Hipokaliemia występuje głównie w ciężkich lub zaawansowanych postaciach choroby."
+        },
+        {
+          "text": "Tak, brak hipokaliemii w 100% wyklucza chorobę",
+          "explanation": "To niebezpieczny błąd diagnostyczny prowadzący do pomijania większości chorych."
+        },
+        {
+          "text": "Prawidłowy potas występuje wyłącznie u dzieci",
+          "explanation": "Postać normokaliemiczna dominuje we wszystkich grupach wiekowych dorosłych."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "zespol-conna-q2",
+      "lessonId": "zespol-conna",
+      "prompt": "Dlaczego badanie tomografii komputerowej (TK) nadnerczy nie jest wystarczające do podjęcia decyzji o adrenalektomii w PA?",
+      "options": [
+        {
+          "text": "W TK często uwidacznia się nieczynny gruczolak (incydentaloma), podczas gdy właściwy mikrogruczolak leży w drugim nadnerczu",
+          "explanation": "TK nie ocenia czynności hormonalnej; może dojść do wycięcia zdrowego narządu i pozostawienia źródła choroby."
+        },
+        {
+          "text": "TK nie potrafi odróżnić nadnercza od wątroby",
+          "explanation": "Rozdzielczość nowoczesnej tomografii bez problemu identyfikuje narządy zaotrzewnowe."
+        },
+        {
+          "text": "Promieniowanie rentgenowskie niszczy receptory aldosteronowe",
+          "explanation": "Promieniowanie diagnostyczne nie wpływa na biochemię receptorową w tkankach."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "zespol-conna-q3",
+      "lessonId": "zespol-conna",
+      "prompt": "Jaka procedura jest uznawana za złoty standard w różnicowaniu jednostronnego gruczolaka (APA) od obustronnego przerostu nadnerczy (BAH)?",
+      "options": [
+        {
+          "text": "Obustronne cewnikowanie żył nadnerczowych (Adrenal Vein Sampling — AVS)",
+          "explanation": "Pozwala na bezpośrednie porównanie gradientu stężeń aldosteronu po obu stronach."
+        },
+        {
+          "text": "Biopsja aspiracyjna cienkoigłowa nadnerczy (BACC)",
+          "explanation": "Biopsja jest przeciwwskazana w guzach nadnerczy ze względu na ryzyko powikłań i brak różnicowania histologycznego."
+        },
+        {
+          "text": "Scyntygrafia kości całego ciała",
+          "explanation": "Scyntygrafia kośćca służy do oceny przerzutów kostnych, a nie hiperaldosteronizmu."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "zespol-conna-q4",
+      "lessonId": "zespol-conna",
+      "prompt": "Jaki lek stanowi podstawę farmakoterapii u chorego z obustronnym przerostem nadnerczy (BAH)?",
+      "options": [
+        {
+          "text": "Antagonista receptora mineralokortykoidowego (spironolakton lub eplerenon)",
+          "explanation": "Blokuje obwodowe działanie nadmiaru aldosteronu w nerkach i naczyniach krwionośnych."
+        },
+        {
+          "text": "Syntetyczny hormon wzrostu (hGH)",
+          "explanation": "Hormon wzrostu nie ma zastosowania w leczeniu nadciśnienia w zespole Conna."
+        },
+        {
+          "text": "Duże dawki lewotyroksyny (LT4)",
+          "explanation": "Lewotyroksyna to hormon tarczycy i nie leczy hiperaldosteronizmu."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "zespol-conna-q5",
+      "lessonId": "zespol-conna",
+      "prompt": "Czym charakteryzuje się wskaźnik ARR u pacjenta z pierwotnym hiperaldosteronizmem?",
+      "options": [
+        {
+          "text": "Podwyższonym stężeniem aldosteronu przy jednoczesnym stłumieniu reniny (wysoki iloraz ARR)",
+          "explanation": "Autonomiczny nadmiar aldosteronu hamuje wydzielanie reniny drogą ujemnego sprzężenia zwrotnego."
+        },
+        {
+          "text": "Bardzo wysokim stężeniem reniny i zerowym aldosteronem",
+          "explanation": "Taki profil cechuje chorobę Addisona, a nie pierwotny hiperaldosteronizm."
+        },
+        {
+          "text": "Całkowitym brakiem obu hormonów we krwi",
+          "explanation": "W PA aldosteron jest produkowany w nadmiarze."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "pheochromocytoma",
+  "objectives": [
+    {
+      "id": "pheochromocytoma-obj-1",
+      "statement": "Rozpoznasz triadę objawów guza chromochłonnego: napadowy ból głowy, zlewne poty i kołatanie serca ze skokami ciśnienia.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "pheochromocytoma-obj-2",
+      "statement": "Zapamiętasz ratującą życie zasadę farmakoterapii: blokada alfa-adrenergiczna ZAWSZE musi poprzedzać włączenie beta-blokera!",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "pheochromocytoma-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "pheochromocytoma-obj-1"
+    ],
+    "prompt": "Dlaczego podanie beta-blokera jako pierwszego leku u pacjenta z guzem chromochłonnym jest kardynalnym błędem w sztuce lekarskiej?",
+    "options": [
+      "Blokada receptorów naczyniowych beta-2 pozostawia nieprzeciwstawioną stymulację receptorów alfa-1, wywołując gwałtowny skurcz naczyń i przełom nadciśnieniowy",
+      "Beta-bloker natychmiast rozpuszcza torebkę guza i wywołuje krwawienie",
+      "Beta-bloker przekształca adrenalinę w truciznę wątrobową"
+    ],
+    "optionFeedback": [
+      "Powoduje to nagłą zapaść lewokomorową, obrzęk płuc lub udar mózgu.",
+      "Beta-adrenolityki nie wykazują działania cytolitycznego na tkankę guza.",
+      "Katecholaminy są fizjologicznymi aminami, a nie toksynami wątrobowymi."
+    ],
+    "answer": 0,
+    "explanation": "Powoduje to nagłą zapaść lewokomorową, obrzęk płuc lub udar mózgu.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "endo_pheo",
+      "pte_nadnercza"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "pheochromocytoma-block-1",
+      "title": "Czym jest guz chromochłonny i reguła 10%?",
+      "text": "Guz chromochłonny (Pheochromocytoma — PCC) to rzadki nowotwór neuroendokrynny wywodzący się z komórek chromafinowych rdzenia nadnerczy produkujący katecholaminy. Guzy o identycznej strukturze zlokalizowane w zwojach współczulnych poza nadnerczami nazywamy paraganglioma (PGL). Dawniej obowiązywała „reguła 10%” (10% obustronne, 10% pozanadnerczowe, 10% złośliwe, 10% rodzinne). Dziś wiemy, że aż 35–40% guzów chromochłonnych ma podłoże genetyczne! Główne zespoły uwarunkowane genetycznie: MEN2A/MEN2B (mutacja RET), choroba von Hippla-Lindaua (VHL), nerwiakowłókniakowatość typu 1 (NF1) oraz mutacje genów dehydrogenazy bursztynianowej (SDHA, SDHB, SDHC, SDHD — SDHB wiąże się z wysokim ryzykiem złośliwości!).",
+      "sourceIds": [
+        "endo_pheo",
+        "pte_nadnercza"
+      ],
+      "checkpointId": "pheochromocytoma-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "enh-adn-pheo-safety",
+          "kind": "workbench-deeplink",
+          "placement": "after-text",
+          "presetId": "adrenal-pheo-safety"
+        }
+      ]
+    },
+    {
+      "id": "pheochromocytoma-block-2",
+      "title": "Obraz kliniczny: Klasyczna triada i napadowość",
+      "text": "Objawy wynikają z gwałtownego wyrzutu katecholamin: 1) Bóle głowy (nagłe, pulsujące); 2) Zlewne poty (zwłaszcza w górnej połowie ciała); 3) Palpitacje serca / tachykardia. Ta triada u chorego z napadowym lub utrwalonym nadciśnieniem tętniczym ma swoistość >90%! Towarzyszy jej bladość skóry (silny skurcz naczyń obwodowych pod wpływem receptorów alfa-1), drżenie rąk, lęk napadowy (uczucie zbliżającej się śmierci) oraz hipotensja ortostatyczna (z powodu przewlekłego obkurczenia łożyska naczyniowego i odruchowej hipowolemii). Czynniki wyzwalające wyrzut: ucisk brzucha, mikcja (w feo pęcherza), stres, znieczulenie ogólne, niektóre leki (metoklopramid, trójpierścieniowe leki przeciwdepresyjne, beta-blokery!).",
+      "sourceIds": [
+        "endo_pheo",
+        "pte_nadnercza"
+      ],
+      "checkpointId": "pheochromocytoma-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "pheochromocytoma-block-3",
+      "title": "Żelazna reguła hemodynamiczna: ALFA przed BETA!",
+      "text": "ZASADA RATUJĄCA ŻYCIE: U chorego z guzem chromochłonnym NIGDY NIE WOLNO podać beta-blokera (np. propranololu, metoprololu) przed pełnym zablokowaniem receptorów alfa-adrenergicznych! Dlaczego? Beta-blokery blokują receptory beta-2 w naczyniach krwionośnych (które odpowiadają za fizjologiczne rozszerzanie naczyń). Pozostawia to krążące olbrzymie stężenia katecholamin z niczym nieprzeciwstawionym działaniem na receptory alfa-1 (nieprzeciwstawiony skurcz naczyniowy — unopposed alpha-stimulation)! Skutkiem jest natychmiastowy, katastrofalny skok ciśnienia tętniczego (np. do 280/160 mmHg), ostra niewydolność lewokomorowa, obrzęk płuc, udar krwotoczny mózgu i zgon pacjenta na stole! Prawidłowa sekwencja: najpierw nieselektywny alfa-bloker (fenoksybenzamina) lub selektywny (doksazosyna) przez 10–14 dni, a beta-bloker dołącza się dopiero po kilku dniach, jeśli utrzymuje się tachykardia.",
+      "sourceIds": [
+        "endo_pheo",
+        "pte_nadnercza"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "pheochromocytoma-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "pheochromocytoma-obj-2"
+      ],
+      "prompt": "Jaki lek należy wdrożyć jako pierwszy w ramach farmakologicznego przygotowania do operacji feochromocytoma?",
+      "options": [
+        "Lek blokujący receptory alfa-adrenergiczne (np. fenoksybenzaminę lub doksazosynę)",
+        "Czysty beta-adrenolityk (propranolol)",
+        "Wysokie dawki furosemidu w celu odwodnienia pacjenta"
+      ],
+      "optionFeedback": [
+        "Zapewnia to rozszerzenie łożyska naczyniowego i bezpieczną kontrolę ciśnienia tętniczego.",
+        "Podanie beta-blokera jako pierwszego jest bezwzględnie przeciwwskazane.",
+        "Odwodnienie nasiliłoby hipowolemię i doprowadziło do wstrząsu."
+      ],
+      "answer": 0,
+      "explanation": "Zapewnia to rozszerzenie łożyska naczyniowego i bezpieczną kontrolę ciśnienia tętniczego.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "endo_pheo",
+        "pte_nadnercza"
+      ]
+    },
+    {
+      "id": "pheochromocytoma-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "pheochromocytoma-obj-1"
+      ],
+      "prompt": "Jaka jest klasyczna triada objawów napadowych sugerująca obecność guza chromochłonnego?",
+      "options": [
+        "Ból głowy, zlewne poty i kołatanie serca (tachykardia)",
+        "Kaszel, krwioplucie i duszność wdechowa",
+        "Biegunka tłuszczowa, świąd skóry i żółtaczka"
+      ],
+      "optionFeedback": [
+        "Obecność tej triady u chorego z nadciśnieniem wykazuje ponad 90% swoistości dla feochromocytoma.",
+        "To objawy ze strony układu oddechowego, a nie guza rdzenia nadnerczy.",
+        "To objawy cholestazy i chorób dróg żółciowych."
+      ],
+      "answer": 0,
+      "explanation": "Obecność tej triady u chorego z nadciśnieniem wykazuje ponad 90% swoistości dla feochromocytoma.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "endo_pheo",
+        "pte_nadnercza"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "pheochromocytoma-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "pheochromocytoma-obj-1",
+      "pheochromocytoma-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Bomba katecholaminowa”.",
+    "modelAnswer": "Guz chromochłonny to nowotwór rdzenia produkujący katecholaminy, w 40% uwarunkowany genetycznie. Wolne metanefryny w osoczu stanowią badanie z wyboru. Przygotowanie do operacji bezwzględnie wymaga wdrożenia blokady receptorów alfa-adrenergicznych na 10–14 dni PRZED ewentualnym włączeniem beta-blokera, aby uniknąć śmiertelnego przełomu nadciśnieniowego.",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "endo_pheo",
+      "pte_nadnercza"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "pheochromocytoma-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "pheochromocytoma-obj-2"
+      ],
+      "prompt": "Jaki odsetek guzów chromochłonnych i paraganglioma rozwija się w związku z mutacją germinalną (uwarunkowanie genetyczne)?",
+      "options": [
+        "Aż około 35–40% wszystkich przypadków",
+        "Dokładnie 0% (wyłącznie mutacje nabyte środowiskowo)",
+        "Mniej niż 0,1%"
+      ],
+      "optionFeedback": [
+        "Dlatego współczesne wytyczne zalecają zaoferowanie poradnictwa i testów genetycznych każdemu choremu z feo/PGL.",
+        "Feochromocytoma to jeden z najsilniej uwarunkowanych genetycznie nowotworów u ludzi.",
+        "Dawny pogląd o rzadkości mutacji rodzinnych został całkowicie zrewidowany."
+      ],
+      "answer": 0,
+      "explanation": "Dlatego współczesne wytyczne zalecają zaoferowanie poradnictwa i testów genetycznych każdemu choremu z feo/PGL.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "endo_pheo",
+        "pte_nadnercza"
+      ]
+    },
+    {
+      "id": "pheochromocytoma-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "pheochromocytoma-obj-1"
+      ],
+      "prompt": "Dlaczego w ostatnich dobach przed operacją guza chromochłonnego zaleca się intensywne nawadnianie 0,9% NaCl i dietę bogatosolną?",
+      "options": [
+        "W celu odtworzenia objętości krwi krążącej (wolemii) i zapobieżenia zapaści naczyniowej po wycięciu guza",
+        "Sól kuchenna neutralizuje komórki nowotworowe w krwioobiegu",
+        "Aby celowo wywołać obrzęki obwodowe"
+      ],
+      "optionFeedback": [
+        "Po usunięciu guza spada poziom katecholamin i bez nawodnienia dochodzi do ciężkiej hipotensji.",
+        "Chlorek sodu nie wykazuje działania onkolitycznego.",
+        "Obrzęki są niepożądane; celem jest ewolemia łożyska naczyniowego."
+      ],
+      "answer": 0,
+      "explanation": "Po usunięciu guza spada poziom katecholamin i bez nawodnienia dochodzi do ciężkiej hipotensji.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "endo_pheo",
+        "pte_nadnercza"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "adrenal-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}

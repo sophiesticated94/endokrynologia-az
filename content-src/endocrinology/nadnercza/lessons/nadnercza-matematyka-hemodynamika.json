@@ -1,0 +1,164 @@
+{
+  "id": "nadnercza-matematyka-hemodynamika",
+  "moduleId": "nadnercza",
+  "title": "Matematyka osi RAA, wskaźnik ARR i krzywe wysycenia receptorów",
+  "subtitle": "Wskaźnik aldosteron-renina (ARR), blokada alfa-beta i równanie Hilla",
+  "group": "Matematyka i modele",
+  "minutes": 21,
+  "goals": [
+    "Wyprowadzisz i zinterpretujesz wskaźnik aldosteronowo-reninowy (ARR) w diagnostyce hiperaldosteronizmu pierwotnego.",
+    "Zanalizujesz krzywe stężenie-odpowiedź receptorów adrenergicznych (kompetycyjna vs niekompetycyjna blokada w pheochromocytoma)."
+  ],
+  "sections": [
+    {
+      "title": "Dynamika pętli sprzężenia zwrotnego RAA i wskaźnik ARR",
+      "text": "W warunkach fizjologicznych wydzielanie aldosteronu przez warstwę kłębkowatą jest ściśle sprzężone z aktywnością reniny osoczowej (PRA) lub stężeniem reniny (DRC): spadek ciśnienia ⟶ wzrost reniny ⟶ wzrost angiotensyny II ⟶ wzrost aldosteronu ⟶ retencja sodu ⟶ hamowanie reniny. W zespole Conna (autonomia gruczolaka) aldosteron pozostaje wysoki mimo całkowitej supresji reniny. Wskaźnik aldosteronowo-reninowy ARR = PAC / PRA (lub PAC / DRC) pozwala wykryć tę utratę kontroli."
+    },
+    {
+      "title": "Matematyczne punkty odcięcia ARR i warunki standaryzacji",
+      "text": "Wartość odcięcia ARR zależy od jednostek laboratoryjnych: przy stężeniu aldosteronu (PAC) w ng/dl i aktywności reniny (PRA) w ng/ml/h punkt odcięcia wynosi zazwyczaj ARR > 30 (przy PAC > 10–15 ng/dl). Przy reninie oznaczanej jako DRC w mIU/L, próg wynosi ARR > 3,7. Ze względu na mianownik dążący do zera (DRC < 2 mIU/L), wynik może być fałszywie dodatni, dlatego niezbędne jest równoczesne spełnienie kryterium podwyższonego stężenia samego aldosteronu."
+    },
+    {
+      "title": "Farmakodynamika blokady receptorów alfa: Fenoksybenzamina vs Doksazosyna",
+      "text": "W pheochromocytoma napływ noradrenaliny wysyca receptory alfa-1 naczyniowe wg równania Hilla: E = (Emax * [C]^n) / (EC50^n + [C]^n). Doksazosyna jest antagonistą kompetycyjnym (odwracalnym) — przesuwa krzywą w prawo, co oznacza, że nagły masywny wyrzut katecholamin podczas operacji może przełamać blokadę. Fenoksybenzamina jest antagonistą niekompetycyjnym (alkilującym) — tworzy nieodwracalne wiązanie kowalencyjne z receptorem alfa, obniżając Emax, co zapewnia absolutną ochronę przed przełomem."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Parametr / Lek",
+      "Model matematyczny",
+      "Znaczenie kliniczne"
+    ],
+    "rows": [
+      [
+        "ARR (PAC / PRA)",
+        "Iloraz PAC [ng/dl] do PRA [ng/ml/h] > 30",
+        "Podstawa screeningu w zespole Conna; wymaga wyrównania potasu"
+      ],
+      [
+        "ARR (PAC / DRC)",
+        "Iloraz PAC [ng/dl] do DRC [mIU/L] > 3,7",
+        "Szybka metoda immunochemiczna bezpośredniego pomiaru reniny"
+      ],
+      [
+        "Doksazosyna",
+        "Antagonista kompetycyjny (zwiększa pozorne EC50)",
+        "Mniej działań niepożądanych, ale ryzyko przełamania przy manipulacji guzem"
+      ],
+      [
+        "Fenoksybenzamina",
+        "Inhibitor nieodwracalny kowalencyjny (obniża Emax)",
+        "Złoty standard blokady przedoperacyjnej guza chromochłonnego"
+      ]
+    ]
+  },
+  "advanced": "Kardynalna reguła farmakologiczna w pheochromocytoma: ZAWSZE blokada alfa przed beta! Zablokowanie receptorów beta-2 (odpowiedzialnych za rozkurcz naczyń w mięśniach) przy braku blokady alfa-1 (skurcz naczyń obwodowych) powoduje unopposed alpha-stimulation — gwałtowny wzrost oporu naczyniowego i potencjalnie śmiertelny kryzys nadciśnieniowy z obrzękiem płuc.",
+  "summary": "Wskaźnik ARR ujawnia autonomię aldosteronu wygaszającą reninę, a niekompetycyjna blokada alfa fenoksybenzaminą chroni przed przełomem hemodynamicznym w pheo.",
+  "sourceIds": [
+    "endo_pa",
+    "endo_pheo",
+    "cah_kinetics"
+  ],
+  "questions": [
+    {
+      "id": "nadnercza-matematyka-hemodynamika-q1",
+      "lessonId": "nadnercza-matematyka-hemodynamika",
+      "prompt": "Dlaczego do wiarygodnej interpretacji podwyższonego wskaźnika ARR (>30) konieczne jest jednoczesne wykazanie stężenia aldosteronu (PAC) > 10–15 ng/dl?",
+      "options": [
+        {
+          "text": "Ponieważ przy bardzo niskiej reninie (mianownik bliski zeru) iloraz może być sztucznie zawyżony przy śladowym aldosteronie",
+          "explanation": "Zapobiega to fałszywie dodatnim rozpoznaniom u pacjentów z niskoreninowym nadciśnieniem samoistnym."
+        },
+        {
+          "text": "Ponieważ aldosteron w stężeniu poniżej 15 ng/dl staje się gazem",
+          "explanation": "Aldosteron jest hormonem steroidowym rozpuszczalnym w lipidach."
+        },
+        {
+          "text": "Ponieważ renina rozkłada probówkę laboratoryjną",
+          "explanation": "Renina to enzym proteolityczny działający w osoczu na angiotensynogen."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "nadnercza-matematyka-hemodynamika-q2",
+      "lessonId": "nadnercza-matematyka-hemodynamika",
+      "prompt": "Dlaczego w przygotowaniu do operacji guza chromochłonnego (pheo) bezwzględnie ZAKAZANE jest wdrożenie beta-blokera przed pełną blokadą alfa?",
+      "options": [
+        {
+          "text": "Prowadzi do nieposkromionej stymulacji receptorów alfa (unopposed alpha) i zagrażającego życiu skoku ciśnienia",
+          "explanation": "Zablokowanie rozkurczających receptorów beta-2 pozostawia naczynia pod wyłącznym wpływem skurczowym alfa-1."
+        },
+        {
+          "text": "Bo beta-bloker natychmiast rozpuszcza guz nadnercza",
+          "explanation": "Leki adrenolityczne nie wykazują działania onkolitycznego na guzy chromochłonne."
+        },
+        {
+          "text": "Bo beta-blokery zmieniają grupę krwi pacjenta",
+          "explanation": "Leki kardiologiczne nie wpływają na antygeny grupowe układu AB0."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "nadnercza-matematyka-hemodynamika-q3",
+      "lessonId": "nadnercza-matematyka-hemodynamika",
+      "prompt": "Na czym polega przewaga niekompetycyjnego antagonisty receptorów alfa (fenoksybenzaminy) nad antagonistą kompetycyjnym (doksazosyną)?",
+      "options": [
+        {
+          "text": "Wiąże się kowalencyjnie z receptorem, więc nawet masywny wyrzut katecholamin podczas resekcji nie przełamie blokady",
+          "explanation": "Zmniejsza Emax odpowiedzi presyjnej, uniemożliwiając skurcz naczynia."
+        },
+        {
+          "text": "Działa wyłącznie przez 15 sekund i natychmiast znika",
+          "explanation": "Fenoksybenzamina działa długo ze względu na konieczność syntezy nowych receptorów de novo."
+        },
+        {
+          "text": "Można ją popijać wyłącznie sokiem grejpfrutowym",
+          "explanation": "Sposób popijania nie jest mechanizmem przewagi farmakodynamicznej."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "nadnercza-matematyka-hemodynamika-q4",
+      "lessonId": "nadnercza-matematyka-hemodynamika",
+      "prompt": "Jaki lek hipotensyjny fałszywie drastycznie podwyższa stężenie reniny i może uniemożliwić interpretację wskaźnika ARR (dając wynik fałszywie ujemny)?",
+      "options": [
+        {
+          "text": "Inhibitory konwertazy angiotensyny (ACE-I) oraz sartany (ARB)",
+          "explanation": "Znoszą hamowanie reniny przez angiotensynę II, wywołując gwałtowny skok reniny w osoczu."
+        },
+        {
+          "text": "Czysta witamina C w małej dawce",
+          "explanation": "Kwas askorbinowy nie zaburza bezpośrednio pętli sprzężenia osi RAA."
+        },
+        {
+          "text": "Insulina podana do posiłku",
+          "explanation": "Insulina nie jest inhibitorem osi renina-angiotensyna."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "nadnercza-matematyka-hemodynamika-q5",
+      "lessonId": "nadnercza-matematyka-hemodynamika",
+      "prompt": "Jaki wpływ na interpretację wskaźnika ARR ma hipokaliemia u pacjenta z podejrzeniem zespołu Conna?",
+      "options": [
+        {
+          "text": "Hipokaliemia hamuje wydzielanie aldosteronu i może dać wynik fałszywie ujemny",
+          "explanation": "Dlatego przed oznaczeniem ARR stężenie potasu w surowicy musi być bezwzględnie wyrównane."
+        },
+        {
+          "text": "Hipokaliemia nie ma żadnego wpływu na steroidogenezę",
+          "explanation": "Jon potasu jest bezpośrednim fizjologicznym secretagogiem aldosteronu w warstwie kłębkowatej."
+        },
+        {
+          "text": "Zawsze daje wynik fałszywie dodatni ponad 1000",
+          "explanation": "Hipokaliemia obniża stężenie aldosteronu, a nie podwyższa."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "nadnercza-chemia-steroidogeneza",
+  "objectives": [
+    {
+      "id": "nadnercza-chemia-steroidogeneza-obj-1",
+      "statement": "Scharakteryzujesz stereochemię szkieletu steranu (konformacja krzesełkowa, podstawniki alfa pod płaszczyzną i beta nad płaszczyzną).",
+      "kind": "mechanism"
+    },
+    {
+      "id": "nadnercza-chemia-steroidogeneza-obj-2",
+      "statement": "Poznasz etapy aktywacji tlenu cząsteczkowego w cyklu katalitycznym cytochromów P450 steroidogenezy.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "nadnercza-chemia-steroidogeneza-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "nadnercza-chemia-steroidogeneza-obj-1"
+    ],
+    "prompt": "Ile atomów węgla liczy podstawowy szkielet steroidowy cholesterolu (prekursora steroidogenezy)?",
+    "options": [
+      "27 atomów węgla (C27)",
+      "Dokładnie 6 atomów węgla",
+      "Ponad 1000 atomów węgla"
+    ],
+    "optionFeedback": [
+      "Podczas syntezy pregnenolonu zostaje skrócony do C21 przez odcięcie 6-węglowego łańcucha kapronowego.",
+      "Sześć atomów węgla zawiera glukoza; cholesterol ma 27 atomów węgla.",
+      "Polimery mają tysiące węgli; cholesterol to mała cząsteczka lipidowa."
+    ],
+    "answer": 0,
+    "explanation": "Podczas syntezy pregnenolonu zostaje skrócony do C21 przez odcięcie 6-węglowego łańcucha kapronowego.",
+    "hint": "Najpierw nazwij mechanizm lub wzorzec wyników, dopiero potem wybierz odpowiedź.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "sterane_chem",
+      "cah_kinetics",
+      "cah_guideline"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "nadnercza-chemia-steroidogeneza-block-1",
+      "title": "Układ cyklopentanoperhydrofenantrenu (Jądro Steranu)",
+      "text": "Wszystkie hormony steroidowe kory nadnerczy wywodzą się z czteropierścieniowego szkieletu steranu: trzech pierścieni sześcioczłonowych (A, B, C w układzie fenantrenu) i jednego pięcioczłonowego (D, cyklopentan). Węgiel C-10 i C-13 posiadają grupy metylowe (C-19 i C-18) zorientowane w pozycji beta (powyżej płaszczyzny cząsteczki). Wiązania skierowane w dół określa się jako alfa (trans względem grup metylowych), a skierowane w górę jako beta (cis). Ta sztywna stereochemia decyduje o rozpoznaniu przez jądrowe receptory MR i GR.",
+      "sourceIds": [
+        "sterane_chem",
+        "cah_kinetics",
+        "cah_guideline"
+      ],
+      "checkpointId": "nadnercza-chemia-steroidogeneza-q2-checkpoint-1-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "nadnercza-chemia-steroidogeneza-block-2",
+      "title": "Cytochromy P450 jako monooksygenazy hemo-żelazowe",
+      "text": "Głównymi enzymami steroidogenezy są cytochromy P450 (CYP11A1, CYP17A1, CYP21A2, CYP11B1, CYP11B2). Reakcja hydroksylacji wymaga aktywacji tlenu cząsteczkowego: RH + O2 + NADPH + H+ ⟶ ROH + H2O + NADP+. Kluczowym elementem katalitycznym jest hem zawierający atom żelaza skoordynowany przez resztę tiolanową cysteiny (tzw. proksymalny ligand tiolanowy).",
+      "sourceIds": [
+        "sterane_chem",
+        "cah_kinetics",
+        "cah_guideline"
+      ],
+      "checkpointId": "nadnercza-chemia-steroidogeneza-q3-checkpoint-2-v2",
+      "inlineEnhancements": []
+    },
+    {
+      "id": "nadnercza-chemia-steroidogeneza-block-3",
+      "title": "Cykl transferu elektronów i reaktywny kompleks ferrylu",
+      "text": "W mitochondriach elektrony z NADPH są przekazywane przez reduktazę adrenodoksyny (FAD) i adrenodoksynę [2Fe-2S] do cytochromu (CYP11A1, CYP11B1, CYP11B2). W siateczce śródplazmatycznej (CYP17A1, CYP21A2) donorem jest reduktaza P450 (POR). Kolejne etapy: redukcja Fe(III) do Fe(II), wiązanie O2, wprowadzenie drugiego elektronu i rozszczepienie O-O z utworzeniem kationorodnika ferrylu [Fe(IV)=O]+•, który abstrahuje atom wodoru z substratu i wstawia grupę hydroksylową z zachowaniem stereochemii.",
+      "sourceIds": [
+        "sterane_chem",
+        "cah_kinetics",
+        "cah_guideline"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "nadnercza-chemia-steroidogeneza-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "nadnercza-chemia-steroidogeneza-obj-2"
+      ],
+      "prompt": "Co oznacza oznaczenie podstawnika jako „alfa” (α) w nomenklaturze chemicznej steroidów?",
+      "options": [
+        "Wiązanie jest skierowane pod płaszczyznę pierścienia (trans do kątowych grup metylowych)",
+        "Cząsteczka emituje promieniowanie alfa z rozpadu promieniotwórczego",
+        "Cząsteczka rozpuszcza się wyłącznie w alkoholu etylowym"
+      ],
+      "optionFeedback": [
+        "Przykładowo grupa 17α-OH w kortyzolu leży poniżej płaszczyzny pierścienia D.",
+        "Termin alfa w chemii steroidów określa wyłącznie konfigurację przestrzenną.",
+        "Rozpuszczalność nie ma związku z prefiksem alfa w stereochemii."
+      ],
+      "answer": 0,
+      "explanation": "Przykładowo grupa 17α-OH w kortyzolu leży poniżej płaszczyzny pierścienia D.",
+      "hint": "Najpierw nazwij bodziec i odpowiedź układu.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "sterane_chem",
+        "cah_kinetics",
+        "cah_guideline"
+      ]
+    },
+    {
+      "id": "nadnercza-chemia-steroidogeneza-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "nadnercza-chemia-steroidogeneza-obj-1"
+      ],
+      "prompt": "Jaki aminokwas w łańcuchu peptydowym cytochromów P450 stanowi proksymalny ligand koordynujący jon żelaza w hemie?",
+      "options": [
+        "Reszta cysteiny (wiązanie tiolanowe Fe-S)",
+        "Kwas glutaminowy",
+        "Czysta cząsteczka wody"
+      ],
+      "optionFeedback": [
+        "Nadaje enzymom P450 charakterystyczne maksimum absorpcji spektrofotometrycznej przy 450 nm w kompleksie z CO.",
+        "Kwas glutaminowy nie tworzy wiązania tiolanowego z żelazem porfirykowym.",
+        "Woda może być dystalnym ligandem wymiennym, ale nie ligandem proksymalnym."
+      ],
+      "answer": 0,
+      "explanation": "Nadaje enzymom P450 charakterystyczne maksimum absorpcji spektrofotometrycznej przy 450 nm w kompleksie z CO.",
+      "hint": "Zwróć uwagę na wartości referencyjne i czynniki zakłócające.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "sterane_chem",
+        "cah_kinetics",
+        "cah_guideline"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "nadnercza-chemia-steroidogeneza-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "nadnercza-chemia-steroidogeneza-obj-1",
+      "nadnercza-chemia-steroidogeneza-obj-2"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami najważniejszy mechanizm kliniczny z lekcji „Stereochemia jądra steranu i cykl katalityczny cytochromów P450”.",
+    "modelAnswer": "Stereochemia steroidów kory nadnerczy opiera się na sztywnym szkielecie steranu i stereospecyficznych hydroksylacjach katalizowanych przez ferryl hemu cytochromów P450.",
+    "explanation": "Porównaj swoją odpowiedź z wzorcem. Liczy się zrozumienie mechanizmu i warunków decyzyjnych.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "sterane_chem",
+      "cah_kinetics",
+      "cah_guideline"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "nadnercza-chemia-steroidogeneza-q4-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "nadnercza-chemia-steroidogeneza-obj-2"
+      ],
+      "prompt": "Który enzym odpowiada za ochronę receptora mineralokortykoidowego (MR) przed niekontrolowaną aktywacją przez kortyzol w nerkach?",
+      "options": [
+        "Dehydrogenaza 11β-hydroksysteroidowa typu 2 (11β-HSD2)",
+        "Oksydaza monoaminowa (MAO)",
+        "Lipaza trzustkowa"
+      ],
+      "optionFeedback": [
+        "Przekształca aktywny kortyzol w nieaktywny kortyzon poprzez utlenienie grupy 11β-OH do 11-keto.",
+        "MAO uczestniczy w rozkładzie amin katecholowych, a nie steroidów.",
+        "Lipaza trawi tłuszcze w świetle przewodu pokarmowego."
+      ],
+      "answer": 0,
+      "explanation": "Przekształca aktywny kortyzol w nieaktywny kortyzon poprzez utlenienie grupy 11β-OH do 11-keto.",
+      "hint": "Zidentyfikuj kryterium decyzyjne lub priorytet kliniczny.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "sterane_chem",
+        "cah_kinetics",
+        "cah_guideline"
+      ]
+    },
+    {
+      "id": "nadnercza-chemia-steroidogeneza-q5-exit-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "nadnercza-chemia-steroidogeneza-obj-1"
+      ],
+      "prompt": "Dlaczego w warstwie kłębkowatej (zona glomerulosa) kory nadnerczy nie powstaje kortyzol ani androgeny?",
+      "options": [
+        "Z powodu braku ekspresji enzymu CYP17A1 (17α-hydroksylazy)",
+        "Ponieważ nie dociera tam krew tętnicza",
+        "Ponieważ komórki tej warstwy nie mają mitochondriów"
+      ],
+      "optionFeedback": [
+        "Szlak steroidogenezy jest tam zablokowany na poziomie progesteronu i kierowany do aldosteronu.",
+        "Warstwa kłębkowata leży bezpośrednio pod torebką i jest bogato unaczyniona.",
+        "Mitochondria są niezbędne do wczesnych i późnych etapów syntezy aldosteronu."
+      ],
+      "answer": 0,
+      "explanation": "Szlak steroidogenezy jest tam zablokowany na poziomie progesteronu i kierowany do aldosteronu.",
+      "hint": "Sprawdź czerwone flagi i bezwzględne przeciwwskazania.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "sterane_chem",
+        "cah_kinetics",
+        "cah_guideline"
+      ]
+    }
+  ],
+  "widgetIds": [
+    "adrenal-workbench",
+    "lab-workbench"
+  ],
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-13",
+    "scope": "Autorska weryfikacja kliniczna V2, powiązanie z pracownią decyzyjną oraz bazą claimów."
+  }
+}
