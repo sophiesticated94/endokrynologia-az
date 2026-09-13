@@ -152,12 +152,12 @@
       "prompt": "Dlaczego u wyniszczonego 85-letniego pacjenta prawidłowe stężenie kreatyniny (0,7 mg/dl) może maskować ciężką niewydolność nerek?",
       "options": [
         {
-          "text": "Ponieważ nerki u osób starszych filtrują krew przez skórę",
-          "explanation": "Filtracja kłębuszkowa zachodzi w nerkach, nie przez skórę."
+          "text": "Ponieważ stężenie kreatyniny we krwi rośnie proporcjonalnie do utraty beztłuszczowej masy ciała",
+          "explanation": "Ubytek masy mięśniowej zmniejsza syntezę kreatyniny, powodując zaniżenie jej stężenia we krwi."
         },
         {
-          "text": "Ponieważ kreatynina u osób starszych ulega rozpadowi do glukozy",
-          "explanation": "Kreatynina jest metabolitem fosfokreatyny mięśniowej wydalanym przez nerki."
+          "text": "Ponieważ klirens nerkowy u osób w podeszłym wieku ulega fizjologicznej kompensacyjnej hiperfiltracji",
+          "explanation": "Z wiekiem dochodzi do postępującego spadku liczby czynnych nefronów i spadku GFR, a nie do hiperfiltracji."
         },
         {
           "text": "Z powodu ubytku masy mięśniowej (sarkopenii) produkcja endogennej kreatyniny jest znikoma, przez co stężenie w surowicy nie odzwierciedla spadku filtracji kłębuszkowej",

@@ -101,8 +101,8 @@
       "prompt": "Dlaczego u chorego w podeszłym wieku z ciężkim epizodem depresyjnym należy bezwzględnie unikać włączania trójpierścieniowych leków przeciwdepresyjnych (TLPD, np. amitryptylina)?",
       "options": [
         "Z powodu silnego działania kardiotoksycznego (wydłużenie QTc, bloki p-k, arytmie komorowe), hipotonii ortostatycznej i wysokiego obciążenia antycholinergicznego (ACB = 3)",
-        "Ponieważ TLPD wywołują natychmiastową utratę wzroku u każdego człowieka",
-        "Ponieważ TLPD wolno stosować wyłącznie u kobiet w ciąży"
+        "Ponieważ TLPD wybiórczo hamują metabolizm wątrobowy CYP2D6 bez wpływu na układ krążenia",
+        "Ponieważ TLPD wchodzą w niebezpieczne interakcje wyłącznie ze statynami"
       ],
       "optionFeedback": [
         "TLPD niosą śmiertelne ryzyko w przedawkowaniu, prowokują majaczenie i upadki u chorych w podeszłym wieku.",
@@ -127,9 +127,9 @@
       ],
       "prompt": "Jak współczesna neuropsychiatria interpretuje zjawisko ustąpienia deficytów poznawczych po skutecznym wyleczeniu geriatrycznego epizodu depresyjnego?",
       "options": [
-        "Jako dowód na to, że pacjent symulował depresję dla uzyskania renty",
+        "Jako wyraz nieodwracalnego zaawansowanego zaniku kory mózgowej wykluczający celowość leczenia",
         "Jako stan podwyższonego ryzyka rozwoju jawnego otępienia w perspektywie kilku lat, wymagający okresowej kontroli neuropsychologicznej",
-        "Jako stuprocentową gwarancję nieśmiertelności neuronów mózgowych do końca życia"
+        "Jako dowód na definitywny brak jakiegokolwiek ryzyka rozwoju otępienia w przyszłości"
       ],
       "optionFeedback": [
         "Epizod depresyjny jest realnym stanem biologicznym, a nie symulacją.",

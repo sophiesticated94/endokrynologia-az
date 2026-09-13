@@ -101,13 +101,13 @@
       ],
       "prompt": "Dlaczego test przesiewowy MMSE może być fałszywie ujemny (wynik w normie) u pacjenta z zaawansowanymi zaburzeniami zachowania w przebiegu bvFTD?",
       "options": [
-        "Ponieważ test MMSE wolno przeprowadzać wyłącznie u dzieci do 12 roku życia",
-        "Ponieważ pacjenci z bvFTD za każdym razem przekupują osobę badającą",
+        "Ponieważ w bvFTD dochodzi do wybiórczego upośledzenia pamięci proceduralnej przy pełnym zachowaniu empatii społecznej",
+        "Ponieważ pacjenci z bvFTD celowo symulują prawidłowe odpowiedzi dzięki wybitnemu wglądowi w swoją chorobę",
         "Ponieważ MMSE bada głównie orientację, pamięć świeżą i proste funkcje językowe, a jest całkowicie niewrażliwy na funkcje kory oczodołowo-czołowej i empatię społeczną"
       ],
       "optionFeedback": [
-        "MMSE jest testem dla osób dorosłych i seniorów.",
-        "Taka teza jest absurdalna; błąd wynika z ograniczeń narzędzia testowego.",
+        "W bvFTD uszkodzeniu ulegają sieci czołowo-podkorowe odpowiedzialne za kontrolę hamowania i empatię, a nie izolowana pamięć proceduralna.",
+        "Pacjenci z bvFTD charakteryzują się głęboką anozognozją (brakiem wglądu) i nie dążą do ukrywania swoich deficytów.",
         "Chory potrafi podać datę i powtórzyć słowa, mimo że utracił kontrolę impulsów i zdolność do funkcjonowania w społeczeństwie."
       ],
       "answer": 2,
@@ -175,7 +175,7 @@
       ],
       "prompt": "Jaki jest najbardziej dyskryminujący wskaźnik pozwalający odróżnić późny epizod manii od wariantu behawioralnego FTD?",
       "options": [
-        "Występowanie łupieżu na skórze głowy",
+        "Wynik badania dna oka i ostrości wzroku",
         "Progresywny, podstępny przebieg z postępującą utratą empatii i obecnością atrofii czołowo-skroniowej w MRI mózgu w bvFTD",
         "Poziom ciśnienia tętniczego mierzony na lewym ramieniu"
       ],
@@ -203,7 +203,7 @@
       "prompt": "Jakie jest zalecane postępowanie farmakologiczne w łagodzeniu odhamowania i kompulsji w bvFTD?",
       "options": [
         "Wysokie dawki inhibitorów acetylocholinoesterazy (donepezil)",
-        "Monoterapia amfetaminą w dawce 100 mg/dobę",
+        "Rutynowe wdrożenie inhibitora cholinoesterazy (donepezil, rywastygmina)",
         "Leki z grupy SSRI (np. trazodon, sertralina) wykazujące umiarkowaną skuteczność w redukcji zachowań stereotypowych i impulsywnych"
       ],
       "optionFeedback": [

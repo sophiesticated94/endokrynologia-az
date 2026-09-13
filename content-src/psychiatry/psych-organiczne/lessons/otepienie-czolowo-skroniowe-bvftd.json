@@ -91,12 +91,12 @@
       "prompt": "Dlaczego test przesiewowy MMSE może być fałszywie ujemny (wynik w normie) u pacjenta z zaawansowanymi zaburzeniami zachowania w przebiegu bvFTD?",
       "options": [
         {
-          "text": "Ponieważ test MMSE wolno przeprowadzać wyłącznie u dzieci do 12 roku życia",
-          "explanation": "MMSE jest testem dla osób dorosłych i seniorów."
+          "text": "Ponieważ w bvFTD dochodzi do wybiórczego upośledzenia pamięci proceduralnej przy pełnym zachowaniu empatii społecznej",
+          "explanation": "W bvFTD uszkodzeniu ulegają sieci czołowo-podkorowe odpowiedzialne za kontrolę hamowania i empatię, a nie izolowana pamięć proceduralna."
         },
         {
-          "text": "Ponieważ pacjenci z bvFTD za każdym razem przekupują osobę badającą",
-          "explanation": "Taka teza jest absurdalna; błąd wynika z ograniczeń narzędzia testowego."
+          "text": "Ponieważ pacjenci z bvFTD celowo symulują prawidłowe odpowiedzi dzięki wybitnemu wglądowi w swoją chorobę",
+          "explanation": "Pacjenci z bvFTD charakteryzują się głęboką anozognozją (brakiem wglądu) i nie dążą do ukrywania swoich deficytów."
         },
         {
           "text": "Ponieważ MMSE bada głównie orientację, pamięć świeżą i proste funkcje językowe, a jest całkowicie niewrażliwy na funkcje kory oczodołowo-czołowej i empatię społeczną",
@@ -131,7 +131,7 @@
       "prompt": "Jaki jest najbardziej dyskryminujący wskaźnik pozwalający odróżnić późny epizod manii od wariantu behawioralnego FTD?",
       "options": [
         {
-          "text": "Występowanie łupieżu na skórze głowy",
+          "text": "Wynik badania dna oka i ostrości wzroku",
           "explanation": "Objawy dermatologiczne nie mają wartości dyskryminującej w neuropsychiatrii."
         },
         {
@@ -155,7 +155,7 @@
           "explanation": "ChEI nie mają udowodnionej skuteczności w bvFTD i mogą wręcz nasilać pobudzenie i drażliwość."
         },
         {
-          "text": "Monoterapia amfetaminą w dawce 100 mg/dobę",
+          "text": "Rutynowe wdrożenie inhibitora cholinoesterazy (donepezil, rywastygmina)",
           "explanation": "Amfetamina w wysokiej dawce nasiliłaby pobudzenie i zachowania agresywne."
         },
         {

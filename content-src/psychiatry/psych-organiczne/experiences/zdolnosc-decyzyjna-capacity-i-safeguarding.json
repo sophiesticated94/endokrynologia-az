@@ -100,9 +100,9 @@
       ],
       "prompt": "Jakie są 4 funkcjonalne domeny oceny zdolności decyzyjnej wg uznanych standardów (Mental Capacity Framework)?",
       "options": [
-        "Zgodność z wolą ordynatora oddziału, partii rządzącej i sąsiadów",
+        "Poziom wykształcenia formalnego oraz brak wcześniejszych rozpoznań psychiatrycznych",
         "Zrozumienie informacji istotnych dla decyzji (Understanding), ich zatrzymanie (Retention), zdolność do ich wyważenia i rozważenia konsekwencji (Weighing) oraz zakomunikowanie wyboru (Communicating)",
-        "Bogactwo finansowe, wykształcenie wyższe, brak zmarszczek na twarzy i posiadanie samochodu"
+        "Wiek poniżej 75 lat, brak chorób somatycznych i prawidłowy wynik badania EKG"
       ],
       "optionFeedback": [
         "Zdolność decyzyjna ocenia autonomię pacjenta, a nie konformizm.",
@@ -127,7 +127,7 @@
       ],
       "prompt": "Co oznacza zasada, że zdolność do podejmowania decyzji jest „decision-specific” i „time-specific”?",
       "options": [
-        "Oznacza, że lekarz podejmuje decyzję wyłącznie w dni parzyste po godzinie 12:00",
+        "Oznacza, że ocena zdolności jest stała i raz stwierdzony brak zdolności obowiązuje dożywotnio",
         "Oznacza, że każda decyzja musi zostać potwierdzona przez test laboratoryjny moczu",
         "Oznacza, że oceniamy zdolność do konkretnej decyzji w danym momencie czasu; pacjent może nie być zdolny do sprzedaży domu, lecz zdolny do wyboru obiadu, a jego stan może fluktuować"
       ],
@@ -201,7 +201,7 @@
       ],
       "prompt": "Dlaczego wywiad od osób trzecich (collateral history) jest niezbędny przy ocenie zdolności seniora do bezpiecznego samodzielnego funkcjonowania w domu?",
       "options": [
-        "Ponieważ rodzina jest właścicielem ciała pacjenta",
+        "Ponieważ rodzina zawsze ma prawny monopol na podejmowanie decyzji medycznych za dorosłego",
         "Ponieważ pacjent w gabinecie może prezentować wyuczone maski społeczne (social facade), podczas gdy rodzina obserwuje niespłacone rachunki, niedożywienie i przypalanie garnków",
         "Ponieważ prawo zabrania wierzyć seniorom w jakiekolwiek słowo bez podpisu świadka"
       ],
@@ -236,7 +236,7 @@
       "options": [
         "Błędne i niezgodne z prawem: zdolność decyzyjna jest specyficzna dla decyzji i czasu; pacjent rozumie naturę zabiegu i ryzyko, więc zachowuje zdolność do odmowy, a diagnoza otępienia nie odbiera mu automatycznie tego prawa",
         "Prawidłowe: każde rozpoznanie choroby Alzheimera skutkuje natychmiastową i całkowitą utratą zdolności do jakichkolwiek decyzji medycznych",
-        "Zabieg należy wykonać pod przymusem natychmiast z uwagi na fakt, że przepuklina pachwinowa zawsze zagraża życiu"
+        "Lekarz powinien arbitralnie zadecydować o zabiegu bez próby rzetelnego wyjaśnienia choremu korzyści i ryzyka"
       ],
       "answer": 0,
       "rationaleRubric": {

@@ -152,12 +152,12 @@
       "prompt": "Dlaczego u osób starszych z pierwszym w życiu epizodem manii lub psychozy należy przyjąć niższy próg do poszerzonej diagnostyki neurologicznej i obrazowej?",
       "options": [
         {
-          "text": "Ponieważ u osób starszych leki psychotropowe w 100% przypadków wywołują zgon",
-          "explanation": "Taka teza jest fałszywa; leki wymagają ostrożnego dawkowania, lecz nie są bezwzględnie śmiertelne."
+          "text": "Ponieważ typowe choroby neurodegeneracyjne u osób starszych zawsze zaczynają się od nagłego epizodu psychotycznego",
+          "explanation": "Choroby neurodegeneracyjne (np. choroba Alzheimera) mają zazwyczaj powolny, podstępny początek bez nagłej izolowanej psychozy."
         },
         {
-          "text": "Ponieważ schizofrenia wyklucza możliwość zachorowania na jakiekolwiek choroby internistyczne",
-          "explanation": "Obecność schorzenia psychicznego nie chroni przed chorobami somatycznymi."
+          "text": "Ponieważ późna schizofrenia jest statystycznie najczęstszą przyczyną nagłej dezorientacji u seniorów",
+          "explanation": "Schizofrenia o bardzo późnym początku jest rzadkim rozpoznaniem z wykluczenia; u seniora nagłe objawy psychotyczne wymagają w pierwszej kolejności wykluczenia delirium i przyczyn somatycznych/naczyniowych."
         },
         {
           "text": "Ponieważ prawdopodobieństwo etiologii wtórnej (udar, guz, infekcja, leki) jest w tej grupie wiekowej istotnie wyższe niż w młodości",

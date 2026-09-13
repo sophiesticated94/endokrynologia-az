@@ -90,11 +90,11 @@
           "explanation": "TLPD niosą śmiertelne ryzyko w przedawkowaniu, prowokują majaczenie i upadki u chorych w podeszłym wieku."
         },
         {
-          "text": "Ponieważ TLPD wywołują natychmiastową utratę wzroku u każdego człowieka",
+          "text": "Ponieważ TLPD wybiórczo hamują metabolizm wątrobowy CYP2D6 bez wpływu na układ krążenia",
           "explanation": "TLPD mogą dawać zaburzenia akomodacji, lecz nie ślepotę; głównym zagrożeniem jest kardiotoksyczność."
         },
         {
-          "text": "Ponieważ TLPD wolno stosować wyłącznie u kobiet w ciąży",
+          "text": "Ponieważ TLPD wchodzą w niebezpieczne interakcje wyłącznie ze statynami",
           "explanation": "TLPD są lekami przeciwdepresyjnymi starej generacji, nie dedykowanymi dla ciężarnych."
         }
       ],
@@ -106,7 +106,7 @@
       "prompt": "Jak współczesna neuropsychiatria interpretuje zjawisko ustąpienia deficytów poznawczych po skutecznym wyleczeniu geriatrycznego epizodu depresyjnego?",
       "options": [
         {
-          "text": "Jako dowód na to, że pacjent symulował depresję dla uzyskania renty",
+          "text": "Jako wyraz nieodwracalnego zaawansowanego zaniku kory mózgowej wykluczający celowość leczenia",
           "explanation": "Epizod depresyjny jest realnym stanem biologicznym, a nie symulacją."
         },
         {
@@ -114,7 +114,7 @@
           "explanation": "Deficyty poznawcze w depresji geriatrycznej często odzwierciedlają wczesną dysfunkcję naczyniową lub prodromalną neurodegenerację."
         },
         {
-          "text": "Jako stuprocentową gwarancję nieśmiertelności neuronów mózgowych do końca życia",
+          "text": "Jako dowód na definitywny brak jakiegokolwiek ryzyka rozwoju otępienia w przyszłości",
           "explanation": "Wyleczenie epizodu nie gwarantuje braku późniejszej demencji."
         }
       ],

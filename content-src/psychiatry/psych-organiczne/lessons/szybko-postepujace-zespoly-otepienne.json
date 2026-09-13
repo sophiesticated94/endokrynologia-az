@@ -71,11 +71,11 @@
       "prompt": "23-letnia studentka bez wcześniejszego wywiadu psychiatrycznego w ciągu 3 tygodni rozwija objawy lęku, omamów wzrokowo-słuchowych, po czym dołączają mimowolne grymasy ust i języka (dyskinezy), uogólniony napad padaczkowy oraz okresowy mutyzm. Jaki jest priorytet diagnostyczny?",
       "options": [
         {
-          "text": "Natychmiastowe rozpoznanie schizofrenii i skierowanie na 10-letnią psychoterapię psychoanalityczną",
+          "text": "Rozpoznanie pierwotnego zaburzenia konwersyjnego i skierowanie do poradni psychologicznej",
           "explanation": "Rozpoznanie schizofrenii przy ostrych napadach padaczkowych i dyskinezach bez badań neurologicznych jest rażącym błędem."
         },
         {
-          "text": "Wypisanie do domu z zaleceniem picia naparu z melisy",
+          "text": "Zalecenie ambulatoryjnej obserwacji i kontroli neurologicznej za 6 miesięcy",
           "explanation": "Encefalopatia z napadami drgawkowymi jest stanem bezpośredniego zagrożenia życia."
         },
         {
@@ -111,7 +111,7 @@
       "prompt": "70-letni pacjent w ciągu 8 tygodni traci zdolność chodzenia (ataksja), dołączają gwałtowne zrywy mięśniowe po klaśnięciu w dłonie (mioklonie wyzwalane bodźcem) oraz głębokie otępienie. Co jest najbardziej prawdopodobną hipotezą roboczą?",
       "options": [
         {
-          "text": "Przemęczenie pracą w ogródku działkowym",
+          "text": "Łagodny zespół depresyjny bez cech procesu neurodegeneracyjnego",
           "explanation": "Tak gwałtowny zespół neurologiczny nigdy nie jest wynikiem zmęczenia fizycznego."
         },
         {
@@ -131,7 +131,7 @@
       "prompt": "Dlaczego ujemny wynik przeciwciał przeciwko receptorom NMDA w surowicy krwi NIE wyklucza autoimmunologicznego zapalenia mózgu?",
       "options": [
         {
-          "text": "Ponieważ przeciwciała we krwi zamieniają się w hemoglobinę po 2 godzinach",
+          "text": "Ponieważ miano przeciwciał w osoczu jest fizjologicznie zawsze zerowe przy chorobach autoimmunologicznych",
           "explanation": "Przeciwciała nie przekształcają się w hemoglobinę; różnica wynika z kompartmentowości bariery krew-mózg."
         },
         {

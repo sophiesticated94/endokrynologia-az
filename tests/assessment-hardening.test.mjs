@@ -298,7 +298,8 @@ test('Assessment Hardening: Lesson selection detects budget shortages and module
   const modResult = selectModuleMasteryAssessment(moduleMap);
   assert.equal(modResult.completeCoverage, true);
   assert.equal(modResult.uncoveredTopics.length, 0);
-  assert.equal(modResult.items.length, 2);
+  assert.equal(modResult.coveredObjectiveCount, 6);
+  assert.ok(modResult.items.length >= 2, 'Minimal set covering all objectives across both lessons');
 
   // Quick Review mode
   const quick = selectModuleQuickReview(moduleMap, { count: 1 });

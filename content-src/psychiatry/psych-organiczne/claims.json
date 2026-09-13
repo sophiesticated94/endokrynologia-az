@@ -92,7 +92,7 @@
   },
   {
     "id": "claim-org-dlb-triad-neuroleptic-sensitivity",
-    "statement": "Otępienie z ciałami Lewy’ego (DLB) charakteryzuje triada: fluktuacje uwagi, wczesne uformowane omamy wzrokowe oraz spontaniczny parkinsonizm; klasyczne neuroleptyki (blokery D2) wywołują u ok. 30–50% chorych zagrażającą życiu nadwrażliwość neuroleptyczną, przez co są bezwzględnie przeciwwskazane u wszystkich pacjentów z podejrzeniem DLB.",
+    "statement": "Otępienie z ciałami Lewy’ego (DLB) wiąże się z istotnym ryzykiem ciężkiej, zagrażającej życiu nadwrażliwości na leki przeciwpsychotyczne, stąd należy unikać szczególnie silnej blokady receptora D2 (jak haloperidol); postępowaniem I rzutu w łagodzeniu omamów i fluktuacji są modyfikacje niefarmakologiczne oraz inhibitory cholinoesterazy. Leki przeciwpsychotyczne o niskim powinowactwie do D2 (np. małe dawki kwetiapiny lub klozapina) można ostrożnie rozważać wyłącznie w sytuacji nasilonego cierpienia lub bezpośredniego zagrożenia po indywidualnej ocenie korzyści i ryzyka oraz przy ścisłym monitorowaniu powikłań pozapiramidowych.",
     "sourceIds": [
       "dlb-mckeith-2017",
       "nice-ng97-dementia"

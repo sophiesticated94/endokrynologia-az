@@ -86,7 +86,7 @@
       "prompt": "Jakie są 4 funkcjonalne domeny oceny zdolności decyzyjnej wg uznanych standardów (Mental Capacity Framework)?",
       "options": [
         {
-          "text": "Zgodność z wolą ordynatora oddziału, partii rządzącej i sąsiadów",
+          "text": "Poziom wykształcenia formalnego oraz brak wcześniejszych rozpoznań psychiatrycznych",
           "explanation": "Zdolność decyzyjna ocenia autonomię pacjenta, a nie konformizm."
         },
         {
@@ -94,7 +94,7 @@
           "explanation": "Czteroelementowy model ocenia proces myślowy pacjenta, a nie samą treść podjętej decyzji."
         },
         {
-          "text": "Bogactwo finansowe, wykształcenie wyższe, brak zmarszczek na twarzy i posiadanie samochodu",
+          "text": "Wiek poniżej 75 lat, brak chorób somatycznych i prawidłowy wynik badania EKG",
           "explanation": "Status społeczny i majątek nie mają żadnego związku z oceną zdolności decyzyjnej."
         }
       ],
@@ -106,7 +106,7 @@
       "prompt": "Co oznacza zasada, że zdolność do podejmowania decyzji jest „decision-specific” i „time-specific”?",
       "options": [
         {
-          "text": "Oznacza, że lekarz podejmuje decyzję wyłącznie w dni parzyste po godzinie 12:00",
+          "text": "Oznacza, że ocena zdolności jest stała i raz stwierdzony brak zdolności obowiązuje dożywotnio",
           "explanation": "Time-specific odnosi się do dynamiki stanu psychicznego chorego (np. w delirium), a nie do harmonogramu dyżurów."
         },
         {
@@ -146,7 +146,7 @@
       "prompt": "Dlaczego wywiad od osób trzecich (collateral history) jest niezbędny przy ocenie zdolności seniora do bezpiecznego samodzielnego funkcjonowania w domu?",
       "options": [
         {
-          "text": "Ponieważ rodzina jest właścicielem ciała pacjenta",
+          "text": "Ponieważ rodzina zawsze ma prawny monopol na podejmowanie decyzji medycznych za dorosłego",
           "explanation": "Pacjent jest autonomicznym podmiotem prawa."
         },
         {

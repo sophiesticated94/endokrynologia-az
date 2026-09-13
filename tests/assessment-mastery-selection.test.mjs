@@ -121,7 +121,8 @@ test('Assessment Mastery: Lesson mastery contract satisfaction and debt reportin
   assert.strictEqual(resultComplete.completeCoverage, true);
   assert.strictEqual(resultComplete.uncoveredObjectiveIds.length, 0);
   assert.strictEqual(resultComplete.items.length, 2);
-  assert.strictEqual(resultComplete.estimatedMinimumRequiredCount, 2);
+  assert.strictEqual(resultComplete.minimumCountIsExact, true);
+  assert.strictEqual(resultComplete.minimumRequiredCount, 2);
 });
 
 test('Assessment Mastery: Module mastery guarantees 1 item per lesson or reports explicit debt', () => {
@@ -180,3 +181,120 @@ test('Assessment Mastery: Module mastery guarantees 1 item per lesson or reports
   assert.strictEqual(quickReviewItems.length, 2);
   assert.ok(Array.isArray(quickReviewItems));
 });
+
+test('Assessment Mastery: Regression - 1 item per lesson touching lessons does not grant completeCoverage when objectives are uncovered', () => {
+  // 3 lessons, each with 2 objectives = 6 objectives total
+  const experiences = {
+    'l-1': {
+      lessonId: 'l-1',
+      objectives: [
+        { id: 'obj-l1-a', kind: 'decision', description: 'Decision A' },
+        { id: 'obj-l1-b', kind: 'knowledge', description: 'Knowledge B' },
+      ],
+      diagnostic: createMockActivity('d1', ['obj-l1-a']),
+      activities: [],
+      teachBack: createMockActivity('tb1', ['obj-l1-a'], 'recall'),
+      exitTicket: [],
+      assessmentBank: [
+        // covers only obj-l1-a
+        createMockActivity('act-l1-a', ['obj-l1-a'], 'select_and_justify', { transfer: true }),
+      ],
+    },
+    'l-2': {
+      lessonId: 'l-2',
+      objectives: [
+        { id: 'obj-l2-a', kind: 'safety', description: 'Safety A' },
+        { id: 'obj-l2-b', kind: 'knowledge', description: 'Knowledge B' },
+      ],
+      diagnostic: createMockActivity('d2', ['obj-l2-a']),
+      activities: [],
+      teachBack: createMockActivity('tb2', ['obj-l2-a'], 'recall'),
+      exitTicket: [],
+      assessmentBank: [
+        // covers only obj-l2-a
+        createMockActivity('act-l2-a', ['obj-l2-a'], 'evidence_weighting', { transfer: true, reasoning: 'safety' }),
+      ],
+    },
+    'l-3': {
+      lessonId: 'l-3',
+      objectives: [
+        { id: 'obj-l3-a', kind: 'differentiation', description: 'Diff A' },
+        { id: 'obj-l3-b', kind: 'knowledge', description: 'Knowledge B' },
+      ],
+      diagnostic: createMockActivity('d3', ['obj-l3-a']),
+      activities: [],
+      teachBack: createMockActivity('tb3', ['obj-l3-a'], 'recall'),
+      exitTicket: [],
+      assessmentBank: [
+        // covers only obj-l3-a
+        createMockActivity('act-l3-a', ['obj-l3-a'], 'select_and_justify', { transfer: true }),
+      ],
+    },
+  };
+
+  // Caller restricts count to 3 items (1 per lesson)
+  const result = selectModuleMasteryAssessment(experiences, { count: 3 });
+
+  assert.strictEqual(result.items.length, 3, 'Selected 3 items (1 from each lesson)');
+  assert.strictEqual(result.uncoveredLessonIds.length, 0, 'All 3 lessons were touched');
+  assert.strictEqual(result.coveredObjectiveCount, 3, 'Only 3 objectives covered');
+  assert.strictEqual(result.totalRequiredObjectiveCount, 6, 'Total 6 objectives required');
+  assert.strictEqual(result.uncoveredObjectiveIds.length, 3, '3 objectives remain uncovered');
+  assert.strictEqual(result.completeCoverage, false, 'completeCoverage MUST be false even though all lessons were touched');
+  assert.ok(result.coverageDebt, 'Must report explicit coverage debt');
+  assert.strictEqual(result.coverageDebt.uncoveredObjectiveIds.length, 3);
+});
+
+test('Assessment Mastery: Safety and decision objectives are strictly required for module completeCoverage', () => {
+  const experiences = {
+    'l-safety': {
+      lessonId: 'l-safety',
+      objectives: [
+        { id: 'obj-critical-safety', kind: 'safety', description: 'Critical safety objective' },
+      ],
+      diagnostic: createMockActivity('d-safe', ['obj-critical-safety']),
+      activities: [],
+      teachBack: createMockActivity('tb-safe', ['obj-critical-safety'], 'recall'),
+      exitTicket: [],
+      assessmentBank: [
+        // Only recognition, lacks safety capable / app / trans
+        createMockActivity('act-safe-rec-only', ['obj-critical-safety'], 'single_choice', {
+          assessmentLevel: 'recognition',
+          transfer: false,
+        }),
+      ],
+    },
+  };
+
+  const result = selectModuleMasteryAssessment(experiences);
+  assert.strictEqual(result.completeCoverage, false, 'Recognition-only item cannot satisfy safety objective');
+  assert.ok(result.uncoveredSafetyObjectives.includes('obj-critical-safety'));
+  assert.ok(result.coverageDebt?.missingSafetyObjectives.includes('obj-critical-safety'));
+});
+
+test('Assessment Mastery: Decision objective requires transfer in module mastery', () => {
+  const experiences = {
+    'l-dec': {
+      lessonId: 'l-dec',
+      objectives: [
+        { id: 'obj-dec-transfer', kind: 'decision', description: 'Decision requiring transfer' },
+      ],
+      diagnostic: createMockActivity('d-dec', ['obj-dec-transfer']),
+      activities: [],
+      teachBack: createMockActivity('tb-dec', ['obj-dec-transfer'], 'recall'),
+      exitTicket: [],
+      assessmentBank: [
+        // Application without transfer
+        createMockActivity('act-dec-no-trans', ['obj-dec-transfer'], 'matching', {
+          assessmentLevel: 'application',
+          transfer: false,
+        }),
+      ],
+    },
+  };
+
+  const result = selectModuleMasteryAssessment(experiences);
+  assert.strictEqual(result.completeCoverage, false, 'Decision objective requires transfer');
+  assert.ok(result.uncoveredRequirements.some(r => r.objectiveId === 'obj-dec-transfer' && r.missing.includes('transfer')));
+});
+

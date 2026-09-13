@@ -91,16 +91,16 @@
       "prompt": "75-letni pacjent z rozpoznanym zespołem parkinsonowskim i łagodnym otępieniem zgłasza, że widzi wieczorem nieznajome dzieci bawiące się w kącie pokoju. Lekarz dyżurny podaje 5 mg haloperidolu domięśniowo. Jakie powikłanie jest najbardziej prawdopodobne?",
       "options": [
         {
-          "text": "Spadek apetytu na słodycze bez żadnych innych następstw",
-          "explanation": "Odpowiedź na podanie neuroleptyku w DLB niesie ciężkie ryzyko powikłań zagrażających życiu."
+          "text": "Łagodne uspokojenie i całkowite ustąpienie omamów bez wpływu na układ pozapiramidowy",
+          "explanation": "Zastosowanie silnego blokera D2 u pacjenta z DLB nie przynosi bezpiecznej sedacji, lecz niesie wysokie ryzyko zagrażającej życiu nadwrażliwości neuroleptycznej."
         },
         {
           "text": "Gwałtowne pogorszenie sprawności ruchowej, ciężka uogólniona sztywność, stupor, a nawet zgon z powodu ostrej nadwrażliwości na blokadę D2",
           "explanation": "Pacjenci z DLB wykazują krytyczną nadwrażliwość na neuroleptyki typowe; haloperidol może zablokować resztkowe receptory dopaminowe w prążkowiu."
         },
         {
-          "text": "Natychmiastowe i trwałe wyleczenie z parkinsonizmu",
-          "explanation": "Haloperidol nasila parkinsonizm, a nie go leczy."
+          "text": "Wystąpienie izolowanego drżenia zamiarowego kończyn bez zmiany napięcia mięśniowego",
+          "explanation": "Haloperidol nasila sztywność i parkinsonizm, nie wywołując izolowanego drżenia zamiarowego."
         }
       ],
       "answer": 1
@@ -151,7 +151,7 @@
       "prompt": "Jaki fakt z wywiadu od małżonka pacjenta z podejrzeniem DLB ma kluczowe znaczenie retrospektywne?",
       "options": [
         {
-          "text": "Fakt, że pacjent lubi oglądać mecze piłkarskie w telewizji",
+          "text": "Stężenie cholesterolu całkowitego sprzed 5 lat",
           "explanation": "Zainteresowania hobbystyczne nie mają znaczenia diagnostycznego w kryteriach DLB."
         },
         {
@@ -159,7 +159,7 @@
           "explanation": "RBD jest wczesnym synukleinopatycznym markerem prodromalnym, wyprzedzającym kliniczne otępienie DLB nawet o 10–20 lat."
         },
         {
-          "text": "Informacja, że pacjent w wieku 15 lat chorował na ospę wietrzną",
+          "text": "Przebycie niepowikłanego zakażenia układu moczowego 3 lata temu",
           "explanation": "Przebyta ospa wietrzna w młodości nie jest markerem synukleinopatii."
         }
       ],

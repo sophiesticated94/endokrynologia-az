@@ -186,13 +186,13 @@
       "prompt": "Co oznacza pojęcie \"kontraktu bezpieczeństwa\" w ambulatoryjnej opiece psychiatrycznej?",
       "options": [
         "Uzgodnienie z pacjentem i rodziną planu postępowania i kontaktu w razie nagłego nasilenia myśli suicydalnych",
-        "Notarialne zrzeczenie się odpowiedzialności przez pacjenta na piśmie",
-        "Bezwzględne zamknięcie pacjenta w izolatce domowej przez bliskich"
+        "Formalne zobowiązanie pacjenta na piśmie do bezwzględnego powstrzymania się od samookaleczeń bez planu kryzysowego",
+        "Zobowiązanie bliskich do całodobowego nadzoru bez ustalania kontaktów do służb pomocowych"
       ],
       "optionFeedback": [
         "Plan obejmuje usunięcie niebezpiecznych przedmiotów, telefony zaufania i kontakt z izbą przyjęć.",
-        "Kontrakt nie jest umową prawno-majątkową, lecz narzędziem relacyjnym.",
-        "Izolacja mechaniczna nie ma zastosowania w opiece domowej."
+        "Pisemne deklaracje bez konkretnych strategii radzenia sobie z kryzysem nie zmniejszają ryzyka suicydalnego i stwarzają fałszywe poczucie bezpieczeństwa.",
+        "Całodobowy nadzór bez zdefiniowanych kontaktów kryzysowych prowadzi do wyczerpania opiekunów i nie zapobiega nagłym próbom samobójczym."
       ],
       "answer": 0,
       "explanation": "Plan obejmuje usunięcie niebezpiecznych przedmiotów, telefony zaufania i kontakt z izbą przyjęć.",

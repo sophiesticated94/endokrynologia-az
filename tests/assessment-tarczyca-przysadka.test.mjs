@@ -92,11 +92,13 @@ test('Wave 1: Przysadka module satisfies 100% objective coverage & playbook gate
 test('Wave 1: Module mastery test generator across 16 lessons', () => {
   const thyAssessment = selectModuleMasteryAssessment(thyroidExperiences);
   assert.equal(thyAssessment.completeCoverage, true, 'Tarczyca full module mastery assessment must achieve complete coverage');
-  assert.equal(thyAssessment.items.length, 16, 'Should select 1 item from each of the 16 lessons');
+  assert.ok(thyAssessment.items.length >= 16, 'Should cover all objectives across 16 lessons');
+  assert.equal(thyAssessment.coveredObjectiveCount, 36, 'All 36 objectives in tarczyca must be covered');
 
   const pitAssessment = selectModuleMasteryAssessment(pituitaryExperiences);
   assert.equal(pitAssessment.completeCoverage, true, 'Przysadka full module mastery assessment must achieve complete coverage');
-  assert.equal(pitAssessment.items.length, 16, 'Should select 1 item from each of the 16 lessons');
+  assert.ok(pitAssessment.items.length >= 16, 'Should cover all objectives across 16 lessons');
+  assert.equal(pitAssessment.coveredObjectiveCount, 32, 'All 32 objectives in przysadka must be covered');
 
   const thyQuick = selectModuleQuickReview(thyroidExperiences, { count: 10 });
   assert.equal(thyQuick.length, 10, 'Tarczyca quick review should sample 10 items');

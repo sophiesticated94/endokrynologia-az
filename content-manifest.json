@@ -60,13 +60,13 @@
     "moduleId": "psych-trauma-dysocjacja"
   },
   "bpsd-objawy-behawioralne-i-psychologiczne": {
-    "hash": "e1051f57a7a882044d6b33cb1b60f4cbdf60935d8d6e4656f9c6cb305e971a94",
+    "hash": "635e51fa9578f8a0974ad8eadcef3cf55108ca0203e956b1b944c5402edb03d3",
     "schemaVersion": 2,
     "lessonId": "bpsd-objawy-behawioralne-i-psychologiczne",
     "moduleId": "psych-organiczne"
   },
   "choroba-alzheimera-wzorzec-i-progresja": {
-    "hash": "20d86139b24268bad98df18ea7212caa9d914e1e9c38979aab886f8d15215e4b",
+    "hash": "37b858db109ce6e4967df92f3dc389717b37c1e6527fc2ad2813137548942525",
     "schemaVersion": 2,
     "lessonId": "choroba-alzheimera-wzorzec-i-progresja",
     "moduleId": "psych-organiczne"
@@ -96,19 +96,19 @@
     "moduleId": "nadnercza"
   },
   "dbt-interwencja-kryzysowa-i-bezpieczenstwo": {
-    "hash": "ee3255322ecbf306ca874b4dc9687478597c64c3417b5cf6d3aab33fd0450b4b",
+    "hash": "7eee99d03d304ee20efc89d20122f2aa33847f04c913395970d662239734e1aa",
     "schemaVersion": 2,
     "lessonId": "dbt-interwencja-kryzysowa-i-bezpieczenstwo",
     "moduleId": "psych-trauma-dysocjacja"
   },
   "delirium-rozpoznanie-i-dynamika": {
-    "hash": "d7b21a0bc298f56877eab997bf3d75b6b64766c5bc235733fc37185b83e7ef26",
+    "hash": "8b28accc020b2a33ca17fcdbfb70221806f186529314a973eb9bfcc239f91e7e",
     "schemaVersion": 2,
     "lessonId": "delirium-rozpoznanie-i-dynamika",
     "moduleId": "psych-organiczne"
   },
   "delirium-vs-otepienie-vs-depresja": {
-    "hash": "8926a1a069570a31c18778c91aad758e43597622421b1050bf4513baa3a96bd8",
+    "hash": "c6aeca2328dcacd914e3e70f7a0795eaf3f9a0a93e12b45057ac24f50243c328",
     "schemaVersion": 2,
     "lessonId": "delirium-vs-otepienie-vs-depresja",
     "moduleId": "psych-organiczne"
@@ -126,7 +126,7 @@
     "moduleId": "psych-afektywne"
   },
   "depresja-wieku-podeszlego-i-poznanie": {
-    "hash": "05cdcac733fd9b816bf99cbd6c67574b25dd25ad890b22d0c565c2eab80518e4",
+    "hash": "1493d966b8002acef6bb1fb4ffbf0f4cc8dccddb29880a053860c2e4d3ba79a9",
     "schemaVersion": 2,
     "lessonId": "depresja-wieku-podeszlego-i-poznanie",
     "moduleId": "psych-organiczne"
@@ -138,7 +138,7 @@
     "moduleId": "tarczyca"
   },
   "diagnostyka-ostrego-zaburzenia-swiadomosci": {
-    "hash": "0116dd6338ba3be34ee9684de09d50e1218a7b228c9f19685fd5afc2960cb204",
+    "hash": "bc29d3d9270b942edb0a9f1228000de4e40e62df69922323d1da0194c2f54e32",
     "schemaVersion": 2,
     "lessonId": "diagnostyka-ostrego-zaburzenia-swiadomosci",
     "moduleId": "psych-organiczne"
@@ -300,7 +300,7 @@
     "moduleId": "psych-farmakologia"
   },
   "naczyniowe-zaburzenia-poznawcze-vad": {
-    "hash": "74e7969cf5151f1a5a2e1367389c69d85ab5ead072cada4578a0be05d5f6b78f",
+    "hash": "156c2d12f0484165f9d83462aa13404cae1b0ec8b1abcb59f36c8073e81cced2",
     "schemaVersion": 2,
     "lessonId": "naczyniowe-zaburzenia-poznawcze-vad",
     "moduleId": "psych-organiczne"
@@ -402,13 +402,13 @@
     "moduleId": "psych-farmakologia"
   },
   "otepienie-czolowo-skroniowe-bvftd": {
-    "hash": "8953fce4592e52acdac2b54c86309e5b35f0ca9fc0c40409c396affcbeb3fc3f",
+    "hash": "e028ed03b793f5116b2543bdce3740f4708ecae5ac1254d0026845046150a02c",
     "schemaVersion": 2,
     "lessonId": "otepienie-czolowo-skroniowe-bvftd",
     "moduleId": "psych-organiczne"
   },
   "otepienie-z-cialami-lewyego-i-parkinson": {
-    "hash": "8080c6e930dcebda0d23510c05f45b32589cc9701a50ac460579f7770d633b40",
+    "hash": "0074425e008e9191cf1c9b084b472630007699ccbb77f89a567ad61e08e7d3cc",
     "schemaVersion": 2,
     "lessonId": "otepienie-z-cialami-lewyego-i-parkinson",
     "moduleId": "psych-organiczne"
@@ -456,7 +456,7 @@
     "moduleId": "nadnercza"
   },
   "przypadki-integracyjne-diagnostyka": {
-    "hash": "af47b18d03bce4fb0a3d7b8933e65301f0d52e9a3981f9a6510f37fe69780f0a",
+    "hash": "a844add9e7870eaeed64fa571d5baa3e1872187d0914ea5aa6b0ccdca5349f61",
     "schemaVersion": 2,
     "lessonId": "przypadki-integracyjne-diagnostyka",
     "moduleId": "psych-afektywne"
@@ -546,7 +546,7 @@
     "moduleId": "przytarczyce"
   },
   "psychofarmakologia-wieku-podeszlego": {
-    "hash": "5320531d16f7c8de5e2b1eff05da03919b23d68ad946924cbc8f8cb41bd2ab00",
+    "hash": "7c91ad59486baeed81ea2387022539c096fcdc6e9c857f6c015a40a0773ca95e",
     "schemaVersion": 2,
     "lessonId": "psychofarmakologia-wieku-podeszlego",
     "moduleId": "psych-organiczne"
@@ -648,7 +648,7 @@
     "moduleId": "psych-afektywne"
   },
   "szybko-postepujace-zespoly-otepienne": {
-    "hash": "e4467c63390b82d8aee08f303d6b94610c25dc5e669a006fe46bd4d1cb5b621c",
+    "hash": "8ae8e2195a9c9203cb83a721ac5fc3750c2a0bd7a79c0d004b84ca7dc7c37733",
     "schemaVersion": 2,
     "lessonId": "szybko-postepujace-zespoly-otepienne",
     "moduleId": "psych-organiczne"
@@ -738,7 +738,7 @@
     "moduleId": "psych-afektywne"
   },
   "zaburzenia-poznawcze-mci-a-otepienie": {
-    "hash": "ec414f48879eae47d5acad4cd78837130029293f7ff3d39dc51ff4469ee7252f",
+    "hash": "0d0dec45ba74568ff3559fbc92b780e956122439aa81a52b647e36f82f16b96a",
     "schemaVersion": 2,
     "lessonId": "zaburzenia-poznawcze-mci-a-otepienie",
     "moduleId": "psych-organiczne"
@@ -762,7 +762,7 @@
     "moduleId": "tarczyca"
   },
   "zdolnosc-decyzyjna-capacity-i-safeguarding": {
-    "hash": "b1e9a1a7d8070173ad7782a5637141939fc2c9dc356730e28fa88621b32b71e0",
+    "hash": "fca3d2a5fe05124fe14919a209d772b3f13b4fac9fb8ca7ada258f98c34c4372",
     "schemaVersion": 2,
     "lessonId": "zdolnosc-decyzyjna-capacity-i-safeguarding",
     "moduleId": "psych-organiczne"

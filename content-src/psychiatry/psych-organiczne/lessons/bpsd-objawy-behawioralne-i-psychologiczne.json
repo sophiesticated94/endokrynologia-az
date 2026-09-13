@@ -91,16 +91,16 @@
       "prompt": "Dlaczego leki przeciwpsychotyczne (zarówno typowe, jak i atypowe) są opatrzone ostrzeżeniem regulatorów (Black Box Warning) w leczeniu otępienia?",
       "options": [
         {
-          "text": "Ponieważ leki przeciwpsychotyczne leczą wyłącznie choroby pasożytnicze wątroby",
-          "explanation": "Leki te działają na receptory OUN (D2, 5-HT2A)."
+          "text": "Ponieważ leki przeciwpsychotyczne nie wykazują żadnego powinowactwa do receptorów w ośrodkowym układzie nerwowym",
+          "explanation": "Leki te działają na receptory OUN (D2, 5-HT2A) i wywierają silny wpływ psychotropowy."
         },
         {
           "text": "Z powodu udokumentowanego 1,5–1,8-krotnego wzrostu śmiertelności ogólnej oraz około 3-krotnego wzrostu ryzyka udaru mózgu i TIA",
           "explanation": "Metaanalizy randomizowanych badań klinicznych jednoznacznie potwierdziły istotny wzrost ryzyka sercowo-naczyniowego i zgonów."
         },
         {
-          "text": "Ponieważ leki te w 100% przypadków zamieniają krew pacjenta w roztwór soli",
-          "explanation": "Taka teza jest biologicznie niemożliwa; ostrzeżenie dotyczy udarów i zgonów naczyniowych."
+          "text": "Ponieważ leki przeciwpsychotyczne u każdego pacjenta z otępieniem wywołują natychmiastową ostrą niewydolność nerek",
+          "explanation": "Ostrzeżenie Black Box dotyczy powikłań naczyniowo-mózgowych i śmiertelności sercowo-naczyniowej, a nie pierwotnej nefrotoksyczności."
         }
       ],
       "answer": 1
@@ -135,12 +135,12 @@
           "explanation": "Wchodzenie w logiczny spór wzmaga lęk i agresję; walidacja emocjonalna i dystrakcja są podstawową techniką niefarmakologiczną."
         },
         {
-          "text": "Zamknąć pacjenta w piwnicy na 24 godziny w celu wymuszenia przeprosin",
-          "explanation": "Pozbawianie wolności i izolacja są niedopuszczalną przemocą nasilającą delirium."
+          "text": "Natychmiast podać podwójną dawkę leku nasennego, aby pacjent przespał resztę dnia i przestał szukać portfela",
+          "explanation": "Eskalacja sedacji farmakologicznej bez próby deeskalacji niefarmakologicznej zwiększa ryzyko upadków, delirium i powikłań oddechowych."
         },
         {
-          "text": "Natychmiast wezwać policję i złożyć doniesienie o zniesławieniu",
-          "explanation": "Urojenia wynikają z neurodegeneracji i nie podlegają odpowiedzialności karnej."
+          "text": "Skonfrontować pacjenta i zażądać przyznania, że oskarżenia o kradzież są nielogiczne i bezpodstawne",
+          "explanation": "Próba logicznej konfrontacji i przekonywania pacjenta o bezpodstawności urojonych przekonań zaostrza lęk, poczucie zagrożenia i opór."
         }
       ],
       "answer": 0
@@ -151,8 +151,8 @@
       "prompt": "Kiedy według wytycznych NICE NG97 dopuszczalne jest rozważenie leku przeciwpsychotycznego u pacjenta z BPSD?",
       "options": [
         {
-          "text": "Wyłącznie wtedy, gdy pacjent wyrazi pisemną zgodę w obecności 3 notariuszy",
-          "explanation": "W stanach nagłego zagrożenia obowiązują procedury medyczne, nie potrójne akty notarialne."
+          "text": "Wyłącznie po uzyskaniu uprzedniej zgody sądu opiekuńczego w każdym przypadku pobudzenia, bez względu na stopień zagrożenia życia",
+          "explanation": "W stanach bezpośredniego zagrożenia życia lub zdrowia priorytetem jest natychmiastowe ratowanie pacjenta zgodnie z ustawą o ochronie zdrowia psychicznego, bez oczekiwania na posiedzenie sądu."
         },
         {
           "text": "Wyłącznie w sytuacji ciężkiego cierpienia pacjenta lub bezpośredniego zagrożenia zranieniem siebie bądź innych osób, gdy metody niefarmakologiczne zawiodły",

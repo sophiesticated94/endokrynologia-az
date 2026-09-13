@@ -106,14 +106,14 @@
       ],
       "prompt": "75-letni pacjent z rozpoznanym zespołem parkinsonowskim i łagodnym otępieniem zgłasza, że widzi wieczorem nieznajome dzieci bawiące się w kącie pokoju. Lekarz dyżurny podaje 5 mg haloperidolu domięśniowo. Jakie powikłanie jest najbardziej prawdopodobne?",
       "options": [
-        "Spadek apetytu na słodycze bez żadnych innych następstw",
+        "Łagodne uspokojenie i całkowite ustąpienie omamów bez wpływu na układ pozapiramidowy",
         "Gwałtowne pogorszenie sprawności ruchowej, ciężka uogólniona sztywność, stupor, a nawet zgon z powodu ostrej nadwrażliwości na blokadę D2",
-        "Natychmiastowe i trwałe wyleczenie z parkinsonizmu"
+        "Wystąpienie izolowanego drżenia zamiarowego kończyn bez zmiany napięcia mięśniowego"
       ],
       "optionFeedback": [
-        "Odpowiedź na podanie neuroleptyku w DLB niesie ciężkie ryzyko powikłań zagrażających życiu.",
+        "Zastosowanie silnego blokera D2 u pacjenta z DLB nie przynosi bezpiecznej sedacji, lecz niesie wysokie ryzyko zagrażającej życiu nadwrażliwości neuroleptycznej.",
         "Pacjenci z DLB wykazują krytyczną nadwrażliwość na neuroleptyki typowe; haloperidol może zablokować resztkowe receptory dopaminowe w prążkowiu.",
-        "Haloperidol nasila parkinsonizm, a nie go leczy."
+        "Haloperidol nasila sztywność i parkinsonizm, nie wywołując izolowanego drżenia zamiarowego."
       ],
       "answer": 1,
       "explanation": "Pacjenci z DLB wykazują krytyczną nadwrażliwość na neuroleptyki typowe; haloperidol może zablokować resztkowe receptory dopaminowe w prążkowiu.",
@@ -207,9 +207,9 @@
       ],
       "prompt": "Jaki fakt z wywiadu od małżonka pacjenta z podejrzeniem DLB ma kluczowe znaczenie retrospektywne?",
       "options": [
-        "Fakt, że pacjent lubi oglądać mecze piłkarskie w telewizji",
+        "Stężenie cholesterolu całkowitego sprzed 5 lat",
         "Wieloletnia historia odgrywania marzeń sennych, krzyków i gwałtownych ruchów w nocy (zaburzenie zachowania w fazie REM — RBD)",
-        "Informacja, że pacjent w wieku 15 lat chorował na ospę wietrzną"
+        "Przebycie niepowikłanego zakażenia układu moczowego 3 lata temu"
       ],
       "optionFeedback": [
         "Zainteresowania hobbystyczne nie mają znaczenia diagnostycznego w kryteriach DLB.",
@@ -241,8 +241,8 @@
       "prompt": "74-letni chory z podejrzeniem otępienia z ciałami Lewy’ego (DLB) widzi w pokoju nieistniejące dzieci i koty, co wywołuje u niego niepokój. Lekarz dyżurny chce podać 5 mg haloperidolu i.m. Dlaczego to postępowanie stanowi błąd w sztuce i zagrożenie życia?",
       "options": [
         "U chorych z DLB blokery receptorów D2 (haloperidol) mogą wywołać ciężką, zagrażającą życiu nadwrażliwość neuroleptyczną (nagły ciężki parkinsonizm, sztywność, śpiączkę i zgon)",
-        "Haloperidol jest w pełni bezpieczny, lecz nie działa na omamy wzrokowe",
-        "Podanie haloperidolu jest dopuszczalne, o ile poda się go w powolnym wlewie z solą fizjologiczną"
+        "Haloperidol w monoterapii jest bezpieczny i stanowi lek pierwszego wyboru w omamach w DLB",
+        "Haloperidol można bezpiecznie podać, pod warunkiem jednoczesnego zastosowania leku cholinolitycznego (np. biperydenu) profilaktycznie chroniącego przed sztywnością"
       ],
       "answer": 0,
       "rationaleRubric": {
@@ -360,7 +360,7 @@
               "leczyć olanzapiną w dużej dawce"
             ],
             "severity": "critical",
-            "feedback": "Błąd krytyczny: Klasyczne neuroleptyki są bezwzględnie przeciwwskazane w DLB."
+            "feedback": "Błąd krytyczny: Klasyczne neuroleptyki (silne blokery D2, jak haloperidol) niosą wysokie ryzyko zagrażającej życiu nadwrażliwości neuroleptycznej w DLB i należy ich bezwzględnie unikać."
           }
         ]
       },

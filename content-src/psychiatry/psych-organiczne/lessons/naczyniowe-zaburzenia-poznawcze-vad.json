@@ -93,7 +93,7 @@
           "explanation": "Pojęcie przebiegu schodkowego odnosi się do udarów wieloogniskowych, nie do schizofrenii."
         },
         {
-          "text": "Ponieważ naczynia mózgowe nie biorą udziału w odżywianiu tkanki nerwowej",
+          "text": "Ponieważ choroba małych naczyń prowadzi wyłącznie do izolowanego uszkodzenia rdzenia kręgowego",
           "explanation": "Naczynia zaopatrują mózg w tlen i glukozę, a ich uszkodzenie niszczy mielinę i aksony."
         }
       ],
@@ -125,11 +125,11 @@
       "prompt": "Co oznacza pojęcie „otępienia mieszanego” (Mixed Dementia) w praktyce klinicznej u chorych w podeszłym wieku?",
       "options": [
         {
-          "text": "Jednoczesne zachorowanie na malarię mózgową i pląsawicę Huntingtona",
+          "text": "Jednoczesne rozpoznanie stwardnienia zanikowego bocznego i otępienia czołowo-skroniowego",
           "explanation": "Mieszane otępienie dotyczy najczęstszego nakładania się patologii AD i naczyniowej."
         },
         {
-          "text": "Połączenie autyzmu dziecięcego z ostrym upojeniem alkoholowym",
+          "text": "Młodzieńczy zespół Tourette’a powikłany przewlekłym krwiakiem przymózgowym",
           "explanation": "Taka konstelacja nie ma nic wspólnego z geriatrycznym otępieniem mieszanym."
         },
         {

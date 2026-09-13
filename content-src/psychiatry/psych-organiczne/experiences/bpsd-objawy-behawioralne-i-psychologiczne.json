@@ -106,14 +106,14 @@
       ],
       "prompt": "Dlaczego leki przeciwpsychotyczne (zarówno typowe, jak i atypowe) są opatrzone ostrzeżeniem regulatorów (Black Box Warning) w leczeniu otępienia?",
       "options": [
-        "Ponieważ leki przeciwpsychotyczne leczą wyłącznie choroby pasożytnicze wątroby",
+        "Ponieważ leki przeciwpsychotyczne nie wykazują żadnego powinowactwa do receptorów w ośrodkowym układzie nerwowym",
         "Z powodu udokumentowanego 1,5–1,8-krotnego wzrostu śmiertelności ogólnej oraz około 3-krotnego wzrostu ryzyka udaru mózgu i TIA",
-        "Ponieważ leki te w 100% przypadków zamieniają krew pacjenta w roztwór soli"
+        "Ponieważ leki przeciwpsychotyczne u każdego pacjenta z otępieniem wywołują natychmiastową ostrą niewydolność nerek"
       ],
       "optionFeedback": [
-        "Leki te działają na receptory OUN (D2, 5-HT2A).",
+        "Leki te działają na receptory OUN (D2, 5-HT2A) i wywierają silny wpływ psychotropowy.",
         "Metaanalizy randomizowanych badań klinicznych jednoznacznie potwierdziły istotny wzrost ryzyka sercowo-naczyniowego i zgonów.",
-        "Taka teza jest biologicznie niemożliwa; ostrzeżenie dotyczy udarów i zgonów naczyniowych."
+        "Ostrzeżenie Black Box dotyczy powikłań naczyniowo-mózgowych i śmiertelności sercowo-naczyniowej, a nie pierwotnej nefrotoksyczności."
       ],
       "answer": 1,
       "explanation": "Metaanalizy randomizowanych badań klinicznych jednoznacznie potwierdziły istotny wzrost ryzyka sercowo-naczyniowego i zgonów.",
@@ -181,13 +181,13 @@
       "prompt": "Jak powinna zareagować rodzina 79-letniego chorego z otępieniem, który oskarża córkę o kradzież portfela (który sam ukrył w tapczanie)?",
       "options": [
         "Unikać konfrontacji i kłótni, potwierdzić emocję lęku pacjenta („rozumiem, że martwi cię portfel”), a następnie odwrócić uwagę inną aktywnością",
-        "Zamknąć pacjenta w piwnicy na 24 godziny w celu wymuszenia przeprosin",
-        "Natychmiast wezwać policję i złożyć doniesienie o zniesławieniu"
+        "Natychmiast podać podwójną dawkę leku nasennego, aby pacjent przespał resztę dnia i przestał szukać portfela",
+        "Skonfrontować pacjenta i zażądać przyznania, że oskarżenia o kradzież są nielogiczne i bezpodstawne"
       ],
       "optionFeedback": [
         "Wchodzenie w logiczny spór wzmaga lęk i agresję; walidacja emocjonalna i dystrakcja są podstawową techniką niefarmakologiczną.",
-        "Pozbawianie wolności i izolacja są niedopuszczalną przemocą nasilającą delirium.",
-        "Urojenia wynikają z neurodegeneracji i nie podlegają odpowiedzialności karnej."
+        "Eskalacja sedacji farmakologicznej bez próby deeskalacji niefarmakologicznej zwiększa ryzyko upadków, delirium i powikłań oddechowych.",
+        "Próba logicznej konfrontacji i przekonywania pacjenta o bezpodstawności urojonych przekonań zaostrza lęk, poczucie zagrożenia i opór."
       ],
       "answer": 0,
       "explanation": "Wchodzenie w logiczny spór wzmaga lęk i agresję; walidacja emocjonalna i dystrakcja są podstawową techniką niefarmakologiczną.",
@@ -207,12 +207,12 @@
       ],
       "prompt": "Kiedy według wytycznych NICE NG97 dopuszczalne jest rozważenie leku przeciwpsychotycznego u pacjenta z BPSD?",
       "options": [
-        "Wyłącznie wtedy, gdy pacjent wyrazi pisemną zgodę w obecności 3 notariuszy",
+        "Wyłącznie po uzyskaniu uprzedniej zgody sądu opiekuńczego w każdym przypadku pobudzenia, bez względu na stopień zagrożenia życia",
         "Wyłącznie w sytuacji ciężkiego cierpienia pacjenta lub bezpośredniego zagrożenia zranieniem siebie bądź innych osób, gdy metody niefarmakologiczne zawiodły",
         "Zawsze przy każdej wizycie jako rutynowa profilaktyka zachowań agresywnych"
       ],
       "optionFeedback": [
-        "W stanach nagłego zagrożenia obowiązują procedury medyczne, nie potrójne akty notarialne.",
+        "W stanach bezpośredniego zagrożenia życia lub zdrowia priorytetem jest natychmiastowe ratowanie pacjenta zgodnie z ustawą o ochronie zdrowia psychicznego, bez oczekiwania na posiedzenie sądu.",
         "Wskazania są wąskie i rygorystyczne; leki nie powinny być stosowane z powodu błądzenia, wokalizacji czy łagodnego niepokoju.",
         "Rutynowe profilaktyczne stosowanie neuroleptyków w otępieniu jest błędem sztuki."
       ],

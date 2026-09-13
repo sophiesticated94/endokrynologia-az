@@ -210,14 +210,14 @@
       ],
       "prompt": "Dlaczego informacje uzyskane od bliskich lub opiekuna (collateral history) są niezbędne do postawienia rozpoznania otępienia?",
       "options": [
-        "Ponieważ testy neuropsychologiczne są w 100% niewiarygodne bez podpisu członka rodziny",
+        "Ponieważ standaryzowane testy poznawcze wymagają, by wynik był zawsze korygowany o poziom lęku osoby towarzyszącej",
         "Ponieważ pacjent z powodu anozognozji (braku wglądu) lub zaburzeń pamięci może nie dostrzegać i bagatelizować rzeczywistych trudności w codziennym życiu",
-        "Ponieważ prawo zabrania rozmawiania z pacjentem bez obecności notariusza"
+        "Ponieważ wywiad od rodziny pozwala pominąć formalne badanie stanu psychicznego i neurologicznego pacjenta"
       ],
       "optionFeedback": [
-        "Testy są standaryzowane, lecz ocena funkcjonowania w świecie realnym wymaga danych ze środowiska domowego.",
+        "Testy neuropsychologiczne oceniają bezpośrednio pacjenta, a stan emocjonalny rodziny nie modyfikuje norm testowych.",
         "Osoba z wczesnym otępieniem często deklaruje pełną sprawność, a dopiero relacja rodziny ujawnia niespłacone rachunki, przypalanie garnków czy gubienie leków.",
-        "Prawo medyczne wymaga badania pacjenta, a wywiad od rodziny jest uzupełnieniem klinicznym."
+        "Wywiad od bliskich stanowi cenne uzupełnienie, lecz nigdy nie zastępuje bezpośredniego badania klinicznego chorego."
       ],
       "answer": 1,
       "explanation": "Osoba z wczesnym otępieniem często deklaruje pełną sprawność, a dopiero relacja rodziny ujawnia niespłacone rachunki, przypalanie garnków czy gubienie leków.",

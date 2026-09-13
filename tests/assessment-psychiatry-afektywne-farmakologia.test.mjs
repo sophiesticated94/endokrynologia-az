@@ -302,7 +302,8 @@ test('Module Mastery Selectors: Complete coverage and balanced review', () => {
   // Test module mastery selection for psych-afektywne
   const afModuleRes = selectModuleMasteryAssessment(af.lessonExperiences);
   assert.equal(afModuleRes.completeCoverage, true);
-  assert.equal(afModuleRes.items.length, 16, 'Should select 1 item per lesson');
+  assert.ok(afModuleRes.items.length >= 16, 'Should select minimal set covering all objectives');
+  assert.equal(afModuleRes.coveredObjectiveCount, 48, 'All 48 objectives must be covered in psych-afektywne');
 
   // Test module quick review for psych-farmakologia
   const phReview = selectModuleQuickReview(ph.lessonExperiences, { count: 10 });
