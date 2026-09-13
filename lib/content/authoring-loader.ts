@@ -14,7 +14,7 @@ import {
   EvidenceClaimSchema,
   type EvidenceClaim,
 } from './schemas/lesson-revision.ts';
-import { getPreset } from './preset-registry.ts';
+import { getPreset, getPresetsForModule } from './preset-registry.ts';
 
 const ENDO_COURSE_INFO = {
   id: 'endocrinology',
@@ -237,6 +237,31 @@ export function loadCourseModuleFromContentSrcSync(
   for (const lid of lessonIds) {
     if (!experiences[lid]) {
       throw new Error(`Missing experience for lesson "${lid}" in fully-curated module "${moduleId}"`);
+    }
+  }
+
+  // 6. Validate presets declared for this module
+  const modulePresets = getPresetsForModule(moduleId);
+  for (const preset of modulePresets) {
+    if (preset.moduleId !== moduleId) {
+      throw new Error(`Preset "${preset.id}" has moduleId "${preset.moduleId}" which does not match "${moduleId}"`);
+    }
+    if (preset.lessonId && !lessonIds.has(preset.lessonId)) {
+      throw new Error(`Preset "${preset.id}" references non-existent lesson "${preset.lessonId}" in module "${moduleId}"`);
+    }
+    if (preset.sourceIds) {
+      for (const sid of preset.sourceIds) {
+        if (!sourcesRaw[sid]) {
+          throw new Error(`Preset "${preset.id}" references unknown sourceId "${sid}" in module "${moduleId}"`);
+        }
+      }
+    }
+    if (preset.claimIds) {
+      for (const cid of preset.claimIds) {
+        if (!claimsMap[cid]) {
+          throw new Error(`Preset "${preset.id}" references unknown claimId "${cid}" in module "${moduleId}"`);
+        }
+      }
     }
   }
 

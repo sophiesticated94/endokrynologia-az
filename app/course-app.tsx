@@ -365,6 +365,7 @@ export default function CourseApp() {
           {route.startsWith('lesson/') && lesson && (
             <LessonView
               lesson={lesson}
+              experience={course.lessonExperiences?.[lesson.id]}
               state={state}
               go={go}
               blocked={blocked}

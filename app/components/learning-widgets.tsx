@@ -1,11 +1,15 @@
 'use client';
-import { useState, useEffect } from 'react';
-import { Activity, Beaker, GitBranch, TrendingUp } from 'lucide-react';
+import { useState } from 'react';
+import { Activity, Beaker, GitBranch, TrendingUp, type LucideIcon } from 'lucide-react';
 import type { Confidence, LearningActivity, LessonExperienceV2, ModuleId, PracticeRecordMeta } from '@/lib/course-types';
 import { PracticeActivityCard } from './practice-activity';
 import { AdrenalWorkbench } from '@/components/learning/endocrinology/AdrenalWorkbench';
 import { ParathyroidWorkbench } from '@/components/learning/endocrinology/ParathyroidWorkbench';
-import { getPreset } from '@/lib/content/preset-registry';
+import {
+  getPreset,
+  type AdrenalWorkbenchPresetState,
+  type ParathyroidWorkbenchPresetState,
+} from '@/lib/content/preset-registry';
 import {
   getPsychiatryWidgetProvider,
   PSYCHIATRY_LESSON_ACTIVITY_REGISTRY,
@@ -14,7 +18,7 @@ import {
 export { PSYCHIATRY_LESSON_ACTIVITY_REGISTRY };
 
 type RecordPractice = (activity: LearningActivity, correct: boolean, confidence?: Confidence, scored?: boolean, meta?: PracticeRecordMeta) => Promise<boolean>;
-const labels: Record<string, readonly [string, any]> = {
+const labels: Record<string, readonly [string, LucideIcon]> = {
   'axis-map': ['Mapa osi', Activity],
   'lab-workbench': ['Panel wyników', Beaker],
   timeline: ['Oś czasu', TrendingUp],
@@ -180,7 +184,8 @@ export function WidgetRenderer({
       <div className="embedded-workbench my-3 p-3 bg-white rounded-xl border border-slate-200 shadow-sm">
         <AdrenalWorkbench
           mode="embedded"
-          preset={presetDef ? (presetDef.initialState as any) : undefined}
+          preset={presetDef ? (presetDef.initialState as unknown as AdrenalWorkbenchPresetState) : undefined}
+          definition={presetDef}
         />
       </div>
     );
@@ -191,7 +196,8 @@ export function WidgetRenderer({
       <div className="embedded-workbench my-3 p-3 bg-white rounded-xl border border-slate-200 shadow-sm">
         <ParathyroidWorkbench
           mode="embedded"
-          preset={presetDef ? (presetDef.initialState as any) : undefined}
+          preset={presetDef ? (presetDef.initialState as unknown as ParathyroidWorkbenchPresetState) : undefined}
+          definition={presetDef}
         />
       </div>
     );
@@ -219,11 +225,17 @@ export function LearningWidgets({
 }) {
   const [active, setActive] = useState(activeWidgetOverride || experience.widgetIds[0]);
   const [currentPresetId, setCurrentPresetId] = useState<string | undefined>(activePresetOverride);
+  const [prevWidgetOverride, setPrevWidgetOverride] = useState(activeWidgetOverride);
+  const [prevPresetOverride, setPrevPresetOverride] = useState(activePresetOverride);
 
-  useEffect(() => {
+  if (activeWidgetOverride !== prevWidgetOverride) {
+    setPrevWidgetOverride(activeWidgetOverride);
     if (activeWidgetOverride) setActive(activeWidgetOverride);
+  }
+  if (activePresetOverride !== prevPresetOverride) {
+    setPrevPresetOverride(activePresetOverride);
     if (activePresetOverride) setCurrentPresetId(activePresetOverride);
-  }, [activeWidgetOverride, activePresetOverride]);
+  }
 
   if (!active) return null;
 
@@ -257,6 +269,7 @@ export function LearningWidgets({
         })}
       </div>
       <WidgetRenderer
+        key={activePresetOverride || currentPresetId || activeWidgetOverride || active}
         widgetId={active}
         presetId={currentPresetId}
         experience={experience}

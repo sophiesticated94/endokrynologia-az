@@ -8,12 +8,14 @@ import {
 import {
   allWidgetPresets,
   getPreset,
+  getPresetsForModule,
   WidgetPresetDefinitionSchema,
   AdrenalWorkbenchPresetSchema,
   ParathyroidWorkbenchPresetSchema,
 } from '../lib/content/preset-registry.ts';
 import { resolveCourseModuleSource } from '../lib/content/source-adapter.ts';
 import { canonicalHash } from '../scripts/content-pipeline.mjs';
+import { lessonExperiences } from '../lib/course.ts';
 
 test('Content Authoring & Presets Invariants', async (t) => {
   // 1. Dynamic module discovery
@@ -28,7 +30,7 @@ test('Content Authoring & Presets Invariants', async (t) => {
     assert.equal(isContentSrcModule('non-existent-module-xyz'), false);
   });
 
-  // 2. Curated LessonExperienceV2 is single source of truth
+  // 2. Curated LessonExperienceV2 is single source of truth in course.ts & source-adapter.ts
   await t.test('resolveCourseModuleSource: uses curated content-src experiences for nadnercza and przytarczyce', () => {
     const nadnerczaSrc = resolveCourseModuleSource('nadnercza');
     assert.ok(nadnerczaSrc.claims, 'nadnercza must have claims loaded');
@@ -51,6 +53,15 @@ test('Content Authoring & Presets Invariants', async (t) => {
     assert.ok(fhhExp, 'fhh-hiperkalcemia experience must exist');
     assert.equal(fhhExp.experienceVersion, 2);
     assert.deepEqual(fhhExp.widgetConfig, {
+      'parathyroid-workbench': { presetId: 'parathyroid-phpt-fhh-cccr' },
+    });
+
+    // In course.ts, curated experiences override generated pilot experiences
+    assert.equal(lessonExperiences['zespol-conna'].review?.status, 'source-checked');
+    assert.deepEqual(lessonExperiences['zespol-conna'].widgetConfig, {
+      'adrenal-workbench': { presetId: 'adrenal-pa-arr-interference' },
+    });
+    assert.deepEqual(lessonExperiences['fhh-hiperkalcemia'].widgetConfig, {
       'parathyroid-workbench': { presetId: 'parathyroid-phpt-fhh-cccr' },
     });
   });
@@ -97,60 +108,89 @@ test('Content Authoring & Presets Invariants', async (t) => {
     assert.notEqual(hash1, hash2, 'Canonical contentHash must change when experience content changes');
   });
 
-  // 4. Preset schemas strictly validate and distinguish sourceIds from claimIds
+  // 4. Strict Preset Schemas: reject unknown fields & validate canonical naming
   await t.test('AdrenalWorkbenchPresetSchema & ParathyroidWorkbenchPresetSchema: strict validation', () => {
-    const validAdrenal = {
-      id: 'adrenal-test-preset',
-      widgetType: 'adrenal-workbench',
-      schemaVersion: 1,
-      moduleId: 'nadnercza',
-      title: 'Test Preset',
-      sourceIds: ['endo_pa'],
-      claimIds: ['claim-pa-arr-confounders'],
-      initialState: {
-        activeTab: 'arr',
-        initialArr: {
-          aldosteroneNgDl: 30,
-          directReninConcentrationUuMl: 2,
-        },
+    // Valid Adrenal preset
+    const validAdrenalState = {
+      focusSection: 'incidentaloma',
+      visibleControls: ['sizeMm', 'unenhancedHu', 'postDstCortisol'],
+      lockedFields: ['sizeMm'],
+      initialIncidentaloma: {
+        sizeMm: 26,
+        unenhancedHu: 6,
+        postDstCortisolUgDl: 2.2,
       },
     };
+    assert.doesNotThrow(() => AdrenalWorkbenchPresetSchema.parse(validAdrenalState));
 
-    assert.doesNotThrow(() => WidgetPresetDefinitionSchema.parse(validAdrenal));
-    assert.doesNotThrow(() => AdrenalWorkbenchPresetSchema.parse(validAdrenal.initialState));
+    // REJECT old field name nativeDensityHu
+    assert.throws(
+      () =>
+        AdrenalWorkbenchPresetSchema.parse({
+          focusSection: 'incidentaloma',
+          initialIncidentaloma: {
+            sizeMm: 26,
+            nativeDensityHu: 6, // Disallowed old name!
+          },
+        }),
+      /unrecognized_keys/
+    );
 
-    // Reject missing required field in WidgetPresetDefinitionSchema
-    const invalidPreset = {
-      ...validAdrenal,
-      widgetType: undefined,
-    };
-    assert.throws(() => WidgetPresetDefinitionSchema.parse(invalidPreset));
+    // REJECT unknown control ID in visibleControls
+    assert.throws(
+      () =>
+        AdrenalWorkbenchPresetSchema.parse({
+          focusSection: 'primary_aldosteronism',
+          visibleControls: ['unknown_control_xyz'],
+        }),
+      /invalid_enum_value/
+    );
 
-    // Parathyroid preset schema test
-    const validParathyroid = {
-      id: 'parathyroid-test-preset',
-      widgetType: 'parathyroid-workbench',
-      schemaVersion: 1,
-      moduleId: 'przytarczyce',
-      title: 'Test PT Preset',
-      sourceIds: ['ese_phpt'],
-      claimIds: ['claim-pt-cccr-overlap-zone'],
-      initialState: {
-        activeTab: 'cccr',
-        initialCccr: {
-          serumCalciumMmolL: 2.7,
-          urineCalciumMmolL: 3.5,
-          serumCreatinineUmolL: 75,
-          urineCreatinineMmolL: 8,
-        },
+    // REJECT unknown field in WidgetPresetDefinition
+    assert.throws(
+      () =>
+        WidgetPresetDefinitionSchema.parse({
+          id: 'test',
+          widgetType: 'adrenal-workbench',
+          schemaVersion: 1,
+          moduleId: 'nadnercza',
+          title: 'Test',
+          initialState: {},
+          extraUnauthorizedField: 123,
+        }),
+      /unrecognized_keys/
+    );
+
+    // Valid Parathyroid preset with canonical naming
+    const validPtState = {
+      focusSection: 'hungry_bone',
+      visibleControls: ['preopCalcium', 'preopPth', 'alkalinePhosphatase', 'patientAge'],
+      lockedFields: ['patientAge'],
+      initialHungryBone: {
+        preopCalciumMmolL: 3.2,
+        preopPthPgMl: 540,
+        alkalinePhosphataseUPerL: 320,
+        patientAge: 62,
       },
     };
-    assert.doesNotThrow(() => WidgetPresetDefinitionSchema.parse(validParathyroid));
-    assert.doesNotThrow(() => ParathyroidWorkbenchPresetSchema.parse(validParathyroid.initialState));
+    assert.doesNotThrow(() => ParathyroidWorkbenchPresetSchema.parse(validPtState));
+
+    // REJECT old field names preopAlpUL and ageYears
+    assert.throws(
+      () =>
+        ParathyroidWorkbenchPresetSchema.parse({
+          focusSection: 'hungry_bone',
+          initialHungryBone: {
+            preopAlpUL: 320, // Disallowed old name!
+            ageYears: 62, // Disallowed old name!
+          },
+        }),
+      /unrecognized_keys/
+    );
   });
 
   // 5. Duplicate preset detection & validation of all registered presets
-  await t.test('allWidgetPresets: verifies no duplicates and valid structure', () => {
+  await t.test('allWidgetPresets: verifies no duplicates, correct module matching, and valid claims', () => {
     const ids = new Set();
     for (const preset of Object.values(allWidgetPresets)) {
       assert.ok(!ids.has(preset.id), `Duplicate preset ID detected: ${preset.id}`);
@@ -173,9 +213,42 @@ test('Content Authoring & Presets Invariants', async (t) => {
     assert.ok(fhhPreset);
     assert.equal(fhhPreset.widgetType, 'parathyroid-workbench');
     assert.ok(fhhPreset.claimIds.includes('claim-pt-cccr-overlap-zone'));
+
+    // Check all module presets for nadnercza and przytarczyce
+    const nadnerczaPresets = getPresetsForModule('nadnercza');
+    assert.ok(nadnerczaPresets.length >= 4);
+    const nadnerczaSrc = loadCourseModuleFromContentSrcSync('nadnercza');
+    for (const p of nadnerczaPresets) {
+      if (p.claimIds) {
+        for (const cid of p.claimIds) {
+          assert.ok(nadnerczaSrc.claims[cid], `Preset ${p.id} references missing claim ${cid}`);
+        }
+      }
+      if (p.sourceIds) {
+        for (const sid of p.sourceIds) {
+          assert.ok(nadnerczaSrc.sources[sid], `Preset ${p.id} references missing source ${sid}`);
+        }
+      }
+    }
+
+    const ptPresets = getPresetsForModule('przytarczyce');
+    assert.ok(ptPresets.length >= 3);
+    const ptSrc = loadCourseModuleFromContentSrcSync('przytarczyce');
+    for (const p of ptPresets) {
+      if (p.claimIds) {
+        for (const cid of p.claimIds) {
+          assert.ok(ptSrc.claims[cid], `Preset ${p.id} references missing claim ${cid}`);
+        }
+      }
+      if (p.sourceIds) {
+        for (const sid of p.sourceIds) {
+          assert.ok(ptSrc.sources[sid], `Preset ${p.id} references missing source ${sid}`);
+        }
+      }
+    }
   });
 
-  // 6. Authoring loader rejects unknown claimId or duplicate claimId
+  // 6. Authoring loader loads and validates cleanly for content-src modules
   await t.test('authoring-loader: loads and validates cleanly for content-src modules', () => {
     assert.doesNotThrow(() => loadCourseModuleFromContentSrcSync('nadnercza'));
     assert.doesNotThrow(() => loadCourseModuleFromContentSrcSync('przytarczyce'));

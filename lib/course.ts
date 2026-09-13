@@ -5,12 +5,12 @@ import {gahtLessons, gahtSources, gahtConceptCards, gahtLessonIds} from './cours
 import {studyPrompts} from './study-paths.ts';
 export const VERIFIED_AT = '2026-09-11';
 export type { ModuleId, Option, Question, Source, Pair, DraftQuestion, Lesson, DraftLesson } from './course-types.ts';
-import { type ModuleId, type Lesson, type DraftLesson, type Source, q } from './course-types.ts';
+import { type ModuleId, type Lesson, type DraftLesson, type Source, type LessonExperienceV2, q } from './course-types.ts';
 import { pituitarySources } from './course-pituitary-sources.ts';
 import { draftPituitaryPart1 } from './course-pituitary-1.ts';
 import { draftPituitaryPart2 } from './course-pituitary-2.ts';
-import { adrenalSources, adrenalLessons } from './endocrinology/nadnercza-content.ts';
-import { parathyroidSources, parathyroidLessons } from './endocrinology/przytarczyce-content.ts';
+import { adrenalSources, adrenalLessons, adrenalExperiences } from './endocrinology/nadnercza-content.ts';
+import { parathyroidSources, parathyroidLessons, parathyroidExperiences } from './endocrinology/przytarczyce-content.ts';
 import { thyroidMathChemSources, draftThyroidMathChem } from './course-thyroid-math-chem.ts';
 import { pituitaryMathChemSources, draftPituitaryMathChem } from './course-pituitary-math-chem.ts';
 import { diabetesSources } from './course-diabetes-sources.ts';
@@ -270,7 +270,13 @@ export const lessons: Lesson[] = [
 ];
 
 export const questions = lessons.flatMap(l => l.questions);
-export const lessonExperiences = buildPilotExperiences(lessons);
+const generatedExperiences = buildPilotExperiences(lessons);
+// Compatibility facade: Curated content-src experiences strictly override generated pilot experiences
+export const lessonExperiences: Record<string, LessonExperienceV2> = {
+  ...generatedExperiences,
+  ...adrenalExperiences,
+  ...parathyroidExperiences,
+};
 export const questionObjectiveMap = buildQuestionObjectiveMap(lessonExperiences);
 export const flashcards = [...questions.map(q => ({
   id: `${q.id}-card`,

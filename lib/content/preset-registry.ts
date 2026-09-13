@@ -2,49 +2,114 @@ import { z } from 'zod';
 import { ENDOCRINE_PRESETS } from '../endocrinology/presets/endocrine-presets.ts';
 import { ALL_PSYCHIATRY_PRESETS } from '../psychiatry/presets/index.ts';
 
+export const AdrenalControlIdSchema = z.enum([
+  'morningCortisol',
+  'assayMethod',
+  'cbgAltered',
+  'synacthenPeak',
+  'recentPituitaryEvent',
+  'aldosterone',
+  'renin',
+  'potassium',
+  'medications',
+  'spontaneousHypokalemia',
+  'normetanephrine',
+  'normetanephrineFraction',
+  'metanephrine',
+  'metanephrineFraction',
+  'alphaBlocker',
+  'alphaBlockade',
+  'betaBlocker',
+  'betaBlockade',
+  'plannedSurgeryOrBiopsy',
+  'sizeMm',
+  'unenhancedHu',
+  'postDstCortisol',
+  'arrPositive',
+  'metanephrinesPositive',
+]);
+
+export type AdrenalControlId = z.infer<typeof AdrenalControlIdSchema>;
+
 export const AdrenalWorkbenchPresetSchema = z.object({
   focusSection: z.enum(['hpa_cortisol', 'primary_aldosteronism', 'pheochromocytoma', 'incidentaloma']).optional(),
-  visibleControls: z.array(z.string()).optional(),
-  lockedFields: z.array(z.string()).optional(),
+  visibleControls: z.array(AdrenalControlIdSchema).optional(),
+  lockedFields: z.array(AdrenalControlIdSchema).optional(),
   initialCortisol: z.object({
     morningCortisolUgDl: z.number().optional(),
     cbgAltered: z.boolean().optional(),
     synacthenPeakUgDl: z.number().optional(),
     recentPituitaryEventWeeks: z.number().optional(),
     assayMethod: z.enum(['immunoassay', 'lc_ms_ms']).optional(),
-  }).optional(),
+  }).strict().optional(),
   initialPA: z.object({
     aldosteroneNgDl: z.number().optional(),
-    reninType: z.enum(['pra_ng_ml_h', 'drc_pg_ml']).optional(),
+    reninType: z.enum(['pra_ng_ml_h', 'drc_miu_l', 'drc_pg_ml']).optional(),
     reninValue: z.number().optional(),
     potassiumMmolL: z.number().optional(),
     medications: z.array(z.string()).optional(),
     spontaneousHypokalemia: z.boolean().optional(),
-  }).optional(),
+  }).strict().optional(),
   initialPheo: z.object({
     normetanephrineFraction: z.number().optional(),
     metanephrineFraction: z.number().optional(),
     currentMedications: z.array(z.string()).optional(),
     alphaBlockerInitiated: z.boolean().optional(),
     betaBlockerInitiated: z.boolean().optional(),
-  }).optional(),
+    plannedSurgeryOrBiopsy: z.boolean().optional(),
+  }).strict().optional(),
   initialIncidentaloma: z.object({
     sizeMm: z.number().optional(),
-    nativeDensityHu: z.number().optional(),
-    absoluteWashoutPercent: z.number().optional(),
+    unenhancedHu: z.number().optional(),
     postDstCortisolUgDl: z.number().optional(),
-    acthPgMl: z.number().optional(),
-  }).optional(),
-});
+    arrPositive: z.boolean().optional(),
+    metanephrinesPositive: z.boolean().optional(),
+  }).strict().optional(),
+}).strict();
+
+export type AdrenalWorkbenchPresetState = z.infer<typeof AdrenalWorkbenchPresetSchema>;
+
+export const ParathyroidControlIdSchema = z.enum([
+  'serumCalcium',
+  'serumCreatinine',
+  'urineCalcium',
+  'urineCalcium24h',
+  'urineCreatinine',
+  'urineCreatinine24h',
+  'vitaminD',
+  'vitaminD25Oh',
+  'egfr',
+  'thiazide',
+  'takingThiazides',
+  'lithium',
+  'takingLithium',
+  'measuredTotalCalcium',
+  'albumin',
+  'serumPhosphate',
+  'hasParesthesiasOrTetany',
+  'calcitriol',
+  'elementalCalcium',
+  'calciumElemental',
+  'preopCalcium',
+  'preopPth',
+  'alp',
+  'alkalinePhosphatase',
+  'age',
+  'patientAge',
+]);
+
+export type ParathyroidControlId = z.infer<typeof ParathyroidControlIdSchema>;
 
 export const ParathyroidWorkbenchPresetSchema = z.object({
   focusSection: z.enum(['hypercalcemia_cccr', 'calcium_correction', 'hypoparathyroidism', 'hungry_bone']).optional(),
-  visibleControls: z.array(z.string()).optional(),
-  lockedFields: z.array(z.string()).optional(),
+  visibleControls: z.array(ParathyroidControlIdSchema).optional(),
+  lockedFields: z.array(ParathyroidControlIdSchema).optional(),
   initialCorrection: z.object({
+    totalCalciumMmolL: z.number().optional(),
+    albuminGPerL: z.number().optional(),
     measuredTotalCalciumMmolL: z.number().optional(),
     albuminGDL: z.number().optional(),
-  }).optional(),
+  }).strict().optional(),
   initialCCCR: z.object({
     serumCalciumMmolL: z.number().optional(),
     serumCreatinineUmolL: z.number().optional(),
@@ -54,7 +119,7 @@ export const ParathyroidWorkbenchPresetSchema = z.object({
     eGfrMlMin: z.number().optional(),
     takingThiazides: z.boolean().optional(),
     takingLithium: z.boolean().optional(),
-  }).optional(),
+  }).strict().optional(),
   initialHypopara: z.object({
     serumCalciumMmolL: z.number().optional(),
     serumPhosphateMmolL: z.number().optional(),
@@ -62,15 +127,16 @@ export const ParathyroidWorkbenchPresetSchema = z.object({
     hasParesthesiasOrTetany: z.boolean().optional(),
     calcitriolMicrogDay: z.number().optional(),
     calciumElementalMgDay: z.number().optional(),
-  }).optional(),
+  }).strict().optional(),
   initialHungryBone: z.object({
     preopCalciumMmolL: z.number().optional(),
     preopPthPgMl: z.number().optional(),
-    preopAlpUL: z.number().optional(),
-    ageYears: z.number().optional(),
-    adenomaVolumeCm3: z.number().optional(),
-  }).optional(),
-});
+    alkalinePhosphataseUPerL: z.number().optional(),
+    patientAge: z.number().optional(),
+  }).strict().optional(),
+}).strict();
+
+export type ParathyroidWorkbenchPresetState = z.infer<typeof ParathyroidWorkbenchPresetSchema>;
 
 export const WidgetPresetDefinitionSchema = z.object({
   id: z.string().min(1),
@@ -83,7 +149,7 @@ export const WidgetPresetDefinitionSchema = z.object({
   sourceIds: z.array(z.string()).optional(),
   claimIds: z.array(z.string()).optional(),
   evidenceIds: z.array(z.string()).optional(),
-});
+}).strict();
 
 export type WidgetPresetDefinition = z.infer<typeof WidgetPresetDefinitionSchema>;
 

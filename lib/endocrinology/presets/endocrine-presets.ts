@@ -124,7 +124,7 @@ export const ENDOCRINE_PRESETS: Record<string, EndocrineWidgetPreset> = {
       },
     },
     sourceIds: ['endo_pai'],
-    claimIds: ['claim-adn-synacthen-acute-secondary-caveat'],
+    claimIds: ['claim-adn-synacthen-recent-secondary'],
     evidenceIds: ['endo_pai'],
   },
   'adrenal-pheo-safety': {
@@ -143,7 +143,7 @@ export const ENDOCRINE_PRESETS: Record<string, EndocrineWidgetPreset> = {
       },
     },
     sourceIds: ['endo_pheo'],
-    claimIds: ['claim-adn-pheo-alpha-blockade-first'],
+    claimIds: ['claim-adn-pheo-alpha-before-beta'],
     evidenceIds: ['endo_pheo'],
   },
   'adrenal-incidentaloma-macs': {
@@ -157,12 +157,12 @@ export const ENDOCRINE_PRESETS: Record<string, EndocrineWidgetPreset> = {
       focusSection: 'incidentaloma',
       initialIncidentaloma: {
         sizeMm: 26,
-        nativeDensityHu: 6,
+        unenhancedHu: 6,
         postDstCortisolUgDl: 2.2,
       },
     },
     sourceIds: ['ese_incidentaloma', 'pte_macs'],
-    claimIds: ['claim-adn-incidentaloma-hu-cutoff', 'claim-adn-macs-dst-tiers'],
+    claimIds: ['claim-adn-incidentaloma-hu-10', 'claim-adn-macs-dst-thresholds'],
     evidenceIds: ['ese_incidentaloma', 'pte_macs'],
   },
   'parathyroid-phpt-fhh-cccr': {
@@ -203,7 +203,7 @@ export const ENDOCRINE_PRESETS: Record<string, EndocrineWidgetPreset> = {
       },
     },
     sourceIds: ['ese_hypopara'],
-    claimIds: ['claim-pt-hypopara-target-ca-2025', 'claim-pt-hypopara-calcitriol-firstline'],
+    claimIds: ['claim-pt-hypopara-target-ca-2025', 'claim-pt-cyp27b1-stimulation'],
     evidenceIds: ['ese_hypopara'],
   },
   'parathyroid-hungry-bone': {
@@ -218,12 +218,12 @@ export const ENDOCRINE_PRESETS: Record<string, EndocrineWidgetPreset> = {
       initialHungryBone: {
         preopCalciumMmolL: 3.2,
         preopPthPgMl: 540,
-        preopAlpUL: 320,
-        ageYears: 62,
+        alkalinePhosphataseUPerL: 320,
+        patientAge: 62,
       },
     },
     sourceIds: ['hungry_bone', 'ese_phpt'],
-    claimIds: ['claim-pt-hungry-bone-alp-predictor'],
+    claimIds: ['claim-pt-hungry-bone-predictors'],
     evidenceIds: ['hungry_bone', 'ese_phpt'],
   },
 };

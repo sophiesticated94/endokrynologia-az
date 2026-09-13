@@ -19,7 +19,7 @@
   },
   {
     "id": "claim-adn-pa-confirmatory-exemption",
-    "statement": "U pacjenta ze spontaniczną hipokaliemią, stłumioną reniną i stężeniem aldosteronu >= 20 ng/dl (550 pmol/l) testy konfirmacyjne są zbędne, a rozpoznanie PA jest pewne.",
+    "statement": "U pacjenta ze spontaniczną hipokaliemią, stłumioną reniną i stężeniem aldosteronu >= 20 ng/dl (550 pmol/l) testy konfirmacyjne uznaje się za zbędne, a prawdopodobieństwo PA za skrajnie wysokie (wg wytycznych ES 2025).",
     "category": "guideline_recommendation",
     "strength": "strong",
     "sourceIds": [
@@ -91,7 +91,7 @@
   },
   {
     "id": "claim-adn-incidentaloma-hu-10",
-    "statement": "Natywna gęstość w CT <= 10 HU wykazuje blisko 100% swoistość dla łagodnego gruczolaka bogatolipoidowego.",
+    "statement": "Natywna gęstość w CT <= 10 HU wykazuje wysoką swoistość (ok. 96–100%) dla łagodnego gruczolaka bogatolipoidowego w badaniach walidacyjnych.",
     "category": "measured",
     "sourceIds": [
       "ese_incidentaloma"

@@ -27,4 +27,9 @@ DO $$ BEGIN
  END IF;
 END $$;
 --> statement-breakpoint
+-- Architectural Deployment Note:
+-- The immediate DROP COLUMN below assumes a cold-deploy / single-deployment model (standard for this stage).
+-- In a high-availability zero-downtime rolling deployment environment, this migration would follow
+-- an expand/contract pattern: Phase 1 (expand: add table & dual-write/backfill), Phase 2 (switch code),
+-- Phase 3 (contract: drop column in a separate follow-up deployment after old containers drain).
 ALTER TABLE "evidence_claims" DROP COLUMN IF EXISTS "source_id";

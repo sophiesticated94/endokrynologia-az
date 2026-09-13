@@ -25,7 +25,7 @@ import {
   EvidenceInspectorModal,
 } from '../components/psychiatry-lesson-enhancements';
 import { PsychiatryLabModal } from '../components/psychiatry-lab-modal';
-import type { Confidence, LearningActivity, PracticeRecordMeta, InlineEnhancementRef } from '@/lib/course-types';
+import type { Confidence, LearningActivity, PracticeRecordMeta, InlineEnhancementRef, LessonExperienceV2 } from '@/lib/course-types';
 import { isLessonCoreComplete } from '@/lib/lesson-v2';
 import type { LearningState } from '@/lib/learning';
 import { SourceList } from '../course-ui';
@@ -56,6 +56,7 @@ const MODULE_LABELS: Record<string, string> = {
 
 export function LessonView({
   lesson,
+  experience: propExperience,
   state,
   go,
   blocked,
@@ -64,6 +65,7 @@ export function LessonView({
   recordPractice,
 }: {
   lesson: Lesson;
+  experience?: LessonExperienceV2;
   state: LearningState;
   go: Navigation;
   blocked: boolean;
@@ -79,7 +81,12 @@ export function LessonView({
   const [activeWorkbenchWidget, setActiveWorkbenchWidget] = useState<string | undefined>(undefined);
   const [activeWorkbenchPreset, setActiveWorkbenchPreset] = useState<string | undefined>(undefined);
   const psychEnhancement = getPsychiatryEnhancement(lesson.id);
-  const experience = endoExperiences[lesson.id] || psychiatryLessonExperiences[lesson.id];
+  // Priority: 1. DB document / prop experience, 2. Curated bundle, 3. Legacy generated
+  const experience: LessonExperienceV2 | undefined =
+    propExperience ??
+    (lesson as { experience?: LessonExperienceV2 }).experience ??
+    endoExperiences[lesson.id] ??
+    psychiatryLessonExperiences[lesson.id];
   const allCourseLessons = lessons.some(l => l.id === lesson.id) ? lessons : psychiatryLessons;
   const moduleLessons = allCourseLessons.filter(l => l.moduleId === lesson.moduleId);
   const lessonNum = moduleLessons.indexOf(lesson) + 1;
