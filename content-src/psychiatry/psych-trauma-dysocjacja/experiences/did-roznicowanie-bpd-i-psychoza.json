@@ -72,7 +72,7 @@
     {
       "id": "did-roznicowanie-bpd-i-psychoza-block-2",
       "title": "Pułapka objawów Schneidera I rzędu: DID a Schizofrenia",
-      "text": "Aż 70–80% pacjentów z DID zgłasza słyszenie głosów. W dawnej koncepcji Kurta Schneidera głosy dyskutujące uznawano za objaw I rzędu silnie sugerujący schizofrenię. To częsta pułapka diagnostyczna: w DID głosy zazwyczaj odzwierciedlają dialog stanów tożsamości, a pacjent w stanach neutralnych zachowuje krytycyzm i nie nadaje im interpretacji urojeniowej. Różnicowanie wymaga wieloosiowej oceny: brak rozkojarzenia toku myślenia, brak pierwotnych urojeń owładnięcia i zachowany afekt dostosowany silnie przemawiają przeciwko schizofrenii, aczkolwiek wczesny proces psychotyczny wymaga uważnej obserwacji podłużnej.",
+      "text": "Aż 70–80% pacjentów z DID zgłasza słyszenie głosów. W dawnej koncepcji Kurta Schneidera głosy dyskutujące uznawano za objaw I rzędu silnie sugerujący schizofrenię. To częsta pułapka diagnostyczna: DID i zaburzenia psychotyczne różnicuje się wieloosiowo. Sama lokalizacja głosu (wewnętrzna vs zewnętrzna) to cecha fenomenologiczna, a nie deterministyczna reguła. Zachowany wgląd w subiektywny charakter głosów oraz brak formalnych zaburzeń myślenia mogą osłabiać podejrzenie pierwotnej psychozy, lecz jej nie wykluczają (wymagana jest całościowa ocena osi urojeniowej, objawów negatywnych i pogorszenia funkcjonowania).",
       "sourceIds": [
         "src-icd11-cddr-2024",
         "src-isstd-adult-did-2011"
@@ -93,7 +93,7 @@
     {
       "id": "did-roznicowanie-bpd-i-psychoza-block-3",
       "title": "Maska neurologiczna: Padaczka płata skroniowego (TLE)",
-      "text": "Krótkotrwałe epizody odrealnienia, amnezji lub automatyzmów mogą wynikać z napadów ogniskowych z płata skroniowego (TLE). CECHY SUGERUJĄCE TLE: 1) Czas trwania: napady TLE trwają typowo kilkadziesiąt sekund do paru minut (choć stan ponapadowy może się przedłużać); 2) Stereotypowość: powtarzalny, paroksyzmalny przebieg; 3) Aura: aura nadbrzuszna (uczucie wznoszenia ciepła/dyskomfortu z żołądka), omamy węchowe lub smakowe; 4) Stan ponapadowy (postictal confusion, afazja). Wskazana diagnostyka neurologiczna (wideo-EEG, MRI wg protokołu padaczkowego ILAE/NICE) celem wykluczenia podłoża padaczkowego przed rozpoznaniem psychogennym.",
+      "text": "Krótkotrwałe epizody odrealnienia, amnezji lub automatyzmów mogą wynikać z napadów ogniskowych z płata skroniowego (TLE). CECHY SUGERUJĄCE TLE: 1) Czas trwania: napady TLE trwają typowo 30–120 sekund (choć stan ponapadowy może się przedłużać); 2) Stereotypowość: powtarzalny, paroksyzmalny przebieg; 3) Aura: aura nadbrzuszna (uczucie wznoszenia z żołądka), omamy węchowe lub smakowe; 4) Stan ponapadowy (postictal confusion, afazja). Wskazana konsultacja neurologiczna i celowana diagnostyka (EEG, ewentualnie MRI w protokole padaczkowym wg NICE NG217 / ILAE 2017) celem oceny podejrzeń napadów ogniskowych przed zamknięciem diagnozy psychogennej. Prawidłowy rutynowy EEG nie wyklucza padaczki skroniowej.",
       "sourceIds": [
         "src-ilae-epilepsy-classification-2017",
         "src-nice-ng217-epilepsies-2022",

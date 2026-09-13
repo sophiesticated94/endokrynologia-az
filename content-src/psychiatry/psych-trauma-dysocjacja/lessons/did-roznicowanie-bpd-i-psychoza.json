@@ -16,11 +16,11 @@
     },
     {
       "title": "Pułapka objawów Schneidera I rzędu: DID a Schizofrenia",
-      "text": "Aż 70–80% pacjentów z DID zgłasza słyszenie głosów. W dawnej koncepcji Kurta Schneidera głosy dyskutujące uznawano za objaw I rzędu silnie sugerujący schizofrenię. To częsta pułapka diagnostyczna: w DID głosy zazwyczaj odzwierciedlają dialog stanów tożsamości, a pacjent w stanach neutralnych może zachowywać krytycyzm. Zgodnie ze współczesną nozologią, sama lokalizacja głosu (wewnętrzna vs zewnętrzna) to cecha fenomenologiczna, a nie deterministyczna reguła. Prawidłowy formalny tok myślenia ani zachowany wgląd w izolacji nie wykluczają procesu psychotycznego. Różnicowanie wymaga jednoczesnej oceny wielu osi: obecności usystematyzowanych urojeń, formalnych zaburzeń myślenia, objawów negatywnych, pogorszenia funkcjonowania i przebiegu podłużnego."
+      "text": "Aż 70–80% pacjentów z DID zgłasza słyszenie głosów. W dawnej koncepcji Kurta Schneidera głosy dyskutujące uznawano za objaw I rzędu silnie sugerujący schizofrenię. To częsta pułapka diagnostyczna: DID i zaburzenia psychotyczne różnicuje się wieloosiowo. Sama lokalizacja głosu (wewnętrzna vs zewnętrzna) to cecha fenomenologiczna, a nie deterministyczna reguła. Zachowany wgląd w subiektywny charakter głosów oraz brak formalnych zaburzeń myślenia mogą osłabiać podejrzenie pierwotnej psychozy, lecz jej nie wykluczają (wymagana jest całościowa ocena osi urojeniowej, objawów negatywnych i pogorszenia funkcjonowania)."
     },
     {
       "title": "Maska neurologiczna: Padaczka płata skroniowego (TLE)",
-      "text": "Krótkotrwałe epizody odrealnienia, amnezji lub automatyzmów mogą wynikać z napadów ogniskowych z płata skroniowego (TLE). CECHY SUGERUJĄCE TLE: 1) Czas trwania: napady TLE trwają typowo kilkadziesiąt sekund do paru minut (choć stan ponapadowy może się przedłużać); 2) Stereotypowość: powtarzalny, paroksyzmalny przebieg; 3) Aura: aura nadbrzuszna (uczucie wznoszenia ciepła/dyskomfortu z żołądka), omamy węchowe lub smakowe; 4) Stan ponapadowy (postictal confusion, afazja). Wskazana diagnostyka neurologiczna (wideo-EEG, MRI wg protokołu padaczkowego ILAE/NICE) celem wykluczenia podłoża padaczkowego przed rozpoznaniem psychogennym."
+      "text": "Krótkotrwałe epizody odrealnienia, amnezji lub automatyzmów mogą wynikać z napadów ogniskowych z płata skroniowego (TLE). CECHY SUGERUJĄCE TLE: 1) Czas trwania: napady TLE trwają typowo 30–120 sekund (choć stan ponapadowy może się przedłużać); 2) Stereotypowość: powtarzalny, paroksyzmalny przebieg; 3) Aura: aura nadbrzuszna (uczucie wznoszenia z żołądka), omamy węchowe lub smakowe; 4) Stan ponapadowy (postictal confusion, afazja). Wskazana konsultacja neurologiczna i celowana diagnostyka (EEG, ewentualnie MRI w protokole padaczkowym wg NICE NG217 / ILAE 2017) celem oceny podejrzeń napadów ogniskowych przed zamknięciem diagnozy psychogennej. Prawidłowy rutynowy EEG nie wyklucza padaczki skroniowej."
     }
   ],
   "table": {
@@ -48,7 +48,7 @@
       ],
       [
         "Fenomenologia głosów",
-        "Złożony dialog stanów jaźni, zachowany krytycyzm",
+        "Dialog stanów tożsamości, wgląd często zachowany (nie jest rozstrzygający)",
         "Rzadkie, przejściowe pod wpływem stresu",
         "Głosy komentujące, urojeniowe, osłabiony krytycyzm",
         "Omamy elementarne (szumy, piski) w aurze"
@@ -63,7 +63,7 @@
     ]
   },
   "advanced": "W diagnostyce różnicowej DID i schizofrenii stosuje się ustrukturyzowane wywiady kliniczne (np. SCID-D, DDIS). Pozwalają one odróżnić zjawiska pseudo-omamowe wynikające z wewnętrznego dialogu stanów tożsamości od psychotycznych zaburzeń percepcji i rozpadu toku myślenia.",
-  "summary": "DID różni się od BPD obecnością odrębnych stanów tożsamości i amnezji codziennej; od schizofrenii zachowanym krytycyzmem i brakiem pierwotnych urojeń; od TLE paroksyzmalnym charakterem i obecnością aury nadbrzusznej w padaczce.",
+  "summary": "DID różni się od BPD obecnością odrębnych stanów tożsamości wykonawczej i nawracającej amnezji codziennej; od schizofrenii wieloosiową konwergencją kryteriów (wgląd i lokalizacja głosu są pomocnicze, lecz nie deterministyczne); od TLE napadowością, krótkim czasem trwania (30–120 s), aurą ogniskową i obecnością automatyzmów.",
   "sourceIds": [
     "src-icd11-cddr-2024",
     "src-dsm5-tr-2022",

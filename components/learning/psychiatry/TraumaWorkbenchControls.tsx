@@ -16,6 +16,9 @@ import {
   type VoicePhenomenology,
   type AffectRegulation,
   type NeurologicalInvestigations,
+  type FunctionalDistressLevel,
+  type FunctionalImpairmentLevel,
+  type ExclusionStatus,
 } from '@/lib/psychiatry/engines/trauma-dissociation-engine';
 import type { TraumaDissociationControlId } from '@/lib/content/preset-registry';
 import { Lock, Info, ShieldAlert } from 'lucide-react';
@@ -35,15 +38,34 @@ export function TraumaWorkbenchControls({
   locked,
   visible,
 }: TraumaWorkbenchControlsProps) {
+  const updateFI = (patch: Partial<NonNullable<TraumaDissociationInput['functionalImpact']>>) => {
+    setInput((prev) => ({ ...prev, functionalImpact: { ...(prev.functionalImpact || DEFAULT_TRAUMA_INPUT.functionalImpact!), ...patch } }));
+  };
+  const updateNeuro = (patch: Partial<NonNullable<TraumaDissociationInput['neurologicalFeatures']>>) => {
+    setInput((prev) => ({ ...prev, neurologicalFeatures: { ...(prev.neurologicalFeatures || DEFAULT_TRAUMA_INPUT.neurologicalFeatures!), ...patch } }));
+  };
+  const updateInv = (patch: Partial<NonNullable<TraumaDissociationInput['neurologicalInvestigations']>>) => {
+    setInput((prev) => ({ ...prev, neurologicalInvestigations: { ...(prev.neurologicalInvestigations || {}), ...patch } }));
+  };
+  const updateVoice = (patch: Partial<NonNullable<TraumaDissociationInput['voicePhenomenology']>>) => {
+    setInput((prev) => ({ ...prev, voicePhenomenology: { ...(prev.voicePhenomenology || DEFAULT_TRAUMA_INPUT.voicePhenomenology!), ...patch } }));
+  };
+  const updateAffect = (patch: Partial<NonNullable<TraumaDissociationInput['affectRegulation']>>) => {
+    setInput((prev) => ({ ...prev, affectRegulation: { ...(prev.affectRegulation || DEFAULT_TRAUMA_INPUT.affectRegulation!), ...patch } }));
+  };
+  const updateRel = (patch: Partial<NonNullable<TraumaDissociationInput['relationalDisturbance']>>) => {
+    setInput((prev) => ({ ...prev, relationalDisturbance: { ...(prev.relationalDisturbance || DEFAULT_TRAUMA_INPUT.relationalDisturbance!), ...patch } }));
+  };
+
   if (section === 'dissociation_axes') {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
         {visible('identityDiscontinuity') && (
           <div className="rounded-xl border border-border/70 p-3 bg-card space-y-1.5">
-            <label className="flex items-center justify-between font-semibold">
+            <span className="font-semibold flex items-center justify-between">
               <span>Ciągłość tożsamości (Identity Discontinuity)</span>
               {locked('identityDiscontinuity') && <Lock className="h-3 w-3 text-amber-500" />}
-            </label>
+            </span>
             <select
               disabled={locked('identityDiscontinuity')}
               value={input.identityDiscontinuity}
@@ -59,10 +81,10 @@ export function TraumaWorkbenchControls({
 
         {visible('amnesiaType') && (
           <div className="rounded-xl border border-border/70 p-3 bg-card space-y-1.5">
-            <label className="flex items-center justify-between font-semibold">
+            <span className="font-semibold flex items-center justify-between">
               <span>Wzorzec amnezji (Amnesia Pattern)</span>
               {locked('amnesiaType') && <Lock className="h-3 w-3 text-amber-500" />}
-            </label>
+            </span>
             <select
               disabled={locked('amnesiaType')}
               value={input.amnesiaType}
@@ -70,20 +92,61 @@ export function TraumaWorkbenchControls({
               className="w-full rounded-md border border-input bg-background p-1.5 text-xs disabled:opacity-60"
             >
               <option value="none">Brak luk pamięciowych</option>
-              <option value="trauma_specific">Amnezja ograniczona do urazu (PTSD / wczesne DID wg ICD-11)</option>
-              <option value="recurrent_daily_activities">Nawracające luki w zdarzeniach codziennych (DID/time loss)</option>
-              <option value="generalized_identity_loss">Uogólniona utrata tożsamości autobiograficznej (Fuga)</option>
+              <option value="trauma_specific">Amnezja urazu (PTSD / wczesne DID wg ICD-11)</option>
+              <option value="recurrent_daily_activities">Nawracające luki zdarzeń codziennych (DID/time loss)</option>
+              <option value="generalized_identity_loss">Uogólniona utrata tożsamości (Fuga)</option>
               <option value="brief_paroxysmal">Krótka paroksyzmalna (mimik TLE)</option>
             </select>
           </div>
         )}
 
+        {visible('functionalImpact') && (
+          <div className="rounded-xl border border-border/70 p-3 bg-card space-y-1.5 col-span-1 md:col-span-2">
+            <span className="font-semibold text-foreground flex items-center justify-between">
+              <span>Wpływ czynnościowy i cierpienie (Kryterium C: Distress & Impairment)</span>
+              {locked('functionalImpact') && <Lock className="h-3 w-3 text-amber-500" />}
+            </span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <div>
+                <label className="text-[11px] text-muted-foreground block mb-1">Subiektywne cierpienie (Distress):</label>
+                <select
+                  disabled={locked('functionalImpact')}
+                  value={input.functionalImpact?.distress || 'unassessed'}
+                  onChange={(e) => updateFI({ distress: e.target.value as FunctionalDistressLevel })}
+                  className="w-full rounded-md border border-input bg-background p-1.5 text-xs disabled:opacity-60"
+                >
+                  <option value="unassessed">Nieoceniony</option>
+                  <option value="none">Brak istotnego cierpienia</option>
+                  <option value="mild">Łagodny dyskomfort</option>
+                  <option value="clinically_significant">Klinicznie istotne cierpienie (spełnia kryterium C)</option>
+                  <option value="extreme_crisis">Skrajny kryzys / cierpienie paraliżujące</option>
+                </select>
+              </div>
+              <div>
+                <label className="text-[11px] text-muted-foreground block mb-1">Upośledzenie funkcjonowania:</label>
+                <select
+                  disabled={locked('functionalImpact')}
+                  value={input.functionalImpact?.functionalImpairment || 'unassessed'}
+                  onChange={(e) => updateFI({ functionalImpairment: e.target.value as FunctionalImpairmentLevel })}
+                  className="w-full rounded-md border border-input bg-background p-1.5 text-xs disabled:opacity-60"
+                >
+                  <option value="unassessed">Nieocenione</option>
+                  <option value="none">Brak zaburzeń ról społecznych/zawodowych</option>
+                  <option value="mild_or_compensated">Łagodne / kompensowane wysiłkiem</option>
+                  <option value="clinically_significant">Klinicznie istotne upośledzenie (spełnia kryterium C)</option>
+                  <option value="severe_incapacitation">Ciężka niewydolność funkcjonalna</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        )}
+
         {visible('realityTesting') && (
           <div className="rounded-xl border border-border/70 p-3 bg-card space-y-1.5">
-            <label className="flex items-center justify-between font-semibold">
+            <span className="font-semibold flex items-center justify-between">
               <span>Testowanie rzeczywistości (Reality Testing)</span>
               {locked('realityTesting') && <Lock className="h-3 w-3 text-amber-500" />}
-            </label>
+            </span>
             <select
               disabled={locked('realityTesting')}
               value={input.realityTesting}
@@ -98,22 +161,16 @@ export function TraumaWorkbenchControls({
         )}
 
         <div className="rounded-xl border border-border/70 p-3 bg-card space-y-2 col-span-1 md:col-span-2">
-          <div className="flex items-center justify-between font-semibold">
-            <span className="flex items-center gap-1.5">
-              <Info className="h-3.5 w-3.5 text-indigo-500" />
-              Fenomenologia głosów (Metadane niebędące samodzielnym kryterium)
-            </span>
-          </div>
+          <span className="flex items-center gap-1.5 font-semibold">
+            <Info className="h-3.5 w-3.5 text-indigo-500" />
+            Fenomenologia głosów (Metadane niebędące samodzielnym kryterium)
+          </span>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
             <div>
               <label className="text-[11px] text-muted-foreground block mb-1">Lokalizacja:</label>
               <select
                 value={input.voicePhenomenology?.location || 'unclear'}
-                onChange={(e) => {
-                  const curr = input.voicePhenomenology || DEFAULT_TRAUMA_INPUT.voicePhenomenology!;
-                  const val = e.target.value as VoicePhenomenology['location'];
-                  setInput({ ...input, voicePhenomenology: { ...curr, present: val !== 'unclear', location: val } });
-                }}
+                onChange={(e) => updateVoice({ present: e.target.value !== 'unclear', location: e.target.value as VoicePhenomenology['location'] })}
                 className="w-full rounded-md border border-input bg-background p-1.5 text-xs"
               >
                 <option value="unclear">Brak głosów / niejasne</option>
@@ -126,10 +183,7 @@ export function TraumaWorkbenchControls({
               <label className="text-[11px] text-muted-foreground block mb-1">Atrybucja źródła:</label>
               <select
                 value={input.voicePhenomenology?.attribution || 'uncertain'}
-                onChange={(e) => {
-                  const curr = input.voicePhenomenology || DEFAULT_TRAUMA_INPUT.voicePhenomenology!;
-                  setInput({ ...input, voicePhenomenology: { ...curr, attribution: e.target.value as VoicePhenomenology['attribution'] } });
-                }}
+                onChange={(e) => updateVoice({ attribution: e.target.value as VoicePhenomenology['attribution'] })}
                 className="w-full rounded-md border border-input bg-background p-1.5 text-xs"
               >
                 <option value="uncertain">Niejasna / niesprecyzowana</option>
@@ -142,10 +196,7 @@ export function TraumaWorkbenchControls({
               <label className="text-[11px] text-muted-foreground block mb-1">Krytycyzm:</label>
               <select
                 value={input.voicePhenomenology?.conviction || 'insight_preserved'}
-                onChange={(e) => {
-                  const curr = input.voicePhenomenology || DEFAULT_TRAUMA_INPUT.voicePhenomenology!;
-                  setInput({ ...input, voicePhenomenology: { ...curr, conviction: e.target.value as VoicePhenomenology['conviction'] } });
-                }}
+                onChange={(e) => updateVoice({ conviction: e.target.value as VoicePhenomenology['conviction'] })}
                 className="w-full rounded-md border border-input bg-background p-1.5 text-xs"
               >
                 <option value="insight_preserved">Zachowany krytycyzm (wgląd)</option>
@@ -155,7 +206,7 @@ export function TraumaWorkbenchControls({
             </div>
           </div>
           <p className="text-[10px] text-muted-foreground italic">
-            Uwaga: Lokalizacja głosu nie przesądza o diagnozie; głosy wewnętrzne bywają obecne w psychozie, a głosy z zewnątrz w dysocjacji pourazowej.
+            Uwaga: Lokalizacja głosu nie przesądza o diagnozie; głosy wewnętrzne bywają w psychozie, a zewnętrzne w dysocjacji pourazowej.
           </p>
         </div>
 
@@ -171,7 +222,7 @@ export function TraumaWorkbenchControls({
               >
                 <option value="none">Brak intruzji</option>
                 <option value="intrusive_memories_without_here_and_now_quality">Natrętne wspomnienia (brak tu i teraz)</option>
-                <option value="vivid_flashback_here_and_now">Flashback tu i teraz (re-experiencing)</option>
+                <option value="vivid_flashback_here_and_now">Flashback tu i teraz (re-living)</option>
                 <option value="trauma_nightmares_with_reexperiencing">Koszmary senne z re-living</option>
               </select>
             </div>
@@ -224,10 +275,7 @@ export function TraumaWorkbenchControls({
               <label className="text-[11px] text-muted-foreground block mb-1">DSO 2: Dysregulacja afektu:</label>
               <select
                 value={input.affectRegulation?.persistentDysregulation || 'none'}
-                onChange={(e) => {
-                  const curr = input.affectRegulation || { reactiveLability: 'none', persistentDysregulation: 'none' };
-                  setInput({ ...input, affectRegulation: { ...curr, persistentDysregulation: e.target.value as AffectRegulation['persistentDysregulation'] } });
-                }}
+                onChange={(e) => updateAffect({ persistentDysregulation: e.target.value as AffectRegulation['persistentDysregulation'] })}
                 className="w-full rounded-md border border-input bg-background p-1.5 text-xs"
               >
                 <option value="none">Brak trwałej dysregulacji</option>
@@ -240,11 +288,7 @@ export function TraumaWorkbenchControls({
               <label className="text-[11px] text-muted-foreground block mb-1">DSO 3: Trudność w bliskości:</label>
               <select
                 value={input.relationalDisturbance?.sustainedDifficultyWithCloseness || 'none'}
-                onChange={(e) => {
-                  const curr = input.relationalDisturbance || { sustainedDifficultyWithCloseness: 'none', persistentDetachmentOrAlienation: 'none', unstableIntenseRelationships: 'none', abandonmentSensitivity: 'none' };
-                  const val = e.target.value as 'none' | 'present';
-                  setInput({ ...input, relationalDisturbance: { ...curr, sustainedDifficultyWithCloseness: val, persistentDetachmentOrAlienation: val } });
-                }}
+                onChange={(e) => updateRel({ sustainedDifficultyWithCloseness: e.target.value as 'none' | 'present', persistentDetachmentOrAlienation: e.target.value as 'none' | 'present' })}
                 className="w-full rounded-md border border-input bg-background p-1.5 text-xs"
               >
                 <option value="none">Zdolność do bliskości</option>
@@ -257,10 +301,7 @@ export function TraumaWorkbenchControls({
               <label className="text-[11px] text-muted-foreground block mb-1">Cecha BPD: Lęk przed porzuceniem:</label>
               <select
                 value={input.relationalDisturbance?.abandonmentSensitivity || 'none'}
-                onChange={(e) => {
-                  const curr = input.relationalDisturbance || { sustainedDifficultyWithCloseness: 'none', persistentDetachmentOrAlienation: 'none', unstableIntenseRelationships: 'none', abandonmentSensitivity: 'none' };
-                  setInput({ ...input, relationalDisturbance: { ...curr, abandonmentSensitivity: e.target.value as 'none' | 'present' | 'marked' } });
-                }}
+                onChange={(e) => updateRel({ abandonmentSensitivity: e.target.value as 'none' | 'present' | 'marked' })}
                 className="w-full rounded-md border border-input bg-background p-1.5 text-xs"
               >
                 <option value="none">Brak lęku przed porzuceniem</option>
@@ -272,10 +313,7 @@ export function TraumaWorkbenchControls({
               <label className="text-[11px] text-muted-foreground block mb-1">Cecha BPD: Reaktywna chwiejność afektu:</label>
               <select
                 value={input.affectRegulation?.reactiveLability || 'none'}
-                onChange={(e) => {
-                  const curr = input.affectRegulation || { reactiveLability: 'none', persistentDysregulation: 'none' };
-                  setInput({ ...input, affectRegulation: { ...curr, reactiveLability: e.target.value as 'none' | 'mild' | 'marked' } });
-                }}
+                onChange={(e) => updateAffect({ reactiveLability: e.target.value as 'none' | 'mild' | 'marked' })}
                 className="w-full rounded-md border border-input bg-background p-1.5 text-xs"
               >
                 <option value="none">Brak nagłej chwiejności</option>
@@ -342,15 +380,8 @@ export function TraumaWorkbenchControls({
               type="checkbox"
               checked={Boolean(input.neurologicalFeatures?.aura?.epigastricRising || input.neurologicalFeatures?.hasAuraOrEpigastricRising)}
               onChange={(e) => {
-                const baseNeuro = input.neurologicalFeatures || DEFAULT_TRAUMA_INPUT.neurologicalFeatures!;
-                setInput({
-                  ...input,
-                  neurologicalFeatures: {
-                    ...baseNeuro,
-                    hasAuraOrEpigastricRising: e.target.checked,
-                    aura: { ...baseNeuro.aura, epigastricRising: e.target.checked },
-                  },
-                });
+                const base = input.neurologicalFeatures || DEFAULT_TRAUMA_INPUT.neurologicalFeatures!;
+                updateNeuro({ hasAuraOrEpigastricRising: e.target.checked, aura: { ...base.aura, epigastricRising: e.target.checked } });
               }}
               className="rounded border-input text-indigo-600"
             />
@@ -360,17 +391,7 @@ export function TraumaWorkbenchControls({
             <input
               type="checkbox"
               checked={Boolean(input.neurologicalFeatures?.episodicPattern === 'stereotyped' || input.neurologicalFeatures?.stereotypedSecondsDuration)}
-              onChange={(e) => {
-                const baseNeuro = input.neurologicalFeatures || DEFAULT_TRAUMA_INPUT.neurologicalFeatures!;
-                setInput({
-                  ...input,
-                  neurologicalFeatures: {
-                    ...baseNeuro,
-                    episodicPattern: e.target.checked ? 'stereotyped' : 'non_stereotyped',
-                    stereotypedSecondsDuration: e.target.checked,
-                  },
-                });
-              }}
+              onChange={(e) => updateNeuro({ episodicPattern: e.target.checked ? 'stereotyped' : 'non_stereotyped', stereotypedSecondsDuration: e.target.checked })}
               className="rounded border-input text-indigo-600"
             />
             <span>Stereotypowe napady z automatyzmami oralnymi/ruchowymi</span>
@@ -380,15 +401,8 @@ export function TraumaWorkbenchControls({
               type="checkbox"
               checked={Boolean(input.neurologicalFeatures?.postictalState?.confusion || input.neurologicalFeatures?.postictalConfusion)}
               onChange={(e) => {
-                const baseNeuro = input.neurologicalFeatures || DEFAULT_TRAUMA_INPUT.neurologicalFeatures!;
-                setInput({
-                  ...input,
-                  neurologicalFeatures: {
-                    ...baseNeuro,
-                    postictalConfusion: e.target.checked,
-                    postictalState: { ...baseNeuro.postictalState, confusion: e.target.checked },
-                  },
-                });
+                const base = input.neurologicalFeatures || DEFAULT_TRAUMA_INPUT.neurologicalFeatures!;
+                updateNeuro({ postictalConfusion: e.target.checked, postictalState: { ...base.postictalState, confusion: e.target.checked } });
               }}
               className="rounded border-input text-indigo-600"
             />
@@ -398,16 +412,7 @@ export function TraumaWorkbenchControls({
             <input
               type="checkbox"
               checked={input.neurologicalFeatures?.witnessHistory === 'available_supportive'}
-              onChange={(e) => {
-                const baseNeuro = input.neurologicalFeatures || DEFAULT_TRAUMA_INPUT.neurologicalFeatures!;
-                setInput({
-                  ...input,
-                  neurologicalFeatures: {
-                    ...baseNeuro,
-                    witnessHistory: e.target.checked ? 'available_supportive' : 'unavailable',
-                  },
-                });
-              }}
+              onChange={(e) => updateNeuro({ witnessHistory: e.target.checked ? 'available_supportive' : 'unavailable' })}
               className="rounded border-input text-indigo-600"
             />
             <span>Relacja świadka potwierdza stałą sekwencję napadu</span>
@@ -422,13 +427,7 @@ export function TraumaWorkbenchControls({
               onChange={(e) => {
                 const inv = input.neurologicalInvestigations || {};
                 type EegStatus = NonNullable<NeurologicalInvestigations['eeg']>['status'];
-                setInput({
-                  ...input,
-                  neurologicalInvestigations: {
-                    ...inv,
-                    eeg: { ...inv.eeg, status: e.target.value as EegStatus },
-                  },
-                });
+                updateInv({ eeg: { ...inv.eeg, status: e.target.value as EegStatus } });
               }}
               className="w-full rounded-md border border-input bg-background p-1.5 text-xs"
             >
@@ -445,13 +444,7 @@ export function TraumaWorkbenchControls({
               onChange={(e) => {
                 const inv = input.neurologicalInvestigations || {};
                 type MriStatus = NonNullable<NeurologicalInvestigations['mri']>['status'];
-                setInput({
-                  ...input,
-                  neurologicalInvestigations: {
-                    ...inv,
-                    mri: { ...inv.mri, status: e.target.value as MriStatus },
-                  },
-                });
+                updateInv({ mri: { ...inv.mri, status: e.target.value as MriStatus } });
               }}
               className="w-full rounded-md border border-input bg-background p-1.5 text-xs"
             >
@@ -462,8 +455,40 @@ export function TraumaWorkbenchControls({
           </div>
         </div>
 
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 border-t border-border/40">
+          <div>
+            <label className="text-[11px] text-muted-foreground block mb-1">Status wykluczenia padaczkowego:</label>
+            <select
+              value={input.neurologicalFeatures?.exclusionStatus || 'none'}
+              onChange={(e) => updateNeuro({
+                exclusionStatus: e.target.value as ExclusionStatus,
+                confirmedDiagnosis: e.target.value === 'confirmed_explanatory' ? 'confirmed_epilepsy_explaining_symptoms' : 'none',
+              })}
+              className="w-full rounded-md border border-input bg-background p-1.5 text-xs"
+            >
+              <option value="none">Brak podejrzenia etiologii neurologicznej</option>
+              <option value="unresolved">Nierozstrzygnięte (podejrzenie TLE w trakcie diagnostyki)</option>
+              <option value="confirmed_explanatory">Potwierdzone organiczne schorzenie (wyklucza DID)</option>
+            </select>
+          </div>
+          <div className="flex items-center gap-2 pt-3">
+            <label className="flex items-center gap-2 cursor-pointer text-xs">
+              <input
+                type="checkbox"
+                checked={input.neurologicalFeatures?.confirmedDiagnosis === 'confirmed_epilepsy_explaining_symptoms'}
+                onChange={(e) => updateNeuro({
+                  confirmedDiagnosis: e.target.checked ? 'confirmed_epilepsy_explaining_symptoms' : 'none',
+                  exclusionStatus: e.target.checked ? 'confirmed_explanatory' : 'unresolved',
+                })}
+                className="rounded border-input text-indigo-600"
+              />
+              <span>Potwierdzona klinicznie padaczka skroniowa</span>
+            </label>
+          </div>
+        </div>
+
         <div className="rounded bg-sky-50 p-2 text-[10px] text-sky-800 dark:bg-sky-950/40 dark:text-sky-300 font-medium">
-          Niezmiennik bezpieczeństwa: Prawidłowy zapis EEG ani prawidłowy MRI NIE potwierdzają zaburzenia dysocjacyjnego ani nie wykluczają definitywnie padaczki.
+          Niezmiennik bezpieczeństwa: Prawidłowy zapis EEG ani prawidłowy MRI NIE potwierdzają zaburzenia dysocjacyjnego ani nie wykluczają definitywnie padaczki (zgodnie z NICE NG217).
         </div>
       </div>
     </div>

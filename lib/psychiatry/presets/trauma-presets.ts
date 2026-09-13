@@ -13,6 +13,7 @@ export const TRAUMA_PRESETS: Record<string, WidgetPresetDefinition> = {
       visibleControls: [
         'identityDiscontinuity',
         'amnesiaType',
+        'functionalImpact',
         'realityTesting',
         'voicePhenomenology',
       ],
@@ -22,6 +23,10 @@ export const TRAUMA_PRESETS: Record<string, WidgetPresetDefinition> = {
         amnesiaType: 'recurrent_daily_activities',
         depersonalizationDerealization: true,
         realityTesting: 'intact',
+        functionalImpact: {
+          distress: 'clinically_significant',
+          functionalImpairment: 'clinically_significant',
+        },
         reExperiencingInPresent: 'intrusive_memories_without_here_and_now_quality',
         traumaAvoidance: 'internal',
         persistentCurrentThreat: 'hypervigilance',
@@ -90,6 +95,7 @@ export const TRAUMA_PRESETS: Record<string, WidgetPresetDefinition> = {
       visibleControls: [
         'identityDiscontinuity',
         'amnesiaType',
+        'functionalImpact',
         'affectRegulation',
         'relationalDisturbance',
         'suicidalityRisk',
@@ -100,6 +106,10 @@ export const TRAUMA_PRESETS: Record<string, WidgetPresetDefinition> = {
         amnesiaType: 'none',
         depersonalizationDerealization: true,
         realityTesting: 'transient_stress_induced',
+        functionalImpact: {
+          distress: 'clinically_significant',
+          functionalImpairment: 'clinically_significant',
+        },
         reExperiencingInPresent: 'none',
         traumaAvoidance: 'none',
         persistentCurrentThreat: 'none',
@@ -140,6 +150,7 @@ export const TRAUMA_PRESETS: Record<string, WidgetPresetDefinition> = {
       visibleControls: [
         'voicePhenomenology',
         'psychosisAxes',
+        'functionalImpact',
         'realityTesting',
         'identityDiscontinuity',
       ],
@@ -149,6 +160,10 @@ export const TRAUMA_PRESETS: Record<string, WidgetPresetDefinition> = {
         amnesiaType: 'recurrent_daily_activities',
         depersonalizationDerealization: true,
         realityTesting: 'intact',
+        functionalImpact: {
+          distress: 'clinically_significant',
+          functionalImpairment: 'clinically_significant',
+        },
         reExperiencingInPresent: 'none',
         traumaAvoidance: 'none',
         persistentCurrentThreat: 'none',
@@ -214,6 +229,7 @@ export const TRAUMA_PRESETS: Record<string, WidgetPresetDefinition> = {
       visibleControls: [
         'depersonalizationDerealization',
         'realityTesting',
+        'functionalImpact',
         'substanceContext',
       ],
       lockedFields: ['depersonalizationDerealization', 'realityTesting'],
@@ -222,6 +238,10 @@ export const TRAUMA_PRESETS: Record<string, WidgetPresetDefinition> = {
         amnesiaType: 'none',
         depersonalizationDerealization: true,
         realityTesting: 'intact',
+        functionalImpact: {
+          distress: 'clinically_significant',
+          functionalImpairment: 'mild_or_compensated',
+        },
         reExperiencingInPresent: 'none',
         traumaAvoidance: 'both',
         persistentCurrentThreat: 'both',
@@ -263,6 +283,7 @@ export const TRAUMA_PRESETS: Record<string, WidgetPresetDefinition> = {
       focusSection: 'safety_neurology',
       visibleControls: [
         'symptomDuration',
+        'functionalImpact',
         'neurologicalFeatures',
         'neurologicalInvestigations',
         'amnesiaType',
@@ -273,6 +294,10 @@ export const TRAUMA_PRESETS: Record<string, WidgetPresetDefinition> = {
         amnesiaType: 'brief_paroxysmal',
         depersonalizationDerealization: true,
         realityTesting: 'intact',
+        functionalImpact: {
+          distress: 'clinically_significant',
+          functionalImpairment: 'clinically_significant',
+        },
         reExperiencingInPresent: 'none',
         traumaAvoidance: 'none',
         persistentCurrentThreat: 'none',
@@ -349,6 +374,7 @@ export const TRAUMA_PRESETS: Record<string, WidgetPresetDefinition> = {
         'negativeSelfConcept',
         'affectRegulation',
         'relationalDisturbance',
+        'functionalImpact',
       ],
       lockedFields: ['reExperiencingInPresent', 'traumaAvoidance'],
       input: {
@@ -356,6 +382,10 @@ export const TRAUMA_PRESETS: Record<string, WidgetPresetDefinition> = {
         amnesiaType: 'trauma_specific',
         depersonalizationDerealization: false,
         realityTesting: 'intact',
+        functionalImpact: {
+          distress: 'clinically_significant',
+          functionalImpairment: 'clinically_significant',
+        },
         reExperiencingInPresent: 'vivid_flashback_here_and_now',
         traumaAvoidance: 'both',
         persistentCurrentThreat: 'both',

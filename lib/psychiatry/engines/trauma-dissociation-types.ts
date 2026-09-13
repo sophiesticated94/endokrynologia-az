@@ -1,62 +1,77 @@
 // Trauma and Dissociation Domain Types & Criteria Models
 // ICD-11 (CDDR 2024) and DSM-5-TR (2022) reference representations
 
-export type IdentityDiscontinuity = 'none' | 'disturbed_sense_of_self' | 'distinct_personality_states';
-export type AmnesiaType = 'none' | 'trauma_specific' | 'recurrent_daily_activities' | 'generalized_identity_loss' | 'brief_paroxysmal';
-export type RealityTesting = 'intact' | 'impaired_delusional' | 'transient_stress_induced';
+export type IdentityDiscontinuity = 'unassessed' | 'none' | 'disturbed_sense_of_self' | 'distinct_personality_states';
+export type AmnesiaType = 'unassessed' | 'none' | 'trauma_specific' | 'recurrent_daily_activities' | 'generalized_identity_loss' | 'brief_paroxysmal';
+export type RealityTesting = 'unassessed' | 'intact' | 'impaired_delusional' | 'transient_stress_induced';
 export type NegativeSelfConcept =
+  | 'unassessed'
   | 'none'
   | 'persistent_shame_guilt'
   | 'worthlessness_failure'
   | 'trauma_related_negative_identity';
-export type SymptomDuration = 'days_under_3' | 'days_under_30' | 'chronic_months' | 'brief_episodes_seconds';
-export type SuicidalityRisk = 'none' | 'passive_ideation' | 'active_with_intent' | 'recent_severe_self_harm';
+export type SymptomDuration = 'unassessed' | 'days_under_3' | 'days_under_30' | 'chronic_months' | 'brief_episodes_seconds';
+export type SuicidalityRisk = 'unassessed' | 'none' | 'passive_ideation' | 'active_with_intent' | 'recent_severe_self_harm';
 
 // PTSD 3 Independent ICD-11 Domains
 export type ReExperiencingInPresent =
+  | 'unassessed'
   | 'none'
   | 'intrusive_memories_without_here_and_now_quality'
   | 'vivid_flashback_here_and_now'
   | 'trauma_nightmares_with_reexperiencing';
 
-export type TraumaAvoidance = 'none' | 'internal' | 'external' | 'both';
-export type PersistentCurrentThreat = 'none' | 'hypervigilance' | 'exaggerated_startle' | 'both';
+export type TraumaAvoidance = 'unassessed' | 'none' | 'internal' | 'external' | 'both';
+export type PersistentCurrentThreat = 'unassessed' | 'none' | 'hypervigilance' | 'exaggerated_startle' | 'both';
+
+// Functional Impact (Independent of Duration)
+export type FunctionalDistressLevel = 'unassessed' | 'none' | 'mild' | 'clinically_significant';
+export type FunctionalImpairmentLevel = 'unassessed' | 'none' | 'mild' | 'clinically_significant';
+
+export interface FunctionalImpact {
+  distress: FunctionalDistressLevel;
+  functionalImpairment: FunctionalImpairmentLevel;
+}
+
+// Exclusion Status Model (Suspected/Unresolved vs Confirmed Explanatory)
+export type ExclusionStatus = 'none' | 'unresolved' | 'confirmed_explanatory';
 
 // Affect Regulation (cPTSD vs BPD)
 export interface AffectRegulation {
-  reactiveLability: 'none' | 'mild' | 'marked';
-  persistentDysregulation: 'none' | 'hyperactivation' | 'hypoactivation_numbing' | 'mixed';
+  reactiveLability: 'unassessed' | 'none' | 'mild' | 'marked';
+  persistentDysregulation: 'unassessed' | 'none' | 'hyperactivation' | 'hypoactivation_numbing' | 'mixed';
 }
 
 // Relational Disturbance (cPTSD DSO vs BPD)
 export interface RelationalDisturbance {
-  sustainedDifficultyWithCloseness: 'none' | 'present';
-  persistentDetachmentOrAlienation: 'none' | 'present';
-  unstableIntenseRelationships: 'none' | 'present';
-  abandonmentSensitivity: 'none' | 'present' | 'marked';
+  sustainedDifficultyWithCloseness: 'unassessed' | 'none' | 'present';
+  persistentDetachmentOrAlienation: 'unassessed' | 'none' | 'present';
+  unstableIntenseRelationships: 'unassessed' | 'none' | 'present';
+  abandonmentSensitivity: 'unassessed' | 'none' | 'present' | 'marked';
 }
 
-// Psychosis Multi-Axial Profile
+// Psychosis Multi-Axial Profile (with explicit unassessed support)
 export interface PsychosisAxes {
-  realityTesting: 'intact' | 'partially_impaired' | 'markedly_impaired';
+  realityTesting: 'unassessed' | 'intact' | 'partially_impaired' | 'markedly_impaired';
   delusions: {
-    presence: 'none' | 'suspected' | 'present';
-    organization: 'none' | 'poorly_formed' | 'systematized' | 'bizarre';
-    conviction: 'low' | 'moderate' | 'high';
+    presence: 'unassessed' | 'none' | 'suspected' | 'present';
+    organization: 'unassessed' | 'none' | 'poorly_formed' | 'systematized' | 'bizarre';
+    conviction: 'unassessed' | 'low' | 'moderate' | 'high';
   };
-  formalThoughtDisorder: 'none' | 'mild' | 'marked';
-  behavioralDisorganization: 'none' | 'mild' | 'marked';
+  formalThoughtDisorder: 'unassessed' | 'none' | 'mild' | 'marked';
+  behavioralDisorganization: 'unassessed' | 'none' | 'mild' | 'marked';
   negativeSymptoms: {
     avolition: boolean;
     anhedonia: boolean;
     alogia: boolean;
     bluntedAffect: boolean;
     socialWithdrawal: boolean;
+    assessed?: boolean;
   };
-  functionalDecline: 'none' | 'possible' | 'clear';
-  longitudinalCourse: 'unknown' | 'brief' | 'episodic' | 'persistent' | 'progressive';
-  moodRelation: 'independent' | 'only_during_mood_episode' | 'mixed_or_unclear';
-  substanceOrMedicalContext: 'none_known' | 'possible' | 'likely';
+  functionalDecline: 'unassessed' | 'none' | 'possible' | 'clear';
+  longitudinalCourse: 'unassessed' | 'brief' | 'episodic' | 'persistent' | 'progressive';
+  moodRelation: 'unassessed' | 'independent' | 'only_during_mood_episode' | 'mixed_or_unclear';
+  substanceOrMedicalContext: 'unassessed' | 'none_known' | 'possible' | 'likely';
 }
 
 // Voice Hearing Phenomenology (Non-diagnostic metadata)
@@ -83,16 +98,18 @@ export interface NeurologicalFeatures {
     experientialDejaVuJamaisVu: boolean;
     otherFocalAura: boolean;
   };
-  impairedAwareness: 'none' | 'possible' | 'clear';
-  witnessedAutomatisms: 'none' | 'possible' | 'clear';
+  impairedAwareness: 'unassessed' | 'none' | 'possible' | 'clear';
+  witnessedAutomatisms: 'unassessed' | 'none' | 'possible' | 'clear';
   postictalState: {
     confusion: boolean;
     somnolence: boolean;
     aphasia: boolean;
     focalDeficit: boolean;
   };
-  witnessHistory: 'unavailable' | 'available_non_supportive' | 'available_supportive';
-  focalNeurologicalDeficits: 'none' | 'possible' | 'present';
+  witnessHistory: 'unassessed' | 'unavailable' | 'available_non_supportive' | 'available_supportive';
+  focalNeurologicalDeficits: 'unassessed' | 'none' | 'possible' | 'present';
+  confirmedDiagnosis?: 'unassessed' | 'none' | 'suspected_unconfirmed' | 'confirmed_epilepsy_explaining_symptoms' | 'other_neurological_disorder';
+  exclusionStatus?: ExclusionStatus;
   // Legacy optional properties
   hasAuraOrEpigastricRising?: boolean;
   stereotypedSecondsDuration?: boolean;
@@ -116,6 +133,7 @@ export interface SubstanceContext {
   activeIntoxicationOrWithdrawal?: boolean;
   onsetDirectlyTiedToSubstance?: boolean;
   substanceDetails?: string;
+  exclusionStatus?: ExclusionStatus;
 }
 
 // Legacy Aliases for Backward Compatibility
@@ -130,7 +148,11 @@ export interface TraumaDissociationInput {
   identityDiscontinuity: IdentityDiscontinuity;
   amnesiaType: AmnesiaType;
   depersonalizationDerealization: boolean;
+  somatoformDissociation?: boolean;
   realityTesting: RealityTesting;
+
+  // Functional Impact (Independent of Duration)
+  functionalImpact?: FunctionalImpact;
 
   // PTSD Core ICD-11 Domains
   reExperiencingInPresent?: ReExperiencingInPresent;
@@ -197,6 +219,8 @@ export interface FrameworkEvaluation {
   criteriaMissing: string[];
   criteriaNotRequired: string[];
   exclusions: string[];
+  unresolvedExclusions?: string[];
+  confirmedExclusions?: string[];
   compatibility: 'meets' | 'possible' | 'insufficient_information' | 'does_not_meet';
   explanation: string;
   sourceIds: string[];
@@ -206,6 +230,7 @@ export interface FrameworkEvaluation {
 export interface NeurologicalAssessmentOutput {
   concern: 'low' | 'moderate' | 'high';
   workupPriority: 'routine' | 'specialist_assessment' | 'urgent_assessment';
+  exclusionStatus: ExclusionStatus;
   supportingFeatures: string[];
   opposingFeatures: string[];
   missingCriticalInformation: string[];
@@ -234,37 +259,42 @@ export interface TraumaDissociationOutput {
 }
 
 export const DEFAULT_TRAUMA_INPUT: TraumaDissociationInput = {
-  identityDiscontinuity: 'none',
-  amnesiaType: 'none',
+  identityDiscontinuity: 'unassessed',
+  amnesiaType: 'unassessed',
   depersonalizationDerealization: false,
-  realityTesting: 'intact',
-  reExperiencingInPresent: 'none',
-  traumaAvoidance: 'none',
-  persistentCurrentThreat: 'none',
-  negativeSelfConcept: 'none',
-  affectRegulation: { reactiveLability: 'none', persistentDysregulation: 'none' },
+  realityTesting: 'unassessed',
+  functionalImpact: {
+    distress: 'unassessed',
+    functionalImpairment: 'unassessed',
+  },
+  reExperiencingInPresent: 'unassessed',
+  traumaAvoidance: 'unassessed',
+  persistentCurrentThreat: 'unassessed',
+  negativeSelfConcept: 'unassessed',
+  affectRegulation: { reactiveLability: 'unassessed', persistentDysregulation: 'unassessed' },
   relationalDisturbance: {
-    sustainedDifficultyWithCloseness: 'none',
-    persistentDetachmentOrAlienation: 'none',
-    unstableIntenseRelationships: 'none',
-    abandonmentSensitivity: 'none',
+    sustainedDifficultyWithCloseness: 'unassessed',
+    persistentDetachmentOrAlienation: 'unassessed',
+    unstableIntenseRelationships: 'unassessed',
+    abandonmentSensitivity: 'unassessed',
   },
   psychosisAxes: {
-    realityTesting: 'intact',
-    delusions: { presence: 'none', organization: 'none', conviction: 'low' },
-    formalThoughtDisorder: 'none',
-    behavioralDisorganization: 'none',
+    realityTesting: 'unassessed',
+    delusions: { presence: 'unassessed', organization: 'unassessed', conviction: 'unassessed' },
+    formalThoughtDisorder: 'unassessed',
+    behavioralDisorganization: 'unassessed',
     negativeSymptoms: {
       avolition: false,
       anhedonia: false,
       alogia: false,
       bluntedAffect: false,
       socialWithdrawal: false,
+      assessed: false,
     },
-    functionalDecline: 'none',
-    longitudinalCourse: 'persistent',
-    moodRelation: 'independent',
-    substanceOrMedicalContext: 'none_known',
+    functionalDecline: 'unassessed',
+    longitudinalCourse: 'unassessed',
+    moodRelation: 'unassessed',
+    substanceOrMedicalContext: 'unassessed',
   },
   voicePhenomenology: {
     present: false,
@@ -288,8 +318,8 @@ export const DEFAULT_TRAUMA_INPUT: TraumaDissociationInput = {
       experientialDejaVuJamaisVu: false,
       otherFocalAura: false,
     },
-    impairedAwareness: 'none',
-    witnessedAutomatisms: 'none',
+    impairedAwareness: 'unassessed',
+    witnessedAutomatisms: 'unassessed',
     postictalState: {
       confusion: false,
       somnolence: false,
@@ -297,7 +327,9 @@ export const DEFAULT_TRAUMA_INPUT: TraumaDissociationInput = {
       focalDeficit: false,
     },
     witnessHistory: 'unavailable',
-    focalNeurologicalDeficits: 'none',
+    focalNeurologicalDeficits: 'unassessed',
+    confirmedDiagnosis: 'unassessed',
+    exclusionStatus: 'none',
   },
   neurologicalInvestigations: {
     specialistAssessment: 'not_done',
@@ -308,6 +340,7 @@ export const DEFAULT_TRAUMA_INPUT: TraumaDissociationInput = {
     activeIntoxicationOrWithdrawal: false,
     onsetDirectlyTiedToSubstance: false,
     substanceDetails: '',
+    exclusionStatus: 'none',
   },
   suicidalityRisk: 'none',
 };

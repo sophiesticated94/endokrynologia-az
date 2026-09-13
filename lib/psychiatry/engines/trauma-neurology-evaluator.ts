@@ -6,6 +6,7 @@ import type {
   NeurologicalAssessmentOutput,
   NeurologicalFeatures,
   NeurologicalInvestigations,
+  ExclusionStatus,
 } from './trauma-dissociation-types.ts';
 
 export function evaluateNeurologyFeatures(
@@ -77,7 +78,7 @@ export function evaluateNeurologyFeatures(
     supporting.push(
       'Relacja świadka potwierdza stałą sekwencję objawów i stereotypowość kolejnych napadów'
     );
-  } else if (neuro.witnessHistory === 'unavailable') {
+  } else if (neuro.witnessHistory === 'unavailable' || neuro.witnessHistory === 'unassessed') {
     missingCritical.push(
       'Brak relacji bezpośredniego świadka napadu – kluczowy element obiektywizujący wg NICE NG217'
     );
@@ -99,21 +100,25 @@ export function evaluateNeurologyFeatures(
     );
   }
 
-  if (neuro.focalNeurologicalDeficits === 'present' || neuro.focalDeficits) {
+  const hasFocalDeficit =
+    neuro.focalNeurologicalDeficits === 'present' || Boolean(neuro.focalDeficits);
+  if (hasFocalDeficit) {
     supporting.push('Ogniskowe deficyty neurologiczne w badaniu przedmiotowym');
   }
 
   // 5. Investigations Interpretation (Safety Invariants)
   let eegInterpretation = 'EEG: Badanie niewykonane.';
   const eegStatus = inv.eeg?.status || (inv as Record<string, unknown> | undefined)?.routineEeg;
+  const isEpileptiformEEG = eegStatus === 'epileptiform';
+
   if (eegStatus) {
-    if (eegStatus === 'epileptiform') {
+    if (isEpileptiformEEG) {
       eegInterpretation =
         'EEG: Wyładowania padaczkokształtne (fale ostre, zespoły iglica-fala) silnie wspierają hipotezę napadową w korelacji z obrazem klinicznym.';
       supporting.push('Zapis EEG z wyładowaniami padaczkokształtnymi');
     } else if (eegStatus === 'normal') {
       eegInterpretation =
-        'EEG: Prawidłowy zapis spoczynkowy. UWAGA: Prawidłowy EEG NIE wyklucza padaczki skroniowej (czułość pojedynczego rutynowego EEG wynosi 30–50%).';
+        'EEG: Prawidłowy zapis spoczynkowy. UWAGA: Prawidłowy rutynowy EEG NIE wyklucza padaczki skroniowej – czułość pojedynczego rutynowego EEG jest ograniczona, szczególnie między napadami (zgodnie z NICE NG217).';
       opposing.push('Rutynowy zapis EEG bez cech padaczkokształtnych (nie wyklucza TLE)');
     } else if (eegStatus === 'nonspecific') {
       eegInterpretation =
@@ -123,8 +128,10 @@ export function evaluateNeurologyFeatures(
 
   let mriInterpretation = 'MRI głowy: Badanie niewykonane.';
   const mriStatus = inv.mri?.status || (inv as Record<string, unknown> | undefined)?.brainMri;
+  const hasEpileptogenicLesion = mriStatus === 'potential_epileptogenic_lesion';
+
   if (mriStatus) {
-    if (mriStatus === 'potential_epileptogenic_lesion') {
+    if (hasEpileptogenicLesion) {
       mriInterpretation =
         'MRI głowy: Zmiana potencjalnie padaczkorodna (np. stwardnienie hipokampa, malformacja naczyniowa lub dysplazja korowa).';
       supporting.push('Zmiana strukturalna w MRI w protokole padaczkowym');
@@ -137,25 +144,50 @@ export function evaluateNeurologyFeatures(
   const safetyInvariant =
     'SAFETY INVARIANT: Prawidłowe wyniki badań EEG i neuroobrazowania NIE potwierdzają zaburzenia dysocjacyjnego ani czynnościowego. Rozpoznanie dysocjacji wymaga spełnienia pozytywnych kryteriów psychopatologicznych.';
 
-  // 6. Synthesis: Concern & Workup Priority
+  // 6. Exclusion Status
+  let exclusionStatus: ExclusionStatus = 'none';
+  if (neuro.confirmedDiagnosis || neuro.exclusionStatus === 'confirmed_explanatory') {
+    exclusionStatus = 'confirmed_explanatory';
+  } else if (
+    isEpileptiformEEG ||
+    hasAura ||
+    (isStereotyped && isBriefSeconds) ||
+    neuro.witnessedAutomatisms === 'clear' ||
+    hasFocalDeficit ||
+    neuro.exclusionStatus === 'unresolved'
+  ) {
+    // Paroxysmal / focal neurological features present, not yet ruled out (normal EEG does not rule out)
+    exclusionStatus = 'unresolved';
+  }
+
+  // 7. Clinical Reasoning Priority & Concern (No Arbitrary Score Points)
   let concern: NeurologicalAssessmentOutput['concern'] = 'low';
   let priority: NeurologicalAssessmentOutput['workupPriority'] = 'routine';
 
-  const strongNeuroPoints =
-    (isStereotyped ? 1 : 0) +
-    (isBriefSeconds ? 1 : 0) +
-    (hasAura ? 2 : 0) +
-    (hasPostictal ? 1 : 0) +
-    (neuro.witnessedAutomatisms === 'clear' ? 2 : 0) +
-    (inv.eeg?.status === 'epileptiform' ? 3 : 0);
-
-  if (neuro.focalNeurologicalDeficits === 'present' || neuro.focalDeficits) {
+  if (hasFocalDeficit) {
+    // Focal deficit is an acute red flag requiring urgent assessment
     concern = 'high';
     priority = 'urgent_assessment';
-  } else if (strongNeuroPoints >= 4) {
+  } else if (isEpileptiformEEG && (isStereotyped || hasAura || isBriefSeconds)) {
+    // Proven epileptiform activity with matching paroxysms
     concern = 'high';
     priority = 'urgent_assessment';
-  } else if (strongNeuroPoints >= 2 || hasAura || isStereotyped) {
+  } else if (
+    (isStereotyped && isBriefSeconds && (hasAura || neuro.witnessedAutomatisms === 'clear')) ||
+    (hasAura && neuro.witnessedAutomatisms === 'clear')
+  ) {
+    // High clinical phenotype convergence for focal impaired awareness seizures
+    concern = 'high';
+    priority = 'specialist_assessment';
+  } else if (
+    hasAura ||
+    isStereotyped ||
+    neuro.witnessedAutomatisms === 'possible' ||
+    hasPostictal ||
+    isBriefSeconds ||
+    hasEpileptogenicLesion ||
+    isEpileptiformEEG
+  ) {
     concern = 'moderate';
     priority = 'specialist_assessment';
   }
@@ -163,6 +195,7 @@ export function evaluateNeurologyFeatures(
   return {
     concern,
     workupPriority: priority,
+    exclusionStatus,
     supportingFeatures: supporting,
     opposingFeatures: opposing,
     missingCriticalInformation: missingCritical,
