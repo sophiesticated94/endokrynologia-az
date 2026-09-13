@@ -58,19 +58,19 @@
     {
       "id": "borderline-bpd-mechanizmy-q1",
       "lessonId": "borderline-bpd-mechanizmy",
-      "prompt": "Na czym polega teoria biospołeczna (biosocial theory) Marshy Linehan wyjaśniająca genezę BPD?",
+      "prompt": "Na czym polega teoria biospołeczna (biosocial theory) Marshy Linehan wyjaśniająca patogenezę BPD?",
       "options": [
         {
-          "text": "Na interakcji wrodzonej wrażliwości emocjonalnej z chronicznie unieważniającym środowiskiem",
-          "explanation": "To fundamentalny model DBT wyjaśniający załamanie umiejętności samoregulacji afektywnej."
+          "text": "Na interakcji wrodzonej wrażliwości i hiperreaktywności emocjonalnej z chronicznie unieważniającym środowiskiem",
+          "explanation": "To fundamentalny model DBT wyjaśniający załamanie umiejętności samoregulacji afektywnej w BPD."
         },
         {
-          "text": "Na zakażeniu wirusem Epsteina-Barr w wieku niemowlęcym",
-          "explanation": "EBV wywołuje mononukleozę, nie zaburzenie osobowości BPD."
+          "text": "Na izolowanym uszkodzeniu kory ciemieniowej wywołującym deficyt uwagi i pamięci przestrzennej",
+          "explanation": "BPD nie jest zespołem agnozji ciemieniowej."
         },
         {
-          "text": "Na wyłącznym braku witaminy D3 w diecie",
-          "explanation": "Brak witaminy D nie stanowi patogenezy BPD."
+          "text": "Na pierwotnym procesie autozapalnym toczącym się w zwojach podstawy",
+          "explanation": "BPD to zaburzenie organizacji osobowości o złożonej etiologii biopsychospołecznej."
         }
       ],
       "answer": 0
@@ -85,12 +85,12 @@
           "explanation": "Stygmatyzujący język personelu nasila lęk przed odrzuceniem i eskaluje zachowania autoagresywne."
         },
         {
-          "text": "Ponieważ manipulacja jest dozwolona wyłącznie u mężczyzn",
-          "explanation": "Nonsens bezpodstawny."
+          "text": "Ponieważ pacjenci z BPD nie mają zdolności do formułowania jakichkolwiek celów interpersonalnych",
+          "explanation": "Pacjenci mają cele relacyjne (bliskość, bezpieczeństwo), lecz realizują je w sposób dysfunkcyjny."
         },
         {
-          "text": "Ponieważ słowo to zostało skasowane ze słownika języka polskiego",
-          "explanation": "Kwestia dotyczy etyki i metodologii klinicznej, nie językoznawstwa."
+          "text": "Ponieważ w klasyfikacji ICD-11 pojęcie manipulacji zostało przypisane wyłącznie do schizofrenii paranoidalnej",
+          "explanation": "To całkowicie błędna koncepcja nozologiczna."
         }
       ],
       "answer": 0
@@ -98,19 +98,19 @@
     {
       "id": "borderline-bpd-mechanizmy-q3",
       "lessonId": "borderline-bpd-mechanizmy",
-      "prompt": "Jaki jest najczęstszy mechanizm psychologiczny samouszkodzeń bez intencji samobójczej (NSSI) w BPD?",
+      "prompt": "Jaki jest najczęstszy mechanizm psychologiczny niesamobójczych samouszkodzeń (NSSI) w BPD?",
       "options": [
         {
           "text": "Chęć redukcji nieznośnego napięcia psychicznego lub przerwania odrętwienia dysocjacyjnego",
-          "explanation": "Ból fizyczny powoduje wyrzut endorfin i przywraca uziemienie w ciele, stanowiąc dysfunkcyjny mechanizm zaradczy."
+          "explanation": "Ból fizyczny wyzwala wyrzut endorfin i przywraca uziemienie somatyczne, stanowiąc dysfunkcyjną samoregulację."
         },
         {
-          "text": "Pragnienie zakażenia personelu medycznego wirusem HIV",
-          "explanation": "To absurdalny i stygmatyzujący mit."
+          "text": "Przekonanie urojeniowe o konieczności złożenia ofiary w celu ocalenia bliskich przed apokalipsą",
+          "explanation": "Urojenia wielkościowo-religijne są cechą pierwotnej psychozy, a nie typowego NSSI w BPD."
         },
         {
-          "text": "Wykonywanie tatuażu zgodnie z zaleceniem NFZ",
-          "explanation": "Nonsens medyczny."
+          "text": "Stereotypie ruchowe wynikające z zespołu Tourette'a lub ciężkiego autyzmu",
+          "explanation": "NSSI w BPD jest działaniem ukierunkowanym na regulację afektu, a nie tikiem motorycznym."
         }
       ],
       "answer": 0
@@ -121,16 +121,16 @@
       "prompt": "Co oznacza zjawisko rozszczepienia (splitting) w relacjach u pacjenta z BPD?",
       "options": [
         {
-          "text": "Czarno-białe postrzeganie ludzi jako całkowicie idealnych albo całkowicie złych bez stanów pośrednich",
-          "explanation": "Brak zdolności do zintegrowania dobrych i złych cech drugiego człowieka w spójny obraz."
+          "text": "Dychotomiczne postrzeganie ludzi jako całkowicie idealnych albo całkowicie złych bez stanów pośrednich",
+          "explanation": "Brak zdolności do zintegrowania pozytywnych i negatywnych cech drugiego człowieka w spójny obraz."
         },
         {
-          "text": "Podział krwinek czerwonych na dwie części w naczyniach włosowatych",
-          "explanation": "To fragmentacja erytrocytów w anemii hemolitycznej (schizocyty)."
+          "text": "Rozszczepienie toku myślenia na niezależne wątki skojarzeniowe w przebiegu rozkojarzenia",
+          "explanation": "To formalne zaburzenie toku myślenia w schizofrenii, a nie mechanizm obronny splittingu."
         },
         {
-          "text": "Rozszczepienie podniebienia u noworodka",
-          "explanation": "To wada anatomiczna twarzoczaszki."
+          "text": "Nawracające epizody fugi dysocjacyjnej z ucieczką od dotychczasowego miejsca zamieszkania",
+          "explanation": "Fuga dysocjacyjna to zaburzenie pamięci i tożsamości z podróżą, a nie relacyjny splitting."
         }
       ],
       "answer": 0
@@ -138,19 +138,19 @@
     {
       "id": "borderline-bpd-mechanizmy-q5",
       "lessonId": "borderline-bpd-mechanizmy",
-      "prompt": "Jaka dynamika wahań nastroju jest typowa dla BPD?",
+      "prompt": "Jaka dynamika wahań nastroju jest najbardziej charakterystyczna dla BPD?",
       "options": [
         {
-          "text": "Wysoka reaktywność na bodźce interpersonalne ze zmianami nastroju trwającymi zazwyczaj godziny lub 1–2 dni",
-          "explanation": "To afektywna niestabilność reaktywna, odmienna od wielotygodniowych faz w chorobie afektywnej."
+          "text": "Wysoka reaktywność na bodźce interpersonalne ze zmianami afektu trwającymi zazwyczaj godziny lub 1–2 dni",
+          "explanation": "To niestabilność reaktywna, odmienna od autonomicznych wielotygodniowych faz w chorobie afektywnej dwubiegunowej."
         },
         {
-          "text": "Fazy trwające ściśle 10 lat bez żadnej zmiany",
-          "explanation": "Wahania nastroju w BPD są wybitnie zmienne i krótkotrwałe."
+          "text": "Wielomiesięczne, autonomiczne epizody manii i ciężkiej depresji bez związku z relacjami",
+          "explanation": "Długie, biologicznie autonomiczne fazy to cecha choroby afektywnej dwubiegunowej typu I."
         },
         {
-          "text": "Całkowity brak nastroju i emocji przez całe życie",
-          "explanation": "Chorzy na BPD przeżywają emocje skrajnie intensywnie."
+          "text": "Przewlekłe spłycenie afektu z brakiem odczuwania lęku, poczucia winy ani złości",
+          "explanation": "Spłycenie afektu bez lęku i winy charakteryzuje raczej osobowość dyssocjalną, a nie BPD."
         }
       ],
       "answer": 0

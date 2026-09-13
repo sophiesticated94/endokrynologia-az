@@ -10,7 +10,7 @@
     {
       "id": "borderline-bpd-mechanizmy-obj-2",
       "statement": "Odrzucisz stygmatyzujące mity o „manipulacji” i poznasz neurobiologię paniki przed porzuceniem.",
-      "kind": "decision"
+      "kind": "interpretation"
     }
   ],
   "diagnostic": {
@@ -19,26 +19,25 @@
     "objectiveIds": [
       "borderline-bpd-mechanizmy-obj-1"
     ],
-    "prompt": "Na czym polega teoria biospołeczna (biosocial theory) Marshy Linehan wyjaśniająca genezę BPD?",
+    "prompt": "Na czym polega teoria biospołeczna (biosocial theory) Marshy Linehan wyjaśniająca patogenezę BPD?",
     "options": [
-      "Na interakcji wrodzonej wrażliwości emocjonalnej z chronicznie unieważniającym środowiskiem",
-      "Na zakażeniu wirusem Epsteina-Barr w wieku niemowlęcym",
-      "Na wyłącznym braku witaminy D3 w diecie"
+      "Na interakcji wrodzonej wrażliwości i hiperreaktywności emocjonalnej z chronicznie unieważniającym środowiskiem",
+      "Na izolowanym uszkodzeniu kory ciemieniowej wywołującym deficyt uwagi i pamięci przestrzennej",
+      "Na pierwotnym procesie autozapalnym toczącym się w zwojach podstawy"
     ],
     "optionFeedback": [
-      "To fundamentalny model DBT wyjaśniający załamanie umiejętności samoregulacji afektywnej.",
-      "EBV wywołuje mononukleozę, nie zaburzenie osobowości BPD.",
-      "Brak witaminy D nie stanowi patogenezy BPD."
+      "To fundamentalny model DBT wyjaśniający załamanie umiejętności samoregulacji afektywnej w BPD.",
+      "BPD nie jest zespołem agnozji ciemieniowej.",
+      "BPD to zaburzenie organizacji osobowości o złożonej etiologii biopsychospołecznej."
     ],
     "answer": 0,
-    "explanation": "To fundamentalny model DBT wyjaśniający załamanie umiejętności samoregulacji afektywnej.",
-    "hint": "Przeanalizuj mechanizm biologiczny i kryteria przed zaznaczeniem opcji.",
+    "explanation": "To fundamentalny model DBT wyjaśniający załamanie umiejętności samoregulacji afektywnej w BPD.",
+    "hint": "Przeanalizuj interakcję podatności biologicznej i czynników środowiskowych.",
     "difficulty": "student",
     "reasoning": "mechanism",
     "sourceIds": [
       "src-linehan-dbt-1993",
-      "src-nice-cg78-bpd-2009",
-      "src-icd11-cddr-2024"
+      "src-nice-cg78-bpd-2009"
     ],
     "claimIds": [
       "claim-trauma-bpd-abandonment-instability"
@@ -51,13 +50,11 @@
       "text": "BPD nie jest „złym charakterem” ani „złośliwą manipulacją”. Teoria biospołeczna (biosocial theory) wyjaśnia BPD jako interakcję dwóch czynników: 1) Biologicznej podatności: wrodzona hiperreaktywność układu limbicznego (wysoka wrażliwość na bodźce emocjonalne, skrajna intensywność odczuwania afektu i powolny powrót do linii bazowej); 2) Środowiska unieważniającego (invalidating environment): otoczenie neguje, karze lub bagatelizuje wewnętrzne przeżycia dziecka („przesadzasz”, „nic ci nie jest”, „nie masz prawa tak czuć”). Dziecko nie uczy się modulować emocji i ucieka się do zachowań skrajnych (krzyk, samookaleczenie), by uzyskać jakąkolwiek reakcję otoczenia.",
       "sourceIds": [
         "src-linehan-dbt-1993",
-        "src-nice-cg78-bpd-2009",
-        "src-icd11-cddr-2024"
+        "src-nice-cg78-bpd-2009"
       ],
       "checkpointId": "borderline-bpd-mechanizmy-q2-checkpoint-1-v2",
       "claimIds": [
-        "claim-trauma-bpd-abandonment-instability",
-        "claim-trauma-bpd-identity-vs-did"
+        "claim-trauma-bpd-abandonment-instability"
       ],
       "inlineEnhancements": []
     },
@@ -66,16 +63,23 @@
       "title": "Osiowe wzorce kliniczne BPD",
       "text": "Główne przejawy BPD: 1) Paniczny lęk przed porzuceniem (prawdziwym lub wyobrażonym) i desperackie wysiłki zapobiegające osamotnieniu; 2) Niestabilne, burzliwe relacje z rozszczepieniem (splitting — naprzemienna idealizacja i dewaluacja); 3) Wyraźne zaburzenie tożsamości z niestabilnym obrazem siebie; 4) Impulsywność w min. 2 obszarach szkodliwych (wydatki, seks, substancje, napadowe objadanie się); 5) Nawracające zachowania samobójcze, groźby lub samouszkodzenia (NSSI); 6) Skrajna labilność afektywna w skali godzin; 7) Przewlekłe uczucie wewnętrznej pustki; 8) Nieadekwatny, trudny do opanowania gniew; 9) Przemijające, stresowe objawy paranoiczne lub dysocjacyjne.",
       "sourceIds": [
-        "src-linehan-dbt-1993",
+        "src-icd11-cddr-2024",
         "src-nice-cg78-bpd-2009",
-        "src-icd11-cddr-2024"
+        "src-linehan-dbt-1993"
       ],
       "checkpointId": "borderline-bpd-mechanizmy-q3-checkpoint-2-v2",
       "claimIds": [
         "claim-trauma-bpd-abandonment-instability",
         "claim-trauma-bpd-identity-vs-did"
       ],
-      "inlineEnhancements": []
+      "inlineEnhancements": [
+        {
+          "id": "borderline-bpd-mechanizmy-enh-bpd-preset",
+          "kind": "workbench-deeplink",
+          "placement": "after-checkpoint",
+          "presetId": "trauma-bpd-vs-did"
+        }
+      ]
     },
     {
       "id": "borderline-bpd-mechanizmy-block-3",
@@ -83,12 +87,10 @@
       "text": "Wypowiedzi personelu typu „ona tylko manipuluje”, „robi to pod publikę”, „wymusza uwagę” są jaskrawym błędem etycznym i terapeutycznym. Samouszkodzenia bez intencji samobójczej (NSSI) są dla pacjenta z BPD niefarmakologiczną, dysfunkcyjną próbą regulacji nieznośnego bólu psychicznego lub ucieczką ze stanu zamrożenia dysocjacyjnego (fizyczny ból „przywraca kontakt z ciałem”). Moralizowanie i odrzucenie personelu wtórnie unieważnia pacjenta i gwałtownie eskaluje ryzyko zgonu samobójczego!",
       "sourceIds": [
         "src-linehan-dbt-1993",
-        "src-nice-cg78-bpd-2009",
-        "src-icd11-cddr-2024"
+        "src-nice-cg78-bpd-2009"
       ],
       "claimIds": [
-        "claim-trauma-bpd-abandonment-instability",
-        "claim-trauma-bpd-identity-vs-did"
+        "claim-trauma-bpd-abandonment-instability"
       ],
       "inlineEnhancements": []
     }
@@ -98,28 +100,27 @@
       "id": "borderline-bpd-mechanizmy-q2-checkpoint-1-v2",
       "type": "single_choice",
       "objectiveIds": [
-        "borderline-bpd-mechanizmy-obj-1"
+        "borderline-bpd-mechanizmy-obj-2"
       ],
       "prompt": "Dlaczego określanie zachowań pacjenta z BPD jako „manipulacji” jest błędem w sztuce medycznej?",
       "options": [
         "Jest moralizujące, unieważnia pacjenta i ignoruje fakt, że zachowania te wynikają z braku umiejętności regulacji bólu",
-        "Ponieważ manipulacja jest dozwolona wyłącznie u mężczyzn",
-        "Ponieważ słowo to zostało skasowane ze słownika języka polskiego"
+        "Ponieważ pacjenci z BPD nie mają zdolności do formułowania jakichkolwiek celów interpersonalnych",
+        "Ponieważ w klasyfikacji ICD-11 pojęcie manipulacji zostało przypisane wyłącznie do schizofrenii paranoidalnej"
       ],
       "optionFeedback": [
         "Stygmatyzujący język personelu nasila lęk przed odrzuceniem i eskaluje zachowania autoagresywne.",
-        "Nonsens bezpodstawny.",
-        "Kwestia dotyczy etyki i metodologii klinicznej, nie językoznawstwa."
+        "Pacjenci mają cele relacyjne (bliskość, bezpieczeństwo), lecz realizują je w sposób dysfunkcyjny.",
+        "To całkowicie błędna koncepcja nozologiczna."
       ],
       "answer": 0,
       "explanation": "Stygmatyzujący język personelu nasila lęk przed odrzuceniem i eskaluje zachowania autoagresywne.",
-      "hint": "Zwróć uwagę na ramy czasowe oraz kryteria wykluczenia.",
+      "hint": "Rozważ etyczny i terapeutyczny wpływ postawy personelu na pacjenta.",
       "difficulty": "both",
-      "reasoning": "mechanism",
+      "reasoning": "interpretation",
       "sourceIds": [
         "src-linehan-dbt-1993",
-        "src-nice-cg78-bpd-2009",
-        "src-icd11-cddr-2024"
+        "src-nice-cg78-bpd-2009"
       ],
       "claimIds": [
         "claim-trauma-bpd-abandonment-instability"
@@ -127,33 +128,33 @@
     },
     {
       "id": "borderline-bpd-mechanizmy-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "missing_information",
       "objectiveIds": [
         "borderline-bpd-mechanizmy-obj-2"
       ],
-      "prompt": "Jaki jest najczęstszy mechanizm psychologiczny samouszkodzeń bez intencji samobójczej (NSSI) w BPD?",
+      "prompt": "Pacjentka z podejrzeniem BPD dokonała powierzchownych nacięć przedramienia w toalecie oddziału po kłótni z partnerem. Która informacja jest kluczowa dla bezpiecznej oceny natychmiastowego ryzyka samobójczego?",
       "options": [
-        "Chęć redukcji nieznośnego napięcia psychicznego lub przerwania odrętwienia dysocjacyjnego",
-        "Pragnienie zakażenia personelu medycznego wirusem HIV",
-        "Wykonywanie tatuażu zgodnie z zaleceniem NFZ"
+        "Jawna intencja pacjentki (chęć rozładowania napięcia vs zamiar zakończenia życia), obecność planu i stopień letalności metody",
+        "Dokładne potwierdzenie, który z członków rodziny partnera zainicjował kłótnię",
+        "Czas jaki upłynął od ostatniego posiłku pacjentki"
       ],
       "optionFeedback": [
-        "Ból fizyczny powoduje wyrzut endorfin i przywraca uziemienie w ciele, stanowiąc dysfunkcyjny mechanizm zaradczy.",
-        "To absurdalny i stygmatyzujący mit.",
-        "Nonsens medyczny."
+        "Rozróżnienie NSSI od próby samobójczej wymaga jawnej oceny intencji, planu i dostępności środków.",
+        "Kontekst kłótni jest wtórny wobec natychmiastowej oceny intencji suicydalnej.",
+        "Posiłek nie ma związku z kwalifikacją ryzyka samobójczego."
       ],
       "answer": 0,
-      "explanation": "Ból fizyczny powoduje wyrzut endorfin i przywraca uziemienie w ciele, stanowiąc dysfunkcyjny mechanizm zaradczy.",
-      "hint": "Kluczem jest bezpieczeństwo i hierarchia postępowania.",
+      "explanation": "Rozróżnienie NSSI od próby samobójczej wymaga jawnej oceny intencji, planu i dostępności środków.",
+      "hint": "Ocena intencji samobójczej jest priorytetem bezpieczeństwa.",
       "difficulty": "doctor",
       "reasoning": "decision",
       "sourceIds": [
         "src-linehan-dbt-1993",
-        "src-nice-cg78-bpd-2009",
-        "src-icd11-cddr-2024"
+        "src-stanley-brown-safety-2012"
       ],
       "claimIds": [
-        "claim-trauma-bpd-identity-vs-did"
+        "claim-trauma-bpd-abandonment-instability",
+        "claim-trauma-dbt-hierarchy-safety"
       ]
     }
   ],
@@ -164,19 +165,17 @@
       "borderline-bpd-mechanizmy-obj-1",
       "borderline-bpd-mechanizmy-obj-2"
     ],
-    "prompt": "Wyjaśnij własnymi słowami najważniejsze kryteria i pułapki różnicowania z lekcji „Zaburzenie osobowości borderline (BPD): neurobiologia i wzorce”.",
+    "prompt": "Wyjaśnij własnymi słowami patogenezę BPD w ujęciu biospołecznym oraz powody, dla których język stygmatyzacji personelu eskaluje ryzyko.",
     "modelAnswer": "BPD wynika z interakcji biologicznej wrażliwości emocjonalnej i środowiska unieważniającego. Odrzucenie moralizowania i zrozumienie funkcji samouszkodzeń jako regulacji afektu stanowi warunek skutecznej opieki.",
-    "explanation": "Porównaj swoją odpowiedź z podsumowaniem klinicznym. Zwróć uwagę na kryteria decyzyjne i czerwone flagi.",
+    "explanation": "Podkreśl teorię biospołeczną, rolę unieważnienia i funkcję regulacji afektu w NSSI.",
     "difficulty": "both",
     "reasoning": "safety",
     "sourceIds": [
       "src-linehan-dbt-1993",
-      "src-nice-cg78-bpd-2009",
-      "src-icd11-cddr-2024"
+      "src-nice-cg78-bpd-2009"
     ],
     "claimIds": [
-      "claim-trauma-bpd-abandonment-instability",
-      "claim-trauma-bpd-identity-vs-did"
+      "claim-trauma-bpd-abandonment-instability"
     ]
   },
   "exitTicket": [
@@ -188,24 +187,23 @@
       ],
       "prompt": "Co oznacza zjawisko rozszczepienia (splitting) w relacjach u pacjenta z BPD?",
       "options": [
-        "Czarno-białe postrzeganie ludzi jako całkowicie idealnych albo całkowicie złych bez stanów pośrednich",
-        "Podział krwinek czerwonych na dwie części w naczyniach włosowatych",
-        "Rozszczepienie podniebienia u noworodka"
+        "Dychotomiczne postrzeganie ludzi jako całkowicie idealnych albo całkowicie złych bez stanów pośrednich",
+        "Rozszczepienie toku myślenia na niezależne wątki skojarzeniowe w przebiegu rozkojarzenia",
+        "Nawracające epizody fugi dysocjacyjnej z ucieczką od dotychczasowego miejsca zamieszkania"
       ],
       "optionFeedback": [
-        "Brak zdolności do zintegrowania dobrych i złych cech drugiego człowieka w spójny obraz.",
-        "To fragmentacja erytrocytów w anemii hemolitycznej (schizocyty).",
-        "To wada anatomiczna twarzoczaszki."
+        "Brak zdolności do zintegrowania pozytywnych i negatywnych cech drugiego człowieka w spójny obraz.",
+        "To formalne zaburzenie toku myślenia w schizofrenii, a nie mechanizm obronny splittingu.",
+        "Fuga dysocjacyjna to zaburzenie pamięci i tożsamości z podróżą, a nie relacyjny splitting."
       ],
       "answer": 0,
-      "explanation": "Brak zdolności do zintegrowania dobrych i złych cech drugiego człowieka w spójny obraz.",
-      "hint": "Przypomnij sobie wzorce neurobiologiczne i kontrfaktyczne reguły decyzyjne.",
+      "explanation": "Brak zdolności do zintegrowania pozytywnych i negatywnych cech drugiego człowieka w spójny obraz.",
+      "hint": "Przeanalizuj mechanizm czarno-białego postrzegania obiektów relacyjnych.",
       "difficulty": "student",
       "reasoning": "mechanism",
       "sourceIds": [
         "src-linehan-dbt-1993",
-        "src-nice-cg78-bpd-2009",
-        "src-icd11-cddr-2024"
+        "src-nice-cg78-bpd-2009"
       ],
       "claimIds": [
         "claim-trauma-bpd-abandonment-instability"
@@ -213,33 +211,35 @@
     },
     {
       "id": "borderline-bpd-mechanizmy-q5-exit-2-v2",
-      "type": "missing_information",
+      "type": "ordering",
       "objectiveIds": [
         "borderline-bpd-mechanizmy-obj-2"
       ],
-      "prompt": "Jaka dynamika wahań nastroju jest typowa dla BPD?",
-      "options": [
-        "Wysoka reaktywność na bodźce interpersonalne ze zmianami nastroju trwającymi zazwyczaj godziny lub 1–2 dni",
-        "Fazy trwające ściśle 10 lat bez żadnej zmiany",
-        "Całkowity brak nastroju i emocji przez całe życie"
+      "prompt": "Uporządkuj reakcje zespołu terapeutycznego wobec pacjenta z BPD po incydencie samookaleczenia na oddziale (od natychmiastowej pomocy somatycznej do analizy behawioralnej):",
+      "items": [
+        "Opatrzenie ran i ocena medyczna w sposób spokojny, rzeczowy, bez moralizowania i bez nadmiernej gratyfikacji",
+        "Weryfikacja natychmiastowego bezpieczeństwa i zabezpieczenie otoczenia przed narzędziami",
+        "Wdrożenie niefarmakologicznych technik regulacji pobudzenia (TIPP: chłód, oddech, relaksacja)",
+        "Przeprowadzenie analizy łańcuchowej (Chain Analysis) w celu identyfikacji bodźca spustowego i ogniw pośrednich"
       ],
-      "optionFeedback": [
-        "To afektywna niestabilność reaktywna, odmienna od wielotygodniowych faz w chorobie afektywnej.",
-        "Wahania nastroju w BPD są wybitnie zmienne i krótkotrwałe.",
-        "Chorzy na BPD przeżywają emocje skrajnie intensywnie."
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
       ],
-      "answer": 0,
-      "explanation": "To afektywna niestabilność reaktywna, odmienna od wielotygodniowych faz w chorobie afektywnej.",
-      "hint": "Wybierz informację o najwyższej wadze różnicującej.",
+      "explanation": "Standard postępowania: najpierw neutralne zaopatrzenie ran i ocena chirurgiczna, zabezpieczenie otoczenia, obniżenie pobudzenia umiejętnościami TIPP, a dopiero po opadnięciu afektu analiza łańcuchowa zachowania problemowego.",
+      "hint": "Od zaopatrzenia chirurgicznego i bezpieczeństwa do regulacji emocji i analizy behawioralnej.",
       "difficulty": "both",
       "reasoning": "safety",
       "sourceIds": [
         "src-linehan-dbt-1993",
         "src-nice-cg78-bpd-2009",
-        "src-icd11-cddr-2024"
+        "src-stanley-brown-safety-2012"
       ],
       "claimIds": [
-        "claim-trauma-bpd-abandonment-instability"
+        "claim-trauma-bpd-abandonment-instability",
+        "claim-trauma-dbt-hierarchy-safety"
       ]
     }
   ],
@@ -250,6 +250,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, CG78, ISTSS, pure content-src architecture"
+    "scope": "WHO ICD-11 CDDR, NICE CG78, Linehan DBT, pure content-src architecture"
   }
 }

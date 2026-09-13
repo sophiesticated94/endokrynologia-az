@@ -82,5 +82,19 @@
     "year": "2017",
     "url": "https://www.apa.org/ptsd-guideline",
     "kind": "Wytyczne praktyki klinicznej APA"
+  },
+  "src-ilae-epilepsy-classification-2017": {
+    "id": "src-ilae-epilepsy-classification-2017",
+    "title": "ILAE — Operational Classification of Fall and Focal Seizure Types (Fisher RS et al., Epilepsia 2017)",
+    "year": "2017",
+    "url": "https://doi.org/10.1111/epi.13670",
+    "kind": "Międzynarodowa klasyfikacja napadów padaczkowych (ILAE)"
+  },
+  "src-nice-ng217-epilepsies-2022": {
+    "id": "src-nice-ng217-epilepsies-2022",
+    "title": "NICE Guideline NG217 — Epilepsies in children, young people and adults",
+    "year": "2022",
+    "url": "https://www.nice.org.uk/guidance/ng217",
+    "kind": "Wytyczne diagnostyki i leczenia padaczki (NICE)"
   }
 }

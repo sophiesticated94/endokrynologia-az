@@ -12,7 +12,7 @@
   "sections": [
     {
       "title": "Geneza cPTSD: Długotrwała, powtarzana trauma bez wyjścia",
-      "text": "cPTSD rozwija się zazwyczaj po ekspozycji na wydarzenia o skrajnym, powtarzającym się lub przedłużonym charakterze, przed którymi ucieczka była fizycznie lub psychicznie niemożliwa. Klasyczne przykłady obejmują: chroniczne wykorzystywanie fizyczne lub seksualne w dzieciństwie, uwięzienie, handel ludźmi, obozy tortur czy długotrwałą przemoc domową. Pojęcie to, wprowadzone klinicznie przez Judith Herman w 1992 r., zyskało oficjalny status nozologiczny w klasyfikacji ICD-11 w 2018 r."
+      "text": "cPTSD rozwija się zazwyczaj po ekspozycji na wydarzenia o skrajnym, powtarzającym się lub przedłużonym charakterze, przed którymi ucieczka była fizycznie lub psychicznie niemożliwa. Klasyczne przykłady obejmują: chroniczne wykorzystywanie fizyczne lub seksualne w dzieciństwie, uwięzienie, handel ludźmi, obozy tortur czy długotrwałą przemoc domową. Pojęcie to, wprowadzone klinicznie przez Judith Herman w 1992 r., zyskało oficjalny status nozologiczny w klasyfikacji ICD-11 (kod 6B41)."
     },
     {
       "title": "Struktura diagnostyczna: PTSD + triada DSO",
@@ -52,7 +52,7 @@
       ]
     ]
   },
-  "advanced": "Do pomiaru cPTSD służy zwalidowany Międzynarodowy Kwestionariusz Traumy (International Trauma Questionnaire — ITQ), który w badaniach psychometrycznych na całym świecie potwierdził dwuczynnikową strukturę zaburzenia (czynnik PTSD oraz czynnik DSO), dowodząc trafności nozologicznej wyodrębnienia cPTSD z klasycznego PTSD.",
+  "advanced": "Do pomiaru cPTSD służy zwalidowany Międzynarodowy Kwestionariusz Traumy (International Trauma Questionnaire — ITQ), który w badaniach psychometrycznych potwierdził dwuczynnikową strukturę zaburzenia (czynnik PTSD oraz czynnik DSO), dowodząc trafności nozologicznej wyodrębnienia cPTSD z klasycznego PTSD w klasyfikacji ICD-11.",
   "summary": "cPTSD w ICD-11 to pełne PTSD powiększone o triadę zaburzeń organizacji jaźni (DSO): dysregulację afektu, negatywny obraz siebie i trudności relacyjne po przewlekłej traumie.",
   "sourceIds": [
     "src-icd11-cddr-2024",
@@ -63,19 +63,19 @@
     {
       "id": "cptsd-zlozone-ptsd-icd11-q1",
       "lessonId": "cptsd-zlozone-ptsd-icd11",
-      "prompt": "Z jakich dwóch głównych bloków składa się kryterium rozpoznania cPTSD wg ICD-11?",
+      "prompt": "Z jakich dwóch głównych bloków kryterialnych składa się rozpoznanie cPTSD wg ICD-11?",
       "options": [
         {
           "text": "Z pełnej triady PTSD oraz triady zaburzeń organizacji jaźni (DSO)",
-          "explanation": "cPTSD = PTSD (intruzje, unikanie, hyperarousal) + DSO (afekt, obraz siebie, relacje)."
+          "explanation": "cPTSD = PTSD (intruzje, unikanie, hyperarousal) + DSO (afekt, negatywny obraz siebie, relacje)."
         },
         {
-          "text": "Z manii i natręctw myciowych",
-          "explanation": "To objawy ChAD i OCD, nie cPTSD."
+          "text": "Z epizodu dużej depresji oraz nawracających napadów paniki bez intruzji",
+          "explanation": "To komorbidność depresyjno-lękowa, a nie cPTSD (wymagający rdzenia PTSD i triady DSO)."
         },
         {
-          "text": "Z utraty wzroku i drżenia spoczynkowego",
-          "explanation": "To objawy neurologiczne."
+          "text": "Z dyfuzji tożsamości oraz panicznego lęku przed porzuceniem bez wywiadu intruzji",
+          "explanation": "To fenotyp zaburzenia osobowości typu borderline (BPD), a nie cPTSD."
         }
       ],
       "answer": 0
@@ -83,19 +83,19 @@
     {
       "id": "cptsd-zlozone-ptsd-icd11-q2",
       "lessonId": "cptsd-zlozone-ptsd-icd11",
-      "prompt": "Jaka cecha relacji interpersonalnych jest najbardziej typowa dla cPTSD w odróżnieniu od BPD?",
+      "prompt": "Jaka cecha relacji interpersonalnych jest najbardziej charakterystyczna dla cPTSD w odróżnieniu od BPD?",
       "options": [
         {
-          "text": "Trwałe unikanie bliskości, poczucie wyobcowania i trudność w zaufaniu",
-          "explanation": "W cPTSD dominuje chłód i wycofanie z intymności, podczas gdy w BPD burzliwe, labilne relacje z lękiem przed porzuceniem."
+          "text": "Trwałe unikanie bliskości, poczucie głębokiego wyobcowania i trudność w obdarzeniu zaufaniem",
+          "explanation": "W cPTSD dominuje chłód i wycofanie z intymności, podczas gdy w BPD burzliwe relacje z paniką porzucenia."
         },
         {
-          "text": "Ciągłe poszukiwanie przygód seksualnych bez lęku",
-          "explanation": "To zachowanie rozhamowane, nietypowe dla unikania w cPTSD."
+          "text": "Gwałtowne dążenie do zlania się z partnerem i rozpaczliwe próby zapobiegania rozstaniu",
+          "explanation": "Paniczny lęk przed osamotnieniem i desperackie wysiłki to osiowa cecha BPD."
         },
         {
-          "text": "Brak jakiejkolwiek świadomości istnienia innych ludzi",
-          "explanation": "To autyzm o głębokim nasileniu, nie cPTSD."
+          "text": "Powierzchowny urok i instrumentalne wykorzystywanie innych bez odczuwania lęku ani wstydu",
+          "explanation": "To cecha osobowości dyssocjalnej, przeciwna do nasyconego wstydem profilu cPTSD."
         }
       ],
       "answer": 0
@@ -103,19 +103,19 @@
     {
       "id": "cptsd-zlozone-ptsd-icd11-q3",
       "lessonId": "cptsd-zlozone-ptsd-icd11",
-      "prompt": "Jak charakteryzuje się negatywny obraz siebie w triadzie DSO cPTSD?",
+      "prompt": "Jak definiuje się komponent negatywnego obrazu siebie w triadzie DSO cPTSD?",
       "options": [
         {
-          "text": "Jako przetrwałe poczucie bycia bezwartościowym, „zniszczonym”, zawstydzonym i winnym",
-          "explanation": "Poczucie klęski i głębokiej skazy osobistej po traumie relacyjnej."
+          "text": "Jako przetrwałe, chroniczne poczucie bycia bezwartościowym, „zniszczonym”, zawstydzonym i winnym",
+          "explanation": "To utrwalona negatywna tożsamość zorganizowana wokół wstydu i klęski po traumie relacyjnej."
         },
         {
-          "text": "Jako wielkościowe przekonanie o byciu wybranym przez siły wyższe",
-          "explanation": "To urojenia wielkościowe w manii lub psychozie."
+          "text": "Jako zmienne, zależne od bieżącej walidacji relacyjnej poczucie własnej wartości",
+          "explanation": "Płynna tożsamość zależna od oceny otoczenia jest charakterystyczna dla BPD."
         },
         {
-          "text": "Jako całkowita amnezja co do własnego wyglądu",
-          "explanation": "To prozopagnozja, deficyt neurologiczny rozpoznawania twarzy."
+          "text": "Jako izolowane poczucie winy występujące wyłącznie w trakcie głębokiego rzutu depresyjnego",
+          "explanation": "Poczucie winy ograniczone do rzutu depresji ustępuje w remisji, w cPTSD jest trwałą cechą struktury self."
         }
       ],
       "answer": 0
@@ -123,19 +123,19 @@
     {
       "id": "cptsd-zlozone-ptsd-icd11-q4",
       "lessonId": "cptsd-zlozone-ptsd-icd11",
-      "prompt": "Czy wg klasyfikacji ICD-11 można jednocześnie postawić diagnozę PTSD i cPTSD?",
+      "prompt": "Czy wg klasyfikacji ICD-11 można u jednego pacjenta jednocześnie postawić diagnozę PTSD i cPTSD?",
       "options": [
         {
-          "text": "Nie — są to diagnozy wzajemnie wykluczające się; cPTSD zastępuje i pochłania PTSD",
-          "explanation": "W ICD-11 stawia się wyłącznie jedno rozpoznanie: cPTSD jest formą nadrzędną."
+          "text": "Nie — są to diagnozy wzajemnie wykluczające się w ICD-11; cPTSD zastępuje i pochłania PTSD",
+          "explanation": "Zgodnie z ICD-11 stawia się jedno rozpoznanie: cPTSD jest kategorią nadrzędną, jeśli spełniona jest triada DSO."
         },
         {
-          "text": "Tak, każdy pacjent musi mieć wpisane oba kody",
-          "explanation": "Zasady kodowania ICD-11 jednoznacznie tego zabraniają."
+          "text": "Tak — PTSD jest kodowane jako choroba zasadnicza, a cPTSD jako cecha osobowości",
+          "explanation": "W ICD-11 cPTSD jest samodzielnym zaburzeniem w bloku zaburzeń związanych ze stresem (6B41)."
         },
         {
-          "text": "Można pod warunkiem zgody lekarza orzecznika ZUS",
-          "explanation": "Zasady klasyfikacji medycznej wynikają z nozologii WHO, nie z decyzji orzeczniczych."
+          "text": "Tak — dopuszcza się podwójne rozpoznanie, jeśli trauma miała charakter jednorazowy",
+          "explanation": "W traumie jednorazowej bez cech DSO rozpoznaje się wyłącznie PTSD."
         }
       ],
       "answer": 0
@@ -143,19 +143,19 @@
     {
       "id": "cptsd-zlozone-ptsd-icd11-q5",
       "lessonId": "cptsd-zlozone-ptsd-icd11",
-      "prompt": "Który rodzaj traumy najczęściej prowadzi do wykształcenia cPTSD?",
+      "prompt": "Który rodzaj ekspozycji urazowej najczęściej leży u podłoża wykształcenia cPTSD?",
       "options": [
         {
-          "text": "Długotrwała, powtarzana trauma relacyjna z brakiem możliwości ucieczki (np. przemoc w dzieciństwie)",
+          "text": "Długotrwała, powtarzana trauma relacyjna z brakiem możliwości ucieczki (np. przemoc w dzieciństwie, niewola)",
           "explanation": "cPTSD jest bezpośrednią konsekwencją przewlekłego terroru interpersonalnego i uwięzienia."
         },
         {
-          "text": "Jednorazowe ukąszenie kleszcza bez boreliozy",
-          "explanation": "To nie stanowi traumy o skrajnym charakterze psychologicznym."
+          "text": "Pojedynczy, nagły wypadek komunikacyjny w wieku dorosłym z zachowanym poczuciem własnej wartości",
+          "explanation": "Pojedynczy wypadek komunikacyjny bez uszkodzenia organizacji jaźni prowadzi typowo do klasycznego PTSD."
         },
         {
-          "text": "Zgubienie portfela w supermarkecie",
-          "explanation": "To powszechny stresor codzienny, nie trauma katastrofalna."
+          "text": "Ekspozycja na przewlekły stres zawodowy o umiarkowanym nasileniu bez bezpośredniego zagrożenia życia",
+          "explanation": "Stres zawodowy prowadzi do wypalenia lub zaburzeń adaptacyjnych, nie do cPTSD."
         }
       ],
       "answer": 0

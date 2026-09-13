@@ -69,12 +69,12 @@
           "explanation": "Wygaszanie nie wymazuje starego śladu, lecz tworzy nowy ślad hamujący zależny od kory czołowej i interneuronów ITC."
         },
         {
-          "text": "Na mechanicznym zniszczeniu komórek ciała migdałowatego",
-          "explanation": "Nie dochodzi do ablacji komórkowej ciała migdałowatego."
+          "text": "Na trwałym mechanicznym zniszczeniu engramów komórkowych w ciele migdałowatym",
+          "explanation": "Wygaszanie nie wymazuje ani nie niszczy starego engramu, lecz tworzy nową asocjację hamującą."
         },
         {
-          "text": "Na wybiórczym wypłukaniu neurotransmiterów z płynu mózgowo-rdzeniowego",
-          "explanation": "To proces neuroplastyczny, nie wypłukiwanie transmiterów."
+          "text": "Na zablokowaniu syntezy acetylocholiny w hipokampie w pierwszych minutach po ekspozycji",
+          "explanation": "Proces ten zależy od receptorów NMDA i transmisji glutaminergiczno-GABA-ergicznej, a nie od wyłączenia acetylocholiny."
         }
       ],
       "answer": 0
@@ -89,12 +89,12 @@
           "explanation": "W tym przedziale czasowym ślad jest labilny i wymaga de novo syntezy białek do ponownej konsolidacji."
         },
         {
-          "text": "Zaledwie 20 milisekund",
-          "explanation": "To czas pojedynczego potencjału czynnościowego, nie procesów transkrypcji i translacji."
+          "text": "Zaledwie kilkadziesiąt milisekund w trakcie depolaryzacji synaptycznej",
+          "explanation": "Milisekundy to skala potencjałów czynnościowych, a nie kaskady transkrypcyjno-translacyjnej."
         },
         {
-          "text": "Dokładnie 7 tygodni bez zmian",
-          "explanation": "Okno plastyczności zamyka się po kilku godzinach od reaktywacji."
+          "text": "Kilka tygodni ciągłej podatności na modyfikację śladu bez konieczności ponownej reaktywacji",
+          "explanation": "Okno plastyczności zamyka się po kilku godzinach; po tym czasie ślad ulega ponownej konsolidacji."
         }
       ],
       "answer": 0
@@ -109,12 +109,12 @@
           "explanation": "Np. lęk paniczny wywoływany przez każdy głośny trzask drzwi, przypominający wybuch."
         },
         {
-          "text": "Utrata umiejętności mówienia w języku ojczystym",
-          "explanation": "To afazja, zaburzenie neurologiczne mowy."
+          "text": "Utratę zdolności różnicowania podstawowych barw i kształtów w badaniu okulistycznym",
+          "explanation": "Nadmierne uogólnienie strachu dotyczy asocjacji afektywnych, a nie pierwotnych funkcji zmysłowych."
         },
         {
-          "text": "Zdolność do logicznego wnioskowania na tematy abstrakcyjne",
-          "explanation": "To ogólna sprawność poznawcza, a nie uogólnienie strachu."
+          "text": "Pojawienie się uogólnionej apraksji ruchowej w sytuacjach neutralnych",
+          "explanation": "Apraksja to objaw ogniskowego uszkodzenia kory ciemieniowej lub czołowej, nie mechanizm warunkowania lękowego."
         }
       ],
       "answer": 0
@@ -129,12 +129,12 @@
           "explanation": "Ekspozycja musi trwać do momentu zauważalnego spadku pobudzenia i habituacji, aby wytworzyć ślad bezpieczeństwa."
         },
         {
-          "text": "Grozi natychmiastowym pęknięciem tętniaka aorty u każdego chorego",
-          "explanation": "Choć wzrasta ciśnienie tętnicze, błąd dotyczy mechanizmu uczenia się emocjonalnego."
+          "text": "Prowadzi do nieodwracalnego stwardnienia tętnic mózgowych w mechanizmie wyrzutu cytokin",
+          "explanation": "Błąd ma naturę neurokognitywną (utrwalenie awersyjnej asocjacji), a nie nagłego stwardnienia naczyń."
         },
         {
-          "text": "Prowadzi do nieodwracalnej utraty słuchu",
-          "explanation": "Brak związku ze zmysłem słuchu."
+          "text": "Uniemożliwia dalszą interpretację wyników testów psychologicznych przez kolejne 12 miesięcy",
+          "explanation": "Przerwanie sesji jest błędem terapeutycznym retraumatyzującym pacjenta, a nie ograniczeniem psychometrycznym."
         }
       ],
       "answer": 0

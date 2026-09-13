@@ -10,7 +10,7 @@
     {
       "id": "trauma-neurobiologia-zagrozenia-obj-2",
       "statement": "Poznasz fizjologię reakcji sympatyko-wagalnej oraz mechanizm załamania hamowania kory przedczołowej.",
-      "kind": "decision"
+      "kind": "mechanism"
     }
   ],
   "diagnostic": {
@@ -22,12 +22,12 @@
     "prompt": "Jaki wzorzec aktywności neurofunkcjonalnej jest typowy dla klasycznego PTSD w badaniach fMRI?",
     "options": [
       "Hipoaktywacja vmPFC przy hiperaktywacji ciała migdałowatego",
-      "Jednoczesne zniszczenie wzgórza i kory potylicznej",
+      "Izolowane uszkodzenie kory potylicznej z obustronną ślepotą korową",
       "Wybiórcza hiperaktywacja hipokampa z zanikiem ciała migdałowatego"
     ],
     "optionFeedback": [
       "Osłabione hamowanie zstępujące kory czołowej pozwala ciału migdałowatemu na niekontrolowane wyzwalanie reakcji lękowej.",
-      "Wzgórze nie ulega zniszczeniu, dochodzi do dysfunkcji przetwarzania sensorycznego i limbicznego.",
+      "Klasyczne PTSD nie wiąże się z uszkodzeniem kory wzrokowej; dotyczy sieci czołowo-limbicznej.",
       "Hipokamp wykazuje tendencję do obniżenia objętości i hipofunkcji, a ciało migdałowate jest nadaktywne."
     ],
     "answer": 0,
@@ -119,26 +119,27 @@
     },
     {
       "id": "trauma-neurobiologia-zagrozenia-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "ordering",
       "objectiveIds": [
         "trauma-neurobiologia-zagrozenia-obj-2"
       ],
-      "prompt": "Co charakteryzuje oś HPA u wielu chorych z przewlekłym klasycznym PTSD?",
-      "options": [
-        "Wzrost stężenia CRH w OUN przy zwiększonej wrażliwości receptorów GR i relatywnie niskim kortyzolu wolnym",
-        "Masywny guz chromochłonny nadnerczy",
-        "Niewrażliwość przysadki na kortykoliberynę z zanikiem ACTH"
+      "prompt": "Uporządkuj przepływ informacji o zagrożeniu w szybkiej ścieżce podkorowej LeDoux (od bodźca sensorycznego do natychmiastowej reakcji wegetatywnej):",
+      "items": [
+        "1. Rejestracja bodźca zmysłowego przez receptory i przekazanie sygnału do wzgórza sensorycznego",
+        "2. Bezpośredni, niskorozdzielczy transfer sygnału ze wzgórza do jądra bocznego ciała migdałowatego (BLA)",
+        "3. Aktywacja jądra środkowego ciała migdałowatego (CeA) generującego sygnał wykonawczy",
+        "4. Uruchomienie substancji szarej okołowodociągowej (PAG) i pnia mózgu wyzwalających odruch obronny"
       ],
-      "optionFeedback": [
-        "Paradoks PTSD: silny napęd centralny CRH z jednoczesnym nadmiernym hamowaniem przez uwrażliwione receptory GR.",
-        "Guz chromochłonny to feochromocytoma rdzenia nadnerczy, a nie zaburzenie osi HPA.",
-        "Przysadka reaguje, ale ujemne sprzężenie zwrotne na poziomie receptora GR jest nadmiernie czułe."
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
       ],
-      "answer": 0,
-      "explanation": "Paradoks PTSD: silny napęd centralny CRH z jednoczesnym nadmiernym hamowaniem przez uwrażliwione receptory GR.",
-      "hint": "Kluczem jest bezpieczeństwo i hierarchia postępowania.",
+      "explanation": "Szybka ścieżka ('low road'): wzgórze -> jądro boczne amygdala (BLA) -> jądro środkowe (CeA) -> PAG i pień mózgu (odruch walki/ucieczki lub zamrożenia).",
+      "hint": "Kluczem jest sekwencja: wzgórze -> wejście do ciała migdałowatego -> wyjście z ciała migdałowatego -> pień mózgu.",
       "difficulty": "doctor",
-      "reasoning": "decision",
+      "reasoning": "mechanism",
       "sourceIds": [
         "src-icd11-cddr-2024",
         "src-apa-ptsd-guideline-2017"
@@ -208,13 +209,13 @@
       "prompt": "Dlaczego osłabienie funkcji hipokampa w trakcie ostrej traumy utrudnia późniejsze zdrowienie?",
       "options": [
         "Wspomnienie urazowe nie zostaje opatrzone znacznikiem czasu i miejsca, stając się intruzywnym fragmentem „tu i teraz”",
-        "Pacjent natychmiast trwale zapomina własne imię i nazwisko",
-        "Dochodzi do nieodwracalnej utraty pamięci proceduralnej (jazda na rowerze)"
+        "Następuje całkowita utrata nabytej pamięci semantycznej dotyczącej faktów ze świata",
+        "Dochodzi do wybiórczej utraty pamięci proceduralnej nawyków ruchowych"
       ],
       "optionFeedback": [
         "Brak integracji hipokampa sprawia, że pamięć sensoryczna nie staje się bezpieczną przeszłością, lecz powraca jako flashback.",
-        "To amnezja uogólniona, rzadka i nietypowa dla typowego PTSD.",
-        "Pamięć proceduralna jest zależna od móżdżku i jąder podstawy, nie od hipokampa."
+        "Pamięć semantyczna pozostaje zachowana; deficyt dotyczy kontekstualizacji epizodycznej.",
+        "Pamięć proceduralna opiera się na strukturach podkorowych i móżdżku, które nie ulegają uszkodzeniu w tym mechanizmie."
       ],
       "answer": 0,
       "explanation": "Brak integracji hipokampa sprawia, że pamięć sensoryczna nie staje się bezpieczną przeszłością, lecz powraca jako flashback.",
@@ -237,6 +238,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, CG78, ISTSS, pure content-src architecture"
+    "scope": "WHO ICD-11, APA DSM-5-TR, LeDoux low/high road, Lanius fMRI PTSD-DS"
   }
 }

@@ -12,15 +12,15 @@
   "sections": [
     {
       "title": "Kryteria amnezji dysocjacyjnej i jej podtypy",
-      "text": "Amnezja dysocjacyjna (ICD-11 6B61 / DSM-5-TR 300.12) to niemożność przypomnienia sobie ważnych informacji autobiograficznych, zazwyczaj o charakterze traumatycznym lub stresowym, która jest zbyt rozległa, by można ją było wyjaśnić zwykłym zapominaniem. Wyróżnia się podtypy: 1) Zlokalizowana (najczęstsza) — brak pamięci o określonym okresie czasu (np. kilku godzinach wypadku); 2) Selektywna — pacjent pamięta niektóre, ale nie wszystkie zdarzenia z danego okresu; 3) Uogólniona (rzadka) — całkowita utrata pamięci własnej tożsamości i całej historii życiowej; 4) Ciągła — zapominanie każdego kolejnego nowego zdarzenia od momentu traumy."
+      "text": "Amnezja dysocjacyjna (ICD-11 6B61 / DSM-5-TR 300.12) to niemożność przypomnienia sobie ważnych informacji autobiograficznych, zazwyczaj o charakterze traumatycznym lub stresowym, która jest zbyt rozległa, by można ją było wyjaśnić zwykłym zapominaniem. Wyróżnia się podtypy: 1) Zlokalizowana (najczęstsza) — brak pamięci o określonym przedziale czasu (np. kilku godzinach wokół napaści lub wypadku); 2) Selektywna — pacjent pamięta niektóre, lecz nie wszystkie zdarzenia z okresu urazu; 3) Uogólniona (rzadka) — całkowita utrata pamięci własnej tożsamości i całej historii życiowej; 4) Ciągła — niezdolność do zapamiętywania kolejnych zdarzeń od momentu traumy."
     },
     {
       "title": "Fuga dysocjacyjna: Ucieczka z utratą tożsamości",
-      "text": "W ICD-11 fuga dysocjacyjna stanowi specyfikator amnezji dysocjacyjnej. Polega na pozornie celowej podróży lub błądzeniu z dala od domu, połączonym z amnezją dotyczącą własnej tożsamości lub przyjęciem nowej tożsamości. W trakcie fugi podstawowe funkcjonowanie społeczne (kupno biletu, jedzenie) może wydawać się osobom postronnym całkowicie normalne. Po wyjściu ze stanu fugi pacjent zazwyczaj nie pamięta zdarzeń, które miały miejsce podczas jej trwania."
+      "text": "W ICD-11 fuga dysocjacyjna stanowi specyfikator amnezji dysocjacyjnej. Polega na pozornie celowej podróży lub błądzeniu z dala od domu, połączonym z niepamięcią własnej tożsamości lub rzadziej przyjęciem nowej tożsamości. W trakcie fugi podstawowe funkcjonowanie społeczne (zakup biletu, jedzenie, proste rozmowy) może wydawać się osobom postronnym całkowicie prawidłowe. Po ustąpieniu stanu fugi pacjent zazwyczaj nie pamięta zdarzeń, które miały miejsce podczas jej trwania."
     },
     {
       "title": "Różnicowanie z amnezją organiczną i neurologiczną",
-      "text": "Kluczowe reguły różnicowania z przyczynami somatycznymi: 1) Przemijająca amnezja ogólna (TGA) — występuje u osób starszych, trwa <24 h, pacjent nieustannie zadaje te same pytania („co ja tu robię?”), ale PAMIĘTA własną tożsamość; 2) Zespół Korsakowa — upośledzenie zapamiętywania świeżego (amnezja następcza) z konfabulacjami w wywiadzie alkoholowym; 3) Amnezja dysocjacyjna — często paradoksalnie dotyczy tożsamości przy zachowanej zdolności do zapamiętywania nowych informacji (odwrotnie niż w organicznym zespole amnestycznym)."
+      "text": "Kluczowe reguły różnicowania z przyczynami somatycznymi: 1) Przemijająca amnezja ogólna (TGA) — występuje głównie u osób po 50. roku życia, trwa zwykle kilka godzin (<24 h), pacjent nieustannie powtarza te same pytania („co się dzieje?”), ale PAMIĘTA własną tożsamość; 2) Zespół Korsakowa — głębokie upośledzenie zapamiętywania świeżego (amnezja następcza) z konfabulacjami w wywiadzie przewlekłego alkoholizmu i niedoboru tiaminy; 3) Amnezja dysocjacyjna — paradoksalnie może dotyczyć tożsamości biograficznej przy zachowanej zdolności do przyswajania nowych informacji (odwrotnie niż w amnezji organicznej)."
     }
   ],
   "table": {
@@ -34,30 +34,30 @@
       [
         "Pamięć własnej tożsamości",
         "Może być utracona (w typie uogólnionym/fudze)",
-        "ZAWSZE zachowana (chory wie, jak się nazywa)",
+        "Zachowana (chory wie, kim jest i jak się nazywa)",
         "Zazwyczaj zachowana"
       ],
       [
         "Zapamiętywanie nowych danych",
-        "Prawidłowe (uczy się nowych faktów bez przeszkód)",
-        "Ciężko upośledzone w trakcie napadu",
+        "Prawidłowe (przyswaja nowe fakty bez przeszkód)",
+        "Ciężko upośledzone w trakcie trwania epizodu",
         "Trwale upośledzone (amnezja następcza)"
       ],
       [
         "Konfabulacje",
-        "Brak — pacjent mówi „nie pamiętam”",
-        "Brak — powtarzające się pytania o sytuację",
+        "Brak — pacjent odpowiada szczerze „nie pamiętam”",
+        "Brak — powtarzające się pytania o bieżącą sytuację",
         "Obecne, bogate konfabulacje zapełniające luki"
       ],
       [
-        "Kontekst urazowy",
-        "Silny konflikt psychiczny, zdrada, katastrofa, wstyd",
-        "Wysiłek fizyczny, stres termiczny, współżycie",
-        "Przewlekły alkoholizm, niedobór tiaminy B1"
+        "Kontekst etiologiczny",
+        "Ostra trauma psychiczna, wstyd, poczucie winy",
+        "Nagły stres fizyczny, wysiłek, bodziec termiczny",
+        "Przewlekły alkoholizm, niedobór tiaminy (B1)"
       ]
     ]
   },
-  "advanced": "W badaniach PET u pacjentów z amnezją dysocjacyjną wykazano funkcjonalne zablokowanie pobierania śladów autobiograficznych w prawym płacie skroniowo-czołowym (tzw. blokada czołowo-podwzgórzowa wywołana przez stresowe stężenia glukokortykoidów), przy braku zmian strukturalnych w MRI.",
+  "advanced": "W badaniach czynnościowych mózgu (PET/fMRI) u pacjentów z amnezją dysocjacyjną wykazano czynnościowe zahamowanie pobierania śladów pamięci autobiograficznej w prawej korze przedczołowej i strukturach limbicznych (tzw. blokada czołowo-podwzgórzowa wywołana stresem neurohormonalnym), bez widocznych ogniskowych uszkodzeń strukturalnych w rutynowym MRI.",
   "summary": "Amnezja dysocjacyjna to niemożność przypomnienia sobie faktów autobiograficznych (najczęściej urazowych). W fudze dochodzi do podróży z utratą tożsamości. Zachowane uczenie się nowych danych odróżnia ją od amnezji organicznej.",
   "sourceIds": [
     "src-icd11-cddr-2024",
@@ -70,16 +70,16 @@
       "prompt": "Który typ amnezji dysocjacyjnej występuje w praktyce klinicznej najczęściej?",
       "options": [
         {
-          "text": "Amnezja zlokalizowana (brak pamięci zdarzeń z określonego przedziału czasu)",
-          "explanation": "Pacjent nie pamięta np. kilku godzin wokół wypadku lub napaści."
+          "text": "Amnezja zlokalizowana (brak pamięci zdarzeń z określonego, ograniczonego przedziału czasu wokół traumy)",
+          "explanation": "Pacjent nie pamięta zazwyczaj kilku godzin lub dni bezpośrednio związanych z wydarzeniem urazowym."
         },
         {
-          "text": "Całkowita utrata znajomości alfabetu",
-          "explanation": "Pamięć semantyczna i umiejętności szkolne są zachowane."
+          "text": "Uogólniona utrata pamięci proceduralnej przy nienaruszonych wspomnieniach emocjonalnych",
+          "explanation": "Pamięć proceduralna (nawyki ruchowe) pozostaje zachowana w amnezji dysocjacyjnej."
         },
         {
-          "text": "Wybiórcza niepamięć koloru zielonego",
-          "explanation": "Amnezja nie dotyczy pojedynczych modalności zmysłowych."
+          "text": "Ciągła amnezja następcza uniemożliwiająca zapamiętanie jakichkolwiek nowych informacji przez całe życie",
+          "explanation": "Trwała amnezja następcza jest cechą uszkodzenia obustronnego hipokampów lub zespołu amnestycznego, a nie typowej dysocjacji."
         }
       ],
       "answer": 0
@@ -87,19 +87,19 @@
     {
       "id": "amnezja-dysocjacyjna-i-fuga-q2",
       "lessonId": "amnezja-dysocjacyjna-i-fuga",
-      "prompt": "Czym charakteryzuje się fuga dysocjacyjna wg ICD-11?",
+      "prompt": "Czym charakteryzuje się fuga dysocjacyjna wg klasyfikacji ICD-11?",
       "options": [
         {
-          "text": "Pozornie celową podróżą z dala od domu z niepamięcią własnej tożsamości",
-          "explanation": "Fuga to amnezja autobiograficzna powiązana z przemieszczaniem się w przestrzeni."
+          "text": "Pozornie celową podróżą lub błądzeniem z dala od domu z niepamięcią własnej tożsamości autobiograficznej",
+          "explanation": "Fuga to amnezja autobiograficzna skojarzona z fizycznym przemieszczaniem się w przestrzeni."
         },
         {
-          "text": "Niekontrolowanymi napadami śmiechu bez utraty pamięci",
-          "explanation": "To afekt rzekomoopuszkowy, zjawisko neurologiczne."
+          "text": "Napadowym drżeniem zamiarowym kończyn górnych nasilającym się przy zbliżaniu do celu",
+          "explanation": "To objaw uszkodzenia móżdżku w badaniu neurologicznym."
         },
         {
-          "text": "Zapaleniem mięśnia sercowego w przebiegu grypy",
-          "explanation": "Brak związku z kardiologią."
+          "text": "Urojeniowym przekonaniem, że pacjent jest śledzony przez służby specjalne",
+          "explanation": "To urojenie prześladowcze typowe dla psychozy schizofrenicznej."
         }
       ],
       "answer": 0
@@ -107,19 +107,19 @@
     {
       "id": "amnezja-dysocjacyjna-i-fuga-q3",
       "lessonId": "amnezja-dysocjacyjna-i-fuga",
-      "prompt": "Jak najpewniej odróżnić amnezję dysocjacyjną uogólnioną od przemijającej amnezji ogólnej (TGA)?",
+      "prompt": "Jak najpewniej odróżnić uogólnioną amnezję dysocjacyjną od przemijającej amnezji ogólnej (TGA)?",
       "options": [
         {
-          "text": "W TGA pacjent zawsze pamięta swoje imię i tożsamość, ale nie rejestruje nowych faktów",
-          "explanation": "W TGA chory powtarza pytania i nie zapamiętuje bieżących odpowiedzi, ale wie kim jest; w uogólnionej amnezji dysocjacyjnej nie wie kim jest, ale zapamiętuje nowe fakty."
+          "text": "W TGA tożsamość chorego jest zachowana, lecz nie rejestruje on nowych danych; w uogólnionej amnezji dysocjacyjnej tożsamość bywa zatarta przy prawidłowym uczeniu się nowych faktów",
+          "explanation": "W TGA chory wie kim jest, lecz zadaje w kółko te same pytania; w uogólnionej dysocjacji nie pamięta kim jest, lecz zapamiętuje nowe fakty."
         },
         {
-          "text": "W amnezji dysocjacyjnej zawsze występuje krwiak podtwardówkowy",
-          "explanation": "Krwiak to uszkodzenie organiczne wykluczające czystą amnezję dysocjacyjną."
+          "text": "W TGA dochodzi do trwałego ubytku pamięci proceduralnej i utraty mowy",
+          "explanation": "W TGA nie ma afazji ani utraty pamięci proceduralnej."
         },
         {
-          "text": "W TGA dochodzi do utraty obu gałek ocznych",
-          "explanation": "Nonsens medyczny."
+          "text": "W amnezji dysocjacyjnej występują obfite konfabulacje wypełniające każdą lukę pamięciową",
+          "explanation": "Konfabulacje są charakterystyczne dla zespołu Korsakowa, a nie dla amnezji dysocjacyjnej."
         }
       ],
       "answer": 0
@@ -127,19 +127,19 @@
     {
       "id": "amnezja-dysocjacyjna-i-fuga-q4",
       "lessonId": "amnezja-dysocjacyjna-i-fuga",
-      "prompt": "Dlaczego u pacjenta z zespołem Korsakowa nie rozpoznaje się amnezji dysocjacyjnej?",
+      "prompt": "Dlaczego u pacjenta z podejrzeniem zespołu Korsakowa nie rozpoznaje się amnezji dysocjacyjnej?",
       "options": [
         {
-          "text": "Wynika z uszkodzenia organicznego ciał suteczkowatych w przebiegu niedoboru tiaminy",
-          "explanation": "To encefalopatia organiczna z deficytem zapamiętywania świeżego i konfabulacjami."
+          "text": "Z uwagi na organiczną etiologię uszkodzenia struktur limbicznych (ciał suteczkowatych) w przebiegu niedoboru tiaminy",
+          "explanation": "Zespół Korsakowa to encefalopatia organiczna o znanej etiologii toksyczno-niedoborowej, co wyklucza etiologię psychogenną."
         },
         {
-          "text": "Ponieważ zespół Korsakowa dotyczy wyłącznie dzieci poniżej 3 roku życia",
-          "explanation": "Występuje niemal wyłącznie u dorosłych uzależnionych od alkoholu lub niedożywionych."
+          "text": "Ponieważ w zespole Korsakowa luki pamięciowe dotyczą wyłącznie okresu wczesnego dzieciństwa",
+          "explanation": "W zespole Korsakowa upośledzone jest przede wszystkim bieżące zapamiętywanie świeże (amnezja następcza)."
         },
         {
-          "text": "W zespole Korsakowa pamięć jest ponadprzeciętnie wzmocniona",
-          "explanation": "To ciężki deficyt pamięci amnestycznej."
+          "text": "Ponieważ w zespole Korsakowa nigdy nie występują objawy amnestyczne",
+          "explanation": "Głęboka amnezja następcza i wsteczna jest osiowym objawem zespołu Korsakowa."
         }
       ],
       "answer": 0
@@ -147,19 +147,19 @@
     {
       "id": "amnezja-dysocjacyjna-i-fuga-q5",
       "lessonId": "amnezja-dysocjacyjna-i-fuga",
-      "prompt": "Co dzieje się z pamięcią proceduralną (np. gra na pianinie, jazda autem) w amnezji dysocjacyjnej?",
+      "prompt": "Co dzieje się z pamięcią proceduralną (np. umiejętność pisania, jazdy na rowerze) w amnezji dysocjacyjnej?",
       "options": [
         {
-          "text": "Zazwyczaj pozostaje w pełni nienaruszona",
-          "explanation": "Amnezja dysocjacyjna dotyczy pamięci epizodycznej/autobiograficznej, nie proceduralnej."
+          "text": "Zazwyczaj pozostaje w pełni nienaruszona, gdyż opiera się na odmiennych obwodach neurobiologicznych",
+          "explanation": "Amnezja dysocjacyjna dotyczy pamięci epizodycznej/autobiograficznej, oszczędzając pamięć proceduralną i semantyczną."
         },
         {
-          "text": "Zawsze zostaje całkowicie wykasowana",
-          "explanation": "Pamięć proceduralna opiera się na innych obwodach (móżdżek, prążkowie)."
+          "text": "Zawsze ulega całkowitej destrukcji równolegle z pamięcią autobiograficzną",
+          "explanation": "Utrata pamięci proceduralnej świadczy o zaawansowanym uszkodzeniu mózgowia, a nie dysocjacji."
         },
         {
-          "text": "Ulega zamianie na pamięć węchową",
-          "explanation": "Brak takiego zjawiska w neurobiologii."
+          "text": "Ulega wybiórczemu zablokowaniu wyłącznie w zakresie czynności wykonywanych lewą ręką",
+          "explanation": "Amnezja dysocjacyjna nie powoduje ogniskowych ubytków ruchowych o charakterze połowiczym."
         }
       ],
       "answer": 0

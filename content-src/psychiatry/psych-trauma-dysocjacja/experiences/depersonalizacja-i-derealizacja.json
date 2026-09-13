@@ -5,7 +5,7 @@
     {
       "id": "depersonalizacja-i-derealizacja-obj-1",
       "statement": "Rozpoznasz objawy depersonalizacji i derealizacji oraz kluczowe kryterium zachowanego testowania rzeczywistości.",
-      "kind": "mechanism"
+      "kind": "differentiation"
     },
     {
       "id": "depersonalizacja-i-derealizacja-obj-2",
@@ -22,19 +22,19 @@
     "prompt": "Jaka cecha ma decydujące znaczenie w odróżnieniu zespołu DPDR od debiutu schizofrenii?",
     "options": [
       "Zachowane testowanie rzeczywistości — pacjent wie, że odczucie nierealności jest subiektywne",
-      "Podwyższona leukocytoza z neutrofilią",
-      "Obecność nadciśnienia tętniczego złośliwego"
+      "Obecność usystematyzowanych urojeń ksobnych i ksobno-prześladowczych",
+      "Występowanie formalnych zaburzeń toku myślenia pod postacią rozkojarzenia"
     ],
     "optionFeedback": [
       "Krytycyzm i świadomość subiektywnego charakteru zmian percepcji definiują DPDR.",
-      "To parametr stanu zapalnego, bez związku z różnicowaniem psychopatologicznym.",
-      "To stan nagły w kardiologii, nie kryterium DPDR."
+      "Urojenia prześladowcze świadczą o psychozie, ich obecność wyklucza czyste DPDR.",
+      "Rozkojarzenie to osiowy objaw schizofrenii, nie występuje w DPDR."
     ],
     "answer": 0,
     "explanation": "Krytycyzm i świadomość subiektywnego charakteru zmian percepcji definiują DPDR.",
-    "hint": "Przeanalizuj mechanizm biologiczny i kryteria przed zaznaczeniem opcji.",
+    "hint": "Zwróć uwagę na zachowanie krytycyzmu i subiektywne poczucie „jak gdyby”.",
     "difficulty": "student",
-    "reasoning": "mechanism",
+    "reasoning": "differentiation",
     "sourceIds": [
       "src-icd11-cddr-2024",
       "src-dsm5-tr-2022"
@@ -54,8 +54,7 @@
       ],
       "checkpointId": "depersonalizacja-i-derealizacja-q2-checkpoint-1-v2",
       "claimIds": [
-        "claim-trauma-dpdr-intact-reality",
-        "claim-trauma-substance-dpdr-exclusion"
+        "claim-trauma-dpdr-intact-reality"
       ],
       "inlineEnhancements": []
     },
@@ -69,12 +68,11 @@
       ],
       "checkpointId": "depersonalizacja-i-derealizacja-q3-checkpoint-2-v2",
       "claimIds": [
-        "claim-trauma-dpdr-intact-reality",
-        "claim-trauma-substance-dpdr-exclusion"
+        "claim-trauma-dpdr-intact-reality"
       ],
       "inlineEnhancements": [
         {
-          "id": "depersonalizacja-i-derealizacja-enh-workbench",
+          "id": "depersonalizacja-i-derealizacja-enh-panic-preset",
           "kind": "workbench-deeplink",
           "placement": "after-checkpoint",
           "presetId": "trauma-depersonalization-panic"
@@ -86,11 +84,10 @@
       "title": "Wyzwalacze i neurobiologia: Kannabinoidy i ataki paniki",
       "text": "Aż u 30–50% młodych chorych początek przewlekłego DPDR wiąże się z pojedynczym epizodem intoksykacji kannabinoidami (zwłaszcza marihuaną o wysokiej zawartości THC) lub napadem paniki. Aktywacja receptorów CB1 w hipokampie i ciele migdałowatym połączona z ostrym wyrzutem noradrenaliny wywołuje przejściową derealizację. Jeśli pacjent zinterpretuje ten stan katastroficznie („uszkodziłem sobie mózg na zawsze”), powstaje błędne koło hiper-czujności (metapoznawczy monitoring własnej percepcji), które utrwala objawy.",
       "sourceIds": [
-        "src-icd11-cddr-2024",
-        "src-dsm5-tr-2022"
+        "src-dsm5-tr-2022",
+        "src-who-mhgap-2023"
       ],
       "claimIds": [
-        "claim-trauma-dpdr-intact-reality",
         "claim-trauma-substance-dpdr-exclusion"
       ],
       "inlineEnhancements": []
@@ -101,60 +98,60 @@
       "id": "depersonalizacja-i-derealizacja-q2-checkpoint-1-v2",
       "type": "single_choice",
       "objectiveIds": [
-        "depersonalizacja-i-derealizacja-obj-1"
+        "depersonalizacja-i-derealizacja-obj-2"
       ],
       "prompt": "Która substancja psychoaktywna jest najczęstszym wyzwalaczem przewlekłego DPDR u młodych dorosłych?",
       "options": [
         "Kannabinoidy (marihuana, zwłaszcza szczepy o wysokim stężeniu THC)",
-        "Witamina B12 w dawkach doustnych",
-        "Insulina ludzka"
+        "Karbamazepina stosowana w dawkach terapeutycznych",
+        "Selektywne inhibitory wychwytu zwrotnego serotoniny (SSRI)"
       ],
       "optionFeedback": [
-        "Agonizm receptorów CB1 w połączeniu z napadem lękowym jest klasycznym triggerem DPDR.",
-        "Witamina B12 jest bezpieczną substancją odżywczą.",
-        "Insulina reguluje glikemię, nie wyzwala specyficznie DPDR."
+        "Agonizm receptorów CB1 w połączeniu z ostrym napadem lękowym jest klasycznym wyzwalaczem DPDR.",
+        "Karbamazepina jest lekiem przeciwpadaczkowym, nie substancją wyzwalającą DPDR.",
+        "SSRI są stosowane w leczeniu zaburzeń lękowych, nie stanowią typowego wyzwalacza DPDR."
       ],
       "answer": 0,
-      "explanation": "Agonizm receptorów CB1 w połączeniu z napadem lękowym jest klasycznym triggerem DPDR.",
-      "hint": "Zwróć uwagę na ramy czasowe oraz kryteria wykluczenia.",
+      "explanation": "Agonizm receptorów CB1 w połączeniu z ostrym napadem lękowym jest klasycznym wyzwalaczem DPDR.",
+      "hint": "Przypomnij sobie rolę receptorów CB1 w hipokampie i ciele migdałowatym.",
       "difficulty": "both",
       "reasoning": "mechanism",
+      "sourceIds": [
+        "src-dsm5-tr-2022",
+        "src-who-mhgap-2023"
+      ],
+      "claimIds": [
+        "claim-trauma-substance-dpdr-exclusion"
+      ]
+    },
+    {
+      "id": "depersonalizacja-i-derealizacja-q3-checkpoint-2-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "depersonalizacja-i-derealizacja-obj-1"
+      ],
+      "prompt": "21-letni student zgłasza uczucie, że „świat wokół niego jest nierealny, jak plan filmowy”. Boi się, że rozwija się u niego schizofrenia. Która informacja kliniczna jest niezbędna, aby bezpiecznie wykluczyć psychozę i potwierdzić zespół DPDR?",
+      "options": [
+        "Weryfikacja, czy pacjent ma pełny wgląd (intact reality testing) i wie, że odczucie to jest subiektywne, oraz brak formalnych zaburzeń toku myślenia i urojeń",
+        "Wykonanie punkcji lędźwiowej z oceną białka oligoklonalnego w płynie mózgowo-rdzeniowym",
+        "Oznaczenie stężenia mocznika i kwasu moczowego w surowicy krwi"
+      ],
+      "optionFeedback": [
+        "Kluczem różnicującym DPDR od psychozy jest nienaruszone testowanie rzeczywistości (krytycyzm) i brak rozkojarzenia myślenia.",
+        "Punkcja lędźwiowa jest procedurą inwazyjną wskazaną przy podejrzeniu neuroinfekcji lub stwardnienia rozsianego, nie w rutynowym DPDR.",
+        "Badania biochemiczne nie różnicują psychopatologii krytycyzmu i derealizacji."
+      ],
+      "answer": 0,
+      "explanation": "Kluczem różnicującym DPDR od psychozy jest nienaruszone testowanie rzeczywistości (krytycyzm) i brak rozkojarzenia myślenia.",
+      "hint": "Testowanie rzeczywistości rozstrzyga granicę między nerwicą a psychozą.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
       "sourceIds": [
         "src-icd11-cddr-2024",
         "src-dsm5-tr-2022"
       ],
       "claimIds": [
         "claim-trauma-dpdr-intact-reality"
-      ]
-    },
-    {
-      "id": "depersonalizacja-i-derealizacja-q3-checkpoint-2-v2",
-      "type": "single_choice",
-      "objectiveIds": [
-        "depersonalizacja-i-derealizacja-obj-2"
-      ],
-      "prompt": "Dlaczego pacjenci z DPDR często nieustannie sprawdzają swoje myśli i ciało w lustrze?",
-      "options": [
-        "Wynika to z lękowego monitoringu metapoznawczego, który paradoksalnie nasila odczucie obcości",
-        "Ponieważ wierzą, że ich twarz zamieniła się w twarz Napoleona Bonaparte",
-        "Mają bezwzględny zakaz spania wydany przez lekarza"
-      ],
-      "optionFeedback": [
-        "Skupianie uwagi na percepcji utrudnia automatyczne doświadczanie i pogłębia derealizację.",
-        "To urojeniowa identyfikacja, typowa dla psychozy, a nie DPDR.",
-        "Brak takiego zalecenia medycznego."
-      ],
-      "answer": 0,
-      "explanation": "Skupianie uwagi na percepcji utrudnia automatyczne doświadczanie i pogłębia derealizację.",
-      "hint": "Kluczem jest bezpieczeństwo i hierarchia postępowania.",
-      "difficulty": "doctor",
-      "reasoning": "decision",
-      "sourceIds": [
-        "src-icd11-cddr-2024",
-        "src-dsm5-tr-2022"
-      ],
-      "claimIds": [
-        "claim-trauma-substance-dpdr-exclusion"
       ]
     }
   ],
@@ -165,9 +162,9 @@
       "depersonalizacja-i-derealizacja-obj-1",
       "depersonalizacja-i-derealizacja-obj-2"
     ],
-    "prompt": "Wyjaśnij własnymi słowami najważniejsze kryteria i pułapki różnicowania z lekcji „Zespół depersonalizacji i derealizacji (DPDR)”.",
+    "prompt": "Wyjaśnij własnymi słowami istotę intact reality testing w DPDR oraz mechanizm błędnego koła metapoznawczego po zażyciu THC.",
     "modelAnswer": "DPDR to poczucie obcości jaźni i świata przy nienaruszonym testowaniu rzeczywistości. Często wyzwalane przez THC lub panikę. Odróżnia się od psychozy pełnym krytycyzmem chorego.",
-    "explanation": "Porównaj swoją odpowiedź z podsumowaniem klinicznym. Zwróć uwagę na kryteria decyzyjne i czerwone flagi.",
+    "explanation": "Zwróć uwagę na subiektywny charakter objawów („jak gdyby”), lęk przed utratą zmysłów i hiperczujność poznawczą.",
     "difficulty": "both",
     "reasoning": "safety",
     "sourceIds": [
@@ -186,22 +183,22 @@
       "objectiveIds": [
         "depersonalizacja-i-derealizacja-obj-1"
       ],
-      "prompt": "Jakie zmiany w odpowiedzi układu autonomicznego na bodźce afektywne obserwuje się w DPDR?",
+      "prompt": "Gdyby pacjent zgłaszający, że „świat jest sztuczny”, oświadczył ze sztywnym przekonaniem, że wszyscy ludzie to kukły sterowane przez kosmitów:",
       "options": [
-        "Tłumienie reaktywności wegetatywnej (obniżone przewodnictwo skóry GSR, emocjonalne znieczulenie)",
-        "Ciągły częstoskurcz komorowy 300/min",
-        "Zupełny brak wydzielania potu na całym ciele przez całe życie"
+        "Rozpoznanie przesuwa się w stronę zespołu urojeniowego/psychozy (utrata testowania rzeczywistości)",
+        "Potwierdza to typowy, podręcznikowy przebieg zespołu depersonalizacji-derealizacji",
+        "Wskazuje to na reakcję żałoby o prawidłowym, adaptacyjnym przebiegu"
       ],
       "optionFeedback": [
-        "Mózg w DPDR wygasza rezonans afektywny, co pacjent odczuwa jako brak czucia emocji.",
-        "To stan bezpośredniego zagrożenia życia, nie profil DPDR.",
-        "To anhidroza wrodzona, rzadka choroba genetyczna."
+        "Utrata krytycyzmu i treść urojeniowa przekraczają granice DPDR i wskazują na psychozę.",
+        "DPDR bezwzględnie wymaga zachowanego testowania rzeczywistości; utrata krytycyzmu wyklucza DPDR.",
+        "Przekonania urojeniowe nie są fizjologiczną reakcją żałoby."
       ],
       "answer": 0,
-      "explanation": "Mózg w DPDR wygasza rezonans afektywny, co pacjent odczuwa jako brak czucia emocji.",
-      "hint": "Przypomnij sobie wzorce neurobiologiczne i kontrfaktyczne reguły decyzyjne.",
+      "explanation": "Utrata krytycyzmu i treść urojeniowa przekraczają granice DPDR i wskazują na psychozę.",
+      "hint": "Utrata krytycyzmu przekształca derealizację w urojenie.",
       "difficulty": "student",
-      "reasoning": "mechanism",
+      "reasoning": "decision",
       "sourceIds": [
         "src-icd11-cddr-2024",
         "src-dsm5-tr-2022"
@@ -212,31 +209,33 @@
     },
     {
       "id": "depersonalizacja-i-derealizacja-q5-exit-2-v2",
-      "type": "missing_information",
+      "type": "ordering",
       "objectiveIds": [
         "depersonalizacja-i-derealizacja-obj-2"
       ],
-      "prompt": "Gdyby pacjent zgłaszający, że „świat jest sztuczny”, oświadczył, że wszyscy ludzie to roboty sterowane przez satelitę:",
-      "options": [
-        "Rozpoznanie przesuwa się w stronę zespołu urojeniowego/psychozy (utrata testowania rzeczywistości)",
-        "Potwierdza to łagodną, podręcznikową postać DPDR",
-        "Należy natychmiast odstawić sól kuchenną"
+      "prompt": "Uporządkuj sekwencję powstawania i utrwalania przewlekłego DPDR po ostrym epizodzie lękowym wywołanym THC:",
+      "items": [
+        "Intoksykacja THC wywołująca ostry napad paniki z przejściową derealizacją fizjologiczną",
+        "Katastroficzna interpretacja poznawcza („trwale uszkodziłem sobie mózg”, „zwariowałem”)",
+        "Wzmożona czujność metapoznawcza i ciągłe skanowanie własnego ciała oraz percepcji w lustrze",
+        "Utrwalenie znieczulenia emocjonalnego i odrealnienia jako przewlekłego mechanizmu obronnego OUN"
       ],
-      "optionFeedback": [
-        "Utrata krytycyzmu i treść urojeniowa przekraczają granice DPDR i wskazują na psychozę.",
-        "DPDR bezwzględnie wymaga zachowanego testowania rzeczywistości.",
-        "Brak związku dietetycznego."
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
       ],
-      "answer": 0,
-      "explanation": "Utrata krytycyzmu i treść urojeniowa przekraczają granice DPDR i wskazują na psychozę.",
-      "hint": "Wybierz informację o najwyższej wadze różnicującej.",
+      "explanation": "Model błędnego koła DPDR: ostry bodziec farmakologiczny/paniczny -> katastrofizująca interpretacja -> lękowy monitoring percepcji -> utrwalenie przewlekłego zespołu dysocjacyjnego.",
+      "hint": "Sekwencja: bodziec wyzwalający -> interpretacja -> monitoring -> utrwalenie objawów.",
       "difficulty": "both",
-      "reasoning": "safety",
+      "reasoning": "mechanism",
       "sourceIds": [
-        "src-icd11-cddr-2024",
-        "src-dsm5-tr-2022"
+        "src-dsm5-tr-2022",
+        "src-who-mhgap-2023"
       ],
       "claimIds": [
+        "claim-trauma-substance-dpdr-exclusion",
         "claim-trauma-dpdr-intact-reality"
       ]
     }
@@ -252,6 +251,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, CG78, ISTSS, pure content-src architecture"
+    "scope": "WHO ICD-11 CDDR (6B66), APA DSM-5-TR, pure content-src architecture"
   }
 }

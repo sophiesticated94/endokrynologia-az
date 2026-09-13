@@ -12,25 +12,25 @@
     "moduleId": "nadnercza"
   },
   "amnezja-dysocjacyjna-i-fuga": {
-    "hash": "52972afcd732d2267b903a5807212d47b017b6fd61aa50c47f5a160c3091e4fa",
+    "hash": "7cdef6a22c534570b1abd40d2178d98f2ac20baf1d6f8ef0b374e47c8874e8b3",
     "schemaVersion": 2,
     "lessonId": "amnezja-dysocjacyjna-i-fuga",
     "moduleId": "psych-trauma-dysocjacja"
   },
   "borderline-bpd-mechanizmy": {
-    "hash": "79141eaa9db054e251edf474b97906a072170d743ed96e4e8aa0ad02372b1292",
+    "hash": "7284340b7018862653db6f98fac22cba2d3bc3d1bd70926d87d9c661edd61406",
     "schemaVersion": 2,
     "lessonId": "borderline-bpd-mechanizmy",
     "moduleId": "psych-trauma-dysocjacja"
   },
   "bpd-roznicowanie-cptsd-chad-adhd": {
-    "hash": "63791b84a6b514af0fe8edae9c6acdd4e3545520a8a00027e84db92975bdbdc8",
+    "hash": "3e779c465267657f45844bf8f9a9ff05ac4da3ada1c287183c0f73870c419688",
     "schemaVersion": 2,
     "lessonId": "bpd-roznicowanie-cptsd-chad-adhd",
     "moduleId": "psych-trauma-dysocjacja"
   },
   "cptsd-zlozone-ptsd-icd11": {
-    "hash": "d878cd20f200b7fac0b30b848e156e5e825a98d296d9bec3d62f95247b109538",
+    "hash": "6a4ade229cb9adbbcd54c6575489fdb0cd25652898fd14a9febee68f624ec3a3",
     "schemaVersion": 2,
     "lessonId": "cptsd-zlozone-ptsd-icd11",
     "moduleId": "psych-trauma-dysocjacja"
@@ -42,25 +42,25 @@
     "moduleId": "nadnercza"
   },
   "dbt-interwencja-kryzysowa-i-bezpieczenstwo": {
-    "hash": "32afa9eb434c5d14ade46a445eda81b05127152386df8c6fc154541c1c9d5145",
+    "hash": "f8c03a39ee1fd15cf9ef660b203bc7f7e2f997c364b58ec9c0e50875d16a0036",
     "schemaVersion": 2,
     "lessonId": "dbt-interwencja-kryzysowa-i-bezpieczenstwo",
     "moduleId": "psych-trauma-dysocjacja"
   },
   "depersonalizacja-i-derealizacja": {
-    "hash": "a7d50a4c226e2ac9bfc843be5f67512d3e1b8621a4976a76af8b5553abb02819",
+    "hash": "b212cc5574d596316ea5f0ca4ed8ab69fe1d47f8dc52475002a3a62f6af392a2",
     "schemaVersion": 2,
     "lessonId": "depersonalizacja-i-derealizacja",
     "moduleId": "psych-trauma-dysocjacja"
   },
   "did-roznicowanie-bpd-i-psychoza": {
-    "hash": "542916ba54fe220ad640597c4179d8f977dfcfbc2461df8bd331ddcb7f90a9d1",
+    "hash": "855aeffd02bf80ea8aa46cd5c989ec35d31c8c529416cad35cf95de9289fa734",
     "schemaVersion": 2,
     "lessonId": "did-roznicowanie-bpd-i-psychoza",
     "moduleId": "psych-trauma-dysocjacja"
   },
   "did-tozsamosc-i-rozszczepienie": {
-    "hash": "72d1e25c1ed8982cd2023d8eba6bd1c9115c242fde9eec3d13796edce87c00ba",
+    "hash": "8837845ab0a64dd1c2e6e264594282ce04ce893ae689ebac00f92fcf7c485d22",
     "schemaVersion": 2,
     "lessonId": "did-tozsamosc-i-rozszczepienie",
     "moduleId": "psych-trauma-dysocjacja"
@@ -132,7 +132,7 @@
     "moduleId": "nadnercza"
   },
   "osobowosc-icd11-wymiary": {
-    "hash": "5469dfd91b1215cf5222624c3f336236b8b7f528074260868488c81b40fe5434",
+    "hash": "fbd24337e8153ae21aaf71672b3ddb487794176b8768eb5e6f73668370743159",
     "schemaVersion": 2,
     "lessonId": "osobowosc-icd11-wymiary",
     "moduleId": "psych-trauma-dysocjacja"
@@ -144,7 +144,7 @@
     "moduleId": "przytarczyce"
   },
   "pamiec-traumatyczna-i-extinction": {
-    "hash": "fc28f5e6c883b7abb6d522b9b1db09ed69e768dff6c5c9e091fdab120498b115",
+    "hash": "8ec5e6cfe52b86e8dc6ef903b236f3699cc8541db70d05b5fa6b5910fbbbe45f",
     "schemaVersion": 2,
     "lessonId": "pamiec-traumatyczna-i-extinction",
     "moduleId": "psych-trauma-dysocjacja"
@@ -210,13 +210,13 @@
     "moduleId": "przytarczyce"
   },
   "psychoterapia-traumy-fazy-i-metody": {
-    "hash": "f6dd9f4562acc544ae9efe05a6453bc08fa9dda1bd4e5fc2e41899fc3e1a2161",
+    "hash": "fc6bd76c3a06758fee2755233eeb82e51437af9b52c928998463e16ab03d0346",
     "schemaVersion": 2,
     "lessonId": "psychoterapia-traumy-fazy-i-metody",
     "moduleId": "psych-trauma-dysocjacja"
   },
   "ptsd-kryteria-i-fenomenologia": {
-    "hash": "144df09cb5dbbf4cae5191bfe7c94a098402a467219104c00247e63edd2bfd1b",
+    "hash": "c777c635959706df7ab463242c0bba4d3b3a1ab359d210bb01bd205be2153990",
     "schemaVersion": 2,
     "lessonId": "ptsd-kryteria-i-fenomenologia",
     "moduleId": "psych-trauma-dysocjacja"
@@ -228,7 +228,7 @@
     "moduleId": "nadnercza"
   },
   "reakcja-na-stres-asr-vs-asd": {
-    "hash": "cc13cc4e51d33a7df2f4bfbc0ea1e25325ebcb2579e08bb4dd46b16225dbf9a6",
+    "hash": "6088a4f6b3be1404a98b1452b45c423b8f23401b0c7b6166bfccafcaa77b9d1d",
     "schemaVersion": 2,
     "lessonId": "reakcja-na-stres-asr-vs-asd",
     "moduleId": "psych-trauma-dysocjacja"
@@ -246,7 +246,7 @@
     "moduleId": "przytarczyce"
   },
   "spektrum-dysocjacji-kontinuum": {
-    "hash": "4364a3203aa842fc8030cdf9de195140cd05a5a0dec1312b99ce57e0ab96b68b",
+    "hash": "e922b174ffaee6faaf12c436b392eae123e4bcbd680266dc6a6967138313fbf0",
     "schemaVersion": 2,
     "lessonId": "spektrum-dysocjacji-kontinuum",
     "moduleId": "psych-trauma-dysocjacja"
@@ -258,13 +258,13 @@
     "moduleId": "przytarczyce"
   },
   "trauma-neurobiologia-zagrozenia": {
-    "hash": "93397580141d3af55f4f7459414b9b62b33fac3432af376636c7c44a6c486b44",
+    "hash": "17d884b33dc79f9a5d8a672e314be1d1fbb20298e34b43a8afe8238eeb98bee0",
     "schemaVersion": 2,
     "lessonId": "trauma-neurobiologia-zagrozenia",
     "moduleId": "psych-trauma-dysocjacja"
   },
   "trauma-somatyka-mimiki-i-bezpieczenstwo": {
-    "hash": "9fb1298fc039911276270a998d0f2964010b46ed06b81097b4eea89c1aa8a1c3",
+    "hash": "f08b20fca471ab786b615e6832364531df55b3bd2812c850276749d898b85057",
     "schemaVersion": 2,
     "lessonId": "trauma-somatyka-mimiki-i-bezpieczenstwo",
     "moduleId": "psych-trauma-dysocjacja"

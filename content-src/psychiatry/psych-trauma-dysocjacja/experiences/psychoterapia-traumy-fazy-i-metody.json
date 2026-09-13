@@ -22,13 +22,13 @@
     "prompt": "Jaki jest bezwzględny pierwszy krok w 3-fazowym modelu leczenia złożonej traumy (Herman, ISTSS)?",
     "options": [
       "Faza 1: Bezpieczeństwo, stabilizacja emocjonalna i opanowanie zachowań destrukcyjnych",
-      "Natychmiastowe zmuszenie pacjenta do szczegółowego opisania gwałtu na pierwszej wizycie",
-      "Wdrożenie leczenia elektrowstrząsowego w pełnej narkozie"
+      "Natychmiastowe zmuszenie pacjenta do szczegółowej rekonstrukcji scen urazu na pierwszej sesji",
+      "Równoległe wdrożenie leczenia biologicznego wysokimi dawkami soli litu bez psychoedukacji"
     ],
     "optionFeedback": [
       "Otwieranie traumy bez stabilizacji i narzędzi radzenia sobie z lękiem grozi ciężką dekompensacją.",
-      "To ciężki błąd sztuki prowadzący do retraumatyzacji.",
-      "ECT nie jest leczeniem pierwszego rzutu w traumie."
+      "To ciężki błąd sztuki prowadzący do natychmiastowej retraumatyzacji i zerwania sojuszu.",
+      "Stabilizacja w fazie 1 opiera się na technikach uziemienia, regulacji i sojuszu, a nie na rutynowym podawaniu litu."
     ],
     "answer": 0,
     "explanation": "Otwieranie traumy bez stabilizacji i narzędzi radzenia sobie z lękiem grozi ciężką dekompensacją.",
@@ -103,13 +103,13 @@
       "prompt": "W której sytuacji klinicznej należy BEZWZGLĘDNIE ODROCZYĆ ekspozycję na traumę (Fazę 2)?",
       "options": [
         "W stanie czynnego kryzysu samobójczego, ciężkich samookaleczeń lub trwającej przemocy domowej",
-        "Gdy pacjent ma w domu psa rasy golden retriever",
-        "Gdy temperatura powietrza na zewnątrz wynosi 22 stopnie Celsjusza"
+        "Gdy pacjent zgłasza łagodny lęk przed wystąpieniami publicznymi niezwiązany z urazem",
+        "W przypadku współistnienia stabilnego, prawidłowo kontrolowanego nadciśnienia tętniczego I stopnia"
       ],
       "optionFeedback": [
         "Brak bezpieczeństwa wewnętrznego lub zewnętrznego jest bezwzględnym przeciwwskazaniem do ekspozycji.",
-        "Posiadanie zwierzęcia domowego może wspierać leczenie.",
-        "Brak związku z warunkami pogodowymi."
+        "Łagodny lęk społeczny nie stanowi przeciwwskazania do Fazy 2, jeśli pacjent ma opanowane umiejętności samoregulacji.",
+        "Wyrównane nadciśnienie tętnicze nie blokuje procedur ekspozycyjnych prowadzonych z zachowaniem okna tolerancji."
       ],
       "answer": 0,
       "explanation": "Brak bezpieczeństwa wewnętrznego lub zewnętrznego jest bezwzględnym przeciwwskazaniem do ekspozycji.",
@@ -127,24 +127,23 @@
     },
     {
       "id": "psychoterapia-traumy-fazy-i-metody-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "ordering",
       "objectiveIds": [
         "psychoterapia-traumy-fazy-i-metody-obj-2"
       ],
-      "prompt": "Które metody psychoterapii są uznawane za metody pierwszego wyboru o najwyższej randze dowodów w PTSD?",
-      "options": [
-        "TF-CBT (terapia poznawczo-behawioralna zorientowana na traumę) oraz EMDR",
-        "Terapia pijawkami lekarskimi i homeopatia",
-        "Wyłącznie izolowana kinezyterapia stawu kolanowego"
+      "prompt": "Uporządkuj kolejne fazy leczenia złożonej traumy wg konsensusu ISTSS (Herman):",
+      "items": [
+        "Faza 1: Bezpieczeństwo i stabilizacja (regulacja afektu, techniki uziemienia, opanowanie samouszkodzeń)",
+        "Faza 2: Przetwarzanie pamięci urazowej (TF-CBT, EMDR, kontrolowana ekspozycja w oknie tolerancji)",
+        "Faza 3: Reintegracja i konsolidacja (odbudowa relacji społecznych, celów życiowych i spójnej tożsamości)"
       ],
-      "optionFeedback": [
-        "Obie metody posiadają najwyższą siłę rekomendacji w wytycznych NICE, APA i ISTSS.",
-        "To metody nienaukowe bez dowodów w medycynie opartej na faktach (EBM).",
-        "To rehabilitacja ortopedyczna."
+      "correctOrder": [
+        0,
+        1,
+        2
       ],
-      "answer": 0,
-      "explanation": "Obie metody posiadają najwyższą siłę rekomendacji w wytycznych NICE, APA i ISTSS.",
-      "hint": "Kluczem jest bezpieczeństwo i hierarchia postępowania.",
+      "explanation": "Trójfazowy model konsensusowy: najpierw bezpieczeństwo i stabilizacja, następnie bezpieczne przetwarzanie pamięci traumy, a na końcu reintegracja tożsamości w życiu codziennym.",
+      "hint": "Hierarchia: stabilizacja -> przetwarzanie urazu -> reintegracja życiowa.",
       "difficulty": "doctor",
       "reasoning": "decision",
       "sourceIds": [
@@ -153,7 +152,7 @@
         "src-nice-ng116-ptsd-2018"
       ],
       "claimIds": [
-        "claim-trauma-exposure-contraindications"
+        "claim-trauma-phase-based-treatment"
       ]
     }
   ],
@@ -188,14 +187,14 @@
       ],
       "prompt": "Jaka jest rola farmakoterapii w leczeniu dysocjacyjnego zaburzenia tożsamości (DID)?",
       "options": [
-        "Leki nie leczą samego DID; stosuje się je wyłącznie pomocniczo na objawy współistniejące (depresję, lęk)",
-        "Pojedyncza tabletka klozapiny całkowicie scala tożsamość w 5 minut",
-        "Farmakoterapia jest surowo zakazana pod karą więzienia"
+        "Leki nie leczą samego DID; stosuje się je wyłącznie pomocniczo na objawy współistniejące (depresję, lęk, bezsenność)",
+        "Klasyczne leki przeciwpsychotyczne stanowią leczenie przyczynowe prowadzące do trwałej reintegracji tożsamości",
+        "Stosowanie jakichkolwiek leków psychotropowych w DID jest bezwzględnym błędem sztuki uniemożliwiającym psychoterapię"
       ],
       "optionFeedback": [
         "Podstawową metodą leczenia DID jest długoterminowa psychoterapia integracyjna; brak swoistej farmakoterapii rozszczepienia tożsamości.",
-        "Brak takiego leku w światowej medycynie.",
-        "Leczenie wspomagające zaburzeń współistniejących jest dozwolone i często potrzebne."
+        "Leki przeciwpsychotyczne nie scalają tożsamości; mogą być wręcz źle tolerowane przy braku pierwotnej psychozy.",
+        "Leczenie wspomagające zaburzeń afektywnych lub lękowych jest powszechną i bezpieczną praktyką kliniczną."
       ],
       "answer": 0,
       "explanation": "Podstawową metodą leczenia DID jest długoterminowa psychoterapia integracyjna; brak swoistej farmakoterapii rozszczepienia tożsamości.",
@@ -219,14 +218,14 @@
       ],
       "prompt": "Na czym polega koncepcja „okna tolerancji afektu” (window of tolerance) w pracy z traumą?",
       "options": [
-        "Na strefie optymalnego pobudzenia OUN, w której pacjent może przetwarzać emocje bez ucieczki w panikę lub odrętwienie",
-        "Na konieczności otwierania okna w gabinecie co 10 minut w celach wietrzenia",
-        "Na tolerowaniu spóźnień pacjenta o maksymalnie 30 sekund"
+        "Na strefie optymalnego pobudzenia OUN, w której pacjent może przetwarzać emocje bez ucieczki w panikę (hiperarousal) lub odrętwienie (hipoarousal)",
+        "Na sztywnym limicie czasu ekspozycji wyobrażeniowej do maksymalnie 15 minut na każdej sesji",
+        "Na dopuszczalnym progu spadku ciśnienia tętniczego podczas technik oddechowych"
       ],
       "optionFeedback": [
         "Praca terapeutyczna jest skuteczna tylko w granicach okna tolerancji (pomiędzy hiper-arousalem a hipo-arousalem dysocjacyjnym).",
-        "To pojęcie z zakresu higieny pomieszczeń, nie psychoterapii afektu.",
-        "Pojęcie dotyczy regulacji układu nerwowego, a nie punktualności."
+        "Okno tolerancji odnosi się do fizjologicznego stanu pobudzenia autonomicznego, a nie do sztywnego zegara sesji.",
+        "Pojęcie to opisuje kontinuum pobudzenia układu nerwowego, a nie izolowany pomiar hipotensji."
       ],
       "answer": 0,
       "explanation": "Praca terapeutyczna jest skuteczna tylko w granicach okna tolerancji (pomiędzy hiper-arousalem a hipo-arousalem dysocjacyjnym).",
@@ -239,7 +238,7 @@
         "src-nice-ng116-ptsd-2018"
       ],
       "claimIds": [
-        "claim-trauma-phase-based-treatment"
+        "claim-trauma-exposure-contraindications"
       ]
     }
   ],
@@ -250,6 +249,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, CG78, ISTSS, pure content-src architecture"
+    "scope": "WHO mhGAP, APA DSM-5-TR, Herman 1992, ISTSS 2019, NICE NG116"
   }
 }

@@ -7,25 +7,25 @@
   "minutes": 20,
   "goals": [
     "Zrozumiesz współczesną koncepcję DID jako rozbicia tożsamości i sprawczości, odrzucając popkulturę.",
-    "Poznasz kryteria ICD-11/DSM-5-TR: stany tożsamości, amnezję codzienną i wykluczenia kulturowe."
+    "Poznasz kryteria ICD-11 (6B64) i DSM-5-TR: stany tożsamości, amnezję codzienną i wykluczenia kulturowe."
   ],
   "sections": [
     {
       "title": "Fenomenologia: Nie „wiele osób”, lecz brak integracji jednej jaźni",
-      "text": "Współczesna psychiatria odrzuca historyczną i popkulturową narrację o „wielu osobach mieszkających w jednym ciele”. Dysocjacyjne zaburzenie tożsamości (DID wg ICD-11 6B60 / DSM-5-TR 300.14) to zaburzenie rozwojowe polegające na braku integracji procesów psychicznych w jednolitą tożsamość. Na skutek przewlekłej, traumatycznej relacji w dzieciństwie (zwykle przed 6–9. rokiem życia, zanim naturalnie nastąpi konsolidacja spójnego self), dochodzi do wykształcenia min. dwóch odrębnych stanów tożsamości (personality states). Każdy stan wykazuje własny, odmienny wzorzec postrzegania, wchodzenia w relacje oraz poczucie sprawczości (sense of agency)."
+      "text": "Współczesna psychiatria odrzuca popkulturową narrację o „wielu osobach mieszkających w jednym ciele”. Dysocjacyjne zaburzenie tożsamości (DID wg ICD-11 6B64 / DSM-5-TR 300.14) to zaburzenie polegające na braku integracji procesów psychicznych w jednolitą tożsamość. W modelach klinicznych (m.in. teorii strukturalnej dysocjacji) wiązane jest z przewlekłą traumą relacyjną we wczesnym dzieciństwie, utrudniającą naturalną konsolidację spójnego poczucia self. Dochodzi do manifestacji min. dwóch odrębnych stanów tożsamości (personality states), z których każdy wykazuje własny wzorzec postrzegania, wchodzenia w relacje oraz poczucie sprawczości (sense of agency). Sam wywiad urazowy stanowi istotny kontekst kliniczny, lecz nie jest formalnym kryterium diagnostycznym."
     },
     {
       "title": "Kryterium decyzyjne: Nawracające luki w pamięci codziennej",
-      "text": "Obecność odmiennych stanów tożsamości NIE wystarcza do diagnozy DID — niezbędnym kryterium współistniejącym są nawracające luki w pamięci autobiograficznej (recurrent amnesic gaps). Co kluczowe, luki te NIE ograniczają się wyłącznie do okresu traumy z przeszłości, lecz dotyczą BIEŻĄCYCH ZDARZEŃ CODZIENNYCH (everyday events). Pacjent doświadcza tzw. ubytków czasu (time loss) — np. „budzi się” w nieznanym miejscu, odkrywa w domu przedmioty lub ubrania, których nie pamięta kupować, albo spotyka ludzi traktujących go jak bliskiego znajomego, których zupełnie nie kojarzy."
+      "text": "Obecność odmiennych stanów tożsamości nie wystarcza do diagnozy DID — niezbędnym kryterium współistniejącym są nawracające luki w pamięci autobiograficznej (recurrent amnesic gaps). Co kluczowe, luki te NIE ograniczają się wyłącznie do okresu traumy z przeszłości, lecz dotyczą BIEŻĄCYCH ZDARZEŃ CODZIENNYCH (everyday events). Pacjent doświadcza tzw. ubytków czasu (time loss) — np. orientuje się, że znajduje się w nieznanym miejscu, odkrywa w domu przedmioty lub ubrania, których nie pamięta kupować, albo spotyka ludzi traktujących go jak bliskiego znajomego, których zupełnie nie kojarzy."
     },
     {
       "title": "Kontekst kulturowy, religijny i wykluczenia",
-      "text": "Zgodnie z wytycznymi ICD-11 i DSM-5-TR objawy nie mogą stanowić normalnej części powszechnie akceptowanej praktyki kulturowej lub religijnej (np. stany transu lub opętania w tradycyjnych rytuałach). W przypadku dzieci objawy nie mogą być przypisane obecności wyimaginowanego przyjaciela ani zabawie w odgrywanie ról. Bezwzględnym wymogiem jest wykluczenie bezpośredniego działania substancji (np. blackout po alkoholu) oraz chorób neurologicznych (napady padaczki skroniowej, zapalenia mózgu, urazy czaszkowo-mózgowe)."
+      "text": "Zgodnie z wytycznymi ICD-11 i DSM-5-TR objawy nie mogą stanowić normalnej części powszechnie akceptowanej praktyki kulturowej lub religijnej (np. tradycyjnych rytuałów opętania transowego). W przypadku dzieci objawy nie mogą być przypisane obecności wyimaginowanego przyjaciela ani rozwojowej zabawie w odgrywanie ról. Bezwzględnym wymogiem jest wykluczenie bezpośredniego działania substancji (np. blackout po alkoholu lub intoksykacja substancjami psychoaktywnymi) oraz schorzeń neurologicznych (napady padaczki skroniowej, zapalenia mózgu, urazy czaszkowo-mózgowe)."
     }
   ],
   "table": {
     "headers": [
-      "Kryterium diagnostyczne (ICD-11 / DSM-5-TR)",
+      "Kryterium diagnostyczne (ICD-11 6B64 / DSM-5-TR)",
       "Manifestacja kliniczna",
       "Pułapka interpretacyjna"
     ],
@@ -43,17 +43,17 @@
       [
         "Istotne cierpienie / upośledzenie",
         "Chaos życiowy, załamanie relacji, pracy, poczucie utraty kontroli",
-        "Brak impairmentu wyklucza zaburzenie kliniczne"
+        "Brak dysfunkcji i cierpienia wyklucza rozpoznanie kliniczne"
       ],
       [
         "Brak podłoża kulturowego i substancji",
-        "Objaw nieakceptowany w grupie odniesienia; trzeźwość",
-        "Konieczne różnicowanie ze stanami opętania w transie kulturowym"
+        "Objaw nieakceptowany w grupie odniesienia; brak wpływu intoksykacji",
+        "Konieczne różnicowanie ze stanami transu kulturowego i działaniem używek"
       ]
     ]
   },
-  "advanced": "W badaniach fMRI badających przełączanie stanów tożsamości w DID (switching) wykazano dynamiczne zmiany aktywacji w zakręcie kątowym (angular gyrus), korze przedczołowej grzbietowo-bocznej (dlPFC) oraz ciele migdałowatym; przełączeniu towarzyszą mierzalne zmiany w oporze skóry, szerokości źrenic oraz wzorcach fal w EEG, co obala hipotezę o prostej „symulacji teatralnej”.",
-  "summary": "DID to potraumatyczny brak integracji tożsamości na min. 2 stany z odrębnym poczuciem sprawczości oraz nawracającą amnezją codziennych zdarzeń (time loss). Wymaga wykluczenia przyczyn kulturowych i neurologicznych.",
+  "advanced": "W badaniach neuroobrazowych (fMRI, PET) badających przełączanie stanów tożsamości w DID (switching) opisano grupowe, zależne od stanu różnice aktywacji w zakręcie kątowym, korze przedczołowej i ciele migdałowatym, którym towarzyszą mierzalne zmiany parametrów autonomicznych (tętno, przewodnictwo skóry). Są to korelacje fizjologiczne na poziomie badań grupowych, nie indywidualne biomarkery służące jako obiektywny test do rozstrzygania symulacji w praktyce klinicznej.",
+  "summary": "DID (ICD-11 6B64) to brak integracji tożsamości na min. 2 stany z odrębnym poczuciem sprawczości oraz nawracającą amnezją codziennych zdarzeń (time loss). Wymaga wykluczenia przyczyn kulturowych, substancyjnych i neurologicznych.",
   "sourceIds": [
     "src-icd11-cddr-2024",
     "src-dsm5-tr-2022",
@@ -63,19 +63,19 @@
     {
       "id": "did-tozsamosc-i-rozszczepienie-q1",
       "lessonId": "did-tozsamosc-i-rozszczepienie",
-      "prompt": "Jaki rodzaj amnezji ma kluczowe znaczenie w spełnieniu kryteriów diagnostycznych DID wg ICD-11 i DSM-5-TR?",
+      "prompt": "Jaki rodzaj amnezji ma kluczowe znaczenie w spełnieniu kryteriów diagnostycznych DID wg ICD-11 6B64 i DSM-5-TR?",
       "options": [
         {
           "text": "Nawracająca amnezja dotycząca bieżących, codziennych wydarzeń (everyday amnesia, time loss)",
-          "explanation": "To kryterium decyzyjne odróżniające DID od prostego PTSD, w którym amnezja dotyczy tylko samego urazu."
+          "explanation": "To kryterium decyzyjne odróżniające DID od prostego PTSD, w którym amnezja ogranicza się zazwyczaj do samego urazu."
         },
         {
-          "text": "Niepamięć numeru PESEL przy nienaruszonej pamięci pozostałych danych",
-          "explanation": "Izolowane zapomnienie numeru urzędowego nie stanowi kryterium amnezji dysocjacyjnej."
+          "text": "Amnezja ograniczona wyłącznie do fragmentów przeżytego w przeszłości wypadku lub napaści",
+          "explanation": "Amnezja specyficzna dla traumy jest typowa dla PTSD i ostrego zaburzenia stresowego, nie spełnia kryteriów DID."
         },
         {
-          "text": "Amnezja wyłącznie po spożyciu 4 litrów piwa",
-          "explanation": "To intoksykacja alkoholowa (blackout), stanowiąca kryterium wykluczenia."
+          "text": "Utrata pamięci semantycznej przy całkowicie nienaruszonej pamięci zdarzeń bieżących",
+          "explanation": "Utrata pamięci semantycznej to cecha pierwotnych schorzeń neurodegeneracyjnych (np. otępienia semantycznego), a nie DID."
         }
       ],
       "answer": 0
@@ -83,19 +83,19 @@
     {
       "id": "did-tozsamosc-i-rozszczepienie-q2",
       "lessonId": "did-tozsamosc-i-rozszczepienie",
-      "prompt": "Jak współczesna neuronauka i wytyczne ISSTD definiują naturę „alterów” w DID?",
+      "prompt": "Jak współczesna nozologia psychiatryczna (ICD-11 6B64) definiuje naturę stanów tożsamości w DID?",
       "options": [
         {
-          "text": "Jako odrębne stany tożsamości jednej nie w pełni zintegrowanej psychiki, a nie „niezależnych ludzi”",
-          "explanation": "DID to zaburzenie integracji jednego umysłu (fragmentacja), a nie obecność wielu dusz czy ciał."
+          "text": "Jako odrębne stany tożsamości jednej nie w pełni zintegrowanej psychiki z odmiennym poczuciem sprawczości",
+          "explanation": "DID to zaburzenie integracji procesów psychicznych jednego umysłu (fragmentacja), a nie obecność wielu niezależnych ludzi."
         },
         {
-          "text": "Jako dosłownie żyjące oddzielne osoby uwięzione pod czaszką",
-          "explanation": "To nienaukowa narracja popkulturowa sprzeczna z psychiatrią."
+          "text": "Jako urojenia wielkościowe i owładnięcia wynikające z pierwotnego rozpadu toku myślenia",
+          "explanation": "To opis psychozy urojeniowej, w której brak odrębnych stanów tożsamości ze zmienną amnezją."
         },
         {
-          "text": "Jako pasożytnicze formy bakterii zagnieżdżone w oponach mózgowych",
-          "explanation": "To niedorzeczność biologiczna."
+          "text": "Jako gwałtowne wahania nastroju w skali godzin z zachowaną stałą tożsamością wykonawczą",
+          "explanation": "Chwiejność afektu przy zachowaniu jednej tożsamości wykonawczej odpowiada profilowi BPD."
         }
       ],
       "answer": 0
@@ -106,16 +106,16 @@
       "prompt": "Który z poniższych stanów stanowi bezwzględne kryterium wykluczenia dla pierwotnego rozpoznania DID?",
       "options": [
         {
-          "text": "Objawy będące bezpośrednim skutkiem napadów padaczkowych lub intoksykacji substancją",
-          "explanation": "Objawy wywołane padaczką lub używkami wykluczają rozpoznanie zaburzenia dysocjacyjnego."
+          "text": "Objawy będące bezpośrednim skutkiem napadów padaczkowych (np. TLE) lub intoksykacji/odstawienia substancji",
+          "explanation": "Zaburzenia napadowe OUN i stany substancyjne wykluczają rozpoznanie pierwotnego zaburzenia dysocjacyjnego."
         },
         {
-          "text": "Przebyta w dzieciństwie ospa wietrzna",
-          "explanation": "Ospa wietrzna nie ma związku z kryteriami wykluczenia DID."
+          "text": "Współistnienie w wywiadzie epizodu depresyjnego o umiarkowanym nasileniu",
+          "explanation": "Zaburzenia afektywne bardzo często współistnieją z DID i nie stanowią kryterium wykluczającego."
         },
         {
-          "text": "Posiadanie prawa jazdy kategorii B",
-          "explanation": "Brak jakiegokolwiek związku z diagnozą nozologiczną."
+          "text": "Współwystępowanie objawów wzmożonego wzbudzenia pourazowego (hyperarousal)",
+          "explanation": "Objawy pourazowe często współistnieją z zaburzeniami dysocjacyjnymi i nie wykluczają DID."
         }
       ],
       "answer": 0
@@ -123,19 +123,19 @@
     {
       "id": "did-tozsamosc-i-rozszczepienie-q4",
       "lessonId": "did-tozsamosc-i-rozszczepienie",
-      "prompt": "Dlaczego u dzieci należy zachować szczególną ostrożność, by nie pomylić DID ze zjawiskami rozwojowymi?",
+      "prompt": "Dlaczego w diagnostyce podejrzeń DID u dzieci wymagana jest szczególna ostrożność kliniczna?",
       "options": [
         {
           "text": "Dzieci w normie rozwojowej miewają wyimaginowanych przyjaciół i wchodzą w zabawy w udawanie",
-          "explanation": "Kompani fantazyjni są zjawiskiem fizjologicznym w wieku przedszkolnym i nie świadczą o patologii."
+          "explanation": "Kompani fantazyjni i zabawy w odgrywanie ról są fizjologiczne u dzieci i nie mogą być mylone z patologicznym rozszczepieniem."
         },
         {
-          "text": "U dzieci do 18. roku życia mózg nie posiada ciała migdałowatego",
-          "explanation": "Ciało migdałowate rozwija się już w okresie prenatalnym."
+          "text": "U dzieci poniżej 18. roku życia kryteria diagnostyczne zaburzeń dysocjacyjnych w ogóle nie mają zastosowania",
+          "explanation": "Zaburzenia dysocjacyjne mogą rozwijać się u dzieci, lecz wymagają rygorystycznego różnicowania z normą rozwojową."
         },
         {
-          "text": "Dzieci nigdy nie doświadczają żadnych urazów psychicznych",
-          "explanation": "Dzieci niestety bywają ofiarami ciężkiej przemocy, stąd konieczność rzetelnej oceny."
+          "text": "Każde zgłoszenie obecności wyimaginowanego przyjaciela u dziecka wymaga natychmiastowego włączenia neuroleptyków",
+          "explanation": "Wyimaginowany przyjaciel u dziecka w wieku przedszkolnym jest zjawiskiem prawidłowym."
         }
       ],
       "answer": 0
@@ -143,19 +143,19 @@
     {
       "id": "did-tozsamosc-i-rozszczepienie-q5",
       "lessonId": "did-tozsamosc-i-rozszczepienie",
-      "prompt": "Co oznacza zjawisko „switching” (przełączanie) w przebiegu DID?",
+      "prompt": "Co oznacza pojęcie przełączania (switching) w obrazie klinicznym DID?",
       "options": [
         {
-          "text": "Zmianę stanu tożsamości kontrolującego w danym momencie świadomość, afekt i zachowanie",
-          "explanation": "Switching może być wyzwalany przez bodźce przypominające traumę lub silny afekt."
+          "text": "Przejście kontroli wykonawczej nad świadomością, zachowaniem i pamięcią na inny stan tożsamości",
+          "explanation": "Switching to zmiana stanu tożsamości kontrolującego w danym momencie ekspresję i działanie pacjenta."
         },
         {
-          "text": "Zmianę płci biologicznej w badaniu kariotypu pod wpływem stresu",
-          "explanation": "Kariotyp genetyczny jest stały przez całe życie."
+          "text": "Przejście z fazy depresyjnej do manii w chorobie afektywnej dwubiegunowej typu I",
+          "explanation": "Zmiana biegunowości w ChAD to zmiana fazy afektywnej, a nie przełączenie stanów tożsamości (switching)."
         },
         {
-          "text": "Zamianę leków przeciwbólowych na antybiotyk",
-          "explanation": "To pojęcie farmakoterapeutyczne, nie zjawisko psychopatologiczne w DID."
+          "text": "Nagłe ustąpienie intruzji pourazowych po podaniu selektywnego inhibitora wychwytu zwrotnego serotoniny",
+          "explanation": "To odpowiedź farmakoterapeutyczna w PTSD, niezwiązana ze switchingiem."
         }
       ],
       "answer": 0

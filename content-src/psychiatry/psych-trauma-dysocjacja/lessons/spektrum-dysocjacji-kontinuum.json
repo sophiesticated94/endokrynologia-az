@@ -2,12 +2,12 @@
   "id": "spektrum-dysocjacji-kontinuum",
   "moduleId": "psych-trauma-dysocjacja",
   "title": "Spektrum i kontinuum zjawisk dysocjacyjnych",
-  "subtitle": "Od normatywnej absorpcji po patologiczną fragmentację: teoria strukturalnej dysocjacji",
-  "group": "B. Dysocjacja",
-  "minutes": 17,
+  "subtitle": "Od normatywnej absorpcji do fragmentacji tożsamości: Teoria strukturalnej dysocjacji",
+  "group": "A. Podstawy dysocjacji",
+  "minutes": 18,
   "goals": [
-    "Zrozumiesz dysocjację jako kontinuum od zjawisk adaptacyjnych (absorpcja) po strukturalną fragmentację.",
-    "Poznasz teorię strukturalnej dysocjacji osobowości (część ANP vs części EP)."
+    "Zrozumiesz kontinuum dysocjacji: różnicę między absorpcją normatywną a fragmentacją tożsamości.",
+    "Poznasz teorię strukturalnej dysocjacji osobowości (Van der Hart) i podział na ANP oraz EP."
   ],
   "sections": [
     {
@@ -19,41 +19,46 @@
       "text": "Model ten wyjaśnia, jak chroniczna trauma uniemożliwia integrację osobowości. Wyróżnia się: 1) Pozornie Normalną Część Osobowości (ANP — Apparently Normal Part), która zarządza codziennym funkcjonowaniem, unikając wspomnień urazowych i realizując cele życiowe; oraz 2) Emocjonalną Część Osobowości (EP — Emotional Part), która pozostaje uwięziona w traumie, przechowując afekt lęku, wściekłości lub zamrożenia (reakcje pniowe). Wyróżnia się dysocjację pierwotną (jedno ANP i jedno EP, np. klasyczne PTSD), wtórną (jedno ANP i kilka EP, np. cPTSD, BPD) oraz trzeciorzędową (wiele ANP i wiele EP — kryterium DID)."
     },
     {
-      "title": "Dysocjacja psychoformiczna a somatoformiczna",
-      "text": "Dysocjacja manifestuje się na dwóch płaszczyznach: 1) Psychoformicznej — objawy w sferze procesów psychicznych (amnezja, depersonalizacja, derealizacja, stany fugi, słyszenie wewnętrznych głosów); 2) Somatoformicznej — objawy w ciele bez organicznego podłoża (konwersja: pseudonapady padaczkowe PNES, utrata czucia o niefizjologicznym przebiegu, czynnościowy paraliż, głuchota psychogenna). Narzędziem oceny jest m.in. skala DES (Dissociative Experiences Scale) oraz SDQ-20."
+      "title": "Dysocjacja psychoformiczna vs somatoformiczna",
+      "text": "Objawy dysocjacyjne dzielimy na: 1) Psychoformiczne: depersonalizacja (obcość siebie), derealizacja (nierealność świata), amnezja dysocjacyjna, tożsamościowe ubytki ciągłości; 2) Somatoformiczne (konwersyjne): czynnościowe napady rzekomopadaczkowe (PNES / psychogenic non-epileptic seizures), afonia, ślepota czynnościowa, utrata czucia o dystrybucji anatomicznie niemożliwej (np. typu „rękawiczki” bez uszkodzenia korzeni czy nerwów obwodowych)."
     }
   ],
   "table": {
     "headers": [
       "Poziom dysocjacji",
-      "Struktura ANP / EP",
-      "Jednostka kliniczna"
+      "Struktura (ANP / EP)",
+      "Jednostka kliniczna",
+      "Charakterystyka"
     ],
     "rows": [
       [
-        "Brak / normatywna",
-        "Jednolita zintegrowana tożsamość",
-        "Norma, przejściowa absorpcja"
+        "Normatywna",
+        "Zintegrowana jaźń",
+        "Zdrowa populacja",
+        "Absorpcja, zamyślenie, brak amnezji patologicznej"
       ],
       [
         "Pierwotna",
-        "1 ANP (funkcjonowanie) + 1 EP (trauma)",
-        "Proste PTSD, ostre zaburzenie stresowe"
+        "1 ANP + 1 EP",
+        "PTSD, ASD",
+        "Intruzje urazowe przełamujące codzienne funkcjonowanie"
       ],
       [
         "Wtórna",
-        "1 ANP + wiele zróżnicowanych EP",
-        "Złożone PTSD (cPTSD), zaburzenie osobowości BPD"
+        "1 ANP + wiele EP",
+        "cPTSD, BPD, OSDD-1a",
+        "Złożona dysregulacja afektu, części obronne i uległe"
       ],
       [
         "Trzeciorzędowa",
-        "Wiele odrębnych ANP + wiele odrębnych EP",
-        "Dysocjacyjne zaburzenie tożsamości (DID)"
+        "Wiele ANP + wiele EP",
+        "DID (6B64)",
+        "Rozszczepienie tożsamości codziennej, amnezja między stanami"
       ]
     ]
   },
-  "advanced": "W badaniach neurofizjologicznych u pacjentów ze strukturalną dysocjacją trzeciorzędową wykazano odmienne mapy łączności korowo-podkorowej w zależności od tego, która część tożsamości (ANP czy EP) kontroluje w danym momencie ciało; manifestuje się to m.in. odmienną zmiennością rytmu zatokowego (HRV), oporem skóry, a nawet mierzalną ostrością wzroku.",
-  "summary": "Dysocjacja to kontinuum od absorpcji do fragmentacji tożsamości. Teoria strukturalnej dysocjacji tłumaczy podział psychiki na części funkcjonujące (ANP) i uwięzione w traumie (EP).",
+  "advanced": "Nijenhuis opracował Skalę Dysocjacji Somatoformicznej (SDQ-20), która bada somatyczne manifestacje traumy. W badaniach fMRI wykazano, że stany EP charakteryzują się nadaktywnością ciała migdałowatego i wyspy oraz hipoaktywnością przedniej kory zakrętu obręczy (ACC), podczas gdy w stanach ANP obserwuje się nadmierną kontrolę przedczołową.",
+  "summary": "Dysocjacja to kontinuum od zjawisk normatywnych po rozszczepienie tożsamości. Teoria strukturalna opisuje podział na części ANP (funkcjonowanie) i EP (trauma), a dysocjacja dzieli się na psychoformiczną i somatoformiczną.",
   "sourceIds": [
     "src-van-der-hart-dissociation-2006",
     "src-isstd-adult-did-2011"
@@ -65,16 +70,16 @@
       "prompt": "Czym różni się część ANP od części EP w teorii strukturalnej dysocjacji?",
       "options": [
         {
-          "text": "ANP odpowiada za codzienne funkcjonowanie unikając traumy, a EP jest uwięziona w afekcie pourazowym",
+          "text": "ANP odpowiada za codzienne funkcjonowanie unikając bodźców traumatycznych, a EP jest uwięziona w afekcie i obronnych reakcjach pourazowych",
           "explanation": "ANP (Apparently Normal Part) realizuje cele adaptacyjne, EP (Emotional Part) przechowuje obronne reakcje zagrożenia."
         },
         {
-          "text": "ANP to część produkująca hormony tarczycy, a EP hormony nadnerczy",
-          "explanation": "To pojęcia z zakresu struktury osobowości i neuropsychologii, a nie gruczołów dokrewnych."
+          "text": "ANP odpowiada wyłącznie za fazy snu wolnofalowego, a EP za stany czuwania w rytmie dobowym",
+          "explanation": "To pojęcia z zakresu struktury osobowości i neuropsychologii traumy, a nie faz fizjologicznego snu."
         },
         {
-          "text": "ANP występuje wyłącznie u niemowląt, a EP u osób po 80. roku życia",
-          "explanation": "Pojęcia te opisują fragmentację potraumatyczną u osób w każdym wieku."
+          "text": "ANP reprezentuje procesy korowe prawej półkuli, a EP wyłącznie aktywność struktur lewopółkulowych",
+          "explanation": "Teoria Van der Harta nie opiera się na mechanicznym podziale lateralizacji półkulowej."
         }
       ],
       "answer": 0
@@ -85,16 +90,16 @@
       "prompt": "Jaki poziom strukturalnej dysocjacji charakteryzuje dysocjacyjne zaburzenie tożsamości (DID)?",
       "options": [
         {
-          "text": "Dysocjacja trzeciorzędowa (wiele odrębnych części ANP oraz wiele części EP)",
+          "text": "Dysocjacja trzeciorzędowa (podział na wiele odrębnych części ANP oraz wiele części EP)",
           "explanation": "W DID dochodzi do podziału nie tylko części emocjonalnych, ale i części realizujących codzienne życie (tożsamości)."
         },
         {
-          "text": "Całkowity brak dysocjacji",
-          "explanation": "DID to skrajna postać dysocjacji tożsamościowej."
+          "text": "Dysocjacja pierwotna (jedno zintegrowane ANP i pojedyncza część emocjonalna EP)",
+          "explanation": "Dysocjacja pierwotna (jedno ANP, jedno EP) jest modelem klasycznego, prostego PTSD."
         },
         {
-          "text": "Wyłącznie normatywna absorpcja filmowa",
-          "explanation": "Normatywna absorpcja nie jest zaburzeniem psychicznym."
+          "text": "Izolowana dysocjacja peritraumatyczna bez utrwalonej fragmentacji struktur tożsamości",
+          "explanation": "Dysocjacja peritraumatyczna to ostry stan w trakcie urazu, nie tłumaczy przewlekłej wielości tożsamości w DID."
         }
       ],
       "answer": 0
@@ -105,16 +110,16 @@
       "prompt": "Co to jest dysocjacja somatoformiczna?",
       "options": [
         {
-          "text": "Występowanie objawów cielesnych (np. rzekomonapadowych, paraliżu, utraty czucia) bez podłoża neurologicznego",
-          "explanation": "To somatyczna manifestacja mechanizmu dysocjacyjnego (zaburzenie konwersyjne)."
+          "text": "Występowanie objawów cielesnych (np. rzekomonapadowych, paraliżu, utraty czucia) bez podłoża neurologicznego, wynikających z mechanizmu konwersji dysocjacyjnej",
+          "explanation": "To somatyczna manifestacja mechanizmu dysocjacyjnego (zaburzenie konwersyjne / czynnościowe objawy neurologiczne)."
         },
         {
-          "text": "Prawdziwe złamanie kości udowej pod wpływem stresu",
-          "explanation": "Złamanie kości wymaga urazu mechanicznego lub osteoporozy."
+          "text": "Występowanie uogólnionego bólu mięśniowo-szkieletowego w przebiegu fibromialgii z prawidłowymi wykładnikami stanu zapalnego",
+          "explanation": "Fibromialgia to przewlekły zespół bólowy z ośrodkową sensytyzacją, nie klasyczna dysocjacja somatoformiczna."
         },
         {
-          "text": "Wrodzony brak jednej z półkul mózgu",
-          "explanation": "To wada rozwojowa OUN, a nie zjawisko dysocjacyjne."
+          "text": "Epizody katatonii z objawem woskowatej giętkości w przebiegu zaburzenia afektywnego dwubiegunowego",
+          "explanation": "Katatonia jest zespołem psychomotorycznym o innej neuropatologii i odrębnych kryteriach kwalifikacyjnych."
         }
       ],
       "answer": 0
@@ -125,16 +130,16 @@
       "prompt": "Który objaw zalicza się do łagodnych, normatywnych zjawisk dysocjacyjnych?",
       "options": [
         {
-          "text": "Zjawisko automatycznej jazdy autem po znanej trasie (highway hypnosis) z przejściową luką w pamięci drogi",
-          "explanation": "To zjawisko powszechne, polegające na automatyzacji czynności bez patologicznej fragmentacji."
+          "text": "Zjawisko automatycznej jazdy autem po znanej trasie (highway hypnosis) z przejściową luką w pamięci drogi w stanie głębokiej absorpcji",
+          "explanation": "To zjawisko powszechne, polegające na automatyzacji czynności bez patologicznej fragmentacji jaźni."
         },
         {
-          "text": "Niepamięć całego swojego dzieciństwa i dorosłości z ucieczką do innego miasta",
-          "explanation": "To fuga dysocjacyjna, stan głęboko patologiczny."
+          "text": "Uogólniona niepamięć wsteczna obejmująca całą biografię i tożsamość z podróżą do innego miasta (fuga dysocjacyjna)",
+          "explanation": "To fuga dysocjacyjna, stan głęboko patologiczny wymagający diagnostyki klinicznej."
         },
         {
-          "text": "Przekonanie, że własne ramiona zostały zamienione w skrzydła ptaka",
-          "explanation": "To zaburzenie urojeniowe lub ciężka agnozja."
+          "text": "Stupor dysocjacyjny z całkowitym brakiem reakcji na bodźce zewnętrzne i utratą mowy",
+          "explanation": "Stupor dysocjacyjny to ostry stan patologiczny wymagający natychmiastowej interwencji medycznej."
         }
       ],
       "answer": 0
@@ -145,16 +150,16 @@
       "prompt": "Jakie narzędzie przesiewowe jest powszechnie stosowane do oceny nasilenia dysocjacji psychoformicznej?",
       "options": [
         {
-          "text": "Skala Doświadczeń Dysocjacyjnych (Dissociative Experiences Scale — DES)",
+          "text": "Skala Doświadczeń Dysocjacyjnych (Dissociative Experiences Scale — DES / DES-II)",
           "explanation": "DES jest międzynarodowym standardem kwestionariuszowym oceny zjawisk dysocjacyjnych."
         },
         {
-          "text": "Skala Glasgow (GCS)",
-          "explanation": "GCS służy do oceny głębokości śpiączki i przytomności w stanach nagłych."
+          "text": "Kwestionariusz Zdrowia Pacjenta-9 (PHQ-9) do oceny ciężkości epizodu depresyjnego",
+          "explanation": "PHQ-9 ocenia objawy depresyjne, a nie specyficzne zjawiska dysocjacyjne."
         },
         {
-          "text": "Krzywa cukrowa OGTT",
-          "explanation": "OGTT diagnozuje zaburzenia gospodarki węglowodanowej."
+          "text": "Skala Oceny Niewydolności Narządów Związanej z Posocznicą (SOFA)",
+          "explanation": "Skala SOFA ocenia dysfunkcję narządową w warunkach intensywnej terapii."
         }
       ],
       "answer": 0

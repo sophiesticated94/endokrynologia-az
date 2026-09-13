@@ -21,14 +21,14 @@
     ],
     "prompt": "Na czym polega błąd konfirmacji negatywnego testu w diagnostyce zaburzeń dysocjacyjnych?",
     "options": [
-      "Na błędnym uznaniu, że prawidłowy wynik EEG i MRI mózgu stanowi „dowód potwierdzający” etiologię dysocjacyjną",
-      "Na założeniu, że każdy pacjent musi mieć powtórzone badanie krwi 100 razy",
-      "Na odrzuceniu wyniku badania z powodu brzydkiego charakteru pisma lekarza"
+      "Na błędnym uznaniu, że prawidłowy wynik badań neuroobrazowych (MRI) i elektrofizjologicznych (EEG) stanowi bezpośredni dowód potwierdzający etiologię czynnościową/dysocjacyjną",
+      "Na założeniu, że wykonanie EEG o wysokiej rozdzielczości definitywnie zapobiega dalszej progresji objawów dysocjacyjnych",
+      "Na przeświadczeniu, że ujemny wynik rutynowego toksykologicznego badania moczu wyklucza konieczność zebrania wywiadu w kierunku leków uspokajających"
     ],
     "optionFeedback": [
       "Diagnoza dysocjacyjna wymaga spełnienia pozytywnych kryteriów klinicznych, a nie wynika z samego braku zmian w badaniach.",
-      "Brak związku z błędem konfirmacji.",
-      "To kwestia edycyjna, nie błąd metodologiczny."
+      "Badanie diagnostyczne nie stanowi interwencji terapeutycznej zapobiegającej objawom.",
+      "Panel toksykologiczny ma ograniczony zakres i nie zastępuje wnikliwego wywiadu farmakologicznego."
     ],
     "answer": 0,
     "explanation": "Diagnoza dysocjacyjna wymaga spełnienia pozytywnych kryteriów klinicznych, a nie wynika z samego braku zmian w badaniach.",
@@ -38,10 +38,13 @@
     "sourceIds": [
       "src-who-mhgap-2023",
       "src-isstd-adult-did-2011",
-      "src-icd11-cddr-2024"
+      "src-icd11-cddr-2024",
+      "src-ilae-epilepsy-classification-2017",
+      "src-nice-ng217-epilepsies-2022"
     ],
     "claimIds": [
-      "claim-trauma-tle-mimic-aura-stereotypy"
+      "claim-trauma-tle-mimic-aura-stereotypy",
+      "claim-trauma-no-negative-test-confirmation"
     ]
   },
   "blocks": [
@@ -52,7 +55,9 @@
       "sourceIds": [
         "src-who-mhgap-2023",
         "src-isstd-adult-did-2011",
-        "src-icd11-cddr-2024"
+        "src-icd11-cddr-2024",
+        "src-ilae-epilepsy-classification-2017",
+        "src-nice-ng217-epilepsies-2022"
       ],
       "checkpointId": "trauma-somatyka-mimiki-i-bezpieczenstwo-q2-checkpoint-1-v2",
       "claimIds": [
@@ -69,7 +74,9 @@
       "sourceIds": [
         "src-who-mhgap-2023",
         "src-isstd-adult-did-2011",
-        "src-icd11-cddr-2024"
+        "src-icd11-cddr-2024",
+        "src-ilae-epilepsy-classification-2017",
+        "src-nice-ng217-epilepsies-2022"
       ],
       "checkpointId": "trauma-somatyka-mimiki-i-bezpieczenstwo-q3-checkpoint-2-v2",
       "claimIds": [
@@ -106,30 +113,32 @@
   "activities": [
     {
       "id": "trauma-somatyka-mimiki-i-bezpieczenstwo-q2-checkpoint-1-v2",
-      "type": "single_choice",
+      "type": "missing_information",
       "objectiveIds": [
         "trauma-somatyka-mimiki-i-bezpieczenstwo-obj-1"
       ],
-      "prompt": "Dlaczego wytyczne międzynarodowe bezwzględnie zakazują technik sugestywnych i hipnozy w celu „odzyskiwania wypartych wspomnień”?",
+      "prompt": "U 32-letniej pacjentki z nagłymi epizodami 'wyłączeń świadomości' i poczuciem obcości rutynowe spoczynkowe EEG jest prawidłowe. Która brakująca informacja z wywiadu stanowi czerwoną flagę wymagającą wstrzymania diagnozy psychogennej i pilnego skierowania na wideo-EEG i rezonans z protokołem padaczkowym?",
       "options": [
-        "Niosą udowodnione wysokie ryzyko wygenerowania iatrogennych, destrukcyjnych fałszywych wspomnień (False Memory Syndrome)",
-        "Hipnoza jest procedurą zbyt kosztowną dla kas chorych",
-        "Hipnoza wywołuje natychmiastowe zakażenie wirusowym zapaleniem wątroby"
+        "Obecność aury nadbrzusznej (uczucie fali wznoszącej się z żołądka), ściśle powtarzalny czas trwania napadu (45–60 s) oraz ponapadowa dezorientacja",
+        "Współwystępowanie silnego płaczu podczas przypominania sobie trudnych wydarzeń z wczesnego dzieciństwa",
+        "Poczucie derealizacji narastające stopniowo przez 2 godziny w trakcie ekspozycji na tłum w centrum handlowym"
       ],
       "optionFeedback": [
-        "Umysł ludzki w hipnozie jest wybitnie podatny na konfabulacje i konfirmację oczekiwań terapeuty.",
-        "Przyczyną jest bezpieczeństwo kliniczne i zapobieganie szkodzie pacjenta.",
-        "Brak transmisji patogenów drogą psychologiczną."
+        "Aura trzewna, krótki stereotypowy przebieg i splątanie ponapadowe to klasyczne cechy napadów ogniskowych z płata skroniowego (TLE) wg ILAE/NICE.",
+        "Reakcja emocjonalna na wspomnienie urazu nie stanowi objawu organicznej aury padaczkowej.",
+        "Stopniowe narastanie depersonalizacji/derealizacji w odpowiedzi na bodziec stresowy wskazuje na mechanizm czynnościowy, a nie padaczkowy."
       ],
       "answer": 0,
-      "explanation": "Umysł ludzki w hipnozie jest wybitnie podatny na konfabulacje i konfirmację oczekiwań terapeuty.",
-      "hint": "Zwróć uwagę na ramy czasowe oraz kryteria wykluczenia.",
-      "difficulty": "both",
+      "explanation": "Aura trzewna, krótki stereotypowy przebieg i splątanie ponapadowe to klasyczne cechy napadów ogniskowych z płata skroniowego (TLE) wg ILAE/NICE.",
+      "hint": "Zwróć uwagę na ramy czasowe, stereotypowość i charakter aury.",
+      "difficulty": "doctor",
       "reasoning": "differentiation",
       "sourceIds": [
         "src-who-mhgap-2023",
         "src-isstd-adult-did-2011",
-        "src-icd11-cddr-2024"
+        "src-icd11-cddr-2024",
+        "src-ilae-epilepsy-classification-2017",
+        "src-nice-ng217-epilepsies-2022"
       ],
       "claimIds": [
         "claim-trauma-tle-mimic-aura-stereotypy"
@@ -137,33 +146,38 @@
     },
     {
       "id": "trauma-somatyka-mimiki-i-bezpieczenstwo-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "ordering",
       "objectiveIds": [
         "trauma-somatyka-mimiki-i-bezpieczenstwo-obj-2"
       ],
-      "prompt": "Który objaw u pacjenta z dysocjacją stanowi czerwoną flagę wymagającą pilnej konsultacji neurologicznej?",
-      "options": [
-        "Napadowość z aurą nadbrzuszną, stereotypowość 30–60 s lub początek po 40. r.ż. z objawami ogniskowymi",
-        "Płacz podczas rozmowy o zmarłym rodzicu",
-        "Uczucie zmęczenia po nieprzespanej nocy"
+      "prompt": "Uporządkuj kolejne kroki postępowania diagnostyczno-terapeutycznego u pacjenta prezentującego ostre epizody amnezji i zachowań automatycznych:",
+      "items": [
+        "Badanie internistyczne i neurologiczne z wykluczeniem ostrych stanów zagrożenia życia (hipoglikemia, intoksykacja, udar, encefalopatia)",
+        "Celowana neurodiagnostyka (MRI OUN z protokołem padaczkowym, EEG / wideo-EEG) w celu weryfikacji podejrzeń organicznych",
+        "Ocena pozytywnych kryteriów psychopatologicznych dysocjacji przy braku uchwytnych przyczyn somatycznych (pamiętając, że ujemny test nie jest dowodem)",
+        "Zaplanowanie bezpiecznej psychoterapii opartej na stabilizacji i psychoedukacji, z bezwzględnym zakazem technik sugerujących i 'odzyskiwania wspomnień'"
       ],
-      "optionFeedback": [
-        "To objawy wskazujące na proces organiczny OUN (padaczka skroniowa, guz, zapalenie).",
-        "To naturalna reakcja żałoby i smutku.",
-        "To fizjologiczny skutek deprywacji snu."
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
       ],
-      "answer": 0,
-      "explanation": "To objawy wskazujące na proces organiczny OUN (padaczka skroniowa, guz, zapalenie).",
-      "hint": "Kluczem jest bezpieczeństwo i hierarchia postępowania.",
-      "difficulty": "doctor",
-      "reasoning": "decision",
+      "explanation": "Hierarchia diagnostyczna: 1) wykluczenie zagrożenia życia i toksykologii; 2) celowana neurodiagnostyka; 3) weryfikacja pozytywnych kryteriów dysocjacji; 4) bezpieczna psychoterapia stabilizacyjna bez sugestii iatrogennych.",
+      "hint": "Hierarchia: bezpieczeństwo somatyczne -> neurodiagnostyka -> kryteria psychopatologiczne -> bezpieczna terapia.",
+      "difficulty": "both",
+      "reasoning": "safety",
       "sourceIds": [
         "src-who-mhgap-2023",
         "src-isstd-adult-did-2011",
-        "src-icd11-cddr-2024"
+        "src-icd11-cddr-2024",
+        "src-ilae-epilepsy-classification-2017",
+        "src-nice-ng217-epilepsies-2022"
       ],
       "claimIds": [
-        "claim-trauma-no-negative-test-confirmation"
+        "claim-trauma-tle-mimic-aura-stereotypy",
+        "claim-trauma-no-negative-test-confirmation",
+        "claim-trauma-recovered-memory-harm"
       ]
     }
   ],
@@ -175,14 +189,16 @@
       "trauma-somatyka-mimiki-i-bezpieczenstwo-obj-2"
     ],
     "prompt": "Wyjaśnij własnymi słowami najważniejsze kryteria i pułapki różnicowania z lekcji „Somatyczne mimiki, substancje i pułapki diagnostyczne”.",
-    "modelAnswer": "Czerwone flagi neurologiczne wymagają pilnej diagnostyki. Prawidłowy wynik testu nie jest dowodem na dysocjację. Narzucanie sugestii i odzyskiwanie wspomnień grozi wytworzeniem fałszywych engramów.",
+    "modelAnswer": "Czerwone flagi neurologiczne (np. aura trzewna, stereotypia <2 min w TLE) wymagają pilnej diagnostyki. Prawidłowy wynik EEG/MRI nie jest dowodem na dysocjację (błąd negatywnego testu). Wymuszanie odzyskiwania wspomnień grozi wytworzeniem fałszywych engramów.",
     "explanation": "Porównaj swoją odpowiedź z podsumowaniem klinicznym. Zwróć uwagę na kryteria decyzyjne i czerwone flagi.",
     "difficulty": "both",
     "reasoning": "safety",
     "sourceIds": [
       "src-who-mhgap-2023",
       "src-isstd-adult-did-2011",
-      "src-icd11-cddr-2024"
+      "src-icd11-cddr-2024",
+      "src-ilae-epilepsy-classification-2017",
+      "src-nice-ng217-epilepsies-2022"
     ],
     "claimIds": [
       "claim-trauma-tle-mimic-aura-stereotypy",
@@ -197,19 +213,19 @@
       "objectiveIds": [
         "trauma-somatyka-mimiki-i-bezpieczenstwo-obj-1"
       ],
-      "prompt": "Czym może manifestować się autoimmunologiczne zapalenie mózgu z przeciwciałami przeciwko receptorom NMDA (anty-NMDAR)?",
+      "prompt": "Czym może manifestować się autoimmunologiczne zapalenie mózgu z przeciwciałami przeciwko receptorom NMDA (anty-NMDAR) imitujące zaburzenia psychiczne?",
       "options": [
-        "Ostrym początkiem psychozy, amnezji, dysocjacji, dyskinez i niestabilności wegetatywnej u młodej osoby",
-        "Izolowanym złamaniem kości piętowej",
-        "Trwałym brakiem linii papilarnych na palcach"
+        "Ostrym lub podostrym początkiem zmian zachowania, psychozy, dysocjacji i deficytów pamięci, którym towarzyszą dyskinezy ustno-twarzowe i niestabilność wegetatywna",
+        "Wieloletnim, powolnym narastaniem poczucia alienacji bez żadnych uchwytnych zmian w badaniu neurologicznym i laboratoryjnym",
+        "Izolowanymi napadami paniki występującymi wyłącznie podczas ekspozycji na bodźce przypominające uraz z dzieciństwa"
       ],
       "optionFeedback": [
-        "Zapalenie anty-NMDAR jest jednym z najczęstszych organicznych mimików zaburzeń psychicznych u młodych kobiet.",
-        "To uraz ortopedyczny.",
-        "To rzadka cecha dermatologiczna (adermatoglifia)."
+        "Zapalenie anty-NMDAR (często u młodych kobiet z potworniakiem jajnika) łączy objawy psychiatryczne z dyskinezami i dysautonomią.",
+        "Przebieg wieloletni i brak objawów neurologicznych nie odpowiada ostrej encefalopatii anty-NMDAR.",
+        "Reakcje na bodźce traumatyczne w PTSD nie dają dyskinez ani labilności układu autonomicznego o podłożu encefalopatii."
       ],
       "answer": 0,
-      "explanation": "Zapalenie anty-NMDAR jest jednym z najczęstszych organicznych mimików zaburzeń psychicznych u młodych kobiet.",
+      "explanation": "Zapalenie anty-NMDAR (często u młodych kobiet z potworniakiem jajnika) łączy objawy psychiatryczne z dyskinezami i dysautonomią.",
       "hint": "Przypomnij sobie wzorce neurobiologiczne i kontrfaktyczne reguły decyzyjne.",
       "difficulty": "student",
       "reasoning": "differentiation",
@@ -230,14 +246,14 @@
       ],
       "prompt": "Co należy zrobić, jeśli rutynowe badanie EEG u pacjenta z podejrzeniem padaczki skroniowej jest prawidłowe?",
       "options": [
-        "Pamiętać, że pojedyncze rutynowe EEG ma ograniczoną czułość i w razie silnego podejrzenia zlecić wideo-EEG lub badanie po deprywacji snu",
-        "Natychmiast ogłosić, że pacjent symuluje chorobę",
-        "Podać dożylnie alkohol etylowy"
+        "Pamiętać o ograniczonej czułości pojedynczego spoczynkowego EEG (fałszywie ujemne u 30–50%) i w razie podejrzenia zlecić wideo-EEG, badanie po deprywacji snu lub MRI z protokołem padaczkowym",
+        "Uznać etiologię padaczkową za ostatecznie wykluczoną i skierować pacjenta wyłącznie na psychoterapię wglądową",
+        "Włączyć wysokie dawki klasycznych neuroleptyków sedatywnych, licząc na profilaktykę dalszych incydentów"
       ],
       "optionFeedback": [
         "Prawidłowy zapis spoczynkowy nie wyklucza ogniska padaczkowego w głębokich strukturach skroniowych.",
-        "Symulacja jest rzadka i wymaga rzetelnego dowodu, a nie oparcia na ujemnym teście przesiewowym.",
-        "Alkohol jest przeciwwskazany w diagnostyce neurologicznej."
+        "Pojedynczy ujemny wynik rutynowego EEG nie jest podstawą do wykluczenia TLE.",
+        "Neuroleptyki obniżają próg drgawkowy i mogą zaostrzyć napady padaczkowe."
       ],
       "answer": 0,
       "explanation": "Prawidłowy zapis spoczynkowy nie wyklucza ogniska padaczkowego w głębokich strukturach skroniowych.",
@@ -247,7 +263,9 @@
       "sourceIds": [
         "src-who-mhgap-2023",
         "src-isstd-adult-did-2011",
-        "src-icd11-cddr-2024"
+        "src-icd11-cddr-2024",
+        "src-ilae-epilepsy-classification-2017",
+        "src-nice-ng217-epilepsies-2022"
       ],
       "claimIds": [
         "claim-trauma-tle-mimic-aura-stereotypy"
@@ -265,6 +283,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, CG78, ISTSS, pure content-src architecture"
+    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, ILAE 2017, NICE NG217, ISSTD, pure content-src architecture"
   }
 }

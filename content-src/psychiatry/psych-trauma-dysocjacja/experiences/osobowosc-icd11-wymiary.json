@@ -22,13 +22,13 @@
     "prompt": "Jaki jest pierwszy i fundamentalny krok w diagnostyce zaburzeń osobowości wg klasyfikacji ICD-11?",
     "options": [
       "Ocena ogólnego stopnia głębokości dysfunkcji (łagodne, umiarkowane, ciężkie zaburzenie)",
-      "Zaliczenie pacjenta do jednego z klastrów A, B lub C",
-      "Oznaczenie poziomu przeciwciał przeciwjądrowych ANA"
+      "Zaliczenie pacjenta do jednego ze sztywnych klastrów A, B lub C wg tradycji DSM-IV",
+      "Wykonanie testu Rorschacha jako obligatoryjnego warunku wstępnego kwalifikacji"
     ],
     "optionFeedback": [
       "Najpierw ustala się czy i w jakim nasileniu występuje zaburzenie funkcjonowania self i relacji.",
-      "Klastry A, B, C to przestarzały system DSM, odrzucony w ICD-11.",
-      "Badania immunologiczne nie diagnozują osobowości."
+      "Klastry A, B, C to przestarzały system kategorialny, odrzucony w ICD-11 na rzecz modelu wymiarowego.",
+      "Testy projekcyjne nie stanowią wymaganego kryterium kwalifikacji w ICD-11."
     ],
     "answer": 0,
     "explanation": "Najpierw ustala się czy i w jakim nasileniu występuje zaburzenie funkcjonowania self i relacji.",
@@ -114,24 +114,23 @@
     },
     {
       "id": "osobowosc-icd11-wymiary-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "ordering",
       "objectiveIds": [
         "osobowosc-icd11-wymiary-obj-2"
       ],
-      "prompt": "Dlaczego w ICD-11 zachowano kwalifikator wzorca borderline (Borderline pattern qualifier)?",
-      "options": [
-        "Dla zachowania ciągłości klinicznej i kierowania pacjentów do dedykowanych terapii (np. DBT)",
-        "Ponieważ jest to jedyne zaburzenie osobowości występujące na świecie",
-        "Z powodu nakazu Światowej Organizacji Handlu"
+      "prompt": "Uporządkuj 3-stopniowy algorytm diagnostyki zaburzeń osobowości wg ICD-11 (kod 6D10):",
+      "items": [
+        "Krok 1: Ocena uogólnionego stopnia głębokości dysfunkcji self i relacji (trudności subkliniczne, łagodne, umiarkowane, ciężkie)",
+        "Krok 2: Określenie profilu 5 domen cech (negatywna afektywność, dystansowanie, dyssocjalność, rozhamowanie, anankastia)",
+        "Krok 3: Zastosowanie opcjonalnego kwalifikatora wzorca borderline w celu ukierunkowania na dedykowaną terapię (np. DBT)"
       ],
-      "optionFeedback": [
-        "Kwalifikator ułatwia identyfikację pacjentów odnoszących korzyść z ustrukturyzowanych programów leczenia.",
-        "Zaburzenia osobowości mają zróżnicowany profil.",
-        "ICD-11 to dokument WHO, a nie WTO."
+      "correctOrder": [
+        0,
+        1,
+        2
       ],
-      "answer": 0,
-      "explanation": "Kwalifikator ułatwia identyfikację pacjentów odnoszących korzyść z ustrukturyzowanych programów leczenia.",
-      "hint": "Kluczem jest bezpieczeństwo i hierarchia postępowania.",
+      "explanation": "Standardowy algorytm ICD-11: najpierw stopień nasilenia (severity), następnie specyfikacja domen cech (trait domains), a na końcu ewentualny kwalifikator borderline.",
+      "hint": "Kluczem jest sekwencja: nasilenie ogólne -> domeny cech -> kwalifikator kliniczny.",
       "difficulty": "doctor",
       "reasoning": "decision",
       "sourceIds": [
@@ -171,13 +170,13 @@
       "prompt": "Co charakteryzuje domenę dyssocjalności (Dissociality) w modelu wymiarowym ICD-11?",
       "options": [
         "Brak empatii, przedmiotowe traktowanie innych ludzi i lekceważenie ich praw",
-        "Ciągły paraliżujący lęk przed wyjściem z domu",
-        "Uporczywe mycie rąk 50 razy na dobę"
+        "Ciągły paraliżujący lęk przed wejściem w nowe relacje społeczne",
+        "Uporczywe, natrętne sprawdzanie zamków w drzwiach i mycie rąk"
       ],
       "optionFeedback": [
         "To rdzeń dyssocjalności (odpowiednik dawnego zaburzenia antyspołecznego i cech psychopatycznych).",
-        "To domena negatywnej afektywności lub dystansowania.",
-        "To objaw anankastyczny lub natręctwo w OCD."
+        "To domena negatywnej afektywności lub dystansowania interpersonalnego.",
+        "To objaw anankastyczny lub zaburzenie z kręgu OCD."
       ],
       "answer": 0,
       "explanation": "To rdzeń dyssocjalności (odpowiednik dawnego zaburzenia antyspołecznego i cech psychopatycznych).",
@@ -199,14 +198,14 @@
       ],
       "prompt": "Co oznacza kategoria „Trudności osobowościowe” (Personality Difficulty) w ICD-11?",
       "options": [
-        "Stan subkliniczny — widoczne cechy utrudniające życie w stresie, lecz niespełniające kryteriów pełnego zaburzenia",
-        "Ciężką postać schizofrenii paranoidalnej z katatonią",
-        "Śpiączkę wątrobową w marskości"
+        "Stan subkliniczny — widoczne cechy utrudniające funkcjonowanie w stresie, lecz niespełniające kryteriów pełnego zaburzenia osobowości",
+        "Ostre, przemijające zaburzenie adaptacyjne wywołane nagłym zdarzeniem losowym",
+        "Epizod łagodnej depresji z zachowanym krytycyzmem bez cech charakterologicznych"
       ],
       "optionFeedback": [
         "Pozwala na nazwanie problemu bez nieuzasadnionej stygmatyzacji pacjenta etykietą zaburzenia psychicznego.",
-        "To psychoza, a nie wariant struktury osobowości.",
-        "To stan somatyczny bezpośrednio zagrażający życiu."
+        "Zaburzenie adaptacyjne jest ostrą reakcją na stresor zewnętrzny, a nie cechą struktury osobowości.",
+        "Zaburzenia afektywne to odrębna kategoria osiowa, niezależna od trudności osobowościowych."
       ],
       "answer": 0,
       "explanation": "Pozwala na nazwanie problemu bez nieuzasadnionej stygmatyzacji pacjenta etykietą zaburzenia psychicznego.",
@@ -228,6 +227,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, CG78, ISTSS, pure content-src architecture"
+    "scope": "WHO ICD-11 CDDR (6D10), APA DSM-5-TR, pure content-src architecture"
   }
 }

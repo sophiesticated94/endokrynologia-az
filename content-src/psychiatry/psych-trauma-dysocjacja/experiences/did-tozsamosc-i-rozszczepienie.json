@@ -9,7 +9,7 @@
     },
     {
       "id": "did-tozsamosc-i-rozszczepienie-obj-2",
-      "statement": "Poznasz kryteria ICD-11/DSM-5-TR: stany tożsamości, amnezję codzienną i wykluczenia kulturowe.",
+      "statement": "Poznasz kryteria ICD-11 (6B64) i DSM-5-TR: stany tożsamości, amnezję codzienną i wykluczenia kulturowe.",
       "kind": "decision"
     }
   ],
@@ -19,20 +19,20 @@
     "objectiveIds": [
       "did-tozsamosc-i-rozszczepienie-obj-1"
     ],
-    "prompt": "Jaki rodzaj amnezji ma kluczowe znaczenie w spełnieniu kryteriów diagnostycznych DID wg ICD-11 i DSM-5-TR?",
+    "prompt": "Jaki rodzaj amnezji ma kluczowe znaczenie w spełnieniu kryteriów diagnostycznych DID wg ICD-11 6B64 i DSM-5-TR?",
     "options": [
       "Nawracająca amnezja dotycząca bieżących, codziennych wydarzeń (everyday amnesia, time loss)",
-      "Niepamięć numeru PESEL przy nienaruszonej pamięci pozostałych danych",
-      "Amnezja wyłącznie po spożyciu 4 litrów piwa"
+      "Amnezja ograniczona wyłącznie do fragmentów przeżytego w przeszłości wypadku lub napaści",
+      "Utrata pamięci semantycznej przy całkowicie nienaruszonej pamięci zdarzeń bieżących"
     ],
     "optionFeedback": [
-      "To kryterium decyzyjne odróżniające DID od prostego PTSD, w którym amnezja dotyczy tylko samego urazu.",
-      "Izolowane zapomnienie numeru urzędowego nie stanowi kryterium amnezji dysocjacyjnej.",
-      "To intoksykacja alkoholowa (blackout), stanowiąca kryterium wykluczenia."
+      "To kryterium decyzyjne odróżniające DID od prostego PTSD, w którym amnezja dotyczy zazwyczaj samego urazu.",
+      "Amnezja specyficzna dla traumy jest typowa dla PTSD i ostrego zaburzenia stresowego, nie spełnia kryteriów DID.",
+      "Utrata pamięci semantycznej to cecha pierwotnych schorzeń neurodegeneracyjnych (np. otępienia semantycznego), a nie DID."
     ],
     "answer": 0,
-    "explanation": "To kryterium decyzyjne odróżniające DID od prostego PTSD, w którym amnezja dotyczy tylko samego urazu.",
-    "hint": "Przeanalizuj mechanizm biologiczny i kryteria przed zaznaczeniem opcji.",
+    "explanation": "To kryterium decyzyjne odróżniające DID od prostego PTSD, w którym amnezja dotyczy zazwyczaj samego urazu.",
+    "hint": "Przeanalizuj kryteria decyzyjne ICD-11 przed zaznaczeniem opcji.",
     "difficulty": "student",
     "reasoning": "mechanism",
     "sourceIds": [
@@ -48,7 +48,7 @@
     {
       "id": "did-tozsamosc-i-rozszczepienie-block-1",
       "title": "Fenomenologia: Nie „wiele osób”, lecz brak integracji jednej jaźni",
-      "text": "Współczesna psychiatria odrzuca historyczną i popkulturową narrację o „wielu osobach mieszkających w jednym ciele”. Dysocjacyjne zaburzenie tożsamości (DID wg ICD-11 6B60 / DSM-5-TR 300.14) to zaburzenie rozwojowe polegające na braku integracji procesów psychicznych w jednolitą tożsamość. Na skutek przewlekłej, traumatycznej relacji w dzieciństwie (zwykle przed 6–9. rokiem życia, zanim naturalnie nastąpi konsolidacja spójnego self), dochodzi do wykształcenia min. dwóch odrębnych stanów tożsamości (personality states). Każdy stan wykazuje własny, odmienny wzorzec postrzegania, wchodzenia w relacje oraz poczucie sprawczości (sense of agency).",
+      "text": "Współczesna psychiatria odrzuca popkulturową narrację o „wielu osobach mieszkających w jednym ciele”. Dysocjacyjne zaburzenie tożsamości (DID wg ICD-11 6B64 / DSM-5-TR 300.14) to zaburzenie polegające na braku integracji procesów psychicznych w jednolitą tożsamość. W modelach klinicznych (m.in. teorii strukturalnej dysocjacji) wiązane jest z przewlekłą traumą relacyjną we wczesnym dzieciństwie, utrudniającą naturalną konsolidację spójnego poczucia self. Dochodzi do manifestacji min. dwóch odrębnych stanów tożsamości (personality states), z których każdy wykazuje własny wzorzec postrzegania, wchodzenia w relacje oraz poczucie sprawczości (sense of agency). Sam wywiad urazowy stanowi istotny kontekst kliniczny, lecz nie jest formalnym kryterium diagnostycznym.",
       "sourceIds": [
         "src-icd11-cddr-2024",
         "src-dsm5-tr-2022",
@@ -64,7 +64,7 @@
     {
       "id": "did-tozsamosc-i-rozszczepienie-block-2",
       "title": "Kryterium decyzyjne: Nawracające luki w pamięci codziennej",
-      "text": "Obecność odmiennych stanów tożsamości NIE wystarcza do diagnozy DID — niezbędnym kryterium współistniejącym są nawracające luki w pamięci autobiograficznej (recurrent amnesic gaps). Co kluczowe, luki te NIE ograniczają się wyłącznie do okresu traumy z przeszłości, lecz dotyczą BIEŻĄCYCH ZDARZEŃ CODZIENNYCH (everyday events). Pacjent doświadcza tzw. ubytków czasu (time loss) — np. „budzi się” w nieznanym miejscu, odkrywa w domu przedmioty lub ubrania, których nie pamięta kupować, albo spotyka ludzi traktujących go jak bliskiego znajomego, których zupełnie nie kojarzy.",
+      "text": "Obecność odmiennych stanów tożsamości nie wystarcza do diagnozy DID — niezbędnym kryterium współistniejącym są nawracające luki w pamięci autobiograficznej (recurrent amnesic gaps). Co kluczowe, luki te NIE ograniczają się wyłącznie do okresu traumy z przeszłości, lecz dotyczą BIEŻĄCYCH ZDARZEŃ CODZIENNYCH (everyday events). Pacjent doświadcza tzw. ubytków czasu (time loss) — np. orientuje się, że znajduje się w nieznanym miejscu, odkrywa w domu przedmioty lub ubrania, których nie pamięta kupować, albo spotyka ludzi traktujących go jak bliskiego znajomego, których zupełnie nie kojarzy.",
       "sourceIds": [
         "src-icd11-cddr-2024",
         "src-dsm5-tr-2022",
@@ -87,7 +87,7 @@
     {
       "id": "did-tozsamosc-i-rozszczepienie-block-3",
       "title": "Kontekst kulturowy, religijny i wykluczenia",
-      "text": "Zgodnie z wytycznymi ICD-11 i DSM-5-TR objawy nie mogą stanowić normalnej części powszechnie akceptowanej praktyki kulturowej lub religijnej (np. stany transu lub opętania w tradycyjnych rytuałach). W przypadku dzieci objawy nie mogą być przypisane obecności wyimaginowanego przyjaciela ani zabawie w odgrywanie ról. Bezwzględnym wymogiem jest wykluczenie bezpośredniego działania substancji (np. blackout po alkoholu) oraz chorób neurologicznych (napady padaczki skroniowej, zapalenia mózgu, urazy czaszkowo-mózgowe).",
+      "text": "Zgodnie z wytycznymi ICD-11 i DSM-5-TR objawy nie mogą stanowić normalnej części powszechnie akceptowanej praktyki kulturowej lub religijnej (np. tradycyjnych rytuałów opętania transowego). W przypadku dzieci objawy nie mogą być przypisane obecności wyimaginowanego przyjaciela ani rozwojowej zabawie w odgrywanie ról. Bezwzględnym wymogiem jest wykluczenie bezpośredniego działania substancji (np. blackout po alkoholu lub intoksykacja substancjami psychoaktywnymi) oraz schorzeń neurologicznych (napady padaczki skroniowej, zapalenia mózgu, urazy czaszkowo-mózgowe).",
       "sourceIds": [
         "src-icd11-cddr-2024",
         "src-dsm5-tr-2022",
@@ -107,19 +107,19 @@
       "objectiveIds": [
         "did-tozsamosc-i-rozszczepienie-obj-1"
       ],
-      "prompt": "Jak współczesna neuronauka i wytyczne ISSTD definiują naturę „alterów” w DID?",
+      "prompt": "Jak współczesna nozologia psychiatryczna (ICD-11 6B64) definiuje naturę stanów tożsamości w DID?",
       "options": [
-        "Jako odrębne stany tożsamości jednej nie w pełni zintegrowanej psychiki, a nie „niezależnych ludzi”",
-        "Jako dosłownie żyjące oddzielne osoby uwięzione pod czaszką",
-        "Jako pasożytnicze formy bakterii zagnieżdżone w oponach mózgowych"
+        "Jako odrębne stany tożsamości jednej nie w pełni zintegrowanej psychiki z odmiennym poczuciem sprawczości",
+        "Jako urojenia wielkościowe i owładnięcia wynikające z pierwotnego rozpadu toku myślenia w psychozie",
+        "Jako gwałtowne wahania nastroju w skali godzin z zachowaną stałą tożsamością wykonawczą w profilu BPD"
       ],
       "optionFeedback": [
-        "DID to zaburzenie integracji jednego umysłu (fragmentacja), a nie obecność wielu dusz czy ciał.",
-        "To nienaukowa narracja popkulturowa sprzeczna z psychiatrią.",
-        "To niedorzeczność biologiczna."
+        "DID to zaburzenie integracji procesów psychicznych jednego umysłu (fragmentacja), a nie obecność wielu niezależnych osób.",
+        "To opis zespołu urojeniowego, w którym brak odrębnych stanów tożsamości ze zmienną amnezją.",
+        "Chwiejność afektu przy zachowaniu jednej tożsamości wykonawczej odpowiada profilowi BPD."
       ],
       "answer": 0,
-      "explanation": "DID to zaburzenie integracji jednego umysłu (fragmentacja), a nie obecność wielu dusz czy ciał.",
+      "explanation": "DID to zaburzenie integracji procesów psychicznych jednego umysłu (fragmentacja), a nie obecność wielu niezależnych osób.",
       "hint": "Zwróć uwagę na ramy czasowe oraz kryteria wykluczenia.",
       "difficulty": "both",
       "reasoning": "mechanism",
@@ -134,24 +134,24 @@
     },
     {
       "id": "did-tozsamosc-i-rozszczepienie-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "missing_information",
       "objectiveIds": [
         "did-tozsamosc-i-rozszczepienie-obj-2"
       ],
-      "prompt": "Który z poniższych stanów stanowi bezwzględne kryterium wykluczenia dla pierwotnego rozpoznania DID?",
+      "prompt": "Do gabinetu zgłasza się 28-letnia pacjentka podająca występowanie odmiennych stanów tożsamości i wewnętrznych głosów. Która brakująca informacja jest najbardziej krytyczna, aby potwierdzić kryteria DID wg ICD-11 6B64 przed podjęciem decyzji terapeutycznej?",
       "options": [
-        "Objawy będące bezpośrednim skutkiem napadów padaczkowych lub intoksykacji substancją",
-        "Przebyta w dzieciństwie ospa wietrzna",
-        "Posiadanie prawa jazdy kategorii B"
+        "Obecność obiektywnych dowodów nawracającej amnezji wobec bieżących zdarzeń codziennych (time loss, nieznane przedmioty, ubrania)",
+        "Obecność w wywiadzie udokumentowanego urazu fizycznego przed ukończeniem 5. roku życia",
+        "Wynik badania rezonansu magnetycznego głowy potwierdzający specyficzny zanik kory skroniowej"
       ],
       "optionFeedback": [
-        "Objawy wywołane padaczką lub używkami wykluczają rozpoznanie zaburzenia dysocjacyjnego.",
-        "Ospa wietrzna nie ma związku z kryteriami wykluczenia DID.",
-        "Brak jakiegokolwiek związku z diagnozą nozologiczną."
+        "Nawracająca amnezja codziennych zdarzeń jest bezwzględnym kryterium kwalifikującym DID i odróżniającym je od dyfuzji tożsamości w BPD.",
+        "Wywiad traumy jest częsty, ale nie stanowi formalnego kryterium diagnostycznego w ICD-11 / DSM-5-TR.",
+        "DID nie posiada swoistego biomarkera neuroobrazowego; MRI służy wykluczeniu patologii organicznej, nie potwierdzeniu DID."
       ],
       "answer": 0,
-      "explanation": "Objawy wywołane padaczką lub używkami wykluczają rozpoznanie zaburzenia dysocjacyjnego.",
-      "hint": "Kluczem jest bezpieczeństwo i hierarchia postępowania.",
+      "explanation": "Nawracająca amnezja codziennych zdarzeń jest bezwzględnym kryterium kwalifikującym DID i odróżniającym je od dyfuzji tożsamości w BPD.",
+      "hint": "Kluczem jest kryterium decyzyjne różnicujące DID od zaburzeń osobowości i PTSD.",
       "difficulty": "doctor",
       "reasoning": "decision",
       "sourceIds": [
@@ -172,7 +172,7 @@
       "did-tozsamosc-i-rozszczepienie-obj-2"
     ],
     "prompt": "Wyjaśnij własnymi słowami najważniejsze kryteria i pułapki różnicowania z lekcji „Dysocjacyjne zaburzenie tożsamości (DID): fenomenologia i kryteria”.",
-    "modelAnswer": "DID to potraumatyczny brak integracji tożsamości na min. 2 stany z odrębnym poczuciem sprawczości oraz nawracającą amnezją codziennych zdarzeń (time loss). Wymaga wykluczenia przyczyn kulturowych i neurologicznych.",
+    "modelAnswer": "DID (ICD-11 6B64) to brak integracji tożsamości na min. 2 stany z odrębnym poczuciem sprawczości oraz nawracającą amnezją codziennych zdarzeń (time loss). Wymaga wykluczenia przyczyn kulturowych, substancyjnych i neurologicznych.",
     "explanation": "Porównaj swoją odpowiedź z podsumowaniem klinicznym. Zwróć uwagę na kryteria decyzyjne i czerwone flagi.",
     "difficulty": "both",
     "reasoning": "safety",
@@ -193,20 +193,20 @@
       "objectiveIds": [
         "did-tozsamosc-i-rozszczepienie-obj-1"
       ],
-      "prompt": "Dlaczego u dzieci należy zachować szczególną ostrożność, by nie pomylić DID ze zjawiskami rozwojowymi?",
+      "prompt": "Dlaczego w diagnostyce podejrzeń DID u dzieci wymagana jest szczególna ostrożność kliniczna?",
       "options": [
         "Dzieci w normie rozwojowej miewają wyimaginowanych przyjaciół i wchodzą w zabawy w udawanie",
-        "U dzieci do 18. roku życia mózg nie posiada ciała migdałowatego",
-        "Dzieci nigdy nie doświadczają żadnych urazów psychicznych"
+        "U dzieci poniżej 18. roku życia kryteria diagnostyczne zaburzeń dysocjacyjnych w ogóle nie mają zastosowania",
+        "Każde zgłoszenie obecności wyimaginowanego przyjaciela u dziecka wymaga natychmiastowego włączenia neuroleptyków"
       ],
       "optionFeedback": [
-        "Kompani fantazyjni są zjawiskiem fizjologicznym w wieku przedszkolnym i nie świadczą o patologii.",
-        "Ciało migdałowate rozwija się już w okresie prenatalnym.",
-        "Dzieci niestety bywają ofiarami ciężkiej przemocy, stąd konieczność rzetelnej oceny."
+        "Kompani fantazyjni i zabawy w odgrywanie ról są fizjologiczne u dzieci i nie mogą być mylone z patologicznym rozszczepieniem.",
+        "Zaburzenia dysocjacyjne mogą rozwijać się u dzieci, lecz wymagają rygorystycznego różnicowania z normą rozwojową.",
+        "Wyimaginowany przyjaciel u dziecka w wieku przedszkolnym jest zjawiskiem prawidłowym."
       ],
       "answer": 0,
-      "explanation": "Kompani fantazyjni są zjawiskiem fizjologicznym w wieku przedszkolnym i nie świadczą o patologii.",
-      "hint": "Przypomnij sobie wzorce neurobiologiczne i kontrfaktyczne reguły decyzyjne.",
+      "explanation": "Kompani fantazyjni i zabawy w odgrywanie ról są fizjologiczne u dzieci i nie mogą być mylone z patologicznym rozszczepieniem.",
+      "hint": "Zwróć uwagę na normy rozwojowe u dzieci.",
       "difficulty": "student",
       "reasoning": "mechanism",
       "sourceIds": [
@@ -220,24 +220,25 @@
     },
     {
       "id": "did-tozsamosc-i-rozszczepienie-q5-exit-2-v2",
-      "type": "missing_information",
+      "type": "ordering",
       "objectiveIds": [
         "did-tozsamosc-i-rozszczepienie-obj-2"
       ],
-      "prompt": "Co oznacza zjawisko „switching” (przełączanie) w przebiegu DID?",
-      "options": [
-        "Zmianę stanu tożsamości kontrolującego w danym momencie świadomość, afekt i zachowanie",
-        "Zmianę płci biologicznej w badaniu kariotypu pod wpływem stresu",
-        "Zamianę leków przeciwbólowych na antybiotyk"
+      "prompt": "Uporządkuj etapy diagnostyki różnicowej u pacjenta zgłaszającego ubytki czasu i odmienne stany tożsamości (od wstępnego wykluczenia przyczyn organicznych i stanów ostrych do weryfikacji kryteriów DID):",
+      "items": [
+        "Wykluczenie bezpośredniego wpływu substancji psychoaktywnych (toksykologia, odstawienie)",
+        "Wykluczenie podłoża neurologicznego (napady skroniowe TLE, wideo-EEG, MRI OUN)",
+        "Ocena testowania rzeczywistości i wykluczenie pierwotnego zespołu urojeniowego",
+        "Strukturyzowana ocena kryteriów DID: odrębne stany tożsamości i codzienna amnezja autobiograficzna"
       ],
-      "optionFeedback": [
-        "Switching może być wyzwalany przez bodźce przypominające traumę lub silny afekt.",
-        "Kariotyp genetyczny jest stały przez całe życie.",
-        "To pojęcie farmakoterapeutyczne, nie zjawisko psychopatologiczne w DID."
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
       ],
-      "answer": 0,
-      "explanation": "Switching może być wyzwalany przez bodźce przypominające traumę lub silny afekt.",
-      "hint": "Wybierz informację o najwyższej wadze różnicującej.",
+      "explanation": "Prawidłowa ścieżka diagnostyczna: najpierw toksykologia i substancje, następnie badania neurologiczne (EEG/MRI), wykluczenie urojeniowej utraty krytycyzmu, a na końcu ustrukturyzowana ocena kryteriów dysocjacji tożsamości.",
+      "hint": "Hierarchia: bezpieczeństwo i substancje -> neurologia -> psychoza -> kryteria dysocjacyjne.",
       "difficulty": "both",
       "reasoning": "safety",
       "sourceIds": [
@@ -261,6 +262,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, CG78, ISTSS, pure content-src architecture"
+    "scope": "WHO ICD-11 CDDR (6B64), APA DSM-5-TR, ISSTD, pure content-src architecture"
   }
 }

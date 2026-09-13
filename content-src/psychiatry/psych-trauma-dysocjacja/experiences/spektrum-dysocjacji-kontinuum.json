@@ -4,13 +4,13 @@
   "objectives": [
     {
       "id": "spektrum-dysocjacji-kontinuum-obj-1",
-      "statement": "Zrozumiesz dysocjację jako kontinuum od zjawisk adaptacyjnych (absorpcja) po strukturalną fragmentację.",
+      "statement": "Zrozumiesz kontinuum dysocjacji: różnicę między absorpcją normatywną a fragmentacją tożsamości.",
       "kind": "mechanism"
     },
     {
       "id": "spektrum-dysocjacji-kontinuum-obj-2",
-      "statement": "Poznasz teorię strukturalnej dysocjacji osobowości (część ANP vs części EP).",
-      "kind": "decision"
+      "statement": "Poznasz teorię strukturalnej dysocjacji osobowości (Van der Hart) i podział na ANP oraz EP.",
+      "kind": "differentiation"
     }
   ],
   "diagnostic": {
@@ -21,14 +21,14 @@
     ],
     "prompt": "Czym różni się część ANP od części EP w teorii strukturalnej dysocjacji?",
     "options": [
-      "ANP odpowiada za codzienne funkcjonowanie unikając traumy, a EP jest uwięziona w afekcie pourazowym",
-      "ANP to część produkująca hormony tarczycy, a EP hormony nadnerczy",
-      "ANP występuje wyłącznie u niemowląt, a EP u osób po 80. roku życia"
+      "ANP odpowiada za codzienne funkcjonowanie unikając bodźców traumatycznych, a EP jest uwięziona w afekcie i obronnych reakcjach pourazowych",
+      "ANP odpowiada wyłącznie za fazy snu wolnofalowego, a EP za stany czuwania w rytmie dobowym",
+      "ANP reprezentuje procesy korowe prawej półkuli, a EP wyłącznie aktywność struktur lewopółkulowych"
     ],
     "optionFeedback": [
       "ANP (Apparently Normal Part) realizuje cele adaptacyjne, EP (Emotional Part) przechowuje obronne reakcje zagrożenia.",
-      "To pojęcia z zakresu struktury osobowości i neuropsychologii, a nie gruczołów dokrewnych.",
-      "Pojęcia te opisują fragmentację potraumatyczną u osób w każdym wieku."
+      "To pojęcia z zakresu struktury osobowości i neuropsychologii traumy, a nie faz fizjologicznego snu.",
+      "Teoria Van der Harta nie opiera się na mechanicznym podziale lateralizacji półkulowej."
     ],
     "answer": 0,
     "explanation": "ANP (Apparently Normal Part) realizuje cele adaptacyjne, EP (Emotional Part) przechowuje obronne reakcje zagrożenia.",
@@ -74,8 +74,8 @@
     },
     {
       "id": "spektrum-dysocjacji-kontinuum-block-3",
-      "title": "Dysocjacja psychoformiczna a somatoformiczna",
-      "text": "Dysocjacja manifestuje się na dwóch płaszczyznach: 1) Psychoformicznej — objawy w sferze procesów psychicznych (amnezja, depersonalizacja, derealizacja, stany fugi, słyszenie wewnętrznych głosów); 2) Somatoformicznej — objawy w ciele bez organicznego podłoża (konwersja: pseudonapady padaczkowe PNES, utrata czucia o niefizjologicznym przebiegu, czynnościowy paraliż, głuchota psychogenna). Narzędziem oceny jest m.in. skala DES (Dissociative Experiences Scale) oraz SDQ-20.",
+      "title": "Dysocjacja psychoformiczna vs somatoformiczna",
+      "text": "Objawy dysocjacyjne dzielimy na: 1) Psychoformiczne: depersonalizacja (obcość siebie), derealizacja (nierealność świata), amnezja dysocjacyjna, tożsamościowe ubytki ciągłości; 2) Somatoformiczne (konwersyjne): czynnościowe napady rzekomopadaczkowe (PNES / psychogenic non-epileptic seizures), afonia, ślepota czynnościowa, utrata czucia o dystrybucji anatomicznie niemożliwej (np. typu „rękawiczki” bez uszkodzenia korzeni czy nerwów obwodowych).",
       "sourceIds": [
         "src-van-der-hart-dissociation-2006",
         "src-isstd-adult-did-2011"
@@ -95,18 +95,18 @@
       ],
       "prompt": "Jaki poziom strukturalnej dysocjacji charakteryzuje dysocjacyjne zaburzenie tożsamości (DID)?",
       "options": [
-        "Dysocjacja trzeciorzędowa (wiele odrębnych części ANP oraz wiele części EP)",
-        "Całkowity brak dysocjacji",
-        "Wyłącznie normatywna absorpcja filmowa"
+        "Dysocjacja trzeciorzędowa (podział na wiele odrębnych części ANP oraz wiele części EP)",
+        "Dysocjacja pierwotna (jedno zintegrowane ANP i pojedyncza część emocjonalna EP)",
+        "Izolowana dysocjacja peritraumatyczna bez utrwalonej fragmentacji struktur tożsamości"
       ],
       "optionFeedback": [
         "W DID dochodzi do podziału nie tylko części emocjonalnych, ale i części realizujących codzienne życie (tożsamości).",
-        "DID to skrajna postać dysocjacji tożsamościowej.",
-        "Normatywna absorpcja nie jest zaburzeniem psychicznym."
+        "Dysocjacja pierwotna (jedno ANP, jedno EP) jest modelem klasycznego, prostego PTSD.",
+        "Dysocjacja peritraumatyczna to ostry stan w trakcie urazu, nie tłumaczy przewlekłej wielości tożsamości w DID."
       ],
       "answer": 0,
       "explanation": "W DID dochodzi do podziału nie tylko części emocjonalnych, ale i części realizujących codzienne życie (tożsamości).",
-      "hint": "Zwróć uwagę na ramy czasowe oraz kryteria wykluczenia.",
+      "hint": "Zwróć uwagę na stopień podziału struktur tożsamości codziennej (ANP).",
       "difficulty": "both",
       "reasoning": "mechanism",
       "sourceIds": [
@@ -119,24 +119,25 @@
     },
     {
       "id": "spektrum-dysocjacji-kontinuum-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "ordering",
       "objectiveIds": [
         "spektrum-dysocjacji-kontinuum-obj-2"
       ],
-      "prompt": "Co to jest dysocjacja somatoformiczna?",
-      "options": [
-        "Występowanie objawów cielesnych (np. rzekomonapadowych, paraliżu, utraty czucia) bez podłoża neurologicznego",
-        "Prawdziwe złamanie kości udowej pod wpływem stresu",
-        "Wrodzony brak jednej z półkul mózgu"
+      "prompt": "Uporządkuj poziomy fragmentacji strukturalnej jaźni (od zjawisk normatywnych do najcięższej postaci dysocjacji tożsamości):",
+      "items": [
+        "Normatywna absorpcja i automatyzacja czynności bez amnezji (np. highway hypnosis)",
+        "Dysocjacja pierwotna: jedno zintegrowane ANP i jedno EP przechowujące uraz (klasyczne PTSD)",
+        "Dysocjacja wtórna: jedno dominujące ANP i wiele części emocjonalnych EP (cPTSD, BPD)",
+        "Dysocjacja trzeciorzędowa: podział na wiele odrębnych części ANP oraz wiele EP (DID — 6B64)"
       ],
-      "optionFeedback": [
-        "To somatyczna manifestacja mechanizmu dysocjacyjnego (zaburzenie konwersyjne).",
-        "Złamanie kości wymaga urazu mechanicznego lub osteoporozy.",
-        "To wada rozwojowa OUN, a nie zjawisko dysocjacyjne."
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
       ],
-      "answer": 0,
-      "explanation": "To somatyczna manifestacja mechanizmu dysocjacyjnego (zaburzenie konwersyjne).",
-      "hint": "Kluczem jest bezpieczeństwo i hierarchia postępowania.",
+      "explanation": "Hierarchia kontinuum: absorpcja -> dysocjacja pierwotna (PTSD) -> dysocjacja wtórna (cPTSD/BPD) -> dysocjacja trzeciorzędowa (DID).",
+      "hint": "Kluczem jest liczba współistniejących części ANP i EP w poszczególnych jednostkach.",
       "difficulty": "doctor",
       "reasoning": "decision",
       "sourceIds": [
@@ -177,17 +178,17 @@
       ],
       "prompt": "Który objaw zalicza się do łagodnych, normatywnych zjawisk dysocjacyjnych?",
       "options": [
-        "Zjawisko automatycznej jazdy autem po znanej trasie (highway hypnosis) z przejściową luką w pamięci drogi",
-        "Niepamięć całego swojego dzieciństwa i dorosłości z ucieczką do innego miasta",
-        "Przekonanie, że własne ramiona zostały zamienione w skrzydła ptaka"
+        "Zjawisko automatycznej jazdy autem po znanej trasie (highway hypnosis) z przejściową luką w pamięci drogi w stanie głębokiej absorpcji",
+        "Uogólniona niepamięć wsteczna obejmująca całą biografię i tożsamość z podróżą do innego miasta (fuga dysocjacyjna)",
+        "Stupor dysocjacyjny z całkowitym brakiem reakcji na bodźce zewnętrzne i utratą mowy"
       ],
       "optionFeedback": [
-        "To zjawisko powszechne, polegające na automatyzacji czynności bez patologicznej fragmentacji.",
-        "To fuga dysocjacyjna, stan głęboko patologiczny.",
-        "To zaburzenie urojeniowe lub ciężka agnozja."
+        "To zjawisko powszechne, polegające na automatyzacji czynności bez patologicznej fragmentacji jaźni.",
+        "To fuga dysocjacyjna, stan głęboko patologiczny wymagający diagnostyki klinicznej.",
+        "Stupor dysocjacyjny to ostry stan patologiczny wymagający natychmiastowej interwencji medycznej."
       ],
       "answer": 0,
-      "explanation": "To zjawisko powszechne, polegające na automatyzacji czynności bez patologicznej fragmentacji.",
+      "explanation": "To zjawisko powszechne, polegające na automatyzacji czynności bez patologicznej fragmentacji jaźni.",
       "hint": "Przypomnij sobie wzorce neurobiologiczne i kontrfaktyczne reguły decyzyjne.",
       "difficulty": "student",
       "reasoning": "mechanism",
@@ -207,14 +208,14 @@
       ],
       "prompt": "Jakie narzędzie przesiewowe jest powszechnie stosowane do oceny nasilenia dysocjacji psychoformicznej?",
       "options": [
-        "Skala Doświadczeń Dysocjacyjnych (Dissociative Experiences Scale — DES)",
-        "Skala Glasgow (GCS)",
-        "Krzywa cukrowa OGTT"
+        "Skala Doświadczeń Dysocjacyjnych (Dissociative Experiences Scale — DES / DES-II)",
+        "Kwestionariusz Zdrowia Pacjenta-9 (PHQ-9) do oceny ciężkości epizodu depresyjnego",
+        "Skala Oceny Niewydolności Narządów Związanej z Posocznicą (SOFA)"
       ],
       "optionFeedback": [
         "DES jest międzynarodowym standardem kwestionariuszowym oceny zjawisk dysocjacyjnych.",
-        "GCS służy do oceny głębokości śpiączki i przytomności w stanach nagłych.",
-        "OGTT diagnozuje zaburzenia gospodarki węglowodanowej."
+        "PHQ-9 ocenia objawy depresyjne, a nie specyficzne zjawiska dysocjacyjne.",
+        "Skala SOFA ocenia dysfunkcję narządową w warunkach intensywnej terapii."
       ],
       "answer": 0,
       "explanation": "DES jest międzynarodowym standardem kwestionariuszowym oceny zjawisk dysocjacyjnych.",
@@ -237,6 +238,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, CG78, ISTSS, pure content-src architecture"
+    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, Van der Hart 2006, Nijenhuis SDQ-20"
   }
 }

@@ -85,7 +85,7 @@
   },
   {
     "id": "claim-trauma-cptsd-dso-triad",
-    "statement": "Złożony zespół stresu pourazowego (cPTSD wg ICD-11 6B41) obejmuje spełnienie pełnych kryteriów PTSD oraz obecność triady zaburzeń organizacji jaźni (DSO): 1) ciężkiej dysregulacji afektu, 2) trwałego negatywnego obrazu siebie (poczucie bezwartościowości i wstydu), 3) trudności w utrzymywaniu relacji.",
+    "statement": "Złożony zespół stresu pourazowego (cPTSD wg ICD-11 6B41) obejmuje spełnienie pełnych kryteriów PTSD oraz obecność triady zaburzeń organizacji jaźni (DSO): 1) ciężkiej dysregulacji afektu, 2) trwałego negatywnego obrazu siebie (poczucie bezwartościowości, wstydu i porażki), 3) trudności w utrzymywaniu relacji interpersonalnych.",
     "category": "guideline_recommendation",
     "strength": "strong",
     "sourceIds": [
@@ -107,9 +107,9 @@
   },
   {
     "id": "claim-trauma-dissociation-continuum",
-    "statement": "Zjawiska dysocjacyjne tworzą kontinuum od normatywnej absorpcji i marzycielstwa po dysocjację peritraumatyczną i strukturalne rozszczepienie tożsamości; patologiczna dysocjacja wiąże się z załamaniem integracji pamięci, percepcji, tożsamości i kontroli motorycznej.",
-    "category": "mechanistic",
-    "strength": "conditional",
+    "statement": "Zjawiska dysocjacyjne opisuje się w modelach klinicznych jako kontinuum od powszechnej absorpcji i marzycielstwa po dysocjację peritraumatyczną i strukturalne rozszczepienie tożsamości; patologiczna dysocjacja wiąże się z załamaniem integracji pamięci, percepcji, tożsamości i kontroli motorycznej.",
+    "category": "educational_simplification",
+    "strength": "expert_consensus",
     "sourceIds": [
       "src-van-der-hart-dissociation-2006",
       "src-isstd-adult-did-2011"
@@ -190,7 +190,7 @@
   },
   {
     "id": "claim-trauma-did-core-criteria",
-    "statement": "Rozpoznanie DID (ICD-11 6B60) wymaga dezintegracji tożsamości z obecnością min. dwóch odrębnych stanów tożsamości (z odmiennym poczuciem jaźni i sprawczości) oraz nawracających luk w pamięci autobiograficznej dotyczących codziennych zdarzeń, ważnych danych osobistych lub traumy.",
+    "statement": "Rozpoznanie DID (ICD-11 6B64) wymaga dezintegracji tożsamości z obecnością min. dwóch odrębnych stanów tożsamości (z odmiennym poczuciem jaźni i sprawczości) oraz nawracających luk w pamięci autobiograficznej dotyczących codziennych zdarzeń, ważnych danych osobistych lub traumy.",
     "category": "guideline_recommendation",
     "strength": "strong",
     "sourceIds": [
@@ -213,7 +213,7 @@
   },
   {
     "id": "claim-trauma-amnesia-everyday-did",
-    "statement": "Obecność luk w pamięci dotyczących bieżących, neutralnych czynności codziennych (everyday amnesia, np. niepamięć zakupów, rozmów) jest kryterium decyzyjnym odróżniającym DID od PTSD, w którym amnezja ogranicza się wyłącznie do fragmentów urazu.",
+    "statement": "Obecność luk w pamięci dotyczących bieżących, neutralnych czynności codziennych (everyday amnesia, np. niepamięć zakupów, rozmów) jest kluczowym kryterium różnicującym DID od PTSD, w którym amnezja ogranicza się zazwyczaj do fragmentów urazu.",
     "category": "guideline_recommendation",
     "strength": "strong",
     "sourceIds": [
@@ -235,7 +235,7 @@
   },
   {
     "id": "claim-trauma-did-voices-not-psychosis",
-    "statement": "Słyszenie głosów wewnętrznych reprezentujących odrębne stany tożsamości w DID jest zjawiskiem częstym i mylnie kwalifikowanym jako objaw Schneiderowski I rzędu; przy braku formalnych zaburzeń myślenia i urojeniowej interpretacji nie uprawnia do rozpoznania schizofrenii.",
+    "statement": "Słyszenie głosów wewnętrznych reprezentujących stany tożsamości w DID jest częstym zjawiskiem fenomenologicznym; samo doświadczenie głosów przy zachowanym krytycyzmie, braku urojeniowej interpretacji i braku formalnych zaburzeń myślenia nie uprawnia do rozpoznania schizofrenii. Różnicowanie wymaga wieloosiowej oceny testowania rzeczywistości, toku myślenia i przebiegu podłużnego.",
     "category": "guideline_recommendation",
     "strength": "strong",
     "sourceIds": [
@@ -256,7 +256,7 @@
   },
   {
     "id": "claim-trauma-bpd-identity-vs-did",
-    "statement": "Zaburzenie tożsamości w BPD polega na niestabilnym, zmiennym obrazie samego siebie i celów życiowych pod wpływem afektu i relacji, ale NIE wiąże się z wykształceniem autonomicznych stanów tożsamości z nawracającą amnezją dysocjacyjną codziennych zdarzeń.",
+    "statement": "Zaburzenie tożsamości w BPD polega na niestabilnym, zmiennym obrazie samego siebie i celów życiowych pod wpływem afektu i relacji; w BPD mogą występować przejściowe objawy dysocjacyjne i poczucie bycia inną osobą, lecz nie dochodzi do utrwalenia autonomicznych stanów tożsamości z nawracającą amnezją codziennych zdarzeń.",
     "category": "guideline_recommendation",
     "strength": "strong",
     "sourceIds": [
@@ -276,6 +276,27 @@
     ],
     "reviewedAt": "2026-09-13",
     "evidenceType": "DIFFERENTIAL_AXIS"
+  },
+  {
+    "id": "claim-trauma-did-developmental-model",
+    "statement": "Przewlekła trauma relacyjna w dzieciństwie stanowi silny kliniczny czynnik ryzyka i kontekst rozwojowy DID (obserwowany u ~90% pacjentów), jednak sam wywiad traumy nie jest formalnym kryterium diagnostycznym w ICD-11 ani DSM-5-TR; diagnoza opiera się na kryteriach fenomenologicznych (odrębne stany tożsamości, amnezja codzienna, upośledzenie funkcjonowania).",
+    "category": "observational_association",
+    "strength": "observational",
+    "sourceIds": [
+      "src-icd11-cddr-2024",
+      "src-isstd-adult-did-2011",
+      "src-dsm5-tr-2022"
+    ],
+    "lessonIds": [
+      "did-tozsamosc-i-rozszczepienie"
+    ],
+    "tags": [
+      "did",
+      "trauma-etiology",
+      "developmental-context"
+    ],
+    "reviewedAt": "2026-09-13",
+    "evidenceType": "OBSERVATIONAL_CORRELATION"
   },
   {
     "id": "claim-trauma-icd11-personality-dimensional",
@@ -364,10 +385,12 @@
   },
   {
     "id": "claim-trauma-tle-mimic-aura-stereotypy",
-    "statement": "Napady ogniskowe z płata skroniowego (TLE) mogą imitować epizody paniki lub dysocjacji; obecność aury nadbrzusznej (uczucie wznoszenia z żołądka), mlaskania, stereotypii oraz czasu trwania 30–120 sekund wymaga priorytetowej diagnostyki neurologicznej (wideo-EEG, MRI OUN).",
+    "statement": "Napady ogniskowe z płata skroniowego (TLE) mogą imitować epizody paniki lub dysocjacji; obecność aury nadbrzusznej (uczucie wznoszenia z żołądka), napadowego stereotypowego przebiegu oraz przemijających zaburzeń przytomności lub objawów ruchowych stanowi wskazanie do priorytetowej diagnostyki neurologicznej (wideo-EEG, MRI OUN wg ILAE/NICE).",
     "category": "guideline_recommendation",
     "strength": "strong",
     "sourceIds": [
+      "src-ilae-epilepsy-classification-2017",
+      "src-nice-ng217-epilepsies-2022",
       "src-who-mhgap-2023",
       "src-icd11-cddr-2024"
     ],

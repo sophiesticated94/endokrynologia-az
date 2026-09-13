@@ -73,12 +73,12 @@
           "explanation": "Najpierw ustala się czy i w jakim nasileniu występuje zaburzenie funkcjonowania self i relacji."
         },
         {
-          "text": "Zaliczenie pacjenta do jednego z klastrów A, B lub C",
-          "explanation": "Klastry A, B, C to przestarzały system DSM, odrzucony w ICD-11."
+          "text": "Zaliczenie pacjenta do jednego ze sztywnych klastrów A, B lub C wg tradycji DSM-IV",
+          "explanation": "Klastry A, B, C to przestarzały system kategorialny, odrzucony w ICD-11 na rzecz modelu wymiarowego."
         },
         {
-          "text": "Oznaczenie poziomu przeciwciał przeciwjądrowych ANA",
-          "explanation": "Badania immunologiczne nie diagnozują osobowości."
+          "text": "Wykonanie testu Rorschacha jako obligatoryjnego warunku wstępnego kwalifikacji",
+          "explanation": "Testy projekcyjne nie stanowią wymaganego kryterium kwalifikacji w ICD-11."
         }
       ],
       "answer": 0
@@ -109,16 +109,16 @@
       "prompt": "Dlaczego w ICD-11 zachowano kwalifikator wzorca borderline (Borderline pattern qualifier)?",
       "options": [
         {
-          "text": "Dla zachowania ciągłości klinicznej i kierowania pacjentów do dedykowanych terapii (np. DBT)",
+          "text": "Dla zachowania ciągłości klinicznej i kierowania pacjentów do dedykowanych terapii o udowodnionej skuteczności (np. DBT)",
           "explanation": "Kwalifikator ułatwia identyfikację pacjentów odnoszących korzyść z ustrukturyzowanych programów leczenia."
         },
         {
-          "text": "Ponieważ jest to jedyne zaburzenie osobowości występujące na świecie",
-          "explanation": "Zaburzenia osobowości mają zróżnicowany profil."
+          "text": "Ponieważ wzorzec borderline jest jedyną jednostką poddającą się farmakoterapii celowanej",
+          "explanation": "Nie ma dedykowanych leków na zaburzenia osobowości; podstawą jest psychoterapia."
         },
         {
-          "text": "Z powodu nakazu Światowej Organizacji Handlu",
-          "explanation": "ICD-11 to dokument WHO, a nie WTO."
+          "text": "Z powodu braku możliwości zdefiniowania cech borderline w kategoriach 5 domen cech",
+          "explanation": "Wzorzec borderline daje się opisać domenami (negatywna afektywność, rozhamowanie), lecz kwalifikator zachowano ze względów pragmatycznych."
         }
       ],
       "answer": 0
@@ -133,12 +133,12 @@
           "explanation": "To rdzeń dyssocjalności (odpowiednik dawnego zaburzenia antyspołecznego i cech psychopatycznych)."
         },
         {
-          "text": "Ciągły paraliżujący lęk przed wyjściem z domu",
-          "explanation": "To domena negatywnej afektywności lub dystansowania."
+          "text": "Ciągły paraliżujący lęk przed wejściem w nowe relacje społeczne",
+          "explanation": "To domena negatywnej afektywności lub dystansowania interpersonalnego."
         },
         {
-          "text": "Uporczywe mycie rąk 50 razy na dobę",
-          "explanation": "To objaw anankastyczny lub natręctwo w OCD."
+          "text": "Uporczywe, natrętne sprawdzanie zamków w drzwiach i mycie rąk",
+          "explanation": "To objaw anankastyczny lub zaburzenie z kręgu OCD."
         }
       ],
       "answer": 0
@@ -149,16 +149,16 @@
       "prompt": "Co oznacza kategoria „Trudności osobowościowe” (Personality Difficulty) w ICD-11?",
       "options": [
         {
-          "text": "Stan subkliniczny — widoczne cechy utrudniające życie w stresie, lecz niespełniające kryteriów pełnego zaburzenia",
+          "text": "Stan subkliniczny — widoczne cechy utrudniające funkcjonowanie w stresie, lecz niespełniające kryteriów pełnego zaburzenia osobowości",
           "explanation": "Pozwala na nazwanie problemu bez nieuzasadnionej stygmatyzacji pacjenta etykietą zaburzenia psychicznego."
         },
         {
-          "text": "Ciężką postać schizofrenii paranoidalnej z katatonią",
-          "explanation": "To psychoza, a nie wariant struktury osobowości."
+          "text": "Ostre, przemijające zaburzenie adaptacyjne wywołane nagłym zdarzeniem losowym",
+          "explanation": "Zaburzenie adaptacyjne jest ostrą reakcją na stresor zewnętrzny, a nie cechą struktury osobowości."
         },
         {
-          "text": "Śpiączkę wątrobową w marskości",
-          "explanation": "To stan somatyczny bezpośrednio zagrażający życiu."
+          "text": "Epizod łagodnej depresji z zachowanym krytycyzmem bez cech charakterologicznych",
+          "explanation": "Zaburzenia afektywne to odrębna kategoria osiowa, niezależna od trudności osobowościowych."
         }
       ],
       "answer": 0

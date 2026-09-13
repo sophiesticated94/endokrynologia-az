@@ -70,12 +70,12 @@
           "explanation": "Poniżej 3 dni to ASR (reakcja przejściowa), a powyżej 1 miesiąca to PTSD."
         },
         {
-          "text": "Dokładnie pierwsze 60 minut od wypadku",
-          "explanation": "To natychmiastowa reakcja peritraumatyczna, nie ASD."
+          "text": "Wyłącznie w ciągu pierwszych 24–48 godzin od ustania zagrożenia",
+          "explanation": "Objawy w pierwszych 48-72h odpowiadają ostrej reakcji na stres (ASR)."
         },
         {
-          "text": "Minimum 2 lata nieprzerwanych objawów",
-          "explanation": "To przewlekłe zaburzenie, wykraczające daleko poza ramy ostrego zaburzenia."
+          "text": "Utrzymywanie się objawów przez okres co najmniej 6 miesięcy",
+          "explanation": "Okres powyżej 1 miesiąca to kryterium czasowe kwalifikujące do rozpoznania PTSD."
         }
       ],
       "answer": 0
@@ -86,16 +86,16 @@
       "prompt": "Dlaczego rutynowy psychologiczny debriefing (CISD) jest odradzany przez wytyczne NICE i WHO?",
       "options": [
         {
-          "text": "Metaanalizy wykazały, że wymuszone wczesne odtwarzanie traumy może zwiększać ryzyko PTSD",
+          "text": "Metaanalizy wykazały, że wymuszone wczesne odtwarzanie traumy może zaburzać naturalną rezyliencję i zwiększać ryzyko PTSD",
           "explanation": "Debriefing zakłóca naturalną obronę psychologiczną i konsoliduje lęk w niestabilnym układzie nerwowym."
         },
         {
-          "text": "Jest to procedura zakazana z powodów finansowych",
-          "explanation": "Przyczyną jest udowodniona szkodliwość kliniczna, a nie koszty."
+          "text": "CISD wymaga każdorazowo wykonania badania rezonansu magnetycznego przed rozpoczęciem sesji",
+          "explanation": "Debriefing jest procedurą psychologiczną, a nie neuroobrazową; powodem odrzucenia jest retraumatyzacja."
         },
         {
-          "text": "Wymaga obecności chirurga naczyniowego na sali",
-          "explanation": "To procedura psychologiczna, nie zabieg operacyjny."
+          "text": "Procedura ta wykazuje skuteczność wyłącznie u dzieci poniżej 10. roku życia",
+          "explanation": "CISD jest odradzany we wszystkich grupach wiekowych ze względu na brak korzyści i ryzyko szkody."
         }
       ],
       "answer": 0
@@ -110,12 +110,12 @@
           "explanation": "To 5 empirycznie potwierdzonych zasad wczesnego wsparcia pourazowego."
         },
         {
-          "text": "Natychmiastowe zmuszenie poszkodowanego do konfrontacji ze sprawcą",
-          "explanation": "To działanie skrajnie niebezpieczne i retraumatyzujące."
+          "text": "Agresywna farmakologiczna sedacja benzodiazepinami o krótkim czasie półtrwania",
+          "explanation": "Farmakoterapia benzodiazepinami we wczesnej fazie zaburza konsolidację pamięci i zwiększa ryzyko PTSD."
         },
         {
-          "text": "Podanie dożylne wysokiej dawki diazepamu każdemu uczestnikowi",
-          "explanation": "Benzodiazepiny są przeciwwskazane we wczesnej prewencji PTSD."
+          "text": "Szczegółowa psychoanalityczna interpretacja wczesnodziecięcych konfliktów popędowych",
+          "explanation": "Interwencje wglądowe są przeciwwskazane w ostrym kryzysie adaptacyjnym."
         }
       ],
       "answer": 0
@@ -126,16 +126,16 @@
       "prompt": "Dlaczego podawanie benzodiazepin bezpośrednio po ekspozycji na traumę jest niewskazane?",
       "options": [
         {
-          "text": "Zaburzają fizjologiczne wygaszanie lęku i wiążą się z wyższym ryzykiem rozwoju przewlekłego PTSD",
+          "text": "Zaburzają fizjologiczne wygaszanie lęku i wiążą się ze statystycznie wyższym ryzykiem rozwoju przewlekłego PTSD",
           "explanation": "BZD upośledzają mechanizmy adaptacyjnego uczenia się bezpieczeństwa w OUN."
         },
         {
-          "text": "Wywołują natychmiastowe zapalenie trzustki",
-          "explanation": "BZD nie mają takiego działania toksycznego."
+          "text": "Wywołują natychmiastowe zaostrzenie pierwotnego nadciśnienia tętniczego",
+          "explanation": "BZD działają anksjolitycznie i raczej obniżają ciśnienie, ale zaburzają wygaszanie lęku."
         },
         {
-          "text": "Trwale blokują receptory insulinowe w wątrobie",
-          "explanation": "Nie wykazują bezpośredniego wpływu na receptor insulinowy."
+          "text": "Prowadzą do nieodwracalnego uszkodzenia bariery krew-mózg",
+          "explanation": "Mechanizm niepożądany dotyczy neuroplastyczności i modulacji receptorów GABA-A w ciele migdałowatego."
         }
       ],
       "answer": 0
@@ -146,16 +146,16 @@
       "prompt": "Co należy zrobić w pierwszej kolejności u osoby z ASR po pożarze mieszkania?",
       "options": [
         {
-          "text": "Zapewnić bezpieczeństwo fizyczne, ciepło, kontakt z bliskimi i zaspokoić podstawowe potrzeby",
+          "text": "Zapewnić bezpieczeństwo fizyczne, ciepło, kontakt z bliskimi i zaspokoić podstawowe potrzeby praktyczne (PFA)",
           "explanation": "Podstawowe wsparcie środowiskowe i PFA są najważniejszą interwencją w pierwszych dobach."
         },
         {
-          "text": "Wdrożyć wieloletnią psychoterapię psychoanalityczną w ostrym dyżurze",
-          "explanation": "To nieadekwatna metoda do stanu nagłego."
+          "text": "Wdrożyć natychmiastową, intensywną ekspozycję wyobrażeniową na sceny pożaru",
+          "explanation": "Wczesna wymuszona ekspozycja w stanie ASR retraumatyzuje pacjenta."
         },
         {
-          "text": "Rozpocząć natychmiastową terapię elektrowstrząsową (ECT)",
-          "explanation": "ASR nie jest wskazaniem do ECT."
+          "text": "Podać profilaktycznie leki przeciwpsychotyczne drugiej generacji w wysokich dawkach",
+          "explanation": "Neuroleptyki nie mają wskazań w profilaktyce pourazowej u pacjentów bez psychozy."
         }
       ],
       "answer": 0

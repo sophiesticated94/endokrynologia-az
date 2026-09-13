@@ -19,19 +19,19 @@
     "objectiveIds": [
       "dbt-interwencja-kryzysowa-i-bezpieczenstwo-obj-1"
     ],
-    "prompt": "Jaki cel terapeutyczny stoi bezwzględnie na szczycie hierarchii w dialektycznej terapii behawioralnej (DBT)?",
+    "prompt": "Jaki cel terapeutyczny stoi bezwzględnie na szczycie hierarchii celów w dialektycznej terapii behawioralnej (DBT)?",
     "options": [
-      "Zachowania zagrażające życiu (aktywna suicydalność, ciężkie samouszkodzenia)",
-      "Nauka gry na instrumencie klawiszowym",
-      "Sprzątanie pokoju w akademiku"
+      "Zachowania zagrażające życiu (aktywne myśli samobójcze z zamiarem, przygotowania suicydalne i ciężkie samouszkodzenia)",
+      "Zachowania kolidujące z procesem terapeutycznym (np. nawracające spóźnienia i unikanie kontaktu)",
+      "Poprawa ogólnej jakości życia i rozwiązywanie przewlekłych konfliktów w relacjach rodzinnych"
     ],
     "optionFeedback": [
-      "Życie pacjenta jest warunkiem wstępnym jakiejkolwiek innej terapii; kryzys suicydalny pochłania cały priorytet sesji.",
-      "To cel hobbystyczny, bez znaczenia w hierarchii DBT.",
-      "Cele jakości życia są na niższym szczeblu hierarchii."
+      "Życie pacjenta jest warunkiem wstępnym jakiejkolwiek innej terapii; kryzys suicydalny całkowicie dominuje agendę sesji (Poziom 1).",
+      "Zachowania kolidujące z terapią to Poziom 2 hierarchii DBT — ustępują bezwzględnie bezpośredniemu zagrożeniu życia.",
+      "Cele jakości życia to Poziom 3 hierarchii DBT, podejmowane po ustabilizowaniu bezpieczeństwa i sojuszu terapeutycznego."
     ],
     "answer": 0,
-    "explanation": "Życie pacjenta jest warunkiem wstępnym jakiejkolwiek innej terapii; kryzys suicydalny pochłania cały priorytet sesji.",
+    "explanation": "Życie pacjenta jest warunkiem wstępnym jakiejkolwiek innej terapii; kryzys suicydalny całkowicie dominuje agendę sesji (Poziom 1).",
     "hint": "Przeanalizuj mechanizm biologiczny i kryteria przed zaznaczeniem opcji.",
     "difficulty": "student",
     "reasoning": "mechanism",
@@ -100,19 +100,19 @@
       "objectiveIds": [
         "dbt-interwencja-kryzysowa-i-bezpieczenstwo-obj-1"
       ],
-      "prompt": "Dlaczego dawne „kontrakty na niepopełnianie samobójstwa” zostały odrzucone we współczesnej medycynie?",
+      "prompt": "Dlaczego archaiczne „kontrakty na niepopełnianie samobójstwa” (tzw. no-suicide contracts) zostały jednoznacznie odrzucone we współczesnych wytycznych?",
       "options": [
-        "Nie mają żadnej udowodnionej skuteczności i mogą dawać personelowi fałszywe poczucie bezpieczeństwa",
-        "Ponieważ wymagały podpisu u notariusza za wysoką opłatą",
-        "Ponieważ samobójstwa w Europie już w ogóle nie występują"
+        "Nie posiadają dowodów na redukcję zachowań samobójczych i stwarzają fałszywe poczucie bezpieczeństwa u personelu, podczas gdy Plan Bezpieczeństwa (Stanley-Brown) uczy konkretnych umiejętności radzenia sobie z kryzysem",
+        "Kontrakty są zbyt skomplikowane formalnie i uniemożliwiają hospitalizację pacjenta w trybie nagłym",
+        "Wymagają one każdorazowo obecności notariusza, co uniemożliwia ich sporządzenie w warunkach izby przyjęć"
       ],
       "optionFeedback": [
-        "Kontrakt nie daje pacjentowi żadnych realnych narzędzi radzenia sobie z bólem; standardem jest Plan Bezpieczeństwa.",
-        "Kwestia dotyczy braku skuteczności klinicznej i fałszywego spokoju personelu.",
-        "Suicydalność pozostaje ogromnym wyzwaniem zdrowia publicznego."
+        "Kontrakt nie daje pacjentowi żadnych realnych narzędzi radzenia sobie z bólem psychicznym; standardem jest ustrukturyzowany Plan Bezpieczeństwa.",
+        "Kontrakty nie blokują hospitalizacji — ich zasadniczą wadą jest brak skuteczności klinicznej i uśpienie czujności zespołu leczącego.",
+        "To kwestia formalno-prawna nieodpowiadająca realiom klinicznym; problemem była nieskuteczność terapeutyczna."
       ],
       "answer": 0,
-      "explanation": "Kontrakt nie daje pacjentowi żadnych realnych narzędzi radzenia sobie z bólem; standardem jest Plan Bezpieczeństwa.",
+      "explanation": "Kontrakt nie daje pacjentowi żadnych realnych narzędzi radzenia sobie z bólem psychicznym; standardem jest ustrukturyzowany Plan Bezpieczeństwa.",
       "hint": "Zwróć uwagę na ramy czasowe oraz kryteria wykluczenia.",
       "difficulty": "both",
       "reasoning": "mechanism",
@@ -127,24 +127,25 @@
     },
     {
       "id": "dbt-interwencja-kryzysowa-i-bezpieczenstwo-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "ordering",
       "objectiveIds": [
         "dbt-interwencja-kryzysowa-i-bezpieczenstwo-obj-2"
       ],
-      "prompt": "Na czym polega krok „T” (Temperature) w protokole kryzysowym TIPP w DBT?",
-      "options": [
-        "Na wywołaniu odruchu nurka (zanurzenie twarzy w zimnej wodzie 10–12°C), co aktywuje nerw błędny i zwalnia akcję serca",
-        "Na pomiarze temperatury w uchu i podaniu antybiotyku",
-        "Na włączeniu sauny fińskiej na 3 godziny"
+      "prompt": "Uporządkuj kolejne etapy deeskalacji kryzysu w Planie Bezpieczeństwa Stanley-Brown (od rozpoznania objawów do interwencji środowiskowej):",
+      "items": [
+        "Rozpoznanie indywidualnych sygnałów ostrzegawczych zwiastujących kryzys suicydalny (myśli, obrazy, afekt)",
+        "Zastosowanie wewnętrznych strategii zaradczych (samodzielna regulacja: odwracanie uwagi, protokół TIPP)",
+        "Aktywacja sieci społecznej i kontakt z profesjonalnymi instytucjami pomocowymi (bliscy, 116 123, izba przyjęć)",
+        "Zabezpieczenie środowiska fizycznego poprzez zablokowanie dostępu do środków śmiercionośnych (leki, ostrza)"
       ],
-      "optionFeedback": [
-        "Fizjologiczny odruch nurka gwałtownie przełącza układ nerwowy w tryb hamowania wagalnego.",
-        "TIPP to technika behawioralna regulacji afektu, nie leczenie gorączki.",
-        "Długotrwała sauna w silnym kryzysie emocjonalnym grozi odwodnieniem i omdleniem."
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
       ],
-      "answer": 0,
-      "explanation": "Fizjologiczny odruch nurka gwałtownie przełącza układ nerwowy w tryb hamowania wagalnego.",
-      "hint": "Kluczem jest bezpieczeństwo i hierarchia postępowania.",
+      "explanation": "Hierarchia Planu Bezpieczeństwa: rozpoznanie sygnałów -> techniki wewnętrzne -> poszukiwanie pomocy zewnętrznej -> bezwzględne zabezpieczenie środowiska fizycznego.",
+      "hint": "Kluczem jest sekwencja: samoświadomość -> samoregulacja -> wsparcie społeczne i medyczne -> eliminacja środków zagrożenia.",
       "difficulty": "doctor",
       "reasoning": "decision",
       "sourceIds": [
@@ -165,7 +166,7 @@
       "dbt-interwencja-kryzysowa-i-bezpieczenstwo-obj-2"
     ],
     "prompt": "Wyjaśnij własnymi słowami najważniejsze kryteria i pułapki różnicowania z lekcji „Dialektyczna terapia behawioralna (DBT) i zarządzanie kryzysem”.",
-    "modelAnswer": "DBT stawia bezpieczeństwo życia na szczycie hierarchii. Standardem jest pisemny Plan Bezpieczeństwa (Stanley-Brown) z zabezpieczeniem środowiska oraz fizjologiczne techniki TIPP (odruch nurka).",
+    "modelAnswer": "DBT stawia bezpieczeństwo życia na szczycie hierarchii (Poziom 1). Standardem jest pisemny Plan Bezpieczeństwa (Stanley-Brown) z zabezpieczeniem środowiska (means restriction) oraz fizjologiczne techniki TIPP (odruch nurka aktywujący nerw błędny).",
     "explanation": "Porównaj swoją odpowiedź z podsumowaniem klinicznym. Zwróć uwagę na kryteria decyzyjne i czerwone flagi.",
     "difficulty": "both",
     "reasoning": "safety",
@@ -186,19 +187,19 @@
       "objectiveIds": [
         "dbt-interwencja-kryzysowa-i-bezpieczenstwo-obj-1"
       ],
-      "prompt": "Który krok w 6-etapowym Planie Bezpieczeństwa (Stanley-Brown) ma największe znaczenie dla fizycznego przetrwania kryzysu?",
+      "prompt": "Który krok w 6-etapowym Planie Bezpieczeństwa (Stanley-Brown) ma najbardziej bezpośrednie, empirycznie udowodnione znaczenie dla ograniczenia śmiertelności suicydalnej?",
       "options": [
-        "Zabezpieczenie środowiska (usunięcie lub zablokowanie dostępu do leków, narzędzi, niebezpiecznych miejsc)",
-        "Wykupienie karnetu na siłownię na rok z góry",
-        "Obejrzenie horroru kinowego"
+        "Zabezpieczenie środowiska (usunięcie lub zablokowanie dostępu do środków śmiercionośnych: leków, ostrych narzędzi, broni palnej)",
+        "Sporządzenie listy pozytywnych afirmacji i celów życiowych na najbliższe 5 lat",
+        "Zobowiązanie bliskich osób do nieustannego, 24-godzinnego monitorowania pacjenta w domu"
       ],
       "optionFeedback": [
-        "Ograniczenie dostępu do śmiercionośnych środków jest najskuteczniejszą empiryczną metodą prewencji samobójstw.",
-        "To działanie odległe, nie chroni w kryzysie ostrym.",
-        "Horror może nasilić pobudzenie lękowe."
+        "Ograniczenie dostępu do środków śmiercionośnych (means restriction) to najsilniejszy, poparty twardymi dowodami czynnik redukcji samobójstw.",
+        "Afirmacje długoterminowe są nieskuteczne i niewskazane w ostrym tunelowaniu poznawczym podczas szczytu kryzysu.",
+        "Obciążenie bliskich całodobowym nadzorem bez zabezpieczenia środowiska prowadzi do wyczerpania i nie zapobiega impulsywnym próbom."
       ],
       "answer": 0,
-      "explanation": "Ograniczenie dostępu do śmiercionośnych środków jest najskuteczniejszą empiryczną metodą prewencji samobójstw.",
+      "explanation": "Ograniczenie dostępu do środków śmiercionośnych (means restriction) to najsilniejszy, poparty twardymi dowodami czynnik redukcji samobójstw.",
       "hint": "Przypomnij sobie wzorce neurobiologiczne i kontrfaktyczne reguły decyzyjne.",
       "difficulty": "student",
       "reasoning": "mechanism",
@@ -217,19 +218,19 @@
       "objectiveIds": [
         "dbt-interwencja-kryzysowa-i-bezpieczenstwo-obj-2"
       ],
-      "prompt": "Co oznacza podejście redukcji szkód (Harm Reduction) w kontekście nawracających samookaleczeń w BPD?",
+      "prompt": "Co oznacza podejście redukcji szkód (Harm Reduction) w kontekście samookaleczeń bez intencji samobójczej (NSSI) w terapii BPD?",
       "options": [
-        "Wdrażanie bezpieczniejszych zachowań zastępczych (kostka lodu, gumka recepturka) w drodze do całkowitego zaprzestania",
-        "Rozdawanie pacjentom żyletek na oddziale szpitalnym",
-        "Zakaz rozmowy z pacjentem przez 6 miesięcy po skaleczeniu"
+        "Tymczasowe stosowanie bezpieczniejszych substytutów sensorycznych (np. ściskanie kostki lodu, strzelanie gumką recepturką) w drodze do opanowania adaptacyjnych technik regulacji afektu",
+        "Całkowite ignorowanie zachowań samouszkadzających i unikanie jakiejkolwiek rozmowy na ich temat podczas sesji terapeutycznych",
+        "Zezwalanie na powierzchowne nacięcia pod warunkiem stosowania sterylnych materiałów opatrunkowych"
       ],
       "optionFeedback": [
-        "Redukcja szkód chroni tkanki przed trwałym okaleczeniem i infekcją w fazie, gdy pacjent dopiero uczy się tolerancji dystresu.",
-        "To skrajne zaniedbanie i bezpośrednie narażenie życia pacjenta.",
-        "Odrzucenie pacjenta eskaluje kryzys suicydalny."
+        "Substytuty sensoryczne dostarczają silnego bodźca proprioceptywnego bez uszkadzania tkanek i ryzyka infekcji, dając czas na wdrożenie umiejętności TIPP.",
+        "W DBT każde zachowanie zagrażające życiu lub zdrowiu wymaga drobiazgowej analizy łańcuchowej (chain analysis).",
+        "Redukcja szkód nie polega na akceptacji uszkadzania ciała, lecz na zastępowaniu go działaniami bezurazowymi."
       ],
       "answer": 0,
-      "explanation": "Redukcja szkód chroni tkanki przed trwałym okaleczeniem i infekcją w fazie, gdy pacjent dopiero uczy się tolerancji dystresu.",
+      "explanation": "Substytuty sensoryczne dostarczają silnego bodźca proprioceptywnego bez uszkadzania tkanek i ryzyka infekcji, dając czas na wdrożenie umiejętności TIPP.",
       "hint": "Wybierz informację o najwyższej wadze różnicującej.",
       "difficulty": "both",
       "reasoning": "safety",
@@ -250,6 +251,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, CG78, ISTSS, pure content-src architecture"
+    "scope": "WHO mhGAP, APA DSM-5-TR, Linehan DBT 1993, Stanley-Brown 2012, NICE CG78"
   }
 }

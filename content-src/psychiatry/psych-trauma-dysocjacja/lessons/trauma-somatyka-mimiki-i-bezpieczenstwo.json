@@ -57,7 +57,9 @@
   "sourceIds": [
     "src-who-mhgap-2023",
     "src-isstd-adult-did-2011",
-    "src-icd11-cddr-2024"
+    "src-icd11-cddr-2024",
+    "src-ilae-epilepsy-classification-2017",
+    "src-nice-ng217-epilepsies-2022"
   ],
   "questions": [
     {
@@ -66,16 +68,16 @@
       "prompt": "Na czym polega błąd konfirmacji negatywnego testu w diagnostyce zaburzeń dysocjacyjnych?",
       "options": [
         {
-          "text": "Na błędnym uznaniu, że prawidłowy wynik EEG i MRI mózgu stanowi „dowód potwierdzający” etiologię dysocjacyjną",
+          "text": "Na błędnym uznaniu, że prawidłowy wynik badań neuroobrazowych (MRI) i elektrofizjologicznych (EEG) stanowi bezpośredni dowód potwierdzający etiologię czynnościową/dysocjacyjną",
           "explanation": "Diagnoza dysocjacyjna wymaga spełnienia pozytywnych kryteriów klinicznych, a nie wynika z samego braku zmian w badaniach."
         },
         {
-          "text": "Na założeniu, że każdy pacjent musi mieć powtórzone badanie krwi 100 razy",
-          "explanation": "Brak związku z błędem konfirmacji."
+          "text": "Na założeniu, że wykonanie EEG o wysokiej rozdzielczości definitywnie zapobiega dalszej progresji objawów dysocjacyjnych",
+          "explanation": "Badanie diagnostyczne nie stanowi interwencji terapeutycznej zapobiegającej objawom."
         },
         {
-          "text": "Na odrzuceniu wyniku badania z powodu brzydkiego charakteru pisma lekarza",
-          "explanation": "To kwestia edycyjna, nie błąd metodologiczny."
+          "text": "Na przeświadczeniu, że ujemny wynik rutynowego toksykologicznego badania moczu wyklucza konieczność zebrania wywiadu w kierunku leków uspokajających",
+          "explanation": "Panel toksykologiczny ma ograniczony zakres i nie zastępuje wnikliwego wywiadu farmakologicznego."
         }
       ],
       "answer": 0
@@ -86,16 +88,16 @@
       "prompt": "Dlaczego wytyczne międzynarodowe bezwzględnie zakazują technik sugestywnych i hipnozy w celu „odzyskiwania wypartych wspomnień”?",
       "options": [
         {
-          "text": "Niosą udowodnione wysokie ryzyko wygenerowania iatrogennych, destrukcyjnych fałszywych wspomnień (False Memory Syndrome)",
-          "explanation": "Umysł ludzki w hipnozie jest wybitnie podatny na konfabulacje i konfirmację oczekiwań terapeuty."
+          "text": "Niosą udowodnione wysokie ryzyko wygenerowania iatrogennych, destrukcyjnych fałszywych wspomnień (False Memory Syndrome) z powodu podatności na konfabulację pod presją sugestii",
+          "explanation": "Umysł ludzki poddany sugestii łatwo tworzy zniekształcone engramy, które subiektywnie są nieodróżnialne od faktów."
         },
         {
-          "text": "Hipnoza jest procedurą zbyt kosztowną dla kas chorych",
-          "explanation": "Przyczyną jest bezpieczeństwo kliniczne i zapobieganie szkodzie pacjenta."
+          "text": "Hipnoza i techniki wyobrażeniowe prowadzą do trwałego uszkodzenia receptorów GABA-ergicznych w hipokampie",
+          "explanation": "Zagrożenie ma naturę psychologiczno-poznawczą i relacyjną, a nie neurotoksyczną."
         },
         {
-          "text": "Hipnoza wywołuje natychmiastowe zakażenie wirusowym zapaleniem wątroby",
-          "explanation": "Brak transmisji patogenów drogą psychologiczną."
+          "text": "Techniki sugestywne są przeciwwskazane wyłącznie u osób z chorobami układu krążenia z powodu nagłego skoku ciśnienia tętniczego",
+          "explanation": "Zakaz wynika z zasad etyki klinicznej i ryzyka wygenerowania fałszywych zarzutów, a nie z ryzyka kardiologicznego."
         }
       ],
       "answer": 0
@@ -103,19 +105,19 @@
     {
       "id": "trauma-somatyka-mimiki-i-bezpieczenstwo-q3",
       "lessonId": "trauma-somatyka-mimiki-i-bezpieczenstwo",
-      "prompt": "Który objaw u pacjenta z dysocjacją stanowi czerwoną flagę wymagającą pilnej konsultacji neurologicznej?",
+      "prompt": "Który objaw u pacjenta z dysocjacją stanowi czerwoną flagę wymagającą pilnej diagnostyki w kierunku padaczki płata skroniowego (TLE) wg ILAE/NICE?",
       "options": [
         {
-          "text": "Napadowość z aurą nadbrzuszną, stereotypowość 30–60 s lub początek po 40. r.ż. z objawami ogniskowymi",
-          "explanation": "To objawy wskazujące na proces organiczny OUN (padaczka skroniowa, guz, zapalenie)."
+          "text": "Napadowość z aurą nadbrzuszną lub węchową, ściśle stereotypowy przebieg trwający 30–120 sekund i ponapadowa dezorientacja lub automatyzmy",
+          "explanation": "Krótki czas trwania, stereotypowość, aura sensoryczna i automatyzmy to kardynalne cechy napadów ogniskowych płata skroniowego."
         },
         {
-          "text": "Płacz podczas rozmowy o zmarłym rodzicu",
-          "explanation": "To naturalna reakcja żałoby i smutku."
+          "text": "Długotrwałe (wielogodzinne) uczucie nierealności otoczenia występujące wyłącznie w trakcie przedłużających się kłótni małżeńskich",
+          "explanation": "To klasyczny obraz derealizacji psychogennej pod wpływem stresu relacyjnego."
         },
         {
-          "text": "Uczucie zmęczenia po nieprzespanej nocy",
-          "explanation": "To fizjologiczny skutek deprywacji snu."
+          "text": "Uogólnione poczucie pustki tożsamościowej i ambiwalencja emocjonalna obecne stale od wczesnej adolescencji",
+          "explanation": "To cecha dyfuzji tożsamości w zaburzeniach osobowości (np. BPD), bez napadowego korelatu organicznego."
         }
       ],
       "answer": 0
@@ -123,19 +125,19 @@
     {
       "id": "trauma-somatyka-mimiki-i-bezpieczenstwo-q4",
       "lessonId": "trauma-somatyka-mimiki-i-bezpieczenstwo",
-      "prompt": "Czym może manifestować się autoimmunologiczne zapalenie mózgu z przeciwciałami przeciwko receptorom NMDA (anty-NMDAR)?",
+      "prompt": "Czym może manifestować się autoimmunologiczne zapalenie mózgu z przeciwciałami przeciwko receptorom NMDA (anty-NMDAR) imitujące zaburzenia psychiczne?",
       "options": [
         {
-          "text": "Ostrym początkiem psychozy, amnezji, dysocjacji, dyskinez i niestabilności wegetatywnej u młodej osoby",
-          "explanation": "Zapalenie anty-NMDAR jest jednym z najczęstszych organicznych mimików zaburzeń psychicznych u młodych kobiet."
+          "text": "Ostrym lub podostrym początkiem zmian zachowania, psychozy, dysocjacji i deficytów pamięci, którym towarzyszą dyskinezy ustno-twarzowe i niestabilność wegetatywna",
+          "explanation": "Zapalenie anty-NMDAR (często u młodych kobiet z potworniakiem jajnika) łączy objawy psychiatryczne z dyskinezami i dysautonomią."
         },
         {
-          "text": "Izolowanym złamaniem kości piętowej",
-          "explanation": "To uraz ortopedyczny."
+          "text": "Wieloletnim, powolnym narastaniem poczucia alienacji bez żadnych uchwytnych zmian w badaniu neurologicznym i laboratoryjnym",
+          "explanation": "Przebieg wieloletni i brak objawów neurologicznych nie odpowiada ostrej encefalopatii anty-NMDAR."
         },
         {
-          "text": "Trwałym brakiem linii papilarnych na palcach",
-          "explanation": "To rzadka cecha dermatologiczna (adermatoglifia)."
+          "text": "Izolowanymi napadami paniki występującymi wyłącznie podczas ekspozycji na bodźce przypominające uraz z dzieciństwa",
+          "explanation": "Reakcje na bodźce traumatyczne w PTSD nie dają dyskinez ani labilności układu autonomicznego o podłożu encefalopatii."
         }
       ],
       "answer": 0
@@ -146,16 +148,16 @@
       "prompt": "Co należy zrobić, jeśli rutynowe badanie EEG u pacjenta z podejrzeniem padaczki skroniowej jest prawidłowe?",
       "options": [
         {
-          "text": "Pamiętać, że pojedyncze rutynowe EEG ma ograniczoną czułość i w razie silnego podejrzenia zlecić wideo-EEG lub badanie po deprywacji snu",
+          "text": "Pamiętać o ograniczonej czułości pojedynczego spoczynkowego EEG (fałszywie ujemne u 30–50%) i w razie podejrzenia zlecić wideo-EEG, badanie po deprywacji snu lub MRI z protokołem padaczkowym",
           "explanation": "Prawidłowy zapis spoczynkowy nie wyklucza ogniska padaczkowego w głębokich strukturach skroniowych."
         },
         {
-          "text": "Natychmiast ogłosić, że pacjent symuluje chorobę",
-          "explanation": "Symulacja jest rzadka i wymaga rzetelnego dowodu, a nie oparcia na ujemnym teście przesiewowym."
+          "text": "Uznać etiologię padaczkową za ostatecznie wykluczoną i skierować pacjenta wyłącznie na psychoterapię wglądową",
+          "explanation": "Pojedynczy ujemny wynik rutynowego EEG nie jest podstawą do wykluczenia TLE."
         },
         {
-          "text": "Podać dożylnie alkohol etylowy",
-          "explanation": "Alkohol jest przeciwwskazany w diagnostyce neurologicznej."
+          "text": "Włączyć wysokie dawki klasycznych neuroleptyków sedatywnych, licząc na profilaktykę dalszych incydentów",
+          "explanation": "Neuroleptyki obniżają próg drgawkowy i mogą zaostrzyć napady padaczkowe."
         }
       ],
       "answer": 0

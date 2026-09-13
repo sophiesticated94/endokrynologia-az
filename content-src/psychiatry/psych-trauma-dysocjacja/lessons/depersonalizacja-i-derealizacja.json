@@ -69,12 +69,12 @@
           "explanation": "Krytycyzm i świadomość subiektywnego charakteru zmian percepcji definiują DPDR."
         },
         {
-          "text": "Podwyższona leukocytoza z neutrofilią",
-          "explanation": "To parametr stanu zapalnego, bez związku z różnicowaniem psychopatologicznym."
+          "text": "Obecność usystematyzowanych urojeń ksobnych i ksobno-prześladowczych",
+          "explanation": "Urojenia prześladowcze świadczą o psychozie, ich obecność wyklucza czyste DPDR."
         },
         {
-          "text": "Obecność nadciśnienia tętniczego złośliwego",
-          "explanation": "To stan nagły w kardiologii, nie kryterium DPDR."
+          "text": "Występowanie formalnych zaburzeń toku myślenia pod postacią rozkojarzenia",
+          "explanation": "Rozkojarzenie to osiowy objaw schizofrenii, nie występuje w DPDR."
         }
       ],
       "answer": 0
@@ -86,15 +86,15 @@
       "options": [
         {
           "text": "Kannabinoidy (marihuana, zwłaszcza szczepy o wysokim stężeniu THC)",
-          "explanation": "Agonizm receptorów CB1 w połączeniu z napadem lękowym jest klasycznym triggerem DPDR."
+          "explanation": "Agonizm receptorów CB1 w połączeniu z ostrym napadem lękowym jest klasycznym wyzwalaczem DPDR."
         },
         {
-          "text": "Witamina B12 w dawkach doustnych",
-          "explanation": "Witamina B12 jest bezpieczną substancją odżywczą."
+          "text": "Karbamazepina stosowana w dawkach terapeutycznych",
+          "explanation": "Karbamazepina jest lekiem przeciwpadaczkowym, nie substancją wyzwalającą DPDR."
         },
         {
-          "text": "Insulina ludzka",
-          "explanation": "Insulina reguluje glikemię, nie wyzwala specyficznie DPDR."
+          "text": "Selektywne inhibitory wychwytu zwrotnego serotoniny (SSRI)",
+          "explanation": "SSRI są stosowane w leczeniu zaburzeń lękowych, nie stanowią typowego wyzwalacza DPDR."
         }
       ],
       "answer": 0
@@ -106,15 +106,15 @@
       "options": [
         {
           "text": "Wynika to z lękowego monitoringu metapoznawczego, który paradoksalnie nasila odczucie obcości",
-          "explanation": "Skupianie uwagi na percepcji utrudnia automatyczne doświadczanie i pogłębia derealizację."
+          "explanation": "Hiperczujna autoobserwacja rozbija automatyczne przetwarzanie percepcyjne i nasila objawy derealizacji."
         },
         {
-          "text": "Ponieważ wierzą, że ich twarz zamieniła się w twarz Napoleona Bonaparte",
-          "explanation": "To urojeniowa identyfikacja, typowa dla psychozy, a nie DPDR."
+          "text": "Jest to urojeniowe poszukiwanie śladów wszczepionych mikroczipów kontrolujących myśli",
+          "explanation": "To objaw urojeniowy typowy dla schizofrenii paranoidalnej, nie DPDR."
         },
         {
-          "text": "Mają bezwzględny zakaz spania wydany przez lekarza",
-          "explanation": "Brak takiego zalecenia medycznego."
+          "text": "Wynika to z natrętnego przekonania o asymetrii twarzy w dysmorfofobii (BDD)",
+          "explanation": "W dysmorfofobii uwaga skupia się na rzekomym defekcie estetycznym, w DPDR na poczuciu obcości."
         }
       ],
       "answer": 0
@@ -125,16 +125,16 @@
       "prompt": "Jakie zmiany w odpowiedzi układu autonomicznego na bodźce afektywne obserwuje się w DPDR?",
       "options": [
         {
-          "text": "Tłumienie reaktywności wegetatywnej (obniżone przewodnictwo skóry GSR, emocjonalne znieczulenie)",
+          "text": "Tłumienie reaktywności wegetatywnej (obniżone przewodnictwo skóry GSR, znieczulenie emocjonalne)",
           "explanation": "Mózg w DPDR wygasza rezonans afektywny, co pacjent odczuwa jako brak czucia emocji."
         },
         {
-          "text": "Ciągły częstoskurcz komorowy 300/min",
-          "explanation": "To stan bezpośredniego zagrożenia życia, nie profil DPDR."
+          "text": "Ciągła, uogólniona nadreaktywność autonomiczna z utrwalonym potoceniem w każdej sytuacji",
+          "explanation": "W DPDR reakcja fizjologiczna na bodźce afektywne jest paradoksalnie stłumiona."
         },
         {
-          "text": "Zupełny brak wydzielania potu na całym ciele przez całe życie",
-          "explanation": "To anhidroza wrodzona, rzadka choroba genetyczna."
+          "text": "Napadowe, 30-sekundowe wyładowania z aurą nadbrzuszną i mlaskaniem",
+          "explanation": "To opis napadów ogniskowych z płata skroniowego (TLE), a nie DPDR."
         }
       ],
       "answer": 0
@@ -142,19 +142,19 @@
     {
       "id": "depersonalizacja-i-derealizacja-q5",
       "lessonId": "depersonalizacja-i-derealizacja",
-      "prompt": "Gdyby pacjent zgłaszający, że „świat jest sztuczny”, oświadczył, że wszyscy ludzie to roboty sterowane przez satelitę:",
+      "prompt": "Gdyby pacjent zgłaszający, że „świat jest sztuczny”, oświadczył ze sztywnym przekonaniem, że wszyscy ludzie to kukły sterowane przez kosmitów:",
       "options": [
         {
           "text": "Rozpoznanie przesuwa się w stronę zespołu urojeniowego/psychozy (utrata testowania rzeczywistości)",
           "explanation": "Utrata krytycyzmu i treść urojeniowa przekraczają granice DPDR i wskazują na psychozę."
         },
         {
-          "text": "Potwierdza to łagodną, podręcznikową postać DPDR",
-          "explanation": "DPDR bezwzględnie wymaga zachowanego testowania rzeczywistości."
+          "text": "Potwierdza to typowy, podręcznikowy przebieg zespołu depersonalizacji-derealizacji",
+          "explanation": "DPDR bezwzględnie wymaga zachowanego testowania rzeczywistości; utrata krytycyzmu wyklucza DPDR."
         },
         {
-          "text": "Należy natychmiast odstawić sól kuchenną",
-          "explanation": "Brak związku dietetycznego."
+          "text": "Wskazuje to na reakcję żałoby o prawidłowym, adaptacyjnym przebiegu",
+          "explanation": "Przekonania urojeniowe nie są fizjologiczną reakcją żałoby."
         }
       ],
       "answer": 0

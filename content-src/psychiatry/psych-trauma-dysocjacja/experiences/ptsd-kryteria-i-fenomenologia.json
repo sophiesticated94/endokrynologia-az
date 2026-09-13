@@ -4,13 +4,13 @@
   "objectives": [
     {
       "id": "ptsd-kryteria-i-fenomenologia-obj-1",
-      "statement": "Opanujesz kryteria diagnostyczne PTSD wg ICD-11 (intruzje, unikanie, wzbudzenie) oraz DSM-5-TR.",
-      "kind": "mechanism"
+      "statement": "Poznasz osiową triadę objawów PTSD wg ICD-11 oraz kryteria podtypu dysocjacyjnego (PTSD-DS).",
+      "kind": "differentiation"
     },
     {
       "id": "ptsd-kryteria-i-fenomenologia-obj-2",
-      "statement": "Rozpoznasz podtyp dysocjacyjny PTSD (depersonalizacja/derealizacja) i jego implikacje kliniczne.",
-      "kind": "decision"
+      "statement": "Nauczysz się odróżniać intruzje pourazowe (flashbacki) od omamów w schizofrenii.",
+      "kind": "mechanism"
     }
   ],
   "diagnostic": {
@@ -21,34 +21,34 @@
     ],
     "prompt": "Jaki warunek musi spełniać intruzja (re-experiencing), aby stanowiła osiowy objaw PTSD wg ICD-11?",
     "options": [
-      "Musi wiązać się z poczuciem ponownego przeżywania zdarzenia w teraźniejszości (w tu i teraz)",
-      "Musi występować wyłącznie w trakcie pełni księżyca",
-      "Musi dotyczyć wyłącznie wydarzeń z okresu noworodkowego"
+      "Musi wiązać się z subiektywnym poczuciem ponownego przeżywania zdarzenia w teraźniejszości (w tu i teraz, flashback lub koszmar)",
+      "Musi występować wyłącznie w trakcie pierwszych 48 godzin od ekspozycji na czynnik urazowy",
+      "Musi obejmować wyłącznie ruminacje depresyjne na temat obniżonego nastroju"
     ],
     "optionFeedback": [
-      "Zwykłe smutne wspominanie przeszłości nie spełnia kryterium re-experiencing w ICD-11.",
-      "Faza księżyca nie ma żadnego znaczenia medycznego.",
-      "Amnezja dziecięca uniemożliwia pamięć noworodkową."
+      "Zwykłe smutne wspominanie przeszłości nie spełnia kryterium re-experiencing w ICD-11; kluczowe jest poczucie, że zdarzenie dzieje się ponownie tu i teraz.",
+      "W pierwszych dobach rozpoznaje się ostre reakcje na stres; objawy intruzywne w PTSD trwają co najmniej kilka tygodni.",
+      "Ruminacje depresyjne to zjawisko poznawcze odmienne od sensorycznego ponownego przeżywania urazu w flashbackach."
     ],
     "answer": 0,
-    "explanation": "Zwykłe smutne wspominanie przeszłości nie spełnia kryterium re-experiencing w ICD-11.",
+    "explanation": "Zwykłe smutne wspominanie przeszłości nie spełnia kryterium re-experiencing w ICD-11; kluczowe jest poczucie, że zdarzenie dzieje się ponownie tu i teraz.",
     "hint": "Przeanalizuj mechanizm biologiczny i kryteria przed zaznaczeniem opcji.",
     "difficulty": "student",
-    "reasoning": "mechanism",
+    "reasoning": "differentiation",
     "sourceIds": [
       "src-icd11-cddr-2024",
       "src-dsm5-tr-2022",
       "src-nice-ng116-ptsd-2018"
     ],
     "claimIds": [
-      "claim-trauma-asr-vs-asd-timing"
+      "claim-trauma-ptsd-core-triad"
     ]
   },
   "blocks": [
     {
       "id": "ptsd-kryteria-i-fenomenologia-block-1",
-      "title": "Kryteria osiowe PTSD w ICD-11: Koncepcja rdzennej triady",
-      "text": "ICD-11 uprościło diagnozę PTSD (kod 6B40), ograniczając ją do trzech kluczowych wiązek objawowych, które muszą trwać min. kilka tygodni i powodować znaczne upośledzenie funkcjonowania: 1) Ponowne przeżywanie traumy w teraźniejszości (re-experiencing) — nie jako zwykłe wspomnienie, lecz intruzje sensoryczne, koszmary senne lub flashbacks z poczuciem, że wydarzenie dzieje się TU I TERAZ; 2) Świadome unikanie (avoidance) — myśli, uczuć lub zewnętrznych przypominaczy (miejsc, ludzi, rozmów); 3) Utrwalone poczucie aktualnego zagrożenia (hyperarousal) — nadmierna czujność (hypervigilance) i nasilona reakcja zaskoczenia (exaggerated startle response).",
+      "title": "Osiowa triada objawów PTSD w ICD-11",
+      "text": "W klasyfikacji ICD-11 definicja PTSD została uproszczona w celu zwiększenia użyteczności klinicznej. Do rozpoznania PTSD wymaga się ekspozycji na zdarzenie o charakterze skrajnie zagrażającym lub katastroficznym oraz obecności trzech osiowych grup objawów utrzymujących się przez co najmniej kilka tygodni: 1) Ponowne przeżywanie zdarzenia w teraźniejszości (Re-experiencing) — nie jako zwykłe wspomnienie, lecz w postaci żywych intruzji, flashbacków lub koszmarów sennych z afektem przerażenia; 2) Świadome unikanie (Avoidance) — unikanie myśli, wspomnień (wewnętrzne) lub miejsc, ludzi i sytuacji (zewnętrzne); 3) Utrzymujące się poczucie aktualnego zagrożenia (Sense of current threat) — w postaci nadmiernej czujności (hipervigilance) lub wzmożonej reakcji przestrachu.",
       "sourceIds": [
         "src-icd11-cddr-2024",
         "src-dsm5-tr-2022",
@@ -56,15 +56,14 @@
       ],
       "checkpointId": "ptsd-kryteria-i-fenomenologia-q2-checkpoint-1-v2",
       "claimIds": [
-        "claim-trauma-asr-vs-asd-timing",
         "claim-trauma-ptsd-core-triad"
       ],
       "inlineEnhancements": []
     },
     {
       "id": "ptsd-kryteria-i-fenomenologia-block-2",
-      "title": "Różnice między ICD-11 a DSM-5-TR",
-      "text": "W DSM-5-TR kryteria są szersze i obejmują 4 klastry: intruzje (B), unikanie (C), negatywne zmiany w sferze poznawczej i nastroju (D — np. alienacja, anhedonia, amnezja pourazowa) oraz zmiany w pobudzeniu i reaktywności (E). W ICD-11 objawy z klastra D zostały celowo przeniesione do definicji Complex PTSD (cPTSD) lub depresji, co zapobiega sztucznemu nakładaniu się jednostek i nadrozpoznawalności.",
+      "title": "Podtyp dysocjacyjny PTSD (PTSD-DS)",
+      "text": "U części pacjentów (ok. 15–30%) w odpowiedzi na przypomnienie traumy nie dochodzi do klasycznej hiperaktywacji sympatycznej, lecz do reakcji przeciwnej: zablokowania pobudzenia i głębokiej dysocjacji. Podtyp dysocjacyjny PTSD (PTSD Dissociative Subtype) charakteryzuje się uporczywym lub nawracającym występowaniem: 1) Depersonalizacji — poczucia bycia zewnętrznym obserwatorem własnego ciała lub procesów psychicznych; 2) Derealizacji — poczucia, że otoczenie jest sztuczne, odległe, za mgłą lub jak ze snu. W badaniach neuroobrazowych podtyp ten wiąże się z nadmierną kontrolą przedczołową nad ciałem migdałowatym (tzw. hiper-inhibicja limbiczna), co klinicznie objawia się odrętwieniem i spłaszczeniem afektu.",
       "sourceIds": [
         "src-icd11-cddr-2024",
         "src-dsm5-tr-2022",
@@ -72,22 +71,20 @@
       ],
       "checkpointId": "ptsd-kryteria-i-fenomenologia-q3-checkpoint-2-v2",
       "claimIds": [
-        "claim-trauma-asr-vs-asd-timing",
         "claim-trauma-ptsd-core-triad"
       ],
       "inlineEnhancements": []
     },
     {
       "id": "ptsd-kryteria-i-fenomenologia-block-3",
-      "title": "Podtyp dysocjacyjny PTSD (PTSD Dissociative Subtype)",
-      "text": "Zarówno ICD-11, jak i DSM-5-TR wyróżniają specyfikator z objawami dysocjacyjnymi (PTSD-DS). Dotyczy on około 15–30% pacjentów z PTSD i charakteryzuje się występowaniem uporczywej depersonalizacji (poczucie odłączenia od własnego ciała/umysłu) lub derealizacji (poczucie nierealności, sztuczności otoczenia) niezależnie od epizodów intruzji. Pacjenci z tym podtypem częściej doświadczyli powtarzanej traumy wczesnodziecięcej, wykazują hiper-inhibicję kory czołowej i wymagają wstępnej fazy stabilizacji przed zastosowaniem metod ekspozycyjnych.",
+      "title": "Flashback vs omamy w schizofrenii: Różnicowanie fenomenologiczne",
+      "text": "Intruzywny flashback w PTSD bywa mylony ze zwiastunami lub epizodem schizofrenii. Różnice: 1) Treść: flashback wiernie (choć fragmentarycznie) odtwarza sensoryczne elementy realnej przeszłej traumy (np. dźwięk pękającego szkła, zapach prochu, twarz sprawcy); omamy schizofreniczne są wielotematyczne, często dziwaczne i nieizomorficzne z konkretnym urazem; 2) Przebieg w czasie: flashback ma początek nagły, wyzwalany bodźcem spustowym (trigger), trwa od kilku sekund do kilkudziesięciu minut i ustępuje; 3) Testowanie rzeczywistości: po ustąpieniu flashbacku pacjent z PTSD w pełni zdaje sobie sprawę z tego, co się stało (wgląd zachowany), podczas gdy w psychozie brak krytycyzmu i utrwalone urojenia dominują obraz.",
       "sourceIds": [
         "src-icd11-cddr-2024",
         "src-dsm5-tr-2022",
         "src-nice-ng116-ptsd-2018"
       ],
       "claimIds": [
-        "claim-trauma-asr-vs-asd-timing",
         "claim-trauma-ptsd-core-triad"
       ],
       "inlineEnhancements": []
@@ -102,51 +99,52 @@
       ],
       "prompt": "Czym charakteryzuje się podtyp dysocjacyjny PTSD (PTSD-DS)?",
       "options": [
-        "Uporczywym współwystępowaniem depersonalizacji lub derealizacji",
-        "Wykształceniem trzeciej nerki i hiperkalcemią",
-        "Utratą zdolności trawienia węglowodanów"
+        "Uporczywym współwystępowaniem depersonalizacji (obcość siebie/ciała) lub derealizacji (nierealność otoczenia) w odpowiedzi na bodźce urazowe",
+        "Obecnością utrwalonych urojeń ksobnych i ksobno-prześladowczych z utratą krytycyzmu",
+        "Napadowymi epizodami przymusowego snu z utratą napięcia mięśniowego (katapleksją)"
       ],
       "optionFeedback": [
-        "To osiowe kryterium specyfikatora dysocjacyjnego w ICD-11 i DSM-5-TR.",
-        "To nonsens somatyczny.",
-        "Brak związku z enzymami trawiennymi."
+        "To osiowe kryterium specyfikatora dysocjacyjnego w ICD-11 i DSM-5-TR przy zachowanym wglądzie.",
+        "Urojenia prześladowcze należą do spektrum psychoz; w PTSD-DS krytycyzm wobec depersonalizacji jest zachowany.",
+        "To fenotyp narkolepsji, schorzenia neurologicznego związanego z niedoborem hipokretyny/oreksyny."
       ],
       "answer": 0,
-      "explanation": "To osiowe kryterium specyfikatora dysocjacyjnego w ICD-11 i DSM-5-TR.",
+      "explanation": "To osiowe kryterium specyfikatora dysocjacyjnego w ICD-11 i DSM-5-TR przy zachowanym wglądzie.",
       "hint": "Zwróć uwagę na ramy czasowe oraz kryteria wykluczenia.",
       "difficulty": "both",
-      "reasoning": "mechanism",
+      "reasoning": "differentiation",
       "sourceIds": [
         "src-icd11-cddr-2024",
         "src-dsm5-tr-2022",
         "src-nice-ng116-ptsd-2018"
       ],
       "claimIds": [
-        "claim-trauma-asr-vs-asd-timing"
+        "claim-trauma-ptsd-core-triad"
       ]
     },
     {
       "id": "ptsd-kryteria-i-fenomenologia-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "ordering",
       "objectiveIds": [
         "ptsd-kryteria-i-fenomenologia-obj-2"
       ],
-      "prompt": "Jaki minimalny czas trwania objawów jest wymagany do rozpoznania PTSD?",
-      "options": [
-        "Minimum kilka tygodni (zwykle definiowane jako co najmniej 1 miesiąc)",
-        "Dokładnie 24 godziny",
-        "Co najmniej 10 lat bez żadnych przerw"
+      "prompt": "Uporządkuj stadia reakcji pourazowej w osi czasu (od bezpośredniego momentu katastrofy do przewlekłych powikłań):",
+      "items": [
+        "Faza peritraumatyczna: ostre odrętwienie emocjonalne, depersonalizacja lub reakcja walki/ucieczki w trakcie trwania urazu",
+        "Ostra reakcja na stres (ASR) / ASD: intruzje, hiperaktywacja wegetatywna lub unikanie w pierwszych 3–30 dniach po zdarzeniu",
+        "Zespół stresu pourazowego (PTSD): utrwalone objawy intruzji 'tu i teraz', unikania i poczucia zagrożenia trwające >1 miesiąc",
+        "Podtyp dysocjacyjny PTSD (PTSD-DS): przewlekłe intruzje powikłane zjawiskiem przedczołowej hiper-inhibicji i depersonalizacji"
       ],
-      "optionFeedback": [
-        "Wcześniejsze objawy (3–30 dni) kwalifikują się jako ostre zaburzenie stresowe (ASD).",
-        "To faza peritraumatyczna lub wczesna ASR.",
-        "PTSD można rozpoznać już po miesiącu od zdarzenia."
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
       ],
-      "answer": 0,
-      "explanation": "Wcześniejsze objawy (3–30 dni) kwalifikują się jako ostre zaburzenie stresowe (ASD).",
-      "hint": "Kluczem jest bezpieczeństwo i hierarchia postępowania.",
+      "explanation": "Ścieżka czasowa reakcji potraumatycznych: reakcja peritraumatyczna -> wczesna ostra reakcja (do 30 dni) -> utrwalone PTSD (>1 miesiąc) -> podtyp z przewlekłą dysocjacją (PTSD-DS).",
+      "hint": "Hierarchia: faza w trakcie zdarzenia -> pierwsze dni/tygodnie -> objawy utrwalone >1 miesiąc -> specyfikator dysocjacyjny.",
       "difficulty": "doctor",
-      "reasoning": "decision",
+      "reasoning": "mechanism",
       "sourceIds": [
         "src-icd11-cddr-2024",
         "src-dsm5-tr-2022",
@@ -164,8 +162,8 @@
       "ptsd-kryteria-i-fenomenologia-obj-1",
       "ptsd-kryteria-i-fenomenologia-obj-2"
     ],
-    "prompt": "Wyjaśnij własnymi słowami najważniejsze kryteria i pułapki różnicowania z lekcji „Zespół stresu pourazowego (PTSD): kryteria i fenotyp kliniczny”.",
-    "modelAnswer": "PTSD wg ICD-11 wymaga triady: intruzji (w tu i teraz), unikania i hyperarousalu przez min. kilka tygodni. Podtyp dysocjacyjny obejmuje depersonalizację/derealizację i wymaga ostrożności w planowaniu ekspozycji.",
+    "prompt": "Wyjaśnij własnymi słowami najważniejsze kryteria i pułapki różnicowania z lekcji „Kryteria diagnostyczne PTSD i fenomenologia intruzji”.",
+    "modelAnswer": "PTSD w ICD-11 to triada: ponowne przeżywanie w tu i teraz, unikanie i poczucie zagrożenia. Podtyp dysocjacyjny (PTSD-DS) cechuje się depersonalizacją/derealizacją. Flashback odróżnia się od omamów związkiem z traumą, bodźcem spustowym i wglądem.",
     "explanation": "Porównaj swoją odpowiedź z podsumowaniem klinicznym. Zwróć uwagę na kryteria decyzyjne i czerwone flagi.",
     "difficulty": "both",
     "reasoning": "safety",
@@ -175,7 +173,6 @@
       "src-nice-ng116-ptsd-2018"
     ],
     "claimIds": [
-      "claim-trauma-asr-vs-asd-timing",
       "claim-trauma-ptsd-core-triad"
     ]
   },
@@ -188,27 +185,27 @@
       ],
       "prompt": "Jak odróżnić intruzję flashback w PTSD od omamów w schizofrenii?",
       "options": [
-        "Flashback jest ściśle związany z treścią urazu i odtwarza sensoryczne fragmenty realnego zdarzenia",
-        "W PTSD pacjent zawsze traci przytomność na ponad 2 godziny",
-        "W schizofrenii pacjent nigdy nie słyszy żadnych głosów"
+        "Flashback jest ściśle związany z treścią urazu, odtwarza sensoryczne fragmenty realnego zdarzenia i wiąże się z zachowanym wglądem po ustąpieniu epizodu",
+        "W PTSD pacjent w trakcie intruzji doznaje napadu uogólnionego z utratą przytomności i przygryzieniem języka",
+        "W schizofrenii pacjent nigdy nie doświadcza żadnych wrażeń sensorycznych w tu i teraz"
       ],
       "optionFeedback": [
-        "W schizofrenii omamy mają zwykle charakter wielotematyczny, niespójny z konkretną traumą i towarzyszą im urojenia.",
-        "Utrata przytomności sugeruje omdlenie lub napad padaczkowy, nie flashback.",
-        "Omamy słuchowe są osiowym objawem schizofrenii."
+        "W schizofrenii omamy mają charakter wielotematyczny, często niespójny z konkretną traumą i towarzyszy im urojeniowa utrata krytycyzmu.",
+        "Utrata przytomności i przygryzienie języka to objawy napadu padaczkowego, a nie flashbacku.",
+        "Omamy w schizofrenii są żywymi doznaniami zmysłowymi branymi za rzeczywistość."
       ],
       "answer": 0,
-      "explanation": "W schizofrenii omamy mają zwykle charakter wielotematyczny, niespójny z konkretną traumą i towarzyszą im urojenia.",
+      "explanation": "W schizofrenii omamy mają charakter wielotematyczny, często niespójny z konkretną traumą i towarzyszy im urojeniowa utrata krytycyzmu.",
       "hint": "Przypomnij sobie wzorce neurobiologiczne i kontrfaktyczne reguły decyzyjne.",
       "difficulty": "student",
-      "reasoning": "mechanism",
+      "reasoning": "differentiation",
       "sourceIds": [
         "src-icd11-cddr-2024",
         "src-dsm5-tr-2022",
         "src-nice-ng116-ptsd-2018"
       ],
       "claimIds": [
-        "claim-trauma-asr-vs-asd-timing"
+        "claim-trauma-ptsd-core-triad"
       ]
     },
     {
@@ -217,29 +214,29 @@
       "objectiveIds": [
         "ptsd-kryteria-i-fenomenologia-obj-2"
       ],
-      "prompt": "Która reakcja fizjologiczna może dominować podczas ekspozycji u pacjenta z podtypem dysocjacyjnym PTSD?",
+      "prompt": "Która reakcja neurobiologiczna dominuje podczas ekspozycji na przypomnienie traumy u pacjenta z podtypem dysocjacyjnym PTSD (PTSD-DS)?",
       "options": [
-        "Zablokowanie pobudzenia sympatycznego, spadek tętna i nasilenie depersonalizacji",
-        "Zawsze tachykardia powyżej 220/min z migotaniem komór",
-        "Cukromocz i przełom tarczycowy"
+        "Nadmierne hamowanie przedczołowe (hiper-inhibicja mPFC/ACC nad ciałem migdałowatym), wygaszenie pobudzenia sympatycznego i depersonalizacja",
+        "Ekstremalna aktywacja pnia mózgu z tachykardią >180/min i zachowaniami agresywno-ucieczkowymi (hiperarousal)",
+        "Pierwotna hiperkaliemia z napadowym blokiem przedsionkowo-komorowym"
       ],
       "optionFeedback": [
-        "To zjawisko nadmiernej inhibicji limbicznej (hiper-inhibicja przedczołowa).",
-        "Reakcja dysocjacyjna charakteryzuje się raczej hiporeaktywnością niż arytmią komorową.",
-        "Brak związku przyczynowego."
+        "To zjawisko nadmiernej inhibicji limbicznej (hipoarousal) opisane m.in. przez Lanius i wsp.",
+        "Hiperarousal to wzorzec klasycznego PTSD bez podtypu dysocjacyjnego.",
+        "Brak związku przyczynowo-skutkowego z reakcją dysocjacyjną na traumę."
       ],
       "answer": 0,
-      "explanation": "To zjawisko nadmiernej inhibicji limbicznej (hiper-inhibicja przedczołowa).",
+      "explanation": "To zjawisko nadmiernej inhibicji limbicznej (hipoarousal) opisane m.in. przez Lanius i wsp.",
       "hint": "Wybierz informację o najwyższej wadze różnicującej.",
       "difficulty": "both",
-      "reasoning": "safety",
+      "reasoning": "mechanism",
       "sourceIds": [
         "src-icd11-cddr-2024",
         "src-dsm5-tr-2022",
         "src-nice-ng116-ptsd-2018"
       ],
       "claimIds": [
-        "claim-trauma-asr-vs-asd-timing"
+        "claim-trauma-ptsd-core-triad"
       ]
     }
   ],
@@ -250,6 +247,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, CG78, ISTSS, pure content-src architecture"
+    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, Lanius fMRI PTSD-DS"
   }
 }

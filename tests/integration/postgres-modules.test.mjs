@@ -36,6 +36,7 @@ const MODULES_TO_TEST = [
   { id: 'psych-afektywne', expectedLessonCount: 16, sampleLessonId: 'wywiad-psychiatryczny-mse' },
   { id: 'psych-farmakologia', expectedLessonCount: 22, sampleLessonId: 'farmakokinetyka-oun-bariera' },
   { id: 'psych-organiczne', expectedLessonCount: 13, sampleLessonId: 'delirium-rozpoznanie-i-dynamika' },
+  { id: 'psych-trauma-dysocjacja', expectedLessonCount: 16, sampleLessonId: 'trauma-neurobiologia-zagrozenia' },
 ];
 
 test('PostgreSQL Integration: Parameterized Modules Migration & System Invariants', async (t) => {

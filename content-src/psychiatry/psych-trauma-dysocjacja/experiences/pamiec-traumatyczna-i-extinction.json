@@ -10,7 +10,7 @@
     {
       "id": "pamiec-traumatyczna-i-extinction-obj-2",
       "statement": "Poznasz zjawisko rekonsolidacji pamięci i warunki biologiczne skutecznej ekspozycji terapeutycznej.",
-      "kind": "decision"
+      "kind": "mechanism"
     }
   ],
   "diagnostic": {
@@ -22,13 +22,13 @@
     "prompt": "Na czym polega proces wygaszania lęku (fear extinction) z punktu widzenia neurobiologii?",
     "options": [
       "Na utworzeniu nowego, hamującego śladu pamięciowego (CS-bezpieczeństwo) sterowanego przez vmPFC",
-      "Na mechanicznym zniszczeniu komórek ciała migdałowatego",
-      "Na wybiórczym wypłukaniu neurotransmiterów z płynu mózgowo-rdzeniowego"
+      "Na trwałym mechanicznym zniszczeniu engramów komórkowych w ciele migdałowatym",
+      "Na zablokowaniu syntezy acetylocholiny w hipokampie w pierwszych minutach po ekspozycji"
     ],
     "optionFeedback": [
       "Wygaszanie nie wymazuje starego śladu, lecz tworzy nowy ślad hamujący zależny od kory czołowej i interneuronów ITC.",
-      "Nie dochodzi do ablacji komórkowej ciała migdałowatego.",
-      "To proces neuroplastyczny, nie wypłukiwanie transmiterów."
+      "Wygaszanie nie wymazuje ani nie niszczy starego engramu, lecz tworzy nową asocjację hamującą.",
+      "Proces ten zależy od receptorów NMDA i transmisji glutaminergiczno-GABA-ergicznej, a nie od wyłączenia acetylocholiny."
     ],
     "answer": 0,
     "explanation": "Wygaszanie nie wymazuje starego śladu, lecz tworzy nowy ślad hamujący zależny od kory czołowej i interneuronów ITC.",
@@ -96,16 +96,16 @@
       "prompt": "Jak długo trwa tzw. okno rekonsolidacji po reaktywacji śladu pamięciowego?",
       "options": [
         "Około 4–6 godzin",
-        "Zaledwie 20 milisekund",
-        "Dokładnie 7 tygodni bez zmian"
+        "Zaledwie kilkadziesiąt milisekund w trakcie depolaryzacji synaptycznej",
+        "Kilka tygodni ciągłej podatności na modyfikację śladu bez konieczności ponownej reaktywacji"
       ],
       "optionFeedback": [
-        "W tym przedziale czasowym ślad jest labilny i wymaga de novo syntezy białek do ponownej konsolidacji.",
-        "To czas pojedynczego potencjału czynnościowego, nie procesów transkrypcji i translacji.",
-        "Okno plastyczności zamyka się po kilku godzinach od reaktywacji."
+        "W tym przedziale czasowym (4-6 h) ślad jest labilny i wymaga de novo syntezy białek do ponownej konsolidacji.",
+        "Milisekundy to skala potencjałów czynnościowych, a nie kaskady transkrypcyjno-translacyjnej.",
+        "Okno plastyczności zamyka się po kilku godzinach; po tym czasie ślad ulega ponownej konsolidacji."
       ],
       "answer": 0,
-      "explanation": "W tym przedziale czasowym ślad jest labilny i wymaga de novo syntezy białek do ponownej konsolidacji.",
+      "explanation": "W tym przedziale czasowym (4-6 h) ślad jest labilny i wymaga de novo syntezy białek do ponownej konsolidacji.",
       "hint": "Zwróć uwagę na ramy czasowe oraz kryteria wykluczenia.",
       "difficulty": "both",
       "reasoning": "mechanism",
@@ -119,26 +119,27 @@
     },
     {
       "id": "pamiec-traumatyczna-i-extinction-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "ordering",
       "objectiveIds": [
         "pamiec-traumatyczna-i-extinction-obj-2"
       ],
-      "prompt": "Co oznacza zjawisko nadmiernego uogólnienia bodźca (overgeneralization) w PTSD?",
-      "options": [
-        "Wyzwalanie pełnej reakcji lękowej przez bodźce bezpieczne, lecz powierzchownie podobne do traumatycznych",
-        "Utrata umiejętności mówienia w języku ojczystym",
-        "Zdolność do logicznego wnioskowania na tematy abstrakcyjne"
+      "prompt": "Uporządkuj etapy przetwarzania pamięci urazowej od momentu ekspozycji do trwałego wygaszenia lęku:",
+      "items": [
+        "1. Kodowanie asocjacji CS-UCS w jądrze podstawno-bocznym ciała migdałowatego (BLA) w trakcie urazu",
+        "2. Konsolidacja engramu z udziałem syntezy białek i kory hipokampa",
+        "3. Reaktywacja wspomnienia z destabilizacją śladu i otwarciem okna plastyczności (4–6 h)",
+        "4. Wygaszanie: wykształcenie nowego śladu hamującego (vmPFC -> neurony ITC -> CeA)"
       ],
-      "optionFeedback": [
-        "Np. lęk paniczny wywoływany przez każdy głośny trzask drzwi, przypominający wybuch.",
-        "To afazja, zaburzenie neurologiczne mowy.",
-        "To ogólna sprawność poznawcza, a nie uogólnienie strachu."
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
       ],
-      "answer": 0,
-      "explanation": "Np. lęk paniczny wywoływany przez każdy głośny trzask drzwi, przypominający wybuch.",
-      "hint": "Kluczem jest bezpieczeństwo i hierarchia postępowania.",
+      "explanation": "Prawidłowa sekwencja: kodowanie lękowe (BLA) -> konsolidacja engramu -> reaktywacja w oknie rekonsolidacji -> aktywne wygaszanie z udziałem vmPFC.",
+      "hint": "Kluczem jest sekwencja: akwizycja -> konsolidacja -> labilizacja/rekonsolidacja -> wygaszanie.",
       "difficulty": "doctor",
-      "reasoning": "decision",
+      "reasoning": "mechanism",
       "sourceIds": [
         "src-istss-guidelines-2019",
         "src-apa-ptsd-guideline-2017"
@@ -178,13 +179,13 @@
       "prompt": "Dlaczego przerwanie sesji przedłużonej ekspozycji w momencie szczytowego przerażenia jest błędem sztuki?",
       "options": [
         "Może utrwalić przekonanie o niebezpieczeństwie i wzmocnić rekonsolidację lęku zamiast wygaszania",
-        "Grozi natychmiastowym pęknięciem tętniaka aorty u każdego chorego",
-        "Prowadzi do nieodwracalnej utraty słuchu"
+        "Prowadzi do nieodwracalnego stwardnienia tętnic mózgowych w mechanizmie wyrzutu cytokin",
+        "Uniemożliwia dalszą interpretację wyników testów psychologicznych przez kolejne 12 miesięcy"
       ],
       "optionFeedback": [
         "Ekspozycja musi trwać do momentu zauważalnego spadku pobudzenia i habituacji, aby wytworzyć ślad bezpieczeństwa.",
-        "Choć wzrasta ciśnienie tętnicze, błąd dotyczy mechanizmu uczenia się emocjonalnego.",
-        "Brak związku ze zmysłem słuchu."
+        "Błąd ma naturę neurokognitywną (utrwalenie awersyjnej asocjacji), a nie nagłego stwardnienia naczyń.",
+        "Przerwanie sesji jest błędem terapeutycznym retraumatyzującym pacjenta, a nie ograniczeniem psychometrycznym."
       ],
       "answer": 0,
       "explanation": "Ekspozycja musi trwać do momentu zauważalnego spadku pobudzenia i habituacji, aby wytworzyć ślad bezpieczeństwa.",
@@ -237,6 +238,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, CG78, ISTSS, pure content-src architecture"
+    "scope": "APA PTSD Guideline, ISTSS 2019, Lanius fMRI, pure content-src architecture"
   }
 }

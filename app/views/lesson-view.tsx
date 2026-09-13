@@ -49,6 +49,7 @@ const MODULE_LABELS: Record<string, string> = {
   nen: 'MODUŁ 07: NOWOTWORY NEUROENDOKRYNNE I MEN',
   otylosc: 'MODUŁ 08: OTYŁOŚĆ I LIPIDY',
   pediatria: 'MODUŁ 09: ENDOKRYNOLOGIA PEDIATRYCZNA',
+  ciaza: 'MODUŁ 10: ENDOKRYNOLOGIA CIĄŻY I POŁOGU',
   'psych-afektywne': 'MODUŁ 01: FUNDAMENTY PSYCHIATRII I DIAGNOSTYKA KLINICZNA',
   'psych-farmakologia': 'MODUŁ 02: PSYCHOFARMAKOLOGIA KLINICZNA I LECZENIE BIOLOGICZNE',
   'psych-organiczne': 'MODUŁ 03: PSYCHIATRIA INTERDYSCYPLINARNA I ORGANICZNA',
@@ -187,7 +188,12 @@ export function LessonView({
               onOpenLab={(presetId?: string) => {
                 if (presetId) {
                   const p = getPreset(presetId);
-                  if (p && (p.widgetType === 'adrenal-workbench' || p.widgetType === 'parathyroid-workbench')) {
+                  if (
+                    p &&
+                    (p.widgetType === 'adrenal-workbench' ||
+                      p.widgetType === 'parathyroid-workbench' ||
+                      p.widgetType === 'trauma-dissociation-workbench')
+                  ) {
                     setActiveWorkbenchPreset(presetId);
                     setActiveWorkbenchWidget(p.widgetType);
                     const el = document.getElementById('pracownia-sekcja');

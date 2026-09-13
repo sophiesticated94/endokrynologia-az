@@ -7,6 +7,7 @@ import type {
   AmnesiaType,
   RealityTesting,
   TraumaIntrusions,
+  NegativeSelfConcept,
   InterpersonalPattern,
   HallucinationType,
   SymptomDuration,
@@ -132,6 +133,27 @@ export function TraumaWorkbenchControls({
               <option value="none">Brak intruzji</option>
               <option value="distressing_memories">Natrętne przykre wspomnienia / koszmary</option>
               <option value="flashbacks_acting_as_if">Flashbacks (odżywanie traumy w tu i teraz)</option>
+            </select>
+          </div>
+        )}
+
+        {/* Negative Self-Concept (DSO Triad) */}
+        {visible('negativeSelfConcept') && (
+          <div className="rounded-xl border border-border/70 p-3 bg-card space-y-1.5">
+            <label className="flex items-center justify-between font-semibold">
+              <span>Obraz siebie (DSO: Negative Self-Concept)</span>
+              {locked('negativeSelfConcept') && <Lock className="h-3 w-3 text-amber-500" />}
+            </label>
+            <select
+              disabled={locked('negativeSelfConcept')}
+              value={input.negativeSelfConcept}
+              onChange={(e) => setInput({ ...input, negativeSelfConcept: e.target.value as NegativeSelfConcept })}
+              className="w-full rounded-md border border-input bg-background p-1.5 text-xs disabled:opacity-60"
+            >
+              <option value="none">Brak trwałego negatywnego obrazu siebie</option>
+              <option value="persistent_shame_guilt">Uporczywe poczucie wstydu, winy i porażki (cPTSD)</option>
+              <option value="worthlessness_failure">Głębokie poczucie bezwartościowości i defektu (cPTSD)</option>
+              <option value="trauma_related_negative_identity">Tożsamość zorganizowana wokół trwałego uszkodzenia</option>
             </select>
           </div>
         )}

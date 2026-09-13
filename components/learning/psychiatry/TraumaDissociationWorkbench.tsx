@@ -42,6 +42,7 @@ const DEFAULT_INPUT: TraumaDissociationInput = {
   traumaIntrusions: 'none',
   avoidanceHyperarousal: false,
   affectInstability: 'none',
+  negativeSelfConcept: 'none',
   interpersonalPattern: 'stable',
   hallucinations: 'none',
   thoughtDisorder: false,

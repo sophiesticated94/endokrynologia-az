@@ -21,63 +21,48 @@
     ],
     "prompt": "Co jest najważniejszym kryterium różnicującym DID od zaburzenia osobowości borderline (BPD)?",
     "options": [
-      "Obecność odrębnych stanów tożsamości z nawracającą amnezją codziennych zdarzeń w DID",
-      "W BPD nigdy nie dochodzi do samookaleczeń",
-      "DID leczy się wyłącznie operacją neurochirurgiczną"
+      "Obecność odrębnych stanów tożsamości z nawracającą amnezją codziennych zdarzeń (time loss) w DID",
+      "Wyłącznie obecność zachowań samouszkadzających i zamiarów samobójczych",
+      "Częste, gwałtowne wahania nastroju w odpowiedzi na bodźce interpersonalne"
     ],
     "optionFeedback": [
-      "W BPD pacjent doświadcza siebie jako jednej osoby i pamięta swoje codzienne czyny, nawet jeśli był wzburzony.",
-      "Samouszkodzenia są częste w BPD i nie różnicują go wprost od DID.",
-      "DID to zaburzenie psychogenne leczone psychoterapią, nie neurochirurgią."
+      "W DID występują odrębne stany wykonawcze i luki w pamięci codziennej; w BPD występuje dyfuzja tożsamości bez autonomicznych alterów i trwałej amnezji codziennej.",
+      "Samouszkodzenia i suicydalność występują w obu tych jednostkach i nie stanowią osi różnicującej.",
+      "Chwiejność afektu cechuje BPD, ale pacjenci z DID również doświadczają dysregulacji afektu."
     ],
     "answer": 0,
-    "explanation": "W BPD pacjent doświadcza siebie jako jednej osoby i pamięta swoje codzienne czyny, nawet jeśli był wzburzony.",
-    "hint": "Przeanalizuj mechanizm biologiczny i kryteria przed zaznaczeniem opcji.",
+    "explanation": "W DID występują odrębne stany wykonawcze i luki w pamięci codziennej; w BPD występuje dyfuzja tożsamości bez autonomicznych alterów i trwałej amnezji codziennej.",
+    "hint": "Przeanalizuj kryteria decyzyjne i osie fenomenologiczne.",
     "difficulty": "student",
     "reasoning": "differentiation",
     "sourceIds": [
       "src-icd11-cddr-2024",
-      "src-dsm5-tr-2022",
+      "src-nice-cg78-bpd-2009",
       "src-isstd-adult-did-2011"
     ],
     "claimIds": [
-      "claim-trauma-did-voices-not-psychosis"
+      "claim-trauma-bpd-identity-vs-did",
+      "claim-trauma-amnesia-everyday-did"
     ]
   },
   "blocks": [
     {
       "id": "did-roznicowanie-bpd-i-psychoza-block-1",
       "title": "DID a BPD: Trzy kluczowe osie różnicujące",
-      "text": "Wielu chorych z DID ma wcześniejsze błędne rozpoznanie BPD z powodu samouszkodzeń i chwiejności afektu. RÓŻNICOWANIE: 1) Ciągłość tożsamości — w BPD tożsamość jest niestabilna, zmienna pod wpływem relacji („nie wiem kim jestem”), ale chory ZAWSZE doświadcza siebie jako jednej osoby; w DID występują odrębne stany tożsamości z odmiennymi imionami, wiekiem i manierami. 2) Amnezja — w BPD NIE MA nawracających luk w pamięci codziennych zdarzeń (chory pamięta swoje kłótnie i zachowania); w DID amnezja codzienna jest osiowa. 3) Wzorzec relacyjny — w BPD dominuje paniczny lęk przed porzuceniem.",
+      "text": "Wielu chorych z DID ma wcześniejsze błędne rozpoznanie BPD z powodu samouszkodzeń i chwiejności afektu. RÓŻNICOWANIE: 1) Struktura tożsamości — w BPD tożsamość jest niestabilna pod wpływem relacji i afektu („dyfuzja tożsamości”), mogą pojawiać się przejściowe objawy dysocjacyjne i poczucie bycia inną osobą, lecz nie dochodzi do utrwalenia odrębnych stanów alter z niezależnym poczuciem sprawstwa; w DID występują min. dwa odrębne stany tożsamości. 2) Amnezja — w BPD luki pamięciowe mają charakter przejściowy, mikrodysocjacyjny pod wpływem skrajnego wzburzenia emocjonalnego, podczas gdy w DID nawracająca amnezja wobec bieżących codziennych zdarzeń (everyday amnesia / time loss) jest kryterium osiowym. 3) Wzorzec relacyjny — w BPD dominuje paniczny lęk przed porzuceniem i naprzemienna idealizacja z dewaluacją.",
       "sourceIds": [
         "src-icd11-cddr-2024",
-        "src-dsm5-tr-2022",
+        "src-nice-cg78-bpd-2009",
         "src-isstd-adult-did-2011"
       ],
       "checkpointId": "did-roznicowanie-bpd-i-psychoza-q2-checkpoint-1-v2",
       "claimIds": [
-        "claim-trauma-did-voices-not-psychosis",
-        "claim-trauma-bpd-identity-vs-did"
-      ],
-      "inlineEnhancements": []
-    },
-    {
-      "id": "did-roznicowanie-bpd-i-psychoza-block-2",
-      "title": "Pułapka objawów Schneidera I rzędu: DID a Schizofrenia",
-      "text": "Aż 70–80% pacjentów z DID zgłasza słyszenie głosów. W dawnej koncepcji Kurta Schneidera słyszenie głosów dyskutujących lub komentujących uznawano za osiowy objaw I rzędu silnie sugerujący schizofrenię. To fatalna pułapka diagnostyczna! W DID głosy mają charakter dialogu wewnętrznego (lokalizowanego w głowie), są spójne z odrębnymi stanami tożsamości, a pacjent ma ZACHOWANY KRYTYCYZM w stanach neutralnych (nie tworzy urojeń o sterowaniu radiowym czy chipach). Brak rozkojarzenia toku myślenia, brak objawów ubytkowych i zachowana zdolność do kontaktu emocjonalnego wykluczają schizofrenię.",
-      "sourceIds": [
-        "src-icd11-cddr-2024",
-        "src-dsm5-tr-2022",
-        "src-isstd-adult-did-2011"
-      ],
-      "checkpointId": "did-roznicowanie-bpd-i-psychoza-q3-checkpoint-2-v2",
-      "claimIds": [
-        "claim-trauma-did-voices-not-psychosis",
-        "claim-trauma-bpd-identity-vs-did"
+        "claim-trauma-bpd-identity-vs-did",
+        "claim-trauma-amnesia-everyday-did"
       ],
       "inlineEnhancements": [
         {
-          "id": "did-roznicowanie-bpd-i-psychoza-enh-workbench",
+          "id": "did-roznicowanie-bpd-i-psychoza-enh-bpd-preset",
           "kind": "workbench-deeplink",
           "placement": "after-checkpoint",
           "presetId": "trauma-bpd-vs-did"
@@ -85,17 +70,37 @@
       ]
     },
     {
-      "id": "did-roznicowanie-bpd-i-psychoza-block-3",
-      "title": "Maska neurologiczna: Padaczka płata skroniowego (TLE)",
-      "text": "Krótkotrwałe epizody odrealnienia, amnezji lub automatyzmów mogą wynikać z ogniskowych napadów padaczkowych płata skroniowego. CECHY TLE: 1) Czas trwania: napad padaczkowy trwa zazwyczaj 30–120 sekund (dysocjacja psychogenna trwa od kwadransów do wielu godzin); 2) Stereotypowość: każdy napad wygląda identycznie; 3) Aura: aura nadbrzuszna (uczucie wznoszenia ciepła/dyskomfortu z żołądka do gardła), omamy węchowe (zapach spalenizny) lub smakowe; 4) Stan ponapadowy (postictal): splątanie, senność, afazja. Wymagane wideo-EEG i MRI 3T z protokołem na hipokamp.",
+      "id": "did-roznicowanie-bpd-i-psychoza-block-2",
+      "title": "Pułapka objawów Schneidera I rzędu: DID a Schizofrenia",
+      "text": "Aż 70–80% pacjentów z DID zgłasza słyszenie głosów. W dawnej koncepcji Kurta Schneidera głosy dyskutujące uznawano za objaw I rzędu silnie sugerujący schizofrenię. To częsta pułapka diagnostyczna: w DID głosy zazwyczaj odzwierciedlają dialog stanów tożsamości, a pacjent w stanach neutralnych zachowuje krytycyzm i nie nadaje im interpretacji urojeniowej. Różnicowanie wymaga wieloosiowej oceny: brak rozkojarzenia toku myślenia, brak pierwotnych urojeń owładnięcia i zachowany afekt dostosowany silnie przemawiają przeciwko schizofrenii, aczkolwiek wczesny proces psychotyczny wymaga uważnej obserwacji podłużnej.",
       "sourceIds": [
         "src-icd11-cddr-2024",
-        "src-dsm5-tr-2022",
         "src-isstd-adult-did-2011"
       ],
+      "checkpointId": "did-roznicowanie-bpd-i-psychoza-q3-checkpoint-2-v2",
       "claimIds": [
-        "claim-trauma-did-voices-not-psychosis",
-        "claim-trauma-bpd-identity-vs-did"
+        "claim-trauma-did-voices-not-psychosis"
+      ],
+      "inlineEnhancements": [
+        {
+          "id": "did-roznicowanie-bpd-i-psychoza-enh-psychosis-preset",
+          "kind": "workbench-deeplink",
+          "placement": "after-checkpoint",
+          "presetId": "trauma-psychosis-vs-dissociation"
+        }
+      ]
+    },
+    {
+      "id": "did-roznicowanie-bpd-i-psychoza-block-3",
+      "title": "Maska neurologiczna: Padaczka płata skroniowego (TLE)",
+      "text": "Krótkotrwałe epizody odrealnienia, amnezji lub automatyzmów mogą wynikać z napadów ogniskowych z płata skroniowego (TLE). CECHY SUGERUJĄCE TLE: 1) Czas trwania: napady TLE trwają typowo kilkadziesiąt sekund do paru minut (choć stan ponapadowy może się przedłużać); 2) Stereotypowość: powtarzalny, paroksyzmalny przebieg; 3) Aura: aura nadbrzuszna (uczucie wznoszenia ciepła/dyskomfortu z żołądka), omamy węchowe lub smakowe; 4) Stan ponapadowy (postictal confusion, afazja). Wskazana diagnostyka neurologiczna (wideo-EEG, MRI wg protokołu padaczkowego ILAE/NICE) celem wykluczenia podłoża padaczkowego przed rozpoznaniem psychogennym.",
+      "sourceIds": [
+        "src-ilae-epilepsy-classification-2017",
+        "src-nice-ng217-epilepsies-2022",
+        "src-icd11-cddr-2024"
+      ],
+      "claimIds": [
+        "claim-trauma-tle-mimic-aura-stereotypy"
       ],
       "inlineEnhancements": []
     }
@@ -107,25 +112,24 @@
       "objectiveIds": [
         "did-roznicowanie-bpd-i-psychoza-obj-1"
       ],
-      "prompt": "Dlaczego głosy wewnętrzne w DID bywają błędnie diagnozowane jako schizofrenia?",
+      "prompt": "Dlaczego głosy wewnętrzne w DID bywają błędnie diagnozowane jako objaw schizofrenii?",
       "options": [
         "Ponieważ dialogujące głosy były dawniej traktowane jako rzekomo rozstrzygający objaw I rzędu Schneidera",
-        "Głosy w DID zawsze znikają po podaniu penicyliny",
-        "W schizofrenii nigdy nie słyszy się głosów w głowie"
+        "Ponieważ w schizofrenii nigdy nie występują omamy słuchowe w przestrzeni wewnętrznej głowy",
+        "Ponieważ w DID nie występuje krytycyzm ani zdolność do refleksji nad własnymi przeżyciami"
       ],
       "optionFeedback": [
-        "Współcześnie wiadomo, że głosy dialogujące występują w DID i bez innych cech psychozy nie świadczą o schizofrenii.",
-        "Penicylina to antybiotyk przeciwbakteryjny.",
-        "Omamy słuchowe w schizofrenii mogą być lokalizowane różnie."
+        "Współcześnie wiadomo, że głosy dialogujące występują w DID i bez innych osiowych cech psychozy nie uprawniają do diagnozy schizofrenii.",
+        "W schizofrenii omamy mogą być lokalizowane zarówno w przestrzeni zewnętrznej, jak i wewnętrznej.",
+        "Pacjenci z DID w stanach neutralnych zachowują krytycyzm wobec nienaturalnego charakteru swoich objawów."
       ],
       "answer": 0,
-      "explanation": "Współcześnie wiadomo, że głosy dialogujące występują w DID i bez innych cech psychozy nie świadczą o schizofrenii.",
+      "explanation": "Współcześnie wiadomo, że głosy dialogujące występują w DID i bez innych osiowych cech psychozy nie uprawniają do diagnozy schizofrenii.",
       "hint": "Zwróć uwagę na ramy czasowe oraz kryteria wykluczenia.",
       "difficulty": "both",
       "reasoning": "differentiation",
       "sourceIds": [
         "src-icd11-cddr-2024",
-        "src-dsm5-tr-2022",
         "src-isstd-adult-did-2011"
       ],
       "claimIds": [
@@ -134,24 +138,24 @@
     },
     {
       "id": "did-roznicowanie-bpd-i-psychoza-q3-checkpoint-2-v2",
-      "type": "single_choice",
+      "type": "missing_information",
       "objectiveIds": [
         "did-roznicowanie-bpd-i-psychoza-obj-2"
       ],
-      "prompt": "Która cecha epizodu najbardziej przemawia za padaczką płata skroniowego (TLE) a nie za dysocjacją?",
+      "prompt": "U 24-letniej pacjentki z objawami dysocjacji, chwiejnością afektu i okresowym słyszeniem dialogujących głosów różnicujesz DID, BPD oraz wczesną psychozę. Która brakująca informacja ma najwyższą wagę decyzyjną?",
       "options": [
-        "Ściśle stereotypowy czas trwania 30–120 sekund z aurą nadbrzuszną i mlaskaniem",
-        "Epizod trwający bez przerwy 3 miesiące z płaczem",
-        "Brak jakichkolwiek objawów somatycznych"
+        "Ocena obecności obiektywnej amnezji codziennych zdarzeń (everyday amnesia) oraz krytycyzmu i toku myślenia w badaniu MSE",
+        "Dokładne oznaczenie poziomu hormonów tarczycy i witaminy B12",
+        "Potwierdzenie w wywiadzie przebytej w dzieciństwie hospitalizacji z powodu zapalenia płuc"
       ],
       "optionFeedback": [
-        "Napady TLE są paroksyzmalne, krótkie i stereotypowe, z towarzyszącymi automatizmami.",
-        "To obraz zaburzenia nastroju lub adaptacyjnego, nie napadu padaczkowego.",
-        "TLE prawie zawsze wykazuje wegetatywne objawy aury."
+        "Amnezja codzienna weryfikuje DID, a krytycyzm i prawidłowy tok myślenia wykluczają ostrą psychozę schizofreniczną.",
+        "Oznaczenia laboratoryjne są badaniami przesiewowymi, lecz nie rozstrzygają osiowej psychopatologii.",
+        "Zapalenie płuc w dzieciństwie nie ma wartości różnicującej."
       ],
       "answer": 0,
-      "explanation": "Napady TLE są paroksyzmalne, krótkie i stereotypowe, z towarzyszącymi automatizmami.",
-      "hint": "Kluczem jest bezpieczeństwo i hierarchia postępowania.",
+      "explanation": "Amnezja codzienna weryfikuje DID, a krytycyzm i prawidłowy tok myślenia wykluczają ostrą psychozę schizofreniczną.",
+      "hint": "Wybierz oś fenomenologiczną rozstrzygającą tożsamość i krytycyzm.",
       "difficulty": "doctor",
       "reasoning": "decision",
       "sourceIds": [
@@ -160,7 +164,8 @@
         "src-isstd-adult-did-2011"
       ],
       "claimIds": [
-        "claim-trauma-bpd-identity-vs-did"
+        "claim-trauma-did-voices-not-psychosis",
+        "claim-trauma-amnesia-everyday-did"
       ]
     }
   ],
@@ -171,9 +176,9 @@
       "did-roznicowanie-bpd-i-psychoza-obj-1",
       "did-roznicowanie-bpd-i-psychoza-obj-2"
     ],
-    "prompt": "Wyjaśnij własnymi słowami najważniejsze kryteria i pułapki różnicowania z lekcji „Różnicowanie DID: BPD, psychoza schizofreniczna i padaczka skroniowa”.",
-    "modelAnswer": "DID różni się od BPD obecnością odrębnych stanów tożsamości i amnezji codziennej; od schizofrenii zachowanym krytycyzmem i brakiem rozkojarzenia; od TLE brakiem aury nadbrzusznej i czasem trwania znacznie dłuższym niż 30–120 s.",
-    "explanation": "Porównaj swoją odpowiedź z podsumowaniem klinicznym. Zwróć uwagę na kryteria decyzyjne i czerwone flagi.",
+    "prompt": "Wyjaśnij własnymi słowami najważniejsze zasady różnicowania DID od BPD, schizofrenii i padaczki skroniowej (TLE).",
+    "modelAnswer": "DID różni się od BPD obecnością odrębnych stanów tożsamości i amnezji codziennej; od schizofrenii zachowanym krytycyzmem i brakiem pierwotnych urojeń; od TLE paroksyzmalnym charakterem i obecnością aury nadbrzusznej w padaczce.",
+    "explanation": "Zwróć uwagę na zachowany krytycyzm, amnezję codzienną i czerwoną flagę aury nadbrzusznej.",
     "difficulty": "both",
     "reasoning": "safety",
     "sourceIds": [
@@ -182,8 +187,9 @@
       "src-isstd-adult-did-2011"
     ],
     "claimIds": [
+      "claim-trauma-bpd-identity-vs-did",
       "claim-trauma-did-voices-not-psychosis",
-      "claim-trauma-bpd-identity-vs-did"
+      "claim-trauma-tle-mimic-aura-stereotypy"
     ]
   },
   "exitTicket": [
@@ -191,62 +197,63 @@
       "id": "did-roznicowanie-bpd-i-psychoza-q4-exit-1-v2",
       "type": "single_choice",
       "objectiveIds": [
-        "did-roznicowanie-bpd-i-psychoza-obj-1"
+        "did-roznicowanie-bpd-i-psychoza-obj-2"
       ],
-      "prompt": "Jaki jest stan formalnego toku myślenia u chorego z czystym DID?",
+      "prompt": "Która cecha epizodu najbardziej przemawia za padaczką płata skroniowego (TLE), a nie za pierwotną dysocjacją?",
       "options": [
-        "Prawidłowy — brak rozkojarzenia, splątania wątków czy neologizmów typowych dla psychozy",
-        "Zawsze głęboko rozkojarzony z całkowitą sałatą słowną",
-        "Myślenie jest możliwe wyłącznie w języku łacińskim"
+        "Paroksyzmalny, stereotypowy charakter z aurą nadbrzuszną, mlaskaniem i stanem ponapadowym",
+        "Przewlekłe odczucie obcości otoczenia nasilające się w trakcie konfliktów relacyjnych",
+        "Współwystępowanie intruzji traumatycznych z pobudzeniem wegetatywnym po ekspozycji na bodziec"
       ],
       "optionFeedback": [
-        "Pacjent z DID myśli logicznie i spójnie, nie prezentuje rozpadu myślenia schizofrenicznego.",
-        "Sałata słowna to skrajny objaw schizofrenii lub ciężkiej afazji sensorycznej.",
-        "Nonsens medyczny."
+        "Napady TLE są napadowe i stereotypowe, z towarzyszącymi objawami wegetatywnymi i splątaniem ponapadowym.",
+        "To cecha derealizacji psychogennej lub dekompensacji w zaburzeniach osobowości.",
+        "To klasyczny obraz ponownego przeżywania w zespole stresu pourazowego (PTSD)."
       ],
       "answer": 0,
-      "explanation": "Pacjent z DID myśli logicznie i spójnie, nie prezentuje rozpadu myślenia schizofrenicznego.",
-      "hint": "Przypomnij sobie wzorce neurobiologiczne i kontrfaktyczne reguły decyzyjne.",
+      "explanation": "Napady TLE są napadowe i stereotypowe, z towarzyszącymi objawami wegetatywnymi i splątaniem ponapadowym.",
+      "hint": "Cechy neurologiczne: napadowość, stereotypowość, aura wegetatywna.",
       "difficulty": "student",
       "reasoning": "differentiation",
       "sourceIds": [
-        "src-icd11-cddr-2024",
-        "src-dsm5-tr-2022",
-        "src-isstd-adult-did-2011"
+        "src-ilae-epilepsy-classification-2017",
+        "src-nice-ng217-epilepsies-2022"
       ],
       "claimIds": [
-        "claim-trauma-did-voices-not-psychosis"
+        "claim-trauma-tle-mimic-aura-stereotypy"
       ]
     },
     {
       "id": "did-roznicowanie-bpd-i-psychoza-q5-exit-2-v2",
-      "type": "missing_information",
+      "type": "ordering",
       "objectiveIds": [
         "did-roznicowanie-bpd-i-psychoza-obj-2"
       ],
-      "prompt": "Co należy zrobić, gdy pacjent z podejrzeniem dysocjacji zgłasza uczucie „wznoszenia z żołądka” i metaliczny smak przed odrealnieniem?",
-      "options": [
-        "Pilnie skierować na diagnostykę neurologiczną (wideo-EEG, MRI OUN) celem wykluczenia padaczki",
-        "Zwiększyć natychmiast dawkę neuroleptyku bez żadnych badań",
-        "Zapewnić, że to na pewno zwykły atak paniki i odesłać do domu"
+      "prompt": "Uporządkuj procedury diagnostyczne u pacjenta zgłaszającego napadowe odrealnienie z uczuciem „wznoszenia z żołądka” (od pilnych działań wykluczających do weryfikacji psychiatrycznej):",
+      "items": [
+        "Badanie neurologiczne i skierowanie na wideo-EEG z oceną faz snu i czuwania",
+        "Rezonans magnetyczny (MRI) OUN wg protokołu padaczkowego z oceną hipokampów",
+        "Wykluczenie intoksykacji substancjami oraz zaburzeń metabolicznych",
+        "Ocena psychopatologiczna pod kątem wtórnych lub współistniejących zaburzeń dysocjacyjnych"
       ],
-      "optionFeedback": [
-        "To klasyczna aura nadbrzuszna i smakowa ogniska skroniowego; zaniechanie badań jest błędem sztuki.",
-        "Leki przeciwpsychotyczne mogą wręcz obniżać próg drgawkowy.",
-        "Aura wymaga bezwzględnego wykluczenia ogniska padaczkowego."
+      "correctOrder": [
+        2,
+        0,
+        1,
+        3
       ],
-      "answer": 0,
-      "explanation": "To klasyczna aura nadbrzuszna i smakowa ogniska skroniowego; zaniechanie badań jest błędem sztuki.",
-      "hint": "Wybierz informację o najwyższej wadze różnicującej.",
+      "explanation": "Ścieżka kliniczna: natychmiastowe wykluczenie substancji/metabolizmu, pilny workup elektrofizjologiczny (EEG) i neuroobrazowy (MRI 3T na hipokamp), a dopiero po ocenie neurologicznej kwalifikacja psychiatryczna.",
+      "hint": "Hierarchia: metaboliczne/toksykologia -> EEG -> MRI OUN -> diagnostyka dysocjacji.",
       "difficulty": "both",
       "reasoning": "safety",
       "sourceIds": [
-        "src-icd11-cddr-2024",
-        "src-dsm5-tr-2022",
-        "src-isstd-adult-did-2011"
+        "src-ilae-epilepsy-classification-2017",
+        "src-nice-ng217-epilepsies-2022",
+        "src-icd11-cddr-2024"
       ],
       "claimIds": [
-        "claim-trauma-did-voices-not-psychosis"
+        "claim-trauma-tle-mimic-aura-stereotypy",
+        "claim-trauma-no-negative-test-confirmation"
       ]
     }
   ],
@@ -261,6 +268,6 @@
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",
-    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, CG78, ISTSS, pure content-src architecture"
+    "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, ISSTD, ILAE 2017, NICE NG217, pure content-src architecture"
   }
 }

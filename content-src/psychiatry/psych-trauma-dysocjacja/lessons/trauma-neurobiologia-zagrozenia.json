@@ -69,8 +69,8 @@
           "explanation": "Osłabione hamowanie zstępujące kory czołowej pozwala ciału migdałowatemu na niekontrolowane wyzwalanie reakcji lękowej."
         },
         {
-          "text": "Jednoczesne zniszczenie wzgórza i kory potylicznej",
-          "explanation": "Wzgórze nie ulega zniszczeniu, dochodzi do dysfunkcji przetwarzania sensorycznego i limbicznego."
+          "text": "Izolowane uszkodzenie kory potylicznej z obustronną ślepotą korową",
+          "explanation": "Klasyczne PTSD nie wiąże się z uszkodzeniem kory wzrokowej; dotyczy sieci czołowo-limbicznej."
         },
         {
           "text": "Wybiórcza hiperaktywacja hipokampa z zanikiem ciała migdałowatego",
@@ -109,12 +109,12 @@
           "explanation": "Paradoks PTSD: silny napęd centralny CRH z jednoczesnym nadmiernym hamowaniem przez uwrażliwione receptory GR."
         },
         {
-          "text": "Masywny guz chromochłonny nadnerczy",
-          "explanation": "Guz chromochłonny to feochromocytoma rdzenia nadnerczy, a nie zaburzenie osi HPA."
+          "text": "Pierwotny hiperaldosteronizm (zespół Conna) z opornym nadciśnieniem i hipokaliemią",
+          "explanation": "Zespół Conna to gruczolak kory nadnerczy, a nie neuroendokrynna adaptacja pourazowa osi HPA."
         },
         {
-          "text": "Niewrażliwość przysadki na kortykoliberynę z zanikiem ACTH",
-          "explanation": "Przysadka reaguje, ale ujemne sprzężenie zwrotne na poziomie receptora GR jest nadmiernie czułe."
+          "text": "Całkowita niewrażliwość przysadki na kortykoliberynę z zanikiem wydzielania ACTH",
+          "explanation": "Przysadka zachowuje reaktywność, ale pętla sprzężenia zwrotnego na poziomie receptora GR w PTSD jest nadmiernie uwrażliwiona."
         }
       ],
       "answer": 0
@@ -149,12 +149,12 @@
           "explanation": "Brak integracji hipokampa sprawia, że pamięć sensoryczna nie staje się bezpieczną przeszłością, lecz powraca jako flashback."
         },
         {
-          "text": "Pacjent natychmiast trwale zapomina własne imię i nazwisko",
-          "explanation": "To amnezja uogólniona, rzadka i nietypowa dla typowego PTSD."
+          "text": "Następuje całkowita utrata nabytej pamięci semantycznej dotyczącej faktów ze świata",
+          "explanation": "Pamięć semantyczna pozostaje zachowana; deficyt dotyczy kontekstualizacji epizodycznej."
         },
         {
-          "text": "Dochodzi do nieodwracalnej utraty pamięci proceduralnej (jazda na rowerze)",
-          "explanation": "Pamięć proceduralna jest zależna od móżdżku i jąder podstawy, nie od hipokampa."
+          "text": "Dochodzi do wybiórczej utraty pamięci proceduralnej nawyków ruchowych",
+          "explanation": "Pamięć proceduralna opiera się na strukturach podkorowych i móżdżku, które nie ulegają uszkodzeniu w tym mechanizmie."
         }
       ],
       "answer": 0
