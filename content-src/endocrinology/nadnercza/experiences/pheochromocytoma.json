@@ -213,6 +213,11 @@
   "widgetIds": [
     "adrenal-workbench"
   ],
+  "widgetConfig": {
+    "adrenal-workbench": {
+      "presetId": "adrenal-pheo-safety"
+    }
+  },
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",

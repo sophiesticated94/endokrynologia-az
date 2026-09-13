@@ -1,6 +1,6 @@
 {
   "addison-choroba": {
-    "hash": "2e78511fe4fbc388f8206f1836caab3b72fe8d30b963dcc7d35d10b714950d3b",
+    "hash": "f5543b239b3f10383d6ddd0788054dcf32db5995b4066a26c91a0e451603003d",
     "schemaVersion": 2,
     "lessonId": "addison-choroba",
     "moduleId": "nadnercza"
@@ -17,8 +17,26 @@
     "lessonId": "cushing-nadnerczowy",
     "moduleId": "nadnercza"
   },
+  "fhh-hiperkalcemia": {
+    "hash": "67d7dcd1292abb9e22213f1e4fee26d67a277e2886bf39504858ee47a9a61eea",
+    "schemaVersion": 2,
+    "lessonId": "fhh-hiperkalcemia",
+    "moduleId": "przytarczyce"
+  },
+  "hiperkalcemia-nowotwory": {
+    "hash": "32b9e9f65fef5b4a93f0593f6844cdc8be67c1dba7e1c2d154373c88c373f003",
+    "schemaVersion": 2,
+    "lessonId": "hiperkalcemia-nowotwory",
+    "moduleId": "przytarczyce"
+  },
+  "hipokalcemia-niedoczynnosc": {
+    "hash": "8753e959769f83e777162a08cdc0ddf06b5d8f900a99da2a77cb23c756d38cfb",
+    "schemaVersion": 2,
+    "lessonId": "hipokalcemia-niedoczynnosc",
+    "moduleId": "przytarczyce"
+  },
   "incydentaloma-nadnercza": {
-    "hash": "8404bc8b5f57f1736c3975b633b8bfccc4b6efded558966fa3f550057b34a2ed",
+    "hash": "32e57ee5a84c85f5a475466dfda88ccf37766aae52200719397c6aeeea77ede2",
     "schemaVersion": 2,
     "lessonId": "incydentaloma-nadnercza",
     "moduleId": "nadnercza"
@@ -65,59 +83,17 @@
     "lessonId": "niedoczynnosc-wtorna",
     "moduleId": "nadnercza"
   },
-  "pheochromocytoma": {
-    "hash": "2dfe4c6e3929154443efb0790179538454fe43e7fb1f92c20e7a1d15fa13f0e7",
-    "schemaVersion": 2,
-    "lessonId": "pheochromocytoma",
-    "moduleId": "nadnercza"
-  },
-  "przelom-nadnerczowy": {
-    "hash": "70e3b10aa54ca4ae8f591b902cfbb38e2b2963adcc37d748456d1ac158172663",
-    "schemaVersion": 2,
-    "lessonId": "przelom-nadnerczowy",
-    "moduleId": "nadnercza"
-  },
-  "rak-nadnercza": {
-    "hash": "52465c145fe66ca052390c814076727fe2c9414058a014e05e620e5e8c61a066",
-    "schemaVersion": 2,
-    "lessonId": "rak-nadnercza",
-    "moduleId": "nadnercza"
-  },
-  "wpn-zespol": {
-    "hash": "beb17b8adbfcfd3a74f28f5edebe67cfa0cd6bef1aef500c89a79ea8dc01e956",
-    "schemaVersion": 2,
-    "lessonId": "wpn-zespol",
-    "moduleId": "nadnercza"
-  },
-  "zespol-conna": {
-    "hash": "ba8178012485883da4b8d46e78cc9c7b5dac10c78ad3aa749184f76f38f0ec8c",
-    "schemaVersion": 2,
-    "lessonId": "zespol-conna",
-    "moduleId": "nadnercza"
-  },
-  "fhh-hiperkalcemia": {
-    "hash": "4de2f95b4356d8177232a7ebd4b8fabf56c3acdc031c27a8e601931c6430f172",
-    "schemaVersion": 2,
-    "lessonId": "fhh-hiperkalcemia",
-    "moduleId": "przytarczyce"
-  },
-  "hiperkalcemia-nowotwory": {
-    "hash": "32b9e9f65fef5b4a93f0593f6844cdc8be67c1dba7e1c2d154373c88c373f003",
-    "schemaVersion": 2,
-    "lessonId": "hiperkalcemia-nowotwory",
-    "moduleId": "przytarczyce"
-  },
-  "hipokalcemia-niedoczynnosc": {
-    "hash": "8753e959769f83e777162a08cdc0ddf06b5d8f900a99da2a77cb23c756d38cfb",
-    "schemaVersion": 2,
-    "lessonId": "hipokalcemia-niedoczynnosc",
-    "moduleId": "przytarczyce"
-  },
   "osteoporoza-metabolizm": {
     "hash": "c6730fa420d6b47829aec5b09f5fdf052cadf759c2b22c8252203a6304d851af",
     "schemaVersion": 2,
     "lessonId": "osteoporoza-metabolizm",
     "moduleId": "przytarczyce"
+  },
+  "pheochromocytoma": {
+    "hash": "d3e5edb9fbc52e13001e2e80405e5dd4fe02e988132d8b69e1396a1a50d08214",
+    "schemaVersion": 2,
+    "lessonId": "pheochromocytoma",
+    "moduleId": "nadnercza"
   },
   "phpt-pierwotna": {
     "hash": "ab4b7c44dfb5e2779b62a27948804da57964348abf7c4d45fca500fa2d844f9d",
@@ -130,6 +106,12 @@
     "schemaVersion": 2,
     "lessonId": "przelom-hiperkalcemiczny",
     "moduleId": "przytarczyce"
+  },
+  "przelom-nadnerczowy": {
+    "hash": "70e3b10aa54ca4ae8f591b902cfbb38e2b2963adcc37d748456d1ac158172663",
+    "schemaVersion": 2,
+    "lessonId": "przelom-nadnerczowy",
+    "moduleId": "nadnercza"
   },
   "przytarczyce-chemia-casr-kalcymimetyki": {
     "hash": "65ef9afa93345756231221bbed2877ccb7610de0151c843bd0b748fadce23b85",
@@ -167,6 +149,12 @@
     "lessonId": "przytarczyce-matematyka-kinetyka-mineralizacji",
     "moduleId": "przytarczyce"
   },
+  "rak-nadnercza": {
+    "hash": "52465c145fe66ca052390c814076727fe2c9414058a014e05e620e5e8c61a066",
+    "schemaVersion": 2,
+    "lessonId": "rak-nadnercza",
+    "moduleId": "nadnercza"
+  },
   "rzekoma-niedoczynnosc": {
     "hash": "c628a0e7cf13ce143fe7416cdf0a05bd3a09344aaee93623fd233625141d95d9",
     "schemaVersion": 2,
@@ -180,13 +168,25 @@
     "moduleId": "przytarczyce"
   },
   "tezyczka-objawy": {
-    "hash": "726627c5e3c7f65ff133a341f823342bae33027251f085147cc92404d61253eb",
+    "hash": "fb6f0f4b2bdc173aeaa0fc22c5e7fa9bfcb1fd54063c4f8dabbad5611c52e487",
     "schemaVersion": 2,
     "lessonId": "tezyczka-objawy",
     "moduleId": "przytarczyce"
   },
+  "wpn-zespol": {
+    "hash": "beb17b8adbfcfd3a74f28f5edebe67cfa0cd6bef1aef500c89a79ea8dc01e956",
+    "schemaVersion": 2,
+    "lessonId": "wpn-zespol",
+    "moduleId": "nadnercza"
+  },
+  "zespol-conna": {
+    "hash": "105fb17c664d0966d5328ee9f237da46630efe6a5a29f9905d3f131ab2cce0ba",
+    "schemaVersion": 2,
+    "lessonId": "zespol-conna",
+    "moduleId": "nadnercza"
+  },
   "zespol-glodnych-kosci": {
-    "hash": "d80098db29d8c690c58ec96c3d3dfdc2c2d8154289a63e5c94315b0ba5ff4d1d",
+    "hash": "74c1e2fee78897ef6a2333b0ce87a2a5be19ab100abf9abc74f462be460af355",
     "schemaVersion": 2,
     "lessonId": "zespol-glodnych-kosci",
     "moduleId": "przytarczyce"

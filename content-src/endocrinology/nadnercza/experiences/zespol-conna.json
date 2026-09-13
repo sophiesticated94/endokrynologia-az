@@ -213,6 +213,11 @@
   "widgetIds": [
     "adrenal-workbench"
   ],
+  "widgetConfig": {
+    "adrenal-workbench": {
+      "presetId": "adrenal-pa-arr-interference"
+    }
+  },
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",

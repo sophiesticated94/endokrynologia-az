@@ -15,6 +15,10 @@ import {
   psychiatrySources,
 } from '../course-psychiatry.ts';
 import { psychiatryLessonExperiences } from '../psychiatry/index.ts';
+import {
+  isContentSrcModule,
+  loadCourseModuleFromContentSrcSync,
+} from './authoring-loader.ts';
 
 export interface CourseModuleSource {
   course: {
@@ -53,7 +57,12 @@ const PSYCH_COURSE_INFO = {
 export function resolveCourseModuleSource(moduleId: string): CourseModuleSource {
   const normId = moduleId.toLowerCase().trim();
 
-  // 1. Check Endocrinology modules
+  // 0. Canonical content-src modules (single source of truth for authoring & publishing)
+  if (isContentSrcModule(normId)) {
+    return loadCourseModuleFromContentSrcSync(normId);
+  }
+
+  // 1. Check Endocrinology modules (legacy static fallback)
   const endoModIdx = endoModulesList.findIndex((m) => m.id === normId);
   if (endoModIdx !== -1) {
     const mod = endoModulesList[endoModIdx];

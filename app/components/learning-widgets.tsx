@@ -1,8 +1,11 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Activity, Beaker, GitBranch, TrendingUp } from 'lucide-react';
 import type { Confidence, LearningActivity, LessonExperienceV2, ModuleId, PracticeRecordMeta } from '@/lib/course-types';
 import { PracticeActivityCard } from './practice-activity';
+import { AdrenalWorkbench } from '@/components/learning/endocrinology/AdrenalWorkbench';
+import { ParathyroidWorkbench } from '@/components/learning/endocrinology/ParathyroidWorkbench';
+import { getPreset } from '@/lib/content/preset-registry';
 import {
   getPsychiatryWidgetProvider,
   PSYCHIATRY_LESSON_ACTIVITY_REGISTRY,
@@ -156,18 +159,110 @@ export function widgetActivitiesForExperience(experience: LessonExperienceV2, mo
   return experience.widgetIds.map(widgetId => withChoiceFeedback(activityFor(widgetId, moduleId, experience)));
 }
 
-export function LearningWidgets({experience,moduleId,onRecord}:{experience:LessonExperienceV2;moduleId:ModuleId;onRecord:RecordPractice}) {
-  const [active, setActive] = useState(experience.widgetIds[0]);
+export function WidgetRenderer({
+  widgetId,
+  presetId,
+  experience,
+  moduleId,
+  onRecord,
+}: {
+  widgetId: string;
+  presetId?: string;
+  experience: LessonExperienceV2;
+  moduleId: ModuleId;
+  onRecord: RecordPractice;
+}) {
+  const resolvedPresetId = presetId || experience.widgetConfig?.[widgetId]?.presetId;
+  const presetDef = resolvedPresetId ? getPreset(resolvedPresetId) : undefined;
+
+  if (widgetId === 'adrenal-workbench') {
+    return (
+      <div className="embedded-workbench my-3 p-3 bg-white rounded-xl border border-slate-200 shadow-sm">
+        <AdrenalWorkbench
+          mode="embedded"
+          preset={presetDef ? (presetDef.initialState as any) : undefined}
+        />
+      </div>
+    );
+  }
+
+  if (widgetId === 'parathyroid-workbench') {
+    return (
+      <div className="embedded-workbench my-3 p-3 bg-white rounded-xl border border-slate-200 shadow-sm">
+        <ParathyroidWorkbench
+          mode="embedded"
+          preset={presetDef ? (presetDef.initialState as any) : undefined}
+        />
+      </div>
+    );
+  }
+
+  const activities = widgetActivitiesForExperience(experience, moduleId);
+  const widgetActivity = activities.find(activity => activity.id === `${experience.lessonId}-${widgetId}-v2`) || activities[0];
+  if (!widgetActivity) return null;
+
+  return <PracticeActivityCard key={widgetActivity.id} activity={widgetActivity} onRecord={onRecord} />;
+}
+
+export function LearningWidgets({
+  experience,
+  moduleId,
+  onRecord,
+  activeWidgetOverride,
+  activePresetOverride,
+}: {
+  experience: LessonExperienceV2;
+  moduleId: ModuleId;
+  onRecord: RecordPractice;
+  activeWidgetOverride?: string;
+  activePresetOverride?: string;
+}) {
+  const [active, setActive] = useState(activeWidgetOverride || experience.widgetIds[0]);
+  const [currentPresetId, setCurrentPresetId] = useState<string | undefined>(activePresetOverride);
+
+  useEffect(() => {
+    if (activeWidgetOverride) setActive(activeWidgetOverride);
+    if (activePresetOverride) setCurrentPresetId(activePresetOverride);
+  }, [activeWidgetOverride, activePresetOverride]);
+
   if (!active) return null;
-  const widgetActivity = widgetActivitiesForExperience(experience, moduleId).find(activity => activity.id === `${experience.lessonId}-${active}-v2`)!;
-  return <section className="widget-lab">
-    <div className="widget-lab-heading"><div><span className="eyebrow">PRACOWNIA W LEKCJI</span><h2>Najpierw przewidź, potem odsłoń mechanizm</h2></div><span className="model-warning">Model edukacyjny · nie diagnozuje</span></div>
-    <div className="widget-tabs" role="tablist" aria-label="Narzędzia tej lekcji">
-      {experience.widgetIds.map(id => {
-        const [label, Icon] = labels[id] || ['Pracownia', Activity];
-        return <button key={id} role="tab" aria-selected={active===id} className={active===id?'active':''} onClick={()=>setActive(id)}><Icon size={16}/>{label}</button>;
-      })}
-    </div>
-    <PracticeActivityCard key={widgetActivity.id} activity={widgetActivity} onRecord={onRecord}/>
-  </section>;
+
+  return (
+    <section id="pracownia-sekcja" className="widget-lab">
+      <div className="widget-lab-heading">
+        <div>
+          <span className="eyebrow">PRACOWNIA W LEKCJI</span>
+          <h2>Najpierw przewidź, potem odsłoń mechanizm</h2>
+        </div>
+        <span className="model-warning">Model edukacyjny · nie diagnozuje</span>
+      </div>
+      <div className="widget-tabs" role="tablist" aria-label="Narzędzia tej lekcji">
+        {experience.widgetIds.map(id => {
+          const [label, Icon] = labels[id] || ['Pracownia', Activity];
+          return (
+            <button
+              key={id}
+              role="tab"
+              aria-selected={active === id}
+              className={active === id ? 'active' : ''}
+              onClick={() => {
+                setActive(id);
+                setCurrentPresetId(undefined);
+              }}
+            >
+              <Icon size={16} />
+              {label}
+            </button>
+          );
+        })}
+      </div>
+      <WidgetRenderer
+        widgetId={active}
+        presetId={currentPresetId}
+        experience={experience}
+        moduleId={moduleId}
+        onRecord={onRecord}
+      />
+    </section>
+  );
 }

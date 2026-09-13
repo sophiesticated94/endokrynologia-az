@@ -14,6 +14,7 @@ import {
   Activity,
 } from 'lucide-react';
 import type { InlineEnhancementRef } from '@/lib/course-types';
+import { getPreset } from '@/lib/content/preset-registry';
 import { getPsychiatryPreset } from '@/lib/psychiatry/presets';
 import { evaluateHunterCriteria } from '@/lib/psychiatry-engine';
 import { getPsychiatryDiagramComponent } from './psychiatry-diagrams';
@@ -177,7 +178,10 @@ export function InlineEnhancementRenderer({
   onOpenLab?: (presetId?: string) => void;
 }) {
   if (enhancement.kind === 'workbench-deeplink') {
-    const preset = enhancement.presetId ? getPsychiatryPreset(enhancement.presetId) : undefined;
+    const generalPreset = enhancement.presetId ? getPreset(enhancement.presetId) : undefined;
+    const psychPreset = enhancement.presetId ? getPsychiatryPreset(enhancement.presetId) : undefined;
+    const title = generalPreset?.title || psychPreset?.title || 'Pracownia kliniczna';
+    const subtitle = psychPreset?.patientSummary || 'Zbadaj ten mechanizm w pracowni klinicznej.';
     const targetRoute = enhancement.presetId ? (`simulator?preset=${enhancement.presetId}` as const) : 'simulator';
     return (
       <div className="workbench-deeplink-card my-3 p-3 bg-gradient-to-r from-indigo-50 to-sky-50 border border-indigo-200 rounded-xl flex items-center justify-between text-xs">
@@ -186,8 +190,8 @@ export function InlineEnhancementRenderer({
             <Sliders size={16} />
           </div>
           <div>
-            <div className="font-bold text-slate-900">{preset ? preset.title : 'Psychiatry Command Center'}</div>
-            <div className="text-slate-600 line-clamp-1">{preset ? preset.patientSummary : 'Zbadaj ten mechanizm na żywym pacjencie.'}</div>
+            <div className="font-bold text-slate-900">{title}</div>
+            <div className="text-slate-600 line-clamp-1">{subtitle}</div>
           </div>
         </div>
         <button

@@ -219,6 +219,11 @@
   "widgetIds": [
     "parathyroid-workbench"
   ],
+  "widgetConfig": {
+    "parathyroid-workbench": {
+      "presetId": "parathyroid-hungry-bone"
+    }
+  },
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",

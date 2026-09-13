@@ -11,8 +11,8 @@ import {
   canonicalHash,
 } from '../../scripts/content-pipeline.mjs';
 import { PostgresContentRepository } from '../../lib/content/content-repository.ts';
-import { lessons, lessonRevisions } from '../../db/postgres/schema.ts';
-import { eq, and } from 'drizzle-orm';
+import { lessons, lessonRevisions, evidenceClaims, evidenceClaimSources } from '../../db/postgres/schema.ts';
+import { eq } from 'drizzle-orm';
 
 const TEST_DB_URL =
   process.env.DATABASE_URL_TEST ||
@@ -115,8 +115,12 @@ test('Content Publishing Pipeline Integration & Invariants', async (t) => {
 
   // 8. Invariant: Cannot publish a revision that is already published
   await t.test('publishPipeline: rejects publishing an already published revision', async () => {
-    const res = await publishPipeline({ revisionId: firstPublishedRevId }, db);
-    assert.equal(res.length, 0); // Noop / already published log
+    await assert.rejects(
+      async () => {
+        await publishPipeline({ revisionId: firstPublishedRevId }, db);
+      },
+      /Cannot publish revision .* with status "published"/
+    );
   });
 
   // 9. Invariant: STAGED_REVISION_STALE detection
@@ -200,6 +204,82 @@ test('Content Publishing Pipeline Integration & Invariants', async (t) => {
 
     const [lessonRow] = await db.select().from(lessons).where(eq(lessons.id, 'nadnercza-anatomia')).limit(1);
     assert.equal(lessonRow.publishedRevisionId, v2RevId);
+  });
+
+  // 12. Batch Atomicity Invariant: 15 valid review + 1 stale => throws STAGED_REVISION_STALE and 0 revisions published
+  await t.test('publishPipeline: batch atomic invariant - stale revision aborts entire batch without partial publish', async () => {
+    // Stage przytarczyce
+    const ptStaged = await stagePipeline('przytarczyce', db);
+    assert.equal(ptStaged.length, 16);
+
+    // Corrupt one staged revision's contentHash to simulate stale review
+    const victim = ptStaged[0];
+    const [victimRev] = await db
+      .select()
+      .from(lessonRevisions)
+      .where(eq(lessonRevisions.id, victim.id))
+      .limit(1);
+    const originalHash = victimRev.contentHash;
+
+    await db
+      .update(lessonRevisions)
+      .set({ contentHash: '0000000000000000000000000000000000000000000000000000000000000000' })
+      .where(eq(lessonRevisions.id, victim.id));
+
+    // Attempt to publish all staged for przytarczyce
+    await assert.rejects(
+      async () => {
+        await publishPipeline({ moduleId: 'przytarczyce', allStaged: true }, db);
+      },
+      /STAGED_REVISION_STALE/
+    );
+
+    // Verify 0 revisions were published and all remain null
+    const ptLessons = await db.select().from(lessons).where(eq(lessons.moduleId, 'przytarczyce'));
+    assert.equal(ptLessons.length, 16);
+    for (const l of ptLessons) {
+      assert.equal(
+        l.publishedRevisionId,
+        null,
+        `Lesson ${l.id} must NOT have publishedRevisionId set after aborted batch publish!`
+      );
+    }
+
+    const ptRevs = await db.select().from(lessonRevisions).where(eq(lessonRevisions.status, 'published'));
+    const publishedPt = ptRevs.filter((r) => r.lessonId.startsWith('przytarczyce') || r.document.moduleId === 'przytarczyce');
+    assert.equal(publishedPt.length, 0, 'Zero przytarczyce revisions should be published after failure');
+
+    // Restore correct hash and publish successfully
+    await db
+      .update(lessonRevisions)
+      .set({ contentHash: originalHash })
+      .where(eq(lessonRevisions.id, victim.id));
+
+    const publishedRes = await publishPipeline({ moduleId: 'przytarczyce', allStaged: true }, db);
+    assert.equal(publishedRes.length, 16);
+
+    const verifyPt = await verifyPipeline('przytarczyce', db);
+    assert.equal(verifyPt.passed, 16);
+    assert.equal(verifyPt.failed, 0);
+  });
+
+  // 13. M:N Evidence Claims and Claim Sources
+  await t.test('evidenceClaims & evidenceClaimSources: multi-source claims preserve all M:N relationships', async () => {
+    const multiSourceClaim = await db
+      .select()
+      .from(evidenceClaims)
+      .where(eq(evidenceClaims.id, 'claim-pt-cccr-overlap-zone'))
+      .limit(1);
+    assert.ok(multiSourceClaim.length > 0, 'claim-pt-cccr-overlap-zone must exist');
+
+    const sources = await db
+      .select()
+      .from(evidenceClaimSources)
+      .where(eq(evidenceClaimSources.claimId, 'claim-pt-cccr-overlap-zone'));
+
+    assert.equal(sources.length, 2, 'Claim should be mapped to exactly 2 sources');
+    const sourceIds = sources.map((s) => s.sourceId).sort();
+    assert.deepEqual(sourceIds, ['ese_phpt', 'fhh_consensus']);
   });
 
   await close();

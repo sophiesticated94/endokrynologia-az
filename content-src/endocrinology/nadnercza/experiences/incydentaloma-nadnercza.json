@@ -222,6 +222,11 @@
   "widgetIds": [
     "adrenal-workbench"
   ],
+  "widgetConfig": {
+    "adrenal-workbench": {
+      "presetId": "adrenal-incidentaloma-macs"
+    }
+  },
   "review": {
     "status": "source-checked",
     "checkedAt": "2026-09-13",

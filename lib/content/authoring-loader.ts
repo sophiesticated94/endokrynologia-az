@@ -14,6 +14,7 @@ import {
   EvidenceClaimSchema,
   type EvidenceClaim,
 } from './schemas/lesson-revision.ts';
+import { getPreset } from './preset-registry.ts';
 
 const ENDO_COURSE_INFO = {
   id: 'endocrinology',
@@ -28,7 +29,9 @@ function canonicalHash(obj: unknown): string {
     if (Array.isArray(item)) return item.map(cleanAndSort);
     const sorted: Record<string, unknown> = {};
     for (const key of Object.keys(item as Record<string, unknown>).sort()) {
-      sorted[key] = cleanAndSort((item as Record<string, unknown>)[key]);
+      if ((item as Record<string, unknown>)[key] !== undefined) {
+        sorted[key] = cleanAndSort((item as Record<string, unknown>)[key]);
+      }
     }
     return sorted;
   };
@@ -36,36 +39,67 @@ function canonicalHash(obj: unknown): string {
   return crypto.createHash('sha256').update(JSON.stringify(cleaned)).digest('hex');
 }
 
-export function isContentSrcModule(moduleId: string, baseDir?: string): boolean {
+export function discoverContentSrcModulesSync(
+  baseDir?: string
+): Array<{ courseId: string; moduleId: string; path: string }> {
   const root = baseDir || path.resolve(process.cwd(), 'content-src');
-  const modDir = path.join(root, 'endocrinology', moduleId);
-  return fs.existsSync(path.join(modDir, 'module.json'));
+  const results: Array<{ courseId: string; moduleId: string; path: string }> = [];
+  if (!fs.existsSync(root)) return results;
+
+  const courseDirs = fs.readdirSync(root, { withFileTypes: true });
+  for (const cDir of courseDirs) {
+    if (!cDir.isDirectory()) continue;
+    const cPath = path.join(root, cDir.name);
+    const modDirs = fs.readdirSync(cPath, { withFileTypes: true });
+    for (const mDir of modDirs) {
+      if (!mDir.isDirectory()) continue;
+      const modPath = path.join(cPath, mDir.name);
+      if (fs.existsSync(path.join(modPath, 'module.json'))) {
+        results.push({ courseId: cDir.name, moduleId: mDir.name, path: modPath });
+      }
+    }
+  }
+  return results.sort((a, b) => a.moduleId.localeCompare(b.moduleId));
 }
 
-export async function loadCourseModuleFromContentSrc(
+export async function discoverContentSrcModules(
+  baseDir?: string
+): Promise<Array<{ courseId: string; moduleId: string; path: string }>> {
+  return discoverContentSrcModulesSync(baseDir);
+}
+
+export function isContentSrcModule(moduleId: string, baseDir?: string): boolean {
+  const mods = discoverContentSrcModulesSync(baseDir);
+  return mods.some((m) => m.moduleId === moduleId);
+}
+
+export function loadCourseModuleFromContentSrcSync(
   moduleId: string,
   baseDir?: string
-): Promise<CourseModuleSource & { claims: Record<string, EvidenceClaim> }> {
+): CourseModuleSource & { claims: Record<string, EvidenceClaim> } {
   const root = baseDir || path.resolve(process.cwd(), 'content-src');
-  const modDir = path.join(root, 'endocrinology', moduleId);
+  const modules = discoverContentSrcModulesSync(root);
+  const found = modules.find((m) => m.moduleId === moduleId);
 
-  if (!fs.existsSync(modDir)) {
-    throw new Error(`Module directory not found: ${modDir}`);
+  if (!found) {
+    throw new Error(`Module directory not found for moduleId "${moduleId}" in ${root}`);
   }
 
+  const modDir = found.path;
+
   // 1. module.json
-  const moduleRaw = JSON.parse(await fsp.readFile(path.join(modDir, 'module.json'), 'utf8'));
+  const moduleRaw = JSON.parse(fs.readFileSync(path.join(modDir, 'module.json'), 'utf8'));
   if (moduleRaw.id !== moduleId) {
     throw new Error(`module.json id "${moduleRaw.id}" does not match requested moduleId "${moduleId}"`);
   }
 
   // 2. sources.json
-  const sourcesRaw = JSON.parse(await fsp.readFile(path.join(modDir, 'sources.json'), 'utf8')) as Record<string, Source>;
+  const sourcesRaw = JSON.parse(fs.readFileSync(path.join(modDir, 'sources.json'), 'utf8')) as Record<string, Source>;
 
   // 3. claims.json
   const claimsPath = path.join(modDir, 'claims.json');
   const claimsList: EvidenceClaim[] = fs.existsSync(claimsPath)
-    ? (JSON.parse(await fsp.readFile(claimsPath, 'utf8')) as EvidenceClaim[])
+    ? (JSON.parse(fs.readFileSync(claimsPath, 'utf8')) as EvidenceClaim[])
     : [];
   const claimsMap: Record<string, EvidenceClaim> = {};
 
@@ -84,13 +118,13 @@ export async function loadCourseModuleFromContentSrc(
 
   // 4. lessons/*.json
   const lessonsDir = path.join(modDir, 'lessons');
-  const lessonFiles = (await fsp.readdir(lessonsDir)).filter((f) => f.endsWith('.json')).sort();
+  const lessonFiles = fs.readdirSync(lessonsDir).filter((f) => f.endsWith('.json')).sort();
 
   const lessons: Lesson[] = [];
   const lessonIds = new Set<string>();
 
   for (const file of lessonFiles) {
-    const raw = JSON.parse(await fsp.readFile(path.join(lessonsDir, file), 'utf8'));
+    const raw = JSON.parse(fs.readFileSync(path.join(lessonsDir, file), 'utf8'));
     const expectedId = file.replace(/\.json$/, '');
     if (raw.id !== expectedId) {
       throw new Error(`Lesson file "${file}" has mismatched internal ID "${raw.id}"`);
@@ -100,7 +134,6 @@ export async function loadCourseModuleFromContentSrc(
     }
     lessonIds.add(raw.id);
 
-    // Validate against LessonRevisionDocumentSchema
     LessonRevisionDocumentSchema.parse(raw);
 
     for (const sid of raw.sourceIds) {
@@ -112,16 +145,30 @@ export async function loadCourseModuleFromContentSrc(
     lessons.push(raw as Lesson);
   }
 
+  // Validate claims lessonIds against loaded lessonIds
+  for (const c of claimsList) {
+    if (c.lessonIds) {
+      for (const lid of c.lessonIds) {
+        if (!lessonIds.has(lid)) {
+          throw new Error(`Claim "${c.id}" references non-existent lesson "${lid}" in module "${moduleId}"`);
+        }
+      }
+    }
+  }
+
   // 5. experiences/*.json
   const experiencesDir = path.join(modDir, 'experiences');
-  const expFiles = (await fsp.readdir(experiencesDir)).filter((f) => f.endsWith('.json')).sort();
+  const expFiles = fs.readdirSync(experiencesDir).filter((f) => f.endsWith('.json')).sort();
   const experiences: Record<string, LessonExperienceV2> = {};
 
   for (const file of expFiles) {
-    const raw = JSON.parse(await fsp.readFile(path.join(experiencesDir, file), 'utf8'));
+    const raw = JSON.parse(fs.readFileSync(path.join(experiencesDir, file), 'utf8'));
     const expectedId = file.replace(/\.json$/, '');
     if (raw.lessonId !== expectedId) {
       throw new Error(`Experience file "${file}" has mismatched lessonId "${raw.lessonId}"`);
+    }
+    if (experiences[raw.lessonId]) {
+      throw new Error(`Duplicate experience ID "${raw.lessonId}" found in ${moduleId}`);
     }
     if (!lessonIds.has(raw.lessonId)) {
       throw new Error(`Orphan experience "${file}" for non-existent lesson "${raw.lessonId}"`);
@@ -129,7 +176,7 @@ export async function loadCourseModuleFromContentSrc(
 
     LessonExperienceV2Schema.parse(raw);
 
-    // Validate claims in experience blocks
+    // Validate claims and sources in experience blocks
     if (raw.blocks) {
       for (const b of raw.blocks) {
         if (b.claimIds) {
@@ -139,16 +186,57 @@ export async function loadCourseModuleFromContentSrc(
             }
           }
         }
+        if (b.sourceIds) {
+          for (const sid of b.sourceIds) {
+            if (!sourcesRaw[sid]) {
+              throw new Error(`Block in experience "${raw.lessonId}" references unknown sourceId "${sid}"`);
+            }
+          }
+        }
+        if (b.inlineEnhancements) {
+          for (const enh of b.inlineEnhancements) {
+            if (enh.presetId) {
+              const preset = getPreset(enh.presetId);
+              if (!preset) {
+                throw new Error(`Inline enhancement in lesson "${raw.lessonId}" references unknown presetId "${enh.presetId}"`);
+              }
+              if (preset.moduleId !== moduleId) {
+                throw new Error(`Preset "${enh.presetId}" belongs to module "${preset.moduleId}", but is referenced by lesson "${raw.lessonId}" in module "${moduleId}"`);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Validate widgetConfig presets
+    if (raw.widgetConfig) {
+      for (const [wId, cfg] of Object.entries(raw.widgetConfig as Record<string, { presetId?: string }>)) {
+        if (cfg?.presetId) {
+          const preset = getPreset(cfg.presetId);
+          if (!preset) {
+            throw new Error(`widgetConfig in lesson "${raw.lessonId}" references unknown presetId "${cfg.presetId}"`);
+          }
+          if (preset.widgetType !== wId) {
+            throw new Error(`widgetConfig for "${wId}" references preset "${cfg.presetId}" with mismatched widgetType "${preset.widgetType}"`);
+          }
+          if (preset.moduleId !== moduleId) {
+            throw new Error(`widgetConfig references preset "${cfg.presetId}" from module "${preset.moduleId}", not "${moduleId}"`);
+          }
+          if (preset.lessonId && preset.lessonId !== raw.lessonId) {
+            throw new Error(`widgetConfig references preset "${cfg.presetId}" bound to lesson "${preset.lessonId}", not "${raw.lessonId}"`);
+          }
+        }
       }
     }
 
     experiences[raw.lessonId] = raw as LessonExperienceV2;
   }
 
-  // Invariant: every lesson must have an experience
+  // Invariant: every lesson in fully-curated module must have exactly one experience
   for (const lid of lessonIds) {
     if (!experiences[lid]) {
-      throw new Error(`Lesson "${lid}" in fully-curated module "${moduleId}" lacks an experience definition`);
+      throw new Error(`Missing experience for lesson "${lid}" in fully-curated module "${moduleId}"`);
     }
   }
 
@@ -168,6 +256,13 @@ export async function loadCourseModuleFromContentSrc(
   };
 }
 
+export async function loadCourseModuleFromContentSrc(
+  moduleId: string,
+  baseDir?: string
+): Promise<CourseModuleSource & { claims: Record<string, EvidenceClaim> }> {
+  return loadCourseModuleFromContentSrcSync(moduleId, baseDir);
+}
+
 export interface ContentManifestEntry {
   hash: string;
   schemaVersion: number;
@@ -180,11 +275,10 @@ export async function generateContentManifest(
 ): Promise<Record<string, ContentManifestEntry>> {
   const root = baseDir || path.resolve(process.cwd(), 'content-src');
   const manifest: Record<string, ContentManifestEntry> = {};
+  const modules = await discoverContentSrcModules(root);
 
-  const modules = ['nadnercza', 'przytarczyce'];
-  for (const modId of modules) {
-    if (!isContentSrcModule(modId, root)) continue;
-    const data = await loadCourseModuleFromContentSrc(modId, root);
+  for (const { moduleId } of modules) {
+    const data = await loadCourseModuleFromContentSrc(moduleId, root);
     for (const l of data.lessons) {
       const exp = data.lessonExperiences[l.id];
       const combined = { lesson: l, experience: exp };
@@ -193,12 +287,16 @@ export async function generateContentManifest(
         hash,
         schemaVersion: 2,
         lessonId: l.id,
-        moduleId: modId,
+        moduleId,
       };
     }
   }
 
-  return manifest;
+  const sorted: Record<string, ContentManifestEntry> = {};
+  for (const key of Object.keys(manifest).sort()) {
+    sorted[key] = manifest[key];
+  }
+  return sorted;
 }
 
 export async function verifyContentManifest(

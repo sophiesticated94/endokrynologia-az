@@ -2,7 +2,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import fsp from 'node:fs/promises';
 import path from 'node:path';
-import { eq, and, desc } from 'drizzle-orm';
+import { eq, and, desc, notInArray } from 'drizzle-orm';
 import { createDatabase } from '../db/postgres/index.ts';
 import {
   courses,
@@ -11,6 +11,7 @@ import {
   lessonRevisions,
   contentSources,
   evidenceClaims,
+  evidenceClaimSources,
   widgetPresets,
 } from '../db/postgres/schema.ts';
 import { LessonRevisionDocumentSchema } from '../lib/content/schemas/lesson-revision.ts';
@@ -190,42 +191,26 @@ export async function migrateModule(options = {}) {
     console.log(`[migrate] Mode: ${isApply ? 'APPLY (writing to database)' : 'DRY RUN (simulation)'}`);
 
     if (isApply) {
-      await db
-        .insert(courses)
-        .values({
-          id: courseMeta.id,
-          title: courseMeta.title,
-          description: courseMeta.description,
-          version: courseMeta.version,
-        })
-        .onConflictDoUpdate({
-          target: courses.id,
-          set: {
-            title: courseMeta.title,
-            description: courseMeta.description,
-            version: courseMeta.version,
-            updatedAt: new Date(),
-          },
-        });
+      await db.insert(courses).values({
+        id: courseMeta.id,
+        title: courseMeta.title,
+        description: courseMeta.description,
+        version: courseMeta.version,
+      }).onConflictDoUpdate({
+        target: courses.id,
+        set: { title: courseMeta.title, description: courseMeta.description, version: courseMeta.version, updatedAt: new Date() },
+      });
 
-      await db
-        .insert(modules)
-        .values({
-          id: moduleId,
-          courseId: courseMeta.id,
-          title: moduleMeta.name,
-          subtitle: moduleMeta.subtitle || '',
-          sortOrder: moduleMeta.sortOrder,
-        })
-        .onConflictDoUpdate({
-          target: modules.id,
-          set: {
-            title: moduleMeta.name,
-            subtitle: moduleMeta.subtitle || '',
-            sortOrder: moduleMeta.sortOrder,
-            updatedAt: new Date(),
-          },
-        });
+      await db.insert(modules).values({
+        id: moduleId,
+        courseId: courseMeta.id,
+        title: moduleMeta.name,
+        subtitle: moduleMeta.subtitle || '',
+        sortOrder: moduleMeta.sortOrder,
+      }).onConflictDoUpdate({
+        target: modules.id,
+        set: { title: moduleMeta.name, subtitle: moduleMeta.subtitle || '', sortOrder: moduleMeta.sortOrder, updatedAt: new Date() },
+      });
 
       // Pre-upsert all lessons in module so foreign keys from widget_presets are always satisfied
       for (let i = 0; i < targetLessons.length; i++) {
@@ -287,29 +272,43 @@ export async function migrateModule(options = {}) {
 
       if (moduleSource.claims) {
         for (const claim of Object.values(moduleSource.claims)) {
-          const srcId = claim.sourceIds?.[0] || claim.sourceId;
-          if (srcId) {
-            const vals = {
-              id: claim.id,
-              sourceId: srcId,
-              statement: claim.statement,
-              quote: claim.quote,
-              confidence: claim.confidence,
-              category: claim.category,
-              strength: claim.strength,
-              metadata: {
-                tags: claim.tags,
-                lessonIds: claim.lessonIds,
-                value: claim.value,
-                unit: claim.unit,
-                evidenceType: claim.evidenceType,
-                reviewedAt: claim.reviewedAt,
-              },
-            };
-            await db.insert(evidenceClaims).values(vals).onConflictDoUpdate({
-              target: evidenceClaims.id,
-              set: vals,
-            });
+          const vals = {
+            id: claim.id,
+            statement: claim.statement,
+            quote: claim.quote,
+            confidence: claim.confidence,
+            category: claim.category,
+            strength: claim.strength,
+            metadata: {
+              tags: claim.tags,
+              lessonIds: claim.lessonIds,
+              value: claim.value,
+              unit: claim.unit,
+              evidenceType: claim.evidenceType,
+              reviewedAt: claim.reviewedAt,
+            },
+          };
+          await db.insert(evidenceClaims).values(vals).onConflictDoUpdate({
+            target: evidenceClaims.id,
+            set: vals,
+          });
+
+          const desiredSourceIds = claim.sourceIds || [];
+          if (desiredSourceIds.length > 0) {
+            for (const sid of desiredSourceIds) {
+              await db.insert(evidenceClaimSources).values({
+                claimId: claim.id,
+                sourceId: sid,
+              }).onConflictDoNothing();
+            }
+            await db.delete(evidenceClaimSources).where(
+              and(
+                eq(evidenceClaimSources.claimId, claim.id),
+                notInArray(evidenceClaimSources.sourceId, desiredSourceIds)
+              )
+            );
+          } else {
+            await db.delete(evidenceClaimSources).where(eq(evidenceClaimSources.claimId, claim.id));
           }
         }
       }

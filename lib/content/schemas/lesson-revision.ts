@@ -104,6 +104,7 @@ export const LessonExperienceV2Schema = z.object({
   ),
   exitTicket: z.array(LearningActivitySchema),
   widgetIds: z.array(z.string()),
+  widgetConfig: z.record(z.object({ presetId: z.string().optional() })).optional(),
   review: z.object({
     status: z.enum(['source-checked', 'needs-review', 'draft']),
     checkedAt: z.string(),

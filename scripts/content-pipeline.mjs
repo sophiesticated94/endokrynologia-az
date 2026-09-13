@@ -1,6 +1,6 @@
 import crypto from 'node:crypto';
 import { execSync } from 'node:child_process';
-import { eq, and, desc, inArray } from 'drizzle-orm';
+import { eq, and, desc, inArray, notInArray } from 'drizzle-orm';
 import { createDatabase } from '../db/postgres/index.ts';
 import {
   courses,
@@ -9,17 +9,13 @@ import {
   lessonRevisions,
   contentSources,
   evidenceClaims,
-  widgetPresets,
+  evidenceClaimSources,
 } from '../db/postgres/schema.ts';
 import { LessonRevisionDocumentSchema } from '../lib/content/schemas/lesson-revision.ts';
 import { PostgresContentRepository } from '../lib/content/content-repository.ts';
 import { compareLessonDocuments } from '../lib/content/structured-diff.ts';
-import { getPreset, WidgetPresetDefinitionSchema } from '../lib/content/preset-registry.ts';
-import { getDefaultObjectStorage } from '../lib/storage/create-object-storage.ts';
-import { ContentAssetRepository } from '../lib/content/asset-repository.ts';
-import { AssetService } from '../lib/content/asset-service.ts';
 import { resolveCourseModuleSource, getAllModuleIds } from '../lib/content/source-adapter.ts';
-import { verifyContentManifest } from '../lib/content/authoring-loader.ts';
+import { verifyContentManifest, saveContentManifest } from '../lib/content/authoring-loader.ts';
 
 function cleanAndSort(obj) {
   if (obj === null || typeof obj !== 'object') return obj;
@@ -107,11 +103,8 @@ async function syncMetadata(db, moduleSource) {
 
   if (claims) {
     for (const claim of Object.values(claims)) {
-      const srcId = claim.sourceIds?.[0] || claim.sourceId;
-      if (!srcId) continue;
       const vals = {
         id: claim.id,
-        sourceId: srcId,
         statement: claim.statement,
         quote: claim.quote,
         confidence: claim.confidence,
@@ -130,6 +123,25 @@ async function syncMetadata(db, moduleSource) {
         target: evidenceClaims.id,
         set: vals,
       });
+
+      // Synchronize evidence_claim_sources (M:N)
+      const desiredSourceIds = claim.sourceIds || [];
+      if (desiredSourceIds.length > 0) {
+        for (const sid of desiredSourceIds) {
+          await db.insert(evidenceClaimSources).values({
+            claimId: claim.id,
+            sourceId: sid,
+          }).onConflictDoNothing();
+        }
+        await db.delete(evidenceClaimSources).where(
+          and(
+            eq(evidenceClaimSources.claimId, claim.id),
+            notInArray(evidenceClaimSources.sourceId, desiredSourceIds)
+          )
+        );
+      } else {
+        await db.delete(evidenceClaimSources).where(eq(evidenceClaimSources.claimId, claim.id));
+      }
     }
   }
 }
@@ -301,46 +313,78 @@ export async function publishPipeline(options, db) {
     return [];
   }
 
-  console.log(`[publish] Publishing ${targetRevisions.length} revision(s)...`);
-  const published = [];
-
+  // A. Materialize immutable publish plan
+  const publishPlan = [];
   for (const rev of targetRevisions) {
-    if (rev.status === 'published') {
-      console.log(`  - Revision ${rev.id} is already published.`);
-      continue;
-    }
     if (rev.status !== 'review') {
       throw new Error(`Cannot publish revision ${rev.id} with status "${rev.status}". Only "review" status can be published.`);
     }
-
     const [lessonRow] = await db.select().from(lessons).where(eq(lessons.id, rev.lessonId)).limit(1);
-    if (!lessonRow) throw new Error(`Lesson "${rev.lessonId}" not found for revision ${rev.id}`);
-    const modSrc = resolveCourseModuleSource(lessonRow.moduleId);
-    const targetL = modSrc.lessons.find(l => l.id === rev.lessonId);
-    if (!targetL) throw new Error(`Authoring source not found for lesson "${rev.lessonId}"`);
+    if (!lessonRow) {
+      throw new Error(`Lesson "${rev.lessonId}" not found for revision ${rev.id}`);
+    }
+    if (moduleId && lessonRow.moduleId !== moduleId) {
+      throw new Error(`Revision ${rev.id} belongs to module "${lessonRow.moduleId}", not requested module "${moduleId}"`);
+    }
+    publishPlan.push({
+      revisionId: rev.id,
+      lessonId: rev.lessonId,
+      moduleId: lessonRow.moduleId,
+      version: rev.version,
+      expectedContentHash: rev.contentHash,
+      previousPublishedRevisionId: lessonRow.publishedRevisionId,
+    });
+  }
 
-    const currentRawDoc = buildLessonDocument(targetL, modSrc.lessonExperiences[targetL.id]);
+  // B. Validate ENTIRE batch before first update (atomic verification)
+  console.log(`[publish] Validating publish plan for ${publishPlan.length} revision(s)...`);
+  for (const item of publishPlan) {
+    const modSrc = resolveCourseModuleSource(item.moduleId);
+    const targetL = modSrc.lessons.find(l => l.id === item.lessonId);
+    if (!targetL) {
+      throw new Error(`Authoring source not found for lesson "${item.lessonId}" in module "${item.moduleId}"`);
+    }
+
+    const exp = modSrc.lessonExperiences[targetL.id];
+    const currentRawDoc = buildLessonDocument(targetL, exp);
     const validatedDoc = LessonRevisionDocumentSchema.parse(currentRawDoc);
     const currentSrcHash = canonicalHash(validatedDoc);
 
-    if (currentSrcHash !== rev.contentHash) {
-      throw new Error(`STAGED_REVISION_STALE: Staged revision ${rev.id} for lesson "${rev.lessonId}" has hash ${rev.contentHash.slice(0, 10)}, but authoring source has changed to ${currentSrcHash.slice(0, 10)}. Re-stage before publishing!`);
+    if (currentSrcHash !== item.expectedContentHash) {
+      throw new Error(`STAGED_REVISION_STALE: Staged revision ${item.revisionId} for lesson "${item.lessonId}" has hash ${item.expectedContentHash.slice(0, 10)}, but authoring source has changed to ${currentSrcHash.slice(0, 10)}. Re-stage before publishing!`);
     }
 
-    await db.transaction(async (tx) => {
-      if (lessonRow.publishedRevisionId && lessonRow.publishedRevisionId !== rev.id) {
-        await tx.update(lessonRevisions).set({ status: 'archived' }).where(eq(lessonRevisions.id, lessonRow.publishedRevisionId));
+    for (const sid of targetL.sourceIds) {
+      if (!modSrc.sources[sid]) {
+        throw new Error(`Lesson "${item.lessonId}" references unknown sourceId "${sid}"`);
       }
-      await tx.update(lessonRevisions).set({ status: 'published', publishedAt: new Date() }).where(eq(lessonRevisions.id, rev.id));
-      await tx.update(lessons).set({ publishedRevisionId: rev.id, updatedAt: new Date() }).where(eq(lessons.id, rev.lessonId));
-    });
-
-    published.push(rev);
-    console.log(`  ✓ Published revision ${rev.id} (v${rev.version}) for lesson "${rev.lessonId}"`);
+    }
   }
 
-  console.log(`[publish] Completed. Successfully published ${published.length} revision(s).`);
-  return published;
+  // C. Execute atomic publication inside a single DB transaction
+  console.log(`[publish] Publishing ${publishPlan.length} revision(s) in single atomic transaction...`);
+  const now = new Date();
+  await db.transaction(async (tx) => {
+    for (const item of publishPlan) {
+      if (item.previousPublishedRevisionId && item.previousPublishedRevisionId !== item.revisionId) {
+        await tx.update(lessonRevisions)
+          .set({ status: 'archived' })
+          .where(eq(lessonRevisions.id, item.previousPublishedRevisionId));
+      }
+      await tx.update(lessonRevisions)
+        .set({ status: 'published', publishedAt: now })
+        .where(eq(lessonRevisions.id, item.revisionId));
+      await tx.update(lessons)
+        .set({ publishedRevisionId: item.revisionId, updatedAt: now })
+        .where(eq(lessons.id, item.lessonId));
+    }
+  });
+
+  for (const item of publishPlan) {
+    console.log(`  ✓ Published revision ${item.revisionId} (v${item.version}) for lesson "${item.lessonId}"`);
+  }
+  console.log(`[publish] Completed. Successfully published ${publishPlan.length} revision(s).`);
+  return targetRevisions;
 }
 
 export async function verifyPipeline(moduleId, db) {
@@ -415,7 +459,7 @@ export async function runPipelineCli() {
         await publishPipeline({ allStaged: true }, db);
         await verifyPipeline(undefined, db);
         break;
-      case 'manifest-check':
+      case 'manifest-check': {
         const res = await verifyContentManifest();
         if (!res.valid) {
           console.error('[manifest-check] FAILED:', res.errors);
@@ -423,8 +467,14 @@ export async function runPipelineCli() {
         }
         console.log(`[manifest-check] Manifest is valid (${res.entryCount} lessons checked).`);
         break;
+      }
+      case 'manifest-generate':
+      case 'manifest-update':
+        await saveContentManifest();
+        console.log('[manifest-generate] Manifest successfully written.');
+        break;
       default:
-        console.error(`Unknown command: "${command}". Available commands: plan, stage, publish, verify, publish-all, manifest-check`);
+        console.error(`Unknown command: "${command}". Available commands: plan, stage, publish, verify, publish-all, manifest-check, manifest-update`);
         process.exit(1);
     }
   } finally {

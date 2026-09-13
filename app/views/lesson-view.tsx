@@ -29,7 +29,6 @@ import type { Confidence, LearningActivity, PracticeRecordMeta, InlineEnhancemen
 import { isLessonCoreComplete } from '@/lib/lesson-v2';
 import type { LearningState } from '@/lib/learning';
 import { SourceList } from '../course-ui';
-import { GlossaryText } from '../glossary-components';
 import { FormattedMathText } from '../components/latex-renderer';
 import { LatexViewerModal } from '../components/latex-viewer-modal';
 import { LessonDiagram } from './lesson-diagrams';
@@ -37,6 +36,7 @@ import { LessonSimulators } from './lesson-simulators';
 import { MathDerivationCard, WorkedExampleCard } from '../components/math-lesson-cards';
 import { PracticeActivityCard } from '../components/practice-activity';
 import { LearningWidgets } from '../components/learning-widgets';
+import { getPreset } from '@/lib/content/preset-registry';
 import type { Navigation } from './types';
 
 const MODULE_LABELS: Record<string, string> = {
@@ -76,6 +76,8 @@ export function LessonView({
   const [labModalPresetId, setLabModalPresetId] = useState<string | null>(null);
   const [selectedClaimKey, setSelectedClaimKey] = useState<string | undefined>(undefined);
   const [finishedActivities, setFinishedActivities] = useState<Set<string>>(new Set());
+  const [activeWorkbenchWidget, setActiveWorkbenchWidget] = useState<string | undefined>(undefined);
+  const [activeWorkbenchPreset, setActiveWorkbenchPreset] = useState<string | undefined>(undefined);
   const psychEnhancement = getPsychiatryEnhancement(lesson.id);
   const experience = endoExperiences[lesson.id] || psychiatryLessonExperiences[lesson.id];
   const allCourseLessons = lessons.some(l => l.id === lesson.id) ? lessons : psychiatryLessons;
@@ -175,6 +177,16 @@ export function LessonView({
                 setEvidenceModalOpen(true);
               }}
               onOpenLab={(presetId?: string) => {
+                if (presetId) {
+                  const p = getPreset(presetId);
+                  if (p && (p.widgetType === 'adrenal-workbench' || p.widgetType === 'parathyroid-workbench')) {
+                    setActiveWorkbenchPreset(presetId);
+                    setActiveWorkbenchWidget(p.widgetType);
+                    const el = document.getElementById('pracownia-sekcja');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    return;
+                  }
+                }
                 setLabModalPresetId(presetId ?? psychEnhancement?.workbenchPresetId ?? 'mse-young-adult-001');
               }}
             />
@@ -255,7 +267,13 @@ export function LessonView({
         />
 
         {experience && lesson.moduleId && (
-          <LearningWidgets experience={experience} moduleId={lesson.moduleId} onRecord={recordPractice} />
+          <LearningWidgets
+            experience={experience}
+            moduleId={lesson.moduleId}
+            onRecord={recordPractice}
+            activeWidgetOverride={activeWorkbenchWidget}
+            activePresetOverride={activeWorkbenchPreset}
+          />
         )}
 
         {/* Formalne wyprowadzenia matematyczne i biofizyczne */}

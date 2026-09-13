@@ -10,6 +10,7 @@ import {
   jsonb,
   uniqueIndex,
   index,
+  primaryKey,
   type AnyPgColumn,
 } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm';
@@ -138,9 +139,6 @@ export const contentSources = pgTable('content_sources', {
 
 export const evidenceClaims = pgTable('evidence_claims', {
   id: varchar('id', { length: 128 }).primaryKey(),
-  sourceId: varchar('source_id', { length: 128 })
-    .notNull()
-    .references(() => contentSources.id, { onDelete: 'cascade' }),
   statement: text('statement').notNull(),
   quote: text('quote'),
   confidence: varchar('confidence', { length: 32 }),
@@ -149,6 +147,22 @@ export const evidenceClaims = pgTable('evidence_claims', {
   metadata: jsonb('metadata').default({}).notNull(),
   createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
 });
+
+export const evidenceClaimSources = pgTable(
+  'evidence_claim_sources',
+  {
+    claimId: varchar('claim_id', { length: 128 })
+      .notNull()
+      .references(() => evidenceClaims.id, { onDelete: 'cascade' }),
+    sourceId: varchar('source_id', { length: 128 })
+      .notNull()
+      .references(() => contentSources.id, { onDelete: 'restrict' }),
+  },
+  (table) => [
+    primaryKey({ columns: [table.claimId, table.sourceId] }),
+    index('evidence_claim_sources_source_idx').on(table.sourceId),
+  ]
+);
 
 // Relations
 export const coursesRelations = relations(courses, ({ many }) => ({
@@ -170,5 +184,14 @@ export const lessonRevisionsRelations = relations(lessonRevisions, ({ one }) => 
 }));
 
 export const contentSourcesRelations = relations(contentSources, ({ many }) => ({
-  evidenceClaims: many(evidenceClaims),
+  claimSources: many(evidenceClaimSources),
+}));
+
+export const evidenceClaimsRelations = relations(evidenceClaims, ({ many }) => ({
+  claimSources: many(evidenceClaimSources),
+}));
+
+export const evidenceClaimSourcesRelations = relations(evidenceClaimSources, ({ one }) => ({
+  claim: one(evidenceClaims, { fields: [evidenceClaimSources.claimId], references: [evidenceClaims.id] }),
+  source: one(contentSources, { fields: [evidenceClaimSources.sourceId], references: [contentSources.id] }),
 }));

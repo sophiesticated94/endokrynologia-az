@@ -15,6 +15,13 @@
       "when": 1789294799440,
       "tag": "0001_typical_karnak",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1789304799440,
+      "tag": "0002_evidence_claim_sources",
+      "breakpoints": true
     }
   ]
 }

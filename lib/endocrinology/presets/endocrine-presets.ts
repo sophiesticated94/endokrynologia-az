@@ -13,6 +13,8 @@ export interface EndocrineWidgetPreset {
   lessonId?: string;
   title: string;
   initialState: Record<string, unknown>;
+  sourceIds?: string[];
+  claimIds?: string[];
   evidenceIds?: string[];
 }
 
@@ -102,6 +104,8 @@ export const ENDOCRINE_PRESETS: Record<string, EndocrineWidgetPreset> = {
         spontaneousHypokalemia: true,
       },
     },
+    sourceIds: ['endo_pa'],
+    claimIds: ['claim-adn-pa-screening-2025', 'claim-adn-pa-confirmatory-exemption'],
     evidenceIds: ['endo_pa'],
   },
   'adrenal-hpa-synacthen': {
@@ -119,6 +123,8 @@ export const ENDOCRINE_PRESETS: Record<string, EndocrineWidgetPreset> = {
         recentPituitaryEventWeeks: 2,
       },
     },
+    sourceIds: ['endo_pai'],
+    claimIds: ['claim-adn-synacthen-acute-secondary-caveat'],
     evidenceIds: ['endo_pai'],
   },
   'adrenal-pheo-safety': {
@@ -136,6 +142,8 @@ export const ENDOCRINE_PRESETS: Record<string, EndocrineWidgetPreset> = {
         alphaBlockerInitiated: false,
       },
     },
+    sourceIds: ['endo_pheo'],
+    claimIds: ['claim-adn-pheo-alpha-blockade-first'],
     evidenceIds: ['endo_pheo'],
   },
   'adrenal-incidentaloma-macs': {
@@ -149,10 +157,12 @@ export const ENDOCRINE_PRESETS: Record<string, EndocrineWidgetPreset> = {
       focusSection: 'incidentaloma',
       initialIncidentaloma: {
         sizeMm: 26,
-        unenhancedHu: 6,
+        nativeDensityHu: 6,
         postDstCortisolUgDl: 2.2,
       },
     },
+    sourceIds: ['ese_incidentaloma', 'pte_macs'],
+    claimIds: ['claim-adn-incidentaloma-hu-cutoff', 'claim-adn-macs-dst-tiers'],
     evidenceIds: ['ese_incidentaloma', 'pte_macs'],
   },
   'parathyroid-phpt-fhh-cccr': {
@@ -172,6 +182,8 @@ export const ENDOCRINE_PRESETS: Record<string, EndocrineWidgetPreset> = {
         vitaminD25OhNgMl: 14,
       },
     },
+    sourceIds: ['fhh_consensus', 'ese_phpt'],
+    claimIds: ['claim-pt-cccr-overlap-zone', 'claim-pt-vitd-confounder-cccr'],
     evidenceIds: ['fhh_consensus', 'ese_phpt'],
   },
   'parathyroid-hypopara-management': {
@@ -190,6 +202,8 @@ export const ENDOCRINE_PRESETS: Record<string, EndocrineWidgetPreset> = {
         calciumElementalMgDay: 1000,
       },
     },
+    sourceIds: ['ese_hypopara'],
+    claimIds: ['claim-pt-hypopara-target-ca-2025', 'claim-pt-hypopara-calcitriol-firstline'],
     evidenceIds: ['ese_hypopara'],
   },
   'parathyroid-hungry-bone': {
@@ -204,10 +218,12 @@ export const ENDOCRINE_PRESETS: Record<string, EndocrineWidgetPreset> = {
       initialHungryBone: {
         preopCalciumMmolL: 3.2,
         preopPthPgMl: 540,
-        alkalinePhosphataseUPerL: 320,
-        patientAge: 62,
+        preopAlpUL: 320,
+        ageYears: 62,
       },
     },
+    sourceIds: ['hungry_bone', 'ese_phpt'],
+    claimIds: ['claim-pt-hungry-bone-alp-predictor'],
     evidenceIds: ['hungry_bone', 'ese_phpt'],
   },
 };

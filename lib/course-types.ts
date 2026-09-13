@@ -84,6 +84,7 @@ export type LessonExperienceV2 = {
     | 'parathyroid-workbench'
     | string
   >;
+  widgetConfig?: Record<string, { presetId?: string }>;
   review: { status: 'source-checked' | 'needs-review' | 'draft'; checkedAt: string; scope: string };
 };
 

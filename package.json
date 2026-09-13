@@ -31,7 +31,8 @@
     "content:publish": "node scripts/content-pipeline.mjs publish",
     "content:verify": "node scripts/content-pipeline.mjs verify",
     "content:publish:all": "node scripts/content-pipeline.mjs publish-all",
-    "content:manifest:check": "node scripts/content-pipeline.mjs manifest-check"
+    "content:manifest:check": "node scripts/content-pipeline.mjs manifest-check",
+    "content:manifest:update": "node scripts/content-pipeline.mjs manifest-update"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
