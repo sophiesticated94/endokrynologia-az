@@ -106,7 +106,7 @@
   },
   {
     "id": "claim-thy-myxedema-steroid-first",
-    "statement": "W śpiączce hipometabolicznej (myxoedema coma) należy bezwzględnie wdrożyć dożylną substytucję glikokortykosteroidami (hydrokortyzon 100 mg co 8 h) PRZED lub równolegle z podaniem hormonów tarczycy, aby uniknąć wywołania śmiertelnego przełomu nadnerczowego.",
+    "statement": "W śpiączce hipometabolicznej (myxoedema coma) należy wdrożyć dożylną substytucję glikokortykosteroidami (hydrokortyzon 100 mg co 8 h) przed lub równolegle z podaniem hormonów tarczycy, aby uniknąć przyspieszenia metabolizmu resztkowego kortyzolu i wywołania przełomu nadnerczowego.",
     "category": "guideline_recommendation",
     "strength": "strong",
     "sourceIds": [
@@ -238,7 +238,7 @@
   },
   {
     "id": "claim-thy-mtc-pheo-exclusion-men2",
-    "statement": "Przed planową tyreoidektomią u każdego chorego z rakiem rdzeniastym tarczycy (MTC) należy bezwzględnie wykluczyć guza chromochłonnego nadnerczy (pheochromocytoma w zespole MEN2) poprzez oznaczenie wolnych metanefryn w osoczu.",
+    "statement": "Przed planowaną tyreoidektomią u chorych z podejrzeniem lub rozpoznaniem raka rdzeniastego tarczycy (MTC) konieczne jest wykluczenie guza chromochłonnego nadnerczy (pheochromocytoma w zespole MEN2) poprzez oznaczenie wolnych metanefryn w osoczu lub frakcjonowanych w moczu.",
     "category": "guideline_recommendation",
     "strength": "strong",
     "sourceIds": [

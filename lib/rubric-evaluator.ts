@@ -125,7 +125,7 @@ export class DeterministicRubricEvaluator implements RubricEvaluator {
       score = 1;
     } else if (coveredConcepts.length > 0) {
       status = 'partially_correct';
-      score = coveredConcepts.length / Math.max(1, rubric.requiredConcepts.length);
+      score = 0.5;
     } else {
       status = 'ungraded';
       score = 0;
@@ -175,10 +175,25 @@ export class DeterministicRubricEvaluator implements RubricEvaluator {
     let hasNeedsRevision = topCriticalErrors.length > 0;
     let hasPartiallyCorrect = false;
     let hasUngraded = false;
-    let allCorrect = true;
+    let allRequiredCorrect = true;
 
     for (const dim of rubric.dimensions) {
+      const isReq = dim.required !== false;
       const text = dimensionTexts[dim.id] || '';
+
+      if (!isReq && text.trim().length === 0) {
+        dimResults[dim.id] = {
+          status: 'ungraded',
+          score: 0,
+          coveredConcepts: [],
+          missingConcepts: [],
+          criticalErrors: [],
+          warnings: [],
+          feedback: 'Wymiar opcjonalny (pominięty).',
+        };
+        continue;
+      }
+
       const dimRubric = {
         requiredConcepts: dim.requiredConcepts,
         optionalConcepts: dim.optionalConcepts,
@@ -191,14 +206,16 @@ export class DeterministicRubricEvaluator implements RubricEvaluator {
 
       if (res.status === 'needs_revision') hasNeedsRevision = true;
       else if (res.status === 'partially_correct') hasPartiallyCorrect = true;
-      else if (res.status === 'ungraded') hasUngraded = true;
+      else if (res.status === 'ungraded') {
+        if (isReq) hasUngraded = true;
+      }
 
-      if (res.status !== 'correct') allCorrect = false;
+      if (isReq && res.status !== 'correct') allRequiredCorrect = false;
     }
 
     let overallStatus: RubricEvaluationStatus = 'ungraded';
     if (hasNeedsRevision) overallStatus = 'needs_revision';
-    else if (allCorrect) overallStatus = 'correct';
+    else if (allRequiredCorrect) overallStatus = 'correct';
     else if (hasPartiallyCorrect) overallStatus = 'partially_correct';
     else if (hasUngraded) overallStatus = 'ungraded';
 

@@ -7,7 +7,8 @@ import {
   validateObjectiveCoverage,
   getAllExperienceActivities,
   selectLessonMasteryTest,
-  selectModuleMasteryTest,
+  selectModuleMasteryAssessment,
+  selectModuleQuickReview,
 } from '../lib/assessment-coverage.ts';
 import { LessonExperienceV2Schema } from '../lib/content/schemas/lesson-revision.ts';
 
@@ -30,6 +31,9 @@ test('Wave 1: Tarczyca module satisfies 100% objective coverage & playbook gates
     assert.equal(report.summary.missingGeneration, 0, 'Tarczyca lesson has missing generation objectives');
     assert.ok(report.summary.hasGenerationTransfer, 'Tarczyca lesson must have Generation transfer item');
 
+    assert.equal(report.summary.missingTransfer, 0, 'Tarczyca lesson has missing transfer objectives');
+    assert.equal(report.summary.missingGenerationTransfer, 0, 'Tarczyca lesson has missing generationTransfer objectives');
+
     // 3. Multi-level assessment gate: every objective has >= 2 distinct activity types
     for (const [objId, detail] of Object.entries(report.objectives)) {
       assert.ok(detail.meetsContract, 'Tarczyca obj ' + objId + ' did not meet contract: ' + detail.missingRequirements.join(', '));
@@ -37,9 +41,9 @@ test('Wave 1: Tarczyca module satisfies 100% objective coverage & playbook gates
       assert.ok(distinctTypes.size >= 2, 'Tarczyca obj ' + objId + ' must have >= 2 distinct activity types, had ' + distinctTypes.size);
     }
 
-    // 4. Assessment Bank verification
+    // 4. Assessment Bank verification (coverage-driven, not quota-capped)
     assert.ok(Array.isArray(exp.assessmentBank), 'Tarczyca lesson must have assessmentBank');
-    assert.ok(exp.assessmentBank.length >= 2 && exp.assessmentBank.length <= 4, 'Tarczyca lesson bank size must be 2-4, got ' + exp.assessmentBank.length);
+    assert.ok(exp.assessmentBank.length >= 2, 'Tarczyca lesson bank size must be >= 2, got ' + exp.assessmentBank.length);
 
     // 5. Test bank item selector
     const masteryTest = selectLessonMasteryTest(exp, { count: 3 });
@@ -65,6 +69,8 @@ test('Wave 1: Przysadka module satisfies 100% objective coverage & playbook gate
     assert.equal(report.summary.missingApplication, 0, 'Przysadka lesson has missing application objectives');
     assert.equal(report.summary.missingGeneration, 0, 'Przysadka lesson has missing generation objectives');
     assert.ok(report.summary.hasGenerationTransfer, 'Przysadka lesson must have Generation transfer item');
+    assert.equal(report.summary.missingTransfer, 0, 'Przysadka lesson has missing transfer objectives');
+    assert.equal(report.summary.missingGenerationTransfer, 0, 'Przysadka lesson has missing generationTransfer objectives');
 
     // 3. Multi-level assessment gate: every objective has >= 2 distinct activity types
     for (const [objId, detail] of Object.entries(report.objectives)) {
@@ -73,9 +79,9 @@ test('Wave 1: Przysadka module satisfies 100% objective coverage & playbook gate
       assert.ok(distinctTypes.size >= 2, 'Przysadka obj ' + objId + ' must have >= 2 distinct activity types, had ' + distinctTypes.size);
     }
 
-    // 4. Assessment Bank verification
+    // 4. Assessment Bank verification (coverage-driven, not quota-capped)
     assert.ok(Array.isArray(exp.assessmentBank), 'Przysadka lesson must have assessmentBank');
-    assert.ok(exp.assessmentBank.length >= 2 && exp.assessmentBank.length <= 4, 'Przysadka lesson bank size must be 2-4, got ' + exp.assessmentBank.length);
+    assert.ok(exp.assessmentBank.length >= 2, 'Przysadka lesson bank size must be >= 2, got ' + exp.assessmentBank.length);
 
     // 5. Test bank item selector
     const masteryTest = selectLessonMasteryTest(exp, { count: 3 });
@@ -84,11 +90,16 @@ test('Wave 1: Przysadka module satisfies 100% objective coverage & playbook gate
 });
 
 test('Wave 1: Module mastery test generator across 16 lessons', () => {
-  const thyMastery = selectModuleMasteryTest(thyroidExperiences, { count: 10 });
-  assert.equal(thyMastery.length, 10, 'Tarczyca module test should have 10 items');
+  const thyAssessment = selectModuleMasteryAssessment(thyroidExperiences);
+  assert.equal(thyAssessment.completeCoverage, true, 'Tarczyca full module mastery assessment must achieve complete coverage');
+  assert.equal(thyAssessment.items.length, 16, 'Should select 1 item from each of the 16 lessons');
 
-  const pitMastery = selectModuleMasteryTest(pituitaryExperiences, { count: 10 });
-  assert.equal(pitMastery.length, 10, 'Przysadka module test should have 10 items');
+  const pitAssessment = selectModuleMasteryAssessment(pituitaryExperiences);
+  assert.equal(pitAssessment.completeCoverage, true, 'Przysadka full module mastery assessment must achieve complete coverage');
+  assert.equal(pitAssessment.items.length, 16, 'Should select 1 item from each of the 16 lessons');
+
+  const thyQuick = selectModuleQuickReview(thyroidExperiences, { count: 10 });
+  assert.equal(thyQuick.length, 10, 'Tarczyca quick review should sample 10 items');
 });
 
 test('Wave 1: Source & Claim Provenance integrity', () => {
@@ -132,5 +143,5 @@ test('Wave 1: Clinical Safety & Nuance Assertions', () => {
 
   const hypoClaim = pituitaryClaims.find(c => c.id === 'claim-pit-hypopituitarism-steroid-priority');
   assert.ok(hypoClaim, 'Hypopituitarism steroid priority claim must exist');
-  assert.match(hypoClaim.statement, /hydrokortyzonem musi ZAWSZE wyprzedzać podanie lewotyroksyny/, 'Hydrocortisone before LT4 mandate');
+  assert.match(hypoClaim.statement, /hydrokortyzon.*(wyprzedzać|przed).*lewotyroksyn/i, 'Hydrocortisone before LT4 mandate');
 });

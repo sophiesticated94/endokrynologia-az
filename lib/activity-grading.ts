@@ -24,6 +24,8 @@ export interface DetailedGradingResult {
   score: number;
   feedback?: string;
   rubricResult?: RubricEvaluationResult | MultiDimensionalEvaluationResult;
+  decisionResult?: boolean;
+  rationaleResult?: RubricEvaluationStatus;
 }
 
 export function evaluateActivity(activity: LearningActivity, response: ActivityResponse): DetailedGradingResult {
@@ -154,7 +156,9 @@ export function evaluateActivity(activity: LearningActivity, response: ActivityR
     const text = typeof response === 'string' ? response : (response && typeof response === 'object' && 'text' in response) ? String(response.text || '') : '';
     const userConf = (response && typeof response === 'object' && 'userConfirmedStatus' in response) ? (response.userConfirmedStatus as RubricEvaluationStatus | undefined) : undefined;
     const rubricRes = defaultRubricEvaluator.evaluate(activity.rubric, text);
-    const finalStatus: RubricEvaluationStatus = userConf || rubricRes.status;
+    const hasCritical = rubricRes.criticalErrors.length > 0;
+    // Canonical precedence: criticalError -> needs_revision regardless of self-review
+    const finalStatus: RubricEvaluationStatus = hasCritical ? 'needs_revision' : (userConf || rubricRes.status);
     const isCorrect = finalStatus === 'correct';
     return {
       status: finalStatus,
@@ -190,38 +194,60 @@ export function evaluateActivity(activity: LearningActivity, response: ActivityR
 
     // Evaluate rationale component
     const rubricRes = defaultRubricEvaluator.evaluate(activity.rationaleRubric, rationale);
-    let finalStatus: RubricEvaluationStatus = 'ungraded';
+    const hasCritical = rubricRes.criticalErrors.length > 0;
+    // Canonical precedence: critical error cannot be overridden by user confirmation
+    const rationaleStatus: RubricEvaluationStatus = hasCritical ? 'needs_revision' : (userConf || rubricRes.status);
 
-    if (!decisionCorrect) {
-      finalStatus = rubricRes.status === 'correct' ? 'partially_correct' : 'needs_revision';
+    let finalStatus: RubricEvaluationStatus = 'ungraded';
+    if (hasCritical) {
+      finalStatus = 'needs_revision';
+    } else if (!decisionCorrect) {
+      // wrong decision + good reasoning => partially_correct or needs_revision, NEVER correct
+      finalStatus = (rationaleStatus === 'correct' || rationaleStatus === 'partially_correct')
+        ? 'partially_correct'
+        : 'needs_revision';
     } else {
-      if (userConf) {
-        finalStatus = userConf;
-      } else if (rubricRes.status === 'correct') {
+      // correct decision
+      if (rationaleStatus === 'correct') {
         finalStatus = 'correct';
-      } else if (rubricRes.status === 'partially_correct') {
+      } else if (rationaleStatus === 'partially_correct') {
         finalStatus = 'partially_correct';
-      } else if (rubricRes.status === 'needs_revision') {
+      } else if (rationaleStatus === 'needs_revision') {
         finalStatus = 'needs_revision';
       } else {
         finalStatus = 'ungraded';
       }
     }
 
+    const decisionFeedback = decisionCorrect ? 'Decyzja: trafna.' : 'Decyzja: nietrafna.';
+    const rationaleFeedback = `Uzasadnienie: ${rubricRes.feedback}`;
+    const feedback = `${decisionFeedback} ${rationaleFeedback}`;
+
     return {
       status: finalStatus,
       correct: finalStatus === 'correct',
       score: finalStatus === 'correct' ? 1 : finalStatus === 'partially_correct' ? 0.5 : 0,
-      feedback: `${decisionCorrect ? 'Decyzja: trafna.' : 'Decyzja: nietrafna.'} ${rubricRes.feedback}`,
+      feedback,
       rubricResult: rubricRes,
+      decisionResult: decisionCorrect,
+      rationaleResult: rationaleStatus,
     };
   }
 
   if (activity.type === 'clinical_reasoning') {
-    const dimTexts = (response && typeof response === 'object' && 'dimensions' in response) ? (response.dimensions as Record<string, string>) : (response && typeof response === 'object' && !('text' in response)) ? (response as Record<string, string>) : {};
-    const userConf = (response && typeof response === 'object' && 'userConfirmedStatus' in response) ? (response.userConfirmedStatus as RubricEvaluationStatus | undefined) : undefined;
+    const dimTexts = (response && typeof response === 'object' && 'dimensions' in response)
+      ? (response.dimensions as Record<string, string>)
+      : (response && typeof response === 'object' && !('text' in response))
+      ? (response as Record<string, string>)
+      : {};
+    const userConf = (response && typeof response === 'object' && 'userConfirmedStatus' in response)
+      ? (response.userConfirmedStatus as RubricEvaluationStatus | undefined)
+      : undefined;
     const multiRes = defaultRubricEvaluator.evaluateMultiDimensional(activity.rubric, dimTexts);
-    const finalStatus: RubricEvaluationStatus = userConf || multiRes.overallStatus;
+    const hasCritical = multiRes.criticalErrors.length > 0 ||
+      Object.values(multiRes.dimensions).some(d => d.criticalErrors.length > 0);
+    // Canonical precedence: criticalError -> needs_revision regardless of self-review
+    const finalStatus: RubricEvaluationStatus = hasCritical ? 'needs_revision' : (userConf || multiRes.overallStatus);
     return {
       status: finalStatus,
       correct: finalStatus === 'correct',

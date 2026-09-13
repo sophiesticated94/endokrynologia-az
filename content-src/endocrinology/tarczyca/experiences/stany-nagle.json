@@ -209,7 +209,8 @@
                   "jod po godzinie"
                 ]
               }
-            ]
+            ],
+            "required": true
           },
           {
             "id": "dim-supportive",
@@ -225,7 +226,8 @@
                   "unikać aspiryny"
                 ]
               }
-            ]
+            ],
+            "required": true
           }
         ]
       },
@@ -314,7 +316,8 @@
       "sourceIds": [
         "coma",
         "emergency"
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "stany-nagle-bank-2",
@@ -347,7 +350,8 @@
       "sourceIds": [
         "storm",
         "emergency"
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "stany-nagle-bank-3",
@@ -381,7 +385,8 @@
       "sourceIds": [
         "storm",
         "emergency"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

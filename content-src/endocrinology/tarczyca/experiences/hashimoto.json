@@ -308,7 +308,8 @@
         "Prawidłowo: Naciek limfocytarny tworzy rzekomoguzki, które nie są prawdziwymi nowotworami i nie wymagają masowej biopsji.",
         "Nieprawidłowo: Naciek limfocytarny tworzy rzekomoguzki, które nie są prawdziwymi nowotworami i nie wymagają masowej biopsji.",
         "Nieprawidłowo: Naciek limfocytarny tworzy rzekomoguzki, które nie są prawdziwymi nowotworami i nie wymagają masowej biopsji."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "hashimoto-bank-2",
@@ -349,7 +350,8 @@
       "sourceIds": [
         "hashimoto",
         "central"
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "hashimoto-bank-3",
@@ -382,7 +384,8 @@
       "reasoning": "differentiation",
       "sourceIds": [
         "hashimoto"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

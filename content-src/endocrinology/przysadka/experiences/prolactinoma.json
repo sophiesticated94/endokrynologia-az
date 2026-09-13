@@ -324,12 +324,13 @@
         "Prawidłowo: W pierwotnej niedoczynności tarczycy wysokie TRH stymuluje wydzielanie prolaktyny; leczenie tyroksyną cofa hiperprolaktynemię.",
         "Nieprawidłowo: W pierwotnej niedoczynności tarczycy wysokie TRH stymuluje wydzielanie prolaktyny; leczenie tyroksyną cofa hiperprolaktynemię.",
         "Nieprawidłowo: W pierwotnej niedoczynności tarczycy wysokie TRH stymuluje wydzielanie prolaktyny; leczenie tyroksyną cofa hiperprolaktynemię."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "prolactinoma-bank-2",
       "type": "numeric",
-      "assessmentLevel": "application",
+      "assessmentLevel": "generation",
       "objectiveIds": [
         "prolactinoma-obj-2"
       ],
@@ -342,7 +343,8 @@
       "reasoning": "decision",
       "sourceIds": [
         "pituitary_prolactinoma_2023"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

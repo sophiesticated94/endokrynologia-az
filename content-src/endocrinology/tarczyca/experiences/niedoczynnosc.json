@@ -228,7 +228,8 @@
                   "compliance"
                 ]
               }
-            ]
+            ],
+            "required": true
           },
           {
             "id": "dim-malabsorption",
@@ -245,7 +246,8 @@
                   "żołądek"
                 ]
               }
-            ]
+            ],
+            "required": true
           }
         ],
         "criticalErrors": [
@@ -318,7 +320,8 @@
         "Prawidłowo: U kobiet planujących ciążę z subkliniczną niedoczynnością i dodatnimi anty-TPO zaleca się włączenie LT4 z celem TSH < 2,5 mIU/l.",
         "Nieprawidłowo: U kobiet planujących ciążę z subkliniczną niedoczynnością i dodatnimi anty-TPO zaleca się włączenie LT4 z celem TSH < 2,5 mIU/l.",
         "Nieprawidłowo: U kobiet planujących ciążę z subkliniczną niedoczynnością i dodatnimi anty-TPO zaleca się włączenie LT4 z celem TSH < 2,5 mIU/l."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "niedoczynnosc-bank-2",
@@ -360,7 +363,8 @@
       "sourceIds": [
         "lt4",
         "spina"
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "niedoczynnosc-bank-3",
@@ -403,7 +407,8 @@
         "Prawidłowo: U osób po 80–85. roku życia nie zaleca się rutynowego leczenia subklinicznej niedoczynności przy TSH < 10 mIU/l.",
         "Nieprawidłowo: U osób po 80–85. roku życia nie zaleca się rutynowego leczenia subklinicznej niedoczynności przy TSH < 10 mIU/l.",
         "Nieprawidłowo: U osób po 80–85. roku życia nie zaleca się rutynowego leczenia subklinicznej niedoczynności przy TSH < 10 mIU/l."
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

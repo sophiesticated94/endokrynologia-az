@@ -284,12 +284,13 @@
         "Prawidłowo: Ryzyko valvulopathy zależy od dawki skumulowanej; w dawkach endokrynologicznych (<2 mg/tydzień) ryzyko jest minimalne.",
         "Nieprawidłowo: Ryzyko valvulopathy zależy od dawki skumulowanej; w dawkach endokrynologicznych (<2 mg/tydzień) ryzyko jest minimalne.",
         "Nieprawidłowo: Ryzyko valvulopathy zależy od dawki skumulowanej; w dawkach endokrynologicznych (<2 mg/tydzień) ryzyko jest minimalne."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "przysadka-chemia-leki-bank-2",
       "type": "numeric",
-      "assessmentLevel": "application",
+      "assessmentLevel": "generation",
       "objectiveIds": [
         "przysadka-chemia-leki-obj-2"
       ],
@@ -302,7 +303,8 @@
       "reasoning": "differentiation",
       "sourceIds": [
         "dopamine_ergot_chem"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

@@ -316,7 +316,8 @@
         "Prawidłowo: W egzogennej tyreotoksykozie TSH hamuje tarczycę, co skutkuje niemierzalnym stężeniem tyreoglobuliny (Tg). W chorobie Gravesa i zapaleniach Tg jest wysoka.",
         "Nieprawidłowo: W egzogennej tyreotoksykozie TSH hamuje tarczycę, co skutkuje niemierzalnym stężeniem tyreoglobuliny (Tg). W chorobie Gravesa i zapaleniach Tg jest wysoka.",
         "Nieprawidłowo: W egzogennej tyreotoksykozie TSH hamuje tarczycę, co skutkuje niemierzalnym stężeniem tyreoglobuliny (Tg). W chorobie Gravesa i zapaleniach Tg jest wysoka."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "nadczynnosc-bank-2",
@@ -357,7 +358,8 @@
       "sourceIds": [
         "graves",
         "nodules"
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "nadczynnosc-bank-3",
@@ -389,7 +391,8 @@
       "reasoning": "differentiation",
       "sourceIds": [
         "graves"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

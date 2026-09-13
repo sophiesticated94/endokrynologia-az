@@ -290,7 +290,8 @@
         "Prawidłowo: Hiperpigmentacja wynika z nadmiaru ACTH/MSH; w hipopituitaryzmie ACTH jest nieobecne, co daje charakterystyczną alabastrową bladość skóry.",
         "Nieprawidłowo: Hiperpigmentacja wynika z nadmiaru ACTH/MSH; w hipopituitaryzmie ACTH jest nieobecne, co daje charakterystyczną alabastrową bladość skóry.",
         "Nieprawidłowo: Hiperpigmentacja wynika z nadmiaru ACTH/MSH; w hipopituitaryzmie ACTH jest nieobecne, co daje charakterystyczną alabastrową bladość skóry."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "hipopituitaryzm-bank-2",
@@ -333,7 +334,8 @@
       "reasoning": "safety",
       "sourceIds": [
         "hypopituitarism_guidelines"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

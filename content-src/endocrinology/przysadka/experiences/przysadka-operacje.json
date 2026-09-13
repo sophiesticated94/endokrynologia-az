@@ -285,12 +285,13 @@
         "Prawidłowo: Uszkodzenie części jamistej ICA jest najbardziej dramatycznym powikłaniem naczyniowym chirurgii przezklinowej.",
         "Nieprawidłowo: Uszkodzenie części jamistej ICA jest najbardziej dramatycznym powikłaniem naczyniowym chirurgii przezklinowej.",
         "Nieprawidłowo: Uszkodzenie części jamistej ICA jest najbardziej dramatycznym powikłaniem naczyniowym chirurgii przezklinowej."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "przysadka-operacje-bank-2",
       "type": "numeric",
-      "assessmentLevel": "application",
+      "assessmentLevel": "generation",
       "objectiveIds": [
         "przysadka-operacje-obj-2"
       ],
@@ -303,7 +304,8 @@
       "reasoning": "differentiation",
       "sourceIds": [
         "transsphenoidal_surgery"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

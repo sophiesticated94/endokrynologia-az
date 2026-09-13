@@ -272,12 +272,13 @@
         "Prawidłowo: Glukoza jako efektywny osmolit wyciąga wodę z komórek, powodując hiponatremię translokacyjną.",
         "Nieprawidłowo: Glukoza jako efektywny osmolit wyciąga wodę z komórek, powodując hiponatremię translokacyjną.",
         "Nieprawidłowo: Glukoza jako efektywny osmolit wyciąga wodę z komórek, powodując hiponatremię translokacyjną."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "przysadka-matematyka-osmolalnosc-bank-2",
       "type": "numeric",
-      "assessmentLevel": "application",
+      "assessmentLevel": "generation",
       "objectiveIds": [
         "przysadka-matematyka-osmolalnosc-obj-1"
       ],
@@ -290,7 +291,8 @@
       "reasoning": "interpretation",
       "sourceIds": [
         "edelman_osmolality"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

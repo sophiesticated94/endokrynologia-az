@@ -270,7 +270,8 @@
         "Prawidłowo: Pula ustrojowa T4 wynosi ok. 1000 µg, więc pominięcie i późniejsze uzupełnienie 100 µg nie zagraża bezpieczeństwu.",
         "Nieprawidłowo: Pula ustrojowa T4 wynosi ok. 1000 µg, więc pominięcie i późniejsze uzupełnienie 100 µg nie zagraża bezpieczeństwu.",
         "Nieprawidłowo: Pula ustrojowa T4 wynosi ok. 1000 µg, więc pominięcie i późniejsze uzupełnienie 100 µg nie zagraża bezpieczeństwu."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "tarczyca-matematyka-kinetyka-bank-2",
@@ -288,7 +289,8 @@
       "reasoning": "interpretation",
       "sourceIds": [
         "spina"
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "tarczyca-matematyka-kinetyka-bank-3",
@@ -319,7 +321,8 @@
       "sourceIds": [
         "spina",
         "lt4"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

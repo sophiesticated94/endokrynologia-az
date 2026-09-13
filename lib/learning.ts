@@ -24,9 +24,18 @@ export function sampleBalancedQuestions(bank:readonly Question[],count:number,to
 }
 export type Activity={id:string;user_id:string;kind:'lesson'|'quiz'|'exam'|'case'|'review'|'profile'|'practice';target_id:string;content_version:string;payload:Record<string,unknown>;created_at:string};
 export type MasteryStatus='new'|'learning'|'practicing'|'mastered';
-export type MasteryRecord={status:MasteryStatus;correctEvidence:number;lastAttemptAt:string;highConfidenceError:boolean};
-export type MistakeRecord={eventId:string;activityId:string;lessonId:string;objectiveIds:string[];confidence?:Confidence;createdAt:string};
-export type LearningState={completed:string[];reviews:Record<string,Review>;attempts:Activity[];level:'student'|'doctor';mastery:Record<string,MasteryRecord>;mistakes:MistakeRecord[]};
+export type MasteryRecord = {
+  status: MasteryStatus;
+  correctEvidence: number;
+  lastAttemptAt: string;
+  remediationRequired: boolean;
+  highConfidenceError: boolean;
+  attemptCount: number;
+  partialEvidenceCount: number;
+  needsRevisionCount: number;
+};
+export type MistakeRecord = { eventId: string; activityId: string; lessonId: string; objectiveIds: string[]; confidence?: Confidence; createdAt: string };
+export type LearningState = { completed: string[]; reviews: Record<string, Review>; attempts: Activity[]; level: 'student' | 'doctor'; mastery: Record<string, MasteryRecord>; mistakes: MistakeRecord[] };
 
 export function practicePayload(
   lessonId: string,
@@ -55,34 +64,49 @@ export function practicePayload(
   };
 }
 
-export function parseStoredActivities(raw:string|null):Activity[]{
-  if(!raw)return[];
-  try{const value=JSON.parse(raw);return Array.isArray(value)?value.filter(item=>item&&typeof item.id==='string'&&typeof item.kind==='string'):[];}catch{return[];}
+export function parseStoredActivities(raw: string | null): Activity[] {
+  if (!raw) return [];
+  try { const value = JSON.parse(raw); return Array.isArray(value) ? value.filter(item => item && typeof item.id === 'string' && typeof item.kind === 'string') : []; } catch { return []; }
 }
 
 type Evidence = { correct: boolean; activityType: string; createdAt: string; confidence?: Confidence; evalStatus?: RubricEvaluationStatus };
-function asConfidence(value:unknown):Confidence|undefined{return value===1||value===2||value===3?value:undefined}
-function masteryFrom(evidence:Evidence[]):MasteryRecord{
-  const latest=evidence[evidence.length-1];
-  const correct=evidence.filter(item=>item.correct);
-  const distinctTypes=new Set(correct.map(item=>item.activityType));
-  const first=correct[0]&&Date.parse(correct[0].createdAt);
-  const last=correct.at(-1)&&Date.parse(correct.at(-1)!.createdAt);
-  const spaced=Boolean(first&&last&&last-first>=86400000);
+function asConfidence(value: unknown): Confidence | undefined { return value === 1 || value === 2 || value === 3 ? value : undefined; }
+function masteryFrom(evidence: Evidence[]): MasteryRecord {
+  const latest = evidence[evidence.length - 1];
+  const correct = evidence.filter(item => item.correct);
+  const distinctTypes = new Set(correct.map(item => item.activityType));
+  const first = correct[0] && Date.parse(correct[0].createdAt);
+  const last = correct.at(-1) && Date.parse(correct.at(-1)!.createdAt);
+  const spaced = Boolean(first && last && last - first >= 86400000);
   const qualifiedForMastered = correct.length >= 2 && distinctTypes.size >= 2 && spaced;
 
+  const partial = evidence.filter(item => item.evalStatus === 'partially_correct');
+  const needsRev = evidence.filter(item => item.evalStatus === 'needs_revision' || (!item.correct && item.evalStatus !== 'partially_correct' && item.evalStatus !== 'ungraded'));
+
+  // Historic mastery is preserved: once qualified for mastered, needs_revision does not strip mastered
   let status: MasteryStatus = 'learning';
-  if (latest.evalStatus === 'partially_correct') {
-    status = qualifiedForMastered ? 'mastered' : 'practicing';
-  } else if (!latest.correct) {
-    status = 'learning';
-  } else if (qualifiedForMastered) {
+  if (qualifiedForMastered) {
     status = 'mastered';
-  } else {
+  } else if (correct.length >= 1) {
     status = 'practicing';
+  } else {
+    status = 'learning';
   }
 
-  return {status,correctEvidence:correct.length,lastAttemptAt:latest.createdAt,highConfidenceError:evidence.some(item=>!item.correct&&item.confidence===3&&item.evalStatus!=='partially_correct')};
+  // Remediation is required if the latest evaluated attempt was an error
+  const latestIsError = latest ? (latest.evalStatus === 'needs_revision' || (!latest.correct && latest.evalStatus !== 'partially_correct' && latest.evalStatus !== 'ungraded')) : false;
+  const remediationRequired = latestIsError;
+
+  return {
+    status,
+    correctEvidence: correct.length,
+    lastAttemptAt: latest ? latest.createdAt : '',
+    remediationRequired,
+    highConfidenceError: evidence.some(item => (item.evalStatus === 'needs_revision' || (!item.correct && item.evalStatus !== 'partially_correct' && item.evalStatus !== 'ungraded')) && item.confidence === 3),
+    attemptCount: evidence.length,
+    partialEvidenceCount: partial.length,
+    needsRevisionCount: needsRev.length,
+  };
 }
 export function projectActivities(rows:Activity[]):LearningState{
   const state:LearningState={completed:[],reviews:{},attempts:[],level:'student',mastery:{},mistakes:[]};

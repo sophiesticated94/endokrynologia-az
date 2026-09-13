@@ -293,12 +293,13 @@
         "Prawidłowo: Glikokortykosteroidy szybko zmniejszają obrzęk i masę gruczołu w LYH, chroniąc przed niepotrzebną resekcją.",
         "Nieprawidłowo: Glikokortykosteroidy szybko zmniejszają obrzęk i masę gruczołu w LYH, chroniąc przed niepotrzebną resekcją.",
         "Nieprawidłowo: Glikokortykosteroidy szybko zmniejszają obrzęk i masę gruczołu w LYH, chroniąc przed niepotrzebną resekcją."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "przysadka-zapalenia-bank-2",
       "type": "numeric",
-      "assessmentLevel": "application",
+      "assessmentLevel": "generation",
       "objectiveIds": [
         "przysadka-zapalenia-obj-2"
       ],
@@ -311,7 +312,8 @@
       "reasoning": "safety",
       "sourceIds": [
         "hypophysitis_review"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

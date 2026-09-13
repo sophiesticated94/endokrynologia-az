@@ -290,12 +290,13 @@
         "Prawidłowo: Oksytocyna w dawkach farmakologicznych wykazuje słabe działanie wazopresynopodobne na receptor V2, co przy wlewie płynów bezelektrolitowych grozi hiponatremią.",
         "Nieprawidłowo: Oksytocyna w dawkach farmakologicznych wykazuje słabe działanie wazopresynopodobne na receptor V2, co przy wlewie płynów bezelektrolitowych grozi hiponatremią.",
         "Nieprawidłowo: Oksytocyna w dawkach farmakologicznych wykazuje słabe działanie wazopresynopodobne na receptor V2, co przy wlewie płynów bezelektrolitowych grozi hiponatremią."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "przysadka-chemia-struktury-bank-2",
       "type": "numeric",
-      "assessmentLevel": "application",
+      "assessmentLevel": "generation",
       "objectiveIds": [
         "przysadka-chemia-struktury-obj-1"
       ],
@@ -308,7 +309,8 @@
       "reasoning": "mechanism",
       "sourceIds": [
         "glycoprotein_hormones"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

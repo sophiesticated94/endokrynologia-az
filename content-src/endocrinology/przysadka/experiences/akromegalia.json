@@ -321,12 +321,13 @@
         "Prawidłowo: Przerost języka i krtani w akromegalii to klasyczna przyczyna trudnych dróg oddechowych w anestezjologii.",
         "Nieprawidłowo: Przerost języka i krtani w akromegalii to klasyczna przyczyna trudnych dróg oddechowych w anestezjologii.",
         "Nieprawidłowo: Przerost języka i krtani w akromegalii to klasyczna przyczyna trudnych dróg oddechowych w anestezjologii."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "akromegalia-bank-2",
       "type": "numeric",
-      "assessmentLevel": "application",
+      "assessmentLevel": "generation",
       "objectiveIds": [
         "akromegalia-obj-2"
       ],
@@ -339,7 +340,8 @@
       "reasoning": "decision",
       "sourceIds": [
         "acromegaly_consensus_2024"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

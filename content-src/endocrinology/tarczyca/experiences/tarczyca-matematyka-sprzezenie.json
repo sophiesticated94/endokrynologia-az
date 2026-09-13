@@ -282,7 +282,8 @@
         "Prawidłowo: Połączenie kontrolera logarytmicznego z nasycającym się elementem wykonawczym tworzy stabilny punkt w przestrzeni fazowej osi.",
         "Nieprawidłowo: Połączenie kontrolera logarytmicznego z nasycającym się elementem wykonawczym tworzy stabilny punkt w przestrzeni fazowej osi.",
         "Nieprawidłowo: Połączenie kontrolera logarytmicznego z nasycającym się elementem wykonawczym tworzy stabilny punkt w przestrzeni fazowej osi."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "tarczyca-matematyka-sprzezenie-bank-2",
@@ -300,7 +301,8 @@
       "reasoning": "interpretation",
       "sourceIds": [
         "spina"
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "tarczyca-matematyka-sprzezenie-bank-3",
@@ -331,7 +333,8 @@
       "reasoning": "mechanism",
       "sourceIds": [
         "spina"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

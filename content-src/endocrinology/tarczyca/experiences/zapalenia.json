@@ -281,7 +281,8 @@
         "Prawidłowo: Poporodowe zapalenie tarczycy to wariant bezbolesnego zapalenia autoimmunologicznego występujący w 1. roku po porodzie.",
         "Nieprawidłowo: Poporodowe zapalenie tarczycy to wariant bezbolesnego zapalenia autoimmunologicznego występujący w 1. roku po porodzie.",
         "Nieprawidłowo: Poporodowe zapalenie tarczycy to wariant bezbolesnego zapalenia autoimmunologicznego występujący w 1. roku po porodzie."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "zapalenia-bank-2",
@@ -313,7 +314,8 @@
       "sourceIds": [
         "thyroiditis",
         "pregnancy"
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "zapalenia-bank-3",
@@ -346,7 +348,8 @@
       "reasoning": "differentiation",
       "sourceIds": [
         "thyroiditis"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

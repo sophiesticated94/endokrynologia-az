@@ -42,6 +42,7 @@ export const RubricDefinitionSchema = z.object({
 export const RubricDimensionSchema = z.object({
   id: z.string(),
   label: z.string(),
+  required: z.boolean().optional(),
   requiredConcepts: z.array(RubricConceptSchema),
   optionalConcepts: z.array(RubricConceptSchema).optional(),
   criticalErrors: z.array(RubricContradictionSchema).optional(),
@@ -71,6 +72,7 @@ const ActivityBaseSchema = z.object({
   claimIds: z.array(z.string()).optional(),
   optionFeedback: z.array(z.string()).optional(),
   assessmentLevel: AssessmentLevelSchema.optional(),
+  transfer: z.boolean().optional(),
 });
 
 export const LearningActivitySchema = z.union([

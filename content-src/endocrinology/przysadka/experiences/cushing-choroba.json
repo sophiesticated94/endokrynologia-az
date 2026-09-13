@@ -295,12 +295,13 @@
         "Prawidłowo: Usunięcie nadnerczy znosi hamowanie kortyzolowe, co w zespole Nelsona prowadzi do agresywnego wzrostu gruczolaka przysadki.",
         "Nieprawidłowo: Usunięcie nadnerczy znosi hamowanie kortyzolowe, co w zespole Nelsona prowadzi do agresywnego wzrostu gruczolaka przysadki.",
         "Nieprawidłowo: Usunięcie nadnerczy znosi hamowanie kortyzolowe, co w zespole Nelsona prowadzi do agresywnego wzrostu gruczolaka przysadki."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "cushing-choroba-bank-2",
       "type": "numeric",
-      "assessmentLevel": "application",
+      "assessmentLevel": "generation",
       "objectiveIds": [
         "cushing-choroba-obj-2"
       ],
@@ -313,7 +314,8 @@
       "reasoning": "decision",
       "sourceIds": [
         "pte_cushing"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

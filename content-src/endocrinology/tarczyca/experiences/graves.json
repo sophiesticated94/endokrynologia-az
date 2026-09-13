@@ -322,7 +322,8 @@
         "Prawidłowo: Po podaniu 131-I bezwzględnie zaleca się odroczenie ciąży na co najmniej 6 miesięcy z uwagi na teratogenność promieniowania.",
         "Nieprawidłowo: Po podaniu 131-I bezwzględnie zaleca się odroczenie ciąży na co najmniej 6 miesięcy z uwagi na teratogenność promieniowania.",
         "Nieprawidłowo: Po podaniu 131-I bezwzględnie zaleca się odroczenie ciąży na co najmniej 6 miesięcy z uwagi na teratogenność promieniowania."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "graves-bank-2",
@@ -354,7 +355,8 @@
       "reasoning": "mechanism",
       "sourceIds": [
         "eyes"
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "graves-bank-3",
@@ -386,7 +388,8 @@
       "reasoning": "safety",
       "sourceIds": [
         "graves"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

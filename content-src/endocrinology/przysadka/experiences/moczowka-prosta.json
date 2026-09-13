@@ -304,12 +304,13 @@
         "Prawidłowo: Pourazowa AVP-D wymaga szybkiej substytucji dDAVP i wyrównania strat wolnej wody za pomocą 5% glukozy.",
         "Nieprawidłowo: Pourazowa AVP-D wymaga szybkiej substytucji dDAVP i wyrównania strat wolnej wody za pomocą 5% glukozy.",
         "Nieprawidłowo: Pourazowa AVP-D wymaga szybkiej substytucji dDAVP i wyrównania strat wolnej wody za pomocą 5% glukozy."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "moczowka-prosta-bank-2",
       "type": "numeric",
-      "assessmentLevel": "application",
+      "assessmentLevel": "generation",
       "objectiveIds": [
         "moczowka-prosta-obj-2"
       ],
@@ -322,7 +323,8 @@
       "reasoning": "decision",
       "sourceIds": [
         "diabetes_insipidus_guidelines"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

@@ -303,12 +303,13 @@
         "Prawidłowo: Zgodnie z klasyfikacją WHO guzy T-pit (nieme kortykotropy) mają bardziej agresywny przebieg kliniczny niż klasyczne guzy SF-1.",
         "Nieprawidłowo: Zgodnie z klasyfikacją WHO guzy T-pit (nieme kortykotropy) mają bardziej agresywny przebieg kliniczny niż klasyczne guzy SF-1.",
         "Nieprawidłowo: Zgodnie z klasyfikacją WHO guzy T-pit (nieme kortykotropy) mają bardziej agresywny przebieg kliniczny niż klasyczne guzy SF-1."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "guzy-nieczynne-bank-2",
       "type": "numeric",
-      "assessmentLevel": "application",
+      "assessmentLevel": "generation",
       "objectiveIds": [
         "guzy-nieczynne-obj-2"
       ],
@@ -321,7 +322,8 @@
       "reasoning": "decision",
       "sourceIds": [
         "pituitary_incidentaloma_2025"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

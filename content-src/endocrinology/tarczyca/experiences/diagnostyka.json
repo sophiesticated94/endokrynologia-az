@@ -344,7 +344,8 @@
         "Prawidłowo: Wysokie FT4 przy nieobniżonym TSH to cecha patologii osi: autonomicznej produkcji TSH (TSH-oma) lub defektu receptora TRβ (RTH).",
         "Nieprawidłowo: Wysokie FT4 przy nieobniżonym TSH to cecha patologii osi: autonomicznej produkcji TSH (TSH-oma) lub defektu receptora TRβ (RTH).",
         "Nieprawidłowo: Wysokie FT4 przy nieobniżonym TSH to cecha patologii osi: autonomicznej produkcji TSH (TSH-oma) lub defektu receptora TRβ (RTH)."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "diagnostyka-bank-2",
@@ -384,7 +385,8 @@
       "reasoning": "interpretation",
       "sourceIds": [
         "central"
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "diagnostyka-bank-3",
@@ -411,7 +413,8 @@
         "Prawidłowo: W I trymestrze ciąży hCG stymuluje receptor TSHR, powodując fizjologiczny spadek TSH. Przy prawidłowym FT4 nie wdraża się leczenia.",
         "Nieprawidłowo: W I trymestrze ciąży hCG stymuluje receptor TSHR, powodując fizjologiczny spadek TSH. Przy prawidłowym FT4 nie wdraża się leczenia.",
         "Nieprawidłowo: W I trymestrze ciąży hCG stymuluje receptor TSHR, powodując fizjologiczny spadek TSH. Przy prawidłowym FT4 nie wdraża się leczenia."
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

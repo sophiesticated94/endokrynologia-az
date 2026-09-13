@@ -303,7 +303,8 @@
       "type": "select_and_justify",
       "assessmentLevel": "application",
       "objectiveIds": [
-        "ciaza-obj-1"
+        "ciaza-obj-1",
+        "ciaza-obj-2"
       ],
       "prompt": "U ciężarnej w 9. tygodniu z ciężkimi niepowściągliwymi wymiotami (hyperemesis gravidarum) stwierdzono TSH <0,02 mIU/l, FT4 = 28 pmol/l (podwyższone), TRAb ujemne. Nie ma wola ani orbitopatii. Jakie jest rozpoznanie i postępowanie?",
       "options": [
@@ -338,7 +339,8 @@
         "Prawidłowo: W hyperemesis gravidarum wysokie stężenia hCG wywołują przemijający wyrzut hormonów ustępujący samoistnie po 14–18. tygodniu.",
         "Nieprawidłowo: W hyperemesis gravidarum wysokie stężenia hCG wywołują przemijający wyrzut hormonów ustępujący samoistnie po 14–18. tygodniu.",
         "Nieprawidłowo: W hyperemesis gravidarum wysokie stężenia hCG wywołują przemijający wyrzut hormonów ustępujący samoistnie po 14–18. tygodniu."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "ciaza-bank-2",
@@ -377,7 +379,8 @@
       "reasoning": "interpretation",
       "sourceIds": [
         "pregnancy"
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "ciaza-bank-3",
@@ -396,7 +399,8 @@
       "sourceIds": [
         "pregnancy",
         "lt4"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

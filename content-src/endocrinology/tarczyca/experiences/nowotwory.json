@@ -311,7 +311,8 @@
         "Prawidłowo: Komórki C nie mają mechanizmów transportu jodu — radiojod w MTC nie ma żadnego zastosowania.",
         "Nieprawidłowo: Komórki C nie mają mechanizmów transportu jodu — radiojod w MTC nie ma żadnego zastosowania.",
         "Nieprawidłowo: Komórki C nie mają mechanizmów transportu jodu — radiojod w MTC nie ma żadnego zastosowania."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "nowotwory-bank-2",
@@ -337,7 +338,8 @@
                   "przetrwała choroba"
                 ]
               }
-            ]
+            ],
+            "required": true
           },
           {
             "id": "dim-imaging",
@@ -353,7 +355,8 @@
                   "poszukiwanie przerzutów"
                 ]
               }
-            ]
+            ],
+            "required": true
           }
         ]
       },
@@ -362,7 +365,8 @@
       "reasoning": "decision",
       "sourceIds": [
         "cancer"
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "nowotwory-bank-3",
@@ -394,7 +398,8 @@
       "reasoning": "differentiation",
       "sourceIds": [
         "cancer"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

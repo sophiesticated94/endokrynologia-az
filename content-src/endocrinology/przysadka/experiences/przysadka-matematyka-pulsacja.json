@@ -278,7 +278,8 @@
         "Prawidłowo: Pulsacyjne podawanie GnRH naśladuje fizjologiczny oscylator, skutecznie stymulując spermatogenezę i owulację.",
         "Nieprawidłowo: Pulsacyjne podawanie GnRH naśladuje fizjologiczny oscylator, skutecznie stymulując spermatogenezę i owulację.",
         "Nieprawidłowo: Pulsacyjne podawanie GnRH naśladuje fizjologiczny oscylator, skutecznie stymulując spermatogenezę i owulację."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "przysadka-matematyka-pulsacja-bank-2",
@@ -309,7 +310,8 @@
       "reasoning": "interpretation",
       "sourceIds": [
         "pituitary_pulsatility"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

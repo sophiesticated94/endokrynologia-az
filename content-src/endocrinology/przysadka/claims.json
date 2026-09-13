@@ -1,7 +1,7 @@
 [
   {
     "id": "claim-pit-macroincidentaloma-field-mandate",
-    "statement": "Każdy makrogruczolak przysadki (wymiar największy >= 10 mm) lub guz przylegający do skrzyżowania wzrokowego (odległość <= 2 mm) bezwzględnie wymaga badania okulistycznego pola widzenia.",
+    "statement": "Każdy makrogruczolak przysadki (wymiar największy >= 10 mm) lub guz z radiologicznym podejrzeniem ucisku skrzyżowania wzrokowego (odległość guz-skrzyżowanie <= 2 mm w badaniu MR) wymaga planowego badania okulistycznego pola widzenia (perymetria ilościowa).",
     "category": "guideline_recommendation",
     "strength": "strong",
     "sourceIds": [
@@ -61,7 +61,7 @@
   },
   {
     "id": "claim-pit-cushing-bipss-gradient",
-    "statement": "W badaniu obustronnego cewnikowania zatok skalistych dolnych (BIPSS) chorobę Cushinga potwierdza gradient stężeń ACTH (zatoka / krew obwodowa) wynoszący >= 2,0 wyjściowo oraz >= 3,0 po stymulacji CRH.",
+    "statement": "W badaniu obustronnego cewnikowania zatok skalistych dolnych (BIPSS) gradient stężeń ACTH (zatoka / krew obwodowa) wynoszący >= 2,0 wyjściowo lub >= 3,0 po stymulacji CRH wskazuje na przysadkowe źródło ACTH (czułość i swoistość ~95–99% w ośrodkach referencyjnych).",
     "category": "guideline_recommendation",
     "strength": "strong",
     "sourceIds": [
@@ -81,7 +81,7 @@
   },
   {
     "id": "claim-pit-hypopituitarism-steroid-priority",
-    "statement": "W substytucji wielohormonalnej niedoczynności przysadki leczenie glikokortykoidowe hydrokortyzonem musi ZAWSZE wyprzedzać podanie lewotyroksyny, aby zapobiec wywołaniu śmiertelnego przełomu nadnerczowego.",
+    "statement": "W substytucji wielohormonalnej niedoczynności przysadki leczenie glikokortykoidowe hydrokortyzonem powinno systematycznie wyprzedzać rozpoczęcie podawania lewotyroksyny, aby zapobiec wyzwoleniu ostrego przełomu nadnerczowego na skutek przyspieszenia klirensu kortyzolu.",
     "category": "guideline_recommendation",
     "strength": "strong",
     "sourceIds": [
@@ -101,7 +101,7 @@
   },
   {
     "id": "claim-pit-copeptin-avp-d-cutoff",
-    "statement": "Stężenie stymulowanej kopeptyny > 4,9 pmol/l (po wlewie hipertonicznego 3% NaCl przy natremii > 147 mmol/l) wyklucza moczówkę prostą centralną (AVP-D) z czułością i swoistością powyżej 96%.",
+    "statement": "Stężenie stymulowanej kopeptyny > 4,9 pmol/l w protokole infuzji 3% NaCl przy udokumentowanej natremii > 147 mmol/l z wysokim prawdopodobieństwem przemawia przeciwko moczówce prostej centralnej (AVP-D; czułość i swoistość > 96% w populacji dorosłych).",
     "category": "guideline_recommendation",
     "strength": "strong",
     "sourceIds": [

@@ -46,6 +46,7 @@ export interface RubricDefinition {
 export interface RubricDimension {
   id: string;
   label: string;
+  required?: boolean;
   requiredConcepts: RubricConcept[];
   optionalConcepts?: RubricConcept[];
   criticalErrors?: RubricContradiction[];
@@ -81,6 +82,7 @@ type ActivityBase = {
   optionFeedback?: string[];
   claimIds?: string[];
   assessmentLevel?: AssessmentLevel;
+  transfer?: boolean;
 };
 
 export type PracticeAnswerType =

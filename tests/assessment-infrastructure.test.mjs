@@ -381,6 +381,7 @@ test('Assessment Infrastructure: Objective coverage validator and test selection
         hypothesis: 'Przełom',
         items: [{ id: 'it1', text: 'T1', expected: 'supports', explanation: 'E' }],
         assessmentLevel: 'application',
+        transfer: true,
       },
       {
         id: 'bank-2',
@@ -394,6 +395,7 @@ test('Assessment Infrastructure: Objective coverage validator and test selection
         sourceIds: ['s1'],
         rubric: { requiredConcepts: [{ id: 'c1', label: 'L', acceptedPhrases: ['p'] }], minRequired: 1 },
         assessmentLevel: 'generation',
+        transfer: true,
       },
     ],
     widgetIds: ['axis-map'],

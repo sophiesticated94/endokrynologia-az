@@ -290,7 +290,8 @@
         "Prawidłowo: Niedobór selenoprotein blokuje dejodynazy DIO1 i DIO2, uniemożliwiając konwersję T4 do T3.",
         "Nieprawidłowo: Niedobór selenoprotein blokuje dejodynazy DIO1 i DIO2, uniemożliwiając konwersję T4 do T3.",
         "Nieprawidłowo: Niedobór selenoprotein blokuje dejodynazy DIO1 i DIO2, uniemożliwiając konwersję T4 do T3."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "tarczyca-chemia-farmakologia-bank-2",
@@ -329,7 +330,8 @@
       "sourceIds": [
         "tpo_chem",
         "graves"
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "tarczyca-chemia-farmakologia-bank-3",
@@ -361,7 +363,8 @@
       "reasoning": "mechanism",
       "sourceIds": [
         "tpo_chem"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

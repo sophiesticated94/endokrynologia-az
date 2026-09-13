@@ -318,7 +318,8 @@
         "Prawidłowo: Podejrzenie przerzutu do węzłów chłonnych szyi jest bezwzględnym wskazaniem do natychmiastowej diagnostyki inwazyjnej niezależnie od wymiarów ogniska pierwotnego.",
         "Nieprawidłowo: Podejrzenie przerzutu do węzłów chłonnych szyi jest bezwzględnym wskazaniem do natychmiastowej diagnostyki inwazyjnej niezależnie od wymiarów ogniska pierwotnego.",
         "Nieprawidłowo: Podejrzenie przerzutu do węzłów chłonnych szyi jest bezwzględnym wskazaniem do natychmiastowej diagnostyki inwazyjnej niezależnie od wymiarów ogniska pierwotnego."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "guzki-bank-2",
@@ -350,7 +351,8 @@
       "sourceIds": [
         "nodules",
         "cancer"
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "guzki-bank-3",
@@ -384,7 +386,8 @@
       "sourceIds": [
         "nodules",
         "cancer"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

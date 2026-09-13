@@ -316,7 +316,8 @@
         "Prawidłowo: Zwiększone powinowactwo nieprawidłowej albuminy podwyższa całkowity hormon, lecz frakcja wolna i sprzężenie HPT są prawidłowe.",
         "Nieprawidłowo: Zwiększone powinowactwo nieprawidłowej albuminy podwyższa całkowity hormon, lecz frakcja wolna i sprzężenie HPT są prawidłowe.",
         "Nieprawidłowo: Zwiększone powinowactwo nieprawidłowej albuminy podwyższa całkowity hormon, lecz frakcja wolna i sprzężenie HPT są prawidłowe."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "fizjologia-bank-2",
@@ -357,7 +358,8 @@
       "reasoning": "mechanism",
       "sourceIds": [
         "physiology"
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "fizjologia-bank-3",
@@ -389,7 +391,8 @@
       "reasoning": "mechanism",
       "sourceIds": [
         "physiology"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

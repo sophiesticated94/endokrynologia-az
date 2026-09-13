@@ -271,7 +271,8 @@
         "Prawidłowo: Niedobór DUOX2 pozbawia TPO niezbędnego kofaktora H2O2, blokując organifikację mimo obecności enzymu TPO.",
         "Nieprawidłowo: Niedobór DUOX2 pozbawia TPO niezbędnego kofaktora H2O2, blokując organifikację mimo obecności enzymu TPO.",
         "Nieprawidłowo: Niedobór DUOX2 pozbawia TPO niezbędnego kofaktora H2O2, blokując organifikację mimo obecności enzymu TPO."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "tarczyca-chemia-synteza-bank-2",
@@ -302,7 +303,8 @@
       "reasoning": "mechanism",
       "sourceIds": [
         "tpo_chem"
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "tarczyca-chemia-synteza-bank-3",
@@ -335,7 +337,8 @@
       "sourceIds": [
         "tpo_chem",
         "physiology"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

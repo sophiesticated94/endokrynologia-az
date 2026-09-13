@@ -305,7 +305,8 @@
         "Prawidłowo: V1 biegnie w bocznej ścianie zatoki jamistej i odpowiada za czucie skóry czoła, oka i grzbietu nosa.",
         "Nieprawidłowo: V1 biegnie w bocznej ścianie zatoki jamistej i odpowiada za czucie skóry czoła, oka i grzbietu nosa.",
         "Nieprawidłowo: V1 biegnie w bocznej ścianie zatoki jamistej i odpowiada za czucie skóry czoła, oka i grzbietu nosa."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "przysadka-fizjologia-bank-2",
@@ -336,7 +337,8 @@
       "reasoning": "mechanism",
       "sourceIds": [
         "pituitary_endo"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

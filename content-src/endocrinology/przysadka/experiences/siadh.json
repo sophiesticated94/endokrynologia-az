@@ -310,12 +310,13 @@
         "Prawidłowo: Tiazydowa hiponatremia to klasyczna pułapka diagnostyczna; rozpoznanie SIADH wymaga odstawienia tiazydów.",
         "Nieprawidłowo: Tiazydowa hiponatremia to klasyczna pułapka diagnostyczna; rozpoznanie SIADH wymaga odstawienia tiazydów.",
         "Nieprawidłowo: Tiazydowa hiponatremia to klasyczna pułapka diagnostyczna; rozpoznanie SIADH wymaga odstawienia tiazydów."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "siadh-bank-2",
       "type": "numeric",
-      "assessmentLevel": "application",
+      "assessmentLevel": "generation",
       "objectiveIds": [
         "siadh-obj-2"
       ],
@@ -328,7 +329,8 @@
       "reasoning": "safety",
       "sourceIds": [
         "siadh_guidelines"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

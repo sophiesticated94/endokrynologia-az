@@ -12,7 +12,7 @@
     "moduleId": "nadnercza"
   },
   "akromegalia": {
-    "hash": "163a65ac6532441e25768c8e73a526c179092452183104ed9b942d2117a43b69",
+    "hash": "5832acbd07b567450635f28c6a5c52dbaa8cad3ba7b01c80bd1e1cc2b64e6560",
     "schemaVersion": 2,
     "lessonId": "akromegalia",
     "moduleId": "przysadka"
@@ -36,7 +36,7 @@
     "moduleId": "psych-trauma-dysocjacja"
   },
   "ciaza": {
-    "hash": "5aabf7a5c25d1b10840f67591a6bd1f94bdfe2de4c8c17b0751981e50a02e167",
+    "hash": "8e76fdbd0949d311d5c71cbdc8c8935e2f54f8add69657b41e170a9cd1f32df2",
     "schemaVersion": 2,
     "lessonId": "ciaza",
     "moduleId": "tarczyca"
@@ -48,7 +48,7 @@
     "moduleId": "psych-trauma-dysocjacja"
   },
   "cushing-choroba": {
-    "hash": "9ec8a1255a8ca2d3ccf3ed7ad23de73aece864c835464601804f2362f5e43b40",
+    "hash": "f77e6d79ebc74f9b7250e1383f2c0fb9a24aa527a799634773ec67e9e0ae4cc9",
     "schemaVersion": 2,
     "lessonId": "cushing-choroba",
     "moduleId": "przysadka"
@@ -72,7 +72,7 @@
     "moduleId": "psych-trauma-dysocjacja"
   },
   "diagnostyka": {
-    "hash": "7ed0edf67847cc5d26978dcbc9633ec084c280133799678436ac581d7a3015c5",
+    "hash": "7465b81e1458b2592770e4d5b51f9ee2d5a43831caaf7704f2c3c0461cf9b388",
     "schemaVersion": 2,
     "lessonId": "diagnostyka",
     "moduleId": "tarczyca"
@@ -96,31 +96,31 @@
     "moduleId": "przytarczyce"
   },
   "fizjologia": {
-    "hash": "05ca6de00e6e29917297214e36e89489e3db8abc9966554b6b442757316c13c8",
+    "hash": "e981f0ab83ba8f8960b8fc106d1697e0e13ea00df4a6d90885e287ad37d69700",
     "schemaVersion": 2,
     "lessonId": "fizjologia",
     "moduleId": "tarczyca"
   },
   "graves": {
-    "hash": "82a3f6bd0f5f1d6365381bfc7067c520f31b6fbba3b6f622b2cbc31e6c1f480b",
+    "hash": "594d0e9f05a98153681a103e5c73f0d3315152d2d9d499da72fb860cb8631cc7",
     "schemaVersion": 2,
     "lessonId": "graves",
     "moduleId": "tarczyca"
   },
   "guzki": {
-    "hash": "526dc6826e4f12bd365f86a9809c774d709302b2e608ff6b483f2ee57265cc33",
+    "hash": "d34757bc1a3b70a2f6a8dbf1cefe1037e8c90ac9a618457982584fe1b9c173aa",
     "schemaVersion": 2,
     "lessonId": "guzki",
     "moduleId": "tarczyca"
   },
   "guzy-nieczynne": {
-    "hash": "4850162a5641cc1bfef4f84d405004ca701b7f0828bd6bb2f17898099c8f2c76",
+    "hash": "8d6cd9cde8984787a39b1f5e76ed91854f7d93e9a10f1f058f4e2f66e6592f44",
     "schemaVersion": 2,
     "lessonId": "guzy-nieczynne",
     "moduleId": "przysadka"
   },
   "hashimoto": {
-    "hash": "25caf898b7afa0fc15f5ac34abe43f4e5c0150dba777c7af8990de5e6f2298ea",
+    "hash": "fce0ede99ab78ab365822e008c77ccf87696d331fe72e729d814d6a5d108e80c",
     "schemaVersion": 2,
     "lessonId": "hashimoto",
     "moduleId": "tarczyca"
@@ -138,7 +138,7 @@
     "moduleId": "przytarczyce"
   },
   "hipopituitaryzm": {
-    "hash": "2bfd54ef52a9090cd4d484c754689ffcc635c9fc2bd8959b114b816acaf9b31f",
+    "hash": "85de638ab3bf4b333d0eb678f0f20d3798800dd28003629872419fcf564b2052",
     "schemaVersion": 2,
     "lessonId": "hipopituitaryzm",
     "moduleId": "przysadka"
@@ -150,19 +150,19 @@
     "moduleId": "nadnercza"
   },
   "leki": {
-    "hash": "d1af3067d68c0ed8fe8abd4deb9f794cf24d64d7d8f3346f07952239744bb9e5",
+    "hash": "695eab60180bbe59f4f3d7c2397e1e501b89958a46bd098217c6b68e73d37110",
     "schemaVersion": 2,
     "lessonId": "leki",
     "moduleId": "tarczyca"
   },
   "moczowka-prosta": {
-    "hash": "d69e616d1d2260da6ba32930485419b826db487a7aaffc4f9d9be27d3a86e76f",
+    "hash": "a0936ed68213c81db436e2eb09afd3692837dccfa67d34d6ef7f5cc212295979",
     "schemaVersion": 2,
     "lessonId": "moczowka-prosta",
     "moduleId": "przysadka"
   },
   "nadczynnosc": {
-    "hash": "deae742f2394814c73742332e316ee7402c40235bd6086f31f2961d60962527f",
+    "hash": "ba8f49f8dfd9dcf2f02513e0bb724b9fff01c071fb7057b07a8da3398b197e39",
     "schemaVersion": 2,
     "lessonId": "nadczynnosc",
     "moduleId": "tarczyca"
@@ -204,7 +204,7 @@
     "moduleId": "nadnercza"
   },
   "niedoczynnosc": {
-    "hash": "295bf858da5add4265f38cfcece85a96012db1d6d8fb201bb4945f6ce41b4b3f",
+    "hash": "0e2239c2e504b4a2902131388a9fd9df25892fec905e49dd6da58f0c7a76e246",
     "schemaVersion": 2,
     "lessonId": "niedoczynnosc",
     "moduleId": "tarczyca"
@@ -216,7 +216,7 @@
     "moduleId": "nadnercza"
   },
   "nowotwory": {
-    "hash": "857afac98f978b0829a28320c2f4bf8c446da380929b987ab5ca2c2642099ea5",
+    "hash": "a54739dc3a53840db081d1dffbdf244d28542acbad19315f899101f84492d849",
     "schemaVersion": 2,
     "lessonId": "nowotwory",
     "moduleId": "tarczyca"
@@ -252,7 +252,7 @@
     "moduleId": "przytarczyce"
   },
   "prolactinoma": {
-    "hash": "56b7a4335ce29e79044a12b40e1694646099b88608c1e56f7bd154562f007472",
+    "hash": "12f822ff907bec56aced069398fb7d8126b23b093d1e8a80648ae379b7ad9c9d",
     "schemaVersion": 2,
     "lessonId": "prolactinoma",
     "moduleId": "przysadka"
@@ -270,49 +270,49 @@
     "moduleId": "nadnercza"
   },
   "przysadka-chemia-leki": {
-    "hash": "152018da92b0dc0d12f7bd9e121559b140d1a94f5cccda2fcbef14cf146e353f",
+    "hash": "91799cb2316770a2b087749dcaf53a41120696a0a16cd485cac9b87a3f4a5e71",
     "schemaVersion": 2,
     "lessonId": "przysadka-chemia-leki",
     "moduleId": "przysadka"
   },
   "przysadka-chemia-struktury": {
-    "hash": "cf9948fa052c17a4d0fe7aefdbda2580ba7f43af9aeef08d91676c50cbda804f",
+    "hash": "002d23a65ce7b5815538cd1441f32ed90f324e6e6d9e8835c2329731e91d390a",
     "schemaVersion": 2,
     "lessonId": "przysadka-chemia-struktury",
     "moduleId": "przysadka"
   },
   "przysadka-diagnostyka": {
-    "hash": "3b5ddae21cf425f103921c44e07a3478f811a76d56413e18c16f93bf65cf0403",
+    "hash": "5e92dcc87854e6d72fa5631b9b018b95e71f1ee5411903b4e428a7317069ec90",
     "schemaVersion": 2,
     "lessonId": "przysadka-diagnostyka",
     "moduleId": "przysadka"
   },
   "przysadka-fizjologia": {
-    "hash": "7db8b7c8f756c133b35766edf51ff6f13a656799dcef465c09947a39e1c5a5cc",
+    "hash": "a61501536cf35445a74c6a64edffdafb6a237882dcdb04b4ec0714df99c0be0c",
     "schemaVersion": 2,
     "lessonId": "przysadka-fizjologia",
     "moduleId": "przysadka"
   },
   "przysadka-matematyka-osmolalnosc": {
-    "hash": "357930c92170c5b2dedf0fa4dccb6c16da7f199ce71999ee5e4e092c503807f6",
+    "hash": "a66a296f1f588a314bfb56e5ccc9bf98647ff0053451f1ae3b675b60641fa0a1",
     "schemaVersion": 2,
     "lessonId": "przysadka-matematyka-osmolalnosc",
     "moduleId": "przysadka"
   },
   "przysadka-matematyka-pulsacja": {
-    "hash": "0d4f50b62147f7169bd18bf29d9ce127dc45c9e527c051d384fffd76e6cef062",
+    "hash": "e636a64769980ca2ca9dfd5476d80b35739c745d9cb83d88875d40c2b9e61ce0",
     "schemaVersion": 2,
     "lessonId": "przysadka-matematyka-pulsacja",
     "moduleId": "przysadka"
   },
   "przysadka-operacje": {
-    "hash": "d09361e8a284c50abe4c33e456d311ee8373d23ff1ab11935e86bb02cfb897a0",
+    "hash": "42843ebaad7cd759cd27c8e71045111cdce4de0c0520ffbe5ace8c9b50d5a5d5",
     "schemaVersion": 2,
     "lessonId": "przysadka-operacje",
     "moduleId": "przysadka"
   },
   "przysadka-zapalenia": {
-    "hash": "1e17720c5bc4a9b764b0f5790cfe7c9da5034d600897d41508124e3f3b100e54",
+    "hash": "ba4923ad9528c3aad82ba7eb1fe91e6eabdffaf17fed805bc3f6ab898d3227d7",
     "schemaVersion": 2,
     "lessonId": "przysadka-zapalenia",
     "moduleId": "przysadka"
@@ -390,7 +390,7 @@
     "moduleId": "przytarczyce"
   },
   "siadh": {
-    "hash": "d18e67c459038ce5e08378ba9ada4539012cec91c90eead78c8db34f711dd244",
+    "hash": "9d4cd967554d0d8a8e9a40fb82912f47878e163548918c6cb31a20ab212d0b82",
     "schemaVersion": 2,
     "lessonId": "siadh",
     "moduleId": "przysadka"
@@ -402,31 +402,31 @@
     "moduleId": "psych-trauma-dysocjacja"
   },
   "stany-nagle": {
-    "hash": "1415c4c110c78574a8b80888e4bf24c9b51be3c54b1551b2864556982f27746b",
+    "hash": "5d9bd13e3dd87d70b2f6ab977090021a4e68f6446af0d23521a2e822347026bc",
     "schemaVersion": 2,
     "lessonId": "stany-nagle",
     "moduleId": "tarczyca"
   },
   "tarczyca-chemia-farmakologia": {
-    "hash": "765b91b8ebb97115cbcb40e19e64873eb85b3d0cfd38b9c4b796c006bc3e9834",
+    "hash": "898667568833e25228cc49013dbd938374286086354263c442026f5a8348e364",
     "schemaVersion": 2,
     "lessonId": "tarczyca-chemia-farmakologia",
     "moduleId": "tarczyca"
   },
   "tarczyca-chemia-synteza": {
-    "hash": "e13203eb5790749c6f0f45ac17bcc6e929344b3bf944947f76a17aba709e941d",
+    "hash": "7f5e11d9d8c406ae482a9799f56de328a967ea2ef26044a921c42edf927fece2",
     "schemaVersion": 2,
     "lessonId": "tarczyca-chemia-synteza",
     "moduleId": "tarczyca"
   },
   "tarczyca-matematyka-kinetyka": {
-    "hash": "3e8f4dc2f6d78c784f56531abc8e4d721136103861d96f2670048e47b528e826",
+    "hash": "3d7eec1495bca6e84a9b7bba3da172f703bd9e5b15df8d237896aadc5a51016c",
     "schemaVersion": 2,
     "lessonId": "tarczyca-matematyka-kinetyka",
     "moduleId": "tarczyca"
   },
   "tarczyca-matematyka-sprzezenie": {
-    "hash": "ce5470f5fe47c4433466f9eb2f35604cae363b310e413543d53655d86da7efbd",
+    "hash": "54209802f39c23342675f1befabda6b4b30cefe6e5000884c28e9a9ed6ab6a61",
     "schemaVersion": 2,
     "lessonId": "tarczyca-matematyka-sprzezenie",
     "moduleId": "tarczyca"
@@ -450,7 +450,7 @@
     "moduleId": "psych-trauma-dysocjacja"
   },
   "udar-przysadki": {
-    "hash": "5a34df7ce31f3ccf4853a15e58c37c7a7e75922d8115403b3ec7ba860463e3af",
+    "hash": "1903704501e556b1910668960ed6ab2e09d249d2bec866db1e6f12dff87d05ef",
     "schemaVersion": 2,
     "lessonId": "udar-przysadki",
     "moduleId": "przysadka"
@@ -462,7 +462,7 @@
     "moduleId": "nadnercza"
   },
   "zapalenia": {
-    "hash": "59d5c89f8798fda4a0a23909977f84ef94b922c52ada9fb517b5259f75aab1e9",
+    "hash": "d21d8c2b2f262c8f7ee5687a01af889ad2ba21eb4dbef2d71e00486e41d220f3",
     "schemaVersion": 2,
     "lessonId": "zapalenia",
     "moduleId": "tarczyca"

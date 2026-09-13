@@ -298,7 +298,8 @@
         "Prawidłowo: Podanie dużej ilości jodu w kontraście pacjentowi z autonomią tarczycową wywołuje gwałtowną syntezę hormonów (Jod-Basedow).",
         "Nieprawidłowo: Podanie dużej ilości jodu w kontraście pacjentowi z autonomią tarczycową wywołuje gwałtowną syntezę hormonów (Jod-Basedow).",
         "Nieprawidłowo: Podanie dużej ilości jodu w kontraście pacjentowi z autonomią tarczycową wywołuje gwałtowną syntezę hormonów (Jod-Basedow)."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "leki-bank-2",
@@ -337,7 +338,8 @@
       "reasoning": "decision",
       "sourceIds": [
         "amiodarone"
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "leki-bank-3",
@@ -370,7 +372,8 @@
       "sourceIds": [
         "amiodarone",
         "lt4"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [

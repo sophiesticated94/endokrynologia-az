@@ -292,7 +292,8 @@
         "Prawidłowo: Zgodnie z konsensusem Pituitary Society każdy guz >=10 mm wymaga badania pola widzenia.",
         "Nieprawidłowo: Zgodnie z konsensusem Pituitary Society każdy guz >=10 mm wymaga badania pola widzenia.",
         "Nieprawidłowo: Zgodnie z konsensusem Pituitary Society każdy guz >=10 mm wymaga badania pola widzenia."
-      ]
+      ],
+      "transfer": true
     },
     {
       "id": "przysadka-diagnostyka-bank-2",
@@ -324,7 +325,8 @@
       "reasoning": "interpretation",
       "sourceIds": [
         "pituitary_endo"
-      ]
+      ],
+      "transfer": true
     }
   ],
   "widgetIds": [
