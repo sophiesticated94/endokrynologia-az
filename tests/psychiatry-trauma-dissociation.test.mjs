@@ -41,6 +41,7 @@ test('Trauma Engine: Functional impact (distress/impairment) is decoupled from s
   // Clinically significant impairment with distinct states meets criteria
   const resValid = evaluateTraumaDissociation({
     identityDiscontinuity: 'distinct_personality_states',
+    executiveControlPattern: 'recurrent_control_by_multiple_identity_states',
     amnesiaType: 'recurrent_daily_activities',
     depersonalizationDerealization: true,
     realityTesting: 'intact',
@@ -70,7 +71,7 @@ test('Trauma Engine: Unresolved exclusions (suspected TLE) vs Confirmed medical 
     identityDiscontinuity: 'distinct_personality_states',
     amnesiaType: 'recurrent_daily_activities',
     functionalImpact: { distress: 'clinically_significant', functionalImpairment: 'clinically_significant' },
-    neurologicalFeatures: { confirmedDiagnosis: true, exclusionStatus: 'confirmed_explanatory' },
+    neurologicalFeatures: { confirmedDiagnosis: 'confirmed_epilepsy_explaining_symptoms', exclusionStatus: 'confirmed_explanatory' },
   });
   assert.equal(resConfirmed.icd11.compatibility, 'does_not_meet');
   assert.ok(resConfirmed.icd11.confirmedExclusions.length > 0);
@@ -250,3 +251,83 @@ test('Trauma Module: Curriculum parity, recurring patient threads and evidence c
   const didClaim = traumaClaims.find((c) => c.id === 'claim-trauma-did-core-criteria');
   assert.ok(didClaim && didClaim.statement.includes('6B64'));
 });
+
+// 11. ICD-11 CDDR 6B64 VS DSM-5-TR 300.14 AMNESIA CRITERION DIVERGENCE
+test('Trauma Engine: ICD-11 6B64 vs DSM-5-TR 300.14 amnesia divergence when amnesia is none', () => {
+  const fwEval = evaluateFrameworkCriteria({
+    identityDiscontinuity: 'distinct_personality_states',
+    executiveControlPattern: 'recurrent_control_by_multiple_identity_states',
+    amnesiaType: 'none',
+    functionalImpact: { distress: 'clinically_significant', functionalImpairment: 'clinically_significant' },
+    symptomDuration: 'chronic_months',
+  });
+
+  // In DSM-5-TR, Criterion B is obligatory: amnesiaType === 'none' means does_not_meet
+  assert.equal(fwEval.dsm5tr.compatibility, 'does_not_meet');
+  assert.ok(fwEval.dsm5tr.criteriaMissing.some((c) => c.includes('Kryterium B')));
+
+  // In ICD-11 CDDR, amnesia is typical/common but absence does NOT yield does_not_meet if recurrent control & discontinuity are present
+  assert.notEqual(fwEval.icd11.compatibility, 'does_not_meet');
+  assert.equal(fwEval.icd11.compatibility, 'meets');
+  assert.ok(fwEval.icd11.criteriaNotRequired.some((n) => n.includes('Amnezja jest typową cechą DID wg ICD-11 CDDR')));
+  assert.ok(fwEval.icd11.explanation.includes('amnezja nie jest warunkiem bezwzględnym'));
+});
+
+// 12. EXECUTIVE CONTROL PATTERN: FULL DID (6B64) VS PARTIAL DID (6B65)
+test('Trauma Engine: Executive control differentiates full DID (6B64) from Partial DID (6B65)', () => {
+  // Intermittent influence without executive control -> Partial DID 6B65 profile
+  const partialEval = evaluateTraumaDissociation({
+    identityDiscontinuity: 'distinct_personality_states',
+    executiveControlPattern: 'intermittent_influence_without_control',
+    amnesiaType: 'recurrent_daily_activities',
+    functionalImpact: { distress: 'clinically_significant', functionalImpairment: 'clinically_significant' },
+    realityTesting: 'intact',
+  });
+
+  const didHyp = partialEval.hypotheses.find((h) => h.category === 'DID');
+  assert.ok(didHyp);
+  assert.equal(didHyp.level, 'possible_consideration');
+  assert.ok(didHyp.rationale.includes('Partial DID 6B65'));
+  assert.ok(partialEval.opposingEvidence.DID.some((e) => e.includes('Partial DID, ICD-11 6B65')));
+
+  // Recurrent control by multiple states -> full DID candidate
+  const fullEval = evaluateTraumaDissociation({
+    identityDiscontinuity: 'distinct_personality_states',
+    executiveControlPattern: 'recurrent_control_by_multiple_identity_states',
+    amnesiaType: 'recurrent_daily_activities',
+    functionalImpact: { distress: 'clinically_significant', functionalImpairment: 'clinically_significant' },
+    realityTesting: 'intact',
+  });
+  assert.equal(fullEval.hypotheses.find((h) => h.category === 'DID')?.level, 'primary_candidate');
+});
+
+// 13. UNASSESSED VALUES SEMANTICS (NO SPURIOUS EVIDENCE)
+test('Trauma Engine: Unassessed values do not trigger false positive symptoms or spurious opposing evidence', () => {
+  const evalUnassessed = evaluateTraumaDissociation({
+    identityDiscontinuity: 'unassessed',
+    traumaAvoidance: 'unassessed',
+    persistentCurrentThreat: 'unassessed',
+    negativeSelfConcept: 'unassessed',
+    amnesiaType: 'unassessed',
+  });
+
+  // Opposing evidence must NOT claim symptoms are absent when they are merely unassessed
+  assert.ok(!evalUnassessed.opposingEvidence.PTSD.some((e) => e.includes('Brak aktywnego unikania')));
+  assert.ok(!evalUnassessed.opposingEvidence.PTSD.some((e) => e.includes('Brak utrzymującego się wzmożonego')));
+  assert.ok(!evalUnassessed.opposingEvidence.cPTSD.some((e) => e.includes('negatywny obraz siebie')));
+  assert.ok(!evalUnassessed.opposingEvidence.DID.some((e) => e.includes('Brak odrębnych stanów tożsamości')));
+});
+
+// 14. NORMALIZER ROBUSTNESS & LEGACY NORMALIZATION
+test('Trauma Engine: Normalizer handles legacy fields without inventing clinical impairment', () => {
+  const normalized = evaluateTraumaDissociation({
+    symptomDuration: 'chronic_months',
+    avoidanceHyperarousal: true,
+    affectInstability: 'rapid_reactive_hours',
+  });
+
+  // symptomDuration === 'chronic_months' does NOT invent clinically_significant functionalImpact
+  assert.equal(normalized.hypotheses.find((h) => h.category === 'DID')?.dataSufficiency, 'insufficient');
+  assert.ok(normalized.missingInformation.some((m) => m.includes('dystresu / upośledzenia')));
+});
+

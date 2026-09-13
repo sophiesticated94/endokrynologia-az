@@ -2,6 +2,11 @@ import { z } from 'zod';
 import { ENDOCRINE_PRESETS } from '../endocrinology/presets/endocrine-presets.ts';
 import { ALL_PSYCHIATRY_PRESETS } from '../psychiatry/presets/index.ts';
 import { TRAUMA_PRESETS } from '../psychiatry/presets/trauma-presets.ts';
+import {
+  FUNCTIONAL_IMPACT_LEVELS,
+  EXECUTIVE_CONTROL_PATTERNS,
+  NEUROLOGICAL_CONFIRMED_DIAGNOSES,
+} from '../psychiatry/engines/trauma-dissociation-types.ts';
 
 export const AdrenalControlIdSchema = z.enum([
   'morningCortisol',
@@ -141,6 +146,7 @@ export type ParathyroidWorkbenchPresetState = z.infer<typeof ParathyroidWorkbenc
 
 export const TraumaDissociationControlIdSchema = z.enum([
   'identityDiscontinuity',
+  'executiveControlPattern',
   'amnesiaType',
   'functionalImpact',
   'depersonalizationDerealization',
@@ -171,13 +177,14 @@ export type TraumaDissociationControlId = z.infer<typeof TraumaDissociationContr
 
 export const TraumaDissociationInputSchema = z.object({
   identityDiscontinuity: z.enum(['none', 'disturbed_sense_of_self', 'distinct_personality_states', 'unassessed']).optional(),
+  executiveControlPattern: z.enum(EXECUTIVE_CONTROL_PATTERNS).optional(),
   amnesiaType: z.enum(['none', 'trauma_specific', 'recurrent_daily_activities', 'generalized_identity_loss', 'brief_paroxysmal', 'unassessed']).optional(),
   depersonalizationDerealization: z.boolean().optional(),
   realityTesting: z.enum(['intact', 'impaired_delusional', 'transient_stress_induced', 'unassessed']).optional(),
-  symptomDuration: z.enum(['days_under_3', 'days_under_30', 'chronic_months', 'brief_episodes_seconds', 'unknown']).optional(),
+  symptomDuration: z.enum(['days_under_3', 'days_under_30', 'chronic_months', 'brief_episodes_seconds', 'unknown', 'unassessed']).optional(),
   functionalImpact: z.object({
-    distress: z.enum(['none', 'mild', 'clinically_significant', 'extreme_crisis', 'unassessed']).optional(),
-    functionalImpairment: z.enum(['none', 'mild_or_compensated', 'clinically_significant', 'severe_incapacitation', 'unassessed']).optional(),
+    distress: z.enum(FUNCTIONAL_IMPACT_LEVELS).optional(),
+    functionalImpairment: z.enum(FUNCTIONAL_IMPACT_LEVELS).optional(),
     impairmentDomains: z.array(z.string()).optional(),
   }).strict().optional(),
   reExperiencingInPresent: z.enum(['none', 'intrusive_memories_without_here_and_now_quality', 'vivid_flashback_here_and_now', 'trauma_nightmares_with_reexperiencing', 'unassessed']).optional(),
@@ -256,7 +263,7 @@ export const TraumaDissociationInputSchema = z.object({
     stereotypedSecondsDuration: z.boolean().optional(),
     postictalConfusion: z.boolean().optional(),
     focalDeficits: z.boolean().optional(),
-    confirmedDiagnosis: z.boolean().optional(),
+    confirmedDiagnosis: z.enum(NEUROLOGICAL_CONFIRMED_DIAGNOSES).optional(),
     exclusionStatus: z.enum(['none', 'unresolved', 'confirmed_explanatory']).optional(),
   }).strict().optional(),
   neurologicalInvestigations: z.object({

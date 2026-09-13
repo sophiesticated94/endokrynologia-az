@@ -63,8 +63,8 @@
     },
     {
       "id": "did-tozsamosc-i-rozszczepienie-block-2",
-      "title": "Kryterium decyzyjne: Nawracające luki w pamięci codziennej",
-      "text": "Obecność odmiennych stanów tożsamości nie wystarcza do diagnozy DID — niezbędnym kryterium współistniejącym są nawracające luki w pamięci autobiograficznej (recurrent amnesic gaps). Co kluczowe, luki te NIE ograniczają się wyłącznie do okresu traumy z przeszłości, lecz dotyczą BIEŻĄCYCH ZDARZEŃ CODZIENNYCH (everyday events). Pacjent doświadcza tzw. ubytków czasu (time loss) — np. orientuje się, że znajduje się w nieznanym miejscu, odkrywa w domu przedmioty lub ubrania, których nie pamięta kupować, albo spotyka ludzi traktujących go jak bliskiego znajomego, których zupełnie nie kojarzy.",
+      "title": "Kryterium decyzyjne: Kontrola wykonawcza i rola amnezji (ICD-11 vs DSM-5-TR)",
+      "text": "W klasyfikacji WHO ICD-11 CDDR kardynalnym kryterium odróżniającym pełnoobjawowe DID (6B64) od częściowego zaburzenia tożsamości dysocjacyjnej (Partial DID, 6B65) jest nawracające przejmowanie kontroli wykonawczej (executive control) nad świadomością i funkcjonowaniem przez co najmniej dwa odrębne stany tożsamości. W Partial DID dominuje jeden stan, a stany niebędące dominującymi wywierają jedynie wpływ intruzywny bez przejmowania pełnej kontroli. Rola amnezji różni się między systemami: w DSM-5-TR Kryterium B bezwzględnie wymaga nawracających luk w pamięci zdarzeń codziennych, danych osobowych lub urazów. W wytycznych ICD-11 CDDR amnezja (zwłaszcza codzienna / time loss) jest uznawana za zjawisko typowe i silnie wspierające, lecz jej brak lub nieuświadomienie przez pacjenta (amnezja na amnezję) nie unieważnia rozpoznania 6B64, jeśli udokumentowano rozszczepienie i nawracającą kontrolę wykonawczą.",
       "sourceIds": [
         "src-icd11-cddr-2024",
         "src-dsm5-tr-2022",

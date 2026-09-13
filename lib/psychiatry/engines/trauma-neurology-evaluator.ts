@@ -144,17 +144,23 @@ export function evaluateNeurologyFeatures(
   const safetyInvariant =
     'SAFETY INVARIANT: Prawidłowe wyniki badań EEG i neuroobrazowania NIE potwierdzają zaburzenia dysocjacyjnego ani czynnościowego. Rozpoznanie dysocjacji wymaga spełnienia pozytywnych kryteriów psychopatologicznych.';
 
-  // 6. Exclusion Status
+  // 6. Exclusion Status (Explicit String Comparison - Zero Truthiness)
   let exclusionStatus: ExclusionStatus = 'none';
-  if (neuro.confirmedDiagnosis || neuro.exclusionStatus === 'confirmed_explanatory') {
+  const hasExplicitConfirmedEpilepsy =
+    neuro.confirmedDiagnosis === 'confirmed_epilepsy_explaining_symptoms' ||
+    neuro.exclusionStatus === 'confirmed_explanatory';
+
+  if (hasExplicitConfirmedEpilepsy) {
     exclusionStatus = 'confirmed_explanatory';
   } else if (
+    neuro.exclusionStatus === 'unresolved' ||
+    neuro.confirmedDiagnosis === 'suspected_unconfirmed' ||
     isEpileptiformEEG ||
     hasAura ||
     (isStereotyped && isBriefSeconds) ||
     neuro.witnessedAutomatisms === 'clear' ||
-    hasFocalDeficit ||
-    neuro.exclusionStatus === 'unresolved'
+    neuro.witnessedAutomatisms === 'possible' ||
+    hasFocalDeficit
   ) {
     // Paroxysmal / focal neurological features present, not yet ruled out (normal EEG does not rule out)
     exclusionStatus = 'unresolved';

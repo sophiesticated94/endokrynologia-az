@@ -1,5 +1,30 @@
-// Trauma and Dissociation Domain Types & Criteria Models
-// ICD-11 (CDDR 2024) and DSM-5-TR (2022) reference representations
+// Canonical Single Source of Truth Vocabularies
+export const FUNCTIONAL_IMPACT_LEVELS = [
+  'unassessed',
+  'none',
+  'mild',
+  'clinically_significant',
+] as const;
+export type FunctionalImpactLevel = typeof FUNCTIONAL_IMPACT_LEVELS[number];
+export type FunctionalDistressLevel = FunctionalImpactLevel;
+export type FunctionalImpairmentLevel = FunctionalImpactLevel;
+
+export const EXECUTIVE_CONTROL_PATTERNS = [
+  'unassessed',
+  'single_state_only',
+  'intermittent_influence_without_control',
+  'recurrent_control_by_multiple_identity_states',
+] as const;
+export type ExecutiveControlPattern = typeof EXECUTIVE_CONTROL_PATTERNS[number];
+
+export const NEUROLOGICAL_CONFIRMED_DIAGNOSES = [
+  'unassessed',
+  'none',
+  'suspected_unconfirmed',
+  'confirmed_epilepsy_explaining_symptoms',
+  'other_neurological_disorder',
+] as const;
+export type NeurologicalConfirmedDiagnosis = typeof NEUROLOGICAL_CONFIRMED_DIAGNOSES[number];
 
 export type IdentityDiscontinuity = 'unassessed' | 'none' | 'disturbed_sense_of_self' | 'distinct_personality_states';
 export type AmnesiaType = 'unassessed' | 'none' | 'trauma_specific' | 'recurrent_daily_activities' | 'generalized_identity_loss' | 'brief_paroxysmal';
@@ -23,10 +48,6 @@ export type ReExperiencingInPresent =
 
 export type TraumaAvoidance = 'unassessed' | 'none' | 'internal' | 'external' | 'both';
 export type PersistentCurrentThreat = 'unassessed' | 'none' | 'hypervigilance' | 'exaggerated_startle' | 'both';
-
-// Functional Impact (Independent of Duration)
-export type FunctionalDistressLevel = 'unassessed' | 'none' | 'mild' | 'clinically_significant';
-export type FunctionalImpairmentLevel = 'unassessed' | 'none' | 'mild' | 'clinically_significant';
 
 export interface FunctionalImpact {
   distress: FunctionalDistressLevel;
@@ -108,7 +129,7 @@ export interface NeurologicalFeatures {
   };
   witnessHistory: 'unassessed' | 'unavailable' | 'available_non_supportive' | 'available_supportive';
   focalNeurologicalDeficits: 'unassessed' | 'none' | 'possible' | 'present';
-  confirmedDiagnosis?: 'unassessed' | 'none' | 'suspected_unconfirmed' | 'confirmed_epilepsy_explaining_symptoms' | 'other_neurological_disorder';
+  confirmedDiagnosis?: NeurologicalConfirmedDiagnosis;
   exclusionStatus?: ExclusionStatus;
   // Legacy optional properties
   hasAuraOrEpigastricRising?: boolean;
@@ -144,8 +165,9 @@ export type HallucinationType = 'none' | 'internal_dialogue_ego_dystonic' | 'ext
 
 // Master Input Interface
 export interface TraumaDissociationInput {
-  // Dissociation & Identity
+  // Dissociation & Identity Structure & Executive Control
   identityDiscontinuity: IdentityDiscontinuity;
+  executiveControlPattern?: ExecutiveControlPattern;
   amnesiaType: AmnesiaType;
   depersonalizationDerealization: boolean;
   somatoformDissociation?: boolean;
@@ -260,6 +282,7 @@ export interface TraumaDissociationOutput {
 
 export const DEFAULT_TRAUMA_INPUT: TraumaDissociationInput = {
   identityDiscontinuity: 'unassessed',
+  executiveControlPattern: 'unassessed',
   amnesiaType: 'unassessed',
   depersonalizationDerealization: false,
   realityTesting: 'unassessed',
@@ -307,7 +330,7 @@ export const DEFAULT_TRAUMA_INPUT: TraumaDissociationInput = {
     associatedDelusions: 'none',
     distress: 'low',
   },
-  symptomDuration: 'chronic_months',
+  symptomDuration: 'unassessed',
   neurologicalFeatures: {
     episodicPattern: 'none',
     episodeDuration: 'unknown',
@@ -326,7 +349,7 @@ export const DEFAULT_TRAUMA_INPUT: TraumaDissociationInput = {
       aphasia: false,
       focalDeficit: false,
     },
-    witnessHistory: 'unavailable',
+    witnessHistory: 'unassessed',
     focalNeurologicalDeficits: 'unassessed',
     confirmedDiagnosis: 'unassessed',
     exclusionStatus: 'none',
@@ -342,5 +365,57 @@ export const DEFAULT_TRAUMA_INPUT: TraumaDissociationInput = {
     substanceDetails: '',
     exclusionStatus: 'none',
   },
-  suicidalityRisk: 'none',
+  suicidalityRisk: 'unassessed',
 };
+
+// Explicit Domain Helpers & Invariants (No Truthiness, No 'value !== none' bugs)
+export function isAmnesiaPresent(type?: AmnesiaType): boolean {
+  return (
+    type === 'trauma_specific' ||
+    type === 'recurrent_daily_activities' ||
+    type === 'generalized_identity_loss' ||
+    type === 'brief_paroxysmal'
+  );
+}
+
+export function isEverydayAmnesia(type?: AmnesiaType): boolean {
+  return type === 'recurrent_daily_activities' || type === 'generalized_identity_loss';
+}
+
+export function isFunctionalImpactClinicallySignificant(
+  fiOrDistress?: FunctionalImpact | FunctionalDistressLevel,
+  maybeImpairment?: FunctionalImpairmentLevel
+): boolean {
+  if (!fiOrDistress) return false;
+  if (typeof fiOrDistress === 'object') {
+    return fiOrDistress.distress === 'clinically_significant' || fiOrDistress.functionalImpairment === 'clinically_significant';
+  }
+  return fiOrDistress === 'clinically_significant' || maybeImpairment === 'clinically_significant';
+}
+
+export function isFunctionalImpactAssessed(
+  fiOrDistress?: FunctionalImpact | FunctionalDistressLevel,
+  maybeImpairment?: FunctionalImpairmentLevel
+): boolean {
+  if (!fiOrDistress) return false;
+  if (typeof fiOrDistress === 'object') {
+    return fiOrDistress.distress !== 'unassessed' || fiOrDistress.functionalImpairment !== 'unassessed';
+  }
+  return fiOrDistress !== 'unassessed' || (maybeImpairment !== undefined && maybeImpairment !== 'unassessed');
+}
+
+export function isExecutiveControlRecurrent(pattern?: ExecutiveControlPattern): boolean {
+  return pattern === 'recurrent_control_by_multiple_identity_states';
+}
+
+export function hasConfirmedEpilepsyExclusion(diag?: NeurologicalConfirmedDiagnosis): boolean {
+  return diag === 'confirmed_epilepsy_explaining_symptoms';
+}
+
+export function isDsoSelfConceptPresent(concept?: NegativeSelfConcept): boolean {
+  return (
+    concept === 'persistent_shame_guilt' ||
+    concept === 'worthlessness_failure' ||
+    concept === 'trauma_related_negative_identity'
+  );
+}

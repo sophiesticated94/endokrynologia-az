@@ -190,7 +190,7 @@
   },
   {
     "id": "claim-trauma-did-core-criteria",
-    "statement": "Rozpoznanie DID (ICD-11 6B64) wymaga dezintegracji tożsamości z obecnością min. dwóch odrębnych stanów tożsamości (z odmiennym poczuciem jaźni i sprawczości) oraz nawracających luk w pamięci autobiograficznej dotyczących codziennych zdarzeń, ważnych danych osobistych lub traumy.",
+    "statement": "Rozpoznanie DID wg WHO ICD-11 CDDR (6B64) wymaga obecności co najmniej dwóch odrębnych stanów tożsamości z wyraźnym przerwaniem ciągłości poczucia jaźni i sprawczości oraz nawracającego przejmowania kontroli wykonawczej nad świadomością i funkcjonowaniem przez min. dwa stany (kryterium różnicujące z Partial DID 6B65). W DSM-5-TR (300.14) obligatoryjne jest ponadto kryterium B (nawracające luki w pamięci zdarzeń codziennych, danych osobistych lub urazów).",
     "category": "guideline_recommendation",
     "strength": "strong",
     "sourceIds": [
@@ -205,6 +205,7 @@
     "tags": [
       "did",
       "identity-disruption",
+      "executive-control",
       "amnesia",
       "criteria"
     ],
@@ -213,7 +214,7 @@
   },
   {
     "id": "claim-trauma-amnesia-everyday-did",
-    "statement": "Obecność nawracających luk w pamięci dotyczących bieżących czynności codziennych (everyday amnesia / time loss) silnie zwiększa prawdopodobieństwo DID i przemawia przeciwko prostemu PTSD; w ICD-11 CDDR amnezja może jednak początkowo ograniczać się do zdarzeń urazowych lub nie być wprost uświadamiana przez pacjenta.",
+    "statement": "W DSM-5-TR nawracające luki pamięciowe (kryterium B) są bezwzględnie wymagane do rozpoznania DID, podczas gdy w wytycznych WHO ICD-11 CDDR amnezja (zwłaszcza codzienna / time loss) jest cechą typową i silnie wspierającą, lecz jej brak lub brak uświadomienia przez pacjenta (amnezja na amnezję) nie unieważnia rozpoznania 6B64, jeśli udokumentowano nawracającą kontrolę wykonawczą.",
     "category": "guideline_recommendation",
     "strength": "strong",
     "sourceIds": [

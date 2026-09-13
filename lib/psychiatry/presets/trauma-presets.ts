@@ -20,6 +20,7 @@ export const TRAUMA_PRESETS: Record<string, WidgetPresetDefinition> = {
       lockedFields: ['identityDiscontinuity', 'amnesiaType'],
       input: {
         identityDiscontinuity: 'distinct_personality_states',
+        executiveControlPattern: 'recurrent_control_by_multiple_identity_states',
         amnesiaType: 'recurrent_daily_activities',
         depersonalizationDerealization: true,
         realityTesting: 'intact',
@@ -103,6 +104,7 @@ export const TRAUMA_PRESETS: Record<string, WidgetPresetDefinition> = {
       lockedFields: ['identityDiscontinuity'],
       input: {
         identityDiscontinuity: 'disturbed_sense_of_self',
+        executiveControlPattern: 'single_state_only',
         amnesiaType: 'none',
         depersonalizationDerealization: true,
         realityTesting: 'transient_stress_induced',
@@ -157,6 +159,7 @@ export const TRAUMA_PRESETS: Record<string, WidgetPresetDefinition> = {
       lockedFields: ['identityDiscontinuity'],
       input: {
         identityDiscontinuity: 'distinct_personality_states',
+        executiveControlPattern: 'recurrent_control_by_multiple_identity_states',
         amnesiaType: 'recurrent_daily_activities',
         depersonalizationDerealization: true,
         realityTesting: 'intact',
@@ -235,12 +238,13 @@ export const TRAUMA_PRESETS: Record<string, WidgetPresetDefinition> = {
       lockedFields: ['depersonalizationDerealization', 'realityTesting'],
       input: {
         identityDiscontinuity: 'none',
+        executiveControlPattern: 'single_state_only',
         amnesiaType: 'none',
         depersonalizationDerealization: true,
         realityTesting: 'intact',
         functionalImpact: {
           distress: 'clinically_significant',
-          functionalImpairment: 'mild_or_compensated',
+          functionalImpairment: 'mild',
         },
         reExperiencingInPresent: 'none',
         traumaAvoidance: 'both',
@@ -291,6 +295,7 @@ export const TRAUMA_PRESETS: Record<string, WidgetPresetDefinition> = {
       lockedFields: ['symptomDuration'],
       input: {
         identityDiscontinuity: 'none',
+        executiveControlPattern: 'single_state_only',
         amnesiaType: 'brief_paroxysmal',
         depersonalizationDerealization: true,
         realityTesting: 'intact',
@@ -330,6 +335,8 @@ export const TRAUMA_PRESETS: Record<string, WidgetPresetDefinition> = {
           },
           witnessHistory: 'available_supportive',
           focalNeurologicalDeficits: 'none',
+          confirmedDiagnosis: 'unassessed',
+          exclusionStatus: 'unresolved',
           hasAuraOrEpigastricRising: true,
           stereotypedSecondsDuration: true,
           postictalConfusion: true,
@@ -379,6 +386,7 @@ export const TRAUMA_PRESETS: Record<string, WidgetPresetDefinition> = {
       lockedFields: ['reExperiencingInPresent', 'traumaAvoidance'],
       input: {
         identityDiscontinuity: 'none',
+        executiveControlPattern: 'single_state_only',
         amnesiaType: 'trauma_specific',
         depersonalizationDerealization: false,
         realityTesting: 'intact',

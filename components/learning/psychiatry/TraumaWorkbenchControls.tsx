@@ -5,6 +5,7 @@ import {
   DEFAULT_TRAUMA_INPUT,
   type TraumaDissociationInput,
   type IdentityDiscontinuity,
+  type ExecutiveControlPattern,
   type AmnesiaType,
   type RealityTesting,
   type NegativeSelfConcept,
@@ -79,6 +80,26 @@ export function TraumaWorkbenchControls({
           </div>
         )}
 
+        {visible('executiveControlPattern') && (
+          <div className="rounded-xl border border-border/70 p-3 bg-card space-y-1.5">
+            <span className="font-semibold flex items-center justify-between">
+              <span>Wzorzec kontroli wykonawczej (Executive Control)</span>
+              {locked('executiveControlPattern') && <Lock className="h-3 w-3 text-amber-500" />}
+            </span>
+            <select
+              disabled={locked('executiveControlPattern')}
+              value={input.executiveControlPattern || 'unassessed'}
+              onChange={(e) => setInput({ ...input, executiveControlPattern: e.target.value as ExecutiveControlPattern })}
+              className="w-full rounded-md border border-input bg-background p-1.5 text-xs disabled:opacity-60"
+            >
+              <option value="unassessed">Nieoceniony</option>
+              <option value="single_state_only">Tylko jeden stan tożsamości sprawuje kontrolę</option>
+              <option value="intermittent_influence_without_control">Wpływ intruzywny bez przejęcia kontroli (Partial DID 6B65)</option>
+              <option value="recurrent_control_by_multiple_identity_states">Nawracająca kontrola przez co najmniej 2 stany (pełne DID 6B64)</option>
+            </select>
+          </div>
+        )}
+
         {visible('amnesiaType') && (
           <div className="rounded-xl border border-border/70 p-3 bg-card space-y-1.5">
             <span className="font-semibold flex items-center justify-between">
@@ -91,6 +112,7 @@ export function TraumaWorkbenchControls({
               onChange={(e) => setInput({ ...input, amnesiaType: e.target.value as AmnesiaType })}
               className="w-full rounded-md border border-input bg-background p-1.5 text-xs disabled:opacity-60"
             >
+              <option value="unassessed">Nieoceniony</option>
               <option value="none">Brak luk pamięciowych</option>
               <option value="trauma_specific">Amnezja urazu (PTSD / wczesne DID wg ICD-11)</option>
               <option value="recurrent_daily_activities">Nawracające luki zdarzeń codziennych (DID/time loss)</option>
@@ -119,7 +141,6 @@ export function TraumaWorkbenchControls({
                   <option value="none">Brak istotnego cierpienia</option>
                   <option value="mild">Łagodny dyskomfort</option>
                   <option value="clinically_significant">Klinicznie istotne cierpienie (spełnia kryterium C)</option>
-                  <option value="extreme_crisis">Skrajny kryzys / cierpienie paraliżujące</option>
                 </select>
               </div>
               <div>
@@ -132,9 +153,8 @@ export function TraumaWorkbenchControls({
                 >
                   <option value="unassessed">Nieocenione</option>
                   <option value="none">Brak zaburzeń ról społecznych/zawodowych</option>
-                  <option value="mild_or_compensated">Łagodne / kompensowane wysiłkiem</option>
+                  <option value="mild">Łagodne / kompensowane wysiłkiem</option>
                   <option value="clinically_significant">Klinicznie istotne upośledzenie (spełnia kryterium C)</option>
-                  <option value="severe_incapacitation">Ciężka niewydolność funkcjonalna</option>
                 </select>
               </div>
             </div>
@@ -234,9 +254,9 @@ export function TraumaWorkbenchControls({
                 className="w-full rounded-md border border-input bg-background p-1.5 text-xs"
               >
                 <option value="none">Brak unikania</option>
-                <option value="internal">Wewnętrzne (myśli, uczucia)</option>
-                <option value="external">Zewnętrzne (miejsca, osoby)</option>
-                <option value="both">Zarówno wewnętrzne, jak i zewnętrzne</option>
+                <option value="internal_thoughts_memories">Wewnętrzne (myśli, wspomnienia)</option>
+                <option value="external_reminders">Zewnętrzne (miejsca, osoby)</option>
+                <option value="both_internal_and_external">Zarówno wewnętrzne, jak i zewnętrzne</option>
               </select>
             </div>
             <div>
@@ -249,7 +269,7 @@ export function TraumaWorkbenchControls({
                 <option value="none">Brak wzmożonej czujności</option>
                 <option value="hypervigilance">Nadmierna czujność (hypervigilance)</option>
                 <option value="exaggerated_startle">Wzmożony odruch zaskoczenia</option>
-                <option value="both">Czujność i odruch zaskoczenia</option>
+                <option value="both_hypervigilance_and_startle">Czujność i odruch zaskoczenia</option>
               </select>
             </div>
           </div>
@@ -279,9 +299,9 @@ export function TraumaWorkbenchControls({
                 className="w-full rounded-md border border-input bg-background p-1.5 text-xs"
               >
                 <option value="none">Brak trwałej dysregulacji</option>
-                <option value="hyperactivation">Trwała nadreaktywność (gniew)</option>
-                <option value="hypoactivation_numbing">Odrętwienie / numbing</option>
-                <option value="mixed">Mieszana nadreaktywność i odrętwienie</option>
+                <option value="chronic_emotional_numbing">Przewlekłe odrętwienie emocjonalne (numbing)</option>
+                <option value="persistent_heightened_negative_affect">Trwały wzmożony negatywny afekt</option>
+                <option value="both_numbing_and_negative_affect">Odrętwienie i wzmożony negatywny afekt</option>
               </select>
             </div>
             <div>
@@ -376,45 +396,25 @@ export function TraumaWorkbenchControls({
         </span>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
           <label className="flex items-center gap-2 cursor-pointer">
-            <input
-              type="checkbox"
-              checked={Boolean(input.neurologicalFeatures?.aura?.epigastricRising || input.neurologicalFeatures?.hasAuraOrEpigastricRising)}
-              onChange={(e) => {
-                const base = input.neurologicalFeatures || DEFAULT_TRAUMA_INPUT.neurologicalFeatures!;
-                updateNeuro({ hasAuraOrEpigastricRising: e.target.checked, aura: { ...base.aura, epigastricRising: e.target.checked } });
-              }}
-              className="rounded border-input text-indigo-600"
-            />
+            <input type="checkbox" checked={Boolean(input.neurologicalFeatures?.aura?.epigastricRising || input.neurologicalFeatures?.hasAuraOrEpigastricRising)} onChange={(e) => {
+              const base = input.neurologicalFeatures || DEFAULT_TRAUMA_INPUT.neurologicalFeatures!;
+              updateNeuro({ hasAuraOrEpigastricRising: e.target.checked, aura: { ...base.aura, epigastricRising: e.target.checked } });
+            }} className="rounded border-input text-indigo-600" />
             <span>Aura nadbrzuszna („wznoszenie z żołądka”) lub węchowa/smakowa</span>
           </label>
           <label className="flex items-center gap-2 cursor-pointer">
-            <input
-              type="checkbox"
-              checked={Boolean(input.neurologicalFeatures?.episodicPattern === 'stereotyped' || input.neurologicalFeatures?.stereotypedSecondsDuration)}
-              onChange={(e) => updateNeuro({ episodicPattern: e.target.checked ? 'stereotyped' : 'non_stereotyped', stereotypedSecondsDuration: e.target.checked })}
-              className="rounded border-input text-indigo-600"
-            />
+            <input type="checkbox" checked={Boolean(input.neurologicalFeatures?.episodicPattern === 'stereotyped' || input.neurologicalFeatures?.stereotypedSecondsDuration)} onChange={(e) => updateNeuro({ episodicPattern: e.target.checked ? 'stereotyped' : 'non_stereotyped', stereotypedSecondsDuration: e.target.checked })} className="rounded border-input text-indigo-600" />
             <span>Stereotypowe napady z automatyzmami oralnymi/ruchowymi</span>
           </label>
           <label className="flex items-center gap-2 cursor-pointer">
-            <input
-              type="checkbox"
-              checked={Boolean(input.neurologicalFeatures?.postictalState?.confusion || input.neurologicalFeatures?.postictalConfusion)}
-              onChange={(e) => {
-                const base = input.neurologicalFeatures || DEFAULT_TRAUMA_INPUT.neurologicalFeatures!;
-                updateNeuro({ postictalConfusion: e.target.checked, postictalState: { ...base.postictalState, confusion: e.target.checked } });
-              }}
-              className="rounded border-input text-indigo-600"
-            />
+            <input type="checkbox" checked={Boolean(input.neurologicalFeatures?.postictalState?.confusion || input.neurologicalFeatures?.postictalConfusion)} onChange={(e) => {
+              const base = input.neurologicalFeatures || DEFAULT_TRAUMA_INPUT.neurologicalFeatures!;
+              updateNeuro({ postictalConfusion: e.target.checked, postictalState: { ...base.postictalState, confusion: e.target.checked } });
+            }} className="rounded border-input text-indigo-600" />
             <span>Stan ponapadowy (senność, afazja, kilkuminutowe splątanie)</span>
           </label>
           <label className="flex items-center gap-2 cursor-pointer">
-            <input
-              type="checkbox"
-              checked={input.neurologicalFeatures?.witnessHistory === 'available_supportive'}
-              onChange={(e) => updateNeuro({ witnessHistory: e.target.checked ? 'available_supportive' : 'unavailable' })}
-              className="rounded border-input text-indigo-600"
-            />
+            <input type="checkbox" checked={input.neurologicalFeatures?.witnessHistory === 'available_supportive'} onChange={(e) => updateNeuro({ witnessHistory: e.target.checked ? 'available_supportive' : 'unavailable' })} className="rounded border-input text-indigo-600" />
             <span>Relacja świadka potwierdza stałą sekwencję napadu</span>
           </label>
         </div>
