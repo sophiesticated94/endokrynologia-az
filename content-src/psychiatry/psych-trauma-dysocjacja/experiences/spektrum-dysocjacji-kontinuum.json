@@ -239,5 +239,173 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, Van der Hart 2006, Nijenhuis SDQ-20"
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "sdk-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "spektrum-dysocjacji-kontinuum-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-dissociation-continuum"
+      ],
+      "prompt": "W jaki sposób model dysocjacji strukturalnej (Van der Hart, Steele, Nijenhuis) klasyfikuje poziomy podziału osobowości?",
+      "options": [
+        "Pierwotna (jedna ANP i jedna EP w PTSD), wtórna (jedna ANP i wiele EP w cPTSD/BPD) oraz trzeciorzędowa (wiele ANP i wiele EP w DID)",
+        "Klasyfikuje dysocjację wyłącznie jako zaburzenie świadomości w przebiegu padaczki",
+        "Uznaje dysocjację za tożsamą z objawami negatywnymi schizofrenii"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-structural-levels",
+            "label": "Dysocjacja pierwotna, wtórna i trzeciorzędowa (ANP i EP)",
+            "acceptedPhrases": [
+              "anp",
+              "ep",
+              "pierwotna",
+              "wtórna",
+              "trzeciorzędowa",
+              "van der hart"
+            ]
+          },
+          {
+            "id": "c-did-tertiary",
+            "label": "DID jako dysocjacja trzeciorzędowa z wieloma ANP i EP",
+            "acceptedPhrases": [
+              "did",
+              "trzeciorzędowa",
+              "wiele anp",
+              "podział tożsamości"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Model dysocjacji strukturalnej wyjaśnia podział na Część Pozornie Normalną (ANP) i Część Emocjonalną (EP).",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "src-van-der-hart-dissociation-2006"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "sdk-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "spektrum-dysocjacji-kontinuum-obj-2"
+      ],
+      "claimIds": [
+        "claim-trauma-dissociation-continuum"
+      ],
+      "prompt": "Wyjaśnij podział zjawisk dysocjacyjnych na odłączenie (detachment) i przedziałkowość (compartmentalization) wg Holmesa oraz wskaż ich manifestacje kliniczne.",
+      "modelAnswer": "Detachment (odłączenie): zmiana jakości świadomości z poczuciem oddalenia od siebie lub świata (depersonalizacja, derealizacja, odrętwienie emocjonalne), bez utraty dostępu do procesów poznawczych. Compartmentalization (przedziałkowość): niemożność świadomego sterowania lub dostępu do procesów pamięciowych lub ruchowych (amnezja dysocjacyjna, fuga, odrębne stany tożsamości w DID, konwersja ruchowa/czuciowa), które działają autonomicznie w odrębnym przedziale psychicznym.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-detachment",
+            "label": "Fenomenologia detachment (DPDR, odrętwienie, zmiana jakości świadomości)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-detach",
+                "label": "Odłączenie, depersonalizacja, derealizacja, zmiana świadomości",
+                "acceptedPhrases": [
+                  "detachment",
+                  "odłączenie",
+                  "depersonalizacja",
+                  "derealizacja",
+                  "odrętwienie"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          },
+          {
+            "id": "dim-compartmentalization",
+            "label": "Fenomenologia compartmentalization (amnezja, alter-stany, konwersja)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-compart",
+                "label": "Przedziałkowość, amnezja dysocjacyjna, alter-stany, autonomia",
+                "acceptedPhrases": [
+                  "compartmentalization",
+                  "przedziałkowość",
+                  "amnezja",
+                  "alter-stany",
+                  "did",
+                  "konwersja"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-confuse-detachment-compart",
+            "patterns": [
+              "amnezja to detachment",
+              "depersonalizacja to compartmentalization"
+            ],
+            "severity": "warning",
+            "feedback": "Uwaga: Amnezja to compartmentalization, DPDR to detachment."
+          }
+        ]
+      },
+      "explanation": "Detachment (odłączenie): zmiana jakości świadomości z poczuciem oddalenia od siebie lub świata (depersonalizacja, derealizacja, odrętwienie emocjonalne), bez utraty dostępu do procesów poznawczych. Compartmentalization (przedziałkowość): niemożność świadomego sterowania lub dostępu do procesów pamięciowych lub ruchowych (amnezja dysocjacyjna, fuga, odrębne stany tożsamości w DID, konwersja ruchowa/czuciowa), które działają autonomicznie w odrębnym przedziale psychicznym.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-van-der-hart-dissociation-2006"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "sdk-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "spektrum-dysocjacji-kontinuum-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-dissociation-continuum"
+      ],
+      "prompt": "Oceń znaczenie objawów dla hipotezy dysocjacji strukturalnej trzeciorzędowej (DID).",
+      "hypothesis": "Obraz kliniczny pacjenta odpowiada trzeciorzędowej dysocjacji strukturalnej (DID).",
+      "items": [
+        {
+          "id": "sdk-ew-1",
+          "text": "Obecność co najmniej 2 odrębnych części dorosłych funkcjonujących w pracy i domu (wiele ANP) oraz dziecięcych części urazowych (EP)",
+          "expected": "supports",
+          "explanation": "Obecność wielu ANP i wielu EP to definicja dysocjacji trzeciorzędowej (DID)."
+        },
+        {
+          "id": "sdk-ew-2",
+          "text": "Pacjent odczuwa jedynie przelotne poczucie obcości dłoni przy silnym zmęczeniu (łagodny detachment)",
+          "expected": "opposes",
+          "explanation": "Łagodne przemijające DPDR to zjawisko z początku kontinuum dysocjacji."
+        },
+        {
+          "id": "sdk-ew-3",
+          "text": "Nawracająca amnezja dotycząca codziennych zakupów i rozmów z dziećmi",
+          "expected": "supports",
+          "explanation": "Amnezja codzienna potwierdza przedziałkowość tożsamości wykonawczej."
+        }
+      ],
+      "explanation": "Trzeciorzędowa dysocjacja to obecność wielu stanów tożsamości wykonawczej (ANP).",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-van-der-hart-dissociation-2006"
+      ],
+      "transfer": true
+    }
+  ]
 }

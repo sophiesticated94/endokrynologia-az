@@ -252,5 +252,174 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "WHO ICD-11 CDDR (6B66), APA DSM-5-TR, pure content-src architecture"
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "dpdr-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "depersonalizacja-i-derealizacja-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-dpdr-intact-reality"
+      ],
+      "prompt": "Jaki jest bezwzględny warunek odróżniający zespół depersonalizacji-derealizacji (DPDR) od epizodu psychotycznego w schizofrenii?",
+      "options": [
+        "Całkowicie zachowane testowanie rzeczywistości (intact reality testing) – pacjent wie, że poczucie obcości jest wyłącznie subiektywnym odczuciem, a nie realną zmianą świata",
+        "Obecność utrwalonych urojeń owładnięcia przez istoty pozaziemskie",
+        "Trwały zanik pamięci autobiograficznej od urodzenia"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-intact-reality-testing",
+            "label": "Zachowane testowanie rzeczywistości / wgląd w naturę objawu",
+            "acceptedPhrases": [
+              "testowanie rzeczywistości",
+              "zachowany krytycyzm",
+              "wgląd",
+              "intact reality testing",
+              "wie że to subiektywne"
+            ]
+          },
+          {
+            "id": "c-not-psychosis",
+            "label": "Brak urojeń, brak omamów psychotycznych",
+            "acceptedPhrases": [
+              "brak urojeń",
+              "nie jest to psychoza",
+              "subiektywne odczucie"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Kryterium osiowe DPDR w ICD-11 i DSM-5-TR: testowanie rzeczywistości pozostaje nienaruszone (krytycyzm zachowany).",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "dpdr-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "depersonalizacja-i-derealizacja-obj-2"
+      ],
+      "claimIds": [
+        "claim-trauma-substance-dpdr-exclusion"
+      ],
+      "prompt": "22-letni student zgłasza od 3 tygodni stałe poczucie, że jego ciało jest sztuczne, a świat za szybą. Przedstaw algorytm wykluczenia przyczyn somatycznych i toksycznych (w tym używki oraz padaczka skroniowa).",
+      "modelAnswer": "Diagnostyka różnicowa DPDR wymaga wykluczenia: 1) Substancji psychoaktywnych (kannabinoidy, syntetyczne kannabinoidy, ketamina, halucynogeny, odstawienie alkoholu/BZD); 2) Przyczyn neurologicznych: napady padaczkowe ogniskowe z płata skroniowego (TLE aury z déjà vu/jamais vu i depersonalizacją), guzy mózgu, migrena; 3) Zaburzeń metabolicznych i infekcyjnych. Badania: toksykologia moczu, badanie neurologiczne, EEG (ze szczególnym uwzględnieniem okolic skroniowych), rezonans magnetyczny mózgu. Dopiero po wykluczeniu podłoża somatycznego rozpoznaje się pierwotne zaburzenie DPDR.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-substance-exclusion",
+            "label": "Wykluczenie substancji psychoaktywnych (THC, ketamina, halucynogeny)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-subst",
+                "label": "Narkotyki, kannabinoidy, ketamina, toksykologia",
+                "acceptedPhrases": [
+                  "kannabinoidy",
+                  "marihuana",
+                  "thc",
+                  "ketamina",
+                  "substancje",
+                  "toksykologia"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          },
+          {
+            "id": "dim-neurological-exclusion",
+            "label": "Wykluczenie neurologiczne (padaczka skroniowa TLE, MRI, EEG)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-neuro-tle",
+                "label": "Padaczka skroniowa, TLE, aura, eeg, mri",
+                "acceptedPhrases": [
+                  "tle",
+                  "padaczka skroniowa",
+                  "aura",
+                  "eeg",
+                  "mri",
+                  "rezonans"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-ignore-cannabis-or-epilepsy",
+            "patterns": [
+              "nie trzeba pytać o narkotyki",
+              "eeg jest zbędne"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: Używanie kannabinoidów i padaczka skroniowa to najczęstsze somatyczne przyczyny ostrej depersonalizacji."
+          }
+        ]
+      },
+      "explanation": "Diagnostyka różnicowa DPDR wymaga wykluczenia: 1) Substancji psychoaktywnych (kannabinoidy, syntetyczne kannabinoidy, ketamina, halucynogeny, odstawienie alkoholu/BZD); 2) Przyczyn neurologicznych: napady padaczkowe ogniskowe z płata skroniowego (TLE aury z déjà vu/jamais vu i depersonalizacją), guzy mózgu, migrena; 3) Zaburzeń metabolicznych i infekcyjnych. Badania: toksykologia moczu, badanie neurologiczne, EEG (ze szczególnym uwzględnieniem okolic skroniowych), rezonans magnetyczny mózgu. Dopiero po wykluczeniu podłoża somatycznego rozpoznaje się pierwotne zaburzenie DPDR.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-ilae-epilepsy-classification-2017"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "dpdr-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "depersonalizacja-i-derealizacja-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-dpdr-intact-reality"
+      ],
+      "prompt": "Oceń znaczenie danych klinicznych dla rozpoznania pierwotnego zespołu depersonalizacji-derealizacji.",
+      "hypothesis": "Zgłaszane objawy odpowiadają pierwotnemu zaburzeniu DPDR wg ICD-11.",
+      "items": [
+        {
+          "id": "dpdr-ew-1",
+          "text": "Pacjent odczuwa swoje ciało jak ze szkła, ale podkreśla: „Wiem, że to niemożliwe, to tylko przerażające odczucie”",
+          "expected": "supports",
+          "explanation": "Zachowany krytycyzm i testowanie rzeczywistości potwierdza DPDR."
+        },
+        {
+          "id": "dpdr-ew-2",
+          "text": "Pacjent jest przekonany, że kosmici usunęli jego mózg i zastąpili nadajnikiem radiowym",
+          "expected": "opposes",
+          "explanation": "Urojenia奇 dziwaczne wskazują na psychozę, wykluczając izolowane DPDR."
+        },
+        {
+          "id": "dpdr-ew-3",
+          "text": "Początek objawów nastąpił 2 godziny po zapaleniu syntetycznego kannabinoidu i utrzymuje się stale",
+          "expected": "opposes",
+          "explanation": "Objawy indukowane substancją psychoaktywną wykluczają pierwotne DPDR."
+        }
+      ],
+      "explanation": "DPDR wymaga zachowanego wglądu i braku tła substancyjnego.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "transfer": true
+    }
+  ]
 }

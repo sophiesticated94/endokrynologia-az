@@ -239,5 +239,170 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "APA PTSD Guideline, ISTSS 2019, Lanius fMRI, pure content-src architecture"
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "pme-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "pamiec-traumatyczna-i-extinction-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-memory-reconsolidation"
+      ],
+      "prompt": "W jaki sposób okno rekonsolidacji pamięci traumatycznej pozwala na bezpieczną modyfikację śladu urazowego?",
+      "options": [
+        "Reaktywacja wspomnienia otwiera kilkugodzinne okno plastyczności, w którym nowe doświadczenie bezpieczeństwa (prediction error) modyfikuje ładunek afektywny śladu",
+        "Każda ekspozycja natychmiast i bezpowrotnie usuwa wspomnienie z kory mózgu",
+        "Podanie benzodiazepin natychmiast po ekspozycji przyspiesza wygaszenie pamięci urazowej"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-window",
+            "label": "Okno rekonsolidacji / labilność śladu",
+            "acceptedPhrases": [
+              "okno rekonsolidacji",
+              "rekonsolidacja",
+              "plastyczność",
+              "labilność"
+            ]
+          },
+          {
+            "id": "c-pred-err",
+            "label": "Błąd przewidywania i nowe doświadczenie bezpieczeństwa",
+            "acceptedPhrases": [
+              "błąd przewidywania",
+              "bezpieczeństwo",
+              "prediction error",
+              "bezpieczny kontekst"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Rekonsolidacja pamięci wymaga kontrolowanej reaktywacji w bezpiecznym kontekście terapeutycznym.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "src-nice-ng116-ptsd-2018"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "pme-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "pamiec-traumatyczna-i-extinction-obj-2"
+      ],
+      "claimIds": [
+        "claim-trauma-phase-based-treatment"
+      ],
+      "prompt": "Dlaczego natychmiastowa ekspozycja bez uprzedniej fazy stabilizacji jest błędem w terapii złożonej traumy (cPTSD)? Omów ryzyko retraumatyzacji.",
+      "modelAnswer": "Zalanie afektem (flooding) u pacjenta bez umiejętności samoregulacji prowadzi do przekroczenia okna tolerancji, nasilenia dysocjacji, zachowań suicydalnych i utrwalenia traumy (retraumatyzacji). Model leczenia traumy (Herman, ISTSS) wymaga Fazy 1 (stabilizacja i bezpieczeństwo) przed Fazą 2 (przetwarzanie pamięci).",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-flooding-risk",
+            "label": "Zagrożenie zalaniem afektem i retraumatyzacją",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-flood",
+                "label": "Flooding, retraumatyzacja, wypadnięcie z okna tolerancji",
+                "acceptedPhrases": [
+                  "retraumatyzacja",
+                  "zalanie afektem",
+                  "okno tolerancji",
+                  "dekompensacja"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          },
+          {
+            "id": "dim-phase-model",
+            "label": "Konieczność modelu fazowego (Herman, ISTSS)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-phase",
+                "label": "Model fazowy, Faza 1 stabilizacji",
+                "acceptedPhrases": [
+                  "model fazowy",
+                  "faza 1",
+                  "stabilizacja",
+                  "bezpieczeństwo",
+                  "istss"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-skip-stabilization",
+            "patterns": [
+              "stabilizacja jest niepotrzebna",
+              "od razu pełna ekspozycja"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd krytyczny: Pominięcie stabilizacji w złożonej traumie grozi próbą samobójczą i retraumatyzacją."
+          }
+        ]
+      },
+      "explanation": "Zalanie afektem (flooding) u pacjenta bez umiejętności samoregulacji prowadzi do przekroczenia okna tolerancji, nasilenia dysocjacji, zachowań suicydalnych i utrwalenia traumy (retraumatyzacji). Model leczenia traumy (Herman, ISTSS) wymaga Fazy 1 (stabilizacja i bezpieczeństwo) przed Fazą 2 (przetwarzanie pamięci).",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-istss-guidelines-2019",
+        "src-herman-trauma-1992"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "pme-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "pamiec-traumatyczna-i-extinction-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-memory-reconsolidation"
+      ],
+      "prompt": "Oceń gotowość pacjenta ze złożoną traumą do rozpoczęcia bezpiecznej ekspozycji pourazowej.",
+      "hypothesis": "Pacjent spełnia kryteria stabilności emocjonalnej do bezpiecznego przetwarzania pamięci urazowej.",
+      "items": [
+        {
+          "id": "pme-ew-1",
+          "text": "Pacjent potrafi stosować techniki uziemienia i przerywać dysocjację w trakcie sesji",
+          "expected": "supports",
+          "explanation": "Samoregulacja w oknie tolerancji to warunek Fazy 2."
+        },
+        {
+          "id": "pme-ew-2",
+          "text": "Codzienne cięcie się i impulsywne zatrucia lekami w ostatnim tygodniu",
+          "expected": "opposes",
+          "explanation": "Brak kontroli autoagresji bezwzględnie uniemożliwia ekspozycję."
+        },
+        {
+          "id": "pme-ew-3",
+          "text": "Zbudowany bezpieczny sojusz terapeutyczny i ustalony plan kryzysowy",
+          "expected": "supports",
+          "explanation": "Fundament relacyjny dla wygaszania lęku."
+        }
+      ],
+      "explanation": "Ekspozycja wymaga stabilności i zachowanego sojuszu terapeutycznego.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-istss-guidelines-2019"
+      ],
+      "transfer": true
+    }
+  ]
 }

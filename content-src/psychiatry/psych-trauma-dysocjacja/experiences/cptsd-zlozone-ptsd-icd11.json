@@ -247,5 +247,169 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "WHO ICD-11 CDDR (6B41), ISTSS 2019, Herman Trauma, pure content-src architecture"
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "cptsd-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "cptsd-zlozone-ptsd-icd11-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-cptsd-dso-triad"
+      ],
+      "prompt": "Jakie są składowe triady zaburzeń samoorganizacji (DSO) definiujące cPTSD w ICD-11?",
+      "options": [
+        "Ciężka dysregulacja afektu (trwałe odrętwienie lub wzmożony negatywny afekt), uporczywy negatywny obraz siebie (poczucie bezwartościowości i wstydu) oraz trudności w relacjach (trwałe trudności w utrzymaniu bliskości)",
+        "Omamy słuchowe, urojenia prześladowcze i katatonia",
+        "Napady przymusowego jedzenia i objawy dysocjacji ruchowej"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-dso-affect",
+            "label": "Trwała dysregulacja afektu",
+            "acceptedPhrases": [
+              "dysregulacja afektu",
+              "afekt",
+              "odrętwienie"
+            ]
+          },
+          {
+            "id": "c-dso-self-relational",
+            "label": "Negatywny obraz siebie i trudności w relacjach",
+            "acceptedPhrases": [
+              "negatywny obraz siebie",
+              "poczucie bezwartościowości",
+              "trudności w relacjach",
+              "bliskość"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "cPTSD w ICD-11 wymaga pełnej triady PTSD oraz pełnej triady DSO po przewlekłej, niemożliwej do uniknięcia traumie.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "cptsd-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "cptsd-zlozone-ptsd-icd11-obj-2"
+      ],
+      "claimIds": [
+        "claim-trauma-cptsd-vs-bpd-attachment"
+      ],
+      "prompt": "Przeprowadź różnicowanie cPTSD od zaburzenia osobowości borderline (BPD): obraz własnego ja, dynamika relacji interpersonalnych oraz lęk przed bliskością vs lęk przed porzuceniem.",
+      "modelAnswer": "Obraz Ja: w cPTSD obraz siebie jest stabilnie, trwale negatywny („jestem skażony, bezwartościowy, zawstydzony”); w BPD tożsamość jest rozchwiana, niestabilna, zmienna w zależności od relacji. Relacje: w cPTSD dominuje unikanie bliskości, wycofanie i dystans relacyjny; w BPD relacje są intensywne, burzliwe i niestabilne (naprzemienna idealizacja i dewaluacja). Lęk osiowy: w cPTSD pacjent obawia się zbliżenia i zranienia (lęk przed bliskością); w BPD dominuje paniczny lęk przed porzuceniem i samotnością.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-self-concept",
+            "label": "Obraz siebie (stabilnie negatywny w cPTSD vs niestabilny/płynny w BPD)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-self",
+                "label": "Stabilnie negatywny w cPTSD vs chwiejny w BPD",
+                "acceptedPhrases": [
+                  "stabilnie negatywny",
+                  "poczucie bezwartościowości",
+                  "niestabilny w bpd",
+                  "rozchwiana tożsamość"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          },
+          {
+            "id": "dim-relational-pattern",
+            "label": "Wzorzec relacji (unikanie bliskości w cPTSD vs burzliwe relacje i lęk przed porzuceniem w BPD)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-rel",
+                "label": "Unikanie bliskości vs lęk przed odrzuceniem/porzuceniem",
+                "acceptedPhrases": [
+                  "unikanie bliskości",
+                  "dystans",
+                  "lęk przed porzuceniem",
+                  "idealizacja i dewaluacja",
+                  "bpd"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-cptsd-equals-bpd",
+            "patterns": [
+              "cptsd to nowa nazwa na borderline",
+              "to to samo rozpoznanie"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: ICD-11 formalnie odróżnia cPTSD od zaburzenia osobowości borderline."
+          }
+        ]
+      },
+      "explanation": "Obraz Ja: w cPTSD obraz siebie jest stabilnie, trwale negatywny („jestem skażony, bezwartościowy, zawstydzony”); w BPD tożsamość jest rozchwiana, niestabilna, zmienna w zależności od relacji. Relacje: w cPTSD dominuje unikanie bliskości, wycofanie i dystans relacyjny; w BPD relacje są intensywne, burzliwe i niestabilne (naprzemienna idealizacja i dewaluacja). Lęk osiowy: w cPTSD pacjent obawia się zbliżenia i zranienia (lęk przed bliskością); w BPD dominuje paniczny lęk przed porzuceniem i samotnością.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-nice-cg78-bpd-2009"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "cptsd-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "cptsd-zlozone-ptsd-icd11-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-cptsd-dso-triad"
+      ],
+      "prompt": "Oceń znaczenie danych klinicznych dla rozpoznania cPTSD u pacjentki z wywiadem wieloletniej przemocy domowej.",
+      "hypothesis": "Obraz kliniczny pacjentki spełnia kryteria cPTSD wg ICD-11.",
+      "items": [
+        {
+          "id": "cptsd-ew-1",
+          "text": "Obecność koszmarów sennych, unikania miejsc zdarzenia i stałego poczucia zagrożenia przez 2 lata",
+          "expected": "supports",
+          "explanation": "Potwierdza triadę PTSD."
+        },
+        {
+          "id": "cptsd-ew-2",
+          "text": "Utrwalone odrętwienie emocjonalne, przekonanie o byciu bezwartościową i całkowite unikanie nawiązywania relacji (DSO)",
+          "expected": "supports",
+          "explanation": "Spełnia kompletną triadę zaburzeń samoorganizacji (DSO)."
+        },
+        {
+          "id": "cptsd-ew-3",
+          "text": "Epizodyczne wahania nastroju z wielomówstwem, zmniejszoną potrzebą snu i gonitwą myśli trwające po 2 tygodnie",
+          "expected": "opposes",
+          "explanation": "Sugeruje epizod manii/hipomanii w przebiegu ChAD, a nie czyste cPTSD."
+        }
+      ],
+      "explanation": "cPTSD wymaga współistnienia triady PTSD i triady DSO.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "transfer": true
+    }
+  ]
 }

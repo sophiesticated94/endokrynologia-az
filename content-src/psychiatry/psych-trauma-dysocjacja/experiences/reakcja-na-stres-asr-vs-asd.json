@@ -246,5 +246,176 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "WHO mhGAP, APA DSM-5-TR, NICE NG116, Hobfoll PFA, Cochrane CISD"
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "asr-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "reakcja-na-stres-asr-vs-asd-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-asr-vs-asd-timing"
+      ],
+      "prompt": "Jakie są kluczowe różnice w klasyfikacji ostrej reakcji na stres w ICD-11 (ASR) a DSM-5-TR (ASD)?",
+      "options": [
+        "W ICD-11 ostra reakcja na stres (ASR) jest traktowana jako przemijająca reakcja normatywna trwająca dni (brak kategorii zaburzenia psychicznego), podczas gdy w DSM-5 zaburzenie ostrego stresu (ASD) jest formalną jednostką nozologiczną trwającą od 3 dni do 1 miesiąca",
+        "ICD-11 wymaga rozpoznania ASD dopiero po 6 miesiącach od traumy",
+        "W DSM-5 ASD jest zawsze diagnozowane jako podtyp schizofrenii"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-icd-asr-normative",
+            "label": "ASR w ICD-11 jako reakcja normatywna, nie zaburzenie psychiczne",
+            "acceptedPhrases": [
+              "reakcja normatywna",
+              "nie jest zaburzeniem",
+              "przemijająca",
+              "dni",
+              "icd-11"
+            ]
+          },
+          {
+            "id": "c-dsm-asd-disorder",
+            "label": "ASD w DSM-5 jako formalne zaburzenie od 3 dni do 1 miesiąca",
+            "acceptedPhrases": [
+              "asd",
+              "zaburzenie",
+              "dsm-5",
+              "3 dni",
+              "1 miesiąc"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "ICD-11 depatologizuje wczesne reakcje na stres (ASR jako reakcja fizjologiczna), chroniąc przed nadrozpoznawalnością.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "asr-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "reakcja-na-stres-asr-vs-asd-obj-2"
+      ],
+      "claimIds": [
+        "claim-trauma-asr-vs-asd-timing"
+      ],
+      "prompt": "Wyjaśnij zasady pierwszej pomocy psychologicznej (Psychological First Aid - PFA) po katastrofie oraz uzasadnij, dlaczego rutynowy debriefing psychologiczny (CISD) jest przeciwwskazany.",
+      "modelAnswer": "PFA polega na zapewnieniu bezpieczeństwa fizycznego, zaspokojeniu podstawowych potrzeb (woda, schronienie), życzliwej obecności, kontakcie z bliskimi i ochronie przed chaosem bez wymuszania opowiadania o traumie. Rutynowy psychologiczny debriefing (wymuszone szczegółowe relacjonowanie traumy w pierwszych dobach) jest przeciwwskazany, ponieważ badania RCT wykazały, że zaburza naturalną odporność, zwiększa ryzyko PTSD i wywołuje wtórną traumatyzację.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-pfa-principles",
+            "label": "Zasady Psychological First Aid (bezpieczeństwo, potrzeby, wsparcie bez presji)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-pfa",
+                "label": "Bezpieczeństwo fizyczne, potrzeby, obecność, brak presji",
+                "acceptedPhrases": [
+                  "pfa",
+                  "bezpieczeństwo",
+                  "potrzeby",
+                  "obecność",
+                  "kontakt z bliskimi",
+                  "brak presji"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          },
+          {
+            "id": "dim-debriefing-harm",
+            "label": "Szkodliwość przymusowego debriefingu (CISD) i wzrost ryzyka PTSD",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-cisd-harm",
+                "label": "Zaburzenie odporności, wzrost PTSD, retraumatyzacja",
+                "acceptedPhrases": [
+                  "debriefing",
+                  "cisd",
+                  "szkodliwy",
+                  "zwiększa ptsd",
+                  "wymuszone opowiadanie",
+                  "retraumatyzacja"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-force-debriefing",
+            "patterns": [
+              "zawsze zmuszać do debriefingu",
+              "debriefing chroni przed ptsd"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: Wytyczne WHO i NICE zakazują rutynowego wczesnego debriefingu psychologicznego."
+          }
+        ]
+      },
+      "explanation": "PFA polega na zapewnieniu bezpieczeństwa fizycznego, zaspokojeniu podstawowych potrzeb (woda, schronienie), życzliwej obecności, kontakcie z bliskimi i ochronie przed chaosem bez wymuszania opowiadania o traumie. Rutynowy psychologiczny debriefing (wymuszone szczegółowe relacjonowanie traumy w pierwszych dobach) jest przeciwwskazany, ponieważ badania RCT wykazały, że zaburza naturalną odporność, zwiększa ryzyko PTSD i wywołuje wtórną traumatyzację.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-who-mhgap-2023",
+        "src-nice-ng116-ptsd-2018"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "asr-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "reakcja-na-stres-asr-vs-asd-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-asr-vs-asd-timing"
+      ],
+      "prompt": "Oceń znaczenie danych klinicznych dla różnicowania ostrej reakcji na stres (ASR) od utrwalonego PTSD.",
+      "hypothesis": "Stan pacjenta odpowiada utrwalonemu PTSD, a nie przemijającej ostrej reakcji.",
+      "items": [
+        {
+          "id": "asr-ew-1",
+          "text": "Objawy intruzji, unikania i czujności utrzymują się od 6 tygodni po wypadku samochodowym",
+          "expected": "supports",
+          "explanation": "Czas trwania >1 miesiąca spełnia kryteria czasowe PTSD."
+        },
+        {
+          "id": "asr-ew-2",
+          "text": "Objawy pojawiły się 12 godzin po napadzie i całkowicie ustąpiły po 3 dniach wypoczynku",
+          "expected": "opposes",
+          "explanation": "Krótkotrwały przebieg w ciągu pierwszych dni to cecha ASR."
+        },
+        {
+          "id": "asr-ew-3",
+          "text": "Utrzymujące się ciężkie zaburzenia funkcjonowania zawodowego i społecznego",
+          "expected": "supports",
+          "explanation": "Znaczące upośledzenie funkcjonowania potwierdza zaburzenie pourazowe."
+        }
+      ],
+      "explanation": "Kryterium czasu (>1 miesiąc) oraz trwałość upośledzenia funkcjonowania definiują przejście do PTSD.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "transfer": true
+    }
+  ]
 }

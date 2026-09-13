@@ -1,0 +1,428 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "szybko-postepujace-zespoly-otepienne",
+  "objectives": [
+    {
+      "id": "szybko-postepujace-zespoly-otepienne-obj-1",
+      "statement": "Zastosujesz „Zegar neurokognitywny” (tempo rozwoju: godziny/dni vs tygodnie/miesiące vs lata) do ustalenia priorytetów diagnostycznych.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "szybko-postepujace-zespoly-otepienne-obj-2",
+      "statement": "Zidentyfikujesz czerwone flagi encefalopatii autoimmunologicznych (napady, dyskinezy ustno-twarzowe, labilność wegetatywna).",
+      "kind": "interpretation"
+    },
+    {
+      "id": "szybko-postepujace-zespoly-otepienne-obj-3",
+      "statement": "Wdrożysz hierarchiczny panel badań (MRI, PMR, EEG, przeciwciała onkoneuronalne) w podejrzeniu odwracalnych przyczyn RPD.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-szybko-postepujace-zespoly-otepienne-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "szybko-postepujace-zespoly-otepienne-obj-1"
+    ],
+    "prompt": "23-letnia studentka bez wcześniejszego wywiadu psychiatrycznego w ciągu 3 tygodni rozwija objawy lęku, omamów wzrokowo-słuchowych, po czym dołączają mimowolne grymasy ust i języka (dyskinezy), uogólniony napad padaczkowy oraz okresowy mutyzm. Jaki jest priorytet diagnostyczny?",
+    "options": [
+      "Pilna hospitalizacja na oddziale neurologii z wykonaniem punkcji lędźwiowej (panel przeciwciał w PMR), MRI mózgu i EEG pod kątem autoimmunologicznego zapalenia mózgu",
+      "Natychmiastowe rozpoznanie schizofrenii i skierowanie na 10-letnią psychoterapię psychoanalityczną",
+      "Wypisanie do domu z zaleceniem picia naparu z melisy"
+    ],
+    "optionFeedback": [
+      "Pojawienie się psychozy z napadami padaczkowymi, dyskinezami i katatonią u młodej osoby w ciągu 3 tygodni jest czerwoną flagą zapalenia mózgu (np. anty-NMDAR).",
+      "Rozpoznanie schizofrenii przy ostrych napadach padaczkowych i dyskinezach bez badań neurologicznych jest rażącym błędem.",
+      "Encefalopatia z napadami drgawkowymi jest stanem bezpośredniego zagrożenia życia."
+    ],
+    "answer": 2,
+    "explanation": "Encefalopatia z napadami drgawkowymi jest stanem bezpośredniego zagrożenia życia.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "rpd-graff-radford-2019",
+      "nice-ng97-dementia"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "szybko-postepujace-zespoly-otepienne-block-1",
+      "title": "Zegar neurokognitywny: tempo jako decydujący drogowskaz",
+      "text": "Szybko postępujące otępienie (Rapidly Progressive Dementia — RPD) definiuje się jako spadek poznawczy rozwijający się w czasie krótszym niż 1–2 lata, a najczęściej w ciągu tygodni do kilku miesięcy. Zegar neurokognitywny dzieli dynamikę na 4 kategorie: 1) godziny–dni (ostre: delirium, zatrucia, udary, stan padaczkowy); 2) dni–tygodnie (podostre: zapalenia mózgu wirusowe/autoimmunologiczne, ostre zaburzenia metaboliczne); 3) tygodnie–miesiące (RPD: autoimmunologiczne, prionowe CJD, paraneoplastyczne, chłoniaki OUN); 4) miesiące–lata (klasyczne procesy neurodegeneracyjne). Tempo nie daje rozpoznania, lecz narzuca natychmiastową pilność procedur.",
+      "sourceIds": [
+        "rpd-graff-radford-2019",
+        "nice-ng97-dementia"
+      ],
+      "checkpointId": "psych-szybko-postepujace-zespoly-otepienne-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "widget-neuro-clock",
+          "kind": "interactive-widget",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "szybko-postepujace-zespoly-otepienne-block-2",
+      "title": "Czerwone flagi zapalenia mózgu (Autoimmune Encephalitis)",
+      "text": "Autoimmunologiczne zapalenie mózgu (np. z przeciwciałami przeciwko receptorom NMDA, LGI1, CASPR2) uderza często w młodych dorosłych lub seniorów. Prawidłowy model nie łączy sztywno pojedynczych objawów (np. psychoza + dyskinezy = anty-NMDAR), lecz uczy konstelacji czerwonych flag: 1) ostra/podostra psychoza lub labilność afektywna; 2) wczesne napady padaczkowe (zwłaszcza lekooporne lub napady dystoniczne twarzowo-ramienne w anty-LGI1); 3) zaburzenia ruchowe (dyskinezy ustno-twarzowe, pląsawica); 4) fluktuacje czuwania i mutyzm/katatonia; 5) niestabilność autonomiczna (hipo/hipertermia, tachykardia, labilne ciśnienie).",
+      "sourceIds": [
+        "rpd-graff-radford-2019",
+        "nice-ng97-dementia"
+      ],
+      "checkpointId": "psych-szybko-postepujace-zespoly-otepienne-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-rpd-autoimmune-redflags",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        },
+        {
+          "id": "deeplink-autoimmune-preset",
+          "kind": "workbench-deeplink",
+          "placement": "end-of-block",
+          "presetId": "preset-autoimmune-encephalitis"
+        }
+      ]
+    },
+    {
+      "id": "szybko-postepujace-zespoly-otepienne-block-3",
+      "title": "Choroby prionowe (CJD) i inne przyczyny odwracalne",
+      "text": "Sporadyczna choroba Creutzfeldta-Jakoba (sCJD) manifestuje się postępującym otępieniem w kilka miesięcy, miokloniami wyzwalanymi bodźcem dźwiękowym (startle reflex), ataksją móżdżkową i wczesnymi objawami wzrokowymi. W diagnostyce kluczowe są: restrykcja dyfuzji w korze wstęgowatej i prążkowiu w MRI (DWI/FLAIR), okresowe wyładowania trójfazowe (PSWC) w EEG oraz białko 14-3-3 i test RT-QuIC w płynie mózgowo-rdzeniowym.",
+      "sourceIds": [
+        "rpd-graff-radford-2019",
+        "nice-ng97-dementia"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-szybko-postepujace-zespoly-otepienne-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "szybko-postepujace-zespoly-otepienne-obj-2"
+      ],
+      "prompt": "Jaka jest najważniejsza zaleta metodyczna podejścia opartego na „Zegarze neurokognitywnym” w diagnostyce zespołów otępiennych?",
+      "options": [
+        "Ustala pilność procedur ratunkowych i zawęża grupy etiologiczne na podstawie tempa rozwoju, chroniąc przed przeoczeniem procesów odwracalnych",
+        "Pozwala na natychmiastowe zrezygnowanie z badania płynu mózgowo-rdzeniowego u każdego pacjenta",
+        "Podaje z góry dokładną datę zgonu pacjenta z marginesem do 1 dnia"
+      ],
+      "optionFeedback": [
+        "Tempo w tygodnie/miesiące wyklucza rutynowe, powolne podejście ambulatoryjne i nakazuje wykluczenie zapaleń mózgu, guzów czy zakażeń.",
+        "Zegar narzuca pilność punkcji lędźwiowej w dynamicznych spadkach poznawczych.",
+        "Medycyna nie dysponuje narzędziami do deterministycznego przewidywania daty zgonu."
+      ],
+      "answer": 0,
+      "explanation": "Tempo w tygodnie/miesiące wyklucza rutynowe, powolne podejście ambulatoryjne i nakazuje wykluczenie zapaleń mózgu, guzów czy zakażeń.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "rpd-graff-radford-2019",
+        "nice-ng97-dementia"
+      ]
+    },
+    {
+      "id": "psych-szybko-postepujace-zespoly-otepienne-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "szybko-postepujace-zespoly-otepienne-obj-3"
+      ],
+      "prompt": "70-letni pacjent w ciągu 8 tygodni traci zdolność chodzenia (ataksja), dołączają gwałtowne zrywy mięśniowe po klaśnięciu w dłonie (mioklonie wyzwalane bodźcem) oraz głębokie otępienie. Co jest najbardziej prawdopodobną hipotezą roboczą?",
+      "options": [
+        "Podejrzenie choroby prionowej (sporadyczna choroba Creutzfeldta-Jakoba — sCJD)",
+        "Typowy, łagodny przebieg choroby Alzheimera",
+        "Przemęczenie pracą w ogródku działkowym"
+      ],
+      "optionFeedback": [
+        "Triada: szybko postępujące otępienie w kilka tygodni, mioklonie bodźcowe (startle) i ataksja to klasyczny obraz sCJD wymagający testu RT-QuIC i MRI DWI.",
+        "Choroba Alzheimera nie doprowadza do głębokiego otępienia z ataksją w ciągu 8 tygodni.",
+        "Tak gwałtowny zespół neurologiczny nigdy nie jest wynikiem zmęczenia fizycznego."
+      ],
+      "answer": 1,
+      "explanation": "Choroba Alzheimera nie doprowadza do głębokiego otępienia z ataksją w ciągu 8 tygodni.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "rpd-graff-radford-2019",
+        "nice-ng97-dementia"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "szybko-postepujace-zespoly-otepienne-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "szybko-postepujace-zespoly-otepienne-obj-1",
+      "szybko-postepujace-zespoly-otepienne-obj-2",
+      "szybko-postepujace-zespoly-otepienne-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Szybko postępujące zespoły otępienne (RPD) i czerwone flagi”.",
+    "modelAnswer": "Szybki spadek poznawczy w tygodnie lub miesiące nie pasuje do typowej choroby Alzheimera. Wymaga natychmiastowego wykluczenia przyczyn odwracalnych i zapalnych poprzez MRI, badanie PMR, EEG oraz panele autoprzeciwciał.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "rpd-graff-radford-2019",
+      "nice-ng97-dementia"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "psych-szybko-postepujace-zespoly-otepienne-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "szybko-postepujace-zespoly-otepienne-obj-1"
+      ],
+      "prompt": "Dlaczego ujemny wynik przeciwciał przeciwko receptorom NMDA w surowicy krwi NIE wyklucza autoimmunologicznego zapalenia mózgu?",
+      "options": [
+        "Ponieważ swoiste przeciwciała mogą być produkowane wewnątrzpłynowo (intrathecal synthesis), a badanie płynu mózgowo-rdzeniowego ma znacznie wyższą czułość",
+        "Ponieważ przeciwciała we krwi zamieniają się w hemoglobinę po 2 godzinach",
+        "Ponieważ krew jest całkowicie pozbawiona białek układu odpornościowego"
+      ],
+      "optionFeedback": [
+        "W zapaleniu anty-NMDAR miano przeciwciał w PMR bezpośrednio koreluje z procesem w OUN, podczas gdy we krwi obwodowej może pozostać ujemne.",
+        "Przeciwciała nie przekształcają się w hemoglobinę; różnica wynika z kompartmentowości bariery krew-mózg.",
+        "Krew zawiera immunoglobuliny, lecz ich stężenie w surowicy może być niewystarczające we wczesnej fazie."
+      ],
+      "answer": 2,
+      "explanation": "Krew zawiera immunoglobuliny, lecz ich stężenie w surowicy może być niewystarczające we wczesnej fazie.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "rpd-graff-radford-2019",
+        "nice-ng97-dementia"
+      ]
+    },
+    {
+      "id": "psych-szybko-postepujace-zespoly-otepienne-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "szybko-postepujace-zespoly-otepienne-obj-1"
+      ],
+      "prompt": "Które z wymienionych schorzeń stanowi w pełni odwracalną przyczynę ostrego/podostrego zespołu otępiennego przy wczesnym wdrożeniu leczenia?",
+      "options": [
+        "Encefalopatia Wernickego (niedobór tiaminy — witaminy B1) oraz ciężka niedoczynność tarczycy",
+        "Zaawansowana choroba Huntingtona z mutacją 55 powtórzeń CAG",
+        "Sporadyczna postać stwardnienia zanikowego bocznego (SLA)"
+      ],
+      "optionFeedback": [
+        "Natychmiastowe podanie wysokich dawek tiaminy parenteralnie lub lewotyroksyny potrafi całkowicie odwrócić objawy encefalopatyczne.",
+        "Pląsawica Huntingtona jest nieuleczalną chorobą genetyczną o charakterze postępującym.",
+        "SLA jest postępującą chorobą neuronu ruchowego bez możliwości pełnego odwrócenia zmian."
+      ],
+      "answer": 0,
+      "explanation": "Natychmiastowe podanie wysokich dawek tiaminy parenteralnie lub lewotyroksyny potrafi całkowicie odwrócić objawy encefalopatyczne.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "rpd-graff-radford-2019",
+        "nice-ng97-dementia"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "rpd-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "szybko-postepujace-zespoly-otepienne-obj-1"
+      ],
+      "claimIds": [
+        "claim-org-rpd-autoimmune-redflags"
+      ],
+      "prompt": "63-letnia kobieta bez obciążeń w ciągu 6 tygodni rozwija postępujące otępienie, mioklonie kończyn, niezborność chodu i mutyzm akinetyczny. W MRI mózgu widoczny objaw wstążki korowej (cortical ribboning) i hiperintensywność prążkowia w DWI. Jakie rozpoznanie i procedurę należy rozważyć w trybie pilnym?",
+      "options": [
+        "Podejrzenie sporadycznej choroby Creutzfeldta-Jakoba (sCJD): pilne badanie RT-QuIC w płynie mózgowo-rdzeniowym i EEG pod kątem fal PSWCs",
+        "Typowa postać choroby Alzheimera: wdrożenie donepezilu i kontrola za 6 miesięcy",
+        "Zaburzenie konwersyjne: skierowanie na psychoterapię ambulatoryjną"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-cjd-features",
+            "label": "Podejrzenie sCJD (przebieg tygodniowy, mioklonie, cortical ribboning w DWI)",
+            "acceptedPhrases": [
+              "cjd",
+              "creutzfeldt",
+              "prionowa",
+              "cortical ribboning",
+              "mioklonie",
+              "mutyzm akinetyczny"
+            ]
+          },
+          {
+            "id": "c-rpd-urgent-workup",
+            "label": "Pilna diagnostyka (RT-QuIC w PMR, EEG z periodycznymi falami)",
+            "acceptedPhrases": [
+              "rt-quic",
+              "14-3-3",
+              "pmr",
+              "eeg",
+              "pswc",
+              "periodyczne"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Szybko postępujące otępienie rozwijające się w ciągu tygodni z miokloniami i wstążką korową w DWI to klasyczny obraz sCJD, wymagający pilnej diagnostyki biomarkerowej.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "rpd-graff-radford-2019"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "rpd-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "szybko-postepujace-zespoly-otepienne-obj-2"
+      ],
+      "claimIds": [
+        "claim-org-rpd-autoimmune-redflags"
+      ],
+      "prompt": "Wymień najważniejsze odwracalne przyczyny szybko postępującego otępienia (RPD) oraz zestaw badań I rzutu koniecznych do pilnego wykluczenia encefalopatii autoimmunologicznej i infekcyjnej.",
+      "modelAnswer": "Odwracalne przyczyny RPD: 1) Autoimmunologiczne i paraneoplastyczne zapalenia mózgu (anty-NMDA, anty-LGI1, anty-CASPR2, anty-Hu); 2) Zakażenia OUN (HSV, VZV, kiła OUN, HIV, borelioza); 3) Zaburzenia metaboliczno-toksyczne (encefalopatia Wernickego, niewydolność wątroby/nerek, zatrucie metalami); 4) Stan padaczkowy bezdrgawkowy (NCSE); 5) Układowe zapalenia naczyń (CNS vasculitis). Zestaw badań: MRI mózgu z kontrastem i DWI, badanie ogólne PMR z indeksem IgG i prążkami oligoklonalnymi, panel przeciwciał przeciwneuronalnych (w surowicy i PMR), EEG (wykluczenie NCSE i fal periodycznych), badania wirusologiczne i serologiczne (VDRL, Borrelia, HIV) oraz screening onkologiczny (TK klatki, brzucha i miednicy).",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-c-autoimmune-encephalitis",
+            "label": "Autoimmunologiczne zapalenia mózgu (przeciwciała powierzchniowe i paraneoplastyczne)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-autoimmune-encephalitis",
+                "label": "Autoimmunologiczne zapalenia mózgu (przeciwciała powierzchniowe i paraneoplastyczne)",
+                "acceptedPhrases": [
+                  "autoimmunologiczne",
+                  "przeciwciała",
+                  "anty-nmda",
+                  "lgi1",
+                  "paraneoplastyczne"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dim-c-infections-and-metabolic",
+            "label": "Zakażenia OUN, encefalopatia Wernickego, NCSE",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-infections-and-metabolic",
+                "label": "Zakażenia OUN, encefalopatia Wernickego, NCSE",
+                "acceptedPhrases": [
+                  "wirusowe",
+                  "hsv",
+                  "kiła",
+                  "hiv",
+                  "wernicke",
+                  "tiamina",
+                  "stan padaczkowy",
+                  "ncse"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dim-c-diagnostic-workup-rpd",
+            "label": "Panel badań (MRI, PMR, EEG, przeciwciała, screening onkologiczny)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-diagnostic-workup-rpd",
+                "label": "Panel badań (MRI, PMR, EEG, przeciwciała, screening onkologiczny)",
+                "acceptedPhrases": [
+                  "mri",
+                  "pmr",
+                  "eeg",
+                  "przeciwciała onkoneuronalne",
+                  "badanie płynu"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-rpd-assume-untreatable",
+            "patterns": [
+              "każde rpd to cjd i nie ma leczenia",
+              "nie trzeba diagnozować bo i tak umrze"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd krytyczny: Wiele przyczyn RPD (autoimmunologiczne, infekcyjne, metaboliczne) jest całkowicie uleczalnych przy szybkim wdrożeniu leczenia."
+          }
+        ]
+      },
+      "explanation": "Zasada w RPD: każdą postać traktuje się jako potencjalnie odwracalną encefalopatię autoimmunologiczną lub infekcyjną do momentu wykluczenia.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "rpd-graff-radford-2019"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "rpd-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "szybko-postepujace-zespoly-otepienne-obj-3"
+      ],
+      "claimIds": [
+        "claim-org-rpd-autoimmune-redflags"
+      ],
+      "prompt": "Oceń znaczenie podanych danych klinicznych u 28-letniej pacjentki z ostrymi zaburzeniami zachowania, dyskinezami twarzy i amnezją rozwijającymi się w ciągu 3 tygodni.",
+      "hypothesis": "Obraz kliniczny odpowiada autoimmunologicznemu zapaleniu mózgu z przeciwciałami przeciwko receptorom NMDA.",
+      "explanation": "Encefalopatia anty-NMDAR typowo dotyczy młodych kobiet, manifestuje się objawami psychiatrycznymi, dyskinezami orofacjalnymi i niestabilnością wegetatywną.",
+      "items": [
+        {
+          "id": "rpd-ew-1",
+          "text": "Pojawienie się mimowolnych ruchów języka i warg (dyskinezy orofacjalne) oraz labilności tętna i ciśnienia",
+          "expected": "supports",
+          "explanation": "Dyskinezy twarzowo-językowe i dysautonomia to charakterystyczny marker zapalenia anty-NMDAR."
+        },
+        {
+          "id": "rpd-ew-2",
+          "text": "W badaniu USG miednicy mniejszej uwidoczniono potworniaka jajnika (teratoma ovarii)",
+          "expected": "supports",
+          "explanation": "Potworniak jajnika jest najczęstszym źródłem antygenowym wyzwalającym produkcję przeciwciał anty-NMDA."
+        },
+        {
+          "id": "rpd-ew-3",
+          "text": "Badanie PMR wykazuje obecność 0 komórek, prawidłowe białko i ujemny wynik przeciwciał w klasie IgG",
+          "expected": "opposes",
+          "explanation": "Całkowicie ujemny wynik PMR i brak przeciwciał przemawia przeciwko aktywnemu zapaleniu autoimmunologicznemu."
+        }
+      ],
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "rpd-graff-radford-2019"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "timeline"
+  ],
+  "widgetConfig": {},
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-12",
+    "scope": "Struktura dydaktyczna v2, standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., AGNP TDM 2026 oraz CPIC."
+  }
+}

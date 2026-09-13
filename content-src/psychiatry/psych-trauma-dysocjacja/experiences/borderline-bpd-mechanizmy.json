@@ -251,5 +251,171 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "WHO ICD-11 CDDR, NICE CG78, Linehan DBT, pure content-src architecture"
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "bpd-mech-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "borderline-bpd-mechanizmy-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-bpd-identity-vs-did",
+        "claim-trauma-bpd-abandonment-instability"
+      ],
+      "prompt": "Na czym polega biospołeczny model Marshy Linehan powstawania zaburzenia osobowości borderline?",
+      "options": [
+        "Na transakcyjnej interakcji pomiędzy wrodzoną wrażliwością biologiczną (nadreaktywność emocjonalna) a wszechogarniającym unieważniającym środowiskiem (invalidating environment)",
+        "Na izolowanym deficycie poznawczym wynikającym z uszkodzenia hipokampa w dzieciństwie",
+        "Na świadomej i wykalkulowanej strategii manipulowania otoczeniem w celu uzyskania korzyści wtórnych"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-innate-vulnerability",
+            "label": "Wrodzona wrażliwość biologiczna / nadreaktywność afektywna",
+            "acceptedPhrases": [
+              "wrażliwość biologiczna",
+              "nadreaktywność",
+              "afekt",
+              "wolny powrót do linii bazowej"
+            ]
+          },
+          {
+            "id": "c-invalidating-env",
+            "label": "Unieważniające środowisko (invalidating environment)",
+            "acceptedPhrases": [
+              "unieważniające środowisko",
+              "invalidating environment",
+              "unieważnianie",
+              "brak akceptacji"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Model biospołeczny zakłada, że chroniczne unieważnianie emocji u dziecka o wysokiej reaktywności uniemożliwia wykształcenie samoregulacji.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "src-nice-cg78-bpd-2009"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "bpd-mech-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "borderline-bpd-mechanizmy-obj-2"
+      ],
+      "claimIds": [
+        "claim-trauma-bpd-abandonment-instability"
+      ],
+      "prompt": "Zespół pielęgniarski na oddziale uważa, że 21-letnia pacjentka z BPD „manipuluje i wymusza uwagę”, grożąc samouszkodzeniem, gdy terapeuta udaje się na urlop. Przeanalizuj to zachowanie w kategoriach neurobiologii paniki przed porzuceniem i funkcji regulacji afektu, korygując postawę stygmatyzującą.",
+      "modelAnswer": "Analiza funkcjonalna i neurobiologiczna: 1) Neurobiologia lęku przed porzuceniem: Sygnał separacji (urlop terapeuty) aktywuje obwód zagrożenia (nadreaktywne ciało migdałowate) przy obniżonej kontroli korowej (osłabione hamowanie przez przednią część kory zakrętu obręczy i prefrontal cortex). Prowadzi to do subiektywnego stanu agonalnego przerażenia (psychic pain), nie do wyliczonej kalkulacji. 2) Samouszkodzenie jako regulacja afektu: Samookaleczenie pełni funkcję nagłego obniżenia nie do zniesienia napięcia psychicznego (poprzez aktywację endogennych opioidów i odwrócenie uwagi od bólu psychicznego) lub stanowi desperacką komunikację kryzysową przy braku umiejętności werbalnych. 3) Korygowanie stygmatyzacji: Etykietowanie zachowań kryzysowych jako „manipulacji” wzmacnia unieważnienie środowiskowe i zaostrza autodestrukcję. Należy zastąpić je empatyczną walidacją bólu przy jednoczesnym utrzymaniu stałych granic leczenia.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-abandonment-neurobiology",
+            "label": "Neurobiologia paniki przed porzuceniem (ciało migdałowate vs PFC)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-neuro-panic",
+                "label": "Ciało migdałowate, kora przedczołowa, ból psychiczny, panika separacyjna",
+                "acceptedPhrases": [
+                  "ciało migdałowate",
+                  "kora przedczołowa",
+                  "ból psychiczny",
+                  "panika",
+                  "nadreaktywność"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          },
+          {
+            "id": "dim-selfharm-function",
+            "label": "Funkcja samouszkodzenia i walidacja bez stygmatyzacji",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-selfharm-regulation",
+                "label": "Regulacja nie do zniesienia napięcia, funkcja komunikacyjna, przeciwdziałanie stygmatyzacji manipulacji",
+                "acceptedPhrases": [
+                  "regulacja afektu",
+                  "napięcie",
+                  "funkcja samouszkodzeń",
+                  "przeciw stygmatyzacji",
+                  "nie manipulacja"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-bpd-pure-manipulation",
+            "patterns": [
+              "pacjenci bpd po prostu manipulują",
+              "to czysty szantaż emocjonalny"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: Etykietowanie jako manipulacji jest szkodliwym mitem medycznym ignorującym neurobiologię dysregulacji afektu."
+          }
+        ]
+      },
+      "explanation": "Analiza funkcjonalna i neurobiologiczna: 1) Neurobiologia lęku przed porzuceniem: Sygnał separacji (urlop terapeuty) aktywuje obwód zagrożenia (nadreaktywne ciało migdałowate) przy obniżonej kontroli korowej (osłabione hamowanie przez przednią część kory zakrętu obręczy i prefrontal cortex). Prowadzi to do subiektywnego stanu agonalnego przerażenia (psychic pain), nie do wyliczonej kalkulacji. 2) Samouszkodzenie jako regulacja afektu: Samookaleczenie pełni funkcję nagłego obniżenia nie do zniesienia napięcia psychicznego (poprzez aktywację endogennych opioidów i odwrócenie uwagi od bólu psychicznego) lub stanowi desperacką komunikację kryzysową przy braku umiejętności werbalnych. 3) Korygowanie stygmatyzacji: Etykietowanie zachowań kryzysowych jako „manipulacji” wzmacnia unieważnienie środowiskowe i zaostrza autodestrukcję. Należy zastąpić je empatyczną walidacją bólu przy jednoczesnym utrzymaniu stałych granic leczenia.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-nice-cg78-bpd-2009"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "bpd-mech-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "borderline-bpd-mechanizmy-obj-2"
+      ],
+      "claimIds": [
+        "claim-trauma-bpd-abandonment-instability"
+      ],
+      "prompt": "Oceń kierunek dowodowy danych wskazujących na biologiczną nadwrażliwość emocjonalną u pacjentki z BPD.",
+      "hypothesis": "U pacjentki występuje biologiczna dysfunkcja regulacji afektu wg modelu biospołecznego.",
+      "items": [
+        {
+          "id": "bpd-mech-ew-1",
+          "text": "Zwiększona aktywacja ciała migdałowatego i przedniej części wyspy w fMRI w odpowiedzi na neutralne twarze z interpretacją ich jako wrogich",
+          "expected": "supports",
+          "explanation": "Klasyczny marker neurobiologicznej nadwrażliwości na bodźce społeczne w BPD."
+        },
+        {
+          "id": "bpd-mech-ew-2",
+          "text": "Powolny powrót parametrów autonomicznych (HR, GSR) do poziomu wyjściowego po ustąpieniu łagodnego stresora laboratoryjnego",
+          "expected": "supports",
+          "explanation": "Cechuje opóźnioną deeskalację fizjologiczną w BPD."
+        },
+        {
+          "id": "bpd-mech-ew-3",
+          "text": "Spokojna, wykalkulowana instrumentalna agresja bez przyspieszenia akcji serca i bez subiektywnego cierpienia",
+          "expected": "opposes",
+          "explanation": "Charakteryzuje dyssocjalność/psychopatię (cold callousness), przeczy dysregulacji BPD."
+        }
+      ],
+      "explanation": "Model biospołeczny pozwala zrozumieć podłoże cierpienia w BPD bez uciekania się do etykiet moralnych.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "src-nice-cg78-bpd-2009"
+      ],
+      "transfer": true
+    }
+  ]
 }

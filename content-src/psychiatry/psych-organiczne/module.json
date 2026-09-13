@@ -1,0 +1,17 @@
+{
+  "id": "psych-organiczne",
+  "title": "Psychiatria organiczna, neurokognitywna i wieku podeszłego",
+  "name": "Psychiatria organiczna, neurokognitywna i wieku podeszłego",
+  "subtitle": "Delirium (4AT, Cause Hunt), otępienia (AD, VaD, DLB, bvFTD), RPD, BPSD, Beers 2023, obciążenie antycholinergiczne (ACB), capacity i safeguarding",
+  "description": "Zaawansowany moduł interdyscyplinarny łączący neuropsychiatrię, geriatrię i medycynę somatyczną. Obejmuje ostre stany zaburzeń świadomości (delirium), wieloosiowe różnicowanie zespołów otępiennych, problematykę BPSD oraz ramy prawne oceny zdolności decyzyjnej (Mental Capacity Act).",
+  "icon": "Brain",
+  "order": 3,
+  "count": 13,
+  "badge": "Moduł 03",
+  "curriculumCategory": "psychiatry",
+  "prerequisites": [
+    "psych-afektywne",
+    "psych-farmakologia"
+  ],
+  "estimatedMinutes": 240
+}

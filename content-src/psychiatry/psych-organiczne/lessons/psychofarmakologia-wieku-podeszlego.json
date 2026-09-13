@@ -1,0 +1,170 @@
+{
+  "id": "psychofarmakologia-wieku-podeszlego",
+  "moduleId": "psych-organiczne",
+  "title": "Psychofarmakologia geriatryczna: polifarmacja, Beers i ACB",
+  "subtitle": "Kryteria Beers 2023, obciążenie antycholinergiczne, czynność nerek, upadki i bezpieczeństwo BZD",
+  "group": "Geriatria kliniczna, bezpieczeństwo i etyka",
+  "minutes": 19,
+  "goals": [
+    "Przeprowadzisz przegląd lekowy (Geriatric Medication Review) z oceną obciążenia antycholinergicznego w skali ACB.",
+    "Zastosujesz kryteria AGS Beers 2023 jako narzędzie wsparcia decyzji (decision-support), unikając traktowania ich jako sztywnego prawa.",
+    "Zrozumiesz odmienności farmakokinetyczne seniorów: spadek GFR, dystrybucję leków lipofilnych i podatność na upadki."
+  ],
+  "sections": [
+    {
+      "title": "Farmakokinetyka starzejącego się organizmu: „start low, go slow”",
+      "text": "Z wiekiem dochodzi do fizjologicznego spadku przesączania kłębuszkowego (GFR — często ukrytego z powodu niskiej masy mięśniowej i fałszywie prawidłowej kreatyniny), zmniejszenia objętości wody w organizmie oraz wzrostu udziału tkanki tłuszczowej. Leki lipofilne (np. diazepam) wykazują dramatyczne wydłużenie okresu półtrwania (z 30 do ponad 100 godzin), co prowadzi do kumulacji, sedacji i ataksji. Spadek rezerwy wątrobowej CYP i polifarmacja potęgują ryzyko nieprzewidywalnych interakcji."
+    },
+    {
+      "title": "Obciążenie antycholinergiczne (ACB): cichy wróg kognicji",
+      "text": "Leki o działaniu antycholinergicznym blokują postsynaptyczne receptory muskarynowe M1 w hipokampie i korze czołowej, imitując lub pogłębiając objawy otępienia. Skala ACB (Anticholinergic Cognitive Burden) przypisuje lekom punkty: 1 (słabe, np. sertralina, metoprolol, trazodon), 2 (umiarkowane) oraz 3 (silne, np. hydroksyzyna, oksybutynina, amitryptylina, klozapina, klemastyna). Łączny wynik ACB >= 3 wiąże się ze statystycznym wzrostem ryzyka majaczenia, przyspieszonego spadku poznawczego, zaparć, ostrego zatrzymania moczu i upadków."
+    },
+    {
+      "title": "Kryteria AGS Beers 2023: wsparcie decyzji, nie prawo karne",
+      "text": "Kryteria Beers American Geriatrics Society (aktualizacja 2023) to zwalidowane narzędzie wsparcia decyzji (decision-support tool) identyfikujące leki potencjalnie nieodpowiednie (Potentially Inappropriate Medications — PIM) u osób >=65 r.ż. Zalecają unikanie m.in. benzodiazepin i leków z grupy Z (ryzyko upadków, złamań i delirium), leków silnie antycholinergicznych oraz neuroleptyków. Ważna zasada: obecność leku na liście Beers nie oznacza bezwzględnego błędu w sztuce — istnieją wyjątki kliniczne (np. BZD w zespole odstawiennym czy katatonii), a decyzja wymaga indywidualnej oceny korzyści i ryzyka."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Grupa leków",
+      "Kluczowe ryzyko geriatryczne wg Beers",
+      "Punktacja ACB",
+      "Bezpieczniejsza alternatywa"
+    ],
+    "rows": [
+      [
+        "Hydroksyzyna",
+        "Silna sedacja, zaburzenia pamięci, delirium",
+        "ACB = 3 (silne)",
+        "Trazodon w mikrodawce, melatonina, higiena snu"
+      ],
+      [
+        "Oksybutynina",
+        "Zaostrzenie otępienia, zatrzymanie moczu",
+        "ACB = 3 (silne)",
+        "Mirabegron (agonista beta-3), trening pęcherza"
+      ],
+      [
+        "Zolpidem / Zopiklon",
+        "Upadki w nocy, złamania szyjki udowej, splątanie",
+        "ACB = 0 (lecz sedacja)",
+        "CBT-I (terapia poznawczo-behawioralna bezsenności)"
+      ],
+      [
+        "Amitryptylina",
+        "Hipotonia ortostatyczna, arytmie, splątanie",
+        "ACB = 3 (silne)",
+        "Sertralina, escitalopram, duloksetyna w bólu"
+      ]
+    ]
+  },
+  "advanced": "W ocenie czynności nerek u seniora nie należy polegać wyłącznie na stężeniu kreatyniny w surowicy; obligatoryjne jest wyliczenie klirensu kreatyniny wzorem Cockcrofta-Gaulta lub eGFR (CKD-EPI). U pacjenta z wyniszczeniem mięśniowym kreatynina 0,8 mg/dl może odpowiadać skrajnemu upośledzeniu filtracji (eGFR < 30 ml/min).",
+  "summary": "Psychofarmakoterapia geriatryczna wymaga minimalizacji obciążenia antycholinergicznego (ACB) i ostrożności wobec BZD/Z-drugs wg Beers 2023. Zmniejszony klirens nerkowy i wydłużona eliminacja leków lipofilnych nakazują zasadę stopniowego miareczkowania.",
+  "sourceIds": [
+    "ags-beers-criteria-2023",
+    "acb-boustani-2008",
+    "nice-ng97-dementia"
+  ],
+  "questions": [
+    {
+      "id": "psych-ger-pharm-q1",
+      "lessonId": "psychofarmakologia-wieku-podeszlego",
+      "prompt": "83-letni pacjent z łagodnymi zaburzeniami poznawczymi otrzymuje od urologa oksybutyninę na nietrzymanie moczu, od internisty hydroksyzynę na świąd skóry i od psychiatry amitryptylinę w małej dawce na ból neuropatyczny. Jakie jest łączne obciążenie ACB tego zestawu?",
+      "options": [
+        {
+          "text": "Wynik wynosi dokładnie 1 punkt i jest całkowicie bezpieczny dla 90-latka",
+          "explanation": "ACB = 9 jest jednym z najwyższych spotykanych w polifarmacji geriatrycznej i wymaga pilnej depreskrypcji."
+        },
+        {
+          "text": "Bardzo wysokie (ACB = 9 pkt: 3 + 3 + 3), niosące krytyczne ryzyko ostrego delirium, nasilenia otępienia, zatrzymania moczu i upadków",
+          "explanation": "Każdy z tych trzech leków posiada maksymalną punktację ACB = 3; kumulacja blokady muskarynowej drastycznie upośledza funkcje poznawcze seniora."
+        },
+        {
+          "text": "Wynik ACB wynosi 0 punktów, ponieważ leki te nie wpływają na układ cholinergiczny",
+          "explanation": "Wszystkie 3 wymienione substancje są klasycznymi, silnymi antagonistami receptorów muskarynowych."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-ger-pharm-q2",
+      "lessonId": "psychofarmakologia-wieku-podeszlego",
+      "prompt": "Jak należy traktować kryteria AGS Beers 2023 w codziennej praktyce lekarskiej w Polsce i Europie?",
+      "options": [
+        {
+          "text": "Jako kodeks karny przewidujący automatyczną utratę prawa wykonywania zawodu za podanie hydroksyzyny",
+          "explanation": "Kryteria Beers są zaleceniem towarzystwa naukowego, a nie prawem karnym."
+        },
+        {
+          "text": "Jako zalecenie dotyczące wyłącznie dawkowania antybiotyków u noworodków",
+          "explanation": "Kryteria Beers dotyczą pacjentów geriatrycznych w wieku >=65 lat."
+        },
+        {
+          "text": "Jako narzędzie wsparcia decyzji (decision-support) identyfikujące leki potencjalnie nieodpowiednie, wymagające indywidualnej oceny klinicznej, a nie jako bezwzględny zakaz prawny",
+          "explanation": "Kryteria Beers ostrzegają przed typowymi powikłaniami, lecz w uzasadnionych sytuacjach (np. opieka paliatywna) stosowanie leku z listy może być właściwym wyborem."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-ger-pharm-q3",
+      "lessonId": "psychofarmakologia-wieku-podeszlego",
+      "prompt": "Dlaczego benzodiazepiny o długim okresie półtrwania (np. diazepam) są szczególnie niebezpieczne u pacjentów geriatrycznych?",
+      "options": [
+        {
+          "text": "Wzrost zawartości tkanki tłuszczowej i spadek klirensu wydłużają okres półtrwania diazepamu do ponad 100 godzin, prowadząc do kumulacji, ataksji i złamań biodra",
+          "explanation": "Lipofilny lek kumuluje się w organizmie seniora, wywołując przewlekłą sedację dzienną i zwiotczenie mięśni sprzyjające upadkom."
+        },
+        {
+          "text": "Ponieważ diazepam u seniorów natychmiast wywołuje zawał mięśnia sercowego",
+          "explanation": "Diazepam nie jest bezpośrednią przyczyną zawału; grozi powikłaniami sedatywno-upadkowymi."
+        },
+        {
+          "text": "Ponieważ diazepam u osób starszych działa wyłącznie jako stymulant dopaminowy",
+          "explanation": "Diazepam jest modulatorem allosterycznym receptora GABA-A, nie stymulantem."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-ger-pharm-q4",
+      "lessonId": "psychofarmakologia-wieku-podeszlego",
+      "prompt": "Co jest zalecaną alternatywą o niższym obciążeniu antycholinergicznym dla oksybutyniny w leczeniu zespołu pęcherza nadreaktywnego u pacjenta z zaburzeniami poznawczymi?",
+      "options": [
+        {
+          "text": "Podanie haloperidolu domięśniowo",
+          "explanation": "Haloperidol nie leczy pęcherza nadreaktywnego i niesie ryzyko parkinsonizmu."
+        },
+        {
+          "text": "Mirabegron (selektywny agonista receptorów beta-3 adrenergicznych) lub ustrukturyzowany trening mięśni dna miednicy",
+          "explanation": "Mirabegron rozluźnia mięsień wypieracz pęcherza na drodze adrenergicznej, nie blokując receptorów muskarynowych w OUN (ACB = 0)."
+        },
+        {
+          "text": "Zwiększenie dawki amitryptyliny do 150 mg na noc",
+          "explanation": "Amitryptylina potęguje obciążenie antycholinergiczne i może doprowadzić do anurii."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-ger-pharm-q5",
+      "lessonId": "psychofarmakologia-wieku-podeszlego",
+      "prompt": "Dlaczego u wyniszczonego 85-letniego pacjenta prawidłowe stężenie kreatyniny (0,7 mg/dl) może maskować ciężką niewydolność nerek?",
+      "options": [
+        {
+          "text": "Ponieważ nerki u osób starszych filtrują krew przez skórę",
+          "explanation": "Filtracja kłębuszkowa zachodzi w nerkach, nie przez skórę."
+        },
+        {
+          "text": "Ponieważ kreatynina u osób starszych ulega rozpadowi do glukozy",
+          "explanation": "Kreatynina jest metabolitem fosfokreatyny mięśniowej wydalanym przez nerki."
+        },
+        {
+          "text": "Z powodu ubytku masy mięśniowej (sarkopenii) produkcja endogennej kreatyniny jest znikoma, przez co stężenie w surowicy nie odzwierciedla spadku filtracji kłębuszkowej",
+          "explanation": "U seniora z niską masą mięśniową GFR może wynosić <30 ml/min mimo pozornie prawidłowego wyniku kreatyniny (konieczne wyliczenie eGFR/klirensu)."
+        }
+      ],
+      "answer": 2
+    }
+  ]
+}

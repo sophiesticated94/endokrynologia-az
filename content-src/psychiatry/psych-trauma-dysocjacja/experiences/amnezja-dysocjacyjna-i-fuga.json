@@ -239,5 +239,167 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "WHO ICD-11 CDDR (6B61), APA DSM-5-TR, pure content-src architecture"
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "adf-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "amnezja-dysocjacyjna-i-fuga-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-dissociative-amnesia-features"
+      ],
+      "prompt": "Czym charakteryzuje się fuga dysocjacyjna w przebiegu amnezji dysocjacyjnej?",
+      "options": [
+        "Celową, pozornie zorganizowaną podróżą z dala od domu lub miejsca pracy z utratą tożsamości autobiograficznej i niepamięcią okresu fugi po jej zakończeniu",
+        "Napadowym zastyganiem w bezruchu z objawami woskowej giętkości",
+        "Utratą zdolności mówienia przy zachowanej pełnej pamięci autobiograficznej"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-fuga-travel-identity",
+            "label": "Podróż z utratą tożsamości autobiograficznej",
+            "acceptedPhrases": [
+              "fuga",
+              "podróż",
+              "utrata tożsamości",
+              "niepamięć autobiograficzna"
+            ]
+          },
+          {
+            "id": "c-fuga-amnesia-recovery",
+            "label": "Amnezja okresu podróży po ustąpieniu fugi",
+            "acceptedPhrases": [
+              "amnezja",
+              "brak pamięci okresu fugi",
+              "nie pamięta podróży"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Fuga dysocjacyjna łączy pozornie celowe przemieszczanie się z amnezją tożsamości własnej.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "adf-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "amnezja-dysocjacyjna-i-fuga-obj-2"
+      ],
+      "claimIds": [
+        "claim-trauma-dissociative-amnesia-features"
+      ],
+      "prompt": "Przedstaw różnicowanie amnezji dysocjacyjnej od przemijającej amnezji globalnej (TGA) oraz amnezji pourazowej (PTA): zachowanie tożsamości, zdolność zapamiętywania nowych informacji oraz profil pamięci.",
+      "modelAnswer": "Tożsamość: w amnezji dysocjacyjnej pacjent może zapomnieć kim jest (amnezja tożsamości), podczas gdy w TGA tożsamość własna jest zawsze nienaruszona. Nowa pamięć: w amnezji dysocjacyjnej pacjent uczy się nowych informacji na bieżąco (brak amnezji następczej); w TGA zdolność zapamiętywania jest całkowicie zniesiona (pacjent kompulsywnie powtarza te same pytania co minutę). Profil pamięci: amnezja dysocjacyjna dotyczy pamięci epizodyczno-autobiograficznej (często zbieżnej z urazem emocjonalnym) przy nienaruszonej pamięci semantycznej i proceduralnej; PTA wiąże się z urazem głowy i zaburzeniami orientacji.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-identity-retention",
+            "label": "Zachowanie tożsamości własnej (utracona w dysocjacyjnej vs zachowana w TGA)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-ident-tga",
+                "label": "Tożsamość zachowana w TGA vs utracona w dysocjacji",
+                "acceptedPhrases": [
+                  "tożsamość zachowana w tga",
+                  "wie kim jest w tga",
+                  "utrata tożsamości w dysocjacji"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          },
+          {
+            "id": "dim-anterograde-learning",
+            "label": "Zapamiętywanie nowych informacji (zachowane w dysocjacji vs zniesione w TGA)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-anterograde",
+                "label": "Brak nowej pamięci w TGA, powtarzanie pytań vs uczenie w dysocjacji",
+                "acceptedPhrases": [
+                  "powtarzanie pytań",
+                  "tga nie uczy się",
+                  "amnezja następcza w tga",
+                  "uczy się w dysocjacji"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-confuse-tga-dissociation",
+            "patterns": [
+              "tga to dysocjacja po kłótni",
+              "w tga pacjent zapomina kim jest"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: TGA ma podłoże naczyniowo-metaboliczne hipokampa, a pacjent zawsze wie kim jest."
+          }
+        ]
+      },
+      "explanation": "Tożsamość: w amnezji dysocjacyjnej pacjent może zapomnieć kim jest (amnezja tożsamości), podczas gdy w TGA tożsamość własna jest zawsze nienaruszona. Nowa pamięć: w amnezji dysocjacyjnej pacjent uczy się nowych informacji na bieżąco (brak amnezji następczej); w TGA zdolność zapamiętywania jest całkowicie zniesiona (pacjent kompulsywnie powtarza te same pytania co minutę). Profil pamięci: amnezja dysocjacyjna dotyczy pamięci epizodyczno-autobiograficznej (często zbieżnej z urazem emocjonalnym) przy nienaruszonej pamięci semantycznej i proceduralnej; PTA wiąże się z urazem głowy i zaburzeniami orientacji.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "adf-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "amnezja-dysocjacyjna-i-fuga-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-dissociative-amnesia-features"
+      ],
+      "prompt": "Oceń cechy luki pamięciowej u 35-letniego żołnierza po ostrzale bazy.",
+      "hypothesis": "Obraz kliniczny odpowiada amnezji dysocjacyjnej zlokalizowanej związanej z traumą.",
+      "items": [
+        {
+          "id": "adf-ew-1",
+          "text": "Pacjent nie pamięta 4 godzin bezpośredniego ostrzału, pamiętając doskonale wszystko przed i po zdarzeniu",
+          "expected": "supports",
+          "explanation": "Klasyczna amnezja zlokalizowana (circumscribed) wokół urazu."
+        },
+        {
+          "id": "adf-ew-2",
+          "text": "Badanie TK głowy i poziom markerów uszkodzenia mózgu bez odchyleń od normy",
+          "expected": "supports",
+          "explanation": "Wykluczenie urazu mechanicznego mózgu wspiera podłoże dysocjacyjne."
+        },
+        {
+          "id": "adf-ew-3",
+          "text": "Pacjent nie pamięta jak się nazywa, nie potrafi czytać ani pisać i nie pamięta zasad języka polskiego",
+          "expected": "opposes",
+          "explanation": "Utrata pamięci semantycznej i proceduralnej nie występuje w czystej amnezji dysocjacyjnej."
+        }
+      ],
+      "explanation": "Amnezja dysocjacyjna oszczędza pamięć semantyczną i proceduralną.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "transfer": true
+    }
+  ]
 }

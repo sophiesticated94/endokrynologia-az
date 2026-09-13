@@ -24,7 +24,7 @@
     "moduleId": "przysadka"
   },
   "amnezja-dysocjacyjna-i-fuga": {
-    "hash": "7cdef6a22c534570b1abd40d2178d98f2ac20baf1d6f8ef0b374e47c8874e8b3",
+    "hash": "a58532cf6a120ec2da61ce711771627ab192649227818ff6bd4f39e762858dd6",
     "schemaVersion": 2,
     "lessonId": "amnezja-dysocjacyjna-i-fuga",
     "moduleId": "psych-trauma-dysocjacja"
@@ -48,16 +48,28 @@
     "moduleId": "psych-farmakologia"
   },
   "borderline-bpd-mechanizmy": {
-    "hash": "7284340b7018862653db6f98fac22cba2d3bc3d1bd70926d87d9c661edd61406",
+    "hash": "2e67c2816c8e212dbed3cfec4d4161b807d72025c6da7b496a7d4c60a9f59e5d",
     "schemaVersion": 2,
     "lessonId": "borderline-bpd-mechanizmy",
     "moduleId": "psych-trauma-dysocjacja"
   },
   "bpd-roznicowanie-cptsd-chad-adhd": {
-    "hash": "3e779c465267657f45844bf8f9a9ff05ac4da3ada1c287183c0f73870c419688",
+    "hash": "62b5db242c7d11ac429fa72f161071588438ac70c14c51f2f58adbb0f1cae6da",
     "schemaVersion": 2,
     "lessonId": "bpd-roznicowanie-cptsd-chad-adhd",
     "moduleId": "psych-trauma-dysocjacja"
+  },
+  "bpsd-objawy-behawioralne-i-psychologiczne": {
+    "hash": "e1051f57a7a882044d6b33cb1b60f4cbdf60935d8d6e4656f9c6cb305e971a94",
+    "schemaVersion": 2,
+    "lessonId": "bpsd-objawy-behawioralne-i-psychologiczne",
+    "moduleId": "psych-organiczne"
+  },
+  "choroba-alzheimera-wzorzec-i-progresja": {
+    "hash": "20d86139b24268bad98df18ea7212caa9d914e1e9c38979aab886f8d15215e4b",
+    "schemaVersion": 2,
+    "lessonId": "choroba-alzheimera-wzorzec-i-progresja",
+    "moduleId": "psych-organiczne"
   },
   "ciaza": {
     "hash": "8e76fdbd0949d311d5c71cbdc8c8935e2f54f8add69657b41e170a9cd1f32df2",
@@ -66,7 +78,7 @@
     "moduleId": "tarczyca"
   },
   "cptsd-zlozone-ptsd-icd11": {
-    "hash": "6a4ade229cb9adbbcd54c6575489fdb0cd25652898fd14a9febee68f624ec3a3",
+    "hash": "6553942759dd888c759df4047fa60c652aef01969090207a233d0c203bab9ad5",
     "schemaVersion": 2,
     "lessonId": "cptsd-zlozone-ptsd-icd11",
     "moduleId": "psych-trauma-dysocjacja"
@@ -84,13 +96,25 @@
     "moduleId": "nadnercza"
   },
   "dbt-interwencja-kryzysowa-i-bezpieczenstwo": {
-    "hash": "f8c03a39ee1fd15cf9ef660b203bc7f7e2f997c364b58ec9c0e50875d16a0036",
+    "hash": "ee3255322ecbf306ca874b4dc9687478597c64c3417b5cf6d3aab33fd0450b4b",
     "schemaVersion": 2,
     "lessonId": "dbt-interwencja-kryzysowa-i-bezpieczenstwo",
     "moduleId": "psych-trauma-dysocjacja"
   },
+  "delirium-rozpoznanie-i-dynamika": {
+    "hash": "d7b21a0bc298f56877eab997bf3d75b6b64766c5bc235733fc37185b83e7ef26",
+    "schemaVersion": 2,
+    "lessonId": "delirium-rozpoznanie-i-dynamika",
+    "moduleId": "psych-organiczne"
+  },
+  "delirium-vs-otepienie-vs-depresja": {
+    "hash": "8926a1a069570a31c18778c91aad758e43597622421b1050bf4513baa3a96bd8",
+    "schemaVersion": 2,
+    "lessonId": "delirium-vs-otepienie-vs-depresja",
+    "moduleId": "psych-organiczne"
+  },
   "depersonalizacja-i-derealizacja": {
-    "hash": "b212cc5574d596316ea5f0ca4ed8ab69fe1d47f8dc52475002a3a62f6af392a2",
+    "hash": "30ab19d2b82e10277baf96c05f5c174a4d1904b4d978754e2a92ea6cc1ce96c4",
     "schemaVersion": 2,
     "lessonId": "depersonalizacja-i-derealizacja",
     "moduleId": "psych-trauma-dysocjacja"
@@ -101,11 +125,23 @@
     "lessonId": "depresja-fenotypy-i-kryteria",
     "moduleId": "psych-afektywne"
   },
+  "depresja-wieku-podeszlego-i-poznanie": {
+    "hash": "05cdcac733fd9b816bf99cbd6c67574b25dd25ad890b22d0c565c2eab80518e4",
+    "schemaVersion": 2,
+    "lessonId": "depresja-wieku-podeszlego-i-poznanie",
+    "moduleId": "psych-organiczne"
+  },
   "diagnostyka": {
     "hash": "7465b81e1458b2592770e4d5b51f9ee2d5a43831caaf7704f2c3c0461cf9b388",
     "schemaVersion": 2,
     "lessonId": "diagnostyka",
     "moduleId": "tarczyca"
+  },
+  "diagnostyka-ostrego-zaburzenia-swiadomosci": {
+    "hash": "0116dd6338ba3be34ee9684de09d50e1218a7b228c9f19685fd5afc2960cb204",
+    "schemaVersion": 2,
+    "lessonId": "diagnostyka-ostrego-zaburzenia-swiadomosci",
+    "moduleId": "psych-organiczne"
   },
   "diagnostyka-roznicowa-algorytmy": {
     "hash": "e46030175c9c5cf3ec19fa6847ee4f3e9c50ad76821a2ec1dd002cad214055f7",
@@ -114,13 +150,13 @@
     "moduleId": "psych-afektywne"
   },
   "did-roznicowanie-bpd-i-psychoza": {
-    "hash": "2e28103c383f9d54d8afbabc22c3881a57a98c11251778da6fed810b74ff1a20",
+    "hash": "8582707df780c842030a6146917d591acb27401d3ed53820e9c05428357b5dba",
     "schemaVersion": 2,
     "lessonId": "did-roznicowanie-bpd-i-psychoza",
     "moduleId": "psych-trauma-dysocjacja"
   },
   "did-tozsamosc-i-rozszczepienie": {
-    "hash": "066e58bad684ca917a0291e4cf9a405618cac682bbffad522308d6b0b305440e",
+    "hash": "758e569cff21f33e50cb6134de4f4ee241274b20b70001a185f39e507a055e96",
     "schemaVersion": 2,
     "lessonId": "did-tozsamosc-i-rozszczepienie",
     "moduleId": "psych-trauma-dysocjacja"
@@ -263,6 +299,12 @@
     "lessonId": "monitorowanie-stezen-tdm",
     "moduleId": "psych-farmakologia"
   },
+  "naczyniowe-zaburzenia-poznawcze-vad": {
+    "hash": "74e7969cf5151f1a5a2e1367389c69d85ab5ead072cada4578a0be05d5f6b78f",
+    "schemaVersion": 2,
+    "lessonId": "naczyniowe-zaburzenia-poznawcze-vad",
+    "moduleId": "psych-organiczne"
+  },
   "nadczynnosc": {
     "hash": "ba8f49f8dfd9dcf2f02513e0bb724b9fff01c071fb7057b07a8da3398b197e39",
     "schemaVersion": 2,
@@ -342,7 +384,7 @@
     "moduleId": "psych-afektywne"
   },
   "osobowosc-icd11-wymiary": {
-    "hash": "fbd24337e8153ae21aaf71672b3ddb487794176b8768eb5e6f73668370743159",
+    "hash": "ff48c17b9318ccfe8ab7726f26bf48e410fa857b4f8fb69bd60549f3b9bad4a6",
     "schemaVersion": 2,
     "lessonId": "osobowosc-icd11-wymiary",
     "moduleId": "psych-trauma-dysocjacja"
@@ -359,8 +401,20 @@
     "lessonId": "ostre-stany-toksyczne-zespol-serotoninowy",
     "moduleId": "psych-farmakologia"
   },
+  "otepienie-czolowo-skroniowe-bvftd": {
+    "hash": "8953fce4592e52acdac2b54c86309e5b35f0ca9fc0c40409c396affcbeb3fc3f",
+    "schemaVersion": 2,
+    "lessonId": "otepienie-czolowo-skroniowe-bvftd",
+    "moduleId": "psych-organiczne"
+  },
+  "otepienie-z-cialami-lewyego-i-parkinson": {
+    "hash": "8080c6e930dcebda0d23510c05f45b32589cc9701a50ac460579f7770d633b40",
+    "schemaVersion": 2,
+    "lessonId": "otepienie-z-cialami-lewyego-i-parkinson",
+    "moduleId": "psych-organiczne"
+  },
   "pamiec-traumatyczna-i-extinction": {
-    "hash": "8ec5e6cfe52b86e8dc6ef903b236f3699cc8541db70d05b5fa6b5910fbbbe45f",
+    "hash": "c2c9dead04b4bdab3502688fd2efa3ae9b1af4a93d710a3013ce52a6bbadb028",
     "schemaVersion": 2,
     "lessonId": "pamiec-traumatyczna-i-extinction",
     "moduleId": "psych-trauma-dysocjacja"
@@ -491,6 +545,12 @@
     "lessonId": "przytarczyce-matematyka-kinetyka-mineralizacji",
     "moduleId": "przytarczyce"
   },
+  "psychofarmakologia-wieku-podeszlego": {
+    "hash": "5320531d16f7c8de5e2b1eff05da03919b23d68ad946924cbc8f8cb41bd2ab00",
+    "schemaVersion": 2,
+    "lessonId": "psychofarmakologia-wieku-podeszlego",
+    "moduleId": "psych-organiczne"
+  },
   "psychopatologia-objawow": {
     "hash": "5e472077341376e155e72ce47dd51caa535060460c81fd31e61f89e0feac2627",
     "schemaVersion": 2,
@@ -498,7 +558,7 @@
     "moduleId": "psych-afektywne"
   },
   "psychoterapia-traumy-fazy-i-metody": {
-    "hash": "fc6bd76c3a06758fee2755233eeb82e51437af9b52c928998463e16ab03d0346",
+    "hash": "5d81d73d71bc882084c4f3f8aeac6c2ee1e12cd051d0ca9555c759cd7128ee1b",
     "schemaVersion": 2,
     "lessonId": "psychoterapia-traumy-fazy-i-metody",
     "moduleId": "psych-trauma-dysocjacja"
@@ -510,7 +570,7 @@
     "moduleId": "psych-afektywne"
   },
   "ptsd-kryteria-i-fenomenologia": {
-    "hash": "c777c635959706df7ab463242c0bba4d3b3a1ab359d210bb01bd205be2153990",
+    "hash": "6b0e216d1155aa119756191807d12f9a5a416bf8eeda62816f7125cf1f8e6df3",
     "schemaVersion": 2,
     "lessonId": "ptsd-kryteria-i-fenomenologia",
     "moduleId": "psych-trauma-dysocjacja"
@@ -534,7 +594,7 @@
     "moduleId": "nadnercza"
   },
   "reakcja-na-stres-asr-vs-asd": {
-    "hash": "6088a4f6b3be1404a98b1452b45c423b8f23401b0c7b6166bfccafcaa77b9d1d",
+    "hash": "d21f38dd264f020330ec78312c2679f6c5863c56d917baee28261d9344f331e8",
     "schemaVersion": 2,
     "lessonId": "reakcja-na-stres-asr-vs-asd",
     "moduleId": "psych-trauma-dysocjacja"
@@ -570,7 +630,7 @@
     "moduleId": "psych-afektywne"
   },
   "spektrum-dysocjacji-kontinuum": {
-    "hash": "e922b174ffaee6faaf12c436b392eae123e4bcbd680266dc6a6967138313fbf0",
+    "hash": "c12f0c57a74959a67a17ef90badac31aa5bb642b505f69c45835d621dbd58391",
     "schemaVersion": 2,
     "lessonId": "spektrum-dysocjacji-kontinuum",
     "moduleId": "psych-trauma-dysocjacja"
@@ -586,6 +646,12 @@
     "schemaVersion": 2,
     "lessonId": "substancje-i-secondary-causes",
     "moduleId": "psych-afektywne"
+  },
+  "szybko-postepujace-zespoly-otepienne": {
+    "hash": "e4467c63390b82d8aee08f303d6b94610c25dc5e669a006fe46bd4d1cb5b621c",
+    "schemaVersion": 2,
+    "lessonId": "szybko-postepujace-zespoly-otepienne",
+    "moduleId": "psych-organiczne"
   },
   "tarczyca-chemia-farmakologia": {
     "hash": "898667568833e25228cc49013dbd938374286086354263c442026f5a8348e364",
@@ -624,13 +690,13 @@
     "moduleId": "psych-farmakologia"
   },
   "trauma-neurobiologia-zagrozenia": {
-    "hash": "17d884b33dc79f9a5d8a672e314be1d1fbb20298e34b43a8afe8238eeb98bee0",
+    "hash": "a2e239231b7667320c39fd5fbae34fcd92e66c1f90104251bf1012b5db6fa5ac",
     "schemaVersion": 2,
     "lessonId": "trauma-neurobiologia-zagrozenia",
     "moduleId": "psych-trauma-dysocjacja"
   },
   "trauma-somatyka-mimiki-i-bezpieczenstwo": {
-    "hash": "f08b20fca471ab786b615e6832364531df55b3bd2812c850276749d898b85057",
+    "hash": "183e132787b4a1d23aed7b29863f84cf09227fc9c85f11c8ebb6309001e8eaf9",
     "schemaVersion": 2,
     "lessonId": "trauma-somatyka-mimiki-i-bezpieczenstwo",
     "moduleId": "psych-trauma-dysocjacja"
@@ -671,6 +737,12 @@
     "lessonId": "zaburzenia-osobowosci-wymiarowe",
     "moduleId": "psych-afektywne"
   },
+  "zaburzenia-poznawcze-mci-a-otepienie": {
+    "hash": "ec414f48879eae47d5acad4cd78837130029293f7ff3d39dc51ff4469ee7252f",
+    "schemaVersion": 2,
+    "lessonId": "zaburzenia-poznawcze-mci-a-otepienie",
+    "moduleId": "psych-organiczne"
+  },
   "zaburzenia-ruchowe-polekowe-eps-dysdyskinezy": {
     "hash": "b164ced18d29540993e51370a41058216ae082ef158dddadfcca345fe276fbdd",
     "schemaVersion": 2,
@@ -688,6 +760,12 @@
     "schemaVersion": 2,
     "lessonId": "zapalenia",
     "moduleId": "tarczyca"
+  },
+  "zdolnosc-decyzyjna-capacity-i-safeguarding": {
+    "hash": "b1e9a1a7d8070173ad7782a5637141939fc2c9dc356730e28fa88621b32b71e0",
+    "schemaVersion": 2,
+    "lessonId": "zdolnosc-decyzyjna-capacity-i-safeguarding",
+    "moduleId": "psych-organiczne"
   },
   "zespol-conna": {
     "hash": "105fb17c664d0966d5328ee9f237da46630efe6a5a29f9905d3f131ab2cce0ba",

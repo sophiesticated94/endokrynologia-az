@@ -1,0 +1,164 @@
+{
+  "id": "diagnostyka-ostrego-zaburzenia-swiadomosci",
+  "moduleId": "psych-organiczne",
+  "title": "Diagnostyka ostrego zaburzenia świadomości: Cause Hunt i badania",
+  "subtitle": "Systematyczne poszukiwanie odwracalnych przyczyn majaczenia bez fałszywej pewności",
+  "group": "Ostre zaburzenia świadomości i zespoły poznawcze",
+  "minutes": 17,
+  "goals": [
+    "Przeprowadzisz ustrukturyzowany proces poszukiwania przyczyn majaczenia (Cause Hunt).",
+    "Zidentyfikujesz ukryte wyzwalacze delirium: ból, zatrzymanie moczu, zaparcie, hipoksję i leki.",
+    "Zrozumiesz zasadę: prawidłowe rutynowe badania nie oznaczają automatycznie pierwotnego tła psychicznego."
+  ],
+  "sections": [
+    {
+      "title": "Cause Hunt: kategorie przyczyn somatycznych i środowiskowych",
+      "text": "W majaczeniu rzadko występuje jedna izolowana przyczyna — typowo dochodzi do nałożenia wielu czynników podatności (np. wiek, otępienie, niedosłuch) i czynników wyzwalających. Akronim PINCHES ułatwia systematyczny przegląd: Pain (ból), Infection (infekcja ZUM, zapalenie płuc), Nutrition/Metabolic (hipo/hiperglikemia, Na, K, Ca), Constipation/retention (zaklinowanie stolca, pęcherz moczowy), Hydration/Hypoxia (odwodnienie, niewydolność serca, POChP), Endocrine/Electrolytes (tarczyca, mocznica), Sedatives/Drugs (nowe leki, BZD, opioidy, leki antycholinergiczne)."
+    },
+    {
+      "title": "Ukryte wyzwalacze geriatryczne: pęcherz i jelita",
+      "text": "Dwa najczęściej pomijane wyzwalacze delirium to ostre zatrzymanie moczu oraz stolcowe zaklinowanie jelit (fecaloma). U starszego pacjenta z zaburzeniami poznawczymi rozciągnięcie ścian pęcherza lub odbytnicy generuje masywny dopływ nocyceptywny do OUN, wyzwalając pobudzenie psychoruchowe bez klasycznych skarg na ból. Przyłóżkowe USG pęcherza moczowego (bladderscan) oraz badanie per rectum są obowiązkowymi elementami workupu majaczenia."
+    },
+    {
+      "title": "Pułapka „ujemnych badań” w ostrym zaburzeniu zachowania",
+      "text": "Prawidłowe wyniki morfologii, CRP, elektrolitów i TK głowy zmniejszają prawdopodobieństwo jawnych infekcji bakteryjnych, zaburzeń elektrolitowych czy ostrego krwawienia śródczaszkowego. Nie stanowią one jednak dowodu na „chorobę psychiczną” — ostre splątanie może wynikać z bólu, zatrzymania moczu, interakcji lekowych, hipoksji w nocy lub bezdrgawkowego stanu padaczkowego (NCSE), których nie widać w standardowych badaniach krwi."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Kategoria przyczyny",
+      "Kluczowe badania",
+      "Częsty błąd postępowania"
+    ],
+    "rows": [
+      [
+        "Infekcja",
+        "Badanie ogólne i posiew moczu, RTG klatki piersiowej",
+        "Ignorowanie braku gorączki u osłabionego seniora"
+      ],
+      [
+        "Zatrzymanie moczu / kału",
+        "Palpacja podbrzusza, USG pęcherza, per rectum",
+        "Włączenie leku uspokajającego zamiast założenia cewnika"
+      ],
+      [
+        "Toksyczność lekowa",
+        "Przegląd lekowy (ACB, opioidy, sedatywy, tiazydy)",
+        "Uznanie polifarmacji za „niezmienną” i dołożenie neuroleptyku"
+      ],
+      [
+        "Metaboliczne / narządowe",
+        "Glikemia, Na, K, Ca, mocznik, kreatynina, gazometria",
+        "Niewykonanie gazometrii przy prawidłowym RTG płuc"
+      ]
+    ]
+  },
+  "advanced": "W oddziałach intensywnej terapii zwalidowanym narzędziem monitorowania majaczenia jest CAM-ICU (Confusion Assessment Method for the ICU) lub ICDSC. Ocenia ono fluktuację czuwania w skali RASS oraz obecność inattention w teście ściskania dłoni na literę „A” (np. słowo SAVEAHAART), co pozwala na wiarygodne badanie pacjentów zaintubowanych.",
+  "summary": "Diagnostyka majaczenia to systematyczny Cause Hunt. Przed przypisaniem pacjentowi pierwotnego zaburzenia psychicznego należy obligatoryjnie wykluczyć zatrzymanie moczu, zaparcie, ból, infekcję i toksyczność lekową.",
+  "sourceIds": [
+    "nice-cg103-delirium",
+    "4at-validation-bellelli-2014"
+  ],
+  "questions": [
+    {
+      "id": "psych-diag-del-q1",
+      "lessonId": "diagnostyka-ostrego-zaburzenia-swiadomosci",
+      "prompt": "81-letni pacjent w 1. dobie po zabiegu pomostowania naczyniowego nagle staje się skrajnie pobudzony, krzyczy i próbuje zeskoczyć z łóżka. Jaki krok diagnostyczno-terapeutyczny powinien poprzedzać podanie leku uspokajającego?",
+      "options": [
+        {
+          "text": "Natychmiastowe podanie 10 mg haloperidolu domięśniowo bez badania fizykalnego",
+          "explanation": "Podanie wysokiej dawki typowego neuroleptyku seniorowi bez zbadania przyczyny somatycznej jest błędem sztuki."
+        },
+        {
+          "text": "Konsultacja psychoanalityczna w celu przepracowania lęku przed śmiercią",
+          "explanation": "Ostre delirium wymaga pilnego postępowania somatycznego, nie psychoterapii wglądowej."
+        },
+        {
+          "text": "Ocena parametrów życiowych, wykluczenie hipoksji oraz zbadanie podbrzusza (USG pęcherza w kierunku zatrzymania moczu) i kontrola bólu",
+          "explanation": "Nagłe pobudzenie pooperacyjne bardzo często wynika z ostrego zatrzymania moczu lub niedostatecznej analgezji; sedacja bez zbadania pacjenta grozi pęknięciem pęcherza lub zapaścią."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-diag-del-q2",
+      "lessonId": "diagnostyka-ostrego-zaburzenia-swiadomosci",
+      "prompt": "Dlaczego brak gorączki i prawidłowa liczba leukocytów u 86-letniego pacjenta z majaczeniem NIE wykluczają aktywnej infekcji bakteryjnej?",
+      "options": [
+        {
+          "text": "Ponieważ układ immunologiczny osób w podeszłym wieku może nie generować typowej odpowiedzi gorączkowej (immunosenescencja)",
+          "explanation": "U seniorów jedyną manifestacją ciężkiego zakażenia układu moczowego lub zapalenia płuc bywa nagłe majaczenie i spadek ciśnienia tętniczego."
+        },
+        {
+          "text": "Ponieważ leukocytoza występuje wyłącznie u pacjentów ze schizofrenią hebefreniczną",
+          "explanation": "Leukocytoza jest wskaźnikiem hematologicznym, niezwiązanym z podtypami schizofrenii."
+        },
+        {
+          "text": "Ponieważ bakterie u osób starszych nie wywołują stanu zapalnego",
+          "explanation": "Bakterie wywołują zapalenie, lecz odpowiedź ogólnoustrojowa może przebiegać bez gorączki."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-diag-del-q3",
+      "lessonId": "diagnostyka-ostrego-zaburzenia-swiadomosci",
+      "prompt": "Jak prawidłowo interpretować informację: „badania laboratoryjne (morfologia, CRP, TSH, glikemia, elektrolity) oraz TK głowy są w normie” u starszej osoby z ostrym splątaniem?",
+      "options": [
+        {
+          "text": "Oznaczają, że pacjent symuluje objawy w celu wymuszenia opieki",
+          "explanation": "Majaczenie jest biologicznym stanem zagrożenia mózgu, a nie symulacją."
+        },
+        {
+          "text": "Zmniejszają prawdopodobieństwo jaskrawych zaburzeń metabolicznych i ostrego krwotoku, lecz nie dowodzą etiologii pierwotnej i wymagają dalszej diagnostyki somatycznej",
+          "explanation": "Wyniki ujemne eliminują jedynie część przyczyn; delirium może wynikać z leków, bezdrgawkowego stanu padaczkowego, bólu czy hipoksji."
+        },
+        {
+          "text": "Stanowią bezpośredni dowód na późny debiut schizofrenii paranoidalnej",
+          "explanation": "Ujemne wyniki badań laboratoryjnych nie są testem potwierdzającym schizofrenię."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-diag-del-q4",
+      "lessonId": "diagnostyka-ostrego-zaburzenia-swiadomosci",
+      "prompt": "Które badanie przyłóżkowe jest najbardziej uzasadnione u pacjenta geriatrycznego z nagłym pobudzeniem wieczornym i brakiem mikcji przez ostatnie 10 godzin?",
+      "options": [
+        {
+          "text": "Badanie rezonansu magnetycznego całego ciała w sekwencji angiograficznej",
+          "explanation": "Angiografia całego ciała nie jest badaniem pierwszego rzutu przy podejrzeniu zatrzymania moczu."
+        },
+        {
+          "text": "Test plam atramentowych Rorschacha",
+          "explanation": "Testy projekcyjne są całkowicie nieprzydatne i niewykonalne w ostrym zespole majaczeniowym."
+        },
+        {
+          "text": "Przyłóżkowe USG pęcherza moczowego (bladderscan) lub cewnikowanie diagnostyczne",
+          "explanation": "Pozwala na natychmiastowe wykrycie zatrzymania moczu, które bywa bezpośrednią i w pełni odwracalną przyczyną majaczenia."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-diag-del-q5",
+      "lessonId": "diagnostyka-ostrego-zaburzenia-swiadomosci",
+      "prompt": "Jaka jest rola narzędzia CAM-ICU w oddziałach intensywnej terapii?",
+      "options": [
+        {
+          "text": "Umożliwia standaryzowaną ocenę majaczenia u pacjentów krytycznie chorych, w tym zaintubowanych i wentylowanych mechanicznie",
+          "explanation": "CAM-ICU bada inattention metodą niewymagającą mowy (ściskanie dłoni na bodziec literowy) w połączeniu z oceną poziomu sedacji RASS."
+        },
+        {
+          "text": "Służy do automatycznego wyliczania dawki dożylnej propofolu bez udziału lekarza",
+          "explanation": "CAM-ICU jest narzędziem diagnostycznym, nie pompą infuzyjną."
+        },
+        {
+          "text": "Wykrywa obecność mutacji genetycznych predysponujących do choroby Alzheimera",
+          "explanation": "CAM-ICU nie bada genetyki ani predyspozycji do otępienia."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

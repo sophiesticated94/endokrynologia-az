@@ -284,5 +284,182 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, ILAE 2017, NICE NG217, ISSTD, pure content-src architecture"
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "trauma-som-bank-1",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "trauma-somatyka-mimiki-i-bezpieczenstwo-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-tle-mimic-aura-stereotypy",
+        "claim-trauma-no-negative-test-confirmation"
+      ],
+      "prompt": "22-letni mężczyzna bez wywiadu traumy zgłasza powtarzające się epizody trwające 40–90 sekund, podczas których czuje nagłe odrealnienie (jak we śnie), dziwne uczucie „wznoszenia się z żołądka ku gardłu” oraz nieprzyjemny zapach spalenizny. Świadkowie podają, że w tym czasie mlaska ustami i nie reaguje na pytania, a po epizodzie jest zdezorientowany przez 15 minut. Zwykłe badanie EEG nie wykazało zmian napadowych. Przedstaw postępowanie i wyjaśnij pułapkę diagnostyczną.",
+      "modelAnswer": "Postępowanie diagnostyczne: 1) Podejrzenie padaczki skroniowej (TLE): Objawy są klasyczną prezentacją napadów ogniskowych z zaburzeniami świadomości: aura nadbrzuszna (epigastric aura), omamy węchowe (uncinate fits), automatyzmy ustno-twarzowe (mlaskanie), stereotypowy czas trwania w sekundach oraz stan ponapadowy (postictal confusion). 2) Pułapka „prawidłowego EEG”: Prawidłowy rutynowy zapis EEG czuwania występuje nawet u 40-50% chorych z padaczką skroniową w okresie międzynapadowym. Nie wyklucza padaczki! 3) Następne kroki: Skierowanie do neurologa / epileptologa, wykonanie EEG po deprywacji snu lub wideo-EEG oraz rezonansu magnetycznego (MRI) mózgowia w protokole padaczkowym (ocena hipokampów pod kątem stwardnienia w obrębie hipokampa - MTS). Błędem byłoby zamknięcie diagnozy jako „zaburzenie dysocjacyjne”.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-tle-recognition",
+            "label": "Rozpoznanie fenotypu padaczki skroniowej (aura, automatyzmy, czas trwania)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-tle-phenotype",
+                "label": "Aura nadbrzuszna, omam węchowy, mlaskanie, stereotypowość w sekundach, stan ponapadowy",
+                "acceptedPhrases": [
+                  "aura nadbrzuszna",
+                  "omam węchowy",
+                  "mlaskanie",
+                  "automatyzmy",
+                  "stan ponapadowy",
+                  "stereotypowość",
+                  "sekundy"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          },
+          {
+            "id": "dim-eeg-pitfall-and-workup",
+            "label": "Pułapka prawidłowego EEG i dalszy algorytm neurologiczny",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-eeg-workup",
+                "label": "Rutynowy EEG nie wyklucza padaczki, konieczne EEG po deprywacji snu / wideo-EEG i MRI protokół padaczkowy",
+                "acceptedPhrases": [
+                  "rutynowy eeg nie wyklucza",
+                  "deprywacja snu",
+                  "wideo-eeg",
+                  "mri w protokole padaczkowym",
+                  "konsultacja neurologiczna"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-close-psychogenic-on-normal-eeg",
+            "patterns": [
+              "skoro eeg jest prawidłowe to na pewno dysocjacja",
+              "wykluczono padaczkę na podstawie rutynowego eeg"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd krytyczny: Prawidłowy rutynowy EEG nie wyklucza padaczki skroniowej. Zaniechanie diagnostyki stwarza bezpośrednie zagrożenie dla pacjenta."
+          }
+        ]
+      },
+      "explanation": "Postępowanie diagnostyczne: 1) Podejrzenie padaczki skroniowej (TLE): Objawy są klasyczną prezentacją napadów ogniskowych z zaburzeniami świadomości: aura nadbrzuszna (epigastric aura), omamy węchowe (uncinate fits), automatyzmy ustno-twarzowe (mlaskanie), stereotypowy czas trwania w sekundach oraz stan ponapadowy (postictal confusion). 2) Pułapka „prawidłowego EEG”: Prawidłowy rutynowy zapis EEG czuwania występuje nawet u 40-50% chorych z padaczką skroniową w okresie międzynapadowym. Nie wyklucza padaczki! 3) Następne kroki: Skierowanie do neurologa / epileptologa, wykonanie EEG po deprywacji snu lub wideo-EEG oraz rezonansu magnetycznego (MRI) mózgowia w protokole padaczkowym (ocena hipokampów pod kątem stwardnienia w obrębie hipokampa - MTS). Błędem byłoby zamknięcie diagnozy jako „zaburzenie dysocjacyjne”.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-who-mhgap-2023"
+      ],
+      "transfer": true,
+      "engineBinding": {
+        "engineId": "trauma-dissociation",
+        "presetId": "trauma-neuro-mimic",
+        "expectedOutputVersion": 1
+      }
+    },
+    {
+      "id": "trauma-som-bank-2",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "trauma-somatyka-mimiki-i-bezpieczenstwo-obj-2"
+      ],
+      "claimIds": [
+        "claim-trauma-recovered-memory-harm"
+      ],
+      "prompt": "Dlaczego techniki „odzyskiwania wypartych wspomnień” (np. w hipnozie lub intensywnej sugestii) są uznawane za niebezpieczne i sprzeczne ze współczesnymi wytycznymi?",
+      "options": [
+        "Mogą prowadzić do jatrogennego wygenerowania fałszywych wspomnień (pseudomemories), gwałtownej dekompensacji psychicznej i nasilenia dysocjacji",
+        "Zmniejszają stężenie endorfin w mózgu pacjenta",
+        "Są skuteczne jedynie wtedy, gdy stosuje się je w warunkach oddziału somatycznego"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-false-memories",
+            "label": "Ryzyko tworzenia fałszywych wspomnień (pseudomemories / jatrogenia)",
+            "acceptedPhrases": [
+              "fałszywe wspomnienia",
+              "pseudomemories",
+              "jatrogenia",
+              "jatrogenne",
+              "sugestia"
+            ]
+          },
+          {
+            "id": "c-decompensation-risk",
+            "label": "Ryzyko dekompensacji i dezinformacji",
+            "acceptedPhrases": [
+              "dekompensacja",
+              "nasilenie objawów",
+              "brak dowodów",
+              "zagrożenie"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Pamięć nie działa jak magnetowid; techniki perswazyjnego odzyskiwania wspomnień niosą ogromne ryzyko implantacji pseudowspomnień i jatrogenii.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "src-apa-ptsd-guideline-2017",
+        "src-isstd-adult-did-2011"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "trauma-som-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "trauma-somatyka-mimiki-i-bezpieczenstwo-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-substance-dpdr-exclusion"
+      ],
+      "prompt": "Oceń znaczenie danych klinicznych w różnicowaniu odrealnienia polekowego/toksycznego od pierwotnego zaburzenia dysocjacyjnego.",
+      "hypothesis": "Odrealnienie u pacjenta ma podłoże toksyczne / polekowe.",
+      "items": [
+        {
+          "id": "trauma-som-ew-1",
+          "text": "Objawy derealizacji wystąpiły bezpośrednio po zażyciu syntetycznych kannabinoidów i ustąpiły całkowicie po 24 godzinach",
+          "expected": "supports",
+          "explanation": "Czasowy związek ze spożyciem substancji i ustąpienie objawów po eliminacji toksyny."
+        },
+        {
+          "id": "trauma-som-ew-2",
+          "text": "Epizody derealizacji pojawiają się nawrotowo od 5 lat w odpowiedzi na kłótnie z partnerem, a testy toksykologiczne są ujemne",
+          "expected": "opposes",
+          "explanation": "Świadczy o przewlekłym zaburzeniu psychogennym (DPDR lub dysocjacji traumatycznej)."
+        },
+        {
+          "id": "trauma-som-ew-3",
+          "text": "Wystąpienie objawów dysocjacyjnych po włączeniu leku o działaniu cholinolitycznym z towarzyszącym poszerzeniem źrenic i suchością w ustach",
+          "expected": "supports",
+          "explanation": "Objawy obwodowe i ośrodkowe zespołu cholinolitycznego."
+        }
+      ],
+      "explanation": "Zawsze należy wykluczyć wpływ substancji psychoaktywnych i leków przed rozpoznaniem trwałej dysocjacji.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022"
+      ],
+      "transfer": true
+    }
+  ]
 }

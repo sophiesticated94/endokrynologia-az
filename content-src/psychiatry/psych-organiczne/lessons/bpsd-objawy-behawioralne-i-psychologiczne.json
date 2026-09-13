@@ -1,0 +1,169 @@
+{
+  "id": "bpsd-objawy-behawioralne-i-psychologiczne",
+  "moduleId": "psych-organiczne",
+  "title": "BPSD: pobudzenie, agresja i psychoza w otępieniu",
+  "subtitle": "Poszukiwanie odwracalnych przyczyn (ból, ZUM, retencja), interwencje niefarmakologiczne i ryzyko neuroleptyków",
+  "group": "Geriatria kliniczna, bezpieczeństwo i etyka",
+  "minutes": 18,
+  "goals": [
+    "Zrozumiesz i wdrożysz zasadę „najpierw poszukaj przyczyny” (Search for Cause) w każdym nowym epizodzie BPSD.",
+    "Zidentyfikujesz ból, zaparcie, zatrzymanie moczu i infekcję jako główne wyzwalacze agresji i krzyku.",
+    "Poznasz ograniczenia i ryzyko leków przeciwpsychotycznych w otępieniu (udar mózgu, 1,5–1,8x wzrost śmiertelności)."
+  ],
+  "sections": [
+    {
+      "title": "BPSD jako niespecyficzna manifestacja cierpienia i niezaspokojonych potrzeb",
+      "text": "Objawy behawioralne i psychologiczne w otępieniu (Behavioural and Psychological Symptoms of Dementia — BPSD) obejmują: pobudzenie psychoruchowe, agresję fizyczną i słowną, urojenia (np. niewierności małżeńskiej, złodziei w domu — zespół „okradania”), omamy, błądzenie (wandering), zaburzenia snu i wokalizacje. W zaawansowanym otępieniu pacjent traci zdolność werbalnego zgłaszania dolegliwości — agresja przy toalecie jest często jedynym dostępnym sposobem zakomunikowania ostrego bólu kolana lub pieczenia przy oddawaniu moczu."
+    },
+    {
+      "title": "Algorytm poszukiwania odwracalnych wyzwalaczy",
+      "text": "Pojawienie się nowego lub zaostrzenie dotychczasowego pobudzenia NIE jest wskazaniem do automatycznego włączenia leku przeciwpsychotycznego. Obowiązuje systematyczna weryfikacja: 1) Ból somatyczny (choroba zwyrodnieniowa, odleżyna, uraz po upadku — ocena skalami behawioralnymi Doloplus/PAINAD); 2) Infekcja (bezobjawowy ZUM, zapalenie płuc); 3) Zatrzymanie moczu lub zaklinowanie stolca; 4) Leki (włączenie leku antycholinergicznego, odstawienie leku nasennego); 5) Przebodźcowanie środowiskowe (hałas, nieznana łazienka, zmiana opiekuna)."
+    },
+    {
+      "title": "Leki przeciwpsychotyczne w otępieniu: ograniczenia i czarna ramka",
+      "text": "Leki przeciwpsychotyczne (np. risperidon — jedyny zarejestrowany w UE do krótkotrwałego leczenia BPSD w AD) wiążą się z czarną ramką ostrzegawczą (Black Box Warning): 1,5–1,8-krotnym wzrostem śmiertelności ogólnej oraz 3-krotnym wzrostem incydentów naczyniowo-mózgowych (udar mózgu/TIA). Wytyczne NICE NG97 dopuszczają ich stosowanie WYŁĄCZNIE wtedy, gdy pacjent doświadcza ciężkiego cierpienia lub stanowi bezpośrednie zagrożenie przemocą fizyczną dla siebie i otoczenia, po wyczerpaniu metod niefarmakologicznych — w najmniejszej dawce i przez najkrótszy czas (do 6–12 tygodni z próbą odstawienia)."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Objaw BPSD",
+      "Najczęstsza ukryta przyczyna somatyczna",
+      "Pierwszy krok niefarmakologiczny",
+      "Rola farmakoterapii"
+    ],
+    "rows": [
+      [
+        "Agresja podczas toalety",
+        "Ból stawów lub pęcherza moczowego",
+        "Delikatny dotyk, ciepło, paracetamol przed myciem",
+        "Niewskazana bez opanowania bólu"
+      ],
+      [
+        "Błądzenie nocne (wandering)",
+        "Dezorientacja w ciemności, potrzeba mikcji",
+        "Oświetlenie drogi do toalety, tabliczki wizualne",
+        "Brak wskazań do neuroleptyków"
+      ],
+      [
+        "Podejrzenia o kradzież emerytury",
+        "Utrata pamięci miejsca schowania pieniędzy",
+        "Niewchodzenie w spór, potwierdzenie emocji, odwrócenie uwagi",
+        "Unikanie eskalacji leków"
+      ],
+      [
+        "Ciężkie pobudzenie z przemocą",
+        "Nałożone ostre delirium somatyczne",
+        "Zapewnienie bezpieczeństwa, deeskalacja",
+        "Krótkoterminowo mała dawka atypowego (SGA)"
+      ]
+    ]
+  },
+  "advanced": "W badaniach CATIE-AD wykazano, że korzyści ze stosowania atypowych leków przeciwpsychotycznych w otępieniu były równoważone przez działania niepożądane (senność, sedacja, objawy pozapiramidowe, zaburzenia chodu, upadki i infekcje dróg oddechowych). Z tego względu leki te nigdy nie powinny być stosowane jako rutynowe „uspokajacze” u osób z demencją.",
+  "summary": "Każde nowe pobudzenie w otępieniu wymaga poszukiwania bólu, infekcji i retencji moczu. Leki przeciwpsychotyczne niosą udokumentowane ryzyko udaru i zgonu, dlatego mogą być stosowane wyłącznie w skrajnym zagrożeniu i przez krótki czas.",
+  "sourceIds": [
+    "nice-ng97-dementia",
+    "ags-beers-criteria-2023"
+  ],
+  "questions": [
+    {
+      "id": "psych-bpsd-hunt-q1",
+      "lessonId": "bpsd-objawy-behawioralne-i-psychologiczne",
+      "prompt": "82-letnia pacjentka z chorobą Alzheimera staje się nagle agresywna, krzyczy i bije opiekunkę za każdym razem, gdy ta próbuje zmienić jej pieluchę. Jaki krok powinien podjąć lekarz w pierwszej kolejności?",
+      "options": [
+        {
+          "text": "Zastosować behawioralną ocenę bólu (np. skala PAINAD) oraz zbadać pacjentkę pod kątem zakażenia układu moczowego, odparzeń lub bólu stawów biodrowych",
+          "explanation": "Pobudzenie wyzwalane manipulacją pielęgnacyjną prawie zawsze wynika z bólu fizycznego; leczenie analgetyczne często całkowicie eliminuje agresję."
+        },
+        {
+          "text": "Natychmiast włączyć olanzapinę w dawce 10 mg dwa razy na dobę bez badania fizykalnego",
+          "explanation": "Podanie wysokiej dawki neuroleptyku bez zbadania przyczyny bólu maskuje cierpienie i drastycznie zwiększa ryzyko upadku i zgonu."
+        },
+        {
+          "text": "Wypisać skierowanie do zakładu karnego za napaść na personel",
+          "explanation": "Zachowanie jest manifestacją choroby neurodegeneracyjnej i somatycznego bólu, nie przestępstwem."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-bpsd-hunt-q2",
+      "lessonId": "bpsd-objawy-behawioralne-i-psychologiczne",
+      "prompt": "Dlaczego leki przeciwpsychotyczne (zarówno typowe, jak i atypowe) są opatrzone ostrzeżeniem regulatorów (Black Box Warning) w leczeniu otępienia?",
+      "options": [
+        {
+          "text": "Ponieważ leki przeciwpsychotyczne leczą wyłącznie choroby pasożytnicze wątroby",
+          "explanation": "Leki te działają na receptory OUN (D2, 5-HT2A)."
+        },
+        {
+          "text": "Z powodu udokumentowanego 1,5–1,8-krotnego wzrostu śmiertelności ogólnej oraz około 3-krotnego wzrostu ryzyka udaru mózgu i TIA",
+          "explanation": "Metaanalizy randomizowanych badań klinicznych jednoznacznie potwierdziły istotny wzrost ryzyka sercowo-naczyniowego i zgonów."
+        },
+        {
+          "text": "Ponieważ leki te w 100% przypadków zamieniają krew pacjenta w roztwór soli",
+          "explanation": "Taka teza jest biologicznie niemożliwa; ostrzeżenie dotyczy udarów i zgonów naczyniowych."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-bpsd-hunt-q3",
+      "lessonId": "bpsd-objawy-behawioralne-i-psychologiczne",
+      "prompt": "Który lek przeciwpsychotyczny posiada w Unii Europejskiej rejestrację do krótkotrwałego (do 6 tygodni) leczenia uporczywej agresji w otępieniu typu Alzheimera po wyczerpaniu metod niefarmakologicznych?",
+      "options": [
+        {
+          "text": "Klozapina w dawce 400 mg/dobę",
+          "explanation": "Klozapina nie jest lekiem pierwszego rzutu w BPSD z powodu sedacji, hipotonii i agranulocytozy."
+        },
+        {
+          "text": "Haloperidol w dożylnym wlewie ciągłym",
+          "explanation": "Haloperidol dożylny u seniora niesie skrajne ryzyko torsade de pointes i ciężkich objawów pozapiramidowych."
+        },
+        {
+          "text": "Rysperydon w małych dawkach (0,25–1 mg/dobę)",
+          "explanation": "Rysperydon jest jedynym SGA zarejestrowanym w tym wskazaniu, z zaleceniem regularnej reewaluacji i próby odstawienia."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-bpsd-hunt-q4",
+      "lessonId": "bpsd-objawy-behawioralne-i-psychologiczne",
+      "prompt": "Jak powinna zareagować rodzina 79-letniego chorego z otępieniem, który oskarża córkę o kradzież portfela (który sam ukrył w tapczanie)?",
+      "options": [
+        {
+          "text": "Unikać konfrontacji i kłótni, potwierdzić emocję lęku pacjenta („rozumiem, że martwi cię portfel”), a następnie odwrócić uwagę inną aktywnością",
+          "explanation": "Wchodzenie w logiczny spór wzmaga lęk i agresję; walidacja emocjonalna i dystrakcja są podstawową techniką niefarmakologiczną."
+        },
+        {
+          "text": "Zamknąć pacjenta w piwnicy na 24 godziny w celu wymuszenia przeprosin",
+          "explanation": "Pozbawianie wolności i izolacja są niedopuszczalną przemocą nasilającą delirium."
+        },
+        {
+          "text": "Natychmiast wezwać policję i złożyć doniesienie o zniesławieniu",
+          "explanation": "Urojenia wynikają z neurodegeneracji i nie podlegają odpowiedzialności karnej."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-bpsd-hunt-q5",
+      "lessonId": "bpsd-objawy-behawioralne-i-psychologiczne",
+      "prompt": "Kiedy według wytycznych NICE NG97 dopuszczalne jest rozważenie leku przeciwpsychotycznego u pacjenta z BPSD?",
+      "options": [
+        {
+          "text": "Wyłącznie wtedy, gdy pacjent wyrazi pisemną zgodę w obecności 3 notariuszy",
+          "explanation": "W stanach nagłego zagrożenia obowiązują procedury medyczne, nie potrójne akty notarialne."
+        },
+        {
+          "text": "Wyłącznie w sytuacji ciężkiego cierpienia pacjenta lub bezpośredniego zagrożenia zranieniem siebie bądź innych osób, gdy metody niefarmakologiczne zawiodły",
+          "explanation": "Wskazania są wąskie i rygorystyczne; leki nie powinny być stosowane z powodu błądzenia, wokalizacji czy łagodnego niepokoju."
+        },
+        {
+          "text": "Zawsze przy każdej wizycie jako rutynowa profilaktyka zachowań agresywnych",
+          "explanation": "Rutynowe profilaktyczne stosowanie neuroleptyków w otępieniu jest błędem sztuki."
+        }
+      ],
+      "answer": 1
+    }
+  ]
+}

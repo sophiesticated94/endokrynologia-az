@@ -1,46 +1,11 @@
-import type { Lesson, Question, DraftLesson } from './course-types.ts';
-import { draftPsychiatryPart5 } from './course-psychiatry-5.ts';
-import { draftPsychiatryPart5b } from './course-psychiatry-5b.ts';
-import { draftPsychiatryPart5c } from './course-psychiatry-5c.ts';
+import type { Lesson, Question } from './course-types.ts';
 import { psychiatrySources as basePsychiatrySources } from './course-psychiatry-sources.ts';
 import { psychiatryCases } from './cases-psychiatry.ts';
 import { psychiatryGlossary } from './glossary-psychiatry.ts';
 import { affectiveLessons, affectiveSources } from './psychiatry/affective-content.ts';
 import { pharmacologyLessons, pharmacologySources } from './psychiatry/pharmacology-content.ts';
+import { organicLessons, organicSources } from './psychiatry/organic-content.ts';
 import { traumaLessons, traumaSources } from './psychiatry/trauma-content.ts';
-
-export const organicDrafts: DraftLesson[] = [
-  ...draftPsychiatryPart5,
-  ...draftPsychiatryPart5b,
-  ...draftPsychiatryPart5c,
-];
-
-const organicLessons: Lesson[] = organicDrafts.map((l, li) => {
-  const subtitle = l.subtitle || l.title;
-  const minutes = l.minutes || (l.readTime ? parseInt(l.readTime, 10) : 15);
-  const sections = l.sections.map(s => ({
-    title: s.title,
-    text: s.text || s.content || '',
-  }));
-  const table = {
-    headers: l.table.headers,
-    rows: l.table.rows,
-  };
-  return {
-    ...l,
-    subtitle,
-    minutes,
-    sections,
-    table,
-    questions: l.questions.map((item, i) => {
-      const answer = (li + i) % 3;
-      const options = item.choices.map(([text, explanation]) => ({ text, explanation }));
-      const rotated = [...options.slice(3 - answer), ...options.slice(0, 3 - answer)];
-      const id = item.id || `psych-${l.id}-q${i + 1}`;
-      return { id, lessonId: l.id, prompt: item.prompt, options: rotated, answer };
-    }),
-  };
-});
 
 export const psychiatryLessons: Lesson[] = [
   ...affectiveLessons,
@@ -119,6 +84,7 @@ const mergedPsychiatrySources = {
   ...basePsychiatrySources,
   ...affectiveSources,
   ...pharmacologySources,
+  ...organicSources,
   ...traumaSources,
 };
 

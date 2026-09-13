@@ -1,0 +1,432 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "choroba-alzheimera-wzorzec-i-progresja",
+  "objectives": [
+    {
+      "id": "choroba-alzheimera-wzorzec-i-progresja-obj-1",
+      "statement": "Zidentyfikujesz typowy wzorzec kliniczny choroby Alzheimera: podstępny początek i deficyty pamięci epizodycznej.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "choroba-alzheimera-wzorzec-i-progresja-obj-2",
+      "statement": "Zrozumiesz sekwencję progresji sieciowej (kora śródwęchowa/hipokamp → asocjacyjna kora ciemieniowo-skroniowa).",
+      "kind": "interpretation"
+    },
+    {
+      "id": "choroba-alzheimera-wzorzec-i-progresja-obj-3",
+      "statement": "Przeprowadzisz różnicowanie z imitatorami: depresją, chorobą małych naczyń, zaburzeniami snu i lekami.",
+      "kind": "differentiation"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-choroba-alzheimera-wzorzec-i-progresja-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "choroba-alzheimera-wzorzec-i-progresja-obj-1"
+    ],
+    "prompt": "Który mechanizm zaburzeń pamięci jest najbardziej charakterystyczny dla wczesnego stadium typowej postaci choroby Alzheimera?",
+    "options": [
+      "Upośledzenie konsolidacji i odraczania nowych informacji (brak poprawy przy podpowiedziach semantycznych)",
+      "Wybiórcze zapominanie wydarzeń z wczesnego dzieciństwa przy zachowanej pamięci wczorajszego dnia",
+      "Gwałtowna utrata pamięci proceduralnej jazdy na rowerze w ciągu 3 dni"
+    ],
+    "optionFeedback": [
+      "Wynika z pierwotnego uszkodzenia formacji hipokampa i kory śródwęchowej; podpowiedzi z listą nie pomagają odtworzyć zapomnianych słów.",
+      "W chorobie Alzheimera pamięć odległa z dzieciństwa jest najlepiej i najdłużej zachowana (prawo Ribota).",
+      "Pamięć proceduralna opiera się na jądrach podstawy i móżdżku, ulegając zaburzeniu dopiero w bardzo późnym stadium."
+    ],
+    "answer": 1,
+    "explanation": "W chorobie Alzheimera pamięć odległa z dzieciństwa jest najlepiej i najdłużej zachowana (prawo Ribota).",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "nice-ng97-dementia",
+      "dsm5tr",
+      "icd11-cddr"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "choroba-alzheimera-wzorzec-i-progresja-block-1",
+      "title": "Wzorzec kliniczny: nie każde zaburzenie pamięci to Alzheimer",
+      "text": "Choroba Alzheimera (AD) jest pierwotnym procesem neurodegeneracyjnym, którego cechą kardynalną jest podstępny początek i powolna, wieloletnia progresja. Wczesny fenotyp typowy charakteryzuje się upośledzeniem pamięci epizodycznej świeżej (trudność w konsolidacji i swobodnym odtwarzaniu nowych informacji, brak poprawy przy podpowiedziach — uszkodzenie hipokampa). Pamięć odległa, procedury i nawyki pozostają nienaruszone przez długi czas.",
+      "sourceIds": [
+        "nice-ng97-dementia",
+        "dsm5tr",
+        "icd11-cddr"
+      ],
+      "checkpointId": "psych-choroba-alzheimera-wzorzec-i-progresja-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-hippocampal-network-progression",
+          "kind": "diagram",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "choroba-alzheimera-wzorzec-i-progresja-block-2",
+      "title": "Kaskada progresji sieciowej i objawy późniejsze",
+      "text": "W miarę rozprzestrzeniania się patologii amyloidowo-tauowej z przyśrodkowych struktur płata skroniowego do asocjacyjnej kory ciemieniowo-skroniowej pojawia się klasyczna triada: 1) afazja (początkowo anomia — trudność w znajdowaniu słów, później ubóstwo semantyczne); 2) apraksja (trudność w wykonywaniu celowych czynności manualnych mimo zachowanej siły mięśniowej); 3) agnozja (trudność w rozpoznawaniu znanych twarzy i przedmiotów). Dołączają zaburzenia wzrokowo-przestrzenne (gubienie się w znanym otoczeniu).",
+      "sourceIds": [
+        "nice-ng97-dementia",
+        "dsm5tr",
+        "icd11-cddr"
+      ],
+      "checkpointId": "psych-choroba-alzheimera-wzorzec-i-progresja-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-chei-indication",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "choroba-alzheimera-wzorzec-i-progresja-block-3",
+      "title": "Różnicowanie z maskami i imitatorami",
+      "text": "Prawidłowe TSH, witamina B12 i morfologia krwi zmniejszają prawdopodobieństwo jawnych masek internistycznych, lecz nie stanowią bezpośredniego dowodu na chorobę Alzheimera. Różnicowanie wymaga wykluczenia: przewlekłych skutków leków sedatywnych i antycholinergicznych, bezdechu sennego (OSA), naczyniowej choroby małych naczyń oraz depresji wieku podeszłego. W neuroobrazowaniu (MRI) wsparciem jest ocena zaniku hipokampów w skali MTA (Medial Temporal Lobe Atrophy).",
+      "sourceIds": [
+        "nice-ng97-dementia",
+        "dsm5tr",
+        "icd11-cddr"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-choroba-alzheimera-wzorzec-i-progresja-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "choroba-alzheimera-wzorzec-i-progresja-obj-2"
+      ],
+      "prompt": "Jaką rolę pełni badanie rezonansu magnetycznego (MRI) głowy w diagnostyce podejrzenia choroby Alzheimera?",
+      "options": [
+        "Wspiera rozpoznanie poprzez ocenę zaniku struktur hipokampa (skala MTA) oraz pozwala wykluczyć guzy, krwiaki podtwardówkowe i udary",
+        "W 100% przypadków jednoznacznie przesądza o obecności złogów amyloidu w synapsach",
+        "Jest badaniem całkowicie bezużytecznym u osób powyżej 60 roku życia"
+      ],
+      "optionFeedback": [
+        "MRI mózgu dostarcza dowodów na atrofię przyśrodkowego płata skroniowego i wyklucza uchwytne strukturalne przyczyny wtórne.",
+        "Standardowe MRI ocenia atrofię makroskopową, nie mikroskopowe złogi amyloidu (wymagałoby to PET amyloidowego).",
+        "MRI jest standardem diagnostycznym rekomendowanym przez wytyczne EFNS i NICE."
+      ],
+      "answer": 2,
+      "explanation": "MRI jest standardem diagnostycznym rekomendowanym przez wytyczne EFNS i NICE.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "nice-ng97-dementia",
+        "dsm5tr",
+        "icd11-cddr"
+      ]
+    },
+    {
+      "id": "psych-choroba-alzheimera-wzorzec-i-progresja-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "choroba-alzheimera-wzorzec-i-progresja-obj-3"
+      ],
+      "prompt": "78-letni pacjent przyprowadza żonę, która od 2 lat powtarza te same pytania, zapomina o wyłączeniu gazu i ma trudności ze znalezieniem słów podczas rozmowy. Wyniki TSH, elektrolitów i witaminy B12 są w normie. Jaki jest prawidłowy wniosek?",
+      "options": [
+        "Wyniki laboratoryjne zmniejszają prawdopodobieństwo wybranych odwracalnych przyczyn somatycznych, a fenotyp kliniczny wspiera podejrzenie otępienia w chorobie Alzheimera",
+        "Prawidłowe TSH i B12 dowodzą, że pacjentka ma pierwotne zaburzenie urojeniowe",
+        "Obraz kliniczny pozwala na natychmiastowe zakończenie diagnostyki bez badania fizykalnego i neurologicznego"
+      ],
+      "optionFeedback": [
+        "Prawidłowe badania krwi eliminują typowe zaburzenia internistyczne, lecz nie są dowodem samym w sobie; rozpoznanie opiera się na 2-letnim przebiegu i deficytach w wywiadzie.",
+        "Brak odchyleń w parametrach tarczycy nie dowodzi zaburzenia urojeniowego.",
+        "Diagnoza otępienia wymaga pełnego badania neurologicznego i obrazowego."
+      ],
+      "answer": 0,
+      "explanation": "Prawidłowe badania krwi eliminują typowe zaburzenia internistyczne, lecz nie są dowodem samym w sobie; rozpoznanie opiera się na 2-letnim przebiegu i deficytach w wywiadzie.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "nice-ng97-dementia",
+        "dsm5tr",
+        "icd11-cddr"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "choroba-alzheimera-wzorzec-i-progresja-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "choroba-alzheimera-wzorzec-i-progresja-obj-1",
+      "choroba-alzheimera-wzorzec-i-progresja-obj-2",
+      "choroba-alzheimera-wzorzec-i-progresja-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Choroba Alzheimera: wzorzec kliniczny, progresja i imitatory”.",
+    "modelAnswer": "Choroba Alzheimera to podstępny i postępujący ubytek pamięci epizodycznej z późniejszą afazją, apraksją i utratą samodzielności. Prawidłowe badania laboratoryjne wykluczają maski, lecz diagnoza opiera się na fenotypie klinicznym i neuroobrazowaniu.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "nice-ng97-dementia",
+      "dsm5tr",
+      "icd11-cddr"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "psych-choroba-alzheimera-wzorzec-i-progresja-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "choroba-alzheimera-wzorzec-i-progresja-obj-1"
+      ],
+      "prompt": "Czym jest anozognozja obserwowana u wielu pacjentów z chorobą Alzheimera?",
+      "options": [
+        "Biologicznym brakiem wglądu i świadomości własnych deficytów poznawczych spowodowanym uszkodzeniem sieci neuronalnych",
+        "Zdolnością do natychmiastowego zapamiętywania 100 cyfr po przecinku",
+        "Napadowym kurczem mięśni powiek wywołanym światłem słonecznym"
+      ],
+      "optionFeedback": [
+        "Anozognozja nie jest zwykłym „wypieraniem psychologicznym”, lecz neurologiczną niezdolnością do monitorowania własnych błędów pamięciowych.",
+        "Taki objaw nie ma związku z anozognozją ani chorobą Alzheimera.",
+        "Kurcz powiek to blefarospazm, a nie anozognozja."
+      ],
+      "answer": 1,
+      "explanation": "Taki objaw nie ma związku z anozognozją ani chorobą Alzheimera.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nice-ng97-dementia",
+        "dsm5tr",
+        "icd11-cddr"
+      ]
+    },
+    {
+      "id": "psych-choroba-alzheimera-wzorzec-i-progresja-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "choroba-alzheimera-wzorzec-i-progresja-obj-1"
+      ],
+      "prompt": "Jaki jest mechanizm działania inhibitorów acetylocholinoesterazy (donepezil, rywastygmina, galantamina) w chorobie Alzheimera?",
+      "options": [
+        "Objawowe zwiększenie stężenia acetylocholiny w szczelinach synaptycznych OUN, bez zatrzymania postępującej utraty neuronów",
+        "Całkowita regeneracja i namnożenie obumarłych komórek piramidowych hipokampa",
+        "Selektywny antagonizm receptorów dopaminowych D2 w prążkowiu"
+      ],
+      "optionFeedback": [
+        "Leki te łagodzą objawy poznawcze i behawioralne, stabilizując sprawność na kilka-kilkanaście miesięcy, lecz nie cofają neurodegeneracji.",
+        "Żaden dostępny inhibitor AChE nie regeneruje obumarłych neuronów.",
+        "Inhibitory AChE działają na układ cholinergiczny, a nie blokadę D2."
+      ],
+      "answer": 2,
+      "explanation": "Inhibitory AChE działają na układ cholinergiczny, a nie blokadę D2.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "nice-ng97-dementia",
+        "dsm5tr",
+        "icd11-cddr"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "ad-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "choroba-alzheimera-wzorzec-i-progresja-obj-2"
+      ],
+      "claimIds": [
+        "claim-org-alzheimer-hippocampal-pattern"
+      ],
+      "prompt": "U 76-letniego pacjenta z łagodną chorobą Alzheimera (MMSE 21) planowane jest wdrożenie leczenia objawowego. Które postępowanie farmakologiczne jest zgodne z wytycznymi EBM?",
+      "options": [
+        "Inhibitor acetylocholinoesterazy (donepezil, rywastygmina lub galantamina) w monoterapii z powolnym miareczkowaniem dawki",
+        "Memantyna w wysokiej dawce od pierwszego dnia leczenia jako jedyny skuteczny lek w stadium łagodnym",
+        "Haloperidol 5 mg na dobę profilaktycznie w celu zahamowania degradacji pamięci"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-achei-firstline",
+            "label": "Inhibitor cholinoesterazy (donepezil, rywastygmina, galantamina) jako lek I rzutu",
+            "acceptedPhrases": [
+              "achei",
+              "inhibitor cholinoesterazy",
+              "donepezil",
+              "rywastygmina",
+              "galantamina",
+              "i rzut"
+            ]
+          },
+          {
+            "id": "c-slow-titration",
+            "label": "Powolne miareczkowanie w celu minimalizacji działań niepożądanych",
+            "acceptedPhrases": [
+              "miareczkowanie",
+              "powolne zwiększanie",
+              "tolerancja",
+              "działania niepożądane"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Wytyczne NICE NG97 rekomendują inhibitory acetylocholinoesterazy w łagodnym i umiarkowanym otępieniu w AD. Memantyna jest wskazana w stadium umiarkowanym do ciężkiego lub przy nietolerancji AChEI.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nice-ng97-dementia",
+        "maudsley15"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "ad-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "choroba-alzheimera-wzorzec-i-progresja-obj-1"
+      ],
+      "claimIds": [
+        "claim-org-alzheimer-hippocampal-pattern"
+      ],
+      "prompt": "Przedstaw algorytm różnicowania choroby Alzheimera z odwracalnymi przyczynami zaburzeń poznawczych u seniora: jakie badania laboratoryjne i obrazowe należy bezwzględnie wykonać oraz jaki typowy profil zaniku w MRI wspiera rozpoznanie AD?",
+      "modelAnswer": "Badania laboratoryjne wykluczające imitatory: TSH (niedoczynność tarczycy), witamina B12 i kwas foliowy, elektrolity, próby nerkowe i wątrobowe, glikemia, serologia kiły/HIV w grupach ryzyka. Neuroobrazowanie: rezonans magnetyczny (MRI) głowy w sekwencjach T1, T2, FLAIR i DWI w celu wykluczenia krwiaka podtwardówkowego, guza mózgu, wodogłowia normotensyjnego (NPH) oraz naczyniopochodnego uszkodzenia istoty białej. Typowy profil dla AD: symetryczny zanik struktur hipokampa i kory śródwęchowej (oceniany w skali Scheltensa MTA >= 2).",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-c-lab-workup",
+            "label": "Badania laboratoryjne (TSH, B12, elektrolity, funkcja nerek/wątroby)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-lab-workup",
+                "label": "Badania laboratoryjne (TSH, B12, elektrolity, funkcja nerek/wątroby)",
+                "acceptedPhrases": [
+                  "tsh",
+                  "b12",
+                  "witamina b12",
+                  "tarczyca",
+                  "elektrolity",
+                  "kreatynina",
+                  "odwracalne przyczyny"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dim-c-mri-hippocampal-atrophy",
+            "label": "MRI głowy i zanik hipokampa / skala Scheltensa (MTA)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-mri-hippocampal-atrophy",
+                "label": "MRI głowy i zanik hipokampa / skala Scheltensa (MTA)",
+                "acceptedPhrases": [
+                  "mri",
+                  "rezonans",
+                  "hipokamp",
+                  "zanik hipokampa",
+                  "scheltens",
+                  "mta",
+                  "kora śródwęchowa"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dim-c-exclude-structural",
+            "label": "Wykluczenie krwiaka podtwardówkowego, guza mózgu i NPH",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-exclude-structural",
+                "label": "Wykluczenie krwiaka podtwardówkowego, guza mózgu i NPH",
+                "acceptedPhrases": [
+                  "krwiak podtwardówkowy",
+                  "guz",
+                  "nph",
+                  "wodogłowie normotensyjne",
+                  "zmiany naczyniowe"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-ad-no-neuroimaging",
+            "patterns": [
+              "nie trzeba robić rezonansu",
+              "same testy psychologiczne wystarczą do rozpoznania"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: Neuroobrazowanie (MRI/TK) jest bezwzględnie wymagane u każdego pacjenta z podejrzeniem otępienia."
+          }
+        ]
+      },
+      "explanation": "Rozpoznanie AD wymaga wykluczenia przyczyn odwracalnych (TSH, B12) oraz neuroobrazowej weryfikacji zaniku hipokampów i wykluczenia patologii ogniskowych.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nice-ng97-dementia",
+        "dsm5tr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "ad-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "choroba-alzheimera-wzorzec-i-progresja-obj-3"
+      ],
+      "claimIds": [
+        "claim-org-alzheimer-hippocampal-pattern"
+      ],
+      "prompt": "Oceń znaczenie podanych danych klinicznych dla rozpoznania typowej postaci choroby Alzheimera u 73-letniego chorego.",
+      "hypothesis": "Pacjent prezentuje typowy fenotyp amnestyczny choroby Alzheimera.",
+      "explanation": "Typowa postać AD charakteryzuje się wczesnym upośledzeniem konsolidacji pamięci epizodycznej bez wczesnych objawów ogniskowych.",
+      "items": [
+        {
+          "id": "ad-ew-1",
+          "text": "Chory wielokrotnie powtarza te same pytania w ciągu dnia i nie pamięta wizyty wnuków sprzed 2 godzin, pamiętając doskonale wydarzenia z młodości",
+          "expected": "supports",
+          "explanation": "Klasyczny wzorzec zaburzeń pamięci świeżej (prawo Ribota) związany z dysfunkcją formacji hipokampa."
+        },
+        {
+          "id": "ad-ew-2",
+          "text": "W ciągu ostatnich 3 miesięcy pacjent przeszedł 2 epizody nagłego niedowładu połowiczego ustępującego częściowo w ciągu tygodni",
+          "expected": "opposes",
+          "explanation": "Ogniskowe objawy naczyniowe i skokowy przebieg przemawiają za otępieniem naczyniowym lub mieszanym."
+        },
+        {
+          "id": "ad-ew-3",
+          "text": "Prawidłowy poziom TSH (1,8 mIU/l) oraz witaminy B12 (420 pg/ml)",
+          "expected": "supports",
+          "explanation": "Wykluczenie najczęstszych odwracalnych przyczyn metabolicznych wspiera proces pierwotnie zwyrodnieniowy."
+        }
+      ],
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "nice-ng97-dementia"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "timeline"
+  ],
+  "widgetConfig": {},
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-12",
+    "scope": "Struktura dydaktyczna v2, standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., AGNP TDM 2026 oraz CPIC."
+  }
+}

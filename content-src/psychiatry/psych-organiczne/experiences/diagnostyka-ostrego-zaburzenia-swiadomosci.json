@@ -1,0 +1,420 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "diagnostyka-ostrego-zaburzenia-swiadomosci",
+  "objectives": [
+    {
+      "id": "diagnostyka-ostrego-zaburzenia-swiadomosci-obj-1",
+      "statement": "Przeprowadzisz ustrukturyzowany proces poszukiwania przyczyn majaczenia (Cause Hunt).",
+      "kind": "decision"
+    },
+    {
+      "id": "diagnostyka-ostrego-zaburzenia-swiadomosci-obj-2",
+      "statement": "Zidentyfikujesz ukryte wyzwalacze delirium: ból, zatrzymanie moczu, zaparcie, hipoksję i leki.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "diagnostyka-ostrego-zaburzenia-swiadomosci-obj-3",
+      "statement": "Zrozumiesz zasadę: prawidłowe rutynowe badania nie oznaczają automatycznie pierwotnego tła psychicznego.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-diagnostyka-ostrego-zaburzenia-swiadomosci-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "diagnostyka-ostrego-zaburzenia-swiadomosci-obj-1"
+    ],
+    "prompt": "81-letni pacjent w 1. dobie po zabiegu pomostowania naczyniowego nagle staje się skrajnie pobudzony, krzyczy i próbuje zeskoczyć z łóżka. Jaki krok diagnostyczno-terapeutyczny powinien poprzedzać podanie leku uspokajającego?",
+    "options": [
+      "Ocena parametrów życiowych, wykluczenie hipoksji oraz zbadanie podbrzusza (USG pęcherza w kierunku zatrzymania moczu) i kontrola bólu",
+      "Natychmiastowe podanie 10 mg haloperidolu domięśniowo bez badania fizykalnego",
+      "Konsultacja psychoanalityczna w celu przepracowania lęku przed śmiercią"
+    ],
+    "optionFeedback": [
+      "Nagłe pobudzenie pooperacyjne bardzo często wynika z ostrego zatrzymania moczu lub niedostatecznej analgezji; sedacja bez zbadania pacjenta grozi pęknięciem pęcherza lub zapaścią.",
+      "Podanie wysokiej dawki typowego neuroleptyku seniorowi bez zbadania przyczyny somatycznej jest błędem sztuki.",
+      "Ostre delirium wymaga pilnego postępowania somatycznego, nie psychoterapii wglądowej."
+    ],
+    "answer": 2,
+    "explanation": "Ostre delirium wymaga pilnego postępowania somatycznego, nie psychoterapii wglądowej.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "nice-cg103-delirium",
+      "4at-validation-bellelli-2014"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "diagnostyka-ostrego-zaburzenia-swiadomosci-block-1",
+      "title": "Cause Hunt: kategorie przyczyn somatycznych i środowiskowych",
+      "text": "W majaczeniu rzadko występuje jedna izolowana przyczyna — typowo dochodzi do nałożenia wielu czynników podatności (np. wiek, otępienie, niedosłuch) i czynników wyzwalających. Akronim PINCHES ułatwia systematyczny przegląd: Pain (ból), Infection (infekcja ZUM, zapalenie płuc), Nutrition/Metabolic (hipo/hiperglikemia, Na, K, Ca), Constipation/retention (zaklinowanie stolca, pęcherz moczowy), Hydration/Hypoxia (odwodnienie, niewydolność serca, POChP), Endocrine/Electrolytes (tarczyca, mocznica), Sedatives/Drugs (nowe leki, BZD, opioidy, leki antycholinergiczne).",
+      "sourceIds": [
+        "nice-cg103-delirium",
+        "4at-validation-bellelli-2014"
+      ],
+      "checkpointId": "psych-diagnostyka-ostrego-zaburzenia-swiadomosci-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "widget-cause-hunt",
+          "kind": "interactive-widget",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "diagnostyka-ostrego-zaburzenia-swiadomosci-block-2",
+      "title": "Ukryte wyzwalacze geriatryczne: pęcherz i jelita",
+      "text": "Dwa najczęściej pomijane wyzwalacze delirium to ostre zatrzymanie moczu oraz stolcowe zaklinowanie jelit (fecaloma). U starszego pacjenta z zaburzeniami poznawczymi rozciągnięcie ścian pęcherza lub odbytnicy generuje masywny dopływ nocyceptywny do OUN, wyzwalając pobudzenie psychoruchowe bez klasycznych skarg na ból. Przyłóżkowe USG pęcherza moczowego (bladderscan) oraz badanie per rectum są obowiązkowymi elementami workupu majaczenia.",
+      "sourceIds": [
+        "nice-cg103-delirium",
+        "4at-validation-bellelli-2014"
+      ],
+      "checkpointId": "psych-diagnostyka-ostrego-zaburzenia-swiadomosci-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-4at-performance",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "diagnostyka-ostrego-zaburzenia-swiadomosci-block-3",
+      "title": "Pułapka „ujemnych badań” w ostrym zaburzeniu zachowania",
+      "text": "Prawidłowe wyniki morfologii, CRP, elektrolitów i TK głowy zmniejszają prawdopodobieństwo jawnych infekcji bakteryjnych, zaburzeń elektrolitowych czy ostrego krwawienia śródczaszkowego. Nie stanowią one jednak dowodu na „chorobę psychiczną” — ostre splątanie może wynikać z bólu, zatrzymania moczu, interakcji lekowych, hipoksji w nocy lub bezdrgawkowego stanu padaczkowego (NCSE), których nie widać w standardowych badaniach krwi.",
+      "sourceIds": [
+        "nice-cg103-delirium",
+        "4at-validation-bellelli-2014"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-diagnostyka-ostrego-zaburzenia-swiadomosci-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "diagnostyka-ostrego-zaburzenia-swiadomosci-obj-2"
+      ],
+      "prompt": "Dlaczego brak gorączki i prawidłowa liczba leukocytów u 86-letniego pacjenta z majaczeniem NIE wykluczają aktywnej infekcji bakteryjnej?",
+      "options": [
+        "Ponieważ układ immunologiczny osób w podeszłym wieku może nie generować typowej odpowiedzi gorączkowej (immunosenescencja)",
+        "Ponieważ leukocytoza występuje wyłącznie u pacjentów ze schizofrenią hebefreniczną",
+        "Ponieważ bakterie u osób starszych nie wywołują stanu zapalnego"
+      ],
+      "optionFeedback": [
+        "U seniorów jedyną manifestacją ciężkiego zakażenia układu moczowego lub zapalenia płuc bywa nagłe majaczenie i spadek ciśnienia tętniczego.",
+        "Leukocytoza jest wskaźnikiem hematologicznym, niezwiązanym z podtypami schizofrenii.",
+        "Bakterie wywołują zapalenie, lecz odpowiedź ogólnoustrojowa może przebiegać bez gorączki."
+      ],
+      "answer": 0,
+      "explanation": "U seniorów jedyną manifestacją ciężkiego zakażenia układu moczowego lub zapalenia płuc bywa nagłe majaczenie i spadek ciśnienia tętniczego.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "nice-cg103-delirium",
+        "4at-validation-bellelli-2014"
+      ]
+    },
+    {
+      "id": "psych-diagnostyka-ostrego-zaburzenia-swiadomosci-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "diagnostyka-ostrego-zaburzenia-swiadomosci-obj-3"
+      ],
+      "prompt": "Jak prawidłowo interpretować informację: „badania laboratoryjne (morfologia, CRP, TSH, glikemia, elektrolity) oraz TK głowy są w normie” u starszej osoby z ostrym splątaniem?",
+      "options": [
+        "Zmniejszają prawdopodobieństwo jaskrawych zaburzeń metabolicznych i ostrego krwotoku, lecz nie dowodzą etiologii pierwotnej i wymagają dalszej diagnostyki somatycznej",
+        "Stanowią bezpośredni dowód na późny debiut schizofrenii paranoidalnej",
+        "Oznaczają, że pacjent symuluje objawy w celu wymuszenia opieki"
+      ],
+      "optionFeedback": [
+        "Wyniki ujemne eliminują jedynie część przyczyn; delirium może wynikać z leków, bezdrgawkowego stanu padaczkowego, bólu czy hipoksji.",
+        "Ujemne wyniki badań laboratoryjnych nie są testem potwierdzającym schizofrenię.",
+        "Majaczenie jest biologicznym stanem zagrożenia mózgu, a nie symulacją."
+      ],
+      "answer": 1,
+      "explanation": "Ujemne wyniki badań laboratoryjnych nie są testem potwierdzającym schizofrenię.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "nice-cg103-delirium",
+        "4at-validation-bellelli-2014"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "diagnostyka-ostrego-zaburzenia-swiadomosci-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "diagnostyka-ostrego-zaburzenia-swiadomosci-obj-1",
+      "diagnostyka-ostrego-zaburzenia-swiadomosci-obj-2",
+      "diagnostyka-ostrego-zaburzenia-swiadomosci-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Diagnostyka ostrego zaburzenia świadomości: Cause Hunt i badania”.",
+    "modelAnswer": "Diagnostyka majaczenia to systematyczny Cause Hunt. Przed przypisaniem pacjentowi pierwotnego zaburzenia psychicznego należy obligatoryjnie wykluczyć zatrzymanie moczu, zaparcie, ból, infekcję i toksyczność lekową.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "nice-cg103-delirium",
+      "4at-validation-bellelli-2014"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "psych-diagnostyka-ostrego-zaburzenia-swiadomosci-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "diagnostyka-ostrego-zaburzenia-swiadomosci-obj-1"
+      ],
+      "prompt": "Które badanie przyłóżkowe jest najbardziej uzasadnione u pacjenta geriatrycznego z nagłym pobudzeniem wieczornym i brakiem mikcji przez ostatnie 10 godzin?",
+      "options": [
+        "Przyłóżkowe USG pęcherza moczowego (bladderscan) lub cewnikowanie diagnostyczne",
+        "Badanie rezonansu magnetycznego całego ciała w sekwencji angiograficznej",
+        "Test plam atramentowych Rorschacha"
+      ],
+      "optionFeedback": [
+        "Pozwala na natychmiastowe wykrycie zatrzymania moczu, które bywa bezpośrednią i w pełni odwracalną przyczyną majaczenia.",
+        "Angiografia całego ciała nie jest badaniem pierwszego rzutu przy podejrzeniu zatrzymania moczu.",
+        "Testy projekcyjne są całkowicie nieprzydatne i niewykonalne w ostrym zespole majaczeniowym."
+      ],
+      "answer": 2,
+      "explanation": "Testy projekcyjne są całkowicie nieprzydatne i niewykonalne w ostrym zespole majaczeniowym.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nice-cg103-delirium",
+        "4at-validation-bellelli-2014"
+      ]
+    },
+    {
+      "id": "psych-diagnostyka-ostrego-zaburzenia-swiadomosci-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "diagnostyka-ostrego-zaburzenia-swiadomosci-obj-1"
+      ],
+      "prompt": "Jaka jest rola narzędzia CAM-ICU w oddziałach intensywnej terapii?",
+      "options": [
+        "Umożliwia standaryzowaną ocenę majaczenia u pacjentów krytycznie chorych, w tym zaintubowanych i wentylowanych mechanicznie",
+        "Służy do automatycznego wyliczania dawki dożylnej propofolu bez udziału lekarza",
+        "Wykrywa obecność mutacji genetycznych predysponujących do choroby Alzheimera"
+      ],
+      "optionFeedback": [
+        "CAM-ICU bada inattention metodą niewymagającą mowy (ściskanie dłoni na bodziec literowy) w połączeniu z oceną poziomu sedacji RASS.",
+        "CAM-ICU jest narzędziem diagnostycznym, nie pompą infuzyjną.",
+        "CAM-ICU nie bada genetyki ani predyspozycji do otępienia."
+      ],
+      "answer": 0,
+      "explanation": "CAM-ICU bada inattention metodą niewymagającą mowy (ściskanie dłoni na bodziec literowy) w połączeniu z oceną poziomu sedacji RASS.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "nice-cg103-delirium",
+        "4at-validation-bellelli-2014"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "diag-del-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "diagnostyka-ostrego-zaburzenia-swiadomosci-obj-2"
+      ],
+      "claimIds": [
+        "claim-org-delirium-cause-hunt-pinch-me"
+      ],
+      "prompt": "Który zestaw badań laboratoryjnych i wstępnych interwencji stanowi podstawowy panel Cause Hunt u każdego hospitalizowanego pacjenta z nowo powstałym majaczeniem?",
+      "options": [
+        "Morfologia, elektrolity (Na, K, Ca), kreatynina/mocznik, glikemia, CRP, badanie ogólne moczu, EKG, ocena retencji moczu (bladderscan) i przegląd leków",
+        "Wyłącznie pilna tomografia komputerowa głowy bez jakichkolwiek badań laboratoryjnych",
+        "Rutynowa punkcja lędźwiowa i panel przeciwciał onkoneuronalnych u każdego pacjenta w pierwszej godzinie"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-basic-metabolic-screen",
+            "label": "Podstawowe badania metaboliczne, infekcyjne i ocena retencji",
+            "acceptedPhrases": [
+              "elektrolity",
+              "mocz",
+              "infekcja",
+              "bladderscan",
+              "crp",
+              "glikemia",
+              "retencja moczu"
+            ]
+          },
+          {
+            "id": "c-medication-review",
+            "label": "Konieczność przeglądu leków (antycholinergiczne, sedatywne)",
+            "acceptedPhrases": [
+              "przegląd leków",
+              "leki",
+              "iatrogenne",
+              "odstawienie leków"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Większość przypadków majaczenia szpitalnego wynika z infekcji (UTI, płuca), zaburzeń elektrolitowych/odwodnienia, retencji moczu lub leków. Badania biochemiczne i przegląd leków są absolutnym standardem I rzutu.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nice-cg103-delirium"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "diag-del-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "diagnostyka-ostrego-zaburzenia-swiadomosci-obj-1"
+      ],
+      "claimIds": [
+        "claim-org-delirium-cause-hunt-pinch-me",
+        "claim-org-delirium-avoid-routine-bzd"
+      ],
+      "prompt": "Wytłumacz, na czym polega protokół 4AT w przesiewowej ocenie delirium na oddziale somatycznym: wymień jego 4 komponenty, wskaż próg punktowy sugerujący majaczenie oraz wyjaśnij, dlaczego sam wynik 4AT nie zastępuje badania lekarskiego.",
+      "modelAnswer": "Skala 4AT obejmuje: 1) Czujność/przytomność (Alertness: 0=prawidłowa, 4=znacznie zmieniona); 2) Skrócony test AMT4 (Age, date of birth, place, current year: 0, 1 lub 2 pkt); 3) Uwagę (wymienianie miesięcy wstecz: 0=7 lub więcej, 1=mniej niż 7, 2=niezdolny); 4) Ostry początek lub fluktuację w ciągu ostatnich 24h (0=brak, 4=obecny). Wynik >=4 wskazuje na prawdopodobne majaczenie z lub bez zaburzeń poznawczych. 4AT jest narzędziem przesiewowym o czułości >85%, ale nie identyfikuje przyczyny somatycznej i nie zastępuje weryfikacji lekarskiej.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-c-4at-components",
+            "label": "Cztery komponenty 4AT (Alertness, AMT4, Uwaga/miesiące wstecz, Fluktuacja)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-4at-components",
+                "label": "Cztery komponenty 4AT (Alertness, AMT4, Uwaga/miesiące wstecz, Fluktuacja)",
+                "acceptedPhrases": [
+                  "czujność",
+                  "alertness",
+                  "amt4",
+                  "miesiące wstecz",
+                  "uwaga",
+                  "ostry początek",
+                  "fluktuacja"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dim-c-4at-threshold",
+            "label": "Próg punktowy: wynik >= 4 punkty oznacza prawdopodobne majaczenie",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-4at-threshold",
+                "label": "Próg punktowy: wynik >= 4 punkty oznacza prawdopodobne majaczenie",
+                "acceptedPhrases": [
+                  ">=4",
+                  "4 punkty",
+                  "cztery punkty",
+                  "próg 4"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dim-c-screening-nature",
+            "label": "Charakter przesiewowy narzędzia (nie zastępuje oceny klinicznej i poszukiwania przyczyny)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-screening-nature",
+                "label": "Charakter przesiewowy narzędzia (nie zastępuje oceny klinicznej i poszukiwania przyczyny)",
+                "acceptedPhrases": [
+                  "przesiewowy",
+                  "screening",
+                  "nie zastępuje badania",
+                  "wymaga identyfikacji przyczyny"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-4at-diagnostic-standalone",
+            "patterns": [
+              "4at stawia rozpoznanie etiologiczne",
+              "nie trzeba badać pacjenta jak jest 4at"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: 4AT to test przesiewowy wykrywający zespół, nie określający przyczyny somatycznej."
+          }
+        ]
+      },
+      "explanation": "4AT (Bellelli 2014) jest zwalidowanym narzędziem przyłóżkowym; wynik >=4 wymaga natychmiastowego uruchomienia protokołu Cause Hunt.",
+      "difficulty": "both",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "4at-validation-bellelli-2014",
+        "nice-cg103-delirium"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "diag-del-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "diagnostyka-ostrego-zaburzenia-swiadomosci-obj-3"
+      ],
+      "claimIds": [
+        "claim-org-delirium-cause-hunt-pinch-me"
+      ],
+      "prompt": "Oceń znaczenie podanych wyników dla hipotezy delirium wywołanego ostrą retencją moczu u pacjenta po zabiegu.",
+      "hypothesis": "Przyczyną ostrego majaczenia z pobudzeniem jest ostre zatrzymanie moczu (retencja).",
+      "explanation": "Przepełniony pęcherz wywołuje silny ból i impulsację współczulną, będąc jedną z najczęstszych odwracalnych przyczyn delirium pooperacyjnego.",
+      "items": [
+        {
+          "id": "diag-ew-1",
+          "text": "W badaniu bladderscan objętość moczu w pęcherzu wynosi 780 ml przy braku mikcji od 8 godzin",
+          "expected": "supports",
+          "explanation": "Potwierdza masywne zatrzymanie moczu wymagające natychmiastowego założenia cewnika."
+        },
+        {
+          "id": "diag-ew-2",
+          "text": "Po odprowadzeniu moczu przez cewnik w ciągu 30 minut pacjent uspokaja się i nawiązuje logiczny kontakt",
+          "expected": "supports",
+          "explanation": "Ustąpienie objawów po eliminacji czynnika wyzwalającego stanowi dowód związku przyczynowo-skutkowego."
+        },
+        {
+          "id": "diag-ew-3",
+          "text": "W RTG klatki piersiowej widoczne są przewlekłe zwapnienia pozapalne w szczycie płuca",
+          "expected": "neutral",
+          "explanation": "Stare zwapnienia bez cech ostrego nacieku nie wyjaśniają ostrego załamania stanu świadomości."
+        }
+      ],
+      "difficulty": "student",
+      "reasoning": "safety",
+      "sourceIds": [
+        "nice-cg103-delirium"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "timeline"
+  ],
+  "widgetConfig": {},
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-12",
+    "scope": "Struktura dydaktyczna v2, standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., AGNP TDM 2026 oraz CPIC."
+  }
+}

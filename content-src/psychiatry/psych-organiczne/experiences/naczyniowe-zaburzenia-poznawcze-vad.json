@@ -1,0 +1,390 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "naczyniowe-zaburzenia-poznawcze-vad",
+  "objectives": [
+    {
+      "id": "naczyniowe-zaburzenia-poznawcze-vad-obj-1",
+      "statement": "Zrozumiesz profil poznawczy uszkodzeń naczyniowych: dominacja dysfunkcji wykonawczej i spowolnienia nad pamięcią.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "naczyniowe-zaburzenia-poznawcze-vad-obj-2",
+      "statement": "Zrezygnujesz z dogmatycznego oczekiwania „schodkowego przebiegu” — poznasz podstępną postać podkorową (SVD).",
+      "kind": "interpretation"
+    },
+    {
+      "id": "naczyniowe-zaburzenia-poznawcze-vad-obj-3",
+      "statement": "Zrozumiesz pojęcie otępienia mieszanego (Mixed Dementia) łączącego patologię Alzheimera i naczyniową.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-naczyniowe-zaburzenia-poznawcze-vad-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "naczyniowe-zaburzenia-poznawcze-vad-obj-1"
+    ],
+    "prompt": "Który profil neuropsychologiczny najsilniej sugeruje naczyniowe zaburzenia poznawcze (VaD) w odróżnieniu od wczesnej choroby Alzheimera?",
+    "options": [
+      "Wyraźne spowolnienie przetwarzania informacji i zaburzenia funkcji wykonawczych przy zachowanej konsolidacji pamięci (poprawa przy podpowiedziach)",
+      "Izolowana utrata pamięci autobiograficznej przy zachowanym tempie psychoruchowym",
+      "Wrodzony brak możliwości rozpoznawania kolorów od dzieciństwa"
+    ],
+    "optionFeedback": [
+      "Uszkodzenie pętli podkorowo-czołowych utrudnia wyszukiwanie informacji i elastyczność myślenia, lecz hipokamp koduje wspomnienia poprawnie.",
+      "Taki profil jest typowy dla zaburzeń dysocjacyjnych lub wczesnego AD, a nie zespołu podkorowego.",
+      "Wada wrodzona widzenia barw nie ma związku z naczyniowym uszkodzeniem mózgu u seniora."
+    ],
+    "answer": 2,
+    "explanation": "Wada wrodzona widzenia barw nie ma związku z naczyniowym uszkodzeniem mózgu u seniora.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "nice-ng97-dementia",
+      "icd11-cddr"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "naczyniowe-zaburzenia-poznawcze-vad-block-1",
+      "title": "Profil poznawczy: dysfunkcja podkorowo-czołowa",
+      "text": "W naczyniowych zaburzeniach poznawczych (Vascular Cognitive Impairment — VCI / Vascular Dementia — VaD) osiowym deficytem nie jest pierwotne uszkodzenie kodowania pamięci hipokampalnej, lecz zespół podkorowo-czołowy. Manifestuje się on: spowolnieniem szybkości przetwarzania informacji (psychomotor slowing), upośledzeniem funkcji wykonawczych (planowanie, elastyczność poznawcza, myślenie abstrakcyjne) oraz zaburzeniami uwagi. Wydobywanie informacji z pamięci poprawia się przy zastosowaniu wskazówek (cueing), co świadczy o zachowanej pamięci trwałej.",
+      "sourceIds": [
+        "nice-ng97-dementia",
+        "icd11-cddr"
+      ],
+      "checkpointId": "psych-naczyniowe-zaburzenia-poznawcze-vad-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-neurocognitive-differential-map",
+          "kind": "diagram",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "naczyniowe-zaburzenia-poznawcze-vad-block-2",
+      "title": "Przebieg: schodkowy vs podstępny w chorobie małych naczyń",
+      "text": "Klasyczny „schodkowy” (stepwise) przebieg z nagłymi zaostrzeniami odpowiada otępieniu wielozawałowemu (multi-infarct dementia) po klinicznie jawnych udarach korowych. Jednak najczęstszą postacią w geriatrii jest podkorowe otępienie naczyniowe w przebiegu choroby małych naczyń (Cerebral Small Vessel Disease — CSVD, choroba Binswangera). Przebiega ono podstępnie, bez uchwytnych epizodów udarowych, prowadząc do zlewnej leukoencefalozy istoty białej (skala Fazekas), lakun i mikrowybroczyn.",
+      "sourceIds": [
+        "nice-ng97-dementia",
+        "icd11-cddr"
+      ],
+      "checkpointId": "psych-naczyniowe-zaburzenia-poznawcze-vad-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "microcase-csvd-binswanger",
+          "kind": "micro-case",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "naczyniowe-zaburzenia-poznawcze-vad-block-3",
+      "title": "Towarzyszące objawy neurologiczne i patologia mieszana",
+      "text": "Naczyniowemu uszkodzeniu OUN towarzyszą często: zaburzenia chodu (chód podkorowy, magnetyczny, na szerokiej podstawie — „apraksja chodu”), nietrzymanie moczu z parciami naglącymi oraz labilność emocjonalna (zespół rzekomoopuszkowy — mimowolny płacz lub śmiech). W badaniach neuropatologicznych u większości seniorów stwierdza się patologię mieszaną (Mixed AD + VaD), gdzie uszkodzenia naczyniowe obniżają próg klinicznego ujawnienia się zmian amyloidowych.",
+      "sourceIds": [
+        "nice-ng97-dementia",
+        "icd11-cddr"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-naczyniowe-zaburzenia-poznawcze-vad-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "naczyniowe-zaburzenia-poznawcze-vad-obj-2"
+      ],
+      "prompt": "Dlaczego błędne jest przekonanie, że otępienie naczyniowe zawsze musi przebiegać w sposób „schodkowy” z nagłymi zaostrzeniami?",
+      "options": [
+        "Ponieważ najczęstsza postać — podkorowa choroba małych naczyń (CSVD) — postępuje powoli, podstępnie i bezobjawowo klinicznie na co dzień",
+        "Ponieważ schodkowy przebieg występuje wyłącznie w młodzieńczej schizofrenii",
+        "Ponieważ naczynia mózgowe nie biorą udziału w odżywianiu tkanki nerwowej"
+      ],
+      "optionFeedback": [
+        "Zmiany w istocie białej i mikrozawały lakunarne kumulują się bez zauważalnych udarów, dając obraz powolnego narastania trudności.",
+        "Pojęcie przebiegu schodkowego odnosi się do udarów wieloogniskowych, nie do schizofrenii.",
+        "Naczynia zaopatrują mózg w tlen i glukozę, a ich uszkodzenie niszczy mielinę i aksony."
+      ],
+      "answer": 0,
+      "explanation": "Zmiany w istocie białej i mikrozawały lakunarne kumulują się bez zauważalnych udarów, dając obraz powolnego narastania trudności.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "nice-ng97-dementia",
+        "icd11-cddr"
+      ]
+    },
+    {
+      "id": "psych-naczyniowe-zaburzenia-poznawcze-vad-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "naczyniowe-zaburzenia-poznawcze-vad-obj-3"
+      ],
+      "prompt": "Który zespól objawów neurologicznych najczęściej towarzyszy podkorowemu otępieniu naczyniowemu (chorobie małych naczyń)?",
+      "options": [
+        "Zaburzenia chodu (apraksja chodu na szerokiej podstawie), naglące parcia na mocz oraz chwiejność emocjonalna (zespół rzekomoopuszkowy)",
+        "Uogólniona wiotkość mięśniowa z zanikiem odruchów głębokich i opadaniem stopy",
+        "Brak jakichkolwiek objawów somatycznych i neurologicznych przez całe życie"
+      ],
+      "optionFeedback": [
+        "Zlewne uszkodzenia istoty białej wokół komór rozrywają drogi korowo-rdzeniowe, pęcherzowe i opuszkowe.",
+        "Objawy obwodowe dotyczą polineuropatii, a nie uszkodzenia naczyniowego OUN.",
+        "VaD ze względu na podłoże naczyniowe prawie zawsze manifestuje się mikrosympatyką neurologiczną."
+      ],
+      "answer": 1,
+      "explanation": "Objawy obwodowe dotyczą polineuropatii, a nie uszkodzenia naczyniowego OUN.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "nice-ng97-dementia",
+        "icd11-cddr"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "naczyniowe-zaburzenia-poznawcze-vad-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "naczyniowe-zaburzenia-poznawcze-vad-obj-1",
+      "naczyniowe-zaburzenia-poznawcze-vad-obj-2",
+      "naczyniowe-zaburzenia-poznawcze-vad-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Naczyniowe zaburzenia poznawcze i otępienie naczyniowe (VaD)”.",
+    "modelAnswer": "Otępienie naczyniowe charakteryzuje się wczesną dysfunkcją wykonawczą, spowolnieniem myślenia i zaburzeniami chodu. Postać podkorowa (CSVD) przebiega powoli i podstępnie, imitując chorobę Alzheimera, z którą bardzo często współistnieje.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "nice-ng97-dementia",
+      "icd11-cddr"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "psych-naczyniowe-zaburzenia-poznawcze-vad-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "naczyniowe-zaburzenia-poznawcze-vad-obj-1"
+      ],
+      "prompt": "Co oznacza pojęcie „otępienia mieszanego” (Mixed Dementia) w praktyce klinicznej u chorych w podeszłym wieku?",
+      "options": [
+        "Współistnienie zmian neurodegeneracyjnych typu Alzheimera (blaszki amyloidowe, sploty tau) oraz naczyniowego uszkodzenia istoty białej i lakun",
+        "Jednoczesne zachorowanie na malarię mózgową i pląsawicę Huntingtona",
+        "Połączenie autyzmu dziecięcego z ostrym upojeniem alkoholowym"
+      ],
+      "optionFeedback": [
+        "Naczyniowe niedokrwienie nasila stan zapalny i obniża rezerwę mózgową, przyspieszając kliniczną manifestację patologii amyloidowej.",
+        "Mieszane otępienie dotyczy najczęstszego nakładania się patologii AD i naczyniowej.",
+        "Taka konstelacja nie ma nic wspólnego z geriatrycznym otępieniem mieszanym."
+      ],
+      "answer": 2,
+      "explanation": "Taka konstelacja nie ma nic wspólnego z geriatrycznym otępieniem mieszanym.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nice-ng97-dementia",
+        "icd11-cddr"
+      ]
+    },
+    {
+      "id": "psych-naczyniowe-zaburzenia-poznawcze-vad-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "naczyniowe-zaburzenia-poznawcze-vad-obj-1"
+      ],
+      "prompt": "Jakie jest podstawowe postępowanie modyfikujące przebieg u pacjenta ze zdiagnozowanymi naczyniowymi zaburzeniami poznawczymi?",
+      "options": [
+        "Agresywna kontrola naczyniowych czynników ryzyka: leczenie nadciśnienia tętniczego, cukrzycy, dyslipidemii oraz rezygnacja z tytoniu",
+        "Wdrożenie leczenia elektrowstrząsami w cyklu 20 zabiegów",
+        "Podawanie dużych dawek benzodiazepin krótko działających przez 5 lat"
+      ],
+      "optionFeedback": [
+        "Prewencja wtórna incydentów naczyniowych chroni przed kolejnymi uszkodzeniami istoty białej i udarami mózgu.",
+        "Elektrowstrząsy nie są metodą leczenia otępienia naczyniowego.",
+        "Benzodiazepiny nasilają zaburzenia poznawcze i podnoszą ryzyko upadków u seniorów."
+      ],
+      "answer": 0,
+      "explanation": "Prewencja wtórna incydentów naczyniowych chroni przed kolejnymi uszkodzeniami istoty białej i udarami mózgu.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "nice-ng97-dementia",
+        "icd11-cddr"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "vad-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "naczyniowe-zaburzenia-poznawcze-vad-obj-1"
+      ],
+      "claimIds": [
+        "claim-org-vad-stepwise-executive"
+      ],
+      "prompt": "Który profil zaburzeń neuropsychologicznych i cech neurologicznych najsilniej odróżnia podkorowe otępienie naczyniowe (zespół Binswangera / CSVD) od choroby Alzheimera?",
+      "options": [
+        "Wczesne spowolnienie psychoruchowe, dominująca dysfunkcja wykonawcza (planowanie, giętkość), labilność emocjonalna oraz chód o małych krokach i dyzartria",
+        "Wybiórcza, izolowana utrata pamięci epizodycznej przy idealnie płynnym chodzie i braku jakichkolwiek cech neurologicznych",
+        "Wczesne, jaskrawe omamy wzrokowe i odwrócenie rytmu dobowego bez zmian w naczyniach mózgowych"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-subcortical-executive-profile",
+            "label": "Podkorowy profil wykonawczy, spowolnienie, labilność",
+            "acceptedPhrases": [
+              "funkcje wykonawcze",
+              "spowolnienie psychoruchowe",
+              "podkorowy",
+              "labilność",
+              "zespół rzekomoopuszkowy"
+            ]
+          },
+          {
+            "id": "c-gait-neurological-signs",
+            "label": "Zaburzenia chodu, objawy piramidowe / dyzartria",
+            "acceptedPhrases": [
+              "chód",
+              "zaburzenia chodu",
+              "małe kroki",
+              "objawy neurologiczne",
+              "dyzartria"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Choroba małych naczyń (CSVD) uszkadza pętle czołowo-podkorowe, wywołując zespół podkorowy: spowolnienie, dysfunkcję wykonawczą i apraksję chodu.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "nice-ng97-dementia",
+        "dsm5tr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "vad-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "naczyniowe-zaburzenia-poznawcze-vad-obj-2"
+      ],
+      "claimIds": [
+        "claim-org-vad-stepwise-executive"
+      ],
+      "prompt": "Wytłumacz, na czym polega skokowy (stepwise) przebieg otępienia naczyniowego wielozawałowego w odróżnieniu od podkorowego otępienia naczyniowego (CSVD) oraz jakie jest podstawowe postępowanie profilaktyczne.",
+      "modelAnswer": "Otępienie wielozawałowe (multi-infarct) charakteryzuje się nagłymi skokami pogorszenia po każdym kolejnym udarze korowym z okresami plateau lub częściowej poprawy. Podkorowe otępienie naczyniowe (CSVD/Binswanger) ma przebieg wolniejszy, zlewający się, wynikający z przewlekłego niedokrwienia istoty białej. Podstawowe postępowanie to agresywna kontrola naczyniowych czynników ryzyka: leczenie nadciśnienia tętniczego, cukrzycy, dyslipidemii, leki przeciwpłytkowe oraz modyfikacja stylu życia (zaprzestanie palenia, ruch).",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-stepwise-vs-csvd",
+            "label": "Skokowy przebieg po incydentach udarowych vs powolna progresja CSVD",
+            "acceptedPhrases": [
+              "skokowy",
+              "stepwise",
+              "udar",
+              "zawał mózgu",
+              "csvd",
+              "istota biała",
+              "przewlekłe niedokrwienie"
+            ]
+          },
+          {
+            "id": "c-vascular-risk-control",
+            "label": "Kontrola naczyniowych czynników ryzyka (ciśnienie, lipidy, glikemia, przeciwpłytkowe)",
+            "acceptedPhrases": [
+              "nadciśnienie",
+              "kontrola ciśnienia",
+              "statyny",
+              "leki przeciwpłytkowe",
+              "czynniki naczyniowe"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-vad-treat-with-high-antipsychotics",
+            "patterns": [
+              "główne leczenie to neuroleptyki",
+              "leczymy tylko sedacją"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: Leki przeciwpsychotyczne w otępieniu naczyniowym zwiększają ryzyko kolejnych udarów i zgonu."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Prewencja wtórna naczyniowa (kontrola ciśnienia, ASA, statyny) to jedyna udowodniona metoda spowalniająca progresję otępienia naczyniowego.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nice-ng97-dementia"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "vad-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "naczyniowe-zaburzenia-poznawcze-vad-obj-3"
+      ],
+      "claimIds": [
+        "claim-org-vad-stepwise-executive"
+      ],
+      "prompt": "Oceń znaczenie podanych faktów klinicznych dla rozpoznania otępienia naczyniowego (VaD) u 69-letniego pacjenta.",
+      "hypothesis": "Zaburzenia poznawcze pacjenta mają etiologię naczyniową (VaD).",
+      "explanation": "Wywiad naczyniowy i zbieżność czasowa incydentu naczyniowego ze spadkiem poznawczym są warunkiem rozpoznania VaD.",
+      "items": [
+        {
+          "id": "vad-ew-1",
+          "text": "Pogorszenie pamięci i planowania wystąpiło w ciągu miesiąca po udarze niedokrwiennym prawej półkuli mózgu",
+          "expected": "supports",
+          "explanation": "Ścisły związek czasowy między udarem a załamaniem poznawczym jest kluczowym kryterium VaD."
+        },
+        {
+          "id": "vad-ew-2",
+          "text": "W MRI mózgu obecne rozlane, zlewające się hiperintensywności istoty białej okołokomorowej (Fazekas 3)",
+          "expected": "supports",
+          "explanation": "Wysoki stopień leukoencefalopatii naczyniowej potwierdza zaawansowaną chorobę małych naczyń (CSVD)."
+        },
+        {
+          "id": "vad-ew-3",
+          "text": "Brak jakichkolwiek czynników ryzyka sercowo-naczyniowego, prawidłowe ciśnienie tętnicze i brak zmian w badaniu naczyń",
+          "expected": "opposes",
+          "explanation": "Brak patologii i czynników naczyniowych podważa pierwotnie naczyniową etiologię otępienia."
+        }
+      ],
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "nice-ng97-dementia",
+        "dsm5tr"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "timeline"
+  ],
+  "widgetConfig": {},
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-12",
+    "scope": "Struktura dydaktyczna v2, standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., AGNP TDM 2026 oraz CPIC."
+  }
+}

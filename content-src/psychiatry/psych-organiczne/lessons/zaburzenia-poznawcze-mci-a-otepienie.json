@@ -1,0 +1,170 @@
+{
+  "id": "zaburzenia-poznawcze-mci-a-otepienie",
+  "moduleId": "psych-organiczne",
+  "title": "MCI, major neurocognitive disorder i funkcjonowanie",
+  "subtitle": "Rozgraniczenie subiektywnych skarg, łagodnych zaburzeń poznawczych i otępienia",
+  "group": "Ostre zaburzenia świadomości i zespoły poznawcze",
+  "minutes": 17,
+  "goals": [
+    "Rozróżnisz subiektywne pogorszenie poznawcze (SCD), łagodne zaburzenia poznawcze (MCI) i otępienie (Dementia).",
+    "Wykorzystasz poziom niezależności w codziennym funkcjonowaniu (IADL vs ADL) jako główny dyskryminator nozologiczny.",
+    "Zrozumiesz ograniczenia przesiewowych testów poznawczych (MMSE, MoCA) i unikniesz diagnozowania wyłącznie z punktacji."
+  ],
+  "sections": [
+    {
+      "title": "Spektrum pogorszenia poznawczego: od SCD do otępienia",
+      "text": "Współczesna nozologia wyróżnia kontinuum zmian poznawczych: 1) Subiektywne pogorszenie poznawcze (Subjective Cognitive Decline — SCD): pacjent zgłasza ubytek sprawności, lecz testy neuropsychologiczne są prawidłowe dla wieku i wykształcenia; 2) Łagodne zaburzenia poznawcze (Mild Cognitive Impairment — MCI / Mild Neurocognitive Disorder): obiektywne deficyty w testach w jednej lub wielu domenach, przy zachowanej samodzielności w codziennym życiu; 3) Otępienie (Major Neurocognitive Disorder / Dementia): deficyty poznawcze w stopniu powodującym utratę niezależności funkcjonalnej."
+    },
+    {
+      "title": "Funkcjonowanie jako kluczowy dyskryminator: IADL vs ADL",
+      "text": "O rozpoznaniu otępienia decyduje nie liczba utraconych punktów w teście, lecz utrata zdolności do samodzielnego funkcjonowania. Wyróżniamy: podstawowe czynności życia codziennego (Basic ADL: ubieranie się, jedzenie, toaleta, higiena osobista, poruszanie się) oraz złożone czynności instrumentalne (Instrumental IADL: zarządzanie budżetem i rachunkami, prawidłowe przyjmowanie leków, korzystanie z telefonu, gotowanie, zakupy, podróżowanie komunikacją). W MCI pacjent może wymagać więcej czasu lub kompensacji, lecz zachowuje niezależność; w otępieniu dochodzi do załamania IADL, a w późniejszych stadiach także ADL."
+    },
+    {
+      "title": "Ograniczenia testów przesiewowych (MMSE, MoCA)",
+      "text": "Testy przesiewowe (np. MoCA, MMSE) służą do identyfikacji potrzeby pogłębionej oceny, a nie do stawiania rozpoznania nozologicznego. Wynik zależy silnie od wykształcenia, języka ojczystego, sprawności narządów zmysłów (słuch, wzrok) oraz nastroju. Osoba z wyższym wykształceniem i wczesnym otępieniem może uzyskać wynik w normie dzięki wysokiej rezerwie poznawczej, podczas gdy osoba z niskim wykształceniem i depresją może uzyskać wynik fałszywie niski."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Kategoria",
+      "Obiektywne testy poznawcze",
+      "Funkcjonowanie IADL",
+      "Funkcjonowanie podstawowe ADL"
+    ],
+    "rows": [
+      [
+        "SCD (subiektywne)",
+        "Prawidłowe dla wieku i edukacji",
+        "Całkowicie niezależne",
+        "Niezależne"
+      ],
+      [
+        "MCI (łagodne zaburzenia)",
+        "Obiektywnie obniżone (>=1 domena)",
+        "Zachowane (możliwy większy wysiłek/kompensacja)",
+        "Niezależne"
+      ],
+      [
+        "Otępienie łagodne",
+        "Znacząco obniżone w wielu domenach",
+        "Upośledzone (wymaga pomocy w lekach/finansach)",
+        "Względnie zachowane"
+      ],
+      [
+        "Otępienie umiarkowane/ciężkie",
+        "Głęboko zaburzone",
+        "Całkowita zależność od opiekuna",
+        "Wymaga pomocy w toalecie, ubiorze, karmieniu"
+      ]
+    ]
+  },
+  "advanced": "Wyróżnia się postać amnestyczną MCI (aMCI — dominujący deficyt pamięci epizodycznej, częstsza konwersja do choroby Alzheimera, wskaźnik konwersji ~10–15% rocznie) oraz postać nieamnestyczną MCI (naMCI — dominujące zaburzenia wykonawcze, językowe lub wzrokowo-przestrzenne, częściej związane z patologią naczyniową, czołowo-skroniową lub DLB).",
+  "summary": "Granica między MCI a otępieniem przebiega wzdłuż osi niezależności funkcjonalnej. Testy przesiewowe wspierają czujność kliniczną, lecz diagnoza wymaga oceny wpływu deficytów na codzienne życie (IADL/ADL) z uwzględnieniem wywiadu od bliskich.",
+  "sourceIds": [
+    "nice-ng97-dementia",
+    "dsm5tr",
+    "icd11-cddr"
+  ],
+  "questions": [
+    {
+      "id": "psych-mci-func-q1",
+      "lessonId": "zaburzenia-poznawcze-mci-a-otepienie",
+      "prompt": "73-letnia emerytowana nauczycielka zauważa u siebie zapominanie nazwisk znajomych. W badaniu MoCA uzyskuje 24/30 pkt, lecz samodzielnie prowadzi dom, opłaca rachunki, gotuje i bezpiecznie podróżuje samochodem. Jak prawidłowo zaklasyfikować jej stan?",
+      "options": [
+        {
+          "text": "Łagodne zaburzenia poznawcze (MCI) — obiektywny spadek w teście przy zachowanej niezależności w złożonych czynnościach dnia codziennego",
+          "explanation": "Obecność obiektywnego ubytku bez utraty samodzielności w IADL/ADL definiuje stadium MCI, wykluczając rozpoznanie otępienia."
+        },
+        {
+          "text": "Zaawansowane otępienie w chorobie Alzheimera wymagające ubezwłasnowolnienia",
+          "explanation": "Zachowana pełna samodzielność w IADL wyklucza otępienie, a tym bardziej stadium zaawansowane."
+        },
+        {
+          "text": "Stan w pełni prawidłowy, niewymagający żadnej obserwacji ani kontroli za rok",
+          "explanation": "Wynik MoCA 24/30 oraz subiektywne skargi wymagają monitorowania dynamiki zmian za 6–12 miesięcy."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-mci-func-q2",
+      "lessonId": "zaburzenia-poznawcze-mci-a-otepienie",
+      "prompt": "Który obszar codziennego funkcjonowania najwcześniej ulega zaburzeniu w procesie konwersji z MCI do otępienia?",
+      "options": [
+        {
+          "text": "Odruchy bezwarunkowe połykania i żucia",
+          "explanation": "Odruchy połykania ulegają uszkodzeniu dopiero w końcowej fazie zaawansowanego otępienia."
+        },
+        {
+          "text": "Złożone czynności instrumentalne (IADL), takie jak zarządzanie budżetem, przyjmowanie leków i załatwianie spraw urzędowych",
+          "explanation": "Funkcje wykonawcze i pamięć robocza potrzebne do IADL załamują się znacznie wcześniej niż podstawowe nawyki higieniczne (ADL)."
+        },
+        {
+          "text": "Podstawowe czynności higieniczne (mycie rąk i czesanie się)",
+          "explanation": "Podstawowe czynności ADL pozostają zachowane aż do umiarkowanych i ciężkich stadiów otępienia."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-mci-func-q3",
+      "lessonId": "zaburzenia-poznawcze-mci-a-otepienie",
+      "prompt": "Dlaczego wynik 27/30 pkt w teście MMSE u 70-letniego profesora uniwersytetu z podejrzeniem procesu otępiennego NIE pozwala na wykluczenie wczesnej choroby Alzheimera?",
+      "options": [
+        {
+          "text": "Ponieważ test MMSE jest testem służącym wyłącznie do wykrywania schizofrenii katatonicznej",
+          "explanation": "MMSE ocenia ogólne funkcje poznawcze, nie schizofrenię katatoniczną."
+        },
+        {
+          "text": "Ponieważ choroba Alzheimera nigdy nie wpływa na pamięć epizodyczną",
+          "explanation": "Zaburzenia pamięci epizodycznej są typową cechą choroby Alzheimera."
+        },
+        {
+          "text": "Wysoka rezerwa poznawcza i wykształcenie maskują wczesne deficyty w prostych przesiewowych testach o niskim suficie trudności",
+          "explanation": "Testy przesiewowe typu MMSE mają efekt sufitowy; u osób z wysokim wykształceniem wczesne otępienie wymaga czulszych testów (MoCA, pełna bateria neuropsychologiczna)."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-mci-func-q4",
+      "lessonId": "zaburzenia-poznawcze-mci-a-otepienie",
+      "prompt": "Czym charakteryzuje się amnestyczna postać MCI (amnestic MCI) w odniesieniu do ryzyka klinicznego?",
+      "options": [
+        {
+          "text": "Wiąże się ze statystycznie najwyższym ryzykiem progresji do choroby Alzheimera w porównaniu z postaciami nieamnestycznymi",
+          "explanation": "Izolowany lub dominujący ubytek odraczania pamięci epizodycznej w aMCI odzwierciedla wczesną dysfunkcję struktur hipokampa i kory śródwęchowej."
+        },
+        {
+          "text": "Gwarantuje 100% samoistne wyleczenie w ciągu 3 miesięcy bez konieczności kontroli",
+          "explanation": "aMCI wymaga monitorowania, gdyż u ~10–15% chorych rocznie dochodzi do konwersji do otępienia."
+        },
+        {
+          "text": "Występuje wyłącznie u pacjentów uzależnionych od alkoholu z zespołem Korsakowa",
+          "explanation": "aMCI jest jednostką kliniczną wieku podeszłego niezależną od uzależnień."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-mci-func-q5",
+      "lessonId": "zaburzenia-poznawcze-mci-a-otepienie",
+      "prompt": "Dlaczego informacje uzyskane od bliskich lub opiekuna (collateral history) są niezbędne do postawienia rozpoznania otępienia?",
+      "options": [
+        {
+          "text": "Ponieważ testy neuropsychologiczne są w 100% niewiarygodne bez podpisu członka rodziny",
+          "explanation": "Testy są standaryzowane, lecz ocena funkcjonowania w świecie realnym wymaga danych ze środowiska domowego."
+        },
+        {
+          "text": "Ponieważ pacjent z powodu anozognozji (braku wglądu) lub zaburzeń pamięci może nie dostrzegać i bagatelizować rzeczywistych trudności w codziennym życiu",
+          "explanation": "Osoba z wczesnym otępieniem często deklaruje pełną sprawność, a dopiero relacja rodziny ujawnia niespłacone rachunki, przypalanie garnków czy gubienie leków."
+        },
+        {
+          "text": "Ponieważ prawo zabrania rozmawiania z pacjentem bez obecności notariusza",
+          "explanation": "Prawo medyczne wymaga badania pacjenta, a wywiad od rodziny jest uzupełnieniem klinicznym."
+        }
+      ],
+      "answer": 1
+    }
+  ]
+}

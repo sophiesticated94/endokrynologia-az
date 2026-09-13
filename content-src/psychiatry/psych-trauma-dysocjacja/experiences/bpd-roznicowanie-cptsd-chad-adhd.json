@@ -254,5 +254,181 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "WHO ICD-11 CDDR, NICE CG78, APA DSM-5-TR, pure content-src architecture"
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "bpd-cptsd-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "bpd-roznicowanie-cptsd-chad-adhd-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-bpd-vs-bipolar-cyclicity"
+      ],
+      "prompt": "Jakie cechy odróżniają dynamikę wahań nastroju w BPD od hipomanii w chorobie afektywnej dwubiegunowej (ChAD II)?",
+      "options": [
+        "W BPD wahania nastroju trwają godziny, są wyzwalane bodźcami interpersonalnymi i dominują w nich gniew lub dysforia; w ChAD epizody hipomanii trwają dni/tygodnie, są autonomiczne i wiążą się ze zmniejszoną potrzebą snu",
+        "W BPD wahania nastroju trwają tygodniami i nie mają związku ze zdarzeniami życiowymi",
+        "W ChAD wahania zmieniają się z minuty na minutę wyłącznie w odpowiedzi na odrzucenie"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-bpd-hours-reactive",
+            "label": "Wahania w BPD trwają godziny i są reaktywne na bodźce interpersonalne",
+            "acceptedPhrases": [
+              "godziny",
+              "reaktywne",
+              "reaktywność",
+              "bodźce interpersonalne",
+              "dysforia"
+            ]
+          },
+          {
+            "id": "c-bipolar-days-autonomous",
+            "label": "Epizody w ChAD trwają dni/tygodnie, są autonomiczne z objawami wegetatywnymi (sen)",
+            "acceptedPhrases": [
+              "dni",
+              "tygodnie",
+              "autonomiczne",
+              "potrzeba snu",
+              "zmniejszona potrzeba snu"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Labilność w BPD to reaktywność godzinowa; w ChAD fazy trwają dni lub tygodnie ze zmianą napędu psychoruchowego i zmniejszoną potrzebą snu.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "bpd-cptsd-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "bpd-roznicowanie-cptsd-chad-adhd-obj-2"
+      ],
+      "claimIds": [
+        "claim-trauma-cptsd-dso-triad",
+        "claim-trauma-cptsd-vs-bpd-attachment"
+      ],
+      "prompt": "27-letnia kobieta po wieloletniej przemocy domowej zgłasza wybuchy złości, poczucie bezwartościowości, unikanie ludzi i koszmary senne. Przedstaw różnicowanie pomiędzy złożonym zespołem stresu pourazowego (cPTSD) a zaburzeniem osobowości borderline (BPD), skupiając się na strukturze tożsamości i wzorcu relacji.",
+      "modelAnswer": "Kluczowe osie różnicujące cPTSD vs BPD: 1) Obraz siebie (Self-concept): W cPTSD obraz siebie jest spójnie i trwale negatywny (poczucie bycia uszkodzonym, bezwartościowym, winnym), bez niestabilności tożsamości. W BPD tożsamość jest niestabilna, zmienna (dyfuzja tożsamości, nagłe zmiany celów, wartości, orientacji, poczucie pustki). 2) Wzorzec relacyjny: W cPTSD dominuje unikanie bliskości, izolacja, poczucie obcości i trudność w nawiązywaniu relacji. W BPD występują intensywne, burzliwe relacje z naprzemienną idealizacją i dewaluacją oraz paniczny lęk przed porzuceniem. 3) Koegzystencja: Pacjent może spełniać kryteria obu jednostek, jeśli obok triady PTSD występują zarówno zaburzenia relacji o typie BPD, jak i dyfuzja tożsamości.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-self-concept-cptsd-vs-bpd",
+            "label": "Struktura tożsamości i obraz siebie (trwale negatywny w cPTSD vs niestabilny w BPD)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-self-diff",
+                "label": "Trwale negatywny w cPTSD vs dyfuzja i zmienność w BPD",
+                "acceptedPhrases": [
+                  "trwale negatywny",
+                  "poczucie uszkodzenia",
+                  "dyfuzja tożsamości",
+                  "niestabilność tożsamości",
+                  "pustka"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          },
+          {
+            "id": "dim-relational-pattern-cptsd-vs-bpd",
+            "label": "Wzorzec relacji (unikanie i dystans w cPTSD vs intensywność i lęk przed porzuceniem w BPD)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-rel-diff",
+                "label": "Unikanie relacji w cPTSD vs idealizacja/dewaluacja i lęk przed odrzuceniem w BPD",
+                "acceptedPhrases": [
+                  "unikanie bliskości",
+                  "dystans",
+                  "idealizacja",
+                  "dewaluacja",
+                  "lęk przed porzuceniem",
+                  "burzliwe relacje"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-equate-cptsd-and-bpd",
+            "patterns": [
+              "cptsd i bpd to dokładnie to samo",
+              "w cptsd zawsze jest paniczny lęk przed porzuceniem"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: cPTSD i BPD mają odmienne fenotypy relacyjne i strukturę tożsamości wg ICD-11."
+          }
+        ]
+      },
+      "explanation": "Kluczowe osie różnicujące cPTSD vs BPD: 1) Obraz siebie (Self-concept): W cPTSD obraz siebie jest spójnie i trwale negatywny (poczucie bycia uszkodzonym, bezwartościowym, winnym), bez niestabilności tożsamości. W BPD tożsamość jest niestabilna, zmienna (dyfuzja tożsamości, nagłe zmiany celów, wartości, orientacji, poczucie pustki). 2) Wzorzec relacyjny: W cPTSD dominuje unikanie bliskości, izolacja, poczucie obcości i trudność w nawiązywaniu relacji. W BPD występują intensywne, burzliwe relacje z naprzemienną idealizacją i dewaluacją oraz paniczny lęk przed porzuceniem. 3) Koegzystencja: Pacjent może spełniać kryteria obu jednostek, jeśli obok triady PTSD występują zarówno zaburzenia relacji o typie BPD, jak i dyfuzja tożsamości.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "transfer": true,
+      "engineBinding": {
+        "engineId": "trauma-dissociation",
+        "presetId": "trauma-cptsd-bpd",
+        "expectedOutputVersion": 1
+      }
+    },
+    {
+      "id": "bpd-cptsd-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "bpd-roznicowanie-cptsd-chad-adhd-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-bpd-abandonment-instability"
+      ],
+      "prompt": "Oceń znaczenie danych klinicznych dla rozpoznania ADHD u dorosłego pacjenta diagnozowanego w kierunku BPD.",
+      "hypothesis": "Objawy pacjenta wynikają z zespołu nadpobudliwości psychoruchowej (ADHD).",
+      "items": [
+        {
+          "id": "bpd-cptsd-ew-1",
+          "text": "Obecność deficytów uwagi, roztargnienia i impulsywności ruchowej przed 12. rokiem życia potwierdzona wywiadem od rodziców",
+          "expected": "supports",
+          "explanation": "Kluczowe kryterium ADHD: początek w dzieciństwie przed ukończeniem 12 lat."
+        },
+        {
+          "id": "bpd-cptsd-ew-2",
+          "text": "Powtarzające się samouszkodzenia i próby samobójcze po zerwaniu relacji romantycznych",
+          "expected": "opposes",
+          "explanation": "Typowe dla BPD; nie wchodzi w zakres osiowych objawów ADHD."
+        },
+        {
+          "id": "bpd-cptsd-ew-3",
+          "text": "Przewlekłe problemy z organizacją pracy, gubieniem przedmiotów i prokrastynacją niezależnie od stanu relacji interpersonalnych",
+          "expected": "supports",
+          "explanation": "Świadczy o stałym deficycie funkcji wykonawczych, niezależnym od afektu interpersonalnego."
+        }
+      ],
+      "explanation": "ADHD wymaga udokumentowania objawów z okresu rozwojowego i odróżnienia dysforii od lęku przed porzuceniem.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "src-dsm5-tr-2022",
+        "src-nice-cg78-bpd-2009"
+      ],
+      "transfer": true
+    }
+  ]
 }

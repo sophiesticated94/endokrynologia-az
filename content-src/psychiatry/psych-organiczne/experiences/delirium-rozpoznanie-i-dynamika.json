@@ -1,0 +1,461 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "delirium-rozpoznanie-i-dynamika",
+  "objectives": [
+    {
+      "id": "delirium-rozpoznanie-i-dynamika-obj-1",
+      "statement": "Zidentyfikujesz kardynalne cechy majaczenia: ostry początek, falujący przebieg oraz zaburzenia uwagi i czuwania.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "delirium-rozpoznanie-i-dynamika-obj-2",
+      "statement": "Rozpoznasz postać hipoaktywną majaczenia, najczęściej myloną z depresją lub otępieniem.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "delirium-rozpoznanie-i-dynamika-obj-3",
+      "statement": "Zastosujesz ustrukturyzowane narzędzia oceny (4AT, CAM-ICU) jako zwalidowane wsparcie badania klinicznego.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-delirium-rozpoznanie-i-dynamika-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "delirium-rozpoznanie-i-dynamika-obj-1"
+    ],
+    "prompt": "Która kombinacja cech klinicznych najsilniej przemawia za majaczeniem (delirium) w odróżnieniu od zaostrzenia schizofrenii?",
+    "options": [
+      "Nagły początek w ciągu godzin/dni, falowanie objawów w dobie oraz zaburzenia uwagi i czujności",
+      "Obecność dobrze ustrukturyzowanych urojeń ksobnych bez wahań świadomości",
+      "Prawidłowy wynik badania EKG i prawidłowa temperatura ciała"
+    ],
+    "optionFeedback": [
+      "Ostre tempo, fluktuacja i inattention są osiowymi wyznacznikami encefalopatii/delirium; schizofrenia rozwija się typowo przy jasnej świadomości.",
+      "Ustrukturyzowane urojenia przy jasnej świadomości są typowe dla psychoz pierwotnych, nie delirium.",
+      "Prawidłowe parametry życiowe nie różnicują osiowych mechanizmów psychopatologicznych."
+    ],
+    "answer": 0,
+    "explanation": "Ostre tempo, fluktuacja i inattention są osiowymi wyznacznikami encefalopatii/delirium; schizofrenia rozwija się typowo przy jasnej świadomości.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "4at-validation-bellelli-2014",
+      "nice-cg103-delirium",
+      "dsm5tr"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "delirium-rozpoznanie-i-dynamika-block-1",
+      "title": "Osiowa triada majaczenia: tempo, fluktuacja i uwaga",
+      "text": "Majaczenie (delirium) jest ostrym, potencjalnie odwracalnym zespołem zaburzeń funkcji mózgu wywołanym chorobą somatyczną, intoksykacją lub odstawieniem leków. Osiowymi cechami wg ICD-11 i DSM-5-TR są: 1) ostre lub podostre tempo rozwoju (godziny do kilku dni); 2) fluktuujący przebieg w ciągu doby (nasilenie w godzinach wieczornych i nocnych — sundowning); 3) zaburzenia uwagi (niezdolność do skupienia, utrzymania i przeniesienia uwagi) oraz czujności (arousal — od senności po patologiczne wzbudzenie).",
+      "sourceIds": [
+        "4at-validation-bellelli-2014",
+        "nice-cg103-delirium",
+        "dsm5tr"
+      ],
+      "checkpointId": "psych-delirium-rozpoznanie-i-dynamika-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-delirium-timeline",
+          "kind": "diagram",
+          "placement": "after-text"
+        },
+        {
+          "id": "deeplink-delirium-preset",
+          "kind": "workbench-deeplink",
+          "placement": "end-of-block",
+          "presetId": "preset-delirium-jan-postop"
+        }
+      ]
+    },
+    {
+      "id": "delirium-rozpoznanie-i-dynamika-block-2",
+      "title": "Fenotypy ruchowe: pułapka postaci hipoaktywnej",
+      "text": "Wyróżniamy trzy fenotypy majaczenia: hiperaktywne (pobudzenie, agresja, omamy, niepokój manipulacyjny — łatwo zauważalne), hipoaktywne (spowolnienie, apatia, patologiczna senność, ubóstwo wypowiedzi) oraz mieszane (najczęstsze w praktyce szpitalnej). Postać hipoaktywna występuje u ponad 50% chorych geriatrycznych i niesie najwyższą śmiertelność, ponieważ bywa błędnie interpretowana jako „zmęczenie pooperacyjne”, „żałoba” lub „depresja”.",
+      "sourceIds": [
+        "4at-validation-bellelli-2014",
+        "nice-cg103-delirium",
+        "dsm5tr"
+      ],
+      "checkpointId": "psych-delirium-rozpoznanie-i-dynamika-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "widget-4at-calculator",
+          "kind": "interactive-widget",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "delirium-rozpoznanie-i-dynamika-block-3",
+      "title": "Zjawiska psychotyczne w delirium a psychozy pierwotne",
+      "text": "Złudzenia (iluzje) i omamy w delirium mają najczęściej charakter wzrokowy (zwierzęta, ruchome cienie, obcy ludzie w pokoju) lub dotykowy i towarzyszy im chwiejny, niespójny sąd realizujący. W przeciwieństwie do schizofrenii omamy w delirium występują na podłożu zaburzeń przytomności i uwagi, nasilają się przy słabym oświetleniu i szybko ustępują wraz z wyrównaniem stanu somatycznego.",
+      "sourceIds": [
+        "4at-validation-bellelli-2014",
+        "nice-cg103-delirium",
+        "dsm5tr"
+      ],
+      "inlineEnhancements": [
+        {
+          "id": "panel-delirium-evidence",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-delirium-rozpoznanie-i-dynamika-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "delirium-rozpoznanie-i-dynamika-obj-2"
+      ],
+      "prompt": "Dlaczego hipoaktywna postać majaczenia wiąże się ze statystycznie gorszym rokowaniem i wyższą śmiertelnością niż postać hiperaktywna?",
+      "options": [
+        "Ponieważ spowolnienie i patologiczna senność są często przeoczane lub mylone z depresją, co opóźnia wykrycie ostrej przyczyny somatycznej",
+        "Ponieważ hipoaktywne delirium występuje wyłącznie u pacjentów ze złośliwym zespołem neuroleptycznym",
+        "Ponieważ postać hipoaktywna jest nieodwracalnym defektem kory potylicznej"
+      ],
+      "optionFeedback": [
+        "Brak pobudzenia sprawia, że personel nie alarmuje lekarza, a postępująca sepsa lub hipoksja pozostają nierozpoznane.",
+        "Hipoaktywne delirium jest powszechnym zespołem geriatrycznym o zróżnicowanej etiologii internistycznej.",
+        "Majaczenie jest zespołem potencjalnie odwracalnym po usunięciu wyzwalacza somatycznego."
+      ],
+      "answer": 1,
+      "explanation": "Hipoaktywne delirium jest powszechnym zespołem geriatrycznym o zróżnicowanej etiologii internistycznej.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "4at-validation-bellelli-2014",
+        "nice-cg103-delirium",
+        "dsm5tr"
+      ]
+    },
+    {
+      "id": "psych-delirium-rozpoznanie-i-dynamika-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "delirium-rozpoznanie-i-dynamika-obj-3"
+      ],
+      "prompt": "Jak należy poprawnie interpretować wynik 6 punktów w skali 4AT u 82-letniego pacjenta po operacji ortopedycznej?",
+      "options": [
+        "Wynik silnie zwiększa podejrzenie majaczenia i nakazuje pilne poszukiwanie przyczyn somatycznych i metabolicznych",
+        "Wynik definitywnie potwierdza otępienie naczyniowe i wyklucza wpływ zabiegu operacyjnego",
+        "Wynik oznacza brak wskazań do jakiejkolwiek diagnostyki, jeśli pacjent nie zgłasza omamów"
+      ],
+      "optionFeedback": [
+        "4AT jest narzędziem przesiewowym; wynik >=4 wskazuje na wysokie prawdopodobieństwo delirium, lecz nie zastępuje badania lekarskiego ani oceny etiologii.",
+        "4AT nie diagnozuje typu otępienia, a ostry wynik odzwierciedla stan dynamiczny.",
+        "Brak omamów jest typowy dla postaci hipoaktywnej i nie obniża czujności przy 6 punktach w 4AT."
+      ],
+      "answer": 2,
+      "explanation": "Brak omamów jest typowy dla postaci hipoaktywnej i nie obniża czujności przy 6 punktach w 4AT.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "4at-validation-bellelli-2014",
+        "nice-cg103-delirium",
+        "dsm5tr"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "delirium-rozpoznanie-i-dynamika-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "delirium-rozpoznanie-i-dynamika-obj-1",
+      "delirium-rozpoznanie-i-dynamika-obj-2",
+      "delirium-rozpoznanie-i-dynamika-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Majaczenie (delirium): uwaga, fluktuacja i tempo początku”.",
+    "modelAnswer": "Majaczenie definiuje ostry początek, dobowa fluktuacja oraz zaburzenia uwagi i czuwania. Postać hipoaktywna jest najgroźniejszą pułapką diagnostyczną, wymagającą systematycznej oceny narzędziami takimi jak 4AT.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "4at-validation-bellelli-2014",
+      "nice-cg103-delirium",
+      "dsm5tr"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "psych-delirium-rozpoznanie-i-dynamika-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "delirium-rozpoznanie-i-dynamika-obj-1"
+      ],
+      "prompt": "80-letnia pacjentka w 2. dobie po zabiegu staje się w nocy lękowa, widzi „robaki chodzące po pościeli” i próbuje opuścić łóżko, a rano podsypia i nie odpowiada na pytania. Jaki jest najbardziej dyskryminujący wniosek?",
+      "options": [
+        "Obraz kliniczny odpowiada majaczeniu o przebiegu mieszanym, wymagającemu natychmiastowego poszukiwania czynnika wyzwalającego",
+        "Stan pacjentki jest debiutem schizofrenii o późnym początku wymagającym pełnej dawki haloperidolu",
+        "Jest to typowa manipulacja behawioralna niewymagająca żadnych badań kontrolnych"
+      ],
+      "optionFeedback": [
+        "Nocne omamy wzrokowe i pobudzenie w połączeniu z poranną sennością i fluktuacją to klasyczny przebieg majaczenia mieszanego.",
+        "Rozpoznanie schizofrenii w 2. dobie pooperacyjnej przy ostrych wahaniach przytomności jest rażącym błędem.",
+        "Zaburzenia spostrzegania i czuwania u chorego po operacji są zawsze objawem somatycznego stanu zagrożenia."
+      ],
+      "answer": 0,
+      "explanation": "Nocne omamy wzrokowe i pobudzenie w połączeniu z poranną sennością i fluktuacją to klasyczny przebieg majaczenia mieszanego.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "4at-validation-bellelli-2014",
+        "nice-cg103-delirium",
+        "dsm5tr"
+      ]
+    },
+    {
+      "id": "psych-delirium-rozpoznanie-i-dynamika-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "delirium-rozpoznanie-i-dynamika-obj-1"
+      ],
+      "prompt": "Co jest kluczową zaletą metodologiczną testu 4AT w porównaniu z kwestionariuszami wymagającymi pełnej współpracy pacjenta?",
+      "options": [
+        "Pozwala na przyznanie punktów pacjentom podsypiającym lub niewspółpracującym, zapobiegając fałszywie ujemnym wynikom w stanach ciężkich",
+        "Wykrywa z dokładnością do 100% stężenie leków przeciwpsychotycznych w osoczu",
+        "Zastępuje konieczność wykonania gazometrii i elektrolitów u każdego chorego"
+      ],
+      "optionFeedback": [
+        "Niemożność wykonania próby uwagi (np. miesięcy od tyłu) punktuje jako nieprawidłowość, co chroni przed zlekceważeniem głębokich zaburzeń czuwania.",
+        "4AT jest testem behawioralno-poznawczym, a nie badaniem laboratoryjnym.",
+        "Żadne narzędzie przesiewowe nie zastępuje diagnostyki laboratoryjnej przyczyny majaczenia."
+      ],
+      "answer": 1,
+      "explanation": "4AT jest testem behawioralno-poznawczym, a nie badaniem laboratoryjnym.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "4at-validation-bellelli-2014",
+        "nice-cg103-delirium",
+        "dsm5tr"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "delirium-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "delirium-rozpoznanie-i-dynamika-obj-2"
+      ],
+      "claimIds": [
+        "claim-org-delirium-avoid-routine-bzd"
+      ],
+      "prompt": "82-letni Jan B. w 2. dobie po zabiegu ortopedycznym staje się w nocy pobudzony, wyrywa kaniulę i próbuje wstawać z łóżka. Rano jest podsypiający i nie potrafi wymienić miesięcy wspak. Dyżurny chirurg proponuje podanie 5 mg diazepamu i.v. na uspokojenie. Oceń to postępowanie.",
+      "options": [
+        "Błędne i niebezpieczne: benzodiazepiny są przeciwwskazane w rutynowym leczeniu majaczenia (poza zespołem odstawiennym) i mogą nasilić splątanie oraz depresję oddechową",
+        "Prawidłowe: diazepam jest lekiem pierwszego rzutu w sedacji każdego pobudzonego pacjenta geriatrycznego",
+        "Wskazane tylko pod warunkiem jednoczesnego wdrożenia unieruchomienia mechanicznego"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-bzd-contraindicated",
+            "label": "Benzodiazepiny przeciwwskazane poza withdrawal / nasilają delirium",
+            "acceptedPhrases": [
+              "przeciwwskazane",
+              "nasilają majaczenie",
+              "nasila splątanie",
+              "nie jest lekiem pierwszego rzutu",
+              "poza odstawieniem"
+            ]
+          },
+          {
+            "id": "c-delirium-cause-hunt",
+            "label": "Konieczność poszukiwania przyczyny somatycznej (Cause Hunt)",
+            "acceptedPhrases": [
+              "przyczyna somatyczna",
+              "cause hunt",
+              "pinch me",
+              "infekcja",
+              "retencja moczu",
+              "ból"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Wytyczne NICE CG103 jednoznacznie zakazują rutynowego podawania benzodiazepin w majaczeniu (z wyjątkiem zespołu odstawienia alkoholu/BZD). Benzodiazepiny pogłębiają zaburzenia uwagi i mogą wywołać paradoksalne pobudzenie.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "nice-cg103-delirium",
+        "maudsley15"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "delirium-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "delirium-rozpoznanie-i-dynamika-obj-1"
+      ],
+      "claimIds": [
+        "claim-org-delirium-acute-fluctuation",
+        "claim-org-delirium-cause-hunt-pinch-me"
+      ],
+      "prompt": "82-letni pacjent prezentuje fluktuacje kontaktu: w dzień senny, wieczorem pobudzony, nie koncentruje uwagi. Przedstaw plan postępowania: jakie cechy kliniczne potwierdzają delirium, jaki jest algorytm poszukiwania przyczyny somatycznej i jakich interwencji niefarmakologicznych wymaga pacjent przed jakąkolwiek farmakoterapią?",
+      "modelAnswer": "Obraz kliniczny: ostry początek i fluktuacja dobowa z zaburzeniami uwagi (kryteria CAM / 4AT). Postępowanie somatyczne (PINCH ME): pilne wykluczenie bólu (Pain), infekcji (Infection - UTI/zapalenie płuc), zaparć (Constipation), retencji moczu (Hydration/Retention), hipoksji i zaburzeń elektrolitowych oraz przegląd leków. Interwencje niefarmakologiczne: obecność bliskich, reorientacja (zegar, kalendarz, dobre oświetlenie), okulary i aparat słuchowy, mobilizacja i unikanie przymusu bezpośredniego.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-c-attention-fluctuation",
+            "label": "Zaburzenia uwagi i fluktuujący przebieg w czasie",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-attention-fluctuation",
+                "label": "Zaburzenia uwagi i fluktuujący przebieg w czasie",
+                "acceptedPhrases": [
+                  "uwaga",
+                  "zaburzenia uwagi",
+                  "fluktuacja",
+                  "zmienność dobowo",
+                  "ostry początek",
+                  "4at",
+                  "cam"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dim-c-pinch-me-somatic",
+            "label": "Poszukiwanie przyczyn somatycznych (PINCH ME: infekcja, ból, retencja)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-pinch-me-somatic",
+                "label": "Poszukiwanie przyczyn somatycznych (PINCH ME: infekcja, ból, retencja)",
+                "acceptedPhrases": [
+                  "pinch me",
+                  "przyczyna somatyczna",
+                  "infekcja",
+                  "ból",
+                  "retencja moczu",
+                  "zaparcie",
+                  "odwodnienie",
+                  "elektrolity"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dim-c-nonpharm-reorientation",
+            "label": "Interwencje niefarmakologiczne i reorientacja środowiskowa",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-nonpharm-reorientation",
+                "label": "Interwencje niefarmakologiczne i reorientacja środowiskowa",
+                "acceptedPhrases": [
+                  "reorientacja",
+                  "niefarmakologiczne",
+                  "zegar",
+                  "okulary",
+                  "aparat słuchowy",
+                  "obecność bliskich",
+                  "oświetlenie"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-delirium-primary-psych",
+            "patterns": [
+              "delirium to choroba psychiczna",
+              "pierwotna psychoza geriatryczna",
+              "tylko choroba alzheimera"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: Majaczenie jest zawsze wtórne do zaburzeń somatycznych/mózgowych, nie jest pierwotną psychozą."
+          },
+          {
+            "id": "err-immediate-sedation-only",
+            "patterns": [
+              "natychmiast uśpić",
+              "rutynowo haloperidol bez badań",
+              "tylko farmakoterapia"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: Postępowanie niefarmakologiczne i diagnostyka somatyczna są bezwzględnym pierwszym krokiem."
+          }
+        ]
+      },
+      "explanation": "Delirium to stan nagły. Wymaga identyfikacji zaburzeń uwagi (4AT/CAM), systematycznego Cause Hunt (PINCH ME) i wdrożenia protokołu reorientacji środowiskowej.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nice-cg103-delirium",
+        "4at-validation-bellelli-2014"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "delirium-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "delirium-rozpoznanie-i-dynamika-obj-3"
+      ],
+      "claimIds": [
+        "claim-org-delirium-acute-fluctuation"
+      ],
+      "prompt": "Oceń znaczenie podanych danych klinicznych dla rozpoznania ostrego majaczenia (delirium) u 80-letniego chorego.",
+      "hypothesis": "U pacjenta rozwija się ostre majaczenie hipoaktywne (hypoactive delirium).",
+      "explanation": "Objawy hipoaktywne (wycofanie, podsypianie, utrata uwagi) są najczęstszą postacią delirium u seniorów i łatwo ulegają przeoczeniu.",
+      "items": [
+        {
+          "id": "del-ew-1",
+          "text": "Pielęgniarka zgłasza, że pacjent od wczoraj jest nienaturalnie cichy, wycofany i nie odpowiada logicznie na pytania",
+          "expected": "supports",
+          "explanation": "Nagła zmiana zachowania i spowolnienie/wycofanie to klasyczny fenotyp majaczenia hipoaktywnego."
+        },
+        {
+          "id": "del-ew-2",
+          "text": "W badaniu o godzinie 11:00 pacjent jest w pełni zorientowany i odpowiada prawidłowo na pytania o datę",
+          "expected": "neutral",
+          "explanation": "Okres przejaśnienia (lucid interval) jest cechą fluktuacji w delirium i NIE wyklucza majaczenia."
+        },
+        {
+          "id": "del-ew-3",
+          "text": "Rodzina informuje, że pacjent od 4 lat ma powoli narastające trudności z pamięcią, bez nagłych zmian",
+          "expected": "opposes",
+          "explanation": "Przewlekła 4-letnia progresja bez ostrego zaostrzenia przemawia za otępieniem, a nie ostrym majaczeniem."
+        }
+      ],
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "4at-validation-bellelli-2014",
+        "nice-cg103-delirium"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "timeline"
+  ],
+  "widgetConfig": {},
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-12",
+    "scope": "Struktura dydaktyczna v2, standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., AGNP TDM 2026 oraz CPIC."
+  }
+}

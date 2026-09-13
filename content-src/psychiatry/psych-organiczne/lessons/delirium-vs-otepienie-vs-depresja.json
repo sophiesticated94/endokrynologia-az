@@ -1,0 +1,170 @@
+{
+  "id": "delirium-vs-otepienie-vs-depresja",
+  "moduleId": "psych-organiczne",
+  "title": "Różnicowanie: Delirium vs Otępienie vs Depresja vs Psychoza",
+  "subtitle": "Macierz różnicowa na 8 wymiarach semiotycznych i zjawisko delirium nałożonego",
+  "group": "Ostre zaburzenia świadomości i zespoły poznawcze",
+  "minutes": 18,
+  "goals": [
+    "Zestawisz delirium, otępienie i depresję na osiach: tempo, uwaga, czujność, orientacja i fluktuacja.",
+    "Rozpoznasz zjawisko majaczenia nałożonego na otępienie (delirium superimposed on dementia).",
+    "Unikniesz błędnego traktowania pojedynczych objawów (np. omamów wzrokowych) jako rozstrzygających w oderwaniu od dynamiki."
+  ],
+  "sections": [
+    {
+      "title": "Wielowymiarowa matryca różnicowa: kluczowa kombinacja cech",
+      "text": "Różnicowanie geriatrycznych stanów neuropsychiatrycznych opiera się na konstelacji cech, a nie izolowanym objawie. Majaczenie rozwija się w godziny/dni, charakteryzuje się falowaniem objawów, głębokim rozbiciem uwagi i zaburzeniami czuwania. Otępienie (dementia) rozwija się podstępnie w miesiące/lata, uwaga i czujność pozostają względnie zachowane we wczesnych stadiach, a dominują deficyty pamięci i funkcji wykonawczych. W depresji początek jest tygodniowy/miesięczny, uwaga bywa spowolniona przez obniżony napęd, lecz czujność jest zachowana, a pacjent chętnie odpowiada „nie wiem”."
+    },
+    {
+      "title": "Majaczenie nałożone na otępienie (Delirium Superimposed on Dementia)",
+      "text": "Obecność otępienia jest najsilniejszym niezależnym czynnikiem ryzyka wystąpienia majaczenia (wzrost ryzyka 3–5-krotny z powodu obniżonej rezerwy neuronalnej i cholinergicznej). Nałożenie delirium manifestuje się nagłą zmianą dotychczasowego funkcjonowania, nowymi omamami, nasileniem dezorientacji i bezsennością nocną. Kluczowy błąd to uznanie ostrego pogorszenia za „naturalną progresję otępienia” — choroba Alzheimera nie zaostrza się w ciągu 24 godzin bez somatycznego wyzwalacza."
+    },
+    {
+      "title": "Kiedy obraz przypomina psychozę pierwotną?",
+      "text": "Późny debiut psychozy u osoby starszej bez wywiadu psychiatrycznego zawsze obniża próg do diagnostyki organicznej. W psychozach pierwotnych (np. schizofrenia o bardzo późnym początku) urojenia są często spójne i usystematyzowane, a orientacja autopsychiczna i allopsychiczna oraz czuwanie pozostają nienaruszone. Pojawienie się fluktuacji, omamów wzrokowych i splątania nakazuje pilne wykluczenie przyczyn wtórnych."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Cecha kliniczna",
+      "Majaczenie (Delirium)",
+      "Otępienie (Dementia)",
+      "Depresja wieku podeszłego"
+    ],
+    "rows": [
+      [
+        "Początek",
+        "Nagły: godziny do kilku dni",
+        "Podstępny: miesiące do lat",
+        "Stopniowy: tygodnie do miesięcy"
+      ],
+      [
+        "Przebieg dobowy",
+        "Znacznie falujący (sundowning)",
+        "Względnie stabilny w ciągu doby",
+        "Gorszy rano (poranne zaostrzenie)"
+      ],
+      [
+        "Uwaga i czujność",
+        "Głęboko zaburzone, labilne",
+        "Zachowane we wczesnych stadiach",
+        "Spowolniona, ale zachowana"
+      ],
+      [
+        "Odwracalność",
+        "Zazwyczaj potencjalnie odwracalne",
+        "Z reguły postępujące",
+        "Odwracalna po skutecznym leczeniu"
+      ]
+    ]
+  },
+  "advanced": "Pojęcie „otępienia rzekomego” (pseudodementia) w depresji ma charakter historyczny i nie powinno być traktowane dosłownie. Współczesne badania neuroobrazowe wskazują, że zaburzenia poznawcze w depresji geriatrycznej mogą wynikać z uszkodzeń naczyniowych istoty białej (depresja naczyniowa) i stanowią stan podwyższonego ryzyka rozwoju późniejszego otępienia neurodegeneracyjnego.",
+  "summary": "Żadna pojedyncza cecha semiotyczna nie jest absolutna. O rozpoznaniu decyduje kombinacja: tempo rozwoju + fluktuacja + stopień zaburzenia uwagi i czuwania. Nagłe pogorszenie u pacjenta z otępieniem to delirium do czasu wykluczenia przyczyn ostrych.",
+  "sourceIds": [
+    "nice-cg103-delirium",
+    "nice-ng97-dementia",
+    "icd11-cddr"
+  ],
+  "questions": [
+    {
+      "id": "psych-del-vs-dem-q1",
+      "lessonId": "delirium-vs-otepienie-vs-depresja",
+      "prompt": "84-letni pacjent ze stabilnym od 3 lat otępieniem w chorobie Alzheimera staje się w ciągu 24 godzin agresywny, nie poznaje córki i widzi ogień za oknem. Co jest najbardziej prawidłowym wnioskiem klinicznym?",
+      "options": [
+        {
+          "text": "Stan ten dowodzi, że pierwotna diagnoza choroby Alzheimera była błędna i pacjent choruje na schizofrenię",
+          "explanation": "Debiut schizofrenii w wieku 84 lat z nagłym załamaniem jest skrajnie nieprawdopodobny."
+        },
+        {
+          "text": "Obraz przemawia za majaczeniem nałożonym na otępienie (delirium superimposed on dementia) i wymaga pilnego poszukiwania ostrej przyczyny somatycznej",
+          "explanation": "Otępienie neurodegeneracyjne nie postępuje skokowo w 24 godziny; nagłe załamanie u chorego z AD jest z reguły majaczeniem wywołanym infekcją, bólem lub lekiem."
+        },
+        {
+          "text": "Jest to naturalna, spodziewana progresja choroby Alzheimera i wymaga podwojenia dawki memantyny",
+          "explanation": "Podwojenie memantyny bez zbadania pacjenta ignoruje ostry stan zagrożenia somatycznego."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-del-vs-dem-q2",
+      "lessonId": "delirium-vs-otepienie-vs-depresja",
+      "prompt": "Który parametr semiotyczny stanowi najważniejszy dyskryminator pomiędzy łagodnym stadium otępienia a hipoaktywnym majaczeniem?",
+      "options": [
+        {
+          "text": "Obecność lub brak ubytków pamięci świeżej",
+          "explanation": "Zaburzenia pamięci świeżej występują zarówno w otępieniu, jak i w delirium, nie stanowiąc cechy różnicującej."
+        },
+        {
+          "text": "Wiek metrykalny pacjenta",
+          "explanation": "Wiek jest czynnikiem ryzyka obu stanów i nie pozwala na ich odróżnienie."
+        },
+        {
+          "text": "Uwaga i czujność — w majaczeniu uwaga jest głęboko zaburzona i falująca, a w łagodnym otępieniu uwaga i czuwanie są względnie zachowane",
+          "explanation": "Pacjent z wczesnym otępieniem potrafi utrzymać kontakt i skupić się na badaniu, podczas gdy w delirium uwaga natychmiast ulega rozproszeniu."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-del-vs-dem-q3",
+      "lessonId": "delirium-vs-otepienie-vs-depresja",
+      "prompt": "76-letnia pacjentka w gabinecie odpowiada na pytania testowe zniechęconym głosem: „nie wiem, nie pamiętam, to bez sensu”, lecz przy zachęcie wykonuje poprawnie trudniejsze zadania. Nie wykazuje fluktuacji świadomości. Jaka hipoteza jest najbardziej prawdopodobna?",
+      "options": [
+        {
+          "text": "Zaburzenia funkcji wykonawczych i pamięci w przebiegu epizodu depresyjnego wieku podeszłego",
+          "explanation": "Postawa rezygnacyjna, odpowiedzi „nie wiem” przy zachowanej czujności i poprawie pod wpływem motywacji są typowe dla geriatrycznego profilu depresyjnego."
+        },
+        {
+          "text": "Ostre hiperaktywne delirium wymagające natychmiastowych pasów obezwładniających",
+          "explanation": "Brak zaburzeń czuwania, brak falowania i brak pobudzenia wykluczają delirium hiperaktywne."
+        },
+        {
+          "text": "Zaawansowana choroba Creutzfeldta-Jakoba w stadium terminalnym",
+          "explanation": "Obraz nie wykazuje cech gwałtownej encefalopatii ani mioklonii."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-del-vs-dem-q4",
+      "lessonId": "delirium-vs-otepienie-vs-depresja",
+      "prompt": "Co oznacza pojęcie „sundowning” w kontekście dobowego przebiegu majaczenia i otępienia?",
+      "options": [
+        {
+          "text": "Występowanie napadów padaczkowych wyłącznie w porze południowej",
+          "explanation": "Sundowning nie odnosi się do napadów padaczkowych w południe."
+        },
+        {
+          "text": "Charakterystyczne nasilenie lęku, dezorientacji, błądzenia i pobudzenia w godzinach późnopopołudniowych i nocnych",
+          "explanation": "Zjawisko to wiąże się ze spadkiem oświetlenia, zmęczeniem sensorycznym i zaburzeniami rytmu okołodobowego melatoniny i kortyzolu."
+        },
+        {
+          "text": "Całkowite ustąpienie wszystkich objawów poznawczych po zachodzie słońca",
+          "explanation": "Sundowning oznacza zaostrzenie, a nie ustąpienie objawów w nocy."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-del-vs-dem-q5",
+      "lessonId": "delirium-vs-otepienie-vs-depresja",
+      "prompt": "Dlaczego u osób starszych z pierwszym w życiu epizodem manii lub psychozy należy przyjąć niższy próg do poszerzonej diagnostyki neurologicznej i obrazowej?",
+      "options": [
+        {
+          "text": "Ponieważ u osób starszych leki psychotropowe w 100% przypadków wywołują zgon",
+          "explanation": "Taka teza jest fałszywa; leki wymagają ostrożnego dawkowania, lecz nie są bezwzględnie śmiertelne."
+        },
+        {
+          "text": "Ponieważ schizofrenia wyklucza możliwość zachorowania na jakiekolwiek choroby internistyczne",
+          "explanation": "Obecność schorzenia psychicznego nie chroni przed chorobami somatycznymi."
+        },
+        {
+          "text": "Ponieważ prawdopodobieństwo etiologii wtórnej (udar, guz, infekcja, leki) jest w tej grupie wiekowej istotnie wyższe niż w młodości",
+          "explanation": "Późny debiut objawów afektywnych lub psychotycznych po 65 r.ż. ma znacznie częściej podłoże somatyczno-naczyniowe niż pierwotne."
+        }
+      ],
+      "answer": 2
+    }
+  ]
+}

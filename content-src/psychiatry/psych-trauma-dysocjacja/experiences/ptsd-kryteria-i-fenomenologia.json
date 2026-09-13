@@ -248,5 +248,191 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, NICE NG116, Lanius fMRI PTSD-DS"
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "ptsd-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "ptsd-kryteria-i-fenomenologia-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-ptsd-core-triad"
+      ],
+      "prompt": "Jaki warunek musi spełniać ponowne przeżywanie zdarzenia (re-experiencing), aby stanowiło objaw osiowy PTSD wg ICD-11?",
+      "options": [
+        "Musi wiązać się z subiektywnym poczuciem, że zdarzenie dzieje się ponownie w teraźniejszości (w tu i teraz, żywy flashback lub koszmar z przerażeniem)",
+        "Musi obejmować wyłącznie smutne rozmyślania i żal po minionych wydarzeniach",
+        "Musi występować wyłącznie w trakcie pierwszych 24 godzin po traumie"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-here-now-quality",
+            "label": "Jakość ponownego przeżywania w teraźniejszości (tu i teraz)",
+            "acceptedPhrases": [
+              "tu i teraz",
+              "w teraźniejszości",
+              "ponowne przeżywanie",
+              "flashback",
+              "here and now"
+            ]
+          },
+          {
+            "id": "c-icd11-core-triad",
+            "label": "Triada ICD-11 (re-experiencing, unikanie, poczucie zagrożenia)",
+            "acceptedPhrases": [
+              "triada",
+              "unikanie",
+              "poczucie zagrożenia",
+              "icd-11"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "ICD-11 wymaga sensorycznego ponownego przeżywania w teraźniejszości; zwykłe ruminacje nie spełniają kryterium.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "ptsd-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "ptsd-kryteria-i-fenomenologia-obj-2"
+      ],
+      "claimIds": [
+        "claim-trauma-ptsd-core-triad"
+      ],
+      "prompt": "Przedstaw różnicowanie fenomenologiczne intruzywnego flashbacku w PTSD od omamów w schizofrenii: treść, dynamika w czasie oraz wgląd chorobowy.",
+      "modelAnswer": "Treść: flashback wiernie, sensorycznie odtwarza fragmenty realnej przeszłej traumy (zapach, dźwięk, obraz); omamy w schizofrenii są wielotematyczne, dziwaczne, często komentujące i nieizomorficzne z konkretnym urazem. Dynamika: flashback pojawia się nagle po bodźcu spustowym (trigger), trwa od sekund do minut i wygasa; omamy w psychozie trwają w sposób ciągły. Wgląd: po ustąpieniu flashbacku pacjent z PTSD w pełni zdaje sobie sprawę z natury zjawiska (zachowany krytycyzm); w schizofrenii dominuje anozognozja i interpretacje urojeniowe.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-content-fidelity",
+            "label": "Treść (odtwarzanie realnej traumy vs omamy dziwaczne w psychozie)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-content",
+                "label": "Izomorfizm z traumą, zmysłowość, realna przeszłość",
+                "acceptedPhrases": [
+                  "realna trauma",
+                  "izomorficzne",
+                  "zmysłowe",
+                  "fragmenty urazu",
+                  "omamy dziwaczne"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          },
+          {
+            "id": "dim-temporal-trigger",
+            "label": "Przebieg w czasie i obecność bodźca wyzwalającego (trigger)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-time",
+                "label": "Bodziec spustowy, nagły początek, przemijający",
+                "acceptedPhrases": [
+                  "bodziec spustowy",
+                  "trigger",
+                  "nagły początek",
+                  "przemijający",
+                  "minuty"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          },
+          {
+            "id": "dim-insight-reality",
+            "label": "Wgląd chorobowy i testowanie rzeczywistości po epizodzie",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-insight",
+                "label": "Zachowany wgląd w PTSD vs anozognozja w schizofrenii",
+                "acceptedPhrases": [
+                  "zachowany wgląd",
+                  "krytycyzm",
+                  "anozognozja",
+                  "urojenia",
+                  "testowanie rzeczywistości"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-flashback-is-schizophrenia",
+            "patterns": [
+              "flashback to zawsze schizofrenia",
+              "leczyć wysoką dawką haloperidolu"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: Flashback w PTSD nie jest psychozą i nie wymaga leczenia przeciwpsychotycznego."
+          }
+        ]
+      },
+      "explanation": "Treść: flashback wiernie, sensorycznie odtwarza fragmenty realnej przeszłej traumy (zapach, dźwięk, obraz); omamy w schizofrenii są wielotematyczne, dziwaczne, często komentujące i nieizomorficzne z konkretnym urazem. Dynamika: flashback pojawia się nagle po bodźcu spustowym (trigger), trwa od sekund do minut i wygasa; omamy w psychozie trwają w sposób ciągły. Wgląd: po ustąpieniu flashbacku pacjent z PTSD w pełni zdaje sobie sprawę z natury zjawiska (zachowany krytycyzm); w schizofrenii dominuje anozognozja i interpretacje urojeniowe.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "ptsd-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "ptsd-kryteria-i-fenomenologia-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-ptsd-core-triad"
+      ],
+      "prompt": "Oceń cechy intruzji pourazowych u pacjenta po napadzie z bronią w ręku.",
+      "hypothesis": "Zgłaszane objawy spełniają kryterium ponownego przeżywania (re-experiencing) w PTSD wg ICD-11.",
+      "items": [
+        {
+          "id": "ptsd-ew-1",
+          "text": "Na dźwięk klaksonu pacjent pada na ziemię, czuje zapach prochu i jest przekonany, że napad dzieje się teraz",
+          "expected": "supports",
+          "explanation": "Klasyczny flashback ze złudzeniem teraźniejszości (here-and-now)."
+        },
+        {
+          "id": "ptsd-ew-2",
+          "text": "Pacjent wspomina, że napad był przykry, ale nie odczuwa przy tym fizycznego przerażenia",
+          "expected": "opposes",
+          "explanation": "Zwykłe wspomnienie bez sensorycznego re-experiencing nie spełnia kryterium."
+        },
+        {
+          "id": "ptsd-ew-3",
+          "text": "Uporczywe koszmary senne, w których pacjent budzi się z krzykiem i tachykardią, odtwarzając ucieczkę",
+          "expected": "supports",
+          "explanation": "Koszmary urazowe z afektem przerażenia to osiowa manifestacja re-experiencing."
+        }
+      ],
+      "explanation": "Osiowy re-experiencing wymaga złudzenia ponownego dziania się w teraźniejszości.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "transfer": true
+    }
+  ]
 }

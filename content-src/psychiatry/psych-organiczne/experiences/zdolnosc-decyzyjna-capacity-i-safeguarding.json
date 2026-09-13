@@ -1,0 +1,416 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "zdolnosc-decyzyjna-capacity-i-safeguarding",
+  "objectives": [
+    {
+      "id": "zdolnosc-decyzyjna-capacity-i-safeguarding-obj-1",
+      "statement": "Zastosujesz ustrukturyzowany model oceny zdolności do podejmowania decyzji (Mental Capacity Act: 4 domeny).",
+      "kind": "safety"
+    },
+    {
+      "id": "zdolnosc-decyzyjna-capacity-i-safeguarding-obj-2",
+      "statement": "Zrozumiesz zasadę: diagnoza otępienia nie jest tożsama z utratą zdolności decyzyjnej we wszystkich sprawach.",
+      "kind": "decision"
+    },
+    {
+      "id": "zdolnosc-decyzyjna-capacity-i-safeguarding-obj-3",
+      "statement": "Zidentyfikujesz zjawisko przeciążenia opiekuna (caregiver burden) i wdrożysz procedury ochrony (safeguarding / niebieska karta).",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-zdolnosc-decyzyjna-capacity-i-safeguarding-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "zdolnosc-decyzyjna-capacity-i-safeguarding-obj-1"
+    ],
+    "prompt": "80-letni pacjent z łagodnym otępieniem w chorobie Alzheimera ma zapalenie płuc i odmawia hospitalizacji, twierdząc: „wiem, że mogę się udusić w domu, ale wolę umrzeć we własnym łóżku niż w szpitalu”. Rozumie ryzyko, pamięta argumenty lekarza i logicznie waży opcje. Jak należy ocenić jego zdolność decyzyjną?",
+    "options": [
+      "Pacjent posiada zachowaną zdolność decyzyjną (capacity) do odmowy hospitalizacji, ponieważ rozumie sytuację, rozważa konsekwencje i komunikuje spójny wybór, a decyzja nieracjonalna medycznie nie oznacza braku capacity",
+      "Pacjent automatycznie nie posiada zdolności decyzyjnej, ponieważ każde rozpoznanie otępienia natychmiast pozbawia człowieka praw obywatelskich",
+      "Pacjent powinien zostać niezwłocznie związany pasami bez badania stanu psychicznego"
+    ],
+    "optionFeedback": [
+      "Zdolność decyzyjna nie wymaga podejmowania decyzji zgodnych z wolą lekarza; pacjent ma prawo do odmowy leczenia, jeśli spełnia 4 kryteria funkcjonalne.",
+      "Diagnoza otępienia nie jest tożsama z ubezwłasnowolnieniem ani automatyczną utratą zdolności decyzyjnej.",
+      "Przymus bezpośredni bez wskazań ustawowych jest bezprawnym pozbawieniem wolności."
+    ],
+    "answer": 0,
+    "explanation": "Zdolność decyzyjna nie wymaga podejmowania decyzji zgodnych z wolą lekarza; pacjent ma prawo do odmowy leczenia, jeśli spełnia 4 kryteria funkcjonalne.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "mca-2005-capacity",
+      "nice-ng97-dementia"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "zdolnosc-decyzyjna-capacity-i-safeguarding-block-1",
+      "title": "Zdolność decyzyjna: decision-specific i time-specific",
+      "text": "Zdolność do podejmowania decyzji (decision-making capacity) nie jest cechą globalną orzekaną raz na zawsze. Obowiązują dwie zasady kardynalne: 1) Specyficzność wobec decyzji (decision-specific) — pacjent z umiarkowanym otępieniem może nie mieć zdolności do sprzedaży nieruchomości lub zrozumienia skomplikowanej operacji kardiochirurgicznej, lecz w pełni zachowywać zdolność do wyboru posiłku, zgody na pobranie krwi czy wyznaczenia osoby bliskiej; 2) Specyficzność wobec czasu (time-specific) — w stanach z fluktuacjami (delirium) zdolność decyzyjna może zmieniać się z godziny na godzinę.",
+      "sourceIds": [
+        "mca-2005-capacity",
+        "nice-ng97-dementia"
+      ],
+      "checkpointId": "psych-zdolnosc-decyzyjna-capacity-i-safeguarding-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "widget-capacity-evaluator",
+          "kind": "interactive-widget",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "zdolnosc-decyzyjna-capacity-i-safeguarding-block-2",
+      "title": "Czteroelementowy model funkcjonalny (Mental Capacity Framework)",
+      "text": "Do uznania, że pacjent posiada zdolność do podjęcia konkretnej decyzji w danym momencie, konieczne jest spełnienie 4 warunków: 1) Zrozumienie informacji istotnych dla decyzji (Understanding: korzyści, ryzyko, alternatywy); 2) Zatrzymanie informacji w pamięci przez czas niezbędny do dokonania wyboru (Retention); 3) Zdolność do wyważenia i logicznego rozważenia informacji (Weighing/Reasoning: ocena konsekwencji wyboru i odmowy); 4) Zdolność do zakomunikowania decyzji (Communicating: słownie, gestem, pismem). Brak którejkolwiek domeny oznacza brak capacity w odniesieniu do tej decyzji.",
+      "sourceIds": [
+        "mca-2005-capacity",
+        "nice-ng97-dementia"
+      ],
+      "checkpointId": "psych-zdolnosc-decyzyjna-capacity-i-safeguarding-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-capacity-framework",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "zdolnosc-decyzyjna-capacity-i-safeguarding-block-3",
+      "title": "Safeguarding, wywiad od osób trzecich i przeciążenie opiekuna",
+      "text": "Opieka nad pacjentem z zespołem otępiennym wiąże się ze skrajnym obciążeniem fizycznym i emocjonalnym opiekuna (caregiver burden / wypalenie opiekuna). Nierozpoznane przeciążenie prowadzi do załamania opieki, a w skrajnych przypadkach do zaniedbania lub przemocy (elder abuse / safeguarding issues). Kluczową rolę odgrywa regularny, osobny wywiad z opiekunem: ocena snu opiekuna, wsparcia środowiskowego, objawów depresji oraz weryfikacja bezpieczeństwa podawania leków.",
+      "sourceIds": [
+        "mca-2005-capacity",
+        "nice-ng97-dementia"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-zdolnosc-decyzyjna-capacity-i-safeguarding-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "zdolnosc-decyzyjna-capacity-i-safeguarding-obj-2"
+      ],
+      "prompt": "Jakie są 4 funkcjonalne domeny oceny zdolności decyzyjnej wg uznanych standardów (Mental Capacity Framework)?",
+      "options": [
+        "Zrozumienie informacji istotnych dla decyzji (Understanding), ich zatrzymanie (Retention), zdolność do ich wyważenia i rozważenia konsekwencji (Weighing) oraz zakomunikowanie wyboru (Communicating)",
+        "Bogactwo finansowe, wykształcenie wyższe, brak zmarszczek na twarzy i posiadanie samochodu",
+        "Zgodność z wolą ordynatora oddziału, partii rządzącej i sąsiadów"
+      ],
+      "optionFeedback": [
+        "Czteroelementowy model ocenia proces myślowy pacjenta, a nie samą treść podjętej decyzji.",
+        "Status społeczny i majątek nie mają żadnego związku z oceną zdolności decyzyjnej.",
+        "Zdolność decyzyjna ocenia autonomię pacjenta, a nie konformizm."
+      ],
+      "answer": 1,
+      "explanation": "Status społeczny i majątek nie mają żadnego związku z oceną zdolności decyzyjnej.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "mca-2005-capacity",
+        "nice-ng97-dementia"
+      ]
+    },
+    {
+      "id": "psych-zdolnosc-decyzyjna-capacity-i-safeguarding-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "zdolnosc-decyzyjna-capacity-i-safeguarding-obj-3"
+      ],
+      "prompt": "Co oznacza zasada, że zdolność do podejmowania decyzji jest „decision-specific” i „time-specific”?",
+      "options": [
+        "Oznacza, że oceniamy zdolność do konkretnej decyzji w danym momencie czasu; pacjent może nie być zdolny do sprzedaży domu, lecz zdolny do wyboru obiadu, a jego stan może fluktuować",
+        "Oznacza, że lekarz podejmuje decyzję wyłącznie w dni parzyste po godzinie 12:00",
+        "Oznacza, że każda decyzja musi zostać potwierdzona przez test laboratoryjny moczu"
+      ],
+      "optionFeedback": [
+        "Odrzuca to zero-jedynkowe traktowanie pacjenta jako „całkowicie zdolnego” lub „całkowicie niezdolnego” do jakichkolwiek czynności życiowych.",
+        "Time-specific odnosi się do dynamiki stanu psychicznego chorego (np. w delirium), a nie do harmonogramu dyżurów.",
+        "Testy laboratoryjne nie oceniają zdolności decyzyjnej."
+      ],
+      "answer": 2,
+      "explanation": "Testy laboratoryjne nie oceniają zdolności decyzyjnej.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "mca-2005-capacity",
+        "nice-ng97-dementia"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "zdolnosc-decyzyjna-capacity-i-safeguarding-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "zdolnosc-decyzyjna-capacity-i-safeguarding-obj-1",
+      "zdolnosc-decyzyjna-capacity-i-safeguarding-obj-2",
+      "zdolnosc-decyzyjna-capacity-i-safeguarding-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Zdolność decyzyjna (capacity), safeguarding i wywiad od opiekuna”.",
+    "modelAnswer": "Diagnoza otępienia nie odbiera automatycznie zdolności decyzyjnej. Ocena capacity jest zawsze zorientowana na konkretną decyzję i moment czasowy, wymagając zbadania 4 domen funkcjonalnych. Integralną częścią opieki jest ochrona seniora (safeguarding) i wsparcie opiekuna.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "mca-2005-capacity",
+      "nice-ng97-dementia"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "psych-zdolnosc-decyzyjna-capacity-i-safeguarding-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "zdolnosc-decyzyjna-capacity-i-safeguarding-obj-1"
+      ],
+      "prompt": "Córka 86-letniej pacjentki z zaawansowanym otępieniem podczas wizyty płacze, jest skrajnie wyczerpana, przyznaje, że śpi po 3 godziny na dobę i obawia się, że „nie wytrzyma i zrobi krzywdę matce”. Jaka interwencja jest kluczowa?",
+      "options": [
+        "Natychmiastowe zaadresowanie przeciążenia opiekuna (caregiver burden): wdrożenie opieki wytchnieniowej, wsparcia środowiskowego MOPS, leczenia bezsenności chorej oraz ocena bezpieczeństwa w ramach safeguarding",
+        "Wyrzucenie córki z gabinetu z naganą za brak miłości rodzicielskiej",
+        "Podanie córce leków przeciwpsychotycznych bez badania"
+      ],
+      "optionFeedback": [
+        "Wypalenie opiekuna jest krytycznym czynnikiem ryzyka załamania opieki i przemocy wobec osób starszych; wymaga pilnej pomocy systemowej.",
+        "Reakcja moralizatorska ignoruje biologiczne i emocjonalne wyczerpanie opiekuna.",
+        "Córka wymaga wsparcia socjalnego i psychologicznego, nie przymusowej farmakoterapii."
+      ],
+      "answer": 0,
+      "explanation": "Wypalenie opiekuna jest krytycznym czynnikiem ryzyka załamania opieki i przemocy wobec osób starszych; wymaga pilnej pomocy systemowej.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "mca-2005-capacity",
+        "nice-ng97-dementia"
+      ]
+    },
+    {
+      "id": "psych-zdolnosc-decyzyjna-capacity-i-safeguarding-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "zdolnosc-decyzyjna-capacity-i-safeguarding-obj-1"
+      ],
+      "prompt": "Dlaczego wywiad od osób trzecich (collateral history) jest niezbędny przy ocenie zdolności seniora do bezpiecznego samodzielnego funkcjonowania w domu?",
+      "options": [
+        "Ponieważ pacjent w gabinecie może prezentować wyuczone maski społeczne (social facade), podczas gdy rodzina obserwuje niespłacone rachunki, niedożywienie i przypalanie garnków",
+        "Ponieważ prawo zabrania wierzyć seniorom w jakiekolwiek słowo bez podpisu świadka",
+        "Ponieważ rodzina jest właścicielem ciała pacjenta"
+      ],
+      "optionFeedback": [
+        "Fenomen fasady społecznej polega na sprawianiu pozorów pełnej sprawności w krótkiej rozmowie przy całkowitej niesamodzielności w środowisku domowym.",
+        "Ocena kliniczna dąży do obiektywizacji faktów, a nie arbitralnego podważania słów pacjenta.",
+        "Pacjent jest autonomicznym podmiotem prawa."
+      ],
+      "answer": 1,
+      "explanation": "Ocena kliniczna dąży do obiektywizacji faktów, a nie arbitralnego podważania słów pacjenta.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "mca-2005-capacity",
+        "nice-ng97-dementia"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "cap-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "zdolnosc-decyzyjna-capacity-i-safeguarding-obj-1"
+      ],
+      "claimIds": [
+        "claim-org-mca-capacity-decision-specific"
+      ],
+      "prompt": "77-letni pacjent z łagodną chorobą Alzheimera (MMSE 22) odmawia proponowanej przez chirurga planowej operacji przepukliny pachwinowej, tłumacząc: „Wiem, że mam przepuklinę i że może ulec uwięźnięciu, ale nie boli mnie, a boję się znieczulenia ogólnego i wolę poczekać”. Chirurg uznaje: „Pacjent ma otępienie, więc nie ma zdolności decyzyjnej; podpiszemy zgodę za niego”. Oceń stanowisko chirurga wg Mental Capacity Act 2005.",
+      "options": [
+        "Błędne i niezgodne z prawem: zdolność decyzyjna jest specyficzna dla decyzji i czasu; pacjent rozumie naturę zabiegu i ryzyko, więc zachowuje zdolność do odmowy, a diagnoza otępienia nie odbiera mu automatycznie tego prawa",
+        "Prawidłowe: każde rozpoznanie choroby Alzheimera skutkuje natychmiastową i całkowitą utratą zdolności do jakichkolwiek decyzji medycznych",
+        "Zabieg należy wykonać pod przymusem natychmiast z uwagi na fakt, że przepuklina pachwinowa zawsze zagraża życiu"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-capacity-decision-specific",
+            "label": "Zdolność decyzyjna jest specyficzna dla danej decyzji i czasu (decision- and time-specific)",
+            "acceptedPhrases": [
+              "specyficzna dla decyzji",
+              "dla danej decyzji",
+              "decision-specific",
+              "time-specific",
+              "w danym czasie"
+            ]
+          },
+          {
+            "id": "c-dementia-not-incapacity",
+            "label": "Diagnoza otępienia nie oznacza automatycznie braku zdolności decyzyjnej",
+            "acceptedPhrases": [
+              "otępienie to nie brak zdolności",
+              "rozpoznanie nie przesądza",
+              "zachowana zdolność",
+              "mca 2005"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Podstawowa zasada Mental Capacity Act 2005: zakłada się istnienie zdolności decyzyjnej, chyba że udowodniono jej brak. Samo rozpoznanie otępienia nie odbiera prawa do odmowy leczenia.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "mca-2005-capacity"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "cap-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "zdolnosc-decyzyjna-capacity-i-safeguarding-obj-2"
+      ],
+      "claimIds": [
+        "claim-org-mca-capacity-decision-specific"
+      ],
+      "prompt": "Wymień 4 etapy testu funkcjonalnego oceny zdolności decyzyjnej (Mental Capacity Act 2005) oraz omów zasadę działania w najlepiej pojętym interesie (best interests) w przypadku stwierdzenia braku zdolności.",
+      "modelAnswer": "Czteroetapowy test funkcjonalny oceny zdolności decyzyjnej: pacjent musi być zdolny do: 1) Zrozumienia informacji istotnych dla podjęcia decyzji (w tym korzyści, ryzyk i alternatyw); 2) Zapamiętania tych informacji na czas niezbędny do podjęcia decyzji; 3) Zważenia (użycia) informacji jako elementu procesu decyzyjnego; 4) Zakomunikowania swojej decyzji (mową, pismem lub gestem). Działanie w najlepiej pojętym interesie (Best Interests Principle): jeśli pacjent nie ma zdolności, decyzja musi uwzględniać uprzednio wyrażone wole i wartości pacjenta, zdanie opiekunów i pełnomocników medycznych oraz wybór rozwiązania najmniej ograniczającego prawa i wolność pacjenta (least restrictive option).",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-c-mca-four-domains",
+            "label": "Cztery domeny testu funkcjonalnego (zrozumienie, zapamiętanie, zważenie, zakomunikowanie)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-mca-four-domains",
+                "label": "Cztery domeny testu funkcjonalnego (zrozumienie, zapamiętanie, zważenie, zakomunikowanie)",
+                "acceptedPhrases": [
+                  "zrozumienie",
+                  "zapamiętanie",
+                  "zważenie",
+                  "użycie",
+                  "zakomunikowanie",
+                  "4 etapy"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dim-c-best-interests-values",
+            "label": "Zasada najlepiej pojętego interesu (best interests) z uwzględnieniem wcześniejszych wartości pacjenta",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-best-interests-values",
+                "label": "Zasada najlepiej pojętego interesu (best interests) z uwzględnieniem wcześniejszych wartości pacjenta",
+                "acceptedPhrases": [
+                  "najlepiej pojęty interes",
+                  "best interests",
+                  "wcześniejsza wola",
+                  "wartości pacjenta",
+                  "opiekunowie"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dim-c-least-restrictive",
+            "label": "Zasada opcji najmniej ograniczającej (least restrictive option)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-least-restrictive",
+                "label": "Zasada opcji najmniej ograniczającej (least restrictive option)",
+                "acceptedPhrases": [
+                  "najmniej ograniczająca",
+                  "least restrictive",
+                  "proporcjonalność",
+                  "poszanowanie praw"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-doctor-arbitrary-decision",
+            "patterns": [
+              "lekarz decyduje sam bez pytania nikogo",
+              "opinia rodziny jest bez znaczenia"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: Procedura best interests wymaga konsultacji z bliskimi i poszukiwania wcześniejszej woli pacjenta."
+          }
+        ]
+      },
+      "explanation": "MCA 2005 zapewnia ochronę praw pacjenta: brak zdolności w jednej kwestii (np. finanse) nie oznacza braku zdolności w innej (np. codzienna opieka).",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "mca-2005-capacity"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "cap-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "zdolnosc-decyzyjna-capacity-i-safeguarding-obj-3"
+      ],
+      "claimIds": [
+        "claim-org-mca-capacity-decision-specific"
+      ],
+      "prompt": "Oceń znaczenie podanych faktów dla oceny zdolności decyzyjnej u 80-letniego pacjenta z zaawansowanym otępieniem odmawiającego pobrania krwi.",
+      "hypothesis": "Pacjent nie posiada zdolności decyzyjnej do wyrażenia świadomej zgody lub sprzeciwu wobec procedury diagnostycznej.",
+      "explanation": "Utrata zdolności do zważenia konsekwencji braku leczenia oznacza brak zdolności decyzyjnej w myśl MCA 2005.",
+      "items": [
+        {
+          "id": "cap-ew-1",
+          "text": "Pacjent uważa, że igła to szpiegowski mikroczip i ucieka z krzykiem, nie przyjmując wyjaśnień personelu",
+          "expected": "supports",
+          "explanation": "Przekonania urojeniowe uniemożliwiają racjonalne zważenie i zrozumienie procedury medycznej."
+        },
+        {
+          "id": "cap-ew-2",
+          "text": "Pacjent powtarza słowa pielęgniarki, lecz po 30 sekundach nie pamięta, o czym była rozmowa",
+          "expected": "supports",
+          "explanation": "Brak zdolności do zapamiętania informacji uniemożliwia przeprowadzenie procesu decyzyjnego."
+        },
+        {
+          "id": "cap-ew-3",
+          "text": "Pacjent potrafi podpisać się na formularzu bez czytania treści",
+          "expected": "neutral",
+          "explanation": "Złożenie mechanicznego podpisu bez zrozumienia treści nie stanowi dowodu posiadania zdolności decyzyjnej."
+        }
+      ],
+      "difficulty": "student",
+      "reasoning": "safety",
+      "sourceIds": [
+        "mca-2005-capacity"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "pathway-builder"
+  ],
+  "widgetConfig": {},
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-12",
+    "scope": "Struktura dydaktyczna v2, standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., AGNP TDM 2026 oraz CPIC."
+  }
+}

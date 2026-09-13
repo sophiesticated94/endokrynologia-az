@@ -1,0 +1,169 @@
+{
+  "id": "otepienie-czolowo-skroniowe-bvftd",
+  "moduleId": "psych-organiczne",
+  "title": "Otępienie czołowo-skroniowe (FTD) i wariant behawioralny (bvFTD)",
+  "subtitle": "Zmiany osobowości po 55 r.ż., odhamowanie, zanik empatii, hiperororalność i maski psychiatryczne",
+  "group": "Główne zespoły neurodegeneracyjne",
+  "minutes": 18,
+  "goals": [
+    "Zidentyfikujesz kardynalne cechy wariantu behawioralnego FTD (kryteria Rascovsky 2011).",
+    "Rozpoznasz pułapki różnicowe: późny debiut manii, zaburzenia osobowości, depresję z apatią.",
+    "Zrozumiesz znaczenie zachowanej orientacji w standardowych testach przesiewowych przy dramatycznej dysfunkcji społecznej."
+  ],
+  "sections": [
+    {
+      "title": "Wariant behawioralny FTD: radykalna przemiana osobowości",
+      "text": "Wariant behawioralny otępienia czołowo-skroniowego (behavioural variant Frontotemporal Dementia — bvFTD) dotyka pacjentów w młodszym wieku niż choroba Alzheimera (typowo 45–65 lat). Osiową cechą jest postępująca zmiana zachowania, charakteru i relacji interpersonalnych. W kryteriach konsensusu Rascovsky (2011) do rozpoznania prawdopodobnego bvFTD wymaga się obecności co najmniej 3 z 6 cech: 1) Wczesne odhamowanie behawioralne (nieadekwatne komentarze seksualne, łamanie norm, agresja słowna); 2) Wczesna apatia lub bezwład; 3) Wczesna utrata empatii i współczucia; 4) Zachowania perseweracyjne, stereotypowe lub kompulsywne; 5) Hiperororalność i zmiany nawyków żywieniowych; 6) Profil neuropsychologiczny z dominacją dysfunkcji wykonawczej."
+    },
+    {
+      "title": "Maska psychiatryczna: bvFTD vs mania, depresja i kryzys wieku średniego",
+      "text": "bvFTD jest najczęściej błędnie diagnozowanym zespołem neurodegeneracyjnym w gabinetach psychiatrycznych. Odhamowanie i podejmowanie ryzykownych decyzji finansowych bywa mylone z manią lub chorobą afektywną dwubiegunową. Apatia i zaniedbanie obowiązków bywają brane za ciężką depresję lub „kryzys wieku średniego”. Kluczowa reguła różnicowa: radykalna, trwała zmiana osobowości i norm moralnych de novo u osoby po 50–55 r.ż. bez wcześniejszego wywiadu psychiatrycznego nakazuje pilne wykluczenie procesu organicznego płatów czołowych."
+    },
+    {
+      "title": "Paradoks testów przesiewowych (MMSE/MoCA w normie)",
+      "text": "W początkowych stadiach bvFTD pacjent potrafi bezbłędnie podać datę, miejsce, powtórzyć 3 słowa i uzyskać 28–30 punktów w teście MMSE, ponieważ kora hipokampa i pamięć epizodyczna są nienaruszone. Jednocześnie chory nie odczuwa żalu po śmierci najbliższej osoby, wykrada jedzenie obcym ludziom w restauracji lub trwoni majątek rodziny. Rutynowe testy przesiewowe są całkowicie ślepe na załamanie kory oczodołowo-czołowej i przedniej skroniowej; wymagane jest neuroobrazowanie (MRI — atrofia czołowa) i ustrukturyzowany wywiad od rodziny."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Obszar kliniczny",
+      "Wariant behawioralny FTD (bvFTD)",
+      "Choroba afektywna dwubiegunowa (Mania)",
+      "Choroba Alzheimera (AD)"
+    ],
+    "rows": [
+      [
+        "Pamięć epizodyczna",
+        "Względnie zachowana we wczesnej fazie",
+        "Zachowana (choć rozproszona)",
+        "Głęboko zaburzona od początku"
+      ],
+      [
+        "Zasady społeczne i empatia",
+        "Wczesna, głęboka utrata empatii i taktu",
+        "Zaburzone wyłącznie w ostrym epizodzie manii",
+        "Zachowane w stadiach wczesnych i umiarkowanych"
+      ],
+      [
+        "Nawyki żywieniowe",
+        "Hiperororalność, pochłanianie słodyczy",
+        "Brak czasu na jedzenie z powodu gonitwy",
+        "Brak specyficznego napędu na słodycze"
+      ],
+      [
+        "Wynik MMSE / MoCA",
+        "Często fałszywie prawidłowy (28–30 pkt)",
+        "Prawidłowy poza fazą zaostrzenia",
+        "Znamiennie obniżony"
+      ]
+    ]
+  },
+  "advanced": "W badaniu MRI mózgu w bvFTD stwierdza się asymetryczną atrofię kory czołowej (brzuszno-przyśrodkowej i oczodołowej) oraz przednich biegunów płatów skroniowych. W pozytonowej tomografii emisyjnej z fluorodeoksyglukozą (FDG-PET) widoczny jest głęboki hipometabolizm czołowo-skroniowy, wyprzedzający widoczną atrofię makroskopową.",
+  "summary": "bvFTD manifestuje się załamaniem norm społecznych, zanikiem empatii i hiperororalnością przy zwodniczo prawidłowych przesiewowych testach pamięci. Nowa zmiana charakteru po 55 r.ż. wymaga natychmiastowej diagnostyki kory czołowej.",
+  "sourceIds": [
+    "bvftd-rascovsky-2011",
+    "nice-ng97-dementia"
+  ],
+  "questions": [
+    {
+      "id": "psych-ftd-behave-q1",
+      "lessonId": "otepienie-czolowo-skroniowe-bvftd",
+      "prompt": "62-letni urzędnik bez wywiadu psychiatrycznego od 18 miesięcy staje się opryskliwy, opowiada wulgarne żarty w obecności przełożonych, nie wykazał żadnych emocji na wieść o śmierci syna i obsesyjnie wyjada cukierniczki. W teście MMSE uzyskuje 29/30 pkt. Jaka diagnoza jest najbardziej prawdopodobna?",
+      "options": [
+        {
+          "text": "Wczesne stadium choroby Creutzfeldta-Jakoba o przebiegu 18-miesięcznym",
+          "explanation": "Przebieg CJD jest gwałtowny (tygodnie/miesiące) z miokloniami i ataksją, a nie izolowanym odhamowaniem."
+        },
+        {
+          "text": "Wariant behawioralny otępienia czołowo-skroniowego (bvFTD)",
+          "explanation": "Odhamowanie behawioralne, zanik empatii i hiperororalność przy zachowanej pamięci świeżej w MMSE to klasyczny obraz uszkodzenia kory czołowej w kryteriach Rascovsky 2011."
+        },
+        {
+          "text": "Prawidłowe starzenie się mózgu niewymagające żadnej diagnostyki",
+          "explanation": "Utrata empatii i wulgarne zachowania u 62-latka nigdy nie są normą fizjologiczną."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-ftd-behave-q2",
+      "lessonId": "otepienie-czolowo-skroniowe-bvftd",
+      "prompt": "Dlaczego test przesiewowy MMSE może być fałszywie ujemny (wynik w normie) u pacjenta z zaawansowanymi zaburzeniami zachowania w przebiegu bvFTD?",
+      "options": [
+        {
+          "text": "Ponieważ test MMSE wolno przeprowadzać wyłącznie u dzieci do 12 roku życia",
+          "explanation": "MMSE jest testem dla osób dorosłych i seniorów."
+        },
+        {
+          "text": "Ponieważ pacjenci z bvFTD za każdym razem przekupują osobę badającą",
+          "explanation": "Taka teza jest absurdalna; błąd wynika z ograniczeń narzędzia testowego."
+        },
+        {
+          "text": "Ponieważ MMSE bada głównie orientację, pamięć świeżą i proste funkcje językowe, a jest całkowicie niewrażliwy na funkcje kory oczodołowo-czołowej i empatię społeczną",
+          "explanation": "Chory potrafi podać datę i powtórzyć słowa, mimo że utracił kontrolę impulsów i zdolność do funkcjonowania w społeczeństwie."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-ftd-behave-q3",
+      "lessonId": "otepienie-czolowo-skroniowe-bvftd",
+      "prompt": "Co oznacza objaw „hiperororalności” (hyperorality) w kryteriach diagnostycznych otępienia czołowo-skroniowego?",
+      "options": [
+        {
+          "text": "Zmienione nawyki żywieniowe: kompulsywne spożywanie słodyczy, wkładanie niejadalnych przedmiotów do ust i żarłoczność",
+          "explanation": "Wynika z uszkodzenia brzuszno-przyśrodkowych struktur płata skroniowego i układu limbicznego (komponent zespołu Klüvera-Bucy’ego)."
+        },
+        {
+          "text": "Nieustanne wygłaszanie przemówień politycznych bez zająknięcia",
+          "explanation": "Wygłaszanie przemówień to logorea lub mania, nie hiperororalność."
+        },
+        {
+          "text": "Zaburzenie czucia smaku wyłącznie w odniesieniu do soli kuchennej",
+          "explanation": "Hiperororalność dotyczy popędu oralnego i wyboru pokarmów, a nie izolowanej utraty smaku słonego."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-ftd-behave-q4",
+      "lessonId": "otepienie-czolowo-skroniowe-bvftd",
+      "prompt": "Jaki jest najbardziej dyskryminujący wskaźnik pozwalający odróżnić późny epizod manii od wariantu behawioralnego FTD?",
+      "options": [
+        {
+          "text": "Występowanie łupieżu na skórze głowy",
+          "explanation": "Objawy dermatologiczne nie mają wartości dyskryminującej w neuropsychiatrii."
+        },
+        {
+          "text": "Progresywny, podstępny przebieg z postępującą utratą empatii i obecnością atrofii czołowo-skroniowej w MRI mózgu w bvFTD",
+          "explanation": "Mania przebiega fazowo z epizodami remisji, podczas gdy bvFTD jest chorobą neurodegeneracyjną prowadzącą do trwałego ubytku tkanki mózgowej."
+        },
+        {
+          "text": "Poziom ciśnienia tętniczego mierzony na lewym ramieniu",
+          "explanation": "Ciśnienie tętnicze nie różnicuje manii od otępienia czołowo-skroniowego."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-ftd-behave-q5",
+      "lessonId": "otepienie-czolowo-skroniowe-bvftd",
+      "prompt": "Jakie jest zalecane postępowanie farmakologiczne w łagodzeniu odhamowania i kompulsji w bvFTD?",
+      "options": [
+        {
+          "text": "Wysokie dawki inhibitorów acetylocholinoesterazy (donepezil)",
+          "explanation": "ChEI nie mają udowodnionej skuteczności w bvFTD i mogą wręcz nasilać pobudzenie i drażliwość."
+        },
+        {
+          "text": "Monoterapia amfetaminą w dawce 100 mg/dobę",
+          "explanation": "Amfetamina w wysokiej dawce nasiliłaby pobudzenie i zachowania agresywne."
+        },
+        {
+          "text": "Leki z grupy SSRI (np. trazodon, sertralina) wykazujące umiarkowaną skuteczność w redukcji zachowań stereotypowych i impulsywnych",
+          "explanation": "Wykazano, że deficyt serotoninergiczny w korze czołowej odpowiada za impulsywność; SSRI pomagają wyhamować drażliwość i hiperororalność."
+        }
+      ],
+      "answer": 2
+    }
+  ]
+}

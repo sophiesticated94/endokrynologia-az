@@ -263,5 +263,181 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "WHO ICD-11 CDDR (6B64), APA DSM-5-TR, ISSTD, pure content-src architecture"
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "did-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "did-tozsamosc-i-rozszczepienie-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-did-core-criteria",
+        "claim-trauma-amnesia-everyday-did"
+      ],
+      "prompt": "Jakie są osiowe kryteria diagnostyczne dysocjacyjnego zaburzenia tożsamości (DID) wg ICD-11 (6B64) i DSM-5-TR?",
+      "options": [
+        "Obecność co najmniej 2 odrębnych stanów tożsamości (osobowości) nawracająco przejmujących kontrolę wykonawczą nad zachowaniem oraz amnezja codzienna (amnesia for everyday events)",
+        "Obecność zmiennych nastrojów w ciągu jednego dnia u osoby z labilnością emocjonalną",
+        "Występowanie urojeń ksobnych i omamów wzrokowych bez podziału tożsamości"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-distinct-states-exec",
+            "label": "Odrębne stany tożsamości z nawracającą kontrolą wykonawczą",
+            "acceptedPhrases": [
+              "odrębne stany",
+              "kontrola wykonawcza",
+              "tożsamość",
+              "alter",
+              "przejmowanie kontroli"
+            ]
+          },
+          {
+            "id": "c-everyday-amnesia",
+            "label": "Amnezja dotycząca codziennych wydarzeń (nie tylko traumy)",
+            "acceptedPhrases": [
+              "amnezja codzienna",
+              "codzienne wydarzenia",
+              "luki pamięciowe",
+              "amnesia for everyday events"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Kryterium konieczne DID: odrębne stany tożsamości + nawracająca kontrola wykonawcza + amnezja codzienna.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "did-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "did-tozsamosc-i-rozszczepienie-obj-2"
+      ],
+      "claimIds": [
+        "claim-trauma-did-core-criteria"
+      ],
+      "prompt": "Przedstaw różnicę między pełnym DID (ICD-11 6B64) a częściowym DID (Partial DID, ICD-11 6B65) w odniesieniu do wzorca kontroli wykonawczej i amnezji codziennej.",
+      "modelAnswer": "Pełne DID (6B64): odrębne stany tożsamości nawracająco przejmują pełną kontrolę wykonawczą nad ciałem i działaniem pacjenta, co wiąże się z amnezją codzienną (pacjent „traci czas”, znajduje nowe przedmioty). Częściowe DID (Partial DID, 6B65): istnieje jeden dominujący stan tożsamości wykonawczej, który na stałe kieruje codziennym funkcjonowaniem, a stany nieprzejmujące kontroli manifestują się jedynie jako intruzje wewnętrzne (głosy, obce myśli, wstrzyknięte emocje, przemijające impulsy), bez utraty kontroli wykonawczej i bez amnezji codziennej.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-full-did-pattern",
+            "label": "Wzorzec pełnego DID (nawracająca kontrola wykonawcza i amnezja codzienna)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-full-did",
+                "label": "Przejmowanie kontroli wykonawczej, amnezja codzienna, utrata czasu",
+                "acceptedPhrases": [
+                  "kontrola wykonawcza",
+                  "amnezja codzienna",
+                  "utrata czasu",
+                  "pełne did",
+                  "6b64"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          },
+          {
+            "id": "dim-partial-did-pattern",
+            "label": "Wzorzec częściowego DID (jeden stan dominujący, intruzje bez przejęcia kontroli)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-partial-did",
+                "label": "Częściowe did, 6b65, dominujący stan, intruzje, brak utraty kontroli",
+                "acceptedPhrases": [
+                  "częściowe did",
+                  "partial did",
+                  "6b65",
+                  "brak kontroli wykonawczej",
+                  "intruzje",
+                  "jeden dominujący stan"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-partial-did-requires-full-switch",
+            "patterns": [
+              "w partial did musi być pełny switch",
+              "brak różnicy między 6b64 a 6b65"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: Partial DID w ICD-11 charakteryzuje się brakiem przejmowania kontroli wykonawczej przez alter-stany."
+          }
+        ]
+      },
+      "explanation": "Pełne DID (6B64): odrębne stany tożsamości nawracająco przejmują pełną kontrolę wykonawczą nad ciałem i działaniem pacjenta, co wiąże się z amnezją codzienną (pacjent „traci czas”, znajduje nowe przedmioty). Częściowe DID (Partial DID, 6B65): istnieje jeden dominujący stan tożsamości wykonawczej, który na stałe kieruje codziennym funkcjonowaniem, a stany nieprzejmujące kontroli manifestują się jedynie jako intruzje wewnętrzne (głosy, obce myśli, wstrzyknięte emocje, przemijające impulsy), bez utraty kontroli wykonawczej i bez amnezji codziennej.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "transfer": true,
+      "engineBinding": {
+        "engineId": "trauma-dissociation",
+        "presetId": "trauma-did-differential",
+        "expectedOutputVersion": 1
+      }
+    },
+    {
+      "id": "did-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "did-tozsamosc-i-rozszczepienie-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-did-core-criteria",
+        "claim-trauma-amnesia-everyday-did"
+      ],
+      "prompt": "Oceń znaczenie danych klinicznych dla rozpoznania pełnego DID u 29-letniej pacjentki.",
+      "hypothesis": "Obraz kliniczny pacjentki spełnia kryteria pełnego DID (ICD-11 6B64 / DSM-5-TR).",
+      "items": [
+        {
+          "id": "did-ew-1",
+          "text": "Pacjentka regularnie znajduje w szafie ubrania, których nie pamięta kupowania, oraz paragony ze sklepów z godzin, w których „jej nie było”",
+          "expected": "supports",
+          "explanation": "Klasyczny dowód amnezji codziennej (compartmentalization) związanej z przejęciem kontroli przez inny stan."
+        },
+        {
+          "id": "did-ew-2",
+          "text": "Pacjentka ma zmienne zainteresowania i styl ubierania się, pamiętając w pełni każdą decyzję i nie tracąc poczucia czasu",
+          "expected": "opposes",
+          "explanation": "Zmienność tożsamości bez amnezji i bez odrębnych stanów wykonawczych wskazuje na BPD, a nie DID."
+        },
+        {
+          "id": "did-ew-3",
+          "text": "Podczas badania pacjentka nagle zmienia tembr głosu, przedstawia się imieniem 8-letniego chłopca i nie rozpoznaje lekarza",
+          "expected": "supports",
+          "explanation": "Zaobserwowane przełączenie stanu tożsamości z utratą orientacji."
+        }
+      ],
+      "explanation": "DID wymaga dowodów odrębnych stanów tożsamości i amnezji codziennej.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022"
+      ],
+      "transfer": true
+    }
+  ]
 }

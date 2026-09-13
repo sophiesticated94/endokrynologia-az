@@ -1,0 +1,164 @@
+{
+  "id": "zdolnosc-decyzyjna-capacity-i-safeguarding",
+  "moduleId": "psych-organiczne",
+  "title": "Zdolność decyzyjna (capacity), safeguarding i wywiad od opiekuna",
+  "subtitle": "Czteroelementowy model oceny, specyficzność decyzyjna i czasowa, ochrona praw seniora i przeciążenie opiekuna",
+  "group": "Geriatria kliniczna, bezpieczeństwo i etyka",
+  "minutes": 19,
+  "goals": [
+    "Zastosujesz ustrukturyzowany model oceny zdolności do podejmowania decyzji (Mental Capacity Act: 4 domeny).",
+    "Zrozumiesz zasadę: diagnoza otępienia nie jest tożsama z utratą zdolności decyzyjnej we wszystkich sprawach.",
+    "Zidentyfikujesz zjawisko przeciążenia opiekuna (caregiver burden) i wdrożysz procedury ochrony (safeguarding / niebieska karta)."
+  ],
+  "sections": [
+    {
+      "title": "Zdolność decyzyjna: decision-specific i time-specific",
+      "text": "Zdolność do podejmowania decyzji (decision-making capacity) nie jest cechą globalną orzekaną raz na zawsze. Obowiązują dwie zasady kardynalne: 1) Specyficzność wobec decyzji (decision-specific) — pacjent z umiarkowanym otępieniem może nie mieć zdolności do sprzedaży nieruchomości lub zrozumienia skomplikowanej operacji kardiochirurgicznej, lecz w pełni zachowywać zdolność do wyboru posiłku, zgody na pobranie krwi czy wyznaczenia osoby bliskiej; 2) Specyficzność wobec czasu (time-specific) — w stanach z fluktuacjami (delirium) zdolność decyzyjna może zmieniać się z godziny na godzinę."
+    },
+    {
+      "title": "Czteroelementowy model funkcjonalny (Mental Capacity Framework)",
+      "text": "Do uznania, że pacjent posiada zdolność do podjęcia konkretnej decyzji w danym momencie, konieczne jest spełnienie 4 warunków: 1) Zrozumienie informacji istotnych dla decyzji (Understanding: korzyści, ryzyko, alternatywy); 2) Zatrzymanie informacji w pamięci przez czas niezbędny do dokonania wyboru (Retention); 3) Zdolność do wyważenia i logicznego rozważenia informacji (Weighing/Reasoning: ocena konsekwencji wyboru i odmowy); 4) Zdolność do zakomunikowania decyzji (Communicating: słownie, gestem, pismem). Brak którejkolwiek domeny oznacza brak capacity w odniesieniu do tej decyzji."
+    },
+    {
+      "title": "Safeguarding, wywiad od osób trzecich i przeciążenie opiekuna",
+      "text": "Opieka nad pacjentem z zespołem otępiennym wiąże się ze skrajnym obciążeniem fizycznym i emocjonalnym opiekuna (caregiver burden / wypalenie opiekuna). Nierozpoznane przeciążenie prowadzi do załamania opieki, a w skrajnych przypadkach do zaniedbania lub przemocy (elder abuse / safeguarding issues). Kluczową rolę odgrywa regularny, osobny wywiad z opiekunem: ocena snu opiekuna, wsparcia środowiskowego, objawów depresji oraz weryfikacja bezpieczeństwa podawania leków."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Domena capacity",
+      "Pytanie badające przyłóżkowo",
+      "Przykładowa dysfunkcja w otępieniu"
+    ],
+    "rows": [
+      [
+        "1. Understanding (Zrozumienie)",
+        "„Czy rozumie Pan/Pani, dlaczego proponujemy pozostanie w szpitalu?”",
+        "Pacjent uważa, że jest w hotelu i nic mu nie dolega"
+      ],
+      [
+        "2. Retention (Zatrzymanie)",
+        "„Czy pamięta Pan/Pani, jakie ryzyko wiąże się z przerwaniem leczenia?”",
+        "Pacjent zapomina treść rozmowy po 15 sekundach"
+      ],
+      [
+        "3. Weighing (Wyważenie)",
+        "„Jakie mogą być konsekwencje powrotu do domu bez tlenu?”",
+        "Pacjent ignoruje ryzyko śmierci z powodu urojeń"
+      ],
+      [
+        "4. Communicating (Zakomunikowanie)",
+        "„Jaki jest ostateczny Pana/Pani wybór po rozważeniu opcji?”",
+        "Brak możliwości kontaktu z powodu afazji całkowitej lub mutyzmu"
+      ]
+    ]
+  },
+  "advanced": "W polskim prawie medycznym i prawie cywilnym odróżnia się zgodę poinformowaną (informed consent) pacjenta przytomnego od procedur zgody zastępczej (sąd opiekuńczy, przedstawiciel ustawowy). Jeśli pacjent nie ubezwłasnowolniony nie posiada zdolności do świadomego wyrażenia zgody z powodu ostrych zaburzeń świadomości, a stan zagraża życiu, lekarz ma prawo podjąć działania ratunkowe na mocy ustawy o zawodach lekarza i lekarza dentysty.",
+  "summary": "Diagnoza otępienia nie odbiera automatycznie zdolności decyzyjnej. Ocena capacity jest zawsze zorientowana na konkretną decyzję i moment czasowy, wymagając zbadania 4 domen funkcjonalnych. Integralną częścią opieki jest ochrona seniora (safeguarding) i wsparcie opiekuna.",
+  "sourceIds": [
+    "mca-2005-capacity",
+    "nice-ng97-dementia"
+  ],
+  "questions": [
+    {
+      "id": "psych-cap-safe-q1",
+      "lessonId": "zdolnosc-decyzyjna-capacity-i-safeguarding",
+      "prompt": "80-letni pacjent z łagodnym otępieniem w chorobie Alzheimera ma zapalenie płuc i odmawia hospitalizacji, twierdząc: „wiem, że mogę się udusić w domu, ale wolę umrzeć we własnym łóżku niż w szpitalu”. Rozumie ryzyko, pamięta argumenty lekarza i logicznie waży opcje. Jak należy ocenić jego zdolność decyzyjną?",
+      "options": [
+        {
+          "text": "Pacjent posiada zachowaną zdolność decyzyjną (capacity) do odmowy hospitalizacji, ponieważ rozumie sytuację, rozważa konsekwencje i komunikuje spójny wybór, a decyzja nieracjonalna medycznie nie oznacza braku capacity",
+          "explanation": "Zdolność decyzyjna nie wymaga podejmowania decyzji zgodnych z wolą lekarza; pacjent ma prawo do odmowy leczenia, jeśli spełnia 4 kryteria funkcjonalne."
+        },
+        {
+          "text": "Pacjent automatycznie nie posiada zdolności decyzyjnej, ponieważ każde rozpoznanie otępienia natychmiast pozbawia człowieka praw obywatelskich",
+          "explanation": "Diagnoza otępienia nie jest tożsama z ubezwłasnowolnieniem ani automatyczną utratą zdolności decyzyjnej."
+        },
+        {
+          "text": "Pacjent powinien zostać niezwłocznie związany pasami bez badania stanu psychicznego",
+          "explanation": "Przymus bezpośredni bez wskazań ustawowych jest bezprawnym pozbawieniem wolności."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-cap-safe-q2",
+      "lessonId": "zdolnosc-decyzyjna-capacity-i-safeguarding",
+      "prompt": "Jakie są 4 funkcjonalne domeny oceny zdolności decyzyjnej wg uznanych standardów (Mental Capacity Framework)?",
+      "options": [
+        {
+          "text": "Zgodność z wolą ordynatora oddziału, partii rządzącej i sąsiadów",
+          "explanation": "Zdolność decyzyjna ocenia autonomię pacjenta, a nie konformizm."
+        },
+        {
+          "text": "Zrozumienie informacji istotnych dla decyzji (Understanding), ich zatrzymanie (Retention), zdolność do ich wyważenia i rozważenia konsekwencji (Weighing) oraz zakomunikowanie wyboru (Communicating)",
+          "explanation": "Czteroelementowy model ocenia proces myślowy pacjenta, a nie samą treść podjętej decyzji."
+        },
+        {
+          "text": "Bogactwo finansowe, wykształcenie wyższe, brak zmarszczek na twarzy i posiadanie samochodu",
+          "explanation": "Status społeczny i majątek nie mają żadnego związku z oceną zdolności decyzyjnej."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-cap-safe-q3",
+      "lessonId": "zdolnosc-decyzyjna-capacity-i-safeguarding",
+      "prompt": "Co oznacza zasada, że zdolność do podejmowania decyzji jest „decision-specific” i „time-specific”?",
+      "options": [
+        {
+          "text": "Oznacza, że lekarz podejmuje decyzję wyłącznie w dni parzyste po godzinie 12:00",
+          "explanation": "Time-specific odnosi się do dynamiki stanu psychicznego chorego (np. w delirium), a nie do harmonogramu dyżurów."
+        },
+        {
+          "text": "Oznacza, że każda decyzja musi zostać potwierdzona przez test laboratoryjny moczu",
+          "explanation": "Testy laboratoryjne nie oceniają zdolności decyzyjnej."
+        },
+        {
+          "text": "Oznacza, że oceniamy zdolność do konkretnej decyzji w danym momencie czasu; pacjent może nie być zdolny do sprzedaży domu, lecz zdolny do wyboru obiadu, a jego stan może fluktuować",
+          "explanation": "Odrzuca to zero-jedynkowe traktowanie pacjenta jako „całkowicie zdolnego” lub „całkowicie niezdolnego” do jakichkolwiek czynności życiowych."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-cap-safe-q4",
+      "lessonId": "zdolnosc-decyzyjna-capacity-i-safeguarding",
+      "prompt": "Córka 86-letniej pacjentki z zaawansowanym otępieniem podczas wizyty płacze, jest skrajnie wyczerpana, przyznaje, że śpi po 3 godziny na dobę i obawia się, że „nie wytrzyma i zrobi krzywdę matce”. Jaka interwencja jest kluczowa?",
+      "options": [
+        {
+          "text": "Natychmiastowe zaadresowanie przeciążenia opiekuna (caregiver burden): wdrożenie opieki wytchnieniowej, wsparcia środowiskowego MOPS, leczenia bezsenności chorej oraz ocena bezpieczeństwa w ramach safeguarding",
+          "explanation": "Wypalenie opiekuna jest krytycznym czynnikiem ryzyka załamania opieki i przemocy wobec osób starszych; wymaga pilnej pomocy systemowej."
+        },
+        {
+          "text": "Wyrzucenie córki z gabinetu z naganą za brak miłości rodzicielskiej",
+          "explanation": "Reakcja moralizatorska ignoruje biologiczne i emocjonalne wyczerpanie opiekuna."
+        },
+        {
+          "text": "Podanie córce leków przeciwpsychotycznych bez badania",
+          "explanation": "Córka wymaga wsparcia socjalnego i psychologicznego, nie przymusowej farmakoterapii."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-cap-safe-q5",
+      "lessonId": "zdolnosc-decyzyjna-capacity-i-safeguarding",
+      "prompt": "Dlaczego wywiad od osób trzecich (collateral history) jest niezbędny przy ocenie zdolności seniora do bezpiecznego samodzielnego funkcjonowania w domu?",
+      "options": [
+        {
+          "text": "Ponieważ rodzina jest właścicielem ciała pacjenta",
+          "explanation": "Pacjent jest autonomicznym podmiotem prawa."
+        },
+        {
+          "text": "Ponieważ pacjent w gabinecie może prezentować wyuczone maski społeczne (social facade), podczas gdy rodzina obserwuje niespłacone rachunki, niedożywienie i przypalanie garnków",
+          "explanation": "Fenomen fasady społecznej polega na sprawianiu pozorów pełnej sprawności w krótkiej rozmowie przy całkowitej niesamodzielności w środowisku domowym."
+        },
+        {
+          "text": "Ponieważ prawo zabrania wierzyć seniorom w jakiekolwiek słowo bez podpisu świadka",
+          "explanation": "Ocena kliniczna dąży do obiektywizacji faktów, a nie arbitralnego podważania słów pacjenta."
+        }
+      ],
+      "answer": 1
+    }
+  ]
+}

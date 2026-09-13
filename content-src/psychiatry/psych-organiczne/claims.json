@@ -1,0 +1,187 @@
+[
+  {
+    "id": "claim-org-delirium-acute-fluctuation",
+    "statement": "Majaczenie (delirium) charakteryzuje się ostrym początkiem (godziny do dni), fluktuującym przebiegiem dobowym oraz zaburzeniami uwagi i świadomości, w przeciwieństwie do powolnej, skrytej progresji otępienia.",
+    "sourceIds": [
+      "4at-validation-bellelli-2014",
+      "nice-cg103-delirium",
+      "dsm5tr"
+    ],
+    "category": "guideline_recommendation",
+    "lessonIds": [
+      "delirium-rozpoznanie-i-dynamika",
+      "delirium-vs-otepienie-vs-depresja"
+    ]
+  },
+  {
+    "id": "claim-org-delirium-cause-hunt-pinch-me",
+    "statement": "Każdy epizod majaczenia stanowi stan naglący w medycynie wywołany odwracalną przyczyną somatyczną; algorytm Cause Hunt (mnemonik PINCH ME) wymaga pilnej identyfikacji infekcji, bólu, leków, zaparć lub zaburzeń metabolicznych.",
+    "sourceIds": [
+      "nice-cg103-delirium",
+      "4at-validation-bellelli-2014"
+    ],
+    "category": "guideline_recommendation",
+    "lessonIds": [
+      "delirium-rozpoznanie-i-dynamika",
+      "diagnostyka-ostrego-zaburzenia-swiadomosci"
+    ]
+  },
+  {
+    "id": "claim-org-delirium-avoid-routine-bzd",
+    "statement": "W leczeniu majaczenia niepowikłanego zespołem odstawiennym (alkohol/BZD) benzodiazepiny są przeciwwskazane jako leczenie rutynowe, gdyż nasilają zaburzenia uwagi, sedację i paradoksalne pobudzenie oraz wydłużają hospitalizację.",
+    "sourceIds": [
+      "nice-cg103-delirium",
+      "maudsley15"
+    ],
+    "category": "guideline_recommendation",
+    "lessonIds": [
+      "delirium-rozpoznanie-i-dynamika",
+      "diagnostyka-ostrego-zaburzenia-swiadomosci"
+    ]
+  },
+  {
+    "id": "claim-org-delirium-superimposed-dementia",
+    "statement": "Majaczenie nałożone na otępienie (delirium superimposed on dementia) występuje u 20–50% hospitalizowanych pacjentów geriatrycznych; rozpoznanie trwałego spadku poznawczego wymaga oceny dopiero po całkowitym wygaszeniu ostrej encefalopatii.",
+    "sourceIds": [
+      "nice-cg103-delirium",
+      "nice-ng97-dementia"
+    ],
+    "category": "observational_association",
+    "lessonIds": [
+      "delirium-vs-otepienie-vs-depresja",
+      "zaburzenia-poznawcze-mci-a-otepienie"
+    ]
+  },
+  {
+    "id": "claim-org-mci-iadl-boundary",
+    "statement": "Łagodne zaburzenia poznawcze (MCI) różnią się od otępienia zachowaną niezależnością w złożonych czynnościach dnia codziennego (IADL); pacjent może wymagać większego wysiłku lub kompensacji, lecz nie jest zależny od innych.",
+    "sourceIds": [
+      "dsm5tr",
+      "icd11-cddr",
+      "nice-ng97-dementia"
+    ],
+    "category": "guideline_recommendation",
+    "lessonIds": [
+      "zaburzenia-poznawcze-mci-a-otepienie",
+      "choroba-alzheimera-wzorzec-i-progresja"
+    ]
+  },
+  {
+    "id": "claim-org-alzheimer-hippocampal-pattern",
+    "statement": "Typowy fenotyp choroby Alzheimera manifestuje się wczesnym upośledzeniem pamięci epizodycznej (nawias hipokampa) i trudnościami z przyswajaniem nowych informacji przy relatywnie zachowanym zachowaniu społecznym we wczesnej fazie.",
+    "sourceIds": [
+      "nice-ng97-dementia",
+      "dsm5tr"
+    ],
+    "category": "mechanistic",
+    "lessonIds": [
+      "choroba-alzheimera-wzorzec-i-progresja"
+    ]
+  },
+  {
+    "id": "claim-org-vad-stepwise-executive",
+    "statement": "Otępienie naczyniowe (VaD) cechuje się skokowym (stepwise) lub zmiennym przebiegiem, wczesnym spowolnieniem psychoruchowym, zaburzeniami funkcji wykonawczych oraz wczesnymi objawami neurologicznymi (chód, piramidowe, zespół rzekomoopuszkowy).",
+    "sourceIds": [
+      "nice-ng97-dementia",
+      "dsm5tr"
+    ],
+    "category": "guideline_recommendation",
+    "lessonIds": [
+      "naczyniowe-zaburzenia-poznawcze-vad"
+    ]
+  },
+  {
+    "id": "claim-org-dlb-triad-neuroleptic-sensitivity",
+    "statement": "Otępienie z ciałami Lewy’ego (DLB) charakteryzuje triada: fluktuacje uwagi, wczesne uformowane omamy wzrokowe oraz spontaniczny parkinsonizm; klasyczne neuroleptyki (blokery D2) wywołują ciężką, potencjalnie śmiertelną nadwrażliwość neuroleptyczną.",
+    "sourceIds": [
+      "dlb-mckeith-2017",
+      "nice-ng97-dementia"
+    ],
+    "category": "guideline_recommendation",
+    "lessonIds": [
+      "otepienie-z-cialami-lewyego-i-parkinson"
+    ]
+  },
+  {
+    "id": "claim-org-bvftd-executive-social-disinhibition",
+    "statement": "Wariant behawioralny otępienia czołowo-skroniowego (bvFTD) manifestuje się wczesnym odhamowaniem, apatią, utratą empatii, zachowaniami perseweracyjnymi i hiperorolnością przy względnie prawidłowej pamięci epizodycznej i orientacji przestrzennej.",
+    "sourceIds": [
+      "bvftd-rascovsky-2011",
+      "dsm5tr"
+    ],
+    "category": "guideline_recommendation",
+    "lessonIds": [
+      "otepienie-czolowo-skroniowe-bvftd"
+    ]
+  },
+  {
+    "id": "claim-org-rpd-autoimmune-redflags",
+    "statement": "Szybko postępujące zaburzenia poznawcze (RPD, spadek w ciągu tygodni do kilku miesięcy) wymagają pilnego wykluczenia encefalopatii autoimmunologicznej (anty-NMDA, anty-LGI1), infekcyjnej, toksycznej lub chorób prionowych (CJD).",
+    "sourceIds": [
+      "rpd-graff-radford-2019"
+    ],
+    "category": "guideline_recommendation",
+    "lessonIds": [
+      "szybko-postepujace-zespoly-otepienne"
+    ]
+  },
+  {
+    "id": "claim-org-bpsd-unmet-needs-nonpharm",
+    "statement": "Objawy behawioralne i psychologiczne w otępieniu (BPSD) wynikają w pierwszej kolejności z niezaspokojonych potrzeb (ból, retencja moczu, lęk); interwencje niefarmakologiczne i środowiskowe stanowią bezwzględny pierwszy rzut leczenia.",
+    "sourceIds": [
+      "nice-ng97-dementia"
+    ],
+    "category": "guideline_recommendation",
+    "lessonIds": [
+      "bpsd-objawy-behawioralne-i-psychologiczne"
+    ]
+  },
+  {
+    "id": "claim-org-bpsd-antipsychotic-blackbox",
+    "statement": "Stosowanie leków przeciwpsychotycznych w BPSD wiąże się ze zwiększonym ryzykiem udaru mózgu i zgonu sercowego; są dopuszczone jedynie w przypadku skrajnego cierpienia lub bezpośredniego zagrożenia w najmniejszej skutecznej dawce przez krótki czas.",
+    "sourceIds": [
+      "nice-ng97-dementia",
+      "maudsley15"
+    ],
+    "category": "guideline_recommendation",
+    "lessonIds": [
+      "bpsd-objawy-behawioralne-i-psychologiczne",
+      "psychofarmakologia-wieku-podeszlego"
+    ]
+  },
+  {
+    "id": "claim-org-beers-acb-geriatric-burden",
+    "statement": "Kryteria Beers 2023 oraz skala ACB (Anticholinergic Cognitive Burden) nakazują unikanie silnie cholinolitycznych leków (np. hydroksyzyna, amitryptylina, klemastyna), które dramatycznie zwiększają ryzyko delirium, upadków i progresji otępienia.",
+    "sourceIds": [
+      "ags-beers-criteria-2023",
+      "acb-boustani-2008"
+    ],
+    "category": "guideline_recommendation",
+    "lessonIds": [
+      "psychofarmakologia-wieku-podeszlego"
+    ]
+  },
+  {
+    "id": "claim-org-geriatric-depression-pseudodementia",
+    "statement": "Depresja wieku podeszłego często przebiega pod maską somatyczną lub z rzekomym otępieniem (pseudodementia); pacjent z depresją typowo odpowiada \"nie wiem\" i cierpi z powodu poczucia niewydolności, zachowując orientację w badaniu.",
+    "sourceIds": [
+      "nice-depression",
+      "nice-ng97-dementia"
+    ],
+    "category": "observational_association",
+    "lessonIds": [
+      "depresja-wieku-podeszlego-i-poznanie"
+    ]
+  },
+  {
+    "id": "claim-org-mca-capacity-decision-specific",
+    "statement": "Zdolność decyzyjna (Mental Capacity Act 2005) jest zawsze specyficzna dla danej decyzji i danego czasu (decision- and time-specific); samo rozpoznanie otępienia nie przesądza o braku zdolności do wyrażenia zgody na leczenie.",
+    "sourceIds": [
+      "mca-2005-capacity"
+    ],
+    "category": "guideline_recommendation",
+    "lessonIds": [
+      "zdolnosc-decyzyjna-capacity-i-safeguarding"
+    ]
+  }
+]

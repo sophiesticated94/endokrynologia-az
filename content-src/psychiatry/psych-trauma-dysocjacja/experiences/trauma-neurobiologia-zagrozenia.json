@@ -239,5 +239,187 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "WHO ICD-11, APA DSM-5-TR, LeDoux low/high road, Lanius fMRI PTSD-DS"
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "tnz-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "trauma-neurobiologia-zagrozenia-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-hpa-amygdala-threat"
+      ],
+      "prompt": "W jaki sposób przewlekła trauma modyfikuje obwody neuronalne osi HPA i kory czołowej w fMRI?",
+      "options": [
+        "Wywołuje nadreaktywność ciała migdałowatego przy osłabieniu hamowania z kory przedczołowej (vmPFC) i zmniejszeniu objętości hipokampa",
+        "Całkowicie dezaktywuje ciało migdałowate, znosząc reaktywność lękową",
+        "Zwiększa objętość hipokampa o 40% w mechanizmie hipertrofii"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-amygdala-vmpfc",
+            "label": "Nadreaktywność amygdali / osłabienie vmPFC",
+            "acceptedPhrases": [
+              "amygdala",
+              "ciało migdałowate",
+              "vmpfc",
+              "kora przedczołowa",
+              "osłabienie hamowania"
+            ]
+          },
+          {
+            "id": "c-hippocampus-atrophy",
+            "label": "Zmniejszenie objętości hipokampa",
+            "acceptedPhrases": [
+              "hipokamp",
+              "zmniejszenie objętości",
+              "zanik hipokampa"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Neurobiologia traumy to osłabienie hamowania odgórnego z vmPFC i neurotoksyczność glukokortykoidowa w hipokampie.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "tnz-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "trauma-neurobiologia-zagrozenia-obj-2"
+      ],
+      "claimIds": [
+        "claim-trauma-hpa-amygdala-threat"
+      ],
+      "prompt": "Zestaw różnice między hiperaktywacją sympatyczną (fight/flight) a hipoaktywacją dysocjacyjną (freeze wg teorii poliwagalnej) oraz wskaż ich znaczenie dla doboru technik terapeutycznych.",
+      "modelAnswer": "Hiperaktywacja to dominacja układu współczulnego (tachykardia, pobudzenie), wymagająca obniżenia pobudzenia (spokojny wydech, grounding). Hipoaktywacja (freeze) to aktywacja grzbietowej gałęzi nerwu błędnego (dorsal vagal) z odrętwieniem i hiper-inhibicją limbiczną, wymagająca łagodnej mobilizacji i powrotu do okna tolerancji, a klasyczna relaksacja może pogłębić dysocjację.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-sympathetic",
+            "label": "Profil hiperaktywacji współczulnej",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-symp",
+                "label": "Układ współczulny, tachykardia",
+                "acceptedPhrases": [
+                  "współczulny",
+                  "sympatyczny",
+                  "tachykardia",
+                  "pobudzenie"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          },
+          {
+            "id": "dim-parasympathetic-freeze",
+            "label": "Profil hipoaktywacji grzbietowej nerwu błędnego",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-dorsal",
+                "label": "Dorsal vagal, odrętwienie, freeze",
+                "acceptedPhrases": [
+                  "nerw błędny",
+                  "dorsal vagal",
+                  "poliwagalna",
+                  "odrętwienie",
+                  "zamrożenie"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          },
+          {
+            "id": "dim-clinical-choice",
+            "label": "Dobór technik terapeutycznych i okno tolerancji",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-ground",
+                "label": "Grounding, ostrożność z relaksacją w stanie freeze",
+                "acceptedPhrases": [
+                  "grounding",
+                  "ugruntowanie",
+                  "okno tolerancji",
+                  "relaksacja pogłębia dysocjację"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-confuse-freeze",
+            "patterns": [
+              "zamrożenie to atak paniki",
+              "dysocjacja to tachykardia"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: Stan zamrożenia ma profil przywspółczulny (grzbietowy nerw błędny), odmienny od pobudzenia współczulnego."
+          }
+        ]
+      },
+      "explanation": "Hiperaktywacja to dominacja układu współczulnego (tachykardia, pobudzenie), wymagająca obniżenia pobudzenia (spokojny wydech, grounding). Hipoaktywacja (freeze) to aktywacja grzbietowej gałęzi nerwu błędnego (dorsal vagal) z odrętwieniem i hiper-inhibicją limbiczną, wymagająca łagodnej mobilizacji i powrotu do okna tolerancji, a klasyczna relaksacja może pogłębić dysocjację.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "tnz-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "trauma-neurobiologia-zagrozenia-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-hpa-amygdala-threat"
+      ],
+      "prompt": "Oceń znaczenie objawów dla hipotezy podtypu dysocjacyjnego z przedczołową hiper-inhibicją limbiczną.",
+      "hypothesis": "U pacjenta występuje podtyp dysocjacyjny reakcji pourazowej z dominacją hipoaktywacji limbicznej.",
+      "items": [
+        {
+          "id": "tnz-ew-1",
+          "text": "Spadek tętna, bladość powłok i poczucie patrzenia na siebie z sufitu podczas przypomnienia traumy",
+          "expected": "supports",
+          "explanation": "Potwierdza aktywację przywspółczulną i depersonalizację."
+        },
+        {
+          "id": "tnz-ew-2",
+          "text": "W fMRI wzmożona aktywność kory przedczołowej z wygaszeniem ciała migdałowatego",
+          "expected": "supports",
+          "explanation": "Wzorzec hiper-inhibicji limbicznej wg Laniusa."
+        },
+        {
+          "id": "tnz-ew-3",
+          "text": "Ekstremalna agresja słowna i próba wybiegnięcia z gabinetu z krzykiem",
+          "expected": "opposes",
+          "explanation": "Reakcja walki/ucieczki (sympatyczna), a nie odrętwienie dysocjacyjne."
+        }
+      ],
+      "explanation": "Podtyp dysocjacyjny charakteryzuje się hiper-inhibicją limbiczną i odrętwieniem.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "transfer": true
+    }
+  ]
 }

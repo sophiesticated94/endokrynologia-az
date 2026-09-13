@@ -1,0 +1,417 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "delirium-vs-otepienie-vs-depresja",
+  "objectives": [
+    {
+      "id": "delirium-vs-otepienie-vs-depresja-obj-1",
+      "statement": "Zestawisz delirium, otępienie i depresję na osiach: tempo, uwaga, czujność, orientacja i fluktuacja.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "delirium-vs-otepienie-vs-depresja-obj-2",
+      "statement": "Rozpoznasz zjawisko majaczenia nałożonego na otępienie (delirium superimposed on dementia).",
+      "kind": "interpretation"
+    },
+    {
+      "id": "delirium-vs-otepienie-vs-depresja-obj-3",
+      "statement": "Unikniesz błędnego traktowania pojedynczych objawów (np. omamów wzrokowych) jako rozstrzygających w oderwaniu od dynamiki.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-delirium-vs-otepienie-vs-depresja-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "delirium-vs-otepienie-vs-depresja-obj-1"
+    ],
+    "prompt": "84-letni pacjent ze stabilnym od 3 lat otępieniem w chorobie Alzheimera staje się w ciągu 24 godzin agresywny, nie poznaje córki i widzi ogień za oknem. Co jest najbardziej prawidłowym wnioskiem klinicznym?",
+    "options": [
+      "Obraz przemawia za majaczeniem nałożonym na otępienie (delirium superimposed on dementia) i wymaga pilnego poszukiwania ostrej przyczyny somatycznej",
+      "Jest to naturalna, spodziewana progresja choroby Alzheimera i wymaga podwojenia dawki memantyny",
+      "Stan ten dowodzi, że pierwotna diagnoza choroby Alzheimera była błędna i pacjent choruje na schizofrenię"
+    ],
+    "optionFeedback": [
+      "Otępienie neurodegeneracyjne nie postępuje skokowo w 24 godziny; nagłe załamanie u chorego z AD jest z reguły majaczeniem wywołanym infekcją, bólem lub lekiem.",
+      "Podwojenie memantyny bez zbadania pacjenta ignoruje ostry stan zagrożenia somatycznego.",
+      "Debiut schizofrenii w wieku 84 lat z nagłym załamaniem jest skrajnie nieprawdopodobny."
+    ],
+    "answer": 1,
+    "explanation": "Podwojenie memantyny bez zbadania pacjenta ignoruje ostry stan zagrożenia somatycznego.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "nice-cg103-delirium",
+      "nice-ng97-dementia",
+      "icd11-cddr"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "delirium-vs-otepienie-vs-depresja-block-1",
+      "title": "Wielowymiarowa matryca różnicowa: kluczowa kombinacja cech",
+      "text": "Różnicowanie geriatrycznych stanów neuropsychiatrycznych opiera się na konstelacji cech, a nie izolowanym objawie. Majaczenie rozwija się w godziny/dni, charakteryzuje się falowaniem objawów, głębokim rozbiciem uwagi i zaburzeniami czuwania. Otępienie (dementia) rozwija się podstępnie w miesiące/lata, uwaga i czujność pozostają względnie zachowane we wczesnych stadiach, a dominują deficyty pamięci i funkcji wykonawczych. W depresji początek jest tygodniowy/miesięczny, uwaga bywa spowolniona przez obniżony napęd, lecz czujność jest zachowana, a pacjent chętnie odpowiada „nie wiem”.",
+      "sourceIds": [
+        "nice-cg103-delirium",
+        "nice-ng97-dementia",
+        "icd11-cddr"
+      ],
+      "checkpointId": "psych-delirium-vs-otepienie-vs-depresja-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-delirium-dementia-matrix",
+          "kind": "diagram",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "delirium-vs-otepienie-vs-depresja-block-2",
+      "title": "Majaczenie nałożone na otępienie (Delirium Superimposed on Dementia)",
+      "text": "Obecność otępienia jest najsilniejszym niezależnym czynnikiem ryzyka wystąpienia majaczenia (wzrost ryzyka 3–5-krotny z powodu obniżonej rezerwy neuronalnej i cholinergicznej). Nałożenie delirium manifestuje się nagłą zmianą dotychczasowego funkcjonowania, nowymi omamami, nasileniem dezorientacji i bezsennością nocną. Kluczowy błąd to uznanie ostrego pogorszenia za „naturalną progresję otępienia” — choroba Alzheimera nie zaostrza się w ciągu 24 godzin bez somatycznego wyzwalacza.",
+      "sourceIds": [
+        "nice-cg103-delirium",
+        "nice-ng97-dementia",
+        "icd11-cddr"
+      ],
+      "checkpointId": "psych-delirium-vs-otepienie-vs-depresja-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "microcase-delirium-superimposed",
+          "kind": "micro-case",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "delirium-vs-otepienie-vs-depresja-block-3",
+      "title": "Kiedy obraz przypomina psychozę pierwotną?",
+      "text": "Późny debiut psychozy u osoby starszej bez wywiadu psychiatrycznego zawsze obniża próg do diagnostyki organicznej. W psychozach pierwotnych (np. schizofrenia o bardzo późnym początku) urojenia są często spójne i usystematyzowane, a orientacja autopsychiczna i allopsychiczna oraz czuwanie pozostają nienaruszone. Pojawienie się fluktuacji, omamów wzrokowych i splątania nakazuje pilne wykluczenie przyczyn wtórnych.",
+      "sourceIds": [
+        "nice-cg103-delirium",
+        "nice-ng97-dementia",
+        "icd11-cddr"
+      ],
+      "inlineEnhancements": [
+        {
+          "id": "deeplink-jan-superimposed",
+          "kind": "workbench-deeplink",
+          "placement": "end-of-block",
+          "presetId": "preset-delirium-superimposed-jan"
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-delirium-vs-otepienie-vs-depresja-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "delirium-vs-otepienie-vs-depresja-obj-2"
+      ],
+      "prompt": "Który parametr semiotyczny stanowi najważniejszy dyskryminator pomiędzy łagodnym stadium otępienia a hipoaktywnym majaczeniem?",
+      "options": [
+        "Uwaga i czujność — w majaczeniu uwaga jest głęboko zaburzona i falująca, a w łagodnym otępieniu uwaga i czuwanie są względnie zachowane",
+        "Obecność lub brak ubytków pamięci świeżej",
+        "Wiek metrykalny pacjenta"
+      ],
+      "optionFeedback": [
+        "Pacjent z wczesnym otępieniem potrafi utrzymać kontakt i skupić się na badaniu, podczas gdy w delirium uwaga natychmiast ulega rozproszeniu.",
+        "Zaburzenia pamięci świeżej występują zarówno w otępieniu, jak i w delirium, nie stanowiąc cechy różnicującej.",
+        "Wiek jest czynnikiem ryzyka obu stanów i nie pozwala na ich odróżnienie."
+      ],
+      "answer": 2,
+      "explanation": "Wiek jest czynnikiem ryzyka obu stanów i nie pozwala na ich odróżnienie.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "nice-cg103-delirium",
+        "nice-ng97-dementia",
+        "icd11-cddr"
+      ]
+    },
+    {
+      "id": "psych-delirium-vs-otepienie-vs-depresja-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "delirium-vs-otepienie-vs-depresja-obj-3"
+      ],
+      "prompt": "76-letnia pacjentka w gabinecie odpowiada na pytania testowe zniechęconym głosem: „nie wiem, nie pamiętam, to bez sensu”, lecz przy zachęcie wykonuje poprawnie trudniejsze zadania. Nie wykazuje fluktuacji świadomości. Jaka hipoteza jest najbardziej prawdopodobna?",
+      "options": [
+        "Zaburzenia funkcji wykonawczych i pamięci w przebiegu epizodu depresyjnego wieku podeszłego",
+        "Ostre hiperaktywne delirium wymagające natychmiastowych pasów obezwładniających",
+        "Zaawansowana choroba Creutzfeldta-Jakoba w stadium terminalnym"
+      ],
+      "optionFeedback": [
+        "Postawa rezygnacyjna, odpowiedzi „nie wiem” przy zachowanej czujności i poprawie pod wpływem motywacji są typowe dla geriatrycznego profilu depresyjnego.",
+        "Brak zaburzeń czuwania, brak falowania i brak pobudzenia wykluczają delirium hiperaktywne.",
+        "Obraz nie wykazuje cech gwałtownej encefalopatii ani mioklonii."
+      ],
+      "answer": 0,
+      "explanation": "Postawa rezygnacyjna, odpowiedzi „nie wiem” przy zachowanej czujności i poprawie pod wpływem motywacji są typowe dla geriatrycznego profilu depresyjnego.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "nice-cg103-delirium",
+        "nice-ng97-dementia",
+        "icd11-cddr"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "delirium-vs-otepienie-vs-depresja-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "delirium-vs-otepienie-vs-depresja-obj-1",
+      "delirium-vs-otepienie-vs-depresja-obj-2",
+      "delirium-vs-otepienie-vs-depresja-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Różnicowanie: Delirium vs Otępienie vs Depresja vs Psychoza”.",
+    "modelAnswer": "Żadna pojedyncza cecha semiotyczna nie jest absolutna. O rozpoznaniu decyduje kombinacja: tempo rozwoju + fluktuacja + stopień zaburzenia uwagi i czuwania. Nagłe pogorszenie u pacjenta z otępieniem to delirium do czasu wykluczenia przyczyn ostrych.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "nice-cg103-delirium",
+      "nice-ng97-dementia",
+      "icd11-cddr"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "psych-delirium-vs-otepienie-vs-depresja-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "delirium-vs-otepienie-vs-depresja-obj-1"
+      ],
+      "prompt": "Co oznacza pojęcie „sundowning” w kontekście dobowego przebiegu majaczenia i otępienia?",
+      "options": [
+        "Charakterystyczne nasilenie lęku, dezorientacji, błądzenia i pobudzenia w godzinach późnopopołudniowych i nocnych",
+        "Całkowite ustąpienie wszystkich objawów poznawczych po zachodzie słońca",
+        "Występowanie napadów padaczkowych wyłącznie w porze południowej"
+      ],
+      "optionFeedback": [
+        "Zjawisko to wiąże się ze spadkiem oświetlenia, zmęczeniem sensorycznym i zaburzeniami rytmu okołodobowego melatoniny i kortyzolu.",
+        "Sundowning oznacza zaostrzenie, a nie ustąpienie objawów w nocy.",
+        "Sundowning nie odnosi się do napadów padaczkowych w południe."
+      ],
+      "answer": 1,
+      "explanation": "Sundowning oznacza zaostrzenie, a nie ustąpienie objawów w nocy.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nice-cg103-delirium",
+        "nice-ng97-dementia",
+        "icd11-cddr"
+      ]
+    },
+    {
+      "id": "psych-delirium-vs-otepienie-vs-depresja-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "delirium-vs-otepienie-vs-depresja-obj-1"
+      ],
+      "prompt": "Dlaczego u osób starszych z pierwszym w życiu epizodem manii lub psychozy należy przyjąć niższy próg do poszerzonej diagnostyki neurologicznej i obrazowej?",
+      "options": [
+        "Ponieważ prawdopodobieństwo etiologii wtórnej (udar, guz, infekcja, leki) jest w tej grupie wiekowej istotnie wyższe niż w młodości",
+        "Ponieważ u osób starszych leki psychotropowe w 100% przypadków wywołują zgon",
+        "Ponieważ schizofrenia wyklucza możliwość zachorowania na jakiekolwiek choroby internistyczne"
+      ],
+      "optionFeedback": [
+        "Późny debiut objawów afektywnych lub psychotycznych po 65 r.ż. ma znacznie częściej podłoże somatyczno-naczyniowe niż pierwotne.",
+        "Taka teza jest fałszywa; leki wymagają ostrożnego dawkowania, lecz nie są bezwzględnie śmiertelne.",
+        "Obecność schorzenia psychicznego nie chroni przed chorobami somatycznymi."
+      ],
+      "answer": 2,
+      "explanation": "Obecność schorzenia psychicznego nie chroni przed chorobami somatycznymi.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "nice-cg103-delirium",
+        "nice-ng97-dementia",
+        "icd11-cddr"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "dvd-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "delirium-vs-otepienie-vs-depresja-obj-1"
+      ],
+      "claimIds": [
+        "claim-org-delirium-superimposed-dementia"
+      ],
+      "prompt": "78-letnia kobieta ze zdiagnozowaną łagodną chorobą Alzheimera (funkcjonująca dotąd w domu) w ciągu 24h staje się agresywna, widzi „robaki na ścianach” i ma odwrócony rytm snu i czuwania. Lekarz POZ mówi córce: „To normalne pogorszenie w chorobie Alzheimera, trzeba oddać mamę do ZOL”. Oceń tę interpretację.",
+      "options": [
+        "Błędna i niebezpieczna: gwałtowny spadek w ciągu 24h z omamami i odwróceniem rytmu snu wskazuje na delirium nałożone na otępienie (DSD), wymagające pilnej hospitalizacji i diagnostyki somatycznej",
+        "Prawidłowa: choroba Alzheimera w stadium umiarkowanym postępuje skokowo w ciągu kilkunastu godzin",
+        "Wskazana wyłącznie sedacja wysoką dawką benzodiazepin w domu pacjenta"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-delirium-superimposed",
+            "label": "Rozpoznanie delirium nałożonego na otępienie (DSD)",
+            "acceptedPhrases": [
+              "delirium nałożone",
+              "dsd",
+              "majaczenie nałożone",
+              "ostre pogorszenie",
+              "nie jest to naturalny przebieg"
+            ]
+          },
+          {
+            "id": "c-acute-somatic-urgency",
+            "label": "Konieczność pilnej diagnostyki somatycznej ostrej przyczyny",
+            "acceptedPhrases": [
+              "pilna diagnostyka",
+              "poszukiwanie przyczyny",
+              "somatyczna",
+              "infekcja",
+              "stan nagły"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Otępienie postępuje w skali miesięcy i lat. Gwałtowne załamanie w ciągu 24 godzin u osoby z otępieniem to niemal zawsze majaczenie nałożone na otępienie (DSD) wywołane ostrym czynnikiem somatycznym.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "nice-cg103-delirium",
+        "nice-ng97-dementia"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "dvd-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "delirium-vs-otepienie-vs-depresja-obj-2"
+      ],
+      "claimIds": [
+        "claim-org-delirium-acute-fluctuation"
+      ],
+      "prompt": "Zestaw 3 kluczowe różnice diagnostyczne między majaczeniem (delirium), otępieniem (dementia) a depresją rzekomootępienną (pseudodementia) w odniesieniu do: tempa początku, profilu uwagi oraz zachowania pacjenta w badaniu testowym.",
+      "modelAnswer": "1) Tempo początku: delirium – nagłe (godziny/dni); otępienie – podstępne i powolne (miesiące/lata); depresja – podostre (tygodnie/miesiące). 2) Uwaga: delirium – silnie zaburzona, fluktuująca; otępienie – we wczesnych stadiach względnie zachowana; depresja – spowolnienie, pacjent zniechęcony, lecz skupia uwagę przy zachęcie. 3) Badanie testowe: w delirium pacjent niezdolny do ukończenia testu; w otępieniu stara się odpowiadać (błędy, konfabulacje); w depresji odpowiada „nie wiem”, rezygnuje z wysiłku, cierpi z powodu poczucia niewydolności.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-onset-comparison",
+            "label": "Porównanie tempa początku (nagły vs podstępny vs podostry)",
+            "acceptedPhrases": [
+              "tempo początku",
+              "godziny/dni",
+              "miesiące/lata",
+              "podstępny",
+              "nagły początek"
+            ]
+          },
+          {
+            "id": "c-attention-profile",
+            "label": "Profil uwagi (zaburzona/fluktuująca w delirium vs zachowana w otępieniu)",
+            "acceptedPhrases": [
+              "uwaga",
+              "zaburzenia uwagi",
+              "fluktuacja",
+              "zachowana we wczesnym otępieniu"
+            ]
+          },
+          {
+            "id": "c-test-attitude",
+            "label": "Zachowanie w teście („nie wiem” w depresji vs błędy/konfabulacje w otępieniu)",
+            "acceptedPhrases": [
+              "nie wiem",
+              "starania pacjenta",
+              "konfabulacje",
+              "rezygnacja",
+              "cierpienie z niewydolności"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-delirium-chronic",
+            "patterns": [
+              "delirium trwa latami",
+              "delirium nie ma początku",
+              "to to samo co otępienie"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: Delirium i otępienie to jakościowo odmienne jednostki o różnej dynamice czasowej."
+          }
+        ],
+        "minRequired": 3
+      },
+      "explanation": "Różnicowanie opiera się na triadzie: tempo początku, jakość uwagi i fluktuacja oraz reakcja na badanie funkcji poznawczych.",
+      "difficulty": "both",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "nice-cg103-delirium",
+        "dsm5tr",
+        "nice-depression"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "dvd-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "delirium-vs-otepienie-vs-depresja-obj-3"
+      ],
+      "claimIds": [
+        "claim-org-geriatric-depression-pseudodementia"
+      ],
+      "prompt": "Oceń znaczenie danych klinicznych dla hipotezy rzekomego otępienia w przebiegu ciężkiej depresji u 75-letniego mężczyzny.",
+      "hypothesis": "Zaburzenia poznawcze pacjenta mają charakter pseudodemencji w przebiegu epizodu depresyjnego.",
+      "explanation": "W pseudodemencji leczenie przeciwdepresyjne odwraca deficyty poznawcze, a pacjent zachowuje orientację i cierpi z powodu poczucia niesprawności.",
+      "items": [
+        {
+          "id": "dvd-ew-1",
+          "text": "Pacjent pytany o datę i prezydenta odpowiada ze smutkiem i łzami: „Nie wiem, do niczego się już nie nadaję, moja głowa jest pusta”",
+          "expected": "supports",
+          "explanation": "Typowa dla depresji geriatrycznej postawa rezygnacyjna („nie wiem”) i cierpienie z poczuciem winy."
+        },
+        {
+          "id": "dvd-ew-2",
+          "text": "W badaniu MoCA po łagodnej zachęcie i wsparciu pacjent poprawnie wykonuje test zegara i zadania przestrzenne",
+          "expected": "supports",
+          "explanation": "Zachowane rezerwy poznawcze przy mobilizacji różnicują depresję od zaawansowanego otępienia."
+        },
+        {
+          "id": "dvd-ew-3",
+          "text": "W rezonansie magnetycznym stwierdzono symetryczny, obustronny zanik hipokampów w skali Scheltensa MTA = 3",
+          "expected": "opposes",
+          "explanation": "Zaawansowany zanik struktur skroniowo-przyśrodkowych przemawia za pierwotnym procesem neurozwyrodnieniowym (AD)."
+        }
+      ],
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "nice-depression",
+        "nice-ng97-dementia"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "timeline",
+    "lab-workbench"
+  ],
+  "widgetConfig": {},
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-12",
+    "scope": "Struktura dydaktyczna v2, standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., AGNP TDM 2026 oraz CPIC."
+  }
+}

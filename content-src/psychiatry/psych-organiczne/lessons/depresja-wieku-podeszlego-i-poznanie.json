@@ -1,0 +1,164 @@
+{
+  "id": "depresja-wieku-podeszlego-i-poznanie",
+  "moduleId": "psych-organiczne",
+  "title": "Depresja wieku podeszłego, kognicja i suicydalność",
+  "subtitle": "Interakcja afekt-poznanie, granice pojęcia pseudootępienia, samobójstwa u seniorów i farmakoterapia",
+  "group": "Geriatria kliniczna, bezpieczeństwo i etyka",
+  "minutes": 18,
+  "goals": [
+    "Rozpoznasz specyfikę depresji geriatrycznej: dominacja skarg somatycznych, anhedonii i lęku nad jawnym smutkiem.",
+    "Zrozumiesz ograniczenia pojęcia „otępienia rzekomego” (pseudodementia) i mechanizmy depresji naczyniowej.",
+    "Ocenisz wysokie ryzyko samobójcze u starszych mężczyzn i wdrożysz bezpieczną farmakoterapię (unikanie TLPD)."
+  ],
+  "sections": [
+    {
+      "title": "Fenotyp geriatryczny: depresja bez smutku (Depression without sadness)",
+      "text": "Depresja wieku podeszłego często manifestuje się nietypowo. Zamiast deklarowanego smutku dominują: uporczywe skargi somatyczne (bóle brzucha, zaparcia, pieczenie w klatce piersiowej bez korelacji narządowej), anhedonia, spowolnienie psychoruchowe lub niepokój manipulacyjny, bezsenność oraz lęk hipochondryczny. Pacjenci wykazują postawę rezygnacyjną i zgłaszają „brak sił do życia”."
+    },
+    {
+      "title": "Interakcja afekt a kognicja: ewolucja pojęcia pseudodementia",
+      "text": "Historyczny termin „otępienie rzekome” sugerował, że deficyty poznawcze w depresji są jedynie odwracalną iluzją. Współczesna neuropsychiatria wskazuje, że ubytek szybkości przetwarzania, uwagi i funkcji wykonawczych w depresji geriatrycznej ma realne podłoże biologiczne (hipoperfuzja czołowa, uszkodzenia istoty białej — hipoteza depresji naczyniowej). U około 30–50% seniorów, u których objawy poznawcze ustąpiły po wyleczeniu depresji, w ciągu kolejnych 3–5 lat rozwija się jawne otępienie neurodegeneracyjne."
+    },
+    {
+      "title": "Suicydalność seniorów i zasady leczenia",
+      "text": "Mężczyźni w wieku powyżej 75–80 lat stanowią grupę o najwyższym wskaźniku dokonanych samobójstw w populacji. Próby samobójcze u seniorów charakteryzują się: wysoką intencjonalnością, brutalnością metod i rzadkimi sygnałami ostrzegawczymi (mniej prób manipulacyjnych, wyższa śmiertelność). W leczeniu lekami pierwszego wyboru są SSRI (sertralina, escitalopram) z uwagi na brak kardiotoksyczności i zerowy indeks ACB; należy bezwzględnie unikać trójpierścieniowych leków przeciwdepresyjnych (TLPD) z powodu ryzyka arytmii, zapaści i letalności w przedawkowaniu."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Wymiar oceny",
+      "Depresja geriatryczna z deficytem poznawczym",
+      "Wczesna choroba Alzheimera"
+    ],
+    "rows": [
+      [
+        "Początek objawów",
+        "Dość precyzyjnie określany przez pacjenta („od kilku tygodni”)",
+        "Podstępny, nieuchwytny, bagatelizowany przez chorego"
+      ],
+      [
+        "Wgląd w ubytki pamięci",
+        "Wyolbrzymianie trudności, niepokój z powodu zapominania",
+        "Pomniejszanie deficytów, anozognozja, maskowanie błędów"
+      ],
+      [
+        "Postawa w testach",
+        "Zniechęcenie, szybkie rezygnacje („nie wiem, nie potrafię”)",
+        "Wysiłek, konfabulacje, próby zatuszowania pomyłek"
+      ],
+      [
+        "Odpowiedź na podpowiedzi",
+        "Poprawa wyników przy motywacji i wskazówkach",
+        "Brak poprawy w konsolidacji pamięci hipokampalnej"
+      ]
+    ]
+  },
+  "advanced": "W przypadku ciężkiej depresji psychotycznej wieku podeszłego, skrajnego odmóżdżającego osłupienia depresyjnego lub braku przyjmowania płynów i pokarmów, metodą leczenia o najwyższej skuteczności i najszybszym efekcie są elektrowstrząsy (ECT). Wiek podeszły nie jest przeciwwskazaniem do ECT, a zabieg cechuje się wyższym profilem bezpieczeństwa niż wysokie dawki kardiotoksycznych leków.",
+  "summary": "Depresja geriatryczna często przebiega pod maską somatyczną i niesie wysokie ryzyko samobójcze. Zaburzenia poznawcze w depresji wymagają czujności, gdyż mogą stanowić zwiastun rozwijającego się procesu neurodegeneracyjnego.",
+  "sourceIds": [
+    "nice-depression",
+    "nice-ng97-dementia"
+  ],
+  "questions": [
+    {
+      "id": "psych-dep-ger-q1",
+      "lessonId": "depresja-wieku-podeszlego-i-poznanie",
+      "prompt": "81-letni samotny mężczyzna po udarze mózgu skarży się na brak sił, zaparcia i bóle mięśniowe. W gabinecie powtarza: „jestem tylko ciężarem, niedługo wszystko się skończy”, a pytany o pamięć odpowiada zniecierpliwiony: „nie wiem, nic nie pamiętam”. Jak należy ocenić jego stan?",
+      "options": [
+        {
+          "text": "Naturalny stan pogodzenia się z losem niewymagający żadnej interwencji",
+          "explanation": "Poczucie bycia ciężarem i rezygnacja są objawami depresji, a nie zdrowym starzeniem się."
+        },
+        {
+          "text": "Brak jakiegokolwiek ryzyka, ponieważ pacjenci po 80 r.ż. nigdy nie podejmują prób samobójczych",
+          "explanation": "Seniorzy cechują się najwyższym wskaźnikiem zgonów samobójczych w całej populacji."
+        },
+        {
+          "text": "Stan wysokiego ryzyka samobójczego w przebiegu ciężkiego epizodu depresji wieku podeszłego, wymagający pilnej oceny planów suicydalnych i wdrożenia bezpieczeństwa",
+          "explanation": "Starszy samotny mężczyzna z poczuciem bycia ciężarem i aluzjami do końca życia znajduje się w grupie najwyższego ryzyka dokonanego samobójstwa."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-dep-ger-q2",
+      "lessonId": "depresja-wieku-podeszlego-i-poznanie",
+      "prompt": "Dlaczego u chorego w podeszłym wieku z ciężkim epizodem depresyjnym należy bezwzględnie unikać włączania trójpierścieniowych leków przeciwdepresyjnych (TLPD, np. amitryptylina)?",
+      "options": [
+        {
+          "text": "Z powodu silnego działania kardiotoksycznego (wydłużenie QTc, bloki p-k, arytmie komorowe), hipotonii ortostatycznej i wysokiego obciążenia antycholinergicznego (ACB = 3)",
+          "explanation": "TLPD niosą śmiertelne ryzyko w przedawkowaniu, prowokują majaczenie i upadki u chorych w podeszłym wieku."
+        },
+        {
+          "text": "Ponieważ TLPD wywołują natychmiastową utratę wzroku u każdego człowieka",
+          "explanation": "TLPD mogą dawać zaburzenia akomodacji, lecz nie ślepotę; głównym zagrożeniem jest kardiotoksyczność."
+        },
+        {
+          "text": "Ponieważ TLPD wolno stosować wyłącznie u kobiet w ciąży",
+          "explanation": "TLPD są lekami przeciwdepresyjnymi starej generacji, nie dedykowanymi dla ciężarnych."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-dep-ger-q3",
+      "lessonId": "depresja-wieku-podeszlego-i-poznanie",
+      "prompt": "Jak współczesna neuropsychiatria interpretuje zjawisko ustąpienia deficytów poznawczych po skutecznym wyleczeniu geriatrycznego epizodu depresyjnego?",
+      "options": [
+        {
+          "text": "Jako dowód na to, że pacjent symulował depresję dla uzyskania renty",
+          "explanation": "Epizod depresyjny jest realnym stanem biologicznym, a nie symulacją."
+        },
+        {
+          "text": "Jako stan podwyższonego ryzyka rozwoju jawnego otępienia w perspektywie kilku lat, wymagający okresowej kontroli neuropsychologicznej",
+          "explanation": "Deficyty poznawcze w depresji geriatrycznej często odzwierciedlają wczesną dysfunkcję naczyniową lub prodromalną neurodegenerację."
+        },
+        {
+          "text": "Jako stuprocentową gwarancję nieśmiertelności neuronów mózgowych do końca życia",
+          "explanation": "Wyleczenie epizodu nie gwarantuje braku późniejszej demencji."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-dep-ger-q4",
+      "lessonId": "depresja-wieku-podeszlego-i-poznanie",
+      "prompt": "Który lek przeciwdepresyjny jest zalecany jako bezpieczny wybór pierwszego rzutu u starszego pacjenta z depresją i chorobą niedokrwienną serca?",
+      "options": [
+        {
+          "text": "Klomipramina w dawce dożylnej 150 mg/dobę",
+          "explanation": "Klomipramina jest silnym TLPD o wysokim ryzyku kardiologicznym."
+        },
+        {
+          "text": "Wyciąg z dziurawca w niekontrolowanych dawkach w połączeniu z fenelzyną",
+          "explanation": "Połączenie niesie śmiertelne ryzyko przełomu nadciśnieniowego i zespołu serotoninowego."
+        },
+        {
+          "text": "Sertralina w stopniowo miareczkowanej dawce (np. od 25 mg/d)",
+          "explanation": "Sertralina posiada udokumentowane bezpieczeństwo kardiologiczne (badanie SADHART), brak istotnego wpływu antycholinergicznego i niski potencjał interakcji."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-dep-ger-q5",
+      "lessonId": "depresja-wieku-podeszlego-i-poznanie",
+      "prompt": "Jaka jest rola terapii elektrowstrząsowej (ECT) u starszych pacjentów z ciężką depresją psychotyczną lub zagrażającym życiu odmóżdżającym osłupieniem?",
+      "options": [
+        {
+          "text": "Jest wysoce skuteczną, bezpieczną i ratującą życie metodą leczenia o szybszym początku działania niż farmakoterapia wielolekowa",
+          "explanation": "Wiek podeszły nie jest przeciwwskazaniem do ECT; zabiegi cechują się ponad 80% skutecznością w ciężkiej geriatrycznej depresji."
+        },
+        {
+          "text": "Jest metodą zakazaną przez wszystkie międzynarodowe towarzystwa medyczne",
+          "explanation": "ECT jest uznaną procedurą medyczną w wytycznych APA, NICE i Polskiego Towarzystwa Psychiatrycznego."
+        },
+        {
+          "text": "Służy wyłącznie do leczenia bezsenności o łagodnym nasileniu",
+          "explanation": "ECT stosuje się w stanach ciężkich i zagrażających życiu, nie w łagodnej bezsenności."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

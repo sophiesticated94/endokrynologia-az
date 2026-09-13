@@ -228,5 +228,172 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "WHO ICD-11 CDDR (6D10), APA DSM-5-TR, pure content-src architecture"
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "icd11-wym-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "osobowosc-icd11-wymiary-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-icd11-personality-dimensional"
+      ],
+      "prompt": "Na czym polega fundamentalna zmiana w diagnozie zaburzeń osobowości w ICD-11 (kod 6D10)?",
+      "options": [
+        "Zastąpienie odrębnych kategorii nozologicznych dwustopniowym modelem wymiarowym: ocena głębokości zaburzenia (łagodne, umiarkowane, ciężkie) oraz 5 domen cech",
+        "Wprowadzenie 15 nowych sztywnych kategorii politetycznych opartych na typach temperamentu",
+        "Całkowite usunięcie pojęcia zaburzenia osobowości i zastąpienie go spektrum traumy"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-dimensional-model",
+            "label": "Dwustopniowy model wymiarowy (stopień nasilenia + domeny cech)",
+            "acceptedPhrases": [
+              "model wymiarowy",
+              "stopień nasilenia",
+              "domeny cech",
+              "dwustopniowy",
+              "6d10"
+            ]
+          },
+          {
+            "id": "c-five-domains",
+            "label": "5 domen cech (negatywna afektywność, odhamowanie, dyssocjalność, wycofanie, anankastia)",
+            "acceptedPhrases": [
+              "5 domen",
+              "negatywna afektywność",
+              "odhamowanie",
+              "anankastia",
+              "dyssocjalność"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "ICD-11 odeszło od kategorii typu BPD/ASPD na rzecz oceny nasilenia zaburzenia funkcjonowania i profilu domen cech.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "icd11-wym-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "osobowosc-icd11-wymiary-obj-2"
+      ],
+      "claimIds": [
+        "claim-trauma-icd11-personality-dimensional"
+      ],
+      "prompt": "32-letnia pacjentka prezentuje przewlekłe problemy interpersonalne, labilność emocjonalną i powtarzające się samouszkodzenia. Wyjaśnij, w jaki sposób wg ICD-11 ustala się stopień nasilenia zaburzenia osobowości (Łagodne vs Umiarkowane vs Ciężkie) oraz jak koduje się wzorzec borderline.",
+      "modelAnswer": "Procedura diagnostyczna ICD-11: 1) Ocena stopnia ciężkości (Severity): Opiera się na stopniu zaburzenia funkcjonowania self (tożsamość, poczucie własnej wartości, kierowanie sobą) oraz funkcjonowania interpersonalnego (zdolność do bliskości, rozumienie perspektywy innych, rozwiązywanie konfliktów). Łagodne (Mild) - ograniczone do wybranych obszarów relacji; Umiarkowane (Moderate) - uogólnione, wpływające na pracę i relacje; Ciężkie (Severe) - głębokie zaburzenie we wszystkich sferach, zagrażające życiu lub zdrowiu własnemu i innych. 2) Domeny cech: Profiluje się 5 domen (Negatywna afektywność, Wycofanie, Dyssocjalność, Odhamowanie, Anankastia). 3) Kwalifikator borderline: ICD-11 zachowało opcjonalny kwalifikator „Wzorzec borderline” (Borderline pattern) ze względu na implikacje terapeutyczne (DBT).",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-icd11-severity-assessment",
+            "label": "Kryteria oceny ciężkości zaburzenia osobowości (self i relacje)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-severity-levels",
+                "label": "Łagodne, umiarkowane, ciężkie na podstawie dysfunkcji self i relacji",
+                "acceptedPhrases": [
+                  "łagodne",
+                  "umiarkowane",
+                  "ciężkie",
+                  "funkcjonowanie self",
+                  "interpersonalne",
+                  "nasilenie"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          },
+          {
+            "id": "dim-borderline-qualifier",
+            "label": "Domeny cech i kwalifikator wzorca borderline",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-borderline-pattern",
+                "label": "Wzorzec borderline jako opcjonalny kwalifikator w ICD-11",
+                "acceptedPhrases": [
+                  "wzorzec borderline",
+                  "borderline pattern",
+                  "kwalifikator",
+                  "cechy"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-icd11-uses-dsm-types",
+            "patterns": [
+              "icd11 wymaga 10 typów osobowości",
+              "icd11 zachowało typ narcystyczny i histrioniczny"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: ICD-11 zlikwidowało tradycyjne kategorie (narcystyczna, histrioniczna itp.) na rzecz modelu wymiarowego."
+          }
+        ]
+      },
+      "explanation": "Procedura diagnostyczna ICD-11: 1) Ocena stopnia ciężkości (Severity): Opiera się na stopniu zaburzenia funkcjonowania self (tożsamość, poczucie własnej wartości, kierowanie sobą) oraz funkcjonowania interpersonalnego (zdolność do bliskości, rozumienie perspektywy innych, rozwiązywanie konfliktów). Łagodne (Mild) - ograniczone do wybranych obszarów relacji; Umiarkowane (Moderate) - uogólnione, wpływające na pracę i relacje; Ciężkie (Severe) - głębokie zaburzenie we wszystkich sferach, zagrażające życiu lub zdrowiu własnemu i innych. 2) Domeny cech: Profiluje się 5 domen (Negatywna afektywność, Wycofanie, Dyssocjalność, Odhamowanie, Anankastia). 3) Kwalifikator borderline: ICD-11 zachowało opcjonalny kwalifikator „Wzorzec borderline” (Borderline pattern) ze względu na implikacje terapeutyczne (DBT).",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "icd11-wym-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "osobowosc-icd11-wymiary-obj-2"
+      ],
+      "claimIds": [
+        "claim-trauma-icd11-personality-dimensional"
+      ],
+      "prompt": "Oceń, które dane kwalifikują pacjenta do rozpoznania Ciężkiego Zaburzenia Osobowości (Severe Personality Disorder, 6D10.2) wg ICD-11.",
+      "hypothesis": "Pacjent spełnia kryteria Ciężkiego Zaburzenia Osobowości wg ICD-11.",
+      "items": [
+        {
+          "id": "icd11-ew-1",
+          "text": "Głęboka dysfunkcja we wszystkich sferach życia (niezdolność do utrzymania zatrudnienia, całkowita izolacja lub skrajnie niszczące relacje) oraz wysokie zagrożenie samobójcze",
+          "expected": "supports",
+          "explanation": "Kryterium Severe PD: uogólnione, głębokie upośledzenie funkcjonowania z bezpośrednim zagrożeniem życia lub zdrowia."
+        },
+        {
+          "id": "icd11-ew-2",
+          "text": "Pacjent odczuwa znaczny dyskomfort w relacjach intymnych, ale radzi sobie w pracy zawodowej i nie podejmuje zachowań zagrażających",
+          "expected": "opposes",
+          "explanation": "Wskazuje na stopień łagodny (Mild) lub umiarkowany, wyklucza stopień ciężki."
+        },
+        {
+          "id": "icd11-ew-3",
+          "text": "Utrwalona niezdolność do przyjęcia perspektywy innych ludzi powiązana z powtarzającymi się aktami przemocy fizycznej",
+          "expected": "supports",
+          "explanation": "Ciężka dysfunkcja interpersonalna stwarzająca realne zagrożenie dla otoczenia."
+        }
+      ],
+      "explanation": "Ocena nasilenia w ICD-11 decyduje o doborze intensywności opieki psychiatrycznej i psychoterapeutycznej.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "src-icd11-cddr-2024"
+      ],
+      "transfer": true
+    }
+  ]
 }

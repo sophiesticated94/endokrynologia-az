@@ -1,0 +1,429 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "psychofarmakologia-wieku-podeszlego",
+  "objectives": [
+    {
+      "id": "psychofarmakologia-wieku-podeszlego-obj-1",
+      "statement": "Przeprowadzisz przegląd lekowy (Geriatric Medication Review) z oceną obciążenia antycholinergicznego w skali ACB.",
+      "kind": "safety"
+    },
+    {
+      "id": "psychofarmakologia-wieku-podeszlego-obj-2",
+      "statement": "Zastosujesz kryteria AGS Beers 2023 jako narzędzie wsparcia decyzji (decision-support), unikając traktowania ich jako sztywnego prawa.",
+      "kind": "safety"
+    },
+    {
+      "id": "psychofarmakologia-wieku-podeszlego-obj-3",
+      "statement": "Zrozumiesz odmienności farmakokinetyczne seniorów: spadek GFR, dystrybucję leków lipofilnych i podatność na upadki.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-psychofarmakologia-wieku-podeszlego-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "psychofarmakologia-wieku-podeszlego-obj-1"
+    ],
+    "prompt": "83-letni pacjent z łagodnymi zaburzeniami poznawczymi otrzymuje od urologa oksybutyninę na nietrzymanie moczu, od internisty hydroksyzynę na świąd skóry i od psychiatry amitryptylinę w małej dawce na ból neuropatyczny. Jakie jest łączne obciążenie ACB tego zestawu?",
+    "options": [
+      "Bardzo wysokie (ACB = 9 pkt: 3 + 3 + 3), niosące krytyczne ryzyko ostrego delirium, nasilenia otępienia, zatrzymania moczu i upadków",
+      "Wynik ACB wynosi 0 punktów, ponieważ leki te nie wpływają na układ cholinergiczny",
+      "Wynik wynosi dokładnie 1 punkt i jest całkowicie bezpieczny dla 90-latka"
+    ],
+    "optionFeedback": [
+      "Każdy z tych trzech leków posiada maksymalną punktację ACB = 3; kumulacja blokady muskarynowej drastycznie upośledza funkcje poznawcze seniora.",
+      "Wszystkie 3 wymienione substancje są klasycznymi, silnymi antagonistami receptorów muskarynowych.",
+      "ACB = 9 jest jednym z najwyższych spotykanych w polifarmacji geriatrycznej i wymaga pilnej depreskrypcji."
+    ],
+    "answer": 1,
+    "explanation": "Wszystkie 3 wymienione substancje są klasycznymi, silnymi antagonistami receptorów muskarynowych.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "ags-beers-criteria-2023",
+      "acb-boustani-2008",
+      "nice-ng97-dementia"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "psychofarmakologia-wieku-podeszlego-block-1",
+      "title": "Farmakokinetyka starzejącego się organizmu: „start low, go slow”",
+      "text": "Z wiekiem dochodzi do fizjologicznego spadku przesączania kłębuszkowego (GFR — często ukrytego z powodu niskiej masy mięśniowej i fałszywie prawidłowej kreatyniny), zmniejszenia objętości wody w organizmie oraz wzrostu udziału tkanki tłuszczowej. Leki lipofilne (np. diazepam) wykazują dramatyczne wydłużenie okresu półtrwania (z 30 do ponad 100 godzin), co prowadzi do kumulacji, sedacji i ataksji. Spadek rezerwy wątrobowej CYP i polifarmacja potęgują ryzyko nieprzewidywalnych interakcji.",
+      "sourceIds": [
+        "ags-beers-criteria-2023",
+        "acb-boustani-2008",
+        "nice-ng97-dementia"
+      ],
+      "checkpointId": "psych-psychofarmakologia-wieku-podeszlego-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-anticholinergic-burden-consequences",
+          "kind": "diagram",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "psychofarmakologia-wieku-podeszlego-block-2",
+      "title": "Obciążenie antycholinergiczne (ACB): cichy wróg kognicji",
+      "text": "Leki o działaniu antycholinergicznym blokują postsynaptyczne receptory muskarynowe M1 w hipokampie i korze czołowej, imitując lub pogłębiając objawy otępienia. Skala ACB (Anticholinergic Cognitive Burden) przypisuje lekom punkty: 1 (słabe, np. sertralina, metoprolol, trazodon), 2 (umiarkowane) oraz 3 (silne, np. hydroksyzyna, oksybutynina, amitryptylina, klozapina, klemastyna). Łączny wynik ACB >= 3 wiąże się ze statystycznym wzrostem ryzyka majaczenia, przyspieszonego spadku poznawczego, zaparć, ostrego zatrzymania moczu i upadków.",
+      "sourceIds": [
+        "ags-beers-criteria-2023",
+        "acb-boustani-2008",
+        "nice-ng97-dementia"
+      ],
+      "checkpointId": "psych-psychofarmakologia-wieku-podeszlego-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "widget-geriatric-med-review",
+          "kind": "interactive-widget",
+          "placement": "before-checkpoint"
+        },
+        {
+          "id": "panel-acb-burden",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        },
+        {
+          "id": "deeplink-geriatric-polypharmacy",
+          "kind": "workbench-deeplink",
+          "placement": "end-of-block",
+          "presetId": "preset-geriatric-polypharmacy"
+        }
+      ]
+    },
+    {
+      "id": "psychofarmakologia-wieku-podeszlego-block-3",
+      "title": "Kryteria AGS Beers 2023: wsparcie decyzji, nie prawo karne",
+      "text": "Kryteria Beers American Geriatrics Society (aktualizacja 2023) to zwalidowane narzędzie wsparcia decyzji (decision-support tool) identyfikujące leki potencjalnie nieodpowiednie (Potentially Inappropriate Medications — PIM) u osób >=65 r.ż. Zalecają unikanie m.in. benzodiazepin i leków z grupy Z (ryzyko upadków, złamań i delirium), leków silnie antycholinergicznych oraz neuroleptyków. Ważna zasada: obecność leku na liście Beers nie oznacza bezwzględnego błędu w sztuce — istnieją wyjątki kliniczne (np. BZD w zespole odstawiennym czy katatonii), a decyzja wymaga indywidualnej oceny korzyści i ryzyka.",
+      "sourceIds": [
+        "ags-beers-criteria-2023",
+        "acb-boustani-2008",
+        "nice-ng97-dementia"
+      ],
+      "inlineEnhancements": [
+        {
+          "id": "panel-beers-2023",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-psychofarmakologia-wieku-podeszlego-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "psychofarmakologia-wieku-podeszlego-obj-2"
+      ],
+      "prompt": "Jak należy traktować kryteria AGS Beers 2023 w codziennej praktyce lekarskiej w Polsce i Europie?",
+      "options": [
+        "Jako narzędzie wsparcia decyzji (decision-support) identyfikujące leki potencjalnie nieodpowiednie, wymagające indywidualnej oceny klinicznej, a nie jako bezwzględny zakaz prawny",
+        "Jako kodeks karny przewidujący automatyczną utratę prawa wykonywania zawodu za podanie hydroksyzyny",
+        "Jako zalecenie dotyczące wyłącznie dawkowania antybiotyków u noworodków"
+      ],
+      "optionFeedback": [
+        "Kryteria Beers ostrzegają przed typowymi powikłaniami, lecz w uzasadnionych sytuacjach (np. opieka paliatywna) stosowanie leku z listy może być właściwym wyborem.",
+        "Kryteria Beers są zaleceniem towarzystwa naukowego, a nie prawem karnym.",
+        "Kryteria Beers dotyczą pacjentów geriatrycznych w wieku >=65 lat."
+      ],
+      "answer": 2,
+      "explanation": "Kryteria Beers dotyczą pacjentów geriatrycznych w wieku >=65 lat.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "ags-beers-criteria-2023",
+        "acb-boustani-2008",
+        "nice-ng97-dementia"
+      ]
+    },
+    {
+      "id": "psych-psychofarmakologia-wieku-podeszlego-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "psychofarmakologia-wieku-podeszlego-obj-3"
+      ],
+      "prompt": "Dlaczego benzodiazepiny o długim okresie półtrwania (np. diazepam) są szczególnie niebezpieczne u pacjentów geriatrycznych?",
+      "options": [
+        "Wzrost zawartości tkanki tłuszczowej i spadek klirensu wydłużają okres półtrwania diazepamu do ponad 100 godzin, prowadząc do kumulacji, ataksji i złamań biodra",
+        "Ponieważ diazepam u seniorów natychmiast wywołuje zawał mięśnia sercowego",
+        "Ponieważ diazepam u osób starszych działa wyłącznie jako stymulant dopaminowy"
+      ],
+      "optionFeedback": [
+        "Lipofilny lek kumuluje się w organizmie seniora, wywołując przewlekłą sedację dzienną i zwiotczenie mięśni sprzyjające upadkom.",
+        "Diazepam nie jest bezpośrednią przyczyną zawału; grozi powikłaniami sedatywno-upadkowymi.",
+        "Diazepam jest modulatorem allosterycznym receptora GABA-A, nie stymulantem."
+      ],
+      "answer": 0,
+      "explanation": "Lipofilny lek kumuluje się w organizmie seniora, wywołując przewlekłą sedację dzienną i zwiotczenie mięśni sprzyjające upadkom.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "ags-beers-criteria-2023",
+        "acb-boustani-2008",
+        "nice-ng97-dementia"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "psychofarmakologia-wieku-podeszlego-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "psychofarmakologia-wieku-podeszlego-obj-1",
+      "psychofarmakologia-wieku-podeszlego-obj-2",
+      "psychofarmakologia-wieku-podeszlego-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Psychofarmakologia geriatryczna: polifarmacja, Beers i ACB”.",
+    "modelAnswer": "Psychofarmakoterapia geriatryczna wymaga minimalizacji obciążenia antycholinergicznego (ACB) i ostrożności wobec BZD/Z-drugs wg Beers 2023. Zmniejszony klirens nerkowy i wydłużona eliminacja leków lipofilnych nakazują zasadę stopniowego miareczkowania.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "ags-beers-criteria-2023",
+      "acb-boustani-2008",
+      "nice-ng97-dementia"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "psych-psychofarmakologia-wieku-podeszlego-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "psychofarmakologia-wieku-podeszlego-obj-1"
+      ],
+      "prompt": "Co jest zalecaną alternatywą o niższym obciążeniu antycholinergicznym dla oksybutyniny w leczeniu zespołu pęcherza nadreaktywnego u pacjenta z zaburzeniami poznawczymi?",
+      "options": [
+        "Mirabegron (selektywny agonista receptorów beta-3 adrenergicznych) lub ustrukturyzowany trening mięśni dna miednicy",
+        "Zwiększenie dawki amitryptyliny do 150 mg na noc",
+        "Podanie haloperidolu domięśniowo"
+      ],
+      "optionFeedback": [
+        "Mirabegron rozluźnia mięsień wypieracz pęcherza na drodze adrenergicznej, nie blokując receptorów muskarynowych w OUN (ACB = 0).",
+        "Amitryptylina potęguje obciążenie antycholinergiczne i może doprowadzić do anurii.",
+        "Haloperidol nie leczy pęcherza nadreaktywnego i niesie ryzyko parkinsonizmu."
+      ],
+      "answer": 1,
+      "explanation": "Amitryptylina potęguje obciążenie antycholinergiczne i może doprowadzić do anurii.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "ags-beers-criteria-2023",
+        "acb-boustani-2008",
+        "nice-ng97-dementia"
+      ]
+    },
+    {
+      "id": "psych-psychofarmakologia-wieku-podeszlego-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "psychofarmakologia-wieku-podeszlego-obj-1"
+      ],
+      "prompt": "Dlaczego u wyniszczonego 85-letniego pacjenta prawidłowe stężenie kreatyniny (0,7 mg/dl) może maskować ciężką niewydolność nerek?",
+      "options": [
+        "Z powodu ubytku masy mięśniowej (sarkopenii) produkcja endogennej kreatyniny jest znikoma, przez co stężenie w surowicy nie odzwierciedla spadku filtracji kłębuszkowej",
+        "Ponieważ nerki u osób starszych filtrują krew przez skórę",
+        "Ponieważ kreatynina u osób starszych ulega rozpadowi do glukozy"
+      ],
+      "optionFeedback": [
+        "U seniora z niską masą mięśniową GFR może wynosić <30 ml/min mimo pozornie prawidłowego wyniku kreatyniny (konieczne wyliczenie eGFR/klirensu).",
+        "Filtracja kłębuszkowa zachodzi w nerkach, nie przez skórę.",
+        "Kreatynina jest metabolitem fosfokreatyny mięśniowej wydalanym przez nerki."
+      ],
+      "answer": 2,
+      "explanation": "Kreatynina jest metabolitem fosfokreatyny mięśniowej wydalanym przez nerki.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "ags-beers-criteria-2023",
+        "acb-boustani-2008",
+        "nice-ng97-dementia"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "ger-pharm-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "psychofarmakologia-wieku-podeszlego-obj-1"
+      ],
+      "claimIds": [
+        "claim-org-beers-acb-geriatric-burden"
+      ],
+      "prompt": "81-letni pacjent z łagodnym otępieniem zgłasza bezsenność i świąd skóry. Lekarz POZ włącza hydroksyzynę 25 mg na noc. Jak ocenić ten wybór leku w świetle kryteriów Beers 2023 i skali ACB?",
+      "options": [
+        "Wysoce nieodpowiedni (kryteria Beers: leki przeciwskazane u seniorów): hydroksyzyna ma silne działanie antycholinergiczne (ACB = 3), dramatycznie zwiększa ryzyko majaczenia, pogorszenia pamięci, upadków i retencji moczu",
+        "Optymalny: hydroksyzyna jest bezpiecznym lekiem pierwszego rzutu na sen i świąd u każdego pacjenta geriatrycznego",
+        "Wskazany pod warunkiem dołączenia amitryptyliny w celu wzmocnienia efektu nasennego"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-beers-anticholinergic-risk",
+            "label": "Kryteria Beers 2023: hydroksyzyna przeciwwskazana u seniorów",
+            "acceptedPhrases": [
+              "beers",
+              "antycholinergiczne",
+              "przeciwwskazana",
+              "nieodpowiednia",
+              "acb"
+            ]
+          },
+          {
+            "id": "c-delirium-falls-retention",
+            "label": "Ryzyko majaczenia, pogorszenia funkcji poznawczych, upadków i retencji moczu",
+            "acceptedPhrases": [
+              "majaczenie",
+              "delirium",
+              "upadki",
+              "pogorszenie pamięci",
+              "retencja moczu",
+              "zaparcia"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Hydroksyzyna znajduje się na liście leków potencjalnie nieodpowiednich wg AGS Beers 2023 z uwagi na wysoki ładunek cholinolityczny i ryzyko majaczenia.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "ags-beers-criteria-2023",
+        "acb-boustani-2008"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "ger-pharm-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "psychofarmakologia-wieku-podeszlego-obj-2"
+      ],
+      "claimIds": [
+        "claim-org-beers-acb-geriatric-burden"
+      ],
+      "prompt": "Wyjaśnij pojęcie skumulowanego obciążenia antycholinergicznego (ACB) u pacjenta geriatrycznego: jakie grupy leków somatycznych i psychiatrycznych najczęściej budują wysoki wynik ACB oraz jakie są kliniczne konsekwencje tego zjawiska?",
+      "modelAnswer": "Obciążenie antycholinergiczne (ACB) to addytywny efekt jednoczesnego stosowania wielu leków blokujących receptory muskarynowe. Grupy leków budujące wysoki ACB: psychiatryczne (leki przeciwhistaminowe I generacji np. hydroksyzyna, TLPD np. amitryptylina, neuroleptyki sedatywne np. klozapina, olanzapina, promazyna) oraz somatyczne (urologiczne leki na pęcherz nadreaktywny np. oksybutynina, spazmolityki np. drotaweryna, leki przeciw chorobie lokomocyjnej). Konsekwencje kliniczne: ośrodkowe (majaczenie, ostre pogorszenie pamięci, sedacja, upadki) oraz obwodowe (suchość w ustach, zaparcia, niedrożność porażenna jelit, ostre zatrzymanie moczu, tachykardia, zaostrzenie jaskry).",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-acb-additive-concept",
+            "label": "Addytywny charakter ładunku cholinolitycznego z leków psychiatrycznych i somatycznych",
+            "acceptedPhrases": [
+              "addytywny",
+              "skumulowany",
+              "kumulacja",
+              "suma punktów",
+              "różne leki"
+            ]
+          },
+          {
+            "id": "c-acb-drug-examples",
+            "label": "Przykłady leków o wysokim ACB (hydroksyzyna, TLPD/amitryptylina, oksybutynina, neuroleptyki)",
+            "acceptedPhrases": [
+              "hydroksyzyna",
+              "amitryptylina",
+              "tlpd",
+              "oksybutynina",
+              "pęcherz nadreaktywny",
+              "promazyna"
+            ]
+          },
+          {
+            "id": "c-acb-clinical-harms",
+            "label": "Skutki kliniczne (delirium, spadek poznawczy, upadki, retencja moczu, zaparcia)",
+            "acceptedPhrases": [
+              "delirium",
+              "majaczenie",
+              "spadek poznawczy",
+              "upadki",
+              "retencja moczu",
+              "zaparcia"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-acb-harmless",
+            "patterns": [
+              "leki cholinolityczne poprawiają pamięć",
+              "brak wpływu na mózg"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd krytyczny: Blokada receptorów muskarynowych dramatycznie pogarsza funkcje poznawcze i nasila ryzyko otępienia."
+          }
+        ],
+        "minRequired": 3
+      },
+      "explanation": "Skala ACB (Boustani 2008) wykazuje, że wynik ACB >= 3 punkty wiąże się ze statystycznie istotnym wzrostem śmiertelności i ryzyka majaczenia.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "acb-boustani-2008",
+        "ags-beers-criteria-2023"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "ger-pharm-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "psychofarmakologia-wieku-podeszlego-obj-3"
+      ],
+      "claimIds": [
+        "claim-org-beers-acb-geriatric-burden"
+      ],
+      "prompt": "Oceń znaczenie leków w wywiadzie dla ryzyka polekowego pogorszenia funkcji poznawczych i upadków u 84-letniego Władysława.",
+      "hypothesis": "Pogorszenie sprawności poznawczej i upadki pacjenta wynikają z wysokiego ładunku antycholinergicznego (ACB) i leków z listy Beers.",
+      "explanation": "Eliminacja leków cholinolitycznych i sedatywnych pozwala często na odzyskanie wyjściowej sprawności poznawczej.",
+      "items": [
+        {
+          "id": "gp-ew-1",
+          "text": "W farmakoterapii pacjenta znajduje się oksybutynina (3 pkt ACB), amitryptylina (3 pkt ACB) i hydroksyzyna (3 pkt ACB) — łącznie 9 punktów",
+          "expected": "supports",
+          "explanation": "Skrajnie wysoki ładunek ACB (9 pkt) niemal gwarantuje ciężkie upośledzenie pamięci i ataksję."
+        },
+        {
+          "id": "gp-ew-2",
+          "text": "W badaniu fizykalnym: szerokie słabo reagujące źrenice, suchość błon śluzowych i przepełniony pęcherz moczowy",
+          "expected": "supports",
+          "explanation": "Klasyczny obwodowy zespół antycholinergiczny potwierdzający blokadę muskarynową."
+        },
+        {
+          "id": "gp-ew-3",
+          "text": "Odstawienie hydroksyzyny i zamiana oksybutyniny na mirabegron doprowadziły do poprawy orientacji i ustąpienia senności dziennej",
+          "expected": "supports",
+          "explanation": "Poprawa po de-preskrypcji potwierdza jatrogenny charakter zaburzeń."
+        }
+      ],
+      "difficulty": "student",
+      "reasoning": "safety",
+      "sourceIds": [
+        "ags-beers-criteria-2023",
+        "acb-boustani-2008"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "timeline"
+  ],
+  "widgetConfig": {},
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-12",
+    "scope": "Struktura dydaktyczna v2, standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., AGNP TDM 2026 oraz CPIC."
+  }
+}

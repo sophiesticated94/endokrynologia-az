@@ -269,5 +269,201 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "WHO ICD-11 CDDR, APA DSM-5-TR, ISSTD, ILAE 2017, NICE NG217, pure content-src architecture"
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "did-roz-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "did-roznicowanie-bpd-i-psychoza-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-bpd-identity-vs-did",
+        "claim-trauma-amnesia-everyday-did"
+      ],
+      "prompt": "Co stanowi kluczowe kryterium różnicujące DID od zaburzenia osobowości borderline (BPD)?",
+      "options": [
+        "Obecność autonomicznych, odrębnych stanów tożsamości z nawracającą kontrolą wykonawczą i amnezją codzienną w DID, w odróżnieniu od dyfuzji tożsamości bez utrwalonych alterów w BPD",
+        "Występowanie epizodów samookaleczeń i prób samobójczych, które są obecne wyłącznie w BPD",
+        "Obecność skrajnych wahań nastroju zależnych od lęku przed odrzuceniem"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-autonomous-states",
+            "label": "Autonomiczne stany tożsamości / altery z kontrolą wykonawczą",
+            "acceptedPhrases": [
+              "odrębne stany",
+              "kontrola wykonawcza",
+              "alter",
+              "tożsamość"
+            ]
+          },
+          {
+            "id": "c-everyday-amnesia-diff",
+            "label": "Amnezja codzienna (utrata czasu) w DID vs dyfuzja tożsamości w BPD",
+            "acceptedPhrases": [
+              "amnezja codzienna",
+              "utrata czasu",
+              "time loss",
+              "dyfuzja tożsamości"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "W DID występują odrębne stany tożsamości i amnezja codzienna; w BPD tożsamość jest niestabilna (dyfuzja), lecz nie ma autonomicznych alterów przejmujących kontrolę.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "did-roz-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "did-roznicowanie-bpd-i-psychoza-obj-2"
+      ],
+      "claimIds": [
+        "claim-trauma-did-voices-not-psychosis",
+        "claim-trauma-tle-mimic-aura-stereotypy"
+      ],
+      "prompt": "24-letnia pacjentka z historią ciężkiej przemocy w dzieciństwie zgłasza słyszenie 3 różnych wewnętrznych głosów (dorosłego mężczyzny, płaczącego dziecka i surowego krytyka), które dyskutują ze sobą w jej głowie. Brak urojeń, myślenie zborne, zachowany krytycyzm i wgląd, afekt żywy, adekwatny. Lekarz POZ podejrzewa schizofrenię z powodu „omamów rzekomych Schneidera”. Przedstaw różnicowanie fenomenologiczne i wyklucz maskę padaczki skroniowej (TLE).",
+      "modelAnswer": "Wieloosiowe różnicowanie: 1) DID vs Schizofrenia: Wewnętrzne głosy dyskutujące w DID (ang. internal auditory hallucinations / dialoguing voices) są związane ze stanami tożsamościowymi, mają charakter egodystoniczny i towarzyszy im zachowany krytycyzm. W schizofrenii osiowe są formalne zaburzenia myślenia, objawy negatywne (awolicja, stępienie afektu) oraz niespójność urojeniowa; wgląd bywa zniesiony. Sama obecność głosów Schneidera nie jest patognomoniczna dla schizofrenii. 2) Wykluczenie padaczki skroniowej (TLE): Krótkie napady z odrealnieniem i omamami mogą imitować dysocjację, ale cechują się stereotypowym przebiegiem (30-120 s), aurą nadbrzuszną/węchową i stanem ponapadowym. Prawidłowy rutynowy EEG nie wyklucza TLE.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-voices-phenomenology",
+            "label": "Fenomenologia głosów w DID a objawy osiowe schizofrenii",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-did-voices",
+                "label": "Głosy tożsamościowe, brak formalnych zaburzeń myślenia, zachowany wgląd",
+                "acceptedPhrases": [
+                  "brak formalnych zaburzeń myślenia",
+                  "wgląd",
+                  "głosy wewnętrzne",
+                  "tożsamościowe",
+                  "krytycyzm"
+                ]
+              },
+              {
+                "id": "c-schiz-criteria",
+                "label": "Objawy negatywne, urojenia owładnięcia, rozpad struktury myślenia w schizofrenii",
+                "acceptedPhrases": [
+                  "objawy negatywne",
+                  "rozpad myślenia",
+                  "schizofrenia",
+                  "urojenia"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          },
+          {
+            "id": "dim-tle-exclusion",
+            "label": "Wykluczenie padaczki skroniowej (TLE) i pułapki EEG",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-tle-features",
+                "label": "Aura nadbrzuszna/węchowa, stereotypowość (sekundy), stan ponapadowy",
+                "acceptedPhrases": [
+                  "aura nadbrzuszna",
+                  "stereotypowość",
+                  "sekundy",
+                  "stan ponapadowy",
+                  "tle"
+                ]
+              },
+              {
+                "id": "c-eeg-pitfall",
+                "label": "Prawidłowy rutynowy EEG nie wyklucza TLE",
+                "acceptedPhrases": [
+                  "rutynowy eeg",
+                  "nie wyklucza",
+                  "czułość eeg"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-equate-voices-schiz",
+            "patterns": [
+              "każdy głos to schizofrenia",
+              "głosy schneidera to zawsze psychoza"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: Głosy tożsamościowe występują u większości pacjentów z DID; nie są patognomoniczne dla schizofrenii."
+          }
+        ]
+      },
+      "explanation": "Wieloosiowe różnicowanie: 1) DID vs Schizofrenia: Wewnętrzne głosy dyskutujące w DID (ang. internal auditory hallucinations / dialoguing voices) są związane ze stanami tożsamościowymi, mają charakter egodystoniczny i towarzyszy im zachowany krytycyzm. W schizofrenii osiowe są formalne zaburzenia myślenia, objawy negatywne (awolicja, stępienie afektu) oraz niespójność urojeniowa; wgląd bywa zniesiony. Sama obecność głosów Schneidera nie jest patognomoniczna dla schizofrenii. 2) Wykluczenie padaczki skroniowej (TLE): Krótkie napady z odrealnieniem i omamami mogą imitować dysocjację, ale cechują się stereotypowym przebiegiem (30-120 s), aurą nadbrzuszną/węchową i stanem ponapadowym. Prawidłowy rutynowy EEG nie wyklucza TLE.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022",
+        "src-isstd-adult-did-2011"
+      ],
+      "transfer": true,
+      "engineBinding": {
+        "engineId": "trauma-dissociation",
+        "presetId": "trauma-psychosis-vs-dissociation",
+        "expectedOutputVersion": 1
+      }
+    },
+    {
+      "id": "did-roz-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "did-roznicowanie-bpd-i-psychoza-obj-2"
+      ],
+      "claimIds": [
+        "claim-trauma-did-voices-not-psychosis",
+        "claim-trauma-tle-mimic-aura-stereotypy"
+      ],
+      "prompt": "Oceń kierunek dowodowy danych klinicznych dla rozpoznania schizofrenii u pacjenta z dysocjacją i głosami.",
+      "hypothesis": "Pacjent cierpi na pierwotną psychozę schizofreniczną.",
+      "items": [
+        {
+          "id": "did-roz-ew-1",
+          "text": "Obecność usystematyzowanych urojeń nasyłania myśli z utratą poczucia granicy ego i alogią",
+          "expected": "supports",
+          "explanation": "Objawy osiowe schizofrenii (pierwotna utrata poczucia sprawstwa myśli i objawy ubytkowe)."
+        },
+        {
+          "id": "did-roz-ew-2",
+          "text": "Głosy prowadzą wewnętrzny dialog, a pacjent zdaje sobie sprawę, że pochodzą z jego umysłu i reprezentują różne części tożsamości",
+          "expected": "opposes",
+          "explanation": "Charakterystyczne dla zjawisk tożsamościowych w dysocjacji (DID/cPTSD), przeczy typowej schizofrenii."
+        },
+        {
+          "id": "did-roz-ew-3",
+          "text": "Występowanie stereoptypowych 40-sekundowych napadów z uczuciem wznoszenia z nadbrzusza i amnezją epizodu",
+          "expected": "opposes",
+          "explanation": "Sugeruje padaczkę płata skroniowego (TLE), a nie schizofrenię czy dysocjację."
+        }
+      ],
+      "explanation": "Różnicowanie wymaga oceny objawów ubytkowych, formalnych zaburzeń myślenia i aury padaczkowej.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "src-icd11-cddr-2024",
+        "src-dsm5-tr-2022"
+      ],
+      "transfer": true
+    }
+  ]
 }

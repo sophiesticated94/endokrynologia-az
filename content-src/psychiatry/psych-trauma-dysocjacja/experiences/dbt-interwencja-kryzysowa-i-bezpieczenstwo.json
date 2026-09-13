@@ -252,5 +252,171 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "WHO mhGAP, APA DSM-5-TR, Linehan DBT 1993, Stanley-Brown 2012, NICE CG78"
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "dbt-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "dbt-interwencja-kryzysowa-i-bezpieczenstwo-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-dbt-hierarchy-safety"
+      ],
+      "prompt": "Jaka jest hierarchia celów w indywidualnej terapii DBT wg Marshy Linehan?",
+      "options": [
+        "1. Zachowania zagrażające życiu (suicydalne, ciężkie samouszkodzenia) -> 2. Zachowania kolidujące z terapią -> 3. Zachowania niszczące jakość życia -> 4. Rozwijanie umiejętności",
+        "1. Poprawa samooceny -> 2. Analiza dzieciństwa -> 3. Leki -> 4. Bezpieczeństwo",
+        "1. Praca zawodowa -> 2. Relacje z rodziną -> 3. Redukcja leków -> 4. Ograniczenie hospitalizacji"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-dbt-hierarchy-life",
+            "label": "1. cel: zachowania zagrażające życiu (suicydalność, samouszkodzenia)",
+            "acceptedPhrases": [
+              "zagrażające życiu",
+              "suicydalne",
+              "życie",
+              "hierarchia celów"
+            ]
+          },
+          {
+            "id": "c-dbt-hierarchy-therapy",
+            "label": "2. cel: zachowania kolidujące z terapią (opuszczanie sesji, łamanie ram)",
+            "acceptedPhrases": [
+              "kolidujące z terapią",
+              "niszczące terapię",
+              "therapy-interfering"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Hierarchia DBT jest sztywna: życie pacjenta ma bezwzględny priorytet, a następnie stabilność przymierza i procesu terapii.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "src-nice-cg78-bpd-2009"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "dbt-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "dbt-interwencja-kryzysowa-i-bezpieczenstwo-obj-2"
+      ],
+      "claimIds": [
+        "claim-trauma-stanley-brown-safety-planning"
+      ],
+      "prompt": "Opracowujesz plan bezpieczeństwa dla pacjentki z BPD w ostrym kryzysie emocjonalnym z myślami samobójczymi. Przedstaw strukturę Planu Bezpieczeństwa Stanleya-Browna, wyjaśnij rolę restrykcji dostępu do środków śmiercionośnych (means restriction) i wskaż, dlaczego tzw. „kontrakty na niepopełnienie samobójstwa” (no-suicide contracts) są przeciwwskazane.",
+      "modelAnswer": "Plan interwencji kryzysowej: 1) Struktura Planu Bezpieczeństwa (Stanley-Brown Safety Planning): Składa się z 6 hierarchicznych kroków tworzonych wspólnie z pacjentem: Krok 1: Wczesne sygnały ostrzegawcze kryzysu (myśli, obrazy, zachowania); Krok 2: Wewnętrzne strategie radzenia sobie (odwracanie uwagi, techniki ugruntowania / TIPP); Krok 3: Kontakty społeczne i miejsca odwracające uwagę (kawiarnia, spacer, przyjaciel bez mówienia o kryzysie); Krok 4: Bliscy, którym można powiedzieć o kryzysie i poprosić o pomoc; Krok 5: Profesjonaliści i instytucje kryzysowe (telefon zaufania, dyżur psychiatryczny, 112); Krok 6: Zabezpieczenie otoczenia (restrykcja środków). 2) Kluczowa rola restrykcji środków (means restriction): Usunięcie leków, ostrych narzędzi czy dostępu do broni jest najskuteczniejszą pojedynczą interwencją redukującą śmiertelność (impuls samobójczy często trwa krótko). 3) Przeciwwskazanie do „kontraktów na niepopełnienie samobójstwa”: Brak jakichkolwiek dowodów na ich skuteczność; dają personelowi fałszywe poczucie bezpieczeństwa, mogą blokować pacjenta przed ujawnieniem narastających myśli samobójczych i przenoszą nieetycznie odpowiedzialność na pacjenta.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-stanley-brown-structure",
+            "label": "Kroki Planu Bezpieczeństwa Stanleya-Browna i restrykcja środków",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-stanley-brown-steps",
+                "label": "Sygnały ostrzegawcze, strategie wewnętrzne, kontakty, profesjonaliści, restrykcja środków śmiercionośnych",
+                "acceptedPhrases": [
+                  "sygnały ostrzegawcze",
+                  "strategie radzenia sobie",
+                  "restrykcja środków",
+                  "zabezpieczenie otoczenia",
+                  "stanley-brown"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          },
+          {
+            "id": "dim-no-suicide-contract-rejection",
+            "label": "Odrzucenie „kontraktów na życie” (brak dowodów, fałszywe bezpieczeństwo)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-reject-contracts",
+                "label": "Kontrakty na niepopełnienie samobójstwa są nieskuteczne, dają fałszywe bezpieczeństwo i są przeciwwskazane",
+                "acceptedPhrases": [
+                  "kontrakty na niepopełnienie samobójstwa",
+                  "brak skuteczności",
+                  "fałszywe bezpieczeństwo",
+                  "przeciwwskazane",
+                  "no-suicide contracts"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-rely-on-no-suicide-contract",
+            "patterns": [
+              "wystarczy podpisać kontrakt na niepopełnienie samobójstwa",
+              "kontrakt na życie chroni pacjenta"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd krytyczny: Kontrakty na niepopełnienie samobójstwa są nieskuteczne, nie chronią przed samobójstwem i nie mogą zastępować planu bezpieczeństwa oraz restrykcji środków."
+          }
+        ]
+      },
+      "explanation": "Plan interwencji kryzysowej: 1) Struktura Planu Bezpieczeństwa (Stanley-Brown Safety Planning): Składa się z 6 hierarchicznych kroków tworzonych wspólnie z pacjentem: Krok 1: Wczesne sygnały ostrzegawcze kryzysu (myśli, obrazy, zachowania); Krok 2: Wewnętrzne strategie radzenia sobie (odwracanie uwagi, techniki ugruntowania / TIPP); Krok 3: Kontakty społeczne i miejsca odwracające uwagę (kawiarnia, spacer, przyjaciel bez mówienia o kryzysie); Krok 4: Bliscy, którym można powiedzieć o kryzysie i poprosić o pomoc; Krok 5: Profesjonaliści i instytucje kryzysowe (telefon zaufania, dyżur psychiatryczny, 112); Krok 6: Zabezpieczenie otoczenia (restrykcja środków). 2) Kluczowa rola restrykcji środków (means restriction): Usunięcie leków, ostrych narzędzi czy dostępu do broni jest najskuteczniejszą pojedynczą interwencją redukującą śmiertelność (impuls samobójczy często trwa krótko). 3) Przeciwwskazanie do „kontraktów na niepopełnienie samobójstwa”: Brak jakichkolwiek dowodów na ich skuteczność; dają personelowi fałszywe poczucie bezpieczeństwa, mogą blokować pacjenta przed ujawnieniem narastających myśli samobójczych i przenoszą nieetycznie odpowiedzialność na pacjenta.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-nice-cg78-bpd-2009",
+        "src-who-mhgap-2023"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "dbt-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "dbt-interwencja-kryzysowa-i-bezpieczenstwo-obj-2"
+      ],
+      "claimIds": [
+        "claim-trauma-stanley-brown-safety-planning"
+      ],
+      "prompt": "Oceń przydatność kliniczną interwencji kryzysowych u pacjentki z dysregulacją afektu i zamiarami samobójczymi.",
+      "hypothesis": "Interwencja jest zgodna ze standardami interwencji kryzysowej i DBT.",
+      "items": [
+        {
+          "id": "dbt-ew-1",
+          "text": "Wspólne z rodziną zdeponowanie zapasu leków i ostrych narzędzi w bezpiecznym miejscu poza zasięgiem pacjenta",
+          "expected": "supports",
+          "explanation": "Restrykcja środków śmiertelnych to fundamentalny i skuteczny element planu bezpieczeństwa."
+        },
+        {
+          "id": "dbt-ew-2",
+          "text": "Nakazanie pacjentce podpisania „zobowiązania, że do piątku nie zrobi sobie krzywdy” jako jedynego zabezpieczenia",
+          "expected": "opposes",
+          "explanation": "Kontrakt na niepopełnienie samobójstwa jest nieskuteczny i stwarza fałszywe poczucie bezpieczeństwa."
+        },
+        {
+          "id": "dbt-ew-3",
+          "text": "Zastosowanie technik TIPP (chłodzenie twarzy lodowatą wodą, intensywny krótki wysiłek) w celu szybkiej redukcji pobudzenia autonomicznego",
+          "expected": "supports",
+          "explanation": "Technika regulacji fizjologicznej w kryzysie (DBT distress tolerance) aktywująca odruch nurka."
+        }
+      ],
+      "explanation": "Zabezpieczenie środków i plan bezpieczeństwa to interwencje o udowodnionej redukcji prób samobójczych.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "src-nice-cg78-bpd-2009",
+        "src-who-mhgap-2023"
+      ],
+      "transfer": true
+    }
+  ]
 }

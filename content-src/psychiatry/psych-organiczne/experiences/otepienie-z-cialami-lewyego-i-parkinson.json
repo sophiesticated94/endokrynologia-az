@@ -1,0 +1,427 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "otepienie-z-cialami-lewyego-i-parkinson",
+  "objectives": [
+    {
+      "id": "otepienie-z-cialami-lewyego-i-parkinson-obj-1",
+      "statement": "Rozpoznasz 4 kardynalne cechy kliniczne otępienia z ciałami Lewy’ego (kryteria McKeith 2017).",
+      "kind": "interpretation"
+    },
+    {
+      "id": "otepienie-z-cialami-lewyego-i-parkinson-obj-2",
+      "statement": "Zrozumiesz zjawisko gwałtownej, zagrażającej życiu nadwrażliwości na leki przeciwpsychotyczne u chorych z DLB.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "otepienie-z-cialami-lewyego-i-parkinson-obj-3",
+      "statement": "Odróżnisz omamy wzrokowe w DLB od psychozy pierwotnej i wdrożysz bezpieczne leczenie objawowe (ChEI).",
+      "kind": "differentiation"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-otepienie-z-cialami-lewyego-i-parkinson-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "otepienie-z-cialami-lewyego-i-parkinson-obj-1"
+    ],
+    "prompt": "Która konstelacja objawów klinicznych u 74-letniego pacjenta z narastającymi trudnościami poznawczymi najsilniej wskazuje na otępienie z ciałami Lewy’ego (DLB)?",
+    "options": [
+      "Dobrze uformowane, plastyczne omamy wzrokowe, wahania czujności w ciągu dnia, sztywność mięśniowa oraz odgrywanie snów w nocy (RBD)",
+      "Utrata pamięci świeżej z prawidłowym chodem i brakiem jakichkolwiek zjawisk psychotycznych",
+      "Nagły początek z prawostronnym niedowładem połowiczym i afazją Broca"
+    ],
+    "optionFeedback": [
+      "Kombinacja omamów wzrokowych, parkinsonizmu, fluktuacji poznawczych i zaburzeń snu REM stanowi rdzeń kryteriów McKeith 2017.",
+      "Izolowany wczesny ubytek pamięci świeżej bez objawów ruchowych jest typowy dla choroby Alzheimera, nie DLB.",
+      "Ostry niedowład połowiczy z afazją to obraz udaru niedokrwiennego kory lewej półkuli."
+    ],
+    "answer": 0,
+    "explanation": "Kombinacja omamów wzrokowych, parkinsonizmu, fluktuacji poznawczych i zaburzeń snu REM stanowi rdzeń kryteriów McKeith 2017.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "dlb-mckeith-2017",
+      "nice-ng97-dementia"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "otepienie-z-cialami-lewyego-i-parkinson-block-1",
+      "title": "Kryteria kardynalne DLB wg konsensusu McKeith 2017",
+      "text": "Otępienie z ciałami Lewy’ego (DLB) jest drugą co do częstości pierwotną przyczyną otępienia neurodegeneracyjnego. Diagnoza opiera się na 4 cechach osiowych: 1) Fluktuacje funkcji poznawczych ze znacznymi wahaniami uwagi i czujności w ciągu dnia; 2) Nawracające, złożone, dobrze uformowane omamy wzrokowe (postacie ludzi, zwierząt, dzieci, często neutralne emocjonalnie lub lękowe); 3) Zaburzenia zachowania w fazie snu REM (RBD: odgrywanie snów, krzyki, wymachiwanie kończynami, często wyprzedzające otępienie o dekady); 4) Spontaniczny parkinsonizm (sztywność, bradykinezja, chód drobnymi kroczkami bez wczesnego drżenia spoczynkowego).",
+      "sourceIds": [
+        "dlb-mckeith-2017",
+        "nice-ng97-dementia"
+      ],
+      "checkpointId": "psych-otepienie-z-cialami-lewyego-i-parkinson-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "diagram-dlb-pathway",
+          "kind": "diagram",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "otepienie-z-cialami-lewyego-i-parkinson-block-2",
+      "title": "Ciężka nadwrażliwość na leki przeciwpsychotyczne (Antipsychotic Sensitivity)",
+      "text": "Około 30–50% pacjentów z DLB wykazuje ciężką, potencjalnie letalną nadwrażliwość na neuroleptyki blokujące receptory D2 (zwłaszcza typowe, np. haloperidol). Nawet pojedyncza mała dawka może wywołać: gwałtowne usztywnienie pozapiramidowe, sedację, stupor, przełom wegetatywny i przyspieszenie zgonu. Dlatego pacjent starszy z omamami wzrokowymi i parkinsonizmem NIGDY nie powinien otrzymywać klasycznych neuroleptyków.",
+      "sourceIds": [
+        "dlb-mckeith-2017",
+        "nice-ng97-dementia"
+      ],
+      "checkpointId": "psych-otepienie-z-cialami-lewyego-i-parkinson-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-dlb-neuroleptic-sensitivity",
+          "kind": "evidence-panel",
+          "placement": "before-checkpoint"
+        },
+        {
+          "id": "deeplink-dlb-preset",
+          "kind": "workbench-deeplink",
+          "placement": "end-of-block",
+          "presetId": "preset-dlb-hallucinations"
+        }
+      ]
+    },
+    {
+      "id": "otepienie-z-cialami-lewyego-i-parkinson-block-3",
+      "title": "Leczenie objawowe i reguła 1 roku (DLB vs PDD)",
+      "text": "W leczeniu omamów wzrokowych i wahań poznawczych w DLB lekami pierwszego wyboru są inhibitory acetylocholinoesterazy (donepezil, rywastygmina), które kompensują masywny deficyt cholinergiczny w jądrze Meynerta. Jeśli konieczne jest leczenie przeciwpsychotyczne (ciężka agresja), dopuszcza się jedynie kwetiapinę lub klozapinę w mikrodawkach. Różnica między DLB a otępieniem w chorobie Parkinsona (PDD) opiera się na konwencji 1 roku: w DLB otępienie pojawia się przed lub w ciągu 12 miesięcy od początku parkinsonizmu; w PDD otępienie rozwija się na podłożu wieloletniej choroby Parkinsona.",
+      "sourceIds": [
+        "dlb-mckeith-2017",
+        "nice-ng97-dementia"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-otepienie-z-cialami-lewyego-i-parkinson-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "otepienie-z-cialami-lewyego-i-parkinson-obj-2"
+      ],
+      "prompt": "75-letni pacjent z rozpoznanym zespołem parkinsonowskim i łagodnym otępieniem zgłasza, że widzi wieczorem nieznajome dzieci bawiące się w kącie pokoju. Lekarz dyżurny podaje 5 mg haloperidolu domięśniowo. Jakie powikłanie jest najbardziej prawdopodobne?",
+      "options": [
+        "Gwałtowne pogorszenie sprawności ruchowej, ciężka uogólniona sztywność, stupor, a nawet zgon z powodu ostrej nadwrażliwości na blokadę D2",
+        "Natychmiastowe i trwałe wyleczenie z parkinsonizmu",
+        "Spadek apetytu na słodycze bez żadnych innych następstw"
+      ],
+      "optionFeedback": [
+        "Pacjenci z DLB wykazują krytyczną nadwrażliwość na neuroleptyki typowe; haloperidol może zablokować resztkowe receptory dopaminowe w prążkowiu.",
+        "Haloperidol nasila parkinsonizm, a nie go leczy.",
+        "Odpowiedź na podanie neuroleptyku w DLB niesie ciężkie ryzyko powikłań zagrażających życiu."
+      ],
+      "answer": 1,
+      "explanation": "Haloperidol nasila parkinsonizm, a nie go leczy.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "dlb-mckeith-2017",
+        "nice-ng97-dementia"
+      ]
+    },
+    {
+      "id": "psych-otepienie-z-cialami-lewyego-i-parkinson-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "otepienie-z-cialami-lewyego-i-parkinson-obj-3"
+      ],
+      "prompt": "Jaka grupa leków stanowi leczenie pierwszego wyboru w łagodzeniu omamów wzrokowych i fluktuacji poznawczych w otępieniu z ciałami Lewy’ego?",
+      "options": [
+        "Inhibitory acetylocholinoesterazy (np. donepezil, rywastygmina)",
+        "Neuroleptyki I generacji o wysokim powinowactwie do D2 (haloperidol)",
+        "Duże dawki leków antycholinergicznych (np. hydroksyzyna, biperyden)"
+      ],
+      "optionFeedback": [
+        "Niwelują głęboki deficyt cholinergiczny w korze potylicznej i czołowej, zmniejszając częstość halucynacji wzrokowych bez ryzyka parkinsonizmu.",
+        "Haloperidol jest skrajnie niebezpieczny w DLB z powodu ryzyka zapaści i śmiertelnej sztywności.",
+        "Leki antycholinergiczne drastycznie zaostrzają omamy, splątanie i deficyty poznawcze w DLB."
+      ],
+      "answer": 2,
+      "explanation": "Leki antycholinergiczne drastycznie zaostrzają omamy, splątanie i deficyty poznawcze w DLB.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "dlb-mckeith-2017",
+        "nice-ng97-dementia"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "otepienie-z-cialami-lewyego-i-parkinson-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "otepienie-z-cialami-lewyego-i-parkinson-obj-1",
+      "otepienie-z-cialami-lewyego-i-parkinson-obj-2",
+      "otepienie-z-cialami-lewyego-i-parkinson-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Otępienie z ciałami Lewy’ego (DLB) i psychoza w chorobie Parkinsona”.",
+    "modelAnswer": "DLB to triada: wahania poznawcze, omamy wzrokowe i parkinsonizm, często poprzedzone zaburzeniami snu REM. Klasyczne leki przeciwpsychotyczne są bezwzględnie przeciwwskazane z powodu śmiertelnej nadwrażliwości pozapiramidowej.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "dlb-mckeith-2017",
+      "nice-ng97-dementia"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "psych-otepienie-z-cialami-lewyego-i-parkinson-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "otepienie-z-cialami-lewyego-i-parkinson-obj-1"
+      ],
+      "prompt": "Na czym polega tzw. „reguła 1 roku” (one-year rule) różnicująca otępienie z ciałami Lewy’ego (DLB) od otępienia w chorobie Parkinsona (PDD)?",
+      "options": [
+        "W DLB objawy otępienne pojawiają się przed wystąpieniem parkinsonizmu lub w ciągu pierwszych 12 miesięcy od jego początku; w PDD otępienie rozwija się na podłożu wieloletniej choroby Parkinsona",
+        "W DLB pacjent przeżywa dokładnie 1 rok od momentu pierwszej wizyty",
+        "W PDD leczenie dopaminergiczne wolno stosować wyłącznie przez 12 miesięcy"
+      ],
+      "optionFeedback": [
+        "Reguła ta jest arbitralną konwencją kliniczną odzwierciedlającą odmienną dynamikę szerzenia się patologii alfa-synukleiny.",
+        "DLB jest chorobą wieloletnią; reguła 1 roku dotyczy sekwencji objawów poznawczych i ruchowych.",
+        "Leczenie dopaminergiczne w chorobie Parkinsona stosuje się przez wiele lat."
+      ],
+      "answer": 0,
+      "explanation": "Reguła ta jest arbitralną konwencją kliniczną odzwierciedlającą odmienną dynamikę szerzenia się patologii alfa-synukleiny.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "dlb-mckeith-2017",
+        "nice-ng97-dementia"
+      ]
+    },
+    {
+      "id": "psych-otepienie-z-cialami-lewyego-i-parkinson-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "otepienie-z-cialami-lewyego-i-parkinson-obj-1"
+      ],
+      "prompt": "Jaki fakt z wywiadu od małżonka pacjenta z podejrzeniem DLB ma kluczowe znaczenie retrospektywne?",
+      "options": [
+        "Wieloletnia historia odgrywania marzeń sennych, krzyków i gwałtownych ruchów w nocy (zaburzenie zachowania w fazie REM — RBD)",
+        "Informacja, że pacjent w wieku 15 lat chorował na ospę wietrzną",
+        "Fakt, że pacjent lubi oglądać mecze piłkarskie w telewizji"
+      ],
+      "optionFeedback": [
+        "RBD jest wczesnym synukleinopatycznym markerem prodromalnym, wyprzedzającym kliniczne otępienie DLB nawet o 10–20 lat.",
+        "Przebyta ospa wietrzna w młodości nie jest markerem synukleinopatii.",
+        "Zainteresowania hobbystyczne nie mają znaczenia diagnostycznego w kryteriach DLB."
+      ],
+      "answer": 1,
+      "explanation": "Przebyta ospa wietrzna w młodości nie jest markerem synukleinopatii.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "dlb-mckeith-2017",
+        "nice-ng97-dementia"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "dlb-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "otepienie-z-cialami-lewyego-i-parkinson-obj-2"
+      ],
+      "claimIds": [
+        "claim-org-dlb-triad-neuroleptic-sensitivity"
+      ],
+      "prompt": "74-letni chory z podejrzeniem otępienia z ciałami Lewy’ego (DLB) widzi w pokoju nieistniejące dzieci i koty, co wywołuje u niego niepokój. Lekarz dyżurny chce podać 5 mg haloperidolu i.m. Dlaczego to postępowanie stanowi błąd w sztuce i zagrożenie życia?",
+      "options": [
+        "U chorych z DLB blokery receptorów D2 (haloperidol) mogą wywołać ciężką, zagrażającą życiu nadwrażliwość neuroleptyczną (nagły ciężki parkinsonizm, sztywność, śpiączkę i zgon)",
+        "Haloperidol jest w pełni bezpieczny, lecz nie działa na omamy wzrokowe",
+        "Podanie haloperidolu jest dopuszczalne, o ile poda się go w powolnym wlewie z solą fizjologiczną"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-neuroleptic-hypersensitivity",
+            "label": "Ciężka nadwrażliwość na neuroleptyki (severe neuroleptic sensitivity) w DLB",
+            "acceptedPhrases": [
+              "nadwrażliwość",
+              "neuroleptyczna",
+              "nadwrażliwość na neuroleptyki",
+              "ciężki parkinsonizm",
+              "zagrożenie życia",
+              "zgon"
+            ]
+          },
+          {
+            "id": "c-d2-blockade-danger",
+            "label": "Niebezpieczeństwo silnej blokady receptorów D2 (haloperidol)",
+            "acceptedPhrases": [
+              "haloperidol",
+              "blokery d2",
+              "blokada d2",
+              "sztywność",
+              "śpiączka"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Wytyczne DLB Consortium (McKeith 2017) ostrzegają, że do 50% pacjentów z DLB reaguje na klasyczne neuroleptyki gwałtownym pogorszeniem parkinsonizmu, sztywnością, śpiączką i 2–3-krotnym wzrostem śmiertelności.",
+      "difficulty": "doctor",
+      "reasoning": "safety",
+      "sourceIds": [
+        "dlb-mckeith-2017",
+        "nice-ng97-dementia"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "dlb-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "otepienie-z-cialami-lewyego-i-parkinson-obj-1"
+      ],
+      "claimIds": [
+        "claim-org-dlb-triad-neuroleptic-sensitivity"
+      ],
+      "prompt": "Wymień 4 osiowe kryteria kliniczne otępienia z ciałami Lewy’ego (DLB wg McKeith 2017), wyjaśnij regułę 1 roku różnicującą DLB od otępienia w chorobie Parkinsona (PDD) oraz wskaż bezpieczne metody łagodzenia omamów wzrokowych.",
+      "modelAnswer": "Kryteria osiowe DLB: 1) Fluktuacje funkcji poznawczych z wyraźnymi zmianami uwagi i czujności; 2) Nawracające, szczegółowo uformowane omamy wzrokowe; 3) Zaburzenie zachowania w fazie snu REM (RBD – odgrywanie snów); 4) Spontaniczny parkinsonizm (pojawiający się bez ekspozycji na leki). Reguła 1 roku: jeśli otępienie rozwija się przed lub w ciągu 1 roku od wystąpienia parkinsonizmu = DLB; jeśli parkinsonizm wyprzedza otępienie o ponad 1 rok = PDD. Bezpieczne leczenie omamów: w pierwszej kolejności inhibitory cholinoesterazy (rywastygmina, donepezil); w razie konieczności atypowe leki o minimalnym powinowactwie do D2 (kwetiapina w małej dawce lub klozapina) przy ścisłym monitorowaniu.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-c-dlb-core-features",
+            "label": "Osiowe cechy DLB (fluktuacje, omamy wzrokowe, RBD, parkinsonizm)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-dlb-core-features",
+                "label": "Osiowe cechy DLB (fluktuacje, omamy wzrokowe, RBD, parkinsonizm)",
+                "acceptedPhrases": [
+                  "fluktuacje",
+                  "omamy wzrokowe",
+                  "rbd",
+                  "sen rem",
+                  "parkinsonizm"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dim-c-one-year-rule",
+            "label": "Reguła 1 roku różnicująca DLB od PDD",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-one-year-rule",
+                "label": "Reguła 1 roku różnicująca DLB od PDD",
+                "acceptedPhrases": [
+                  "reguła 1 roku",
+                  "rok",
+                  "jeden rok",
+                  "pdd",
+                  "parkinson wyprzedza otępienie"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dim-c-safe-management",
+            "label": "Inhibitory cholinoesterazy jako I rzut / ostrożnie kwetiapina lub klozapina",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-safe-management",
+                "label": "Inhibitory cholinoesterazy jako I rzut / ostrożnie kwetiapina lub klozapina",
+                "acceptedPhrases": [
+                  "rywastygmina",
+                  "donepezil",
+                  "inhibitory cholinoesterazy",
+                  "kwetiapina",
+                  "klozapina",
+                  "unikanie typowych"
+                ]
+              }
+            ]
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-dlb-give-haloperidol",
+            "patterns": [
+              "podać haloperidol",
+              "leczyć olanzapiną w dużej dawce"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd krytyczny: Klasyczne neuroleptyki są bezwzględnie przeciwwskazane w DLB."
+          }
+        ]
+      },
+      "explanation": "DLB charakteryzuje się unikalną triadą objawów i wymaga wyjątkowej ostrożności farmakologicznej ze względu na ryzyko zapaści po neuroleptykach.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "dlb-mckeith-2017",
+        "nice-ng97-dementia"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "dlb-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "otepienie-z-cialami-lewyego-i-parkinson-obj-3"
+      ],
+      "claimIds": [
+        "claim-org-dlb-triad-neuroleptic-sensitivity"
+      ],
+      "prompt": "Oceń znaczenie podanych cech klinicznych dla rozpoznania otępienia z ciałami Lewy’ego (DLB).",
+      "hypothesis": "Obraz kliniczny pacjenta odpowiada otępieniu z ciałami Lewy’ego (DLB).",
+      "explanation": "Obecność RBD, wczesnych omamów wzrokowych i parkinsonizmu silnie wspiera rozpoznanie DLB.",
+      "items": [
+        {
+          "id": "dlb-ew-1",
+          "text": "Żona podaje, że mąż od 3 lat krzyczy przez sen, wymachuje rękami i spada z łóżka, odgrywając koszmary (RBD)",
+          "expected": "supports",
+          "explanation": "Zaburzenia zachowania w fazie REM (RBD) są kluczowym wczesnym biomarkerem klinicznym synukleinopatii (DLB)."
+        },
+        {
+          "id": "dlb-ew-2",
+          "text": "W badaniu neurologicznym stwierdza się asymetryczny grubofalisty drżenie spoczynkowe prawej ręki trwające od 8 lat bez otępienia",
+          "expected": "opposes",
+          "explanation": "Wieloletni izolowany parkinsonizm wyprzedzający otępienie o wiele lat przemawia za PDD (otępieniem w chorobie Parkinsona), a nie DLB."
+        },
+        {
+          "id": "dlb-ew-3",
+          "text": "Wyraźne fluktuacje uwagi i sprawności poznawczej z dnia na dzień i w ciągu tej samej doby",
+          "expected": "supports",
+          "explanation": "Fluktuacje uwagi i poziomu czujności to osiowe kryterium DLB."
+        }
+      ],
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "dlb-mckeith-2017"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "timeline"
+  ],
+  "widgetConfig": {},
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-12",
+    "scope": "Struktura dydaktyczna v2, standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., AGNP TDM 2026 oraz CPIC."
+  }
+}

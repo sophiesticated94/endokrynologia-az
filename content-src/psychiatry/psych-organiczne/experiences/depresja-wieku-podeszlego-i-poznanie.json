@@ -1,0 +1,399 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "depresja-wieku-podeszlego-i-poznanie",
+  "objectives": [
+    {
+      "id": "depresja-wieku-podeszlego-i-poznanie-obj-1",
+      "statement": "Rozpoznasz specyfikę depresji geriatrycznej: dominacja skarg somatycznych, anhedonii i lęku nad jawnym smutkiem.",
+      "kind": "interpretation"
+    },
+    {
+      "id": "depresja-wieku-podeszlego-i-poznanie-obj-2",
+      "statement": "Zrozumiesz ograniczenia pojęcia „otępienia rzekomego” (pseudodementia) i mechanizmy depresji naczyniowej.",
+      "kind": "mechanism"
+    },
+    {
+      "id": "depresja-wieku-podeszlego-i-poznanie-obj-3",
+      "statement": "Ocenisz wysokie ryzyko samobójcze u starszych mężczyzn i wdrożysz bezpieczną farmakoterapię (unikanie TLPD).",
+      "kind": "safety"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-depresja-wieku-podeszlego-i-poznanie-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "depresja-wieku-podeszlego-i-poznanie-obj-1"
+    ],
+    "prompt": "81-letni samotny mężczyzna po udarze mózgu skarży się na brak sił, zaparcia i bóle mięśniowe. W gabinecie powtarza: „jestem tylko ciężarem, niedługo wszystko się skończy”, a pytany o pamięć odpowiada zniecierpliwiony: „nie wiem, nic nie pamiętam”. Jak należy ocenić jego stan?",
+    "options": [
+      "Stan wysokiego ryzyka samobójczego w przebiegu ciężkiego epizodu depresji wieku podeszłego, wymagający pilnej oceny planów suicydalnych i wdrożenia bezpieczeństwa",
+      "Naturalny stan pogodzenia się z losem niewymagający żadnej interwencji",
+      "Brak jakiegokolwiek ryzyka, ponieważ pacjenci po 80 r.ż. nigdy nie podejmują prób samobójczych"
+    ],
+    "optionFeedback": [
+      "Starszy samotny mężczyzna z poczuciem bycia ciężarem i aluzjami do końca życia znajduje się w grupie najwyższego ryzyka dokonanego samobójstwa.",
+      "Poczucie bycia ciężarem i rezygnacja są objawami depresji, a nie zdrowym starzeniem się.",
+      "Seniorzy cechują się najwyższym wskaźnikiem zgonów samobójczych w całej populacji."
+    ],
+    "answer": 2,
+    "explanation": "Seniorzy cechują się najwyższym wskaźnikiem zgonów samobójczych w całej populacji.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "nice-depression",
+      "nice-ng97-dementia"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "depresja-wieku-podeszlego-i-poznanie-block-1",
+      "title": "Fenotyp geriatryczny: depresja bez smutku (Depression without sadness)",
+      "text": "Depresja wieku podeszłego często manifestuje się nietypowo. Zamiast deklarowanego smutku dominują: uporczywe skargi somatyczne (bóle brzucha, zaparcia, pieczenie w klatce piersiowej bez korelacji narządowej), anhedonia, spowolnienie psychoruchowe lub niepokój manipulacyjny, bezsenność oraz lęk hipochondryczny. Pacjenci wykazują postawę rezygnacyjną i zgłaszają „brak sił do życia”.",
+      "sourceIds": [
+        "nice-depression",
+        "nice-ng97-dementia"
+      ],
+      "checkpointId": "psych-depresja-wieku-podeszlego-i-poznanie-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "microcase-geriatric-depression-mask",
+          "kind": "micro-case",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "depresja-wieku-podeszlego-i-poznanie-block-2",
+      "title": "Interakcja afekt a kognicja: ewolucja pojęcia pseudodementia",
+      "text": "Historyczny termin „otępienie rzekome” sugerował, że deficyty poznawcze w depresji są jedynie odwracalną iluzją. Współczesna neuropsychiatria wskazuje, że ubytek szybkości przetwarzania, uwagi i funkcji wykonawczych w depresji geriatrycznej ma realne podłoże biologiczne (hipoperfuzja czołowa, uszkodzenia istoty białej — hipoteza depresji naczyniowej). U około 30–50% seniorów, u których objawy poznawcze ustąpiły po wyleczeniu depresji, w ciągu kolejnych 3–5 lat rozwija się jawne otępienie neurodegeneracyjne.",
+      "sourceIds": [
+        "nice-depression",
+        "nice-ng97-dementia"
+      ],
+      "checkpointId": "psych-depresja-wieku-podeszlego-i-poznanie-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "panel-suicide-risk-elderly",
+          "kind": "evidence-panel",
+          "placement": "after-text"
+        }
+      ]
+    },
+    {
+      "id": "depresja-wieku-podeszlego-i-poznanie-block-3",
+      "title": "Suicydalność seniorów i zasady leczenia",
+      "text": "Mężczyźni w wieku powyżej 75–80 lat stanowią grupę o najwyższym wskaźniku dokonanych samobójstw w populacji. Próby samobójcze u seniorów charakteryzują się: wysoką intencjonalnością, brutalnością metod i rzadkimi sygnałami ostrzegawczymi (mniej prób manipulacyjnych, wyższa śmiertelność). W leczeniu lekami pierwszego wyboru są SSRI (sertralina, escitalopram) z uwagi na brak kardiotoksyczności i zerowy indeks ACB; należy bezwzględnie unikać trójpierścieniowych leków przeciwdepresyjnych (TLPD) z powodu ryzyka arytmii, zapaści i letalności w przedawkowaniu.",
+      "sourceIds": [
+        "nice-depression",
+        "nice-ng97-dementia"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-depresja-wieku-podeszlego-i-poznanie-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "depresja-wieku-podeszlego-i-poznanie-obj-2"
+      ],
+      "prompt": "Dlaczego u chorego w podeszłym wieku z ciężkim epizodem depresyjnym należy bezwzględnie unikać włączania trójpierścieniowych leków przeciwdepresyjnych (TLPD, np. amitryptylina)?",
+      "options": [
+        "Z powodu silnego działania kardiotoksycznego (wydłużenie QTc, bloki p-k, arytmie komorowe), hipotonii ortostatycznej i wysokiego obciążenia antycholinergicznego (ACB = 3)",
+        "Ponieważ TLPD wywołują natychmiastową utratę wzroku u każdego człowieka",
+        "Ponieważ TLPD wolno stosować wyłącznie u kobiet w ciąży"
+      ],
+      "optionFeedback": [
+        "TLPD niosą śmiertelne ryzyko w przedawkowaniu, prowokują majaczenie i upadki u chorych w podeszłym wieku.",
+        "TLPD mogą dawać zaburzenia akomodacji, lecz nie ślepotę; głównym zagrożeniem jest kardiotoksyczność.",
+        "TLPD są lekami przeciwdepresyjnymi starej generacji, nie dedykowanymi dla ciężarnych."
+      ],
+      "answer": 0,
+      "explanation": "TLPD niosą śmiertelne ryzyko w przedawkowaniu, prowokują majaczenie i upadki u chorych w podeszłym wieku.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "nice-depression",
+        "nice-ng97-dementia"
+      ]
+    },
+    {
+      "id": "psych-depresja-wieku-podeszlego-i-poznanie-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "depresja-wieku-podeszlego-i-poznanie-obj-3"
+      ],
+      "prompt": "Jak współczesna neuropsychiatria interpretuje zjawisko ustąpienia deficytów poznawczych po skutecznym wyleczeniu geriatrycznego epizodu depresyjnego?",
+      "options": [
+        "Jako stan podwyższonego ryzyka rozwoju jawnego otępienia w perspektywie kilku lat, wymagający okresowej kontroli neuropsychologicznej",
+        "Jako stuprocentową gwarancję nieśmiertelności neuronów mózgowych do końca życia",
+        "Jako dowód na to, że pacjent symulował depresję dla uzyskania renty"
+      ],
+      "optionFeedback": [
+        "Deficyty poznawcze w depresji geriatrycznej często odzwierciedlają wczesną dysfunkcję naczyniową lub prodromalną neurodegenerację.",
+        "Wyleczenie epizodu nie gwarantuje braku późniejszej demencji.",
+        "Epizod depresyjny jest realnym stanem biologicznym, a nie symulacją."
+      ],
+      "answer": 1,
+      "explanation": "Wyleczenie epizodu nie gwarantuje braku późniejszej demencji.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "nice-depression",
+        "nice-ng97-dementia"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "depresja-wieku-podeszlego-i-poznanie-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "depresja-wieku-podeszlego-i-poznanie-obj-1",
+      "depresja-wieku-podeszlego-i-poznanie-obj-2",
+      "depresja-wieku-podeszlego-i-poznanie-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Depresja wieku podeszłego, kognicja i suicydalność”.",
+    "modelAnswer": "Depresja geriatryczna często przebiega pod maską somatyczną i niesie wysokie ryzyko samobójcze. Zaburzenia poznawcze w depresji wymagają czujności, gdyż mogą stanowić zwiastun rozwijającego się procesu neurodegeneracyjnego.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "nice-depression",
+      "cssrs-scale",
+      "nice-ng97-dementia"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "psych-depresja-wieku-podeszlego-i-poznanie-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "depresja-wieku-podeszlego-i-poznanie-obj-1"
+      ],
+      "prompt": "Który lek przeciwdepresyjny jest zalecany jako bezpieczny wybór pierwszego rzutu u starszego pacjenta z depresją i chorobą niedokrwienną serca?",
+      "options": [
+        "Sertralina w stopniowo miareczkowanej dawce (np. od 25 mg/d)",
+        "Klomipramina w dawce dożylnej 150 mg/dobę",
+        "Wyciąg z dziurawca w niekontrolowanych dawkach w połączeniu z fenelzyną"
+      ],
+      "optionFeedback": [
+        "Sertralina posiada udokumentowane bezpieczeństwo kardiologiczne (badanie SADHART), brak istotnego wpływu antycholinergicznego i niski potencjał interakcji.",
+        "Klomipramina jest silnym TLPD o wysokim ryzyku kardiologicznym.",
+        "Połączenie niesie śmiertelne ryzyko przełomu nadciśnieniowego i zespołu serotoninowego."
+      ],
+      "answer": 2,
+      "explanation": "Połączenie niesie śmiertelne ryzyko przełomu nadciśnieniowego i zespołu serotoninowego.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nice-depression",
+        "nice-ng97-dementia"
+      ]
+    },
+    {
+      "id": "psych-depresja-wieku-podeszlego-i-poznanie-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "depresja-wieku-podeszlego-i-poznanie-obj-1"
+      ],
+      "prompt": "Jaka jest rola terapii elektrowstrząsowej (ECT) u starszych pacjentów z ciężką depresją psychotyczną lub zagrażającym życiu odmóżdżającym osłupieniem?",
+      "options": [
+        "Jest wysoce skuteczną, bezpieczną i ratującą życie metodą leczenia o szybszym początku działania niż farmakoterapia wielolekowa",
+        "Jest metodą zakazaną przez wszystkie międzynarodowe towarzystwa medyczne",
+        "Służy wyłącznie do leczenia bezsenności o łagodnym nasileniu"
+      ],
+      "optionFeedback": [
+        "Wiek podeszły nie jest przeciwwskazaniem do ECT; zabiegi cechują się ponad 80% skutecznością w ciężkiej geriatrycznej depresji.",
+        "ECT jest uznaną procedurą medyczną w wytycznych APA, NICE i Polskiego Towarzystwa Psychiatrycznego.",
+        "ECT stosuje się w stanach ciężkich i zagrażających życiu, nie w łagodnej bezsenności."
+      ],
+      "answer": 0,
+      "explanation": "Wiek podeszły nie jest przeciwwskazaniem do ECT; zabiegi cechują się ponad 80% skutecznością w ciężkiej geriatrycznej depresji.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "nice-depression",
+        "nice-ng97-dementia"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "dep-ger-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "depresja-wieku-podeszlego-i-poznanie-obj-1"
+      ],
+      "claimIds": [
+        "claim-org-geriatric-depression-pseudodementia"
+      ],
+      "prompt": "75-letnia kobieta po śmierci męża zgłasza całkowity brak pamięci: „Moja głowa jest zniszczona, nic nie pamiętam”. W teście MMSE uzyskała 20/30, odpowiadając na wiele pytań: „Nie wiem, nie pytajcie mnie”. Wyniki badań laboratoryjnych i TK głowy w normie. Jaki jest prawidłowy plan postępowania?",
+      "options": [
+        "Podejrzenie rzekomego otępienia depresyjnego (pseudodementia): wdrożenie bezpiecznego leku przeciwdepresyjnego (np. sertralina lub escitalopram) i psychoterapii wspierającej z ponowną oceną poznawczą po 8–12 tygodniach",
+        "Rozpoznanie choroby Alzheimera i wdrożenie memantyny bez leczenia nastroju",
+        "Zastosowanie wysokiej dawki amitryptyliny w celu szybkiej sedacji"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-pseudodementia-ssri",
+            "label": "Rozpoznanie pseudodemencji i wdrożenie bezpiecznego SSRI (sertralina, escitalopram)",
+            "acceptedPhrases": [
+              "pseudodemencja",
+              "depresja",
+              "ssri",
+              "sertralina",
+              "escitalopram",
+              "leczenie przeciwdepresyjne"
+            ]
+          },
+          {
+            "id": "c-reassessment-timing",
+            "label": "Ponowna ocena poznawcza po wyleczeniu epizodu depresyjnego",
+            "acceptedPhrases": [
+              "reewaluacja",
+              "ponowna ocena",
+              "po ustąpieniu depresji",
+              "8-12 tygodni"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Pseudodemencja depresyjna odpowiada na leczenie przeciwdepresyjne. SSRI o niskim potencjale interakcji (sertralina, escitalopram) są lekami I wyboru u seniorów.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "nice-depression",
+        "nice-ng97-dementia"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "dep-ger-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "depresja-wieku-podeszlego-i-poznanie-obj-2"
+      ],
+      "claimIds": [
+        "claim-org-geriatric-depression-pseudodementia"
+      ],
+      "prompt": "Wskaż specyficzne czynniki wysokiego ryzyka samobójczego u osób starszych z depresją oraz wyjaśnij, dlaczego myśli samobójcze u seniorów są rzadziej werbalizowane wprost.",
+      "modelAnswer": "Czynniki wysokiego ryzyka samobójstwa u seniorów: płeć męska (zwłaszcza samotni wdowcy), przewlekły ból somatyczny i choroby ograniczające sprawność, samotność i izolacja społeczna, poczucie bycia ciężarem dla bliskich, dostęp do środków śmiertelnych (leki, broń). Seniorzy rzadziej demonstrują myśli samobójcze wprost z powodu maskowania depresji objawami somatycznymi, wstydu, anhedonii i cichej rezygnacji (bierne życzenie śmierci, odmawianie przyjmowania posiłków i leków). Akty samobójcze u osób starszych cechuje znacznie większa determinacja i śmiertelność (mniej prób nieudanych, stosowanie metod bardziej drastycznych).",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-elderly-suicide-factors",
+            "label": "Czynniki ryzyka (mężczyźni, samotność, wdowieństwo, przewlekły ból/choroba)",
+            "acceptedPhrases": [
+              "mężczyźni",
+              "samotność",
+              "wdowcy",
+              "ból",
+              "choroby somatyczne",
+              "bycie ciężarem"
+            ]
+          },
+          {
+            "id": "c-covert-presentation",
+            "label": "Maskowanie somatyczne, cicha rezygnacja, odmawianie leków/jedzenia",
+            "acceptedPhrases": [
+              "maskowanie somatyczne",
+              "bierne życzenie śmierci",
+              "odmawianie jedzenia",
+              "rezygnacja",
+              "nie mówią wprost"
+            ]
+          },
+          {
+            "id": "c-high-lethality",
+            "label": "Wysoka śmiertelność i determinacja prób samobójczych u seniorów",
+            "acceptedPhrases": [
+              "wysoka śmiertelność",
+              "determinacja",
+              "drastyczne metody",
+              "mniej prób demonstracyjnych"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-elderly-suicide-manipulation",
+            "patterns": [
+              "to tylko manipulacja",
+              "starsi ludzie nie popełniają samobójstw"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd krytyczny: Wskaźnik dokonanych samobójstw jest najwyższy w grupie starszych mężczyzn."
+          }
+        ],
+        "minRequired": 3
+      },
+      "explanation": "Suicydalność u osób w wieku podeszłym to stan najwyższego zagrożenia życia, charakteryzujący się wysoką śmiertelnością prób.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "nice-depression"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "dep-ger-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "depresja-wieku-podeszlego-i-poznanie-obj-3"
+      ],
+      "claimIds": [
+        "claim-org-geriatric-depression-pseudodementia"
+      ],
+      "prompt": "Oceń znaczenie danych klinicznych dla rozpoznania maskowanej depresji u 79-letniego pacjenta zgłaszającego liczne skargi somatyczne.",
+      "hypothesis": "Pacjent cierpi na epizod depresyjny wieku podeszłego przebiegający pod maską somatyczną.",
+      "explanation": "Brak organicznego podłoża skarg somatycznych i utrata zainteresowań to osiowe cechy depresji geriatrycznej.",
+      "items": [
+        {
+          "id": "dg-ew-1",
+          "text": "Pacjent zgłasza uporczywe pieczenie w jamie brzusznej i osłabienie, a gastroskopia i kolonoskopia są bez odchyleń",
+          "expected": "supports",
+          "explanation": "Liczne badania somatyczne bez patologii narządowej sugerują depresję maskowaną."
+        },
+        {
+          "id": "dg-ew-2",
+          "text": "Pacjent przestał spotykać się z przyjaciółmi w klubie szachowym i twierdzi, że nic już go nie cieszy (anhedonia)",
+          "expected": "supports",
+          "explanation": "Anhedonia to osiowy objaw depresji według kryteriów ICD-11 / DSM-5-TR."
+        },
+        {
+          "id": "dg-ew-3",
+          "text": "Pacjent jest radosny, pełen energii, robi zakupy na zapas i planuje remont mieszkania",
+          "expected": "opposes",
+          "explanation": "Wzmożony napęd i nastrój wykluczają epizod depresyjny."
+        }
+      ],
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "nice-depression"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "timeline"
+  ],
+  "widgetConfig": {},
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-12",
+    "scope": "Struktura dydaktyczna v2, standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., AGNP TDM 2026 oraz CPIC."
+  }
+}

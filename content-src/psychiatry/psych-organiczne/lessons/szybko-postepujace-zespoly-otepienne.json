@@ -1,0 +1,169 @@
+{
+  "id": "szybko-postepujace-zespoly-otepienne",
+  "moduleId": "psych-organiczne",
+  "title": "Szybko postępujące zespoły otępienne (RPD) i czerwone flagi",
+  "subtitle": "Zegar neurokognitywny, zapalenia autoimmunologiczne, encefalopatie i różnicowanie prionowe",
+  "group": "Geriatria kliniczna, bezpieczeństwo i etyka",
+  "minutes": 19,
+  "goals": [
+    "Zastosujesz „Zegar neurokognitywny” (tempo rozwoju: godziny/dni vs tygodnie/miesiące vs lata) do ustalenia priorytetów diagnostycznych.",
+    "Zidentyfikujesz czerwone flagi encefalopatii autoimmunologicznych (napady, dyskinezy ustno-twarzowe, labilność wegetatywna).",
+    "Wdrożysz hierarchiczny panel badań (MRI, PMR, EEG, przeciwciała onkoneuronalne) w podejrzeniu odwracalnych przyczyn RPD."
+  ],
+  "sections": [
+    {
+      "title": "Zegar neurokognitywny: tempo jako decydujący drogowskaz",
+      "text": "Szybko postępujące otępienie (Rapidly Progressive Dementia — RPD) definiuje się jako spadek poznawczy rozwijający się w czasie krótszym niż 1–2 lata, a najczęściej w ciągu tygodni do kilku miesięcy. Zegar neurokognitywny dzieli dynamikę na 4 kategorie: 1) godziny–dni (ostre: delirium, zatrucia, udary, stan padaczkowy); 2) dni–tygodnie (podostre: zapalenia mózgu wirusowe/autoimmunologiczne, ostre zaburzenia metaboliczne); 3) tygodnie–miesiące (RPD: autoimmunologiczne, prionowe CJD, paraneoplastyczne, chłoniaki OUN); 4) miesiące–lata (klasyczne procesy neurodegeneracyjne). Tempo nie daje rozpoznania, lecz narzuca natychmiastową pilność procedur."
+    },
+    {
+      "title": "Czerwone flagi zapalenia mózgu (Autoimmune Encephalitis)",
+      "text": "Autoimmunologiczne zapalenie mózgu (np. z przeciwciałami przeciwko receptorom NMDA, LGI1, CASPR2) uderza często w młodych dorosłych lub seniorów. Prawidłowy model nie łączy sztywno pojedynczych objawów (np. psychoza + dyskinezy = anty-NMDAR), lecz uczy konstelacji czerwonych flag: 1) ostra/podostra psychoza lub labilność afektywna; 2) wczesne napady padaczkowe (zwłaszcza lekooporne lub napady dystoniczne twarzowo-ramienne w anty-LGI1); 3) zaburzenia ruchowe (dyskinezy ustno-twarzowe, pląsawica); 4) fluktuacje czuwania i mutyzm/katatonia; 5) niestabilność autonomiczna (hipo/hipertermia, tachykardia, labilne ciśnienie)."
+    },
+    {
+      "title": "Choroby prionowe (CJD) i inne przyczyny odwracalne",
+      "text": "Sporadyczna choroba Creutzfeldta-Jakoba (sCJD) manifestuje się postępującym otępieniem w kilka miesięcy, miokloniami wyzwalanymi bodźcem dźwiękowym (startle reflex), ataksją móżdżkową i wczesnymi objawami wzrokowymi. W diagnostyce kluczowe są: restrykcja dyfuzji w korze wstęgowatej i prążkowiu w MRI (DWI/FLAIR), okresowe wyładowania trójfazowe (PSWC) w EEG oraz białko 14-3-3 i test RT-QuIC w płynie mózgowo-rdzeniowym."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Grupa etiologiczna",
+      "Przykłady schorzeń",
+      "Czerwone flagi kliniczne",
+      "Kluczowe badanie różnicujące"
+    ],
+    "rows": [
+      [
+        "Autoimmunologiczne",
+        "Zapalenie anty-NMDAR, anty-LGI1",
+        "Napady padaczkowe, dyskinezy, katatonia",
+        "Panel przeciwciał w PMR i surowicy, MRI mózgu"
+      ],
+      [
+        "Prionowe",
+        "Sporadyczne CJD (sCJD)",
+        "Mioklonie bodźcowe, ataksja, mutyzm akinetyczny",
+        "MRI DWI (hyperintensywność kory), test RT-QuIC w PMR"
+      ],
+      [
+        "Zakaźne",
+        "HSV, kiła OUN, neuroborelioza, HIV",
+        "Gorączka, ból głowy, objawy oponowe",
+        "Badanie ogólne PMR, PCR HSV, serologia OUN"
+      ],
+      [
+        "Toksyczno-metaboliczne",
+        "Encefalopatia Wernickego, Hashimoto (SREAT)",
+        "Ofszyja/ataksja/oczopląs, wysokie aTPO",
+        "Poziom tiaminy, panel tarczycowy, odpowiedź na sterydy"
+      ]
+    ]
+  },
+  "advanced": "W zapaleniach autoimmunologicznych przeciwciała w surowicy krwi mogą być fałszywie ujemne (np. w anty-NMDAR czułość surowicy wynosi ~85%, podczas gdy w PMR sięga niemal 100%). Ujemny wynik z krwi obwodowej nigdy nie zwalnia z punkcji lędźwiowej przy wysokim podejrzeniu klinicznym.",
+  "summary": "Szybki spadek poznawczy w tygodnie lub miesiące nie pasuje do typowej choroby Alzheimera. Wymaga natychmiastowego wykluczenia przyczyn odwracalnych i zapalnych poprzez MRI, badanie PMR, EEG oraz panele autoprzeciwciał.",
+  "sourceIds": [
+    "rpd-graff-radford-2019",
+    "nice-ng97-dementia"
+  ],
+  "questions": [
+    {
+      "id": "psych-rpd-clock-q1",
+      "lessonId": "szybko-postepujace-zespoly-otepienne",
+      "prompt": "23-letnia studentka bez wcześniejszego wywiadu psychiatrycznego w ciągu 3 tygodni rozwija objawy lęku, omamów wzrokowo-słuchowych, po czym dołączają mimowolne grymasy ust i języka (dyskinezy), uogólniony napad padaczkowy oraz okresowy mutyzm. Jaki jest priorytet diagnostyczny?",
+      "options": [
+        {
+          "text": "Natychmiastowe rozpoznanie schizofrenii i skierowanie na 10-letnią psychoterapię psychoanalityczną",
+          "explanation": "Rozpoznanie schizofrenii przy ostrych napadach padaczkowych i dyskinezach bez badań neurologicznych jest rażącym błędem."
+        },
+        {
+          "text": "Wypisanie do domu z zaleceniem picia naparu z melisy",
+          "explanation": "Encefalopatia z napadami drgawkowymi jest stanem bezpośredniego zagrożenia życia."
+        },
+        {
+          "text": "Pilna hospitalizacja na oddziale neurologii z wykonaniem punkcji lędźwiowej (panel przeciwciał w PMR), MRI mózgu i EEG pod kątem autoimmunologicznego zapalenia mózgu",
+          "explanation": "Pojawienie się psychozy z napadami padaczkowymi, dyskinezami i katatonią u młodej osoby w ciągu 3 tygodni jest czerwoną flagą zapalenia mózgu (np. anty-NMDAR)."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-rpd-clock-q2",
+      "lessonId": "szybko-postepujace-zespoly-otepienne",
+      "prompt": "Jaka jest najważniejsza zaleta metodyczna podejścia opartego na „Zegarze neurokognitywnym” w diagnostyce zespołów otępiennych?",
+      "options": [
+        {
+          "text": "Ustala pilność procedur ratunkowych i zawęża grupy etiologiczne na podstawie tempa rozwoju, chroniąc przed przeoczeniem procesów odwracalnych",
+          "explanation": "Tempo w tygodnie/miesiące wyklucza rutynowe, powolne podejście ambulatoryjne i nakazuje wykluczenie zapaleń mózgu, guzów czy zakażeń."
+        },
+        {
+          "text": "Pozwala na natychmiastowe zrezygnowanie z badania płynu mózgowo-rdzeniowego u każdego pacjenta",
+          "explanation": "Zegar narzuca pilność punkcji lędźwiowej w dynamicznych spadkach poznawczych."
+        },
+        {
+          "text": "Podaje z góry dokładną datę zgonu pacjenta z marginesem do 1 dnia",
+          "explanation": "Medycyna nie dysponuje narzędziami do deterministycznego przewidywania daty zgonu."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-rpd-clock-q3",
+      "lessonId": "szybko-postepujace-zespoly-otepienne",
+      "prompt": "70-letni pacjent w ciągu 8 tygodni traci zdolność chodzenia (ataksja), dołączają gwałtowne zrywy mięśniowe po klaśnięciu w dłonie (mioklonie wyzwalane bodźcem) oraz głębokie otępienie. Co jest najbardziej prawdopodobną hipotezą roboczą?",
+      "options": [
+        {
+          "text": "Przemęczenie pracą w ogródku działkowym",
+          "explanation": "Tak gwałtowny zespół neurologiczny nigdy nie jest wynikiem zmęczenia fizycznego."
+        },
+        {
+          "text": "Podejrzenie choroby prionowej (sporadyczna choroba Creutzfeldta-Jakoba — sCJD)",
+          "explanation": "Triada: szybko postępujące otępienie w kilka tygodni, mioklonie bodźcowe (startle) i ataksja to klasyczny obraz sCJD wymagający testu RT-QuIC i MRI DWI."
+        },
+        {
+          "text": "Typowy, łagodny przebieg choroby Alzheimera",
+          "explanation": "Choroba Alzheimera nie doprowadza do głębokiego otępienia z ataksją w ciągu 8 tygodni."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-rpd-clock-q4",
+      "lessonId": "szybko-postepujace-zespoly-otepienne",
+      "prompt": "Dlaczego ujemny wynik przeciwciał przeciwko receptorom NMDA w surowicy krwi NIE wyklucza autoimmunologicznego zapalenia mózgu?",
+      "options": [
+        {
+          "text": "Ponieważ przeciwciała we krwi zamieniają się w hemoglobinę po 2 godzinach",
+          "explanation": "Przeciwciała nie przekształcają się w hemoglobinę; różnica wynika z kompartmentowości bariery krew-mózg."
+        },
+        {
+          "text": "Ponieważ krew jest całkowicie pozbawiona białek układu odpornościowego",
+          "explanation": "Krew zawiera immunoglobuliny, lecz ich stężenie w surowicy może być niewystarczające we wczesnej fazie."
+        },
+        {
+          "text": "Ponieważ swoiste przeciwciała mogą być produkowane wewnątrzpłynowo (intrathecal synthesis), a badanie płynu mózgowo-rdzeniowego ma znacznie wyższą czułość",
+          "explanation": "W zapaleniu anty-NMDAR miano przeciwciał w PMR bezpośrednio koreluje z procesem w OUN, podczas gdy we krwi obwodowej może pozostać ujemne."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-rpd-clock-q5",
+      "lessonId": "szybko-postepujace-zespoly-otepienne",
+      "prompt": "Które z wymienionych schorzeń stanowi w pełni odwracalną przyczynę ostrego/podostrego zespołu otępiennego przy wczesnym wdrożeniu leczenia?",
+      "options": [
+        {
+          "text": "Encefalopatia Wernickego (niedobór tiaminy — witaminy B1) oraz ciężka niedoczynność tarczycy",
+          "explanation": "Natychmiastowe podanie wysokich dawek tiaminy parenteralnie lub lewotyroksyny potrafi całkowicie odwrócić objawy encefalopatyczne."
+        },
+        {
+          "text": "Zaawansowana choroba Huntingtona z mutacją 55 powtórzeń CAG",
+          "explanation": "Pląsawica Huntingtona jest nieuleczalną chorobą genetyczną o charakterze postępującym."
+        },
+        {
+          "text": "Sporadyczna postać stwardnienia zanikowego bocznego (SLA)",
+          "explanation": "SLA jest postępującą chorobą neuronu ruchowego bez możliwości pełnego odwrócenia zmian."
+        }
+      ],
+      "answer": 0
+    }
+  ]
+}

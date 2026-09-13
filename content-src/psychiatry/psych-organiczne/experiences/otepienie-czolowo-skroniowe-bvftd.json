@@ -1,0 +1,389 @@
+{
+  "experienceVersion": 2,
+  "lessonId": "otepienie-czolowo-skroniowe-bvftd",
+  "objectives": [
+    {
+      "id": "otepienie-czolowo-skroniowe-bvftd-obj-1",
+      "statement": "Zidentyfikujesz kardynalne cechy wariantu behawioralnego FTD (kryteria Rascovsky 2011).",
+      "kind": "interpretation"
+    },
+    {
+      "id": "otepienie-czolowo-skroniowe-bvftd-obj-2",
+      "statement": "Rozpoznasz pułapki różnicowe: późny debiut manii, zaburzenia osobowości, depresję z apatią.",
+      "kind": "differentiation"
+    },
+    {
+      "id": "otepienie-czolowo-skroniowe-bvftd-obj-3",
+      "statement": "Zrozumiesz znaczenie zachowanej orientacji w standardowych testach przesiewowych przy dramatycznej dysfunkcji społecznej.",
+      "kind": "interpretation"
+    }
+  ],
+  "diagnostic": {
+    "id": "psych-otepienie-czolowo-skroniowe-bvftd-q1-diagnostic-v2",
+    "type": "single_choice",
+    "objectiveIds": [
+      "otepienie-czolowo-skroniowe-bvftd-obj-1"
+    ],
+    "prompt": "62-letni urzędnik bez wywiadu psychiatrycznego od 18 miesięcy staje się opryskliwy, opowiada wulgarne żarty w obecności przełożonych, nie wykazał żadnych emocji na wieść o śmierci syna i obsesyjnie wyjada cukierniczki. W teście MMSE uzyskuje 29/30 pkt. Jaka diagnoza jest najbardziej prawdopodobna?",
+    "options": [
+      "Wariant behawioralny otępienia czołowo-skroniowego (bvFTD)",
+      "Prawidłowe starzenie się mózgu niewymagające żadnej diagnostyki",
+      "Wczesne stadium choroby Creutzfeldta-Jakoba o przebiegu 18-miesięcznym"
+    ],
+    "optionFeedback": [
+      "Odhamowanie behawioralne, zanik empatii i hiperororalność przy zachowanej pamięci świeżej w MMSE to klasyczny obraz uszkodzenia kory czołowej w kryteriach Rascovsky 2011.",
+      "Utrata empatii i wulgarne zachowania u 62-latka nigdy nie są normą fizjologiczną.",
+      "Przebieg CJD jest gwałtowny (tygodnie/miesiące) z miokloniami i ataksją, a nie izolowanym odhamowaniem."
+    ],
+    "answer": 1,
+    "explanation": "Utrata empatii i wulgarne zachowania u 62-latka nigdy nie są normą fizjologiczną.",
+    "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+    "difficulty": "student",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "bvftd-rascovsky-2011",
+      "nice-ng97-dementia"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "otepienie-czolowo-skroniowe-bvftd-block-1",
+      "title": "Wariant behawioralny FTD: radykalna przemiana osobowości",
+      "text": "Wariant behawioralny otępienia czołowo-skroniowego (behavioural variant Frontotemporal Dementia — bvFTD) dotyka pacjentów w młodszym wieku niż choroba Alzheimera (typowo 45–65 lat). Osiową cechą jest postępująca zmiana zachowania, charakteru i relacji interpersonalnych. W kryteriach konsensusu Rascovsky (2011) do rozpoznania prawdopodobnego bvFTD wymaga się obecności co najmniej 3 z 6 cech: 1) Wczesne odhamowanie behawioralne (nieadekwatne komentarze seksualne, łamanie norm, agresja słowna); 2) Wczesna apatia lub bezwład; 3) Wczesna utrata empatii i współczucia; 4) Zachowania perseweracyjne, stereotypowe lub kompulsywne; 5) Hiperororalność i zmiany nawyków żywieniowych; 6) Profil neuropsychologiczny z dominacją dysfunkcji wykonawczej.",
+      "sourceIds": [
+        "bvftd-rascovsky-2011",
+        "nice-ng97-dementia"
+      ],
+      "checkpointId": "psych-otepienie-czolowo-skroniowe-bvftd-q2-checkpoint-1-v2",
+      "inlineEnhancements": [
+        {
+          "id": "deeplink-marek-ftd",
+          "kind": "workbench-deeplink",
+          "placement": "end-of-block",
+          "presetId": "preset-marek-bvftd"
+        }
+      ]
+    },
+    {
+      "id": "otepienie-czolowo-skroniowe-bvftd-block-2",
+      "title": "Maska psychiatryczna: bvFTD vs mania, depresja i kryzys wieku średniego",
+      "text": "bvFTD jest najczęściej błędnie diagnozowanym zespołem neurodegeneracyjnym w gabinetach psychiatrycznych. Odhamowanie i podejmowanie ryzykownych decyzji finansowych bywa mylone z manią lub chorobą afektywną dwubiegunową. Apatia i zaniedbanie obowiązków bywają brane za ciężką depresję lub „kryzys wieku średniego”. Kluczowa reguła różnicowa: radykalna, trwała zmiana osobowości i norm moralnych de novo u osoby po 50–55 r.ż. bez wcześniejszego wywiadu psychiatrycznego nakazuje pilne wykluczenie procesu organicznego płatów czołowych.",
+      "sourceIds": [
+        "bvftd-rascovsky-2011",
+        "nice-ng97-dementia"
+      ],
+      "checkpointId": "psych-otepienie-czolowo-skroniowe-bvftd-q3-checkpoint-2-v2",
+      "inlineEnhancements": [
+        {
+          "id": "microcase-bvftd-morality",
+          "kind": "micro-case",
+          "placement": "before-checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "otepienie-czolowo-skroniowe-bvftd-block-3",
+      "title": "Paradoks testów przesiewowych (MMSE/MoCA w normie)",
+      "text": "W początkowych stadiach bvFTD pacjent potrafi bezbłędnie podać datę, miejsce, powtórzyć 3 słowa i uzyskać 28–30 punktów w teście MMSE, ponieważ kora hipokampa i pamięć epizodyczna są nienaruszone. Jednocześnie chory nie odczuwa żalu po śmierci najbliższej osoby, wykrada jedzenie obcym ludziom w restauracji lub trwoni majątek rodziny. Rutynowe testy przesiewowe są całkowicie ślepe na załamanie kory oczodołowo-czołowej i przedniej skroniowej; wymagane jest neuroobrazowanie (MRI — atrofia czołowa) i ustrukturyzowany wywiad od rodziny.",
+      "sourceIds": [
+        "bvftd-rascovsky-2011",
+        "nice-ng97-dementia"
+      ],
+      "inlineEnhancements": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "psych-otepienie-czolowo-skroniowe-bvftd-q2-checkpoint-1-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "otepienie-czolowo-skroniowe-bvftd-obj-2"
+      ],
+      "prompt": "Dlaczego test przesiewowy MMSE może być fałszywie ujemny (wynik w normie) u pacjenta z zaawansowanymi zaburzeniami zachowania w przebiegu bvFTD?",
+      "options": [
+        "Ponieważ MMSE bada głównie orientację, pamięć świeżą i proste funkcje językowe, a jest całkowicie niewrażliwy na funkcje kory oczodołowo-czołowej i empatię społeczną",
+        "Ponieważ test MMSE wolno przeprowadzać wyłącznie u dzieci do 12 roku życia",
+        "Ponieważ pacjenci z bvFTD za każdym razem przekupują osobę badającą"
+      ],
+      "optionFeedback": [
+        "Chory potrafi podać datę i powtórzyć słowa, mimo że utracił kontrolę impulsów i zdolność do funkcjonowania w społeczeństwie.",
+        "MMSE jest testem dla osób dorosłych i seniorów.",
+        "Taka teza jest absurdalna; błąd wynika z ograniczeń narzędzia testowego."
+      ],
+      "answer": 2,
+      "explanation": "Taka teza jest absurdalna; błąd wynika z ograniczeń narzędzia testowego.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "mechanism",
+      "sourceIds": [
+        "bvftd-rascovsky-2011",
+        "nice-ng97-dementia"
+      ]
+    },
+    {
+      "id": "psych-otepienie-czolowo-skroniowe-bvftd-q3-checkpoint-2-v2",
+      "type": "single_choice",
+      "objectiveIds": [
+        "otepienie-czolowo-skroniowe-bvftd-obj-3"
+      ],
+      "prompt": "Co oznacza objaw „hiperororalności” (hyperorality) w kryteriach diagnostycznych otępienia czołowo-skroniowego?",
+      "options": [
+        "Zmienione nawyki żywieniowe: kompulsywne spożywanie słodyczy, wkładanie niejadalnych przedmiotów do ust i żarłoczność",
+        "Nieustanne wygłaszanie przemówień politycznych bez zająknięcia",
+        "Zaburzenie czucia smaku wyłącznie w odniesieniu do soli kuchennej"
+      ],
+      "optionFeedback": [
+        "Wynika z uszkodzenia brzuszno-przyśrodkowych struktur płata skroniowego i układu limbicznego (komponent zespołu Klüvera-Bucy’ego).",
+        "Wygłaszanie przemówień to logorea lub mania, nie hiperororalność.",
+        "Hiperororalność dotyczy popędu oralnego i wyboru pokarmów, a nie izolowanej utraty smaku słonego."
+      ],
+      "answer": 0,
+      "explanation": "Wynika z uszkodzenia brzuszno-przyśrodkowych struktur płata skroniowego i układu limbicznego (komponent zespołu Klüvera-Bucy’ego).",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "student",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "bvftd-rascovsky-2011",
+        "nice-ng97-dementia"
+      ]
+    }
+  ],
+  "teachBack": {
+    "id": "otepienie-czolowo-skroniowe-bvftd-teach-back-v2",
+    "type": "recall",
+    "objectiveIds": [
+      "otepienie-czolowo-skroniowe-bvftd-obj-1",
+      "otepienie-czolowo-skroniowe-bvftd-obj-2",
+      "otepienie-czolowo-skroniowe-bvftd-obj-3"
+    ],
+    "prompt": "Wyjaśnij własnymi słowami kluczowy mechanizm neurobiologiczny lub algorytm decyzyjny z lekcji „Otępienie czołowo-skroniowe (FTD) i wariant behawioralny (bvFTD)”.",
+    "modelAnswer": "bvFTD manifestuje się załamaniem norm społecznych, zanikiem empatii i hiperororalnością przy zwodniczo prawidłowych przesiewowych testach pamięci. Nowa zmiana charakteru po 55 r.ż. wymaga natychmiastowej diagnostyki kory czołowej.",
+    "explanation": "Porównaj swoją odpowiedź z odpowiedzią wzorcową. Zwróć uwagę na mechanizm receptorowy, kryteria diagnostyczne i margines bezpieczeństwa pacjenta.",
+    "difficulty": "both",
+    "reasoning": "mechanism",
+    "sourceIds": [
+      "bvftd-rascovsky-2011",
+      "nice-ng97-dementia"
+    ]
+  },
+  "exitTicket": [
+    {
+      "id": "psych-otepienie-czolowo-skroniowe-bvftd-q4-exit-transfer-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "otepienie-czolowo-skroniowe-bvftd-obj-1"
+      ],
+      "prompt": "Jaki jest najbardziej dyskryminujący wskaźnik pozwalający odróżnić późny epizod manii od wariantu behawioralnego FTD?",
+      "options": [
+        "Progresywny, podstępny przebieg z postępującą utratą empatii i obecnością atrofii czołowo-skroniowej w MRI mózgu w bvFTD",
+        "Poziom ciśnienia tętniczego mierzony na lewym ramieniu",
+        "Występowanie łupieżu na skórze głowy"
+      ],
+      "optionFeedback": [
+        "Mania przebiega fazowo z epizodami remisji, podczas gdy bvFTD jest chorobą neurodegeneracyjną prowadzącą do trwałego ubytku tkanki mózgowej.",
+        "Ciśnienie tętnicze nie różnicuje manii od otępienia czołowo-skroniowego.",
+        "Objawy dermatologiczne nie mają wartości dyskryminującej w neuropsychiatrii."
+      ],
+      "answer": 1,
+      "explanation": "Ciśnienie tętnicze nie różnicuje manii od otępienia czołowo-skroniowego.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "decision",
+      "sourceIds": [
+        "bvftd-rascovsky-2011",
+        "nice-ng97-dementia"
+      ]
+    },
+    {
+      "id": "psych-otepienie-czolowo-skroniowe-bvftd-q5-exit-safety-v2",
+      "type": "missing_information",
+      "objectiveIds": [
+        "otepienie-czolowo-skroniowe-bvftd-obj-1"
+      ],
+      "prompt": "Jakie jest zalecane postępowanie farmakologiczne w łagodzeniu odhamowania i kompulsji w bvFTD?",
+      "options": [
+        "Leki z grupy SSRI (np. trazodon, sertralina) wykazujące umiarkowaną skuteczność w redukcji zachowań stereotypowych i impulsywnych",
+        "Wysokie dawki inhibitorów acetylocholinoesterazy (donepezil)",
+        "Monoterapia amfetaminą w dawce 100 mg/dobę"
+      ],
+      "optionFeedback": [
+        "Wykazano, że deficyt serotoninergiczny w korze czołowej odpowiada za impulsywność; SSRI pomagają wyhamować drażliwość i hiperororalność.",
+        "ChEI nie mają udowodnionej skuteczności w bvFTD i mogą wręcz nasilać pobudzenie i drażliwość.",
+        "Amfetamina w wysokiej dawce nasiliłaby pobudzenie i zachowania agresywne."
+      ],
+      "answer": 2,
+      "explanation": "Amfetamina w wysokiej dawce nasiliłaby pobudzenie i zachowania agresywne.",
+      "hint": "Zastosuj model wnioskowania klinicznego: najpierw zidentyfikuj patomechanizm lub kryterium, a dopiero potem wybierz działanie.",
+      "difficulty": "both",
+      "reasoning": "safety",
+      "sourceIds": [
+        "bvftd-rascovsky-2011",
+        "nice-ng97-dementia"
+      ]
+    }
+  ],
+  "assessmentBank": [
+    {
+      "id": "ftd-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "otepienie-czolowo-skroniowe-bvftd-obj-1"
+      ],
+      "claimIds": [
+        "claim-org-bvftd-executive-social-disinhibition"
+      ],
+      "prompt": "58-letni dyrektor banku bez wcześniejszego wywiadu psychiatrycznego od 9 miesięcy staje się opryskliwy, opowiada wulgarne dowcipy na spotkaniach zarządu, kupuje hurtowo słodycze i wykazuje całkowitą obojętność na chorobę nowotworową żony. Pamięć orientacyjna i orientacja w terenie są bezbłędne. Jakie rozpoznanie należy podejrzewać w pierwszej kolejności?",
+      "options": [
+        "Wariant behawioralny otępienia czołowo-skroniowego (bvFTD)",
+        "Późny debiut manii w przebiegu zaburzenia afektywnego dwubiegunowego",
+        "Klasyczna postać choroby Alzheimera w stadium łagodnym"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-bvftd-core-domains",
+            "label": "Odhamowanie społeczne, apatia, utrata empatii, hiperorolność (słodycze)",
+            "acceptedPhrases": [
+              "odhamowanie",
+              "utrata empatii",
+              "słodycze",
+              "hiperorolność",
+              "obojętność",
+              "bvftd"
+            ]
+          },
+          {
+            "id": "c-preserved-memory",
+            "label": "Zachowana pamięć i orientacja we wczesnej fazie bvFTD",
+            "acceptedPhrases": [
+              "pamięć zachowana",
+              "brak amnezji",
+              "orientacja zachowana",
+              "wczesny wiek"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "bvFTD to najczęstsze otępienie o wczesnym początku (<65 r.ż.) charakteryzujące się zmianą osobowości, utratą rezonansu społecznego i odhamowaniem przy braku wczesnych zaburzeń pamięci.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "bvftd-rascovsky-2011",
+        "dsm5tr"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "ftd-bank-2",
+      "type": "short_answer",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "otepienie-czolowo-skroniowe-bvftd-obj-2"
+      ],
+      "claimIds": [
+        "claim-org-bvftd-executive-social-disinhibition"
+      ],
+      "prompt": "Wymień 5 kryteriów wczesnego wariantu behawioralnego FTD wg Rascovsky 2011 oraz wskaż, dlaczego inhibitory acetylocholinoesterazy NIE są zalecane w bvFTD.",
+      "modelAnswer": "Kryteria kliniczne bvFTD: 1) Wczesne odhamowanie behawioralne; 2) Wczesna apatia lub bezczynność; 3) Wczesna utrata empatii i współczucia; 4) Wczesne zachowania perseweracyjne, stereotypowe lub kompulsywne; 5) Hiperorolność i zmiany nawyków żywieniowych (pochłanianie słodyczy); 6) Profil neuropsychologiczny z dominacją dysfunkcji wykonawczej przy względnym oszczędzeniu pamięci epizodycznej i funkcji wzrokowo-przestrzennych. Inhibitory acetylocholinoesterazy nie są zalecane w FTD, ponieważ w tym schorzeniu brak jest pierwotnego deficytu cholinergicznego, a leki te mogą nasilać odhamowanie i pobudzenie behawioralne.",
+      "rubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-rascovsky-criteria",
+            "label": "Cechy bvFTD (odhamowanie, apatia, utrata empatii, perseweracje, hiperorolność)",
+            "acceptedPhrases": [
+              "odhamowanie",
+              "apatia",
+              "empatia",
+              "perseweracje",
+              "hiperorolność",
+              "słodycze"
+            ]
+          },
+          {
+            "id": "c-achei-contraindication-ftd",
+            "label": "Brak deficytu cholinergicznego w FTD / ryzyko nasilenia odhamowania przez AChEI",
+            "acceptedPhrases": [
+              "brak deficytu cholinergicznego",
+              "nasilenie pobudzenia",
+              "brak wskazań do achei",
+              "mogą nasilać objawy"
+            ]
+          }
+        ],
+        "contradictions": [
+          {
+            "id": "err-ftd-same-as-ad",
+            "patterns": [
+              "ftd leczy się donepezilem tak samo jak alzheimera",
+              "donepezil lekiem z wyboru"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd: Inhibitory cholinoesterazy nie mają rejestracji w FTD i mogą pogarszać objawy behawioralne."
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "bvFTD ma odmienny profil neurochemiczny (zwyrodnienie tau lub TDP-43 w płatach czołowych i skroniowych) i leki procholinergiczne nie przynoszą korzyści.",
+      "difficulty": "both",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "bvftd-rascovsky-2011",
+        "nice-ng97-dementia"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "ftd-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "otepienie-czolowo-skroniowe-bvftd-obj-3"
+      ],
+      "claimIds": [
+        "claim-org-bvftd-executive-social-disinhibition"
+      ],
+      "prompt": "Oceń znaczenie podanych objawów dla różnicowania wariantu behawioralnego FTD od choroby Alzheimera u 60-letniego pacjenta.",
+      "hypothesis": "Zaburzenia pacjenta odpowiadają wariantowi behawioralnemu FTD (bvFTD).",
+      "explanation": "Dominacja zmian zachowania i afektu przy braku amnezji epizodycznej przemawia za bvFTD.",
+      "items": [
+        {
+          "id": "ftd-ew-1",
+          "text": "Pacjent od kilku miesięcy kompulsywnie zbiera puszki po piwie i klaszcze w dłonie w stałym rytmie (stereotypie)",
+          "expected": "supports",
+          "explanation": "Zachowania perseweracyjne i stereotypie ruchowe to cecha osiowa bvFTD."
+        },
+        {
+          "id": "ftd-ew-2",
+          "text": "W badaniu neuropsychologicznym stwierdzono głęboki deficyt pamięci epizodycznej z brakiem poprawy po podpowiedziach",
+          "expected": "opposes",
+          "explanation": "Wczesna i dominująca amnezja hipokampalna to cecha osiowa choroby Alzheimera, a nie bvFTD."
+        },
+        {
+          "id": "ftd-ew-3",
+          "text": "W MRI mózgu widoczny wyraźny, asymetryczny zanik biegunów płatów czołowych i przednich części płatów skroniowych",
+          "expected": "supports",
+          "explanation": "Przedni zanik czołowo-skroniowy to klasyczny biomarker obrazowy bvFTD."
+        }
+      ],
+      "difficulty": "student",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "bvftd-rascovsky-2011"
+      ],
+      "transfer": true
+    }
+  ],
+  "widgetIds": [
+    "lab-workbench",
+    "pathway-builder"
+  ],
+  "widgetConfig": {},
+  "review": {
+    "status": "source-checked",
+    "checkedAt": "2026-09-12",
+    "scope": "Struktura dydaktyczna v2, standardy ICD-11 CDDR, DSM-5-TR, Maudsley 15th ed., AGNP TDM 2026 oraz CPIC."
+  }
+}

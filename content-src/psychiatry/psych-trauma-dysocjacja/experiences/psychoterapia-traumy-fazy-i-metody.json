@@ -250,5 +250,187 @@
     "status": "source-checked",
     "checkedAt": "2026-09-13",
     "scope": "WHO mhGAP, APA DSM-5-TR, Herman 1992, ISTSS 2019, NICE NG116"
-  }
+  },
+  "assessmentBank": [
+    {
+      "id": "trauma-ter-bank-1",
+      "type": "select_and_justify",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "psychoterapia-traumy-fazy-i-metody-obj-1"
+      ],
+      "claimIds": [
+        "claim-trauma-phase-based-treatment"
+      ],
+      "prompt": "Na czym polega powszechnie akceptowany model trójfazowy psychoterapii traumy (Judith Herman)?",
+      "options": [
+        "Faza 1: Stabilizacja i budowanie bezpieczeństwa; Faza 2: Przetwarzanie i integracja wspomnień traumatycznych; Faza 3: Reintegracja ze społeczeństwem i budowanie przyszłości",
+        "Faza 1: Natychmiastowa głęboka ekspozycja; Faza 2: Farmakoterapia; Faza 3: Analiza marzeń sennych",
+        "Faza 1: Hipnoza; Faza 2: Odzyskiwanie wspomnień; Faza 3: Konfrontacja ze sprawcą"
+      ],
+      "answer": 0,
+      "rationaleRubric": {
+        "requiredConcepts": [
+          {
+            "id": "c-phase-1-stabilization",
+            "label": "Faza 1: stabilizacja, regulacja emocji, bezpieczeństwo",
+            "acceptedPhrases": [
+              "stabilizacja",
+              "bezpieczeństwo",
+              "faza 1",
+              "regulacja emocji",
+              "umiejętności"
+            ]
+          },
+          {
+            "id": "c-phase-2-processing",
+            "label": "Faza 2: przetwarzanie pamięci traumatycznej i desensytyzacja",
+            "acceptedPhrases": [
+              "przetwarzanie",
+              "faza 2",
+              "pamięć traumatyczna",
+              "ekspozycja",
+              "emdr",
+              "tf-cbt"
+            ]
+          }
+        ],
+        "minRequired": 2
+      },
+      "explanation": "Model 3-fazowy chroni przed retraumatyzacją; przejście do przetwarzania wymaga stabilnego poczucia bezpieczeństwa i umiejętności samoregulacji.",
+      "difficulty": "doctor",
+      "reasoning": "differentiation",
+      "sourceIds": [
+        "src-istss-guidelines-2019",
+        "src-apa-ptsd-guideline-2017"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "trauma-ter-bank-2",
+      "type": "clinical_reasoning",
+      "assessmentLevel": "generation",
+      "objectiveIds": [
+        "psychoterapia-traumy-fazy-i-metody-obj-2"
+      ],
+      "claimIds": [
+        "claim-trauma-phase-based-treatment",
+        "claim-trauma-exposure-contraindications"
+      ],
+      "prompt": "30-letnia pacjentka z rozpoznaniem cPTSD, z historią prób samobójczych i niestabilną sytuacją mieszkaniową (mieszka z przemocowym partnerem), zgłasza się z prośbą o „natychmiastowe rozpoczęcie procedury EMDR lub przedłużonej ekspozycji (PE)”, aby pozbyć się koszmarów. Przedstaw ocenę wskazań i przeciwwskazań oraz zaplanuj właściwą kolejność interwencji.",
+      "modelAnswer": "Ocena i plan postępowania: 1) Przeciwwskazania do wczesnej ekspozycji traumatycznej: Brak zewnętrznego bezpieczeństwa (trwająca przemoc domowa w miejscu zamieszkania), wysokie ryzyko samobójcze, brak umiejętności regulacji skrajnego pobudzenia emocjonalnego i stabilnego przymierza terapeutycznego. Bezpośrednia ekspozycja grozi dekompensacją, retraumatyzacją lub próbą samobójczą. 2) Właściwa kolejność: Bezwzględne wdrożenie Fazy 1 (Stabilizacja): zapewnienie fizycznego bezpieczeństwa (plan wyjścia z przemocowego środowiska), psychoedukacja, grounding, trening regulacji emocjonalnej (np. moduły DBT), opracowanie planu bezpieczeństwa (Stanley-Brown). 3) Przetwarzanie (Faza 2): Rozpoczęcie EMDR lub PE dopiero po uzyskaniu bezpiecznego schronienia, opanowaniu technik powrotu do okna tolerancji i braku zachowań samobójczych.",
+      "rubric": {
+        "dimensions": [
+          {
+            "id": "dim-contraindications-exposure",
+            "label": "Rozpoznanie przeciwwskazań do wczesnej ekspozycji (przemoc, niestabilność, suicydalność)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-ongoing-threat",
+                "label": "Trwające zagrożenie / przemoc w domu, brak stabilności życiowej",
+                "acceptedPhrases": [
+                  "trwająca przemoc",
+                  "brak bezpieczeństwa",
+                  "przemocowy partner",
+                  "zagrożenie"
+                ]
+              },
+              {
+                "id": "c-decompensation-risk-exp",
+                "label": "Ryzyko dekompensacji, retraumatyzacji, próby samobójczej",
+                "acceptedPhrases": [
+                  "dekompensacja",
+                  "retraumatyzacja",
+                  "ryzyko samobójcze",
+                  "przeciwwskazanie do ekspozycji"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          },
+          {
+            "id": "dim-stabilization-first",
+            "label": "Priorytet Fazy 1 (stabilizacja, ugruntowanie, plan bezpieczeństwa)",
+            "required": true,
+            "requiredConcepts": [
+              {
+                "id": "c-stabilization-priority",
+                "label": "Konieczność Fazy 1 (stabilizacja, umiejętności ugruntowania, plan bezpieczeństwa przed ekspozycją)",
+                "acceptedPhrases": [
+                  "faza 1",
+                  "stabilizacja",
+                  "grounding",
+                  "ugruntowanie",
+                  "bezpieczeństwo fizyczne",
+                  "plan bezpieczeństwa"
+                ]
+              }
+            ],
+            "criticalErrors": []
+          }
+        ],
+        "criticalErrors": [
+          {
+            "id": "err-expose-in-unsafe-env",
+            "patterns": [
+              "od razu zacząć emdr",
+              "zrobić ekspozycję mimo przemocy w domu"
+            ],
+            "severity": "critical",
+            "feedback": "Błąd krytyczny: Rozpoczynanie ekspozycji w sytuacji trwającej przemocy domowej i braku stabilizacji jest jaskrawym błędem w sztuce i stwarza zagrożenie życia."
+          }
+        ]
+      },
+      "explanation": "Ocena i plan postępowania: 1) Przeciwwskazania do wczesnej ekspozycji traumatycznej: Brak zewnętrznego bezpieczeństwa (trwająca przemoc domowa w miejscu zamieszkania), wysokie ryzyko samobójcze, brak umiejętności regulacji skrajnego pobudzenia emocjonalnego i stabilnego przymierza terapeutycznego. Bezpośrednia ekspozycja grozi dekompensacją, retraumatyzacją lub próbą samobójczą. 2) Właściwa kolejność: Bezwzględne wdrożenie Fazy 1 (Stabilizacja): zapewnienie fizycznego bezpieczeństwa (plan wyjścia z przemocowego środowiska), psychoedukacja, grounding, trening regulacji emocjonalnej (np. moduły DBT), opracowanie planu bezpieczeństwa (Stanley-Brown). 3) Przetwarzanie (Faza 2): Rozpoczęcie EMDR lub PE dopiero po uzyskaniu bezpiecznego schronienia, opanowaniu technik powrotu do okna tolerancji i braku zachowań samobójczych.",
+      "difficulty": "doctor",
+      "reasoning": "decision",
+      "sourceIds": [
+        "src-istss-guidelines-2019",
+        "src-apa-ptsd-guideline-2017"
+      ],
+      "transfer": true
+    },
+    {
+      "id": "trauma-ter-bank-3",
+      "type": "evidence_weighting",
+      "assessmentLevel": "application",
+      "objectiveIds": [
+        "psychoterapia-traumy-fazy-i-metody-obj-2"
+      ],
+      "claimIds": [
+        "claim-trauma-phase-based-treatment",
+        "claim-trauma-exposure-contraindications"
+      ],
+      "prompt": "Oceń gotowość pacjenta do przejścia z Fazy 1 (stabilizacja) do Fazy 2 (przetwarzanie traumy / ekspozycja).",
+      "hypothesis": "Pacjent jest gotowy do bezpiecznego rozpoczęcia procedur przetwarzania pamięci traumatycznej.",
+      "items": [
+        {
+          "id": "trauma-ter-ew-1",
+          "text": "Pacjent skutecznie stosuje techniki ugruntowania (grounding) i potrafi samodzielnie powrócić do okna tolerancji w trakcie sesji",
+          "expected": "supports",
+          "explanation": "Kluczowy dowód nabycia umiejętności samoregulacji afektu."
+        },
+        {
+          "id": "trauma-ter-ew-2",
+          "text": "Pacjent od 2 tygodni intensywnie nadużywa alkoholu w celu stłumienia intruzji i doświadcza amnezji toksycznej",
+          "expected": "opposes",
+          "explanation": "Czynne uzależnienie i intoksykacja to bezwzględne przeciwwskazanie do rozpoczęcia ekspozycji."
+        },
+        {
+          "id": "trauma-ter-ew-3",
+          "text": "Stabilna sytuacja życiowa i brak zachowań samobójczych lub ciężkich samookaleczeń w ciągu ostatnich miesięcy",
+          "expected": "supports",
+          "explanation": "Zapewnia niezbędne ramy bezpieczeństwa dla Fazy 2."
+        }
+      ],
+      "explanation": "Przetwarzanie traumy można rozpocząć tylko przy ugruntowanej stabilizacji emocjonalnej i środowiskowej.",
+      "difficulty": "doctor",
+      "reasoning": "interpretation",
+      "sourceIds": [
+        "src-istss-guidelines-2019"
+      ],
+      "transfer": true
+    }
+  ]
 }

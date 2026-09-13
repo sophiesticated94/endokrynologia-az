@@ -1,0 +1,164 @@
+{
+  "id": "choroba-alzheimera-wzorzec-i-progresja",
+  "moduleId": "psych-organiczne",
+  "title": "Choroba Alzheimera: wzorzec kliniczny, progresja i imitatory",
+  "subtitle": "Podstępny początek, kaskada pamięci epizodycznej, model hipokampalny i różnicowanie",
+  "group": "Główne zespoły neurodegeneracyjne",
+  "minutes": 18,
+  "goals": [
+    "Zidentyfikujesz typowy wzorzec kliniczny choroby Alzheimera: podstępny początek i deficyty pamięci epizodycznej.",
+    "Zrozumiesz sekwencję progresji sieciowej (kora śródwęchowa/hipokamp → asocjacyjna kora ciemieniowo-skroniowa).",
+    "Przeprowadzisz różnicowanie z imitatorami: depresją, chorobą małych naczyń, zaburzeniami snu i lekami."
+  ],
+  "sections": [
+    {
+      "title": "Wzorzec kliniczny: nie każde zaburzenie pamięci to Alzheimer",
+      "text": "Choroba Alzheimera (AD) jest pierwotnym procesem neurodegeneracyjnym, którego cechą kardynalną jest podstępny początek i powolna, wieloletnia progresja. Wczesny fenotyp typowy charakteryzuje się upośledzeniem pamięci epizodycznej świeżej (trudność w konsolidacji i swobodnym odtwarzaniu nowych informacji, brak poprawy przy podpowiedziach — uszkodzenie hipokampa). Pamięć odległa, procedury i nawyki pozostają nienaruszone przez długi czas."
+    },
+    {
+      "title": "Kaskada progresji sieciowej i objawy późniejsze",
+      "text": "W miarę rozprzestrzeniania się patologii amyloidowo-tauowej z przyśrodkowych struktur płata skroniowego do asocjacyjnej kory ciemieniowo-skroniowej pojawia się klasyczna triada: 1) afazja (początkowo anomia — trudność w znajdowaniu słów, później ubóstwo semantyczne); 2) apraksja (trudność w wykonywaniu celowych czynności manualnych mimo zachowanej siły mięśniowej); 3) agnozja (trudność w rozpoznawaniu znanych twarzy i przedmiotów). Dołączają zaburzenia wzrokowo-przestrzenne (gubienie się w znanym otoczeniu)."
+    },
+    {
+      "title": "Różnicowanie z maskami i imitatorami",
+      "text": "Prawidłowe TSH, witamina B12 i morfologia krwi zmniejszają prawdopodobieństwo jawnych masek internistycznych, lecz nie stanowią bezpośredniego dowodu na chorobę Alzheimera. Różnicowanie wymaga wykluczenia: przewlekłych skutków leków sedatywnych i antycholinergicznych, bezdechu sennego (OSA), naczyniowej choroby małych naczyń oraz depresji wieku podeszłego. W neuroobrazowaniu (MRI) wsparciem jest ocena zaniku hipokampów w skali MTA (Medial Temporal Lobe Atrophy)."
+    }
+  ],
+  "table": {
+    "headers": [
+      "Stadium AD",
+      "Objawy poznawcze",
+      "Funkcjonowanie codzienne",
+      "Objawy neuropsychiatryczne"
+    ],
+    "rows": [
+      [
+        "Wczesne (łagodne)",
+        "Ubytki pamięci epizodycznej, anomia",
+        "Trudności w finansach i lekach (IADL)",
+        "Lęk, wycofanie, łagodna apatia"
+      ],
+      [
+        "Umiarkowane",
+        "Afazja, apraksja, dezorientacja w przestrzeni",
+        "Wymaga pomocy w ubiorze i toalecie (ADL)",
+        "BPSD: błądzenie, podejrzliwość, pobudzenie"
+      ],
+      [
+        "Zaawansowane",
+        "Głęboka agnozja, mutyzm, zanik mowy",
+        "Całkowita zależność od opiekuna",
+        "Sztywność mięśniowa, dysfagia, infekcje"
+      ]
+    ]
+  },
+  "advanced": "Model progresji hipokampalno-sieciowej (Hippocampal/Network Progression Model) traktowany jest jako SUPPORTED DISEASE MODEL. Nie stanowi on deterministycznego biomarkera klinicznego u każdego pacjenta; fenotypy atypowe (np. atrofia korowa tylna — PCA z wczesnymi objawami wzrokowo-przestrzennymi, czy logopeniczna afazja postępująca — lvPPA) mogą przebiegać bez wczesnego ubytku pamięci hipokampalnej.",
+  "summary": "Choroba Alzheimera to podstępny i postępujący ubytek pamięci epizodycznej z późniejszą afazją, apraksją i utratą samodzielności. Prawidłowe badania laboratoryjne wykluczają maski, lecz diagnoza opiera się na fenotypie klinicznym i neuroobrazowaniu.",
+  "sourceIds": [
+    "nice-ng97-dementia",
+    "dsm5tr",
+    "icd11-cddr"
+  ],
+  "questions": [
+    {
+      "id": "psych-ad-wzor-q1",
+      "lessonId": "choroba-alzheimera-wzorzec-i-progresja",
+      "prompt": "Który mechanizm zaburzeń pamięci jest najbardziej charakterystyczny dla wczesnego stadium typowej postaci choroby Alzheimera?",
+      "options": [
+        {
+          "text": "Gwałtowna utrata pamięci proceduralnej jazdy na rowerze w ciągu 3 dni",
+          "explanation": "Pamięć proceduralna opiera się na jądrach podstawy i móżdżku, ulegając zaburzeniu dopiero w bardzo późnym stadium."
+        },
+        {
+          "text": "Upośledzenie konsolidacji i odraczania nowych informacji (brak poprawy przy podpowiedziach semantycznych)",
+          "explanation": "Wynika z pierwotnego uszkodzenia formacji hipokampa i kory śródwęchowej; podpowiedzi z listą nie pomagają odtworzyć zapomnianych słów."
+        },
+        {
+          "text": "Wybiórcze zapominanie wydarzeń z wczesnego dzieciństwa przy zachowanej pamięci wczorajszego dnia",
+          "explanation": "W chorobie Alzheimera pamięć odległa z dzieciństwa jest najlepiej i najdłużej zachowana (prawo Ribota)."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-ad-wzor-q2",
+      "lessonId": "choroba-alzheimera-wzorzec-i-progresja",
+      "prompt": "Jaką rolę pełni badanie rezonansu magnetycznego (MRI) głowy w diagnostyce podejrzenia choroby Alzheimera?",
+      "options": [
+        {
+          "text": "W 100% przypadków jednoznacznie przesądza o obecności złogów amyloidu w synapsach",
+          "explanation": "Standardowe MRI ocenia atrofię makroskopową, nie mikroskopowe złogi amyloidu (wymagałoby to PET amyloidowego)."
+        },
+        {
+          "text": "Jest badaniem całkowicie bezużytecznym u osób powyżej 60 roku życia",
+          "explanation": "MRI jest standardem diagnostycznym rekomendowanym przez wytyczne EFNS i NICE."
+        },
+        {
+          "text": "Wspiera rozpoznanie poprzez ocenę zaniku struktur hipokampa (skala MTA) oraz pozwala wykluczyć guzy, krwiaki podtwardówkowe i udary",
+          "explanation": "MRI mózgu dostarcza dowodów na atrofię przyśrodkowego płata skroniowego i wyklucza uchwytne strukturalne przyczyny wtórne."
+        }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "psych-ad-wzor-q3",
+      "lessonId": "choroba-alzheimera-wzorzec-i-progresja",
+      "prompt": "78-letni pacjent przyprowadza żonę, która od 2 lat powtarza te same pytania, zapomina o wyłączeniu gazu i ma trudności ze znalezieniem słów podczas rozmowy. Wyniki TSH, elektrolitów i witaminy B12 są w normie. Jaki jest prawidłowy wniosek?",
+      "options": [
+        {
+          "text": "Wyniki laboratoryjne zmniejszają prawdopodobieństwo wybranych odwracalnych przyczyn somatycznych, a fenotyp kliniczny wspiera podejrzenie otępienia w chorobie Alzheimera",
+          "explanation": "Prawidłowe badania krwi eliminują typowe zaburzenia internistyczne, lecz nie są dowodem samym w sobie; rozpoznanie opiera się na 2-letnim przebiegu i deficytach w wywiadzie."
+        },
+        {
+          "text": "Prawidłowe TSH i B12 dowodzą, że pacjentka ma pierwotne zaburzenie urojeniowe",
+          "explanation": "Brak odchyleń w parametrach tarczycy nie dowodzi zaburzenia urojeniowego."
+        },
+        {
+          "text": "Obraz kliniczny pozwala na natychmiastowe zakończenie diagnostyki bez badania fizykalnego i neurologicznego",
+          "explanation": "Diagnoza otępienia wymaga pełnego badania neurologicznego i obrazowego."
+        }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "psych-ad-wzor-q4",
+      "lessonId": "choroba-alzheimera-wzorzec-i-progresja",
+      "prompt": "Czym jest anozognozja obserwowana u wielu pacjentów z chorobą Alzheimera?",
+      "options": [
+        {
+          "text": "Napadowym kurczem mięśni powiek wywołanym światłem słonecznym",
+          "explanation": "Kurcz powiek to blefarospazm, a nie anozognozja."
+        },
+        {
+          "text": "Biologicznym brakiem wglądu i świadomości własnych deficytów poznawczych spowodowanym uszkodzeniem sieci neuronalnych",
+          "explanation": "Anozognozja nie jest zwykłym „wypieraniem psychologicznym”, lecz neurologiczną niezdolnością do monitorowania własnych błędów pamięciowych."
+        },
+        {
+          "text": "Zdolnością do natychmiastowego zapamiętywania 100 cyfr po przecinku",
+          "explanation": "Taki objaw nie ma związku z anozognozją ani chorobą Alzheimera."
+        }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "psych-ad-wzor-q5",
+      "lessonId": "choroba-alzheimera-wzorzec-i-progresja",
+      "prompt": "Jaki jest mechanizm działania inhibitorów acetylocholinoesterazy (donepezil, rywastygmina, galantamina) w chorobie Alzheimera?",
+      "options": [
+        {
+          "text": "Całkowita regeneracja i namnożenie obumarłych komórek piramidowych hipokampa",
+          "explanation": "Żaden dostępny inhibitor AChE nie regeneruje obumarłych neuronów."
+        },
+        {
+          "text": "Selektywny antagonizm receptorów dopaminowych D2 w prążkowiu",
+          "explanation": "Inhibitory AChE działają na układ cholinergiczny, a nie blokadę D2."
+        },
+        {
+          "text": "Objawowe zwiększenie stężenia acetylocholiny w szczelinach synaptycznych OUN, bez zatrzymania postępującej utraty neuronów",
+          "explanation": "Leki te łagodzą objawy poznawcze i behawioralne, stabilizując sprawność na kilka-kilkanaście miesięcy, lecz nie cofają neurodegeneracji."
+        }
+      ],
+      "answer": 2
+    }
+  ]
+}
